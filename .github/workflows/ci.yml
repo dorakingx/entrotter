@@ -34,7 +34,7 @@ jobs:
         with:
           repository: entrotter/entrotter.github.io
           path: entrotter.github.io
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - uses: foundry-rs/foundry-toolchain@v1
