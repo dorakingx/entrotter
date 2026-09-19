@@ -1,5 +1,9 @@
 import hashlib
 import json
+import os
+from pathlib import Path
+import subprocess
+import sys
 import unittest
 from unittest.mock import patch
 from entrotter_sdk import Client, ClientError, RunResult, verify
@@ -10,6 +14,20 @@ def artifact():
     body['artifact_id']=hashlib.sha256(data).hexdigest();return body
 
 class SDKTests(unittest.TestCase):
+    def test_offline_roundtrip_example(self):
+        root = Path(__file__).resolve().parents[1]
+        env = {**os.environ, "PYTHONPATH": str(root / "src")}
+        result = subprocess.run(
+            [sys.executable, "examples/roundtrip.py"],
+            cwd=root,
+            env=env,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        self.assertIn("Verified fixture artifact:", result.stdout)
+        self.assertIn("does not establish model correctness", result.stdout)
+
     def test_valid_hash(self): self.assertTrue(verify(artifact()))
     def test_tamper(self):
         a=artifact();a['mode']='evm-local';self.assertFalse(verify(a))

@@ -1,0 +1,14 @@
+{
+  "assumptions": [
+    "Synthetic fixture only; not historical market data or a real experiment."
+  ],
+  "baseline": {},
+  "candidate": {},
+  "comparison": {},
+  "mode": "fixture",
+  "scenario": {
+    "id": "offline-example"
+  },
+  "schema_version": "0.1.0",
+  "artifact_id": "83c48e06dc754a1066f159c03d9046f13091945ec062d5a77a999f9a95616d74"
+}
