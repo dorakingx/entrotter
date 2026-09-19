@@ -10,27 +10,27 @@ jobs:
   integration:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: entrotter/entrotter
           path: entrotter
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: entrotter/engine
           path: engine
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: entrotter/sdk-python
           path: sdk-python
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: entrotter/cli
           path: cli
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: entrotter/scenarios
           path: scenarios
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: entrotter/entrotter.github.io
           path: entrotter.github.io
