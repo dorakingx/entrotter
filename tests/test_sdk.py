@@ -10,6 +10,17 @@ def artifact():
     body['artifact_id']=hashlib.sha256(data).hexdigest();return body
 
 class SDKTests(unittest.TestCase):
+    def test_hashed_unhashable_mode_is_a_client_error(self):
+        for mode in [[], {}]:
+            a = artifact()
+            a.pop('artifact_id')
+            a['mode'] = mode
+            data = json.dumps(a, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode()
+            a['artifact_id'] = hashlib.sha256(data).hexdigest()
+            self.assertTrue(verify(a))
+            with self.subTest(mode=mode), self.assertRaises(ClientError):
+                RunResult.parse(a)
+
     def test_valid_hash(self): self.assertTrue(verify(artifact()))
     def test_tamper(self):
         a=artifact();a['mode']='evm-local';self.assertFalse(verify(a))
