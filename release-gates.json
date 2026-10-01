@@ -45,7 +45,8 @@
         "Proposed bounded-default public clean checkout/venv/image-build/example reproduces exact fixture in 11.682 seconds locally with running Docker and warm caches; not a cold installation measurement",
         "Engine PR #21 integrates bounded risk/recorded-replay execution and exactly reproduces all 19 original EVM reports (12 agent records) with no new model generation; protected review and frozen-script API/pin migration remain pending",
         "Fresh five-public-repo bounded agent checkout/venv/image build/exact replay/CLI verify+inspect in 20.403 seconds locally; bounded fixture 18.588 seconds, Docker running and warm caches. Frozen native reproduction remains exact; independent review pending.",
-        "Candidate quick-start shell blocks executed verbatim in a fresh workspace: six immutable public checkouts, venv, real Foundry download/build, complete fixture match and real local Anvil verification in 25.57 seconds. Running Docker and warm caches; candidate review/integration remains pending."
+        "Candidate quick-start shell blocks executed verbatim in a fresh workspace: six immutable public checkouts, venv, real Foundry download/build, complete fixture match and real local Anvil verification in 25.57 seconds. Running Docker and warm caches; candidate review/integration remains pending.",
+        "Latest October 1 six-repository quick-start shell blocks ran verbatim in 24.352 seconds with running Docker/warm caches; complete fixture/local-EVM IDs match, no model/archive calls. Separate pinned Linux clean fixture/agent reproduction artifacts and all image input hashes verified."
       ],
       "todo": [
         "independent approval and merge of engine/schema/coordination agent PRs"
@@ -151,13 +152,15 @@
         "Submission index, explicit unvalidated pricing/market hypothesis, unsent three-session evaluation protocol and prior-work/AI/media disclosure prepared",
         "Owner approved original videos, confirmed solo participation and eligibility, and reports no funding and no pre-September-14 Entrotter development; user evaluations explicitly deferred, not completed",
         "Authenticated Entrotter draft project 14185 created; product details and partial founder profile saved",
-        "New 106.0675-second synthetic-narration pitch matches the stricter authenticated form limit and passes full decode"
+        "New 106.0675-second synthetic-narration pitch matches the stricter authenticated form limit and passes full decode",
+        "October 1 authenticated draft shows uploaded logo (139 KB) and exactly two missing media fields; approved pitch/demo hashes unchanged. Final submission opening reconfirmed at October 6 11:00 UTC. No videos uploaded or entry submitted."
       ],
       "todo": [
         "Independent review/integration and final exact submission source pins",
         "Complete required current-school-status field without fabricating a personal answer",
-        "Upload project logo and obtain supported-host URLs for <=120-second pitch and <=180-second demo",
-        "After October 6 opening, recheck the authenticated form and required facts, submit the exact reviewed code/video version when eligible, and verify server-side acceptance"
+        "Obtain supported-host URLs for <=120-second pitch and <=180-second demo; upload-time YouTube terms confirmation pending",
+        "After October 6 opening, recheck the authenticated form and required facts, submit the exact reviewed code/video version when eligible, and verify server-side acceptance",
+        "Obtain owner verification of the required primary city without inferring personal information"
       ],
       "requires_approval": [
         "outreach",
@@ -279,7 +282,9 @@
     "evidence/host-service/summary.json",
     "evidence/quick-start/summary.json",
     "evidence/submission-preparation/summary.json",
-    "evidence/worker-build-deadline.json"
+    "evidence/worker-build-deadline.json",
+    "evidence/quick-start-oct01/summary.json",
+    "evidence/submission-preparation/oct01-checkpoint.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

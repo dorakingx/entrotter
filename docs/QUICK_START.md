@@ -19,10 +19,13 @@ five-minute reproduction claim. See [worker security](WORKER_SECURITY.md) for
 the tested daemon and limits, and [bounded host service](BOUNDED_HOST_SERVICE.md)
 for the optional Linux API-process and VM configuration.
 
-The commands below were [executed from a fresh workspace](../evidence/quick-start/summary.json)
-in 25.57 seconds, including source fetches, venv creation, the Foundry download,
-image build and both report checks. Docker was running and image/build caches
-were warm; this is not a cold-machine setup benchmark.
+The October 1 commands were [executed from a fresh workspace](../evidence/quick-start-oct01/summary.json)
+in 24.35 seconds, including source fetches, venv creation, the Foundry download,
+image build and both report checks. They select the tested whole worker-build
+deadline and current console candidates. Docker was already running and image/build
+caches were warm; installation and VM startup are excluded. The
+[September 20 measurement](../evidence/quick-start/summary.json) uses earlier pins
+and remains separate. Neither measurement is a cold-machine setup benchmark.
 
 ## 1. Fetch a compatible snapshot
 
@@ -36,7 +39,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 98f11012934e92fadbbf0ae1ab8552c19d069ce7
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 03f878613b56240002c83422f3540757b2848634
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
@@ -78,7 +81,8 @@ export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.lo
 ```
 
 The builder verifies the daemon and upstream checksums and builds locally; it
-does not publish an image. A previously downloaded release archive can be passed
+does not publish an image. Preparation has a 600-second lifetime cap, with a
+separate watchdog for blocked downloads/builds. A previously downloaded release archive can be passed
 with `--archive /absolute/path/to/release.tar.gz`; it is still checksum-verified.
 Image IDs vary by architecture/build; use the manifest from your own build.
 On macOS, if Python needs the OS certificate bundle, set

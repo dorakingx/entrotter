@@ -5,8 +5,10 @@ videos and supplied the solo-participant facts on 2026-09-20. User evaluation is
 deferred, with zero completed sessions. The authenticated event account now has
 an [Entrotter draft](https://colosseum.com/arena/projects/entrotter); product details
 are saved. Final submission opens October 6 at 11:00 UTC / 20:00 JST. Formal
-post-submission editing is not yet verified, so the owner's conditional submission
-authorization has not been exercised. No outreach or final entry was sent.
+post-submission editing is not yet verified. The owner now authorizes formal
+submission once quality conditions and required personal facts are verified and
+the portal is open, without another blanket approval. No outreach or final entry
+was sent. Independent review, authentication and terms must still be respected.
 
 ## Product
 
@@ -43,7 +45,23 @@ process output, and generated report files. It does not stage successful output,
 claim to be the founder speaking, or present the recording console as a product
 feature. The pitch does not establish founder communication skills or market fit. No video platform has received an upload.
 
-## Exact review sources
+## Latest candidate sources
+
+These are the October 1 tested candidates, still awaiting independent approval
+and protected integration. Follow the [current pinned quick start](../docs/QUICK_START.md)
+instead of rebuilding from moving main branches. The recordings below retain
+their original source versions.
+
+| Component | Exact source | Candidate PR |
+| --- | --- | --- |
+| Coordination and dependency pins | [03f8786](https://github.com/entrotter/entrotter/tree/03f878613b56240002c83422f3540757b2848634) | [#47](https://github.com/entrotter/entrotter/pull/47) |
+| Bounded agent engine and build lifetime | [d5b3003](https://github.com/entrotter/engine/tree/d5b30035b4a2a1c292db24f6caf81ed419a2684e) | [#22](https://github.com/entrotter/engine/pull/22) |
+| Python SDK | [b0c2ba3](https://github.com/entrotter/sdk-python/tree/b0c2ba3bba411e548af44101ae06e879bd7b5dc0) | [#6](https://github.com/entrotter/sdk-python/pull/6) |
+| CLI | [a63a390](https://github.com/entrotter/cli/tree/a63a39000e03d151e80b5a9c47dd4df449281b93) | [#9](https://github.com/entrotter/cli/pull/9) |
+| Schema contracts | [3a78ecc](https://github.com/entrotter/scenarios/tree/3a78ecca24334ae87119a5a0b64c84ba6dd71de1) | [#8](https://github.com/entrotter/scenarios/pull/8) |
+| Current console, accessibility and quality | [8671ab2](https://github.com/entrotter/entrotter.github.io/tree/8671ab2ee481a894784afe2a2cc216fb6931b02c) | [#11](https://github.com/entrotter/entrotter.github.io/pull/11) |
+
+## Recorded review sources
 
 | Component | Source | Review state |
 | --- | --- | --- |
@@ -52,7 +70,7 @@ feature. The pitch does not establish founder communication skills or market fit
 | Frozen evaluation implementation | [engine bb8b3e8](https://github.com/entrotter/engine/tree/bb8b3e8d32c7cbd49629d337758f30bfdf805045) | Original benchmark/source boundary retained |
 | Frozen scenarios | [scenarios 5b71898](https://github.com/entrotter/scenarios/tree/5b718984ac67b8fb49e02f4dab676ae212d2aa58) | Original cases and evaluated holdouts unchanged |
 | Reproduction evidence | [coordination 67b7d19](https://github.com/entrotter/entrotter/tree/67b7d19105495e314c308cd7e2e01ef254f37ca1) | [PR #39](https://github.com/entrotter/entrotter/pull/39), independent review pending |
-| Public site | [entrotter.github.io](https://entrotter.github.io/) | Live earlier viewer; do not confuse with the recorded review branch |
+| Public site | [entrotter.github.io](https://entrotter.github.io/) | Live current main console, distinct from the recording and unmerged accessibility/quality candidate |
 
 Six public repositories: [coordination](https://github.com/entrotter/entrotter),
 [engine](https://github.com/entrotter/engine), [SDK](https://github.com/entrotter/sdk-python),
@@ -91,13 +109,17 @@ or pay for the broader workflow is still a hypothesis.
 - Existing videos are approved. The form requires a pitch of at most two minutes
   and a demo of at most three minutes, hosted on YouTube, Loom or Vimeo. The new
   short pitch passes a full decode/duration check; hosting is still pending.
-- Logo upload was rejected by the browser file-upload transport; no logo was
-  uploaded. The saved project still needs its logo and two supported video URLs.
+- The October 1 authenticated draft shows the uploaded project logo
+  `icon_trasparent_v2.png` (139 KB). Two supported video URLs are still missing.
+  This supersedes the September 20 failed upload attempt.
+- The saved required city needs owner verification; do not infer personal facts.
 - User evaluations are deferred and are not a current owner-required gate.
 - Independent GitHub approval and protected main/Pages integration remain open.
-- Formal submission is authorized only if later editing is verified. The form
-  currently confirms editable drafts before opening, not editing after submission.
+- Formal submission is authorized when the quality conditions and required facts
+  are verified and the portal is open. The form confirms editable drafts before
+  opening; post-submission editing remains unverified.
 
-See [preparation evidence](../evidence/submission-preparation/summary.json).
+See the [October 1 authenticated draft readback](../evidence/submission-preparation/oct01-checkpoint.json)
+and [original preparation evidence](../evidence/submission-preparation/summary.json).
 
 The material is not a claim of a win, market validation or complete goal acceptance.

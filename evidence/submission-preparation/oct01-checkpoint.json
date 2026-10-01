@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-01T07:11:18.118373+00:00",
+  "project_id": 14185,
+  "project_url": "https://colosseum.com/arena/projects/entrotter",
+  "state": "saved_draft_not_submitted",
+  "logo": {
+    "state": "uploaded_in_authenticated_draft",
+    "filename": "icon_trasparent_v2.png",
+    "displayed_size": "139 KB",
+    "image_id": 71382,
+    "supersedes": "September 20 rejected file-chooser attempt"
+  },
+  "media_and_code_fields_needing_attention": 2,
+  "video_urls": {
+    "demo": "blank",
+    "pitch": "blank"
+  },
+  "opening_time_confirmed": "2026-10-06T11:00:00Z",
+  "draft_editable": true,
+  "post_submission_editability": "not_verified",
+  "submission_authorization": "Owner authorizes formal submission when quality conditions and required facts are verified and portal is open; preserve independent review/authentication/terms. No additional blanket approval required.",
+  "remaining": [
+    "YouTube upload-time terms confirmation requested; no files transmitted",
+    "Supported-host URLs for approved 106.0675-second pitch and 174.24-second demo",
+    "Required school Yes/No answer and owner verification of the required city",
+    "Independent PR reviews/protected integration and candidate Pages deployment",
+    "After portal opening, confirm requirements and server-side formal acceptance"
+  ],
+  "privacy": "Personal contact, city value and education/work details excluded from public evidence.",
+  "scope": "Authenticated UI readback and approved source-file hash verification; no upload or final submission."
+}

@@ -817,3 +817,27 @@ guess required school status or bypass review, authentication or terms. Supporte
 video-host links/logo and the school answer remain unfinished; the September 20
 authenticated form's opening time still requires rechecking at submission.
 Discord was abandoned by the owner and is excluded from work/submission gates.
+
+## October 1 — Submission index and current quick start
+
+The submission index now separates the latest tested candidates (coordination
+03f8786, engine d5b3003, SDK b0c2ba3, CLI a63a390, scenarios 3a78ecc and site
+8671ab2) from the September recordings. It reflects the owner's current submission
+authorization and the actual uploaded logo, while preserving unanswered personal
+facts and the missing video URLs. The portal again shows October 6 11:00 UTC as
+the opening time. YouTube upload requires an action-time terms confirmation; none
+of the approved files has been transmitted. See the authenticated draft checkpoint.
+
+All four updated quick-start shell blocks were extracted verbatim and executed in
+a new temporary workspace in 24.352 seconds. Six public checkouts, fresh venv,
+actual Foundry download, worker build/doctor, full fixture equality and local Anvil
+verification pass. Docker was running with warm caches; installation/VM startup
+are excluded. Complete report IDs match existing evidence. All 18 worker image
+inputs and the integration checker match downloaded current-head CI artifacts;
+engine's eight and coordination's five checks pass at their above immutable heads.
+See evidence/quick-start-oct01/summary.json. No new model/archive call was made.
+
+The dedicated VM was stopped and the pre-existing default VM left running. Lima
+warned that its legacy symlink source share was not mounted; this walkthrough needs
+no guest source share and does not revalidate the historical host-service mount
+topology. Candidate reviews/integration and final submission remain uncompleted.
