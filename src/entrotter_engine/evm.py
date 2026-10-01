@@ -9,7 +9,7 @@ import shutil
 import socket
 import subprocess
 import time
-from .rpc import RPC, RPCError, RPCRejected
+from .rpc import RPC, RPCError, RPCRejected, OwnedTraceRPC
 from .artifact import VERSION, seal
 from .defi import read_uint, token_balances
 
@@ -25,10 +25,15 @@ class AnvilSession:
         rpc_url: str | None = None,
         *,
         lifetime: float = 150,
+        trace: bool = False,
     ):
         if type(lifetime) not in (int, float) or not 0.1 <= lifetime <= 150:
             raise ExecutionError("Anvil lifetime must be between 0.1 and 150 seconds")
         self.lifetime = lifetime
+        if type(trace) is not bool:
+            raise ExecutionError("Trace profile must be a boolean")
+        self.trace = trace
+        self.chain_id = 1 if trace else 31337
         self.source, self.rpc_url = source, rpc_url
         self.process: subprocess.Popen[bytes] | None = None
         self.rpc: RPC | None = None
@@ -53,7 +58,7 @@ class AnvilSession:
             "--port",
             str(port),
             "--chain-id",
-            "31337",
+            str(self.chain_id),
             "--no-mining",
             "--silent",
             "--accounts",
@@ -71,8 +76,12 @@ class AnvilSession:
                 str(self.source["block_number"]),
                 "--no-storage-caching",
             ]
-        else:
+        elif not self.trace:
             args += ["--timestamp", "1700000000", "--hardfork", "cancun"]
+        if self.trace:
+            args += ["--hardfork", "shanghai", "--order", "fifo"]
+            if not self.source:
+                args += ["--timestamp", "1700000000"]
         guardian = str(Path(__file__).with_name("_guardian.py"))
         self.process = subprocess.Popen(
             [sys.executable, guardian, str(self.lifetime), *args],
@@ -81,7 +90,10 @@ class AnvilSession:
             stderr=subprocess.DEVNULL,
             start_new_session=True,
         )
-        self.rpc = RPC(f"http://127.0.0.1:{port}", local=True, timeout=10)
+        url = f"http://127.0.0.1:{port}"
+        self.rpc = (
+            OwnedTraceRPC(url) if self.trace else RPC(url, local=True, timeout=10)
+        )
         deadline = time.monotonic() + 25
         try:
             while time.monotonic() < deadline:
@@ -93,7 +105,7 @@ class AnvilSession:
                     version = str(self.rpc.call("web3_clientVersion"))
                     if "anvil" not in version.lower() or self.rpc.call(
                         "eth_chainId"
-                    ) != hex(31337):
+                    ) != hex(self.chain_id):
                         raise ExecutionError(
                             "Local RPC identity or chain ID did not match Anvil"
                         )

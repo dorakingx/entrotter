@@ -44,6 +44,17 @@ def encode_agent_request(scenario: dict, configuration: dict) -> bytes:
     return payload
 
 
+def encode_trace_request(plan: dict) -> bytes:
+    from .trace import validate_plan
+
+    snapshot = json.loads(canonical(plan))
+    validate_plan(snapshot)
+    payload = canonical({"worker_version": WORKER_VERSION, "trace": snapshot})
+    if len(payload) > MAX_SCENARIO_INPUT:
+        raise ValueError("Trace worker request exceeds 256 KiB")
+    return payload
+
+
 def execute_request(raw: bytes) -> dict:
     """Worker-only dispatcher; validates all data before native execution."""
     from .runner import run_agent_native, run_native
@@ -58,6 +69,20 @@ def execute_request(raw: bytes) -> dict:
             raise ValueError("Scenario input exceeds 256 KiB")
         validate(value)
         return run_native(value)
+    if (
+        set(value) == {"worker_version", "trace"}
+        and value["worker_version"] == WORKER_VERSION
+    ):
+        from .trace import validate_plan, run_trace_native
+
+        if len(raw) > MAX_SCENARIO_INPUT:
+            raise ValueError("Trace worker request exceeds 256 KiB")
+        validate_plan(value["trace"])
+        return {
+            "worker_version": WORKER_VERSION,
+            "request_id": sha256(raw).hexdigest(),
+            "report": run_trace_native(value["trace"]),
+        }
     if (
         set(value) != {"worker_version", "scenario", "agent"}
         or value["worker_version"] != WORKER_VERSION

@@ -45,6 +45,8 @@ class NoRedirect(HTTPRedirectHandler):
 
 
 class RPC:
+    LOCAL_METHODS = LOCAL
+
     def __init__(self, url: str, *, local: bool = False, timeout: float = 10):
         parsed = urlsplit(url)
         if parsed.scheme not in {"http", "https"} or not parsed.hostname:
@@ -62,7 +64,7 @@ class RPC:
         self.next_id = 0
 
     def call(self, method: str, params: list | None = None):
-        if method not in (LOCAL if self.local else READ_ONLY):
+        if method not in (self.LOCAL_METHODS if self.local else READ_ONLY):
             raise RPCError("RPC method is not allowed on this transport")
         self.next_id += 1
         req_id = self.next_id
@@ -96,3 +98,26 @@ class RPC:
             raise RPCError(
                 f"RPC request failed for {method}; check connectivity and archive access"
             ) from None
+
+
+class OwnedTraceRPC(RPC):
+    """Signed replay/header writes for a node owned by AnvilSession only.
+
+    Normal RPC, including normal local execution, still forbids raw broadcast.
+    No impersonation, balance replacement or code replacement is permitted here.
+    """
+
+    LOCAL_METHODS = READ_ONLY | {
+        "web3_clientVersion",
+        "eth_getTransactionCount",
+        "eth_sendRawTransaction",
+        "evm_mine",
+        "evm_setNextBlockTimestamp",
+        "evm_setBlockGasLimit",
+        "anvil_setCoinbase",
+        "anvil_setNextBlockBaseFeePerGas",
+        "anvil_setNextBlockPrevRandao",
+    }
+
+    def __init__(self, url: str):
+        super().__init__(url, local=True, timeout=10)
