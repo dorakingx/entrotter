@@ -14,5 +14,14 @@
   },
   "fix": "Sequential native focus via actual Tab from preceding trace sample button; same Enter/filechooser timeout/import/no-network gates and new visible-focus assertion.",
   "validation": "Final local33groups/25axe full browser pass; separate3group/3scan focused visual probe confirms visible parentlabel focus outline at1280/390/320. Linux exact-head CI remains required.",
-  "passed_check_reuse": "Original check7s/quality26s/docs10s unchanged; attempt2 check/quality IDs reindexed but original timestamps retained."
+  "passed_check_reuse": "Original check7s/quality26s/docs10s unchanged; attempt2 check/quality IDs reindexed but original timestamps retained.",
+  "second_setup_timeout": {
+    "head": "0ccef43990a7a31a6fb2b21af70a0c4c1f1465ce",
+    "run": "https://github.com/entrotter/entrotter.github.io/actions/runs/36892139052",
+    "job": "110470109255",
+    "cause": "Azure HTTP font/package transfer delays consumed job deadline; fonts-wqy7.5MB delayed16:32:18\u219216:35:43 then retried; browser download completed16:37:42 as unchanged10minute job canceled.",
+    "harness_executed": false,
+    "other_checks": "check6s/quality33s/docs13s passed; full original quality/docs root-verified."
+  },
+  "setup_fix": "Only Azure Ubuntu URI becomes official HTTPS archive in legacy/deb822 apt source files. Signed-By/suites/components/third-party sources, full Playwright with-deps/allchecks/10mtimeout preserved. Exact extracted script YAML/AST/temp-filesystem checks and independent review pass; actual finalCI still pending."
 }

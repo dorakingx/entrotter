@@ -35,6 +35,27 @@ jobs:
         run: |
           mkdir -p output/playwright
           npm audit --json > output/playwright/npm-audit.json
+      - name: Use the official HTTPS Ubuntu archive for browser dependencies
+        run: |
+          sudo python3 - <<'PYAPT'
+          from pathlib import Path
+          paths = [Path('/etc/apt/sources.list')]
+          for suffix in ('*.list', '*.sources'):
+              paths.extend(Path('/etc/apt/sources.list.d').glob(suffix))
+          for path in paths:
+              if not path.is_file():
+                  continue
+              original = path.read_text()
+              updated = original.replace(
+                  'http://azure.archive.ubuntu.com/ubuntu',
+                  'https://archive.ubuntu.com/ubuntu',
+              ).replace(
+                  'https://azure.archive.ubuntu.com/ubuntu',
+                  'https://archive.ubuntu.com/ubuntu',
+              )
+              if updated != original:
+                  path.write_text(updated)
+          PYAPT
       - run: npx --no-install playwright install --with-deps chromium
       - run: npm run test:accessibility
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

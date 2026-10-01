@@ -62,14 +62,16 @@
     "evidence/trace-viewer/320-signed-prefix.png": "2fe578caae88a7daa4c36483b191927171bdd2f987c0e0ec6b93e0aa74e7368c",
     "evidence/trace-viewer/390-signed-prefix-file-focus.png": "e424a503a26829d47dfb97dde5e307052ebcfe5d6efdc0d869e7ecbced0ee4fd",
     "evidence/trace-viewer/390-signed-prefix.png": "6fb50884dd1ae9e47c99ac5982be7149f4d21d564c7e346aacdb11081d7f226c",
+    "evidence/trace-viewer/apt-mirror-proof.json": "c06cabbc2ed5929a58d6ed947fad4b373877d9ae945745adf6f7041e14e59f5a",
+    "evidence/trace-viewer/apt-workflow-independent-review.json": "30fb683ead055c132f0b3915275e6cef4e15c4650e25fa31d6d1cc7644fde051",
     "evidence/trace-viewer/axe-signed-prefix-1280.json.gz": "06e1dc0a98c88f8099490445c6a49e7fc911acc764936523910945ec88f2f04e",
     "evidence/trace-viewer/axe-signed-prefix-320.json.gz": "21fe906aaca6b677fff556604d6d7a0395efe963bdd2fc78ad0050e8f5d39844",
     "evidence/trace-viewer/axe-signed-prefix-390.json.gz": "c799151cea389d2662d60068dbee9e92a29aa71b54c9ee11bbecfc2c6b5c91d7",
     "evidence/trace-viewer/axe-signed-prefix-unverified.json.gz": "705835787a94f0911c97623a457dfee99a354556bcc6289a0b3e4602989d648e",
     "evidence/trace-viewer/browser-prior-source.json": "aea5427db0a5b0ac392ffbec25eed4aa0a98f006c2c26ac1e44fb4e985f100b4",
     "evidence/trace-viewer/browser.json": "63cb22d676ec11a04b5a8054c9dbaff86864b93b040d22e3734d129c3885064a",
-    "evidence/trace-viewer/ci-failures.json": "a4c2076b0468680eef4f386c7724e6851e9641e489cebd2e580690599ff4c49c",
-    "evidence/trace-viewer/commands.md": "fcd64acff001f388657598a0dd1baf2d8c88c28b15daf358ef4709e73eff5f40",
+    "evidence/trace-viewer/ci-failures.json": "a8616188c18bc29972d437073438674492ba314c235d6f044d62d2c1b5ef3c15",
+    "evidence/trace-viewer/commands.md": "7eb9590a6e1b7b23d49eadce5efcbfa2687c09143e0e00f18bd7acb1d2c63b23",
     "evidence/trace-viewer/independent-review.json": "cfa05d920cf3766d1d2682e3164eca41e2ce80f44b07d9ca157fde272e7ed38d",
     "evidence/trace-viewer/keyboard-independent-review.json": "d4fc1fff63955d25078295c87ae349ff8ff37e70d2801a5cda4a37d32605129b",
     "evidence/trace-viewer/keyboard-visual.json": "cc90e0ebe549d198d7e70ae4ff4a7a12db0d12da10690b41535263445e586e67",
@@ -98,7 +100,8 @@
     "resolved_findings": 6,
     "independent_numeric_codec_cases": 52,
     "github_approval": false,
-    "keyboard_followup": "keyboard-independent-review.json"
+    "keyboard_followup": "keyboard-independent-review.json",
+    "apt_workflow": "apt-workflow-independent-review.json"
   },
   "unit_fixture_provenance": {
     "files": [
@@ -110,5 +113,7 @@
     "scope": "Python stdlib resealed metadata based on unchanged one-prefix fixture; runtime/text vectors and one metadata-modified67,204byte RLP envelope with no valid-signature or execution claim test reader compatibility. These are not new valid signatures, EVM/chain runs or original recorded execution.",
     "before_fix_logs": "Paths replaced with <viewer-repository> and trailing whitespace removed; 3 original regression failures +1raw +1DEL +1codepoint group, now pass."
   },
-  "keyboard_visual_scope": "Separate ignored3group/3axe probe preserves native chooser+visible parent-label outline; padded screenshots visually inspected1280/320 (390same assertion). Not full-browser or manual assistive-tech certification."
+  "keyboard_visual_scope": "Separate ignored3group/3axe probe preserves native chooser+visible parent-label outline; padded screenshots visually inspected1280/320 (390same assertion). Not full-browser or manual assistive-tech certification.",
+  "workflow_sha256": "289feb80218e4b0cdc4cb30485053fa81ef1b305f863bbb92d290bdc965c08d6",
+  "setup_scope": "Two actual setup timeouts preserved; reviewed URI-only official HTTPS mirror repair has local script/shape proof. No gate/timeout/security/source-binding weakening; actual LinuxCI pending."
 }

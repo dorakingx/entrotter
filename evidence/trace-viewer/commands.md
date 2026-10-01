@@ -55,3 +55,12 @@ keyboard-visual.json and padded-control screenshots come from a separate ignored
 3group visual probe (same product source, only focus-label assertions/captures
 added); this is not the full33group runner. Its label outline is visibly mint at
 1280/390/320px. Original full ignored CI logs remain preserved.
+
+A second full-head job again timed out during Azure HTTP package/font transfers,
+with no harness execution. The workflow rewrites only that Ubuntu archive URI
+to the official HTTPS equivalent in legacy/deb822 source files. Signed keyring,
+suites/components, other source URIs, package requirements, all tests and the
+10minute job timeout remain unchanged. apt-mirror-proof.json records exact YAML,
+AST and temporary-filesystem application checks; apt-workflow-independent-review.json
+records independent source review. No sudo/APT installation ran on the local
+machine. Actual final Linux CI remains required.

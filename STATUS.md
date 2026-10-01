@@ -129,7 +129,11 @@ the native chooser. The first Linux attempt timed out in apt setup; retry reache
 the harness and exposed one1280px programmatic-focus chooser timeout. Sequential
 Tab navigation retains all chooser/import assertions; independent review and
 focused padded-control screenshots confirm visible parent-label focus at all
-three widths. Final exact-head Linux CI remains required. Imports emit
+three widths. A second setup attempt again exhausted the deadline in slow Azure HTTP package
+transfers before harness execution. The reviewed workflow now selects the official
+HTTPS Ubuntu archive without changing signed-APT validation, dependencies, tests
+or timeout; YAML/extracted-script mock checks pass. Final exact-head Linux CI
+remains required. Imports emit
 zero requests; only same-origin GETs occur. Manual assistive-tech/full WCAG remain
 open. See evidence/trace-viewer for raw proof/source hashes and retained limits.
 
