@@ -82,6 +82,70 @@ The Anvil command line may expose the archive URL to other processes of the
 same OS user. Use only a trusted local machine and a restricted read-only RPC
 credential. Archive providers may charge for reads; the user selects the provider.
 
+## Original transaction-prefix replay
+
+`trace-run` uses a separate versioned format for original signed transactions,
+distinct from v0.1 archived-state actions and recorded-agent simulations. It
+forks the pinned parent twice, restores the original timestamp, coinbase,
+prevrandao, base fee and gas limit, queues the original signatures in FIFO order
+and mines one block. The candidate may skip selected original transactions;
+remaining nonces/signatures are never repaired, funded or impersonated.
+
+```bash
+export ENTROTTER_RPC_URL='https://YOUR_ARCHIVE_PROVIDER'
+PYTHONPATH=src python3 -m entrotter_engine trace-run tests/data/canonical-mainnet-prefix.json -o transaction-replay.json
+```
+
+The configured bounded Docker worker is the default, with no native fallback.
+`--native` is an explicit trusted-development opt-out of whole-process limits.
+Fork workers retain the operator-trusted bridge network described below; this
+does not authorize external code. No trace endpoint is added to HTTP `/v1/runs`.
+Upstream RPC stays read-only; only owned trace nodes allow signed submissions
+and header writes. Normal local RPC still forbids raw submissions.
+
+A plan has exactly `trace_version: "0.1.0"`, `source` (chain ID, block number,
+block hash), `through_index` (0–31) and sorted unique `skip_indices` within the
+prefix. Only Ethereum mainnet's Shanghai interval and legacy/type-1/type-2
+signatures are currently supported. Input is bounded to 256 KiB, individual
+calldata to 64 KiB, access lists to 256 entries/keys, receipt logs to 512 entries,
+and exported reports to 8 MiB with the existing shared export ledger.
+
+The result has `execution_kind: "canonical_transaction_prefix_replay"` and
+`trace_version`, **not** the v0.1 `schema_version`. The v0.1 SDK/viewer deliberately
+do not accept this format yet. `verify_trace` checks format/integrity and the
+worker additionally binds it to the complete admitted plan. A checksum is not
+proof of a trusted RPC, image or correct execution. Runtime is measured metadata,
+so artifact hashes can differ even when execution outcomes match.
+
+`baseline_verified` requires every original projected receipt to match status,
+gas/cumulative gas, effective price, transaction identity/index, ordered log bytes
+and bloom. A receipt/state-dependent difference, nonce conflict, rejection or
+unmined transaction leaves the baseline unverified. Original in-prefix oracle
+transactions are retained; missing archive state fails explicitly. Skipped
+transactions can change later execution, without inventing oracle inputs or
+future market responses. CLI success means a valid report was exported; check
+`baseline_verified` before claiming successful historical replay.
+
+Anvil pool admission evaluates parent state. A transaction funded only by an
+earlier transaction in the same block can be rejected before mining, even if
+valid historically. This remains explicit; no sequential mining or balance patch
+is substituted. Full-block execution, opcode traces, canonical block/root
+equality, withdrawals/end-block state, other fork eras and an alternate economy
+remain open work. This prefix feature does not close those gates.
+
+The mainnet example pins block 19,000,000 and its first transaction, reproducing
+208,144 gas and8 logs while the candidate omits it. It is a technical receipt case,
+not a model evaluation, profitability claim or newly untouched holdout. See
+[recorded evidence](evidence/trace-replay/README.md). The separate
+`canonical-local-inputs.json` is an artificially funded local fixture, generated
+with a disposable key; only public signed inputs are retained.
+
+Encoding follows [EIP-155](https://eips.ethereum.org/EIPS/eip-155),
+[EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) and
+[EIP-1559](https://eips.ethereum.org/EIPS/eip-1559). Mainnet activation is pinned
+to [go-ethereum v1.14.0](https://github.com/ethereum/go-ethereum/blob/v1.14.0/params/config.go);
+header methods use [Anvil v1.8.3](https://github.com/foundry-rs/foundry/blob/v1.8.3/crates/anvil/src/eth/api.rs).
+
 ## Limits and contribution priorities
 
 There is no automatic replay of later blocks, mempool ordering, oracle event

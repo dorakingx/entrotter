@@ -18,10 +18,15 @@ def main(argv=None):
     r = s.add_parser("run")
     r.add_argument("scenario")
     r.add_argument("-o", "--output", required=True)
+    t = s.add_parser(
+        "trace-run", help="Replay an original signed transaction prefix in owned Anvil"
+    )
+    t.add_argument("plan")
+    t.add_argument("-o", "--output", required=True)
     a = s.add_parser("serve")
     a.add_argument("--port", type=int, default=8787)
     a.add_argument("--output", default="artifacts")
-    for command in (r, a):
+    for command in (r, t, a):
         mode = command.add_mutually_exclusive_group()
         mode.add_argument(
             "--isolated",
@@ -50,6 +55,22 @@ def main(argv=None):
                     {
                         "artifact_id": result["artifact_id"],
                         "mode": result["mode"],
+                        "output": args.output,
+                    }
+                )
+            )
+        elif args.command == "trace-run":
+            from .trace import load_trace, run_trace, run_trace_native, write_trace
+
+            trace_executor = run_trace if args.isolated else run_trace_native
+            result = trace_executor(load_trace(args.plan))
+            write_trace(result, args.output)
+            print(
+                json.dumps(
+                    {
+                        "artifact_id": result["artifact_id"],
+                        "execution_kind": result["execution_kind"],
+                        "baseline_verified": result["baseline_verified"],
                         "output": args.output,
                     }
                 )

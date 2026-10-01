@@ -18,6 +18,19 @@ not a security sandbox for untrusted agent code. Container/process sandboxing,
 egress controls, authenticated multi-tenancy and a production job queue remain
 release gates before any hosted service is made available.
 
+Signed transaction-prefix replay accepts only bounded data plans, with no keys,
+URLs, imports or commands in JSON. Upstream RPC cannot broadcast. A separate
+owned loopback Anvil profile permits raw signed inputs and fixed header setters,
+but denies balance/code overrides, impersonation and unsigned transactions.
+Normal RPC still denies raw submission. Default trace execution uses the same
+bounded Docker worker and shared admission/cleanup controls; its archive bridge
+is not an egress firewall. Native trace execution requires explicit opt-out.
+Receipt matches cover only the projected prefix fields, not block/state roots,
+provider authenticity or economic outcomes. Same-block funding dependencies can
+fail pool admission and must leave the baseline unverified. Trace checksums and
+worker request binding establish integrity, not independently recomputed receipt
+equivalence. See README.md and the raw evidence for limits.
+
 Do not post secrets or exploit details in public issues. Use GitHub private
 vulnerability reporting where enabled. If it is not yet enabled, ask the
 maintainers in an issue to enable a private channel without disclosing details.

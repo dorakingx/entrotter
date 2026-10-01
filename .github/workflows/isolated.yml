@@ -32,6 +32,23 @@ jobs:
           PY
       - name: Verify real kernel enforcement, API and lifetime cleanup
         run: python -m unittest discover -s tests_isolated -v
+      - name: Replay pinned mainnet transaction through the default bounded worker
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+        run: |
+          python -m entrotter_engine trace-run tests/data/canonical-mainnet-prefix.json -o .quality/trace-replay/mainnet-prefix.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from entrotter_engine.trace import verify_trace
+          report = json.loads(Path('.quality/trace-replay/mainnet-prefix.json').read_text())
+          if not verify_trace(report) or not report['baseline_verified']:
+              raise RuntimeError('Pinned mainnet receipt replay did not verify; no fixture substitution')
+          receipt = report['baseline']['outcomes'][0]['receipt']
+          if receipt['gasUsed'] != '0x32d10' or len(receipt['logs']) != 8:
+              raise RuntimeError('Pinned transaction execution differs from original receipt')
+          print(json.dumps({'artifact_id': report['artifact_id'], 'runtime_seconds': report['runtime_seconds'], 'gas_used': 208144, 'log_count': 8}))
+          PY
       - name: Verify no test workers remain
         if: always()
         run: |
@@ -51,6 +68,7 @@ jobs:
             .quality/image-security/
             .quality/native-security/
             .quality/build-output-docker.json
+            .quality/trace-replay/
             worker-image.json
           include-hidden-files: true
           if-no-files-found: error
