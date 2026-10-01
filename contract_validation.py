@@ -1,4 +1,4 @@
-"""Offline v0.1 wire-shape validation; engine semantics and hashes are separate."""
+"""Offline wire-shape validation; engine semantics and hashes are separate."""
 
 import argparse
 import json
@@ -10,7 +10,7 @@ from referencing import Registry, Resource
 
 SCHEMAS = Path(__file__).resolve().parent / "schemas"
 BASE = "https://entrotter.github.io/schemas/"
-KINDS = ("scenario", "result", "agent-recording")
+KINDS = ("scenario", "result", "agent-recording", "trace-plan", "trace-result")
 
 
 def validator(kind: str, schema_dir: Path = SCHEMAS) -> Draft202012Validator:
