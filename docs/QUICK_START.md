@@ -34,7 +34,8 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination adf4fc8, engine 6e13f34 and CLI 22b514c; SDK/schema/site pins are retained.
+coordination 2204fca, engine 6e13f34 and CLI 22b514c; SDK/schema pins are retained,
+with the recorded-agent viewer at49914a2.
 
 The prior [inspection-fix composition](../evidence/agent-inspection-integration/summary.json)
 selects the independently code-reviewed CLI fix: extra typed-response fields
@@ -68,7 +69,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git adf4fc8f65f1e7641f371624ffe01e73da83332e
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 2204fcad3dfe329d433806126ee68adb796925b6
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
@@ -201,6 +202,27 @@ under matching observations, not later-block historical trace replay or new mode
 quality/holdout evidence. Invalid or diverged replay preserves an existing output.
 The optional Linux service/CLI installation guides retain their separately tested
 operator pins; this walkthrough does not claim those service installs were repeated.
+
+## Inspect recorded decisions in the local viewer
+
+From `entrotter-candidate`, serve the checked-out site with
+`python3 -m http.server 8000 --bind 127.0.0.1 --directory entrotter.github.io`.
+Open `http://127.0.0.1:8000`, expand the **v0.1 report explorer** and select
+**Local EVM · recorded model decisions**, or import `model-replayed.json`.
+The table joins the original preflight/budget/choice/reason to candidate outcomes.
+Original model alias, nondeterminism, unavailable seed/cost and no measured model
+advantage remain disclosed. No new model call or upload occurs.
+
+The [tested viewer composition](../evidence/agent-viewer-integration/summary.json)
+selects site49914a2/#14. Independent source review resolved three resealed-record
+consistency gaps;47Node/11Python tests and28 browser groups/21axe scans pass in
+its four required checks. Imported data is not authenticated and selected display
+checks do not replace full engine validation. Current combined CI and clean
+reproduction artifacts are in [PR55](https://github.com/entrotter/entrotter/pull/55).
+All older measurements retain their actual pins; candidate review/publication and
+manual assistive-technology/full WCAG checks remain separate gates.
+Stop this local static server with Ctrl-C when finished. The timed walkthrough
+above does not include this optional viewer step or claim a cold installation.
 
 ## Measurement and cleanup
 
