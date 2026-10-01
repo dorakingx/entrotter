@@ -1,0 +1,261 @@
+{
+  "artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "assumptions": [
+    "Synthetic exogenous price path; not a historical replay.",
+    "Both policies observe identical prices with no future lookahead.",
+    "Immediate fills with fixed fees/slippage; no gas, MEV, market impact or liquidity model.",
+    "No real money, chain transaction or LLM is used."
+  ],
+  "baseline": {
+    "metrics": {
+      "fees": "0",
+      "final_equity": "5800",
+      "initial_equity": "10000",
+      "max_drawdown_pct": "52.4271844660194174757281553398058252427184466019417475728155",
+      "return_pct": "-42.00",
+      "trades": 0
+    },
+    "policy": {
+      "type": "hold"
+    },
+    "trace": [
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "10000",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "100",
+        "step": 0,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "10300",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "103",
+        "step": 1,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "10100",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "101",
+        "step": 2,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "9400",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "94",
+        "step": 3,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "8600",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "86",
+        "step": 4,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "6500",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "65",
+        "step": 5,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "4900",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "49",
+        "step": 6,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "5300",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "53",
+        "step": 7,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "5800",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "58",
+        "step": 8,
+        "units": "100"
+      }
+    ]
+  },
+  "candidate": {
+    "metrics": {
+      "fees": "25.748400",
+      "final_equity": "8557.051600",
+      "initial_equity": "10000",
+      "max_drawdown_pct": "16.9218291262135922330097087378640776699029126213592233009709",
+      "return_pct": "-14.42948400",
+      "trades": 1
+    },
+    "policy": {
+      "drawdown_trigger": "0.12",
+      "type": "circuit_breaker"
+    },
+    "trace": [
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "10000",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "100",
+        "step": 0,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "10300",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "103",
+        "step": 1,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "10100",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "101",
+        "step": 2,
+        "units": "100"
+      },
+      {
+        "action": "hold",
+        "cash": "0",
+        "equity": "9400",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "94",
+        "step": 3,
+        "units": "100"
+      },
+      {
+        "action": "sell_all",
+        "cash": "8557.051600",
+        "equity": "8557.051600",
+        "execution_price": "85.828",
+        "fee": "25.748400",
+        "observed_price": "86",
+        "step": 4,
+        "units": "0"
+      },
+      {
+        "action": "hold",
+        "cash": "8557.051600",
+        "equity": "8557.051600",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "65",
+        "step": 5,
+        "units": "0"
+      },
+      {
+        "action": "hold",
+        "cash": "8557.051600",
+        "equity": "8557.051600",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "49",
+        "step": 6,
+        "units": "0"
+      },
+      {
+        "action": "hold",
+        "cash": "8557.051600",
+        "equity": "8557.051600",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "53",
+        "step": 7,
+        "units": "0"
+      },
+      {
+        "action": "hold",
+        "cash": "8557.051600",
+        "equity": "8557.051600",
+        "execution_price": null,
+        "fee": "0",
+        "observed_price": "58",
+        "step": 8,
+        "units": "0"
+      }
+    ]
+  },
+  "comparison": {
+    "final_equity_delta": "2757.051600"
+  },
+  "engine_version": "0.1.0",
+  "mode": "fixture",
+  "scenario": {
+    "baseline": {
+      "type": "hold"
+    },
+    "candidate": {
+      "drawdown_trigger": "0.12",
+      "type": "circuit_breaker"
+    },
+    "id": "liquidity-shock",
+    "market": {
+      "fee_bps": 30,
+      "initial_cash": "0",
+      "initial_units": "100",
+      "prices": [
+        "100",
+        "103",
+        "101",
+        "94",
+        "86",
+        "65",
+        "49",
+        "53",
+        "58"
+      ],
+      "slippage_bps": 20,
+      "symbol": "TEST"
+    },
+    "mode": "fixture",
+    "provenance": {
+      "description": "An invented drawdown path. Not prices from a real token or historical crisis.",
+      "kind": "synthetic"
+    },
+    "schema_version": "0.1.0",
+    "title": "Synthetic liquidity shock"
+  },
+  "schema_version": "0.1.0"
+}

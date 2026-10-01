@@ -1,0 +1,26 @@
+test_blocked_download_obeys_whole_build_budget_and_preserves_manifest (test_worker_build.WorkerBuildTests.test_blocked_download_obeys_whole_build_budget_and_preserves_manifest) ... FAIL
+test_corrupt_archive_is_rejected (test_worker_build.WorkerBuildTests.test_corrupt_archive_is_rejected) ... ok
+test_deadline_checks_after_slow_read_before_writing (test_worker_build.WorkerBuildTests.test_deadline_checks_after_slow_read_before_writing) ... ok
+test_endless_stream_cannot_fill_disk_or_request_unbounded_reads (test_worker_build.WorkerBuildTests.test_endless_stream_cannot_fill_disk_or_request_unbounded_reads) ... ok
+test_exact_limit_is_accepted_and_hash_is_preserved (test_worker_build.WorkerBuildTests.test_exact_limit_is_accepted_and_hash_is_preserved) ... ok
+test_fifo_without_writer_rejects_without_hanging (test_worker_build.WorkerBuildTests.test_fifo_without_writer_rejects_without_hanging) ... ok
+test_local_regular_file_is_streamed_without_read_bytes (test_worker_build.WorkerBuildTests.test_local_regular_file_is_streamed_without_read_bytes) ... ok
+test_oversized_archive_rejected_before_digest_or_extraction (test_worker_build.WorkerBuildTests.test_oversized_archive_rejected_before_digest_or_extraction) ... ok
+
+======================================================================
+FAIL: test_blocked_download_obeys_whole_build_budget_and_preserves_manifest (test_worker_build.WorkerBuildTests.test_blocked_download_obeys_whole_build_budget_and_preserves_manifest)
+----------------------------------------------------------------------
+ValueError: download finally returned
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/hatanakatomoya/Developer/App/Entrotter/.worktrees/engine-agent-worker/tests/test_worker_build.py", line 42, in test_blocked_download_obeys_whole_build_budget_and_preserves_manifest
+    self.assertRaisesRegex(ValueError, "deadline"),
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "deadline" does not match "download finally returned"
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.082s
+
+FAILED (failures=1)

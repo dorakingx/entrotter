@@ -1,0 +1,6 @@
+{
+  "deadline_seconds": 10,
+  "elapsed_seconds": 10.013,
+  "daemon_probe_processes_remaining": [],
+  "scope": "Actual isolated BuildKit RUN sleeping for 60 seconds; local Docker client lifetime/session termination"
+}
