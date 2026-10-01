@@ -286,7 +286,8 @@
     "evidence/worker-build-deadline.json",
     "evidence/quick-start-oct01/summary.json",
     "evidence/submission-preparation/oct01-checkpoint.json",
-    "evidence/host-service-oct01/summary.json"
+    "evidence/host-service-oct01/summary.json",
+    "evidence/submission-preparation/oct01-rules-recheck.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

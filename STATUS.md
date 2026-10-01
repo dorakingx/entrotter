@@ -869,3 +869,10 @@ See evidence/host-service-oct01/. This verifies the optional guest deployment,
 not universal host limits, hard host cache/backup storage bounds, independent
 review or goal completion. The original hour expiry and live root exhaustion
 remain untested; the scaled timer and actual block topology are the stated proof.
+
+The public event page, FAQ and official rules were rechecked on October 1.
+Section 5 still specifies October 12, 2026 at 23:59 PT (October 13 06:59 UTC /
+15:59 JST), with administrator schedule-change rights. The FAQ still permits
+all-chain entries. COMPETITION.md and DISCLOSURE.md now reflect the owner's
+new authorization and the verified logo; historical September evidence is retained.
+See evidence/submission-preparation/oct01-rules-recheck.json.

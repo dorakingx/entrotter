@@ -1,4 +1,4 @@
-# Competition requirements — checked 2026-09-20 JST
+# Competition requirements — public rules rechecked 2026-10-01 JST
 
 The [event page](https://colosseum.com/worldsfair) and
 [official rules, section 5](https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf)
@@ -11,15 +11,19 @@ The authenticated dashboard contains the saved Entrotter draft, project 14185.
 Formal submission opens **October 6 at 04:00 PDT / 11:00 UTC / 20:00 JST**.
 The form confirms that drafts can be saved, edited and reviewed before then.
 It does not currently establish editing rights after formal submission. The
-owner's permission to submit is conditional on verifying that right; no formal
+owner now authorizes formal submission once quality conditions and required
+personal facts are verified and the portal is open, without another blanket
+approval. Do not bypass authentication, terms or independent review. No formal
 submission has occurred.
 
 The actual form requires **pitch <= 2 minutes**, **demo <= 3 minutes**, and video
 URLs from **YouTube, Loom or Vimeo**. This is stricter than the earlier reading
 of the [public FAQ](https://colosseum.com/hackathon). The new 1:46.07 pitch meets
 the form limit; the original 2:51.44 pitch is historical review evidence only.
-The existing 2:54.24 demo meets its duration limit. Supported-host uploads and
-a logo upload remain pending.
+The existing 2:54.24 demo meets its duration limit. The October 1 authenticated
+draft confirms the uploaded logo. Both supported-host video URLs remain blank;
+YouTube upload-time terms confirmation has been requested. The required school
+answer and owner verification of the saved primary city remain pending.
 
 ## Owner decisions and factual scope
 
@@ -40,5 +44,10 @@ that provenance limit and disclose substantial AI assistance.
 See [the current submission index](../submission/README.md),
 [development and AI disclosure](../submission/DISCLOSURE.md) and
 [preparation evidence](../evidence/submission-preparation/summary.json).
+The original September 20 evidence records the earlier conditional authorization
+and failed logo upload; the current submission index records the superseding
+owner decision and authenticated draft readback. Public rules/FAQ were checked
+again on October 1; recheck the authenticated form and official rules at final
+submission because the administrator may change the schedule or requirements.
 Repository/Pages publication is already authorized. Outreach, paid services and
 package publication have no new authorization. No prize outcome is promised.

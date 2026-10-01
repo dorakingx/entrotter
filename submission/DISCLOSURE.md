@@ -70,5 +70,7 @@ Automated full-file decoding, stream/duration checks and representative frame
 inspection pass. The owner approved the existing review videos on 2026-09-20. A new
 1:46.07 pitch uses the confirmed solo-founder context and meets the authenticated
 form's two-minute limit. The original recordings remain unchanged evidence.
-Supported-host uploads and conditional final submission remain pending. These videos are real recorded review deliverables,
+Supported-host uploads remain pending. Formal submission is authorized once quality
+conditions and required facts are verified and the portal is open; no final entry
+has occurred. These videos are real recorded review deliverables,
 not proof of founder communication, customer demand or a submitted entry.
