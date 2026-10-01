@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: d5b30035b4a2a1c292db24f6caf81ed419a2684e
+          ref: fa3738078079ffa8f8350a26dca60b560d8aa32f
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:

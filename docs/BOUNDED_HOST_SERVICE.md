@@ -68,7 +68,7 @@ test ! -e "$HOME/.config/systemd/user/entrotter-engine.service"
 mkdir -p "$app_dir" "$config_dir" "$HOME/.config/systemd/user"
 chmod 700 "$app_dir" "$config_dir"
 git clone https://github.com/entrotter/engine.git "$app_dir/engine"
-git -C "$app_dir/engine" checkout --detach d5b30035b4a2a1c292db24f6caf81ed419a2684e
+git -C "$app_dir/engine" checkout --detach fa3738078079ffa8f8350a26dca60b560d8aa32f
 export PYTHONPATH="$app_dir/engine/src"
 export ENTROTTER_DOCKER_SOCKET=/var/run/docker.sock
 python3 "$app_dir/engine/scripts/build_worker.py" --output "$app_dir/worker-image.json"
@@ -121,6 +121,12 @@ The one-hour production expiry was read back, not waited out; the timer fault te
 uses two seconds. Live root-disk exhaustion was not attempted: disk evidence is
 actual block-device size, writable mount topology and rejection of host-share
 writes. The existing report-quota tests cover application-level exhaustion.
+
+The install block now selects engine fa37380, whose builder additionally bounds
+forwarded diagnostics. Its engine source and Dockerfile are byte-identical to
+d5b3003; current native/Docker/image checks pass in engine PR #26. The resource
+and topology evidence above remains the d5b3003 installation, not a newly repeated
+service installation at fa37380. The service/checker files are unchanged.
 
 ## Boundaries that remain
 
