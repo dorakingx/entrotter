@@ -139,7 +139,8 @@
         "Website PR #10: same-runner before failures and 18 passing macOS/Linux keyboard/reflow/import/error/forced-color checks; 14 zero-violation axe scans with explicit incomplete contrast evidence per final run; pending independent review and deployment",
         "Pinned browser development tools, strict npm audit and Pages build prerequisite verified in Linux CI; downloaded site/runner hashes match local evidence",
         "Proposed website decimal-input fix: failing-before correctly hashed malformed-metric regression; final local/Linux 21 JS and ten Python tests, 19 real browser groups and 14 zero-violation axe scans. All 19 existing EVM reports retain exact hash/view-model behavior after fixing introduced source:null rejection. Existing incomplete contrast/manual AT limits remain; no deployment before review/merge.",
-        "Website PR #11 integrates current UFO/experiment-console main d44af5d into the accessibility/quality candidate. At 8671ab2: 40 JS/11 Python tests, 24 browser groups/18 zero-violation axe scans and all four required GitHub checks pass; independent review/deployment of this candidate pending. Live five-file bytes match current main, which is distinct from this candidate."
+        "Website PR #11 integrates current UFO/experiment-console main d44af5d into the accessibility/quality candidate. At 8671ab2: 40 JS/11 Python tests, 24 browser groups/18 zero-violation axe scans and all four required GitHub checks pass; independent review/deployment of this candidate pending. Live five-file bytes match current main, which is distinct from this candidate.",
+        "Viewer #14/49914a2 displays recorded agent choices/reasons beside candidate outcomes, original requested model provenance/unknown cost and negative result. Independent code review3P2 findings resolved;47Node/11Python,28Chromium groups/21zero-violation axe scans,55full findings/18source hashes and42Python/109npm lock identities verified in4passed CI checks. All12 original agent reports remain readable; this is display-only, not new chain/model evaluation, full WCAG or publication proof."
       ],
       "blocked": [],
       "todo": [
@@ -299,7 +300,8 @@
     "evidence/bounded-cli/summary.json",
     "https://github.com/entrotter/engine/blob/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json",
     "evidence/latest-candidate/summary.json",
-    "evidence/contract-identity-integration/summary.json"
+    "evidence/contract-identity-integration/summary.json",
+    "evidence/agent-viewer-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

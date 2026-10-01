@@ -1099,3 +1099,30 @@ final guide commit; its exact artifact/readback links will be recorded in PR55.
 See evidence/contract-identity-integration/summary.json. Mandatory independent
 GitHub approval, protected integration/publication and personal/media/submission
 gates remain open. Discord is discontinued and excluded.
+
+## October 1 — Recorded-agent viewer composition
+
+Viewer #14/49914a2 builds on8671ab2 and makes recorded reasons/choices and their
+candidate outcomes inspectable, preserving original alias/nondeterminism/unknown
+seed/cost and no measured model advantage. The original local model report is
+copied byte-identically; all12 original agent reports retain valid hashes and
+display. No new model/archive run or original-media/schema rewrite occurred.
+
+Independent software review found and resolved3P2 consistency gaps: array-valued
+choices, proposals not bound to scenario actions, and held outcomes claiming
+success/nonzero gas. Four fully resealed regressions fail before the fix and now
+refuse. Re-review confirms resolution; this is not an approving GitHub review.
+All4 current-head site checks pass:47Node/11Python tests,28 realChromium groups,
+21zero-violation axe scans and mobile keyboard scrolling. Downloaded18 source/
+config/lock hashes,55 full security findings,11JS/12type inputs/14rules, Python
+source/lock/42packages and109npm lock entries match, with0 reported advisories.
+Raw incomplete axe/browser/advisory limits remain explicit. Mobile screenshots
+were visually inspected. No import uploads or third-party requests occurred.
+
+Coordination selects site49914a2 with unchanged engine6e/CLI22/SDK/schema pins.
+Combined source pin/guide/index CI is separate from site proof; priorb724983
+fixture5.853s/model5.637s belongs to site867. Frozen native/provider/benchmark/
+consumed holdout/report/media sources stay distinct. See
+evidence/agent-viewer-integration/summary.json. All protected-main approvals,
+manual assistive-tech/full WCAG and live candidate publication/submission gates
+remain open. Discord remains abandoned; no localDocker/VM startup.

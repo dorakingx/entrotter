@@ -152,6 +152,15 @@ a reconstructed alternative market, or an integrated-agent benchmark.
 
 ## Recorded model decisions
 
+The proposed [recorded-agent viewer](https://github.com/entrotter/entrotter.github.io/pull/14)
+lets contributors open the v0.1 report explorer and select **Local EVM · recorded
+model decisions**. It places preflight, gas budget, execute/hold and reasons beside
+candidate receipts while preserving original model/cost uncertainty. The current
+[pinned quick start](docs/QUICK_START.md) selects that tested candidate; independent
+approval and live publication remain pending. Original media and model evaluation
+inputs retain their separate versions.
+
+
 The experimental local controller now connects typed `execute`/`hold` model
 responses to real Anvil execution and replays a full recording without another
 model call. In the artificial transfer/revert example, the model and a simple

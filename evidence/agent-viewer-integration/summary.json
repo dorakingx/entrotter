@@ -1,0 +1,95 @@
+{
+  "status": "tested_viewer_selected_combined_current_head_CI_pending",
+  "previous_coordination_head": "b724983a6c24fbe20473111565c8639714cb1bb0",
+  "previous_execution_snapshot": "adf4fc8f65f1e7641f371624ffe01e73da83332e",
+  "viewer_PR": "https://github.com/entrotter/entrotter.github.io/pull/14",
+  "viewer": {
+    "head": "49914a2ca7358a9e45befc9b458f7f3ac52c6142",
+    "all_four_required_checks": "passed",
+    "source_hashes_match": 18,
+    "JS_sources": 11,
+    "type_inputs": 12,
+    "security_rules": 14,
+    "retained_security_findings": 55,
+    "Python_source_and_lock_hashes_match": true,
+    "audited_Python_packages": 42,
+    "npm_lock_entries": 109,
+    "npm_audit_metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 1,
+        "dev": 109,
+        "optional": 20,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 109
+      }
+    },
+    "reported_advisories": 0,
+    "Node_tests": 47,
+    "Python_tests": 11,
+    "browser_groups": 28,
+    "axe_scans": 21,
+    "axe_violations": 0,
+    "browser_source_hashes_match": 10,
+    "browser": "153.0.8010.12",
+    "browser_node": "v22.23.3",
+    "GitHub_reviews": [],
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T12:32:52Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36862460651/job/110369739330",
+        "name": "docs-links",
+        "startedAt": "2026-10-01T12:32:43Z",
+        "status": "COMPLETED",
+        "workflowName": "Documentation links"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T12:32:51Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36862460520/job/110369731189",
+        "name": "check",
+        "startedAt": "2026-10-01T12:32:41Z",
+        "status": "COMPLETED",
+        "workflowName": "Publish OSS documentation"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T12:33:48Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36862460520/job/110369731614",
+        "name": "accessibility",
+        "startedAt": "2026-10-01T12:32:41Z",
+        "status": "COMPLETED",
+        "workflowName": "Publish OSS documentation"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T12:33:08Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36862460520/job/110369731489",
+        "name": "quality",
+        "startedAt": "2026-10-01T12:32:41Z",
+        "status": "COMPLETED",
+        "workflowName": "Publish OSS documentation"
+      }
+    ],
+    "build_deploy": "intentionally skipped on PR; no publication claim"
+  },
+  "source_review_and_failure_fix_proof": "https://github.com/entrotter/entrotter.github.io/tree/49914a2ca7358a9e45befc9b458f7f3ac52c6142/evidence/agent-decisions",
+  "behavior": "Recorded observation steps/preflight/requested-remaining gas/execute-hold/reasons join candidate outcomes. Original model alias/nondeterminism/unknown seed-generation cost and no measured model advantage remain explicit. Selected consistency checks do not prove authenticity, real execution, model provenance or full engine validity.",
+  "original_reports": "Public local model report copied byte-identically; all12 original agent reports retain hashes and display; no new archive/model calls.",
+  "unchanged": "Engine6e13f34/CLI22b514c/SDKb0/scenarios3a78 pins and frozen benchmark/provider/holdout/report/media sources; no local Docker/VM startup.",
+  "prior_combined_proof": "b724983 had all5 checks and fixture5.853s/model5.637s CI with site867. These timings remain at those actual source pins and do not measure a new guide walkthrough or this new site combination.",
+  "remaining": "Current composition CI/artifact binding, mandatory GitHub approval/protected integration, Pages live publication and personal/media/submission gates. Discord remains excluded."
+}
