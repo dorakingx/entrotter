@@ -19,7 +19,7 @@ five-minute reproduction claim. See [worker security](WORKER_SECURITY.md) for
 the tested daemon and limits, and [bounded host service](BOUNDED_HOST_SERVICE.md)
 for the optional Linux API-process and VM configuration.
 
-The latest [agent CLI candidate evidence](../evidence/latest-agent-cli/summary.json)
+The earlier [agent CLI candidate evidence](../evidence/latest-agent-cli/summary.json)
 uses engine c167193 and CLI 87cfe40. Its automated clean public replay includes
 five pinned dependency checkouts, a new pipless venv, actual Foundry download/build
 and complete recorded-model equality through the standalone CLI. Docker was
@@ -34,7 +34,16 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination 924f60e, engine c167193 and CLI 87cfe40; SDK/schema/site pins are retained.
+coordination b8a23f8, engine c167193 and CLI 22b514c; SDK/schema/site pins are retained.
+
+The current [inspection-fix composition](../evidence/agent-inspection-integration/summary.json)
+selects the independently code-reviewed CLI fix: extra typed-response fields
+cannot replace an observation's displayed step, and malformed responses are
+refused before replay execution. All six CLI checks pass with 42 units per Python
+version and four actual Docker cases retaining original report equality. Code
+review is distinct from protected-main approval. Combined current-head CI and its
+clean reproduction artifacts are recorded in the candidate PR; the older full
+guide timings above do not measure these updated pins.
 
 ## 1. Fetch a compatible snapshot
 
@@ -48,7 +57,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 924f60ee90364218a700bf7416496ab86132b339
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git b8a23f819ff4e682eb2bbdf89b6e7c55cf3ec025
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json

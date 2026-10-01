@@ -92,5 +92,7 @@
   "original_report_inputs": "unchanged; no new model/archive calls or consumed holdout tuning",
   "previous_walkthrough": "evidence/latest-agent-cli/summary.json remains the actual26.043s all-five-block run at CLI87cfe40/coord924f60e. Do not transfer that timing to the new pins.",
   "public_current_commands": "updated immutable source guide; complete current clean fixture/model replay is verified by separate CI artifacts",
-  "remaining": "Independent GitHub approval, protected main/publication, verified personal form facts, hosted approved videos and submission remain open."
+  "remaining": "Independent GitHub approval, protected main/publication, verified personal form facts, hosted approved videos and submission remain open.",
+  "coordination_execution_snapshot": "b8a23f819ff4e682eb2bbdf89b6e7c55cf3ec025",
+  "published_guide_sha256": "6e6eadc6bf4c953013122cdf4a57dad24664385347f123a609988bf7b5da12ee"
 }
