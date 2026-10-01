@@ -25,7 +25,7 @@ is a synthetic filesystem check, not a new historical or model measurement.
 `scripts/quality_scope.py` discovers production Python recursively under `scripts`
 and `.github`, including hidden production action helpers. Unit tests and archived
 evidence are separate inputs, not executable production tools. Current coverage
-is 19 files. Ruff lint covers all production files. Formatting covers 18: the
+is 21 files. Ruff lint covers all production files. Formatting covers 20: the
 Codex adapter's exact bytes are part of the historical benchmark freeze and are
 enforced by a hash instead of changing its formatting.
 
@@ -45,12 +45,18 @@ those exact reviewed findings. New, missing or changed diagnostics fail. Other
 groups have zero errors. Independent approval of these reasons is still required.
 Historical source is not silently changed to make a formatter or type checker green.
 
-Full Bandit scanning uses all rules and ignores `nosec` comments. The current 75
+Full Bandit scanning uses all rules and ignores `nosec` comments. The current 78
 findings remain in the report with exact source/finding hashes and per-call reasons
 in `security-reviewed.json`. They concern developer subprocesses, trusted PATH and
 the fixed public Pages content check. Author review is not independent security
 approval or proof that the tools are safe for untrusted code. Unexpected findings,
 source changes, scanner failures or skipped checks reject the gate.
+
+The original quality checkpoint retained 75 findings; the optional bounded Linux
+CLI adds three explicit subprocess reviews. Its fixed installed sources,
+safe-path invocation, kernel guards and actual cancellation/admission/timer
+evidence are recorded in [the launcher proof](../evidence/bounded-cli/summary.json).
+The unchanged frozen adapter still has the same three type diagnostics.
 
 ## Dependencies and CI
 
