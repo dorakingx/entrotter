@@ -160,3 +160,58 @@ independent engine and CLI packages. Cross-repository CI requires byte equality
 and verifies shared admission using both real CLIs and separate mixed processes.
 Any protocol change must preserve this shared-state contract or use a deliberately
 migrated protocol version; never silently reset existing reservations.
+
+
+## Agent execution and exact recorded replay
+
+The proposed agent CLI requires the matching bounded engine API. The actual
+integration job pins engine `c1671938edde03c59deef64dbb81d7c41a33406b` and SDK
+`b0c2ba3bba411e548af44101ae06e879bd7b5dc0`; these candidates require independent
+review before protected integration. Build/configure that engine's local Docker
+worker first. In a workspace with these source checkouts:
+
+```bash
+export PYTHONPATH="$PWD/cli/src:$PWD/sdk-python/src:$PWD/engine/src"
+python3 -m entrotter_cli agent-run engine/tests/data/local.json --steps 0 1 -o risk.json
+python3 -m entrotter_cli replay risk.json -o risk-replayed.json
+python3 -m entrotter_cli replay cli/tests/data/agent-recorded-local.json -o model-replayed.json
+python3 -m entrotter_cli verify model-replayed.json
+python3 -m entrotter_cli inspect model-replayed.json
+```
+
+`agent-run` uses only the built-in current-state risk policy. It accepts 1–32
+unique candidate decision steps and an optional `--gas-budget` (default
+2,000,000 requested gas; 21,000–64,000,000 allowed). It never generates a model
+response. `replay` reads a verified complete agent report, derives its original
+steps and initial gas budget, and sends only its recorded data to the bounded
+worker. Provider metadata does not select a module, executable, model, credential
+or URL. Both commands run locally; neither accepts `--native` or `--api`, and
+missing/older engine or Docker prerequisites fail without native fallback.
+
+Replay requires complete returned JSON equality with the reference before export.
+Changed initial state, an invalid recording, failed worker or diverged result
+leaves an existing output intact. Successful exports retain the existing private
+atomic-write/shared-quota policy. The replay input is a regular file of at most
+8 MiB; the scenario limit remains 256 KiB. Runtime preparation and host Python
+object memory remain subject to the engine/operator's documented scope limits.
+
+`inspect` adds decisions, reasons, request IDs and original provider provenance
+when present. It still works without an installed engine or a model account.
+The sample preserves the original model's nondeterminism, requested alias and
+unknown monetary cost. Zero new model calls during replay does not mean its
+original generation was free, deterministic or economically correct. These are
+synthetic local EVM records, not new historical traces, holdouts or a new model
+quality comparison. A fork report additionally needs the engine's operator-owned
+archive configuration; no RPC URL is taken from provider metadata.
+
+Actual Docker CLI tests run separately from engine-free unit/package checks:
+
+```bash
+PYTHONPATH=cli/src:sdk-python/src:engine/src python3 -m unittest discover -s cli/tests_agent -v
+```
+
+The tests fail if worker prerequisites are missing and do not skip the real
+gate. They compare complete original risk/model reports, changed-state refusal,
+recovery and missing-image rejection. Exact sample/source pins are in
+[quality-inputs.json](quality-inputs.json); measured local evidence is in
+[evidence/agent-cli/summary.json](evidence/agent-cli/summary.json).

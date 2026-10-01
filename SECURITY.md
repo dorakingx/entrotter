@@ -21,3 +21,14 @@ state directory. Pending reservations survive abrupt process death and remain
 charged. Never reset the ledger while retaining its outputs. Operator file moves,
 other applications, old clients and distinct state roots are outside this budget;
 this is not a whole-filesystem quota. Inspect usage with the exports command.
+
+
+Agent CLI execution uses only the matching engine's bounded `run_agent` primitive:
+built-in risk policy or JSON-only replay. It never imports a provider named by a
+recording, selects a command/model/image/RPC from metadata, or offers a native
+fallback. Inspection does not require an engine. Replay verifies the reference
+hash and complete output equality before the existing private/quota-protected
+export; these hashes detect corruption, not dishonest producer assumptions.
+The engine validates causal request/response bindings and enforces its existing
+worker limits. Fork egress, trusted installed packages/images and host overhead
+retain the engine's documented boundaries. Do not publish private recordings.
