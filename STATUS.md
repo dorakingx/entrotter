@@ -1170,3 +1170,10 @@ Full-block/opcode/root/end-withdrawal equivalence, broader oracle/divergence cas
 and trace SDK/viewer integration remain open. Software review is not protected
 GitHub approval. No protected merge, candidate deployment, outreach, media upload
 or formal competition submission occurred. Discord remains excluded.
+
+The initial86f2014 combined run passed four jobs but quality refused: the worker
+type-policy JSON still required6e while its checkout advanced0d. The immutable
+assertion is retained. Updating that policy pin makes the existing local type
+check pass against exact cleanbb8/0d/b0/22 sources with the same three frozen
+diagnostics; no script, diagnostic rule or branch protection was weakened. The
+failure log is preserved; corrected snapshot/head checks remain separate.

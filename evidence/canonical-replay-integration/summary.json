@@ -216,5 +216,19 @@
   "full_goal": "Active. Prefix Shanghai/type0-1-2/<=32 support does not close full-block/opcode/end-state, same-block funding admission, SDK/viewer or broader oracle/divergence cases.",
   "mandatory_approval": "No GitHub approving review; source software reviews do not bypass protected main.",
   "VM_scope": "No local Docker/VM startup; actual bounded proof from LinuxCI.",
-  "community": "Discord abandoned/excluded"
+  "community": "Discord abandoned/excluded",
+  "initial_combined_CI": {
+    "head": "86f20140f77631f170ba24e5feb1805b33943b16",
+    "passed": [
+      "integration",
+      "host-bounds",
+      "bounded-default",
+      "docs-links"
+    ],
+    "failed": "quality",
+    "failure_run": 36873540359,
+    "cause": "Workflow/worker source selected0d4faf7, but quality-inputs.json still required6e13f34; immutable dependency assertion refused before type checking. No guard was disabled.",
+    "resolution": "Synchronize the reviewed worker type pin to0d4faf7; local existing check_types passes against clean exactbb8/0d/b0/22 checkouts with only the3previous frozen diagnostics. New guide snapshot and full current-head CI follow."
+  },
+  "local_type_binding_fix": "Passed;21production source hashes and exact dependency commits retained, no production script edit."
 }
