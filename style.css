@@ -7,3 +7,32 @@
 @media(max-width:1100px){.shell{padding-inline:30px}.hero{grid-template-columns:1.15fr 1fr;min-height:540px;padding-top:35px;padding-bottom:40px}h1{font-size:58px;letter-spacing:-3px}.time-machine{height:380px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.reason{min-height:60px}.toolbar{align-items:start;flex-direction:column}.toolbar .actions{max-width:100%}.amount{font-size:32px}form{grid-template-columns:repeat(3,1fr)}form button{grid-column:1/-1;justify-self:start}}
 @media(max-width:700px){.shell{padding-inline:20px}.header{min-height:114px;flex-wrap:wrap;gap:14px;padding-block:18px}.header .brand{font-size:20px}.header nav{width:100%;gap:22px;font-size:11px;justify-content:space-between}.github{padding:4px 9px}.hero{grid-template-columns:1fr;padding-top:42px;padding-bottom:12px;gap:0}.hero-copy{max-width:520px}h1{font-size:clamp(42px,9.6vw,64px);letter-spacing:-2.5px}.intro{font-size:16px;max-width:400px}.hero .eyebrow{font-size:10px;margin-bottom:20px}.time-machine{height:325px;width:min(100%,450px);margin:-8px auto 5px}.ufo{width:61%;left:19.5%}.coord-top{top:13%}.mission-strip{display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:8px}.section{padding-top:60px;padding-bottom:18px}.section-head h2{font-size:34px;letter-spacing:-1.4px}.section-head p:not(.eyebrow){font-size:13px}.toolbar{padding:18px}.toolbar .actions{gap:8px}.toolbar .actions button,.toolbar .actions .button{font-size:10px;padding:9px 10px}.section-top{align-items:start;flex-direction:column;gap:12px}.section-top h2{font-size:21px}.cards{grid-template-columns:1fr}.card{padding:23px}.card h3{font-size:22px}.amount{font-size:36px}.card-top{font-size:10px}.card dl{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}.reason{min-height:0}.takeaway{grid-template-columns:1fr;gap:10px;padding:20px}.feature-grid{grid-template-columns:1fr;gap:24px}.feature-grid article{padding-top:17px}.feature-grid h3{margin-block:10px}.repo-grid{grid-template-columns:1fr 1fr}.repo-grid>a{padding:16px}.repo-grid strong{font-size:13px}.repo-grid p{font-size:11px}.footer{flex-direction:column;align-items:flex-start;gap:10px;margin-top:45px}.footer p{margin:0}form{grid-template-columns:1fr;gap:16px}form button{justify-self:stretch}.archive{padding:20px 15px}.report-toolbar{align-items:stretch;flex-direction:column}.metrics{grid-template-columns:1fr;gap:8px}.metrics div{padding:14px}.chart-caption{display:block}.chart-caption span{display:block}.artifact{gap:8px}.table-wrap{font-size:11px}th,td{padding:10px}.constraints{gap:6px}.constraints span{font-size:9px}.brand img{width:32px;height:32px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ufo{animation:none}}
+
+/* Preserve the report explorer's equivalent data and keyboard affordances. */
+.table-wrap:focus-visible, pre:focus-visible { outline-offset: -2px; }
+.chart-description { color: var(--muted); font-size: 12px; }
+#equity-rows th, #metric-rows th { color: #e6dff0; font-weight: 400; }
+.metrics strong { display: block; overflow-wrap: anywhere; }
+.line.baseline { stroke-dasharray: 6 6; }
+.header nav, .hero-copy, .toolbar > div, form label { min-width: 0; }
+.card .amount { white-space: normal; overflow-wrap: anywhere; }
+@media (max-width: 480px) {
+  .header nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; }
+  .header nav > a { display: inline-flex; align-items: center; min-height: 32px; }
+}
+@media (forced-colors: active) {
+  .line.baseline, .line.candidate { stroke: CanvasText; }
+  .legend-baseline { background: transparent; border-bottom: 3px dashed CanvasText; }
+  .legend-candidate { background: CanvasText; }
+  :focus-visible { outline-color: Highlight; }
+}
+
+/* Opaque surfaces keep text contrast measurable; the portal retains its glow. */
+body { background: var(--bg); }
+.secondary, .repo-grid > a { background: var(--panel); }
+.toolbar { background: #1c1428; }
+.card { background: #171120; }
+.card.recommended { background: #17261f; }
+.takeaway { background: #291b37; }
+.constraints span, .metrics div { background: #16121f; }
+.pill { background: #17261f; }

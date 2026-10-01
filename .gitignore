@@ -15,5 +15,10 @@ node_modules/
 playwright-report/
 test-results/
 
+# Local browser audit evidence
 output/playwright/
+
+.quality/
+.mypy_cache/
+.ruff_cache/
 .playwright-cli/
