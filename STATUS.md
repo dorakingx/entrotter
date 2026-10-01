@@ -1177,3 +1177,46 @@ assertion is retained. Updating that policy pin makes the existing local type
 check pass against exact cleanbb8/0d/b0/22 sources with the same three frozen
 diagnostics; no script, diagnostic rule or branch protection was weakened. The
 failure log is preserved; corrected snapshot/head checks remain separate.
+
+## October 1 — Mining deadline and actual four-transaction divergence
+
+The prior coordination0690adf/cda73fe composition passed all five checks. Its
+21 sources/78 full findings/50 audited packages/19 image inputs and complete
+CLI/SDK/API/export/clean reports were independently verified. Fixture6.827s and
+recorded-model7.350s belong to that engine0d composition with Docker already
+running and potentially warm caches; they are not a cold/all-five-guide benchmark.
+PR55 contains the exact job links and artifact readback. The stale type-policy
+failure was corrected with the immutable assertion and three frozen diagnostics
+retained, without changing production checkers or protections.
+
+Engine#30/8176597 fixes an actual failure: all four original signed inputs were
+captured/queued, but owned-local evm_mine exceeded the ordinary ten-second RPC
+cap. Only mining now uses the primitive's remaining shared150-second deadline,
+then restores ordinary reads in finally. The separate node guardian is unchanged.
+The original source fails the new slow-mine regression; the fixed full local
+suite passes244tests31.741s. Independent source and evidence/workflow follow-up
+reviews found no actionable finding; these are not GitHub approving reviews.
+
+All eight new head checks pass first attempt:244Linux native tests33.590s and
+23actualDocker cases213.407s, with no test workers left. Downloaded23source/
+18wheel/19image inputs match,23full findings are retained with no skips. Image/
+native/manifest/auditor/inventory hashes match;42Python/26OS/1,126signedCargo
+identities have zero reported advisories,172nonCargo entries remain outside that
+scope. Database metadata matches; binary database digest is recorded by CI and
+not locally rehashed from exported metadata. Host/VM safety is not inferred.
+
+The actual first four transactions of Ethereum19M match every original receipt
+projection in native46.982404s and default bounded14.539113s; complete results
+match except runtime/hash. These different environments are not a speed comparison.
+Omitting transaction0 changes gas/logs in1/2 and leaves3 at original nonce5523
+versus expected5522. No funding/code/nonce repair, new model call or holdout/media
+change occurred. See evidence/canonical-mine-integration/summary.json and linked
+engine raw reports/observed prior failure/reviews for exact scope and hashes.
+
+This candidate selects engine817 with unchanged CLI22/SDKb0/scenarios8785/site499.
+Worker workflow and type-policy pins are updated together. New combined-head CI
+and guide reproduction remain separate from component proof. Parent-state pool
+funding admission, broader oracle/missing-state cases, full-block/opcode/end-state
+and trace SDK/viewer integration remain open. All protected approvals/candidate
+publication/personal/media/submission gates remain open; no local Docker/VM
+startup, protected merge, media upload or formal submission occurred.
