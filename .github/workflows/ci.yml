@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: 8176597af994dddb7a3dc6721db623580ebc9601
+          ref: 935558a5b95755c72ca6fb24f076b3a231fa5b64
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -159,6 +159,58 @@ jobs:
               'nonce_conflict': {'original': 5523, 'expected': 5522},
               'limits': ['Checksum/internal consistency is not authenticity/EVM truth.',
                          'Browser behavior is tested by the separate exact-head viewer CI.'],
+          }, indent=2) + '\n')
+          PY
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.23.1'
+      - name: Inspect the synthetic same-block funding report with SDK and viewer
+        run: |
+          python - <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+          from entrotter_sdk import load_trace
+          source = Path('engine/evidence/trace-funding-admission/synthetic-prefix.json')
+          digest = 'fbfed29e8e25c069ba74a5b405f828543213a88a8dc913e15e2dc9b89806e28f'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          report = load_trace(source)
+          assert report.baseline_verified
+          assert [r.baseline.status for r in report.transactions] == ['executed', 'executed']
+          assert [r.baseline.receipt.gas_used for r in report.transactions] == [21000, 21000]
+          assert [r.baseline.receipt.cumulative_gas_used for r in report.transactions] == [21000, 42000]
+          assert [r.candidate.status for r in report.transactions] == ['skipped', 'not_mined']
+          assert all(r.candidate.receipt is None for r in report.transactions)
+          module = Path('entrotter.github.io/trace-report.mjs')
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[2], 'utf8')));
+          assert.equal(view.baseline.matches, true);
+          assert.deepEqual(view.baseline.rows.map(r => r.receipt.gasUsed), ['0x5208', '0x5208']);
+          assert.deepEqual(view.baseline.rows.map(r => r.receipt.cumulativeGasUsed), ['0x5208', '0xa410']);
+          assert.deepEqual(view.candidate.rows.map(r => r.status), ['skipped', 'not_mined']);
+          assert(view.candidate.rows.every(r => r.receipt === null));
+          console.log(JSON.stringify({status: 'passed', artifact_id: view.report.artifact_id, node: process.version}));
+          """
+          completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                      module.resolve().as_uri(), str(source)],
+                                     check=True, capture_output=True, text=True, timeout=30)
+          viewer = json.loads(completed.stdout)
+          assert viewer['artifact_id'] == report.artifact_id
+          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-funding-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline synthetic report inspection; no new EVM/model call',
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'report_sha256': digest, 'artifact_id': report.artifact_id,
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
+              'baseline_gas': [21000, 21000], 'baseline_cumulative_gas': [21000, 42000],
+              'candidate_statuses': ['skipped', 'not_mined'], 'candidate_receipts': [None, None],
+              'viewer': viewer,
+              'limits': ['Native synthetic source; not archived funding or host default-worker execution proof.',
+                         'Viewer codec inspection is separate from rendered browser verification.',
+                         'Checksum/internal consistency is not authenticity/EVM truth.'],
           }, indent=2) + '\n')
           PY
       - name: Build source-bound local image
