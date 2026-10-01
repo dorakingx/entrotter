@@ -46,6 +46,10 @@ class SiteTests(unittest.TestCase):
                 + hashlib.sha256((ROOT / "comparison.mjs").read_bytes()).hexdigest()[
                     :12
                 ],
+                "trace-viewer.mjs?v="
+                + hashlib.sha256((ROOT / "trace-viewer.mjs").read_bytes()).hexdigest()[
+                    :12
+                ],
             ],
         )
 
@@ -78,6 +82,12 @@ class SiteTests(unittest.TestCase):
                 d, sort_keys=True, separators=(",", ":"), ensure_ascii=True
             ).encode()
             self.assertEqual(hashlib.sha256(data).hexdigest(), supplied)
+            if d.get("trace_version") == "0.1.0":
+                self.assertEqual(
+                    d["execution_kind"], "canonical_transaction_prefix_replay"
+                )
+                self.assertEqual(d["plan"]["source"]["chain_id"], 1)
+                continue
             self.assertEqual(
                 d["scenario"]["provenance"]["kind"],
                 {

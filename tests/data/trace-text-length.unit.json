@@ -1,0 +1,26 @@
+[
+  {
+    "field": "assumption",
+    "count": 4000,
+    "valid": true,
+    "artifact_id": "b802a7c7f333e4c1575d8512236176e72dac28cb6653c200646ea47e990a1aba"
+  },
+  {
+    "field": "assumption",
+    "count": 4001,
+    "valid": false,
+    "artifact_id": "b961d03d5d1b8ec801adfbf12874b000c8564551e36293313e0318995e795d8d"
+  },
+  {
+    "field": "anvil_version",
+    "count": 1000,
+    "valid": true,
+    "artifact_id": "301d3ca2af02a2acaffd7f92f8efaeb1fdb6673bd97961333f65831db5f996db"
+  },
+  {
+    "field": "anvil_version",
+    "count": 1001,
+    "valid": false,
+    "artifact_id": "bca29fe770933645fe1cc0cf2d3c566fd55078ad6a0e521631449253856e00ed"
+  }
+]

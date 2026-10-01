@@ -32,7 +32,7 @@ const server = createServer(async (request, response) => {
     const pathname = new URL(request.url || "/", "http://127.0.0.1").pathname;
     const name = pathname === "/" ? "index.html" : pathname.slice(1);
     if (
-      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
+      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|trace-report\.mjs|trace-viewer\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
         name,
       )
     ) {
@@ -72,7 +72,7 @@ async function check(name, work) {
     checks.push({
       name,
       status: "failed",
-      error: error instanceof Error ? error.message : String(error),
+      error: error instanceof Error ? error.stack : String(error),
     });
   }
 }
@@ -857,6 +857,302 @@ try {
         "/404.html",
       ),
   );
+  for (const width of [1280, 390, 320]) {
+    await check(
+      `${width}px signed prefix: exact evidence, keyboard, reflow and axe`,
+      () =>
+        withPage(width, async (page) => {
+          await page.locator(".trace-archive > summary").focus();
+          await visibleFocus(page);
+          await page.keyboard.press("Enter");
+          await page.locator("#trace-sample").focus();
+          await page.keyboard.press("Enter");
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-status")
+              ?.textContent?.includes("matches all original"),
+          );
+          assert.equal(await page.locator("#trace-inputs tr").count(), 4);
+          const table = await page.locator("#trace-outcomes").innerText();
+          for (const value of [
+            "208144",
+            "245136",
+            "185721",
+            "nonce_conflict",
+            "expected 5522, original 5523",
+            "gasUsed, cumulativeGasUsed, transactionIndex, logs",
+          ])
+            assert.ok(table.includes(value), value);
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            "reports/trace-mainnet-prefix-four.json",
+          );
+          await page
+            .locator("#trace-receipts details")
+            .nth(1)
+            .locator("summary")
+            .focus();
+          await page.keyboard.press("Enter");
+          assert.ok(
+            (
+              await page.locator("#trace-receipts pre").nth(1).innerText()
+            ).includes('"logs"'),
+          );
+          await page
+            .locator("#trace-outcomes")
+            .locator("..")
+            .locator("..")
+            .focus();
+          await page.keyboard.press("ArrowRight");
+          if (width < 700)
+            await page.waitForFunction(() => {
+              const wrapper =
+                document.querySelector("#trace-outcomes")?.parentElement
+                  ?.parentElement;
+              return (
+                wrapper !== null &&
+                wrapper !== undefined &&
+                wrapper.scrollLeft > 0
+              );
+            });
+          await noOverflow(page);
+          await scan(page, `signed-prefix-${width}`);
+          await page.locator("#transaction-replay").screenshot({
+            path: resolve(output, `${width}-signed-prefix.png`),
+          });
+          // Import through the actual keyboard file chooser; no upload or fetch.
+          const original = JSON.parse(
+            await readFile(
+              resolve(root, "reports/trace-mainnet-prefix-four.json"),
+              "utf8",
+            ),
+          );
+          original.assumptions[0] = "<img src=x onerror=alert(1)> 🛸";
+          delete original.artifact_id;
+          original.artifact_id = createHash("sha256")
+            .update(canonical(original))
+            .digest("hex");
+          const count = requests.length;
+          await page.locator("#trace-import").focus();
+          await focusIs(page, "trace-import");
+          const chooser = page.waitForEvent("filechooser");
+          await page.keyboard.press("Enter");
+          await (
+            await chooser
+          ).setFiles({
+            name: "local-trace.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(JSON.stringify(original)),
+          });
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-origin")
+              ?.textContent?.includes("Local import"),
+          );
+          assert.equal(requests.length, count);
+          assert.equal(
+            await page.locator("#trace-download").isVisible(),
+            false,
+          );
+          assert.equal(await page.locator("#trace-assumptions img").count(), 0);
+          assert.ok(
+            (
+              (await page.locator("#trace-assumptions").textContent()) || ""
+            ).includes("<img"),
+          );
+          // Existing v0.1 pane retains its selected report and original rows.
+          assert.ok(
+            (await page.locator("#report-status").innerText()).includes(
+              "Integrity verified locally",
+            ),
+          );
+        }),
+    );
+  }
+  await check(
+    "Signed prefix: resealed contradictions, oversized import and honest unverified recovery",
+    () =>
+      withPage(390, async (page) => {
+        await page.locator(".trace-archive > summary").click();
+        const template = JSON.parse(
+          await readFile(
+            resolve(root, "reports/trace-mainnet-prefix-four.json"),
+            "utf8",
+          ),
+        );
+        const bad = [];
+        for (const change of [
+          (r) => {
+            r.candidate.outcomes[3].expected_nonce++;
+          },
+          (r) => {
+            r.candidate.outcomes[1].differing_fields = [];
+          },
+          (r) => {
+            r.baseline_verified = false;
+          },
+        ]) {
+          const r = structuredClone(template);
+          change(r);
+          delete r.artifact_id;
+          r.artifact_id = createHash("sha256")
+            .update(canonical(r))
+            .digest("hex");
+          bad.push(Buffer.from(JSON.stringify(r)));
+        }
+        bad.push(Buffer.alloc(8 * 1024 * 1024 + 1, 32));
+        for (const [i, buffer] of bad.entries()) {
+          const count = requests.length;
+          await page.locator("#trace-import").setInputFiles({
+            name: `bad-${i}.json`,
+            mimeType: "application/json",
+            buffer,
+          });
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-status")
+              ?.classList.contains("error"),
+          );
+          assert.equal(await page.locator("#trace-results").isVisible(), false);
+          assert.equal(await page.locator("#trace-outcomes tr").count(), 0);
+          assert.equal(await page.locator("#trace-raw").textContent(), "");
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            null,
+          );
+          assert.equal(requests.length, count);
+        }
+        const r = structuredClone(template),
+          o = r.baseline.outcomes[3];
+        r.baseline.outcomes[3] = {
+          index: o.index,
+          hash: o.hash,
+          status: "rejected",
+        };
+        r.baseline.matches_original_receipts = false;
+        r.baseline_verified = false;
+        delete r.artifact_id;
+        r.artifact_id = createHash("sha256").update(canonical(r)).digest("hex");
+        await page.locator("#trace-import").setInputFiles({
+          name: "unverified.json",
+          mimeType: "application/json",
+          buffer: Buffer.from(JSON.stringify(r)),
+        });
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#trace-status")
+            ?.textContent?.includes("UNVERIFIED"),
+        );
+        assert.equal(await page.locator("#trace-outcomes tr").count(), 4);
+        await scan(page, "signed-prefix-unverified");
+        const numeric = JSON.parse(
+          await readFile(
+            resolve(root, "tests/data/trace-mainnet-prefix-one.json"),
+            "utf8",
+          ),
+        );
+        const codecs = JSON.parse(
+          await readFile(
+            resolve(root, "tests/data/trace-runtime-codecs.json"),
+            "utf8",
+          ),
+        );
+        const count = requests.length;
+        codecs.push(
+          ...JSON.parse(
+            await readFile(
+              resolve(root, "tests/data/trace-unicode-codecs.unit.json"),
+              "utf8",
+            ),
+          ),
+        );
+        for (const testCase of codecs) {
+          numeric.runtime_seconds = testCase.runtime_seconds;
+          numeric.artifact_id = testCase.artifact_id;
+          if (testCase.assumption !== undefined)
+            numeric.assumptions[0] = testCase.assumption;
+          await page.locator("#trace-import").setInputFiles({
+            name: "python-runtime.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(JSON.stringify(numeric)),
+          });
+          await page.waitForFunction(
+            (id) => document.querySelector("#trace-hash")?.textContent === id,
+            testCase.artifact_id,
+          );
+          assert.equal(await page.locator("#trace-outcomes tr").count(), 1);
+          assert.equal(
+            await page
+              .locator("#trace-status")
+              .evaluate((el) => el.classList.contains("error")),
+            false,
+          );
+        }
+        assert.equal(requests.length, count);
+      }),
+  );
+  await check(
+    "Signed prefix: delayed sample cannot replace a newer local import",
+    () =>
+      withPage(390, async (page) => {
+        await page.locator(".trace-archive > summary").click();
+        const original = await readFile(
+          resolve(root, "reports/trace-mainnet-prefix-four.json"),
+          "utf8",
+        );
+        let release;
+        const blocked = new Promise((resolve) => {
+          release = resolve;
+        });
+        let arrived;
+        const intercepted = new Promise((resolve) => {
+          arrived = resolve;
+        });
+        await page.route(
+          "**/reports/trace-mainnet-prefix-four.json",
+          async (route) => {
+            arrived();
+            await blocked;
+            await route.fulfill({
+              status: 200,
+              contentType: "application/json",
+              body: original,
+            });
+          },
+        );
+        try {
+          await page.locator("#trace-sample").click();
+          await intercepted;
+          await page.locator("#trace-import").setInputFiles({
+            name: "newer.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(original),
+          });
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-origin")
+              ?.textContent?.includes("Local import"),
+          );
+          const response = page.waitForResponse(
+            "**/reports/trace-mainnet-prefix-four.json",
+          );
+          release();
+          await response;
+          await page.waitForTimeout(100);
+          assert.ok(
+            (await page.locator("#trace-origin").innerText()).includes(
+              "Local import",
+            ),
+          );
+          assert.equal(
+            await page.locator("#trace-download").isVisible(),
+            false,
+          );
+        } finally {
+          release();
+        }
+      }),
+  );
   await check(
     "No JavaScript exceptions, uploads or unexpected third-party requests",
     async () => {
@@ -880,6 +1176,9 @@ try {
     "app.js",
     "comparison.mjs",
     "report-validation.mjs",
+    "trace-report.mjs",
+    "trace-viewer.mjs",
+    "reports/trace-mainnet-prefix-four.json",
     "assets/examples/action-comparison.json",
     "reports/agent-local-codex.json",
     "style.css",

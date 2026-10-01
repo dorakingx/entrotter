@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css?v=873629f64bbf">
   <script src="app.js?v=36786b0c3db6" defer></script>
   <script type="module" src="comparison.mjs?v=e0dac48fe543"></script>
+  <script type="module" src="trace-viewer.mjs?v=2c25d1f30c1c"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -65,6 +66,28 @@
     <p class="privacy">Local files stay in your browser. No uploads, accounts, analytics, wallet connection or transactions. A valid hash verifies integrity, not model correctness.</p>
   </div></details>
 </section>
+
+<section class="section shell" id="transaction-replay" tabindex="-1">
+  <div class="section-head"><p class="eyebrow">ORIGINAL SIGNED TRANSACTIONS</p><h2>Inspect a historical prefix</h2><p>Compare original receipts with a replay from the same pinned parent and a branch that omits transaction 0. This separate technical case shows changed gas, logs and a nonce conflict; it is not a model evaluation or profit claim.</p></div>
+  <details class="trace-archive"><summary>Open signed-prefix replay <span>Ethereum mainnet · four original transactions · trace_version 0.1.0</span></summary><div class="report-panel">
+    <div class="report-toolbar"><button id="trace-sample" type="button">Load recorded four-transaction case</button><label class="file-button" for="trace-import">Open local signed-prefix JSON<input id="trace-import" type="file" accept="application/json,.json"></label></div>
+    <p class="privacy">Local files stay in your browser. Import makes no network request. A recomputable checksum and internal consistency do not authenticate a provider, signature, image or execution.</p>
+    <p id="trace-status" class="report-status" role="status" aria-live="polite" aria-atomic="true">Load the recorded case or import a local trace-version report (8 MiB maximum).</p>
+    <div id="trace-results" hidden>
+      <p id="trace-origin" class="small"></p>
+      <details><summary>Pinned source, parent and original header</summary><pre id="trace-pins" tabindex="0" role="region" aria-label="Pinned trace source and original header"></pre></details>
+      <p class="small">Gas is shown in exact units. On narrow screens, focus a table and use the arrow keys to scroll. Open each receipt comparison for exact log bytes and every difference, including an unverified baseline.</p>
+      <div class="table-wrap" role="region" aria-labelledby="trace-input-caption" tabindex="0"><table><caption id="trace-input-caption">Original signed prefix: immutable indices, hashes, senders and nonces</caption><thead><tr><th scope="col">Index</th><th scope="col">Transaction hash</th><th scope="col">Sender</th><th scope="col">Nonce</th><th scope="col">Type</th><th scope="col">Destination</th></tr></thead><tbody id="trace-inputs"></tbody></table></div>
+      <div class="table-wrap" role="region" aria-labelledby="trace-outcome-caption" tabindex="0"><table><caption id="trace-outcome-caption">Original, baseline and intervention outcomes (gas used / ordered log count)</caption><thead><tr><th scope="col">Index</th><th scope="col">Original gas / logs</th><th scope="col">Baseline status</th><th scope="col">Baseline gas / logs</th><th scope="col">Candidate status</th><th scope="col">Candidate gas / logs</th><th scope="col">Candidate receipt differences</th></tr></thead><tbody id="trace-outcomes"></tbody></table></div>
+      <div id="trace-receipts"></div>
+      <details><summary>Recorded assumptions</summary><ul id="trace-assumptions"></ul></details>
+      <details><summary>Full signed-prefix result JSON</summary><pre id="trace-raw" tabindex="0" role="region" aria-label="Full signed-prefix report JSON"></pre></details>
+      <div class="artifact"><span>SHA-256</span><code id="trace-hash"></code><a id="trace-download" hidden download>Recorded source JSON ↗</a></div>
+    </div>
+    <div class="note"><b>Limits of this replay</b><p>Only Ethereum Shanghai legacy/type-1/type-2 prefixes of up to 32 transactions are supported. Anvil pool admission can reject valid same-block funding dependencies and leave the baseline unverified. Original in-prefix oracle updates remain; later transactions and external responses are not invented. Full-block, opcode, state-root and end-withdrawal equivalence remain open. The v0.1 agent explorer is separate. This browser checks display consistency and integrity; it never executes transactions.</p><p><a href="https://github.com/entrotter/engine/blob/8176597af994dddb7a3dc6721db623580ebc9601/evidence/trace-mine-deadline/README.md">Read the exact engine evidence and native/default-worker scope</a>.</p></div>
+  </div></details>
+</section>
+
 <section class="section shell" id="contribute" tabindex="-1">
   <div class="section-head wide"><p class="eyebrow">BUILD THE TIME MACHINE TOGETHER</p><h2>Small repositories.<br> Meaningful pull requests.</h2><p>Start where you can help. Improve a failure case, an API boundary or a reproduction command. A negative result is a useful contribution.</p></div>
   <div class="repo-grid">

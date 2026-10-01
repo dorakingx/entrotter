@@ -1,0 +1,105 @@
+{
+  "base": "49914a2ca7358a9e45befc9b458f7f3ac52c6142",
+  "branch": "feat/trace-report-viewer",
+  "status": "author_source_checks_passed_independent_review_complete_exact_head_CI_pending",
+  "feature": "Separate browser-only trace-version viewer with strict display relationships; existing v0.1 app and original fixture/model reports unchanged.",
+  "original_four_prefix": {
+    "source": "Actual default-worker engine817/PR30 isolated CI run36878173559; byte-identical coordinatione3e9c84 evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json",
+    "engine": "8176597af994dddb7a3dc6721db623580ebc9601",
+    "artifact_id": "cf1b51833babf17c1b39c5d37af0ff7945da43422e2efc3453d36e72b2d0810f",
+    "sha256": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+    "runtime_seconds": 14.539113,
+    "new_execution": false
+  },
+  "separate_one_prefix": {
+    "source": "Exact engine0d committed evidence/trace-replay/mainnet-prefix.json",
+    "file": "tests/data/trace-mainnet-prefix-one.json",
+    "sha256": "c3ece9113161842d37a59bb348dc7c086119ca57b3d9f8bb13e236a3bafda84b",
+    "test_only": true
+  },
+  "schemas_source": "Byte-identical schemas from scenarios8785bb090c13390b783fe8c42f01b26f1d5e7c24; shape references, not EVM verification",
+  "checks": {
+    "Node_units": 63,
+    "Python_units": 11,
+    "lint_format_types": "Passed full scope",
+    "JS_sources": 14,
+    "type_inputs": 15,
+    "security_rules": 14,
+    "full_security_findings": 97,
+    "prior_findings_retained": 55,
+    "new_individually_explained_findings": 42,
+    "Python_sources": 1,
+    "Python_full_Bandit_findings": 0,
+    "Node_dev_dependencies": 109,
+    "Python_lock_dependencies": 42,
+    "dependency_advisories": 0,
+    "browser_groups": 33,
+    "axe_scans": 25,
+    "browser": "Prior-source Chromium153.0.8010.12; final exact-head CI pending",
+    "node": "22.23.1",
+    "viewports": [
+      1280,
+      390,
+      320
+    ],
+    "import_requests": 0
+  },
+  "browser_scope": "Actual loopback browser desktop/mobile/reflow/focus/keyboard chooser, exact recorded rows/receipt bytes, hostile inert Unicode, fully resealed contradictions and8MiB refusal/clear/recovery, honest unverified baseline, stale sample/import race and no third-party/nonGET requests. All existing v0.1/agent/console cases retained. Python float/int/exponent and DEL/astral/combining imported cases also accepted without requests.",
+  "limits": [
+    "Safe integer numeric JSON subset; uint256 hex quantities exact BigInt.",
+    "Canonical RLP metadata only; no Keccak hash/recovered sender/signature verification or parent-state nonce attestation.",
+    "Integrity and display consistency do not authenticate RPC/provider/image/execution.",
+    "Same-block parent-state funding, broader oracle/missing-state/fullblock/opcode/root/end-withdrawal and alternate-economy limits persist.",
+    "Automated Chromium/axe/keyboard, not manual assistive-technology or complete WCAG certification.",
+    "No new engine/archive/model/holdout/media/Docker/VM execution; no deployment, protected merge or GitHub approval.",
+    "Prior browser evidence precedes final text-length fix; final exact-head required browser CI remains pending.",
+    "Float/integer runtime encodings both retain the same numeric metadata; checksum does not authenticate the report."
+  ],
+  "files_sha256": {
+    "evidence/trace-viewer/1280-signed-prefix.png": "842a74aeab86712ded53ca40e895bde6ab76e12ffa3b029903408efe32d37ab6",
+    "evidence/trace-viewer/320-signed-prefix.png": "2fe578caae88a7daa4c36483b191927171bdd2f987c0e0ec6b93e0aa74e7368c",
+    "evidence/trace-viewer/390-signed-prefix.png": "6fb50884dd1ae9e47c99ac5982be7149f4d21d564c7e346aacdb11081d7f226c",
+    "evidence/trace-viewer/axe-signed-prefix-1280.json.gz": "60749821404858e93efaeb144fd6a32ea3b8b553d9af88bd7ce7c4fd10fe7984",
+    "evidence/trace-viewer/axe-signed-prefix-320.json.gz": "f8ebc61e6fcd01665b26ea27a92c2671a59e1a299ac652461df3201d09cea2ae",
+    "evidence/trace-viewer/axe-signed-prefix-390.json.gz": "22a8820f039557320bf961841b1b1b443c1e82e8090f41552d806cc835e4cdbd",
+    "evidence/trace-viewer/axe-signed-prefix-unverified.json.gz": "b98840769938c12fa8a0ccbf2d25488c75532e85ea98497b516fa988e1a56251",
+    "evidence/trace-viewer/browser.json": "aea5427db0a5b0ac392ffbec25eed4aa0a98f006c2c26ac1e44fb4e985f100b4",
+    "evidence/trace-viewer/commands.md": "4da9e51eef862773afe5fa1ef15af94471923dba2cbeaf0b3feb348480e1dd4d",
+    "evidence/trace-viewer/independent-review.json": "cfa05d920cf3766d1d2682e3164eca41e2ce80f44b07d9ca157fde272e7ed38d",
+    "evidence/trace-viewer/npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+    "evidence/trace-viewer/python-dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "evidence/trace-viewer/python-security.json": "29cbae523aa0d92650fd1caca2a80ec1d58d634fb2628aa66c8ac1b744df305a",
+    "evidence/trace-viewer/python-tests.log": "c4c40d7738653a504dee43b95b8f58671ebacba7c55c9950cf63bd3789ba2996",
+    "evidence/trace-viewer/review-failing-before.log": "2fde735dd7adccfad19228136bd90a98b3e46810ea870917e53ccf6536f8938e",
+    "evidence/trace-viewer/review-raw-failing-before.log": "b60dc6413eb8c9994d1d9b89c71a2ff33091793d321f34f0b0d93d49c8a47656",
+    "evidence/trace-viewer/review-text-length-failing-before.log": "faca6aee218ec8b21c8adf90568e788c6b22a372097e489da9d83d0b62dbd0ac",
+    "evidence/trace-viewer/review-unicode-failing-before.log": "fc3f23cb2dfe27909b6234f7cd7de642073d33530d617f3bd340a22c1f41509d",
+    "evidence/trace-viewer/scope.json": "af77fb8d4a8ba4fd1b24c96ea337e0f42f5c12f6bd20b2780a14451ded08948b",
+    "evidence/trace-viewer/security.json": "638c7c02e78404e44d213f44ecb1ed2d53bc063a3e6541641dfd3c2ec78c86c2",
+    "evidence/trace-viewer/source-sha256.json": "e1a8531a58d39d908742a6f13ad676836ab8c11e771091af2b44023f8ea21471",
+    "evidence/trace-viewer/unit-tests.log": "8eae7a51a7a36247cd08a84a692270577ac76cfca0bf5014b05d02ebead49880"
+  },
+  "browser_source_scope": {
+    "proof": "browser.json records exact checked source hashes; last full local browser run precedes final bounded Unicode codepoint-length fix",
+    "checked_trace_report_sha256": "4755dc15551076b27f3038f12654d341a087e413c31368d9a25242d29c3cfe78",
+    "final_trace_report_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+    "final_full_browser": "Required exact-head CI will execute unchanged full harness, not claimed complete here"
+  },
+  "review": {
+    "source": "independent-review.json",
+    "remaining_actionable": 0,
+    "resolved_findings": 6,
+    "independent_numeric_codec_cases": 52,
+    "github_approval": false
+  },
+  "unit_fixture_provenance": {
+    "files": [
+      "tests/data/trace-runtime-codecs.json",
+      "tests/data/trace-unicode-codecs.unit.json",
+      "tests/data/trace-text-length.unit.json",
+      "tests/data/trace-wide-envelope.unit.json"
+    ],
+    "scope": "Python stdlib resealed metadata based on unchanged one-prefix fixture; runtime/text vectors and one metadata-modified67,204byte RLP envelope with no valid-signature or execution claim test reader compatibility. These are not new valid signatures, EVM/chain runs or original recorded execution.",
+    "before_fix_logs": "Paths replaced with <viewer-repository> and trailing whitespace removed; 3 original regression failures +1raw +1DEL +1codepoint group, now pass."
+  }
+}

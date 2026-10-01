@@ -100,3 +100,37 @@ Selected consistency checks do not authenticate imported data or reproduce full
 engine/financial validation. Browser proof is not manual assistive-tech or full
 WCAG certification. Current-head CI is separately required; independent GitHub
 approval/protected integration/Pages live verification and submission remain open.
+
+## October 2 — Separate signed-prefix report viewer candidate
+
+Branch feat/trace-report-viewer builds from tested49914a2. New trace-report.mjs
+and trace-viewer.mjs add a browser-only pane for the immutable engine817 actual
+Docker four-prefix report, with exact source/parent/header, original signed
+identities/nonces and original/baseline/candidate receipt comparisons. Existing
+v0.1 app.js and original model/fixture reports remain byte-identical. The older
+engine0d native one-prefix case is a separate test-only compatibility fixture.
+
+Exact shape/integrity, RLP metadata, skip/index/receipt identity and type/target,
+shared baseline-derived parent nonce anchors, cumulative gas, exact unique
+receipt-difference sets and verification flags are checked before display.
+Malformed resealed imports clear values/downloads and stale sample replies cannot
+replace newer imports. Safe-integer numeric limits and unverified branches are
+explicit; no authenticity, signature/Keccak, parent-state or EVM proof is claimed.
+
+Author checks:63Node/11Python units, full lint/format/checkJs/Python checks pass.
+All97 findings across14JS sources/15type inputs remain visible (all55 prior plus
+42 individual explanations), no rule suppression;1Python source has zero full
+Bandit findings. Node109/Python42 dependency audits report zero advisories.
+Prior-source actual Chromium desktop/390/320px checks pass33groups and25axe scans, including
+keyboard/import/reflow, exact receipt rows, inert hostile text, contradictory and
+oversized imports, Python float/integer/Unicode imports, unverified recovery and
+delayed-sample races. This browser proof precedes the final codepoint-length fix;
+final exact-head CI will rerun the unchanged full browser harness. Imports emit
+zero requests; only same-origin GETs occur. Manual assistive-tech/full WCAG remain
+open. See evidence/trace-viewer for raw proof/source hashes and retained limits.
+
+Independent root source followup resolves six compatibility/mutation findings with
+zero remaining actionable findings within scope; public proof is retained. Mandatory
+GitHub approval, exact-head CI and publication remain separate. No archive/model
+call, new chain execution, local Docker/VM startup, deployment, protected merge,
+media/holdout change or competition submission occurred. Discord is excluded.
