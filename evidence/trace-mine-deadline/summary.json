@@ -1,0 +1,98 @@
+{
+  "observed_at_utc": "2026-10-01T14:36:07.206788+00:00",
+  "base": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+  "candidate_commit": "Enclosing commit; actual exact-head CI will be linked in the PR without an evidence-only rerun.",
+  "problem": "A valid four-transaction archive-backed evm_mine exceeded the fixed ten-second owned-local RPC cap. Primitive and node lifetime budgets were still available.",
+  "prior_failure": {
+    "unmodified_native_CLI_exit": 1,
+    "instrumented_unmodified_native_CLI_exit": 1,
+    "method": "evm_mine",
+    "seconds": 10.003215,
+    "original_transactions_captured_and_queued": 4,
+    "owned_port_closed": true,
+    "old_source_regression": "Immutable0d source fails new slow-mine test with the expected simulated RPC timeout"
+  },
+  "fix": "Only evm_mine receives the remaining shared primitive deadline, never a new150seconds. Its original read timeout is restored in finally. The owned node guardian lifetime and upstream read-only methods are unchanged.",
+  "native": {
+    "command": "PYTHONPATH=src python3 -m entrotter_engine trace-run tests/data/canonical-mainnet-prefix-four.json --native -o native-prefix-four.json",
+    "environment": "Darwin arm64/Python3.13.0/verified Foundry1.8.3; verified OS TLS bundle, public dRPC archive; explicit trusted native opt-out, not whole-process isolated or cold-install benchmark",
+    "runtime_seconds": 46.982404,
+    "artifact_id": "0d763ad100b5816d72e09c5b5d40a3d95803fcda97b990edebbcdfd911b61427",
+    "verified_original_receipts": 4,
+    "original_gas": [
+      208144,
+      234720,
+      175305,
+      178980
+    ],
+    "original_logs": [
+      8,
+      10,
+      6,
+      8
+    ],
+    "candidate_statuses": [
+      "skipped",
+      "executed",
+      "executed",
+      "nonce_conflict"
+    ],
+    "candidate_executed_gas": [
+      245136,
+      185721
+    ],
+    "candidate_difference_fields": [
+      "gasUsed",
+      "cumulativeGasUsed",
+      "transactionIndex",
+      "logs"
+    ],
+    "nonce_conflict": {
+      "index": 3,
+      "hash": "0xc40dd487cb384cb49d1834586f8d67339d4bcc4fec159077665c4e121343a12e",
+      "status": "nonce_conflict",
+      "expected_nonce": 5522,
+      "original_nonce": 5523
+    },
+    "full_original_receipt_projections_match": true,
+    "process_check": "After full local suite and actual CLI terminal exit0, ps comm inventory had no live Anvil executable. Prior failed observation separately shows its owned loopback port closed."
+  },
+  "checks": {
+    "full_suite": {
+      "tests": 244,
+      "seconds": 31.741,
+      "exit_code": 0
+    },
+    "new_regressions": 3,
+    "independent_focused_tests": 3,
+    "independent_actionable_findings": [],
+    "full_Bandit": {
+      "source_files": 23,
+      "retained_findings": 23,
+      "skipped_rules": 0,
+      "change": "Only changed trace.py source hash refreshed after full retained finding equality"
+    },
+    "ruff": "pass",
+    "format": "pass",
+    "mypy": "23sourcefiles pass",
+    "additive_schema_validation": "Existing schemas8785 plan/result pass; no schema edit",
+    "independent_followup": "No actionable findings; evidence/source/review bindings and new default-worker CI assertions inspected without duplicate execution"
+  },
+  "bounded_CI_at_commit": "Pending; new mandatory mainnet four-prefix step plus all existing kernel/guardian/cleanup/security tests retained. No local Docker/VM startup.",
+  "new_model_calls": 0,
+  "frozen_model_holdout_media": "Unchanged. Separate technical receipt case, not an untouched model evaluation or profitability claim.",
+  "limits": [
+    "Shanghai/type0-1-2 prefixes<=32 only",
+    "Parent-state pool same-block funding dependency admission remains unsupported",
+    "Not full-block/opcode/root/end-withdrawal equivalence or an alternate market",
+    "Native owner CPU/RSS and exact150second return-time not claimed; node cleanup has existing grace periods",
+    "Source software review is distinct from required GitHub approval"
+  ],
+  "files_sha256": {
+    "independent-followup-review.json": "3b3b4496e49f8cb6d4c24411b8f526040853bdaaff419f50df89ea120f842cb0",
+    "independent-review.json": "72242820bd8769b68a55001290f61c0bcd371a8574f42e1b9aa71140f932de14",
+    "native-prefix-four.json": "857c7a29aa5a2ea8af185b0b449727923b8902d36f786c3592e7b79e84a50943",
+    "plan.json": "17bd757a74c11340a763fe75e2c7490062c66c24c0e8b7f646d87a3841c5d17b",
+    "prior-timeout-observation.json": "1d463a18dc98aa31fd9435b293563a1fbb9c5d1f9b5a13492465debceb83c3df"
+  }
+}
