@@ -116,6 +116,28 @@ class ValidationTests(unittest.TestCase):
     def test_fork_rejects_code_override(self):
         f=fork();f['local_contracts']={f['allowed_targets'][0]:'0x00'}
         with self.assertRaises(ValidationError): validate(f)
+    def test_case_aliased_local_contracts_are_rejected_before_node_launch(self):
+        from entrotter_engine.runner import run as bounded_run, run_agent
+        target='0x'+'ab'*20
+        f=evm();f['allowed_targets'].append(target)
+        entries=[(target,'0x60006000fd'),('0x'+'AB'*20,'0x00')]
+        variants=[]
+        for order in [entries,list(reversed(entries))]:
+            variant=deepcopy(f);variant['local_contracts']=dict(order);variants.append(variant)
+        self.assertEqual(canonical(variants[0]),canonical(variants[1]))
+        for variant in variants:
+            for executor in [run,bounded_run,lambda value:run_agent(value,decision_steps=[0])]:
+                with self.subTest(order=list(variant['local_contracts']),executor=executor),patch('entrotter_engine.runner.run_evm') as node,patch('entrotter_engine.isolated.client') as daemon:
+                    with self.assertRaisesRegex(ValidationError,'unique'):
+                        executor(variant)
+                    node.assert_not_called();daemon.assert_not_called()
+    def test_single_mixed_case_local_contract_is_preserved(self):
+        target='0x'+'ab'*20
+        f=evm();f['allowed_targets'].append(target)
+        f['local_contracts']={'0x'+'aB'*20:'0x00'}
+        original=deepcopy(f)
+        self.assertIs(validate(f),f)
+        self.assertEqual(f,original)
     def test_decimal_wei_rejected(self):
         f=evm();f['actor_balance_wei']='1.2'
         with self.assertRaises(ValidationError): validate(f)

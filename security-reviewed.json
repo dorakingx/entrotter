@@ -200,7 +200,7 @@
     "src/entrotter_engine/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
     "src/entrotter_engine/fixture.py": "1f771e23c8b8311bf1f5e9cc56bf30f7b369f8f617513d99024876688e809647",
     "src/entrotter_engine/isolated.py": "20119e46ae4c38e5cb0728c3d5613aa4fbe9b322301a1861bf6577647f4bdbfe",
-    "src/entrotter_engine/models.py": "1383a7d508e22210217af4515c664c82a861f8a23dcef9dd9ec8f831966ae9b7",
+    "src/entrotter_engine/models.py": "80de1f5ab1e52f9dd00c0f3deaa3ea1a16a0ae159eab50c0a130a2431084b7e7",
     "src/entrotter_engine/rpc.py": "f19af9a2af2f924c65595f609e7d320d75109e0b5f09c5ae032c0bbff43b7d46",
     "src/entrotter_engine/runner.py": "d483df0825e3185548e68d6ead02d9e3fb89d8a12d9b0134b04b1a6a57d4d3df",
     "src/entrotter_engine/store.py": "25a6b9fe252cd0c8eef00ce5c3eb869d3a54044b00e9a67653a5c00b41749b3b",

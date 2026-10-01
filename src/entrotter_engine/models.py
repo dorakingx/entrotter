@@ -226,8 +226,13 @@ def validate(raw: Any) -> dict:
             raise ValidationError("local_contracts supports at most 8 entries")
         if mode == "evm-fork" and contracts:
             raise ValidationError("Code overrides are only supported in evm-local")
+        seen_contracts = set()
         for addr, code in contracts.items():
-            if address(addr, "contract") not in allow:
+            normalized = address(addr, "contract")
+            if normalized in seen_contracts:
+                raise ValidationError("Local contract addresses must be unique")
+            seen_contracts.add(normalized)
+            if normalized not in allow:
                 raise ValidationError("Local contract must be in allowed_targets")
             if not isinstance(code, str) or not re.fullmatch(
                 r"0x(?:[0-9a-fA-F]{2}){1,4096}", code
