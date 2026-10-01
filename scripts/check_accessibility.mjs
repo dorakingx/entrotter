@@ -477,12 +477,117 @@ try {
         assert.equal(await page.locator("#download").isVisible(), false);
       }),
   );
+  await check(
+    "Recorded agent imports preserve reasons, reject resealed mismatches, clear and recover",
+    () =>
+      withPage(1280, async (page) => {
+        const original = JSON.parse(
+          await readFile(
+            resolve(root, "reports/agent-local-codex.json"),
+            "utf8",
+          ),
+        );
+        const upload = async (report) => {
+          delete report.artifact_id;
+          report.artifact_id = createHash("sha256")
+            .update(canonical(report))
+            .digest("hex");
+          await page.locator("#import").setInputFiles({
+            name: "agent.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(JSON.stringify(report)),
+          });
+        };
+        const hostile = structuredClone(original);
+        hostile.agent.exchanges[0].response.reason =
+          "<img src=x onerror=alert(1)> 🛸";
+        hostile.candidate.trace[0].agent_decision.reason =
+          hostile.agent.exchanges[0].response.reason;
+        const count = requests.length;
+        await upload(hostile);
+        await page.waitForFunction(() =>
+          document.querySelector("#agent-rows")?.textContent?.includes("<img"),
+        );
+        assert.equal(await page.locator("#agent-rows img").count(), 0);
+        assert.equal(requests.length, count);
+        for (const mutate of [
+          (r) => {
+            r.agent.exchanges[0].response.step = 31;
+          },
+          (r) => {
+            r.candidate.trace[0].agent_decision.reason = "unrelated";
+          },
+          (r) => {
+            r.agent.exchanges[0].request.observation.step = 31;
+          },
+          (r) => {
+            r.agent.exchanges[0].response.choice = ["hold"];
+            r.candidate.trace[0].agent_decision.choice = ["hold"];
+          },
+          (r) => {
+            r.candidate.trace[1].status = "success";
+            r.candidate.trace[1].gas_used = "21000";
+          },
+          (r) => {
+            r.agent.exchanges[0].request.proposed_action.to =
+              "0x" + "f".repeat(40);
+            r.candidate.trace[0].action.to = "0x" + "f".repeat(40);
+          },
+          (r) => {
+            r.candidate.trace[0].receipt.status = "0x0";
+          },
+        ]) {
+          const report = structuredClone(original);
+          mutate(report);
+          for (const exchange of report.agent.exchanges) {
+            const { request_id, ...request } = exchange.request;
+            const id = createHash("sha256")
+              .update(canonical(request))
+              .digest("hex");
+            exchange.request.request_id = id;
+            exchange.response.request_id = id;
+            if (request.observation.step < report.candidate.trace.length)
+              report.candidate.trace[
+                request.observation.step
+              ].agent_decision.request_id = id;
+          }
+          await upload(report);
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#report-status")
+              ?.classList.contains("error"),
+          );
+          assert.equal(await page.locator("#agent-details").isVisible(), false);
+          assert.equal(await page.locator("#agent-rows tr").count(), 0);
+          assert.equal(await page.locator("#agent-provenance").innerText(), "");
+          assert.equal(await page.locator("#download").isVisible(), false);
+          assert.equal(requests.length, count);
+          await upload(structuredClone(original));
+          await page.waitForFunction(
+            () =>
+              !document
+                .querySelector("#report-status")
+                ?.classList.contains("error"),
+          );
+          assert.equal(await page.locator("#agent-rows tr").count(), 2);
+        }
+        await page.selectOption("#scenario", "liquidity-shock");
+        await page.waitForFunction(
+          () =>
+            document.querySelector("#fixture-chart") instanceof HTMLElement &&
+            !document.getElementById("fixture-chart")?.hidden,
+        );
+        assert.equal(await page.locator("#agent-details").isVisible(), false);
+        assert.equal(await page.locator("#agent-rows tr").count(), 0);
+      }),
+  );
   for (const width of [1280, 390, 320]) {
     for (const sample of [
       "liquidity-shock",
       "recovery-trap",
       "depeg-stress",
       "ethereum-uniswap-slippage",
+      "agent-local-codex",
     ]) {
       await check(
         `${width}px ${sample}: reflow, exact accessible data and axe`,
@@ -497,6 +602,39 @@ try {
               report.artifact_id,
             );
             await noOverflow(page);
+            if (report.agent) {
+              assert.equal(
+                await page.locator("#agent-rows tr").count(),
+                report.agent.exchanges.length,
+              );
+              const text = await page.locator("#agent-provenance").innerText();
+              assert.match(text, /requested alias/);
+              assert.match(text, /Nondeterministic/);
+              assert.match(text, /Original generation cost.*Unavailable/);
+              for (const exchange of report.agent.exchanges)
+                assert.ok(
+                  (await page.locator("#agent-rows").innerText()).includes(
+                    exchange.response.reason,
+                  ),
+                );
+              await page.locator("#agent-details .table-wrap").focus();
+              await visibleFocus(page);
+              if (width === 320) {
+                await page.keyboard.press("ArrowRight");
+                await page.waitForFunction(
+                  () =>
+                    (document.querySelector("#agent-details .table-wrap")
+                      ?.scrollLeft ?? 0) > 0,
+                );
+              }
+              await page.locator("#agent-details").screenshot({
+                path: resolve(output, `${width}-agent-evidence.png`),
+              });
+            } else
+              assert.equal(
+                await page.locator("#agent-details").isVisible(),
+                false,
+              );
             if (report.mode === "fixture") {
               const summary = page.getByText("Equity values by observation", {
                 exact: true,
@@ -535,7 +673,9 @@ try {
               );
               assert.match(
                 await page.locator("#source-pin").innerText(),
-                /19000000/,
+                report.mode === "evm-fork"
+                  ? /19000000/
+                  : /Local disposable chain/,
               );
               const region = page.getByRole("region", {
                 name: "Supplied actions on isolated local forks",
@@ -741,6 +881,7 @@ try {
     "comparison.mjs",
     "report-validation.mjs",
     "assets/examples/action-comparison.json",
+    "reports/agent-local-codex.json",
     "style.css",
     "404.html",
     "package.json",

@@ -70,3 +70,33 @@ source hashes match the final runtime bytes. These are display checks using
 existing evidence, not a new chain or model run. Manual assistive-technology
 review and complete WCAG conformance remain unverified. PR builds do not deploy;
 the independent main-branch approval and required jobs remain mandatory.
+
+## 2026-10-01 — Inspectable recorded agent decisions
+
+The candidate based on8671ab2 adds decision-time preflight/gas/execute-hold/reasons
+beside candidate outcomes in the v0.1 archive. The existing local model report is
+copied byte-identically; original requested alias, nondeterminism, unavailable
+seed/cost and no measured model advantage remain disclosed. No model/archive
+call, Docker startup, schema change or original recording rewrite occurred.
+
+Independent source review found three P2 internal-consistency gaps: array choices
+coerced to strings, proposals not tied to scenario actions and held outcomes
+claiming success/nonzero gas. All are fixed and independently re-reviewed. Four
+fully resealed contradictions fail before the fix and pass refusal afterwards.
+All47 Node/11 Python tests, lint/format/types and full source scans pass. All55
+static findings remain visible with reasons, retaining51 previous rationales and
+reviewing4 new indexed-read/fixed-fixture filesystem findings; no rule is skipped.
+
+Chromium153.0.8010.12/axe4.13.0 on Node22.23.1 pass28 groups and21 scans with zero
+violations, including three viewports, hostile local imports, resealed failure/
+clear/recovery, exact reasons/provenance and mobile keyboard horizontal scroll.
+The320px screenshot was visually inspected and its table adjusted for readable
+rows. All12 original agent reports still display with exact original hashes.
+Raw incomplete axe items, source hashes and failures are preserved in
+evidence/agent-decisions/. Initial unsupported Node20.2 and an EVM-test historical
+source assumption were corrected before final verification.
+
+Selected consistency checks do not authenticate imported data or reproduce full
+engine/financial validation. Browser proof is not manual assistive-tech or full
+WCAG certification. Current-head CI is separately required; independent GitHub
+approval/protected integration/Pages live verification and submission remain open.

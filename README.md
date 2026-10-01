@@ -62,7 +62,7 @@ npm run test:accessibility
 ```
 
 The standalone runner starts and closes its own loopback server and Chromium.
-It checks all four public samples at 1280, 390 and 320 CSS pixels, skip-link
+It checks all five public samples at 1280, 390 and 320 CSS pixels, skip-link
 focus, keyboard sample selection/local-file import, exact chart data, scrollable
 tables/JSON, error clearing, reduced motion, forced colors and the 404 page.
 Hostile imported text remains inert; requests must be same-origin GETs.
@@ -120,7 +120,7 @@ Python website tests. CI discovers the tracked sources and refuses empty scans.
 
 All 14 rules from eslint-plugin-security run without inline suppressions. Full
 findings are saved in `.quality/security.json` before the source-bound review
-policy is checked. `security-reviewed.json` retains 51 findings with individual
+policy is checked. `security-reviewed.json` retains 55 findings with individual
 rationales (bounded numeric grammar, inert indexed reads and trusted developer
 file operations). It pins every JS/declaration source and tool configuration/lock;
 source drift, new/missing findings or missing rationale fail the gate. These are
@@ -139,6 +139,33 @@ Imports make no network request. Existing report/schema/mascot files are unchang
 Quality, browser and unit jobs all gate Pages builds; PRs never deploy. After an
 independent reviewer approves and merges the changes, verify the live deployment
 separately before calling this implementation released.
+
+## Recorded agent evidence
+
+Open the v0.1 report explorer and select **Local EVM · recorded model decisions**.
+The original [model report](https://github.com/entrotter/entrotter/blob/b724983a6c24fbe20473111565c8639714cb1bb0/evidence/agent-local-codex.json)
+is copied byte-for-byte into `reports/agent-local-codex.json`; its artifact ID and
+original requested model alias, prompt version, nondeterminism, unavailable seed
+and generation cost remain unchanged. Loading it makes no model call. In this
+local transfer/revert case the model chose the same actions as the preflight risk
+rule and took longer; there is no measured model advantage.
+
+The decision table joins each recorded observation step, current-state preflight,
+requested/remaining gas, execute/hold choice and reason to its candidate outcome.
+The viewer checks request digests, exact typed response keys/string choices,
+ordered steps and prior-action history, scenario proposal equality, matching
+trace decisions/actions, hold/rejection outcomes and success/revert receipt
+status/gas/hash consistency. It hides and clears agent evidence after invalid
+imports and when switching to a report without an agent. Imported text stays
+inert; original raw JSON remains available.
+
+These are selected internal consistency checks, not full engine validation,
+authentication of an imported recording or proof of execution/model provenance.
+A hash can be recomputed by an author. The original generation cost is distinct
+from deterministic recorded replay. Browser regression tests also import
+hash-resealed contradictions, hostile Unicode reasons and subsequent valid
+recovery without uploads. Existing local/archived-state agent reports remain
+compatible; this display work adds no new chain/model evaluation or schema.
 
 ## The experiment console
 

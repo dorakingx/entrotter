@@ -148,3 +148,143 @@ test("local EVM reports accept null/absent source while forks require their pin"
   fork.source = null;
   assert.throws(() => context.evmViewModel(fork), /source pin/);
 });
+
+const agent = () =>
+  JSON.parse(
+    readFileSync(
+      new URL("../reports/agent-local-codex.json", import.meta.url),
+      "utf8",
+    ),
+  );
+test("recorded agent decisions join causal steps to exact candidate outcomes", async () => {
+  const r = agent();
+  await context.checkHash(r);
+  const view = await context.agentViewModel(r);
+  assert.equal(view.rows.length, 2);
+  assert.deepEqual(Array.from(view.rows[0]), [
+    "0",
+    "success",
+    "21000 / 2000000",
+    "execute",
+    r.agent.exchanges[0].response.reason,
+    "success",
+    "21000",
+  ]);
+  assert.deepEqual(Array.from(view.rows[1]).slice(0, 4), [
+    "1",
+    "rejected",
+    "50000 / 1979000",
+    "hold",
+  ]);
+  assert.match(view.provenance, /gpt-5.6-sol/);
+  assert.match(view.provenance, /requested alias/);
+  assert.match(view.provenance, /Nondeterministic/);
+  assert.match(view.provenance, /Original generation cost.*Unavailable/);
+  assert.equal(await context.agentViewModel(evm()), null);
+});
+test("agent recording rejects forged steps, responses, IDs, outcomes and future history", async () => {
+  const mutations = [
+    (r) => {
+      r.agent.exchanges[0].response.step = 31;
+    },
+    (r) => {
+      r.agent.exchanges[0].request.observation.step = 31;
+    },
+    (r) => {
+      r.agent.exchanges[0].request.request_id = "a".repeat(64);
+    },
+    (r) => {
+      r.candidate.trace[0].agent_decision.reason = "unrelated";
+    },
+    (r) => {
+      r.candidate.trace[1].action =
+        r.agent.exchanges[1].request.proposed_action;
+    },
+    (r) => {
+      r.agent.exchanges[0].request.observation.completed_actions.push({
+        step: 1,
+        status: "noop",
+        gas_used: "0",
+      });
+    },
+    (r) => {
+      r.agent.exchanges = Array(33).fill(r.agent.exchanges[0]);
+    },
+  ];
+  for (const mutate of mutations) {
+    const r = agent();
+    mutate(r);
+    await assert.rejects(
+      context.agentViewModel(r),
+      /agent|Agent|observation|Observation/,
+    );
+  }
+});
+test("agent metadata preserves built-in determinism and known generation cost", async () => {
+  const r = agent();
+  r.agent.provider = {
+    provider: "builtin",
+    model: "preflight-risk-v1",
+    deterministic: true,
+    cost_usd: "0",
+  };
+  assert.match((await context.agentViewModel(r)).provenance, /Deterministic/);
+  assert.match(
+    (await context.agentViewModel(r)).provenance,
+    /Original generation cost.*0/,
+  );
+  r.agent.provider.cost_usd = " ";
+  await assert.rejects(context.agentViewModel(r), /metric/);
+});
+
+/** @type {Array<[string, (r: ReturnType<typeof agent>) => void]>} */
+const contradictoryAgents = [
+  [
+    "array choice disguised as hold",
+    (r) => {
+      r.agent.exchanges[0].response.choice = ["hold"];
+      r.candidate.trace[0].agent_decision.choice = ["hold"];
+    },
+  ],
+  [
+    "held action claiming successful gas use",
+    (r) => {
+      r.candidate.trace[1].status = "success";
+      r.candidate.trace[1].gas_used = "21000";
+    },
+  ],
+  [
+    "proposal unrelated to scenario",
+    (r) => {
+      r.agent.exchanges[0].request.proposed_action.to = "0x" + "f".repeat(40);
+      r.candidate.trace[0].action.to = "0x" + "f".repeat(40);
+    },
+  ],
+  [
+    "receipt contradicting outcome",
+    (r) => {
+      r.candidate.trace[0].receipt.status = "0x0";
+    },
+  ],
+];
+for (const [name, mutate] of contradictoryAgents)
+  test(`resealed agent refuses ${name}`, async () => {
+    const r = agent();
+    mutate(r);
+    for (const exchange of r.agent.exchanges) {
+      const { request_id, ...request } = exchange.request;
+      const id = createHash("sha256")
+        .update(context.canonical(request))
+        .digest("hex");
+      exchange.request.request_id = id;
+      exchange.response.request_id = id;
+      r.candidate.trace[request.observation.step].agent_decision.request_id =
+        id;
+    }
+    const { artifact_id, ...body } = r;
+    r.artifact_id = createHash("sha256")
+      .update(context.canonical(body))
+      .digest("hex");
+    await context.checkHash(r);
+    await assert.rejects(context.agentViewModel(r), /agent|Agent/);
+  });

@@ -1,0 +1,296 @@
+
+> entrotter-oss-website@0.1.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: measured report passes hash and semantic validation
+ok 1 - measured report passes hash and semantic validation
+  ---
+  duration_ms: 5.425917
+  type: 'test'
+  ...
+# Subtest: rejects changed hash
+ok 2 - rejects changed hash
+  ---
+  duration_ms: 1.231958
+  type: 'test'
+  ...
+# Subtest: rejects receipt gas mismatch
+ok 3 - rejects receipt gas mismatch
+  ---
+  duration_ms: 1.303792
+  type: 'test'
+  ...
+# Subtest: rejects different starting root
+ok 4 - rejects different starting root
+  ---
+  duration_ms: 0.736625
+  type: 'test'
+  ...
+# Subtest: rejects inconsistent delta
+ok 5 - rejects inconsistent delta
+  ---
+  duration_ms: 0.811375
+  type: 'test'
+  ...
+# Subtest: rejects fake hold fee
+ok 6 - rejects fake hold fee
+  ---
+  duration_ms: 1.24475
+  type: 'test'
+  ...
+# Subtest: rejects missing trial
+ok 7 - rejects missing trial
+  ---
+  duration_ms: 0.427958
+  type: 'test'
+  ...
+# Subtest: rejects wrong token
+ok 8 - rejects wrong token
+  ---
+  duration_ms: 0.719333
+  type: 'test'
+  ...
+# Subtest: rejects wrong calldata fee
+ok 9 - rejects wrong calldata fee
+  ---
+  duration_ms: 0.90425
+  type: 'test'
+  ...
+# Subtest: rejects wrong chain
+ok 10 - rejects wrong chain
+  ---
+  duration_ms: 1.03125
+  type: 'test'
+  ...
+# Subtest: rejects invalid decimals
+ok 11 - rejects invalid decimals
+  ---
+  duration_ms: 1.108125
+  type: 'test'
+  ...
+# Subtest: rejects forged policy
+ok 12 - rejects forged policy
+  ---
+  duration_ms: 0.7065
+  type: 'test'
+  ...
+# Subtest: rejects wrong input
+ok 13 - rejects wrong input
+  ---
+  duration_ms: 0.834625
+  type: 'test'
+  ...
+# Subtest: rejects missing receipt
+ok 14 - rejects missing receipt
+  ---
+  duration_ms: 0.675333
+  type: 'test'
+  ...
+# Subtest: rejects missing cleanup
+ok 15 - rejects missing cleanup
+  ---
+  duration_ms: 0.828042
+  type: 'test'
+  ...
+# Subtest: rejects unsupported format
+ok 16 - rejects unsupported format
+  ---
+  duration_ms: 0.345375
+  type: 'test'
+  ...
+# Subtest: rejects invalid amount type
+ok 17 - rejects invalid amount type
+  ---
+  duration_ms: 0.301584
+  type: 'test'
+  ...
+# Subtest: rejects malformed envelope
+ok 18 - rejects malformed envelope
+  ---
+  duration_ms: 0.071416
+  type: 'test'
+  ...
+# Subtest: exact decimals avoid floating point
+ok 19 - exact decimals avoid floating point
+  ---
+  duration_ms: 0.100334
+  type: 'test'
+  ...
+# Subtest: security policy retains explicitly reviewed findings
+ok 20 - security policy retains explicitly reviewed findings
+  ---
+  duration_ms: 1.449709
+  type: 'test'
+  ...
+# Subtest: source drift, new/missing findings and absent rationale fail review
+ok 21 - source drift, new/missing findings and absent rationale fail review
+  ---
+  duration_ms: 2.020417
+  type: 'test'
+  ...
+# Subtest: empty source scope fails review
+ok 22 - empty source scope fails review
+  ---
+  duration_ms: 0.073167
+  type: 'test'
+  ...
+# Subtest: parser and suppressed diagnostics cannot be accepted as a clean scan
+ok 23 - parser and suppressed diagnostics cannot be accepted as a clean scan
+  ---
+  duration_ms: 0.177709
+  type: 'test'
+  ...
+# Subtest: production JS verifies Python artifact: liquidity-shock
+ok 24 - production JS verifies Python artifact: liquidity-shock
+  ---
+  duration_ms: 4.513542
+  type: 'test'
+  ...
+# Subtest: production JS verifies Python artifact: recovery-trap
+ok 25 - production JS verifies Python artifact: recovery-trap
+  ---
+  duration_ms: 1.403084
+  type: 'test'
+  ...
+# Subtest: production JS verifies Python artifact: depeg-stress
+ok 26 - production JS verifies Python artifact: depeg-stress
+  ---
+  duration_ms: 0.663208
+  type: 'test'
+  ...
+# Subtest: tampered metric fails integrity validation
+ok 27 - tampered metric fails integrity validation
+  ---
+  duration_ms: 0.810041
+  type: 'test'
+  ...
+# Subtest: unknown schema is not accepted
+ok 28 - unknown schema is not accepted
+  ---
+  duration_ms: 0.355459
+  type: 'test'
+  ...
+# Subtest: canonical ASCII escaping includes supplementary Unicode
+ok 29 - canonical ASCII escaping includes supplementary Unicode
+  ---
+  duration_ms: 0.101167
+  type: 'test'
+  ...
+# Subtest: finite numerical display validation
+ok 30 - finite numerical display validation
+  ---
+  duration_ms: 0.164834
+  type: 'test'
+  ...
+# Subtest: JS re-canonicalization matches exported content hash
+ok 31 - JS re-canonicalization matches exported content hash
+  ---
+  duration_ms: 0.490584
+  type: 'test'
+  ...
+# Subtest: real archived-state artifact passes hash and receipt view validation
+ok 32 - real archived-state artifact passes hash and receipt view validation
+  ---
+  duration_ms: 2.735917
+  type: 'test'
+  ...
+# Subtest: token units preserve integers beyond Number safe precision
+ok 33 - token units preserve integers beyond Number safe precision
+  ---
+  duration_ms: 0.380333
+  type: 'test'
+  ...
+# Subtest: missing source hash cannot appear as a historical report
+ok 34 - missing source hash cannot appear as a historical report
+  ---
+  duration_ms: 0.208042
+  type: 'test'
+  ...
+# Subtest: mismatched token addresses cannot share a comparison row
+ok 35 - mismatched token addresses cannot share a comparison row
+  ---
+  duration_ms: 0.159292
+  type: 'test'
+  ...
+# Subtest: malformed receipt state and oversized traces fail closed
+ok 36 - malformed receipt state and oversized traces fail closed
+  ---
+  duration_ms: 0.20675
+  type: 'test'
+  ...
+# Subtest: display metrics reject coercible non-decimal strings
+ok 37 - display metrics reject coercible non-decimal strings
+  ---
+  duration_ms: 0.078125
+  type: 'test'
+  ...
+# Subtest: decimal metrics preserve supported signed/exponent values and reject overflow
+ok 38 - decimal metrics preserve supported signed/exponent values and reject overflow
+  ---
+  duration_ms: 0.091292
+  type: 'test'
+  ...
+# Subtest: hash verification rejects non-object or non-finite parsed JSON
+ok 39 - hash verification rejects non-object or non-finite parsed JSON
+  ---
+  duration_ms: 0.185958
+  type: 'test'
+  ...
+# Subtest: local EVM reports accept null/absent source while forks require their pin
+ok 40 - local EVM reports accept null/absent source while forks require their pin
+  ---
+  duration_ms: 0.394167
+  type: 'test'
+  ...
+# Subtest: recorded agent decisions join causal steps to exact candidate outcomes
+ok 41 - recorded agent decisions join causal steps to exact candidate outcomes
+  ---
+  duration_ms: 4.166208
+  type: 'test'
+  ...
+# Subtest: agent recording rejects forged steps, responses, IDs, outcomes and future history
+ok 42 - agent recording rejects forged steps, responses, IDs, outcomes and future history
+  ---
+  duration_ms: 4.622458
+  type: 'test'
+  ...
+# Subtest: agent metadata preserves built-in determinism and known generation cost
+ok 43 - agent metadata preserves built-in determinism and known generation cost
+  ---
+  duration_ms: 0.999583
+  type: 'test'
+  ...
+# Subtest: resealed agent refuses array choice disguised as hold
+ok 44 - resealed agent refuses array choice disguised as hold
+  ---
+  duration_ms: 1.206666
+  type: 'test'
+  ...
+# Subtest: resealed agent refuses held action claiming successful gas use
+ok 45 - resealed agent refuses held action claiming successful gas use
+  ---
+  duration_ms: 1.24925
+  type: 'test'
+  ...
+# Subtest: resealed agent refuses proposal unrelated to scenario
+ok 46 - resealed agent refuses proposal unrelated to scenario
+  ---
+  duration_ms: 1.488084
+  type: 'test'
+  ...
+# Subtest: resealed agent refuses receipt contradicting outcome
+ok 47 - resealed agent refuses receipt contradicting outcome
+  ---
+  duration_ms: 1.151792
+  type: 'test'
+  ...
+1..47
+# tests 47
+# suites 0
+# pass 47
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 114.747625

@@ -10,6 +10,9 @@
 
 /* Preserve the report explorer's equivalent data and keyboard affordances. */
 .table-wrap:focus-visible, pre:focus-visible { outline-offset: -2px; }
+
+#agent-details table { min-width: 54rem; }
+#agent-details td:nth-child(5) { min-width: 18rem; max-width: 26rem; overflow-wrap: anywhere; }
 .chart-description { color: var(--muted); font-size: 12px; }
 #equity-rows th, #metric-rows th { color: #e6dff0; font-weight: 400; }
 .metrics strong { display: block; overflow-wrap: anywhere; }
