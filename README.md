@@ -72,6 +72,12 @@ recorded. Supplying block_hash in the scenario additionally enforces a prior
 pin. Local writes use chain ID 31337 and target only owned Anvil processes.
 The supplied historical example is a template; it is not a published benchmark.
 
+Local code overrides require unique EVM addresses after case normalization.
+Two `local_contracts` keys naming the same address are rejected before node or
+Docker-client launch, even if their spelling or code differs. This prevents
+JSON object-key order from changing execution. A single mixed-case address is
+accepted without changing the original scenario or its hash inputs.
+
 The Anvil command line may expose the archive URL to other processes of the
 same OS user. Use only a trusted local machine and a restricted read-only RPC
 credential. Archive providers may charge for reads; the user selects the provider.

@@ -1,0 +1,89 @@
+{
+  "status": "local_verified_current_head_CI_and_independent_GitHub_approval_pending",
+  "checked_at": "2026-10-01T11:47:40.061994+00:00",
+  "base_engine_commit": "c1671938edde03c59deef64dbb81d7c41a33406b",
+  "source_sha256": {
+    "src/entrotter_engine/models.py": "80de1f5ab1e52f9dd00c0f3deaa3ea1a16a0ae159eab50c0a130a2431084b7e7",
+    "tests/test_engine.py": "a732abb7ea9cdd58b555de75ac469465653375c50c3007cc70c52c218c32d216"
+  },
+  "actual_before": {
+    "canonical_scenarios_equal": true,
+    "canonical_scenario_sha256": "9dd42423c21d750bf6696d82ad4b4bc9d612b6ab90219b7707d0f501a7804d8b",
+    "forward_candidate_status": "success",
+    "reverse_candidate_status": "reverted",
+    "forward_gas_used": "21000",
+    "reverse_gas_used": "21006",
+    "anvil": "anvil/v1.8.3",
+    "execution": "explicit native, actual local Anvil",
+    "owned_node_cleanup": [
+      {
+        "guardian_pid": 88379,
+        "guardian_returncode": 0,
+        "owned_rpc_port": 55670,
+        "port_closed": true
+      },
+      {
+        "guardian_pid": 88383,
+        "guardian_returncode": 0,
+        "owned_rpc_port": 55686,
+        "port_closed": true
+      },
+      {
+        "guardian_pid": 88385,
+        "guardian_returncode": 0,
+        "owned_rpc_port": 55704,
+        "port_closed": true
+      },
+      {
+        "guardian_pid": 88387,
+        "guardian_returncode": 0,
+        "owned_rpc_port": 55720,
+        "port_closed": true
+      }
+    ],
+    "docker_started": false,
+    "archive_calls": 0,
+    "model_calls": 0
+  },
+  "after": {
+    "native_suite": 214,
+    "native_seconds": 29.765,
+    "focused_refusal_cases": 2,
+    "expanded_entrypoints": [
+      "native",
+      "default bounded",
+      "bounded agent"
+    ],
+    "before_backend_launch": true,
+    "single_mixed_case_scenario_unchanged": true,
+    "lint": "passed22files",
+    "format": "passed22files",
+    "types": "passed22files",
+    "full_security_findings": 23,
+    "findings_changed": false,
+    "source_review": "stale source manifest failed; only models.py source hash refreshed"
+  },
+  "new_archive_RPC_calls": 0,
+  "new_model_calls": 0,
+  "new_Docker_startup": false,
+  "independent_code_re_review": "Resolved: both orders reject before native/default/agent execution; single legitimate mixed-case key preserved. Two focused checks pass; finding inventory unchanged. No remaining actionable finding in fix.",
+  "GitHub_approval": "pending; no main/review bypass",
+  "coordination": "PR55/328f4c1 still selects c167193 until separately verified promotion; CLI22b514c/source record inputs unchanged",
+  "artifact_sha256": {
+    "failing-before.log": "b4ca65904bdf98fc1f396bcd08a87744dead932ccaa8eb217fd135ff73693c39",
+    "commands.md": "1cb00e16ec9f66885d85e5ac82b46b87532e7868a07b430476b3bdb1c9751d7b",
+    "forward-scenario.json": "aef3adafa1163a56fd07275c8478e825de9807696c1ba7d8625907593387a120",
+    "stale-review.log": "180bc8cda4466b3fb3a99b52d4adc47a5004b627781c9e5d7203d7c9463c232a",
+    "reproduce-before.py": "295a364576937e56949ba61ec4b5634aa81875cae7a427f0df836ce646979c26",
+    "before-actual-anvil.json": "38f8b009fefaf36730da701ee1f1edeab083d060a80d7b20d25a914bf0f9310c",
+    "early-refusal.log": "052e6e3a1bf10de129cbb67b439e0e4b7c1990d724458e190e26cb5a2e7924ed",
+    "native-tests.log": "c175c0c6b4bcf5b3db88131685c0697e5f51a49c5f097a52da74a4f1544bc4c7",
+    "review.json": "768d1fad810bb2075c217891391ba97e248efddd635cc773efef47512bb5061b",
+    "reverse-scenario.json": "b764688724c91b42018ce82a14b3744fbafd49afd779d7beb689a57d024e98f7"
+  },
+  "limits": [
+    "Actual reproduction is artificial local EVM state, not a new historical trace/market evaluation.",
+    "Worker resource controls require the separate current-head Linux Docker job.",
+    "No schema or valid recorded-report byte changes; generic historical trace replay remains unsupported."
+  ]
+}

@@ -65,3 +65,27 @@ cache/image/VM storage and archive egress limits remain. Frozen historical/model
 inputs are unchanged and no new archive/model call, protected merge, deployment,
 package publication or submission occurred. Coordination still selects the prior
 review candidate until this focused stacked PR is independently reviewed.
+
+## October 1 — Contract identity reproducibility review and fix
+
+An independent Codex source reviewer reproduced a real Anvil v1.8.3 defect:
+case-aliased local contract keys with STOP/revert code produced success/21,000 gas
+versus revert/21,006 gas when only insertion order changed. Canonical scenario
+bytes were identical. All four owned guardians exited and their RPC ports closed.
+The original source, inputs, script and observations are retained in
+`evidence/local-contract-identity/`, separately from the fix.
+
+Validation now refuses duplicate normalized local contract addresses before any
+node/Docker client for native, normal bounded and bounded-agent entrypoints.
+One legitimate mixed-case override is preserved unchanged. Both-order refusal
+regressions fail before the fix and pass afterward; all 214 native/unit tests pass
+in 29.765s with pinned Foundry. Lint/format/type checks cover all 22 production
+files. The full scanner retains all 23 findings and unchanged rationales; stale
+source review fails before refreshing only the models.py source hash. Follow-up
+independent code review confirms resolution; it is not a GitHub approval.
+
+Actual current-head Linux native/Docker/image/native-provenance CI remains a
+separate gate linked in this focused PR. No archive/model call, Docker/VM startup,
+protected merge, deployment or submission occurred. Frozen report/holdout/source
+inputs and v0.1 contracts are unchanged. Coordination still selects tested c167193
+until a separately validated source promotion; main protection is retained.
