@@ -2,7 +2,7 @@
   "review_status": "author reviewed; independent approval required",
   "scope": "All 14 installed security rules over every tracked JS source; no inline suppression. Exact source/type-input bytes and every diagnostic must match.",
   "sources": {
-    "app.js": "645675eab6c3b159a0234bc1847238f8e4e8c1ae589c3c85df5679c8e7b319d6",
+    "app.js": "36786b0c3db6a8016101648a5b86ccb3253ac8ce20867cdc01cfe48b88e8325a",
     "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
     "eslint.config.mjs": "9a4d1f5f6b36c2cfad7250a249ff27bad083fdee9f00ef8e58cb418c5820b0b5",
     "eslint.security.config.mjs": "fb2ab88ae816262fd1cef89709826491797957b8ee04835fae10bc6ab83ca7f2",
@@ -12,12 +12,12 @@
     "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
     "requirements-quality.in": "eccd79884fb38364cc396e59e22eb5a78f48bbf92e2c0b47825dcff473692185",
     "requirements-quality.txt": "845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722",
-    "scripts/check_accessibility.mjs": "eee1e6846abab25982eadc77eb46d1e6f53189f7aea6cf545a8bf2cdd962c18e",
+    "scripts/check_accessibility.mjs": "fef31a490f113831cfcb829baa0fa0048ddcc6079076505121f1f0852c09ca46",
     "scripts/check_quality.mjs": "51d72e7ccb7e9716acfc50e39bdf692a2512532e6da91491358da1437f4794d8",
     "scripts/quality_policy.mjs": "e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89",
     "tests/comparison.test.mjs": "35a035d9e806548d20224070fa707e8866783c639e860ccc3afece23376b6327",
     "tests/quality.test.mjs": "71150f603988dcb2429b56de76e3535b0268fbf180b12ecbe998c23c235e52c1",
-    "tests/report.test.mjs": "a15d0e2d90ff523435716b03ddc82d476de4c42780b96581ea530402599fd227",
+    "tests/report.test.mjs": "7669919663e3486783dc39b97d7e5f892b5a4955ef7696d084f244db502ceffd",
     "tsconfig.json": "b11349591a0d0c9933d0ee3ff60b0b874df53834e8f2e3c6c45b788aa35cb661",
     "types/browser-tools.d.ts": "0a5352e697b9e2a51651016ac789287acb71d48fdc04027d80a4050b604f579e"
   },
@@ -28,9 +28,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 30,
+        "line": 31,
         "column": 52,
-        "endLine": 30,
+        "endLine": 31,
         "endColumn": 68
       },
       "reason": "Canonicalization reads only own keys enumerated by Object.keys from parsed JSON. It writes no properties and produces a hash string; no key selects code or a prototype mutation."
@@ -41,9 +41,9 @@
         "ruleId": "security/detect-unsafe-regex",
         "severity": 1,
         "message": "Unsafe Regular Expression",
-        "line": 71,
+        "line": 76,
         "column": 6,
-        "endLine": 71,
+        "endLine": 76,
         "endColumn": 62
       },
       "reason": "The metric is checked as a string of at most 100 characters before this decimal grammar runs. Integer, fraction and exponent parts have distinct separators; rejected malformed values are bounded. This is not an unbounded regex service."
@@ -54,9 +54,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 153,
+        "line": 158,
         "column": 18,
-        "endLine": 153,
+        "endLine": 158,
         "endColumn": 25
       },
       "reason": "The metric name comes from the same fixed four-item list. The candidate value immediately passes rawInteger and remains inert text; no object mutation or code execution."
@@ -67,9 +67,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 154,
+        "line": 159,
         "column": 18,
-        "endLine": 154,
+        "endLine": 159,
         "endColumn": 25
       },
       "reason": "The metric name comes from the same fixed four-item list. The candidate value immediately passes rawInteger and remains inert text; no object mutation or code execution."
@@ -80,9 +80,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 204,
+        "line": 209,
         "column": 22,
-        "endLine": 204,
+        "endLine": 209,
         "endColumn": 27
       },
       "reason": "The baseline token array is checked as an array with at most eight entries, and i is the bounded loop index. record validates each selected value before metadata or balance access."
@@ -93,9 +93,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 205,
+        "line": 210,
         "column": 18,
-        "endLine": 205,
+        "endLine": 210,
         "endColumn": 23
       },
       "reason": "The candidate token array is checked for matching length and the same eight-entry maximum. The loop index comes from the baseline length, and record validates the selected candidate."
@@ -105,10 +105,36 @@
         "file": "app.js",
         "ruleId": "security/detect-object-injection",
         "severity": 1,
+        "message": "Variable Assigned to Object Injection Sink",
+        "line": 297,
+        "column": 21,
+        "endLine": 297,
+        "endColumn": 32
+      },
+      "reason": "The observation step is checked as an integer in increasing order within the validated 1-32 element candidate trace before this read. The returned object is display data; the index never selects code, a setter or a property write."
+    },
+    {
+      "finding": {
+        "file": "app.js",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 306,
+        "column": 26,
+        "endLine": 306,
+        "endColumn": 46
+      },
+      "reason": "Scenario steps must be an array with the same bounded length as the validated candidate trace. This previously range-checked integer reads the matching scenario action for inert canonical equality; no property is written or executed."
+    },
+    {
+      "finding": {
+        "file": "app.js",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 354,
+        "line": 521,
         "column": 16,
-        "endLine": 354,
+        "endLine": 521,
         "endColumn": 21
       },
       "reason": "Both fixture traces have equal checked lengths and their equities have already passed finite. The index comes from the baseline map; conversion is for an inert exact-text table cell."
@@ -119,9 +145,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 373,
+        "line": 540,
         "column": 35,
-        "endLine": 373,
+        "endLine": 540,
         "endColumn": 42
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -132,9 +158,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 373,
+        "line": 540,
         "column": 50,
-        "endLine": 373,
+        "endLine": 540,
         "endColumn": 57
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -145,9 +171,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 374,
+        "line": 541,
         "column": 35,
-        "endLine": 374,
+        "endLine": 541,
         "endColumn": 42
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -158,9 +184,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 374,
+        "line": 541,
         "column": 50,
-        "endLine": 374,
+        "endLine": 541,
         "endColumn": 57
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -496,9 +522,22 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 492,
+        "line": 485,
+        "column": 17,
+        "endLine": 488,
+        "endColumn": 12
+      },
+      "reason": "This browser regression reads only the fixed tracked reports/agent-local-codex.json under the trusted SITE_DIR developer checkout. An imported report never chooses a filesystem path; the browser receives its bytes as an in-memory local-file test."
+    },
+    {
+      "finding": {
+        "file": "scripts/check_accessibility.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 597,
         "column": 21,
-        "endLine": 492,
+        "endLine": 597,
         "endColumn": 78
       },
       "reason": "Sample paths come from a fixed list of four trusted public fixtures beneath the operator-selected checkout root. Incoming report contents cannot select a filename."
@@ -509,9 +548,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 524,
+        "line": 662,
         "column": 19,
-        "endLine": 524,
+        "endLine": 662,
         "endColumn": 44
       },
       "reason": "This reads a trusted fixture candidate trace at the corresponding baseline iteration index to verify exact accessible table values. No property is written or used to select executable code."
@@ -522,9 +561,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 591,
+        "line": 731,
         "column": 17,
-        "endLine": 591,
+        "endLine": 731,
         "endColumn": 80
       },
       "reason": "This reads the fixed liquidity-shock fixture to construct a tampered local import. Only its in-memory metrics change; report content cannot select filesystem paths."
@@ -535,9 +574,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 625,
+        "line": 765,
         "column": 19,
-        "endLine": 628,
+        "endLine": 768,
         "endColumn": 14
       },
       "reason": "This reads the fixed liquidity-shock fixture to construct correctly hashed malformed metric imports. The path is independent of report content."
@@ -548,12 +587,12 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 750,
+        "line": 891,
         "column": 7,
-        "endLine": 750,
+        "endLine": 891,
         "endColumn": 19
       },
-      "reason": "The evidence inventory assigns hashes only to keys from the fixed source file list. No imported report key can select a property or prototype mutation."
+      "reason": "Missing source bytes assign null only to a key from the fixed inventory. Imported report fields cannot select property names or mutate object prototypes."
     },
     {
       "finding": {
@@ -561,9 +600,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 751,
+        "line": 892,
         "column": 23,
-        "endLine": 751,
+        "endLine": 892,
         "endColumn": 52
       },
       "reason": "This hashes only the fixed nine-item source inventory beneath trusted operator SITE_DIR. Imported reports cannot select paths; missing files become explicit null evidence."
@@ -574,12 +613,12 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 754,
+        "line": 895,
         "column": 7,
-        "endLine": 754,
+        "endLine": 895,
         "endColumn": 19
       },
-      "reason": "Missing source bytes assign null only to a key from the fixed inventory. Imported report fields cannot select property names or mutate object prototypes."
+      "reason": "The evidence inventory assigns hashes only to keys from the fixed source file list. No imported report key can select a property or prototype mutation."
     },
     {
       "finding": {
@@ -587,9 +626,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found writeFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 781,
+        "line": 922,
         "column": 9,
-        "endLine": 784,
+        "endLine": 925,
         "endColumn": 4
       },
       "reason": "The final evidence report uses the fixed accessibility.json filename under the operator/CI-selected output directory. Imported report contents cannot select its destination."
@@ -684,6 +723,19 @@
         "endColumn": 6
       },
       "reason": "The test reads the fixed archived-state Uniswap public report relative to its own module. This is offline evidence display validation, not archive RPC execution."
+    },
+    {
+      "finding": {
+        "file": "tests/report.test.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 154,
+        "column": 5,
+        "endLine": 157,
+        "endColumn": 6
+      },
+      "reason": "This unit fixture loader resolves the fixed tracked reports/agent-local-codex.json relative to import.meta.url. There is no user path, directory enumeration or imported-report value in this filesystem operation."
     }
   ]
 }

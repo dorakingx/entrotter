@@ -80,7 +80,11 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(hashlib.sha256(data).hexdigest(), supplied)
             self.assertEqual(
                 d["scenario"]["provenance"]["kind"],
-                "historical-fork" if d["mode"] == "evm-fork" else "synthetic",
+                {
+                    "evm-fork": "historical-fork",
+                    "evm-local": "local-evm",
+                    "fixture": "synthetic",
+                }[d["mode"]],
             )
             if d["mode"] == "evm-fork":
                 self.assertEqual(

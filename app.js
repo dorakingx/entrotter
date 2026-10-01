@@ -16,6 +16,7 @@ const allowedSamples = new Set([
   "recovery-trap",
   "depeg-stress",
   "ethereum-uniswap-slippage",
+  "agent-local-codex",
 ]);
 let generation = 0;
 // The backend canonicalizes JSON with sorted keys and ensure_ascii=True.
@@ -50,17 +51,21 @@ async function checkHash(input) {
   )
     throw new Error("Unsupported schema or missing hash.");
   const { artifact_id, ...body } = report;
-  const hash = await crypto.subtle.digest(
-    "SHA-256",
-    new TextEncoder().encode(canonical(body)),
-  );
-  const actual = Array.from(new Uint8Array(hash), (b) =>
-    b.toString(16).padStart(2, "0"),
-  ).join("");
+  const actual = await hashValue(body);
   if (actual !== artifact_id)
     throw new Error(
       "Content hash mismatch. The result was changed or damaged.",
     );
+}
+/** @param {unknown} value */
+async function hashValue(value) {
+  const hash = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(canonical(value)),
+  );
+  return Array.from(new Uint8Array(hash), (b) =>
+    b.toString(16).padStart(2, "0"),
+  ).join("");
 }
 /** @param {unknown} value */
 function finite(value) {
@@ -235,6 +240,161 @@ function evmViewModel(input) {
       : "Local disposable chain; no historical source",
   };
 }
+/** @param {unknown} input */
+async function agentViewModel(input) {
+  const report = record(input);
+  if (report.agent === undefined) return null;
+  const agent = record(report.agent);
+  if (
+    !["evm-local", "evm-fork"].includes(String(report.mode)) ||
+    agent.agent_version !== "0.1.0" ||
+    !Array.isArray(agent.exchanges) ||
+    agent.exchanges.length < 1 ||
+    agent.exchanges.length > 32
+  )
+    throw new Error("Invalid agent recording.");
+  evmViewModel(report);
+  const candidate = record(report.candidate);
+  const trace = /** @type {unknown[]} */ (candidate.trace).map(record);
+  const scenario = record(report.scenario);
+  if (!Array.isArray(scenario.steps) || scenario.steps.length !== trace.length)
+    throw new Error("Invalid agent scenario steps.");
+  if (trace.some((point, index) => point.step !== index))
+    throw new Error("Invalid agent candidate order.");
+  const rows = [];
+  let previous = -1;
+  for (const value of agent.exchanges) {
+    const exchange = record(value),
+      request = record(exchange.request),
+      response = record(exchange.response),
+      observation = record(request.observation),
+      proposal = record(request.proposed_action),
+      limits = record(request.limits),
+      preflight = record(request.preflight);
+    const step = observation.step;
+    if (
+      request.agent_version !== "0.1.0" ||
+      typeof step !== "number" ||
+      !Number.isInteger(step) ||
+      step <= previous ||
+      step >= trace.length ||
+      typeof request.request_id !== "string" ||
+      !/^[a-f0-9]{64}$/.test(request.request_id) ||
+      Object.keys(response).sort().join(",") !== "choice,reason,request_id" ||
+      response.request_id !== request.request_id ||
+      typeof response.choice !== "string" ||
+      !["execute", "hold"].includes(String(response.choice)) ||
+      typeof response.reason !== "string" ||
+      [...response.reason].length < 1 ||
+      [...response.reason].length > 1000 ||
+      typeof preflight.status !== "string" ||
+      !["success", "rejected"].includes(String(preflight.status))
+    )
+      throw new Error("Invalid agent observation or response.");
+    const { request_id, ...body } = request;
+    if ((await hashValue(body)) !== request_id)
+      throw new Error("Agent observation digest mismatch.");
+    const outcome = trace[step];
+    const history = trace.slice(0, step).map((point) => ({
+      step: point.step,
+      status: point.status,
+      gas_used: point.gas_used,
+    }));
+    if (
+      canonical(observation.completed_actions) !== canonical(history) ||
+      canonical(proposal) !==
+        canonical(record(scenario.steps[step]).candidate) ||
+      canonical(outcome.agent_decision) !== canonical(response) ||
+      canonical(outcome.action) !==
+        canonical(response.choice === "hold" ? null : proposal)
+    )
+      throw new Error("Agent recording and candidate outcome disagree.");
+    if (response.choice === "hold" || outcome.status === "rejected") {
+      if (
+        (response.choice === "hold" && outcome.status !== "noop") ||
+        outcome.gas_used !== "0" ||
+        outcome.receipt !== undefined ||
+        outcome.transaction_hash !== undefined
+      )
+        throw new Error("Invalid agent held or rejected outcome.");
+    } else {
+      const receipt = record(outcome.receipt);
+      if (
+        !["success", "reverted"].includes(String(outcome.status)) ||
+        receipt.status !== (outcome.status === "success" ? "0x1" : "0x0") ||
+        typeof receipt.gasUsed !== "string" ||
+        !/^0x[0-9a-fA-F]{1,16}$/.test(receipt.gasUsed) ||
+        BigInt(receipt.gasUsed) !== BigInt(rawInteger(outcome.gas_used)) ||
+        receipt.transactionHash !== outcome.transaction_hash
+      )
+        throw new Error("Agent receipt and outcome disagree.");
+    }
+    const requested = proposal.gas ?? 21000,
+      remaining = limits.remaining_requested_gas;
+    if (
+      typeof requested !== "number" ||
+      !Number.isSafeInteger(requested) ||
+      requested < 1 ||
+      typeof remaining !== "number" ||
+      !Number.isSafeInteger(remaining) ||
+      remaining < 0 ||
+      (response.choice === "execute" && requested > remaining)
+    )
+      throw new Error("Invalid agent gas budget.");
+    rows.push([
+      String(step),
+      String(preflight.status),
+      `${requested} / ${remaining}`,
+      String(response.choice),
+      response.reason,
+      String(outcome.status),
+      rawInteger(outcome.gas_used),
+    ]);
+    previous = step;
+  }
+  if (
+    trace.filter((point) => point.agent_decision !== undefined).length !==
+    rows.length
+  )
+    throw new Error("Missing agent exchange for a candidate decision.");
+  const provider = record(agent.provider);
+  /** @param {unknown} value */
+  function metadata(value) {
+    if (value === undefined || value === null) return "Unavailable";
+    if (typeof value !== "string" || value.length > 1000)
+      throw new Error("Invalid agent provenance.");
+    return value;
+  }
+  if (
+    provider.deterministic !== undefined &&
+    typeof provider.deterministic !== "boolean"
+  )
+    throw new Error("Invalid agent determinism metadata.");
+  const cost = provider.cost_usd;
+  if (cost !== undefined && cost !== null && finite(cost) < 0)
+    throw new Error("Invalid agent generation cost.");
+  const seed = provider.seed;
+  if (
+    seed !== undefined &&
+    seed !== null &&
+    !(typeof seed === "number" && Number.isFinite(seed)) &&
+    !(typeof seed === "string" && seed.length <= 1000)
+  )
+    throw new Error("Invalid agent seed.");
+  return {
+    rows,
+    provenance: [
+      `Provider: ${metadata(provider.provider)}`,
+      `Original model/policy: ${metadata(provider.model)}`,
+      `Model identity scope: ${metadata(provider.model_identity_scope)}`,
+      `Prompt version: ${metadata(provider.prompt_version)}`,
+      `Generation: ${provider.deterministic === true ? "Deterministic" : provider.deterministic === false ? "Nondeterministic" : "Unspecified"}`,
+      `Seed: ${seed === undefined || seed === null ? "Unavailable" : String(seed)}`,
+      `Original generation cost (USD): ${cost === undefined || cost === null ? "Unavailable" : String(cost)}`,
+      `Cost note: ${metadata(provider.cost_note)}`,
+    ].join("\n"),
+  };
+}
 /** @param {string} id @param {string[][]} rows @param {boolean} [rowHeaders] */
 function tableRows(id, rows, rowHeaders = false) {
   $(id).replaceChildren();
@@ -271,11 +431,15 @@ function setError(message) {
   $("fixture-chart").hidden = true;
   $("equity-rows").replaceChildren();
   $("chart-description").textContent = "";
+  $("agent-details").hidden = true;
+  $("agent-rows").replaceChildren();
+  $("agent-provenance").textContent = "";
 }
 /** @param {unknown} input @param {number} seq */
 async function render(input, seq) {
   const report = record(input);
   await checkHash(report);
+  const agent = await agentViewModel(report);
   if (seq !== generation) return;
   const baseline = record(report.baseline),
     candidate = record(report.candidate);
@@ -284,6 +448,9 @@ async function render(input, seq) {
   const comparison = record(report.comparison);
   const scenario = record(report.scenario);
   const evm = report.mode !== "fixture";
+  $("agent-details").hidden = agent === null;
+  tableRows("agent-rows", agent?.rows ?? []);
+  $("agent-provenance").textContent = agent?.provenance ?? "";
   $("fixture-chart").hidden = evm;
   $("evm-details").hidden = !evm;
   $("baseline-label").textContent = evm ? "Baseline actions" : "Hold baseline";

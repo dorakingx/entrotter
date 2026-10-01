@@ -1,0 +1,130 @@
+{
+  "status": "local_tests_review_and_browser_passed_current_head_CI_pending",
+  "base_site_head": "8671ab2ee481a894784afe2a2cc216fb6931b02c",
+  "branch": "feat/agent-decision-evidence",
+  "public_report_source": "https://github.com/entrotter/entrotter/blob/b724983a6c24fbe20473111565c8639714cb1bb0/evidence/agent-local-codex.json",
+  "public_report_sha256": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+  "artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b",
+  "report_copied_byte_identically": true,
+  "runtime_and_browser_source_sha256": {
+    "index.html": "2ac89cb022d0d097e14293966cbe7062bff3ecbdddf94e0fcd9e333b262a0f13",
+    "app.js": "36786b0c3db6a8016101648a5b86ccb3253ac8ce20867cdc01cfe48b88e8325a",
+    "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
+    "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
+    "assets/examples/action-comparison.json": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67",
+    "reports/agent-local-codex.json": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+    "style.css": "866e4c001afe391b626cb38a092be01f4228f7fda816f9251f9c0780d8943905",
+    "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+    "package.json": "d4ae0a0b1a412c70cf38bace34efd9fd459736f0e8c4d13ded0c53cab43e772d",
+    "package-lock.json": "199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342"
+  },
+  "browser_runner_sha256": "fef31a490f113831cfcb829baa0fa0048ddcc6079076505121f1f0852c09ca46",
+  "node": "v22.23.1",
+  "Node_tests": 47,
+  "Python_tests": 11,
+  "browser_groups": 28,
+  "axe_scans": 21,
+  "axe_violations": 0,
+  "browser": "153.0.8010.12",
+  "axe": "4.13.0",
+  "JS_sources": 11,
+  "type_inputs": 12,
+  "security_rules": 14,
+  "retained_security_findings": 55,
+  "unchanged_prior_findings_rationales": 51,
+  "new_reviewed_findings": 4,
+  "original_agent_reports_displayed": 12,
+  "mobile_keyboard_horizontal_scroll": true,
+  "mobile_screenshot_visually_inspected": true,
+  "raw_axe_results": [
+    {
+      "file": "axe-1280-agent-local-codex.json.gz",
+      "uncompressed_sha256": "90d6ce23a5a3d78db89b12ab5a7568dac58b57d7dd95d4697547d4319f044fd6"
+    },
+    {
+      "file": "axe-1280-console.json.gz",
+      "uncompressed_sha256": "0475a0deeccabbb0a5acdeadb7f41df7fd118cd2e19505b5c697d9966abb4778"
+    },
+    {
+      "file": "axe-1280-depeg-stress.json.gz",
+      "uncompressed_sha256": "cd203831d30f33792f7923d127b2b52743319d10007ded8a64acd3136ff498c9"
+    },
+    {
+      "file": "axe-1280-ethereum-uniswap-slippage.json.gz",
+      "uncompressed_sha256": "ede7cef934c39ca14e84a7d9db2809c5dc66ae52a5d14850ea128ba92cf785e9"
+    },
+    {
+      "file": "axe-1280-liquidity-shock.json.gz",
+      "uncompressed_sha256": "ec0682012a0e4897847a65dbc6764d9621e332020693ce43c9c5ca81eeb829da"
+    },
+    {
+      "file": "axe-1280-recovery-trap.json.gz",
+      "uncompressed_sha256": "3656278fa3841f27e9e7e4a5aeedbadbc3b83c859f4c6eed21f0f74852e9ccd8"
+    },
+    {
+      "file": "axe-320-agent-local-codex.json.gz",
+      "uncompressed_sha256": "7095c15fddc3943bf1b418c86107465734c1373f47fbf20accd64c62e26d0522"
+    },
+    {
+      "file": "axe-320-console.json.gz",
+      "uncompressed_sha256": "1c8139ed547695efee1d03e566431310161897e84e5c37008a17cf554e8a707b"
+    },
+    {
+      "file": "axe-320-depeg-stress.json.gz",
+      "uncompressed_sha256": "cdeb02f16989a4829a6b318ab36c595662bae958e45a600d606633a5e8431b45"
+    },
+    {
+      "file": "axe-320-ethereum-uniswap-slippage.json.gz",
+      "uncompressed_sha256": "2552528474712a52b85c0e40096f445be2bb337290f6c39c995964ec6c8d33a5"
+    },
+    {
+      "file": "axe-320-liquidity-shock.json.gz",
+      "uncompressed_sha256": "fe12d04748bf7590981733cf8c119875ee989a19fbaadb94f231eeff8709aef6"
+    },
+    {
+      "file": "axe-320-recovery-trap.json.gz",
+      "uncompressed_sha256": "519b169ebc9f8896ce9bf6b1002c58bd8a707fc579509edc909a7d95c7c00e5e"
+    },
+    {
+      "file": "axe-390-agent-local-codex.json.gz",
+      "uncompressed_sha256": "b2e4c7f53b9b25d3d0a46b0cf9718faef8dd6d698ce290b31fa567f1fc4a82e6"
+    },
+    {
+      "file": "axe-390-console.json.gz",
+      "uncompressed_sha256": "f2d4c0378f1bb331da6846a7739a6cca794f6a1d666f36137a79849e27f687be"
+    },
+    {
+      "file": "axe-390-depeg-stress.json.gz",
+      "uncompressed_sha256": "54d84d38986e1bd9b39a1d312c059a3d983d4bb9f0f132fdbab26fc698949ea4"
+    },
+    {
+      "file": "axe-390-ethereum-uniswap-slippage.json.gz",
+      "uncompressed_sha256": "c5fb102120163c0fc4d8a56fe4346b9e75848249a3cd50b2811e7d06b1cb016f"
+    },
+    {
+      "file": "axe-390-liquidity-shock.json.gz",
+      "uncompressed_sha256": "74b922280974528c582ee5f712371ee9b54f0a4d1a877a0645a0a44e2aa15d97"
+    },
+    {
+      "file": "axe-390-recovery-trap.json.gz",
+      "uncompressed_sha256": "430f3fcd1858128df9cbb0fc32e239dcfaacd6ec3a6c45c282726710efe803ec"
+    },
+    {
+      "file": "axe-404.json.gz",
+      "uncompressed_sha256": "a2111bb8c77c2745a27cb8047385f89bbc8304ecbbe84da6d22665470a8473b3"
+    },
+    {
+      "file": "axe-console-import.json.gz",
+      "uncompressed_sha256": "7d287a605b62ba8c2c9716c7642196eb8db23a9b91fd5e3eedfef14e8071ff20"
+    },
+    {
+      "file": "axe-error.json.gz",
+      "uncompressed_sha256": "36c98e8cd7508216148245b1dd752b693cbdaa5ea99db9a3ed5da72071daee8c"
+    }
+  ],
+  "new_model_calls": 0,
+  "new_archive_calls": 0,
+  "local_Docker_VM_startup": false,
+  "prior_development_failures": "Initial default Node20.2 below repository requirement prevented TypeScript startup; existing Node22 reused. Initial browser assertion assumed every EVM sample was historical; corrected to preserve local-source distinction. Neither was hidden or accepted as final verification.",
+  "remaining": "Current-head mandatory CI/dependency artifacts, independent GitHub approval and protected main/Pages deployment/live verification; manual assistive-technology/full WCAG proof and submission gates remain open."
+}
