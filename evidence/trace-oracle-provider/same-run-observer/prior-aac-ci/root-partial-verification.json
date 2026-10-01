@@ -1,0 +1,66 @@
+{
+  "head": "aac525c8279005a3a8468fe3928e691c3ce80148",
+  "mandatory_isolated_gate": "FAILED; all8 incomplete",
+  "quality": {
+    "source_bindings": 23,
+    "retained_full_findings": 23,
+    "wheel_modules": 18,
+    "exact_Python_lock_packages": 42,
+    "advisories": 0
+  },
+  "docs_exact_hashes": 13,
+  "native_tests": 267,
+  "native_skips": 0,
+  "native_seconds": 41.207,
+  "unit_tests_each": 267,
+  "unit_real_Anvil_skips_each": 31,
+  "image_source_inputs": 19,
+  "image_native_advisory_gates": "not run after failed historical gate; no success inferred",
+  "historical_reports": [
+    {
+      "file": "mainnet-prefix.json",
+      "sha256": "42c51a5a02f14d11e38c0e2b9af9702ff546965a79a0142fbce6ed6c7bbe20aa",
+      "baseline_original_receipts_exact": 1,
+      "runtime_seconds": 9.143445,
+      "candidate_statuses": [
+        "skipped"
+      ],
+      "SDK_viewer_hash_and_status_equal": true
+    },
+    {
+      "file": "mainnet-prefix-four.json",
+      "sha256": "d3b4f6802146f949f093fa4daf2569ffc259a6b1f97a8b418138dd6eb43189e6",
+      "baseline_original_receipts_exact": 4,
+      "runtime_seconds": 29.610351,
+      "candidate_statuses": [
+        "skipped",
+        "executed",
+        "not_mined",
+        "nonce_conflict"
+      ],
+      "SDK_viewer_hash_and_status_equal": true
+    }
+  ],
+  "diagnostic_followup": {
+    "request_sha256": "0b7d65d46b39d67024a4f43492bcb0af35d6e2f395ee9b450b85c9f5b8b55fde",
+    "protocol_verified": true,
+    "baseline_verified": true,
+    "candidate_statuses": [
+      "skipped",
+      "executed",
+      "executed",
+      "nonce_conflict"
+    ],
+    "cleanup_verified": true,
+    "scope": "Later repeat succeeded; does not identify missing receipt cause in original failed candidate. No failed-gate substitution."
+  },
+  "artifact_sha256": {
+    "ci-bounded/worker-image-security/.quality/build-output-docker.json": "0047c89e086cb97f21863a97d3addf84887d33e66b573795a049b0e4786f57b6",
+    "ci-bounded/worker-image-security/.quality/trace-replay/failure-diagnostic.json": "decea2096d6f455231389ffef6c6601f7a7060c55255c07229d4553358c02fef",
+    "ci-bounded/worker-image-security/.quality/trace-replay/mainnet-prefix-four.json": "d3b4f6802146f949f093fa4daf2569ffc259a6b1f97a8b418138dd6eb43189e6",
+    "ci-bounded/worker-image-security/.quality/trace-replay/mainnet-prefix.json": "42c51a5a02f14d11e38c0e2b9af9702ff546965a79a0142fbce6ed6c7bbe20aa",
+    "ci-bounded/worker-image-security/worker-image.json": "d43a3a109011c4e6ffb0db35d7f79fc90f79272f10ee2d1e41e47c74b1dd5392"
+  },
+  "human_GitHub_approval": "not supplied; separate from root artifact inspection",
+  "next_action": "Same-run diagnostic of owned Anvil archive/mining errors, no state repair or relaxed candidate assertion."
+}

@@ -1,0 +1,186 @@
+{
+  "head": "aac525c8279005a3a8468fe3928e691c3ce80148",
+  "quality_run": 36913460195,
+  "native_run": 36913460181,
+  "unit_run": 36913460412,
+  "docs_run": 36913460488,
+  "source_files": 23,
+  "full_security_findings_retained": 23,
+  "security_skips": 0,
+  "wheel_modules_byte_equal": 18,
+  "exact_lock_packages": 42,
+  "advisories": 0,
+  "docs_file_hashes": 13,
+  "docs_merge_commit": "24c913d2b33283532b3c097cf2d8e1579ddd3ec0",
+  "linux_native_tests": 267,
+  "linux_native_seconds": 41.207,
+  "units": [
+    [
+      "267",
+      "28.323"
+    ],
+    [
+      "267",
+      "28.375"
+    ],
+    [
+      "267",
+      "26.998"
+    ],
+    [
+      "267",
+      "26.525"
+    ]
+  ],
+  "all_required_checks": "7success/isolatedfailure; incomplete, no further retry",
+  "limits": [
+    "Full local/CI synthetic native checks and image tests are distinct from default host bounded historical replay.",
+    "This artifact review is not independent human GitHub approval.",
+    "Later diagnostic completion cannot substitute the failed mandatory four-prefix result.",
+    "No new local Docker/VM, further blind CI retry or speculative state/runtime fix."
+  ],
+  "isolated_run": 36913460373,
+  "isolated_job": 110541575793,
+  "actual_Docker_tests": 25,
+  "actual_Docker_seconds": 217.511,
+  "image_input_hashes_match": 19,
+  "image_source_digest": "f6a36d9a05c741eda62b8c6d571c4d592b1f99fd8499508c94662e6e7aebccdd",
+  "bounded_artifact_id": 11190085317,
+  "bounded_artifact_files": {
+    ".quality/build-output-docker.json": "0047c89e086cb97f21863a97d3addf84887d33e66b573795a049b0e4786f57b6",
+    ".quality/trace-replay/failure-diagnostic.json": "decea2096d6f455231389ffef6c6601f7a7060c55255c07229d4553358c02fef",
+    ".quality/trace-replay/mainnet-prefix-four.json": "d3b4f6802146f949f093fa4daf2569ffc259a6b1f97a8b418138dd6eb43189e6",
+    ".quality/trace-replay/mainnet-prefix.json": "42c51a5a02f14d11e38c0e2b9af9702ff546965a79a0142fbce6ed6c7bbe20aa",
+    "worker-image.json": "d43a3a109011c4e6ffb0db35d7f79fc90f79272f10ee2d1e41e47c74b1dd5392"
+  },
+  "historical_default_reports": [
+    {
+      "file": "mainnet-prefix.json",
+      "sha256": "42c51a5a02f14d11e38c0e2b9af9702ff546965a79a0142fbce6ed6c7bbe20aa",
+      "artifact_id": "987673450983e1b8c0ac9f5639cdde825b72c6278e6d9fce1b8a5575db367937",
+      "runtime_seconds": 9.143445,
+      "all_baseline_projections_equal_original_and_prior": true,
+      "baseline_count": 1,
+      "candidate_statuses": [
+        "skipped"
+      ]
+    },
+    {
+      "file": "mainnet-prefix-four.json",
+      "sha256": "d3b4f6802146f949f093fa4daf2569ffc259a6b1f97a8b418138dd6eb43189e6",
+      "artifact_id": "3b9f494e337ad0c78303f7dcad22a162e84a008e07277ec937542ca0db75540a",
+      "runtime_seconds": 29.610351,
+      "all_baseline_projections_equal_original_and_prior": true,
+      "baseline_count": 4,
+      "candidate_statuses": [
+        "skipped",
+        "executed",
+        "not_mined",
+        "nonce_conflict"
+      ]
+    }
+  ],
+  "failure_stage": "four-prefix expected candidate row2 executed, actual not_mined/no receipt; originalbaselineverified; RuntimeError Omission/nonce conflict differs from pinned evidence",
+  "diagnostic": {
+    "request_id": "0b7d65d46b39d67024a4f43492bcb0af35d6e2f395ee9b450b85c9f5b8b55fde",
+    "sha256": "decea2096d6f455231389ffef6c6601f7a7060c55255c07229d4553358c02fef",
+    "status": "completed",
+    "baseline_verified": true,
+    "candidate_statuses": [
+      "skipped",
+      "executed",
+      "executed",
+      "nonce_conflict"
+    ],
+    "error": null,
+    "cleanup_verified": true,
+    "checkpoints": 32,
+    "dropped_checkpoints": 7,
+    "authoritative_default_gate": false
+  },
+  "cause": "Unidentified; later independently instrumented replay succeeded. Receipt absence does not identify an archive/provider/runtime cause.",
+  "image_native_advisory_stages": "skipped; no package/DB/nativeaudit proof at this head",
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T19:24:53Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36913460373/job/110541575793",
+      "name": "isolated",
+      "startedAt": "2026-10-01T19:19:45Z",
+      "status": "COMPLETED",
+      "workflowName": "Isolated worker enforcement"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T19:19:57Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36913460488/job/110541576529",
+      "name": "docs-links",
+      "startedAt": "2026-10-01T19:19:45Z",
+      "status": "COMPLETED",
+      "workflowName": "Documentation links"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T19:20:04Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36913460195/job/110541574729",
+      "name": "quality",
+      "startedAt": "2026-10-01T19:19:44Z",
+      "status": "COMPLETED",
+      "workflowName": "Engine quality and Python dependency audit"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T19:20:35Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36913460181/job/110541575683",
+      "name": "evm",
+      "startedAt": "2026-10-01T19:19:45Z",
+      "status": "COMPLETED",
+      "workflowName": "Local EVM integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T19:20:16Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36913460412/job/110541576651",
+      "name": "unit (3.11)",
+      "startedAt": "2026-10-01T19:19:45Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T19:20:20Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36913460412/job/110541576528",
+      "name": "unit (3.12)",
+      "startedAt": "2026-10-01T19:19:46Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T19:20:26Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36913460412/job/110541576041",
+      "name": "unit (3.13)",
+      "startedAt": "2026-10-01T19:19:45Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T19:20:23Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36913460412/job/110541576370",
+      "name": "unit (3.14)",
+      "startedAt": "2026-10-01T19:19:45Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    }
+  ],
+  "GitHub_reviews": []
+}

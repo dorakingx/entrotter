@@ -144,3 +144,29 @@ Original pre-publication hashes and evidence-loss disclosure remain preserved.
 All eight exact-headCI checks are pending. No local Docker/VM, new archive/model/holdout/media operation,
 upstream write, retained key, merge or deployment. Prior engine935/PR31 all-eight
 CI and coordinator8029 evidence remain distinct; the overall goal remains active.
+
+## Separate diagnostic same-invocation observation prepared
+
+Published aac/PR32 has seven successful required checks and one failed isolated
+check:25Docker tests and first-prefix default replay passed; the four-prefix
+baseline matched originals, while candidate transaction2 was `not_mined`. A later
+separate diagnostic completed; the original cause remains unknown. Later image
+and native advisory gates did not run. No blind retry or weakened assertion.
+
+The failure-only test helper now observes its own guardian invocation with a
+fixed backend log filter, bounded finite event/index/EOF/truncation metadata and
+exact worker envelope SHA/branch binding. All23production sources and normal
+mandatory workflow commands remain unchanged. Owned reader/session cleanup and
+primary replay error preservation have focused regressions. A frozen integrated
+native synthetic control preserves full original receipts; missing storage emits
+same-invocation execution-skip2/1 with an unverified baseline. All seven owned
+nodes, eight readers and two proxy threads/ports close; source state is unchanged.
+This is diagnostic observability, not the cause of the original historical fail,
+a normal default-worker pass, profit or provider/state attestation.
+
+See [frozen proof and precise test/evidence scope](evidence/trace-oracle-provider/same-run-observer/README.md).
+Final independent source/privacy/evidence review passed; new-head required CI
+and protected-main human approval remain separate. No local Docker/VM or new
+archive/model/holdout/media operation. Current public composition remains
+coordinator8029/engine935; unpublished integration awaits all component gates.
+Overall goal active, with earlier raw-evidence loss disclosure retained.

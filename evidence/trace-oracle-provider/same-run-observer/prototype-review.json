@@ -1,0 +1,36 @@
+{
+  "scope": "Independent root source/finite-results/normal-fault-control/lifecycle evidence review; no new root Anvil/Docker/archive invocation",
+  "sources_sha256": {
+    "observer.py": "9cc5944e1f92808defd35f0f036331220346956aa365abea944248e7ec36b6dd",
+    "probe.py": "37058f669d4e0acfb2a790dcc51ea339bff71b82ef883565b8de86cb7dbac0e1",
+    "tests_observer.py": "8203ff425d34459cc75cee7e6d681ed8d84864acc1daa326118867dfc4a1ba1d"
+  },
+  "readiness_sha256": "95622c648ec3f45cd28d8e906d4dcbd19a2ebcf498c27341b6edd4f196b348f1",
+  "native_frozen_fixture_sha256": "4439e4a3848476b6eb64a6a634fbe608a0efb1fc2be08629f8e4d4ff361c5067",
+  "native_binary_sha256": "2ae79126940817dc8393bbb680faa6880226ea3424593828435b7128f4c07147",
+  "native_cases": 3,
+  "owned_nodes_closed": 9,
+  "observed_reader_threads_closed": 8,
+  "proxies_listener_handlers_ports_closed": 3,
+  "control_original_and_adverse_receipts_unchanged": true,
+  "known_missing_storage_observed_execution_skip_counts": [
+    2,
+    1
+  ],
+  "focused_tests": 8,
+  "focused_test_binding_scope": "Final observer/test bytes binding by ordered author chronology/addendum; unittest output has no startup hash. Earlier6-test exact source bytes unavailable, not rebound.",
+  "same_protocol_request_binding": "Not demonstrated: native probe hashes canonical plan, not normal worker envelope.",
+  "actual_historical_failure_cause": "unknown; no inference from this synthetic controlled proof",
+  "log_scan_limits": "Only bounded first131072bytes/8192line; incomplete/EOF/cap/overlong metrics distinguish absence of observation from complete scan. Logs unauthenticated; no state/provider cause attestation.",
+  "timing_scope": "Single observed/unobserved pair; negative timing difference is scheduling noise, not speed claim.",
+  "remaining_actionable_source_findings": [],
+  "transport_decision": "Extend separate failure-only diagnostic; preserve original mandatory default commands. Any observed custom entrypoint is diagnostic-only, never normal default proof.",
+  "artifacts_sha256": {
+    "results/finite-observations.json": "7e4c5ddefa9c1b1b600158eb07e608ef626e6b5a3ec98d1e2e1308fe841a36f6",
+    "results/observed_control.json": "f69d70b08bd898cb1b2865d4a33e3d69b1d7215c73c21a15d01b1b3b8b8df43d",
+    "results/observed_missing_storage.json": "5a94fbd1fe51db941d286b1234b490809e8da87638a08b5918185169e1f9fde9",
+    "results/unobserved_control.json": "f2dc946a74fc44a9d424cc1a22f003de0d5c361bb971740e63383fe09a01d7d8"
+  },
+  "frozen_manifest_source_and_evidence_bindings_verified": 7,
+  "startup_readiness_sha256": "bef1e898cd8783cbf525cfc81febe4792f733886f326b2b0227d4014ada606a5"
+}

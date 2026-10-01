@@ -1,0 +1,80 @@
+{
+  "scope": "004 integrated native diagnostic; independent raw comparison and source/payload preservation added after 003 terminal. Not normal default host dispatch, Docker or historical cause proof.",
+  "source_sha256": {
+    "scripts/build_worker.py": "6f930024a7da99b545fbe8b5e005f9aa961ef38defdc0777f0184662b10880a2",
+    "scripts/check_dependency_manifest.py": "d9c90b75f8c26ef0aa3723ab07580f05c7391a78ef12fcf20b99e80ef198deef",
+    "scripts/check_image_security.py": "e84d1c8d37c33a176706b6cad3fe32c5f3b1f8faf96422f694cc088763ea8261",
+    "scripts/check_native_security.py": "f32a97e5c0b7fd3cd611d31f83dc98c5150b0ec6249669ac2ad17d8ca5f4c29d",
+    "scripts/check_security.py": "515db8c5988e21ff3910e93cb08c8f53dec3ce557d6a5a09377583f4fb6fe1a7",
+    "src/entrotter_engine/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "src/entrotter_engine/__main__.py": "332eeac2f6b9f7522c230dd4b82c9d2e191ec2403345b91b3a02285ed7b26e13",
+    "src/entrotter_engine/_guardian.py": "3758412adb3e8761a3c82eac89cbf5a72bac7d0dad5c492a6825b4bb2a5f9ddf",
+    "src/entrotter_engine/_isolated_worker.py": "ec3ae2219ce1bce01e9d9aa97d67a0f1cbc354abcdda3e5514d028b0dfc271de",
+    "src/entrotter_engine/agent.py": "de16734bc3a9dac08d51efc7721bf5bb0c0671266df8883910dc0ac64374a01c",
+    "src/entrotter_engine/api.py": "cab74cd6a4e62230e5d6ce5c386a341e290fb1658ba8fc75892d02f859ebae3c",
+    "src/entrotter_engine/artifact.py": "a76cfe6d83e28f2f15ef7fb4f9b06dc5c5d51db0c89c7fa9c9e627161527787c",
+    "src/entrotter_engine/defi.py": "f4f5e6e50ad3745426c7d0fbc08b5fa42c79fd4daa225667821814f95acb7fde",
+    "src/entrotter_engine/evm.py": "1ec41f147a517c4372bdf72fb5763bde1adc3075e462786ba656ff87c26dba55",
+    "src/entrotter_engine/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "src/entrotter_engine/fixture.py": "1f771e23c8b8311bf1f5e9cc56bf30f7b369f8f617513d99024876688e809647",
+    "src/entrotter_engine/isolated.py": "61f99e799a7056f009e2181bd4df42da9c2a9a57ae8e7c642a46c46cd94fa70d",
+    "src/entrotter_engine/models.py": "80de1f5ab1e52f9dd00c0f3deaa3ea1a16a0ae159eab50c0a130a2431084b7e7",
+    "src/entrotter_engine/rpc.py": "fba46bb3b4f532c9bc42748f85663c9a2ca22e66aafcc238746759d5259f253e",
+    "src/entrotter_engine/runner.py": "d483df0825e3185548e68d6ead02d9e3fb89d8a12d9b0134b04b1a6a57d4d3df",
+    "src/entrotter_engine/store.py": "25a6b9fe252cd0c8eef00ce5c3eb869d3a54044b00e9a67653a5c00b41749b3b",
+    "src/entrotter_engine/trace.py": "709061f02814c918dc1cf04753d1e8df153517fa0e6cf7f5fc18d973f29b25b6",
+    "src/entrotter_engine/worker_protocol.py": "7f5f1320aab5c4fe987ba7d4af06ac83d9d08fef4f51912108950ffe2bfbb313",
+    "tests_isolated/diagnose_trace_worker.py": "d24ffd710a28308008a98a3655d9d592376bef686ce5e48d46d70d3bdf666af1",
+    "tests/test_trace_observer.py": "454501ab828fe9bb5e8495a19f4c4300738b5ae1d4013535c470e85a9a39c39a",
+    "tests/test_trace_diagnostic.py": "0f1a75c80e3c9b6f7351e3fef7e35b51c4810b743c414dff6324b24188d6cca6",
+    "tests/test_trace_oracle.py": "74be232dcc9927a22dd7326dbd7e94c4350ec18a20bf6de0900803842a215b0d",
+    "tests/data/canonical-local-oracle-inputs.json": "4439e4a3848476b6eb64a6a634fbe608a0efb1fc2be08629f8e4d4ff361c5067",
+    ".github/workflows/isolated.yml": "6e64ba15e26eb7917fdc9be764d9639d102211ea614bae8ba5549bc47828cee5",
+    ".quality/oracle-prefix/same-run-observer-004/probe.py": "32451afb2311d39c5a3ecc9b397d0f6ab190933d90b17b9008086e8f685efedf",
+    ".quality/oracle-prefix/same-run-observer-004/helper.py": "d24ffd710a28308008a98a3655d9d592376bef686ce5e48d46d70d3bdf666af1",
+    ".quality/oracle-prefix/same-run-observer-004/test_trace_observer.py": "454501ab828fe9bb5e8495a19f4c4300738b5ae1d4013535c470e85a9a39c39a",
+    ".quality/oracle-prefix/same-run-observer-004/test_trace_diagnostic.py": "0f1a75c80e3c9b6f7351e3fef7e35b51c4810b743c414dff6324b24188d6cca6"
+  },
+  "production_sources": [
+    "scripts/build_worker.py",
+    "scripts/check_dependency_manifest.py",
+    "scripts/check_image_security.py",
+    "scripts/check_native_security.py",
+    "scripts/check_security.py",
+    "src/entrotter_engine/__init__.py",
+    "src/entrotter_engine/__main__.py",
+    "src/entrotter_engine/_guardian.py",
+    "src/entrotter_engine/_isolated_worker.py",
+    "src/entrotter_engine/agent.py",
+    "src/entrotter_engine/api.py",
+    "src/entrotter_engine/artifact.py",
+    "src/entrotter_engine/defi.py",
+    "src/entrotter_engine/evm.py",
+    "src/entrotter_engine/export_budget.py",
+    "src/entrotter_engine/fixture.py",
+    "src/entrotter_engine/isolated.py",
+    "src/entrotter_engine/models.py",
+    "src/entrotter_engine/rpc.py",
+    "src/entrotter_engine/runner.py",
+    "src/entrotter_engine/store.py",
+    "src/entrotter_engine/trace.py",
+    "src/entrotter_engine/worker_protocol.py"
+  ],
+  "anvil_binary_sha256": "2ae79126940817dc8393bbb680faa6880226ea3424593828435b7128f4c07147",
+  "focused_tests": {
+    "observer_14": {
+      "seconds": 3.643,
+      "log_sha256": "fd404bf7277057d897f9e728723efca2dfea51981788cd1e97c6a6c6fa23308f",
+      "source_snapshot": "003 prelaunch 14-test snapshot"
+    },
+    "diagnostic_15": {
+      "seconds": 0.739,
+      "log_sha256": "bd3fa787d825a93248a659e0ac4aa9981fcc32497e066ac7041c1d3d91977320"
+    },
+    "added_collector_descendant_1": {
+      "seconds": 3.113,
+      "log_sha256": "3061200bad521b82dfeda6ba7e51466acc1dfdc22fa6dd8c9f8302276563ae75",
+      "source_snapshot": "004 final 15-test file"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "base": "aac525c8279005a3a8468fe3928e691c3ce80148",
+  "status": "independent_integrated_review_pass_new_head_ci_pending",
+  "native_scope": "Integrated trusted diagnostic execute_request on owned native synthetic source; not normal default host dispatch, Docker, historical cause or provider/state attestation.",
+  "startup_readiness_sha256": "93da6d6046d662672235bac71d9f7b2d3a2f21aa487b06a757c49468c510eea3",
+  "source_sha256": {
+    "tests_isolated/diagnose_trace_worker.py": "d24ffd710a28308008a98a3655d9d592376bef686ce5e48d46d70d3bdf666af1",
+    "tests/test_trace_observer.py": "454501ab828fe9bb5e8495a19f4c4300738b5ae1d4013535c470e85a9a39c39a",
+    "tests/test_trace_diagnostic.py": "0f1a75c80e3c9b6f7351e3fef7e35b51c4810b743c414dff6324b24188d6cca6",
+    ".github/workflows/isolated.yml": "6e64ba15e26eb7917fdc9be764d9639d102211ea614bae8ba5549bc47828cee5"
+  },
+  "production_sources_unchanged": 23,
+  "mandatory_normal_workflow_unchanged": true,
+  "focused_checks": {
+    "observer_14": {
+      "seconds": 3.643,
+      "log_sha256": "fd404bf7277057d897f9e728723efca2dfea51981788cd1e97c6a6c6fa23308f",
+      "source_snapshot": "003 prelaunch 14-test snapshot"
+    },
+    "diagnostic_15": {
+      "seconds": 0.739,
+      "log_sha256": "bd3fa787d825a93248a659e0ac4aa9981fcc32497e066ac7041c1d3d91977320"
+    },
+    "added_collector_descendant_1": {
+      "seconds": 3.113,
+      "log_sha256": "3061200bad521b82dfeda6ba7e51466acc1dfdc22fa6dd8c9f8302276563ae75",
+      "source_snapshot": "004 final 15-test file"
+    }
+  },
+  "focused_check_scope": "14-test frozen file passed, then only one additive collector-owned descendant test ran against final 15-test file; 15 legacy diagnostic tests pass. No full native/image rerun.",
+  "protocol_request_sha256": "5ca8a54907b0eca09602df3a3c827b1ac074c15bf6ebd8477a12d04c56d219f2",
+  "native_cases": {
+    "observed_control": {
+      "runtime_seconds": 0.323749,
+      "baseline_verified": true,
+      "candidate_statuses": [
+        "skipped",
+        "executed"
+      ],
+      "events": [
+        {},
+        {}
+      ],
+      "indices": [
+        {},
+        {}
+      ],
+      "raw_bytes_drained": [
+        6601,
+        4868
+      ],
+      "full_eof_no_truncation": true
+    },
+    "observed_missing_storage": {
+      "runtime_seconds": 0.329446,
+      "baseline_verified": false,
+      "candidate_statuses": [
+        "skipped",
+        "not_mined"
+      ],
+      "events": [
+        {
+          "execution_skip": 2
+        },
+        {
+          "execution_skip": 1
+        }
+      ],
+      "indices": [
+        {
+          "0": 1,
+          "1": 1
+        },
+        {
+          "1": 1
+        }
+      ],
+      "raw_bytes_drained": [
+        6100,
+        4269
+      ],
+      "full_eof_no_truncation": true
+    }
+  },
+  "owned_native_nodes_closed": 7,
+  "observed_reader_threads_closed": 8,
+  "proxy_listener_handler_threads_ports_closed": 2,
+  "original_report_preserved": true,
+  "payload_preserved": true,
+  "prior_aac_ci": {
+    "required_success": 7,
+    "isolated_success": false,
+    "actual_Docker_tests_passed": 25,
+    "first_prefix_default_passed": true,
+    "four_prefix_baseline_verified": true,
+    "four_prefix_candidate": [
+      "skipped",
+      "executed",
+      "not_mined",
+      "nonce_conflict"
+    ],
+    "subsequent_separate_diagnostic_completed": true,
+    "cause": "unknown",
+    "later_image_native_advisory_gates": "not_run"
+  },
+  "observation_limits": [
+    "Finite unauthenticated log observations for this diagnostic invocation only, never provider/state attestation or original historical failure cause.",
+    "First 131072 total bytes and 8192-byte lines scanned; EOF/cap/partial/errors explicitly scope absent observations.",
+    "Original guardian owner/lifetime/signal controls preserved; fixed backend logging and pipe readers change diagnostic dispatch only.",
+    "No actual Docker/default-host/historical observer invocation or new-head all-eight CI proof yet.",
+    "Prototype001 initial six-test bytes unavailable; prototype002 ordered source/test binding and 003 raw-unobserved omission remain distinct.",
+    "Earlier nine-node oracle raw evidence loss remains disclosed; no reconstruction.",
+    "Single native wall/trace observations are not a speed or benchmark claim."
+  ],
+  "independent_prototype_review": {
+    "path": "prototype-review.json",
+    "sha256": "28edb9d609e7dbaefbd597aed1d6a90a7c7359202aa04004cae984ca8e760bba",
+    "scope": "Earlier 002 scratch prototype only; final integrated 004 review is recorded separately."
+  },
+  "protected_main_approval": false,
+  "independent_integrated_review": {
+    "path": "independent-review.json",
+    "sha256": "eaa757efe666e58fb0e9c3e3fa6a103704debb30c1502152c56afb539a81209f",
+    "remaining_actionable_findings": 0,
+    "scope": "Source/protocol/privacy/frozen native evidence and offline consumers; not GitHub approval, Docker or new-head CI."
+  }
+}

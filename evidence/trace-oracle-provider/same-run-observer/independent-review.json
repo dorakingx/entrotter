@@ -1,0 +1,96 @@
+{
+  "scope": "Independent source, native evidence and SDK/actual site codec review; no root EVM/Docker/archive execution",
+  "readiness_sha256": "93da6d6046d662672235bac71d9f7b2d3a2f21aa487b06a757c49468c510eea3",
+  "source_sha256": {
+    "scripts/build_worker.py": "6f930024a7da99b545fbe8b5e005f9aa961ef38defdc0777f0184662b10880a2",
+    "scripts/check_dependency_manifest.py": "d9c90b75f8c26ef0aa3723ab07580f05c7391a78ef12fcf20b99e80ef198deef",
+    "scripts/check_image_security.py": "e84d1c8d37c33a176706b6cad3fe32c5f3b1f8faf96422f694cc088763ea8261",
+    "scripts/check_native_security.py": "f32a97e5c0b7fd3cd611d31f83dc98c5150b0ec6249669ac2ad17d8ca5f4c29d",
+    "scripts/check_security.py": "515db8c5988e21ff3910e93cb08c8f53dec3ce557d6a5a09377583f4fb6fe1a7",
+    "src/entrotter_engine/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "src/entrotter_engine/__main__.py": "332eeac2f6b9f7522c230dd4b82c9d2e191ec2403345b91b3a02285ed7b26e13",
+    "src/entrotter_engine/_guardian.py": "3758412adb3e8761a3c82eac89cbf5a72bac7d0dad5c492a6825b4bb2a5f9ddf",
+    "src/entrotter_engine/_isolated_worker.py": "ec3ae2219ce1bce01e9d9aa97d67a0f1cbc354abcdda3e5514d028b0dfc271de",
+    "src/entrotter_engine/agent.py": "de16734bc3a9dac08d51efc7721bf5bb0c0671266df8883910dc0ac64374a01c",
+    "src/entrotter_engine/api.py": "cab74cd6a4e62230e5d6ce5c386a341e290fb1658ba8fc75892d02f859ebae3c",
+    "src/entrotter_engine/artifact.py": "a76cfe6d83e28f2f15ef7fb4f9b06dc5c5d51db0c89c7fa9c9e627161527787c",
+    "src/entrotter_engine/defi.py": "f4f5e6e50ad3745426c7d0fbc08b5fa42c79fd4daa225667821814f95acb7fde",
+    "src/entrotter_engine/evm.py": "1ec41f147a517c4372bdf72fb5763bde1adc3075e462786ba656ff87c26dba55",
+    "src/entrotter_engine/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "src/entrotter_engine/fixture.py": "1f771e23c8b8311bf1f5e9cc56bf30f7b369f8f617513d99024876688e809647",
+    "src/entrotter_engine/isolated.py": "61f99e799a7056f009e2181bd4df42da9c2a9a57ae8e7c642a46c46cd94fa70d",
+    "src/entrotter_engine/models.py": "80de1f5ab1e52f9dd00c0f3deaa3ea1a16a0ae159eab50c0a130a2431084b7e7",
+    "src/entrotter_engine/rpc.py": "fba46bb3b4f532c9bc42748f85663c9a2ca22e66aafcc238746759d5259f253e",
+    "src/entrotter_engine/runner.py": "d483df0825e3185548e68d6ead02d9e3fb89d8a12d9b0134b04b1a6a57d4d3df",
+    "src/entrotter_engine/store.py": "25a6b9fe252cd0c8eef00ce5c3eb869d3a54044b00e9a67653a5c00b41749b3b",
+    "src/entrotter_engine/trace.py": "709061f02814c918dc1cf04753d1e8df153517fa0e6cf7f5fc18d973f29b25b6",
+    "src/entrotter_engine/worker_protocol.py": "7f5f1320aab5c4fe987ba7d4af06ac83d9d08fef4f51912108950ffe2bfbb313",
+    "tests_isolated/diagnose_trace_worker.py": "d24ffd710a28308008a98a3655d9d592376bef686ce5e48d46d70d3bdf666af1",
+    "tests/test_trace_observer.py": "454501ab828fe9bb5e8495a19f4c4300738b5ae1d4013535c470e85a9a39c39a",
+    "tests/test_trace_diagnostic.py": "0f1a75c80e3c9b6f7351e3fef7e35b51c4810b743c414dff6324b24188d6cca6",
+    "tests/test_trace_oracle.py": "74be232dcc9927a22dd7326dbd7e94c4350ec18a20bf6de0900803842a215b0d",
+    "tests/data/canonical-local-oracle-inputs.json": "4439e4a3848476b6eb64a6a634fbe608a0efb1fc2be08629f8e4d4ff361c5067",
+    ".github/workflows/isolated.yml": "6e64ba15e26eb7917fdc9be764d9639d102211ea614bae8ba5549bc47828cee5",
+    ".quality/oracle-prefix/same-run-observer-004/probe.py": "32451afb2311d39c5a3ecc9b397d0f6ab190933d90b17b9008086e8f685efedf",
+    ".quality/oracle-prefix/same-run-observer-004/helper.py": "d24ffd710a28308008a98a3655d9d592376bef686ce5e48d46d70d3bdf666af1",
+    ".quality/oracle-prefix/same-run-observer-004/test_trace_observer.py": "454501ab828fe9bb5e8495a19f4c4300738b5ae1d4013535c470e85a9a39c39a",
+    ".quality/oracle-prefix/same-run-observer-004/test_trace_diagnostic.py": "0f1a75c80e3c9b6f7351e3fef7e35b51c4810b743c414dff6324b24188d6cca6"
+  },
+  "production_sources_unchanged": 23,
+  "mandatory_workflow_unchanged": true,
+  "actual_protocol_request_sha256": "5ca8a54907b0eca09602df3a3c827b1ac074c15bf6ebd8477a12d04c56d219f2",
+  "native_cases": [
+    {
+      "case": "observed_control",
+      "report_sha256": "52b1f11d79af1da0031e16ab0ebd8a9a92074f525f5ae10cb1d12d10a897830a",
+      "baseline_verified": true,
+      "candidate_statuses": [
+        "skipped",
+        "executed"
+      ],
+      "drained_bytes": [
+        6601,
+        4868
+      ]
+    },
+    {
+      "case": "observed_missing_storage",
+      "report_sha256": "c4ba768c1a87eef1145b58a735072d2dc2adc9950bebc80349dcc467938cbf8c",
+      "baseline_verified": false,
+      "candidate_statuses": [
+        "skipped",
+        "not_mined"
+      ],
+      "drained_bytes": [
+        6100,
+        4269
+      ]
+    }
+  ],
+  "original_normal_and_adverse_receipts_unchanged": true,
+  "owned_nodes_closed": 7,
+  "reader_threads_closed": 8,
+  "proxy_listeners_handlers_ports_closed": 2,
+  "SDK_and_actual_viewer_report_hash_status_consistency": 3,
+  "SDK_trace_reader_sha256": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+  "actual_site_codec_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+  "source_state_unchanged": true,
+  "actionable_source_findings_remaining": [],
+  "limits": [
+    "Synthetic native observed diagnostic is not normal default Docker dispatch proof.",
+    "Finite log events are unauthenticated and do not attest provider/state cause.",
+    "Original historical CI failure cause remains unknown; later invocation cannot substitute for original failed gate.",
+    "Focused14 source is frozen003; new collector test source is frozen004; do not claim earlier14 executed final15 bytes."
+  ],
+  "artifact_sha256": {
+    "results/finite-observations.json": "93a5817d56f20dea19c6df3f79d85aedf5921bf3a23e2df3f0a8911973901174",
+    "results/observed_control-diagnostic.json": "3b27a581a49a291a520d89e8300f89ff71369e5b9fd255633be801b200b11deb",
+    "results/observed_control-nodes.json": "6f86b7d557b5d54bc4f1279a1155978964e00dc003687e8d9e6a427122d5229f",
+    "results/observed_control-report.json": "52b1f11d79af1da0031e16ab0ebd8a9a92074f525f5ae10cb1d12d10a897830a",
+    "results/observed_missing_storage-diagnostic.json": "7560d8909eb18260c2acff385f153a3089344550dfee209176c5c4202f61f55b",
+    "results/observed_missing_storage-nodes.json": "6f86b7d557b5d54bc4f1279a1155978964e00dc003687e8d9e6a427122d5229f",
+    "results/observed_missing_storage-report.json": "c4ba768c1a87eef1145b58a735072d2dc2adc9950bebc80349dcc467938cbf8c",
+    "results/unobserved-original-report.json": "471ddbf6a96fe503c95c7a3b8b85385de2837032b09dee0523be5b3c8097b318",
+    "results/worker-request.json": "5ca8a54907b0eca09602df3a3c827b1ac074c15bf6ebd8477a12d04c56d219f2"
+  }
+}
