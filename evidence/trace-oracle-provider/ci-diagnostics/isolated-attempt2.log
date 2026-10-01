@@ -1,0 +1,434 @@
+isolated	Set up job	﻿2026-10-01T18:41:55.3502090Z Current runner version: '2.337.0'
+isolated	Set up job	2026-10-01T18:41:55.3527472Z ##[group]Runner Image Provisioner
+isolated	Set up job	2026-10-01T18:41:55.3528461Z Hosted Compute Agent
+isolated	Set up job	2026-10-01T18:41:55.3529543Z Version: 20260901.588
+isolated	Set up job	2026-10-01T18:41:55.3530366Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+isolated	Set up job	2026-10-01T18:41:55.3531119Z Build Date: 2026-09-01T19:56:44Z
+isolated	Set up job	2026-10-01T18:41:55.3531820Z Worker ID: {fc058034-9b59-4656-97c4-c21decb6b0a3}
+isolated	Set up job	2026-10-01T18:41:55.3532607Z Azure Region: westus
+isolated	Set up job	2026-10-01T18:41:55.3533180Z ##[endgroup]
+isolated	Set up job	2026-10-01T18:41:55.3534750Z ##[group]Operating System
+isolated	Set up job	2026-10-01T18:41:55.3535445Z Ubuntu
+isolated	Set up job	2026-10-01T18:41:55.3535985Z 24.04.5
+isolated	Set up job	2026-10-01T18:41:55.3536547Z LTS
+isolated	Set up job	2026-10-01T18:41:55.3537106Z ##[endgroup]
+isolated	Set up job	2026-10-01T18:41:55.3537722Z ##[group]Runner Image
+isolated	Set up job	2026-10-01T18:41:55.3538347Z Image: ubuntu-24.04
+isolated	Set up job	2026-10-01T18:41:55.3538919Z Version: 20260927.320.1
+isolated	Set up job	2026-10-01T18:41:55.3540461Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+isolated	Set up job	2026-10-01T18:41:55.3542318Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+isolated	Set up job	2026-10-01T18:41:55.3543324Z ##[endgroup]
+isolated	Set up job	2026-10-01T18:41:55.3544464Z ##[group]GITHUB_TOKEN Permissions
+isolated	Set up job	2026-10-01T18:41:55.3546336Z Contents: read
+isolated	Set up job	2026-10-01T18:41:55.3547011Z Metadata: read
+isolated	Set up job	2026-10-01T18:41:55.3547663Z ##[endgroup]
+isolated	Set up job	2026-10-01T18:41:55.3549994Z Secret source: Actions
+isolated	Set up job	2026-10-01T18:41:55.3551108Z Cache mode: write
+isolated	Set up job	2026-10-01T18:41:55.3551817Z Prepare workflow directory
+isolated	Set up job	2026-10-01T18:41:55.4004251Z Prepare all required actions
+isolated	Set up job	2026-10-01T18:41:55.4053008Z Getting action download info
+isolated	Set up job	2026-10-01T18:41:55.8343596Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+isolated	Set up job	2026-10-01T18:41:55.9492912Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+isolated	Set up job	2026-10-01T18:41:56.0367897Z Download action repository 'foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09' (SHA:908c540300062bd5a7e473851cdb4282204cee09)
+isolated	Set up job	2026-10-01T18:41:56.5116769Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+isolated	Set up job	2026-10-01T18:41:56.7163454Z Complete job name: isolated
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-01T18:41:56.8059817Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8060988Z with:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8061470Z   repository: entrotter/engine
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8065142Z   token: ***
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8065595Z   ssh-strict: true
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8066056Z   ssh-user: git
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8066522Z   persist-credentials: true
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8067035Z   clean: true
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8067494Z   sparse-checkout-cone-mode: true
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8068046Z   fetch-depth: 1
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8068498Z   fetch-tags: false
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8069157Z   show-progress: true
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8069656Z   lfs: false
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8070130Z   submodules: false
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8070612Z   set-safe-directory: true
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8071150Z   allow-unsafe-pr-checkout: false
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8071959Z env:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8072408Z   PYTHONPATH: src
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8072934Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.8073546Z ##[endgroup]
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9123040Z Syncing repository: entrotter/engine
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9125788Z ##[group]Getting Git version info
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9126959Z Working directory is '/home/runner/work/engine/engine'
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9128663Z [command]/usr/bin/git version
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9239925Z git version 2.55.0
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9262615Z ##[endgroup]
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9277524Z Temporarily overriding HOME='/home/runner/work/_temp/e285cf04-27fb-4a32-b023-5126546afd1e' before making global git config changes
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9280229Z Adding repository directory to the temporary git global config as a safe directory
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9282922Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/engine/engine
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9332923Z Deleting the contents of '/home/runner/work/engine/engine'
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9336672Z ##[group]Initializing the repository
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9340687Z [command]/usr/bin/git init /home/runner/work/engine/engine
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9444160Z hint: Using 'master' as the name for the initial branch. This default branch name
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9446044Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9447200Z hint: to use in all of your new repositories, which will suppress this warning,
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9448082Z hint: call:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9539258Z hint:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9540531Z hint: 	git config --global init.defaultBranch <name>
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9541621Z hint:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9542665Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9544554Z hint: 'development'. The just-created branch can be renamed via this command:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9546206Z hint:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9547057Z hint: 	git branch -m <name>
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9548028Z hint:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9549553Z hint: Disable this message with "git config set advice.defaultBranchName false"
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9551415Z Initialized empty Git repository in /home/runner/work/engine/engine/.git/
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9554474Z [command]/usr/bin/git remote add origin https://github.com/entrotter/engine
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9557396Z ##[endgroup]
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9558900Z ##[group]Disabling automatic garbage collection
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9560323Z [command]/usr/bin/git config --local gc.auto 0
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9586565Z ##[endgroup]
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9587858Z ##[group]Setting up auth
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9588780Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:56.9623444Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:57.0008335Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:57.0053258Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:57.0281175Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:57.0318522Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:57.0543034Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:57.0583591Z ##[endgroup]
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:57.0584469Z ##[group]Fetching the repository
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:57.0595479Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +167a14ef8b6741781bb25d157374ddb9063d38fb:refs/remotes/pull/32/merge
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3497138Z From https://github.com/entrotter/engine
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3499762Z  * [new ref]         167a14ef8b6741781bb25d157374ddb9063d38fb -> pull/32/merge
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3503095Z ##[endgroup]
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3504226Z ##[group]Determining the checkout info
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3505549Z ##[endgroup]
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3512438Z [command]/usr/bin/git sparse-checkout disable
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3566517Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3627406Z ##[group]Checking out the ref
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3631294Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/32/merge
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3786870Z Note: switching to 'refs/remotes/pull/32/merge'.
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3788081Z 
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3789177Z You are in 'detached HEAD' state. You can look around, make experimental
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3791518Z changes and commit them, and you can discard any commits you make in this
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3793089Z state without impacting any branches by switching back to a branch.
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3794083Z 
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3794759Z If you want to create a new branch to retain commits you create, you may
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3796137Z do so (now or later) by using -c with the switch command. Example:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3796985Z 
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3797263Z   git switch -c <new-branch-name>
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3797803Z 
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3798115Z Or undo this operation with:
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3799250Z 
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3799742Z   git switch -
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3800247Z 
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3800970Z Turn off this advice by setting config variable advice.detachedHead to false
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3802085Z 
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3803335Z HEAD is now at 167a14e Merge e84980edd3945d405bf118790b8166c95bd75c7b into 935558a5b95755c72ca6fb24f076b3a231fa5b64
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3807446Z ##[endgroup]
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3847525Z [command]/usr/bin/git log -1 --format=%H
+isolated	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:41:58.3875602Z 167a14ef8b6741781bb25d157374ddb9063d38fb
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-10-01T18:41:58.4242371Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4243850Z with:
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4244476Z   python-version: 3.12
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4245232Z   check-latest: false
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4254432Z   token: ***
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4255183Z   update-environment: true
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4256018Z   allow-prereleases: false
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4256852Z   freethreaded: false
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4257544Z env:
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4258125Z   PYTHONPATH: src
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4259057Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.4260094Z ##[endgroup]
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.5605811Z ##[group]Installed versions
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.5706402Z (node:2307) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.5710899Z (Use `node --trace-deprecation ...` to show where the warning was created)
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.5713270Z Successfully set up CPython (3.12.14)
+isolated	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-10-01T18:41:58.5715833Z ##[endgroup]
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	﻿2026-10-01T18:41:58.6027976Z ##[group]Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6030595Z with:
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6031580Z   version: v1.8.3
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6032675Z   network: ethereum
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6033771Z   cache: true
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6034891Z   cache-key: isolated-167a14ef8b6741781bb25d157374ddb9063d38fb
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6036551Z   cache-restore-keys: isolated-
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6037594Z env:
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6038330Z   PYTHONPATH: src
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6039456Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6040753Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6042320Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6043854Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6045262Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6046637Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6048818Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.6050926Z ##[endgroup]
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.7369460Z Installing Foundry (version: v1.8.3)
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.7382792Z Downloading foundryup installer from foundry-rs/foundryup@a27902ef04dcb43061fabf343365cb5afc95fc48...
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:41:58.7700873Z Running foundryup installer...
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:00.6512117Z Running: foundryup --install 1.8.3
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:02.9587699Z Added /home/runner/.foundry/bin to PATH
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:02.9591262Z Primary key: linux-foundry-chain-fork-isolated-167a14ef8b6741781bb25d157374ddb9063d38fb
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:02.9595383Z Restore keys: linux-foundry-chain-fork-isolated-
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.1958469Z Cache not found
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.1959506Z Running: forge --version
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2018709Z forge Version: 1.8.3
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2019896Z Commit SHA: cae51ad458f6abb64852b7709eb784352429825d
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2020936Z Build Timestamp: 2026-09-15T10:46:16.519267388Z (1789469176)
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2021926Z Build Profile: dist
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2025275Z Running: cast --version
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2104341Z cast Version: 1.8.3
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2105019Z Commit SHA: cae51ad458f6abb64852b7709eb784352429825d
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2105761Z Build Timestamp: 2026-09-15T10:46:16.519267388Z (1789469176)
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2106426Z Build Profile: dist
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2112544Z Running: anvil --version
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2157419Z anvil Version: 1.8.3
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2157970Z Commit SHA: cae51ad458f6abb64852b7709eb784352429825d
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2158663Z Build Timestamp: 2026-09-15T10:46:16.519267388Z (1789469176)
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2159479Z Build Profile: dist
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2169787Z Running: chisel --version
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2206073Z chisel Version: 1.8.3
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2207125Z Commit SHA: cae51ad458f6abb64852b7709eb784352429825d
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2208074Z Build Timestamp: 2026-09-15T10:46:16.519267388Z (1789469176)
+isolated	Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09	2026-10-01T18:42:03.2208902Z Build Profile: dist
+isolated	Build local worker from digest-verified inputs	﻿2026-10-01T18:42:03.2335948Z ##[group]Run python scripts/build_worker.py
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2336388Z [36;1mpython scripts/build_worker.py[0m
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2336691Z [36;1mpython - <<'PY'[0m
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2336929Z [36;1mimport json, os[0m
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2337184Z [36;1mfrom pathlib import Path[0m
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2337620Z [36;1mimage = json.loads(Path('worker-image.json').read_text())['image_id'][0m
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2338093Z [36;1mwith open(os.environ['GITHUB_ENV'], 'a') as output:[0m
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2338500Z [36;1m    output.write('ENTROTTER_WORKER_IMAGE=' + image + '\n')[0m
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2338830Z [36;1mPY[0m
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2604821Z shell: /usr/bin/bash -e {0}
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2605205Z env:
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2605486Z   PYTHONPATH: src
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2605864Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2606393Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2607010Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2607668Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2608217Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2608765Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2609538Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:03.2610016Z ##[endgroup]
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:08.9990087Z #0 building with "default" instance using docker driver
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:08.9990674Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:08.9990881Z #1 [internal] load build definition from Dockerfile
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:08.9991577Z #1 transferring dockerfile: 360B 0.0s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:08.9992059Z #1 DONE 0.0s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:08.9992284Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:08.9993201Z #2 [internal] load metadata for cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.7569804Z #2 DONE 0.9s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8760363Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8761615Z #3 [internal] load .dockerignore
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8762738Z #3 transferring context: 2B done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8763216Z #3 DONE 0.0s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8763430Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8764028Z #4 [1/4] FROM cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8765377Z #4 resolve cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20 done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8766618Z #4 sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20 1.12kB / 1.12kB done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8767798Z #4 sha256:1a2d7475c7c0b979faefb02732f8f0aa40bd0862c41d134f81b00886aec1f01f 0B / 12.91MB 0.1s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8768880Z #4 sha256:28c972c1431bbe69cb9b16c0f75b357850302e8503212392cc1e00cb26d9e9d0 0B / 2.94MB 0.1s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8770639Z #4 sha256:51c6e4fc19caa33401af779542d33d25f48c4d0d1756a38a5123f587c47b6c2a 2.82kB / 2.82kB done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8777562Z #4 sha256:353fe07a386aa143c5d62d72d7b14a8381e048fa86b06155b88e8037afe16a86 0B / 3.36MB 0.1s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:09.8780777Z #4 sha256:6f89f21351dab025eae2c7594f802e958c6813114f16752c22e6407aa0630a21 2.50kB / 2.50kB done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0766652Z #4 ...
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0766937Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0767127Z #5 [internal] load build context
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0767660Z #5 transferring context: 50.55MB 0.2s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0768220Z #5 DONE 0.2s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0768426Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0769169Z #4 [1/4] FROM cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0770485Z #4 sha256:1a2d7475c7c0b979faefb02732f8f0aa40bd0862c41d134f81b00886aec1f01f 2.10MB / 12.91MB 0.3s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0771885Z #4 sha256:28c972c1431bbe69cb9b16c0f75b357850302e8503212392cc1e00cb26d9e9d0 2.94MB / 2.94MB 0.2s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0773224Z #4 sha256:353fe07a386aa143c5d62d72d7b14a8381e048fa86b06155b88e8037afe16a86 3.36MB / 3.36MB 0.3s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0774597Z #4 sha256:7ca2df4a7d903669d373373f17e70d2950b918b27a3f621e9cda97b96586dd80 0B / 699.56kB 0.3s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.0776267Z #4 sha256:bfd77f85335618ebb37198ab5bc555b0ef04959a6761d1ecaf20a4f88d46b365 0B / 1.35MB 0.3s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.2623078Z #4 sha256:1a2d7475c7c0b979faefb02732f8f0aa40bd0862c41d134f81b00886aec1f01f 6.29MB / 12.91MB 0.4s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.2624384Z #4 sha256:bfd77f85335618ebb37198ab5bc555b0ef04959a6761d1ecaf20a4f88d46b365 1.35MB / 1.35MB 0.4s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.2627027Z #4 sha256:40a26f2d1aef25be4125fca9dea99c4478794e33e5b60373d789758912a4c379 0B / 1.80MB 0.4s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.2628027Z #4 extracting sha256:1a2d7475c7c0b979faefb02732f8f0aa40bd0862c41d134f81b00886aec1f01f
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.3663363Z #4 sha256:1a2d7475c7c0b979faefb02732f8f0aa40bd0862c41d134f81b00886aec1f01f 12.91MB / 12.91MB 0.5s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.3664790Z #4 sha256:7ca2df4a7d903669d373373f17e70d2950b918b27a3f621e9cda97b96586dd80 699.56kB / 699.56kB 0.4s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.3665996Z #4 sha256:9de06a769f10118613abcf70953d711e0051f21705a2a390e159ec79ffd27ec8 0B / 973.80kB 0.5s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.3667145Z #4 sha256:5489185ba0a4c776c43c13768b40c2c2cfdcc1ec1801ccfc4b90d8f886c47c98 0B / 632.20kB 0.5s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.4760611Z #4 sha256:40a26f2d1aef25be4125fca9dea99c4478794e33e5b60373d789758912a4c379 1.80MB / 1.80MB 0.7s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.4761444Z #4 sha256:9de06a769f10118613abcf70953d711e0051f21705a2a390e159ec79ffd27ec8 973.80kB / 973.80kB 0.6s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.4762342Z #4 sha256:5489185ba0a4c776c43c13768b40c2c2cfdcc1ec1801ccfc4b90d8f886c47c98 632.20kB / 632.20kB 0.7s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.4765161Z #4 sha256:72f154a025dd07360e226be7997e4074d19373a0b0ae64e876f1f2bd3c51b808 378.52kB / 378.52kB 0.7s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.4766267Z #4 sha256:95875a932152e3696fd38728803d776a03d07b4c53836fcd2378a98dcec2dcb9 0B / 62.40kB 0.7s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.4767449Z #4 sha256:2eadf5f6db71e0a59307ef01338f2c4014d8e610312aa056a6816b16ce6cf49c 0B / 1.22MB 0.7s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.5759719Z #4 sha256:72f154a025dd07360e226be7997e4074d19373a0b0ae64e876f1f2bd3c51b808 378.52kB / 378.52kB 0.7s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.6761009Z #4 sha256:2eadf5f6db71e0a59307ef01338f2c4014d8e610312aa056a6816b16ce6cf49c 1.22MB / 1.22MB 0.8s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.7763497Z #4 extracting sha256:1a2d7475c7c0b979faefb02732f8f0aa40bd0862c41d134f81b00886aec1f01f 0.4s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.7764929Z #4 sha256:95875a932152e3696fd38728803d776a03d07b4c53836fcd2378a98dcec2dcb9 62.40kB / 62.40kB 0.9s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:10.7765940Z #4 extracting sha256:28c972c1431bbe69cb9b16c0f75b357850302e8503212392cc1e00cb26d9e9d0 0.0s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:11.8333847Z #4 extracting sha256:353fe07a386aa143c5d62d72d7b14a8381e048fa86b06155b88e8037afe16a86
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.0162449Z #4 extracting sha256:353fe07a386aa143c5d62d72d7b14a8381e048fa86b06155b88e8037afe16a86 0.0s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.0164131Z #4 extracting sha256:bfd77f85335618ebb37198ab5bc555b0ef04959a6761d1ecaf20a4f88d46b365 0.0s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.0165547Z #4 extracting sha256:7ca2df4a7d903669d373373f17e70d2950b918b27a3f621e9cda97b96586dd80 0.1s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.1352887Z #4 extracting sha256:40a26f2d1aef25be4125fca9dea99c4478794e33e5b60373d789758912a4c379 0.0s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.1354646Z #4 extracting sha256:9de06a769f10118613abcf70953d711e0051f21705a2a390e159ec79ffd27ec8 0.0s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.1356206Z #4 extracting sha256:5489185ba0a4c776c43c13768b40c2c2cfdcc1ec1801ccfc4b90d8f886c47c98 0.0s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.1357980Z #4 extracting sha256:72f154a025dd07360e226be7997e4074d19373a0b0ae64e876f1f2bd3c51b808 0.0s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.1360013Z #4 extracting sha256:2eadf5f6db71e0a59307ef01338f2c4014d8e610312aa056a6816b16ce6cf49c
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.3127660Z #4 extracting sha256:2eadf5f6db71e0a59307ef01338f2c4014d8e610312aa056a6816b16ce6cf49c 0.0s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.3129523Z #4 extracting sha256:95875a932152e3696fd38728803d776a03d07b4c53836fcd2378a98dcec2dcb9 done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.3130551Z #4 DONE 2.5s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5321389Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5321989Z #6 [2/4] COPY anvil /usr/local/bin/anvil
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5323152Z #6 DONE 0.0s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5323408Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5323706Z #7 [3/4] COPY entrotter_engine /app/entrotter_engine
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5324200Z #7 DONE 0.0s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5324364Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5324492Z #8 [4/4] WORKDIR /app
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5324785Z #8 DONE 0.0s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5324945Z 
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5325068Z #9 exporting to image
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:12.5325370Z #9 exporting layers
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:13.0090182Z #9 exporting layers 0.6s done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:13.0268172Z #9 writing image sha256:3795586fdb556e5ae6221b24aa537377413bd1bd9c571524a938043db74a7989 done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:13.0269598Z #9 naming to docker.io/library/entrotter-worker:f6a36d9a05c741ed done
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:13.0270297Z #9 DONE 0.6s
+isolated	Build local worker from digest-verified inputs	2026-10-01T18:42:13.1120113Z {"image_id": "sha256:3795586fdb556e5ae6221b24aa537377413bd1bd9c571524a938043db74a7989", "manifest": "worker-image.json", "published": false}
+isolated	Verify real kernel enforcement, API and lifetime cleanup	﻿2026-10-01T18:42:13.1588371Z ##[group]Run python -m unittest discover -s tests_isolated -v
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1588862Z [36;1mpython -m unittest discover -s tests_isolated -v[0m
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1653654Z shell: /usr/bin/bash -e {0}
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1653948Z env:
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1654173Z   PYTHONPATH: src
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1654472Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1654922Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1655446Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1655961Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1656428Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1656892Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1657385Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1658019Z   ENTROTTER_WORKER_IMAGE: sha256:3795586fdb556e5ae6221b24aa537377413bd1bd9c571524a938043db74a7989
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:13.1658620Z ##[endgroup]
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:14.3193552Z test_api_rejects_occupied_daemon_without_storing_report (test_admission.DaemonAdmissionTests.test_api_rejects_occupied_daemon_without_storing_report) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:14.9753306Z test_cli_rejects_occupied_daemon_without_replacing_export (test_admission.DaemonAdmissionTests.test_cli_rejects_occupied_daemon_without_replacing_export) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:17.4695318Z test_host_timeout_releases_owned_slot_for_next_run (test_admission.DaemonAdmissionTests.test_host_timeout_releases_owned_slot_for_next_run) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:23.2649364Z test_two_processes_race_after_both_observe_empty_slot (test_admission.DaemonAdmissionTests.test_two_processes_race_after_both_observe_empty_slot) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:23.6964400Z test_unstarted_container_keeps_slot_until_explicit_owned_removal (test_admission.DaemonAdmissionTests.test_unstarted_container_keeps_slot_until_explicit_owned_removal) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:25.4081621Z test_diverged_recording_and_gas_budget_fail_then_next_run_succeeds (test_agent.BoundedAgentTests.test_diverged_recording_and_gas_budget_fail_then_next_run_succeeds) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:25.9788211Z test_frozen_model_recording_replays_without_provider_or_network (test_agent.BoundedAgentTests.test_frozen_model_recording_replays_without_provider_or_network) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:26.5676613Z test_recording_larger_than_scenario_budget_stays_valid (test_agent.BoundedAgentTests.test_recording_larger_than_scenario_budget_stays_valid) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:27.9810266Z test_risk_matches_native_and_replays_complete_artifact (test_agent.BoundedAgentTests.test_risk_matches_native_and_replays_complete_artifact) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:28.5633765Z test_risk_respects_tight_requested_gas_budget (test_agent.BoundedAgentTests.test_risk_respects_tight_requested_gas_budget) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:38.1169795Z test_real_multistep_build_has_one_bounded_diagnostic_stream (test_build_output.BuildOutputTests.test_real_multistep_build_has_one_bounded_diagnostic_stream) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:38.8023778Z test_actual_image_protocol_replays_signed_oracle_update_and_adverse_omission (test_trace.BoundedCanonicalReplay.test_actual_image_protocol_replays_signed_oracle_update_and_adverse_omission) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:39.4645200Z test_actual_image_protocol_retains_same_block_funding_and_unmined_omission (test_trace.BoundedCanonicalReplay.test_actual_image_protocol_retains_same_block_funding_and_unmined_omission) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:40.1153198Z test_actual_worker_reconstructs_original_receipts_and_nonce_conflicts (test_trace.BoundedCanonicalReplay.test_actual_worker_reconstructs_original_receipts_and_nonce_conflicts) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:42.0870405Z test_cli_and_api_roundtrip (test_worker.IsolatedAPITests.test_cli_and_api_roundtrip) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:44.3792655Z test_cpu_quota_throttles_parallel_work (test_worker.IsolatedWorkerTests.test_cpu_quota_throttles_parallel_work) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:44.5570714Z test_kernel_controls_mounts_and_privileges (test_worker.IsolatedWorkerTests.test_kernel_controls_mounts_and_privileges) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:44.7360347Z test_memory_limit_actually_oom_kills_overallocation (test_worker.IsolatedWorkerTests.test_memory_limit_actually_oom_kills_overallocation) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:44.9074792Z test_pid_limit_actually_rejects_more_processes (test_worker.IsolatedWorkerTests.test_pid_limit_actually_rejects_more_processes) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:46.0412853Z test_real_fixture_and_anvil_results_match_native (test_worker.IsolatedWorkerTests.test_real_fixture_and_anvil_results_match_native) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:46.2185536Z test_runtime_has_python_and_anvil_without_shell_or_package_commands (test_worker.IsolatedWorkerTests.test_runtime_has_python_and_anvil_without_shell_or_package_commands) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:42:46.4377420Z test_tmpfs_space_and_noexec_are_enforced (test_worker.IsolatedWorkerTests.test_tmpfs_space_and_noexec_are_enforced) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:45:46.9627547Z Independent idle deadline observed after 180.524 seconds
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:45:47.2875789Z test_detached_idle_worker_expires_without_host_cooperation (test_worker.WorkerLifetimeTests.test_detached_idle_worker_expires_without_host_cooperation) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:45:48.4780493Z test_lost_client_is_bounded_by_independent_worker_timer (test_worker.WorkerLifetimeTests.test_lost_client_is_bounded_by_independent_worker_timer) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:45:49.6932124Z test_sigterm_ends_idle_worker_and_removes_container (test_worker.WorkerLifetimeTests.test_sigterm_ends_idle_worker_and_removes_container) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:45:49.6933182Z 
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:45:49.6933494Z ----------------------------------------------------------------------
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:45:49.6934071Z Ran 25 tests in 216.203s
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:45:49.6934295Z 
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-10-01T18:45:49.6934406Z OK
+isolated	Replay pinned mainnet transaction through the default bounded worker	﻿2026-10-01T18:45:49.7224013Z ##[group]Run python -m entrotter_engine trace-run tests/data/canonical-mainnet-prefix.json -o .quality/trace-replay/mainnet-prefix.json
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7225051Z [36;1mpython -m entrotter_engine trace-run tests/data/canonical-mainnet-prefix.json -o .quality/trace-replay/mainnet-prefix.json[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7225672Z [36;1mpython - <<'PY'[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7225902Z [36;1mimport json[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7226128Z [36;1mfrom pathlib import Path[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7226434Z [36;1mfrom entrotter_engine.trace import verify_trace[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7226918Z [36;1mreport = json.loads(Path('.quality/trace-replay/mainnet-prefix.json').read_text())[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7227451Z [36;1mif not verify_trace(report) or not report['baseline_verified']:[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7228016Z [36;1m    raise RuntimeError('Pinned mainnet receipt replay did not verify; no fixture substitution')[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7228565Z [36;1mreceipt = report['baseline']['outcomes'][0]['receipt'][0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7229357Z [36;1mif receipt['gasUsed'] != '0x32d10' or len(receipt['logs']) != 8:[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7229900Z [36;1m    raise RuntimeError('Pinned transaction execution differs from original receipt')[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7230668Z [36;1mprint(json.dumps({'artifact_id': report['artifact_id'], 'runtime_seconds': report['runtime_seconds'], 'gas_used': 208144, 'log_count': 8}))[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7231249Z [36;1mPY[0m
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7293916Z shell: /usr/bin/bash -e {0}
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7294172Z env:
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7294365Z   PYTHONPATH: src
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7294619Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7295004Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7295428Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7295850Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7296231Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7296625Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7297024Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7297532Z   ENTROTTER_WORKER_IMAGE: sha256:3795586fdb556e5ae6221b24aa537377413bd1bd9c571524a938043db74a7989
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7298021Z   ENTROTTER_RPC_URL: https://eth.drpc.org
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:49.7298298Z ##[endgroup]
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:53.6227805Z Error: Isolated worker failed or exceeded its resource budget; no fallback
+isolated	Replay pinned mainnet transaction through the default bounded worker	2026-10-01T18:45:53.6366421Z ##[error]Process completed with exit code 1.
+isolated	Verify no test workers remain	﻿2026-10-01T18:45:53.6421832Z ##[group]Run workers=$(docker ps --all --filter label=org.entrotter.worker=true --format '{{.ID}}')
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6422528Z [36;1mworkers=$(docker ps --all --filter label=org.entrotter.worker=true --format '{{.ID}}')[0m
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6423000Z [36;1mtest -z "$workers"[0m
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6485939Z shell: /usr/bin/bash -e {0}
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6486237Z env:
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6486439Z   PYTHONPATH: src
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6486704Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6487094Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6487563Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6488013Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6488411Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6488812Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6489457Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6490056Z   ENTROTTER_WORKER_IMAGE: sha256:3795586fdb556e5ae6221b24aa537377413bd1bd9c571524a938043db74a7989
+isolated	Verify no test workers remain	2026-10-01T18:45:53.6490537Z ##[endgroup]
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	﻿2026-10-01T18:45:53.6765935Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6766355Z with:
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6766747Z   name: worker-image-security
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6767326Z   path: .quality/image-security/
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	.quality/native-security/
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	.quality/build-output-docker.json
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	.quality/trace-replay/
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	worker-image.json
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6767947Z   include-hidden-files: true
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6768192Z   if-no-files-found: error
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6768422Z   compression-level: 6
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6768636Z   overwrite: false
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6768828Z env:
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6769267Z   PYTHONPATH: src
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6769517Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6769879Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6770305Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6770723Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6771112Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6771530Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6771932Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6772440Z   ENTROTTER_WORKER_IMAGE: sha256:3795586fdb556e5ae6221b24aa537377413bd1bd9c571524a938043db74a7989
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.6772892Z ##[endgroup]
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.8432385Z (node:8867) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.8433702Z (Use `node --trace-deprecation ...` to show where the warning was created)
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.8544748Z Multiple search paths detected. Calculating the least common ancestor of all paths
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.8557034Z The least common ancestor is /home/runner/work/engine/engine. This will be the root directory of the artifact
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.8558354Z With the provided path, there will be 2 files uploaded
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.8560241Z Artifact name is valid!
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:53.8560976Z Root directory input is valid!
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:54.2605668Z Beginning upload of artifact content to blob storage
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:54.2833698Z (node:8867) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:54.5595416Z Uploaded bytes 1689
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:54.6389146Z Finished uploading artifact content to blob storage!
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:54.6390076Z SHA256 digest of uploaded artifact zip is 0bd73eee868c4f2104d28a82a411a5db44b448aa129c4d6cbb772e9d77da2ff8
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:54.6391573Z Finalizing artifact upload
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:54.9379292Z Artifact worker-image-security.zip successfully finalized. Artifact ID 11185778341
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:54.9381463Z Artifact worker-image-security has been successfully uploaded! Final size is 1689 bytes. Artifact ID is 11185778341
+isolated	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-10-01T18:45:54.9388360Z Artifact download URL: https://github.com/entrotter/engine/actions/runs/36907558519/artifacts/11185778341
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-01T18:45:54.9598892Z Post job cleanup.
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0462004Z [command]/usr/bin/git version
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0507128Z git version 2.55.0
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0551664Z Temporarily overriding HOME='/home/runner/work/_temp/c926fda0-54a3-42aa-b740-ddac6b211476' before making global git config changes
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0553766Z Adding repository directory to the temporary git global config as a safe directory
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0557231Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/engine/engine
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0596886Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0632729Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0891913Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0921340Z http.https://github.com/.extraheader
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0933758Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.0969613Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.1233515Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+isolated	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-01T18:45:55.1273378Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+isolated	Complete job	﻿2026-10-01T18:45:55.1695206Z Cleaning up orphan processes
+isolated	Complete job	2026-10-01T18:45:55.2070080Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

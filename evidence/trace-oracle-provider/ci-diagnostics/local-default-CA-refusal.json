@@ -1,0 +1,8 @@
+{
+  "probe": "Same public readonlyeth_chainId directurllib transport, defaultTLSverification, noredirect override/fallback, no writes.",
+  "exception_type": "URLError",
+  "reason_type": "SSLCertVerificationError",
+  "ssl_verify_code": 20,
+  "ssl_verify_message": "unable to get local issuer certificate",
+  "elapsed_seconds": 0.033888
+}

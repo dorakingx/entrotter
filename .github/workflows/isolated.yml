@@ -33,6 +33,7 @@ jobs:
       - name: Verify real kernel enforcement, API and lifetime cleanup
         run: python -m unittest discover -s tests_isolated -v
       - name: Replay pinned mainnet transaction through the default bounded worker
+        id: mainnet_one
         env:
           ENTROTTER_RPC_URL: https://eth.drpc.org
         run: |
@@ -50,6 +51,7 @@ jobs:
           print(json.dumps({'artifact_id': report['artifact_id'], 'runtime_seconds': report['runtime_seconds'], 'gas_used': 208144, 'log_count': 8}))
           PY
       - name: Verify mainnet prefix divergence and nonce conflict within the shared deadline
+        id: mainnet_four
         env:
           ENTROTTER_RPC_URL: https://eth.drpc.org
         run: |
@@ -76,6 +78,12 @@ jobs:
               raise RuntimeError('Original signed nonce was changed or conflict concealed')
           print(json.dumps({'artifact_id': report['artifact_id'], 'runtime_seconds': report['runtime_seconds'], 'verified_original_receipts': 4, 'nonce_conflicts': 1}))
           PY
+      - name: Record privacy-safe bounded diagnostics after a historical replay failure
+        if: ${{ failure() && (steps.mainnet_one.outcome == 'failure' || steps.mainnet_four.outcome == 'failure') }}
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+          TRACE_DIAGNOSTIC_PLAN: ${{ steps.mainnet_one.outcome == 'failure' && 'tests/data/canonical-mainnet-prefix.json' || 'tests/data/canonical-mainnet-prefix-four.json' }}
+        run: python tests_isolated/diagnose_trace_worker.py "$TRACE_DIAGNOSTIC_PLAN" --output .quality/trace-replay/failure-diagnostic.json
       - name: Verify no test workers remain
         if: always()
         run: |

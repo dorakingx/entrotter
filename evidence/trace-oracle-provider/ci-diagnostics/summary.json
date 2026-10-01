@@ -1,0 +1,62 @@
+{
+  "base": "e84980edd3945d405bf118790b8166c95bd75c7b",
+  "status": "independent_source_review_pass_new_head_ci_pending",
+  "source_sha256": {
+    ".github/workflows/isolated.yml": "6e64ba15e26eb7917fdc9be764d9639d102211ea614bae8ba5549bc47828cee5",
+    "tests_isolated/diagnose_trace_worker.py": "fc9e1cfaecec7b417a51a30e605fcaaacfa843e7231c0dbf64ed9bcaf737fa1b",
+    "tests/test_trace_diagnostic.py": "c70b119f8ac3f480c71ef0deb1bf14ea91bac9de8d4783e89c41c3cd0896de24"
+  },
+  "focused_tests": {
+    "final_count": 15,
+    "seconds": 0.729,
+    "failures": 0,
+    "skips": 0,
+    "prior_14_count_seconds": 0.585,
+    "review_regressions_before": {
+      "count": 14,
+      "failures": 3,
+      "seconds": 0.598
+    },
+    "scope": "Real stdlib process/session/pipe and embedded-program execution; mocked Docker admission/removal. No Docker, network or archive execution."
+  },
+  "ci_at_base": {
+    "required_success": 7,
+    "isolated_attempts_failed": 2,
+    "actual_Docker_tests_each": 25,
+    "historical_failure": "first default-host one-prefix replay",
+    "cause": "unknown",
+    "all_eight_required_complete": false
+  },
+  "diagnostic": {
+    "execution": "trusted fixed test-only program, unchanged execute_request data protocol",
+    "failed_plan_selection": "exact one-prefix or four-prefix step outcome",
+    "shared_worker_slot": true,
+    "owner_label_fresh": true,
+    "trace_total_seconds": 150,
+    "entrypoint_seconds": 180,
+    "host_seconds": 190,
+    "stdout_bytes": 16384,
+    "checkpoint_limit": 32,
+    "exception_chain_nodes": 8,
+    "privacy": "finite allowlisted phases/methods/types/transport; optional strict integer SSL/HTTP codes; no messages, args, URL, params, traceback, stderr or dynamic class names",
+    "success_substitutes_failed_default_gate": false
+  },
+  "production_sources_unchanged": 23,
+  "wheel_modules_unchanged": 18,
+  "image_inputs_unchanged": 19,
+  "existing_security_findings_retained": 23,
+  "coverage_limits": [
+    "Helper lies outside production scanner/type scope; independent helper/privacy/lifecycle review required.",
+    "No final new-head CI, local Docker/VM or kernel-enforcement claim.",
+    "Healthy subsequent read-only capture does not prove transient cause of the two failures.",
+    "Original nine-node evidence-loss disclosure remains unchanged in enclosing oracle evidence."
+  ],
+  "current_public_composition": "coordinator8029 / engine935; prepared integration remains unpublished",
+  "independent_review": {
+    "path": "independent-review.json",
+    "sha256": "c0b5fe083635df27eec26896f4574d853365b02e77ad7473d2bfdbd5b4268e50",
+    "readiness_sha256": "1d934a9ffd0e6bfb253830f7ccf12d6a6f71a07fda6dc3b2ea561916f54fde88",
+    "remaining_actionable_findings": 0,
+    "scope": "Source/privacy/lifecycle and observed stdlib evidence; not GitHub human approval, Docker/kernel or new-head CI success"
+  }
+}
