@@ -121,11 +121,15 @@ Author checks:63Node/11Python units, full lint/format/checkJs/Python checks pass
 All97 findings across14JS sources/15type inputs remain visible (all55 prior plus
 42 individual explanations), no rule suppression;1Python source has zero full
 Bandit findings. Node109/Python42 dependency audits report zero advisories.
-Prior-source actual Chromium desktop/390/320px checks pass33groups and25axe scans, including
+Final-source local Chromium desktop/390/320px checks pass33groups and25axe scans, including
 keyboard/import/reflow, exact receipt rows, inert hostile text, contradictory and
 oversized imports, Python float/integer/Unicode imports, unverified recovery and
-delayed-sample races. This browser proof precedes the final codepoint-length fix;
-final exact-head CI will rerun the unchanged full browser harness. Imports emit
+delayed-sample races. This proof includes the final codepoint-length fix and actual Tab navigation to
+the native chooser. The first Linux attempt timed out in apt setup; retry reached
+the harness and exposed one1280px programmatic-focus chooser timeout. Sequential
+Tab navigation retains all chooser/import assertions; independent review and
+focused padded-control screenshots confirm visible parent-label focus at all
+three widths. Final exact-head Linux CI remains required. Imports emit
 zero requests; only same-origin GETs occur. Manual assistive-tech/full WCAG remain
 open. See evidence/trace-viewer for raw proof/source hashes and retained limits.
 

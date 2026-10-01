@@ -35,7 +35,7 @@
     "dependency_advisories": 0,
     "browser_groups": 33,
     "axe_scans": 25,
-    "browser": "Prior-source Chromium153.0.8010.12; final exact-head CI pending",
+    "browser": "Final-source local Chromium153.0.8010.12; exact-head Linux CI pending",
     "node": "22.23.1",
     "viewports": [
       1280,
@@ -52,20 +52,27 @@
     "Same-block parent-state funding, broader oracle/missing-state/fullblock/opcode/root/end-withdrawal and alternate-economy limits persist.",
     "Automated Chromium/axe/keyboard, not manual assistive-technology or complete WCAG certification.",
     "No new engine/archive/model/holdout/media/Docker/VM execution; no deployment, protected merge or GitHub approval.",
-    "Prior browser evidence precedes final text-length fix; final exact-head required browser CI remains pending.",
-    "Float/integer runtime encodings both retain the same numeric metadata; checksum does not authenticate the report."
+    "Float/integer runtime encodings both retain the same numeric metadata; checksum does not authenticate the report.",
+    "Final local browser proof passes; final exact-head Linux browser CI remains pending."
   ],
   "files_sha256": {
+    "evidence/trace-viewer/1280-signed-prefix-file-focus.png": "2aef501a58ccad19d36e4bcdff4a9217403b1ed755bb7e20ca8ea643cd23a2a6",
     "evidence/trace-viewer/1280-signed-prefix.png": "842a74aeab86712ded53ca40e895bde6ab76e12ffa3b029903408efe32d37ab6",
+    "evidence/trace-viewer/320-signed-prefix-file-focus.png": "1fb1750d247b826c3afa283138743bd1e53476289eb628989a40f702c42bc0a0",
     "evidence/trace-viewer/320-signed-prefix.png": "2fe578caae88a7daa4c36483b191927171bdd2f987c0e0ec6b93e0aa74e7368c",
+    "evidence/trace-viewer/390-signed-prefix-file-focus.png": "e424a503a26829d47dfb97dde5e307052ebcfe5d6efdc0d869e7ecbced0ee4fd",
     "evidence/trace-viewer/390-signed-prefix.png": "6fb50884dd1ae9e47c99ac5982be7149f4d21d564c7e346aacdb11081d7f226c",
-    "evidence/trace-viewer/axe-signed-prefix-1280.json.gz": "60749821404858e93efaeb144fd6a32ea3b8b553d9af88bd7ce7c4fd10fe7984",
-    "evidence/trace-viewer/axe-signed-prefix-320.json.gz": "f8ebc61e6fcd01665b26ea27a92c2671a59e1a299ac652461df3201d09cea2ae",
-    "evidence/trace-viewer/axe-signed-prefix-390.json.gz": "22a8820f039557320bf961841b1b1b443c1e82e8090f41552d806cc835e4cdbd",
-    "evidence/trace-viewer/axe-signed-prefix-unverified.json.gz": "b98840769938c12fa8a0ccbf2d25488c75532e85ea98497b516fa988e1a56251",
-    "evidence/trace-viewer/browser.json": "aea5427db0a5b0ac392ffbec25eed4aa0a98f006c2c26ac1e44fb4e985f100b4",
-    "evidence/trace-viewer/commands.md": "4da9e51eef862773afe5fa1ef15af94471923dba2cbeaf0b3feb348480e1dd4d",
+    "evidence/trace-viewer/axe-signed-prefix-1280.json.gz": "06e1dc0a98c88f8099490445c6a49e7fc911acc764936523910945ec88f2f04e",
+    "evidence/trace-viewer/axe-signed-prefix-320.json.gz": "21fe906aaca6b677fff556604d6d7a0395efe963bdd2fc78ad0050e8f5d39844",
+    "evidence/trace-viewer/axe-signed-prefix-390.json.gz": "c799151cea389d2662d60068dbee9e92a29aa71b54c9ee11bbecfc2c6b5c91d7",
+    "evidence/trace-viewer/axe-signed-prefix-unverified.json.gz": "705835787a94f0911c97623a457dfee99a354556bcc6289a0b3e4602989d648e",
+    "evidence/trace-viewer/browser-prior-source.json": "aea5427db0a5b0ac392ffbec25eed4aa0a98f006c2c26ac1e44fb4e985f100b4",
+    "evidence/trace-viewer/browser.json": "63cb22d676ec11a04b5a8054c9dbaff86864b93b040d22e3734d129c3885064a",
+    "evidence/trace-viewer/ci-failures.json": "a4c2076b0468680eef4f386c7724e6851e9641e489cebd2e580690599ff4c49c",
+    "evidence/trace-viewer/commands.md": "fcd64acff001f388657598a0dd1baf2d8c88c28b15daf358ef4709e73eff5f40",
     "evidence/trace-viewer/independent-review.json": "cfa05d920cf3766d1d2682e3164eca41e2ce80f44b07d9ca157fde272e7ed38d",
+    "evidence/trace-viewer/keyboard-independent-review.json": "d4fc1fff63955d25078295c87ae349ff8ff37e70d2801a5cda4a37d32605129b",
+    "evidence/trace-viewer/keyboard-visual.json": "cc90e0ebe549d198d7e70ae4ff4a7a12db0d12da10690b41535263445e586e67",
     "evidence/trace-viewer/npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
     "evidence/trace-viewer/python-dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
     "evidence/trace-viewer/python-security.json": "29cbae523aa0d92650fd1caca2a80ec1d58d634fb2628aa66c8ac1b744df305a",
@@ -75,22 +82,23 @@
     "evidence/trace-viewer/review-text-length-failing-before.log": "faca6aee218ec8b21c8adf90568e788c6b22a372097e489da9d83d0b62dbd0ac",
     "evidence/trace-viewer/review-unicode-failing-before.log": "fc3f23cb2dfe27909b6234f7cd7de642073d33530d617f3bd340a22c1f41509d",
     "evidence/trace-viewer/scope.json": "af77fb8d4a8ba4fd1b24c96ea337e0f42f5c12f6bd20b2780a14451ded08948b",
-    "evidence/trace-viewer/security.json": "638c7c02e78404e44d213f44ecb1ed2d53bc063a3e6541641dfd3c2ec78c86c2",
-    "evidence/trace-viewer/source-sha256.json": "e1a8531a58d39d908742a6f13ad676836ab8c11e771091af2b44023f8ea21471",
+    "evidence/trace-viewer/security.json": "d5b0492ee417c847543d0be9ffcb99821bac1072b8794a86e0167fa478a9b5b5",
+    "evidence/trace-viewer/source-sha256.json": "2361eae5b2d34d8c6be03726c8afb6131f258ab45830e3cee5f2d6be4f14a0db",
     "evidence/trace-viewer/unit-tests.log": "8eae7a51a7a36247cd08a84a692270577ac76cfca0bf5014b05d02ebead49880"
   },
   "browser_source_scope": {
-    "proof": "browser.json records exact checked source hashes; last full local browser run precedes final bounded Unicode codepoint-length fix",
-    "checked_trace_report_sha256": "4755dc15551076b27f3038f12654d341a087e413c31368d9a25242d29c3cfe78",
+    "proof": "browser.json final product source and892752e runner; browser-prior-source.json preserves earlier4755 product source proof",
     "final_trace_report_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
-    "final_full_browser": "Required exact-head CI will execute unchanged full harness, not claimed complete here"
+    "runner_sha256": "892752eaf701319a2b99f7b58ff8ac95f97ef5f05740fd9b7c6222d022228825",
+    "Linux_CI": "Required exact-head CI pending after setup stall and concrete keyboard harness fix"
   },
   "review": {
     "source": "independent-review.json",
     "remaining_actionable": 0,
     "resolved_findings": 6,
     "independent_numeric_codec_cases": 52,
-    "github_approval": false
+    "github_approval": false,
+    "keyboard_followup": "keyboard-independent-review.json"
   },
   "unit_fixture_provenance": {
     "files": [
@@ -101,5 +109,6 @@
     ],
     "scope": "Python stdlib resealed metadata based on unchanged one-prefix fixture; runtime/text vectors and one metadata-modified67,204byte RLP envelope with no valid-signature or execution claim test reader compatibility. These are not new valid signatures, EVM/chain runs or original recorded execution.",
     "before_fix_logs": "Paths replaced with <viewer-repository> and trailing whitespace removed; 3 original regression failures +1raw +1DEL +1codepoint group, now pass."
-  }
+  },
+  "keyboard_visual_scope": "Separate ignored3group/3axe probe preserves native chooser+visible parent-label outline; padded screenshots visually inspected1280/320 (390same assertion). Not full-browser or manual assistive-tech certification."
 }

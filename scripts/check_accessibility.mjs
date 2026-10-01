@@ -933,8 +933,12 @@ try {
             .update(canonical(original))
             .digest("hex");
           const count = requests.length;
-          await page.locator("#trace-import").focus();
+          // Enter the native file control through sequential keyboard focus,
+          // as in the existing console chooser check, after leaving the table.
+          await page.locator("#trace-sample").focus();
+          await page.keyboard.press("Tab");
           await focusIs(page, "trace-import");
+          await visibleFocus(page);
           const chooser = page.waitForEvent("filechooser");
           await page.keyboard.press("Enter");
           await (

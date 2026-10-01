@@ -28,10 +28,11 @@ all55 prior findings are retained and42 additional findings have individual
 rationales. No security rule or dependency advisory was suppressed. New browser
 checks first exposed asynchronous keyboard-scroll/focus test synchronization;
 the corrected harness waits for actual scrolling and confirms file-input focus.
-The prior-source full browser run passes33groups/25axe scans, preserving all
-existing cases plus Python float/integer/Unicode import compatibility. It precedes
-the final codepoint-length fix (browser.json records exact source hashes); final
-exact-head CI runs the full harness. Final source passes63Node units and full
+The final-source local full browser run passes33groups/25axe scans, preserving all
+existing cases plus Python float/integer/Unicode import compatibility and actual
+Tab navigation into the native chooser. browser.json records exact final source
+hashes; browser-prior-source.json retains the earlier run. Exact-head Linux CI
+remains required. Final source passes63Node units and full
 source-bound lint/format/types/security; unchanged11Python units and locked
 dependency audits are reused.
 Full scan/audit results and screenshots are here; all detailed axe scans remain
@@ -45,3 +46,12 @@ Version/gas/revert-bloom consistency guards were included in that same batch.
 All affected regressions now pass. Public independent-review.json records source
 hashes and52additional independent numeric codec probes; it is software review,
 not GitHub human approval, authenticity/EVM certification or a deployment claim.
+
+First CI apt setup timeout and failed-only retry are retained in ci-failures.json.
+The retry exposed one1280px direct programmatic native-focus chooser failure,
+while32other groups/25axe scans passed. The reviewed harness now enters the
+control with actual Tab and retains Enter/filechooser/import/zero-network checks.
+keyboard-visual.json and padded-control screenshots come from a separate ignored
+3group visual probe (same product source, only focus-label assertions/captures
+added); this is not the full33group runner. Its label outline is visibly mint at
+1280/390/320px. Original full ignored CI logs remain preserved.

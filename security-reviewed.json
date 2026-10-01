@@ -10,7 +10,7 @@
     "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
     "requirements-quality.in": "eccd79884fb38364cc396e59e22eb5a78f48bbf92e2c0b47825dcff473692185",
     "requirements-quality.txt": "845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722",
-    "scripts/check_accessibility.mjs": "006a4cbfd22f8969b3895aced789542b6d85476cdfb0f8a66c70c3b007855839",
+    "scripts/check_accessibility.mjs": "892752eaf701319a2b99f7b58ff8ac95f97ef5f05740fd9b7c6222d022228825",
     "scripts/check_quality.mjs": "51d72e7ccb7e9716acfc50e39bdf692a2512532e6da91491358da1437f4794d8",
     "scripts/quality_policy.mjs": "e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89",
     "tests/comparison.test.mjs": "35a035d9e806548d20224070fa707e8866783c639e860ccc3afece23376b6327",
@@ -601,9 +601,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 978,
+        "line": 982,
         "column": 17,
-        "endLine": 981,
+        "endLine": 985,
         "endColumn": 12
       },
       "reason": "The trusted browser harness indexes fixed viewport/report fixtures and explicitly bounded arrays while testing hostile resealed data as inert JSON. File names/routes and loopback origin are developer constants; indexed report values never select shell commands or remote destinations."
@@ -614,9 +614,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1049,
+        "line": 1053,
         "column": 17,
-        "endLine": 1052,
+        "endLine": 1056,
         "endColumn": 12
       },
       "reason": "The trusted browser harness indexes fixed viewport/report fixtures and explicitly bounded arrays while testing hostile resealed data as inert JSON. File names/routes and loopback origin are developer constants; indexed report values never select shell commands or remote destinations."
@@ -627,9 +627,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1055,
+        "line": 1059,
         "column": 17,
-        "endLine": 1058,
+        "endLine": 1062,
         "endColumn": 12
       },
       "reason": "This hashes only the fixed nine-item source inventory beneath trusted operator SITE_DIR. Imported reports cannot select paths; missing files become explicit null evidence."
@@ -640,9 +640,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1063,
+        "line": 1067,
         "column": 19,
-        "endLine": 1066,
+        "endLine": 1070,
         "endColumn": 14
       },
       "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
@@ -653,36 +653,10 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1099,
+        "line": 1103,
         "column": 32,
-        "endLine": 1102,
+        "endLine": 1106,
         "endColumn": 10
-      },
-      "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
-    },
-    {
-      "finding": {
-        "file": "scripts/check_accessibility.mjs",
-        "ruleId": "security/detect-object-injection",
-        "severity": 1,
-        "message": "Generic Object Injection Sink",
-        "line": 1190,
-        "column": 7,
-        "endLine": 1190,
-        "endColumn": 19
-      },
-      "reason": "Missing source bytes assign null only to a key from the fixed inventory. Imported report fields cannot select property names or mutate object prototypes."
-    },
-    {
-      "finding": {
-        "file": "scripts/check_accessibility.mjs",
-        "ruleId": "security/detect-non-literal-fs-filename",
-        "severity": 1,
-        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1191,
-        "column": 23,
-        "endLine": 1191,
-        "endColumn": 52
       },
       "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
     },
@@ -697,6 +671,32 @@
         "endLine": 1194,
         "endColumn": 19
       },
+      "reason": "Missing source bytes assign null only to a key from the fixed inventory. Imported report fields cannot select property names or mutate object prototypes."
+    },
+    {
+      "finding": {
+        "file": "scripts/check_accessibility.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 1195,
+        "column": 23,
+        "endLine": 1195,
+        "endColumn": 52
+      },
+      "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
+    },
+    {
+      "finding": {
+        "file": "scripts/check_accessibility.mjs",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 1198,
+        "column": 7,
+        "endLine": 1198,
+        "endColumn": 19
+      },
       "reason": "The evidence inventory assigns hashes only to keys from the fixed source file list. No imported report key can select a property or prototype mutation."
     },
     {
@@ -705,9 +705,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found writeFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1221,
+        "line": 1225,
         "column": 9,
-        "endLine": 1224,
+        "endLine": 1228,
         "endColumn": 4
       },
       "reason": "The final evidence report uses the fixed accessibility.json filename under the operator/CI-selected output directory. Imported report contents cannot select its destination."
