@@ -1042,3 +1042,30 @@ explicit prerequisites; this is not cold machine setup. Source service/CLI guide
 retain separately tested older installation pins, without a new install claim.
 See evidence/latest-agent-cli/summary.json; current-head CI remains separately
 recorded in the PR. Main integration, independent review and submission gates stay open.
+
+## October 1 — Independent agent-inspection review and fix
+
+A separate Codex code reviewer found that a hash-resealed extra response `step`
+could replace the causal observation step displayed by CLI `inspect`. Engine
+execution already rejects that invalid typed response. CLI #10/22b514c now checks
+exact response keys before inspection/replay and gives the observation step final
+precedence. Three failing-before assertions become passing refusals, including
+zero optional-engine calls and preserved incumbent exports. The reviewer then
+confirmed resolution with focused checks; this is not a GitHub approving review.
+
+All 42 local units and Linux units on Python 3.11/3.12/3.13 pass. All four actual
+Docker groups reproduce the original complete risk/model reports in 2.935s with
+no model call. Six current-head checks pass; downloaded six-source security,
+CLI/SDK wheel and all 18 worker-input hashes match, including actual local SDK
+bytes. The full scanner retains zero findings/skips and 42 locked packages have
+no reported Python advisories. Public review/failure/fix evidence is in CLI's
+`evidence/inspection-review/`; coordination selects this exact tested fix and
+needs separate current-head CI. Prior PR55/2e12018 passed all five checks after
+rerunning only its failed Docker-metadata job; its internal cause remains unknown.
+The prior full guide timing belongs to its actual old pins; new clean replay
+measurements are separate.
+
+Independent GitHub approval remains empty; main protections and original reports
+and evaluations stay intact. No model/archive evaluation, protected merge,
+deployment, user outreach or submission occurred. The stopped dedicated VM is
+not restarted for this parse-only local fix; Linux CI supplies fresh Docker proof.

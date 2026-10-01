@@ -1,0 +1,96 @@
+{
+  "status": "tested_CLI_selected_combined_current_head_CI_pending",
+  "previous_coordination_head": "2e12018fc84db532bde465c7950246406738b340",
+  "CLI_fix": {
+    "head": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "all_six_checks": "passed",
+    "source_files_verified": 6,
+    "wheel_files_verified": {
+      "wheels": 4,
+      "sdk-wheels": 2
+    },
+    "local_test_SDK_bytes_match": true,
+    "worker_image_inputs_verified": 18,
+    "retained_security_findings": 0,
+    "audited_Python_packages": 42,
+    "reported_advisories": 0,
+    "unit_tests_per_Python_version": 42,
+    "Python_versions": [
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
+    "actual_Docker_tests": 4,
+    "actual_Docker_seconds": 2.935,
+    "new_model_calls": 0,
+    "independent_code_review": "P3 resolved; follow-up focused checks pass",
+    "GitHub_reviews": [],
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:25:37Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/cli/actions/runs/36855240936/job/110346072239",
+        "name": "quality",
+        "startedAt": "2026-10-01T11:25:12Z",
+        "status": "COMPLETED",
+        "workflowName": "CLI quality and Python dependency audit"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:25:21Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/cli/actions/runs/36855240873/job/110346072053",
+        "name": "docs-links",
+        "startedAt": "2026-10-01T11:25:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Documentation links"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:25:19Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/cli/actions/runs/36855240882/job/110346072333",
+        "name": "unit (3.11)",
+        "startedAt": "2026-10-01T11:25:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:25:20Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/cli/actions/runs/36855240882/job/110346072039",
+        "name": "unit (3.12)",
+        "startedAt": "2026-10-01T11:25:13Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:25:20Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/cli/actions/runs/36855240882/job/110346072352",
+        "name": "unit (3.13)",
+        "startedAt": "2026-10-01T11:25:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:25:36Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/cli/actions/runs/36855240882/job/110346072286",
+        "name": "agent",
+        "startedAt": "2026-10-01T11:25:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      }
+    ]
+  },
+  "source_review": "https://github.com/entrotter/cli/blob/22b514cbba2ecd0c41ae99c330f8396c97acebf2/evidence/inspection-review/review.json",
+  "original_report_inputs": "unchanged; no new model/archive calls or consumed holdout tuning",
+  "previous_walkthrough": "evidence/latest-agent-cli/summary.json remains the actual26.043s all-five-block run at CLI87cfe40/coord924f60e. Do not transfer that timing to the new pins.",
+  "public_current_commands": "updated immutable source guide; complete current clean fixture/model replay is verified by separate CI artifacts",
+  "remaining": "Independent GitHub approval, protected main/publication, verified personal form facts, hosted approved videos and submission remain open."
+}

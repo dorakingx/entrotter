@@ -4,7 +4,7 @@
     "agent-engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
     "worker-engine": "c1671938edde03c59deef64dbb81d7c41a33406b",
     "sdk": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
-    "cli": "87cfe4078dfaaaa3eebcbff65bcedc8d60013cc8"
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2"
   },
   "frozen_sources": {
     "scripts/codex_policy.py": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76"
