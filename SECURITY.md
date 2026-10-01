@@ -25,6 +25,14 @@ RPC URLs can contain secrets: never include them in reports, commands in
 screenshots, logs, pull requests, or issue bodies. The optional fork URL may
 be visible to other processes owned by your OS user; run on a trusted machine.
 
+The default worker checks bound Docker `info` to 1 MiB and its `ps` admission/
+ownership response to 128 bytes before parsing. Both use bounded chunk reads,
+a ten-second pipe/client deadline and owned-process-group cleanup on timeout,
+reader failure or Python cancellation. Arbitrary native callers, sudden owner
+SIGKILL, process launch/kernel stalls and other Docker/tool response captures
+remain outside this metadata helper's guarantees. Docker itself stays trusted;
+a bounded response is not proof of honest daemon state.
+
 The default isolated worker adds tested per-experiment Linux kernel quotas,
 non-root/read-only execution and no network for non-fork modes. Fork workers
 still use a general bridge network; arbitrary code execution stays disabled.

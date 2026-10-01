@@ -187,6 +187,16 @@ credentials. The dedicated Docker tests fail if the daemon/image is unavailable;
 they are separate from offline and native-Anvil tests and require cgroup v2.
 The owner-loss test can take approximately three minutes.
 
+Before creating a worker, Docker resource information is read in chunks of at
+most 4 KiB and accepted only up to 1 MiB; admission/ownership queries accept at
+most 128 bytes and still require a single full immutable ID. Overflow fails
+before JSON/ID acceptance. Both fixed metadata commands have a ten-second
+pipe-and-client deadline. Their private process group is killed on reader
+failure, timeout or Python cancellation, including descendants retaining stdout.
+This covers `info` and `ps`, not every Docker response or host process overhead.
+The actual regression and resource-scope limits are in
+[metadata evidence](evidence/docker-metadata/summary.json).
+
 Each worker has one CPU quota, 512 MiB RAM, no swap, 128 process/thread slots,
 a read-only root, a 64 MiB no-exec temporary filesystem and 16 MiB shared memory.
 It runs as UID 65534 with all capabilities dropped and no new privileges. There

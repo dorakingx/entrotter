@@ -6,9 +6,11 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 from unittest.mock import patch
 
+from entrotter_engine import isolated
 from entrotter_engine.artifact import seal
 from entrotter_engine.evm import ExecutionError
 from entrotter_engine.isolated import run_isolated, worker_args, verify_daemon, WorkerBusy, _slot, _cleanup
@@ -108,12 +110,12 @@ if os.environ.get('FAKE_FAIL_AFTER_CREATE'): sys.exit(125)
         for response in [subprocess.CompletedProcess([], 0, b'partial-id'),
                          subprocess.CompletedProcess([], 0, b'c'*64+b'\n'+b'd'*64),
                          subprocess.CompletedProcess([], 0, b'\xff')]:
-            with patch('entrotter_engine.isolated.subprocess.run', return_value=response):
+            with patch('entrotter_engine.isolated._read_metadata', return_value=response.stdout):
                 with self.assertRaises(ExecutionError):
                     _slot(['docker'])
         for error in [OSError(), subprocess.TimeoutExpired('docker', 10),
                       subprocess.CalledProcessError(1, 'docker')]:
-            with patch('entrotter_engine.isolated.subprocess.run', side_effect=error):
+            with patch('entrotter_engine.isolated._read_metadata', side_effect=error):
                 with self.assertRaises(ExecutionError):
                     _slot(['docker'])
 
@@ -168,9 +170,81 @@ if os.environ.get('FAKE_FAIL_AFTER_CREATE'): sys.exit(125)
         for field in healthy:
             wrong = {**healthy, field: False}
             response = subprocess.CompletedProcess([], 0, json.dumps(wrong).encode())
-            with self.subTest(field=field), patch('entrotter_engine.isolated.subprocess.run', return_value=response):
+            with self.subTest(field=field), patch('entrotter_engine.isolated._read_metadata', return_value=response.stdout):
                 with self.assertRaises(ExecutionError):
                     verify_daemon(['docker'])
+
+
+class DockerMetadataTests(unittest.TestCase):
+    def test_oversized_valid_daemon_info_is_refused_before_json_acceptance(self):
+        code = "import json; print(json.dumps(dict(OSType='linux', CgroupVersion='2', MemoryLimit=True, SwapLimit=True, CpuCfsQuota=True, PidsLimit=True, padding='x'*1048576)))"
+        with self.assertRaises(ExecutionError):
+            verify_daemon([sys.executable, '-c', code])
+
+    def test_exact_limit_and_one_byte_overflow(self):
+        for count in [128, 129]:
+            command = [sys.executable, '-c', f"import os; os.write(1, b'x'*{count})"]
+            if count == 128:
+                self.assertEqual(isolated._read_metadata(command, 128), b'x'*128)
+            else:
+                with self.assertRaisesRegex(ExecutionError, 'byte limit'):
+                    isolated._read_metadata(command, 128)
+
+    def test_flood_is_refused_promptly_and_client_group_exits(self):
+        code = "import os; [os.write(1,b'x'*65536) for _ in range(1024)]"
+        started = time.monotonic()
+        with self.assertRaises(ExecutionError):
+            verify_daemon([sys.executable, '-c', code])
+        self.assertLess(time.monotonic()-started, 2)
+
+    def assert_no_active_group(self, pid):
+        rows = subprocess.run(['ps', '-eo', 'pgid=,stat='], capture_output=True,
+                              text=True, check=True, timeout=2).stdout.splitlines()
+        active = [row for row in rows if len(row.split()) == 2
+                  and row.split()[0] == str(pid) and not row.split()[1].startswith('Z')]
+        self.assertEqual(active, [])
+
+    def test_production_timeout_kills_descendant_held_pipe(self):
+        with tempfile.TemporaryDirectory() as directory:
+            marker = Path(directory)/'pid'
+            code = """import os,signal,time,sys
+from pathlib import Path
+Path(sys.argv[1]).write_text(str(os.getpid()))
+if os.fork() == 0:
+    signal.signal(signal.SIGTERM, signal.SIG_IGN)
+    time.sleep(60)
+else:
+    os._exit(0)
+"""
+            started = time.monotonic()
+            with self.assertRaisesRegex(ExecutionError, 'timed out'):
+                isolated._read_metadata([sys.executable, '-c', code, str(marker)], 128)
+            elapsed = time.monotonic()-started
+            self.assertGreaterEqual(elapsed, 10)
+            self.assertLess(elapsed, 12)
+            self.assert_no_active_group(int(marker.read_text()))
+
+    def test_closed_pipe_still_waits_within_deadline_and_retains_exit_status(self):
+        with patch.object(isolated, 'METADATA_TIMEOUT', .15):
+            with self.assertRaises(subprocess.TimeoutExpired):
+                isolated._read_metadata([sys.executable, '-c',
+                    'import os,time; os.close(1); time.sleep(10)'], 128)
+        with self.assertRaises(subprocess.CalledProcessError) as caught:
+            isolated._read_metadata([sys.executable, '-c', 'import sys; sys.exit(7)'], 128)
+        self.assertEqual(caught.exception.returncode, 7)
+
+    def test_reader_cancellation_kills_owned_group(self):
+        with tempfile.TemporaryDirectory() as directory:
+            marker = Path(directory)/'pid'
+            code = "import os,sys,time; from pathlib import Path; Path(sys.argv[1]).write_text(str(os.getpid())); os.write(1,b'x'); time.sleep(60)"
+            original_select = isolated.selectors.DefaultSelector.select
+            def cancelled(selector, *args):
+                original_select(selector, *args)
+                raise KeyboardInterrupt
+            with patch.object(isolated.selectors.DefaultSelector, 'select', new=cancelled):
+                with self.assertRaises(KeyboardInterrupt):
+                    isolated._read_metadata([sys.executable, '-c', code, str(marker)], 128)
+            self.assert_no_active_group(int(marker.read_text()))
 
 
 if __name__ == '__main__':

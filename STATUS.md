@@ -28,3 +28,40 @@ storage, arbitrary caller quotas and uninterruptible kernel faults are not bound
 by this change. No new model/archive replay, upstream transaction, image
 publication or paid service was used. See the coordination repository for the
 broader release gates; this does not establish full goal completion.
+
+## 2026-10-01 — Bounded default-worker Docker metadata candidate
+
+The default worker previously buffered Docker `info` and `ps` without byte caps.
+An actual valid info response over 1 MiB failed the new refusal regression before
+this fix. Fixed metadata queries now read at most 4 KiB per chunk and reject
+information above 1 MiB or admission/owner output above 128 bytes before parsing.
+Each query retains a ten-second pipe/client deadline, nonzero exit failure and
+ownership/controller validation. Finally kills only its new client process group,
+including descendants retaining stdout; it never kills the daemon or removes a
+foreign worker. Cleanup uses the existing owner-label/full-ID protocol.
+
+All 212 local native/unit tests pass with Foundry 1.8.3. Six new real-pipe cases
+cover exact boundaries, oversized valid JSON, flooding, a full ten-second timeout
+with an exited leader/ignoring child, EOF-before-exit/status, and cancellation.
+The initial cancellation probe interrupted Popen internals rather than the reader;
+its corrected selector-bound probe and final full suite pass. All 22 production
+sources pass Ruff/mypy and the full scanner retains 23 findings, with no suppressed
+rules. Two metadata launch sites are consolidated; this reduction is not evidence
+of fewer vulnerabilities. Updated exact source/finding rationales need independent
+review.
+
+Actual dedicated ARM64 Docker returns 11,576 info bytes and confirms all required
+controllers. A new image changes only isolated.py among 18 inputs. The first full
+22-case Docker run retained 19 passing resource/admission/lifetime/build tests but
+three native/worker equality cases used the wrong host Foundry version. Only those
+three were retried with 1.8.3; all pass without source/expectation changes, including
+complete fixture/local-Anvil/risk/recorded-model equality. This is combined local
+coverage, not a single all-passing full invocation. Current-head complete CI is
+linked separately in the PR; evidence/docker-metadata/summary.json binds the logs.
+
+This fix covers only default-worker info/ps captures. Other scanner/tool responses,
+whole-host overhead, abrupt owner SIGKILL, process-launch/kernel stalls, Docker
+cache/image/VM storage and archive egress limits remain. Frozen historical/model
+inputs are unchanged and no new archive/model call, protected merge, deployment,
+package publication or submission occurred. Coordination still selects the prior
+review candidate until this focused stacked PR is independently reviewed.

@@ -1,0 +1,6 @@
+test_reader_cancellation_kills_owned_group (test_isolated.DockerMetadataTests.test_reader_cancellation_kills_owned_group) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.041s
+
+OK
