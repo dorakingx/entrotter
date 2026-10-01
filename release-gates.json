@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-10-01T17:46:49.027796+00:00",
+  "updated_at": "2026-10-01T20:48:47.168114+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -21,13 +21,17 @@
         "Engine#29/0d4faf7 adds bounded original signed transaction-prefix replay separate from v0.1 actions/model records. All8headchecks pass;241native/23actualDocker tests and23source/18wheel/19image hashes verified. Ethereum19Mtx0 matches208144gas/8logs and complete native outcomes in default Docker4.484323s (native9.951108s). Independent mutable-input defect fixed. Schemas#11/8785 adds distinct offline contracts; all5checks/13hashes/23tests on3compositions/19original report shapes pass. Software review differs from mandatory GitHub approval; combined new-source candidate CI pending.",
         "Engine#30/8176597 fixes actual archive-backed local mining timeout within remaining shared150second budget, without extending node guardian. All8checks pass;244native tests33.590s/23actualDocker cases213.407s/23source18wheel19image inputs verified. Four original Ethereum19M receipt projections match in default worker14.539113s (native46.982404s, different environment). Omission0 changes gas/logs of1/2 and original3 has nonce5523 versus expected5522. Full native/default outcomes match except runtime/hash; no upstream writes/model call/holdout retuning. Independent review passes; required GitHub approval and new combined CI remain separate.",
         "SDK#7/ee5523d typed offline signed-prefix reader passes all5checks:36tests perPython,5source/3wheel/42lock/7doc hashes verified;4independent consistency fixes re-reviewed. Viewer#15/b7 passes all4requiredchecks,33Linuxbrowsergroups/25rawaxe/0violations/13browser sources+runner verified;21qualitysources/97fullretainedfindings/42Python/109npm/11docs verified. Repeated setup/nativechooser failures fixed and retained; signedapt and allgates/timeouts unchanged. Prepared composition offline/type/source review passes; final combined CI pending. This is not protected-main approval, candidate publication or new chain/model proof.",
-        "EnginePR31/935 native synthetic same-block signed funding and omission regression proof passes248fullnative tests with0skips; independent source/evidence review passes. Trace-only pool balance/fee/gas deferral retains actual EVM/block validation and bounds. All8exact935checks and root full23source/18wheel/19image/42Python/26OS/1126signedCargo/11doc bindings pass;248Linuxnative/24actualDocker no skips. Actual four-prefix receipt projections match current default worker24.17299s, no speed comparison. Archive-backed same-block funding and combined CI remain separate. Coordinatora253 source review/offline SDK+viewer codec/types pass; human GitHub approval separate."
+        "EnginePR31/935 native synthetic same-block signed funding and omission regression proof passes248fullnative tests with0skips; independent source/evidence review passes. Trace-only pool balance/fee/gas deferral retains actual EVM/block validation and bounds. All8exact935checks and root full23source/18wheel/19image/42Python/26OS/1126signedCargo/11doc bindings pass;248Linuxnative/24actualDocker no skips. Actual four-prefix receipt projections match current default worker24.17299s, no speed comparison. Archive-backed same-block funding and combined CI remain separate. Coordinatora253 source review/offline SDK+viewer codec/types pass; human GitHub approval separate.",
+        "Engine#32/e849 adds signed synthetic oracle update and adverse unchanged-signature consumer omission, plus read-only provider control/parent/code/balance/storage fault coverage.252localnative/252Linuxnative38.944s no skips; independent source/evidence review23sources/18wheel/42packages passes. Positive/control/unverified-storage reports pass SDKee and actual siteb7 codec offline. Only production change accurately explains missing receipts cannot diagnose cause or attest state. First isolated historical1 failed after all25Docker/oracle cases passed and before later four-prefix/image/native audit gates; all8component/combined checks remain incomplete, not deployment proof.",
+        "Local integrated diagnostic observer independently reviewed:33frozen source/protocol/binary/fixture bindings,23production sources and mandatory workflow unchanged from aac; raw original/control receipts exact and injected missing-storage execution_skip2/1 bound to input indices. Seven nodes/eight readers/two proxy handlers/listeners/ports close; SDKee and actual viewerb7 validate all3reports.14focused observer tests plus separately added descendant collector regression and15existing diagnostic tests pass. Synthetic native diagnostic only; component new-head CI and original historical cause remain unproven. See evidence/trace-oracle-integration/root-integrated-observer-review.json.",
+        "Engine99fd/PR32 all8firstattempt checks independently verified:282native0skips/25Docker217.324s,23source18wheel19image42Python26OS1126signedCargo14docs; current normal default1/4 original receipts and full prior935outcomes exact except runtime/hash/added assumption. SDK/site codec verify current reports. Diagnostic conditional skipped; older failed cause unknown. Reviewed coordinatione46 selects99fd,21types/same3diagnostics/3offline bodies pass; combinedCI/human approval/publication separate. See evidence/trace-oracle-integration/root-engine-full-CI.json."
       ],
       "blocked": [],
       "todo": [
         "stronger execution budgets and signal/process fault coverage",
-        "Extend signed-prefix replay coverage for archive-backed same-block funding, full-block/opcode/end-state scope and broader nonce/order/oracle/missing-state divergence cases; complete cross-repository trace-reader integration proof while preserving explicit mode separation",
-        "more assumptions and adverse scenarios in benchmark"
+        "Extend signed-prefix replay coverage for archive-backed same-block funding, full-block/opcode/end-state scope and archived oracle/provider state authenticity and broader divergence cases; complete cross-repository trace-reader integration proof while preserving explicit mode separation",
+        "more assumptions and adverse scenarios in benchmark",
+        "Resolve same-invocation four-prefix candidate not_mined outcome at engineaac525c without state repair or weakening expected statuses; later successful diagnostic does not identify cause. Current99fd component8/8 passes; prior failure cause and current combined composition remain unverified."
       ]
     },
     {
@@ -308,7 +312,9 @@
     "evidence/contract-identity-integration/summary.json",
     "evidence/agent-viewer-integration/summary.json",
     "evidence/canonical-replay-integration/summary.json",
-    "evidence/trace-reader-integration/summary.json"
+    "evidence/trace-reader-integration/summary.json",
+    "evidence/trace-oracle-integration/summary.json",
+    "evidence/trace-oracle-integration/diagnostic-ci-partial.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

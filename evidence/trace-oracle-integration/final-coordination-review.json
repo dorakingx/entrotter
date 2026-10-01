@@ -1,0 +1,134 @@
+{
+  "scope": "Independent read-only final unpublished coordination source/docs/evidence review; no component/native/chain/browser/full CI rerun, edits, commit/push, network call or GitHub approval.",
+  "execution_snapshot": "e46b392a4047bd680e5c03feb6bdc1a05a02269b",
+  "snapshot_parent": "8029d3a77d94cdd6b27c2abe294de0bc4e83d4c2",
+  "component": "99fd3a60a754f129c78d1324f2a01787a6538917",
+  "source_sha256": {
+    ".github/workflows/ci.yml": "a4dccf178e72f5c61c69e4b628b6caa20435f3f3e9b5b4944e66e8f61df8fbfe",
+    ".github/workflows/quality.yml": "6b110c62b80fb6f99f3257d12bf42c4a4390220d31019007d10014343b185e63",
+    "bounded-worker-pins.json": "5b532d27124db98248bbae49dbc96de76df76124435961a1e57c2156fe1a31b7",
+    "quality-inputs.json": "248f42a7153768beb5b6796cb4606ba30914dca740e051c621e1816c4979532b"
+  },
+  "documentation_sha256": {
+    "docs/QUICK_START.md": "fbb2e66e581fac743dd3173783982167de8260406d1f01210b1634515066f5e0",
+    "submission/README.md": "fcd767e9882c62d0b125b5025c63b4850acdfc1e9022469578281c1e0ee36d96",
+    "STATUS.md": "bf2d1cf1db08f32652a2b72be86ba73af650a40f26019a65ba42e9dbf17ad116",
+    "release-gates.json": "46cde3406c052f1ddd3425f469b8339ecf1397fb1afda1c6398bea32125218eb"
+  },
+  "evidence_sha256": {
+    "evidence/trace-oracle-integration/README.md": "2d74d8d43852edc05dfce86f5c871d9d53f6b8f34112a53796010bbf40e437c6",
+    "evidence/trace-oracle-integration/diagnostic-ci-partial.json": "61afc8b05e49867e44b5b9795a878bb9e76e00d7bd76c35d3101566ef9ed4fd8",
+    "evidence/trace-oracle-integration/diagnostic-followup.json": "decea2096d6f455231389ffef6c6601f7a7060c55255c07229d4553358c02fef",
+    "evidence/trace-oracle-integration/diagnostic-mainnet-prefix-four.json": "d3b4f6802146f949f093fa4daf2569ffc259a6b1f97a8b418138dd6eb43189e6",
+    "evidence/trace-oracle-integration/diagnostic-mainnet-prefix.json": "42c51a5a02f14d11e38c0e2b9af9702ff546965a79a0142fbce6ed6c7bbe20aa",
+    "evidence/trace-oracle-integration/diagnostic-pin-review.json": "d8dc8e23d3f4f4238bee99bbb06e1736e8a71869e500f5a81710fc679ec61df7",
+    "evidence/trace-oracle-integration/funding-reader-result.json": "42796f2586cc1d65bcd6daa2dca53fec67d8ff8019d80b9348c36c0e940bbdce",
+    "evidence/trace-oracle-integration/independent-source-review.json": "de65d14ae4c2804cf95fa163c657eb75ab4ff56182eb5570503df219242d0eb5",
+    "evidence/trace-oracle-integration/observer-pin-review.json": "8b300c9f4d5506a839a1a494098b585a6675713933d1a3e7f956f17c7ba6e034",
+    "evidence/trace-oracle-integration/offline-result.json": "b6670443641f10879dd3a827805140f76fed5c7196e7f7826ec92078fd7838c8",
+    "evidence/trace-oracle-integration/original-reader-result.json": "8a47a93f2605d33eccd36dc94e45d876f38ab7b238e23a908b0d17b3837400ed",
+    "evidence/trace-oracle-integration/previous-funding-ci.json": "47538725edcab92486921e3c0057328eb1744cf285f2405fd6f1437eed508bb0",
+    "evidence/trace-oracle-integration/root-engine-full-CI.json": "eeba3c890e4a2edd2a1a1d9ec221fad6ad03e1de2724c667612488c44ff0773c",
+    "evidence/trace-oracle-integration/root-engine-source-review.json": "56a0de0ee5b0bcaa15d816dc3003afffb7d812e4587257929203db3634b7db1f",
+    "evidence/trace-oracle-integration/root-integrated-observer-package-review.json": "8ef32d8bcb323ce5b2dca212fa42d64d7428dacd35b9beb2a5eae3e83057a803",
+    "evidence/trace-oracle-integration/root-integrated-observer-review.json": "eaa757efe666e58fb0e9c3e3fa6a103704debb30c1502152c56afb539a81209f",
+    "evidence/trace-oracle-integration/summary.json": "1f7463fba5ac31ff0d2c9b0b7b29478539cff917a1a36ec878603819f7812df1",
+    "evidence/trace-oracle-integration/types.json": "077429b30573556b6cb01253abe68a0399f8dbca62aa92c5c7b66a31f5ad4ece",
+    "evidence/trace-oracle-integration/verified-mainnet-prefix-four.json": "a771f1a07a5023ee9b2f297abe9616bc49a4c0ece5d75d6576522daf5a584176",
+    "evidence/trace-oracle-integration/verified-mainnet-prefix.json": "abc276351b7076e43639a8184764948c32bb615e40301b45a4e973545085f721"
+  },
+  "findings": [],
+  "resolved_review_finding": {
+    "priority": 3,
+    "file": "release-gates.json",
+    "line": 25,
+    "original_claim": "Earlier e849 first historical1 failure occurred before new image case.",
+    "actual_retained_evidence": "Engine ignored ci-bounded-failure.log lines313/330: signed oracle image test OK/all25Docker216.086s; line360: later historical1 failure.",
+    "resolution": "Root now states failure after all25Docker/oracle cases passed and before later four-prefix/image/native audit gates.",
+    "related_heading_scope": "Root changed observer heading to synthetic native evidence; current99fd fullCI recorded separately."
+  },
+  "bindings": {
+    "exact_source_tree_files": 4,
+    "public_raw_copies": 10,
+    "types": 21,
+    "frozen_diagnostics": 3,
+    "offline_pins": true,
+    "privacy_markers": 0,
+    "copy_hashes": [
+      {
+        "public": "verified-mainnet-prefix.json",
+        "sha256": "abc276351b7076e43639a8184764948c32bb615e40301b45a4e973545085f721",
+        "byte_identical": true
+      },
+      {
+        "public": "verified-mainnet-prefix-four.json",
+        "sha256": "a771f1a07a5023ee9b2f297abe9616bc49a4c0ece5d75d6576522daf5a584176",
+        "byte_identical": true
+      },
+      {
+        "public": "diagnostic-mainnet-prefix.json",
+        "sha256": "42c51a5a02f14d11e38c0e2b9af9702ff546965a79a0142fbce6ed6c7bbe20aa",
+        "byte_identical": true
+      },
+      {
+        "public": "diagnostic-mainnet-prefix-four.json",
+        "sha256": "d3b4f6802146f949f093fa4daf2569ffc259a6b1f97a8b418138dd6eb43189e6",
+        "byte_identical": true
+      },
+      {
+        "public": "diagnostic-followup.json",
+        "sha256": "decea2096d6f455231389ffef6c6601f7a7060c55255c07229d4553358c02fef",
+        "byte_identical": true
+      },
+      {
+        "public": "root-engine-full-CI.json",
+        "sha256": "eeba3c890e4a2edd2a1a1d9ec221fad6ad03e1de2724c667612488c44ff0773c",
+        "byte_identical": true
+      },
+      {
+        "public": "diagnostic-ci-partial.json",
+        "sha256": "61afc8b05e49867e44b5b9795a878bb9e76e00d7bd76c35d3101566ef9ed4fd8",
+        "byte_identical": true
+      },
+      {
+        "public": "root-integrated-observer-review.json",
+        "sha256": "eaa757efe666e58fb0e9c3e3fa6a103704debb30c1502152c56afb539a81209f",
+        "byte_identical": true
+      },
+      {
+        "public": "root-integrated-observer-package-review.json",
+        "sha256": "8ef32d8bcb323ce5b2dca212fa42d64d7428dacd35b9beb2a5eae3e83057a803",
+        "byte_identical": true
+      },
+      {
+        "public": "observer-pin-review.json",
+        "sha256": "8b300c9f4d5506a839a1a494098b585a6675713933d1a3e7f956f17c7ba6e034",
+        "byte_identical": true
+      }
+    ]
+  },
+  "invariants": {
+    "snapshot_tree_equals_current_four_production_files": true,
+    "snapshot_commit_changes_exactly_four_production_files_from_prior8029": true,
+    "source_and_type_and_offline_dependencies_99fd_ee_22_8785_b7_consistent": true,
+    "full99fd_rootproof_eeba3c89_equals_public_copy": true,
+    "aac_failed_reports_and_followup_equal_original_bytes": true,
+    "current_1_4_normal_reports_equal_downloaded99fd_bytes": true,
+    "raw33_source_native_and_package_review_copies_equal_originals": true,
+    "summary_current_source_proof_offline_hashes_match": true,
+    "typed21_sources_same3diagnostics": true,
+    "three_offline_steps_are_readers_no_new_EVM_model_or_rendered_browser": true,
+    "current_source_is_local_unpublished_combined_five_CI_pending": true,
+    "component_all8_is_separate_from_human_approval_deployment_release": true,
+    "older_frozen_source_timings_media_model_holdout_are_unchanged": true,
+    "prior_unknown_failure_cause_and_original_evidence_loss_retained": true,
+    "Discord_excluded": true
+  },
+  "privacy_scope": "No personal filesystem paths, private owner handle/contact or new RPC URLs in evidence/doc changes; guide intentional loopback8000 example is documentation, not probe/private endpoint. No keys/private state exposed.",
+  "scope_limits": [
+    "Root offline Lychee links proof101total/60successful/0errors reused; final wording fixes changed no targets. No independent duplicate link suite.",
+    "Online fetch of unpublished e46 intentionally deferred until root consolidated push, then mandatory exact-head combined5CI.",
+    "Fresh parent-provider/oracle authenticity/full-block/root/end-state/opcode/economic proof remains outside validated scope.",
+    "This software/source review is not the mandatory protected-main human GitHub approval."
+  ]
+}

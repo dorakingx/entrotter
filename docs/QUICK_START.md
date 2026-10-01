@@ -34,7 +34,7 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination a253da8, engine935558a, schemas8785bb0 and CLI22b514c; SDK and
+coordination e46b392, engine99fd3a6, schemas8785bb0 and CLI22b514c; SDK and
 signed-prefix reader/viewer pins are ee5523d/b7c20ce. Older timings do not measure
 this new signed-prefix inspection composition.
 
@@ -70,7 +70,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git a253da8695fb2521702056dca286ed16b0aba44f
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git e46b392a4047bd680e5c03feb6bdc1a05a02269b
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
@@ -230,14 +230,19 @@ above does not include this optional viewer step or claim a cold installation.
 The [signed-prefix composition](../evidence/canonical-mine-integration/summary.json)
 retains the historical engine#30 receipt evidence and separate schema#11.
 The [funding composition](../evidence/trace-funding-integration/README.md) selects
-engine#31 for the new same-block admission fix. From `entrotter-candidate`, an operator
+engine#31 for the same-block admission fix; the current
+[oracle/provider composition](../evidence/trace-oracle-integration/README.md) adds
+signed causal oracle and missing-state coverage at engine#32. From `entrotter-candidate`, an operator
 with an archive-capable `ENTROTTER_RPC_URL` can run
 `python3 -m entrotter_engine trace-run engine/tests/data/canonical-mainnet-prefix-four.json -o transaction-replay.json`
 using the configured bounded worker. It forks the original parent with canonical
 header context, preserves original signatures/order/nonces, and records candidate
-omissions/conflicts or receipt differences. Missing archive state fails explicitly.
+omissions/conflicts or receipt differences. Missing parent/account state can fail
+explicitly; mining-time storage failures can instead leave transactions unmined
+and the baseline unverified. Receipt absence alone cannot identify the cause or
+attest provider state; no fixture state or oracle response is substituted.
 
-The actual engine CI replay matched all four original Ethereum 19M receipt
+The prior engine817 CI replay matched all four original Ethereum 19M receipt
 projections in 14.539113s, including gas 208,144 / 234,720 / 175,305 / 178,980 and
 8 / 10 / 6 / 8 ordered logs. Omitting transaction 0 changes gas/logs in 1 and 2,
 and leaves transaction 3 at original nonce 5,523 versus expected 5,522. Complete
@@ -282,10 +287,45 @@ Shanghai interval are supported. Owned trace nodes defer parent-state pool
 balance/fee/gas admission to actual ordered EVM/block execution. Native synthetic
 same-block funding and an adverse omission are verified; accepted transactions
 can remain unmined and receive no receipt. No funding or nonce repair occurs.
-Archived same-block funding and full-block/opcode/root/end-state equivalence
-and broader oracle/divergence coverage remain open. See the pinned engine README
+The synthetic signed oracle case verifies that omitting an in-prefix update makes
+the original consumer revert. Provider fault/control cases distinguish explicit
+errors from unverified storage-failure reports. Archived same-block funding,
+archived oracle cases, provider state authenticity and full-block/opcode/root/
+end-state equivalence remain open. See the pinned engine README
 for complete limits and upstream write denial. This inspection is outside all
 previous timed guide walkthroughs; frozen model/holdout/media sources are unchanged.
+
+## Optional synthetic oracle and provider-fault inspection
+
+Read the frozen native regression reports offline from the selected engine.
+They use a synthetic oracle, not historical prices or an external oracle service:
+
+```bash
+python3 - <<'PY'
+from entrotter_sdk import load_trace
+for name in ("native-oracle-prefix.json", "native-provider-control.json", "native-missing-storage.json"):
+    report = load_trace("engine/evidence/trace-oracle-provider/" + name)
+    print(name, "baseline verified:", report.baseline_verified)
+    for tx in report.transactions:
+        receipt = tx.candidate.receipt
+        print(tx.index, tx.candidate.status,
+              "receipt status:", receipt.status if receipt else None,
+              "gas:", receipt.gas_used if receipt else None)
+PY
+```
+
+The first two reports verify both original receipts. Omitting update0 preserves
+consumer1's signature and produces an executed reverted receipt, status0 with
+25808gas and no logs. `executed` means it was mined; inspect receipt status for
+success or revert. The missing-storage report has an unverified baseline and no
+receipts. Its known fault cause comes from separate regression controls, not the
+report's missing receipts. Neither checksums nor receipt equality authenticate
+provider state or external oracle truth.
+
+Open these files with **Open local signed-prefix JSON** in the local viewer.
+The [integration evidence](../evidence/trace-oracle-integration/README.md) records
+offline SDK/codec checks separately from the existing rendered browser CI. This
+optional inspection is outside all previous guide timing measurements.
 
 ## Measurement and cleanup
 

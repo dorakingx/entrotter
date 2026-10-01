@@ -1311,3 +1311,126 @@ roots/end-state/opcode scope remain open. Protected human approvals, candidate
 Pages publication, personal facts/terms and formal submission gates remain open.
 No local Docker/VM startup, upstream writes, new model or holdout run, media upload,
 protected merge, package publication, formal submission or Discord work occurred.
+
+## October 2 — Signed oracle/provider candidate integration prepared
+
+The previous8029/a253 funding composition passed all five checks. Downloaded
+21source/78full retained findings/50audit/19image/55doc bindings and complete
+API/CLI/admission/export/reproduction proof pass. Clean fixture7.477365s and
+recorded model8.196629s retain engine935, running Docker and potentially warm
+caches. The new evidence folder preserves that complete prior proof separately
+from its older author preparation records.
+
+Enginee849/PR32 adds four signed synthetic oracle/provider-fault native regressions
+and one direct image/protocol case. Original update20 plus independent consumer
+receipts match gas26167/26438; omission from parent10 preserves the consumer hash
+but reverts at25808gas without logs. Normal read-only provider control verifies
+receipts. Missing parent/code/balance explicitly fail; missing mining-time storage
+produces an integrity-valid unverified report without receipts. Only one accurate
+report assumption changes; state/signature repairs or inferred error causes are
+not introduced.252localnative and252Linuxnative38.944s pass without skips. Root
+source/evidence review verifies23source/18wheel/42lock and unchanged findings.
+Two prior investigation raw files were overwritten by an ignored generator and
+are unavailable; that loss is disclosed. Current separately saved native proof
+is not presented under their old hashes.
+
+The immutable coordination source snapshot27c39fe selects enginee849 with the
+other dependency/frozen/model/holdout/media pins unchanged. Four source files pass
+independent review;21type inputs retain the same three frozen diagnostics. The
+exact new offline SDK/site step verifies three fixed positive/control/storage
+reports, receipt success/revert/gas/logs and unverified receipt absence. Existing
+original four-prefix/funding reader steps also pass with current pin metadata.
+See evidence/trace-oracle-integration/README.md. Component isolated CI twice failed at
+the historical1 default worker after25Docker tests passed216.086/216.203s; later
+full4/image/native audits did not run. Both full failures are preserved; cause
+remains unknown despite healthy same-source readonly followup. Further blind
+retries stopped; a failure-only bounded diagnostic is being implemented for
+independent review. Combined new-head CI is not started.
+
+Archived oracle/funding, provider authenticity and full-block/root/end-state/opcode
+scope remain open. Protected human approvals, candidate Pages publication, owner
+facts/terms and formal submission remain separate gates. No local Docker/VM
+startup, upstream write, new model/holdout/media run, protected merge, package
+publication, formal submission or Discord work occurred. Overall goal active.
+
+
+## October 2 — Failure-only diagnostic reviewed and real divergence retained
+
+EnginePR32/aac525c adds a reviewed trusted test-only diagnostic; production23
+source/script bytes,18wheel modules,19image inputs and policy remain unchanged.
+Root review fixes owner-cleanup/descriptor-close fault paths and missing-code
+TLS classification. Three regressions fail before fixes;15focused tests pass
+0.729s, including real embedded invalid-input execution. Root separately executes
+three such cases without Docker/network and checks17source/evidence hashes plus
+11original/redacted copies. Published failure records retain raw trailing spaces;
+no evidence-normalization or secret/state substitution occurs.
+
+Seven exact-head checks pass:267Linux native tests41.207s without skips,
+four267-test unit matrices with31real-Anvil skips each,23full reviewed source
+findings/42exact locked packages/18wheel modules and13document hashes. Isolated
+CI36913460373 passes25Docker tests217.511s, mainnet1 original receipt9.143445s
+and all4baseline receipts29.610351s. Candidate transaction2 is not_mined without
+a receipt; the unchanged status assertion fails. Later exact-plan diagnostic
+completes normally, so the original cause remains unknown. Cleanup passes;
+subsequent image/native advisory gates do not run. No blind retry or all8 claim.
+
+Root independently verifies raw bindings and both actual reports through SDKee
+and viewerb7 codec, preserving the failed candidate outcome. Current partial
+proof/reports/followup are in evidence/trace-oracle-integration. Local four-pin
+edits select aac;21types and all3offline reader steps pass, independent pin review
+has no findings. Earlier27source snapshot/docs preparation remains local; no new
+immutable composition, combined CI or publication is claimed. Public8029/a253
+with engine935 remains the latest fully tested composition. A controlled
+same-invocation node-log observer is under investigation; no original provider
+cause is inferred from receipt absence or a successful later repeat.
+
+All full-goal gates remain active, including archived oracle/funding and
+full-block/root/end-state/opcode scope, protected human approval, candidate Pages
+publication, required facts/terms and formal submission. No local Docker/VM,
+upstream write, new model/holdout/media operation, merge, package publication,
+formal submission or Discord work occurred in this step.
+
+
+## October 2 — Integrated observer native proof independently reviewed
+
+The failure-only trusted diagnostic now binds finite owned-node events to its
+actual worker envelope, baseline/candidate branch and unchanged original input
+indices. Normal mandatory commands and23production sources remain byte-identical
+to aac. Frozen source/fixture/binary/protocol evidence and raw original/control/
+missing-storage reports pass independent root inspection; all three also pass
+SDKee and the actual viewerb7 codec. Normal and adverse receipts match unchanged;
+injected missing storage produces bound execution-skip counts2/1 with complete
+EOF/no truncation. Seven nodes, eight readers and two proxy handlers/listeners/
+ports close, and source oracle/nonces remain unchanged. See
+[evidence and limits](evidence/trace-oracle-integration/README.md).
+
+Fourteen focused observer tests, one separately added real collector-descendant
+regression and15existing diagnostic tests pass. The collector regression proves
+its own bounded timeout/descriptor/group cleanup; original trace failure survives
+secondary collection errors. Final15-test source is separately frozen; no claim
+that earlier14tests executed the later file. Packaging and required new-head CI
+are pending. The old historical candidate failure is preserved and its cause is
+unknown; later/synthetic diagnostics do not replace it. Full G1–G5 remain active,
+and no new composition, protected merge, Pages publication or submission occurs.
+Discord remains excluded.
+
+
+## October 2 — Current component all eight verified; composition prepared
+
+Engine99fd/PR32 passes all8first-attempt checks. Root verifies complete raw23
+source/18wheel/19image/42Python/26OS/1126signedCargo/14docs and282native0skip,
+25Docker217.324s, default1/4 receipts and complete prior935report values except
+runtime/hash/exact added assumption. Current candidate4 has expected skipped/
+executed/executed/nonce_conflict statuses. Actual SDKee/siteb7 codec checks the
+current report hashes/statuses. Conditional diagnostic is skipped; prior failed
+reports and unknown cause remain separate. No retry, weakened assertion or claim
+of actual observed Docker/historical helper dispatch. See
+[evidence](evidence/trace-oracle-integration/README.md).
+
+Reviewed sourcee46 selects99fd through four exact selectors only;21type inputs
+retain the same3frozen diagnostics and all3exact offline workflow steps pass.
+Other dependencies, frozen scenarios, recorded model/holdout/media stay unchanged.
+Current source/docs remain local pending consolidated publication and all5combined
+checks. Previous public8029/a253/935 remains the fully tested public composition.
+Human protected-main approval and candidate Pages publication remain separate.
+Full G1–G5 and official submission stay active; Discord excluded.

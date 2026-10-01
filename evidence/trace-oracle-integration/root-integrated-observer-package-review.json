@@ -1,0 +1,25 @@
+{
+  "scope": "Root final package copy/privacy/source/focused-test additive delta review; native proof separate eaa757ef; no CI claimed",
+  "package_readiness_sha256": "68338654b82fddb8906258c1e7cfb61773e8e2ada4a5067e40afd562beb2d2fc",
+  "source_sha256": {
+    "tests_isolated/diagnose_trace_worker.py": "d24ffd710a28308008a98a3655d9d592376bef686ce5e48d46d70d3bdf666af1",
+    "tests/test_trace_observer.py": "454501ab828fe9bb5e8495a19f4c4300738b5ae1d4013535c470e85a9a39c39a",
+    "tests/test_trace_diagnostic.py": "0f1a75c80e3c9b6f7351e3fef7e35b51c4810b743c414dff6324b24188d6cca6",
+    "STATUS.md": "ec7ab0c652d23241a3d190175655af9f66a730825ccc4c2714aeccfa3db1491f",
+    ".github/workflows/isolated.yml": "6e64ba15e26eb7917fdc9be764d9639d102211ea614bae8ba5549bc47828cee5"
+  },
+  "public_file_bindings": 30,
+  "copy_provenance_bindings": 27,
+  "earlier14_test_snapshot_sha256": "ab6f7a58a2a75251e13633cca7b66870c66b91ebc9c2849e88356d04ba964a0a",
+  "final15_test_snapshot_sha256": "454501ab828fe9bb5e8495a19f4c4300738b5ae1d4013535c470e85a9a39c39a",
+  "existing_test_methods_unchanged": 17,
+  "new_test_method": "CollectorTests.test_collector_deadline_kills_descendant_retaining_stdout",
+  "redacted_files": [
+    "checks/initial-import-harness-failure.log"
+  ],
+  "privacy_marker_scope": "No personal paths/handle or loopback URLs. Static synthetic SECRET constants in frozen test code are test data, not emitted provider credentials.",
+  "remaining_actionable_findings": [],
+  "expected_native_and_units": 282,
+  "expected_Docker_tests": 25,
+  "all8": false
+}

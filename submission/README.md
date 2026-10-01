@@ -59,8 +59,10 @@ binds its original engine817/schema sources, receipt match and exact inputs.
 The prefix is a separate technical case. The new
 [funding composition](../evidence/trace-funding-integration/README.md) verifies
 native synthetic same-block funding and an adverse omission without state repair.
-Archived same-block funding, full-block/end-state and broader oracle/missing-state
-coverage remain open. The
+The [oracle/provider composition](../evidence/trace-oracle-integration/README.md)
+adds native signed update/consumer causal proof and actual read-only fault/control
+coverage, including an integrity-valid unverified storage-failure report. Archived
+funding/oracle, provider authenticity and full-block/end-state remain open. The
 [recorded-agent viewer evidence](../evidence/agent-viewer-integration/summary.json)
 adds original decision/provenance inspection and preserves original reports. Current
 combined checks and public reproduction measurements are recorded in
@@ -71,8 +73,8 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [a253da8](https://github.com/entrotter/entrotter/tree/a253da8695fb2521702056dca286ed16b0aba44f) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
-| Bounded agent engine, contract identity and signed transaction-prefix replay | [935558a](https://github.com/entrotter/engine/tree/935558a5b95755c72ca6fb24f076b3a231fa5b64) | [#31](https://github.com/entrotter/engine/pull/31) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [e46b392](https://github.com/entrotter/entrotter/tree/e46b392a4047bd680e5c03feb6bdc1a05a02269b) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Bounded agent engine, contract identity and signed transaction-prefix replay | [99fd3a6](https://github.com/entrotter/engine/tree/99fd3a60a754f129c78d1324f2a01787a6538917) | [#32](https://github.com/entrotter/engine/pull/32) |
 | Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
@@ -83,9 +85,24 @@ adds SDK and browser inspection of the actual four-receipt case. SDK all5checks
 and viewer all4checks pass; root artifact verification confirms33Linux browser
 groups/25raw axe scans without reported violations. Checksums and internal
 relationships do not authenticate source state or prove economic/EVM truth.
-The previous86a reader composition passed all five combined checks and54document
-hashes; the new funding composition requires its own exact-head CI. No new
+The previous8029/a253 funding composition passed all five combined checks and55
+document hashes, with complete API/CLI/export and both offline reader proofs. The
+new oracle/provider composition requires its own exact-head CI. No new
 video/model/holdout result is implied.
+
+The earlier diagnostic successor [engineaac525c](https://github.com/entrotter/engine/tree/aac525c8279005a3a8468fe3928e691c3ce80148)
+has seven successful checks but a failed four-prefix candidate gate: all original
+receipts match, while one changed-branch transaction lacks a receipt. A later
+diagnostic succeeds and does not establish the first failure's cause. The
+[partial proof](../evidence/trace-oracle-integration/diagnostic-ci-partial.json)
+keeps those outcomes separate. The current engine99fd passes all eight checks
+on its first attempt, including normal default1/4 and image/native advisory gates.
+[Independent full proof](../evidence/trace-oracle-integration/root-engine-full-CI.json)
+binds those raw reports and audits. Its conditional observation diagnostic was
+skipped, so the original failure cause remains unknown. Current coordinatione46
+in the table is reviewed but unpublished; combined CI remains a separate gate.
+The latest fully tested public composition remains8029/a253 with engine935.
+
 
 ## Recorded review sources
 
