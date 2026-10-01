@@ -1,0 +1,22 @@
+{
+  "status": "direction_approved_for_real_coverage_and_precise_limits",
+  "engine_head": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+  "investigation_sha256": "abce222dd8518b6cdf8adb58606b7d6416c3aa368441dd6667479532a69853df",
+  "report_sha256": "89ab037b66d0852f75089212c87a8e4850b07e4eebc600f97e3a808bf4a46795",
+  "independent_review": "Root read full probe bytecode/setup/fault control and raw observed outputs, independently checked exact original receipt projections, preserved consumer hash, sealed report,9followup and16total cleanup, plus pinned Foundry executor DB-error skip code. No fake verified baseline reproduced.",
+  "direction": [
+    "Add focused actual native signed CREATE oracle/update/consumer and read-only provider-fault/control regressions, matching receipt/gas/log/state observations and owned cleanup.",
+    "Add corresponding direct bounded-image protocol oracle test; preserve default-host historical and all isolation gates independently.",
+    "Document missing parent/code/balance can explicitly fail, while missing storage during mining can yield integrity-valid not_mined with baseline_verified=false; missing receipt does not identify cause.",
+    "No speculative state repair, fallback, inference of cause or claim of historical/wholeblock/oracle-service/economic truth."
+  ],
+  "privacy_before_publication": [
+    "Raw diagnostic local paths must be redacted in public copies; preserve ignored originals and exact publiccopy hashes.",
+    "Never retain signing keys/argv/stderr; freeze only disposable public signed fixture transactions and startup source allocation."
+  ],
+  "remaining": [
+    "Implementation/source/evidence review and mandatory exact-headCI remain required.",
+    "Missing archival storage cannot be identified solely from receipt absence; intentionally preserve unverified output.",
+    "Human protected-main approval and G1-G5 completion remain separate."
+  ]
+}

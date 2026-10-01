@@ -110,3 +110,63 @@ engine817 historical proof retain their exact prior sources. No Docker/VM startu
 upstream write, key retention, merge, deployment or submission occurred. Independent source/evidence review passed with no remaining actionable findings;
 its exact pre-publication hashes are preserved. Exact-head CI and mandatory
 human GitHub approval remain separate; overall goal active.
+
+## Signed oracle dependency and provider-state coverage prepared
+
+The `test/trace-oracle-provider-state` candidate starts from tested935558a/PR31.
+Four actual native regressions cover signed CREATE parent setup, original
+signed same-block oracle update20 plus an independent sender's consumer, adverse
+omission from parent value10, and read-only local provider fault/control cases.
+Both original receipts match gas26167/26438 and the consumer word20 log; omission
+preserves its signature and reverts at25808gas with no logs. Source nonces/state
+remain unchanged by replay. This is synthetic causal receipt proof, not profit,
+historical price, oracle service or complete state truth.
+
+Missing parent/code/balance explicitly fail; missing mining-time storage instead
+can produce a sealed unverified `not_mined` baseline without receipts. The only
+production change explains that receipt absence cannot identify the cause or
+attest parent state. No state/signature repair, fallback or inferred error cause
+was added. New direct image/protocol coverage awaits exact-headCI; default host
+dispatch/lifecycle and historical gates remain separate unchanged checks.
+
+After a preserved new-test import failure, four focused cases and252full native
+tests pass with0skips/errors/failures. Full23-source lint/format/types and all23
+retained scanner findings pass;42locked Python packages have0advisories. Nine
+oracle/fault nodes and five proxy threads/ports close successfully. A diagnostic
+generator's prior nine-node raw JSON/report overwrite is explicitly disclosed;
+original aggregate investigation/root review and initial raw observations remain,
+while the fresh current native proof uses a separate non-overwriting destination.
+See [raw evidence and exact scope](evidence/trace-oracle-provider/README.md).
+
+Independent source/privacy/evidence review passed with no remaining actionable
+findings; three fresh reports also pass unchanged SDKee/siteb7 offline validators.
+Original pre-publication hashes and evidence-loss disclosure remain preserved.
+All eight exact-headCI checks are pending. No local Docker/VM, new archive/model/holdout/media operation,
+upstream write, retained key, merge or deployment. Prior engine935/PR31 all-eight
+CI and coordinator8029 evidence remain distinct; the overall goal remains active.
+
+## Separate diagnostic same-invocation observation prepared
+
+Published aac/PR32 has seven successful required checks and one failed isolated
+check:25Docker tests and first-prefix default replay passed; the four-prefix
+baseline matched originals, while candidate transaction2 was `not_mined`. A later
+separate diagnostic completed; the original cause remains unknown. Later image
+and native advisory gates did not run. No blind retry or weakened assertion.
+
+The failure-only test helper now observes its own guardian invocation with a
+fixed backend log filter, bounded finite event/index/EOF/truncation metadata and
+exact worker envelope SHA/branch binding. All23production sources and normal
+mandatory workflow commands remain unchanged. Owned reader/session cleanup and
+primary replay error preservation have focused regressions. A frozen integrated
+native synthetic control preserves full original receipts; missing storage emits
+same-invocation execution-skip2/1 with an unverified baseline. All seven owned
+nodes, eight readers and two proxy threads/ports close; source state is unchanged.
+This is diagnostic observability, not the cause of the original historical fail,
+a normal default-worker pass, profit or provider/state attestation.
+
+See [frozen proof and precise test/evidence scope](evidence/trace-oracle-provider/same-run-observer/README.md).
+Final independent source/privacy/evidence review passed; new-head required CI
+and protected-main human approval remain separate. No local Docker/VM or new
+archive/model/holdout/media operation. Current public composition remains
+coordinator8029/engine935; unpublished integration awaits all component gates.
+Overall goal active, with earlier raw-evidence loss disclosure retained.

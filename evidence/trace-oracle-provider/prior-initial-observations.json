@@ -1,0 +1,281 @@
+{
+  "source_commit": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+  "proof_kind": "synthetic signed oracle update and dependent consumer; not historical market/profit evidence",
+  "faults": [
+    {
+      "fault": "parent_missing",
+      "exception_type": "ExecutionError",
+      "message": "Trace parent block is unavailable or mismatched",
+      "elapsed_seconds": 0.00473,
+      "requests": {
+        "eth_chainId": 1,
+        "eth_getBlockByNumber": 2
+      },
+      "denied": {
+        "eth_getBlockByNumber": 1
+      },
+      "proxy_thread_closed": true
+    },
+    {
+      "fault": "eth_getStorageAt",
+      "branch": {
+        "anvil_version": "anvil/v1.8.3",
+        "outcomes": [
+          {
+            "index": 0,
+            "hash": "0xc63a13e148f0d17fb25ce417f9cc298ba3ccd19ffa229d7c19a5718b911cad80",
+            "status": "not_mined"
+          },
+          {
+            "index": 1,
+            "hash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+            "status": "not_mined"
+          }
+        ],
+        "matches_original_receipts": false
+      },
+      "elapsed_seconds": 0.14881,
+      "requests": {
+        "eth_chainId": 2,
+        "anvil_nodeInfo": 2,
+        "eth_getBlockByNumber": 2,
+        "eth_gasPrice": 1,
+        "eth_getBalance": 5,
+        "eth_getTransactionCount": 5,
+        "eth_getCode": 5,
+        "eth_getAccountInfo": 1,
+        "eth_getStorageAt": 2,
+        "eth_getTransactionReceipt": 2
+      },
+      "denied": {
+        "anvil_nodeInfo": 2,
+        "eth_gasPrice": 1,
+        "eth_getAccountInfo": 1,
+        "eth_getStorageAt": 2
+      },
+      "proxy_thread_closed": true
+    },
+    {
+      "fault": "eth_getCode",
+      "exception_type": "RPCRejected",
+      "message": "RPC rejected eth_getTransactionCount",
+      "elapsed_seconds": 0.131002,
+      "requests": {
+        "eth_chainId": 2,
+        "anvil_nodeInfo": 2,
+        "eth_getBlockByNumber": 2,
+        "eth_gasPrice": 1,
+        "eth_getAccountInfo": 1,
+        "eth_getBalance": 1,
+        "eth_getTransactionCount": 1,
+        "eth_getCode": 1
+      },
+      "denied": {
+        "anvil_nodeInfo": 2,
+        "eth_gasPrice": 1,
+        "eth_getAccountInfo": 1,
+        "eth_getCode": 1
+      },
+      "proxy_thread_closed": true
+    },
+    {
+      "fault": "eth_getBalance",
+      "exception_type": "RPCRejected",
+      "message": "RPC rejected eth_getTransactionCount",
+      "elapsed_seconds": 0.132405,
+      "requests": {
+        "eth_chainId": 2,
+        "anvil_nodeInfo": 2,
+        "eth_getBlockByNumber": 2,
+        "eth_gasPrice": 1,
+        "eth_getAccountInfo": 1,
+        "eth_getBalance": 1,
+        "eth_getTransactionCount": 1,
+        "eth_getCode": 1
+      },
+      "denied": {
+        "anvil_nodeInfo": 2,
+        "eth_gasPrice": 1,
+        "eth_getAccountInfo": 1,
+        "eth_getBalance": 1
+      },
+      "proxy_thread_closed": true
+    }
+  ],
+  "plan": {
+    "trace_version": "0.1.0",
+    "source": {
+      "chain_id": 1,
+      "block_number": 3,
+      "block_hash": "0x2b29f9ad176fb05bfa4edcb6c32d5959780f7a37f4e6377cb37d62dcbc49276c"
+    },
+    "through_index": 1,
+    "skip_indices": [
+      0
+    ]
+  },
+  "deployment_receipts": [
+    {
+      "hash": "0x18f118dcd42d9f2694194e22a5348cbb9d748f16571b48bb329866d3a3dc81a3",
+      "receipt": {
+        "type": "0x0",
+        "status": "0x1",
+        "cumulativeGasUsed": "0x13a62",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "transactionHash": "0x18f118dcd42d9f2694194e22a5348cbb9d748f16571b48bb329866d3a3dc81a3",
+        "transactionIndex": "0x0",
+        "blockHash": "0x125b7e0d8e4ade6a46e90bc8b710fc0b616ffb94df92f20663289f52e3cdcaca",
+        "blockNumber": "0x1",
+        "gasUsed": "0x13a62",
+        "effectiveGasPrice": "0x3b9aca00",
+        "from": "0x9646f607073de9b9c9c78f5d23566ecedd4d5d35",
+        "to": null,
+        "contractAddress": "0x81ca2332a3d29dfc6288feeba6c3a4c825ed77a0",
+        "blockTimestamp": 1700000000
+      }
+    },
+    {
+      "hash": "0xc88478702fbf893943ec042ccc48cc55c1b5950b99c1b03d61c3200c22705a79",
+      "receipt": {
+        "type": "0x0",
+        "status": "0x1",
+        "cumulativeGasUsed": "0xff8c",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "transactionHash": "0xc88478702fbf893943ec042ccc48cc55c1b5950b99c1b03d61c3200c22705a79",
+        "transactionIndex": "0x0",
+        "blockHash": "0xc56d628645256b75406c52fcb5acd854c8e89d6e174448591d182355b81c2df9",
+        "blockNumber": "0x2",
+        "gasUsed": "0xff8c",
+        "effectiveGasPrice": "0x3b9aca00",
+        "from": "0x9646f607073de9b9c9c78f5d23566ecedd4d5d35",
+        "to": null,
+        "contractAddress": "0x827831ecdf9f2c18bab129bc54d543f896af78f8",
+        "blockTimestamp": 1700000001
+      }
+    }
+  ],
+  "oracle_runtime": "0x3615600c57600035600055005b60005460005260206000f3",
+  "consumer_runtime": "0x60206000600060007381ca2332a3d29dfc6288feeba6c3a4c825ed77a05afa156033576000516014141560335760206000a0005b60006000fd",
+  "parent_oracle_value": 10,
+  "source_latest_oracle_value": 20,
+  "report_sha256": "7001a5cb0b443aa76145308f925288e3b1be826c8363378ab5c53713684f9e5c",
+  "baseline_verified": true,
+  "baseline": {
+    "anvil_version": "anvil/v1.8.3",
+    "outcomes": [
+      {
+        "index": 0,
+        "hash": "0xc63a13e148f0d17fb25ce417f9cc298ba3ccd19ffa229d7c19a5718b911cad80",
+        "status": "executed",
+        "receipt": {
+          "type": "0x0",
+          "status": "0x1",
+          "gasUsed": "0x6637",
+          "cumulativeGasUsed": "0x6637",
+          "effectiveGasPrice": "0x3b9aca00",
+          "transactionIndex": "0x0",
+          "transactionHash": "0xc63a13e148f0d17fb25ce417f9cc298ba3ccd19ffa229d7c19a5718b911cad80",
+          "from": "0x9646f607073de9b9c9c78f5d23566ecedd4d5d35",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "to": "0x81ca2332a3d29dfc6288feeba6c3a4c825ed77a0",
+          "contractAddress": null,
+          "logs": []
+        },
+        "differing_fields": []
+      },
+      {
+        "index": 1,
+        "hash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+        "status": "executed",
+        "receipt": {
+          "type": "0x0",
+          "status": "0x1",
+          "gasUsed": "0x6746",
+          "cumulativeGasUsed": "0xcd7d",
+          "effectiveGasPrice": "0x3b9aca00",
+          "transactionIndex": "0x1",
+          "transactionHash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+          "from": "0xc93d633b807fe105e1d4809a3c0f4a8ad100fc1f",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000100000000800000000000000000000000000000000000",
+          "to": "0x827831ecdf9f2c18bab129bc54d543f896af78f8",
+          "contractAddress": null,
+          "logs": [
+            {
+              "address": "0x827831ecdf9f2c18bab129bc54d543f896af78f8",
+              "topics": [],
+              "data": "0x0000000000000000000000000000000000000000000000000000000000000014"
+            }
+          ]
+        },
+        "differing_fields": []
+      }
+    ],
+    "matches_original_receipts": true
+  },
+  "candidate": {
+    "anvil_version": "anvil/v1.8.3",
+    "outcomes": [
+      {
+        "index": 0,
+        "hash": "0xc63a13e148f0d17fb25ce417f9cc298ba3ccd19ffa229d7c19a5718b911cad80",
+        "status": "skipped"
+      },
+      {
+        "index": 1,
+        "hash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+        "status": "executed",
+        "receipt": {
+          "type": "0x0",
+          "status": "0x0",
+          "gasUsed": "0x64d0",
+          "cumulativeGasUsed": "0x64d0",
+          "effectiveGasPrice": "0x3b9aca00",
+          "transactionIndex": "0x0",
+          "transactionHash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+          "from": "0xc93d633b807fe105e1d4809a3c0f4a8ad100fc1f",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "to": "0x827831ecdf9f2c18bab129bc54d543f896af78f8",
+          "contractAddress": null,
+          "logs": []
+        },
+        "differing_fields": [
+          "status",
+          "gasUsed",
+          "cumulativeGasUsed",
+          "transactionIndex",
+          "logsBloom",
+          "logs"
+        ]
+      }
+    ],
+    "matches_original_receipts": false
+  },
+  "node_cleanup": [
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    }
+  ]
+}

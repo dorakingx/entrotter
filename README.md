@@ -129,7 +129,11 @@ so artifact hashes can differ even when execution outcomes match.
 gas/cumulative gas, effective price, transaction identity/index, ordered log bytes
 and bloom. A receipt/state-dependent difference, nonce conflict, rejection or
 unmined transaction leaves the baseline unverified. Original in-prefix oracle
-transactions are retained; missing archive state fails explicitly. Skipped
+transactions are retained. Missing parent headers or account code/balance can
+fail explicitly. Storage retrieval errors during mining can instead leave
+transactions `not_mined`, with an unverified baseline. Receipt absence alone
+cannot identify the cause or attest provider state; no fixture state or oracle
+response is substituted. Skipped
 transactions can change later execution, without inventing oracle inputs or
 future market responses. CLI success means a valid report was exported; check
 `baseline_verified` before claiming successful historical replay.
@@ -141,8 +145,11 @@ EVM balance/nonce/fee/intrinsic-gas checks and aggregate block gas limits remain
 enabled. Ordinary nodes do not receive this option. Accepted inputs can still
 be `not_mined`; acceptance alone never establishes a valid original receipt.
 The [synthetic funding evidence](evidence/trace-funding-admission/README.md)
-is native local proof, distinct from prior engine817 historical receipts and
-pending new bounded-worker CI. No sequential different-block mining, balance/
+is native local proof, distinct from prior engine817 historical receipts. The
+[engine935 candidate](https://github.com/entrotter/engine/pull/31) subsequently
+passed all eight checks, including its direct image funding case and separate
+host-default historical gates; the frozen author evidence retains its original
+pre-CI scope. No sequential different-block mining, balance/
 nonce repair or impersonation is substituted. Full-block execution, opcode traces, canonical block/root
 equality, withdrawals/end-block state, other fork eras and an alternate economy
 remain open work. This prefix feature does not close those gates.
@@ -156,6 +163,17 @@ with a disposable key; only public signed inputs are retained.
 The [four-transaction case](evidence/trace-mine-deadline/README.md) also matches
 all four original receipts and shows changed gas/logs plus a nonce conflict after
 omitting transaction 0. Its native and bounded evidence have separate scopes.
+
+The [oracle/provider-state coverage](evidence/trace-oracle-provider/README.md)
+uses disposable signed CREATE transactions to establish a synthetic parent
+oracle value10. An original signed update20 and a different sender's consumer
+call execute in the same block. Both original receipts match; omitting the
+update preserves the consumer signature and makes it revert with no log.
+Read-only local provider-fault/control tests distinguish explicit errors from
+integrity-valid unverified storage-failure reports. This is synthetic causal
+receipt proof, not a live oracle service, historical price, profit, whole-block
+state proof or model advantage. The new direct bounded-image protocol case
+awaits CI; it is separate from host default dispatch/lifecycle coverage.
 
 Encoding follows [EIP-155](https://eips.ethereum.org/EIPS/eip-155),
 [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) and

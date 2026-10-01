@@ -1,0 +1,164 @@
+{
+  "readiness.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/readiness.json",
+    "original_sha256": "93da6d6046d662672235bac71d9f7b2d3a2f21aa487b06a757c49468c510eea3",
+    "public_sha256": "93da6d6046d662672235bac71d9f7b2d3a2f21aa487b06a757c49468c510eea3",
+    "redacted": false
+  },
+  "frozen/helper.py": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/helper.py",
+    "original_sha256": "d24ffd710a28308008a98a3655d9d592376bef686ce5e48d46d70d3bdf666af1",
+    "public_sha256": "d24ffd710a28308008a98a3655d9d592376bef686ce5e48d46d70d3bdf666af1",
+    "redacted": false
+  },
+  "frozen/probe.py": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/probe.py",
+    "original_sha256": "32451afb2311d39c5a3ecc9b397d0f6ab190933d90b17b9008086e8f685efedf",
+    "public_sha256": "32451afb2311d39c5a3ecc9b397d0f6ab190933d90b17b9008086e8f685efedf",
+    "redacted": false
+  },
+  "frozen/test_trace_observer.py": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/test_trace_observer.py",
+    "original_sha256": "454501ab828fe9bb5e8495a19f4c4300738b5ae1d4013535c470e85a9a39c39a",
+    "public_sha256": "454501ab828fe9bb5e8495a19f4c4300738b5ae1d4013535c470e85a9a39c39a",
+    "redacted": false
+  },
+  "frozen/test_trace_diagnostic.py": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/test_trace_diagnostic.py",
+    "original_sha256": "0f1a75c80e3c9b6f7351e3fef7e35b51c4810b743c414dff6324b24188d6cca6",
+    "public_sha256": "0f1a75c80e3c9b6f7351e3fef7e35b51c4810b743c414dff6324b24188d6cca6",
+    "redacted": false
+  },
+  "results/finite-observations.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/results/finite-observations.json",
+    "original_sha256": "93a5817d56f20dea19c6df3f79d85aedf5921bf3a23e2df3f0a8911973901174",
+    "public_sha256": "93a5817d56f20dea19c6df3f79d85aedf5921bf3a23e2df3f0a8911973901174",
+    "redacted": false
+  },
+  "results/observed_control-diagnostic.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/results/observed_control-diagnostic.json",
+    "original_sha256": "3b27a581a49a291a520d89e8300f89ff71369e5b9fd255633be801b200b11deb",
+    "public_sha256": "3b27a581a49a291a520d89e8300f89ff71369e5b9fd255633be801b200b11deb",
+    "redacted": false
+  },
+  "results/observed_control-nodes.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/results/observed_control-nodes.json",
+    "original_sha256": "6f86b7d557b5d54bc4f1279a1155978964e00dc003687e8d9e6a427122d5229f",
+    "public_sha256": "6f86b7d557b5d54bc4f1279a1155978964e00dc003687e8d9e6a427122d5229f",
+    "redacted": false
+  },
+  "results/observed_control-report.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/results/observed_control-report.json",
+    "original_sha256": "52b1f11d79af1da0031e16ab0ebd8a9a92074f525f5ae10cb1d12d10a897830a",
+    "public_sha256": "52b1f11d79af1da0031e16ab0ebd8a9a92074f525f5ae10cb1d12d10a897830a",
+    "redacted": false
+  },
+  "results/observed_missing_storage-diagnostic.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/results/observed_missing_storage-diagnostic.json",
+    "original_sha256": "7560d8909eb18260c2acff385f153a3089344550dfee209176c5c4202f61f55b",
+    "public_sha256": "7560d8909eb18260c2acff385f153a3089344550dfee209176c5c4202f61f55b",
+    "redacted": false
+  },
+  "results/observed_missing_storage-nodes.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/results/observed_missing_storage-nodes.json",
+    "original_sha256": "6f86b7d557b5d54bc4f1279a1155978964e00dc003687e8d9e6a427122d5229f",
+    "public_sha256": "6f86b7d557b5d54bc4f1279a1155978964e00dc003687e8d9e6a427122d5229f",
+    "redacted": false
+  },
+  "results/observed_missing_storage-report.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/results/observed_missing_storage-report.json",
+    "original_sha256": "c4ba768c1a87eef1145b58a735072d2dc2adc9950bebc80349dcc467938cbf8c",
+    "public_sha256": "c4ba768c1a87eef1145b58a735072d2dc2adc9950bebc80349dcc467938cbf8c",
+    "redacted": false
+  },
+  "results/unobserved-original-report.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/results/unobserved-original-report.json",
+    "original_sha256": "471ddbf6a96fe503c95c7a3b8b85385de2837032b09dee0523be5b3c8097b318",
+    "public_sha256": "471ddbf6a96fe503c95c7a3b8b85385de2837032b09dee0523be5b3c8097b318",
+    "redacted": false
+  },
+  "results/worker-request.json": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/results/worker-request.json",
+    "original_sha256": "5ca8a54907b0eca09602df3a3c827b1ac074c15bf6ebd8477a12d04c56d219f2",
+    "public_sha256": "5ca8a54907b0eca09602df3a3c827b1ac074c15bf6ebd8477a12d04c56d219f2",
+    "redacted": false
+  },
+  "checks/observer-unit-final.log": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/observer-unit-final.log",
+    "original_sha256": "fd404bf7277057d897f9e728723efca2dfea51981788cd1e97c6a6c6fa23308f",
+    "public_sha256": "fd404bf7277057d897f9e728723efca2dfea51981788cd1e97c6a6c6fa23308f",
+    "redacted": false
+  },
+  "checks/diagnostic-unit.log": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/diagnostic-unit.log",
+    "original_sha256": "bd3fa787d825a93248a659e0ac4aa9981fcc32497e066ac7041c1d3d91977320",
+    "public_sha256": "bd3fa787d825a93248a659e0ac4aa9981fcc32497e066ac7041c1d3d91977320",
+    "redacted": false
+  },
+  "checks/collector-descendant-unit.log": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/collector-descendant-unit.log",
+    "original_sha256": "3061200bad521b82dfeda6ba7e51466acc1dfdc22fa6dd8c9f8302276563ae75",
+    "public_sha256": "3061200bad521b82dfeda6ba7e51466acc1dfdc22fa6dd8c9f8302276563ae75",
+    "redacted": false
+  },
+  "checks/probe.log": {
+    "source": ".quality/oracle-prefix/same-run-observer-004/probe.log",
+    "original_sha256": "ae524539cfbc5bf2268b37f3cbd1c8e809ee07479d3fd3428cba3a7bf82ac588",
+    "public_sha256": "ae524539cfbc5bf2268b37f3cbd1c8e809ee07479d3fd3428cba3a7bf82ac588",
+    "redacted": false
+  },
+  "checks/initial-import-harness-failure.log": {
+    "source": ".quality/oracle-prefix/same-run-observer-003/observer-unit.log",
+    "original_sha256": "fb5517121abb09b49ee6d33cc133354ff4a21c82be79ba41d7285216bac71db5",
+    "public_sha256": "1c9583a2bc55e75eb06ec19b513ccb65e0402b9f05dd79181723daf0744d888d",
+    "redacted": true
+  },
+  "prototype-review.json": {
+    "source": "coordination/.quality/root-observer-native-review.json",
+    "original_sha256": "28edb9d609e7dbaefbd597aed1d6a90a7c7359202aa04004cae984ca8e760bba",
+    "public_sha256": "28edb9d609e7dbaefbd597aed1d6a90a7c7359202aa04004cae984ca8e760bba",
+    "redacted": false
+  },
+  "prior-aac-ci/mainnet-prefix.json": {
+    "source": ".quality/oracle-prefix/diagnostic-ci/ci-bounded/worker-image-security/.quality/trace-replay/mainnet-prefix.json",
+    "original_sha256": "42c51a5a02f14d11e38c0e2b9af9702ff546965a79a0142fbce6ed6c7bbe20aa",
+    "public_sha256": "42c51a5a02f14d11e38c0e2b9af9702ff546965a79a0142fbce6ed6c7bbe20aa",
+    "redacted": false
+  },
+  "prior-aac-ci/mainnet-prefix-four.json": {
+    "source": ".quality/oracle-prefix/diagnostic-ci/ci-bounded/worker-image-security/.quality/trace-replay/mainnet-prefix-four.json",
+    "original_sha256": "d3b4f6802146f949f093fa4daf2569ffc259a6b1f97a8b418138dd6eb43189e6",
+    "public_sha256": "d3b4f6802146f949f093fa4daf2569ffc259a6b1f97a8b418138dd6eb43189e6",
+    "redacted": false
+  },
+  "prior-aac-ci/failure-diagnostic.json": {
+    "source": ".quality/oracle-prefix/diagnostic-ci/ci-bounded/worker-image-security/.quality/trace-replay/failure-diagnostic.json",
+    "original_sha256": "decea2096d6f455231389ffef6c6601f7a7060c55255c07229d4553358c02fef",
+    "public_sha256": "decea2096d6f455231389ffef6c6601f7a7060c55255c07229d4553358c02fef",
+    "redacted": false
+  },
+  "prior-aac-ci/author-partial-verification.json": {
+    "source": ".quality/oracle-prefix/diagnostic-ci/ci-verification.json",
+    "original_sha256": "456bfd5d86d57b904522cc8ba6f20879d1db6105e6074caf100aef47a6d688c6",
+    "public_sha256": "456bfd5d86d57b904522cc8ba6f20879d1db6105e6074caf100aef47a6d688c6",
+    "redacted": false
+  },
+  "prior-aac-ci/root-partial-verification.json": {
+    "source": "coordination/.quality/root-engine-diagnostic-partial-proof.json",
+    "original_sha256": "61afc8b05e49867e44b5b9795a878bb9e76e00d7bd76c35d3101566ef9ed4fd8",
+    "public_sha256": "61afc8b05e49867e44b5b9795a878bb9e76e00d7bd76c35d3101566ef9ed4fd8",
+    "redacted": false
+  },
+  "independent-review.json": {
+    "source": "coordination/.quality/oracle-integration/root-integrated-observer-review.json",
+    "original_sha256": "eaa757efe666e58fb0e9c3e3fa6a103704debb30c1502152c56afb539a81209f",
+    "public_sha256": "eaa757efe666e58fb0e9c3e3fa6a103704debb30c1502152c56afb539a81209f",
+    "redacted": false
+  },
+  "frozen/test_trace_observer-003.py": {
+    "source": ".quality/oracle-prefix/same-run-observer-003/test_trace_observer.py",
+    "original_sha256": "ab6f7a58a2a75251e13633cca7b66870c66b91ebc9c2849e88356d04ba964a0a",
+    "public_sha256": "ab6f7a58a2a75251e13633cca7b66870c66b91ebc9c2849e88356d04ba964a0a",
+    "redacted": false
+  }
+}

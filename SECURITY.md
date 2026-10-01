@@ -26,8 +26,12 @@ Normal RPC still denies raw submission. Default trace execution uses the same
 bounded Docker worker and shared admission/cleanup controls; its archive bridge
 is not an egress firewall. Native trace execution requires explicit opt-out.
 Receipt matches cover only the projected prefix fields, not block/state roots,
-provider authenticity or economic outcomes. Same-block funding dependencies can
-fail pool admission and must leave the baseline unverified. Trace checksums and
+provider authenticity or economic outcomes. Trace-only deferred pool admission
+allows earlier same-block funding while retaining EVM validity checks. Missing
+parent/account state can fail explicitly; mining-time archive/storage failures
+can leave an unverified `not_mined` baseline. Receipt absence does not identify
+the cause or attest parent state; no fixture state or oracle response is supplied.
+Trace checksums and
 worker request binding establish integrity, not independently recomputed receipt
 equivalence. See README.md and the raw evidence for limits.
 

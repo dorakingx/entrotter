@@ -1,0 +1,16 @@
+{
+  "run": 36907558519,
+  "attempt": 1,
+  "job": 110521798025,
+  "status": "failed",
+  "head": "e84980edd3945d405bf118790b8166c95bd75c7b",
+  "actual_Docker_tests": 25,
+  "actual_Docker_seconds": 216.086,
+  "new_oracle_case": "passed",
+  "failure_stage": "First default-host historical1 step failed after about2.84seconds with a generic bounded-worker error. No report exported; historical4/image/native advisory stages skipped. Actual cause not identified.",
+  "always_owned_container_cleanup": "passed",
+  "image_inputs_hash_match": 19,
+  "retained_artifact_files": 2,
+  "readonly_diagnosis": "Subsequent exact public dRPC chain/header/parent/original receipt capture passed with existing hash-locked Mozilla CA bundle and full certificate/hostname verification. The local macOS quality Python default trust-store issuer failure is separate from the Linux CI failure.",
+  "retry": "One unchanged-head isolated-only retry authorized as diagnostic evidence. Healthy followup does not prove the original cause was transient RPC. No gates/bounds/source changes or fixture fallback. No blind further retries."
+}
