@@ -52,6 +52,12 @@ and protected integration. Follow the [current pinned quick start](../docs/QUICK
 instead of rebuilding from moving main branches. The recordings below retain
 their original source versions.
 
+The execution snapshot below contains the optional bounded Linux CLI launcher and
+selects the bounded-diagnostic builder. Its [fresh measured walkthrough](../evidence/latest-candidate/summary.json)
+checks all six public revisions and complete fixture/local-Anvil results. Guide
+and evidence updates occur in later documentation commits with the same production
+tools; this snapshot is proposed code, not an independently approved release.
+
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
 | Coordination execution snapshot, dependency pins and Linux CLI helper | [dcef3ee](https://github.com/entrotter/entrotter/tree/dcef3ee06af060b17b52e0f3d59c060a9ab17fd6) | Current composition builds on [#53](https://github.com/entrotter/entrotter/pull/53) |

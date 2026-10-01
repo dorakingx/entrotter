@@ -1,0 +1,289 @@
+{
+  "status": "verified_candidate_pending_independent_review",
+  "wall_seconds": 24.431,
+  "coordination_execution_snapshot": "dcef3ee06af060b17b52e0f3d59c060a9ab17fd6",
+  "dependencies": {
+    "engine": "fa3738078079ffa8f8350a26dca60b560d8aa32f",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+    "scenarios": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+    "entrotter.github.io": "8671ab2ee481a894784afe2a2cc216fb6931b02c"
+  },
+  "all_six_public_checkouts_clean": true,
+  "complete_fixture_equality": true,
+  "complete_local_anvil_equality": true,
+  "fixture_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "local_anvil_artifact_id": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7",
+  "executed_guide_sha256": "83e6026e452355f34119720e63b7d0f1f0556ab985149adf82177fd7b19aa059",
+  "commands_sha256": "e0e49d1c2f5352e2397bc5a5a0c1a43bfb1ea7b492543708c0990ec4b7b40d04",
+  "prerequisites": "Running dedicated local Docker daemon; potentially warm image/base/build caches. Docker installation and VM startup excluded. Source fetches, fresh pipless venv, network Foundry download, worker build/doctor and both report verifications included.",
+  "scope": "All four guide shell blocks extracted verbatim; explicit documented local socket, OS TLS bundle and temporary export state supplied in environment. No new model/archive RPC calls.",
+  "checked_at": "2026-10-01T09:30:03.238525+00:00",
+  "report_references": [
+    "evidence/quick-start-oct01/report.json",
+    "evidence/quick-start-oct01/local-evm.json"
+  ],
+  "prior_report_bytes_unchanged": true,
+  "engine_pr": "https://github.com/entrotter/engine/pull/26",
+  "source_assembly": "Coordination execution snapshot dcef3ee includes the Linux CLI launcher and fa37380 engine manifest. Guide/evidence live in later documentation commits; production coordination tools are unchanged.",
+  "frozen_inputs": "dependency-pins.json, frozen provider source, model recordings and evaluated holdouts unchanged",
+  "previous_measurement": "evidence/quick-start-oct01/summary.json",
+  "independent_review": "Pending; GitHub collaborator readback shows only author. No collaborator added, review invented, protection weakened or main merge performed.",
+  "current_component_prs": [
+    {
+      "repo": "sdk-python",
+      "pr": 6,
+      "headRefOid": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "state": "OPEN",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T18:55:04Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/sdk-python/actions/runs/35462695005/job/105949280471",
+          "name": "docs-links",
+          "startedAt": "2026-09-19T18:54:55Z",
+          "status": "COMPLETED",
+          "workflowName": "Documentation links"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T18:55:21Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/sdk-python/actions/runs/35462694962/job/105949280279",
+          "name": "quality",
+          "startedAt": "2026-09-19T18:54:54Z",
+          "status": "COMPLETED",
+          "workflowName": "SDK quality and Python dependency audit"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T18:55:02Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/sdk-python/actions/runs/35462695017/job/105949281228",
+          "name": "unit (3.11)",
+          "startedAt": "2026-09-19T18:54:56Z",
+          "status": "COMPLETED",
+          "workflowName": "Tests"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T18:55:00Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/sdk-python/actions/runs/35462695017/job/105949281188",
+          "name": "unit (3.12)",
+          "startedAt": "2026-09-19T18:54:55Z",
+          "status": "COMPLETED",
+          "workflowName": "Tests"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T18:55:01Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/sdk-python/actions/runs/35462695017/job/105949281136",
+          "name": "unit (3.13)",
+          "startedAt": "2026-09-19T18:54:55Z",
+          "status": "COMPLETED",
+          "workflowName": "Tests"
+        }
+      ]
+    },
+    {
+      "repo": "cli",
+      "pr": 9,
+      "headRefOid": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "state": "OPEN",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T21:56:01Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/cli/actions/runs/35471836965/job/105974068689",
+          "name": "quality",
+          "startedAt": "2026-09-19T21:55:31Z",
+          "status": "COMPLETED",
+          "workflowName": "CLI quality and Python dependency audit"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T21:55:39Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/cli/actions/runs/35471836942/job/105974068656",
+          "name": "docs-links",
+          "startedAt": "2026-09-19T21:55:31Z",
+          "status": "COMPLETED",
+          "workflowName": "Documentation links"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T21:56:17Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/cli/actions/runs/35471836943/job/105974068734",
+          "name": "unit (3.11)",
+          "startedAt": "2026-09-19T21:56:07Z",
+          "status": "COMPLETED",
+          "workflowName": "Tests"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T21:55:39Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/cli/actions/runs/35471836943/job/105974068720",
+          "name": "unit (3.12)",
+          "startedAt": "2026-09-19T21:55:31Z",
+          "status": "COMPLETED",
+          "workflowName": "Tests"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T21:55:51Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/cli/actions/runs/35471836943/job/105974068695",
+          "name": "unit (3.13)",
+          "startedAt": "2026-09-19T21:55:31Z",
+          "status": "COMPLETED",
+          "workflowName": "Tests"
+        }
+      ]
+    },
+    {
+      "repo": "scenarios",
+      "pr": 8,
+      "headRefOid": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "state": "OPEN",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T22:54:19Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/35474622683/job/105981616450",
+          "name": "docs-links",
+          "startedAt": "2026-09-19T22:54:13Z",
+          "status": "COMPLETED",
+          "workflowName": "Documentation links"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T22:54:40Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/35474622690/job/105981616428",
+          "name": "quality",
+          "startedAt": "2026-09-19T22:54:13Z",
+          "status": "COMPLETED",
+          "workflowName": "Scenario Python quality"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T22:54:22Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/35474622711/job/105981616635",
+          "name": "validate",
+          "startedAt": "2026-09-19T22:54:13Z",
+          "status": "COMPLETED",
+          "workflowName": "Scenario contracts"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T22:54:24Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/35474622711/job/105981616541",
+          "name": "compatibility (3.11, bb8b3e8d32c7cbd49629d337758f30bfdf805045)",
+          "startedAt": "2026-09-19T22:54:13Z",
+          "status": "COMPLETED",
+          "workflowName": "Scenario contracts"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-09-19T22:54:56Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/35474622711/job/105981616738",
+          "name": "compatibility (3.13, 0d3857839b2187541e573bec2e58042ad5bf0b45)",
+          "startedAt": "2026-09-19T22:54:49Z",
+          "status": "COMPLETED",
+          "workflowName": "Scenario contracts"
+        }
+      ]
+    },
+    {
+      "repo": "entrotter.github.io",
+      "pr": 11,
+      "headRefOid": "8671ab2ee481a894784afe2a2cc216fb6931b02c",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "state": "OPEN",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-01T06:15:35Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36823808295/job/110244908935",
+          "name": "docs-links",
+          "startedAt": "2026-10-01T06:15:26Z",
+          "status": "COMPLETED",
+          "workflowName": "Documentation links"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-01T06:15:33Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36823808364/job/110244909913",
+          "name": "check",
+          "startedAt": "2026-10-01T06:15:26Z",
+          "status": "COMPLETED",
+          "workflowName": "Publish OSS documentation"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-01T06:17:04Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36823808364/job/110244910204",
+          "name": "accessibility",
+          "startedAt": "2026-10-01T06:16:03Z",
+          "status": "COMPLETED",
+          "workflowName": "Publish OSS documentation"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-01T06:16:00Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36823808364/job/110244910214",
+          "name": "quality",
+          "startedAt": "2026-10-01T06:15:27Z",
+          "status": "COMPLETED",
+          "workflowName": "Publish OSS documentation"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-01T06:17:05Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36823808364/job/110245361623",
+          "name": "build",
+          "startedAt": "2026-10-01T06:17:05Z",
+          "status": "COMPLETED",
+          "workflowName": "Publish OSS documentation"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-01T06:17:05Z",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/entrotter/entrotter.github.io/actions/runs/36823808364/job/110245361923",
+          "name": "deploy",
+          "startedAt": "2026-10-01T06:17:05Z",
+          "status": "COMPLETED",
+          "workflowName": "Publish OSS documentation"
+        }
+      ]
+    }
+  ],
+  "new_model_calls": 0,
+  "new_archive_rpc_calls": 0,
+  "files_sha256": {
+    "commands.sh": "e0e49d1c2f5352e2397bc5a5a0c1a43bfb1ea7b492543708c0990ec4b7b40d04",
+    "walkthrough.log": "74179ea4d10fda9da4c4d36eeb2aa321e638a2c76c4c138f985377df6df927e7",
+    "worker-image.json": "552c2cb7ad4cd6546577b464b9d52cacedeaeba79e4296bcae36861721d4ed6d"
+  },
+  "published_guide_sha256": "38b02c4c994f5c166d200c02f1580dda33cea5f9353aa676b399221e05147546",
+  "published_shell_blocks_match_executed_commands": true
+}

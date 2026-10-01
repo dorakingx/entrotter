@@ -964,3 +964,15 @@ are recorded separately from the earlier October 1 measurements. Historical
 service/topology proof remains the actual d5b3003 installation. GitHub's current
 collaborator readback shows only the author; an independent reviewer identity is
 requested, and no permission, review or branch-protection bypass is performed.
+
+All four updated quick-start blocks then ran verbatim from a fresh temporary
+workspace in 24.431 seconds, selecting coordination dcef3ee and engine fa37380.
+All six public checkouts were clean, with a fresh pipless venv, network Foundry
+download, worker build/doctor and complete fixture/local-Anvil equality. Docker
+was already running with potentially warm caches; installation/startup is excluded.
+The prior complete reports and recordings are reused unchanged. Current SDK/CLI/
+scenario/site PR heads match the selected pins and their required checks pass;
+website deployment jobs are intentionally skipped before review/merge.
+See evidence/latest-candidate/summary.json. Main still requires one independent
+approval with strict freshness/admin enforcement. No main merge or deployment is
+claimed. The dedicated VM was stopped afterward; the default VM is preserved.

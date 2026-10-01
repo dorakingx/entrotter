@@ -19,6 +19,14 @@ five-minute reproduction claim. See [worker security](WORKER_SECURITY.md) for
 the tested daemon and limits, and [bounded host service](BOUNDED_HOST_SERVICE.md)
 for the optional Linux API-process and VM configuration.
 
+The [latest candidate walkthrough](../evidence/latest-candidate/summary.json)
+completed in 24.431 seconds: six clean public checkouts, a fresh pipless venv,
+actual Foundry download/build/doctor, and complete fixture/local-Anvil equality.
+Docker was running with potentially warm base/build caches; installation and VM
+startup are excluded. The guide's four shell blocks were executed verbatim, with
+the documented local socket, OS TLS bundle and a private temporary export ledger
+supplied in the environment. This is not a cold-machine setup benchmark.
+
 The earlier October 1 commands were [executed from a fresh workspace](../evidence/quick-start-oct01/summary.json)
 in 24.35 seconds, including source fetches, venv creation, the Foundry download,
 image build and both report checks. That measurement used coordination 03f8786

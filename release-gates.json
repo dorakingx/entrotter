@@ -46,7 +46,8 @@
         "Engine PR #21 integrates bounded risk/recorded-replay execution and exactly reproduces all 19 original EVM reports (12 agent records) with no new model generation; protected review and frozen-script API/pin migration remain pending",
         "Fresh five-public-repo bounded agent checkout/venv/image build/exact replay/CLI verify+inspect in 20.403 seconds locally; bounded fixture 18.588 seconds, Docker running and warm caches. Frozen native reproduction remains exact; independent review pending.",
         "Candidate quick-start shell blocks executed verbatim in a fresh workspace: six immutable public checkouts, venv, real Foundry download/build, complete fixture match and real local Anvil verification in 25.57 seconds. Running Docker and warm caches; candidate review/integration remains pending.",
-        "Latest October 1 six-repository quick-start shell blocks ran verbatim in 24.352 seconds with running Docker/warm caches; complete fixture/local-EVM IDs match, no model/archive calls. Separate pinned Linux clean fixture/agent reproduction artifacts and all image input hashes verified."
+        "Latest October 1 six-repository quick-start shell blocks ran verbatim in 24.352 seconds with running Docker/warm caches; complete fixture/local-EVM IDs match, no model/archive calls. Separate pinned Linux clean fixture/agent reproduction artifacts and all image input hashes verified.",
+        "Latest proposed CLI/builder composition: clean public coordination dcef3ee + engine fa37380 and unchanged SDK/CLI/schema/site pins reproduce complete fixture/local-Anvil results in 24.431s through all four guide blocks; running Docker/warm caches are prerequisites. Current-head cross-repository CI and independent review are separate gates."
       ],
       "todo": [
         "independent approval and merge of engine/schema/coordination agent PRs"
@@ -291,7 +292,8 @@
     "evidence/host-service-oct01/summary.json",
     "evidence/submission-preparation/oct01-rules-recheck.json",
     "evidence/bounded-cli/summary.json",
-    "https://github.com/entrotter/engine/blob/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json"
+    "https://github.com/entrotter/engine/blob/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json",
+    "evidence/latest-candidate/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }
