@@ -71,7 +71,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/sdk-python
-          ref: b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+          ref: ee5523ded16488af32d1f64040f1996cd002f8f3
           path: sdk-python
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -109,16 +109,58 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/sdk-python
-          ref: b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+          ref: ee5523ded16488af32d1f64040f1996cd002f8f3
           path: sdk-python
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
           ref: 22b514cbba2ecd0c41ae99c330f8396c97acebf2
           path: cli
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: entrotter/entrotter.github.io
+          ref: b7c20ce2c080427fe0742a1afcb5dbc49277de70
+          path: entrotter.github.io
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
+      - name: Verify offline reader and viewer retain the actual signed-prefix evidence
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from entrotter_sdk import load_trace
+          files = [
+              Path('entrotter/evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json'),
+              Path('sdk-python/tests/data/canonical-mainnet-prefix-four.result.json'),
+              Path('entrotter.github.io/reports/trace-mainnet-prefix-four.json'),
+          ]
+          digest = '1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2'
+          assert all(hashlib.sha256(p.read_bytes()).hexdigest() == digest for p in files)
+          report = load_trace(files[0])
+          rows = report.transactions
+          assert report.baseline_verified
+          assert [r.original_receipt.gas_used for r in rows] == [208144, 234720, 175305, 178980]
+          assert [len(r.original_receipt.logs) for r in rows] == [8, 10, 6, 8]
+          assert [r.candidate.status for r in rows] == ['skipped', 'executed', 'executed', 'nonce_conflict']
+          assert rows[1].candidate.receipt.gas_used == 245136
+          assert rows[2].candidate.receipt.gas_used == 185721
+          assert rows[3].candidate.expected_nonce == 5522 and rows[3].candidate.original_nonce == 5523
+          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline original-report inspection; no new chain/model call',
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'artifact_id': report.artifact_id, 'report_sha256': digest,
+              'identical_report_files': [str(p) for p in files],
+              'baseline_verified': report.baseline_verified,
+              'candidate_statuses': [r.candidate.status for r in rows],
+              'candidate_gas': [r.candidate.receipt.gas_used if r.candidate.receipt else None for r in rows],
+              'nonce_conflict': {'original': 5523, 'expected': 5522},
+              'limits': ['Checksum/internal consistency is not authenticity/EVM truth.',
+                         'Browser behavior is tested by the separate exact-head viewer CI.'],
+          }, indent=2) + '\n')
+          PY
       - name: Build source-bound local image
         run: |
           mkdir -p entrotter/evidence/bounded-agent-integration/integration-ci

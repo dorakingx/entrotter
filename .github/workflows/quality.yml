@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/sdk-python
-          ref: b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+          ref: ee5523ded16488af32d1f64040f1996cd002f8f3
           path: sdk-python
           persist-credentials: false
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262

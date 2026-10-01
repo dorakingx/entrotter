@@ -3,7 +3,7 @@
   "dependency_commits": {
     "agent-engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
     "worker-engine": "8176597af994dddb7a3dc6721db623580ebc9601",
-    "sdk": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "sdk": "ee5523ded16488af32d1f64040f1996cd002f8f3",
     "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2"
   },
   "frozen_sources": {
