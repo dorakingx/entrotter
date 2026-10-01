@@ -116,8 +116,11 @@ independent guardian lifetime is unchanged. Native cleanup has its existing
 grace period; this is not a claim of whole-process native resource isolation.
 
 The result has `execution_kind: "canonical_transaction_prefix_replay"` and
-`trace_version`, **not** the v0.1 `schema_version`. The v0.1 SDK/viewer deliberately
-do not accept this format yet. `verify_trace` checks format/integrity and the
+`trace_version`, **not** the v0.1 `schema_version`. The existing v0.1 SDK/viewer
+interfaces remain separate. The reviewed [SDKee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3)
+and [viewerb7c20ce](https://github.com/entrotter/entrotter.github.io/tree/b7c20ce2c080427fe0742a1afcb5dbc49277de70)
+add distinct offline trace readers; these are unmerged candidates, not new EVM
+execution or deployment proof. `verify_trace` checks format/integrity and the
 worker additionally binds it to the complete admitted plan. A checksum is not
 proof of a trusted RPC, image or correct execution. Runtime is measured metadata,
 so artifact hashes can differ even when execution outcomes match.
@@ -131,10 +134,16 @@ transactions can change later execution, without inventing oracle inputs or
 future market responses. CLI success means a valid report was exported; check
 `baseline_verified` before claiming successful historical replay.
 
-Anvil pool admission evaluates parent state. A transaction funded only by an
-earlier transaction in the same block can be rejected before mining, even if
-valid historically. This remains explicit; no sequential mining or balance patch
-is substituted. Full-block execution, opcode traces, canonical block/root
+Owned trace nodes use Foundryv1.8.3's `--disable-pool-balance-checks` to defer
+parent-state balance, gas and fee admission checks to ordered EVM/block execution.
+This allows a transaction funded by an earlier transaction in the same block.
+EVM balance/nonce/fee/intrinsic-gas checks and aggregate block gas limits remain
+enabled. Ordinary nodes do not receive this option. Accepted inputs can still
+be `not_mined`; acceptance alone never establishes a valid original receipt.
+The [synthetic funding evidence](evidence/trace-funding-admission/README.md)
+is native local proof, distinct from prior engine817 historical receipts and
+pending new bounded-worker CI. No sequential different-block mining, balance/
+nonce repair or impersonation is substituted. Full-block execution, opcode traces, canonical block/root
 equality, withdrawals/end-block state, other fork eras and an alternate economy
 remain open work. This prefix feature does not close those gates.
 

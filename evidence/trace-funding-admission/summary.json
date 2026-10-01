@@ -1,0 +1,110 @@
+{
+  "base": "8176597af994dddb7a3dc6721db623580ebc9601",
+  "candidate_commit": "Enclosing commit; independent source/evidence review passed, exact-head CI pending.",
+  "status": "native_quality_and_independent_source_review_pass_exact_head_CI_pending",
+  "implementation": "Only owned trace Anvil receives --disable-pool-balance-checks; EVM validity/block gas and all existing lifetime/memory/transport controls remain. No balance/nonce/signature repairs.",
+  "before": {
+    "production_profile_regression_failed": true,
+    "real_paired_baseline_regression_failed": true,
+    "focused_tests": 2,
+    "log": "regression-before.log"
+  },
+  "after": {
+    "focused_tests_passed": 4,
+    "focused_seconds": 1.243,
+    "full_native_tests_passed": 248,
+    "full_native_seconds": 33.137,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "log": "native-suite.log"
+  },
+  "author_runner_failure": "An ignored evidence runner lacked __main__ guard, so multiprocessing spawn recursively started tests and broke the existing store barrier. Initial43.045s attempt retained in author-runner-failure.log. Runner fixed without production/test changes, fresh required full suite passed.",
+  "synthetic_result": {
+    "artifact_id": "a0c72b846faf16b9a87ebf8447e80106ad4600f3cf131114641cf20f3241fe06",
+    "runtime_seconds": 0.266237,
+    "baseline_verified": true,
+    "baseline_statuses": [
+      "executed",
+      "executed"
+    ],
+    "baseline_gas": [
+      21000,
+      21000
+    ],
+    "baseline_cumulative_gas": [
+      21000,
+      42000
+    ],
+    "candidate_statuses": [
+      "skipped",
+      "not_mined"
+    ],
+    "report_sha256": "fbfed29e8e25c069ba74a5b405f828543213a88a8dc913e15e2dc9b89806e28f",
+    "fixture_sha256": "a3e6ad0dbdbb2068dea677a130c90206567cf2ad9ddb2754eee9abedea97ac7a",
+    "timing_scope": "Disposable native synthetic paired replay only; not historical, model, cold setup or whole-process isolation measurement."
+  },
+  "quality": {
+    "production_and_script_sources": 23,
+    "full_bandit_findings_retained": 23,
+    "scanner_errors": 0,
+    "scanner_skips": 0,
+    "policy_change": "Only evm Popen line94/fingerprint shifted from86, two changed source hashes refreshed, same fixed-launch rationale expanded; no suppressions. Stale-source gate failure preserved.",
+    "exact_lock_packages": 42,
+    "advisories": 0,
+    "wheel_built": true,
+    "wheel_sha256": "1957edc706a8d5d1c038d11ca4eba59c97ddac85ca9ea795db7119e95325ba76",
+    "wheel_changed_modules_byte_match": true
+  },
+  "image_protocol_case": {
+    "file": "tests_isolated/test_trace.py",
+    "status": "added_not_executed_locally",
+    "scope": "Real no-network bounded image directly executes encode_trace_request/execute_request with frozen synthetic signatures. Separate from host run_trace default helper dispatch/lifecycle; existing actual default mainnet gates retained unchanged.",
+    "python_snippets_parsed": 2
+  },
+  "scope_limits": [
+    "No local Docker/VM startup, archive call, upstream write, model generation, holdout/media change, protected merge, deployment, submission or key retention.",
+    "Prior engine817 historical four-prefix proof and SDKee/siteb7 offline reader checks keep original sources; this native synthetic result does not revalidate them at the new source.",
+    "Runtime acceptance is not execution: omitted funding/invalid gas/fee/nonce inputs remain unmined without receipts.",
+    "Full-block/roots/end-state/withdrawals/opcode/other fork eras/oracle coverage remain open.",
+    "Independent human GitHub approval and all required exact-head CI remain separate gates."
+  ],
+  "source_sha256": {
+    "src/entrotter_engine/evm.py": "1ec41f147a517c4372bdf72fb5763bde1adc3075e462786ba656ff87c26dba55",
+    "src/entrotter_engine/trace.py": "e65d6dfba7368c407d2d8fea357211d34fe90b2869b789a1da3e1baa06217226",
+    "tests/test_trace.py": "d55c76944540f75ac1f0e3ff947a78c16f43b115b2020ebd302b5020ea5c2b15",
+    "tests/test_trace_funding.py": "51285f0d6e7abd2e7ef03662e38ccbafd5f43fd61d5ae3a4fb14d60bdeff4e65",
+    "tests_isolated/test_trace.py": "5bbfdf89f8bbd3e4ae0ee684349c62195d405eeab2b7653ec99ba21df817cb88",
+    "security-reviewed.json": "db1641e95862f78ebb49da4d6805d10dc3032484f745f8ee6cd6781e270c993b",
+    "README.md": "dad495ecb06796b43c4e7fd2e0c9aef77226e46ce58e8d49f7db3c838b557100",
+    "STATUS.md": "175ca80955d100968a24af254b2a57957af912ccdce8fb328c884873b2e318ad"
+  },
+  "public_log_redaction": {
+    "scope": "Public diagnostic log path redaction only; ignored raw originals retained byte-identically. No code, test outcome, line number or successful runtime changed; no checks rerun.",
+    "files": {
+      "author-runner-failure.log": {
+        "absolute_path_occurrences_redacted": 1,
+        "public_sha256": "1cbe8f09a3b99af199c63680518e96ea2128be07173e62dace05ab2f6709d8c0",
+        "ignored_raw_original_preserved": true
+      },
+      "regression-before.log": {
+        "absolute_path_occurrences_redacted": 2,
+        "public_sha256": "8174cf0c0c5661683dfc8c16f50de8aab542c2d15a064d04cdc1e6288973d27a",
+        "ignored_raw_original_preserved": true
+      },
+      "security-before-refresh.log": {
+        "absolute_path_occurrences_redacted": 2,
+        "public_sha256": "fe15536c4abccc4a73d31fb57087cd65529db7bc57705fc2e93e7b9502ce3615",
+        "ignored_raw_original_preserved": true
+      }
+    }
+  },
+  "independent_source_review": {
+    "status": "passed_no_remaining_actionable_findings",
+    "file": "independent-review.json",
+    "sha256": "ce6de8f9a4ae78f9a7e25b2834f9417b16a8f058e5e19d7570773beb32b54e37",
+    "reviewed_summary_sha256": "d6b9106b2e79db7aa3f64dd6e21755a1fc7caf2ca3b9ce9e3837aef3743eb52b",
+    "scope": "Independent software source/evidence review; not required human GitHub approval."
+  },
+  "source_hash_scope": "Reviewed pre-publication snapshot. All production/tests/policy hashes remain exact; STATUS review-status text is updated after review. Preserve reviewed hashes in independent-review.json."
+}
