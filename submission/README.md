@@ -52,10 +52,16 @@ and protected integration. Follow the [current pinned quick start](../docs/QUICK
 instead of rebuilding from moving main branches. The recordings below retain
 their original source versions.
 
+The execution snapshot below contains the optional bounded Linux CLI launcher and
+selects the bounded-diagnostic builder. Its [fresh measured walkthrough](../evidence/latest-candidate/summary.json)
+checks all six public revisions and complete fixture/local-Anvil results. Guide
+and evidence updates occur in later documentation commits with the same production
+tools; this snapshot is proposed code, not an independently approved release.
+
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination and dependency pins | [03f8786](https://github.com/entrotter/entrotter/tree/03f878613b56240002c83422f3540757b2848634) | [#47](https://github.com/entrotter/entrotter/pull/47) |
-| Bounded agent engine and build lifetime | [d5b3003](https://github.com/entrotter/engine/tree/d5b30035b4a2a1c292db24f6caf81ed419a2684e) | [#22](https://github.com/entrotter/engine/pull/22) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [dcef3ee](https://github.com/entrotter/entrotter/tree/dcef3ee06af060b17b52e0f3d59c060a9ab17fd6) | Current composition builds on [#53](https://github.com/entrotter/entrotter/pull/53) |
+| Bounded agent engine, build lifetime and diagnostics | [fa37380](https://github.com/entrotter/engine/tree/fa3738078079ffa8f8350a26dca60b560d8aa32f) | [#26](https://github.com/entrotter/engine/pull/26) |
 | Python SDK | [b0c2ba3](https://github.com/entrotter/sdk-python/tree/b0c2ba3bba411e548af44101ae06e879bd7b5dc0) | [#6](https://github.com/entrotter/sdk-python/pull/6) |
 | CLI | [a63a390](https://github.com/entrotter/cli/tree/a63a39000e03d151e80b5a9c47dd4df449281b93) | [#9](https://github.com/entrotter/cli/pull/9) |
 | Schema contracts | [3a78ecc](https://github.com/entrotter/scenarios/tree/3a78ecca24334ae87119a5a0b64c84ba6dd71de1) | [#8](https://github.com/entrotter/scenarios/pull/8) |

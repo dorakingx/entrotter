@@ -46,7 +46,8 @@
         "Engine PR #21 integrates bounded risk/recorded-replay execution and exactly reproduces all 19 original EVM reports (12 agent records) with no new model generation; protected review and frozen-script API/pin migration remain pending",
         "Fresh five-public-repo bounded agent checkout/venv/image build/exact replay/CLI verify+inspect in 20.403 seconds locally; bounded fixture 18.588 seconds, Docker running and warm caches. Frozen native reproduction remains exact; independent review pending.",
         "Candidate quick-start shell blocks executed verbatim in a fresh workspace: six immutable public checkouts, venv, real Foundry download/build, complete fixture match and real local Anvil verification in 25.57 seconds. Running Docker and warm caches; candidate review/integration remains pending.",
-        "Latest October 1 six-repository quick-start shell blocks ran verbatim in 24.352 seconds with running Docker/warm caches; complete fixture/local-EVM IDs match, no model/archive calls. Separate pinned Linux clean fixture/agent reproduction artifacts and all image input hashes verified."
+        "Latest October 1 six-repository quick-start shell blocks ran verbatim in 24.352 seconds with running Docker/warm caches; complete fixture/local-EVM IDs match, no model/archive calls. Separate pinned Linux clean fixture/agent reproduction artifacts and all image input hashes verified.",
+        "Latest proposed CLI/builder composition: clean public coordination dcef3ee + engine fa37380 and unchanged SDK/CLI/schema/site pins reproduce complete fixture/local-Anvil results in 24.431s through all four guide blocks; running Docker/warm caches are prerequisites. Current-head cross-repository CI and independent review are separate gates."
       ],
       "todo": [
         "independent approval and merge of engine/schema/coordination agent PRs"
@@ -107,7 +108,8 @@
         "Proposed Linux API host service: actual cgroup startup guard, one CPU/256 MiB/no swap/64 tasks, descriptor/core and session limits. Real VM CLI-SDK-API fixture/Anvil equality, CPU/PID/OOM/scaled timeout and missing-cap startup rejection pass. Dedicated guest block geometry/mounts and host-share EROFS verified. Scope excludes ordinary host callers, hypervisor/log/base-cache overhead and hard whole-build deadlines; independent review pending.",
         "Engine PR #22 now bounds whole POSIX image preparation at 600 seconds using an independent owned-session watchdog/lifetime pipe; blocked native call, actual stalled HTTP, SIGTERM and owner SIGKILL tests pass. Actual 60-second BuildKit RUN stops in 10.013 seconds under a ten-second cap with no guest probe process left. All 204 pinned-native local tests, quality and unchanged-image fixture match pass; current CI/independent review recorded in PR, integration pending.",
         "Latest host-service guide freshly installed at engine d5b3003, SDK b0c2ba3 and CLI a63a390 after canonical share repair. Complete fixture/Anvil API reports match current quick start; real CPU/PID/OOM/scaled timer and unbounded-start rejection pass. Both shares reject writes with EROFS; all disks classified including read-only cloud-init ISO. Service/owned work cleaned; historical proof retained separately.",
-        "Optional bounded Linux CLI: fixed per-user user-service admission, actual CPU/memory/swap/tasks/FD/core/NNP startup guard, original-owner pidfd cancellation and full 180.170-second timer. CWD package spoof failed before safe-path fix and passes after; complete fixture/local-Anvil/API reports match. Four controller tests, full 21-source quality and 78 retained findings pass; independent review and ordinary caller/host overhead limits remain."
+        "Optional bounded Linux CLI: fixed per-user user-service admission, actual CPU/memory/swap/tasks/FD/core/NNP startup guard, original-owner pidfd cancellation and full 180.170-second timer. CWD package spoof failed before safe-path fix and passes after; complete fixture/local-Anvil/API reports match. Four controller tests, full 21-source quality and 78 retained findings pass; independent review and ordinary caller/host overhead limits remain.",
+        "Engine PR #26/fa37380: builder diagnostics stream in <=64 KiB chunks with <=1 MiB + one 68-byte notice, keeping failure status and the independent deadline. Failing-before/noisy-exit/endless-session regressions, 206 pinned-native tests, all 22 production source checks and 24 retained findings pass. Actual four-step BuildKit requests 16 MiB and emits exactly 1,048,644 stderr bytes; full fixture and image inputs agree. Current CI/review recorded in PR; other Docker captures/storage and native callers remain separately scoped."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
@@ -289,7 +291,9 @@
     "evidence/submission-preparation/oct01-checkpoint.json",
     "evidence/host-service-oct01/summary.json",
     "evidence/submission-preparation/oct01-rules-recheck.json",
-    "evidence/bounded-cli/summary.json"
+    "evidence/bounded-cli/summary.json",
+    "https://github.com/entrotter/engine/blob/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json",
+    "evidence/latest-candidate/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

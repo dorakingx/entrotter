@@ -912,3 +912,67 @@ code, Docker daemon/build work and host hypervisor/cache/log/backup overhead rem
 outside the helper's leaf budget. An API job may continue after its client dies
 under the separate API/worker limits. Independent review, protected integration
 and the remaining G1-G5 gates are still open; Discord remains excluded.
+
+## October 1 — Worker build diagnostic budget candidate
+
+Engine PR #26 at fa37380 is a focused branch on PR #22/d5b3003. Build diagnostics
+previously inherited stdout/stderr without an output quota. They now merge into
+a pipe, read at most 64 KiB per chunk and forward at most 1 MiB plus a 68-byte
+notice to stderr. Further output is drained without accumulating it; nonzero
+command status and the existing independent deadline/owned-session cleanup remain.
+Successful stdout contains only the final JSON manifest summary. Runtime source
+and image inputs are unchanged; no coordination dependency pin is promoted here.
+
+A real noisy-command regression fails before the fix and retains exit 7 after it.
+An endless producer stops under a shortened 0.4-second independent budget with
+no active process group. All 206 local native/unit tests (17 builder tests) pass
+with pinned Foundry 1.8.3; all 22 production files pass Ruff/mypy and the full
+source-bound scan retains 24 findings. Actual dedicated Linux arm64 BuildKit
+executes four RUN steps requesting 16 MiB and forwards exactly 1,048,644 stderr
+bytes, no stdout and one notice. The checked-in Docker regression independently
+passes and is now included in mandatory isolated CI. Full normal fixture equality
+and unchanged image-input hashes pass after the normal build.
+
+The first Dockerfile used an image ID as FROM and failed reference resolution.
+A single-step probe then produced only 414,062 bytes, so it did not exercise the
+helper quota; four steps do. These setup failures are distinct from final proof.
+The probe image was removed only after its unique label/full ID matched, with no
+worker left. Dedicated VM stop/default VM preservation are verified. Normal worker
+image/cache stays local; no registry publication, model call or archive-RPC call.
+See https://github.com/entrotter/engine/blob/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json.
+
+Current-head CI and independent review are recorded in PR #26. Other Docker JSON
+captures, daemon/BuildKit storage, image/cache/host overhead quotas and abrupt-death
+staging/configuration leftovers remain open. The coordination STATUS/gate additions
+were held as local checkpoints and are included in the following candidate-pin
+preparation, without a separate status-only PR or CI run. All overall gates remain partial.
+
+## October 1 — Latest tested candidate composition
+
+This candidate builds on coordination PR #53/6a30402 and selects engine PR
+#26/fa37380 in the bounded-source manifest, current integration job and actual
+type dependency. Engine's eight and coordination's five existing checks pass;
+the updated dependency combination still needs its own current-head checks.
+Type checking against the clean fa37380 checkout passes with only the same three
+frozen-provider diagnostics. Engine runtime modules and Dockerfile are unchanged
+from d5b3003; SDK/CLI/schema/site pins and frozen model/benchmark inputs are retained.
+
+This is proposed candidate composition, not protected main integration or approval.
+The optional CLI helper and bounded builder can now be reviewed together using
+immutable source snapshots. Fresh public reproduction and this candidate's CI
+are recorded separately from the earlier October 1 measurements. Historical
+service/topology proof remains the actual d5b3003 installation. GitHub's current
+collaborator readback shows only the author; an independent reviewer identity is
+requested, and no permission, review or branch-protection bypass is performed.
+
+All four updated quick-start blocks then ran verbatim from a fresh temporary
+workspace in 24.431 seconds, selecting coordination dcef3ee and engine fa37380.
+All six public checkouts were clean, with a fresh pipless venv, network Foundry
+download, worker build/doctor and complete fixture/local-Anvil equality. Docker
+was already running with potentially warm caches; installation/startup is excluded.
+The prior complete reports and recordings are reused unchanged. Current SDK/CLI/
+scenario/site PR heads match the selected pins and their required checks pass;
+website deployment jobs are intentionally skipped before review/merge.
+See evidence/latest-candidate/summary.json. Main still requires one independent
+approval with strict freshness/admin enforcement. No main merge or deployment is
+claimed. The dedicated VM was stopped afterward; the default VM is preserved.
