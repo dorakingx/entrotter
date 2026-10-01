@@ -1264,3 +1264,50 @@ state coverage and full-block/opcode/end-state scope remain open. Required GitHu
 approval, candidate Pages publication, personal facts/terms and submission gates
 remain separate. No localDocker/VM startup, protected merge, new model/holdout
 evaluation, media upload, formal submission or Discord work occurred.
+
+## October 2 — Same-block signed funding candidate preparation
+
+The previous86a/968b reader composition passed all five first-attempt checks.
+Downloaded21-source type inputs/three frozen diagnostics/78full retained findings/
+50audited packages/19image inputs/54doc hashes match. Full API/CLI/admission,
+normal and optimized exports, fixture and recorded-model reproduction pass;
+clean fixture8.763215s and model8.018850s belong to engine817 with Docker already
+running and potentially warm caches. These are not cold/full-guide measurements.
+See evidence/trace-funding-integration/previous-reader-ci.json and existingPR55
+job links. Public evidence in the older reader folder records its earlier prepared
+state; current pass does not backfill those historical records.
+
+EnginePR31/935558a defers parent-state pool balance/fee/gas checks only on owned
+trace nodes. Actual ordered EVM/block validation, signatures, loopback/no-mining,
+memory bound, guardian/deadline and ordinary profiles remain unchanged. Two
+regressions fail before the fix; four focused and248 full native tests pass after
+with0skips. Native synthetic funding produces two matching original signed
+receipts, gas21000/21000 and cumulative21000/42000; omission leaves a dependent
+spend unmined without a receipt. Invalid gas/fee/nonce inputs leave state unchanged.
+No replay balance/nonce/code repairs or sequential different-block workaround.
+Independent source/evidence review passes after redacting public local-installation
+paths; ignored originals and test outcomes remain unchanged. All8 new-head checks pass first attempt:248 Linux native tests36.615s and24
+actual Docker cases221.940s without skips. Root verifies23source/18wheel/19image/
+42Python/26OS/1126signedCargo/11doc bindings, retained full findings and exact
+original historical receipt projections. Current default four-prefix24.17299s
+keeps the complete previous outcomes except runtime/hash and one accurate admission
+assumption. Current SDK offline readback also passes. Database binary digest is
+CI-recorded, not locally rehashed from exported metadata;172nonCargo entries remain
+outside the Cargo audit. Synthetic image/protocol funding is distinct from the
+actual default host historical case. Human GitHub approval remains separate.
+
+The new immutable coordination source snapshot a253da8 selects engine935 with
+unchanged SDKee/CLI22/schema8785/siteb7. Four-file source review has no actionable
+findings;21-source types and the same three frozen diagnostics pass. The exact
+new offline CI step checks the frozen synthetic report with the typed SDK and
+actual viewer codec at Node22.23.1; baseline/adverse statuses, gas/cumulative and
+absent candidate receipts match. Rendered browser and historical funding proof
+are not inferred. See evidence/trace-funding-integration/README.md. The quick-start
+and latest submission index select this snapshot; old report/model/holdout/video
+sources and measurements retain their actual pins. New combined CI is pending.
+
+Archived same-block funding, broader oracle/missing-state cases and full-block/
+roots/end-state/opcode scope remain open. Protected human approvals, candidate
+Pages publication, personal facts/terms and formal submission gates remain open.
+No local Docker/VM startup, upstream writes, new model or holdout run, media upload,
+protected merge, package publication, formal submission or Discord work occurred.

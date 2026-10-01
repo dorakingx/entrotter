@@ -47,17 +47,20 @@ feature. The pitch does not establish founder communication skills or market fit
 
 ## Latest candidate sources
 
-These are the October 1 tested candidates, still awaiting independent approval
+These are the October 2 candidate sources, still awaiting independent approval
 and protected integration. Follow the [current pinned quick start](../docs/QUICK_START.md)
 instead of rebuilding from moving main branches. The recordings below retain
 their original source versions.
 
 The execution snapshot below contains the optional bounded Linux CLI launcher,
 the canonical contract identity fix and original signed transaction-prefix replay.
-The [current composition evidence](../evidence/canonical-mine-integration/summary.json)
-binds the tested engine/schema sources, original receipt match and exact inputs.
-The prefix is a separate technical case; full-block/end-state, same-block funding
-admission and broader oracle/missing-state coverage remain open. The
+The [prior four-prefix receipt evidence](../evidence/canonical-mine-integration/summary.json)
+binds its original engine817/schema sources, receipt match and exact inputs.
+The prefix is a separate technical case. The new
+[funding composition](../evidence/trace-funding-integration/README.md) verifies
+native synthetic same-block funding and an adverse omission without state repair.
+Archived same-block funding, full-block/end-state and broader oracle/missing-state
+coverage remain open. The
 [recorded-agent viewer evidence](../evidence/agent-viewer-integration/summary.json)
 adds original decision/provenance inspection and preserves original reports. Current
 combined checks and public reproduction measurements are recorded in
@@ -68,8 +71,8 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [968b488](https://github.com/entrotter/entrotter/tree/968b48886991223278ae0671848279b16e93e157) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
-| Bounded agent engine, contract identity and signed transaction-prefix replay | [8176597](https://github.com/entrotter/engine/tree/8176597af994dddb7a3dc6721db623580ebc9601) | [#30](https://github.com/entrotter/engine/pull/30) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [a253da8](https://github.com/entrotter/entrotter/tree/a253da8695fb2521702056dca286ed16b0aba44f) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Bounded agent engine, contract identity and signed transaction-prefix replay | [935558a](https://github.com/entrotter/engine/tree/935558a5b95755c72ca6fb24f076b3a231fa5b64) | [#31](https://github.com/entrotter/engine/pull/31) |
 | Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
@@ -80,7 +83,9 @@ adds SDK and browser inspection of the actual four-receipt case. SDK all5checks
 and viewer all4checks pass; root artifact verification confirms33Linux browser
 groups/25raw axe scans without reported violations. Checksums and internal
 relationships do not authenticate source state or prove economic/EVM truth.
-Final combined CI remains separate. No new video/model/holdout result is implied.
+The previous86a reader composition passed all five combined checks and54document
+hashes; the new funding composition requires its own exact-head CI. No new
+video/model/holdout result is implied.
 
 ## Recorded review sources
 

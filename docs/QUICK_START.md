@@ -34,7 +34,7 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination 968b488, engine 8176597, schemas 8785bb0 and CLI 22b514c; SDK and
+coordination a253da8, engine935558a, schemas8785bb0 and CLI22b514c; SDK and
 signed-prefix reader/viewer pins are ee5523d/b7c20ce. Older timings do not measure
 this new signed-prefix inspection composition.
 
@@ -70,7 +70,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 968b48886991223278ae0671848279b16e93e157
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git a253da8695fb2521702056dca286ed16b0aba44f
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
@@ -228,7 +228,9 @@ above does not include this optional viewer step or claim a cold installation.
 ## Optional original transaction-prefix replay
 
 The [signed-prefix composition](../evidence/canonical-mine-integration/summary.json)
-selects engine #30 and separate schema #11. From `entrotter-candidate`, an operator
+retains the historical engine#30 receipt evidence and separate schema#11.
+The [funding composition](../evidence/trace-funding-integration/README.md) selects
+engine#31 for the new same-block admission fix. From `entrotter-candidate`, an operator
 with an archive-capable `ENTROTTER_RPC_URL` can run
 `python3 -m entrotter_engine trace-run engine/tests/data/canonical-mainnet-prefix-four.json -o transaction-replay.json`
 using the configured bounded worker. It forks the original parent with canonical
@@ -276,8 +278,11 @@ The SDK/browser check checksums and selected internal relationships; they do not
 recover signatures, authenticate a provider or prove EVM/source/financial truth.
 Browser numeric integer fields are limited to exact JavaScript safe integers;
 hex quantities remain exact. At most32 original transactions in Ethereum's
-Shanghai interval are supported. Same-block funding can fail Anvil pool admission
-and leave the baseline unverified. Full-block/opcode/root/end-state equivalence
+Shanghai interval are supported. Owned trace nodes defer parent-state pool
+balance/fee/gas admission to actual ordered EVM/block execution. Native synthetic
+same-block funding and an adverse omission are verified; accepted transactions
+can remain unmined and receive no receipt. No funding or nonce repair occurs.
+Archived same-block funding and full-block/opcode/root/end-state equivalence
 and broader oracle/divergence coverage remain open. See the pinned engine README
 for complete limits and upstream write denial. This inspection is outside all
 previous timed guide walkthroughs; frozen model/holdout/media sources are unchanged.

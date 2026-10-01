@@ -1,0 +1,48 @@
+{
+  "status": "pass_no_remaining_actionable_findings",
+  "execution_snapshot": "a253da8695fb2521702056dca286ed16b0aba44f",
+  "engine_head": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+  "scope": "Final read-only coordination snapshot/docs/evidence review and focused submission pointer fix; source tests, chain, browser and CI not rerun.",
+  "files_sha256": {
+    ".github/workflows/ci.yml": "2d0e6b4447185a6a9928681f826ac9f75079777da9b42dc5a1b0fb47b2c9650f",
+    ".github/workflows/quality.yml": "6ffe00f15247861b07f67df30b2d665673dd82b7dc18d2d2a2d9def9a9e5e3be",
+    "bounded-worker-pins.json": "08cb55f25d78b20141c7decb920660d8b202915703cf1f2ab8b0b6bf3da6d79b",
+    "quality-inputs.json": "981dae244e2d557bbb7c1d066b9abc5da49c0bf1c8011e25de411e96e55915e3",
+    "README.md": "06f36329d2352af72cddc9aa0aa146c0d8d6ad559e5462b8fb3c6322704ea8df",
+    "STATUS.md": "fb51aad57b1fed249f177048c0961ec45a10ddf557964f97f5e953aa970592f9",
+    "docs/QUICK_START.md": "0b3aae6ca9926c651d90ed803c4bec5001a0c32c036c4dfd4da81a63a537a1c6",
+    "submission/README.md": "4f5bd8b4d25fd36b55312b86f5550dcfc40f340396641f3dbbeed51fa91255f4",
+    "release-gates.json": "5ab75cbfab38c2006c61cd9e51ef258322024abf8155cb9085ea0467614dba0b",
+    "evidence/trace-funding-integration/README.md": "4c0b26ac8f7472b4888a17a80e0aaf930d74d11cddbb22c2db84d5f2ab698262",
+    "evidence/trace-funding-integration/bounded-mainnet-prefix-four.json": "08223c26889550c08fe700ceac38b12998bc04f0f63d4c2c8cbafa18e4b63b93",
+    "evidence/trace-funding-integration/independent-source-review.json": "3a73d7244d12f980443cafaaf71f26abd3e576efdfaee2e653d7cc8c5376a922",
+    "evidence/trace-funding-integration/offline-result.json": "9c52b8a8f8d4f72f0aaa7557bb906faa2d9346d24e40ce86bf4c058cc4cb20d6",
+    "evidence/trace-funding-integration/original-reader-result.json": "a8439186b1c893a9f008439bf77b67b290283dd69413838a1bb0e0b18d36999e",
+    "evidence/trace-funding-integration/previous-reader-ci.json": "9c6353c74a8fb6b7b3968b927614185c5b595f9227cde604b04dcd0924588f67",
+    "evidence/trace-funding-integration/root-engine-ci-verification.json": "c158afb8cde9a6ca764900d2e024fff138b0fe8a43f8389ffc7cd05898f21aa0",
+    "evidence/trace-funding-integration/summary.json": "480aba4f18da3fd5d256db2e8eb79e552f59f675a62ebcfb750055200f459473"
+  },
+  "findings": [],
+  "resolved_findings": [
+    {
+      "priority": 3,
+      "file": "submission/README.md",
+      "trigger": "Historical817 evidence was labeled current while current table selects935/a253.",
+      "resolution": "Link now says prior four-prefix receipt evidence and explicitly preserves original engine817/schema sources; new935 funding proof/table remains separate."
+    }
+  ],
+  "observations": [
+    "Four source files remain exact reviewed immutable a253 bytes; manifests/workflows/type policy agree on935 with unchanged SDKee/siteb7/CLI22/scenarios8785 and frozen agentbb8.",
+    "Frozen fetch/top/table select exacta253 and935; historical timings/report/model/holdout/video sources remain separate.",
+    "Published root engine artifact proof matches author downloaded full8CI verification:248native/24image,23sources/18wheel/19image/42Python/26OS/1126Cargo/11docs.172outsideCargo and nonexported DBbinary remain explicit.",
+    "Actual new4 report is byte-identical to downloaded935 CI report08223c26...; complete prior source/outcomes equal except runtime/hash and exactly one admission assumption. Old817 receipt evidence remains unchanged.",
+    "Offline synthetic report reader result and independent source review hashes resolve to exact public files. Typed SDK/actual Node codec smoke does not claim rendered browser or archived funding proof.",
+    "Current component CI all8passed firstattempt; previous86a combined5 proof retains prior timings. New combined exact-head CI remains pending; release overall remains in_progress.",
+    "Final summary funding_proof_synthetic_only=true scopes only funding evidence, distinguishing separate current935 actual mainnet receipt cases. No source/test/link change."
+  ],
+  "limits": [
+    "No new test/archive/model/Docker/VM/browser execution; parent offline link proof reused.",
+    "a253 snapshot not yet published until parent consolidated push; no current combined-head success claim.",
+    "Software/component review does not satisfy required human GitHub approval; no merge/deployment/submission or G1-G5 completion implied."
+  ]
+}

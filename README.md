@@ -65,6 +65,11 @@ combined CI evidence is distinct from the older deployed site. Follow the
 [optional replay instructions](docs/QUICK_START.md#optional-original-transaction-prefix-replay)
 for the recorded four-transaction case and archive requirements.
 
+The [same-block funding composition](evidence/trace-funding-integration/README.md)
+adds a trace-only admission fix and cross-repository inspection of the synthetic
+original-signature baseline and adverse funding omission. Historical and bounded
+execution, combined CI and protected publication remain distinct evidence gates.
+
 ## Local API and SDK
 
 After completing the quick start, keep its environment variables in both terminals.
