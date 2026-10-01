@@ -68,7 +68,7 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [f02b2ac](https://github.com/entrotter/entrotter/tree/f02b2ac2d1c3e979e451534304b0252df6293dcc) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [cda73fe](https://github.com/entrotter/entrotter/tree/cda73fe04e3e525bfcf253afcea06e63029e7af0) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
 | Bounded agent engine, contract identity and signed transaction-prefix replay | [0d4faf7](https://github.com/entrotter/engine/tree/0d4faf7d4feda817499ea19e8797a0e03504fbad) | [#29](https://github.com/entrotter/engine/pull/29) |
 | Python SDK | [b0c2ba3](https://github.com/entrotter/sdk-python/tree/b0c2ba3bba411e548af44101ae06e879bd7b5dc0) | [#6](https://github.com/entrotter/sdk-python/pull/6) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |

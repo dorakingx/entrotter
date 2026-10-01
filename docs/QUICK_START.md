@@ -34,7 +34,7 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination f02b2ac, engine 0d4faf7, schemas 8785bb0 and CLI 22b514c; SDK and
+coordination cda73fe, engine 0d4faf7, schemas 8785bb0 and CLI 22b514c; SDK and
 recorded-agent viewer pins remain b0c2ba3/49914a2. Older timings do not measure
 this new signed-prefix composition.
 
@@ -70,7 +70,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git f02b2ac2d1c3e979e451534304b0252df6293dcc
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git cda73fe04e3e525bfcf253afcea06e63029e7af0
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
