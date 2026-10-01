@@ -34,8 +34,9 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination 2204fca, engine 6e13f34 and CLI 22b514c; SDK/schema pins are retained,
-with the recorded-agent viewer at49914a2.
+coordination f02b2ac, engine 0d4faf7, schemas 8785bb0 and CLI 22b514c; SDK and
+recorded-agent viewer pins remain b0c2ba3/49914a2. Older timings do not measure
+this new signed-prefix composition.
 
 The prior [inspection-fix composition](../evidence/agent-inspection-integration/summary.json)
 selects the independently code-reviewed CLI fix: extra typed-response fields
@@ -46,7 +47,7 @@ review is distinct from protected-main approval. Combined current-head CI and it
 clean reproduction artifacts are recorded in the candidate PR: fixture6.308s and
 model6.830s belong to coordination328f4c1/enginec167193/CLI22b514c.
 
-The current [contract identity composition](../evidence/contract-identity-integration/summary.json)
+The prior [contract identity composition](../evidence/contract-identity-integration/summary.json)
 selects engine6e13f34. An independent source reviewer reproduced different Anvil
 outcomes for canonically equal local contract maps differing only in key order.
 Duplicate normalized contract addresses now refuse before native/default/agent
@@ -69,7 +70,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 2204fcad3dfe329d433806126ee68adb796925b6
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git f02b2ac2d1c3e979e451534304b0252df6293dcc
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
@@ -223,6 +224,29 @@ All older measurements retain their actual pins; candidate review/publication an
 manual assistive-technology/full WCAG checks remain separate gates.
 Stop this local static server with Ctrl-C when finished. The timed walkthrough
 above does not include this optional viewer step or claim a cold installation.
+
+## Optional original transaction-prefix replay
+
+The [signed-prefix composition](../evidence/canonical-replay-integration/summary.json)
+selects engine #29 and separate schema #11. From `entrotter-candidate`, an operator
+with an archive-capable `ENTROTTER_RPC_URL` can run
+`python3 -m entrotter_engine trace-run scenarios/traces/ethereum-mainnet-prefix.plan.json -o transaction-replay.json`
+using the configured bounded worker. It forks the original parent with canonical
+header context, preserves original signatures/order/nonces, and records candidate
+omissions/conflicts or receipt differences. Missing archive state fails explicitly.
+
+The actual engine CI replay matched the pinned Ethereum 19M transaction's 208,144 gas
+and 8 logs in 4.484323s; its complete output matches the native 9.951108s result except
+runtime/hash. The [raw bounded report](../evidence/canonical-replay-integration/bounded-mainnet-prefix.json)
+is a separate technical receipt case, with no new model/holdout evaluation.
+This archive step is outside the timed offline guide walkthrough.
+
+The result uses `trace_version`; the current v0.1 SDK/viewer does not accept it.
+Inspect the JSON and its `baseline_verified` flag. At most 32 original transactions
+in Ethereum's Shanghai interval are supported. Same-block funding can fail Anvil
+pool admission and leave the baseline unverified. Full-block/opcode/root/end-state
+equivalence, broader oracle/divergence coverage and trace viewer/SDK support remain
+open. See the pinned engine README for complete limits and upstream write denial.
 
 ## Measurement and cleanup
 

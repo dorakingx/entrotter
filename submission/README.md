@@ -52,10 +52,12 @@ and protected integration. Follow the [current pinned quick start](../docs/QUICK
 instead of rebuilding from moving main branches. The recordings below retain
 their original source versions.
 
-The execution snapshot below contains the optional bounded Linux CLI launcher and
-selects the tested canonical contract identity fix. The
-[current composition evidence](../evidence/contract-identity-integration/summary.json)
-binds its independently reviewed engine fix and exact source/image inputs. The
+The execution snapshot below contains the optional bounded Linux CLI launcher,
+the canonical contract identity fix and original signed transaction-prefix replay.
+The [current composition evidence](../evidence/canonical-replay-integration/summary.json)
+binds the tested engine/schema sources, original receipt match and exact inputs.
+The prefix is a separate technical case; full-block/end-state, same-block funding
+admission and trace SDK/viewer coverage remain open. The
 [recorded-agent viewer evidence](../evidence/agent-viewer-integration/summary.json)
 adds original decision/provenance inspection and preserves original reports. Current
 combined checks and public reproduction measurements are recorded in
@@ -66,11 +68,11 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [2204fca](https://github.com/entrotter/entrotter/tree/2204fcad3dfe329d433806126ee68adb796925b6) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
-| Bounded agent engine and canonical contract identity fix | [6e13f34](https://github.com/entrotter/engine/tree/6e13f342a20dece8c4d0983dc9813260508fb7fb) | [#28](https://github.com/entrotter/engine/pull/28) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [f02b2ac](https://github.com/entrotter/entrotter/tree/f02b2ac2d1c3e979e451534304b0252df6293dcc) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Bounded agent engine, contract identity and signed transaction-prefix replay | [0d4faf7](https://github.com/entrotter/engine/tree/0d4faf7d4feda817499ea19e8797a0e03504fbad) | [#29](https://github.com/entrotter/engine/pull/29) |
 | Python SDK | [b0c2ba3](https://github.com/entrotter/sdk-python/tree/b0c2ba3bba411e548af44101ae06e879bd7b5dc0) | [#6](https://github.com/entrotter/sdk-python/pull/6) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
-| Schema contracts | [3a78ecc](https://github.com/entrotter/scenarios/tree/3a78ecca24334ae87119a5a0b64c84ba6dd71de1) | [#8](https://github.com/entrotter/scenarios/pull/8) |
+| Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
 | Console, recorded agent evidence, accessibility and quality | [49914a2](https://github.com/entrotter/entrotter.github.io/tree/49914a2ca7358a9e45befc9b458f7f3ac52c6142) | [#14](https://github.com/entrotter/entrotter.github.io/pull/14) |
 
 ## Recorded review sources
