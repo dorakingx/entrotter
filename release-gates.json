@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-09-20",
+  "updated_at": "2026-10-01",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -103,7 +103,8 @@
         "All six main branches now require 32 observed GitHub Actions checks (previously 13), including quality/security, links, Docker and browser jobs. API readback confirms strict freshness, independent approval and admin enforcement preserved; unrelated settings unchanged. See required-checks.json and evidence/required-check-coverage/.",
         "Engine PR #22 bounds setup archive staging to 256 MiB with at most 1 MiB chunks and streaming pinned digest verification, regular-file/FIFO checks and between-read deadlines. Failing-before regression, 196 local native/unit tests, full quality policy and an actual unchanged-source Docker fixture pass. Host/image/VM quotas and hard whole-build deadlines remain outside this fix; independent review pending.",
         "All six repositories have an open, scoped good first issue, verified by GitHub body/state/label readback. Four missing documentation opportunities were created, existing SDK/CLI tasks reused, and the contribution directory linked from README/CONTRIBUTING. This proves issue availability, not task completion or adoption.",
-        "Proposed Linux API host service: actual cgroup startup guard, one CPU/256 MiB/no swap/64 tasks, descriptor/core and session limits. Real VM CLI-SDK-API fixture/Anvil equality, CPU/PID/OOM/scaled timeout and missing-cap startup rejection pass. Dedicated guest block geometry/mounts and host-share EROFS verified. Scope excludes ordinary host callers, hypervisor/log/base-cache overhead and hard whole-build deadlines; independent review pending."
+        "Proposed Linux API host service: actual cgroup startup guard, one CPU/256 MiB/no swap/64 tasks, descriptor/core and session limits. Real VM CLI-SDK-API fixture/Anvil equality, CPU/PID/OOM/scaled timeout and missing-cap startup rejection pass. Dedicated guest block geometry/mounts and host-share EROFS verified. Scope excludes ordinary host callers, hypervisor/log/base-cache overhead and hard whole-build deadlines; independent review pending.",
+        "Engine PR #22 now bounds whole POSIX image preparation at 600 seconds using an independent owned-session watchdog/lifetime pipe; blocked native call, actual stalled HTTP, SIGTERM and owner SIGKILL tests pass. Actual 60-second BuildKit RUN stops in 10.013 seconds under a ten-second cap with no guest probe process left. All 204 pinned-native local tests, quality and unchanged-image fixture match pass; current CI/independent review recorded in PR, integration pending."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
@@ -127,7 +128,8 @@
         "Static website Markdown/HTML/CSS file, fragment and public HTTP links: 29 occurrences passed locally and in CI; no UI deployment change",
         "Website PR #10: same-runner before failures and 18 passing macOS/Linux keyboard/reflow/import/error/forced-color checks; 14 zero-violation axe scans with explicit incomplete contrast evidence per final run; pending independent review and deployment",
         "Pinned browser development tools, strict npm audit and Pages build prerequisite verified in Linux CI; downloaded site/runner hashes match local evidence",
-        "Proposed website decimal-input fix: failing-before correctly hashed malformed-metric regression; final local/Linux 21 JS and ten Python tests, 19 real browser groups and 14 zero-violation axe scans. All 19 existing EVM reports retain exact hash/view-model behavior after fixing introduced source:null rejection. Existing incomplete contrast/manual AT limits remain; no deployment before review/merge."
+        "Proposed website decimal-input fix: failing-before correctly hashed malformed-metric regression; final local/Linux 21 JS and ten Python tests, 19 real browser groups and 14 zero-violation axe scans. All 19 existing EVM reports retain exact hash/view-model behavior after fixing introduced source:null rejection. Existing incomplete contrast/manual AT limits remain; no deployment before review/merge.",
+        "Website PR #11 integrates current UFO/experiment-console main d44af5d into the accessibility/quality candidate. At 8671ab2: 40 JS/11 Python tests, 24 browser groups/18 zero-violation axe scans and all four required GitHub checks pass; independent review/deployment of this candidate pending. Live five-file bytes match current main, which is distinct from this candidate."
       ],
       "blocked": [],
       "todo": [
@@ -155,13 +157,13 @@
         "Independent review/integration and final exact submission source pins",
         "Complete required current-school-status field without fabricating a personal answer",
         "Upload project logo and obtain supported-host URLs for <=120-second pitch and <=180-second demo",
-        "After October 6 submission opening, verify post-submission editing before exercising conditional owner submission authorization"
+        "After October 6 opening, recheck the authenticated form and required facts, submit the exact reviewed code/video version when eligible, and verify server-side acceptance"
       ],
       "requires_approval": [
         "outreach",
         "paid services"
       ],
-      "conditional_authorization": "Final submission permitted only if post-submission editing is verified; currently unverified and submission not open",
+      "conditional_authorization": "Owner authorizes formal submission without another blanket approval when quality conditions and required facts are verified and the portal is open; do not bypass authentication, terms or independent review.",
       "deferred_by_owner": [
         "three genuine user evaluations; zero completed, no demand evidence claimed"
       ]
@@ -276,6 +278,8 @@
     "evidence/first-contribution-paths.json",
     "evidence/host-service/summary.json",
     "evidence/quick-start/summary.json",
-    "evidence/submission-preparation/summary.json"
-  ]
+    "evidence/submission-preparation/summary.json",
+    "evidence/worker-build-deadline.json"
+  ],
+  "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

@@ -785,3 +785,35 @@ Existing demo and original recording evidence are unchanged. Logo upload was
 rejected by the browser file-chooser transport, and supported video hosting is
 pending. See evidence/submission-preparation/summary.json. Independent GitHub
 review/main integration and newer Pages deployment also remain pending.
+
+## October 1 — Current console and whole worker preparation budget
+
+Website PR #11 now merges the current UFO/experiment-console main into the
+accessibility and quality candidate. Its 8671ab2 head passes all four required
+GitHub checks, with 40 JavaScript/11 Python tests and 24 browser groups/18
+zero-violation axe scans locally. Five live site files match main d44af5d;
+that publication is distinct from this unmerged candidate. Review remains pending.
+
+Engine PR #22 at d5b3003 adds a 600-second cap across POSIX image preparation,
+with a separate owned-session watchdog and an owner-lifetime pipe. Actual stalled
+HTTP, a native blocking call, SIGTERM, ignoring descendants and owner SIGKILL are
+tested. A real 60-second BuildKit RUN stops in 10.013 seconds with a ten-second
+budget, with no guest probe process remaining. All 204 tests pass using pinned
+Foundry 1.8.3, and the unchanged image produces the exact existing fixture.
+Full source-bound security review retains 24 findings; Ruff/mypy pass. Historical
+build-input evidence remains separate. See evidence/worker-build-deadline.json.
+
+This coordination candidate promotes only the bounded worker/site pins and their
+quality/integration checkout pins. Frozen agent/native benchmark revisions remain
+unchanged. Current-head integration CI and independent reviews remain pending.
+The dedicated Entrotter VM used for validation was stopped; the already-running
+default VM was left running. SIGKILL can leave staging/config files; cache/image,
+VM storage, arbitrary caller quotas and uninterruptible kernel faults remain limits.
+
+The owner has broadened submission authorization: when quality conditions and
+required facts are verified and the portal is open, submit without another blanket
+approval and verify server-side acceptance and exact code/video versions. Do not
+guess required school status or bypass review, authentication or terms. Supported
+video-host links/logo and the school answer remain unfinished; the September 20
+authenticated form's opening time still requires rechecking at submission.
+Discord was abandoned by the owner and is excluded from work/submission gates.
