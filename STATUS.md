@@ -976,3 +976,56 @@ website deployment jobs are intentionally skipped before review/merge.
 See evidence/latest-candidate/summary.json. Main still requires one independent
 approval with strict freshness/admin enforcement. No main merge or deployment is
 claimed. The dedicated VM was stopped afterward; the default VM is preserved.
+
+## October 1 — CLI agent execution and complete recorded replay candidate
+
+CLI PR #10 at 87cfe4078dfaaaa3eebcbff65bcedc8d60013cc8 builds on the existing
+export-budget candidate and uses the bounded engine c167193/SDK b0c2ba3 API.
+`agent-run` exposes built-in risk decisions; `replay` derives recorded steps/gas
+and requires complete JSON equality before private quota-protected export.
+`inspect` displays choices/reasons/original provider provenance without an engine.
+No provider/code loader, native fallback, agent HTTP endpoint or v0.1 change is added.
+
+All 40 local units and four actual Docker groups pass; Linux repeats 40 units
+on Python 3.11/3.12/3.13 and four real Docker groups in 3.783 seconds. Complete
+original risk/model reports match; altered state refuses without replacing an
+incumbent and recovers, while unavailable/legacy engine or image fails explicitly.
+All six production files pass unsuppressed quality/security, with zero findings;
+42 tool identities are audited without reported vulnerabilities. Downloaded
+source/wheel/18-worker-input hashes match. Samples stay byte-identical; zero new
+model/archive calls, no holdout tuning or new demand/agent advantage is claimed.
+See https://github.com/entrotter/cli/pull/10 and that branch's evidence/agent-cli/.
+
+The observed GitHub Actions `agent` check is added to CLI main's required checks:
+six are now required there and 33 across the six repositories. Fresh full
+protection readback preserves one independent approval, strict freshness/admin
+enforcement and every unrelated setting. Older partial CLI PRs need the new job
+before protected integration. Independent reviews remain empty; no merge,
+deployment or submission occurred. Dedicated VM is stopped and default VM running
+untouched, with no owned experiment worker left. Existing coordination PR #54
+still selects fa37380/a63a390, explicitly distinct from this new tested candidate.
+These status/gate/required-check records are held locally for the next substantive
+candidate-pin/guide integration, without a status-only PR or additional CI run.
+
+## October 1 — Latest agent CLI candidate composition
+
+Coordination builds on #54/99a7f4f and selects tested engine #27/c167193 and
+CLI #10/87cfe40 with the unchanged SDK/schema/site pins. Current bounded
+integration/type inputs now use these exact sources. The frozen native/provider,
+benchmark/holdout/report inputs are unchanged. Main still requires independent
+review; this is preparation of a reviewable combination, not protected integration.
+
+Bounded-agent clean reproduction now uses the actual standalone CLI replay,
+verify and inspect commands. The old CLI pin fails that real clean-checkout
+regression with missing-command exit 2. Updated public source fetches, new pipless
+venv, network Foundry download, worker build and complete original model replay
+then pass in 19.266 seconds. Docker/VM was running and caches may be warm; setup
+installation/startup excluded. No model/archive call, new evaluation or retuning.
+This source-bound measurement is separate from the later guide walkthrough.
+
+All 21 production files pass type checks against clean c167193/87cfe40 dependencies,
+retaining the same three frozen provider diagnostics. The stale security source
+review fails before refresh; all 78 full findings remain visible, with a changed
+reproduction-loop scope/fingerprint author rationale. Independent review remains
+pending. Source pins, guide/public measurements and current-head CI are recorded
+separately in this candidate evidence and PR.

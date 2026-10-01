@@ -2,9 +2,9 @@
   "mypy_version": "1.18.2",
   "dependency_commits": {
     "agent-engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
-    "worker-engine": "fa3738078079ffa8f8350a26dca60b560d8aa32f",
+    "worker-engine": "c1671938edde03c59deef64dbb81d7c41a33406b",
     "sdk": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
-    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
+    "cli": "87cfe4078dfaaaa3eebcbff65bcedc8d60013cc8"
   },
   "frozen_sources": {
     "scripts/codex_policy.py": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76"

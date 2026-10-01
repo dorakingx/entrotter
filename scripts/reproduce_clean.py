@@ -147,19 +147,12 @@ write_report(run_agent(r["scenario"], AgentController(ReplayPolicy(r["agent"]), 
         if args.bounded_agent:
             commands[0] = [
                 python,
-                "-c",
-                """import json
-from entrotter_engine.runner import run_agent
-from entrotter_engine.artifact import verify, write_report
-r = json.load(open("recorded.json"))
-if not verify(r): raise ValueError("Invalid recording hash")
-exchanges = r["agent"]["exchanges"]
-steps = [x["request"]["observation"]["step"] for x in exchanges]
-budget = exchanges[0]["request"]["limits"]["remaining_requested_gas"]
-actual = run_agent(r["scenario"], decision_steps=steps, recording=r["agent"], max_requested_gas=budget)
-if actual != r: raise ValueError("Complete recorded artifact differs")
-write_report(actual, "report.json")
-""",
+                "-m",
+                "entrotter_cli",
+                "replay",
+                "recorded.json",
+                "-o",
+                "report.json",
             ]
     for command in commands:
         subprocess.run(
@@ -216,6 +209,8 @@ filename = (
 )
 if recorded:
     result["new_agent_model_calls"] = 0
+    if args.bounded_agent:
+        result["agent_entrypoint"] = "standalone CLI replay"
 destination = args.output or ROOT / "evidence" / filename
 destination.parent.mkdir(parents=True, exist_ok=True)
 destination.write_text(json.dumps(result, indent=2) + "\n")

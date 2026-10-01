@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: fa3738078079ffa8f8350a26dca60b560d8aa32f
+          ref: c1671938edde03c59deef64dbb81d7c41a33406b
           path: worker-engine
           persist-credentials: false
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: a63a39000e03d151e80b5a9c47dd4df449281b93
+          ref: 87cfe4078dfaaaa3eebcbff65bcedc8d60013cc8
           path: cli
           persist-credentials: false
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
