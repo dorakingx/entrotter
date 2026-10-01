@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 import selectors
 import shutil
+import signal
 import stat
 import subprocess
 import tempfile
@@ -23,10 +24,57 @@ MAX_INPUT = 262144
 HOST_TIMEOUT = 190
 WORKER_NAME = "entrotter-active-worker"
 OWNER_LABEL = "org.entrotter.owner"
+METADATA_TIMEOUT = 10
+MAX_DAEMON_INFO = 1024 * 1024
+MAX_SLOT_OUTPUT = 128
 
 
 class WorkerBusy(ExecutionError):
     """The configured daemon's single worker slot is already occupied."""
+
+
+def _read_metadata(command: list[str], limit: int) -> bytes:
+    """Bound fixed local Docker metadata, including a descendant-held pipe."""
+    output = bytearray()
+    with subprocess.Popen(
+        command,
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        start_new_session=True,
+    ) as process:
+        try:
+            if process.stdout is None:
+                raise ExecutionError("Docker metadata pipe was not initialized")
+            deadline = time.monotonic() + METADATA_TIMEOUT
+            with selectors.DefaultSelector() as selector:
+                selector.register(process.stdout, selectors.EVENT_READ)
+                while selector.get_map():
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+                        raise ExecutionError("Docker metadata query timed out")
+                    for key, _ in selector.select(min(0.1, remaining)):
+                        chunk = os.read(key.fd, min(4096, limit - len(output) + 1))
+                        if not chunk:
+                            selector.unregister(key.fileobj)
+                        else:
+                            if len(output) + len(chunk) > limit:
+                                raise ExecutionError(
+                                    "Docker metadata exceeds its byte limit"
+                                )
+                            output.extend(chunk)
+            status = process.wait(timeout=max(0.001, deadline - time.monotonic()))
+            if status:
+                raise subprocess.CalledProcessError(status, command)
+            return bytes(output)
+        finally:
+            # A failed client or an exited leader may leave pipe-owning children.
+            # Only this new session's group is killed; never a daemon or worker.
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            process.wait(timeout=1)
 
 
 def _slot(prefix, owner=None):
@@ -41,19 +89,15 @@ def _slot(prefix, owner=None):
     if owner is not None:
         args += ["--filter", "label=" + OWNER_LABEL + "=" + owner]
     try:
-        result = subprocess.run(
-            [*args, "--format", "{{.ID}}"],
-            stdin=subprocess.DEVNULL,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
-            timeout=10,
-            check=True,
+        value = (
+            _read_metadata([*args, "--format", "{{.ID}}"], MAX_SLOT_OUTPUT)
+            .decode("ascii")
+            .strip()
         )
-        value = result.stdout.decode("ascii").strip()
         if value and not re.fullmatch(r"[0-9a-f]{64}", value):
             raise ValueError()
         return value or None
-    except (OSError, subprocess.SubprocessError, ValueError):
+    except (OSError, subprocess.SubprocessError, ValueError, ExecutionError):
         raise ExecutionError("Cannot verify local Docker worker admission") from None
 
 
@@ -135,16 +179,16 @@ def worker_args(prefix, image, name, *, fork=False):
 
 def verify_daemon(prefix):
     try:
-        result = subprocess.run(
-            [*prefix, "info", "--format", "{{json .}}"],
-            stdin=subprocess.DEVNULL,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
-            timeout=10,
-            check=True,
+        info = json.loads(
+            _read_metadata([*prefix, "info", "--format", "{{json .}}"], MAX_DAEMON_INFO)
         )
-        info = json.loads(result.stdout)
-    except (OSError, subprocess.SubprocessError, ValueError):
+    except (
+        OSError,
+        subprocess.SubprocessError,
+        ValueError,
+        RecursionError,
+        ExecutionError,
+    ):
         raise ExecutionError(
             "Cannot verify local Docker resource controllers"
         ) from None

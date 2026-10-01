@@ -1,0 +1,75 @@
+{
+  "status": "verified_local; current_head_CI_and_independent_review_pending",
+  "checked_at": "2026-10-01T10:07:39.969485+00:00",
+  "base_commit": "fa3738078079ffa8f8350a26dca60b560d8aa32f",
+  "metadata_limits": {
+    "daemon_information_bytes": 1048576,
+    "admission_and_owner_query_bytes": 128,
+    "read_chunk_bytes": 4096,
+    "pipe_and_client_seconds": 10,
+    "cleanup_wait_seconds": 1
+  },
+  "local_native_tests": 212,
+  "local_native_seconds": 29.805,
+  "new_real_pipe_regressions": 6,
+  "quality": {
+    "production_sources": 22,
+    "type_errors": 0,
+    "full_scan_findings": 23,
+    "suppressed_rules": 0,
+    "explanation": "Two fixed metadata subprocess launches become one shared launcher; prior subprocess/import/tmpfs findings remain visible with new source fingerprints and author rationales. Independent review pending."
+  },
+  "changed_worker_input": [
+    "isolated.py"
+  ],
+  "source_digest": "7b0e31892858a1bf90dd590a390073f837076201c1c3989d1501829ee96ee1fa",
+  "local_image_id": "sha256:0e1bd3a9cfad2a864a72e4af0505987f3d9a8f67f8a63bf5345506bbab5cc018",
+  "actual_daemon": "actual-metadata.json",
+  "setup_failures": [
+    "Initial reader-cancellation test patched os.read used by Popen before the reader; corrected to interrupt only the ready selector. Final test and full native suite pass.",
+    "First Docker suite omitted pinned native Foundry PATH. Worker 1.8.3 differs from host default; final run uses required 1.8.3 without changing source/test expectations."
+  ],
+  "limitations": [
+    "Only default-worker info and ps metadata; security scanners/other Docker response captures remain outside this fix",
+    "Deadline starts after process launch; sudden owner SIGKILL and launch/kernel stalls are not independently watchdog-bounded by this helper",
+    "Owned process-group cleanup does not kill the daemon or remove an unrelated worker; existing ownership checks remain authoritative",
+    "No whole-host CPU/memory/image-cache/VM storage guarantee, archive egress allowlist or historical trace replay",
+    "No independent approval, protected integration, deployment, new model/archive-RPC call or final submission"
+  ],
+  "new_model_calls": 0,
+  "new_archive_rpc_calls": 0,
+  "actual_Docker": {
+    "first_run_cases": 22,
+    "first_run_passed": 19,
+    "first_run_environment_failures": 3,
+    "first_run_seconds": 216.201,
+    "corrected_retry_cases": 3,
+    "corrected_retry_passed": 3,
+    "corrected_retry_seconds": 4.609,
+    "scope": "All 22 cases covered: first-run successful tests retained, only three host/worker equality failures retried with pinned Foundry 1.8.3; not one successful full local invocation. Mandatory CI runs the complete suite.",
+    "source_unchanged_between_runs": true
+  },
+  "ci": "Current-head run/results will be linked in the PR; no green or independent approval inferred",
+  "artifact_sha256": {
+    "failing-before.log": "aa71b89c42e32144dccaab54e3c60579dd65956c37566ebce8b70dd9891e8a53",
+    "actual-metadata.json": "024e8cdcb42d2e46c5710daf0a3f08d787e46c0a800c709f00de69a110e87822",
+    "isolated-corrected.log.gz": "f4548da16fc821c4b5c1f2b7e02add34286377f4257d362663143599213e16df",
+    "cancellation.log": "9af677dd39b83aff984837eef70a195e818b4a2f711c3e881e3a78fc54cff4ff",
+    "worker-image.json": "525912385195aa4de1b86c0a93594200cf29f7bfbc6fbfe2540c5c922573c09c",
+    "native.log": "77ad811d256a2b126b82d5deed0c981483b303f1d1c829d830249fc658ee992e",
+    "bandit.json": "3aeeac9390085e0fea5416ca1f884681ae6f7f51c80ef6adf26a48685867970b",
+    "isolated.log.gz": "ff3ef41089214069640f740dbb6b875208fd1b6b334b0d5363b5d2703d5b9044"
+  },
+  "documents": {
+    "files": 7,
+    "links": 11,
+    "errors": 0,
+    "timeouts": 0,
+    "exclusions": 0
+  },
+  "cleanup": {
+    "owned_workers": 0,
+    "dedicated_VM": "Stopped; actual Colima readback",
+    "default_VM": "Running; pre-existing user VM left untouched"
+  }
+}

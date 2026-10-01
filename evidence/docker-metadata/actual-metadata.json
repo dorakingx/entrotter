@@ -1,0 +1,9 @@
+{
+  "info_bytes": 11576,
+  "info_seconds": 0.26770066702738404,
+  "linux": true,
+  "cgroup": "2",
+  "all_required_controllers": true,
+  "slot_present": true,
+  "privacy": "Raw daemon information discarded; no host/configuration paths recorded"
+}

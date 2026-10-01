@@ -149,48 +149,40 @@
     {
       "file": "src/entrotter_engine/isolated.py",
       "test_id": "B404",
-      "line": 12,
-      "code_sha256": "2465a4bcf6e163e04367571748181fc25aed570802df4c31928802bfc843ccde",
+      "line": 13,
+      "code_sha256": "bfc860002b7d1ca26d1ffc28f64247efba6b689494c34e660cb9e943f0fd6d35",
       "severity": "LOW",
       "reason": "This module imports subprocess for the fixed, individually reviewed calls below. No shell or scenario-selected executable is accepted; command construction is reviewed at each call site."
     },
     {
       "file": "src/entrotter_engine/isolated.py",
       "test_id": "B603",
-      "line": 44,
-      "code_sha256": "926ae5fdbfc99ddb43f6509405e3fc7f11a7ef4fbf80afb70cd525cad68c55d1",
+      "line": 39,
+      "code_sha256": "015a2772896e427b84195774f07aea592785536bfa97cc5a15bfa4ff9b1f5bdb",
       "severity": "LOW",
-      "reason": "Runs a fixed Docker ps query with an anchored constant name and optional generated owner UUID label, shell=False and ten-second timeout. Full container IDs are validated before use. No scenario fields or arbitrary selectors enter this control query."
+      "reason": "Runs only fixed Docker info/ps metadata queries through the operator-trusted local executable/socket and private empty client configuration; no scenario-selected command or shell. Reads at most 4096 bytes per chunk, retains <=1 MiB daemon information or <=128 bytes admission output, and rejects overflow before parsing. A ten-second deadline covers pipe EOF and client exit; finally kills only its owned new process group, including pipe-holding descendants, on failure or caller cancellation. Full worker IDs and resource controllers are still checked separately. This is not a host memory sandbox or abrupt owner-death watchdog."
     },
     {
       "file": "src/entrotter_engine/isolated.py",
       "test_id": "B603",
-      "line": 64,
-      "code_sha256": "1a3b41991073a58e752c40c59e3a970275412100304cf0b0cd29f5ac4f30234d",
+      "line": 108,
+      "code_sha256": "78e4f58d22412897fadc229074a864488ce0f9fd84fba16275e3d42741350fba",
       "severity": "LOW",
       "reason": "Runs fixed docker rm --force with only the validated full immutable container ID obtained from this invocation\u2019s unique owner label. Never removes by the shared name, so a late finalizer cannot delete a replacement worker. Trusted local socket, shell=False and ten-second timeout."
     },
     {
       "file": "src/entrotter_engine/isolated.py",
       "test_id": "B108",
-      "line": 120,
-      "code_sha256": "dcb9d5ccb79c9df41c14a23f99c4c070415f754ff4ee559c7f6e13e35a67d785",
+      "line": 164,
+      "code_sha256": "ffeeb38f74c2ab513a3fb54b6d36b553154c45ca0146b4e2fcc2ce5baceda70a",
       "severity": "MEDIUM",
       "reason": "This is a Docker tmpfs mount specification for /tmp inside the disposable container, not an insecure host temporary filename. The mount has a 64 MiB limit with noexec/nosuid/nodev; the host uses tempfile for exclusive temporary creation. Real kernel enforcement tests cover the mount."
     },
     {
       "file": "src/entrotter_engine/isolated.py",
       "test_id": "B603",
-      "line": 138,
-      "code_sha256": "1d793d54afe136e47fb8db1761ec4330cabe017b5479c3b47f3ef6bf34d146ac",
-      "severity": "LOW",
-      "reason": "Runs a fixed docker info query through the verified local Unix socket, with an absolute operator-trusted Docker executable, empty client configuration, shell=False and ten-second timeout. No scenario fields enter the arguments."
-    },
-    {
-      "file": "src/entrotter_engine/isolated.py",
-      "test_id": "B603",
-      "line": 205,
-      "code_sha256": "8049b4a008f83eab6c4fe763d8b73882f2254371a75c1ae939c3f46e4d759de6",
+      "line": 249,
+      "code_sha256": "351fbbf749ffea42e176f4d8efccb3d9b63739f7a12f3fd7e7d197392cde58a4",
       "severity": "LOW",
       "reason": "Launches fixed Docker worker options, a constant daemon-wide slot name, generated owner label and operator-owned immutable image ID. Scenario JSON uses bounded stdin, never command text. No shell or scenario-selected command/image is allowed; cleanup verifies exact ownership."
     }
@@ -207,7 +199,7 @@
     "src/entrotter_engine/evm.py": "a9ac4ba7704c2bca5360c981a725a7bc9c5586c95dce0c913594db8ee3e9af47",
     "src/entrotter_engine/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
     "src/entrotter_engine/fixture.py": "1f771e23c8b8311bf1f5e9cc56bf30f7b369f8f617513d99024876688e809647",
-    "src/entrotter_engine/isolated.py": "0f3181c70f96fdb4282d089e54de96f803977d00d792d4e625c365ccbb344780",
+    "src/entrotter_engine/isolated.py": "20119e46ae4c38e5cb0728c3d5613aa4fbe9b322301a1861bf6577647f4bdbfe",
     "src/entrotter_engine/models.py": "1383a7d508e22210217af4515c664c82a861f8a23dcef9dd9ec8f831966ae9b7",
     "src/entrotter_engine/rpc.py": "f19af9a2af2f924c65595f609e7d320d75109e0b5f09c5ae032c0bbff43b7d46",
     "src/entrotter_engine/runner.py": "d483df0825e3185548e68d6ead02d9e3fb89d8a12d9b0134b04b1a6a57d4d3df",
