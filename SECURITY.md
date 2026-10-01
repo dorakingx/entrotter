@@ -4,6 +4,13 @@ Experimental research software. Do not use production keys, custody real
 funds, or expose the local engine port or Anvil JSON-RPC to the Internet.
 This is not a trading execution service. Mainnet broadcast is not supported.
 
+The separate offline trace reader executes no report code or chain writes. It
+checks bounded JSON, content integrity and reported receipt/nonce consistency;
+it does not verify recovered senders, signatures, transaction/header hashes,
+archive authenticity or EVM truth. An attacker can forge internally consistent
+data and reseal it. Preserve the report's source and limitations when sharing
+results. It adds no trace HTTP endpoint or arbitrary agent execution.
+
 The engine runs only built-in policies. A Python import or a subprocess is
 not a security sandbox for untrusted agent code. Container/process sandboxing,
 egress controls, authenticated multi-tenancy and a production job queue remain

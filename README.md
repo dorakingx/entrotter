@@ -32,6 +32,60 @@ This package has not been published on PyPI. Install this source checkout with
 install a similarly named registry package. Integrity does not establish
 model correctness or financial safety.
 
+## Read original transaction-prefix reports offline
+
+The separate `trace_version: "0.1.0"` family from the engine's `trace-run`
+command has an offline reader. It does not use the `/v1/runs` HTTP endpoint or
+change v0.1 action/model-record results. No chain access or model call occurs:
+
+```python
+from entrotter_sdk import load_trace
+
+replay = load_trace("transaction-replay.json")
+print(replay.artifact_id, replay.baseline_verified)
+for tx in replay.transactions:
+    print(tx.index, tx.candidate.status, tx.candidate.differing_fields)
+    if tx.candidate.status == "nonce_conflict":
+        print(tx.candidate.original_nonce, tx.candidate.expected_nonce)
+```
+
+`TraceResult.parse(value)` accepts an in-memory report; `verify_trace(value)`
+returns a boolean instead of raising `ClientError`. Typed transactions/outcomes,
+receipts and ordered logs are immutable. `result.report` returns a fresh JSON
+copy, so later caller mutations cannot alter the validated snapshot. The file
+reader accepts only regular JSON files up to 8 MiB and rejects duplicate object
+keys. It uses nonblocking open where available to refuse special files.
+
+Validation covers exact versions/shapes, SHA-256 content integrity, bounded
+prefix/raw inputs/logs, plan/source/parent/index binding and canonical RLP metadata
+for original legacy/type-1/type-2 signatures. It binds type/nonce/target and typed
+or protected-legacy chain fields to encoded metadata. Unprotected legacy v27/v28
+is supported as in the engine; those bytes contain no chain ID. It does not recover
+the sender, verify a signature
+or recomputing the Ethereum transaction hash. Receipt identities and cumulative
+gas/index order, signed gas ceilings, reverted log/bloom absence and contract
+address consistency are checked. Access lists have at most 256 total storage
+keys. Declared `differing_fields` must be the exact unique
+set of observed receipt differences, and match flags must agree with outcomes.
+Both branches use the same reported initial nonce anchors; accepted-but-unmined
+transactions advance their branch's queue nonce, while rejection/omission does
+not. An honestly unmatched/rejected baseline remains readable with its false flag.
+
+These checks establish internal consistency, not trusted source state, actual
+execution or oracle/market truth. `baseline_verified` is the engine's declared
+receipt-match result, checked against the embedded original receipts; it is not
+independently rerun by the SDK. Parent nonce anchors are inferred from reported
+baseline outcomes, not independently attested. All values may be forged together
+and resealed. SHA-256 is not provenance or financial validation.
+
+The [actual four-prefix example and limitations](evidence/trace-reader/README.md)
+retain the exact engine #30 default-worker artifact. Omitting transaction 0
+changes gas/logs in 1 and 2 and leaves 3 at nonce 5,523 versus expected 5,522.
+This technical case is separate from frozen model/holdout evaluation. Shanghai/
+Ethereum-only prefix limits, same-block funding admission and full-block/root/
+opcode/end-state limitations remain the engine's responsibility. Packages remain
+unpublished and required protected-main approval is still pending.
+
 ## Quality checks
 
 The CI quality job checks every production Python file under `src/` and `scripts/`
