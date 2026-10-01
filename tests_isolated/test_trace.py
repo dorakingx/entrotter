@@ -97,3 +97,67 @@ print(json.dumps(result))
         self.assertEqual([o['status'] for o in candidate],['skipped','not_mined'])
         self.assertNotIn('receipt',candidate[1])
         self.assertFalse(report['candidate']['matches_original_receipts'])
+
+    def test_actual_image_protocol_replays_signed_oracle_update_and_adverse_omission(self):
+        fixture=json.loads((ROOT/'tests/data/canonical-local-oracle-inputs.json').read_text())
+        code='''import json,os,socket,subprocess
+from unittest.mock import patch
+from urllib.parse import urlsplit
+from entrotter_engine.evm import AnvilSession
+from entrotter_engine.worker_protocol import encode_trace_request,execute_request
+fixture=FIXTURE
+original_popen=subprocess.Popen
+def fixture_start(command,*args,**kwargs):
+    return original_popen([*command,'--fund-accounts',*[a+':'+fixture['actor_balance_eth'] for a in fixture['actors']]],*args,**kwargs)
+source=AnvilSession(trace=True)
+with patch('entrotter_engine.evm.subprocess.Popen',side_effect=fixture_start):
+    source.__enter__()
+nodes=[source]
+def replay_node(*args,**kwargs):
+    node=AnvilSession(*args,**kwargs);nodes.append(node);return node
+try:
+    rpc=source.rpc
+    for raw,address,runtime in zip(fixture['deployment_transactions'],[fixture['oracle'],fixture['consumer']],[fixture['oracle_runtime'],fixture['consumer_runtime']]):
+        h=rpc.call('eth_sendRawTransaction',[raw]);rpc.call('evm_mine')
+        receipt=rpc.call('eth_getTransactionReceipt',[h])
+        assert receipt['status']=='0x1' and receipt['contractAddress']==address
+        assert rpc.call('eth_getCode',[address,'latest'])==runtime
+    assert int(rpc.call('eth_call',[{'to':fixture['oracle'],'data':'0x'},'latest']),16)==10
+    for raw in fixture['raw_transactions']:rpc.call('eth_sendRawTransaction',[raw])
+    for method,value in [('evm_setNextBlockTimestamp',fixture['target_timestamp']),('evm_setBlockGasLimit',hex(fixture['gas_limit'])),('anvil_setNextBlockBaseFeePerGas',hex(fixture['base_fee'])),('anvil_setCoinbase',fixture['coinbase']),('anvil_setNextBlockPrevRandao',fixture['prevrandao'])]:rpc.call(method,[value])
+    rpc.call('evm_mine')
+    block=rpc.call('eth_getBlockByNumber',['latest',False]);assert len(block['transactions'])==2
+    plan={'trace_version':'0.1.0','source':{'chain_id':1,'block_number':int(block['number'],16),'block_hash':block['hash']},'through_index':1,'skip_indices':[0]}
+    os.environ['ENTROTTER_RPC_URL']=rpc.url
+    with patch('entrotter_engine.trace.AnvilSession',side_effect=replay_node):
+        result=execute_request(encode_trace_request(plan))
+    assert int(rpc.call('eth_call',[{'to':fixture['oracle'],'data':'0x'},'latest']),16)==20
+finally:
+    source.__exit__(None,None,None)
+    for node in nodes:
+        assert node.process.poll()==0
+        with socket.socket() as sock:
+            sock.settimeout(.2)
+            assert sock.connect_ex(('127.0.0.1',urlsplit(node.rpc.url).port))!=0
+print(json.dumps(result))
+'''.replace('FIXTURE',repr(fixture))
+        # Direct bounded image/protocol proof; host default dispatch/lifecycle
+        # and historical provider gates remain independently required.
+        result,_=self.probe(code)
+        self.assertEqual(result.returncode,0,result.stderr)
+        report=json.loads(result.stdout)['report']
+        self.assertTrue(verify_trace(report));self.assertTrue(report['baseline_verified'])
+        baseline=report['baseline']['outcomes']
+        self.assertEqual([o['receipt']['status'] for o in baseline],['0x1','0x1'])
+        self.assertEqual([int(o['receipt']['gasUsed'],16) for o in baseline],[26167,26438])
+        self.assertEqual([int(o['receipt']['cumulativeGasUsed'],16) for o in baseline],[26167,52605])
+        self.assertEqual([o['differing_fields'] for o in baseline],[[],[]])
+        self.assertEqual(baseline[1]['receipt']['logs'][0]['data'],'0x'+(20).to_bytes(32,'big').hex())
+        candidate=report['candidate']['outcomes']
+        self.assertEqual([o['status'] for o in candidate],['skipped','executed'])
+        self.assertEqual(candidate[1]['hash'],report['source']['inputs'][1]['hash'])
+        self.assertEqual(candidate[1]['receipt']['status'],'0x0')
+        self.assertEqual(int(candidate[1]['receipt']['gasUsed'],16),25808)
+        self.assertEqual(candidate[1]['receipt']['logs'],[])
+        self.assertEqual(set(candidate[1]['differing_fields']),{'status','gasUsed','cumulativeGasUsed','transactionIndex','logsBloom','logs'})
+        self.assertFalse(report['candidate']['matches_original_receipts'])

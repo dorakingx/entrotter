@@ -1,0 +1,173 @@
+{
+  "copies": [
+    {
+      "ignored_source": ".quality/oracle-prefix/native-run-002/oracle-prefix.json",
+      "public_copy": "native-oracle-prefix.json",
+      "ignored_sha256": "b97f34c9396f76eb352f870c0235422b77fa3aaaa58c25a97262c2995f2bd1ae",
+      "public_sha256": "b97f34c9396f76eb352f870c0235422b77fa3aaaa58c25a97262c2995f2bd1ae",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/native-run-002/none.json",
+      "public_copy": "native-provider-control.json",
+      "ignored_sha256": "66c1d555ad0068e128c8e5cdc0619f71824c4401177b0c3f1b84a77be4572b5d",
+      "public_sha256": "66c1d555ad0068e128c8e5cdc0619f71824c4401177b0c3f1b84a77be4572b5d",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/native-run-002/eth_getStorageAt.json",
+      "public_copy": "native-missing-storage.json",
+      "ignored_sha256": "2d1449f0807329e6f70799c0ff02ec69d2c8e1050c15425fd3f13aad034c034b",
+      "public_sha256": "2d1449f0807329e6f70799c0ff02ec69d2c8e1050c15425fd3f13aad034c034b",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/native-run-002/summary.json",
+      "public_copy": "native-suite-summary.json",
+      "ignored_sha256": "fbd0778ded8bb505fa6ec3c3d7a27602171f1607920d72f16c2b304b1b18a9ad",
+      "public_sha256": "fbd0778ded8bb505fa6ec3c3d7a27602171f1607920d72f16c2b304b1b18a9ad",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/native-suite.log",
+      "public_copy": "native-suite.log",
+      "ignored_sha256": "41054e445955cbffb7f30d56911deba85b4101b00550785dfcde14bf902bcb26",
+      "public_sha256": "41054e445955cbffb7f30d56911deba85b4101b00550785dfcde14bf902bcb26",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/native-suite-import-failure.log",
+      "public_copy": "native-suite-import-failure.log",
+      "ignored_sha256": "41e131008dee8464587b52a36bc4e5c55a88cf828f9a8dd0f084298d9e7963a6",
+      "public_sha256": "78ffd6ed8d92db76fda6757dcf028375c71f63e73a615b2c0320eab168b3232a",
+      "absolute_workspace_path_redactions": 6
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/focused.log",
+      "public_copy": "focused.log",
+      "ignored_sha256": "56834f76ae25a192f95b7860a4f9d7e14ad6db953fdbcbbe08f2a696e643d3b3",
+      "public_sha256": "6773acdf4dae83435996bc2a196e94f31ddcce9c8c01a08d6082db5b1c004e60",
+      "absolute_workspace_path_redactions": 1
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/bandit.json",
+      "public_copy": "bandit.json",
+      "ignored_sha256": "7701ba8c0f7ffd0627d67db14752b2aa8bcdba860b925859605ee29799a8c658",
+      "public_sha256": "7701ba8c0f7ffd0627d67db14752b2aa8bcdba860b925859605ee29799a8c658",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/static-checks.json",
+      "public_copy": "static-checks.json",
+      "ignored_sha256": "6b599bae446cd99a2999bbf52e3ee310e2e84f8681fea2a13350b85cb927dc07",
+      "public_sha256": "6b599bae446cd99a2999bbf52e3ee310e2e84f8681fea2a13350b85cb927dc07",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/security-refresh.json",
+      "public_copy": "security-refresh.json",
+      "ignored_sha256": "e93c3440406c68cc4521caf560acbc3afa0bf1e5cb64eac8db6b06e2b84cc069",
+      "public_sha256": "e93c3440406c68cc4521caf560acbc3afa0bf1e5cb64eac8db6b06e2b84cc069",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/security.log",
+      "public_copy": "security.log",
+      "ignored_sha256": "129673275c671edc5d77ea7bc2b98a61d2535cafc41a25dc5fe2234a0e27a507",
+      "public_sha256": "129673275c671edc5d77ea7bc2b98a61d2535cafc41a25dc5fe2234a0e27a507",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/security-before-refresh.log",
+      "public_copy": "security-before-refresh.log",
+      "ignored_sha256": "dfd6742d36a194196e6e45e00b1827cb1f57e6c4f71eb74eb0f0ce49c5e68cab",
+      "public_sha256": "fe15536c4abccc4a73d31fb57087cd65529db7bc57705fc2e93e7b9502ce3615",
+      "absolute_workspace_path_redactions": 2
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/dependencies.json",
+      "public_copy": "dependencies.json",
+      "ignored_sha256": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+      "public_sha256": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/dependency-scope.log",
+      "public_copy": "dependency-scope.log",
+      "ignored_sha256": "27179731f19ca8ffdf626ce4b657f3c8c8511e24218e2b01b8586e7536e34e94",
+      "public_sha256": "27179731f19ca8ffdf626ce4b657f3c8c8511e24218e2b01b8586e7536e34e94",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/dependencies.log",
+      "public_copy": "dependencies.log",
+      "ignored_sha256": "15950a68a7ed99c59779717acefdceb3f69cfd31bde67d2c954f2a3cea4d7955",
+      "public_sha256": "15950a68a7ed99c59779717acefdceb3f69cfd31bde67d2c954f2a3cea4d7955",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/investigation.json",
+      "public_copy": "prior-investigation.json",
+      "ignored_sha256": "abce222dd8518b6cdf8adb58606b7d6416c3aa368441dd6667479532a69853df",
+      "public_sha256": "abce222dd8518b6cdf8adb58606b7d6416c3aa368441dd6667479532a69853df",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/root-direction-review.json",
+      "public_copy": "root-direction-review.json",
+      "ignored_sha256": "053ce4503c818b82348bb396798a288e1d4c5b6870524fefabc9214a6de11cb1",
+      "public_sha256": "053ce4503c818b82348bb396798a288e1d4c5b6870524fefabc9214a6de11cb1",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/evidence-handling.json",
+      "public_copy": "evidence-handling.json",
+      "ignored_sha256": "ff4ffd5c4ea2f89e8be16d17cf81236e171e74c29b97bdb07aa7eca586f21c04",
+      "public_sha256": "ff4ffd5c4ea2f89e8be16d17cf81236e171e74c29b97bdb07aa7eca586f21c04",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/initial-observations.json",
+      "public_copy": "prior-initial-observations.json",
+      "ignored_sha256": "cf47258aaf547d61a8b77380e47ae2c29c8084d25fae6c720ee6b8b3abd14297",
+      "public_sha256": "cf47258aaf547d61a8b77380e47ae2c29c8084d25fae6c720ee6b8b3abd14297",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/initial-oracle-report.json",
+      "public_copy": "prior-initial-oracle-report.json",
+      "ignored_sha256": "7001a5cb0b443aa76145308f925288e3b1be826c8363378ab5c53713684f9e5c",
+      "public_sha256": "7001a5cb0b443aa76145308f925288e3b1be826c8363378ab5c53713684f9e5c",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/initial-probe.log",
+      "public_copy": "prior-initial-probe.log",
+      "ignored_sha256": "a5b2a1fd2d0f119765697db814a237e48fee273b2a1d725c6b27a137dae128e1",
+      "public_sha256": "a5b2a1fd2d0f119765697db814a237e48fee273b2a1d725c6b27a137dae128e1",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/probe.log",
+      "public_copy": "prior-followup-probe.log",
+      "ignored_sha256": "232a958ae68a2d42474572396fe69b49b1e1da1913bf6e154405b3807c2582e0",
+      "public_sha256": "232a958ae68a2d42474572396fe69b49b1e1da1913bf6e154405b3807c2582e0",
+      "absolute_workspace_path_redactions": 0
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/setup-failure.log",
+      "public_copy": "diagnostic-setup-failure.log",
+      "ignored_sha256": "7c0ef5699fb96efa950b4dcb0d8f2c3f0f1124518814af6c5da514bc5c22d88c",
+      "public_sha256": "26f805b3d7e8ff7a13f248a5394af0f1457586c7e97cf58bbbc393d91f02155a",
+      "absolute_workspace_path_redactions": 4
+    },
+    {
+      "ignored_source": ".quality/oracle-prefix/setup-failure.json",
+      "public_copy": "diagnostic-setup-cleanup.json",
+      "ignored_sha256": "e23fdef81b7eb6396a4a6549e9f4e202a4bb631ce065c03088641e5d641205f5",
+      "public_sha256": "e23fdef81b7eb6396a4a6549e9f4e202a4bb631ce065c03088641e5d641205f5",
+      "absolute_workspace_path_redactions": 0
+    }
+  ],
+  "note": "Ignored original raw files retained except explicitly disclosed prior9node followup JSON/report overwrite. New native-run-002 is unique and refuses existing destination. No private keys, signing argv/stderr or RPC URLs in public copies."
+}

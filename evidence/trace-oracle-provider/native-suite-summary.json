@@ -1,0 +1,135 @@
+{
+  "tests_run": 252,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "oracle_artifact_id": "b8c5b8d1e162bbcb304693cb09f986c46d7bfc42d19e334741d6374f66e6d10d",
+  "runtime_seconds": 0.286282,
+  "provider_faults": {
+    "eth_getStorageAt": {
+      "requests": {
+        "eth_chainId": 5,
+        "eth_getBlockByNumber": 6,
+        "eth_getTransactionReceipt": 5,
+        "anvil_nodeInfo": 4,
+        "eth_gasPrice": 2,
+        "eth_getAccountInfo": 2,
+        "eth_getBalance": 8,
+        "eth_getTransactionCount": 8,
+        "eth_getCode": 8,
+        "eth_getStorageAt": 3
+      },
+      "denied": {
+        "anvil_nodeInfo": 4,
+        "eth_getAccountInfo": 2,
+        "eth_getStorageAt": 3
+      },
+      "proxy_thread_and_port_closed": true
+    },
+    "parent_missing": {
+      "requests": {
+        "eth_chainId": 1,
+        "eth_getBlockByNumber": 2
+      },
+      "denied": {
+        "eth_getBlockByNumber": 1
+      },
+      "proxy_thread_and_port_closed": true
+    },
+    "eth_getCode": {
+      "requests": {
+        "eth_chainId": 3,
+        "eth_getBlockByNumber": 4,
+        "eth_getTransactionReceipt": 2,
+        "anvil_nodeInfo": 2,
+        "eth_gasPrice": 1,
+        "eth_getBalance": 1,
+        "eth_getTransactionCount": 1,
+        "eth_getCode": 1,
+        "eth_getAccountInfo": 1
+      },
+      "denied": {
+        "anvil_nodeInfo": 2,
+        "eth_getCode": 1,
+        "eth_getAccountInfo": 1
+      },
+      "proxy_thread_and_port_closed": true
+    },
+    "eth_getBalance": {
+      "requests": {
+        "eth_chainId": 3,
+        "eth_getBlockByNumber": 4,
+        "eth_getTransactionReceipt": 2,
+        "anvil_nodeInfo": 2,
+        "eth_gasPrice": 1,
+        "eth_getBalance": 1,
+        "eth_getTransactionCount": 1,
+        "eth_getCode": 1,
+        "eth_getAccountInfo": 1
+      },
+      "denied": {
+        "anvil_nodeInfo": 2,
+        "eth_getBalance": 1,
+        "eth_getAccountInfo": 1
+      },
+      "proxy_thread_and_port_closed": true
+    },
+    "none": {
+      "requests": {
+        "eth_chainId": 5,
+        "eth_getBlockByNumber": 6,
+        "eth_getTransactionReceipt": 2,
+        "anvil_nodeInfo": 4,
+        "eth_gasPrice": 2,
+        "eth_getAccountInfo": 2,
+        "eth_getBalance": 9,
+        "eth_getTransactionCount": 9,
+        "eth_getCode": 9,
+        "eth_getStorageAt": 2
+      },
+      "denied": {
+        "anvil_nodeInfo": 4,
+        "eth_getAccountInfo": 2
+      },
+      "proxy_thread_and_port_closed": true
+    }
+  },
+  "owned_node_cleanup": [
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    },
+    {
+      "guardian_returncode": 0,
+      "source_port_closed_by_class_cleanup": true
+    }
+  ]
+}

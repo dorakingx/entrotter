@@ -1,0 +1,31 @@
+{
+  "status": "evidence_handling_error_disclosed",
+  "cause": "Copied ignored fixture generator reused the final probe output paths. Generator outputs moved to distinct paths; generator now requires a nonexistent new directory before running.",
+  "affected": [
+    {
+      "original_path": ".quality/oracle-prefix/observations.json",
+      "original_sha256": "fe4dbb8ea9e44f24ce60dbf5be449eb65447816600beced07a576b32daf34173",
+      "original_bytes_available": false,
+      "generator_output_path": ".quality/oracle-prefix/fixture-generation-observations.json",
+      "generator_output_sha256": "908d74fdd55e9ec01d7b59b687219030dba356fbad97815d61d8dee75eead679"
+    },
+    {
+      "original_path": ".quality/oracle-prefix/oracle-report.json",
+      "original_sha256": "89ab037b66d0852f75089212c87a8e4850b07e4eebc600f97e3a808bf4a46795",
+      "original_bytes_available": false,
+      "generator_output_path": ".quality/oracle-prefix/fixture-generation-report.json",
+      "generator_output_sha256": "eefb80f599bccb80de5a68fab9dfde0bbb2844210b6685a49e774d29c838461e"
+    }
+  ],
+  "preserved": [
+    "investigation.json",
+    "root-direction-review.json",
+    "initial-probe.py",
+    "initial-probe.log",
+    "initial-observations.json",
+    "initial-oracle-report.json",
+    "setup-failure.json",
+    "setup-failure.log"
+  ],
+  "scope": "Original9-node public-entrypoint followup full raw JSON/report are unavailable; aggregate observed results, exact prior hashes and contemporaneous root review survive. Never reconstruct/substitute new bytes under old hashes. Publictested engine935/coordinator8029 unaffected. Fresh regression output is separately named and refuses existing destination."
+}

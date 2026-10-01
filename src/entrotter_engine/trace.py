@@ -571,6 +571,7 @@ def run_trace_native(plan: dict) -> dict:
                 "Skipping original transactions preserves every remaining signature/nonce. Nonce conflicts and rejected/unmined transactions are reported, never repaired.",
                 "Owned trace nodes defer parent-state pool balance/fee/gas admission checks to ordered EVM/block execution, allowing earlier in-block funding. Accepted inputs can still remain unmined; no balance/nonce repair or sequential different-block mining is substituted.",
                 "Exact projected receipts include status, gas/cumulative gas, effective price, identities, ordered log bytes and bloom. Divergence is reported; an unmatched baseline is not verified historical replay.",
+                "Missing parent/account state may fail explicitly. Mining-time archive/storage errors may instead leave transactions not_mined and the baseline unverified; receipt absence alone does not identify the cause or attest parent state. No fixture state or oracle response is substituted.",
                 "Block hashes/roots, withdrawals/end-block state, opcode traces, full-block replay and an alternate market are outside this transaction-prefix result.",
                 "The primitive owns bounded-lifetime Anvil. Whole-process CPU/RSS isolation is supplied only by the default Docker worker; explicit native execution opts out. No upstream writes or arbitrary agent code.",
             ],
