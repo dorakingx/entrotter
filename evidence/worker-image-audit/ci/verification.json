@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "proof_commit": "b6bd48bb17cd950e5a12a7d766276291b33a35da",
+  "integration_run": 35469413504,
+  "links_run": 35469413528,
+  "source_manifest_and_checker_match": true,
+  "full_fixture_and_evm_artifact_ids_match": true,
+  "shared_admission_checks_match": true,
+  "linux_clean_reproduction_seconds": 5.017141688999999,
+  "local_clean_reproduction_seconds": 20.671856333006872,
+  "note": "Docker already running; build caches warm. Native binary/image IDs differ by architecture; no cold-machine timing claim."
+}

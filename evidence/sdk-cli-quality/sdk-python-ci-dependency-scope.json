@@ -1,0 +1,8 @@
+{
+  "runtime": [],
+  "build": [
+    "setuptools==84.0.0"
+  ],
+  "optional_runtime": {},
+  "audited_locked_packages": 42
+}

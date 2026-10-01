@@ -1,0 +1,79 @@
+app.js(63,3): error TS2531: Object is possibly 'null'.
+app.js(67,5): error TS2531: Object is possibly 'null'.
+app.js(71,3): error TS2531: Object is possibly 'null'.
+app.js(71,43): error TS2531: Object is possibly 'null'.
+app.js(72,73): error TS2531: Object is possibly 'null'.
+app.js(73,3): error TS2531: Object is possibly 'null'.
+app.js(73,49): error TS2531: Object is possibly 'null'.
+app.js(74,3): error TS2531: Object is possibly 'null'.
+app.js(74,34): error TS2531: Object is possibly 'null'.
+app.js(74,70): error TS2531: Object is possibly 'null'.
+app.js(74,106): error TS2531: Object is possibly 'null'.
+app.js(75,3): error TS2531: Object is possibly 'null'.
+app.js(76,3): error TS2531: Object is possibly 'null'.
+app.js(76,33): error TS2531: Object is possibly 'null'.
+app.js(76,68): error TS2531: Object is possibly 'null'.
+app.js(77,3): error TS2531: Object is possibly 'null'.
+app.js(77,35): error TS2531: Object is possibly 'null'.
+app.js(77,71): error TS2531: Object is possibly 'null'.
+app.js(83,3): error TS2531: Object is possibly 'null'.
+app.js(83,34): error TS2531: Object is possibly 'null'.
+app.js(84,3): error TS2531: Object is possibly 'null'.
+app.js(85,3): error TS2531: Object is possibly 'null'.
+app.js(86,3): error TS2531: Object is possibly 'null'.
+app.js(86,34): error TS2531: Object is possibly 'null'.
+app.js(87,3): error TS2531: Object is possibly 'null'.
+app.js(90,5): error TS2531: Object is possibly 'null'.
+app.js(91,5): error TS2531: Object is possibly 'null'.
+app.js(92,5): error TS2531: Object is possibly 'null'.
+app.js(94,5): error TS2531: Object is possibly 'null'.
+app.js(94,41): error TS2531: Object is possibly 'null'.
+app.js(95,5): error TS2531: Object is possibly 'null'.
+app.js(103,3): error TS2531: Object is possibly 'null'.
+app.js(103,55): error TS2531: Object is possibly 'null'.
+app.js(104,3): error TS2531: Object is possibly 'null'.
+app.js(106,3): error TS2531: Object is possibly 'null'.
+app.js(107,3): error TS2531: Object is possibly 'null'.
+app.js(109,3): error TS2531: Object is possibly 'null'.
+app.js(110,3): error TS2531: Object is possibly 'null'.
+app.js(116,5): error TS2531: Object is possibly 'null'.
+app.js(120,3): error TS2531: Object is possibly 'null'.
+app.js(123,63): error TS2531: Object is possibly 'null'.
+app.js(125,3): error TS2531: Object is possibly 'null'.
+app.js(126,3): error TS2531: Object is possibly 'null'.
+app.js(127,3): error TS2531: Object is possibly 'null'.
+app.js(128,3): error TS2531: Object is possibly 'null'.
+app.js(129,3): error TS2531: Object is possibly 'null'.
+app.js(130,3): error TS2531: Object is possibly 'null'.
+app.js(133,32): error TS2531: Object is possibly 'null'.
+app.js(133,46): error TS2339: Property 'value' does not exist on type 'HTMLElement'.
+app.js(140,26): error TS2531: Object is possibly 'null'.
+app.js(140,40): error TS2339: Property 'href' does not exist on type 'HTMLElement'.
+app.js(141,49): error TS18046: 'error' is of type 'unknown'.
+app.js(143,1): error TS2531: Object is possibly 'null'.
+app.js(144,1): error TS2531: Object is possibly 'null'.
+app.js(145,14): error TS18047: 'event.target' is possibly 'null'.
+app.js(145,27): error TS2339: Property 'files' does not exist on type 'EventTarget'.
+app.js(150,25): error TS2531: Object is possibly 'null'.
+app.js(151,46): error TS18046: 'error' is of type 'unknown'.
+scripts/check_accessibility.mjs(19,30): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string | URL'.
+  Type 'undefined' is not assignable to type 'string | URL'.
+scripts/check_accessibility.mjs(28,47): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'number'.
+scripts/check_accessibility.mjs(29,36): error TS2531: Object is possibly 'null'.
+scripts/check_accessibility.mjs(29,53): error TS2339: Property 'port' does not exist on type 'string | AddressInfo'.
+  Property 'port' does not exist on type 'string'.
+scripts/check_accessibility.mjs(34,66): error TS18046: 'error' is of type 'unknown'.
+scripts/check_accessibility.mjs(42,49): error TS2531: Object is possibly 'null'.
+scripts/check_accessibility.mjs(53,71): error TS18047: 'document.activeElement' is possibly 'null'.
+scripts/check_accessibility.mjs(56,34): error TS2345: Argument of type 'Element | null' is not assignable to parameter of type 'Element'.
+  Type 'null' is not assignable to type 'Element'.
+scripts/check_accessibility.mjs(64,42): error TS2304: Cannot find name 'axe'.
+scripts/check_accessibility.mjs(108,36): error TS2531: Object is possibly 'null'.
+scripts/check_accessibility.mjs(124,36): error TS2531: Object is possibly 'null'.
+scripts/check_accessibility.mjs(133,40): error TS2531: Object is possibly 'null'.
+scripts/check_accessibility.mjs(147,44): error TS2531: Object is possibly 'null'.
+scripts/check_accessibility.mjs(153,78): error TS2531: Object is possibly 'null'.
+scripts/check_accessibility.mjs(167,36): error TS2531: Object is possibly 'null'.
+scripts/check_accessibility.mjs(171,36): error TS2531: Object is possibly 'null'.

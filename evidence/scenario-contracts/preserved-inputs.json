@@ -1,0 +1,20 @@
+{
+  "benchmarks/causal-v1/README.md": "d562bf71890297d513a4f7d6dd7eacad8e7f91a5fac5161323e5010b8ca0ce81",
+  "benchmarks/causal-v1/cases/17000000.json": "872aee0c3fca50e4ba4a4eb7d5cd6b34e4c6df85fe8c53655f329d691133339b",
+  "benchmarks/causal-v1/cases/18000000.json": "5b82f881e4163fa667a9729a7d40e60917222d6925a9fc32d317aab68d2103f3",
+  "benchmarks/causal-v1/cases/19000000.json": "2059263c6e3eb9dfd8ef3549ef82f1e070225dcb5430c6301349da51d4a4d02f",
+  "benchmarks/causal-v1/cases/20000000.json": "749b12bb349dd2ebdeac9f234d0c0553056a3f0ee8b78f7f8db42beeee8953d6",
+  "benchmarks/causal-v1/cases/21000000.json": "600f4a1e6b935ed3c82ab0f3d2c25839d06c0523d006a7348567e456a10bce8b",
+  "benchmarks/causal-v1/manifest.json": "f147489fcde8de04be6a9de459fe011018488bd75e66a84de55f6a8a35ed030e",
+  "benchmarks/causal-v1/source-headers.json": "0680600e343f55e7b560af03053332f8bc696428b2ed4323faf63a691a190e71",
+  "evm/ethereum-state-fork.json": "353173fdf8d19f9b60341734a9f860e2c90aa38afc959837039c95288beb4261",
+  "evm/ethereum-uniswap-slippage.json": "9bba384c7a56f973b26e4b9cfef058e6dd841d7ddd737cbeeed75f9478c64c33",
+  "evm/local-branch-revert.json": "635ceda3e7a473a65cb45f3477f835e218de5542e1a631ae84e8458587dd1d32",
+  "fixtures/depeg-stress.json": "85536dfc85c278bd253f73cc941ff9926a5eb8040c9e56932b3b8e0cd70be3ac",
+  "fixtures/liquidity-shock.json": "9ca50616f050805afa86b485222aad53bffa23572ed7732367e80c32d547eeb3",
+  "fixtures/recovery-trap.json": "576c77f14393d0c1c2cd4b6086a9012b157bb746f2acee66f568c8fae35c1cc2",
+  "manifest.json": "758d7c1cf328bf65a9d7f3a651f4b81189095666f88b28d63ed6c9f301fa9d0b",
+  "schemas/agent-recording.v0.1.schema.json": "12573fe89aa6a5ab43328fb157561a63496cc7d31e82ac751cdbdc1dcefe8eea",
+  "schemas/result.v0.1.schema.json": "2db80e9cd4d00fff792f549312cef868871b1e65b1df17c0c3b740742b4966bb",
+  "schemas/scenario.v0.1.schema.json": "1e7d3fe0bf839494771cda5cfa023515fd518d7b0f1a3f99336015c547aee1f2"
+}

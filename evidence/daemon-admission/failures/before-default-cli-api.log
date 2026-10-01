@@ -1,0 +1,25 @@
+test_api_rejects_occupied_daemon_without_storing_report (test_admission.DaemonAdmissionTests.test_api_rejects_occupied_daemon_without_storing_report) ... FAIL
+test_cli_rejects_occupied_daemon_without_replacing_export (test_admission.DaemonAdmissionTests.test_cli_rejects_occupied_daemon_without_replacing_export) ... FAIL
+
+======================================================================
+FAIL: test_api_rejects_occupied_daemon_without_storing_report (test_admission.DaemonAdmissionTests.test_api_rejects_occupied_daemon_without_storing_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/tests_isolated/test_admission.py", line 72, in test_api_rejects_occupied_daemon_without_storing_report
+    self.assertEqual(response.status, 429, 'Independent API bypassed occupied worker slot')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 201 != 429 : Independent API bypassed occupied worker slot
+
+======================================================================
+FAIL: test_cli_rejects_occupied_daemon_without_replacing_export (test_admission.DaemonAdmissionTests.test_cli_rejects_occupied_daemon_without_replacing_export)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/tests_isolated/test_admission.py", line 54, in test_cli_rejects_occupied_daemon_without_replacing_export
+    self.assertNotEqual(result.returncode, 0, 'Independent CLI bypassed occupied worker slot')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : Independent CLI bypassed occupied worker slot
+
+----------------------------------------------------------------------
+Ran 2 tests in 3.634s
+
+FAILED (failures=2)

@@ -10,6 +10,6 @@ test_public_reports_valid_hashes (test_site.SiteTests.test_public_reports_valid_
 test_workflow_stages_allowlisted_files (test_site.SiteTests.test_workflow_stages_allowlisted_files) ... ok
 
 ----------------------------------------------------------------------
-Ran 10 tests in 0.021s
+Ran 10 tests in 0.023s
 
 OK

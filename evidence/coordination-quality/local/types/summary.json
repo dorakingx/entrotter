@@ -1,0 +1,78 @@
+{
+  "status": "passed_with_explicit_frozen_diagnostics",
+  "mypy_version": "1.18.2",
+  "sources_sha256": {
+    ".github/actions/docs-links/check.py": "34f7173772099c0ce8fc01fe39693c6f88c25bba27b07444d7cbf74263d8beac",
+    "scripts/benchmark_agent.py": "14fa2bdeb9adfa47e76eead751b789d9c2eb5564f36cb0c35e27d9bd90a49aa1",
+    "scripts/benchmark_direct.py": "a69212c2f66e657a0217f49e593a0a059922454a8f00044ac290885f33660957",
+    "scripts/browser_check.py": "cb624bebc251e4a96c6b302a609550538af7cb32cb30aa1553f5f25b998f7b9c",
+    "scripts/check_agent.py": "e9cbeb134a7137b200937157887e154140d3f0064c90f153cb066425af98ae09",
+    "scripts/check_default_wheels.py": "91f9836bc2315ca7232d735164efb75db29b28fbea769d02fca5e7083f415ed9",
+    "scripts/check_dependencies.py": "4b6aa95413b509f10bb876ec1d753353025c72abe2a7c861a8bc3384884a1228",
+    "scripts/check_export_budget.py": "50accb3dba9bbfdccd28d9e34b45e51e9a38709a62374de83b8d35212110412e",
+    "scripts/check_historical.py": "2be74ef9775ed78a8c9e019f1a07f785ff3d9cf6892d87f4aaf2082f997b62c6",
+    "scripts/check_host_limits.py": "7bc0fa1055c7d332edbfa7f14928ef29dbe183fc5f7d9b2b7ff56edc35a3174c",
+    "scripts/check_security.py": "59c663e1612f57f14d241195baf6a70a06ca2b1610d7d62cb14dd6f0d06719bb",
+    "scripts/check_types.py": "ea69dc5a5b8404907d0b13df4b7f690a7959b0e39ef394d7986eb9c13176c8d6",
+    "scripts/codex_policy.py": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76",
+    "scripts/direct_anvil_case.py": "0defb1ea03cc71e6985ee6a459cea7a6e0a7ce49ec96fc9663a447e6ef36427f",
+    "scripts/export_reports.py": "8971b8e439fd1f60641afb9fb7260a6d52cde2e076256ee38e228d4e393288f3",
+    "scripts/publish.py": "e54c579a177ab5877e5cb9e8d7626a0c0f6fbf1e3f72067495cbf8b58597cfe8",
+    "scripts/quality_scope.py": "f39cbd50586f57a73973e28e1c901148ebb9cb779c7ceda845d86289d102fb11",
+    "scripts/reproduce_clean.py": "e2203976e89d6e917da495e4caded90d095dc5d918b2b31e71bfb42b245c663e",
+    "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333"
+  },
+  "dependency_commits": {
+    "agent-engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+    "worker-engine": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+    "sdk": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
+  },
+  "groups": [
+    {
+      "group": "agent",
+      "files": [
+        "scripts/benchmark_agent.py",
+        "scripts/benchmark_direct.py",
+        "scripts/check_agent.py",
+        "scripts/check_historical.py",
+        "scripts/codex_policy.py",
+        "scripts/direct_anvil_case.py",
+        "scripts/export_reports.py"
+      ],
+      "exit_code": 1,
+      "reviewed_diagnostics": 3
+    },
+    {
+      "group": "worker",
+      "files": [
+        "scripts/check_host_limits.py",
+        "scripts/check_export_budget.py"
+      ],
+      "exit_code": 0,
+      "reviewed_diagnostics": 0
+    },
+    {
+      "group": "general",
+      "files": [
+        ".github/actions/docs-links/check.py",
+        "scripts/browser_check.py",
+        "scripts/check_default_wheels.py",
+        "scripts/check_dependencies.py",
+        "scripts/check_security.py",
+        "scripts/check_types.py",
+        "scripts/publish.py",
+        "scripts/quality_scope.py",
+        "scripts/reproduce_clean.py",
+        "scripts/verify.py"
+      ],
+      "exit_code": 0,
+      "reviewed_diagnostics": 0
+    }
+  ],
+  "limitations": [
+    "Normal mypy with unannotated bodies, not strict typing or runtime JSON validation",
+    "Imported external packages provide types; their implementation is checked in owning repositories",
+    "Three frozen-provider pipe/selector diagnostics are retained; independent review required"
+  ]
+}

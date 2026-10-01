@@ -1,0 +1,26 @@
+test_api_rejects_occupied_daemon_without_storing_report (test_admission.DaemonAdmissionTests.test_api_rejects_occupied_daemon_without_storing_report) ... ok
+test_cli_rejects_occupied_daemon_without_replacing_export (test_admission.DaemonAdmissionTests.test_cli_rejects_occupied_daemon_without_replacing_export) ... ok
+test_host_timeout_releases_owned_slot_for_next_run (test_admission.DaemonAdmissionTests.test_host_timeout_releases_owned_slot_for_next_run) ... ok
+test_two_processes_race_after_both_observe_empty_slot (test_admission.DaemonAdmissionTests.test_two_processes_race_after_both_observe_empty_slot) ... FAIL
+test_unstarted_container_keeps_slot_until_explicit_owned_removal (test_admission.DaemonAdmissionTests.test_unstarted_container_keeps_slot_until_explicit_owned_removal) ... ok
+
+======================================================================
+FAIL: test_two_processes_race_after_both_observe_empty_slot (test_admission.DaemonAdmissionTests.test_two_processes_race_after_both_observe_empty_slot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/tests_isolated/test_admission.py", line 96, in test_two_processes_race_after_both_observe_empty_slot
+    self.assertEqual(sorted(item[0] for item in results), ['busy', 'success'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['success', 'unexpected'] != ['busy', 'success']
+
+First differing element 0:
+'success'
+'busy'
+
+- ['success', 'unexpected']
++ ['busy', 'success']
+
+----------------------------------------------------------------------
+Ran 5 tests in 13.771s
+
+FAILED (failures=1)

@@ -1,0 +1,386 @@
+[
+  {
+    "filePath": "app.js",
+    "messages": [
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 30,
+        "column": 52,
+        "endLine": 30,
+        "endColumn": 68
+      },
+      {
+        "ruleId": "security/detect-unsafe-regex",
+        "severity": 1,
+        "message": "Unsafe Regular Expression",
+        "line": 71,
+        "column": 6,
+        "endLine": 71,
+        "endColumn": 62
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 153,
+        "column": 18,
+        "endLine": 153,
+        "endColumn": 25
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 154,
+        "column": 18,
+        "endLine": 154,
+        "endColumn": 25
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 204,
+        "column": 22,
+        "endLine": 204,
+        "endColumn": 27
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 205,
+        "column": 18,
+        "endLine": 205,
+        "endColumn": 23
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 354,
+        "column": 16,
+        "endLine": 354,
+        "endColumn": 21
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 373,
+        "column": 35,
+        "endLine": 373,
+        "endColumn": 42
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 373,
+        "column": 50,
+        "endLine": 373,
+        "endColumn": 57
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 374,
+        "column": 35,
+        "endLine": 374,
+        "endColumn": 42
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 374,
+        "column": 50,
+        "endLine": 374,
+        "endColumn": 57
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 11,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "\"use strict\";\n/** @param {string} id */\nfunction $(id) {\n  const element = document.getElementById(id);\n  if (!element) throw new Error(`Missing interface element: ${id}`);\n  return element;\n}\n/** @param {unknown} value @returns {Record<string, unknown>} */\nfunction record(value) {\n  if (value === null || typeof value !== \"object\" || Array.isArray(value))\n    throw new Error(\"Invalid report object.\");\n  return /** @type {Record<string, unknown>} */ (value);\n}\nconst allowedSamples = new Set([\n  \"liquidity-shock\",\n  \"recovery-trap\",\n  \"depeg-stress\",\n  \"ethereum-uniswap-slippage\",\n]);\nlet generation = 0;\n// The backend canonicalizes JSON with sorted keys and ensure_ascii=True.\n/** @param {unknown} value @returns {string} */\nfunction canonical(value) {\n  if (Array.isArray(value)) return \"[\" + value.map(canonical).join(\",\") + \"]\";\n  if (value !== null && typeof value === \"object\")\n    return (\n      \"{\" +\n      Object.keys(value)\n        .sort()\n        .map((k) => canonical(k) + \":\" + canonical(record(value)[k]))\n        .join(\",\") +\n      \"}\"\n    );\n  if (typeof value === \"number\" && !Number.isFinite(value))\n    throw new Error(\"Invalid JSON number.\");\n  const serialized = JSON.stringify(value);\n  if (serialized === undefined) throw new Error(\"Invalid JSON value.\");\n  return serialized.replace(\n    /[\\u0080-\\uffff]/g,\n    (c) => \"\\\\u\" + c.charCodeAt(0).toString(16).padStart(4, \"0\"),\n  );\n}\n/** @param {unknown} input */\nasync function checkHash(input) {\n  const report = record(input);\n  if (\n    report.schema_version !== \"0.1.0\" ||\n    typeof report.artifact_id !== \"string\" ||\n    !/^[a-f0-9]{64}$/.test(report.artifact_id)\n  )\n    throw new Error(\"Unsupported schema or missing hash.\");\n  const { artifact_id, ...body } = report;\n  const hash = await crypto.subtle.digest(\n    \"SHA-256\",\n    new TextEncoder().encode(canonical(body)),\n  );\n  const actual = Array.from(new Uint8Array(hash), (b) =>\n    b.toString(16).padStart(2, \"0\"),\n  ).join(\"\");\n  if (actual !== artifact_id)\n    throw new Error(\n      \"Content hash mismatch. The result was changed or damaged.\",\n    );\n}\n/** @param {unknown} value */\nfunction finite(value) {\n  if (\n    typeof value !== \"string\" ||\n    value.length > 100 ||\n    value.trim() !== value ||\n    !/^-?(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?$/.test(value) ||\n    !Number.isFinite(Number(value))\n  )\n    throw new Error(\"Invalid metric.\");\n  return Number(value);\n}\n/** @param {unknown} value @param {number} [digits] */\nfunction fmt(value, digits = 2) {\n  return finite(value).toLocaleString(\"en-US\", {\n    maximumFractionDigits: digits,\n  });\n}\n/** @param {unknown} value */\nfunction rawInteger(value) {\n  if (\n    typeof value !== \"string\" ||\n    value.trim() !== value ||\n    !/^-?(0|[1-9][0-9]{0,79})$/.test(value)\n  )\n    throw new Error(\"Invalid raw integer.\");\n  return value;\n}\n/** @param {unknown} input @param {unknown} decimals */\nfunction tokenUnits(input, decimals) {\n  const value = rawInteger(input);\n  if (\n    typeof decimals !== \"number\" ||\n    !Number.isInteger(decimals) ||\n    decimals < 0 ||\n    decimals > 36\n  )\n    throw new Error(\"Invalid token decimals.\");\n  const negative = value.startsWith(\"-\"),\n    digits = (negative ? value.slice(1) : value).padStart(decimals + 1, \"0\");\n  return (\n    (negative ? \"-\" : \"\") +\n    (decimals\n      ? digits.slice(0, -decimals) + \".\" + digits.slice(-decimals)\n      : digits)\n  );\n}\n/** @param {unknown} input */\nfunction evmViewModel(input) {\n  const report = record(input);\n  if (report.mode !== \"evm-local\" && report.mode !== \"evm-fork\")\n    throw new Error(\"Unsupported EVM report.\");\n  if (\n    record(record(report.scenario).provenance).kind !==\n    (report.mode === \"evm-fork\" ? \"historical-fork\" : \"local-evm\")\n  )\n    throw new Error(\"Invalid EVM provenance.\");\n  const source =\n    report.source === undefined || report.source === null\n      ? null\n      : record(report.source);\n  const baseline = record(report.baseline),\n    candidate = record(report.candidate);\n  const bm = record(baseline.metrics),\n    cm = record(candidate.metrics);\n  if (\n    report.mode === \"evm-fork\" &&\n    (source === null ||\n      typeof source.chain_id !== \"number\" ||\n      !Number.isSafeInteger(source.chain_id) ||\n      source.chain_id < 1 ||\n      typeof source.block_number !== \"number\" ||\n      !Number.isSafeInteger(source.block_number) ||\n      source.block_number < 1 ||\n      typeof source.block_hash !== \"string\" ||\n      !/^0x[0-9a-fA-F]{64}$/.test(source.block_hash))\n  )\n    throw new Error(\"Missing historical source pin.\");\n  const rows = [],\n    traces = [];\n  for (const key of [\n    \"initial_balance_wei\",\n    \"final_balance_wei\",\n    \"balance_delta_wei\",\n    \"gas_used\",\n  ]) {\n    rows.push([\n      key.replaceAll(\"_\", \" \"),\n      rawInteger(bm[key]),\n      rawInteger(cm[key]),\n    ]);\n  }\n  if (bm.gas_cost_wei !== undefined || cm.gas_cost_wei !== undefined)\n    rows.push([\n      \"Gas cost (wei)\",\n      rawInteger(bm.gas_cost_wei),\n      rawInteger(cm.gas_cost_wei),\n    ]);\n  for (const { name, branch } of [\n    { name: \"Baseline\", branch: baseline },\n    { name: \"Candidate\", branch: candidate },\n  ]) {\n    if (\n      !Array.isArray(branch.trace) ||\n      branch.trace.length < 1 ||\n      branch.trace.length > 32\n    )\n      throw new Error(\"Invalid EVM trace.\");\n    for (const inputStep of branch.trace) {\n      const step = record(inputStep);\n      if (\n        typeof step.step !== \"number\" ||\n        !Number.isInteger(step.step) ||\n        step.step < 0 ||\n        step.step > 31 ||\n        typeof step.status !== \"string\" ||\n        ![\"noop\", \"success\", \"reverted\", \"rejected\"].includes(step.status)\n      )\n        throw new Error(\"Invalid EVM step.\");\n      traces.push([\n        name,\n        String(step.step),\n        step.status,\n        rawInteger(step.gas_used),\n        rawInteger(step.actor_balance_wei),\n      ]);\n    }\n  }\n  const bt = baseline.tokens ?? [],\n    ct = candidate.tokens ?? [];\n  if (\n    !Array.isArray(bt) ||\n    !Array.isArray(ct) ||\n    bt.length !== ct.length ||\n    bt.length > 8\n  )\n    throw new Error(\"Invalid token observations.\");\n  const seen = new Set();\n  for (let i = 0; i < bt.length; i++) {\n    const b = record(bt[i]),\n      c = record(ct[i]);\n    if (\n      typeof b.address !== \"string\" ||\n      typeof c.address !== \"string\" ||\n      !/^0x[0-9a-fA-F]{40}$/.test(b.address) ||\n      b.address.toLowerCase() !== c.address.toLowerCase() ||\n      seen.has(b.address.toLowerCase()) ||\n      b.decimals !== c.decimals ||\n      typeof b.symbol !== \"string\" ||\n      !/^[A-Z0-9_-]{1,12}$/.test(b.symbol) ||\n      b.symbol !== c.symbol\n    )\n      throw new Error(\"Mismatched token metadata.\");\n    seen.add(b.address.toLowerCase());\n    rows.push([\n      b.symbol + \" final token units\",\n      tokenUnits(b.final_balance_raw, b.decimals),\n      tokenUnits(c.final_balance_raw, c.decimals),\n    ]);\n    rows.push([\n      b.symbol + \" change in raw units\",\n      rawInteger(b.balance_delta_raw),\n      rawInteger(c.balance_delta_raw),\n    ]);\n  }\n  return {\n    rows,\n    traces,\n    source: source\n      ? `Chain ${source.chain_id} · Block ${source.block_number}\\n${source.block_hash}`\n      : \"Local disposable chain; no historical source\",\n  };\n}\n/** @param {string} id @param {string[][]} rows @param {boolean} [rowHeaders] */\nfunction tableRows(id, rows, rowHeaders = false) {\n  $(id).replaceChildren();\n  for (const row of rows) {\n    const tr = document.createElement(\"tr\");\n    row.forEach((value, index) => {\n      const cell = document.createElement(\n        rowHeaders && index === 0 ? \"th\" : \"td\",\n      );\n      if (rowHeaders && index === 0) cell.scope = \"row\";\n      cell.textContent = value;\n      tr.appendChild(cell);\n    });\n    $(id).appendChild(tr);\n  }\n}\n/** @param {string} message */\nfunction setError(message) {\n  $(\"report-status\").textContent = message;\n  $(\"report-status\").classList.add(\"error\");\n  [\"baseline-value\", \"candidate-value\", \"delta-value\", \"hash\"].forEach(\n    (id) => ($(id).textContent = \"—\"),\n  );\n  $(\"baseline-line\").setAttribute(\"points\", \"\");\n  $(\"candidate-line\").setAttribute(\"points\", \"\");\n  $(\"metric-table\").hidden = true;\n  $(\"metric-rows\").replaceChildren();\n  $(\"assumptions\").replaceChildren();\n  $(\"raw-report\").textContent = \"\";\n  $(\"download\").hidden = true;\n  $(\"evm-details\").hidden = true;\n  $(\"evm-traces\").replaceChildren();\n  $(\"source-pin\").textContent = \"\";\n  $(\"fixture-chart\").hidden = true;\n  $(\"equity-rows\").replaceChildren();\n  $(\"chart-description\").textContent = \"\";\n}\n/** @param {unknown} input @param {number} seq */\nasync function render(input, seq) {\n  const report = record(input);\n  await checkHash(report);\n  if (seq !== generation) return;\n  const baseline = record(report.baseline),\n    candidate = record(report.candidate);\n  const bm = record(baseline.metrics),\n    cm = record(candidate.metrics);\n  const comparison = record(report.comparison);\n  const scenario = record(report.scenario);\n  const evm = report.mode !== \"fixture\";\n  $(\"fixture-chart\").hidden = evm;\n  $(\"evm-details\").hidden = !evm;\n  $(\"baseline-label\").textContent = evm ? \"Baseline actions\" : \"Hold baseline\";\n  $(\"candidate-label\").textContent = evm\n    ? \"Changed actions\"\n    : \"Circuit-breaker policy\";\n  $(\"baseline-unit\").textContent = $(\"candidate-unit\").textContent = evm\n    ? \"Approximate native balance (ETH)\"\n    : \"Final model equity\";\n  $(\"delta-unit\").textContent = evm\n    ? \"Approximate ETH; not profit\"\n    : \"Model quote units, not USD\";\n  if (evm) {\n    const view = evmViewModel(report);\n    $(\"baseline-value\").textContent = Number(\n      tokenUnits(bm.final_balance_wei, 18),\n    ).toFixed(6);\n    $(\"candidate-value\").textContent = Number(\n      tokenUnits(cm.final_balance_wei, 18),\n    ).toFixed(6);\n    $(\"delta-value\").textContent = Number(\n      tokenUnits(comparison.final_balance_delta_wei, 18),\n    ).toFixed(6);\n    tableRows(\"metric-rows\", view.rows, true);\n    tableRows(\"evm-traces\", view.traces);\n    $(\"equity-rows\").replaceChildren();\n    $(\"chart-description\").textContent = \"\";\n    $(\"source-pin\").textContent = view.source;\n  } else {\n    if (record(record(report.scenario).provenance).kind !== \"synthetic\")\n      throw new Error(\"A fixture must be labelled synthetic.\");\n    const b = baseline,\n      c = candidate;\n    if (\n      !Array.isArray(b?.trace) ||\n      !Array.isArray(c?.trace) ||\n      b.trace.length !== c.trace.length ||\n      b.trace.length < 2 ||\n      b.trace.length > 4096\n    )\n      throw new Error(\"Invalid trace.\");\n    const bt = b.trace.map(record),\n      ct = c.trace.map(record);\n    const yb = bt.map((x) => finite(x.equity)),\n      yc = ct.map((x) => finite(x.equity));\n    const values = [...yb, ...yc],\n      min = Math.min(...values),\n      max = Math.max(...values),\n      spread = max - min || 1;\n    /** @param {number[]} ys */\n    function line(ys) {\n      return ys\n        .map(\n          (y, i) =>\n            `${45 + (i / (ys.length - 1)) * 925},${210 - ((y - min) / spread) * 165}`,\n        )\n        .join(\" \");\n    }\n    $(\"baseline-line\").setAttribute(\"points\", line(yb));\n    $(\"candidate-line\").setAttribute(\"points\", line(yc));\n    $(\"chart-description\").textContent =\n      `${yb.length} observations, in recorded order. Dashed line: baseline. Solid line: candidate. Open Equity values by observation for every exact value.`;\n    tableRows(\n      \"equity-rows\",\n      bt.map((point, i) => [\n        String(i + 1),\n        String(point.equity),\n        String(ct[i].equity),\n      ]),\n      true,\n    );\n    $(\"baseline-value\").textContent = fmt(bm.final_equity);\n    $(\"candidate-value\").textContent = fmt(cm.final_equity);\n    const delta = finite(comparison.final_equity_delta);\n    $(\"delta-value\").textContent =\n      (delta > 0 ? \"+\" : \"\") + fmt(comparison.final_equity_delta);\n    $(\"metric-rows\").replaceChildren();\n    for (const [label, key, suffix] of [\n      [\"Model return\", \"return_pct\", \"%\"],\n      [\"Maximum drawdown\", \"max_drawdown_pct\", \"%\"],\n      [\"Fees (quote units)\", \"fees\", \"\"],\n      [\"Number of trades\", \"trades\", \"\"],\n    ]) {\n      const tr = document.createElement(\"tr\");\n      [\n        label,\n        key === \"trades\" ? String(bm[key]) : fmt(bm[key]) + suffix,\n        key === \"trades\" ? String(cm[key]) : fmt(cm[key]) + suffix,\n      ].forEach((text, index) => {\n        const cell = document.createElement(index === 0 ? \"th\" : \"td\");\n        if (index === 0) cell.scope = \"row\";\n        cell.textContent = text;\n        tr.appendChild(cell);\n      });\n      $(\"metric-rows\").appendChild(tr);\n    }\n  }\n  if (!Array.isArray(report.assumptions) || report.assumptions.length > 32)\n    throw new Error(\"Invalid assumptions.\");\n  $(\"assumptions\").replaceChildren();\n  for (const text of report.assumptions) {\n    if (typeof text !== \"string\" || text.length > 4000)\n      throw new Error(\"Invalid assumption.\");\n    const li = document.createElement(\"li\");\n    li.textContent = text;\n    $(\"assumptions\").appendChild(li);\n  }\n  $(\"hash\").textContent = String(report.artifact_id);\n  $(\"raw-report\").textContent = JSON.stringify(report, null, 2);\n  $(\"report-status\").classList.remove(\"error\");\n  $(\"report-status\").textContent =\n    \"Integrity verified locally · \" +\n    (evm\n      ? report.mode === \"evm-fork\"\n        ? \"Archived-state actions; not historical replay\"\n        : \"Local EVM actions\"\n      : \"Synthetic fixture\") +\n    \" · \" +\n    String(scenario.title).slice(0, 120);\n  $(\"metric-table\").hidden = false;\n  $(\"download\").hidden = false;\n}\nasync function loadSample() {\n  const seq = ++generation;\n  const selection = $(\"scenario\");\n  if (!(\"value\" in selection) || typeof selection.value !== \"string\")\n    throw new Error(\"Missing scenario selector.\");\n  const name = selection.value;\n  if (!allowedSamples.has(name)) return;\n  try {\n    const response = await fetch(\"reports/\" + name + \".json\");\n    if (!response.ok)\n      throw new Error(\"The recorded sample could not be loaded.\");\n    const text = await response.text();\n    if (text.length > 4 * 1024 * 1024) throw new Error(\"Report too large.\");\n    await render(JSON.parse(text), seq);\n    if (seq === generation)\n      $(\"download\").setAttribute(\"href\", \"reports/\" + name + \".json\");\n  } catch (error) {\n    if (seq === generation)\n      setError(\n        error instanceof Error ? error.message : \"Could not load this report.\",\n      );\n  }\n}\n$(\"scenario\").addEventListener(\"change\", loadSample);\n$(\"import\").addEventListener(\"change\", async (event) => {\n  if (!(event.target instanceof HTMLInputElement)) return;\n  const file = event.target.files?.[0];\n  if (!file) return;\n  const seq = ++generation;\n  try {\n    if (file.size > 4 * 1024 * 1024)\n      throw new Error(\"Local report limit is 4 MiB.\");\n    await render(JSON.parse(await file.text()), seq);\n    // No blob links or network upload are needed for an already-local file.\n    if (seq === generation) $(\"download\").hidden = true;\n  } catch (error) {\n    if (seq === generation)\n      setError(error instanceof Error ? error.message : \"Invalid report file.\");\n  }\n});\nloadSample();\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "eslint.config.mjs",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "eslint.security.config.mjs",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "scripts/check_accessibility.mjs",
+    "messages": [
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 12,
+        "column": 17,
+        "endLine": 12,
+        "endColumn": 51
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found mkdir from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 16,
+        "column": 7,
+        "endLine": 16,
+        "endColumn": 41
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 17,
+        "column": 25,
+        "endLine": 20,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 40,
+        "column": 25,
+        "endLine": 40,
+        "endColumn": 54
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found writeFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 152,
+        "column": 9,
+        "endLine": 155,
+        "endColumn": 4
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 235,
+        "column": 52,
+        "endLine": 235,
+        "endColumn": 56
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 294,
+        "column": 17,
+        "endLine": 294,
+        "endColumn": 80
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 331,
+        "column": 21,
+        "endLine": 331,
+        "endColumn": 78
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 363,
+        "column": 19,
+        "endLine": 363,
+        "endColumn": 44
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 430,
+        "column": 17,
+        "endLine": 430,
+        "endColumn": 80
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 464,
+        "column": 19,
+        "endLine": 467,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 586,
+        "column": 7,
+        "endLine": 586,
+        "endColumn": 19
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 587,
+        "column": 23,
+        "endLine": 587,
+        "endColumn": 52
+      },
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 590,
+        "column": 7,
+        "endLine": 590,
+        "endColumn": 19
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found writeFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 617,
+        "column": 9,
+        "endLine": 620,
+        "endColumn": 4
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 15,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "// Real Chromium, keyboard and axe checks; no Playwright test runner or app mocks.\nimport assert from \"node:assert/strict\";\nimport { createHash } from \"node:crypto\";\nimport { createServer } from \"node:http\";\nimport { readFile, mkdir, writeFile } from \"node:fs/promises\";\nimport { resolve, extname } from \"node:path\";\nimport { createRequire } from \"node:module\";\nimport { chromium } from \"playwright\";\n\nconst require = createRequire(import.meta.url);\nconst runnerHash = createHash(\"sha256\")\n  .update(await readFile(new URL(import.meta.url)))\n  .digest(\"hex\");\nconst root = resolve(process.env.SITE_DIR || \".\");\nconst output = resolve(process.env.A11Y_OUTPUT || \"output/playwright\");\nawait mkdir(output, { recursive: true });\nconst axeSource = await readFile(\n  require.resolve(\"axe-core/axe.min.js\"),\n  \"utf8\",\n);\nconst types = {\n  \".html\": \"text/html\",\n  \".js\": \"text/javascript\",\n  \".css\": \"text/css\",\n  \".json\": \"application/json\",\n  \".png\": \"image/png\",\n};\nconst server = createServer(async (request, response) => {\n  try {\n    const pathname = new URL(request.url || \"/\", \"http://127.0.0.1\").pathname;\n    const name = pathname === \"/\" ? \"index.html\" : pathname.slice(1);\n    if (\n      !/^(index\\.html|404\\.html|style\\.css|app\\.js|(?:assets|reports|schemas)\\/[a-zA-Z0-9_.-]+)$/.test(\n        name,\n      )\n    ) {\n      response.writeHead(404).end();\n      return;\n    }\n    const bytes = await readFile(resolve(root, name));\n    response\n      .writeHead(200, {\n        \"Content-Type\": types[extname(name)] || \"application/octet-stream\",\n        \"Cache-Control\": \"no-store\",\n      })\n      .end(bytes);\n  } catch {\n    response.writeHead(404).end();\n  }\n});\nawait new Promise((resolve) =>\n  server.listen(0, \"127.0.0.1\", () => resolve(undefined)),\n);\nconst address = server.address();\nif (address === null || typeof address === \"string\")\n  throw new Error(\"Missing server address\");\nconst origin = `http://127.0.0.1:${address.port}`;\nconst checks = [],\n  scans = [],\n  errors = [],\n  requests = [];\n/** @type {import(\"playwright\").Browser | undefined} */\nlet browser;\n/** @param {string} name @param {() => Promise<void>} work */\nasync function check(name, work) {\n  try {\n    await work();\n    checks.push({ name, status: \"passed\" });\n  } catch (error) {\n    checks.push({\n      name,\n      status: \"failed\",\n      error: error instanceof Error ? error.message : String(error),\n    });\n  }\n}\nasync function pageAt(width = 1280, path = \"/\") {\n  if (!browser) throw new Error(\"Browser is not running\");\n  const page = await browser.newPage({\n    viewport: { width, height: 900 },\n    reducedMotion: \"reduce\",\n  });\n  page.setDefaultTimeout(5000);\n  page.on(\"pageerror\", (error) => errors.push(String(error)));\n  page.on(\"request\", (request) =>\n    requests.push({ url: request.url(), method: request.method() }),\n  );\n  await page.goto(origin + path);\n  if (path === \"/\")\n    await page.waitForFunction(() =>\n      document\n        .querySelector(\"#report-status\")\n        ?.textContent?.includes(\"Integrity verified locally\"),\n    );\n  return page;\n}\n/** @param {number} width @param {(page: import(\"playwright\").Page) => Promise<void>} work @param {string} [path] */\nasync function withPage(width, work, path = \"/\") {\n  const page = await pageAt(width, path);\n  try {\n    await work(page);\n  } finally {\n    await page.close();\n  }\n}\n/** @param {import(\"playwright\").Page} page */\nasync function noOverflow(page) {\n  const size = await page.evaluate(() => ({\n    width: innerWidth,\n    scroll: document.documentElement.scrollWidth,\n  }));\n  assert.ok(size.scroll <= size.width, JSON.stringify(size));\n}\n/** @param {import(\"playwright\").Page} page @param {string} id */\nasync function focusIs(page, id) {\n  assert.equal(await page.evaluate(() => document.activeElement?.id), id);\n}\n/** @param {import(\"playwright\").Page} page */\nasync function visibleFocus(page) {\n  assert.ok(\n    await page.evaluate(() => {\n      const active = document.activeElement;\n      if (!active) return false;\n      const style = getComputedStyle(active);\n      return (\n        style.outlineStyle !== \"none\" && parseFloat(style.outlineWidth) >= 2\n      );\n    }),\n    \"Focused control has no visible outline\",\n  );\n}\n/** @param {import(\"playwright\").Page} page @param {string} name */\nasync function scan(page, name) {\n  // Diagnostic injection through DevTools only. The website ships no axe script,\n  // retains its production CSP, and makes no analyzer/network request.\n  await page.evaluate(axeSource);\n  const result = await page.evaluate(() =>\n    axe.run(document, {\n      runOnly: {\n        type: \"tag\",\n        values: [\n          \"wcag2a\",\n          \"wcag2aa\",\n          \"wcag21a\",\n          \"wcag21aa\",\n          \"wcag22aa\",\n          \"best-practice\",\n        ],\n      },\n    }),\n  );\n  await writeFile(\n    resolve(output, `axe-${name}.json`),\n    JSON.stringify(result, null, 2) + \"\\n\",\n  );\n  const supplemental = [];\n  scans.push({\n    name,\n    violations: result.violations.map((x) => ({\n      id: x.id,\n      targets: x.nodes.map((n) => n.target),\n    })),\n    incomplete: result.incomplete.map((x) => x.id),\n    supplemental,\n  });\n  for (const item of result.incomplete) {\n    assert.equal(\n      item.id,\n      \"color-contrast\",\n      `Unreviewed incomplete rule: ${item.id}`,\n    );\n    for (const node of item.nodes) {\n      assert.equal(node.target.length, 1, \"Unexpected shadow/frame target\");\n      const target = node.target[0];\n      assert.equal(typeof target, \"string\", \"Unexpected frame/shadow selector\");\n      if (typeof target !== \"string\")\n        throw new Error(\"Selector must be a string\");\n      const colors = await page.locator(target).evaluate((element) => {\n        const foreground = getComputedStyle(element).color;\n        let background;\n        /** @type {Element | null} */\n        let parent = element;\n        for (; parent; parent = parent.parentElement) {\n          const style = getComputedStyle(parent);\n          if (\n            style.backgroundImage !== \"none\" ||\n            style.opacity !== \"1\" ||\n            style.filter !== \"none\"\n          )\n            throw new Error(\"Contrast requires visual review of effects\");\n          if (style.backgroundColor !== \"rgba(0, 0, 0, 0)\") {\n            background = style.backgroundColor;\n            break;\n          }\n        }\n        return { foreground, background };\n      });\n      function luminance(css) {\n        const match = /^rgb\\((\\d+), (\\d+), (\\d+)\\)$/.exec(css);\n        assert.ok(match, `Non-opaque/non-RGB color needs review: ${css}`);\n        const values = match\n          .slice(1)\n          .map((x) => Number(x) / 255)\n          .map((x) =>\n            x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4,\n          );\n        return values[0] * 0.2126 + values[1] * 0.7152 + values[2] * 0.0722;\n      }\n      const a = luminance(colors.foreground),\n        b = luminance(colors.background);\n      const ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);\n      supplemental.push({\n        target: node.target,\n        colors,\n        ratio,\n        scope:\n          \"Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification\",\n      });\n      assert.ok(ratio >= 4.5, `Insufficient supplemental contrast: ${ratio}`);\n    }\n  }\n  assert.equal(\n    result.violations.length,\n    0,\n    JSON.stringify(scans.at(-1).violations),\n  );\n}\nfunction canonical(x) {\n  if (Array.isArray(x)) return \"[\" + x.map(canonical).join(\",\") + \"]\";\n  if (x !== null && typeof x === \"object\")\n    return (\n      \"{\" +\n      Object.keys(x)\n        .sort()\n        .map((k) => canonical(k) + \":\" + canonical(x[k]))\n        .join(\",\") +\n      \"}\"\n    );\n  return JSON.stringify(x).replace(\n    /[\\u0080-\\uffff]/g,\n    (c) => \"\\\\u\" + c.charCodeAt(0).toString(16).padStart(4, \"0\"),\n  );\n}\n\ntry {\n  browser = await chromium.launch();\n  await check(\n    \"Keyboard skip link moves focus into main and skips navigation\",\n    () =>\n      withPage(1280, async (page) => {\n        await page.keyboard.press(\"Tab\");\n        assert.equal(\n          await page.locator(\":focus\").innerText(),\n          \"Skip to content\",\n        );\n        await visibleFocus(page);\n        await page.keyboard.press(\"Enter\");\n        await focusIs(page, \"main\");\n        await page.keyboard.press(\"Tab\");\n        assert.match(\n          await page.locator(\":focus\").innerText(),\n          /Run it locally/,\n        );\n      }),\n  );\n  await check(\n    \"Keyboard sample selection, native local-file chooser, live status and inert import\",\n    () =>\n      withPage(1280, async (page) => {\n        await page.locator(\"#scenario\").focus();\n        await visibleFocus(page);\n        await page.keyboard.press(\"r\");\n        await page.keyboard.press(\"Tab\");\n        await page.waitForFunction(() =>\n          document\n            .querySelector(\"#report-status\")\n            ?.textContent?.includes(\"recovery trap\"),\n        );\n        assert.ok(\n          (await page.locator(\"#delta-value\").innerText()).startsWith(\"-\"),\n        );\n        assert.equal(\n          await page.locator(\"#report-status\").getAttribute(\"aria-atomic\"),\n          \"true\",\n        );\n        assert.equal(\n          await page.locator(\".metrics\").getAttribute(\"aria-live\"),\n          null,\n        );\n        await focusIs(page, \"import\");\n        const chooser = page.waitForEvent(\"filechooser\");\n        await page.keyboard.press(\"Enter\");\n        const report = JSON.parse(\n          await readFile(resolve(root, \"reports/liquidity-shock.json\"), \"utf8\"),\n        );\n        delete report.artifact_id;\n        report.scenario.title = \"<img src=x onerror=alert(1)> 🛸\";\n        report.artifact_id = createHash(\"sha256\")\n          .update(canonical(report))\n          .digest(\"hex\");\n        const count = requests.length;\n        await (\n          await chooser\n        ).setFiles({\n          name: \"local-report.json\",\n          mimeType: \"application/json\",\n          buffer: Buffer.from(JSON.stringify(report)),\n        });\n        await page.waitForFunction(() =>\n          document\n            .querySelector(\"#report-status\")\n            ?.textContent?.includes(\"<img\"),\n        );\n        assert.equal(await page.locator(\"#report-status img\").count(), 0);\n        assert.equal(requests.length, count);\n        assert.equal(await page.locator(\"#download\").isVisible(), false);\n      }),\n  );\n  for (const width of [1280, 390, 320]) {\n    for (const sample of [\n      \"liquidity-shock\",\n      \"recovery-trap\",\n      \"depeg-stress\",\n      \"ethereum-uniswap-slippage\",\n    ]) {\n      await check(\n        `${width}px ${sample}: reflow, exact accessible data and axe`,\n        () =>\n          withPage(width, async (page) => {\n            const report = JSON.parse(\n              await readFile(resolve(root, `reports/${sample}.json`), \"utf8\"),\n            );\n            await page.selectOption(\"#scenario\", sample);\n            await page.waitForFunction(\n              (id) => document.querySelector(\"#hash\")?.textContent === id,\n              report.artifact_id,\n            );\n            await noOverflow(page);\n            if (report.mode === \"fixture\") {\n              const summary = page.getByText(\"Equity values by observation\", {\n                exact: true,\n              });\n              await summary.focus();\n              await page.keyboard.press(\"Enter\");\n              const rows = await page\n                .locator(\"#equity-rows tr\")\n                .allTextContents();\n              assert.equal(rows.length, report.baseline.trace.length);\n              const actual = await page\n                .locator(\"#equity-rows tr\")\n                .evaluateAll((rows) =>\n                  rows.map((row) => {\n                    if (!(row instanceof HTMLTableRowElement))\n                      throw new Error(\"Expected table row\");\n                    return [...row.cells].map((cell) => cell.textContent);\n                  }),\n                );\n              assert.deepEqual(\n                actual,\n                report.baseline.trace.map((point, i) => [\n                  String(i + 1),\n                  point.equity,\n                  report.candidate.trace[i].equity,\n                ]),\n              );\n              assert.equal(\n                await page.locator('#equity-rows th[scope=\"row\"]').count(),\n                rows.length,\n              );\n            } else {\n              assert.equal(\n                await page.locator(\"#fixture-chart\").isVisible(),\n                false,\n              );\n              assert.match(\n                await page.locator(\"#source-pin\").innerText(),\n                /19000000/,\n              );\n              const region = page.getByRole(\"region\", {\n                name: \"Supplied actions on isolated local forks\",\n              });\n              if (width === 320) {\n                await region.focus();\n                await visibleFocus(page);\n                await page.keyboard.press(\"ArrowRight\");\n                await page.waitForFunction(\n                  () =>\n                    (document.querySelector(\"#evm-details .table-wrap\")\n                      ?.scrollLeft ?? 0) > 0,\n                );\n              }\n            }\n            assert.ok(\n              (await page.locator('#metric-rows th[scope=\"row\"]').count()) > 0,\n            );\n            await page.getByText(\"Full result JSON\", { exact: true }).focus();\n            await page.keyboard.press(\"Enter\");\n            await page.keyboard.press(\"Tab\");\n            await focusIs(page, \"raw-report\");\n            await visibleFocus(page);\n            await page.keyboard.press(\"PageDown\");\n            await page.waitForFunction(\n              () => (document.querySelector(\"#raw-report\")?.scrollTop ?? 0) > 0,\n            );\n            await scan(page, `${width}-${sample}`);\n            if (\n              sample === \"ethereum-uniswap-slippage\" ||\n              (sample === \"liquidity-shock\" && width === 1280)\n            ) {\n              await page.screenshot({\n                path: resolve(output, `${width}-${sample}.png`),\n                fullPage: true,\n              });\n              await page\n                .locator(\"#reports .section-head\")\n                .scrollIntoViewIfNeeded();\n              await page.screenshot({\n                path: resolve(output, `${width}-${sample}-viewport.png`),\n              });\n            }\n          }),\n      );\n    }\n  }\n  await check(\n    \"Tampered import clears data, reports an accessible error and recovers\",\n    () =>\n      withPage(390, async (page) => {\n        const report = JSON.parse(\n          await readFile(resolve(root, \"reports/liquidity-shock.json\"), \"utf8\"),\n        );\n        report.candidate.metrics.final_equity = \"999999\";\n        await page.locator(\"#import\").setInputFiles({\n          name: \"tampered.json\",\n          mimeType: \"application/json\",\n          buffer: Buffer.from(JSON.stringify(report)),\n        });\n        await page.waitForFunction(() =>\n          document\n            .querySelector(\"#report-status\")\n            ?.textContent?.includes(\"mismatch\"),\n        );\n        assert.equal(await page.locator(\"#candidate-value\").innerText(), \"—\");\n        assert.equal(await page.locator(\"#equity-rows tr\").count(), 0);\n        assert.equal(await page.locator(\"#fixture-chart\").isVisible(), false);\n        await scan(page, \"error\");\n        await page.selectOption(\"#scenario\", \"recovery-trap\");\n        await page.waitForFunction(() =>\n          document\n            .querySelector(\"#report-status\")\n            ?.textContent?.includes(\"Synthetic recovery trap\"),\n        );\n        assert.equal(await page.locator(\"#metric-table\").isVisible(), true);\n        assert.equal(await page.locator(\"#fixture-chart\").isVisible(), true);\n        assert.ok((await page.locator(\"#equity-rows tr\").count()) > 0);\n      }),\n  );\n  await check(\n    \"Correctly hashed non-decimal metrics fail, clear data and recover without uploads\",\n    () =>\n      withPage(390, async (page) => {\n        for (const value of [\"\", \" \", \"\\t\", \"0x10\", \"0b11\", \"0o10\"]) {\n          const report = JSON.parse(\n            await readFile(\n              resolve(root, \"reports/liquidity-shock.json\"),\n              \"utf8\",\n            ),\n          );\n          delete report.artifact_id;\n          report.candidate.metrics.final_equity = value;\n          report.artifact_id = createHash(\"sha256\")\n            .update(canonical(report))\n            .digest(\"hex\");\n          const count = requests.length;\n          await page.locator(\"#import\").setInputFiles({\n            name: \"invalid-metric.json\",\n            mimeType: \"application/json\",\n            buffer: Buffer.from(JSON.stringify(report)),\n          });\n          await page.waitForFunction(() =>\n            document\n              .querySelector(\"#report-status\")\n              ?.textContent?.includes(\"Invalid metric\"),\n          );\n          assert.equal(await page.locator(\"#candidate-value\").innerText(), \"—\");\n          assert.equal(await page.locator(\"#equity-rows tr\").count(), 0);\n          assert.equal(await page.locator(\"#raw-report\").innerText(), \"\");\n          assert.equal(await page.locator(\"#metric-table\").isVisible(), false);\n          assert.equal(await page.locator(\"#download\").isVisible(), false);\n          assert.equal(requests.length, count);\n          // Force a different selection after every invalid local import.\n          await page.selectOption(\"#scenario\", \"liquidity-shock\");\n          await page.selectOption(\"#scenario\", \"recovery-trap\");\n          await page.waitForFunction(() =>\n            document\n              .querySelector(\"#report-status\")\n              ?.textContent?.includes(\"Synthetic recovery trap\"),\n          );\n          assert.equal(await page.locator(\"#metric-table\").isVisible(), true);\n        }\n      }),\n  );\n  await check(\n    \"Forced colors, reduced motion and keyboard focus remain usable\",\n    () =>\n      withPage(320, async (page) => {\n        await page.emulateMedia({\n          forcedColors: \"active\",\n          reducedMotion: \"reduce\",\n        });\n        assert.equal(\n          await page.evaluate(\n            () => getComputedStyle(document.documentElement).scrollBehavior,\n          ),\n          \"auto\",\n        );\n        await page.locator(\"#scenario\").focus();\n        await visibleFocus(page);\n        await noOverflow(page);\n        const strokes = await page\n          .locator(\"#chart .line\")\n          .evaluateAll((lines) =>\n            lines.map((x) => ({\n              color: getComputedStyle(x).stroke,\n              dash: getComputedStyle(x).strokeDasharray,\n            })),\n          );\n        assert.equal(strokes[0].color, strokes[1].color);\n        assert.notEqual(strokes[0].dash, strokes[1].dash);\n        await page.screenshot({\n          path: resolve(output, \"forced-colors.png\"),\n          fullPage: true,\n        });\n      }),\n  );\n  await check(\n    \"404 page at 320px: keyboard home link, no overflow and axe\",\n    () =>\n      withPage(\n        320,\n        async (page) => {\n          await noOverflow(page);\n          await page.keyboard.press(\"Tab\");\n          assert.match(\n            await page.locator(\":focus\").innerText(),\n            /Back to Entrotter/,\n          );\n          await scan(page, \"404\");\n          await page.keyboard.press(\"Enter\");\n          await page.waitForFunction(() =>\n            document\n              .querySelector(\"#report-status\")\n              ?.textContent?.includes(\"Integrity verified locally\"),\n          );\n        },\n        \"/404.html\",\n      ),\n  );\n  await check(\n    \"No JavaScript exceptions, uploads or unexpected third-party requests\",\n    async () => {\n      assert.deepEqual(errors, []);\n      assert.ok(requests.length > 0);\n      assert.ok(\n        requests.every(\n          (x) => x.url.startsWith(origin + \"/\") && x.method === \"GET\",\n        ),\n        JSON.stringify(requests),\n      );\n    },\n  );\n} finally {\n  const version = browser?.version();\n  if (browser) await browser.close();\n  await new Promise((resolve) => server.close(resolve));\n  const source = {};\n  for (const name of [\n    \"index.html\",\n    \"app.js\",\n    \"style.css\",\n    \"404.html\",\n    \"package.json\",\n    \"package-lock.json\",\n  ]) {\n    try {\n      source[name] = createHash(\"sha256\")\n        .update(await readFile(resolve(root, name)))\n        .digest(\"hex\");\n    } catch {\n      source[name] = null;\n    }\n  }\n  const report = {\n    checked_at: new Date().toISOString(),\n    node: process.version,\n    platform: process.platform,\n    runner_sha256: runnerHash,\n    status:\n      checks.length > 0 && checks.every((x) => x.status === \"passed\")\n        ? \"passed\"\n        : \"failed\",\n    browser: version,\n    axe: require(\"axe-core/package.json\").version,\n    playwright: require(\"playwright/package.json\").version,\n    source_sha256: source,\n    checks,\n    scans,\n    request_count: requests.length,\n    errors,\n    limitations: [\n      \"Automated Chromium and accessibility-tree/keyboard evidence; no claim of manual screen-reader certification or complete WCAG conformance.\",\n      \"320 CSS-pixel viewport checks reflow; it is not a hardware/browser zoom measurement.\",\n      \"Axe incomplete contrast items remain explicit; supplemental checks apply only to opaque solid CSS colors.\",\n      \"Local fixture/archived report display; no new chain/model execution.\",\n    ],\n  };\n  await writeFile(\n    resolve(output, \"accessibility.json\"),\n    JSON.stringify(report, null, 2) + \"\\n\",\n  );\n  console.log(\n    JSON.stringify(\n      { status: report.status, browser: version, checks, scans: scans.length },\n      null,\n      2,\n    ),\n  );\n  if (report.status !== \"passed\") process.exitCode = 1;\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "scripts/check_quality.mjs",
+    "messages": [
+      {
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 59,
+        "column": 3,
+        "endLine": 59,
+        "endColumn": 16
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 60,
+        "column": 19,
+        "endLine": 60,
+        "endColumn": 33
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 2,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "// Full findings are retained before the exact source-bound review gate is applied.\nimport assert from \"node:assert/strict\";\nimport { execFileSync } from \"node:child_process\";\nimport { createHash } from \"node:crypto\";\nimport { mkdir, readFile, writeFile } from \"node:fs/promises\";\nimport { resolve, relative } from \"node:path\";\nimport { ESLint } from \"eslint\";\nimport security from \"eslint-plugin-security\";\nimport { findings, verifyReview } from \"./quality_policy.mjs\";\n\nconst root = process.cwd();\nconst paths = execFileSync(\n  \"git\",\n  [\"ls-files\", \"-z\", \"--cached\", \"--others\", \"--exclude-standard\"],\n  { encoding: \"utf8\" },\n)\n  .split(\"\\0\")\n  .filter(Boolean);\nconst jsFiles = [...new Set(paths.filter((p) => /\\.(js|mjs)$/.test(p)))].sort();\nassert.ok(jsFiles.length > 0, \"No tracked JavaScript sources\");\nawait mkdir(\".quality\", { recursive: true });\n// TypeScript 7 exposes the compiler through its CLI, not the former compiler API.\nconst listed = execFileSync(\n  process.execPath,\n  [\n    resolve(\"node_modules/typescript/bin/tsc\"),\n    \"--listFilesOnly\",\n    \"--pretty\",\n    \"false\",\n  ],\n  { encoding: \"utf8\" },\n);\nconst typeInputs = listed\n  .trim()\n  .split(\"\\n\")\n  .map((name) => relative(root, name.trim()))\n  .filter(\n    (name) => !name.startsWith(\"node_modules/\") && !name.startsWith(\"../\"),\n  )\n  .sort();\nassert.deepEqual(\n  typeInputs.filter((name) => /\\.(js|mjs)$/.test(name)),\n  jsFiles,\n  \"Type checking omits source files\",\n);\n/** @type {Record<string, string>} */\nconst sources = {};\nconst configurationInputs = [\n  \"package.json\",\n  \"package-lock.json\",\n  \"tsconfig.json\",\n  \"pyproject.toml\",\n  \"requirements-quality.in\",\n  \"requirements-quality.txt\",\n];\nfor (const path of [\n  ...new Set([...jsFiles, ...typeInputs, ...configurationInputs]),\n].sort()) {\n  sources[path] = createHash(\"sha256\")\n    .update(await readFile(path))\n    .digest(\"hex\");\n}\nawait writeFile(\n  \".quality/source-sha256.json\",\n  JSON.stringify(sources, null, 2) + \"\\n\",\n);\nconst checker = new ESLint({\n  overrideConfigFile: \"eslint.security.config.mjs\",\n  allowInlineConfig: false,\n});\nfor (const path of jsFiles) {\n  const config = await checker.calculateConfigForFile(path);\n  for (const rule of Object.keys(security.rules)) {\n    assert.ok(\n      config.rules[\"security/\" + rule]?.[0] > 0,\n      \"Missing security rule: \" + rule,\n    );\n  }\n}\nconst reports = await checker.lintFiles(jsFiles);\nawait writeFile(\n  \".quality/security.json\",\n  JSON.stringify(\n    reports.map((report) => ({\n      ...report,\n      filePath: relative(root, report.filePath),\n    })),\n    null,\n    2,\n  ) + \"\\n\",\n);\nassert.deepEqual(\n  reports.map((report) => relative(root, report.filePath)).sort(),\n  jsFiles,\n  \"Incomplete security scan\",\n);\nconst rows = findings(reports, root);\nconst review = JSON.parse(await readFile(\"security-reviewed.json\", \"utf8\"));\nverifyReview(rows, sources, review);\nawait writeFile(\n  \".quality/scope.json\",\n  JSON.stringify(\n    {\n      status: \"passed\",\n      js_files: jsFiles,\n      type_inputs: typeInputs,\n      security_rules: Object.keys(security.rules),\n      retained_security_findings: rows.length,\n      limitations: [\n        \"Source-bound author review, not independent approval or proof of security\",\n        \"Normal checkJs with strict null checks and unknown report inputs; noImplicitAny is disabled for JS tooling\",\n      ],\n    },\n    null,\n    2,\n  ) + \"\\n\",\n);\nconsole.log(\n  JSON.stringify({\n    sources: jsFiles.length,\n    type_inputs: typeInputs.length,\n    security_findings: rows.length,\n  }),\n);\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "scripts/quality_policy.mjs",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "tests/quality.test.mjs",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "tests/report.test.mjs",
+    "messages": [
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 22,
+        "column": 3,
+        "endLine": 22,
+        "endColumn": 62
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 27,
+        "column": 5,
+        "endLine": 30,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 36,
+        "column": 9,
+        "endLine": 39,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 74,
+        "column": 5,
+        "endLine": 77,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 4,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import test from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { readFileSync } from \"node:fs\";\nimport { createHash, webcrypto } from \"node:crypto\";\nimport vm from \"node:vm\";\n\n// No browser/network needed: exercise the exact production hash/number functions.\nconst context = vm.createContext({\n  document: {\n    getElementById: () => ({\n      value: \"not-an-allowed-sample\",\n      addEventListener: () => {},\n    }),\n  },\n  crypto: webcrypto,\n  TextEncoder,\n  fetch: () => {\n    throw new Error(\"Unit tests must not contact the network\");\n  },\n});\nvm.runInContext(\n  readFileSync(new URL(\"../app.js\", import.meta.url), \"utf8\"),\n  context,\n);\nconst sample = () =>\n  JSON.parse(\n    readFileSync(\n      new URL(\"../reports/liquidity-shock.json\", import.meta.url),\n      \"utf8\",\n    ),\n  );\nfor (const name of [\"liquidity-shock\", \"recovery-trap\", \"depeg-stress\"]) {\n  test(`production JS verifies Python artifact: ${name}`, async () => {\n    await context.checkHash(\n      JSON.parse(\n        readFileSync(\n          new URL(`../reports/${name}.json`, import.meta.url),\n          \"utf8\",\n        ),\n      ),\n    );\n  });\n}\ntest(\"tampered metric fails integrity validation\", async () => {\n  const r = sample();\n  r.candidate.metrics.final_equity = \"999999\";\n  await assert.rejects(context.checkHash(r), /mismatch/);\n});\ntest(\"unknown schema is not accepted\", async () => {\n  const r = sample();\n  r.schema_version = \"9\";\n  await assert.rejects(context.checkHash(r), /Unsupported/);\n});\ntest(\"canonical ASCII escaping includes supplementary Unicode\", () => {\n  assert.equal(\n    context.canonical({ x: \"🛸\", a: \"é\" }),\n    '\\x7b\"a\":\"\\\\u00e9\",\"x\":\"\\\\ud83d\\\\udef8\"\\x7d',\n  );\n});\ntest(\"finite numerical display validation\", () => {\n  assert.equal(context.finite(\"8557.0516\"), 8557.0516);\n  assert.throws(() => context.finite(\"Infinity\"), /Invalid metric/);\n  assert.throws(() => context.finite(2), /Invalid metric/);\n});\ntest(\"JS re-canonicalization matches exported content hash\", () => {\n  const { artifact_id, ...r } = sample();\n  assert.equal(\n    createHash(\"sha256\").update(context.canonical(r)).digest(\"hex\"),\n    artifact_id,\n  );\n});\nconst evm = () =>\n  JSON.parse(\n    readFileSync(\n      new URL(\"../reports/ethereum-uniswap-slippage.json\", import.meta.url),\n      \"utf8\",\n    ),\n  );\ntest(\"real archived-state artifact passes hash and receipt view validation\", async () => {\n  const r = evm();\n  await context.checkHash(r);\n  const view = context.evmViewModel(r);\n  assert.equal(view.traces.length, 6);\n  assert.equal(view.traces.at(-1)[2], \"reverted\");\n  assert.match(view.source, /19000000/);\n  assert.equal(\n    view.rows.find((r) => r[0] === \"USDC final token units\")[1],\n    \"2556.134769\",\n  );\n});\ntest(\"token units preserve integers beyond Number safe precision\", () => {\n  assert.equal(\n    context.tokenUnits(\"123456789012345678901\", 18),\n    \"123.456789012345678901\",\n  );\n  assert.equal(context.tokenUnits(\"-1\", 6), \"-0.000001\");\n  assert.equal(context.tokenUnits(\"42\", 0), \"42\");\n  assert.throws(() => context.tokenUnits(\"1e18\", 18), /Invalid/);\n  assert.throws(() => context.tokenUnits(\"1\", 1000), /Invalid/);\n});\ntest(\"missing source hash cannot appear as a historical report\", () => {\n  const r = evm();\n  delete r.source.block_hash;\n  assert.throws(() => context.evmViewModel(r), /source pin/);\n});\ntest(\"mismatched token addresses cannot share a comparison row\", () => {\n  const r = evm();\n  r.candidate.tokens[0].address = \"0x\" + \"f\".repeat(40);\n  assert.throws(() => context.evmViewModel(r), /metadata/);\n});\ntest(\"malformed receipt state and oversized traces fail closed\", () => {\n  const r = evm();\n  r.candidate.trace[0].status = \"<img>\";\n  assert.throws(() => context.evmViewModel(r), /step/);\n  const many = evm();\n  many.baseline.trace = Array(33).fill(many.baseline.trace[0]);\n  assert.throws(() => context.evmViewModel(many), /trace/);\n});\n\ntest(\"display metrics reject coercible non-decimal strings\", () => {\n  for (const value of [\"\", \" \", \"\\t\", \"0x10\", \"0b11\", \"0o10\"]) {\n    assert.throws(() => context.finite(value), /Invalid metric/);\n  }\n});\n\ntest(\"decimal metrics preserve supported signed/exponent values and reject overflow\", () => {\n  assert.equal(context.finite(\"-1.25\"), -1.25);\n  assert.equal(context.finite(\"1e2\"), 100);\n  for (const value of [\"1e999\", \"1\\n\", \"1 \", \"NaN\", \"1\".repeat(101)])\n    assert.throws(() => context.finite(value), /Invalid metric/);\n  assert.throws(() => context.rawInteger(\"1\\n\"), /Invalid raw integer/);\n});\ntest(\"hash verification rejects non-object or non-finite parsed JSON\", async () => {\n  for (const value of [null, [], true, 42, \"report\"])\n    await assert.rejects(context.checkHash(value), /Invalid report object/);\n  assert.throws(() => context.canonical(Infinity), /Invalid JSON number/);\n});\n\ntest(\"local EVM reports accept null/absent source while forks require their pin\", () => {\n  const r = evm();\n  r.mode = \"evm-local\";\n  r.scenario.provenance.kind = \"local-evm\";\n  r.source = null;\n  assert.match(context.evmViewModel(r).source, /Local disposable chain/);\n  delete r.source;\n  assert.match(context.evmViewModel(r).source, /Local disposable chain/);\n  const fork = evm();\n  fork.source = null;\n  assert.throws(() => context.evmViewModel(fork), /source pin/);\n});\n",
+    "usedDeprecatedRules": []
+  }
+]

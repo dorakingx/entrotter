@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-01T07:35:32.875766+00:00",
+  "sources": {
+    "event": "https://colosseum.com/worldsfair",
+    "faq": "https://colosseum.com/hackathon",
+    "rules": "https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf"
+  },
+  "observations": {
+    "rules_section_5": "September 14, 2026 at 06:00 PT through October 12, 2026 at 23:59 PT; administrator may change the schedule",
+    "deadline_utc": "2026-10-13T06:59:00Z",
+    "deadline_jst": "2026-10-13T15:59:00+09:00",
+    "event_page_deadline": "October 12, 2026",
+    "faq_all_blockchain_ecosystems_eligible_for_prizes": true,
+    "faq_individual_and_team_registration": "Registration and requested profile information required before deadline; one team and one submission per individual",
+    "prior_work_disclosure": "FAQ permits pre-existing work but requires disclosure; only event-period work is judged"
+  },
+  "authenticated_fields": "October 1 saved-draft readback retained separately in oct01-checkpoint.json; this public recheck does not prove final server-side acceptance",
+  "owner_authorization": "Formal submission authorized after quality/fact verification and opening; do not bypass terms/authentication/review",
+  "unresolved": [
+    "YouTube upload-time terms confirmation",
+    "Required school answer and primary city verification",
+    "Independent reviews/protected integration",
+    "Final submission and receipt validation after opening"
+  ],
+  "scope": "Observed primary-source text and event-specific date conversion, not a legal opinion, eligibility adjudication or accepted entry."
+}

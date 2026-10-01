@@ -1,0 +1,199 @@
+{
+  "schema_version": "0.1.0",
+  "checked_at": "2026-09-19T19:58:30.183540+00:00",
+  "status": "verified_local_and_ci; independent_review_and_merge_pending",
+  "issue": "https://github.com/entrotter/entrotter/issues/22",
+  "prs": {
+    "engine": "https://github.com/entrotter/engine/pull/16",
+    "cli": "https://github.com/entrotter/cli/pull/8",
+    "coordination": "https://github.com/entrotter/entrotter/pull/23"
+  },
+  "commits": {
+    "engine": "dddba4a2c3efdd429e36520e8fc9d163888089e2",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "952bfb5aba14b674dd959035a5625fadbd2b07d1",
+    "scenarios": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+    "entrotter.github.io": "ab121348b0ffbec5650f9eadf0a0b11f639d9780"
+  },
+  "regression": {
+    "before_engine": "80e8ce2386812daa8f6150048f84ab316624cc0d",
+    "failed_default_groups": 3,
+    "fifo_timeout_before_seconds": 2,
+    "after_native_and_unit_tests": 129,
+    "note": "Existing native behavior tests now explicitly select run_native/isolated=False; separate tests exercise default bounded entrypoints."
+  },
+  "local": {
+    "docker_enforcement_tests": 10,
+    "independent_worker_expiry_seconds": 181.405,
+    "cli_tests": 15,
+    "coordination_tests": 20,
+    "default_cli_sdk_api_integration": "passed",
+    "archived_state_default_run": "complete public 19M artifact matches exactly; 10.097275457985234 seconds",
+    "clean_bounded_reproduction_seconds": 11.68200912498287,
+    "clean_reproduction_evidence": "../clean-bounded-reproduction.json",
+    "clean_scope": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included.",
+    "installed_ci_wheels": "fresh venv --no-index --no-deps, Python -I, default local run and unavailable-worker export preservation passed"
+  },
+  "quality": {
+    "engine_bandit_findings": 15,
+    "engine_findings_unchanged": true,
+    "changed_source_hashes_reviewed": 5,
+    "cli_bandit_findings": 0,
+    "locked_audited_packages_per_repo": 42,
+    "reported_known_vulnerabilities": 0,
+    "downloaded_scan_source_hashes_match": true,
+    "independent_review_pending": true
+  },
+  "engine_ci": {
+    "quality": 35465334727,
+    "python_matrix": 35465334732,
+    "native_anvil": 35465334741,
+    "isolated_worker": 35465334725,
+    "links": 35465334740,
+    "all": "success"
+  },
+  "cli_ci": {
+    "quality": 35465336950,
+    "python_matrix": 35465336864,
+    "links": 35465336883,
+    "all": "success"
+  },
+  "script_sha256": {
+    "check_host_limits.py": "ce6787cb23bffad283a6de98793dcca7c37bb2d9f9f9380e83cb9249a59d3c74",
+    "reproduce_clean.py": "b467bede0bccf7ca19da5ae4b5e13b94bdfd375092a4368c20242d546099e6e4",
+    "check_default_wheels.py": "46860dec1cdcc881a95e5a2f1fcbbc9a331e2dbd705db61d8ecc6f350454ecc3"
+  },
+  "limits": [
+    "The proposed default runs use one CPU quota, 512 MiB/no swap, 128 PIDs, readonly non-root rootfs, bounded tmpfs, input/output and 180-second worker lifetime",
+    "Explicit native development is outside the whole-process resource sandbox",
+    "Aggregate independent CLI execution/export retention and image/VM storage remain open",
+    "Frozen agent benchmark branch is unchanged and not incorporated into this default-worker branch",
+    "No arbitrary agent code, upstream transactions, image/package registry publication or competition submission",
+    "All PRs remain unmerged pending independent review; native/main release and live Pages are unchanged",
+    "Local log workspace/temp prefixes replaced with /workspace and /tmp; trailing whitespace normalized",
+    "Initial image build used a wrong local archive filename; retained failure precedes successful checksum-verified build",
+    "Committed CI test logs extract only the named test step from public logs; complete run URLs/IDs are retained."
+  ],
+  "files": {
+    "ci/engine-docker-tests.log": {
+      "sha256": "e7f720522221f7b5b6137a84f02bad872e3cf376e6de2d8024fc76e9d1e94ace",
+      "bytes": 5051
+    },
+    "ci/clean-reproduction.json": {
+      "sha256": "a6ece4225fceed10c54c4ede6bda1b48fd0502445e06e7a4fee22b0a82ea56f2",
+      "bytes": 2880
+    },
+    "ci/engine-native-tests.log": {
+      "sha256": "68af8eba871305ed2305caf51d8c97731158c75b1ee9b6861a6db284609adfdf",
+      "bytes": 26932
+    },
+    "ci/integration.json": {
+      "sha256": "5eb5fff7d0a64d2a2b07dfdcd163411ac8a48d0dca32dfbd56a5d97df15d04e4",
+      "bytes": 2205
+    },
+    "ci/image.json": {
+      "sha256": "eb194149a1c5db53535cd303dd7866e8bcef850f801ff485a6e3c84eb0683c45",
+      "bytes": 1779
+    },
+    "local/docker-tests.log": {
+      "sha256": "8bcce5c8605930afbf2a7fe73b977eae74accd81fa712536a2ae4de4051be014",
+      "bytes": 1495
+    },
+    "local/historical.json": {
+      "sha256": "f36ffdde9f25d419f1dc6292ce55302ac76753ea810528b056727e45e6feed8b",
+      "bytes": 871
+    },
+    "local/coordination-tests.log": {
+      "sha256": "48d92e91b7a34f0c12971bb581da51742f5c74c8351ee2f6f3208d320e65cce7",
+      "bytes": 2623
+    },
+    "local/cli-tests.log": {
+      "sha256": "8feccfc1f75d41797d07feb50871aae248136f40a90b52965f9fe023175ee0d4",
+      "bytes": 1744
+    },
+    "local/image-build-initial-failure.log": {
+      "sha256": "4d91e049ba1a1b641874751261c247663a9b9eb1828420ab8f99a986e28d0991",
+      "bytes": 625
+    },
+    "local/installed-wheels.json": {
+      "sha256": "5366334492e7f61267df7d450efba0f9f23a748fbd4974f07c2a9e1e24b1860e",
+      "bytes": 1122
+    },
+    "local/native-tests.log": {
+      "sha256": "9841cbab575f9d01ea9b268f4f1386b55df38da38097dd0a17dac3b41d057c43",
+      "bytes": 14488
+    },
+    "local/before.log": {
+      "sha256": "ce933578cca6dd26ebf33229ebd435a2a15c890615b568e8ba20f0ac7955c5f5",
+      "bytes": 9148
+    },
+    "local/integration.json": {
+      "sha256": "78381ef89ada30f17a3ab01f77f50300d153ba55a75aa218751e5f82e3a825b2",
+      "bytes": 2204
+    },
+    "local/image.json": {
+      "sha256": "b8d602eefae8c4289b08e42d3b069ae08da12ad2c9560348a91e2d6e68fd53cf",
+      "bytes": 1779
+    },
+    "local/image-build.log": {
+      "sha256": "e3ecbbb7c0b52a7ee27507bfd1224880d0a15931f8184d523d807f34cbc4e847",
+      "bytes": 1270
+    },
+    "quality-ci/engine-dependencies.json": {
+      "sha256": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+      "bytes": 2436
+    },
+    "quality-ci/cli-dependencies.json": {
+      "sha256": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+      "bytes": 2436
+    },
+    "quality-ci/engine-dependency-scope.json": {
+      "sha256": "523c22b99543db0f4d3f92a40e38ee0dd88d784eb57c88e176f2155edc5fbc56",
+      "bytes": 122
+    },
+    "quality-ci/cli-security-scope.json": {
+      "sha256": "aa806c00f8df578a2e34815a2160a7c5d83751069d49fa9bedefce9e6e901514",
+      "bytes": 597
+    },
+    "quality-ci/cli-bandit.json": {
+      "sha256": "26b57a25bb7932d8457bcc200607390689666504051dc77b309de7af8f14e13f",
+      "bytes": 2077
+    },
+    "quality-ci/cli-dependency-scope.json": {
+      "sha256": "1ec5f7945bddee6507eb22f70dbf4909d2cd406236d2913bd983435768594c48",
+      "bytes": 365
+    },
+    "quality-ci/engine-bandit.json": {
+      "sha256": "bea522db16da5127cda4ab898f6fdfe2a9dc4c923391172bd4b8ee686be341cb",
+      "bytes": 22282
+    }
+  },
+  "coordination_ci": {
+    "commit": "29e2be912dee3193e355ce1d551bbc757a7e11b8",
+    "integration_run": 35465814576,
+    "links_run": 35465814613,
+    "jobs": {
+      "integration": "success",
+      "host-bounds": "success",
+      "bounded-default": "success",
+      "docs-links": "success"
+    },
+    "downloaded_default_evidence": true,
+    "source_pins_checker_and_artifact_ids_match_local": true,
+    "image_source_hashes_match_across_architectures": true,
+    "clean_default_reproduction_seconds": 7.4435970010000005,
+    "clean_default_archive_predownloaded": false,
+    "artifact": {
+      "id": 10591710599,
+      "github_reported_digest": "sha256:37db16665f0c53070a7c3e843614d6ec03ee650e2f62bd7a0cce96bb57aa77ad",
+      "size_in_bytes": 4236
+    }
+  },
+  "cleanup": {
+    "owned_workers_absent_before_vm_stop": true,
+    "dedicated_colima_profile": "entrotter",
+    "dedicated_profile_stopped": true,
+    "existing_default_profile_still_stopped": true,
+    "docker_context_unchanged": "colima"
+  }
+}

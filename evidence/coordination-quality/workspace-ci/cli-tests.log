@@ -1,0 +1,11 @@
+test_doctor (test_cli.CLITests.test_doctor) ... ok
+test_doctor_no_secrets (test_cli.CLITests.test_doctor_no_secrets) ... ok
+test_error_no_traceback (test_cli.CLITests.test_error_no_traceback) ... ok
+test_local_option (test_cli.CLITests.test_local_option) ... ok
+test_read_json (test_cli.CLITests.test_read_json) ... ok
+test_size_limit (test_cli.CLITests.test_size_limit) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.020s
+
+OK

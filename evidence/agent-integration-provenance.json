@@ -1,0 +1,16 @@
+{
+  "scope": "Post-run source checkpoint for the verified local integration; not benchmark preregistration",
+  "source_sha256": {
+    "scripts/codex_policy.py": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76",
+    "scripts/check_agent.py": "869c0870d6a7df7944e9ee8625c2d1a2b3aa35598622368909f48ad37d05ea59",
+    "scripts/reproduce_clean.py": "863a404035ee1c2ca10e60572f47cdbeed7bd46fc910a4a283e2346c8d2807e9"
+  },
+  "engine_commit": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+  "schema_commit": "828cfe37f2a2d6d7f2db868a0856a28c080b7a94",
+  "model_artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b",
+  "notes": [
+    "Post-run adapter guards add explicit POSIX and maximum-call checks; the successful two-call path and prompt are unchanged.",
+    "The earlier unsupported model alias failed explicitly and produced no recording.",
+    "Both dependency PRs have passing CI and await independent approval."
+  ]
+}

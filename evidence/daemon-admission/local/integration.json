@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "kind": "integration verification, not a performance benchmark",
+  "tested_commits": {
+    "engine": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "952bfb5aba14b674dd959035a5625fadbd2b07d1"
+  },
+  "checker_sha256": "abe285958f0f6501f2d8cae2b162208da82905d2745321babfefdec255bd65e2",
+  "default_worker": {
+    "image_id": "sha256:45b3c91f4c930e403beb697cbcdbdfdea74f736db32e6f80d30ac7d21c6266b1",
+    "image_source_digest": "a3722524ab7fd46b557b813cda533df45592facdc04ad1244c8b5aa7ed4e9d99",
+    "manifest_sha256": "2164d12fac75876656c352b31f7908f99a1e7cd109a8e9a94bb9abe4001a6d6d",
+    "actual_source_matches_image_manifest_and_label": true,
+    "cgroup_version": "2",
+    "artifact_ids": {
+      "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+      "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+    },
+    "local_cli_without_mode_opt_in": true,
+    "missing_worker_fails_without_export_replacement": true,
+    "explicit_native_fixture_matches": true,
+    "daemon_shared_admission": {
+      "standalone_local_cli_rejected": true,
+      "cli_sdk_api_429": true,
+      "api_posts": 1,
+      "existing_export_and_incumbent_preserved": true,
+      "successful_run_after_release": true,
+      "scope": "one container worker per configured daemon; no native/host-process/storage bound"
+    }
+  },
+  "wall_seconds": 8.489914208010305,
+  "artifact_ids": {
+    "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+    "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+  },
+  "verified": [
+    "actual CLI/SDK/API fixture and Anvil runs",
+    "SDK get and saved-file full equality",
+    "real EVM success and revert receipts",
+    "full-store idempotent repeat",
+    "CLI reports 507 without retrying POST or replacing export",
+    "eight idle sockets cause SDK/CLI 503 without executing work",
+    "health recovers after idle sockets close"
+  ],
+  "fault_parameters": {
+    "store_file_limit": 2,
+    "connection_limit": 8,
+    "busy_cli_attempts": 16
+  },
+  "archive_or_model_calls": false,
+  "limitations": [
+    "Lowered file-count quota for integration; production thresholds tested separately",
+    "Uses the tested API constructor default; worker manifest enables additional default-path proof. Kernel enforcement is a separate CI job",
+    "Independent export retention, host processes, explicit native execution and image/VM storage remain operator-controlled"
+  ]
+}

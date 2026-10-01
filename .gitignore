@@ -14,3 +14,10 @@ artifacts/
 node_modules/
 playwright-report/
 test-results/
+
+.quality/
+.mypy_cache/
+.ruff_cache/
+_deps/
+
+/output/

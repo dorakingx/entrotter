@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "scope": "Post-execution report integrity/schema/current-observation equality and exact receipt gas accounting",
+  "model_and_risk_requests_equal": true,
+  "model_and_risk_final_metrics_equal": true,
+  "rows": [
+    {
+      "block": 17000000,
+      "split": "evaluation",
+      "actions": {
+        "non-agent": "success",
+        "risk": "success",
+        "model": "success"
+      },
+      "gas": {
+        "non-agent": "216505",
+        "risk": "216505",
+        "model": "216505"
+      },
+      "seconds": {
+        "non-agent": 9.789,
+        "risk": 9.111,
+        "model": 13.806
+      },
+      "model_final_usdc": "1860.850781",
+      "model_final_weth": "0"
+    },
+    {
+      "block": 18000000,
+      "split": "evaluation",
+      "actions": {
+        "non-agent": "reverted",
+        "risk": "noop",
+        "model": "noop"
+      },
+      "gas": {
+        "non-agent": "234844",
+        "risk": "91090",
+        "model": "91090"
+      },
+      "seconds": {
+        "non-agent": 10.085,
+        "risk": 10.125,
+        "model": 13.662
+      },
+      "model_final_usdc": "0",
+      "model_final_weth": "1"
+    },
+    {
+      "block": 19000000,
+      "split": "development",
+      "actions": {
+        "non-agent": "reverted",
+        "risk": "noop",
+        "model": "noop"
+      },
+      "gas": {
+        "non-agent": "222793",
+        "risk": "91090",
+        "model": "91090"
+      },
+      "seconds": {
+        "non-agent": 8.628,
+        "risk": 8.533,
+        "model": 12.549
+      },
+      "model_final_usdc": "0",
+      "model_final_weth": "1"
+    },
+    {
+      "block": 20000000,
+      "split": "holdout",
+      "actions": {
+        "non-agent": "success",
+        "risk": "success",
+        "model": "success"
+      },
+      "gas": {
+        "non-agent": "221862",
+        "risk": "221862",
+        "model": "221862"
+      },
+      "seconds": {
+        "non-agent": 11.114,
+        "risk": 10.877,
+        "model": 15.779
+      },
+      "model_final_usdc": "3806.64361",
+      "model_final_weth": "0"
+    },
+    {
+      "block": 21000000,
+      "split": "holdout",
+      "actions": {
+        "non-agent": "reverted",
+        "risk": "noop",
+        "model": "noop"
+      },
+      "gas": {
+        "non-agent": "222785",
+        "risk": "91090",
+        "model": "91090"
+      },
+      "seconds": {
+        "non-agent": 10.791,
+        "risk": 10.621,
+        "model": 17.789
+      },
+      "model_final_usdc": "0",
+      "model_final_weth": "1"
+    }
+  ],
+  "evaluator_commit": "52da502344a25b5549ac40f5de4cce7a4ce73b24",
+  "evaluator_sha256": "c07489bab83542db8a5a491fd2ae71747fc4b6b58bdebe5383fee2fc3abe5eb4",
+  "schema_validation": "15 reports verified; all 10 agent recording schemas passed"
+}

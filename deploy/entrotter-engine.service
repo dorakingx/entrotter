@@ -1,0 +1,29 @@
+[Unit]
+Description=Entrotter local API with host process resource limits
+
+[Service]
+Type=exec
+WorkingDirectory=%h/.local/share/entrotter
+EnvironmentFile=%h/.config/entrotter/engine.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStartPre=/usr/bin/python3 %h/.local/share/entrotter/check_host_envelope.py
+ExecStart=/usr/bin/python3 -m entrotter_engine serve --port 8787 --output reports
+Restart=no
+RuntimeMaxSec=1h
+TimeoutStopSec=15s
+KillMode=control-group
+CPUAccounting=yes
+CPUQuota=100%
+MemoryAccounting=yes
+MemoryMax=256M
+MemorySwapMax=0
+TasksAccounting=yes
+TasksMax=64
+LimitNOFILE=256
+LimitCORE=0
+NoNewPrivileges=yes
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+LogRateLimitIntervalSec=30s
+LogRateLimitBurst=50

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "run": 35471835371,
+  "scanned_production_files": 20,
+  "source_hashes_match": true,
+  "bandit_findings": 24,
+  "all_findings_equal_local": true,
+  "audited_packages": 42,
+  "known_findings": 0,
+  "wheel_python_files": 15,
+  "wheel_source_equal": true,
+  "shared_helper_equal": true,
+  "wheel_sha256": "5869fe8f8d220393f18276d28858535eb6f42d73e4ec94f92e1bcf2bc8353380",
+  "license": "MIT",
+  "runtime_dependencies": []
+}

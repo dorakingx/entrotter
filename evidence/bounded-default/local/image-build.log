@@ -1,0 +1,37 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 394B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-trixie@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/python:3.12-slim-trixie@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 50.42MB 2.3s done
+#5 DONE 2.3s
+
+#6 [2/4] COPY anvil /usr/local/bin/anvil
+#6 CACHED
+
+#7 [3/4] COPY entrotter_engine /app/entrotter_engine
+#7 DONE 0.2s
+
+#8 [4/4] WORKDIR /app
+#8 DONE 0.0s
+
+#9 exporting to image
+#9 exporting layers 0.0s done
+#9 writing image sha256:9f94199649a1e317be307b585615d688da9bc76969d0e6c5810320c232146821 done
+#9 naming to docker.io/library/entrotter-worker:a825d52e8e573e9b done
+#9 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/default/default/st0i9jpvejvkaq7g0bbudsppx
+{"image_id": "sha256:9f94199649a1e317be307b585615d688da9bc76969d0e6c5810320c232146821", "manifest": "/tmp/entrotter-default-image.json", "published": false}

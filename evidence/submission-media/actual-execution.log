@@ -1,0 +1,10 @@
+run_agent(scenario, decision_steps=[0, 1])
+Risk choices:     execute, hold
+Baseline status:  success, reverted
+Candidate status: success, noop
+
+run_agent(scenario, decision_steps=[0, 1], recording=record)
+Complete JSON equality: true
+Artifact: 1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b
+Saved: agent-replay.json  |  Agent model calls: 0
+Actual execution time: 1.435 seconds

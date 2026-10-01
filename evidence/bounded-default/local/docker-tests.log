@@ -1,0 +1,16 @@
+test_cli_and_api_roundtrip (test_worker.IsolatedAPITests.test_cli_and_api_roundtrip) ... ok
+test_cpu_quota_throttles_parallel_work (test_worker.IsolatedWorkerTests.test_cpu_quota_throttles_parallel_work) ... ok
+test_kernel_controls_mounts_and_privileges (test_worker.IsolatedWorkerTests.test_kernel_controls_mounts_and_privileges) ... ok
+test_memory_limit_actually_oom_kills_overallocation (test_worker.IsolatedWorkerTests.test_memory_limit_actually_oom_kills_overallocation) ... ok
+test_pid_limit_actually_rejects_more_processes (test_worker.IsolatedWorkerTests.test_pid_limit_actually_rejects_more_processes) ... ok
+test_real_fixture_and_anvil_results_match_native (test_worker.IsolatedWorkerTests.test_real_fixture_and_anvil_results_match_native) ... ok
+test_tmpfs_space_and_noexec_are_enforced (test_worker.IsolatedWorkerTests.test_tmpfs_space_and_noexec_are_enforced) ... ok
+test_detached_idle_worker_expires_without_host_cooperation (test_worker.WorkerLifetimeTests.test_detached_idle_worker_expires_without_host_cooperation) ... Independent idle deadline observed after 181.405 seconds
+ok
+test_lost_client_is_bounded_by_independent_worker_timer (test_worker.WorkerLifetimeTests.test_lost_client_is_bounded_by_independent_worker_timer) ... ok
+test_sigterm_ends_idle_worker_and_removes_container (test_worker.WorkerLifetimeTests.test_sigterm_ends_idle_worker_and_removes_container) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 195.560s
+
+OK

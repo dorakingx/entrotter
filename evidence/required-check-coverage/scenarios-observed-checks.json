@@ -1,0 +1,50 @@
+{
+  "total_count": 5,
+  "check_runs": [
+    {
+      "name": "compatibility (3.13, 0d3857839b2187541e573bec2e58042ad5bf0b45)",
+      "head_sha": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/scenarios/actions/runs/35474622711/job/105981616738"
+    },
+    {
+      "name": "validate",
+      "head_sha": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/scenarios/actions/runs/35474622711/job/105981616635"
+    },
+    {
+      "name": "compatibility (3.11, bb8b3e8d32c7cbd49629d337758f30bfdf805045)",
+      "head_sha": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/scenarios/actions/runs/35474622711/job/105981616541"
+    },
+    {
+      "name": "docs-links",
+      "head_sha": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/scenarios/actions/runs/35474622683/job/105981616450"
+    },
+    {
+      "name": "quality",
+      "head_sha": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/scenarios/actions/runs/35474622690/job/105981616428"
+    }
+  ]
+}

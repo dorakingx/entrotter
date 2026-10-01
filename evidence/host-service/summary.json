@@ -1,0 +1,62 @@
+{
+  "checked_at": "2026-09-20T01:57:03.287460+00:00",
+  "status": "verified_proposed_reference_deployment",
+  "engine_commit": "2c843842dc57387150e3bb080c720bc94ce18bc5",
+  "source_sha256": {
+    "deploy/entrotter-engine.service": "3a92a3bbe5d2b585c727a42cc96cd510fa6e541aebd5abfd5141d8173e22f486",
+    "deploy/colima-entrotter.yaml": "277f64bc86f19013025c002e3475b3ccd693d7712b4db163bb586efa995de84a",
+    "scripts/check_host_envelope.py": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb",
+    "tests/test_host_envelope.py": "6beb8c88459153f4672afa06a5a6754e4662548d435975768179240813a16037",
+    "tests_host/check_service.py": "3176cfd65787342d150949def6aa2c0f59cdb639daafa8dd0ba823d364961e49"
+  },
+  "files": {
+    "policy-tests.log": "ae5ef368006b1d63a92bc2b29e1790fe0c734c181ea847ef480654393eb53b7b",
+    "service-checks.json": "98cbe26252e181c4a6214d3d4cadce10183a2f06d750c2c0aa3efb7dc2ba1067",
+    "source-drift-rejection.log": "6990b488fde295470cb97a5e51b97cbe49a4f3007ef185f72a301bb0f061d557",
+    "vm-topology.json": "84013c1b2e3133416d8332e8e35d9976b1a585cf9ee19e350f4a86fb474e3b1b"
+  },
+  "unit_tests": 2,
+  "existing_quality_policy_tests": 6,
+  "mypy_production_sources": 20,
+  "retained_security_findings": 75,
+  "actual_api_roundtrips": 2,
+  "actual_resource_probes": 4,
+  "unbounded_start_rejected_before_main": true,
+  "tested_colima": "0.8.1",
+  "tested_dbus_user_session": "1.14.10-4ubuntu4.1",
+  "production_hour_expiry_waited": false,
+  "live_vm_disk_exhausted": false,
+  "claim_scope": "API service cgroup and measured guest resource/mount boundary, not universal host limits or arbitrary-code isolation",
+  "setup_failures": [
+    "User-manager connection failure before socket recovery",
+    "Transient-unit test required missing dbus-user-session package; installed signed Ubuntu package and reran successfully"
+  ],
+  "log_normalization": "Guest home and coordination checkout paths replaced with placeholders",
+  "ci": "Final results will be in the pull request description; not claimed passed by this pre-CI checkpoint",
+  "cleanup": {
+    "service": "inactive",
+    "service_main_pid": 0,
+    "boot_enabled": false,
+    "owned_worker_containers": 0,
+    "transient_proof_units": 0,
+    "vm_stop": "both local profiles verified Stopped",
+    "profiles": [
+      {
+        "name": "default",
+        "status": "Stopped",
+        "arch": "aarch64",
+        "cpus": 4,
+        "memory": 8589934592,
+        "disk": 42949672960
+      },
+      {
+        "name": "entrotter",
+        "status": "Stopped",
+        "arch": "aarch64",
+        "cpus": 2,
+        "memory": 2147483648,
+        "disk": 10737418240
+      }
+    ]
+  }
+}

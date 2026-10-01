@@ -1,0 +1,12 @@
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:41:38.2702279Z test_cli_and_api_roundtrip (test_worker.IsolatedAPITests.test_cli_and_api_roundtrip) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:41:40.6625759Z test_cpu_quota_throttles_parallel_work (test_worker.IsolatedWorkerTests.test_cpu_quota_throttles_parallel_work) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:41:40.9388925Z test_kernel_controls_mounts_and_privileges (test_worker.IsolatedWorkerTests.test_kernel_controls_mounts_and_privileges) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:41:41.1448169Z test_memory_limit_actually_oom_kills_overallocation (test_worker.IsolatedWorkerTests.test_memory_limit_actually_oom_kills_overallocation) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:41:41.3771760Z test_pid_limit_actually_rejects_more_processes (test_worker.IsolatedWorkerTests.test_pid_limit_actually_rejects_more_processes) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:41:43.2717738Z test_real_fixture_and_anvil_results_match_native (test_worker.IsolatedWorkerTests.test_real_fixture_and_anvil_results_match_native) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:41:43.5978909Z test_tmpfs_space_and_noexec_are_enforced (test_worker.IsolatedWorkerTests.test_tmpfs_space_and_noexec_are_enforced) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:44:44.2011364Z test_detached_idle_worker_expires_without_host_cooperation (test_worker.WorkerLifetimeTests.test_detached_idle_worker_expires_without_host_cooperation) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:44:45.3932577Z test_lost_client_is_bounded_by_independent_worker_timer (test_worker.WorkerLifetimeTests.test_lost_client_is_bounded_by_independent_worker_timer) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:44:46.6188938Z test_sigterm_ends_idle_worker_and_removes_container (test_worker.WorkerLifetimeTests.test_sigterm_ends_idle_worker_and_removes_container) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:44:46.6193885Z Ran 10 tests in 191.375s
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T18:44:46.6194942Z OK

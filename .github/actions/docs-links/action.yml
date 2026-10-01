@@ -1,0 +1,35 @@
+name: Check documentation links
+description: Check tracked Markdown, HTML and CSS using checksum-pinned Lychee.
+runs:
+  using: composite
+  steps:
+    - name: Install verified Lychee (Linux x86_64)
+      shell: bash
+      run: |
+        set -euo pipefail
+        test "$(uname -s)" = Linux
+        test "$(uname -m)" = x86_64
+        mkdir -p "$RUNNER_TEMP/entrotter-lychee"
+        cd "$RUNNER_TEMP/entrotter-lychee"
+        curl --fail --silent --show-error --location --proto '=https' --proto-redir '=https' --max-time 120 --retry 2 \
+          https://github.com/lycheeverse/lychee/releases/download/lychee-v0.24.2/lychee-x86_64-unknown-linux-gnu.tar.gz -o release.tar.gz
+        echo '1f4e0ef7f6554a6ed33dd7ac144fb2e1bbed98598e7af973042fc5cd43951c9a  release.tar.gz' | sha256sum --check --strict
+        tar -xzf release.tar.gz --strip-components=1 lychee-x86_64-unknown-linux-gnu/lychee
+        ./lychee --version
+    - name: Prove missing files, fragments and HTTP errors fail
+      shell: bash
+      env:
+        LINK_ACTION_PATH: ${{ github.action_path }}
+      run: python3 "$LINK_ACTION_PATH/test_check.py" "$RUNNER_TEMP/entrotter-lychee/lychee"
+    - name: Check this checkout's tracked documents
+      shell: bash
+      env:
+        LINK_ACTION_PATH: ${{ github.action_path }}
+      run: python3 "$LINK_ACTION_PATH/check.py" --binary "$RUNNER_TEMP/entrotter-lychee/lychee" --repo "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/docs-links/report.json"
+    - name: Retain full link evidence
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: docs-links
+        path: ${{ runner.temp }}/docs-links/report.json
+        if-no-files-found: error

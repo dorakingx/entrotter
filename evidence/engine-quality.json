@@ -1,0 +1,61 @@
+{
+  "updated_at": "2026-09-19T18:18:17.571054+00:00",
+  "status": "verified_pending_independent_review",
+  "engine_commit": "ba0adfb233b685f99f35cbbe33331fee83360504",
+  "engine_pr": "https://github.com/entrotter/engine/pull/13",
+  "merged": false,
+  "local_tests": {
+    "passed": 121,
+    "skipped": 0,
+    "seconds": 9.604,
+    "log": "engine-quality-tests.log",
+    "scope": "Actual native Anvil and unit/policy tests; overlaps prior engine suites"
+  },
+  "source_files_checked": 17,
+  "initial_findings": {
+    "ruff": 28,
+    "mypy": 19
+  },
+  "security": {
+    "scanner": "Bandit 1.9.4",
+    "rules": "all defaults; --ignore-nosec",
+    "findings_retained": 15,
+    "low": 13,
+    "medium": 2,
+    "high": 0,
+    "review": "Author rationales and exact source/finding hashes; independent approval pending",
+    "report": "engine-bandit-local.json"
+  },
+  "python_dependency_audit": {
+    "scanner": "pip-audit 2.10.1",
+    "packages": 42,
+    "skipped": 0,
+    "reported_known_vulnerabilities": 0,
+    "report": "engine-python-audit-local.json",
+    "requirements_lock_sha256": "845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722"
+  },
+  "historical_evidence": "engine-quality-historical.json",
+  "installed_wheel_evidence": "engine-quality-wheel-smoke.json",
+  "ci": {
+    "initial_quality_run": "https://github.com/entrotter/engine/actions/runs/35460511375",
+    "initial_upload_issue": "Job passed but hidden .quality directory was excluded; follow-up enables hidden generated reports and fails missing files",
+    "final_status": "quality, native Anvil, Python matrix and real Docker enforcement all passed",
+    "quality_run": "https://github.com/entrotter/engine/actions/runs/35460638786",
+    "native_run": "https://github.com/entrotter/engine/actions/runs/35460638756",
+    "python_matrix_run": "https://github.com/entrotter/engine/actions/runs/35460638843",
+    "docker_run": "https://github.com/entrotter/engine/actions/runs/35460638998",
+    "quality_artifact_downloaded": true,
+    "quality_report": "engine-bandit-ci.json",
+    "dependency_report": "engine-python-audit-ci.json",
+    "wheel_source_files_verified": 14,
+    "wheel_sha256": "71fc540a6a5953c4249e4c4c361846bfe6a8d1d932dc86a8b95b8fdfee3a95a9",
+    "wheel_license": "MIT",
+    "wheel_runtime_dependencies": []
+  },
+  "scope_limits": [
+    "Engine production source and scripts only; other repos and separate agent branch not covered",
+    "Python advisories do not cover native binaries, Python/OpenSSL runtime, container OS or Docker",
+    "Normal mypy rules with unannotated bodies checked, not strict fully typed JSON",
+    "All PRs require independent review; overall goal and G3 remain partial"
+  ]
+}

@@ -1,0 +1,63 @@
+1
+00:00:01,123 --> 00:00:06,986
+Before an onchain agent gets production permissions, its decisions need a reproducible test.
+
+2
+00:00:07,436 --> 00:00:15,157
+Entrotter lets a developer start from known blockchain state, change a decision, and keep a record another developer can inspect.
+
+3
+00:00:16,107 --> 00:00:24,501
+A passing simulation alone does not explain a decision. Which block did it use? Which balances were overridden? What information reached the policy?
+
+4
+00:00:24,951 --> 00:00:33,043
+Our hypothesis is that teams need these answers together, instead of scattered across scripts, terminal logs, and screenshots.
+
+5
+00:00:33,993 --> 00:00:46,962
+Entrotter runs baseline and candidate actions from identical initial state in separate Anvil instances. A constrained policy sees the current proposal, current state, and completed actions, not future steps.
+
+6
+00:00:47,412 --> 00:00:56,096
+It can hold, or execute the unchanged proposal. The report keeps source pins, receipts, token units, assumptions, and the recorded decisions.
+
+7
+00:00:57,046 --> 00:01:08,366
+The current review branch reproduces all nineteen existing EVM reports as exactly equal complete artifacts, including twelve agent recordings, without calling a model again.
+
+8
+00:01:08,816 --> 00:01:18,545
+One hundred eighty nine native and unit tests, and twenty one real Docker tests, verify behavior and resource controls. All results and limitations are public.
+
+9
+00:01:19,495 --> 00:01:31,093
+The model matched the deterministic risk rule in the five evaluated historical cases, and took longer. A same-task comparison also showed no speed advantage over a direct Anvil script.
+
+10
+00:01:31,543 --> 00:01:40,343
+The proposed value is a reusable, reviewable experiment and replay record. It is not a claim of smarter trading, future prediction, or profit.
+
+11
+00:01:41,293 --> 00:01:49,954
+The initial audience is small EVM agent teams that already write simulation scripts and need a teammate to reproduce a questionable decision.
+
+12
+00:01:50,404 --> 00:02:02,734
+The first validation target is three genuine developer sessions: run their own case, reproduce a colleague's result, and identify what would make this workflow useful. Those sessions have not happened yet.
+
+13
+00:02:03,684 --> 00:02:15,689
+The local engine and viewer are MIT licensed. A business hypothesis is paid team collaboration around shared scenarios and reviews, while local execution stays open source.
+
+14
+00:02:16,139 --> 00:02:25,764
+Ninety nine dollars per team per month is an interview anchor, not a live offer or validated willingness to pay. There are no verified customer or revenue claims.
+
+15
+00:02:26,714 --> 00:02:36,698
+Start with the public example, inspect the assumptions, then bring one decision you need to explain. The site and six repositories provide the code and measured evidence.
+
+16
+00:02:37,148 --> 00:02:49,478
+The bounded agent integration still needs independent review. Team details and demand validation remain pending. This presentation uses synthetic narration and discloses Codex assisted development.

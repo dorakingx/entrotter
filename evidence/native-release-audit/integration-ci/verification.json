@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "proof_commit": "573b6c3a67773dbaeafaaedb413c638e5a44fcb5",
+  "integration_run": 35470453881,
+  "links_run": 35470453897,
+  "all_three_integration_jobs_passed": true,
+  "current_pins_and_checker_verified": true,
+  "full_fixture_and_evm_artifact_ids_equal_previous": true,
+  "runtime_source_image_manifest_and_binary_digest_equal_previous": true,
+  "clean_reproduction_seconds": 5.9279049550000025,
+  "scope": "Linux public clone/venv/image build/default fixture; Docker already running and build cache warm, no cold installation claim"
+}

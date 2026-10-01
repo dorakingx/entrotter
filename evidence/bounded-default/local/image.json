@@ -1,0 +1,26 @@
+{
+  "image_id": "sha256:9f94199649a1e317be307b585615d688da9bc76969d0e6c5810320c232146821",
+  "source_digest": "a825d52e8e573e9bf7976c53b57e50cd360a4de96cfcd69e3830a637a45fc0f9",
+  "source_files": {
+    "__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "__main__.py": "f2d485d21613996f1e662ddeae01600e53afe900f993854105df0daeeb53c3d7",
+    "_guardian.py": "3758412adb3e8761a3c82eac89cbf5a72bac7d0dad5c492a6825b4bb2a5f9ddf",
+    "_isolated_worker.py": "eb8062f0b477793f8d489f376d04b8cf445a3b00decb3c58ae13bbf983698e7a",
+    "api.py": "37410550229714019813fa9c5cb32f7ce6a094379f9c42e992e90f73d836fb14",
+    "artifact.py": "69a6cb7cb312f0159f7fb8c2231606d49997c6375c665b753ca2bf4c7378150e",
+    "defi.py": "f4f5e6e50ad3745426c7d0fbc08b5fa42c79fd4daa225667821814f95acb7fde",
+    "evm.py": "7f8fdde9bc96f0bdcdbba7f04b4ff5175808943c547e47d97662abee2392b443",
+    "fixture.py": "1f771e23c8b8311bf1f5e9cc56bf30f7b369f8f617513d99024876688e809647",
+    "isolated.py": "19f54707d3cde4d5cfc9ba204d108d2ddc868942fed635c3e479c3e8df4fa7e1",
+    "models.py": "1383a7d508e22210217af4515c664c82a861f8a23dcef9dd9ec8f831966ae9b7",
+    "rpc.py": "f19af9a2af2f924c65595f609e7d320d75109e0b5f09c5ae032c0bbff43b7d46",
+    "runner.py": "a890c229194685551fe52904954527147002f9b1a3715588e0e646570feadce8",
+    "store.py": "25a6b9fe252cd0c8eef00ce5c3eb869d3a54044b00e9a67653a5c00b41749b3b",
+    "Dockerfile": "f09bd4e3c9f8dc59ebf484ef795391bf11fcb087bf5ed0c88eccf29ab01b1622"
+  },
+  "foundry_version": "1.8.3",
+  "foundry_archive_sha256": "93fc23be26c8a902ca58fe54aa6ca28c880b58af95d052674933161df7928e6d",
+  "architecture": "arm64",
+  "published": false,
+  "base_image": "python:3.12-slim-trixie@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9"
+}

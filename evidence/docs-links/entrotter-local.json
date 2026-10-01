@@ -1,0 +1,821 @@
+{
+  "checked_at": "2026-09-19T18:33:30.309449+00:00",
+  "source_commit": "ea74aec66c5234edb935e4b12c14ec686dc73f80",
+  "worktree_dirty": false,
+  "checker": "lychee 0.24.2",
+  "checker_sha256": "af111b5890746a863e60b4929720ab383337843ed15b701515871aa6e8817c2b",
+  "files": {
+    ".github/PULL_REQUEST_TEMPLATE.md": "f8840c1975bc5aabfdedbd13d69de905fc19b7c9ad4c9b965f48e2b4c20b405d",
+    "AGENTS.md": "d1d8e6c41d67cbcd2ee82f7dcbb50568189acfcf92508b60731eed8de480e303",
+    "CODEX_GOAL.md": "6afa8d0a5f2059d128e3b654dcb0de290b0f5eec207806c841f886d52339a9b8",
+    "CONTRIBUTING.md": "0f8f64bf0fad468d8f6d99cb38e3ab83f2811d6c199f16d308e8fff0bff11449",
+    "README.md": "609862f09be992c7457451ac1d594bcdcae469dd2339e0d17f76938b243ef37f",
+    "ROADMAP.md": "7b831a14218f04f98d34a7d9bf7e6b5a30bd2de07c502c06531095ccc1000b5c",
+    "SECURITY.md": "06f4d07eae20821a11549334d9f6733aa84ce18847bc8ec59459ac93b2b49514",
+    "STATUS.md": "ea0943364059cbf44738a284a5a0b910dc4064fa6219e16fdd41d1787b9a3a96",
+    "backlog/01-validate-real-anvil.md": "04eeb47f6f04935dafbf916eb335bbca96092b0da5bca9bcefb6ba213db24ca6",
+    "backlog/02-defi-adapter.md": "9a7c275a494ab406b80b392874bd0c589d43ed98879bf7ee078377e5c7fc41bb",
+    "backlog/03-agent-interface.md": "33e7907bba4a07c2fc258030e34c31a849c24e9c7e0a686e2ca365a8b3a0779a",
+    "backlog/04-historical-evidence.md": "ba695636d25b2e6adcfc6771145845a63af4e4c62b21c399a77087f1d51c673a",
+    "backlog/05-sdk-examples.md": "9cf78b4e6cbac1f73c1533bdc15e38fd10a6d5dbb3adec7b2bf751a5bd94e09d",
+    "backlog/06-help-diagnostics.md": "5415c0df8dc3b5c843093421fe6cb14daea7c064001fde865b5159aa8cbbf84c",
+    "backlog/07-evm-report-viewer.md": "14332eaf7ab757ef16bbe6c8ba7c4bc5d06c265047dd48ec6f6fa932df3ff3ee",
+    "backlog/08-submission-evidence.md": "04a13f072dc7db3f11ae016714911aee591c999d122492273aadbfeff45f8500",
+    "docs/AGENT_EVALUATION.md": "5609e3ce169515735fd3966fdcdbcff6ea2472c950297a7fcca75e587f0dc097",
+    "docs/ARCHITECTURE.md": "1ea68ad9727c06d2be76facea39f9f09d433c5c49fee5e7ee29273916a433616",
+    "docs/COMPETITION.md": "32ed5c7ec57444184bd2eb3c30a18361abcf23cd5811108ef87cb5e8ea3d5e72",
+    "docs/DIRECT_ANVIL_COMPARISON.md": "279218fb14551daf6528288d6fe1de1bab44ea90901557d29220e2763ecc26df",
+    "docs/ENGINE_QUALITY.md": "4c625276e7fad202acb08a1a8faab97c2ac2edd47b736e8824875ef0cf2fc904",
+    "docs/HISTORICAL_AGENT_EVALUATION.md": "a8b63301282ffaf1d1e589cb16685f0a5e4d60204da028c1ea24b36597327d7d",
+    "docs/HOST_RESOURCE_LIMITS.md": "b1b72d0808e355b7bbc504aff0e0625597eacd34eda5e53d7127f9639d6d66c7",
+    "docs/LINK_CHECKS.md": "54b5a64bbbdc9b5c05b2716ad5c0835aae6a7fe24afd156c0bdf3880e5c3bab1",
+    "docs/SOURCES.md": "693152f84d577fd486b7aca533a0969f017339dabaae8a3bb5760edeee0ae51c",
+    "docs/WORKER_SECURITY.md": "821c2474126e188d9587b30ed7f71ef71160178b89e41628b7bd3d90f412a708"
+  },
+  "lychee_exit_code": 0,
+  "passed": true,
+  "path_redaction": "Local checkout prefix replaced with /workspace/repository",
+  "report": {
+    "total": 47,
+    "unique": 41,
+    "successful": 47,
+    "unknown": 0,
+    "unsupported": 0,
+    "timeouts": 0,
+    "redirects": 1,
+    "remaps": 0,
+    "excludes": 0,
+    "errors": 0,
+    "cached": 2,
+    "success_map": {
+      "docs/LINK_CHECKS.md": [
+        {
+          "url": "https://github.com/lycheeverse/lychee/releases/tag/lychee-v0.24.2",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 8,
+            "column": 22
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 304056000
+          }
+        }
+      ],
+      "docs/WORKER_SECURITY.md": [
+        {
+          "url": "https://github.com/entrotter/engine/pull/9",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 6,
+            "column": 11
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 899791416
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/engine/pull/10",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 4,
+            "column": 44
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 670013792
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/engine/pull/11",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 5,
+            "column": 5
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 642781667
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/engine/blob/05448c3335440f19e619d1b71b449f4f0fb470d6/README.md#opt-in-isolated-local-worker",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 47,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 37743667
+          }
+        }
+      ],
+      "docs/COMPETITION.md": [
+        {
+          "url": "https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 4,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 57715959
+          }
+        },
+        {
+          "url": "https://colosseum.com/worldsfair",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 273117916
+          }
+        },
+        {
+          "url": "https://colosseum.com/hackathon",
+          "status": {
+            "text": "OK (cached)",
+            "code": 200
+          },
+          "span": {
+            "line": 13,
+            "column": 5
+          }
+        }
+      ],
+      "docs/ENGINE_QUALITY.md": [
+        {
+          "url": "https://pip.pypa.io/en/stable/topics/secure-installs/",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 34,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 97462000
+          }
+        },
+        {
+          "url": "https://bandit.readthedocs.io/en/latest/config.html",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 35,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 71579292
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/engine/pull/13",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 649855042
+          }
+        }
+      ],
+      "README.md": [
+        {
+          "url": "file:///workspace/repository/CONTRIBUTING.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 108
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 27209
+          }
+        },
+        {
+          "url": "file:///workspace/repository/docs/LINK_CHECKS.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 183,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7750
+          }
+        },
+        {
+          "url": "file:///workspace/repository/SECURITY.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 142
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8083
+          }
+        },
+        {
+          "url": "file:///workspace/repository/LICENSE",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 168
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8208
+          }
+        },
+        {
+          "url": "https://entrotter.github.io/",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 22,
+            "column": 9
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 94632291
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 323364625
+          }
+        },
+        {
+          "url": "file:///workspace/repository/docs/DIRECT_ANVIL_COMPARISON.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 169,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 9250
+          }
+        },
+        {
+          "url": "file:///workspace/repository/docs/HOST_RESOURCE_LIMITS.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 179,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7875
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/sdk-python",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 31,
+            "column": 3
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 229083750
+          }
+        },
+        {
+          "url": "file:///workspace/repository/docs/AGENT_EVALUATION.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 160,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 50500
+          }
+        },
+        {
+          "url": "file:///workspace/repository/docs/WORKER_SECURITY.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 174,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7625
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter.github.io",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 34,
+            "column": 3
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 923060500
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/engine",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 30,
+            "column": 3
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 863783958
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/scenarios",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 33,
+            "column": 3
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 816083167
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/cli",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 32,
+            "column": 3
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 507973792
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/scenarios/blob/main/evm/ethereum-uniswap-slippage.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 138,
+            "column": 5
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 260275333
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 29,
+            "column": 3
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 122016042
+          }
+        },
+        {
+          "url": "file:///workspace/repository/docs/HISTORICAL_AGENT_EVALUATION.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 164,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11334
+          }
+        }
+      ],
+      "CONTRIBUTING.md": [
+        {
+          "url": "file:///workspace/repository/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 5,
+            "column": 28
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 45750
+          }
+        }
+      ],
+      "STATUS.md": [
+        {
+          "url": "https://github.com/entrotter",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 5,
+            "column": 7
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 898404084
+          }
+        }
+      ],
+      "docs/AGENT_EVALUATION.md": [
+        {
+          "url": "file:///workspace/repository/docs/HISTORICAL_AGENT_EVALUATION.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 91,
+            "column": 16
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 51834
+          }
+        },
+        {
+          "url": "file:///workspace/repository/docs/DIRECT_ANVIL_COMPARISON.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 93,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 9375
+          }
+        }
+      ],
+      "docs/SOURCES.md": [
+        {
+          "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 6,
+            "column": 29
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 54888541
+          }
+        },
+        {
+          "url": "https://colosseum.com/hackathon",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 5,
+            "column": 29
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 426453375
+          }
+        },
+        {
+          "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 7,
+            "column": 26
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 256770459
+          }
+        },
+        {
+          "url": "https://getfoundry.sh/anvil/reference/",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "redirects": {
+            "origin": "https://getfoundry.sh/anvil/reference/",
+            "redirects": [
+              {
+                "url": "https://www.getfoundry.sh/anvil/reference/",
+                "code": 307
+              },
+              {
+                "url": "https://www.getfoundry.sh/anvil/reference",
+                "code": 308
+              },
+              {
+                "url": "https://www.getfoundry.sh/reference/anvil/anvil",
+                "code": 308
+              }
+            ]
+          },
+          "span": {
+            "line": 8,
+            "column": 20
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 785853916
+          }
+        },
+        {
+          "url": "https://github.com/foundry-rs/foundry/releases/tag/v1.8.3",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 9,
+            "column": 48
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 156994208
+          }
+        },
+        {
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 10,
+            "column": 20
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 94522792
+          }
+        },
+        {
+          "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 11,
+            "column": 16
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 250065042
+          }
+        }
+      ],
+      "docs/HISTORICAL_AGENT_EVALUATION.md": [
+        {
+          "url": "file:///workspace/repository/docs/DIRECT_ANVIL_COMPARISON.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 42,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 50500
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/scenarios/commit/1ce15d9",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 19,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 884434333
+          }
+        }
+      ],
+      "docs/HOST_RESOURCE_LIMITS.md": [
+        {
+          "url": "file:///workspace/repository/docs/WORKER_SECURITY.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 29,
+            "column": 15
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 48125
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/engine/pull/12",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 25
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 925800125
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/cli/pull/5",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 4,
+            "column": 5
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 321148334
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter/issues/12",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 5,
+            "column": 38
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 322059125
+          }
+        }
+      ],
+      "CODEX_GOAL.md": [
+        {
+          "url": "https://colosseum.com/hackathon",
+          "status": {
+            "text": "OK (cached)",
+            "code": 200
+          },
+          "span": {
+            "line": 121,
+            "column": 12
+          }
+        }
+      ]
+    },
+    "error_map": {},
+    "timeout_map": {},
+    "suggestion_map": {},
+    "redirect_map": {
+      "docs/SOURCES.md": [
+        {
+          "origin": "https://getfoundry.sh/anvil/reference/",
+          "redirects": [
+            {
+              "url": "https://www.getfoundry.sh/anvil/reference/",
+              "code": 307
+            },
+            {
+              "url": "https://www.getfoundry.sh/anvil/reference",
+              "code": 308
+            },
+            {
+              "url": "https://www.getfoundry.sh/reference/anvil/anvil",
+              "code": 308
+            }
+          ]
+        }
+      ]
+    },
+    "excluded_map": {},
+    "duration": {
+      "secs": 6,
+      "nanos": 405893584
+    },
+    "detailed_stats": true
+  }
+}

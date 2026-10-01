@@ -1,0 +1,133 @@
+{
+  "conclusion": "success",
+  "databaseId": 35477273936,
+  "headSha": "abb4662ce960e08b2aa3a2c8a1c10719339edccc",
+  "jobs": [
+    {
+      "completedAt": "2026-09-19T23:56:21Z",
+      "conclusion": "success",
+      "databaseId": 105988571033,
+      "name": "isolated",
+      "startedAt": "2026-09-19T23:52:21Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-09-19T23:52:23Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-09-19T23:52:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:52:24Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "startedAt": "2026-09-19T23:52:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:52:24Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 3,
+          "startedAt": "2026-09-19T23:52:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:52:28Z",
+          "conclusion": "success",
+          "name": "Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+          "number": 4,
+          "startedAt": "2026-09-19T23:52:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:52:38Z",
+          "conclusion": "success",
+          "name": "Build local worker from digest-verified inputs",
+          "number": 5,
+          "startedAt": "2026-09-19T23:52:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:56:01Z",
+          "conclusion": "success",
+          "name": "Verify real kernel enforcement, API and lifetime cleanup",
+          "number": 6,
+          "startedAt": "2026-09-19T23:52:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:56:01Z",
+          "conclusion": "success",
+          "name": "Verify no test workers remain",
+          "number": 7,
+          "startedAt": "2026-09-19T23:56:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:56:11Z",
+          "conclusion": "success",
+          "name": "Verify base signature and audit every detected worker package",
+          "number": 8,
+          "startedAt": "2026-09-19T23:56:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:56:17Z",
+          "conclusion": "success",
+          "name": "Verify native release provenance and signed Cargo inventory",
+          "number": 9,
+          "startedAt": "2026-09-19T23:56:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:56:18Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "number": 10,
+          "startedAt": "2026-09-19T23:56:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:56:19Z",
+          "conclusion": "success",
+          "name": "Post Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+          "number": 18,
+          "startedAt": "2026-09-19T23:56:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:56:19Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "number": 19,
+          "startedAt": "2026-09-19T23:56:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:56:19Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 20,
+          "startedAt": "2026-09-19T23:56:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:56:19Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-09-19T23:56:19Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/entrotter/engine/actions/runs/35477273936/job/105988571033"
+    }
+  ],
+  "name": "Isolated worker enforcement",
+  "status": "completed",
+  "url": "https://github.com/entrotter/engine/actions/runs/35477273936"
+}

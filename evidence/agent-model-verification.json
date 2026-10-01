@@ -1,0 +1,72 @@
+{
+  "executed_at": "2026-09-19T16:19:15.910967+00:00",
+  "status": "passed",
+  "scope": "One artificial local-EVM transfer/revert case, not historical market evaluation",
+  "model_generation": true,
+  "results": [
+    {
+      "policy": "non-agent",
+      "runtime_seconds": 0.3182075420045294,
+      "metrics": {
+        "initial_balance_wei": "10000000000000000000",
+        "final_balance_wei": "8999918610073950000",
+        "balance_delta_wei": "-1000081389926050000",
+        "gas_used": "42006",
+        "gas_cost_wei": "81389926050000",
+        "reverted_transactions": 1,
+        "rejected_transactions": 0
+      },
+      "artifact_id": "65c7d1584a0dd577ac4bb8646ac3fe62f233d58c5b73a5b5d7d6e4e98fc374d2"
+    },
+    {
+      "policy": "risk",
+      "runtime_seconds": 0.3130599580181297,
+      "replay_seconds": 0.3262719580088742,
+      "replay_exact": true,
+      "metrics": {
+        "initial_balance_wei": "10000000000000000000",
+        "final_balance_wei": "8999958000000000000",
+        "balance_delta_wei": "-1000042000000000000",
+        "gas_used": "21000",
+        "gas_cost_wei": "42000000000000",
+        "reverted_transactions": 0,
+        "rejected_transactions": 0
+      },
+      "choices": [
+        "execute",
+        "hold"
+      ],
+      "artifact_id": "bae842845d882b3007fbb497c4d6abbbc86bb935b7e0cb1d504cecf6dad57e52"
+    },
+    {
+      "policy": "codex",
+      "runtime_seconds": 8.721030999993673,
+      "replay_seconds": 0.3257915420108475,
+      "replay_exact": true,
+      "metrics": {
+        "initial_balance_wei": "10000000000000000000",
+        "final_balance_wei": "8999958000000000000",
+        "balance_delta_wei": "-1000042000000000000",
+        "gas_used": "21000",
+        "gas_cost_wei": "42000000000000",
+        "reverted_transactions": 0,
+        "rejected_transactions": 0
+      },
+      "choices": [
+        "execute",
+        "hold"
+      ],
+      "artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b"
+    }
+  ],
+  "child_cpu_seconds": 2.840174,
+  "child_maxrss": 104185856,
+  "child_maxrss_unit": "bytes",
+  "resource_scope": "All checker children, peak RSS not aggregate; no hard CPU/RSS cap",
+  "limitations": [
+    "Same execute-if-preflight-succeeds objective for risk policy and model; not proof of LLM advantage",
+    "No prices or valuation, so profit and drawdown are not defined",
+    "Historical cases and untouched holdouts still pending",
+    "CLI reports requested model alias and token usage, not immutable served model or monetary cost"
+  ]
+}

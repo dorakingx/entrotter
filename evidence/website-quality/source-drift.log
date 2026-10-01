@@ -1,0 +1,63 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Reviewed source bytes changed
++ actual - expected
+
+  {
+    'app.js': '185b35ff5355651193e7c3a8fd71ea7556fdd62986df7214003f5d99ed4eb361',
+    'eslint.config.mjs': '9c47b58e6b983da255d91ca59ee105dffbcfb92cfc575d5bd1f47cda281674b5',
+    'eslint.security.config.mjs': 'f3965f5c175d6d76885f055b78613997d3547d43299eae28e285b25171804feb',
+-   'package-lock.json': '199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342',
+-   'package.json': 'd4ae0a0b1a412c70cf38bace34efd9fd459736f0e8c4d13ded0c53cab43e772d',
+-   'pyproject.toml': '1fa3f76b9d84bb385aa4a7557416c172a54572c6d380c1ca1d64ddae31457f38',
+-   'requirements-quality.in': 'eccd79884fb38364cc396e59e22eb5a78f48bbf92e2c0b47825dcff473692185',
+-   'requirements-quality.txt': '845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722',
+    'scripts/check_accessibility.mjs': '3527da1c09ea99c33092980393fb1c67caadfc16c3bad8ca3bd3af7b2107412f',
++   'scripts/check_quality.mjs': '9d253ccca6ccaa3b69246f442827c44578426fc2fd6529e96ef723ee1758b66e',
+-   'scripts/check_quality.mjs': '51d72e7ccb7e9716acfc50e39bdf692a2512532e6da91491358da1437f4794d8',
+    'scripts/quality_policy.mjs': 'e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89',
+    'tests/quality.test.mjs': '71150f603988dcb2429b56de76e3535b0268fbf180b12ecbe998c23c235e52c1',
+    'tests/report.test.mjs': 'a7d30de36267c336519993ae3cc8e3ee22c93296c4b98f22deab1a7cbe191660',
+-   'tsconfig.json': '7fc2201f2a59527b82ba606b5e28ef3e3c192389c748580fd65dea824ffd30d5',
+    'types/browser-tools.d.ts': '0a5352e697b9e2a51651016ac789287acb71d48fdc04027d80a4050b604f579e'
+  }
+
+    at verifyReview (file://<workspace>/entrotter.github.io/scripts/quality_policy.mjs:33:10)
+    at file://<workspace>/entrotter.github.io/scripts/check_quality.mjs:99:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: {
+    'app.js': '185b35ff5355651193e7c3a8fd71ea7556fdd62986df7214003f5d99ed4eb361',
+    'eslint.config.mjs': '9c47b58e6b983da255d91ca59ee105dffbcfb92cfc575d5bd1f47cda281674b5',
+    'eslint.security.config.mjs': 'f3965f5c175d6d76885f055b78613997d3547d43299eae28e285b25171804feb',
+    'scripts/check_accessibility.mjs': '3527da1c09ea99c33092980393fb1c67caadfc16c3bad8ca3bd3af7b2107412f',
+    'scripts/check_quality.mjs': '9d253ccca6ccaa3b69246f442827c44578426fc2fd6529e96ef723ee1758b66e',
+    'scripts/quality_policy.mjs': 'e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89',
+    'tests/quality.test.mjs': '71150f603988dcb2429b56de76e3535b0268fbf180b12ecbe998c23c235e52c1',
+    'tests/report.test.mjs': 'a7d30de36267c336519993ae3cc8e3ee22c93296c4b98f22deab1a7cbe191660',
+    'types/browser-tools.d.ts': '0a5352e697b9e2a51651016ac789287acb71d48fdc04027d80a4050b604f579e'
+  },
+  expected: {
+    'app.js': '185b35ff5355651193e7c3a8fd71ea7556fdd62986df7214003f5d99ed4eb361',
+    'eslint.config.mjs': '9c47b58e6b983da255d91ca59ee105dffbcfb92cfc575d5bd1f47cda281674b5',
+    'eslint.security.config.mjs': 'f3965f5c175d6d76885f055b78613997d3547d43299eae28e285b25171804feb',
+    'package-lock.json': '199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342',
+    'package.json': 'd4ae0a0b1a412c70cf38bace34efd9fd459736f0e8c4d13ded0c53cab43e772d',
+    'pyproject.toml': '1fa3f76b9d84bb385aa4a7557416c172a54572c6d380c1ca1d64ddae31457f38',
+    'requirements-quality.in': 'eccd79884fb38364cc396e59e22eb5a78f48bbf92e2c0b47825dcff473692185',
+    'requirements-quality.txt': '845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722',
+    'scripts/check_accessibility.mjs': '3527da1c09ea99c33092980393fb1c67caadfc16c3bad8ca3bd3af7b2107412f',
+    'scripts/check_quality.mjs': '51d72e7ccb7e9716acfc50e39bdf692a2512532e6da91491358da1437f4794d8',
+    'scripts/quality_policy.mjs': 'e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89',
+    'tests/quality.test.mjs': '71150f603988dcb2429b56de76e3535b0268fbf180b12ecbe998c23c235e52c1',
+    'tests/report.test.mjs': 'a7d30de36267c336519993ae3cc8e3ee22c93296c4b98f22deab1a7cbe191660',
+    'tsconfig.json': '7fc2201f2a59527b82ba606b5e28ef3e3c192389c748580fd65dea824ffd30d5',
+    'types/browser-tools.d.ts': '0a5352e697b9e2a51651016ac789287acb71d48fdc04027d80a4050b604f579e'
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

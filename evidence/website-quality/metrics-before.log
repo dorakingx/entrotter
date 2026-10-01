@@ -1,0 +1,98 @@
+
+> entrotter-oss-website@0.1.0 test
+> node --test tests/report.test.mjs
+
+TAP version 13
+# Subtest: production JS verifies Python artifact: liquidity-shock
+ok 1 - production JS verifies Python artifact: liquidity-shock
+  ---
+  duration_ms: 3.05225
+  ...
+# Subtest: production JS verifies Python artifact: recovery-trap
+ok 2 - production JS verifies Python artifact: recovery-trap
+  ---
+  duration_ms: 1.328875
+  ...
+# Subtest: production JS verifies Python artifact: depeg-stress
+ok 3 - production JS verifies Python artifact: depeg-stress
+  ---
+  duration_ms: 0.828792
+  ...
+# Subtest: tampered metric fails integrity validation
+ok 4 - tampered metric fails integrity validation
+  ---
+  duration_ms: 0.819583
+  ...
+# Subtest: unknown schema is not accepted
+ok 5 - unknown schema is not accepted
+  ---
+  duration_ms: 0.48475
+  ...
+# Subtest: canonical ASCII escaping includes supplementary Unicode
+ok 6 - canonical ASCII escaping includes supplementary Unicode
+  ---
+  duration_ms: 0.090291
+  ...
+# Subtest: finite numerical display validation
+ok 7 - finite numerical display validation
+  ---
+  duration_ms: 0.078667
+  ...
+# Subtest: JS re-canonicalization matches exported content hash
+ok 8 - JS re-canonicalization matches exported content hash
+  ---
+  duration_ms: 0.8665
+  ...
+# Subtest: real archived-state artifact passes hash and receipt view validation
+ok 9 - real archived-state artifact passes hash and receipt view validation
+  ---
+  duration_ms: 2.269917
+  ...
+# Subtest: token units preserve integers beyond Number safe precision
+ok 10 - token units preserve integers beyond Number safe precision
+  ---
+  duration_ms: 0.109583
+  ...
+# Subtest: missing source hash cannot appear as a historical report
+ok 11 - missing source hash cannot appear as a historical report
+  ---
+  duration_ms: 0.228833
+  ...
+# Subtest: mismatched token addresses cannot share a comparison row
+ok 12 - mismatched token addresses cannot share a comparison row
+  ---
+  duration_ms: 0.159709
+  ...
+# Subtest: malformed receipt state and oversized traces fail closed
+ok 13 - malformed receipt state and oversized traces fail closed
+  ---
+  duration_ms: 0.317666
+  ...
+# Subtest: display metrics reject coercible non-decimal strings
+not ok 14 - display metrics reject coercible non-decimal strings
+  ---
+  duration_ms: 0.669584
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file://<workspace>/entrotter.github.io/tests/report.test.mjs:73:12)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:568:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:315:27)
+    Test.postRun (node:internal/test_runner/test:637:19)
+    Test.run (node:internal/test_runner/test:596:10)
+    async Test.processPendingSubtests (node:internal/test_runner/test:315:7)
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 13
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 56.506959

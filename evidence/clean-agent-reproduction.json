@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "wall_seconds_including_clone_and_venv": 5.147631457977695,
+  "mode": "recorded-agent-local-evm",
+  "under_five_minutes": true,
+  "dependency_pins": {
+    "engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+    "sdk-python": "f65f45de26c2658e2269a02a5dbe7c90c74b1cba",
+    "cli": "b6a7f4d96cec08f4779968b9f63bab3f9b405fe8",
+    "scenarios": "828cfe37f2a2d6d7f2db868a0856a28c080b7a94",
+    "entrotter.github.io": "ab121348b0ffbec5650f9eadf0a0b11f639d9780"
+  },
+  "environment": "fresh venv without pip; no system site packages or third-party runtime dependencies",
+  "artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b",
+  "matches_recorded_sample": true,
+  "scope": "five code/data/site repos; coordination checkout already present"
+}

@@ -1,0 +1,22 @@
+test_absolute_deadline_closes_idle_socket_and_returns_capacity (test_api_limits.APILimitTests.test_absolute_deadline_closes_idle_socket_and_returns_capacity) ... ok
+test_eight_idle_connections_bound_handlers_and_recover (test_api_limits.APILimitTests.test_eight_idle_connections_bound_handlers_and_recover) ... ok
+test_exclusive_store_lock_returns_503_then_recovers (test_api_limits.APILimitTests.test_exclusive_store_lock_returns_503_then_recovers) ... ok
+test_full_store_returns_507_and_retains_saved_report (test_api_limits.APILimitTests.test_full_store_returns_507_and_retains_saved_report) ... ok
+test_overload_client_that_never_sends_cannot_block_accept_loop (test_api_limits.APILimitTests.test_overload_client_that_never_sends_cannot_block_accept_loop) ... ok
+test_overload_response_survives_post_body_sent_after_headers (test_api_limits.APILimitTests.test_overload_response_survives_post_body_sent_after_headers) ... ERROR
+test_oversized_stored_file_and_symlink_are_not_served (test_api_limits.APILimitTests.test_oversized_stored_file_and_symlink_are_not_served) ... ok
+test_slow_header_progress_does_not_extend_absolute_deadline (test_api_limits.APILimitTests.test_slow_header_progress_does_not_extend_absolute_deadline) ... ok
+
+======================================================================
+ERROR: test_overload_response_survives_post_body_sent_after_headers (test_api_limits.APILimitTests.test_overload_response_survives_post_body_sent_after_headers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/tests/test_api_limits.py", line 109, in test_overload_response_survives_post_body_sent_after_headers
+    client.sendall(b'x' * 4096)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+----------------------------------------------------------------------
+Ran 8 tests in 4.551s
+
+FAILED (errors=1)

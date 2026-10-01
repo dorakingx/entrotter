@@ -1,0 +1,80 @@
+test_frozen_inputs_and_split_are_unchanged (test_benchmark_cases.FrozenCaseTests.test_frozen_inputs_and_split_are_unchanged) ... ok
+test_existing_report_envelope_still_accepts_no_agent (test_recording_schema.RecordingSchemaTests.test_existing_report_envelope_still_accepts_no_agent) ... ok
+test_shape_rejects_executable_action_extensions (test_recording_schema.RecordingSchemaTests.test_shape_rejects_executable_action_extensions) ... ERROR
+test_all_runtime_validate (test_scenarios.ScenarioTests.test_all_runtime_validate) ... ok
+test_json_schema (test_scenarios.ScenarioTests.test_json_schema) ... ok
+test_manifest_paths (test_scenarios.ScenarioTests.test_manifest_paths) ... ok
+test_no_real_claims_in_synthetic (test_scenarios.ScenarioTests.test_no_real_claims_in_synthetic) ... ok
+
+======================================================================
+ERROR: test_shape_rejects_executable_action_extensions (test_recording_schema.RecordingSchemaTests.test_shape_rejects_executable_action_extensions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/referencing/_core.py", line 428, in get_or_retrieve
+    resource = registry._retrieve(uri)
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/jsonschema/validators.py", line 112, in _warn_for_remote_retrieve
+    request = Request(uri, headers=headers)  # noqa: S310
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py", line 292, in __init__
+    self.full_url = url
+    ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py", line 318, in full_url
+    self._parse()
+    ~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py", line 347, in _parse
+    raise ValueError("unknown url type: %r" % self.full_url)
+ValueError: unknown url type: 'agent-recording.v0.1.schema.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/referencing/_core.py", line 682, in lookup
+    retrieved = self._registry.get_or_retrieve(uri)
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/referencing/_core.py", line 435, in get_or_retrieve
+    raise exceptions.Unretrievable(ref=uri) from error
+referencing.exceptions.Unretrievable: 'agent-recording.v0.1.schema.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/jsonschema/validators.py", line 463, in _validate_reference
+    resolved = self._resolver.lookup(ref)
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/referencing/_core.py", line 686, in lookup
+    raise exceptions.Unresolvable(ref=ref) from error
+referencing.exceptions.Unresolvable: agent-recording.v0.1.schema.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_recording_schema.py", line 30, in test_shape_rejects_executable_action_extensions
+    Draft202012Validator(result_schema).validate({
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+        'schema_version': '0.1.0', 'artifact_id': 'a' * 64, 'mode': 'evm-local', 'scenario': {},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'baseline': {'metrics': {}, 'trace': []}, 'candidate': {'metrics': {}, 'trace': []},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'comparison': {}, 'assumptions': [], 'agent': recording})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/jsonschema/validators.py", line 450, in validate
+    for error in self.iter_errors(*args, **kwargs):
+                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/jsonschema/validators.py", line 384, in iter_errors
+    for error in errors:
+                 ^^^^^^
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/jsonschema/_keywords.py", line 296, in properties
+    yield from validator.descend(
+    ...<4 lines>...
+    )
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/jsonschema/validators.py", line 432, in descend
+    for error in errors:
+                 ^^^^^^
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/jsonschema/_keywords.py", line 275, in ref
+    yield from validator._validate_reference(ref=ref, instance=instance)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/.tools/coordination-quality-venv/lib/python3.13/site-packages/jsonschema/validators.py", line 465, in _validate_reference
+    raise exceptions._WrappedReferencingError(err) from err
+jsonschema.exceptions._WrappedReferencingError: Unresolvable: agent-recording.v0.1.schema.json
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.022s
+
+FAILED (errors=1)

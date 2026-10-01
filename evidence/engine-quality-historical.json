@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "full_artifact_matches_public_reference": true,
+  "artifact_id": "6c358340e3b1227fccb4398802d30fefe27877aeacbacf8bd313c9c65c13a453",
+  "wall_seconds": 9.73598166697775,
+  "scope": "Native supplied-action archived-state check after formatting and typing changes; no agent rerun"
+}

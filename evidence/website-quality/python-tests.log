@@ -1,0 +1,15 @@
+test_csp (test_site.SiteTests.test_csp) ... ok
+test_internal_anchors (test_site.SiteTests.test_internal_anchors) ... ok
+test_mascot_asset (test_site.SiteTests.test_mascot_asset) ... ok
+test_no_custom_domain (test_site.SiteTests.test_no_custom_domain) ... ok
+test_no_duplicate_ids (test_site.SiteTests.test_no_duplicate_ids) ... ok
+test_no_inner_html (test_site.SiteTests.test_no_inner_html) ... ok
+test_no_remote_scripts (test_site.SiteTests.test_no_remote_scripts) ... ok
+test_not_business_saas (test_site.SiteTests.test_not_business_saas) ... ok
+test_public_reports_valid_hashes (test_site.SiteTests.test_public_reports_valid_hashes) ... ok
+test_workflow_stages_allowlisted_files (test_site.SiteTests.test_workflow_stages_allowlisted_files) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.010s
+
+OK

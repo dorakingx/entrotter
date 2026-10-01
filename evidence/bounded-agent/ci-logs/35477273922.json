@@ -1,0 +1,61 @@
+{
+  "conclusion": "success",
+  "databaseId": 35477273922,
+  "headSha": "abb4662ce960e08b2aa3a2c8a1c10719339edccc",
+  "jobs": [
+    {
+      "completedAt": "2026-09-19T23:52:29Z",
+      "conclusion": "success",
+      "databaseId": 105988571003,
+      "name": "docs-links",
+      "startedAt": "2026-09-19T23:52:21Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-09-19T23:52:24Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-09-19T23:52:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:52:25Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "startedAt": "2026-09-19T23:52:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:52:28Z",
+          "conclusion": "success",
+          "name": "Run entrotter/entrotter/.github/actions/docs-links@ea74aec66c5234edb935e4b12c14ec686dc73f80",
+          "number": 3,
+          "startedAt": "2026-09-19T23:52:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:52:28Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 6,
+          "startedAt": "2026-09-19T23:52:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-09-19T23:52:28Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 7,
+          "startedAt": "2026-09-19T23:52:28Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/entrotter/engine/actions/runs/35477273922/job/105988571003"
+    }
+  ],
+  "name": "Documentation links",
+  "status": "completed",
+  "url": "https://github.com/entrotter/engine/actions/runs/35477273922"
+}

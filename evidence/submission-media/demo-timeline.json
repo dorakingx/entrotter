@@ -1,0 +1,183 @@
+{
+  "scenes": [
+    {
+      "id": "intro",
+      "label": "01 / THE REAL VIEWER",
+      "narration": [
+        "This is Entrotter, a local test bench for onchain agent decisions. The recording uses the actual report viewer and the bounded engine review branch.",
+        "The narration is synthetic. The browser interactions and process outputs are real; no wallet or production signing key is used."
+      ],
+      "start": 1.0,
+      "end": 20.081995464852607
+    },
+    {
+      "id": "historical",
+      "label": "02 / AN ADVERSE OUTCOME",
+      "narration": [
+        "Choose the Ethereum and Uniswap example. Both branches start at the same pinned historical state, with explicitly artificial funding.",
+        "The baseline swap succeeds. The changed minimum output makes the candidate transaction revert. Native and token balance changes are exact units, not a claim of profit."
+      ],
+      "start": 20.081995464852607,
+      "end": 40.65006802721088
+    },
+    {
+      "id": "source",
+      "label": "03 / INSPECT THE ASSUMPTIONS",
+      "narration": [
+        "The source section records Ethereum block nineteen million and its hash. The receipts show which supplied actions succeeded or reverted, and their gas use.",
+        "These are actions re-executed against archived state. The experiment does not reconstruct later market behavior, transaction ordering, or future prices."
+      ],
+      "start": 40.65006802721088,
+      "end": 61.612879818594095
+    },
+    {
+      "id": "run",
+      "label": "04 / ACTUAL BOUNDED EXECUTION",
+      "narration": [
+        "Now the recording console starts real Python calls to the configured Docker worker. First, the built-in risk policy evaluates a local transfer and a reverting proposal.",
+        "Then it replays the previously recorded model decisions against fresh observations. The complete result must match the original artifact, or the command fails."
+      ],
+      "start": 61.612879818594095,
+      "end": 84.45650793650793
+    },
+    {
+      "id": "run_result",
+      "label": "05 / AN EXACT REPLAY",
+      "narration": [
+        "The risk policy executes the transfer and holds the reverting proposal. The recorded model replay produces the original content identifier, with complete JSON equality.",
+        "No model is called during this replay. The worker uses one CPU, five hundred twelve mebibytes of memory, and an independent lifetime limit. Native custom providers are a separate, unsandboxed path."
+      ],
+      "start": 84.45650793650793,
+      "end": 109.48281179138323
+    },
+    {
+      "id": "import",
+      "label": "06 / OPEN THE GENERATED RESULT",
+      "narration": [
+        "Open the result that the command just generated. The viewer shows the baseline revert and the candidate hold from that exact local experiment.",
+        "The source JSON preserves the recorded observations, typed choices, provider metadata and assumptions. A content hash detects changed content; it does not establish that a model is correct."
+      ],
+      "start": 109.48281179138323,
+      "end": 131.6878911564626
+    },
+    {
+      "id": "invalid",
+      "label": "07 / REJECT ALTERED CONTENT",
+      "narration": [
+        "Here is the same report with a deliberately incorrect content hash. The viewer rejects it and clears the previous result.",
+        "Loading the original generated report recovers normally. Local imports stay in this browser; the recording checks that no upload or third-party request occurs."
+      ],
+      "start": 131.6878911564626,
+      "end": 150.06167800453517
+    },
+    {
+      "id": "end",
+      "label": "08 / REPRODUCE AND REVIEW",
+      "narration": [
+        "The broader check reproduced nineteen existing reports, including twelve agent records. The evaluated model matched the risk rule; no model advantage is claimed.",
+        "Use the public code and evidence to reproduce a case of your own. This integration is an open review branch, not a claim of a merged release or a finished competition submission."
+      ],
+      "start": 150.06167800453517,
+      "end": 173.13750566893427
+    }
+  ],
+  "captions": [
+    {
+      "start": 1.0,
+      "end": 10.787210884353742,
+      "text": "This is Entrotter, a local test bench for onchain agent decisions. The recording uses the actual report viewer and the bounded engine review branch.",
+      "scene": "intro"
+    },
+    {
+      "start": 11.237210884353741,
+      "end": 19.131995464852608,
+      "text": "The narration is synthetic. The browser interactions and process outputs are real; no wallet or production signing key is used.",
+      "scene": "intro"
+    },
+    {
+      "start": 20.081995464852607,
+      "end": 29.091337868480725,
+      "text": "Choose the Ethereum and Uniswap example. Both branches start at the same pinned historical state, with explicitly artificial funding.",
+      "scene": "historical"
+    },
+    {
+      "start": 29.541337868480724,
+      "end": 39.70006802721088,
+      "text": "The baseline swap succeeds. The changed minimum output makes the candidate transaction revert. Native and token balance changes are exact units, not a claim of profit.",
+      "scene": "historical"
+    },
+    {
+      "start": 40.65006802721088,
+      "end": 50.39083900226757,
+      "text": "The source section records Ethereum block nineteen million and its hash. The receipts show which supplied actions succeeded or reverted, and their gas use.",
+      "scene": "source"
+    },
+    {
+      "start": 50.840839002267565,
+      "end": 60.66287981859409,
+      "text": "These are actions re-executed against archived state. The experiment does not reconstruct later market behavior, transaction ordering, or future prices.",
+      "scene": "source"
+    },
+    {
+      "start": 61.612879818594095,
+      "end": 72.67718820861677,
+      "text": "Now the recording console starts real Python calls to the configured Docker worker. First, the built-in risk policy evaluates a local transfer and a reverting proposal.",
+      "scene": "run"
+    },
+    {
+      "start": 73.12718820861677,
+      "end": 83.50650793650793,
+      "text": "Then it replays the previously recorded model decisions against fresh observations. The complete result must match the original artifact, or the command fails.",
+      "scene": "run"
+    },
+    {
+      "start": 84.45650793650793,
+      "end": 94.91709750566893,
+      "text": "The risk policy executes the transfer and holds the reverting proposal. The recorded model replay produces the original content identifier, with complete JSON equality.",
+      "scene": "run_result"
+    },
+    {
+      "start": 95.36709750566894,
+      "end": 108.53281179138322,
+      "text": "No model is called during this replay. The worker uses one CPU, five hundred twelve mebibytes of memory, and an independent lifetime limit. Native custom providers are a separate, unsandboxed path.",
+      "scene": "run_result"
+    },
+    {
+      "start": 109.48281179138323,
+      "end": 117.76072562358277,
+      "text": "Open the result that the command just generated. The viewer shows the baseline revert and the candidate hold from that exact local experiment.",
+      "scene": "import"
+    },
+    {
+      "start": 118.21072562358277,
+      "end": 130.73789115646258,
+      "text": "The source JSON preserves the recorded observations, typed choices, provider metadata and assumptions. A content hash detects changed content; it does not establish that a model is correct.",
+      "scene": "import"
+    },
+    {
+      "start": 131.6878911564626,
+      "end": 139.31564625850342,
+      "text": "Here is the same report with a deliberately incorrect content hash. The viewer rejects it and clears the previous result.",
+      "scene": "invalid"
+    },
+    {
+      "start": 139.7656462585034,
+      "end": 149.11167800453515,
+      "text": "Loading the original generated report recovers normally. Local imports stay in this browser; the recording checks that no upload or third-party request occurs.",
+      "scene": "invalid"
+    },
+    {
+      "start": 150.06167800453517,
+      "end": 160.31328798185942,
+      "text": "The broader check reproduced nineteen existing reports, including twelve agent records. The evaluated model matched the risk rule; no model advantage is claimed.",
+      "scene": "end"
+    },
+    {
+      "start": 160.76328798185943,
+      "end": 172.18750566893425,
+      "text": "Use the public code and evidence to reproduce a case of your own. This integration is an open review branch, not a claim of a merged release or a finished competition submission.",
+      "scene": "end"
+    }
+  ],
+  "duration": 174.13750566893427
+}

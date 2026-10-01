@@ -1,0 +1,86 @@
+{
+  "checked_at": "2026-09-20T01:31:43.834656+00:00",
+  "scope": "G3 scoped good-first-issue availability in every repository; does not claim completion of the issue tasks or any other release gate",
+  "issues": [
+    {
+      "repository": "entrotter",
+      "number": 44,
+      "title": "Add a safe, reproducible bug-report walkthrough",
+      "url": "https://github.com/entrotter/entrotter/issues/44",
+      "state": "OPEN",
+      "labels": [
+        "documentation",
+        "good first issue"
+      ],
+      "body_sha256": "8442c62cecca69e8b7fccbed58edcc6a637cb58ee80c93e289fac0e69281ec98",
+      "new_this_checkpoint": true
+    },
+    {
+      "repository": "engine",
+      "number": 23,
+      "title": "Explain success, reverted, rejected and noop EVM outcomes",
+      "url": "https://github.com/entrotter/engine/issues/23",
+      "state": "OPEN",
+      "labels": [
+        "documentation",
+        "good first issue"
+      ],
+      "body_sha256": "47c434fdfe58b5d71497d832c2874264329696570a92a2d764f974297b518efd",
+      "new_this_checkpoint": true
+    },
+    {
+      "repository": "sdk-python",
+      "number": 1,
+      "title": "Add a small end-to-end SDK example",
+      "url": "https://github.com/entrotter/sdk-python/issues/1",
+      "state": "OPEN",
+      "labels": [
+        "good first issue"
+      ],
+      "body_sha256": "9cf78b4e6cbac1f73c1533bdc15e38fd10a6d5dbb3adec7b2bf751a5bd94e09d",
+      "new_this_checkpoint": false
+    },
+    {
+      "repository": "cli",
+      "number": 1,
+      "title": "Improve CLI errors and command examples",
+      "url": "https://github.com/entrotter/cli/issues/1",
+      "state": "OPEN",
+      "labels": [
+        "good first issue"
+      ],
+      "body_sha256": "5415c0df8dc3b5c843093421fe6cb14daea7c064001fde865b5159aa8cbbf84c",
+      "new_this_checkpoint": false
+    },
+    {
+      "repository": "scenarios",
+      "number": 9,
+      "title": "Add a field-by-field walkthrough of the recovery-trap fixture",
+      "url": "https://github.com/entrotter/scenarios/issues/9",
+      "state": "OPEN",
+      "labels": [
+        "documentation",
+        "good first issue"
+      ],
+      "body_sha256": "4fc7efd391667ca3ad416d93e0c48186f4857342efa4870e239d711a81742e3c",
+      "new_this_checkpoint": true
+    },
+    {
+      "repository": "entrotter.github.io",
+      "number": 12,
+      "title": "Add a manual accessibility review checklist for the report viewer",
+      "url": "https://github.com/entrotter/entrotter.github.io/issues/12",
+      "state": "OPEN",
+      "labels": [
+        "documentation",
+        "good first issue"
+      ],
+      "body_sha256": "0b9cc4f7ab352d93dbbe0fa5e578c1c5d89b32cc0fd03992a81659914ed1ff2a",
+      "new_this_checkpoint": true
+    }
+  ],
+  "all_six_have_open_labeled_issue": true,
+  "new_issues": 4,
+  "existing_issues_reused": 2,
+  "outreach_or_assignments": false
+}

@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-09-19T19:26:08.030904+00:00",
+  "url": "https://entrotter.github.io/",
+  "status": 200,
+  "current_main": "ab121348b0ffbec5650f9eadf0a0b11f639d9780",
+  "html_sha256": "6ddcbddd33455f78e796ca642b011216418fdf9b377b3ee8c353088f2a12c4c9",
+  "html_matches_main": true,
+  "accessibility_pr": 10,
+  "accessibility_changes_deployed": false,
+  "note": "The unchanged previously deployed EVM viewer is live; proposed accessibility changes require independent review and merge."
+}

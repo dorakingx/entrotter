@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "proof_commit": "77a754eec02d020291134ad80d7d69470e89c632",
+  "integration_run": 35472379661,
+  "links_run": 35472379628,
+  "all_three_jobs_passed": true,
+  "source_checker_shared_protocol_and_pins_match": true,
+  "full_fixture_and_evm_artifact_ids_match": true,
+  "image_source_files_and_native_binary_match": true,
+  "clean_reproduction_seconds": 6.277971051999998,
+  "scope": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included."
+}

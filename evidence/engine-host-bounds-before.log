@@ -1,0 +1,26 @@
+test_auth (test_api.APITests.test_auth) ... ok
+test_browser_request_rejected (test_api.APITests.test_browser_request_rejected) ... ok
+test_concurrency_limit (test_api.APITests.test_concurrency_limit) ... ok
+test_content_type (test_api.APITests.test_content_type) ... ok
+test_dns_rebinding_guard (test_api.APITests.test_dns_rebinding_guard) ... ok
+test_health (test_api.APITests.test_health) ... ok
+test_invalid_scenario (test_api.APITests.test_invalid_scenario) ... ok
+test_missing_report (test_api.APITests.test_missing_report) ... ok
+test_path_traversal (test_api.APITests.test_path_traversal) ... ok
+test_payload_limit (test_api.APITests.test_payload_limit) ... ok
+test_report_filename_must_match_content_hash (test_api.APITests.test_report_filename_must_match_content_hash) ... FAIL
+test_roundtrip (test_api.APITests.test_roundtrip) ... ok
+
+======================================================================
+FAIL: test_report_filename_must_match_content_hash (test_api.APITests.test_report_filename_must_match_content_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/engine/tests/test_api.py", line 38, in test_report_filename_must_match_content_hash
+    self.assertEqual(status, 500)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 200 != 500
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.528s
+
+FAILED (failures=1)

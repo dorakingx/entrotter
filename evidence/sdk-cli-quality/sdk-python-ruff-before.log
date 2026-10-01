@@ -1,0 +1,12 @@
+E701 Multiple statements on one line (colon)
+  --> src/entrotter_sdk/client.py:79:44
+   |
+77 |                 raise ClientError("Result exceeds the 16 MiB client limit")
+78 |             result = json.loads(content)
+79 |             if not isinstance(result, dict): raise ClientError("Invalid JSON response")
+   |                                            ^
+80 |             return result
+81 |         except HTTPError as e:
+   |
+
+Found 1 error.

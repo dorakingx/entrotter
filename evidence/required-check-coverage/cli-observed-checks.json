@@ -1,0 +1,50 @@
+{
+  "total_count": 5,
+  "check_runs": [
+    {
+      "name": "unit (3.11)",
+      "head_sha": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/cli/actions/runs/35471836943/job/105974068734"
+    },
+    {
+      "name": "unit (3.12)",
+      "head_sha": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/cli/actions/runs/35471836943/job/105974068720"
+    },
+    {
+      "name": "unit (3.13)",
+      "head_sha": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/cli/actions/runs/35471836943/job/105974068695"
+    },
+    {
+      "name": "quality",
+      "head_sha": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/cli/actions/runs/35471836965/job/105974068689"
+    },
+    {
+      "name": "docs-links",
+      "head_sha": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/cli/actions/runs/35471836942/job/105974068656"
+    }
+  ]
+}

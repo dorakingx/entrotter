@@ -1,0 +1,214 @@
+{
+  "checked_at": "2026-09-19T18:34:14.335712+00:00",
+  "source_commit": "706a5ea138e08bc4723b43b3abe57030a29b8a53",
+  "worktree_dirty": false,
+  "checker": "lychee 0.24.2",
+  "checker_sha256": "87e6e75195df5753f08c53b5c0a13694b8328edd8df009914ae9e29b5000162d",
+  "files": {
+    ".github/PULL_REQUEST_TEMPLATE.md": "f8840c1975bc5aabfdedbd13d69de905fc19b7c9ad4c9b965f48e2b4c20b405d",
+    "AGENTS.md": "d1d8e6c41d67cbcd2ee82f7dcbb50568189acfcf92508b60731eed8de480e303",
+    "CONTRIBUTING.md": "e0c64ae5088a13a0b87a0f2e36a7dc8a8b670e6e5db2ebdd71f3ab0e578c7c2b",
+    "README.md": "1ad81daffc1092a9e4e89fa21eada5e509861c925bee6c6b6a8cc8cc52a09bbe",
+    "SECURITY.md": "06f4d07eae20821a11549334d9f6733aa84ce18847bc8ec59459ac93b2b49514",
+    "benchmarks/causal-v1/README.md": "d562bf71890297d513a4f7d6dd7eacad8e7f91a5fac5161323e5010b8ca0ce81"
+  },
+  "lychee_exit_code": 0,
+  "passed": true,
+  "path_redaction": "Local checkout prefix replaced with /workspace/repository",
+  "report": {
+    "total": 11,
+    "unique": 9,
+    "successful": 11,
+    "unknown": 0,
+    "unsupported": 0,
+    "timeouts": 0,
+    "redirects": 0,
+    "remaps": 0,
+    "excludes": 0,
+    "errors": 0,
+    "cached": 0,
+    "success_map": {
+      "CONTRIBUTING.md": [
+        {
+          "url": "file:///workspace/repository/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 5,
+            "column": 28
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 4066
+          }
+        }
+      ],
+      "benchmarks/causal-v1/README.md": [
+        {
+          "url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 40,
+            "column": 22
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 478675561
+          }
+        },
+        {
+          "url": "https://developers.circle.com/stablecoins/usdc-contract-addresses",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 41,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 556592776
+          }
+        }
+      ],
+      "README.md": [
+        {
+          "url": "https://developers.circle.com/stablecoins/usdc-contract-addresses",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 70,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 79364099
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 611839343
+          }
+        },
+        {
+          "url": "file:///workspace/repository/CONTRIBUTING.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 108
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10185
+          }
+        },
+        {
+          "url": "file:///workspace/repository/LICENSE",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 168
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 5138
+          }
+        },
+        {
+          "url": "https://developers.uniswap.org/docs/protocols/v3/deployments/v3-ethereum-deployments",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 69,
+            "column": 22
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 477008347
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter/tree/main/evidence",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 72,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 286460801
+          }
+        },
+        {
+          "url": "file:///workspace/repository/benchmarks/causal-v1/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 91,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 36254
+          }
+        },
+        {
+          "url": "file:///workspace/repository/SECURITY.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 142
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 4928
+          }
+        }
+      ]
+    },
+    "error_map": {},
+    "timeout_map": {},
+    "suggestion_map": {},
+    "redirect_map": {},
+    "excluded_map": {},
+    "duration": {
+      "secs": 0,
+      "nanos": 765702106
+    },
+    "detailed_stats": true
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "checked_at": "2026-09-20T00:56:28.421093+00:00",
+  "status": "applied_and_read_back",
+  "results": [
+    {
+      "repository": "entrotter",
+      "before_count": 1,
+      "after_count": 5,
+      "additions": [
+        "bounded-default",
+        "docs-links",
+        "host-bounds",
+        "quality"
+      ],
+      "strict": true,
+      "app_id": 15368,
+      "approvals": 1,
+      "enforce_admins": true,
+      "other_protection_fields_unchanged": true
+    },
+    {
+      "repository": "engine",
+      "before_count": 4,
+      "after_count": 8,
+      "additions": [
+        "docs-links",
+        "isolated",
+        "quality",
+        "unit (3.14)"
+      ],
+      "strict": true,
+      "app_id": 15368,
+      "approvals": 1,
+      "enforce_admins": true,
+      "other_protection_fields_unchanged": true
+    },
+    {
+      "repository": "sdk-python",
+      "before_count": 3,
+      "after_count": 5,
+      "additions": [
+        "docs-links",
+        "quality"
+      ],
+      "strict": true,
+      "app_id": 15368,
+      "approvals": 1,
+      "enforce_admins": true,
+      "other_protection_fields_unchanged": true
+    },
+    {
+      "repository": "cli",
+      "before_count": 3,
+      "after_count": 5,
+      "additions": [
+        "docs-links",
+        "quality"
+      ],
+      "strict": true,
+      "app_id": 15368,
+      "approvals": 1,
+      "enforce_admins": true,
+      "other_protection_fields_unchanged": true
+    },
+    {
+      "repository": "scenarios",
+      "before_count": 1,
+      "after_count": 5,
+      "additions": [
+        "compatibility (3.11, bb8b3e8d32c7cbd49629d337758f30bfdf805045)",
+        "compatibility (3.13, 0d3857839b2187541e573bec2e58042ad5bf0b45)",
+        "docs-links",
+        "quality"
+      ],
+      "strict": true,
+      "app_id": 15368,
+      "approvals": 1,
+      "enforce_admins": true,
+      "other_protection_fields_unchanged": true
+    },
+    {
+      "repository": "entrotter.github.io",
+      "before_count": 1,
+      "after_count": 4,
+      "additions": [
+        "accessibility",
+        "docs-links",
+        "quality"
+      ],
+      "strict": true,
+      "app_id": 15368,
+      "approvals": 1,
+      "enforce_admins": true,
+      "other_protection_fields_unchanged": true
+    }
+  ],
+  "no_required_checks_removed": true,
+  "no_branch_push_merge_or_deployment": true
+}

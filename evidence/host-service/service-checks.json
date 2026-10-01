@@ -1,0 +1,138 @@
+{
+  "service": {
+    "RuntimeMaxUSec": "1h",
+    "MainPID": "2642",
+    "Result": "success",
+    "ControlGroup": "/user.slice/user-501.slice/user@501.service/app.slice/entrotter-engine.service",
+    "MemoryMax": "268435456",
+    "MemorySwapMax": "0",
+    "TasksMax": "64",
+    "ActiveState": "active"
+  },
+  "kernel_limits": {
+    "cpu.max": "100000 100000",
+    "memory.max": "268435456",
+    "memory.swap.max": "0",
+    "pids.max": "64"
+  },
+  "reports": [
+    {
+      "case": "fixture",
+      "artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+      "mode": "fixture",
+      "api_cli_exact_equality": true
+    },
+    {
+      "case": "local",
+      "artifact_id": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7",
+      "mode": "evm-local",
+      "api_cli_exact_equality": true
+    }
+  ],
+  "probes": [
+    {
+      "probe": "cpu",
+      "result": {
+        "ActiveState": "inactive",
+        "Result": "success",
+        "MainPID": "0"
+      },
+      "configured_properties": {
+        "CPUQuota": "100%",
+        "MemoryMax": "256M",
+        "MemorySwapMax": "0",
+        "TasksMax": "64",
+        "LimitNOFILE": "256",
+        "LimitCORE": "0",
+        "NoNewPrivileges": "yes",
+        "KillMode": "control-group",
+        "RuntimeMaxSec": "15s",
+        "TimeoutStopSec": "1s",
+        "Restart": "no"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 3.138127087000157,
+      "output": "{\"stage\": \"admission\", \"limits\": {\"cpu_quota_us\": 100000, \"cpu_period_us\": 100000, \"memory_bytes\": 268435456, \"swap_bytes\": 0, \"tasks\": 64}}\n{\"kind\": \"cpu\", \"throttled_periods\": 30}"
+    },
+    {
+      "probe": "pids",
+      "result": {
+        "ActiveState": "inactive",
+        "Result": "success",
+        "MainPID": "0"
+      },
+      "configured_properties": {
+        "CPUQuota": "100%",
+        "MemoryMax": "256M",
+        "MemorySwapMax": "0",
+        "TasksMax": "64",
+        "LimitNOFILE": "256",
+        "LimitCORE": "0",
+        "NoNewPrivileges": "yes",
+        "KillMode": "control-group",
+        "RuntimeMaxSec": "15s",
+        "TimeoutStopSec": "1s",
+        "Restart": "no"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 0.31910577000007834,
+      "output": "{\"stage\": \"admission\", \"limits\": {\"cpu_quota_us\": 100000, \"cpu_period_us\": 100000, \"memory_bytes\": 268435456, \"swap_bytes\": 0, \"tasks\": 64}}\n{\"kind\": \"pids\", \"children\": 63, \"errno\": 11, \"events\": \"max 2\\n\"}"
+    },
+    {
+      "probe": "memory",
+      "result": {
+        "ActiveState": "failed",
+        "Result": "oom-kill",
+        "MainPID": "0"
+      },
+      "configured_properties": {
+        "CPUQuota": "100%",
+        "MemoryMax": "256M",
+        "MemorySwapMax": "0",
+        "TasksMax": "64",
+        "LimitNOFILE": "256",
+        "LimitCORE": "0",
+        "NoNewPrivileges": "yes",
+        "KillMode": "control-group",
+        "RuntimeMaxSec": "15s",
+        "TimeoutStopSec": "1s",
+        "Restart": "no"
+      },
+      "exit_code": 1,
+      "elapsed_seconds": 0.15188007599999764,
+      "output": "{\"stage\": \"admission\", \"limits\": {\"cpu_quota_us\": 100000, \"cpu_period_us\": 100000, \"memory_bytes\": 268435456, \"swap_bytes\": 0, \"tasks\": 64}}"
+    },
+    {
+      "probe": "runtime",
+      "result": {
+        "ActiveState": "failed",
+        "Result": "timeout",
+        "MainPID": "0"
+      },
+      "configured_properties": {
+        "CPUQuota": "100%",
+        "MemoryMax": "256M",
+        "MemorySwapMax": "0",
+        "TasksMax": "64",
+        "LimitNOFILE": "256",
+        "LimitCORE": "0",
+        "NoNewPrivileges": "yes",
+        "KillMode": "control-group",
+        "RuntimeMaxSec": "2s",
+        "TimeoutStopSec": "1s",
+        "Restart": "no"
+      },
+      "exit_code": 1,
+      "elapsed_seconds": 2.1491565799999535,
+      "output": "{\"stage\": \"admission\", \"limits\": {\"cpu_quota_us\": 100000, \"cpu_period_us\": 100000, \"memory_bytes\": 268435456, \"swap_bytes\": 0, \"tasks\": 64}}"
+    }
+  ],
+  "unbounded_start_rejected": {
+    "result": "exit-code",
+    "main_executable_started": false,
+    "exit_code": 1,
+    "diagnostics": "Running as unit: entrotter-host-proof-aa4d0be69e2648afbd8e152c90cb59ce.service; invocation ID: d193b7e6d927485dab550715aa609b91\nHost resource envelope rejected: invalid literal for int() with base 10: 'max'\nFinished with result: exit-code\nService runtime: 13ms\nCPU time consumed: 13ms\nMemory peak: 324.0K\nMemory swap peak: 0B\n"
+  },
+  "runtime_probe_seconds": 2,
+  "production_runtime_expiry_not_waited": true
+}

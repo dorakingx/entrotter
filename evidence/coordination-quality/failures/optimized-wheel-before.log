@@ -1,0 +1,19 @@
+test_optimized_interpreter_rejects_wrong_wheel_before_install (test_quality_guards.VerificationGuards.test_optimized_interpreter_rejects_wrong_wheel_before_install) ... FAIL
+
+======================================================================
+FAIL: test_optimized_interpreter_rejects_wrong_wheel_before_install (test_quality_guards.VerificationGuards.test_optimized_interpreter_rejects_wrong_wheel_before_install)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/entrotter/tests/test_quality_guards.py", line 46, in test_optimized_interpreter_rejects_wrong_wheel_before_install
+    self.assertEqual(json.loads(result.stdout), {'rejected':True, 'calls':[]})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'rejected': False, 'calls': ['installation_or_executi[25 chars]ror'} != {'rejected': True, 'calls': []}
++ {'calls': [], 'rejected': True}
+- {'calls': ['installation_or_execution'],
+-  'error': 'RuntimeError',
+-  'rejected': False}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.074s
+
+FAILED (failures=1)

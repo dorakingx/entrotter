@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "image_id": "sha256:626ca28986b4ca5da93df1438a705f1757bb35afcd42f77b539bab7d66d7a485",
+  "inventories": [
+    {
+      "type": "wolfi",
+      "class": "os-pkgs",
+      "packages": 26,
+      "findings": 0
+    }
+  ],
+  "vulnerability_count": 0,
+  "database_updated_at": "2026-09-19T07:03:12.311489574Z",
+  "database_next_update": "2026-09-20T07:03:12.311489134Z",
+  "policy": "Every detected vulnerability, including unfixed and unknown severity, fails; no suppression files or VEX",
+  "limitations": [
+    "Only detected OS/language packages are covered, not proof of absence of vulnerabilities",
+    "Native Anvil dependencies without embedded inventory remain outside this scan",
+    "Docker daemon, host kernel/VM and arbitrary user code are not audited"
+  ],
+  "source_digest": "fba06f6dd633858f91dd89d4f48a51c8447696f32e9eb3820302d09bcb379f42",
+  "auditor_sha256": "e84d1c8d37c33a176706b6cad3fe32c5f3b1f8faf96422f694cc088763ea8261",
+  "trivy_version": "0.74.0",
+  "trivy_archive_sha256": "1caada5e0e2091909357c7525d3aa76f4b660b13821bc143b190c7483e31cc11",
+  "cosign_version": "3.1.3",
+  "cosign_binary_sha256": "5cf948c2f4dfe59687bdd0b8523709067383e03982cc543475c8a7dc70e92a76",
+  "base_image": "cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20",
+  "verified_base_signer": "https://github.com/chainguard-images/images/.github/workflows/release.yaml@refs/heads/main",
+  "verified_base_issuer": "https://token.actions.githubusercontent.com",
+  "database_sha256": "d2011995903d437182133a086780524c5d7d309947cbcce3e546822a06dc54d2",
+  "report_sha256": "fc315108c3915467b9d04daeaa59339e1a5072fa55611f4e82e7c2968326a1be"
+}

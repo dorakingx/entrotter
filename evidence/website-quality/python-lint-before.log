@@ -1,0 +1,175 @@
+E702 Multiple statements on one line (semicolon)
+  --> tests/test_site.py:8:42
+   |
+ 6 | ROOT=Path(__file__).resolve().parents[1]
+ 7 | class HTML(HTMLParser):
+ 8 |     def __init__(self):super().__init__();self.scripts=[];self.ids=[];self.links=[];self.meta=[]
+   |                                          ^
+ 9 |     def handle_starttag(self,tag,attrs):
+10 |         a=dict(attrs)
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> tests/test_site.py:8:58
+   |
+ 6 | ROOT=Path(__file__).resolve().parents[1]
+ 7 | class HTML(HTMLParser):
+ 8 |     def __init__(self):super().__init__();self.scripts=[];self.ids=[];self.links=[];self.meta=[]
+   |                                                          ^
+ 9 |     def handle_starttag(self,tag,attrs):
+10 |         a=dict(attrs)
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> tests/test_site.py:8:70
+   |
+ 6 | ROOT=Path(__file__).resolve().parents[1]
+ 7 | class HTML(HTMLParser):
+ 8 |     def __init__(self):super().__init__();self.scripts=[];self.ids=[];self.links=[];self.meta=[]
+   |                                                                      ^
+ 9 |     def handle_starttag(self,tag,attrs):
+10 |         a=dict(attrs)
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> tests/test_site.py:8:84
+   |
+ 6 | ROOT=Path(__file__).resolve().parents[1]
+ 7 | class HTML(HTMLParser):
+ 8 |     def __init__(self):super().__init__();self.scripts=[];self.ids=[];self.links=[];self.meta=[]
+   |                                                                                    ^
+ 9 |     def handle_starttag(self,tag,attrs):
+10 |         a=dict(attrs)
+   |
+
+E701 Multiple statements on one line (colon)
+  --> tests/test_site.py:11:25
+   |
+ 9 |     def handle_starttag(self,tag,attrs):
+10 |         a=dict(attrs)
+11 |         if tag=='script':self.scripts.append(a.get('src'))
+   |                         ^
+12 |         if tag=='a':self.links.append(a.get('href',''))
+13 |         if tag=='meta':self.meta.append(a)
+   |
+
+E701 Multiple statements on one line (colon)
+  --> tests/test_site.py:12:20
+   |
+10 |         a=dict(attrs)
+11 |         if tag=='script':self.scripts.append(a.get('src'))
+12 |         if tag=='a':self.links.append(a.get('href',''))
+   |                    ^
+13 |         if tag=='meta':self.meta.append(a)
+14 |         if 'id' in a:self.ids.append(a['id'])
+   |
+
+E701 Multiple statements on one line (colon)
+  --> tests/test_site.py:13:23
+   |
+11 |         if tag=='script':self.scripts.append(a.get('src'))
+12 |         if tag=='a':self.links.append(a.get('href',''))
+13 |         if tag=='meta':self.meta.append(a)
+   |                       ^
+14 |         if 'id' in a:self.ids.append(a['id'])
+15 | class SiteTests(unittest.TestCase):
+   |
+
+E701 Multiple statements on one line (colon)
+  --> tests/test_site.py:14:21
+   |
+12 |         if tag=='a':self.links.append(a.get('href',''))
+13 |         if tag=='meta':self.meta.append(a)
+14 |         if 'id' in a:self.ids.append(a['id'])
+   |                     ^
+15 | class SiteTests(unittest.TestCase):
+16 |     def setUp(self):
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> tests/test_site.py:17:25
+   |
+15 | class SiteTests(unittest.TestCase):
+16 |     def setUp(self):
+17 |         self.html=HTML();self.html.feed((ROOT/'index.html').read_text())
+   |                         ^
+18 |     def test_no_remote_scripts(self):self.assertEqual(self.html.scripts,['app.js?v='+hashlib.sha256((ROOT/'app.js').read_bytes()).hexd…
+19 |     def test_no_duplicate_ids(self):self.assertEqual(len(self.html.ids),len(set(self.html.ids)))
+   |
+
+E701 Multiple statements on one line (colon)
+  --> tests/test_site.py:22:50
+   |
+20 |     def test_internal_anchors(self):
+21 |         for link in self.html.links:
+22 |             if link.startswith('#') and link!='#':self.assertIn(link[1:],self.html.ids)
+   |                                                  ^
+23 |     def test_csp(self):self.assertTrue(any(m.get('http-equiv')=='Content-Security-Policy' for m in self.html.meta))
+24 |     def test_no_inner_html(self):self.assertNotIn('.innerHTML',(ROOT/'app.js').read_text())
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> tests/test_site.py:28:40
+   |
+26 |     def test_public_reports_valid_hashes(self):
+27 |         for p in (ROOT/'reports').glob('*.json'):
+28 |             d=json.loads(p.read_text());supplied=d.pop('artifact_id')
+   |                                        ^
+29 |             data=json.dumps(d,sort_keys=True,separators=(',',':'),ensure_ascii=True).encode()
+30 |             self.assertEqual(hashlib.sha256(data).hexdigest(),supplied)
+   |
+
+E701 Multiple statements on one line (colon)
+  --> tests/test_site.py:32:37
+   |
+30 |             self.assertEqual(hashlib.sha256(data).hexdigest(),supplied)
+31 |             self.assertEqual(d['scenario']['provenance']['kind'], 'historical-fork' if d['mode']=='evm-fork' else 'synthetic')
+32 |             if d['mode']=='evm-fork': self.assertEqual(d['source']['block_hash'],d['scenario']['source']['block_hash'])
+   |                                     ^
+33 |     def test_not_business_saas(self):
+34 |         text=(ROOT/'index.html').read_text().lower()
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> tests/test_site.py:35:39
+   |
+33 |     def test_not_business_saas(self):
+34 |         text=(ROOT/'index.html').read_text().lower()
+35 |         self.assertNotIn('<form',text);self.assertNotIn('connect wallet',text);self.assertNotIn('stripe',text)
+   |                                       ^
+36 |     def test_workflow_stages_allowlisted_files(self):
+37 |         text=(ROOT/'.github/workflows/pages.yml').read_text()
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> tests/test_site.py:35:79
+   |
+33 |     def test_not_business_saas(self):
+34 |         text=(ROOT/'index.html').read_text().lower()
+35 |         self.assertNotIn('<form',text);self.assertNotIn('connect wallet',text);self.assertNotIn('stripe',text)
+   |                                                                               ^
+36 |     def test_workflow_stages_allowlisted_files(self):
+37 |         text=(ROOT/'.github/workflows/pages.yml').read_text()
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> tests/test_site.py:38:42
+   |
+36 |     def test_workflow_stages_allowlisted_files(self):
+37 |         text=(ROOT/'.github/workflows/pages.yml').read_text()
+38 |         self.assertIn('path: _site',text);self.assertIn('cp index.html',text)
+   |                                          ^
+39 |         self.assertNotIn('path: .\n',text)
+40 |     def test_mascot_asset(self):self.assertTrue((ROOT/'assets/icon.png').is_file())
+   |
+
+E701 Multiple statements on one line (colon)
+  --> tests/test_site.py:42:24
+   |
+40 |     def test_mascot_asset(self):self.assertTrue((ROOT/'assets/icon.png').is_file())
+41 |
+42 | if __name__=='__main__':unittest.main()
+   |                        ^
+   |
+
+Found 16 errors.

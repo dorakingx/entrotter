@@ -1,0 +1,44 @@
+{
+  "baseline_commit": "6368eef29dd7beb694da9174f46d1518b38d52d5",
+  "status": "passed",
+  "total_converted": 83,
+  "files": [
+    {
+      "file": "scripts/browser_check.py",
+      "original_assertions": 9,
+      "explicit_guards": 9,
+      "predicates_and_lazy_messages_equal": true
+    },
+    {
+      "file": "scripts/check_default_wheels.py",
+      "original_assertions": 6,
+      "explicit_guards": 6,
+      "predicates_and_lazy_messages_equal": true
+    },
+    {
+      "file": "scripts/check_export_budget.py",
+      "original_assertions": 15,
+      "explicit_guards": 15,
+      "predicates_and_lazy_messages_equal": true
+    },
+    {
+      "file": "scripts/check_historical.py",
+      "original_assertions": 14,
+      "explicit_guards": 14,
+      "predicates_and_lazy_messages_equal": true
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "original_assertions": 38,
+      "explicit_guards": 38,
+      "predicates_and_lazy_messages_equal": true
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "original_assertions": 1,
+      "explicit_guards": 1,
+      "predicates_and_lazy_messages_equal": true
+    }
+  ],
+  "normalization": "Ignore AST locations, invert Ruff membership rewrites, normalize failed_run/result variable rename; embedded installed-venv path check is separately explicit"
+}

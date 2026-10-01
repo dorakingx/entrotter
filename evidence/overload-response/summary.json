@@ -1,0 +1,70 @@
+{
+  "status": "verified_local_and_linux_ci_pending_independent_review",
+  "engine_commit": "80e8ce2386812daa8f6150048f84ab316624cc0d",
+  "engine_pr": "https://github.com/entrotter/engine/pull/15",
+  "observed_failure": "CI 35461539934 failed the busy CLI 503 assertion; local saturation reproduced 5 generic transport errors in 59 attempts. See ../docs-links/busy-cli-before.json.",
+  "root_cause": "Immediate close after sending 503 while a client is still writing its POST can reset TCP and hide the response.",
+  "regression": "Real-socket test sends request headers, observes queued 503, then sends the body in three chunks. BrokenPipe before the fix; valid complete 503 afterward.",
+  "fix": "Half-close output after 503 and discard at most 320 KiB within a 100 ms absolute budget including send. No new handler or experiment.",
+  "native_tests": {
+    "passed": 124,
+    "skipped": 0,
+    "seconds": 10.972,
+    "environment": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.0",
+    "foundry": "1.8.3"
+  },
+  "quality": {
+    "ruff_lint": "passed",
+    "ruff_format": "passed",
+    "mypy": "passed",
+    "bandit_findings": 15,
+    "api_findings": 0,
+    "finding_fingerprints": "unchanged",
+    "source_review": "Only api.py source hash changed after reviewing bounded socket loop; full scanner report retained."
+  },
+  "integration": {
+    "status": "passed",
+    "busy_cli_attempts": 16,
+    "real_anvil": true,
+    "checks": "Complete fixture/local-EVM reports, 507/no retry/unchanged exports, 16 busy CLI 503s/no work, recovery"
+  },
+  "test_correction": "Existing trickled incomplete-header absolute-deadline test originally expected FIN only; macOS returned reset during a full run. It now accepts FIN or reset as intentional forced closure, never timeout. Timing, slot recovery and actual trickling assertions remain. Failure retained. The overload complete-response regression still requires 503, not reset.",
+  "limitations": [
+    "Grace is bounded: slow or oversized rejected requests may still observe transport failure.",
+    "Main remains protected and fix awaits independent review.",
+    "Aggregate CPU/RSS/storage/concurrency and other release gates remain open."
+  ],
+  "ci": {
+    "engine_quality": 35461992113,
+    "engine_native": 35461992110,
+    "engine_python_matrix": 35461992117,
+    "engine_links": 35461992088,
+    "coordination_integration": 35462077021,
+    "coordination_links": 35462077038,
+    "engine_isolated_worker": {
+      "run": 35461992112,
+      "status": "completed",
+      "conclusion": "success",
+      "actual_enforcement_tests": 10
+    },
+    "downloaded_artifact_checks": {
+      "bandit_findings": 15,
+      "bandit_errors": 0,
+      "audited_python_packages": 42,
+      "known_vulnerabilities_reported": 0,
+      "wheel_source_files_matching_checkout": 14,
+      "linux_macos_report_ids_match": true,
+      "busy_cli_attempts": 16
+    }
+  },
+  "live_pages_recheck": {
+    "checked_at": "2026-09-19T18:44:47.965641+00:00",
+    "url": "https://entrotter.github.io/",
+    "http_status": 200,
+    "main_commit": "ab121348b0ffbec5650f9eadf0a0b11f639d9780",
+    "index_sha256": "6ddcbddd33455f78e796ca642b011216418fdf9b377b3ee8c353088f2a12c4c9",
+    "matches_source": true,
+    "new_ui_deployment": false
+  }
+}

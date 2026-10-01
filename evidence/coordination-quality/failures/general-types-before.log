@@ -1,0 +1,9 @@
+scripts/check_default_wheels.py:113: error: Incompatible types in assignment (expression has type "dict[str, Any]", variable has type "CompletedProcess[bytes]")  [assignment]
+scripts/browser_check.py:38: error: Argument 1 to "launch" of "BrowserType" has incompatible type "**dict[str, str]"; expected "bool | None"  [arg-type]
+scripts/browser_check.py:38: error: Argument 1 to "launch" of "BrowserType" has incompatible type "**dict[str, str]"; expected "float | timedelta | None"  [arg-type]
+scripts/browser_check.py:38: error: Argument 1 to "launch" of "BrowserType" has incompatible type "**dict[str, str]"; expected "dict[str, str | float | bool] | None"  [arg-type]
+scripts/browser_check.py:38: note: "dict" is invariant -- see https://mypy.readthedocs.io/en/stable/common_issues.html#variance
+scripts/browser_check.py:38: note: Consider using "Mapping" instead, which is covariant in the value type
+scripts/browser_check.py:38: error: Argument 1 to "launch" of "BrowserType" has incompatible type "**dict[str, str]"; expected "ProxySettings | None"  [arg-type]
+scripts/browser_check.py:38: error: Argument 1 to "launch" of "BrowserType" has incompatible type "**dict[str, str]"; expected "float | None"  [arg-type]
+Found 6 errors in 2 files (checked 6 source files)

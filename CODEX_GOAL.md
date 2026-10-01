@@ -121,12 +121,15 @@ decisions yourself and record them.
 - Re-check https://colosseum.com/hackathon and the joined event for current rules,
   exact deadline/time zone, eligibility and required files. Do not rely on chat
   history for changing rules. Disclose prior development and AI assistance honestly.
-- Prepare a 2-3 minute pitch and at-most-3-minute product demo. A draft/script is
+- Prepare a pitch no longer than 2 minutes and an at-most-3-minute product demo
+  (the authenticated 2026-09-20 submission form is stricter than the public FAQ). A draft/script is
   not a recorded video. Clearly distinguish recorded and pending deliverables.
 - Show why an agent developer would use Entrotter instead of a few Anvil scripts
   or an existing simulator. Benchmark the same task and conditions, not slogans.
-- Create a concise pricing/market hypothesis and interview script. At least three
-  genuine target-user evaluations are the validation target; do not invent them.
+- Create a concise pricing/market hypothesis and interview script. Three
+  genuine target-user evaluations remain a future validation target; the owner
+  deferred them on 2026-09-20, so they are not a current submission gate. Do not
+  invent completed evaluations.
   Outreach and final submission require owner approval and may be HUMAN_BLOCKED.
 - Prepare a submission index linking exact code, demo, reports, reproducibility
   instructions, measured evidence, genuine feedback and known limitations.
@@ -157,5 +160,5 @@ execution. Respect the user's stop/pause requests and preserve work safely.
 All engineering gates have actual passing evidence, Pages is verified live,
 all repos are public and usable by outside contributors, the real-chain demo
 works, and submission materials distinguish verified results from hypotheses.
-If demand validation or owner-reviewed submission remains blocked, report that
+If owner-required validation or owner-reviewed submission remains blocked, report that
 precisely; do not substitute fake completion or guarantee winning.

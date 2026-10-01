@@ -1,0 +1,47 @@
+test_body_limit (test_sdk.SDKTests.test_body_limit) ... ok
+test_embedded_credentials (test_sdk.SDKTests.test_embedded_credentials) ... ok
+test_get_must_match_id (test_sdk.SDKTests.test_get_must_match_id) ... ok
+test_hashed_unhashable_mode_is_a_client_error (test_sdk.SDKTests.test_hashed_unhashable_mode_is_a_client_error) ...
+  test_hashed_unhashable_mode_is_a_client_error (test_sdk.SDKTests.test_hashed_unhashable_mode_is_a_client_error) (mode=[]) ... ERROR
+  test_hashed_unhashable_mode_is_a_client_error (test_sdk.SDKTests.test_hashed_unhashable_mode_is_a_client_error) (mode={}) ... ERROR
+test_https_url (test_sdk.SDKTests.test_https_url) ... ok
+test_id_validation (test_sdk.SDKTests.test_id_validation) ... ok
+test_parse (test_sdk.SDKTests.test_parse) ... ok
+test_parse_rejects (test_sdk.SDKTests.test_parse_rejects) ... ok
+test_path_rejected (test_sdk.SDKTests.test_path_rejected) ... ok
+test_plaintext_remote_rejected (test_sdk.SDKTests.test_plaintext_remote_rejected) ... ok
+test_query_rejected (test_sdk.SDKTests.test_query_rejected) ... ok
+test_run_dispatch (test_sdk.SDKTests.test_run_dispatch) ... ok
+test_tamper (test_sdk.SDKTests.test_tamper) ... ok
+test_unknown_version (test_sdk.SDKTests.test_unknown_version) ... ok
+test_valid_hash (test_sdk.SDKTests.test_valid_hash) ... ok
+test_zero_timeout (test_sdk.SDKTests.test_zero_timeout) ... ok
+
+======================================================================
+ERROR: test_hashed_unhashable_mode_is_a_client_error (test_sdk.SDKTests.test_hashed_unhashable_mode_is_a_client_error) (mode=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/sdk-python/tests/test_sdk.py", line 22, in test_hashed_unhashable_mode_is_a_client_error
+    RunResult.parse(a)
+    ~~~~~~~~~~~~~~~^^^
+  File "/workspace/sdk-python/src/entrotter_sdk/client.py", line 37, in parse
+    if value.get("mode") not in {"fixture", "evm-local", "evm-fork"}:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'list'
+
+======================================================================
+ERROR: test_hashed_unhashable_mode_is_a_client_error (test_sdk.SDKTests.test_hashed_unhashable_mode_is_a_client_error) (mode={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/sdk-python/tests/test_sdk.py", line 22, in test_hashed_unhashable_mode_is_a_client_error
+    RunResult.parse(a)
+    ~~~~~~~~~~~~~~~^^^
+  File "/workspace/sdk-python/src/entrotter_sdk/client.py", line 37, in parse
+    if value.get("mode") not in {"fixture", "evm-local", "evm-fork"}:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.009s
+
+FAILED (errors=2)

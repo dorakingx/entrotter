@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "proof_commit": "f05eae7faa6561623802ad751dfa892044dd9176",
+  "quality_run": 35473711997,
+  "integration_run": 35473712013,
+  "links_run": 35473711998,
+  "all_three_integration_jobs_passed": true,
+  "full_security_findings_equal_local": true,
+  "source_and_type_dependency_hashes_match": true,
+  "dependency_locks_and_installed_versions_equal": true,
+  "frozen_type_findings_retained": 3,
+  "full_bandit_findings_retained": 75,
+  "python_packages_audited": 50,
+  "known_vulnerabilities": 0,
+  "normal_and_optimized_export_results_equal": true,
+  "fixture_and_evm_artifact_ids_equal_previous": true,
+  "image_source_files_equal_previous": true,
+  "clean_reproduction_seconds": 6.748282830999997,
+  "clean_scope": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included."
+}

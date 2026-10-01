@@ -1,0 +1,12 @@
+{
+  "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+  "assets/icon.png": "1e8ef40b9371697d1c2e76900daaf25081a6beff56178eebe680d25ef279e051",
+  "assets/mascot.webp": "6b56ae1a3b6b2d123f71f0008b345073cd622ed821cf25ce2edf9f5428ac0f76",
+  "reports/depeg-stress.json": "c866409a0d8b908a81392b411323a1554d13a9a89f50ae9a8081ed1adc45854e",
+  "reports/ethereum-uniswap-slippage.json": "2d32bb9c7dccb3db5ebaaa11b7a65a4ab02bf2228c93933ec57b411480c341df",
+  "reports/liquidity-shock.json": "626d696c4ecd3399d5fb398509380750e515ef342032f952266a7948fa641a0d",
+  "reports/recovery-trap.json": "94c983d6190a0b57ae0876eceb7c66cf1c4d6ff98a9247d72fc17c71c78304bb",
+  "schemas/result.v0.1.schema.json": "86f70810d55a2920c814d1eccf9850ddbef62776f223e3b8d8f6f41e8c21a190",
+  "schemas/scenario.v0.1.schema.json": "1e7d3fe0bf839494771cda5cfa023515fd518d7b0f1a3f99336015c547aee1f2",
+  "style.css": "16be105da69be8e60dee350314ea0133471ec07aa8a865b7a909c1b486080c7d"
+}

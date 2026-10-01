@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "js_files": [
+    "app.js",
+    "eslint.config.mjs",
+    "eslint.security.config.mjs",
+    "scripts/check_accessibility.mjs",
+    "scripts/check_quality.mjs",
+    "scripts/quality_policy.mjs",
+    "tests/quality.test.mjs",
+    "tests/report.test.mjs"
+  ],
+  "type_inputs": [
+    "app.js",
+    "eslint.config.mjs",
+    "eslint.security.config.mjs",
+    "scripts/check_accessibility.mjs",
+    "scripts/check_quality.mjs",
+    "scripts/quality_policy.mjs",
+    "tests/quality.test.mjs",
+    "tests/report.test.mjs",
+    "types/browser-tools.d.ts"
+  ],
+  "security_rules": [
+    "detect-unsafe-regex",
+    "detect-non-literal-regexp",
+    "detect-non-literal-require",
+    "detect-non-literal-fs-filename",
+    "detect-eval-with-expression",
+    "detect-pseudoRandomBytes",
+    "detect-possible-timing-attacks",
+    "detect-no-csrf-before-method-override",
+    "detect-buffer-noassert",
+    "detect-child-process",
+    "detect-disable-mustache-escape",
+    "detect-object-injection",
+    "detect-new-buffer",
+    "detect-bidi-characters"
+  ],
+  "retained_security_findings": 32,
+  "limitations": [
+    "Source-bound author review, not independent approval or proof of security",
+    "Normal checkJs with strict null checks and unknown report inputs; noImplicitAny is disabled for JS tooling"
+  ]
+}

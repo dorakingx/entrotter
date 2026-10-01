@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/entrotter/scripts/check_host_limits.py", line 254, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/entrotter/scripts/check_host_limits.py", line 161, in main
+    assert 'worker_busy_retry_later' in api_busy.stderr
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

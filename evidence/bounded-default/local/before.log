@@ -1,0 +1,61 @@
+test_api_default_rejects_missing_worker_without_saving_report (test_default_execution.DefaultExecutionTests.test_api_default_rejects_missing_worker_without_saving_report) ... FAIL
+test_cli_default_rejects_missing_worker_without_replacing_export (test_default_execution.DefaultExecutionTests.test_cli_default_rejects_missing_worker_without_replacing_export) ... FAIL
+test_public_runner_never_falls_back_when_worker_is_unavailable (test_default_execution.DefaultExecutionTests.test_public_runner_never_falls_back_when_worker_is_unavailable) ... FAIL
+test_scenario_fifo_is_rejected_without_waiting_for_a_writer (test_default_execution.DefaultExecutionTests.test_scenario_fifo_is_rejected_without_waiting_for_a_writer) ... ERROR
+
+======================================================================
+ERROR: test_scenario_fifo_is_rejected_without_waiting_for_a_writer (test_default_execution.DefaultExecutionTests.test_scenario_fifo_is_rejected_without_waiting_for_a_writer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/tests/test_default_execution.py", line 67, in test_scenario_fifo_is_rejected_without_waiting_for_a_writer
+    result = subprocess.run([sys.executable, '-m', 'entrotter_engine', 'run',
+                             str(source), '-o', str(self.root / 'result.json')],
+                            env={**os.environ, **self.missing}, capture_output=True,
+                            text=True, timeout=2)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 556, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1219, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 2123, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1263, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['/Library/Frameworks/Python.framework/Versions/3.13/bin/python3', '-m', 'entrotter_engine', 'run', '/tmp/tmpg7pdb2pg/scenario.fifo', '-o', '/tmp/tmpg7pdb2pg/result.json']' timed out after 2 seconds
+
+======================================================================
+FAIL: test_api_default_rejects_missing_worker_without_saving_report (test_default_execution.DefaultExecutionTests.test_api_default_rejects_missing_worker_without_saving_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/tests/test_default_execution.py", line 55, in test_api_default_rejects_missing_worker_without_saving_report
+    self.assertEqual(response.status, 422, response.read())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 201 != 422 : b'{"schema_version": "0.1.0", "engine_version": "0.1.0", "mode": "fixture", "scenario": {"schema_version": "0.1.0", "id": "liquidity-shock", "title": "Synthetic liquidity shock", "mode": "fixture", "provenance": {"kind": "synthetic", "description": "An invented drawdown path. Not prices from a real token or historical crisis."}, "market": {"prices": ["100", "103", "101", "94", "86", "65", "49", "53", "58"], "initial_cash": "0", "initial_units": "100", "fee_bps": 30, "slippage_bps": 20, "symbol": "TEST"}, "baseline": {"type": "hold"}, "candidate": {"type": "circuit_breaker", "drawdown_trigger": "0.12"}}, "baseline": {"policy": {"type": "hold"}, "trace": [{"step": 0, "observed_price": "100", "action": "hold", "cash": "0", "units": "100", "equity": "10000", "execution_price": null, "fee": "0"}, {"step": 1, "observed_price": "103", "action": "hold", "cash": "0", "units": "100", "equity": "10300", "execution_price": null, "fee": "0"}, {"step": 2, "observed_price": "101", "action": "hold", "cash": "0", "units": "100", "equity": "10100", "execution_price": null, "fee": "0"}, {"step": 3, "observed_price": "94", "action": "hold", "cash": "0", "units": "100", "equity": "9400", "execution_price": null, "fee": "0"}, {"step": 4, "observed_price": "86", "action": "hold", "cash": "0", "units": "100", "equity": "8600", "execution_price": null, "fee": "0"}, {"step": 5, "observed_price": "65", "action": "hold", "cash": "0", "units": "100", "equity": "6500", "execution_price": null, "fee": "0"}, {"step": 6, "observed_price": "49", "action": "hold", "cash": "0", "units": "100", "equity": "4900", "execution_price": null, "fee": "0"}, {"step": 7, "observed_price": "53", "action": "hold", "cash": "0", "units": "100", "equity": "5300", "execution_price": null, "fee": "0"}, {"step": 8, "observed_price": "58", "action": "hold", "cash": "0", "units": "100", "equity": "5800", "execution_price": null, "fee": "0"}], "metrics": {"initial_equity": "10000", "final_equity": "5800", "return_pct": "-42.00", "max_drawdown_pct": "52.4271844660194174757281553398058252427184466019417475728155", "fees": "0", "trades": 0}}, "candidate": {"policy": {"type": "circuit_breaker", "drawdown_trigger": "0.12"}, "trace": [{"step": 0, "observed_price": "100", "action": "hold", "cash": "0", "units": "100", "equity": "10000", "execution_price": null, "fee": "0"}, {"step": 1, "observed_price": "103", "action": "hold", "cash": "0", "units": "100", "equity": "10300", "execution_price": null, "fee": "0"}, {"step": 2, "observed_price": "101", "action": "hold", "cash": "0", "units": "100", "equity": "10100", "execution_price": null, "fee": "0"}, {"step": 3, "observed_price": "94", "action": "hold", "cash": "0", "units": "100", "equity": "9400", "execution_price": null, "fee": "0"}, {"step": 4, "observed_price": "86", "action": "sell_all", "cash": "8557.051600", "units": "0", "equity": "8557.051600", "execution_price": "85.828", "fee": "25.748400"}, {"step": 5, "observed_price": "65", "action": "hold", "cash": "8557.051600", "units": "0", "equity": "8557.051600", "execution_price": null, "fee": "0"}, {"step": 6, "observed_price": "49", "action": "hold", "cash": "8557.051600", "units": "0", "equity": "8557.051600", "execution_price": null, "fee": "0"}, {"step": 7, "observed_price": "53", "action": "hold", "cash": "8557.051600", "units": "0", "equity": "8557.051600", "execution_price": null, "fee": "0"}, {"step": 8, "observed_price": "58", "action": "hold", "cash": "8557.051600", "units": "0", "equity": "8557.051600", "execution_price": null, "fee": "0"}], "metrics": {"initial_equity": "10000", "final_equity": "8557.051600", "return_pct": "-14.42948400", "max_drawdown_pct": "16.9218291262135922330097087378640776699029126213592233009709", "fees": "25.748400", "trades": 1}}, "comparison": {"final_equity_delta": "2757.051600"}, "assumptions": ["Synthetic exogenous price path; not a historical replay.", "Both policies observe identical prices with no future lookahead.", "Immediate fills with fixed fees/slippage; no gas, MEV, market impact or liquidity model.", "No real money, chain transaction or LLM is used."], "artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6"}'
+
+======================================================================
+FAIL: test_cli_default_rejects_missing_worker_without_replacing_export (test_default_execution.DefaultExecutionTests.test_cli_default_rejects_missing_worker_without_replacing_export)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/tests/test_default_execution.py", line 41, in test_cli_default_rejects_missing_worker_without_replacing_export
+    self.assertEqual(result.returncode, 1, result.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : {"artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6", "mode": "fixture", "output": "/tmp/tmpek_1vtej/report.json"}
+
+
+======================================================================
+FAIL: test_public_runner_never_falls_back_when_worker_is_unavailable (test_default_execution.DefaultExecutionTests.test_public_runner_never_falls_back_when_worker_is_unavailable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/tests/test_default_execution.py", line 31, in test_public_runner_never_falls_back_when_worker_is_unavailable
+    with self.assertRaises(ExecutionError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+AssertionError: ExecutionError not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.647s
+
+FAILED (failures=3, errors=1)

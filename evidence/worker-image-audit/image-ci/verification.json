@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "run": 35469285580,
+  "engine": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+  "actual_docker_tests": 16,
+  "inventories": [
+    {
+      "type": "wolfi",
+      "class": "os-pkgs",
+      "packages": 26,
+      "findings": 0
+    }
+  ],
+  "source_and_auditor_hashes_match_local": true,
+  "downloaded_report_hash_verified": true,
+  "policy_reevaluation": "passed with current unexpired database metadata",
+  "base_signer_and_digest_match_local": true,
+  "image_architecture": "amd64",
+  "same_application_source_as_arm64": true,
+  "native_binary_inventory_complete": false
+}

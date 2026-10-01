@@ -1,0 +1,36 @@
+﻿2026-09-19T21:04:24.1280984Z ##[group]Run python -m unittest discover -s tests_isolated -v
+2026-09-19T21:04:24.1281476Z [36;1mpython -m unittest discover -s tests_isolated -v[0m
+2026-09-19T21:04:24.1318619Z shell: /usr/bin/bash -e {0}
+2026-09-19T21:04:24.1318873Z env:
+2026-09-19T21:04:24.1319061Z   PYTHONPATH: src
+2026-09-19T21:04:24.1319312Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+2026-09-19T21:04:24.1319679Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-09-19T21:04:24.1320366Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+2026-09-19T21:04:24.1320800Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-09-19T21:04:24.1321181Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-09-19T21:04:24.1321559Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+2026-09-19T21:04:24.1322137Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+2026-09-19T21:04:24.1322652Z   ENTROTTER_WORKER_IMAGE: sha256:c77d095159e6351f9f3f048e776c8ef57f69f7edbe1c9fbff17a2bc03755b85b
+2026-09-19T21:04:24.1323151Z ##[endgroup]
+2026-09-19T21:04:25.2584508Z test_api_rejects_occupied_daemon_without_storing_report (test_admission.DaemonAdmissionTests.test_api_rejects_occupied_daemon_without_storing_report) ... ok
+2026-09-19T21:04:25.9017238Z test_cli_rejects_occupied_daemon_without_replacing_export (test_admission.DaemonAdmissionTests.test_cli_rejects_occupied_daemon_without_replacing_export) ... ok
+2026-09-19T21:04:28.3708343Z test_host_timeout_releases_owned_slot_for_next_run (test_admission.DaemonAdmissionTests.test_host_timeout_releases_owned_slot_for_next_run) ... ok
+2026-09-19T21:04:34.2412714Z test_two_processes_race_after_both_observe_empty_slot (test_admission.DaemonAdmissionTests.test_two_processes_race_after_both_observe_empty_slot) ... ok
+2026-09-19T21:04:34.6771115Z test_unstarted_container_keeps_slot_until_explicit_owned_removal (test_admission.DaemonAdmissionTests.test_unstarted_container_keeps_slot_until_explicit_owned_removal) ... ok
+2026-09-19T21:04:36.6691546Z test_cli_and_api_roundtrip (test_worker.IsolatedAPITests.test_cli_and_api_roundtrip) ... ok
+2026-09-19T21:04:38.9209198Z test_cpu_quota_throttles_parallel_work (test_worker.IsolatedWorkerTests.test_cpu_quota_throttles_parallel_work) ... ok
+2026-09-19T21:04:39.1010156Z test_kernel_controls_mounts_and_privileges (test_worker.IsolatedWorkerTests.test_kernel_controls_mounts_and_privileges) ... ok
+2026-09-19T21:04:39.2890788Z test_memory_limit_actually_oom_kills_overallocation (test_worker.IsolatedWorkerTests.test_memory_limit_actually_oom_kills_overallocation) ... ok
+2026-09-19T21:04:39.4630742Z test_pid_limit_actually_rejects_more_processes (test_worker.IsolatedWorkerTests.test_pid_limit_actually_rejects_more_processes) ... ok
+2026-09-19T21:04:40.6025218Z test_real_fixture_and_anvil_results_match_native (test_worker.IsolatedWorkerTests.test_real_fixture_and_anvil_results_match_native) ... ok
+2026-09-19T21:04:40.7930794Z test_runtime_has_python_and_anvil_without_shell_or_package_commands (test_worker.IsolatedWorkerTests.test_runtime_has_python_and_anvil_without_shell_or_package_commands) ... ok
+2026-09-19T21:04:41.0266723Z test_tmpfs_space_and_noexec_are_enforced (test_worker.IsolatedWorkerTests.test_tmpfs_space_and_noexec_are_enforced) ... ok
+2026-09-19T21:07:41.5463684Z Independent idle deadline observed after 180.519 seconds
+2026-09-19T21:07:41.8670391Z test_detached_idle_worker_expires_without_host_cooperation (test_worker.WorkerLifetimeTests.test_detached_idle_worker_expires_without_host_cooperation) ... ok
+2026-09-19T21:07:43.0700856Z test_lost_client_is_bounded_by_independent_worker_timer (test_worker.WorkerLifetimeTests.test_lost_client_is_bounded_by_independent_worker_timer) ... ok
+2026-09-19T21:07:44.2860452Z test_sigterm_ends_idle_worker_and_removes_container (test_worker.WorkerLifetimeTests.test_sigterm_ends_idle_worker_and_removes_container) ... ok
+2026-09-19T21:07:44.2861643Z
+2026-09-19T21:07:44.2861949Z ----------------------------------------------------------------------
+2026-09-19T21:07:44.2863085Z Ran 16 tests in 199.845s
+2026-09-19T21:07:44.2863349Z
+2026-09-19T21:07:44.2863480Z OK

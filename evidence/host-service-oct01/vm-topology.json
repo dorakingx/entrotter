@@ -1,0 +1,102 @@
+{
+  "cpu_count": 2,
+  "memory_total_bytes": 2054631424,
+  "swap_total_bytes": 0,
+  "root_block_device_bytes": 10737418240,
+  "readonly_block_devices": [
+    {
+      "name": "vdb",
+      "size": 48384000,
+      "type": "disk",
+      "ro": true,
+      "fstype": "iso9660",
+      "mountpoints": [
+        "/mnt/lima-cidata"
+      ]
+    }
+  ],
+  "writable_paths": [
+    {
+      "path": "/",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    },
+    {
+      "path": "/tmp",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    },
+    {
+      "path": "/var/lib/docker",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    },
+    {
+      "path": "<guest-home>/.local/share/entrotter",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    },
+    {
+      "path": "<guest-home>/.local/share/entrotter/reports",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    }
+  ],
+  "host_share_probes": [
+    {
+      "name": "colima",
+      "mount_readonly": true,
+      "write_errno": 30
+    },
+    {
+      "name": ".sandbox-share",
+      "mount_readonly": true,
+      "write_errno": 30
+    }
+  ],
+  "api_health_after_fault_probes": {
+    "status": "ok",
+    "version": "0.1.0",
+    "scope": "local-development"
+  },
+  "owned_worker_containers": 0,
+  "transient_proof_units": 0,
+  "source_commits": {
+    "engine": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+    "sdk": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
+  },
+  "source_worktrees_clean": {
+    "engine": true,
+    "sdk": true,
+    "cli": true
+  },
+  "source_sha256": {
+    "check_host_envelope.py": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb",
+    "check_service.py": "3176cfd65787342d150949def6aa2c0f59cdb639daafa8dd0ba823d364961e49"
+  },
+  "disk_exhaustion_tested": false,
+  "disk_proof_scope": "Actual block geometry and mount topology, not filling the live root disk",
+  "systemd": "systemd 255 (255.4-1ubuntu8.4)",
+  "python": "Python 3.12.3"
+}

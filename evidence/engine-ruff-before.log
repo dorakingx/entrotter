@@ -1,0 +1,294 @@
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_engine/__main__.py:15:28
+   |
+13 |     p = argparse.ArgumentParser(description="Entrotter local simulation engine")
+14 |     s = p.add_subparsers(dest="command", required=True)
+15 |     r = s.add_parser("run"); r.add_argument("scenario"); r.add_argument("-o", "--output", required=True)
+   |                            ^
+16 |     a = s.add_parser("serve"); a.add_argument("--port", type=int, default=8787); a.add_argument("--output", default="artifacts")
+17 |     r.add_argument("--isolated", action="store_true", help="Use the configured bounded local Docker worker")
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_engine/__main__.py:15:56
+   |
+13 |     p = argparse.ArgumentParser(description="Entrotter local simulation engine")
+14 |     s = p.add_subparsers(dest="command", required=True)
+15 |     r = s.add_parser("run"); r.add_argument("scenario"); r.add_argument("-o", "--output", required=True)
+   |                                                        ^
+16 |     a = s.add_parser("serve"); a.add_argument("--port", type=int, default=8787); a.add_argument("--output", default="artifacts")
+17 |     r.add_argument("--isolated", action="store_true", help="Use the configured bounded local Docker worker")
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_engine/__main__.py:16:30
+   |
+14 |     s = p.add_subparsers(dest="command", required=True)
+15 |     r = s.add_parser("run"); r.add_argument("scenario"); r.add_argument("-o", "--output", required=True)
+16 |     a = s.add_parser("serve"); a.add_argument("--port", type=int, default=8787); a.add_argument("--output", default="artifacts")
+   |                              ^
+17 |     r.add_argument("--isolated", action="store_true", help="Use the configured bounded local Docker worker")
+18 |     a.add_argument("--isolated", action="store_true", help="Run API experiments in the bounded local Docker worker")
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_engine/__main__.py:16:80
+   |
+14 |     s = p.add_subparsers(dest="command", required=True)
+15 |     r = s.add_parser("run"); r.add_argument("scenario"); r.add_argument("-o", "--output", required=True)
+16 |     a = s.add_parser("serve"); a.add_argument("--port", type=int, default=8787); a.add_argument("--output", default="artifacts")
+   |                                                                                ^
+17 |     r.add_argument("--isolated", action="store_true", help="Use the configured bounded local Docker worker")
+18 |     a.add_argument("--isolated", action="store_true", help="Run API experiments in the bounded local Docker worker")
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_engine/__main__.py:27:51
+   |
+25 |             else:
+26 |                 executor = run
+27 |             result = executor(load(args.scenario)); write_report(result, args.output)
+   |                                                   ^
+28 |             print(json.dumps({"artifact_id": result["artifact_id"], "mode": result["mode"], "output": args.output}))
+29 |         else:
+   |
+
+E701 Multiple statements on one line (colon)
+  --> src/entrotter_engine/__main__.py:32:16
+   |
+30 |             server = EngineServer(args.port, token=os.getenv("ENTROTTER_API_TOKEN", ""), output=args.output, isolated=args.isolated)
+31 |             print(f"Local engine: http://127.0.0.1:{server.server_port}. Do not expose this port.", flush=True)
+32 |             try: server.serve_forever()
+   |                ^
+33 |             except KeyboardInterrupt: pass
+34 |             finally: server.server_close()
+   |
+
+E701 Multiple statements on one line (colon)
+  --> src/entrotter_engine/__main__.py:33:37
+   |
+31 |             print(f"Local engine: http://127.0.0.1:{server.server_port}. Do not expose this port.", flush=True)
+32 |             try: server.serve_forever()
+33 |             except KeyboardInterrupt: pass
+   |                                     ^
+34 |             finally: server.server_close()
+35 |         return 0
+   |
+
+E701 Multiple statements on one line (colon)
+  --> src/entrotter_engine/__main__.py:34:20
+   |
+32 |             try: server.serve_forever()
+33 |             except KeyboardInterrupt: pass
+34 |             finally: server.server_close()
+   |                    ^
+35 |         return 0
+36 |     except (ValueError, OSError, ExecutionError, RPCError) as e:
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_engine/__main__.py:37:46
+   |
+35 |         return 0
+36 |     except (ValueError, OSError, ExecutionError, RPCError) as e:
+37 |         print(f"Error: {e}", file=sys.stderr); return 1
+   |                                              ^
+38 |
+39 | if __name__ == "__main__":
+   |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:108:59
+    |
+106 |         port = self.server.server_port
+107 |         if self.headers.get("Host") not in {f"127.0.0.1:{port}", f"localhost:{port}"}:
+108 |             self.reply(403, {"error": "host_not_allowed"}); return False
+    |                                                           ^
+109 |         if self.headers.get("Origin") is not None:
+110 |             self.reply(403, {"error": "browser_origin_not_allowed"}); return False
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:110:69
+    |
+108 |             self.reply(403, {"error": "host_not_allowed"}); return False
+109 |         if self.headers.get("Origin") is not None:
+110 |             self.reply(403, {"error": "browser_origin_not_allowed"}); return False
+    |                                                                     ^
+111 |         if self.server.token and not hmac.compare_digest(self.headers.get("Authorization", ""), "Bearer "+self.server.token):
+112 |             self.reply(401, {"error": "unauthorized"}); return False
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:112:55
+    |
+110 |             self.reply(403, {"error": "browser_origin_not_allowed"}); return False
+111 |         if self.server.token and not hmac.compare_digest(self.headers.get("Authorization", ""), "Bearer "+self.server.token):
+112 |             self.reply(401, {"error": "unauthorized"}); return False
+    |                                                       ^
+113 |         return True
+    |
+
+E701 Multiple statements on one line (colon)
+   --> src/entrotter_engine/api.py:116:33
+    |
+115 |     def do_GET(self):
+116 |         if not self.authorized(): return
+    |                                 ^
+117 |         if self.path == "/health":
+118 |             self.reply(200, {"status": "ok", "version": "0.1.0", "scope": "local-development"}); return
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:118:96
+    |
+116 |         if not self.authorized(): return
+117 |         if self.path == "/health":
+118 |             self.reply(200, {"status": "ok", "version": "0.1.0", "scope": "local-development"}); return
+    |                                                                                                ^
+119 |         match = re.fullmatch(r"/v1/runs/([0-9a-f]{64})", self.path)
+120 |         if match:
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:124:56
+    |
+122 |                 data = self.server.store.get(match[1])
+123 |             except FileNotFoundError:
+124 |                 self.reply(404, {"error": "not_found"}); return
+    |                                                        ^
+125 |             except (OSError, ValueError, RecursionError):
+126 |                 self.reply(500, {"error": "invalid_stored_artifact"}); return
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:126:70
+    |
+124 |                 self.reply(404, {"error": "not_found"}); return
+125 |             except (OSError, ValueError, RecursionError):
+126 |                 self.reply(500, {"error": "invalid_stored_artifact"}); return
+    |                                                                      ^
+127 |             self.reply(200, data); return
+128 |         self.reply(404, {"error": "not_found"})
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:127:34
+    |
+125 |             except (OSError, ValueError, RecursionError):
+126 |                 self.reply(500, {"error": "invalid_stored_artifact"}); return
+127 |             self.reply(200, data); return
+    |                                  ^
+128 |         self.reply(404, {"error": "not_found"})
+    |
+
+E701 Multiple statements on one line (colon)
+   --> src/entrotter_engine/api.py:131:33
+    |
+130 |     def do_POST(self):
+131 |         if not self.authorized(): return
+    |                                 ^
+132 |         if self.path != "/v1/runs":
+133 |             self.reply(404, {"error": "not_found"}); return
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:133:52
+    |
+131 |         if not self.authorized(): return
+132 |         if self.path != "/v1/runs":
+133 |             self.reply(404, {"error": "not_found"}); return
+    |                                                    ^
+134 |         if self.headers.get_content_type() != "application/json":
+135 |             self.reply(415, {"error": "content_type_must_be_json"}); return
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:135:68
+    |
+133 |             self.reply(404, {"error": "not_found"}); return
+134 |         if self.headers.get_content_type() != "application/json":
+135 |             self.reply(415, {"error": "content_type_must_be_json"}); return
+    |                                                                    ^
+136 |         if self.headers.get("Transfer-Encoding"):
+137 |             self.reply(400, {"error": "chunked_requests_not_supported"}); return
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:137:73
+    |
+135 |             self.reply(415, {"error": "content_type_must_be_json"}); return
+136 |         if self.headers.get("Transfer-Encoding"):
+137 |             self.reply(400, {"error": "chunked_requests_not_supported"}); return
+    |                                                                         ^
+138 |         lengths = self.headers.get_all("Content-Length", [])
+139 |         try:
+    |
+
+E701 Multiple statements on one line (colon)
+   --> src/entrotter_engine/api.py:140:33
+    |
+138 |         lengths = self.headers.get_all("Content-Length", [])
+139 |         try:
+140 |             if len(lengths) != 1: raise ValueError()
+    |                                 ^
+141 |             size = int(lengths[0])
+142 |             if not 0 < size <= MAX_BODY: raise ValueError()
+    |
+
+E701 Multiple statements on one line (colon)
+   --> src/entrotter_engine/api.py:142:40
+    |
+140 |             if len(lengths) != 1: raise ValueError()
+141 |             size = int(lengths[0])
+142 |             if not 0 < size <= MAX_BODY: raise ValueError()
+    |                                        ^
+143 |         except ValueError:
+144 |             self.reply(413, {"error": "body_limit_256_kib"}); return
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:144:61
+    |
+142 |             if not 0 < size <= MAX_BODY: raise ValueError()
+143 |         except ValueError:
+144 |             self.reply(413, {"error": "body_limit_256_kib"}); return
+    |                                                             ^
+145 |         if not self.server.slot.acquire(blocking=False):
+146 |             self.reply(429, {"error": "engine_busy_retry_later"}); return
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> src/entrotter_engine/api.py:146:66
+    |
+144 |             self.reply(413, {"error": "body_limit_256_kib"}); return
+145 |         if not self.server.slot.acquire(blocking=False):
+146 |             self.reply(429, {"error": "engine_busy_retry_later"}); return
+    |                                                                  ^
+147 |         try:
+148 |             data = self.rfile.read(size)
+    |
+
+E701 Multiple statements on one line (colon)
+   --> src/entrotter_engine/api.py:149:33
+    |
+147 |         try:
+148 |             data = self.rfile.read(size)
+149 |             if len(data) != size: raise ValidationError("Incomplete request body")
+    |                                 ^
+150 |             scenario = json.loads(data)
+151 |             result = self.server.runner(scenario)
+    |
+
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_engine/models.py:89:36
+   |
+87 |         if not isinstance(m.get("symbol"), str) or not re.fullmatch(r"[A-Z0-9_-]{1,12}", m["symbol"]):
+88 |             raise ValidationError("symbol must be 1-12 uppercase alphanumeric characters")
+89 |         policy(raw.get("baseline")); policy(raw.get("candidate"))
+   |                                    ^
+90 |     elif mode in {"evm-local", "evm-fork"}:
+91 |         if any(k in raw for k in ["market", "baseline", "candidate"]):
+   |
+
+Found 28 errors (1 fixed, 27 remaining).

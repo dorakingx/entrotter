@@ -10,48 +10,145 @@ jobs:
   integration:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/entrotter
           path: entrotter
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: 6a3e03341eccd44fcd04a990db21cc5509e0c84d
+          ref: bb8b3e8d32c7cbd49629d337758f30bfdf805045
           path: engine
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/sdk-python
           ref: f65f45de26c2658e2269a02a5dbe7c90c74b1cba
           path: sdk-python
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
           ref: b6a7f4d96cec08f4779968b9f63bab3f9b405fe8
           path: cli
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/scenarios
-          ref: b8bf6f025a872dbc6854965c08f3dba587c86d28
+          ref: 5b718984ac67b8fb49e02f4dab676ae212d2aa58
           path: scenarios
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/entrotter.github.io
-          ref: da2f2e73d6b9599f72930678aac4b41d208ba74e
+          ref: ab121348b0ffbec5650f9eadf0a0b11f639d9780
           path: entrotter.github.io
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
-      - uses: foundry-rs/foundry-toolchain@v1
+      - uses: foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09
         with:
           version: v1.8.3
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '22'
-      - run: pip install -r scenarios/requirements-dev.txt
+      - run: |
+          python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r entrotter/requirements-contracts.txt
       - run: python entrotter/scripts/verify.py --require-anvil
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: verification-evidence
           path: entrotter/evidence/
+  host-bounds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          path: entrotter
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: entrotter/engine
+          ref: 80e8ce2386812daa8f6150048f84ab316624cc0d
+          path: engine
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: entrotter/sdk-python
+          ref: b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+          path: sdk-python
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: entrotter/cli
+          ref: aba6a6147b2b4b96facf758f9b95b63d8e6b5952
+          path: cli
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09
+        with:
+          version: v1.8.3
+      - name: Verify CLI-SDK-API success, quota errors and connection recovery
+        run: PYTHONPATH=engine/src:sdk-python/src:cli/src python entrotter/scripts/check_host_limits.py --output entrotter/evidence/host-limits-ci.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: host-limits-evidence
+          path: entrotter/evidence/host-limits-ci.json
+          if-no-files-found: error
+  bounded-default:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONPATH: engine/src:sdk-python/src:cli/src
+      ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          path: entrotter
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: entrotter/engine
+          ref: d5b30035b4a2a1c292db24f6caf81ed419a2684e
+          path: engine
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: entrotter/sdk-python
+          ref: b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+          path: sdk-python
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: entrotter/cli
+          ref: a63a39000e03d151e80b5a9c47dd4df449281b93
+          path: cli
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Build source-bound local image
+        run: |
+          mkdir -p entrotter/evidence/bounded-agent-integration/integration-ci
+          python engine/scripts/build_worker.py --output entrotter/evidence/bounded-agent-integration/integration-ci/image.json
+          python - <<'PY'
+          import json, os
+          image = json.load(open('entrotter/evidence/bounded-agent-integration/integration-ci/image.json'))['image_id']
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+              output.write('ENTROTTER_WORKER_IMAGE=' + image + '\n')
+              output.write('ENTROTTER_EXPORT_STATE_DIR=' + os.path.join(os.environ['RUNNER_TEMP'], 'entrotter-export-state') + '\n')
+          PY
+      - name: Verify shared daemon admission, default CLI-SDK-API, preservation and quotas
+        run: python entrotter/scripts/check_host_limits.py --worker-manifest entrotter/evidence/bounded-agent-integration/integration-ci/image.json --output entrotter/evidence/bounded-agent-integration/integration-ci/integration.json
+      - name: Verify shared export accounting across real CLI processes
+        run: python entrotter/scripts/check_export_budget.py --output entrotter/evidence/bounded-agent-integration/integration-ci/export-contract.json
+      - name: Verify export failures still reject under Python optimization
+        run: python -O entrotter/scripts/check_export_budget.py --output entrotter/evidence/bounded-agent-integration/integration-ci/optimized-export-contract.json
+      - name: Measure a clean public checkout with the bounded default
+        run: python entrotter/scripts/reproduce_clean.py --bounded --output entrotter/evidence/bounded-agent-integration/integration-ci/clean-fixture.json
+      - name: Measure clean public bounded agent replay and standalone CLI verification
+        run: python entrotter/scripts/reproduce_clean.py --bounded-agent --output entrotter/evidence/bounded-agent-integration/integration-ci/clean-agent.json
+      - name: Verify no owned worker remains
+        if: always()
+        run: |
+          workers=$(docker ps --all --filter label=org.entrotter.worker=true --format '{{.ID}}')
+          test -z "$workers"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: coordination-integration-evidence
+          path: |
+            entrotter/evidence/bounded-agent-integration/integration-ci/
+          if-no-files-found: error

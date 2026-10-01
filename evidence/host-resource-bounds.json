@@ -1,0 +1,63 @@
+{
+  "status": "verified_pending_independent_review",
+  "updated_at": "2026-09-19T17:53:22.795378+00:00",
+  "engine_commit": "5e2663661cb26b17247ed34b2f31297095ba65e6",
+  "cli_commit": "d842c56bd9cf2c0845f5666b4ea0b02d2be34489",
+  "engine_pr": "https://github.com/entrotter/engine/pull/12",
+  "cli_pr": "https://github.com/entrotter/cli/pull/5",
+  "tracking_issue": "https://github.com/entrotter/entrotter/issues/12",
+  "local_tests": {
+    "engine_native": {
+      "passed": 114,
+      "skipped": 0,
+      "seconds": 9.645,
+      "log": "engine-host-bounds-tests.log"
+    },
+    "cli": {
+      "passed": 9,
+      "skipped": 0,
+      "seconds": 0.153,
+      "log": "cli-export-tests.log"
+    },
+    "coordination": {
+      "passed": 20,
+      "skipped": 0,
+      "seconds": 1.206,
+      "log": "host-bounds-coordination-tests.log"
+    }
+  },
+  "before_fix_regressions": {
+    "engine_content_id_mismatch": "engine-host-bounds-before.log",
+    "cli_oversize": "cli-export-before.log",
+    "log_redaction": "Only local checkout paths replaced with /workspace paths; results unchanged"
+  },
+  "integration_evidence": "host-limits-integration.json",
+  "ci": {
+    "engine_native": "https://github.com/entrotter/engine/actions/runs/35459064700",
+    "engine_docker": "https://github.com/entrotter/engine/actions/runs/35459064683",
+    "engine_python_matrix": "https://github.com/entrotter/engine/actions/runs/35459064751",
+    "cli_python_matrix": "https://github.com/entrotter/cli/actions/runs/35459212920",
+    "status": "all engine, CLI and coordination jobs passed",
+    "coordination_run": "https://github.com/entrotter/entrotter/actions/runs/35459506934",
+    "coordination_source_commit": "09eaa5c",
+    "client_path_report": "host-limits-ci.json",
+    "macos_linux_artifact_ids_equal": true
+  },
+  "limits": {
+    "api_store_content_bytes": 134217728,
+    "api_store_files_excluding_lock": 128,
+    "individual_report_bytes": 8388608,
+    "connection_handlers": 8,
+    "connection_idle_seconds": 10,
+    "connection_absolute_seconds": 240,
+    "concurrent_api_experiments": 1
+  },
+  "scope_notes": [
+    "Tests overlap earlier native engine/CLI suites; do not add to frozen workspace totals",
+    "Actual default file and byte quotas tested; integration lowers file count to two",
+    "Actual sockets with accelerated 0.2/0.25-second production timer path; no full 240-second wait claimed",
+    "Logical file-content quotas exclude filesystem metadata and noncooperating processes",
+    "Native mode remains default; socket expiry is not forced native computation cancellation",
+    "Aggregate CLI exports/concurrency and image/VM storage remain uncapped"
+  ]
+}

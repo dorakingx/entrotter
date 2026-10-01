@@ -1,0 +1,48 @@
+
+> entrotter-oss-website@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ security policy retains explicitly reviewed findings (0.722375ms)
+✔ source drift, new/missing findings and absent rationale fail review (1.708292ms)
+✔ empty source scope fails review (0.136458ms)
+✔ parser and suppressed diagnostics cannot be accepted as a clean scan (0.23275ms)
+✔ production JS verifies Python artifact: liquidity-shock (4.877542ms)
+✔ production JS verifies Python artifact: recovery-trap (1.371542ms)
+✔ production JS verifies Python artifact: depeg-stress (0.796833ms)
+✔ tampered metric fails integrity validation (0.693625ms)
+✔ unknown schema is not accepted (0.181875ms)
+✔ canonical ASCII escaping includes supplementary Unicode (0.117625ms)
+✔ finite numerical display validation (0.182708ms)
+✔ JS re-canonicalization matches exported content hash (0.443584ms)
+✔ real archived-state artifact passes hash and receipt view validation (2.41025ms)
+✔ token units preserve integers beyond Number safe precision (0.157792ms)
+✔ missing source hash cannot appear as a historical report (0.192208ms)
+✔ mismatched token addresses cannot share a comparison row (0.175208ms)
+✔ malformed receipt state and oversized traces fail closed (0.213875ms)
+✔ display metrics reject coercible non-decimal strings (0.083125ms)
+✔ decimal metrics preserve supported signed/exponent values and reject overflow (0.089291ms)
+✔ hash verification rejects non-object or non-finite parsed JSON (0.117875ms)
+✖ local EVM reports accept null/absent source while forks require their pin (0.164ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 57.844
+
+✖ failing tests:
+
+test at tests/report.test.mjs:139:1
+✖ local EVM reports accept null/absent source while forks require their pin (0.164ms)
+  Error: Invalid report object.
+      at record (evalmachine.<anonymous>:11:11)
+      at Object.evmViewModel (evalmachine.<anonymous>:122:55)
+      at TestContext.<anonymous> (file://<workspace>/entrotter.github.io/tests/report.test.mjs:144:24)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

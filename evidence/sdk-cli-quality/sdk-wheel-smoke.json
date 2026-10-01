@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "wheel_sha256": "00e351379a6e0bae296fe8502c6c217a92979e234eda4989661d78b95a3e7993",
+  "python": "3.13.0",
+  "no_index": true,
+  "no_deps": true,
+  "isolated_python": true,
+  "source_files_match": 3,
+  "typed_marker_present": true,
+  "runtime_dependencies": [],
+  "license": "MIT"
+}

@@ -1,0 +1,16 @@
+{
+  "pitch": {
+    "complete_decode_exit": 0,
+    "decode_stderr_bytes": 0,
+    "audio_analysis_exit": 0,
+    "sample_frame_seconds": 79,
+    "human_listening_review": "pending"
+  },
+  "demo": {
+    "complete_decode_exit": 0,
+    "decode_stderr_bytes": 0,
+    "audio_analysis_exit": 0,
+    "sample_frame_seconds": 135,
+    "human_listening_review": "pending"
+  }
+}

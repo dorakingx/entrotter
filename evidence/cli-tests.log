@@ -6,6 +6,6 @@ test_read_json (test_cli.CLITests.test_read_json) ... ok
 test_size_limit (test_cli.CLITests.test_size_limit) ... ok
 
 ----------------------------------------------------------------------
-Ran 6 tests in 0.028s
+Ran 6 tests in 0.027s
 
 OK

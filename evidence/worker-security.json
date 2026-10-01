@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1.0",
+  "updated_at": "2026-09-19T17:33:22.343312+00:00",
+  "status": "verified_pending_independent_review",
+  "goal_complete": false,
+  "engine_commit": "05448c3335440f19e619d1b71b449f4f0fb470d6",
+  "engine_pr": "https://github.com/entrotter/engine/pull/11",
+  "guardian_pr": "https://github.com/entrotter/engine/pull/10",
+  "guardian_ci": [
+    "https://github.com/entrotter/engine/actions/runs/35457139928",
+    "https://github.com/entrotter/engine/actions/runs/35457139867"
+  ],
+  "local_test_suites": [
+    {
+      "suite": "unit and actual native Anvil",
+      "passed": 96,
+      "skipped": 0,
+      "seconds": 5.646,
+      "log": "engine-worker-tests.log",
+      "command": "PATH=<verified-foundry-v1.8.3>:$PATH PYTHONPATH=src python3 -m unittest discover -s tests -v"
+    },
+    {
+      "suite": "actual Docker worker enforcement and lifecycle",
+      "passed": 10,
+      "skipped": 0,
+      "seconds": 193.502,
+      "log": "isolated-worker-tests.log",
+      "command": "ENTROTTER_DOCKER_SOCKET=<local-unix-socket> ENTROTTER_WORKER_IMAGE=<manifest-image-id> PATH=<verified-foundry-v1.8.3>:$PATH PYTHONPATH=src python3 -m unittest discover -s tests_isolated -v"
+    },
+    {
+      "suite": "coordination",
+      "passed": 20,
+      "skipped": 0,
+      "seconds": 1.174,
+      "log": "worker-coordination-tests.log",
+      "command": "PYTHONPATH=../engine/src:../sdk-python/src:../cli/src python3 -m unittest discover -s tests -v"
+    }
+  ],
+  "independent_detached_worker_expiry_seconds": 180.916,
+  "historical_result": "isolated-worker-historical.json",
+  "image_provenance": "isolated-worker-image.json",
+  "daemon_environment": "isolated-worker-system.json",
+  "native_guardian_log": "engine-guardian-tests.log",
+  "ci": {
+    "status": "passed",
+    "isolated": "https://github.com/entrotter/engine/actions/runs/35458208203",
+    "native_evm": "https://github.com/entrotter/engine/actions/runs/35458208163",
+    "python_matrix": "https://github.com/entrotter/engine/actions/runs/35458208159",
+    "engine_head": "05448c3335440f19e619d1b71b449f4f0fb470d6",
+    "isolated_test_count": 10,
+    "isolated_test_seconds": 192.044,
+    "independent_detached_worker_expiry_seconds": 181.473
+  },
+  "measurement_scope": "Real aarch64 Linux Docker VM on macOS. Native suite overlaps prior engine suites; do not sum with frozen workspace totals. One supplied-action historical case, no agent benchmark rerun.",
+  "limits": {
+    "cpu_quota": 1,
+    "memory_mib": 512,
+    "swap_bytes": 0,
+    "pids": 128,
+    "tmpfs_mib": 64,
+    "shm_mib": 16,
+    "input_bytes": 262144,
+    "output_bytes": 8388608,
+    "worker_timer_seconds": 180,
+    "host_wait_seconds": 190,
+    "native_anvil_watchdog_seconds": 150,
+    "native_anvil_grace_seconds": 2
+  },
+  "limitations": [
+    "Opt-in only; native execution remains default",
+    "Host artifact/image/VM disk and aggregate independent CLI invocations remain uncapped",
+    "API active connection threads remain unbounded; only one experiment admitted",
+    "Fork bridge networking is not an egress firewall",
+    "Arbitrary external code execution remains disabled",
+    "Daemon/VM failure outside application lifecycle guarantees",
+    "Signal and owned-node cleanup can add short termination grace",
+    "Independent reviews and merge pending; no deployed hosted engine or published image"
+  ],
+  "cleanup": {
+    "owned_worker_containers_remaining_before_vm_shutdown": 0,
+    "dedicated_colima_profile": "entrotter",
+    "dedicated_profile_status": "Stopped",
+    "existing_default_profile_status": "Stopped",
+    "active_docker_context": "colima",
+    "published_image": false
+  }
+}

@@ -1,0 +1,585 @@
+E702 Multiple statements on one line (semicolon)
+  --> scripts/browser_check.py:15:25
+   |
+13 | WORKSPACE=ROOT.parent
+14 | SITE=WORKSPACE/'entrotter.github.io'
+15 | EVIDENCE=ROOT/'evidence';EVIDENCE.mkdir(exist_ok=True)
+   |                         ^
+16 | class Quiet(SimpleHTTPRequestHandler):
+17 |     def log_message(self,*args): pass
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/browser_check.py:19:65
+   |
+17 |     def log_message(self,*args): pass
+18 | server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(SITE)))
+19 | thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+   |                                                                 ^
+20 | url=f'http://127.0.0.1:{server.server_port}/'
+21 | results=[]
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/browser_check.py:27:18
+   |
+25 |         browser=p.chromium.launch(**({'executable_path':executable} if executable else {}),headless=True,args=['--no-sandbox'])
+26 |         page=browser.new_page(viewport={'width':1440,'height':1000},device_scale_factor=1)
+27 |         errors=[];requests=[]
+   |                  ^
+28 |         page.on('pageerror',lambda e:errors.append(str(e)))
+29 |         page.on('request',lambda r:requests.append(r.url))
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/browser_check.py:49:35
+   |
+47 | …     import hashlib
+48 | …     hostile=json.loads((SITE/'reports/liquidity-shock.json').read_text())
+49 | …     hostile.pop('artifact_id');hostile['scenario']['title']='<img src=x onerror=alert(1)> 🛸'
+   |                                 ^
+50 | …     hostile['artifact_id']=hashlib.sha256(json.dumps(hostile,sort_keys=True,separators=(',',':'),ensure_ascii=True).encode()).hexdig…
+51 | …     before=len(requests)
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/browser_check.py:68:22
+   |
+66 |         browser.close()
+67 | finally:
+68 |     server.shutdown();server.server_close();thread.join()
+   |                      ^
+69 | (EVIDENCE/'browser-verification.json').write_text(json.dumps({'checks':results,'status':'passed','server_scope':'local_only'},indent=2…
+70 | print('\n'.join(results))
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/browser_check.py:68:44
+   |
+66 |         browser.close()
+67 | finally:
+68 |     server.shutdown();server.server_close();thread.join()
+   |                                            ^
+69 | (EVIDENCE/'browser-verification.json').write_text(json.dumps({'checks':results,'status':'passed','server_scope':'local_only'},indent=2…
+70 | print('\n'.join(results))
+   |
+
+E401 [*] Multiple imports on one line
+ --> scripts/check_default_wheels.py:1:1
+  |
+1 | import argparse,email,json,hashlib,os,subprocess,sys,tempfile,zipfile
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2 | from pathlib import Path
+3 | parser=argparse.ArgumentParser(description="Verify downloaded CI wheels against source and exercise the installed bounded default")
+  |
+help: Split imports
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/check_default_wheels.py:23:22
+   |
+21 |   records[name]={'wheel_sha256':hashlib.sha256(wheel.read_bytes()).hexdigest(),'python_files_match_source':len(actual),'license':'MIT'…
+22 | with tempfile.TemporaryDirectory(prefix='entrotter-default-installed-') as directory:
+23 |  root=Path(directory);venv=root/'venv'
+   |                      ^
+24 |  subprocess.run([sys.executable,'-m','venv',str(venv)],check=True,capture_output=True)
+25 |  python=str(venv/'bin/python')
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/check_default_wheels.py:38:40
+   |
+36 |  cmd=[python,'-I','-m','entrotter_cli','run',str(items[0][2]/'tests/data/fixture.json'),'--local','-o',str(output)]
+37 |  subprocess.run(cmd,env=env,cwd=root,check=True,capture_output=True,timeout=30)
+38 |  report=json.loads(output.read_bytes());assert report==json.loads(args.reference.read_bytes())
+   |                                        ^
+39 |  previous=output.read_bytes();env['ENTROTTER_DOCKER_SOCKET']=str(root/'missing.sock')
+40 |  result=subprocess.run(cmd,env=env,cwd=root,capture_output=True,timeout=10)
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/check_default_wheels.py:39:30
+   |
+37 |  subprocess.run(cmd,env=env,cwd=root,check=True,capture_output=True,timeout=30)
+38 |  report=json.loads(output.read_bytes());assert report==json.loads(args.reference.read_bytes())
+39 |  previous=output.read_bytes();env['ENTROTTER_DOCKER_SOCKET']=str(root/'missing.sock')
+   |                              ^
+40 |  result=subprocess.run(cmd,env=env,cwd=root,capture_output=True,timeout=10)
+41 |  assert result.returncode==1 and output.read_bytes()==previous
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/check_default_wheels.py:43:57
+   |
+41 |  assert result.returncode==1 and output.read_bytes()==previous
+42 | result={'status':'passed','wheels':records,'fresh_venv':True,'registry_access':False,'installation':'--no-index --no-deps; execution u…
+43 | args.output.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
+   |                                                         ^
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/check_export_budget.py:48:32
+   |
+46 |             return command('entrotter_engine', 'run', source, '--native', '-o', target)
+47 |         try:
+48 |             for i in range(127): artifact.write_report(expected, root / 'engine-reports' / f'{i}.json')
+   |                                ^
+49 |             last = root / 'other-folder/cli.json'
+50 |             accepted = cli_run(last)
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/check_export_budget.py:55:52
+   |
+53 |             snapshots = []
+54 |             for module in ['entrotter_engine', 'entrotter_cli']:
+55 |                 result = command(module, 'exports'); assert result.returncode == 0, result.stderr
+   |                                                    ^
+56 |                 snapshots.append(json.loads(result.stdout))
+57 |             assert snapshots[0] == snapshots[1]
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/check_export_budget.py:69:56
+   |
+67 |             assert recovered.returncode == 0, recovered.stderr
+68 |             assert json.loads(rejected_target.read_bytes()) == expected
+69 |             previous = root / 'previous-untracked.json'; previous.write_bytes(b'preserve previous file')
+   |                                                        ^
+70 |             rejected = cli_run(previous)
+71 |             assert rejected.returncode == 1 and 'Export budget full' in rejected.stderr
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/check_export_budget.py:87:38
+   |
+85 |                         for i, module in enumerate(['entrotter_engine.export_budget', 'entrotter_cli.export_budget'])]
+86 |             try:
+87 |                 for child in children: child.stdin.write(b'x'); child.stdin.flush()
+   |                                      ^
+88 |                 observations = [child.communicate(timeout=10) for child in children]
+89 |                 assert sorted(child.returncode for child in children) == [0, 1], observations
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/check_export_budget.py:87:63
+   |
+85 |                         for i, module in enumerate(['entrotter_engine.export_budget', 'entrotter_cli.export_budget'])]
+86 |             try:
+87 |                 for child in children: child.stdin.write(b'x'); child.stdin.flush()
+   |                                                               ^
+88 |                 observations = [child.communicate(timeout=10) for child in children]
+89 |                 assert sorted(child.returncode for child in children) == [0, 1], observations
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/check_export_budget.py:93:44
+   |
+91 |             finally:
+92 |                 for child in children:
+93 |                     if child.poll() is None: child.kill(); child.communicate(timeout=5)
+   |                                            ^
+94 |         finally:
+95 |             if old_state is None: os.environ.pop('ENTROTTER_EXPORT_STATE_DIR', None)
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/check_export_budget.py:93:58
+   |
+91 |             finally:
+92 |                 for child in children:
+93 |                     if child.poll() is None: child.kill(); child.communicate(timeout=5)
+   |                                                          ^
+94 |         finally:
+95 |             if old_state is None: os.environ.pop('ENTROTTER_EXPORT_STATE_DIR', None)
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/check_export_budget.py:95:33
+   |
+93 |                     if child.poll() is None: child.kill(); child.communicate(timeout=5)
+94 |         finally:
+95 |             if old_state is None: os.environ.pop('ENTROTTER_EXPORT_STATE_DIR', None)
+   |                                 ^
+96 |             else: os.environ['ENTROTTER_EXPORT_STATE_DIR'] = old_state
+97 |     result = {'status': 'passed', 'tested_commits': pins,
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/check_export_budget.py:96:17
+   |
+94 |         finally:
+95 |             if old_state is None: os.environ.pop('ENTROTTER_EXPORT_STATE_DIR', None)
+96 |             else: os.environ['ENTROTTER_EXPORT_STATE_DIR'] = old_state
+   |                 ^
+97 |     result = {'status': 'passed', 'tested_commits': pins,
+98 |               'checker_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+   |
+
+E701 Multiple statements on one line (colon)
+   --> scripts/check_export_budget.py:114:26
+    |
+114 | if __name__ == '__main__': main()
+    |                          ^
+    |
+
+E402 Module level import not at top of file
+  --> scripts/export_reports.py:8:1
+   |
+ 6 | W=Path(__file__).resolve().parents[2]
+ 7 | sys.path.insert(0,str(W/'engine/src'))
+ 8 | from entrotter_engine.runner import run
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 9 | from entrotter_engine.artifact import write_report
+10 | for fixture in sorted((W/'scenarios/fixtures').glob('*.json')):
+   |
+
+E402 Module level import not at top of file
+  --> scripts/export_reports.py:9:1
+   |
+ 7 | sys.path.insert(0,str(W/'engine/src'))
+ 8 | from entrotter_engine.runner import run
+ 9 | from entrotter_engine.artifact import write_report
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+10 | for fixture in sorted((W/'scenarios/fixtures').glob('*.json')):
+11 |     result=run(json.loads(fixture.read_text()))
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:28:77
+   |
+26 |     p=command(cmd,check=False)
+27 |     if p.returncode:
+28 |         if missing_ok and ('HTTP 404' in p.stderr or 'HTTP 409' in p.stderr): return None
+   |                                                                             ^
+29 |         raise RuntimeError('GitHub API operation failed. Check organization/repository/Pages permissions. '+p.stderr.strip()[:600])
+30 |     return json.loads(p.stdout) if p.stdout.strip() else {}
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:36:45
+   |
+34 |         path=WORKSPACE/spec['name']
+35 |         for required in ['README.md','LICENSE','AGENTS.md','CONTRIBUTING.md','SECURITY.md']:
+36 |             if not (path/required).is_file(): raise RuntimeError(f'Missing {spec["name"]}/{required}')
+   |                                             ^
+37 |         if (path/'CNAME').exists(): raise RuntimeError('Custom domain configuration is not authorized')
+38 |         for f in path.rglob('*'):
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:37:35
+   |
+35 |         for required in ['README.md','LICENSE','AGENTS.md','CONTRIBUTING.md','SECURITY.md']:
+36 |             if not (path/required).is_file(): raise RuntimeError(f'Missing {spec["name"]}/{required}')
+37 |         if (path/'CNAME').exists(): raise RuntimeError('Custom domain configuration is not authorized')
+   |                                   ^
+38 |         for f in path.rglob('*'):
+39 |             if not f.is_file() or '.git' in f.parts or '__pycache__' in f.parts: continue
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:39:80
+   |
+37 | …     if (path/'CNAME').exists(): raise RuntimeError('Custom domain configuration is not authorized')
+38 | …     for f in path.rglob('*'):
+39 | …         if not f.is_file() or '.git' in f.parts or '__pycache__' in f.parts: continue
+   |                                                                              ^
+40 | …         if f.name.startswith('.env') and f.name != '.env.example': raise RuntimeError(f'Remove local env file before publishing: {f.…
+41 | …         if f.suffix in {'.png','.webp','.jpg','.jpeg','.zip','.pyc'}: continue
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:40:70
+   |
+38 | …     for f in path.rglob('*'):
+39 | …         if not f.is_file() or '.git' in f.parts or '__pycache__' in f.parts: continue
+40 | …         if f.name.startswith('.env') and f.name != '.env.example': raise RuntimeError(f'Remove local env file before publishing: {f.…
+   |                                                                    ^
+41 | …         if f.suffix in {'.png','.webp','.jpg','.jpeg','.zip','.pyc'}: continue
+42 | …         text=f.read_text(errors='ignore')
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:41:73
+   |
+39 | …     if not f.is_file() or '.git' in f.parts or '__pycache__' in f.parts: continue
+40 | …     if f.name.startswith('.env') and f.name != '.env.example': raise RuntimeError(f'Remove local env file before publishing: {f.name…
+41 | …     if f.suffix in {'.png','.webp','.jpg','.jpeg','.zip','.pyc'}: continue
+   |                                                                   ^
+42 | …     text=f.read_text(errors='ignore')
+43 | …     if re.search(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',text) or re.search(r'(?:ghp_|sk-proj-)[A-Za-z0-9_-]{24,}',text…
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:49:60
+   |
+47 |     manifest=json.loads((ROOT/'repositories.json').read_text())
+48 |     org=manifest['organization']
+49 |     if org!='entrotter' or manifest['visibility']!='public': raise RuntimeError('Unexpected publication target')
+   |                                                            ^
+50 |     preflight_local(manifest)
+51 |     for spec in manifest['repositories']:
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:57:57
+   |
+55 |         print('Dry run only. Nothing was created, pushed or deployed. Review this script before --apply.')
+56 |         return
+57 |     if not shutil.which('gh') or not shutil.which('git'): raise RuntimeError('Install GitHub CLI (gh) and git, then authenticate with …
+   |                                                         ^
+58 |     command(['gh','auth','status'])
+59 |     owner=gh_json(f'orgs/{org}')
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:60:41
+   |
+58 |     command(['gh','auth','status'])
+59 |     owner=gh_json(f'orgs/{org}')
+60 |     if owner.get('type')!='Organization': raise RuntimeError('Target is not an existing organization')
+   |                                         ^
+61 |     membership=gh_json(f'user/memberships/orgs/{org}')
+62 |     if membership.get('state')!='active': raise RuntimeError('Authenticated user must be an active organization member')
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:62:41
+   |
+60 |     if owner.get('type')!='Organization': raise RuntimeError('Target is not an existing organization')
+61 |     membership=gh_json(f'user/memberships/orgs/{org}')
+62 |     if membership.get('state')!='active': raise RuntimeError('Authenticated user must be an active organization member')
+   |                                         ^
+63 |     user=gh_json('user')
+64 |     published=[]
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/publish.py:66:26
+   |
+64 |     published=[]
+65 |     for spec in sorted(manifest['repositories'], key=lambda s: s['name']=='entrotter'):
+66 |         name=spec['name'];full=f'{org}/{name}';local=WORKSPACE/name
+   |                          ^
+67 |         remote=gh_json(f'repos/{full}',missing_ok=True)
+68 |         if remote:
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/publish.py:66:47
+   |
+64 |     published=[]
+65 |     for spec in sorted(manifest['repositories'], key=lambda s: s['name']=='entrotter'):
+66 |         name=spec['name'];full=f'{org}/{name}';local=WORKSPACE/name
+   |                                               ^
+67 |         remote=gh_json(f'repos/{full}',missing_ok=True)
+68 |         if remote:
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:69:37
+   |
+67 |         remote=gh_json(f'repos/{full}',missing_ok=True)
+68 |         if remote:
+69 |             if remote.get('private'): raise RuntimeError(f'{full} already exists privately; refusing to disclose it')
+   |                                     ^
+70 |             perms=remote.get('permissions',{})
+71 |             if not (perms.get('push') or perms.get('admin')): raise RuntimeError(f'No write permission for {full}')
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:71:61
+   |
+69 | …     if remote.get('private'): raise RuntimeError(f'{full} already exists privately; refusing to disclose it')
+70 | …     perms=remote.get('permissions',{})
+71 | …     if not (perms.get('push') or perms.get('admin')): raise RuntimeError(f'No write permission for {full}')
+   |                                                       ^
+72 | …     head=gh_json(f'repos/{full}/commits?per_page=1',missing_ok=True)
+73 | …     if head and not (local/'.git').is_dir(): raise RuntimeError(f'{full} is not empty. Clone it and use reviewed PRs; never overwrit…
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:73:52
+   |
+71 | …         if not (perms.get('push') or perms.get('admin')): raise RuntimeError(f'No write permission for {full}')
+72 | …         head=gh_json(f'repos/{full}/commits?per_page=1',missing_ok=True)
+73 | …         if head and not (local/'.git').is_dir(): raise RuntimeError(f'{full} is not empty. Clone it and use reviewed PRs; never over…
+   |                                                  ^
+74 | …     else:
+75 | …         remote=gh_json(f'orgs/{org}/repos',method='POST',fields={'name':name,'description':spec['description'],'private':False,'auto…
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:76:39
+   |
+74 | …     else:
+75 | …         remote=gh_json(f'orgs/{org}/repos',method='POST',fields={'name':name,'description':spec['description'],'private':False,'auto…
+76 | …     if not (local/'.git').is_dir(): command(['git','init','-b','main'],cwd=local)
+   |                                     ^
+77 | …     branches=command(['git','branch','--show-current'],cwd=local).stdout.strip()
+78 | …     if branches!='main': raise RuntimeError(f'{name}: expected main; do not rewrite another branch')
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:78:28
+   |
+76 |         if not (local/'.git').is_dir(): command(['git','init','-b','main'],cwd=local)
+77 |         branches=command(['git','branch','--show-current'],cwd=local).stdout.strip()
+78 |         if branches!='main': raise RuntimeError(f'{name}: expected main; do not rewrite another branch')
+   |                            ^
+79 |         current=command(['git','remote','get-url','origin'],cwd=local,check=False)
+80 |         expected={f'https://github.com/{full}.git',f'https://github.com/{full}',f'git@github.com:{full}.git'}
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:81:30
+   |
+79 |         current=command(['git','remote','get-url','origin'],cwd=local,check=False)
+80 |         expected={f'https://github.com/{full}.git',f'https://github.com/{full}',f'git@github.com:{full}.git'}
+81 |         if current.returncode: command(['git','remote','add','origin',f'https://github.com/{full}.git'],cwd=local)
+   |                              ^
+82 |         elif current.stdout.strip() not in expected: raise RuntimeError(f'{name}: existing origin points elsewhere')
+83 |         for key,value in [('user.name',user['login']),('user.email',f'{user["id"]}+{user["login"]}@users.noreply.github.com')]:
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:82:52
+   |
+80 |         expected={f'https://github.com/{full}.git',f'https://github.com/{full}',f'git@github.com:{full}.git'}
+81 |         if current.returncode: command(['git','remote','add','origin',f'https://github.com/{full}.git'],cwd=local)
+82 |         elif current.stdout.strip() not in expected: raise RuntimeError(f'{name}: existing origin points elsewhere')
+   |                                                    ^
+83 |         for key,value in [('user.name',user['login']),('user.email',f'{user["id"]}+{user["login"]}@users.noreply.github.com')]:
+84 |             if command(['git','config','--get',key],cwd=local,check=False).returncode: command(['git','config',key,value],cwd=local)
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:84:86
+   |
+82 |         elif current.stdout.strip() not in expected: raise RuntimeError(f'{name}: existing origin points elsewhere')
+83 |         for key,value in [('user.name',user['login']),('user.email',f'{user["id"]}+{user["login"]}@users.noreply.github.com')]:
+84 |             if command(['git','config','--get',key],cwd=local,check=False).returncode: command(['git','config',key,value],cwd=local)
+   |                                                                                      ^
+85 |         command(['git','add','--all'],cwd=local)
+86 |         changes=command(['git','diff','--cached','--quiet'],cwd=local,check=False)
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:87:33
+   |
+85 |         command(['git','add','--all'],cwd=local)
+86 |         changes=command(['git','diff','--cached','--quiet'],cwd=local,check=False)
+87 |         if changes.returncode==1: command(['git','commit','-m','feat: bootstrap open-source Entrotter component'],cwd=local)
+   |                                 ^
+88 |         # Use the authenticated CLI credential helper without writing a token to disk or URLs.
+89 |         command(['git','-c','credential.helper=!gh auth git-credential','push','-u','origin','main'],cwd=local)
+   |
+
+E701 Multiple statements on one line (colon)
+  --> scripts/publish.py:95:34
+   |
+93 |     pages_repo=f'{org}/entrotter.github.io'
+94 |     page=gh_json(f'repos/{pages_repo}/pages',missing_ok=True)
+95 |     if page and page.get('cname'): raise RuntimeError('Existing Pages custom domain found. Refusing to change it.')
+   |                                  ^
+96 |     if page is None:
+97 |         gh_json(f'repos/{pages_repo}/pages',method='POST',fields={'build_type':'workflow'})
+   |
+
+E701 Multiple statements on one line (colon)
+   --> scripts/publish.py:107:76
+    |
+105 |             full=f'{org}/{spec["repository"]}'
+106 |             existing=gh_json(f'repos/{full}/issues?state=all&per_page=100')
+107 |             if any(issue.get('title')==spec['title'] for issue in existing): continue
+    |                                                                            ^
+108 |             label=spec['label']
+109 |             command(['gh','label','create',label,'--repo',full,'--color','9C7AE5','--force'])
+    |
+
+E701 Multiple statements on one line (colon)
+   --> scripts/publish.py:125:70
+    |
+123 |         with urlopen('https://entrotter.github.io/',timeout=30) as response:
+124 |             html=response.read(2*1024*1024).decode('utf-8')
+125 |             if response.status!=200 or 'Send your agents' not in html: raise RuntimeError('Deployed content check failed')
+    |                                                                      ^
+126 |         status['pages_status']='live_http_200_verified'
+127 |         print('VERIFIED LIVE: https://entrotter.github.io/')
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> scripts/publish.py:133:32
+    |
+132 | if __name__=='__main__':
+133 |     p=argparse.ArgumentParser();p.add_argument('--apply',action='store_true');p.add_argument('--skip-issues',action='store_true')
+    |                                ^
+134 |     try: publish(p.parse_args())
+135 |     except (RuntimeError,OSError,ValueError) as e:
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> scripts/publish.py:133:78
+    |
+132 | if __name__=='__main__':
+133 |     p=argparse.ArgumentParser();p.add_argument('--apply',action='store_true');p.add_argument('--skip-issues',action='store_true')
+    |                                                                              ^
+134 |     try: publish(p.parse_args())
+135 |     except (RuntimeError,OSError,ValueError) as e:
+    |
+
+E701 Multiple statements on one line (colon)
+   --> scripts/publish.py:134:8
+    |
+132 | if __name__=='__main__':
+133 |     p=argparse.ArgumentParser();p.add_argument('--apply',action='store_true');p.add_argument('--skip-issues',action='store_true')
+134 |     try: publish(p.parse_args())
+    |        ^
+135 |     except (RuntimeError,OSError,ValueError) as e:
+136 |         print(f'BLOCKED: {e}',file=sys.stderr);sys.exit(1)
+    |
+
+E702 Multiple statements on one line (semicolon)
+   --> scripts/publish.py:136:47
+    |
+134 |     try: publish(p.parse_args())
+135 |     except (RuntimeError,OSError,ValueError) as e:
+136 |         print(f'BLOCKED: {e}',file=sys.stderr);sys.exit(1)
+    |                                               ^
+    |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/verify.py:14:28
+   |
+12 | ROOT=Path(__file__).resolve().parents[1]
+13 | WORKSPACE=ROOT.parent
+14 | p=argparse.ArgumentParser();p.add_argument('--require-anvil',action='store_true');args=p.parse_args()
+   |                            ^
+15 | if args.require_anvil and not shutil.which('anvil'):
+16 |     raise SystemExit('Anvil is required for this verification gate but is missing.')
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/verify.py:14:82
+   |
+12 | ROOT=Path(__file__).resolve().parents[1]
+13 | WORKSPACE=ROOT.parent
+14 | p=argparse.ArgumentParser();p.add_argument('--require-anvil',action='store_true');args=p.parse_args()
+   |                                                                                  ^
+15 | if args.require_anvil and not shutil.which('anvil'):
+16 |     raise SystemExit('Anvil is required for this verification gate but is missing.')
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> scripts/verify.py:19:25
+   |
+17 | env=dict(os.environ)
+18 | env['PYTHONPATH']=os.pathsep.join(str(WORKSPACE/r/'src') for r in ['engine','sdk-python','cli'])
+19 | EVIDENCE=ROOT/'evidence';EVIDENCE.mkdir(exist_ok=True)
+   |                         ^
+20 | checks=[]
+21 | for repo in ['engine','sdk-python','cli','scenarios','entrotter.github.io','entrotter']:
+   |
+
+Found 54 errors.
+[*] 1 fixable with the `--fix` option.

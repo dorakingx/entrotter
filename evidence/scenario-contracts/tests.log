@@ -1,0 +1,19 @@
+test_frozen_inputs_and_split_are_unchanged (test_benchmark_cases.FrozenCaseTests.test_frozen_inputs_and_split_are_unchanged) ... ok
+test_all_schema_meta_validation_with_network_disabled (test_offline_contracts.OfflineContractTests.test_all_schema_meta_validation_with_network_disabled) ... ok
+test_command_rejects_invalid_result_without_success_output (test_offline_contracts.OfflineContractTests.test_command_rejects_invalid_result_without_success_output) ... ok
+test_command_validates_local_scenario (test_offline_contracts.OfflineContractTests.test_command_validates_local_scenario) ... ok
+test_invalid_schema_fails_at_load (test_offline_contracts.OfflineContractTests.test_invalid_schema_fails_at_load) ... ok
+test_missing_schema_fails_even_without_agent (test_offline_contracts.OfflineContractTests.test_missing_schema_fails_even_without_agent) ... ok
+test_unknown_kind_fails (test_offline_contracts.OfflineContractTests.test_unknown_kind_fails) ... ok
+test_unregistered_references_fail_without_io (test_offline_contracts.OfflineContractTests.test_unregistered_references_fail_without_io) ... ok
+test_existing_report_envelope_still_accepts_no_agent (test_recording_schema.RecordingSchemaTests.test_existing_report_envelope_still_accepts_no_agent) ... ok
+test_shape_rejects_executable_action_extensions (test_recording_schema.RecordingSchemaTests.test_shape_rejects_executable_action_extensions) ... ok
+test_all_runtime_validate (test_scenarios.ScenarioTests.test_all_runtime_validate) ... ok
+test_json_schema (test_scenarios.ScenarioTests.test_json_schema) ... ok
+test_manifest_paths (test_scenarios.ScenarioTests.test_manifest_paths) ... ok
+test_no_real_claims_in_synthetic (test_scenarios.ScenarioTests.test_no_real_claims_in_synthetic) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.201s
+
+OK

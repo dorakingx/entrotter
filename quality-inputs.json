@@ -1,0 +1,26 @@
+{
+  "mypy_version": "1.18.2",
+  "dependency_commits": {
+    "agent-engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+    "worker-engine": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+    "sdk": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
+  },
+  "frozen_sources": {
+    "scripts/codex_policy.py": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76"
+  },
+  "frozen_type_findings": [
+    {
+      "diagnostic": "scripts/codex_policy.py:44: error: Argument 1 to \"register\" of \"_BaseSelectorImpl\" has incompatible type \"IO[bytes] | None\"; expected \"int | HasFileno\"  [arg-type]",
+      "reason": "Popen is constructed with stdout=PIPE, so this successful subprocess launch has a readable pipe. The frozen source registers only that pipe; real timeout/exit tests exercise this path."
+    },
+    {
+      "diagnostic": "scripts/codex_policy.py:50: error: Item \"int\" of \"int | HasFileno\" has no attribute \"fileno\"  [union-attr]",
+      "reason": "The selector receives only the stdout pipe object registered above, never an integer descriptor. That object supports fileno; bounded output/timeout/descendant cleanup tests exercise it."
+    },
+    {
+      "diagnostic": "scripts/codex_policy.py:72: error: Item \"None\" of \"IO[bytes] | None\" has no attribute \"close\"  [union-attr]",
+      "reason": "Popen stdout=PIPE supplies this pipe on a successful launch. The finally block closes it after owned process-group termination and wait; creation failures occur before entry into this block."
+    }
+  ]
+}

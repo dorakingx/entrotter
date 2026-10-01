@@ -1,0 +1,14 @@
+{
+  "ServerVersion": "27.4.0",
+  "OperatingSystem": "Ubuntu 24.04.1 LTS",
+  "OSType": "linux",
+  "Architecture": "aarch64",
+  "KernelVersion": "6.8.0-50-generic",
+  "CgroupVersion": "2",
+  "MemoryLimit": true,
+  "SwapLimit": true,
+  "CpuCfsQuota": true,
+  "PidsLimit": true,
+  "NCPU": 2,
+  "MemTotal": 2054631424
+}

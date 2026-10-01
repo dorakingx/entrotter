@@ -1,0 +1,38 @@
+test_aggregate_bytes_across_directories_and_replacement_peak (test_export_budget.ExportBudgetTests.test_aggregate_bytes_across_directories_and_replacement_peak) ... ok
+test_changed_tracked_files_and_hard_links_cannot_hide_usage (test_export_budget.ExportBudgetTests.test_changed_tracked_files_and_hard_links_cannot_hide_usage) ... ok
+test_default_count_rejects_129th_completed_export (test_export_budget.ExportBudgetTests.test_default_count_rejects_129th_completed_export) ... ok
+test_destination_symlink_is_replaced_without_modifying_referent (test_export_budget.ExportBudgetTests.test_destination_symlink_is_replaced_without_modifying_referent) ... ok
+test_failed_publish_preserves_previous_and_releases_reservation (test_export_budget.ExportBudgetTests.test_failed_publish_preserves_previous_and_releases_reservation) ... ok
+test_file_count_and_manual_deletion_release_capacity (test_export_budget.ExportBudgetTests.test_file_count_and_manual_deletion_release_capacity) ... ok
+test_invalid_or_oversized_bookkeeping_fails_closed (test_export_budget.ExportBudgetTests.test_invalid_or_oversized_bookkeeping_fails_closed) ...
+  test_invalid_or_oversized_bookkeeping_fails_closed (test_export_budget.ExportBudgetTests.test_invalid_or_oversized_bookkeeping_fails_closed) (data=b'{"version":true,"entries":[]}') ... FAIL
+test_invalid_or_oversized_bookkeeping_fails_closed (test_export_budget.ExportBudgetTests.test_invalid_or_oversized_bookkeeping_fails_closed) ... FAIL
+test_parent_alias_does_not_double_charge_same_export (test_export_budget.ExportBudgetTests.test_parent_alias_does_not_double_charge_same_export) ... ok
+test_private_state_and_reserved_files_are_required (test_export_budget.ExportBudgetTests.test_private_state_and_reserved_files_are_required) ... ok
+test_reservation_failure_writes_no_output_bytes (test_export_budget.ExportBudgetTests.test_reservation_failure_writes_no_output_bytes) ... ok
+test_sigkill_after_rename_recovers_exact_published_output (test_export_budget.ExportBudgetTests.test_sigkill_after_rename_recovers_exact_published_output) ... ok
+test_sigkill_before_rename_keeps_temporary_bytes_charged (test_export_budget.ExportBudgetTests.test_sigkill_before_rename_keeps_temporary_bytes_charged) ... ok
+test_two_real_processes_cannot_overrun_shared_budget (test_export_budget.ExportBudgetTests.test_two_real_processes_cannot_overrun_shared_budget) ... ok
+
+======================================================================
+FAIL: test_invalid_or_oversized_bookkeeping_fails_closed (test_export_budget.ExportBudgetTests.test_invalid_or_oversized_bookkeeping_fails_closed) (data=b'{"version":true,"entries":[]}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/engine-security/tests/test_export_budget.py", line 98, in test_invalid_or_oversized_bookkeeping_fails_closed
+    with self.subTest(data=data[:50]), self.assertRaises(OSError): budget.write(b'x', self.output / 'new')
+                                       ~~~~~~~~~~~~~~~~~^^^^^^^^^
+AssertionError: OSError not raised
+
+======================================================================
+FAIL: test_invalid_or_oversized_bookkeeping_fails_closed (test_export_budget.ExportBudgetTests.test_invalid_or_oversized_bookkeeping_fails_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/engine-security/tests/test_export_budget.py", line 99, in test_invalid_or_oversized_bookkeeping_fails_closed
+    self.assertFalse((self.output / 'new').exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.269s
+
+FAILED (failures=2)

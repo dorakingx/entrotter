@@ -1,0 +1,27 @@
+{
+  "image_id": "sha256:c77d095159e6351f9f3f048e776c8ef57f69f7edbe1c9fbff17a2bc03755b85b",
+  "source_digest": "339d83885af59c8fdb815a5693c411d99c502044c441d495a56761792037412a",
+  "source_files": {
+    "__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "__main__.py": "f2d485d21613996f1e662ddeae01600e53afe900f993854105df0daeeb53c3d7",
+    "_guardian.py": "3758412adb3e8761a3c82eac89cbf5a72bac7d0dad5c492a6825b4bb2a5f9ddf",
+    "_isolated_worker.py": "eb8062f0b477793f8d489f376d04b8cf445a3b00decb3c58ae13bbf983698e7a",
+    "api.py": "cab74cd6a4e62230e5d6ce5c386a341e290fb1658ba8fc75892d02f859ebae3c",
+    "artifact.py": "69a6cb7cb312f0159f7fb8c2231606d49997c6375c665b753ca2bf4c7378150e",
+    "defi.py": "f4f5e6e50ad3745426c7d0fbc08b5fa42c79fd4daa225667821814f95acb7fde",
+    "evm.py": "7f8fdde9bc96f0bdcdbba7f04b4ff5175808943c547e47d97662abee2392b443",
+    "fixture.py": "1f771e23c8b8311bf1f5e9cc56bf30f7b369f8f617513d99024876688e809647",
+    "isolated.py": "5a1079194380ea0e84433a506be88636aa464aa7a3d1131bdf954520e5065800",
+    "models.py": "1383a7d508e22210217af4515c664c82a861f8a23dcef9dd9ec8f831966ae9b7",
+    "rpc.py": "f19af9a2af2f924c65595f609e7d320d75109e0b5f09c5ae032c0bbff43b7d46",
+    "runner.py": "a890c229194685551fe52904954527147002f9b1a3715588e0e646570feadce8",
+    "store.py": "25a6b9fe252cd0c8eef00ce5c3eb869d3a54044b00e9a67653a5c00b41749b3b",
+    "Dockerfile": "b2e8192261465bd1ba454345ed1c43917cbb05fffc9ad4f5cc526eb5eea912cc"
+  },
+  "foundry_version": "1.8.3",
+  "foundry_archive_sha256": "7ca48e6ca3cac1bce1403ca67e5bc1dc3bc1fd818199c9957c7165079c228568",
+  "anvil_binary_sha256": "674a06c97a01350cd00241762bbfb01ebcafce9b6e8cbd6c8758ecea6ef4b968",
+  "architecture": "amd64",
+  "published": false,
+  "base_image": "cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20"
+}

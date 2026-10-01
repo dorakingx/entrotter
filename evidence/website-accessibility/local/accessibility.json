@@ -1,0 +1,819 @@
+{
+  "checked_at": "2026-09-19T19:23:13.074Z",
+  "node": "v20.2.0",
+  "platform": "darwin",
+  "runner_sha256": "5166d4339df0b0d25b618ca0d402828757a9f311d4452a644dcd14766e976565",
+  "status": "passed",
+  "browser": "153.0.8010.12",
+  "axe": "4.13.0",
+  "playwright": "1.63.0",
+  "source_sha256": {
+    "index.html": "cb3ac894fdc2315da08d52a4d18d844ead96d93515d8489bd401ff490f5893e0",
+    "app.js": "76db722f03c0d71e3ee092a030dabc40a6fe6dda8370dae05cb4c547670f5f91",
+    "style.css": "16be105da69be8e60dee350314ea0133471ec07aa8a865b7a909c1b486080c7d",
+    "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+    "package.json": "514cb382a52db269921fb58eda55368809f3cc3fb8a852a20c761875389219bf",
+    "package-lock.json": "3da39071930c9b225476842e31056c522b44768ef3f650b48a41b38be3c0c65b"
+  },
+  "checks": [
+    {
+      "name": "Keyboard skip link moves focus into main and skips navigation",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard sample selection, native local-file chooser, live status and inert import",
+      "status": "passed"
+    },
+    {
+      "name": "1280px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px recovery-trap: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px depeg-stress: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px recovery-trap: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px depeg-stress: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px recovery-trap: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px depeg-stress: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "Tampered import clears data, reports an accessible error and recovers",
+      "status": "passed"
+    },
+    {
+      "name": "Forced colors, reduced motion and keyboard focus remain usable",
+      "status": "passed"
+    },
+    {
+      "name": "404 page at 320px: keyboard home link, no overflow and axe",
+      "status": "passed"
+    },
+    {
+      "name": "No JavaScript exceptions, uploads or unexpected third-party requests",
+      "status": "passed"
+    }
+  ],
+  "scans": [
+    {
+      "name": "1280-liquidity-shock",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "1280-recovery-trap",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "1280-depeg-stress",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "1280-ethereum-uniswap-slippage",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "390-liquidity-shock",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "390-recovery-trap",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "390-depeg-stress",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "390-ethereum-uniswap-slippage",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-table > table > thead > tr > th[scope=\"col\"]:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(178, 167, 191)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 8.272882630259412,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(1) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(2) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(3) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(4) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(5) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(6) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(7) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(8) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(9) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "th[scope=\"col\"]:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(178, 167, 191)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 8.272882630259412,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(1) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(2) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(3) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(4) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(5) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(6) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "320-liquidity-shock",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "320-recovery-trap",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "320-depeg-stress",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "320-ethereum-uniswap-slippage",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-table > table > thead > tr > th[scope=\"col\"]:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(178, 167, 191)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 8.272882630259412,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(1) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(2) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(3) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(4) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(5) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "#metric-rows > tr:nth-child(6) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(7) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(8) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(9) > td:nth-child(3)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "div[aria-labelledby=\"evm-caption\"] > table > thead > tr > th[scope=\"col\"]:nth-child(1)"
+          ],
+          "colors": {
+            "foreground": "rgb(178, 167, 191)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 8.272882630259412,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "th[scope=\"col\"]:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(178, 167, 191)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 8.272882630259412,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(1) > td:nth-child(1)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(1) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(2) > td:nth-child(1)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(2) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(3) > td:nth-child(1)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(3) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(4) > td:nth-child(1)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(4) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(5) > td:nth-child(1)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(5) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(6) > td:nth-child(1)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        },
+        {
+          "target": [
+            "tr:nth-child(6) > td:nth-child(5)"
+          ],
+          "colors": {
+            "foreground": "rgb(230, 223, 240)",
+            "background": "rgb(17, 16, 21)"
+          },
+          "ratio": 14.590753768121477,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "error",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental": [
+        {
+          "target": [
+            ".secondary > span[aria-hidden=\"true\"]"
+          ],
+          "colors": {
+            "foreground": "rgb(246, 243, 252)",
+            "background": "rgb(19, 16, 22)"
+          },
+          "ratio": 17.194725353177017,
+          "scope": "Opaque CSS contrast for clipped/decorative nodes; not an axe pass or screen-reader certification"
+        }
+      ]
+    },
+    {
+      "name": "404",
+      "violations": [],
+      "incomplete": [],
+      "supplemental": []
+    }
+  ],
+  "request_count": 101,
+  "errors": [],
+  "limitations": [
+    "Automated Chromium and accessibility-tree/keyboard evidence; no claim of manual screen-reader certification or complete WCAG conformance.",
+    "320 CSS-pixel viewport checks reflow; it is not a hardware/browser zoom measurement.",
+    "Axe incomplete contrast items remain explicit; supplemental checks apply only to opaque solid CSS colors.",
+    "Local fixture/archived report display; no new chain/model execution."
+  ]
+}

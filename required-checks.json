@@ -1,0 +1,182 @@
+{
+  "schema_version": "0.1.0",
+  "organization": "entrotter",
+  "branch": "main",
+  "strict": true,
+  "app_id": 15368,
+  "repositories": {
+    "entrotter": {
+      "verified_commit": "b011a5efea19c5edbaa55d12c41e2ec101990ba2",
+      "checks": [
+        {
+          "context": "bounded-default",
+          "app_id": 15368
+        },
+        {
+          "context": "docs-links",
+          "app_id": 15368
+        },
+        {
+          "context": "host-bounds",
+          "app_id": 15368
+        },
+        {
+          "context": "integration",
+          "app_id": 15368
+        },
+        {
+          "context": "quality",
+          "app_id": 15368
+        }
+      ],
+      "excluded": []
+    },
+    "engine": {
+      "verified_commit": "abb4662ce960e08b2aa3a2c8a1c10719339edccc",
+      "checks": [
+        {
+          "context": "docs-links",
+          "app_id": 15368
+        },
+        {
+          "context": "evm",
+          "app_id": 15368
+        },
+        {
+          "context": "isolated",
+          "app_id": 15368
+        },
+        {
+          "context": "quality",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.11)",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.12)",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.13)",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.14)",
+          "app_id": 15368
+        }
+      ],
+      "excluded": []
+    },
+    "sdk-python": {
+      "verified_commit": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "checks": [
+        {
+          "context": "docs-links",
+          "app_id": 15368
+        },
+        {
+          "context": "quality",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.11)",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.12)",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.13)",
+          "app_id": 15368
+        }
+      ],
+      "excluded": []
+    },
+    "cli": {
+      "verified_commit": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "checks": [
+        {
+          "context": "docs-links",
+          "app_id": 15368
+        },
+        {
+          "context": "quality",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.11)",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.12)",
+          "app_id": 15368
+        },
+        {
+          "context": "unit (3.13)",
+          "app_id": 15368
+        }
+      ],
+      "excluded": []
+    },
+    "scenarios": {
+      "verified_commit": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "checks": [
+        {
+          "context": "compatibility (3.11, bb8b3e8d32c7cbd49629d337758f30bfdf805045)",
+          "app_id": 15368
+        },
+        {
+          "context": "compatibility (3.13, 0d3857839b2187541e573bec2e58042ad5bf0b45)",
+          "app_id": 15368
+        },
+        {
+          "context": "docs-links",
+          "app_id": 15368
+        },
+        {
+          "context": "quality",
+          "app_id": 15368
+        },
+        {
+          "context": "validate",
+          "app_id": 15368
+        }
+      ],
+      "excluded": []
+    },
+    "entrotter.github.io": {
+      "verified_commit": "61740312f281f7e911e0eb6e9482a3c372cb1fae",
+      "checks": [
+        {
+          "context": "accessibility",
+          "app_id": 15368
+        },
+        {
+          "context": "check",
+          "app_id": 15368
+        },
+        {
+          "context": "docs-links",
+          "app_id": 15368
+        },
+        {
+          "context": "quality",
+          "app_id": 15368
+        }
+      ],
+      "excluded": [
+        {
+          "context": "deploy",
+          "reason": "Post-merge Pages build/deployment, intentionally skipped for pull requests; not a pre-merge check."
+        },
+        {
+          "context": "build",
+          "reason": "Post-merge Pages build/deployment, intentionally skipped for pull requests; not a pre-merge check."
+        }
+      ]
+    }
+  }
+}

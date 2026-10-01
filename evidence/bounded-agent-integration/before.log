@@ -1,0 +1,3 @@
+usage: reproduce_clean.py [-h] [--historical | --agent | --bounded]
+                          [--foundry-archive FOUNDRY_ARCHIVE]
+reproduce_clean.py: error: unrecognized arguments: --bounded-agent

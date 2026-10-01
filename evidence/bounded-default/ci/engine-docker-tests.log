@@ -1,0 +1,30 @@
+isolated	Verify real kernel enforcement, API and lifetime cleanup	﻿2026-09-19T19:45:54.0941158Z ##[group]Run python -m unittest discover -s tests_isolated -v
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0941639Z [36;1mpython -m unittest discover -s tests_isolated -v[0m
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0979999Z shell: /usr/bin/bash -e {0}
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0980242Z env:
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0980432Z   PYTHONPATH: src
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0980847Z   ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0981216Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0981648Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0982094Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0982491Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0982881Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0983267Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0983786Z   ENTROTTER_WORKER_IMAGE: sha256:6745f96d1e6c3adf16ddca4d67f95b8523288e6dac9a39204df42ab111ed961a
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:54.0984280Z ##[endgroup]
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:57.2476078Z test_cli_and_api_roundtrip (test_worker.IsolatedAPITests.test_cli_and_api_roundtrip) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:59.6296510Z test_cpu_quota_throttles_parallel_work (test_worker.IsolatedWorkerTests.test_cpu_quota_throttles_parallel_work) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:45:59.8862466Z test_kernel_controls_mounts_and_privileges (test_worker.IsolatedWorkerTests.test_kernel_controls_mounts_and_privileges) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:46:00.0839920Z test_memory_limit_actually_oom_kills_overallocation (test_worker.IsolatedWorkerTests.test_memory_limit_actually_oom_kills_overallocation) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:46:00.3175021Z test_pid_limit_actually_rejects_more_processes (test_worker.IsolatedWorkerTests.test_pid_limit_actually_rejects_more_processes) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:46:02.1246582Z test_real_fixture_and_anvil_results_match_native (test_worker.IsolatedWorkerTests.test_real_fixture_and_anvil_results_match_native) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:46:02.4457617Z test_tmpfs_space_and_noexec_are_enforced (test_worker.IsolatedWorkerTests.test_tmpfs_space_and_noexec_are_enforced) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:49:03.9343250Z Independent idle deadline observed after 181.490 seconds
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:49:03.9501625Z test_detached_idle_worker_expires_without_host_cooperation (test_worker.WorkerLifetimeTests.test_detached_idle_worker_expires_without_host_cooperation) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:49:05.1377240Z test_lost_client_is_bounded_by_independent_worker_timer (test_worker.WorkerLifetimeTests.test_lost_client_is_bounded_by_independent_worker_timer) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:49:06.3567130Z test_sigterm_ends_idle_worker_and_removes_container (test_worker.WorkerLifetimeTests.test_sigterm_ends_idle_worker_and_removes_container) ... ok
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:49:06.3568176Z
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:49:06.3568427Z ----------------------------------------------------------------------
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:49:06.3569254Z Ran 10 tests in 192.108s
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:49:06.3569505Z
+isolated	Verify real kernel enforcement, API and lifetime cleanup	2026-09-19T19:49:06.3569636Z OK

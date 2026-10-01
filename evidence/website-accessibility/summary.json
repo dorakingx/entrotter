@@ -1,0 +1,324 @@
+{
+  "schema_version": "0.1.0",
+  "checked_at": "2026-09-19T19:27:06.661861+00:00",
+  "status": "verified_proposed_changes_not_merged_or_deployed",
+  "tracking_issue": "https://github.com/entrotter/entrotter/issues/20",
+  "website_pr": "https://github.com/entrotter/entrotter.github.io/pull/10",
+  "before_commit": "692bb467bda71078f37bbeb1658f42f3f7212f7f",
+  "website_commit": "d7785e201a4de50b72623a1e7522762738abab54",
+  "runner_sha256": "5166d4339df0b0d25b618ca0d402828757a9f311d4452a644dcd14766e976565",
+  "source_sha256": {
+    "index.html": "cb3ac894fdc2315da08d52a4d18d844ead96d93515d8489bd401ff490f5893e0",
+    "app.js": "76db722f03c0d71e3ee092a030dabc40a6fe6dda8370dae05cb4c547670f5f91",
+    "style.css": "16be105da69be8e60dee350314ea0133471ec07aa8a865b7a909c1b486080c7d",
+    "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+    "package.json": "514cb382a52db269921fb58eda55368809f3cc3fb8a852a20c761875389219bf",
+    "package-lock.json": "3da39071930c9b225476842e31056c522b44768ef3f650b48a41b38be3c0c65b"
+  },
+  "workflow_sha256": "a5abd26c855e40d136ffc29a0181b60764e251c51f45cf2c0f4857ca0f46a227",
+  "commands": {
+    "before": "SITE_DIR=../.worktrees/website-a11y-before A11Y_OUTPUT=output/playwright/before node scripts/check_accessibility.mjs",
+    "after": "npm run test:accessibility",
+    "setup": "npm ci --ignore-scripts; npx --no-install playwright install chromium",
+    "audit": "npm audit --json"
+  },
+  "before": {
+    "failed_groups": 16,
+    "passed_groups": 2,
+    "runner_matches_after": true,
+    "browser": "153.0.8010.12",
+    "note": "Checks stop at the first assertion within each group; this is 16 failed groups, not 16 independent axe violations. Earlier direct scans also retain the scrollable-region-focusable violation and aria-prohibited-attr incomplete. The initial desktop scan used Chrome 152; final same-runner baseline and mobile direct scan used Chromium 153."
+  },
+  "local": {
+    "platform": "darwin",
+    "node": "v20.2.0",
+    "browser": "153.0.8010.12",
+    "passed_groups": 18,
+    "axe_scans": 14,
+    "axe_violations": 0
+  },
+  "ci": {
+    "run_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35464241907",
+    "link_run_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35464241911",
+    "conclusion": "success",
+    "platform": "linux",
+    "node": "v22.23.2",
+    "browser": "153.0.8010.12",
+    "passed_groups": 18,
+    "axe_scans": 14,
+    "axe_violations": 0,
+    "all_source_and_runner_hashes_match_local": true,
+    "artifact": {
+      "id": 10590528585,
+      "name": "accessibility-evidence",
+      "github_reported_digest": "sha256:afa3973a97b406d475bf7ebd50a12ba98b0fdb04237df70baacea856214e32ef",
+      "size_in_bytes": 2786350,
+      "downloaded_and_inspected": true
+    },
+    "jobs": {
+      "check": "success",
+      "accessibility": "success",
+      "build": "skipped_on_pr",
+      "deploy": "skipped_on_pr"
+    }
+  },
+  "tools": {
+    "axe": "4.13.0",
+    "playwright": "1.63.0",
+    "direct_dependencies": "exact versions with integrity-locked package-lock.json",
+    "runtime_dependencies": [],
+    "audit_known_vulnerabilities": 0,
+    "scope": "Three installed development packages including playwright-core; browser/OS advisory coverage is separate."
+  },
+  "contrast": {
+    "axe_incomplete_rules": [
+      "color-contrast"
+    ],
+    "supplemental_minimum_ratio": 8.272882630259412,
+    "note": "Raw incomplete results are retained. Separate opaque CSS calculations for clipped/decorative nodes require 4.5:1 and reject gradients/transparency/filter effects. This is not an axe pass or complete contrast certification."
+  },
+  "visual_review": [
+    "Local desktop and 320px report screenshots inspected",
+    "Linux 320px report screenshot inspected; system fonts differ by platform"
+  ],
+  "boundaries": [
+    "No manual screen-reader certification or complete WCAG conformance claim",
+    "320 CSS pixels is viewport reflow, not hardware zoom",
+    "All reports are existing public samples; no new chain or model execution",
+    "No uploads or third-party requests; diagnostics injected through DevTools, production CSP unchanged",
+    "Initial harness failures retained: request.url was a method, macOS select needed typeahead; error-state empty table was a product issue fixed before final runs",
+    "Gzip files losslessly retain complete raw axe reports; logs only normalize trailing whitespace",
+    "Public main remains ab121348b0ffbec5650f9eadf0a0b11f639d9780; new changes await independent review and merge",
+    "Owned headed browser, loopback server and clean baseline worktree removed after checks"
+  ],
+  "files": {
+    "before/accessibility.json": {
+      "sha256": "e1efe7b3318d8ab6637e5569dc1ae6ca03e432b719e2fbfc5a0763b7864b2d63",
+      "bytes": 5068
+    },
+    "before/axe-before.json.gz": {
+      "sha256": "fe8cb7cade38c431302e4a507c190577600fe9bd44fbb41ca7fdbc417cdc6db3",
+      "bytes": 24460,
+      "uncompressed_sha256": "4d48e7d9c094d90023b3c2f6a2c868747a5d9c729876f78a526ab0e7efd6df82"
+    },
+    "before/axe-evm-mobile-before.json.gz": {
+      "sha256": "2689566af0dbc42299289700580ab0dbce243a14f7d18c0130658d6eef760b03",
+      "bytes": 26957,
+      "uncompressed_sha256": "f97725a45d923a0edae7617f0d19648933faa40462bba9e2e56f09fb3eb8b6e5"
+    },
+    "before/checks.log": {
+      "sha256": "08fd3195002ff8c85cd678972f43d3ea3ad79ada6bbaeefdbaf3c84f790a3025",
+      "bytes": 3767
+    },
+    "before/mobile.png": {
+      "sha256": "7f0d223507a244bf40d986e755ccc4a0c68235d0ee2c7188bec28b1da814987e",
+      "bytes": 491992
+    },
+    "ci/320-ethereum-uniswap-slippage-viewport.png": {
+      "sha256": "974ef0b42655c55b169fe9ea3b77fa2f37c5d1c5375f4a9ed771c161d125bde9",
+      "bytes": 58474
+    },
+    "ci/accessibility.json": {
+      "sha256": "c0f76e2cbc91bafc4c6e8af9b48d7fb696a79e71d40b0c68f7dd766a2269c05a",
+      "bytes": 27019
+    },
+    "ci/axe-1280-depeg-stress.json.gz": {
+      "sha256": "5a1c5464b31228e02f9dc42b0d694ac83a8aadbac9fc9fc4a525da73cb2036e2",
+      "bytes": 28259,
+      "uncompressed_sha256": "8542e54496c6b786c9645eb91b2b1f9e6ae10ce43ff3c99147f5651c509a3e67"
+    },
+    "ci/axe-1280-ethereum-uniswap-slippage.json.gz": {
+      "sha256": "22c09e720b8835b0b3edc7e3f58584bc6f299a5a7ae9e044ca5393638ea487e7",
+      "bytes": 28752,
+      "uncompressed_sha256": "453aecdba601033ffba873e12b6e8f2b9970e9ac2b1a6a6fb304beab1edcbc3f"
+    },
+    "ci/axe-1280-liquidity-shock.json.gz": {
+      "sha256": "fc5f9f70bcca1724a192e3e50f5bb87794f75a422014af765105a61406b4e84a",
+      "bytes": 28309,
+      "uncompressed_sha256": "57391638341a4862b69db570869260037cc3dace5384f1bab6b515d4d1ca020e"
+    },
+    "ci/axe-1280-recovery-trap.json.gz": {
+      "sha256": "251a330c98aa857fd42a4e00b591e2c92a0b00fc20f1d2dc337a389dede94b54",
+      "bytes": 28345,
+      "uncompressed_sha256": "eed78cf4bc0a08812c7d8f2e323aa7ccf31a45fa571b72c0f9999e0bbdadea0e"
+    },
+    "ci/axe-320-depeg-stress.json.gz": {
+      "sha256": "d7f1ec243c858d5cd97cfe21cd280f9e2bcbb952e13417b7d325f1e31efb8a9b",
+      "bytes": 28248,
+      "uncompressed_sha256": "1e3b9c095432f7dc83580d42efb302f41e520373f873a1550cd7f45f2b248961"
+    },
+    "ci/axe-320-ethereum-uniswap-slippage.json.gz": {
+      "sha256": "06eb6d191557be2526acbd05dadf7de4b0d519cd8259ca51af13549e27ac5f96",
+      "bytes": 29114,
+      "uncompressed_sha256": "4a30c4ca8eacdd1fbb3361104f0853165ddbf16441cd54777b9e1c78729029ae"
+    },
+    "ci/axe-320-liquidity-shock.json.gz": {
+      "sha256": "7a6158b796f89dec599b40591a8b0e07fdb01961ba4dc59d27bb902ce49738d3",
+      "bytes": 28300,
+      "uncompressed_sha256": "7f32cd165f138d5cea9cef066566a77b6bdc81a3612c2e08017231c02c2ddbfb"
+    },
+    "ci/axe-320-recovery-trap.json.gz": {
+      "sha256": "2205189dbf794f444d27d8e5bacff2c8fb77ff3affe40b070e76804a3d7cc418",
+      "bytes": 28333,
+      "uncompressed_sha256": "2be362c69e4f79dae3d44b60e936b5553777ad46c4076f45186fa1ee74049366"
+    },
+    "ci/axe-390-depeg-stress.json.gz": {
+      "sha256": "4e02462be09006961029908d397a5f5684e8417ced5a2d045419c01c76a15484",
+      "bytes": 28236,
+      "uncompressed_sha256": "c2281926fe5165a9f1935c99af75aaaa5bb7115ead9afccb0aef5a33801c96c7"
+    },
+    "ci/axe-390-ethereum-uniswap-slippage.json.gz": {
+      "sha256": "88c1f2f6b68247f6a3dac33b44d068cd060d82b69717459f8ed76314e99864a9",
+      "bytes": 29073,
+      "uncompressed_sha256": "efd1969056c02043b5cfd74919b32a3f1d835305f253d27affbe6e6ee4ccbdfa"
+    },
+    "ci/axe-390-liquidity-shock.json.gz": {
+      "sha256": "fbb28b0fab986c814e425745ddd0fdd860aa4dfe38267cf3f9ac3d00fbffd946",
+      "bytes": 28287,
+      "uncompressed_sha256": "a5225f407db1e346ed7939e179c1b168635e99292c78efdffbe696a1cbeae7d2"
+    },
+    "ci/axe-390-recovery-trap.json.gz": {
+      "sha256": "ec874a0cfe21ecc4e82a2f8ce5546bb7d13037c9715d8c5ad2dbd5461b73f128",
+      "bytes": 28320,
+      "uncompressed_sha256": "74480a8ea8cf80f457ee3c1edfee31bd17b76a9e8ca4085086315973e1de93f1"
+    },
+    "ci/axe-404.json.gz": {
+      "sha256": "ea89db6f38493b9e4ac142f57fbab4a018b9a7d8eec835ca4f16c1b787babb19",
+      "bytes": 6985,
+      "uncompressed_sha256": "10410ed6c6fdfb8abb988bca3ca14d0b5b529862b6302da433ea79782dd3ea56"
+    },
+    "ci/axe-error.json.gz": {
+      "sha256": "2e187f30f3c52c3b7b7a2ce145dd8afe9c2d793663d1af19cfd7ab18a8e93116",
+      "bytes": 21566,
+      "uncompressed_sha256": "3c91203a7cb6dbb40ae9ab886020e61ae38953acf3285203327d64ec45201e43"
+    },
+    "ci/npm-audit.json": {
+      "sha256": "f9a031af1fd5991a41d6dbf8c4fcafa5b596b094a7d17ad5dea052518cd16fb7",
+      "bytes": 358
+    },
+    "ci/unit-tests.log": {
+      "sha256": "d008cfee9a8925336f7e54de5455d61e9c3f092c5c3f55d282a0bd9cac1a94ba",
+      "bytes": 39003
+    },
+    "initial-harness-and-error-state-failures.log": {
+      "sha256": "d04862df6a1671e60c5befacb9eefa079f88eeaa5f97749b7cd94d50ae8f3653",
+      "bytes": 2413
+    },
+    "live-publication.json": {
+      "sha256": "1e3dc6d0ac016a2fa9b3e052ce6929272ac3692be7708312bd2f3a7e141fc26b",
+      "bytes": 494
+    },
+    "local/1280-liquidity-shock-viewport.png": {
+      "sha256": "ab678aa93733c5606da5de28cc4df312cd1ae6d4e51af440873d26c67aaeec46",
+      "bytes": 108468
+    },
+    "local/320-ethereum-uniswap-slippage-viewport.png": {
+      "sha256": "f7fde7d54e53115cca5e4dba4d81183c48d26a7b03c5850407af2b48c102e2e1",
+      "bytes": 66647
+    },
+    "local/accessibility.json": {
+      "sha256": "e79864d2a4d9f90b5c7c2042affd7dab3d4d36346b9d11634a4de4291b957522",
+      "bytes": 27019
+    },
+    "local/axe-1280-depeg-stress.json.gz": {
+      "sha256": "3fb70e0a91d96e1c0c9743f4f7ade01373538cbb7b616fa24534b24092d47fca",
+      "bytes": 28271,
+      "uncompressed_sha256": "fc35310e2208dd108b71b37a70dbc950fc3cf4315d7f08e3075ed488ca09c57e"
+    },
+    "local/axe-1280-ethereum-uniswap-slippage.json.gz": {
+      "sha256": "044162460fd117547c559ba4dd2a656a3195196a4993f0d355c74a209c940ab1",
+      "bytes": 28765,
+      "uncompressed_sha256": "0183668e4b0a9b16f681b8cfc3ea31721920d66583853f9f5778f0ec8f59b704"
+    },
+    "local/axe-1280-liquidity-shock.json.gz": {
+      "sha256": "0b3a1f8ddd142253828d0cfc242678082a53ac23d7c347a6238d630350efbbfd",
+      "bytes": 28321,
+      "uncompressed_sha256": "1652d8b5927e9d20547bf56fe177da2367dfc52301049a48ffdb2356f5c703f5"
+    },
+    "local/axe-1280-recovery-trap.json.gz": {
+      "sha256": "e84188291c16ae80ad9d02ad2e24c7350ab4374d2baeff59f99ffc706555cfc6",
+      "bytes": 28356,
+      "uncompressed_sha256": "9e527faa99ada4884e3fb2b7dc9b2671882859fd4bd1bd35b21037d46d41ed2b"
+    },
+    "local/axe-320-depeg-stress.json.gz": {
+      "sha256": "49eafc021fed681f301e4db7af30812af7c757259c110cbacfd19136337ae2f1",
+      "bytes": 28251,
+      "uncompressed_sha256": "0d20e0c5a96edba503c42fe6ed04cf2a56152793ecd7da10504394a05543d9bb"
+    },
+    "local/axe-320-ethereum-uniswap-slippage.json.gz": {
+      "sha256": "60d423ac7484274143cfefd03fd1cac8a0acf484e1006f35571a15586ec3edf3",
+      "bytes": 29120,
+      "uncompressed_sha256": "c6894631ddcc0359ec22911cc8fe09e78bf55aea1c9ba71c4ad5020ddd5207f1"
+    },
+    "local/axe-320-liquidity-shock.json.gz": {
+      "sha256": "1978c227d795b610466eac2b91daf8017a18c32317961ed0d07a490d322305bb",
+      "bytes": 28300,
+      "uncompressed_sha256": "8ac7cd6fda784a5ba44a75a52177414d8f1256960f4daec9abd4963937acff67"
+    },
+    "local/axe-320-recovery-trap.json.gz": {
+      "sha256": "c33ed8eac6176a15f5a53ff1f811ced7faedfd6e62f2fa7b0224c39fb301113d",
+      "bytes": 28337,
+      "uncompressed_sha256": "b1ebd8bdf71d5b7ef316b654c0223a67ea318370aa09134bc9f89ea51b6aad22"
+    },
+    "local/axe-390-depeg-stress.json.gz": {
+      "sha256": "88c403b45142c45a5f7d66a256f7759ce6a1360f9b2b29d05c37e4c54721e2fb",
+      "bytes": 28244,
+      "uncompressed_sha256": "001ed571807858d243a1b2d1cada06ce50ed012f8ae8e04c128d09f432966a8f"
+    },
+    "local/axe-390-ethereum-uniswap-slippage.json.gz": {
+      "sha256": "ccc026787f4666336bf53217d2ff04e80dddeb0994d7df549aad718de33227b7",
+      "bytes": 29087,
+      "uncompressed_sha256": "ed6445787b0ea83bf28e7e2e761f64cba85580d9233d5936f9bd3523fba7626a"
+    },
+    "local/axe-390-liquidity-shock.json.gz": {
+      "sha256": "f5b7521d9424abdd5aaae285551a5d3ced424308539a762be92f4e97e5d9f273",
+      "bytes": 28295,
+      "uncompressed_sha256": "69b1b291252b612365777f1ea62aa21848501aa692549ed26e476d439d6da477"
+    },
+    "local/axe-390-recovery-trap.json.gz": {
+      "sha256": "d4eb14f9d5e6f0bf334ae3719d4a1feb81fee32d64cf6b8db491d9f225c8abb9",
+      "bytes": 28330,
+      "uncompressed_sha256": "fc4b9ec22540742aa40cdc2c2f7ea888d787e967104050f59ffba78fbd9c55f3"
+    },
+    "local/axe-404.json.gz": {
+      "sha256": "054cc21298448d9a2f6104be9f4769d2dfd7af23aaf700086a9dff5964e59438",
+      "bytes": 7002,
+      "uncompressed_sha256": "3e1e89307d7d2b0a92f8a65964939ae851298f56250bc44c5588e0f8be1bd5fe"
+    },
+    "local/axe-error.json.gz": {
+      "sha256": "a0dc7cbf0b872564ab44dd75698c49df26179bf991cca405e9f252203ac89f0a",
+      "bytes": 21578,
+      "uncompressed_sha256": "d258e6d426b7d962f3da4ee2758fdfd828a52644eb867059b0c916032a3cc56d"
+    },
+    "local/checks.log": {
+      "sha256": "3f4700cd23a98b2e7dde3fb197afed2cd5449faf0f2c6e2b2a571d98996b7947",
+      "bytes": 2325
+    },
+    "local/forced-colors.png": {
+      "sha256": "9bb9fe89e2a7c1f83ef6b8de7b494fa30cafc21fb6ff08b2ef889d473f35af6e",
+      "bytes": 333176
+    },
+    "local/npm-audit.json": {
+      "sha256": "f9a031af1fd5991a41d6dbf8c4fcafa5b596b094a7d17ad5dea052518cd16fb7",
+      "bytes": 358
+    },
+    "coordination-setup-failure.log": {
+      "sha256": "c75d7e6258e67d4607720a8e4e137e7bb6b2940a3f06ccb4a1df678221aba7da",
+      "bytes": 4254
+    },
+    "coordination-tests.log": {
+      "sha256": "7e5072a6245138f96058c6cd7a9073bad032f4afb41a25bc51e00754629e85c5",
+      "bytes": 2623
+    },
+    "coordination-links.json": {
+      "sha256": "c27b3108585f76b7c9b729997dbc86b9d2f6d0cd547e1b0f2f18703a72b6e01f",
+      "bytes": 24943
+    }
+  },
+  "coordination_tests": {
+    "passed": 20,
+    "skipped": 0,
+    "command": "PYTHONPATH=../engine/src:../sdk-python/src:../cli/src PATH=\"$PWD/../.tools/foundry-v1.8.3:$PATH\" python3 -m unittest discover -s tests -v",
+    "initial_setup_failure": "First invocation omitted required sibling PYTHONPATH and failed four module imports; corrected invocation passes. Both logs retained; workspace path replaced with /workspace."
+  }
+}

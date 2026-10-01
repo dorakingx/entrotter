@@ -1,3 +1,17 @@
+test_changed_manifest_fails_before_any_execution (test_benchmark_guard.BenchmarkGuardTests.test_changed_manifest_fails_before_any_execution) ... ok
+test_dirty_engine_cannot_silently_change_holdout_policy (test_benchmark_guard.BenchmarkGuardTests.test_dirty_engine_cannot_silently_change_holdout_policy) ... ok
+test_split_loading_does_not_execute_or_generate (test_benchmark_guard.BenchmarkGuardTests.test_split_loading_does_not_execute_or_generate) ... ok
+test_bounded_process_stdin_and_no_secret_environment_forwarding (test_codex_policy.CodexBoundaryTests.test_bounded_process_stdin_and_no_secret_environment_forwarding) ... ok
+test_empty_or_invalid_usage_never_looks_completed (test_codex_policy.CodexBoundaryTests.test_empty_or_invalid_usage_never_looks_completed) ... ok
+test_nonzero_exit_redacts_stderr (test_codex_policy.CodexBoundaryTests.test_nonzero_exit_redacts_stderr) ... ok
+test_one_typed_response_and_usage (test_codex_policy.CodexBoundaryTests.test_one_typed_response_and_usage) ... ok
+test_output_limit_fails_without_returning_partial_decision (test_codex_policy.CodexBoundaryTests.test_output_limit_fails_without_returning_partial_decision) ... ok
+test_timeout_reaps_owned_child (test_codex_policy.CodexBoundaryTests.test_timeout_reaps_owned_child) ... ok
+test_changed_case_cannot_be_run (test_direct_benchmark.DirectBenchmarkTests.test_changed_case_cannot_be_run) ... ok
+test_owned_client_takes_only_a_local_port (test_direct_benchmark.DirectBenchmarkTests.test_owned_client_takes_only_a_local_port) ... ok
+test_projection_rejects_tampered_reference (test_direct_benchmark.DirectBenchmarkTests.test_projection_rejects_tampered_reference) ... ok
+test_standalone_execution_has_no_engine_imports (test_direct_benchmark.DirectBenchmarkTests.test_standalone_execution_has_no_engine_imports) ... ok
+test_upstream_cannot_broadcast_or_mutate (test_direct_benchmark.DirectBenchmarkTests.test_upstream_cannot_broadcast_or_mutate) ... ok
 test_all_exported_reports_reproduce_exactly (test_workspace.WorkspaceTests.test_all_exported_reports_reproduce_exactly) ... ok
 test_cli_local_verify_inspect (test_workspace.WorkspaceTests.test_cli_local_verify_inspect) ... ok
 test_copied_fixture_contract (test_workspace.WorkspaceTests.test_copied_fixture_contract) ... ok
@@ -6,6 +20,6 @@ test_public_manifest_boundaries (test_workspace.WorkspaceTests.test_public_manif
 test_sdk_api_roundtrip (test_workspace.WorkspaceTests.test_sdk_api_roundtrip) ... ok
 
 ----------------------------------------------------------------------
-Ran 6 tests in 0.540s
+Ran 20 tests in 1.191s
 
 OK

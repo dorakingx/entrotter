@@ -1,0 +1,13 @@
+{
+  "engine_commit": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+  "quality_run": 35467337447,
+  "bandit_findings": 15,
+  "full_local_ci_findings_equal": true,
+  "audited_packages": 42,
+  "vulnerabilities": 0,
+  "wheel_source_files": 14,
+  "wheel_source_equality": true,
+  "wheel_sha256": "398be8008751c18ae462e9ca0cb1de83d5cf196c76d63071f4ecbeb7dc356163",
+  "license": "MIT",
+  "runtime_dependencies": []
+}
