@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: 935558a5b95755c72ca6fb24f076b3a231fa5b64
+          ref: 99fd3a60a754f129c78d1324f2a01787a6538917
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -211,6 +211,78 @@ jobs:
               'limits': ['Native synthetic source; not archived funding or host default-worker execution proof.',
                          'Viewer codec inspection is separate from rendered browser verification.',
                          'Checksum/internal consistency is not authenticity/EVM truth.'],
+          }, indent=2) + '\n')
+          PY
+      - name: Inspect oracle omission and unverified storage reports with SDK and viewer
+        run: |
+          python - <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+          from entrotter_sdk import load_trace
+          sources = {
+              'native-oracle-prefix.json': 'b97f34c9396f76eb352f870c0235422b77fa3aaaa58c25a97262c2995f2bd1ae',
+              'native-provider-control.json': '66c1d555ad0068e128c8e5cdc0619f71824c4401177b0c3f1b84a77be4572b5d',
+              'native-missing-storage.json': '2d1449f0807329e6f70799c0ff02ec69d2c8e1050c15425fd3f13aad034c034b',
+          }
+          module = Path('entrotter.github.io/trace-report.mjs')
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[2], 'utf8')));
+          const missing = process.argv[3] === 'true';
+          assert.equal(view.baseline.matches, !missing);
+          assert.deepEqual(view.baseline.rows.map(r => r.status), missing ? ['not_mined', 'not_mined'] : ['executed', 'executed']);
+          assert.deepEqual(view.candidate.rows.map(r => r.status), missing ? ['skipped', 'not_mined'] : ['skipped', 'executed']);
+          if (missing) {
+            assert([...view.baseline.rows, ...view.candidate.rows].every(r => r.receipt === null));
+          } else {
+            assert.deepEqual(view.baseline.rows.map(r => parseInt(r.receipt.gasUsed, 16)), [26167, 26438]);
+            assert.deepEqual(view.baseline.rows.map(r => parseInt(r.receipt.cumulativeGasUsed, 16)), [26167, 52605]);
+            assert.equal(view.baseline.rows[1].receipt.logs[0].data, '0x' + (20n).toString(16).padStart(64, '0'));
+            assert.equal(view.candidate.rows[1].receipt.status, '0x0');
+            assert.equal(parseInt(view.candidate.rows[1].receipt.gasUsed, 16), 25808);
+            assert.deepEqual(view.candidate.rows[1].receipt.logs, []);
+          }
+          console.log(JSON.stringify({status: 'passed', artifact_id: view.report.artifact_id, baseline_verified: view.baseline.matches, node: process.version}));
+          """
+          results = []
+          for name, digest in sources.items():
+              source = Path('engine/evidence/trace-oracle-provider') / name
+              assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+              report = load_trace(source)
+              missing = name == 'native-missing-storage.json'
+              assert report.baseline_verified == (not missing)
+              assert [r.baseline.status for r in report.transactions] == (['not_mined', 'not_mined'] if missing else ['executed', 'executed'])
+              assert [r.candidate.status for r in report.transactions] == (['skipped', 'not_mined'] if missing else ['skipped', 'executed'])
+              if missing:
+                  assert all(r.baseline.receipt is None and r.candidate.receipt is None for r in report.transactions)
+              else:
+                  assert [r.baseline.receipt.gas_used for r in report.transactions] == [26167, 26438]
+                  assert [r.baseline.receipt.cumulative_gas_used for r in report.transactions] == [26167, 52605]
+                  assert report.transactions[1].baseline.receipt.logs[0].data == '0x' + (20).to_bytes(32, 'big').hex()
+                  adverse = report.transactions[1].candidate.receipt
+                  assert adverse.status == 0 and adverse.gas_used == 25808 and not adverse.logs
+                  assert report.transactions[1].candidate.hash == report.transactions[1].hash
+              completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                          module.resolve().as_uri(), str(source), str(missing).lower()],
+                                         check=True, capture_output=True, text=True, timeout=30)
+              viewer = json.loads(completed.stdout)
+              assert viewer['artifact_id'] == report.artifact_id and viewer['baseline_verified'] == report.baseline_verified
+              results.append({'source': str(source), 'report_sha256': digest,
+                              'artifact_id': report.artifact_id, 'baseline_verified': report.baseline_verified,
+                              'baseline_statuses': [r.baseline.status for r in report.transactions],
+                              'candidate_statuses': [r.candidate.status for r in report.transactions], 'viewer': viewer})
+          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-oracle-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline synthetic oracle/provider-fault reports; no new EVM/model call',
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(), 'reports': results,
+              'limits': ['Known storage-fault cause comes from separate test controls, not receipt absence.',
+                         'Synthetic native source is not archived oracle or host default-worker proof.',
+                         'Viewer codec inspection is separate from rendered browser verification.',
+                         'Checksums/internal consistency do not authenticate provider state or oracle truth.'],
           }, indent=2) + '\n')
           PY
       - name: Build source-bound local image
