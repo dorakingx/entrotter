@@ -34,16 +34,27 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination b8a23f8, engine c167193 and CLI 22b514c; SDK/schema/site pins are retained.
+coordination adf4fc8, engine 6e13f34 and CLI 22b514c; SDK/schema/site pins are retained.
 
-The current [inspection-fix composition](../evidence/agent-inspection-integration/summary.json)
+The prior [inspection-fix composition](../evidence/agent-inspection-integration/summary.json)
 selects the independently code-reviewed CLI fix: extra typed-response fields
 cannot replace an observation's displayed step, and malformed responses are
 refused before replay execution. All six CLI checks pass with 42 units per Python
 version and four actual Docker cases retaining original report equality. Code
 review is distinct from protected-main approval. Combined current-head CI and its
-clean reproduction artifacts are recorded in the candidate PR; the older full
-guide timings above do not measure these updated pins.
+clean reproduction artifacts are recorded in the candidate PR: fixture6.308s and
+model6.830s belong to coordination328f4c1/enginec167193/CLI22b514c.
+
+The current [contract identity composition](../evidence/contract-identity-integration/summary.json)
+selects engine6e13f34. An independent source reviewer reproduced different Anvil
+outcomes for canonically equal local contract maps differing only in key order.
+Duplicate normalized contract addresses now refuse before native/default/agent
+work; a single mixed-case address remains valid. All eight engine checks pass
+with214 native tests and22 actual Docker enforcement/cleanup cases. The original
+records remain unchanged. Current combined CI and clean reproduction results are
+recorded in [candidate PR55](https://github.com/entrotter/entrotter/pull/55);
+the older timings above do not measure this new composition. Independent GitHub
+approval and protected integration remain pending.
 
 ## 1. Fetch a compatible snapshot
 
@@ -57,7 +68,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git b8a23f819ff4e682eb2bbdf89b6e7c55cf3ec025
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git adf4fc8f65f1e7641f371624ffe01e73da83332e
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json

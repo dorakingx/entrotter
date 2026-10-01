@@ -53,15 +53,19 @@ instead of rebuilding from moving main branches. The recordings below retain
 their original source versions.
 
 The execution snapshot below contains the optional bounded Linux CLI launcher and
-selects the bounded-diagnostic builder. Its [fresh measured walkthrough](../evidence/latest-candidate/summary.json)
-checks all six public revisions and complete fixture/local-Anvil results. Guide
-and evidence updates occur in later documentation commits with the same production
-tools; this snapshot is proposed code, not an independently approved release.
+selects the tested canonical contract identity fix. The
+[current composition evidence](../evidence/contract-identity-integration/summary.json)
+binds its independently reviewed engine fix and exact source/image inputs; current
+combined checks and public reproduction measurements are recorded in
+[candidate PR55](https://github.com/entrotter/entrotter/pull/55). Prior walkthroughs
+retain their actual older pins. Guide and evidence updates occur in later
+documentation commits with the same production tools; this snapshot is proposed
+code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [b8a23f8](https://github.com/entrotter/entrotter/tree/b8a23f819ff4e682eb2bbdf89b6e7c55cf3ec025) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
-| Bounded agent engine, build lifetime/diagnostics and metadata | [c167193](https://github.com/entrotter/engine/tree/c1671938edde03c59deef64dbb81d7c41a33406b) | [#27](https://github.com/entrotter/engine/pull/27) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [adf4fc8](https://github.com/entrotter/entrotter/tree/adf4fc8f65f1e7641f371624ffe01e73da83332e) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Bounded agent engine and canonical contract identity fix | [6e13f34](https://github.com/entrotter/engine/tree/6e13f342a20dece8c4d0983dc9813260508fb7fb) | [#28](https://github.com/entrotter/engine/pull/28) |
 | Python SDK | [b0c2ba3](https://github.com/entrotter/sdk-python/tree/b0c2ba3bba411e548af44101ae06e879bd7b5dc0) | [#6](https://github.com/entrotter/sdk-python/pull/6) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Schema contracts | [3a78ecc](https://github.com/entrotter/scenarios/tree/3a78ecca24334ae87119a5a0b64c84ba6dd71de1) | [#8](https://github.com/entrotter/scenarios/pull/8) |
