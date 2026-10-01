@@ -1,0 +1,10 @@
+{
+  "description": "Disposable synthetic signed same-block funding, not historical/model/holdout proof. No keys retained. Only A receives startup parent allocation; no replay repairs.",
+  "actor": "0x42a7ab204a9c08d5f82ffc56201d83c111c8c5e7",
+  "actor_balance_eth": "1",
+  "raw_transactions": [
+    "0xf86a80843b9aca0082520894a2337bf7c2010018a56fc17326a4a9a9f9eb8edb872386f26fc100008026a0d7899bf0066566646ab01ceaecb2cdfc628eb8c6d09e79552fa594fd5c8afd55a062ed4583c47babf8f26b6a6301c572a76ce5bb5b662765043253a6a40085b33e",
+    "0xf86a80843b9aca0082520894333333333333333333333333333333333333333387038d7ea4c680008026a04945636ededecc42e7a1098fb5d815728f44fb6b02f94b626f573f6110018203a02d0e145cc647423022482c86b61a0fbe3e537b537477cd4680373255084b8f17"
+  ],
+  "target_timestamp": 1700000123
+}

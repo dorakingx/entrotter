@@ -1,0 +1,35 @@
+{
+  "status": "no_remaining_actionable_findings",
+  "reviewer": "Root independent source/evidence review, separate from human GitHub approval",
+  "base": "8176597af994dddb7a3dc6721db623580ebc9601",
+  "source_sha256": {
+    "src/entrotter_engine/evm.py": "1ec41f147a517c4372bdf72fb5763bde1adc3075e462786ba656ff87c26dba55",
+    "src/entrotter_engine/trace.py": "e65d6dfba7368c407d2d8fea357211d34fe90b2869b789a1da3e1baa06217226",
+    "tests/test_trace.py": "d55c76944540f75ac1f0e3ff947a78c16f43b115b2020ebd302b5020ea5c2b15",
+    "tests/test_trace_funding.py": "51285f0d6e7abd2e7ef03662e38ccbafd5f43fd61d5ae3a4fb14d60bdeff4e65",
+    "tests_isolated/test_trace.py": "5bbfdf89f8bbd3e4ae0ee684349c62195d405eeab2b7653ec99ba21df817cb88",
+    "security-reviewed.json": "db1641e95862f78ebb49da4d6805d10dc3032484f745f8ee6cd6781e270c993b",
+    "README.md": "dad495ecb06796b43c4e7fd2e0c9aef77226e46ce58e8d49f7db3c838b557100",
+    "STATUS.md": "175ca80955d100968a24af254b2a57957af912ccdce8fb328c884873b2e318ad"
+  },
+  "summary_sha256": "d6b9106b2e79db7aa3f64dd6e21755a1fc7caf2ca3b9ce9e3837aef3743eb52b",
+  "scope": [
+    "Trace-only fixed pool-admission flag; ordinary profiles, EVM/block validation, loopback/no-mining/memory/guardian/deadline unchanged.",
+    "Real failing-before and passing-after same-block original-signature funding/omission and invalid gas/fee/nonce regression coverage; full native248 with zero skips.",
+    "Existing isolated workflow unchanged; new direct image/protocol case is accurately pending, distinct from host default helper execution.",
+    "All23 source policy hashes and retained full findings match; only allowed two source and Popen location/fingerprint/rationale updates.",
+    "Synthetic report/fixture hashes and all public log redactions verified; raw originals preserved.",
+    "Prior root offline SDKee load_trace and viewerb7 validateTraceReport compatibility probes passed this exact synthetic report; no rendered-browser or new historical proof implied."
+  ],
+  "resolved_findings": [
+    {
+      "finding": "Public diagnostic logs exposed local username paths",
+      "resolution": "Three public logs redacted to generic workspace paths; exact resulting hashes independently checked; ignored originals and test outcomes preserved."
+    }
+  ],
+  "limitations": [
+    "Native synthetic proof only; new-head Docker/image and historical CI still required.",
+    "Full-block/end-state/roots/opcode and broader oracle/missing-state coverage incomplete.",
+    "No independent human GitHub approving review, merge, deployment or submission implied."
+  ]
+}

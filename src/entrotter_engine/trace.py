@@ -569,7 +569,7 @@ def run_trace_native(plan: dict) -> dict:
                 "Original signed legacy/type-1/type-2 transaction prefix only, Ethereum mainnet Shanghai rules, FIFO order; no new signatures or artificial funding.",
                 "Both branches fork the pinned parent with original timestamp, coinbase, gas limit, base fee and prevrandao. Original transactions supply any in-prefix oracle updates; external responses and later transactions are not invented.",
                 "Skipping original transactions preserves every remaining signature/nonce. Nonce conflicts and rejected/unmined transactions are reported, never repaired.",
-                "Anvil pool admission evaluates parent state: a transaction funded only by an earlier in-block transaction can be rejected. Such a baseline remains unverified; sequential mining or balance repair is not substituted.",
+                "Owned trace nodes defer parent-state pool balance/fee/gas admission checks to ordered EVM/block execution, allowing earlier in-block funding. Accepted inputs can still remain unmined; no balance/nonce repair or sequential different-block mining is substituted.",
                 "Exact projected receipts include status, gas/cumulative gas, effective price, identities, ordered log bytes and bloom. Divergence is reported; an unmatched baseline is not verified historical replay.",
                 "Block hashes/roots, withdrawals/end-block state, opcode traces, full-block replay and an alternate market are outside this transaction-prefix result.",
                 "The primitive owns bounded-lifetime Anvil. Whole-process CPU/RSS isolation is supplied only by the default Docker worker; explicit native execution opts out. No upstream writes or arbitrary agent code.",

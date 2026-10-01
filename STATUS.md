@@ -89,3 +89,24 @@ separate gate linked in this focused PR. No archive/model call, Docker/VM startu
 protected merge, deployment or submission occurred. Frozen report/holdout/source
 inputs and v0.1 contracts are unchanged. Coordination still selects tested c167193
 until a separately validated source promotion; main protection is retained.
+
+## Same-block signed funding: native fix prepared, CI pending
+
+The `fix/trace-funding-admission` candidate starts from tested engine8176597.
+Only owned trace nodes defer parent-state pool balance/gas/fee admission to
+actual ordered EVM/block execution. Two regressions fail before the fix; four
+focused real-native regressions and248full native tests pass with0skips. Existing
+RPC denial, fixed headers/signatures, guardian/memory/deadline and all v0.1
+contracts remain. Full23-source lint/format/types and23retained Bandit findings
+pass;42locked dependency identities have0reported advisories, fresh wheel built.
+An ignored author runner's spawn-guard failure remains distinct from the fresh
+required full pass. See [scope and raw evidence](evidence/trace-funding-admission/README.md).
+
+This is disposable synthetic native funding proof, not a new historical replay,
+model/holdout result or Docker-isolation measurement. A new no-network image
+protocol case is pending CI; separate host default mainnet/image/native provenance
+and cleanup gates remain unchanged. Existing SDKee/siteb7 offline inspection and
+engine817 historical proof retain their exact prior sources. No Docker/VM startup,
+upstream write, key retention, merge, deployment or submission occurred. Independent source/evidence review passed with no remaining actionable findings;
+its exact pre-publication hashes are preserved. Exact-head CI and mandatory
+human GitHub approval remain separate; overall goal active.

@@ -313,10 +313,12 @@ class CanonicalLocalIntegration(unittest.TestCase):
         def create(*args,**kwargs):
             node=AnvilSession(*args,**kwargs); nodes.append(node); return node
         with patch('entrotter_engine.trace.AnvilSession', side_effect=create):
-            # High original-header fee rejects all originals without repairing signatures.
+            # Admission is deferred, but the original-header fee still makes
+            # every original invalid at execution. Signatures are not repaired.
             r=replay_branch(captured, self.rpc.url, [], time.monotonic()+30)
             self.assertFalse(r['matches_original_receipts'])
-            self.assertEqual([x['status'] for x in r['outcomes']], ['rejected','nonce_conflict','nonce_conflict'])
+            self.assertEqual([x['status'] for x in r['outcomes']], ['not_mined','not_mined','not_mined'])
+            self.assertTrue(all('receipt' not in x for x in r['outcomes']))
         self.assertEqual(len(nodes),1)
         self.assertIsNotNone(nodes[0].process.poll())
         with self.assertRaises(RPCError): nodes[0].rpc.call('eth_chainId')

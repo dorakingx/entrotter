@@ -79,7 +79,15 @@ class AnvilSession:
         elif not self.trace:
             args += ["--timestamp", "1700000000", "--hardfork", "cancun"]
         if self.trace:
-            args += ["--hardfork", "shanghai", "--order", "fifo"]
+            # Defer parent-state pool checks to ordered block execution. EVM
+            # validity and block gas checks remain enabled; no state is repaired.
+            args += [
+                "--hardfork",
+                "shanghai",
+                "--order",
+                "fifo",
+                "--disable-pool-balance-checks",
+            ]
             if not self.source:
                 args += ["--timestamp", "1700000000"]
         guardian = str(Path(__file__).with_name("_guardian.py"))

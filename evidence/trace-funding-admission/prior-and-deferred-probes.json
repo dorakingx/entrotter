@@ -1,0 +1,451 @@
+{
+  "engine_head": "8176597af994dddb7a3dc6721db623580ebc9601",
+  "synthetic_only": true,
+  "no_upstream_or_docker": true,
+  "setup": "Startup synthetic parent allocation A=1ETH B=0; no post-start balance/nonce/code changes, no impersonation. Each case executes exactly one block.",
+  "cases": [
+    {
+      "name": "default_funded",
+      "pool_admission_deferred": false,
+      "owned_port": 63764,
+      "transactions": [
+        {
+          "name": "fund",
+          "sender": "0x0E51125b4611Cb285216a18506234BCB547699D2",
+          "nonce": 0,
+          "gas_limit": 21000,
+          "value_wei": 10000000000000000,
+          "gas_price_wei": 1000000000,
+          "hash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176",
+          "admitted": true,
+          "receipt": {
+            "status": "0x1",
+            "gasUsed": "0x5208",
+            "cumulativeGasUsed": "0x5208",
+            "transactionIndex": "0x0",
+            "blockNumber": "0x1",
+            "transactionHash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176"
+          }
+        },
+        {
+          "name": "spend",
+          "sender": "0x3DD1AD988243A9d422d25233CB70f482027c04F9",
+          "nonce": 0,
+          "gas_limit": 21000,
+          "value_wei": 1000000000000000,
+          "gas_price_wei": 1000000000,
+          "admitted": false
+        }
+      ],
+      "version": "anvil/v1.8.3",
+      "initial_balances": [
+        "0xde0b6b3a7640000",
+        "0x0"
+      ],
+      "signed_bundle": {
+        "bundleHash": "0xfb7bc7521c019fbe39e5be39e2ff090221a6eb5d2f64f1eb02c9a8546b75a9d4",
+        "bundleGasPrice": "0",
+        "coinbaseDiff": "0",
+        "ethSentToCoinbase": "0",
+        "gasFees": "0",
+        "results": [
+          {
+            "coinbaseDiff": "0",
+            "ethSentToCoinbase": "0",
+            "fromAddress": "0x0e51125b4611cb285216a18506234bcb547699d2",
+            "gasFees": "0",
+            "gasPrice": "0",
+            "gasUsed": 21000,
+            "toAddress": "0x3dd1ad988243a9d422d25233cb70f482027c04f9",
+            "txHash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176",
+            "value": "0x"
+          },
+          {
+            "coinbaseDiff": "0",
+            "ethSentToCoinbase": "0",
+            "fromAddress": "0x3dd1ad988243a9d422d25233cb70f482027c04f9",
+            "gasFees": "0",
+            "gasPrice": "0",
+            "gasUsed": 21000,
+            "toAddress": "0x3333333333333333333333333333333333333333",
+            "txHash": "0x134ac4f08fd634a9be153ecd6aed444f54583a19ed80422730dcb2e759cd3861",
+            "value": "0x"
+          }
+        ],
+        "stateBlockNumber": 0,
+        "totalGasUsed": 42000
+      },
+      "block": {
+        "number": "0x1",
+        "timestamp": "0x6553f17b",
+        "gasLimit": "0xc350",
+        "miner": "0x4242424242424242424242424242424242424242",
+        "baseFeePerGas": "0x3b9aca00",
+        "mixHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "gasUsed": "0x5208",
+        "transactions": [
+          "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176"
+        ]
+      },
+      "header_exact": true,
+      "final_balances": [
+        "0xdbd1ca7c618b000",
+        "0x2386f26fc10000",
+        "0x0"
+      ],
+      "cleanup": {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    },
+    {
+      "name": "deferred_funded",
+      "pool_admission_deferred": true,
+      "owned_port": 63785,
+      "transactions": [
+        {
+          "name": "fund",
+          "sender": "0x0E51125b4611Cb285216a18506234BCB547699D2",
+          "nonce": 0,
+          "gas_limit": 21000,
+          "value_wei": 10000000000000000,
+          "gas_price_wei": 1000000000,
+          "hash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176",
+          "admitted": true,
+          "receipt": {
+            "status": "0x1",
+            "gasUsed": "0x5208",
+            "cumulativeGasUsed": "0x5208",
+            "transactionIndex": "0x0",
+            "blockNumber": "0x1",
+            "transactionHash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176"
+          }
+        },
+        {
+          "name": "spend",
+          "sender": "0x3DD1AD988243A9d422d25233CB70f482027c04F9",
+          "nonce": 0,
+          "gas_limit": 21000,
+          "value_wei": 1000000000000000,
+          "gas_price_wei": 1000000000,
+          "hash": "0x134ac4f08fd634a9be153ecd6aed444f54583a19ed80422730dcb2e759cd3861",
+          "admitted": true,
+          "receipt": {
+            "status": "0x1",
+            "gasUsed": "0x5208",
+            "cumulativeGasUsed": "0xa410",
+            "transactionIndex": "0x1",
+            "blockNumber": "0x1",
+            "transactionHash": "0x134ac4f08fd634a9be153ecd6aed444f54583a19ed80422730dcb2e759cd3861"
+          }
+        }
+      ],
+      "version": "anvil/v1.8.3",
+      "initial_balances": [
+        "0xde0b6b3a7640000",
+        "0x0"
+      ],
+      "block": {
+        "number": "0x1",
+        "timestamp": "0x6553f17b",
+        "gasLimit": "0xc350",
+        "miner": "0x4242424242424242424242424242424242424242",
+        "baseFeePerGas": "0x3b9aca00",
+        "mixHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "gasUsed": "0xa410",
+        "transactions": [
+          "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176",
+          "0x134ac4f08fd634a9be153ecd6aed444f54583a19ed80422730dcb2e759cd3861"
+        ]
+      },
+      "header_exact": true,
+      "final_balances": [
+        "0xdbd1ca7c618b000",
+        "0x1fe65a59703000",
+        "0x38d7ea4c68000"
+      ],
+      "cleanup": {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    },
+    {
+      "name": "deferred_omit_fund",
+      "pool_admission_deferred": true,
+      "owned_port": 63805,
+      "transactions": [
+        {
+          "name": "spend",
+          "sender": "0x3DD1AD988243A9d422d25233CB70f482027c04F9",
+          "nonce": 0,
+          "gas_limit": 21000,
+          "value_wei": 1000000000000000,
+          "gas_price_wei": 1000000000,
+          "hash": "0x134ac4f08fd634a9be153ecd6aed444f54583a19ed80422730dcb2e759cd3861",
+          "admitted": true,
+          "receipt": null
+        }
+      ],
+      "version": "anvil/v1.8.3",
+      "initial_balances": [
+        "0xde0b6b3a7640000",
+        "0x0"
+      ],
+      "block": {
+        "number": "0x1",
+        "timestamp": "0x6553f17b",
+        "gasLimit": "0xc350",
+        "miner": "0x4242424242424242424242424242424242424242",
+        "baseFeePerGas": "0x3b9aca00",
+        "mixHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "gasUsed": "0x0",
+        "transactions": []
+      },
+      "header_exact": true,
+      "final_balances": [
+        "0xde0b6b3a7640000",
+        "0x0",
+        "0x0"
+      ],
+      "cleanup": {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    },
+    {
+      "name": "deferred_reversed",
+      "pool_admission_deferred": true,
+      "owned_port": 63823,
+      "transactions": [
+        {
+          "name": "spend",
+          "sender": "0x3DD1AD988243A9d422d25233CB70f482027c04F9",
+          "nonce": 0,
+          "gas_limit": 21000,
+          "value_wei": 1000000000000000,
+          "gas_price_wei": 1000000000,
+          "hash": "0x134ac4f08fd634a9be153ecd6aed444f54583a19ed80422730dcb2e759cd3861",
+          "admitted": true,
+          "receipt": null
+        },
+        {
+          "name": "fund",
+          "sender": "0x0E51125b4611Cb285216a18506234BCB547699D2",
+          "nonce": 0,
+          "gas_limit": 21000,
+          "value_wei": 10000000000000000,
+          "gas_price_wei": 1000000000,
+          "hash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176",
+          "admitted": true,
+          "receipt": {
+            "status": "0x1",
+            "gasUsed": "0x5208",
+            "cumulativeGasUsed": "0x5208",
+            "transactionIndex": "0x0",
+            "blockNumber": "0x1",
+            "transactionHash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176"
+          }
+        }
+      ],
+      "version": "anvil/v1.8.3",
+      "initial_balances": [
+        "0xde0b6b3a7640000",
+        "0x0"
+      ],
+      "block": {
+        "number": "0x1",
+        "timestamp": "0x6553f17b",
+        "gasLimit": "0xc350",
+        "miner": "0x4242424242424242424242424242424242424242",
+        "baseFeePerGas": "0x3b9aca00",
+        "mixHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "gasUsed": "0x5208",
+        "transactions": [
+          "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176"
+        ]
+      },
+      "header_exact": true,
+      "final_balances": [
+        "0xdbd1ca7c618b000",
+        "0x2386f26fc10000",
+        "0x0"
+      ],
+      "cleanup": {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    },
+    {
+      "name": "deferred_gas_below_intrinsic",
+      "pool_admission_deferred": true,
+      "owned_port": 63843,
+      "transactions": [
+        {
+          "name": "lowgas",
+          "sender": "0x0E51125b4611Cb285216a18506234BCB547699D2",
+          "nonce": 0,
+          "gas_limit": 20000,
+          "value_wei": 1,
+          "gas_price_wei": 1000000000,
+          "hash": "0xaaf1c6b0b670c2401116b7c0f50e95007e36c01f7a82bb8081802bf851611940",
+          "admitted": true,
+          "receipt": null
+        }
+      ],
+      "version": "anvil/v1.8.3",
+      "initial_balances": [
+        "0xde0b6b3a7640000",
+        "0x0"
+      ],
+      "block": {
+        "number": "0x1",
+        "timestamp": "0x6553f17b",
+        "gasLimit": "0xc350",
+        "miner": "0x4242424242424242424242424242424242424242",
+        "baseFeePerGas": "0x3b9aca00",
+        "mixHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "gasUsed": "0x0",
+        "transactions": []
+      },
+      "header_exact": true,
+      "final_balances": [
+        "0xde0b6b3a7640000",
+        "0x0",
+        "0x0"
+      ],
+      "cleanup": {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    },
+    {
+      "name": "deferred_gas_above_block",
+      "pool_admission_deferred": true,
+      "owned_port": 63861,
+      "transactions": [
+        {
+          "name": "highgas",
+          "sender": "0x0E51125b4611Cb285216a18506234BCB547699D2",
+          "nonce": 0,
+          "gas_limit": 50001,
+          "value_wei": 1,
+          "gas_price_wei": 1000000000,
+          "hash": "0xe0e91caec845c8aedca8998de936919705c61c90ca294e9b0d448eeae8373520",
+          "admitted": true,
+          "receipt": null
+        }
+      ],
+      "version": "anvil/v1.8.3",
+      "initial_balances": [
+        "0xde0b6b3a7640000",
+        "0x0"
+      ],
+      "block": {
+        "number": "0x1",
+        "timestamp": "0x6553f17b",
+        "gasLimit": "0xc350",
+        "miner": "0x4242424242424242424242424242424242424242",
+        "baseFeePerGas": "0x3b9aca00",
+        "mixHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "gasUsed": "0x0",
+        "transactions": []
+      },
+      "header_exact": true,
+      "final_balances": [
+        "0xde0b6b3a7640000",
+        "0x0",
+        "0x0"
+      ],
+      "cleanup": {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    },
+    {
+      "name": "deferred_fee_below_basefee",
+      "pool_admission_deferred": true,
+      "owned_port": 63879,
+      "transactions": [
+        {
+          "name": "lowfee",
+          "sender": "0x0E51125b4611Cb285216a18506234BCB547699D2",
+          "nonce": 0,
+          "gas_limit": 21000,
+          "value_wei": 1,
+          "gas_price_wei": 1,
+          "hash": "0x22e3e50d2095a291131d425a4faa37dce7c9c94c371b7abb4e8c84341caf4cc7",
+          "admitted": true,
+          "receipt": null
+        }
+      ],
+      "version": "anvil/v1.8.3",
+      "initial_balances": [
+        "0xde0b6b3a7640000",
+        "0x0"
+      ],
+      "block": {
+        "number": "0x1",
+        "timestamp": "0x6553f17b",
+        "gasLimit": "0xc350",
+        "miner": "0x4242424242424242424242424242424242424242",
+        "baseFeePerGas": "0x3b9aca00",
+        "mixHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "gasUsed": "0x0",
+        "transactions": []
+      },
+      "header_exact": true,
+      "final_balances": [
+        "0xde0b6b3a7640000",
+        "0x0",
+        "0x0"
+      ],
+      "cleanup": {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    },
+    {
+      "name": "deferred_nonce_gap",
+      "pool_admission_deferred": true,
+      "owned_port": 63897,
+      "transactions": [
+        {
+          "name": "noncegap",
+          "sender": "0x0E51125b4611Cb285216a18506234BCB547699D2",
+          "nonce": 1,
+          "gas_limit": 21000,
+          "value_wei": 1,
+          "gas_price_wei": 1000000000,
+          "hash": "0x552ba9e501c9bf95a2ea0ebccb6134e7f66698591908f700901ede37c9b2c7b6",
+          "admitted": true,
+          "receipt": null
+        }
+      ],
+      "version": "anvil/v1.8.3",
+      "initial_balances": [
+        "0xde0b6b3a7640000",
+        "0x0"
+      ],
+      "block": {
+        "number": "0x1",
+        "timestamp": "0x6553f17b",
+        "gasLimit": "0xc350",
+        "miner": "0x4242424242424242424242424242424242424242",
+        "baseFeePerGas": "0x3b9aca00",
+        "mixHash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+        "gasUsed": "0x0",
+        "transactions": []
+      },
+      "header_exact": true,
+      "final_balances": [
+        "0xde0b6b3a7640000",
+        "0x0",
+        "0x0"
+      ],
+      "cleanup": {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    }
+  ]
+}
