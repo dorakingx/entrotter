@@ -133,3 +133,52 @@ holdouts before protocol-state execution. It pins all proposals, model/prompt
 configuration and source hashes. This is a one-protocol decision integration
 comparison, not a profitability or unseen-model-training-data claim. The frozen
 input tests perform no archive reads and do not execute holdouts.
+
+## Separate canonical transaction-prefix replay contracts
+
+`schemas/trace-plan.v0.1.schema.json` and
+`schemas/trace-result.v0.1.schema.json` describe the distinct `trace_version`
+`0.1.0` family introduced by the candidate
+[engine replay PR](https://github.com/entrotter/engine/pull/29), commit
+`0d4faf7d4feda817499ea19e8797a0e03504fbad`. These are additive contracts;
+the v0.1 scenario/result schemas and existing inputs remain unchanged.
+
+The plan pins Ethereum mainnet's block number/hash, selects a prefix starting
+at transaction index zero (at most 32 transactions), and lists original
+transactions to skip in the candidate branch. Execution supports the Shanghai
+interval and signed legacy/type-1/type-2 transactions. It compares projected
+receipts from paired owned forks of the original parent; it does not establish
+whole-block, opcode-trace or end-state equivalence.
+
+Validate the public plan and recorded result without RPC or model access:
+
+```bash
+python3 -m contract_validation --kind trace-plan traces/ethereum-mainnet-prefix.plan.json
+python3 -m contract_validation --kind trace-result tests/data/trace-mainnet-prefix.result.json
+```
+
+The plan is copied byte-for-byte from the engine candidate. The result is an
+existing public native replay of Ethereum block 19,000,000's first transaction,
+with an original-receipt match and a candidate skip. This schema work performs
+no new execution. Fixture provenance and hashes are recorded in
+[the contract evidence](evidence/trace-contracts/summary.json). The report is
+separate from the earlier artificially funded Uniswap intervention.
+
+The schemas reject unknown/executable fields, unsupported source/version shapes,
+invalid projected receipt fields and incomplete terminal outcomes. An executed
+outcome requires a receipt and a list of differing fields; skipped, rejected and
+unmined outcomes cannot claim one. Nonce conflicts retain both expected and
+original nonces. Verification flags must agree with these declared outcome
+shapes. **Schema validity does not verify those declarations.**
+
+Plain JSON Schema does not enforce sorted skip indices, `skip <= through_index`,
+contiguous prefix/order and source/result correspondence, serialized aggregate
+byte limits, signature/hash identity, or computed receipt/EVM equivalence. The
+engine enforces execution semantics and reports divergence. Tests deliberately
+show shape-valid data that violates sorted/prefix constraints or has an altered
+receipt without a recomputed hash. Hashes do not authenticate a provider or node.
+
+Anvil pool admission reads parent state, so transactions funded only by earlier
+in-block transactions can be rejected. Such a baseline remains unverified;
+neither artificial funding nor sequential mining substitutes for same-block
+execution. Provider availability and broader replay coverage remain limitations.

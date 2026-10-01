@@ -1,0 +1,97 @@
+{
+  "candidate_branch": "feat/canonical-trace-contracts",
+  "base_commit": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+  "engine_contract_commit": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+  "implementation": "Additive trace-plan/trace-result wire schemas and offline registry; no original v0.1 schemas or inputs changed.",
+  "fixture_provenance": {
+    "plan": {
+      "path": "traces/ethereum-mainnet-prefix.plan.json",
+      "sha256": "ccde28ce34f51c55e8c68789f2deecdf394417e05e81a738c52e140950b83031",
+      "origin": "Byte-identical engine commit 0d4faf7d4feda817499ea19e8797a0e03504fbad tests/data/canonical-mainnet-prefix.json."
+    },
+    "result": {
+      "path": "tests/data/trace-mainnet-prefix.result.json",
+      "sha256": "c3ece9113161842d37a59bb348dc7c086119ca57b3d9f8bb13e236a3bafda84b",
+      "artifact_id": "ae54ce106ee4f94b6ab62f5f54644102e81512a604e2c0a91628a41e2cd7f0eb",
+      "origin": "Byte-identical engine commit 0d4faf7d4feda817499ea19e8797a0e03504fbad evidence/trace-replay/mainnet-prefix.json; existing public native archived-state recording, not a new run or default-worker execution claim.",
+      "recorded_baseline_verified": true,
+      "recorded_gas_used": 208144,
+      "recorded_log_count": 8,
+      "recorded_candidate_status": "skipped"
+    }
+  },
+  "checks": {
+    "tests": {
+      "command": "PYTHONPATH=.:<matching-engine-checkout>/src <reused-hash-locked-scenario-quality-python> -m unittest discover -s tests -v",
+      "passed": 23,
+      "new_contract_tests": 9,
+      "elapsed_seconds": 1.407,
+      "log": "tests.log",
+      "scope": "Full suite before independent review corrected the result fixture to the exact committed engine evidence. Unchanged legacy tests reused; affected trace contracts retested separately."
+    },
+    "before_implementation": {
+      "new_tests": 9,
+      "errors": 9,
+      "log": "failing-before.log",
+      "cause": "Separate trace contract kinds/schemas/fixtures unavailable before implementation."
+    },
+    "ruff_lint": "Passed across all 6 Python files",
+    "ruff_format": "Passed across all 6 Python files",
+    "mypy": "Success: no issues found in 6 source files",
+    "bandit": {
+      "rules": "All default rules with --ignore-nosec; no suppression",
+      "files": 6,
+      "findings": 0,
+      "errors": [],
+      "log": "security.json"
+    },
+    "dependencies": "Both hash-locked dependency files unchanged from tested base PR8. Existing successful dependency audits reused; no fresh advisory audit claimed. CI retains both strict audits.",
+    "docs_links": {
+      "files": 7,
+      "links": 14,
+      "successful": 14,
+      "errors": 0,
+      "timeouts": 0,
+      "excludes": 0,
+      "log": "docs-links.json",
+      "tool": "Existing verified Lychee v0.24.2; local check of candidate documents, not a deployed-site claim."
+    },
+    "fixture_correction": "Independent review requested the exact committed report in place of an earlier ignored native attempt. Current fixture pins the declared engine evidence and includes its updated pool/default-mode limitations.",
+    "committed_fixture_tests": {
+      "command": "PYTHONPATH=.:<matching-engine-checkout>/src <reused-hash-locked-scenario-quality-python> -m unittest discover -s tests -p test_trace_contracts.py -v",
+      "passed": 9,
+      "elapsed_seconds": 0.989,
+      "log": "committed-fixture-tests.log",
+      "scope": "Only affected tests repeated after replacing the early ignored native report with the exact committed engine evidence."
+    },
+    "independent_source_review": "Root independently reviewed source/schemas, requested committed-fixture provenance correction, and reported no remaining actionable issue. This is not required human GitHub approval."
+  },
+  "source_sha256": {
+    "contract_validation.py": "ecc6e2ad88437be575c495bcb6d8f09080fba468d87400e90d1493769b16fdbe",
+    "tests/test_benchmark_cases.py": "98fa27e382b971061a943fbc913f45b364648bf7617578ba2089e3e5a1dfcf5c",
+    "tests/test_offline_contracts.py": "e8abec6179177c6207a5f6cb0318be97ad7b7a2b2845dd0940fc587e7d775be1",
+    "tests/test_recording_schema.py": "9da8883e2005458d8b79d3fcaefb0744bd1746a1f97ccaee8bcea04a919780ee",
+    "tests/test_scenarios.py": "64b80a37349cd670bd0ce277bc29144b3330cd86e6bfc91de2dfa75416175bfe",
+    "tests/test_trace_contracts.py": "70462a63b41f7c0d735439e9960f359d6d395087e97097bb84e35d5aa6efc318",
+    "schemas/trace-plan.v0.1.schema.json": "61e5a741a61c4c2894c93ab77b4d1242bc66d0f05924e288e6ff38ce01bd6174",
+    "schemas/trace-result.v0.1.schema.json": "3d97a0e2c2c40f85fd41d8a3ad73f8c56619d1366b5044801bdca3da14947211"
+  },
+  "unchanged_base_hashes": {
+    "schemas/scenario.v0.1.schema.json": "1e7d3fe0bf839494771cda5cfa023515fd518d7b0f1a3f99336015c547aee1f2",
+    "schemas/result.v0.1.schema.json": "2db80e9cd4d00fff792f549312cef868871b1e65b1df17c0c3b740742b4966bb",
+    "schemas/agent-recording.v0.1.schema.json": "12573fe89aa6a5ab43328fb157561a63496cc7d31e82ac751cdbdc1dcefe8eea",
+    "requirements-dev.txt": "926c624eef1d61a3454839341639a30005462a3367d7a6644952747ef04e0b47",
+    "requirements-quality.txt": "47a245f146dbd59cc6add9a827aa4b004fbfd974f7390ecd714b8afa264b6f67"
+  },
+  "limitations": [
+    "JSON Schema verifies declared shapes and flag/outcome consistency, not chain execution truth.",
+    "Sorted skips, skip<=through_index, source/prefix/order correspondence and aggregate serialized bytes require engine validation.",
+    "Signatures, hash identity and computed receipt equivalence are not established by schemas.",
+    "Both shape-valid semantic violations and a changed receipt with stale hash intentionally remain accepted in tests to expose these limits.",
+    "Anvil parent-state pool admission can reject valid in-block funding dependencies; unverified baselines stay unverified.",
+    "Broader block/state-root/opcode/end-state equivalence is outside the current prefix family.",
+    "No new archive/model runs, current candidateCI, protected integration, deployment or GitHub approval are claimed."
+  ],
+  "private_data": "No credentials, private signer material or secret URLs included.",
+  "candidate_identity": "The commit containing this evidence identifies the candidate; fixture source pins are independent."
+}
