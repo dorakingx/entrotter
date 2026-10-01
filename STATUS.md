@@ -876,3 +876,39 @@ Section 5 still specifies October 12, 2026 at 23:59 PT (October 13 06:59 UTC /
 all-chain entries. COMPETITION.md and DISCLOSURE.md now reflect the owner's
 new authorization and the verified logo; historical September evidence is retained.
 See evidence/submission-preparation/oct01-rules-recheck.json.
+
+## October 1 — Optional bounded Linux CLI caller
+
+The new focused candidate adds an operator-installed launcher for the existing
+trusted CLI. One fixed transient unit per user manager atomically admits one job
+without disturbing an incumbent. Before CLI execution, the actual cgroup guard
+checks one CPU, 256 MiB, no swap, 64 tasks, descriptor/core limits and
+NoNewPrivileges. The unit has a 180-second production lifetime and two-second stop
+budget; pidfd monitors the original caller, including SIGKILL. The small dispatcher
+remains outside the leaf cgroup and inside the measured guest deployment.
+
+The first private EnvironmentFile specifier was rejected by the transient-unit
+API; it now uses a concrete quoted absolute path. A real regression then proved
+that the working folder could supply a fake CLI Python package. Adding Python
+safe-path mode fixed it without changing the installed component pins. The final
+source passes literal path/quote/environment tests, complete fixture equality,
+actual owner SIGTERM/SIGKILL cleanup in under 0.12 seconds and full production
+expiry in 180.170 seconds, with destinations preserved and doctor recovery.
+Standalone real local Anvil and CLI-SDK-API fixture results equal complete current
+quick-start reports. No model or archive call was made.
+
+Four controller tests, two host-guard tests, six quality-policy tests and all
+21 production-source quality checks pass. The same three frozen-provider type
+diagnostics and all 75 prior security findings remain; three source-bound
+subprocess reasons are added. This is author review, not independent approval.
+The two guide blocks pass on the existing clean installed pins, including full
+fixture equality; cold clone/setup is not claimed. Actual user-systemd enforcement
+is separate from ordinary unit CI. See evidence/bounded-cli/summary.json.
+
+Both API/CLI units are inactive with PID 0 and no owned worker remains. Colima
+readback confirms the dedicated VM is stopped and the pre-existing default VM
+is still running, left untouched. Direct native callers, other users/VMs, arbitrary
+code, Docker daemon/build work and host hypervisor/cache/log/backup overhead remain
+outside the helper's leaf budget. An API job may continue after its client dies
+under the separate API/worker limits. Independent review, protected integration
+and the remaining G1-G5 gates are still open; Discord remains excluded.

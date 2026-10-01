@@ -127,6 +127,8 @@ writes. The existing report-quota tests cover application-level exhaustion.
 Only processes run in this service receive its cgroup budget. Direct macOS/Python
 callers, developer native opt-outs and independently started CLI processes do not
 inherit it. Guest CLI clients remain inside the VM's aggregate resource boundary.
+The optional [bounded CLI launcher](BOUNDED_CLI.md) adds a verified caller cgroup;
+ordinary CLI invocations still do not inherit the API service's limits.
 Docker daemon/build work is outside the service cgroup but inside the measured VM;
 the worker has its own limits. Operator-selected images and Docker socket access
 remain trusted, not an arbitrary-code sandbox or an archive-host egress firewall.

@@ -228,3 +228,6 @@ policy, successful source checkpoints and migration of older partial PRs.
 
 [Bounded API host service](docs/BOUNDED_HOST_SERVICE.md) adds a verified Linux
 service envelope and dedicated-VM operating profile, with measured scope limits.
+
+[Bounded Linux CLI](docs/BOUNDED_CLI.md) adds an optional per-user caller budget,
+atomic admission and owner-death cleanup, with actual production-timer evidence.

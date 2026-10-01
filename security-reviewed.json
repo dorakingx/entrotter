@@ -601,18 +601,44 @@
       "code_sha256": "42ea9cda4c6c9a1f4b1733bb99713151a7f5238312ae2ff8f11e10aca1b5c380",
       "severity": "LOW",
       "reason": "Execution uses a structured argv list with shell=False. Execute fixed tests for six sibling repositories plus installed Anvil/node version and unit checks. No scenario JSON can select commands; results retain failures/skips."
+    },
+    {
+      "file": "scripts/bounded_cli.py",
+      "test_id": "B404",
+      "line": 13,
+      "code_sha256": "44c6615dd36c26ed4c0ee77b789cb51f38f1923ddce274afef52c8f64d04d1cc",
+      "severity": "LOW",
+      "reason": "The operator launcher needs subprocess to start a fixed per-user systemd job and the installed trusted CLI. Both calls use structured arguments without a shell. Actual kernel-limit startup guards, pidfd owner-death cancellation, atomic admission and full runtime expiry were tested. This is not an arbitrary-code sandbox."
+    },
+    {
+      "file": "scripts/bounded_cli.py",
+      "test_id": "B603",
+      "line": 78,
+      "code_sha256": "45bf52464f59b5a6b36cea876b6ec57383662009903b051d56d6a2018d592c22",
+      "severity": "LOW",
+      "reason": "Executes only /usr/bin/python3 -P -m entrotter_cli with PYTHONPATH replaced by the fixed installed engine/SDK/CLI sources. Safe-path mode rejects the reproduced cwd package spoof; literal scenario/export arguments never pass through a shell. Actual cgroup limits are verified before execution, pidfd monitors the original owner and finally cancels the owned session. Operator-controlled installed source remains trusted."
+    },
+    {
+      "file": "scripts/bounded_cli.py",
+      "test_id": "B603",
+      "line": 127,
+      "code_sha256": "e5039108311caf6efc516af0ab9f8064d6b0bacf69bf79e338515e467f1695cf",
+      "severity": "LOW",
+      "reason": "Executes only /usr/bin/systemd-run with a fixed per-user unit, concrete private EnvironmentFile, fixed resource/time properties and this installed worker script. Structured arguments and disabled systemd environment expansion preserve literal user paths; no shell or credentials in argv. Real duplicate admission preserves the incumbent, and owner SIGTERM/SIGKILL/full 180-second expiry recover. The tiny dispatcher is outside the leaf cgroup but inside the separately verified dedicated VM."
     }
   ],
   "source_sha256": {
     ".github/actions/docs-links/check.py": "34f7173772099c0ce8fc01fe39693c6f88c25bba27b07444d7cbf74263d8beac",
     "scripts/benchmark_agent.py": "14fa2bdeb9adfa47e76eead751b789d9c2eb5564f36cb0c35e27d9bd90a49aa1",
     "scripts/benchmark_direct.py": "a69212c2f66e657a0217f49e593a0a059922454a8f00044ac290885f33660957",
+    "scripts/bounded_cli.py": "df96abd74fb22e3d9b16f60d8b1e93f3cc39129a8cb11a63b61cdfbcaf4cd1c2",
     "scripts/browser_check.py": "cb624bebc251e4a96c6b302a609550538af7cb32cb30aa1553f5f25b998f7b9c",
     "scripts/check_agent.py": "e9cbeb134a7137b200937157887e154140d3f0064c90f153cb066425af98ae09",
     "scripts/check_default_wheels.py": "91f9836bc2315ca7232d735164efb75db29b28fbea769d02fca5e7083f415ed9",
     "scripts/check_dependencies.py": "4b6aa95413b509f10bb876ec1d753353025c72abe2a7c861a8bc3384884a1228",
     "scripts/check_export_budget.py": "50accb3dba9bbfdccd28d9e34b45e51e9a38709a62374de83b8d35212110412e",
     "scripts/check_historical.py": "2be74ef9775ed78a8c9e019f1a07f785ff3d9cf6892d87f4aaf2082f997b62c6",
+    "scripts/check_host_envelope.py": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb",
     "scripts/check_host_limits.py": "7bc0fa1055c7d332edbfa7f14928ef29dbe183fc5f7d9b2b7ff56edc35a3174c",
     "scripts/check_security.py": "59c663e1612f57f14d241195baf6a70a06ca2b1610d7d62cb14dd6f0d06719bb",
     "scripts/check_types.py": "ea69dc5a5b8404907d0b13df4b7f690a7959b0e39ef394d7986eb9c13176c8d6",
@@ -622,7 +648,6 @@
     "scripts/publish.py": "e54c579a177ab5877e5cb9e8d7626a0c0f6fbf1e3f72067495cbf8b58597cfe8",
     "scripts/quality_scope.py": "f39cbd50586f57a73973e28e1c901148ebb9cb779c7ceda845d86289d102fb11",
     "scripts/reproduce_clean.py": "0e1b9f29bd1dad1bfe9f09f8f75aae4be00b2ecc232be9ec276a04203a7a0576",
-    "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333",
-    "scripts/check_host_envelope.py": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb"
+    "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333"
   }
 }
