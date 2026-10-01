@@ -1,0 +1,6 @@
+test_real_multistep_build_has_one_bounded_diagnostic_stream (test_build_output.BuildOutputTests.test_real_multistep_build_has_one_bounded_diagnostic_stream) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 12.502s
+
+OK

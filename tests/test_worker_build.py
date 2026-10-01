@@ -6,6 +6,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import hashlib
 import importlib.util
 import io
+import json
 import os
 from pathlib import Path
 import signal
@@ -27,6 +28,74 @@ spec.loader.exec_module(builder)
 
 
 class WorkerBuildTests(unittest.TestCase):
+    def test_noisy_command_has_bounded_diagnostics_and_preserves_failure(self):
+        code = """import subprocess,sys
+sys.path.insert(0,'scripts')
+import build_worker as b
+try:
+    b.run_build_command([sys.executable,'-c',
+        "import sys; sys.stdout.buffer.write(b'o'*(2*1024*1024)); sys.stdout.flush(); "
+        "sys.stderr.buffer.write(b'e'*(2*1024*1024)); sys.stderr.flush(); sys.exit(7)"])
+except subprocess.CalledProcessError as error:
+    print('command-failed:'+str(error.returncode))
+"""
+        result = subprocess.run(
+            [sys.executable, "-c", code], cwd=ROOT, capture_output=True, timeout=10
+        )
+        self.assertEqual(result.returncode, 0, result.stderr[-2048:])
+        self.assertEqual(result.stdout, b"command-failed:7\n")
+        self.assertLessEqual(len(result.stderr), 1024 * 1024 + 256)
+        self.assertIn(b"further build output discarded", result.stderr[-256:])
+
+    @unittest.skipUnless(hasattr(os, "fork"), "requires POSIX process supervision")
+    def test_endless_output_is_bounded_and_whole_deadline_cleans_session(self):
+        code = """import sys,json,signal,subprocess,time
+from pathlib import Path
+sys.path.insert(0,'scripts')
+import build_worker as b
+def flooded(*args):
+    child="import os,sys,signal; from pathlib import Path; signal.signal(signal.SIGTERM,signal.SIG_IGN); Path(sys.argv[1]).write_text(str(os.getpgrp())); exec('while True: os.write(1,b\\\"x\\\"*65536)')"
+    b.run_build_command([sys.executable,'-c',child,sys.argv[1]],own_session=False)
+b.prepare_image=flooded
+started=time.monotonic()
+try:
+    with b.build_deadline(0.4):
+        b.prepare_supervised([],Path(sys.argv[2]),None,0.4)
+except ValueError:
+    print(json.dumps({'deadline':True,'seconds':time.monotonic()-started}))
+"""
+        with tempfile.TemporaryDirectory() as directory:
+            marker = Path(directory) / "group"
+            result = subprocess.run(
+                [sys.executable, "-c", code, str(marker), directory],
+                cwd=ROOT,
+                capture_output=True,
+                timeout=5,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr[-2048:])
+            self.assertTrue(marker.exists(), result.stderr[-2048:])
+            observed = json.loads(result.stdout)
+            self.assertTrue(observed["deadline"])
+            self.assertLess(observed["seconds"], 2)
+            self.assertLessEqual(len(result.stderr), 1024 * 1024 + 256)
+            group = marker.read_text()
+            deadline = time.monotonic() + 2
+            while True:
+                state = subprocess.run(
+                    ["ps", "-eo", "pgid=,stat="],
+                    capture_output=True,
+                    text=True,
+                    timeout=2,
+                )
+                active = [
+                    line for line in state.stdout.splitlines()
+                    if line.split()[0] == group and not line.split()[1].startswith("Z")
+                ]
+                if not active or time.monotonic() >= deadline:
+                    break
+                time.sleep(0.02)
+            self.assertFalse(active, active)
+
     @unittest.skipUnless(hasattr(os, "fork"), "requires POSIX process supervision")
     def test_native_block_cannot_delay_the_supervised_deadline(self):
         def native_block(*args):

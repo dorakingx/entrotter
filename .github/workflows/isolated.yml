@@ -50,6 +50,7 @@ jobs:
           path: |
             .quality/image-security/
             .quality/native-security/
+            .quality/build-output-docker.json
             worker-image.json
           include-hidden-files: true
           if-no-files-found: error
