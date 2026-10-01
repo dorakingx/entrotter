@@ -34,9 +34,9 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination e3e9c84, engine 8176597, schemas 8785bb0 and CLI 22b514c; SDK and
-recorded-agent viewer pins remain b0c2ba3/49914a2. Older timings do not measure
-this new signed-prefix composition.
+coordination 968b488, engine 8176597, schemas 8785bb0 and CLI 22b514c; SDK and
+signed-prefix reader/viewer pins are ee5523d/b7c20ce. Older timings do not measure
+this new signed-prefix inspection composition.
 
 The prior [inspection-fix composition](../evidence/agent-inspection-integration/summary.json)
 selects the independently code-reviewed CLI fix: extra typed-response fields
@@ -70,7 +70,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git e3e9c84e14183d23aedef728d26d95b41bd7263c
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 968b48886991223278ae0671848279b16e93e157
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
@@ -246,12 +246,41 @@ Both branches share a 150-second primitive budget; only owned mining gets its
 remaining deadline, and ordinary reads resume afterward. This archive step is
 outside the timed offline guide walkthrough.
 
-The result uses `trace_version`; the current v0.1 SDK/viewer does not accept it.
-Inspect the JSON and its `baseline_verified` flag. At most 32 original transactions
-in Ethereum's Shanghai interval are supported. Same-block funding can fail Anvil
-pool admission and leave the baseline unverified. Full-block/opcode/root/end-state
-equivalence, broader oracle/divergence coverage and trace viewer/SDK support remain
-open. See the pinned engine README for complete limits and upstream write denial.
+The result uses the separate `trace_version` family. The selected SDK candidate
+has an offline typed reader; the original v0.1 HTTP client remains separate.
+Read the frozen actual report without archive access or a new execution:
+
+```bash
+python3 - <<'PY'
+from entrotter_sdk import load_trace
+report = load_trace("entrotter/evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json")
+print(report.artifact_id, report.baseline_verified)
+for tx in report.transactions:
+    print(tx.index, tx.candidate.status, tx.candidate.differing_fields)
+    if tx.candidate.status == "nonce_conflict":
+        print(tx.candidate.original_nonce, tx.candidate.expected_nonce)
+PY
+```
+
+In the checked-out local site, open **Inspect a historical prefix**, expand
+**Open signed-prefix replay** and select **Load recorded four-transaction case**.
+The recorded file is byte-identical to the SDK and coordination fixture. A freshly
+generated `transaction-replay.json` can instead be opened through **Open local
+signed-prefix JSON**. Imports stay in the browser and make no network request.
+The viewer shows original, baseline and candidate gas/logs, exact receipt fields,
+omissions, differences and nonce conflicts; an unverified baseline remains explicit.
+
+See [reader composition evidence](../evidence/trace-reader-integration/README.md)
+for component checks and the separate combined-head CI/publication scope.
+The SDK/browser check checksums and selected internal relationships; they do not
+recover signatures, authenticate a provider or prove EVM/source/financial truth.
+Browser numeric integer fields are limited to exact JavaScript safe integers;
+hex quantities remain exact. At most32 original transactions in Ethereum's
+Shanghai interval are supported. Same-block funding can fail Anvil pool admission
+and leave the baseline unverified. Full-block/opcode/root/end-state equivalence
+and broader oracle/divergence coverage remain open. See the pinned engine README
+for complete limits and upstream write denial. This inspection is outside all
+previous timed guide walkthroughs; frozen model/holdout/media sources are unchanged.
 
 ## Measurement and cleanup
 

@@ -1,0 +1,125 @@
+{
+  "head": "b7c20ce2c080427fe0742a1afcb5dbc49277de70",
+  "status": "all_four_required_checks_and_downloaded_browser_sources_verified",
+  "CI": "https://github.com/entrotter/entrotter.github.io/actions/runs/36894075581/job/110476545736",
+  "browser_groups": 33,
+  "raw_axe_scans": 25,
+  "violations": 0,
+  "runner_sha256": "892752eaf701319a2b99f7b58ff8ac95f97ef5f05740fd9b7c6222d022228825",
+  "source_hashes_match": 13,
+  "report_sha256": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+  "errors": [],
+  "scan_incomplete": {
+    "1280-console": [
+      "color-contrast"
+    ],
+    "390-console": [
+      "color-contrast"
+    ],
+    "320-console": [
+      "color-contrast"
+    ],
+    "console-import": [
+      "color-contrast"
+    ],
+    "1280-liquidity-shock": [
+      "color-contrast"
+    ],
+    "1280-recovery-trap": [
+      "color-contrast"
+    ],
+    "1280-depeg-stress": [
+      "color-contrast"
+    ],
+    "1280-ethereum-uniswap-slippage": [
+      "color-contrast"
+    ],
+    "1280-agent-local-codex": [
+      "color-contrast"
+    ],
+    "390-liquidity-shock": [
+      "color-contrast"
+    ],
+    "390-recovery-trap": [
+      "color-contrast"
+    ],
+    "390-depeg-stress": [
+      "color-contrast"
+    ],
+    "390-ethereum-uniswap-slippage": [
+      "color-contrast"
+    ],
+    "390-agent-local-codex": [
+      "color-contrast"
+    ],
+    "320-liquidity-shock": [
+      "color-contrast"
+    ],
+    "320-recovery-trap": [
+      "color-contrast"
+    ],
+    "320-depeg-stress": [
+      "color-contrast"
+    ],
+    "320-ethereum-uniswap-slippage": [
+      "color-contrast"
+    ],
+    "320-agent-local-codex": [
+      "color-contrast"
+    ],
+    "error": [
+      "color-contrast"
+    ],
+    "404": [],
+    "signed-prefix-1280": [
+      "color-contrast"
+    ],
+    "signed-prefix-390": [
+      "color-contrast"
+    ],
+    "signed-prefix-320": [
+      "color-contrast"
+    ],
+    "signed-prefix-unverified": [
+      "color-contrast"
+    ]
+  },
+  "supplemental_opaque_CSS_checks": 244,
+  "desktop_mobile_visual_review": "1280 and320 full signed-prefix captures inspected: readable scoped tables with keyboard scroll/focus, disclosed receipt/nonce outcomes and limitations; no page overflow. Exact browser harness also covers390.",
+  "limits": [
+    "Automated Chromium and accessibility-tree/keyboard evidence; no claim of manual screen-reader certification or complete WCAG conformance.",
+    "320 CSS-pixel viewport checks reflow; it is not a hardware/browser zoom measurement.",
+    "Axe incomplete contrast items remain explicit; supplemental checks apply only to opaque solid CSS colors.",
+    "Local fixture/archived report display; no new chain/model execution."
+  ],
+  "quality_docs_verification": "mirror-quality-docs-verification.json",
+  "artifact_sha256": {
+    "accessibility.json": "d37cd1e1cedbc71d4c6e7ce1500ff39edbcd91c0cc7d193b7578e96786361493",
+    "axe-1280-agent-local-codex.json": "d68658e6563f01564f0feebd04e17fca4c52da95d635fc1bda72e40b9a6d0458",
+    "axe-1280-console.json": "652f9b751d4e88af05803f5544933e75ec695966f3e543ada6d0f3758fe13a98",
+    "axe-1280-depeg-stress.json": "4792ecaba27ad38f702e00142e4f0b01d4e0d6c6562d7b343fe8e5ce35774f97",
+    "axe-1280-ethereum-uniswap-slippage.json": "3167150237d502c827852499d9f57485081bebf5d7adb8c11e8235c0290d5526",
+    "axe-1280-liquidity-shock.json": "3dc5b71a2465a430e024fb049948faff72249b352d0337805bdebfabb1407bd4",
+    "axe-1280-recovery-trap.json": "8f04adc0cd5edf4d177a8f4c1196b8d91c71269929e7f406e97d5eb5ba1c6ffa",
+    "axe-320-agent-local-codex.json": "fa6d0df72c24beb299676fd6cb3d2c4f330c7e428e37d7f544d9d2966cb5ee87",
+    "axe-320-console.json": "838b26ba1a1be2069eb6bbd79bca2dbf7b401412619862e3baa0246bb3d1069c",
+    "axe-320-depeg-stress.json": "5122ea972d8718740885ab75c877174d001ca69f86b3ddd1c55f189412116cc5",
+    "axe-320-ethereum-uniswap-slippage.json": "f934eceee41c3fb19936a62c859e84dc9afd3516946b9b1390031ba053a67157",
+    "axe-320-liquidity-shock.json": "8c26f50a72e5f505ba374c6b00e29f47460b428d7d5efef7243a0f7f2f7848ff",
+    "axe-320-recovery-trap.json": "8b499906e43e1755c6d5646d11a0197e67ddddc417eb6eacb828d33d93083e37",
+    "axe-390-agent-local-codex.json": "3cce984f7b6700321f57643df597ff4310a42647b184ae0432bdd53b160e113d",
+    "axe-390-console.json": "c1b92070c14405627cb9b1717afe238e24456139e0cc9d4c2e0d1fb417494a8f",
+    "axe-390-depeg-stress.json": "7acdf00cb2c141a7d597c485632b8df7aa3bf09c3f9fa4ad86787b7307e016b9",
+    "axe-390-ethereum-uniswap-slippage.json": "818c8d34e698d6f553f400259b13fa0dd4287ce780a09b5a44fbdf189e5c6a43",
+    "axe-390-liquidity-shock.json": "9ca9404826bc6703c430cf744055e3bb4cff9837fd028051c42ac85778b23c5e",
+    "axe-390-recovery-trap.json": "4fcc16d44297f6f97a6d6b92063c54cf96e66e5cc5b972a51008fc227e8edbdd",
+    "axe-404.json": "7077331d51fb0fb9c67c703fafd674d87805a18da83ae9ece6d3c1ffbd1166c8",
+    "axe-console-import.json": "24b2519b41e6442655e6716c663867e372b464de39e95b5f9500013374529f5a",
+    "axe-error.json": "396451464e41b67d967915823258bf09727c195e1c5be3f2f445eb57123025fe",
+    "axe-signed-prefix-1280.json": "3c2d29eacc8833417829d379526a7cc11b25598764ec03ba824ac6378c387946",
+    "axe-signed-prefix-320.json": "8c9ea40218b9b10ac3118b002185117fe9dcf2ad052c729f6003ea26f9920aed",
+    "axe-signed-prefix-390.json": "0c120a93c4cf5bca19d800b011dbf41c937e87f3d887939eac32e541d3348544",
+    "axe-signed-prefix-unverified.json": "0de324b943c38f7f5da455dd751b998ebfadbcb0ed34cf88b40b4ebca6fa9c0a",
+    "npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3"
+  }
+}

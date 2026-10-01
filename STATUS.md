@@ -1220,3 +1220,47 @@ funding admission, broader oracle/missing-state cases, full-block/opcode/end-sta
 and trace SDK/viewer integration remain open. All protected approvals/candidate
 publication/personal/media/submission gates remain open; no local Docker/VM
 startup, protected merge, media upload or formal submission occurred.
+
+## October 2 — Typed signed-prefix inspection integration in progress
+
+SDK#7/ee5523d adds a separate immutable offline trace reader. All five required
+checks pass:36tests each on Python3.11/3.12/3.13,5production sources fully checked,
+3installed wheel modules/marker verified,42exact locked audit identities and7doc
+hashes match without findings/skips/advisories. Four independent consistency
+findings were fixed and re-reviewed. The v0.1 HTTP client remains unchanged.
+
+Viewer#15/b7c20ce adds distinct browser-only original-prefix inspection. Root review
+resolved six codec/snapshot/bounds findings;63Node/11Python tests,21source hashes,
+97full explained findings,42Python/109npm identities and11doc hashes match.
+All four required checks pass. Downloaded Linux browser evidence passes33groups/
+25raw axe scans with0violations;13source hashes and the runner match. Root inspected
+1280/320px signed-prefix captures;390px, keyboard native chooser, invalid/resealed/
+oversized inputs, delayed-load races, recovery and no-upload/third-party-request
+gates pass. Incomplete contrast remains explicit;244opaque CSS comparisons are
+supplemental, with no manual screen-reader/full WCAG certification claim.
+
+Previous failures remain recorded: fd7 apt setup timed out, then retry exposed a
+1280px native chooser harness failure. Actual Tab navigation fixes that gate;
+0c again timed out during apt setup before the harness. Changing only Azure's
+Ubuntu mirror URI to the official HTTPS archive fixes setup while preserving
+signed apt, suites/components/keyring,10minute limit and every browser gate.
+Root independently reviewed both concrete harness/setup fixes. No product source
+changed in those fixes. The final Linux run passes, separately from prior attempts.
+
+The prepared coordination composition adds the exact offline SDK/site/coordination
+fixture-byte check and typed four-receipt/gas/log/nonce inspection. That workflow
+step and21-source type policy pass locally with the three frozen diagnostics
+retained; independent review of the four-file integration has no actionable
+finding. The guide now gives actual SDK and local-viewer instructions. The immutable
+execution snapshot is968b488, selecting SDKee5523d/siteb7c20ce; guide/index refs
+match those exact pins. Final snapshot/docs re-review passes after fixing a missing public proof pointer;
+combined exact-head CI remains pending, with evidence in final-review.json.
+See evidence/trace-reader-integration/README.md. These are existing original
+reports, not a new chain/model call or timing claim. Combined new-head CI remains
+separate from the previous42eb191 five-check proof.
+
+The full goal stays active: same-block funding admission, broader oracle/missing
+state coverage and full-block/opcode/end-state scope remain open. Required GitHub
+approval, candidate Pages publication, personal facts/terms and submission gates
+remain separate. No localDocker/VM startup, protected merge, new model/holdout
+evaluation, media upload, formal submission or Discord work occurred.

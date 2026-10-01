@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-10-01T14:49:53.741332+00:00",
+  "updated_at": "2026-10-01T16:41:54.236647+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -19,12 +19,13 @@
         "two identical archived Ethereum state executions with source hash and receipts",
         "Engine PR #28/6e13f34 resolves independent source review P2: canonically equal case-alias local contract overrides gave order-dependent real Anvil outcomes. Both orders now refuse before native/default/agent work; one mixed-case address remains valid. All 8 head checks pass: 214 native tests and 22 actual Docker cases, full 22-source/17-wheel/18-image-input binding verified. Coordination selects this tested source; combined CI and mandatory GitHub approval remain separate.",
         "Engine#29/0d4faf7 adds bounded original signed transaction-prefix replay separate from v0.1 actions/model records. All8headchecks pass;241native/23actualDocker tests and23source/18wheel/19image hashes verified. Ethereum19Mtx0 matches208144gas/8logs and complete native outcomes in default Docker4.484323s (native9.951108s). Independent mutable-input defect fixed. Schemas#11/8785 adds distinct offline contracts; all5checks/13hashes/23tests on3compositions/19original report shapes pass. Software review differs from mandatory GitHub approval; combined new-source candidate CI pending.",
-        "Engine#30/8176597 fixes actual archive-backed local mining timeout within remaining shared150second budget, without extending node guardian. All8checks pass;244native tests33.590s/23actualDocker cases213.407s/23source18wheel19image inputs verified. Four original Ethereum19M receipt projections match in default worker14.539113s (native46.982404s, different environment). Omission0 changes gas/logs of1/2 and original3 has nonce5523 versus expected5522. Full native/default outcomes match except runtime/hash; no upstream writes/model call/holdout retuning. Independent review passes; required GitHub approval and new combined CI remain separate."
+        "Engine#30/8176597 fixes actual archive-backed local mining timeout within remaining shared150second budget, without extending node guardian. All8checks pass;244native tests33.590s/23actualDocker cases213.407s/23source18wheel19image inputs verified. Four original Ethereum19M receipt projections match in default worker14.539113s (native46.982404s, different environment). Omission0 changes gas/logs of1/2 and original3 has nonce5523 versus expected5522. Full native/default outcomes match except runtime/hash; no upstream writes/model call/holdout retuning. Independent review passes; required GitHub approval and new combined CI remain separate.",
+        "SDK#7/ee5523d typed offline signed-prefix reader passes all5checks:36tests perPython,5source/3wheel/42lock/7doc hashes verified;4independent consistency fixes re-reviewed. Viewer#15/b7 passes all4requiredchecks,33Linuxbrowsergroups/25rawaxe/0violations/13browser sources+runner verified;21qualitysources/97fullretainedfindings/42Python/109npm/11docs verified. Repeated setup/nativechooser failures fixed and retained; signedapt and allgates/timeouts unchanged. Prepared composition offline/type/source review passes; final combined CI pending. This is not protected-main approval, candidate publication or new chain/model proof."
       ],
       "blocked": [],
       "todo": [
         "stronger execution budgets and signal/process fault coverage",
-        "Extend signed-prefix replay coverage for parent-state pool/same-block funding, full-block/opcode/end-state scope and broader nonce/order/oracle/missing-state divergence cases; add trace SDK/viewer integration while preserving explicit mode separation",
+        "Extend signed-prefix replay coverage for parent-state pool/same-block funding, full-block/opcode/end-state scope and broader nonce/order/oracle/missing-state divergence cases; complete cross-repository trace-reader integration proof while preserving explicit mode separation",
         "more assumptions and adverse scenarios in benchmark"
       ]
     },
@@ -142,7 +143,8 @@
         "Pinned browser development tools, strict npm audit and Pages build prerequisite verified in Linux CI; downloaded site/runner hashes match local evidence",
         "Proposed website decimal-input fix: failing-before correctly hashed malformed-metric regression; final local/Linux 21 JS and ten Python tests, 19 real browser groups and 14 zero-violation axe scans. All 19 existing EVM reports retain exact hash/view-model behavior after fixing introduced source:null rejection. Existing incomplete contrast/manual AT limits remain; no deployment before review/merge.",
         "Website PR #11 integrates current UFO/experiment-console main d44af5d into the accessibility/quality candidate. At 8671ab2: 40 JS/11 Python tests, 24 browser groups/18 zero-violation axe scans and all four required GitHub checks pass; independent review/deployment of this candidate pending. Live five-file bytes match current main, which is distinct from this candidate.",
-        "Viewer #14/49914a2 displays recorded agent choices/reasons beside candidate outcomes, original requested model provenance/unknown cost and negative result. Independent code review3P2 findings resolved;47Node/11Python,28Chromium groups/21zero-violation axe scans,55full findings/18source hashes and42Python/109npm lock identities verified in4passed CI checks. All12 original agent reports remain readable; this is display-only, not new chain/model evaluation, full WCAG or publication proof."
+        "Viewer #14/49914a2 displays recorded agent choices/reasons beside candidate outcomes, original requested model provenance/unknown cost and negative result. Independent code review3P2 findings resolved;47Node/11Python,28Chromium groups/21zero-violation axe scans,55full findings/18source hashes and42Python/109npm lock identities verified in4passed CI checks. All12 original agent reports remain readable; this is display-only, not new chain/model evaluation, full WCAG or publication proof.",
+        "SDK#7/ee5523d typed offline signed-prefix reader passes all5checks:36tests perPython,5source/3wheel/42lock/7doc hashes verified;4independent consistency fixes re-reviewed. Viewer#15/b7 passes all4requiredchecks,33Linuxbrowsergroups/25rawaxe/0violations/13browser sources+runner verified;21qualitysources/97fullretainedfindings/42Python/109npm/11docs verified. Repeated setup/nativechooser failures fixed and retained; signedapt and allgates/timeouts unchanged. Prepared composition offline/type/source review passes; final combined CI pending. This is not protected-main approval, candidate publication or new chain/model proof."
       ],
       "blocked": [],
       "todo": [
@@ -304,7 +306,8 @@
     "evidence/latest-candidate/summary.json",
     "evidence/contract-identity-integration/summary.json",
     "evidence/agent-viewer-integration/summary.json",
-    "evidence/canonical-replay-integration/summary.json"
+    "evidence/canonical-replay-integration/summary.json",
+    "evidence/trace-reader-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

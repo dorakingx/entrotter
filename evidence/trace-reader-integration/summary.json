@@ -1,0 +1,22 @@
+{
+  "status": "all_component_checks_artifacts_offline_type_and_final_independent_review_passed_combined_CI_pending",
+  "pins": {
+    "engine": "8176597af994dddb7a3dc6721db623580ebc9601",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+  },
+  "original_report_sha256": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+  "new_chain_or_model_execution": false,
+  "offline_fixture_reader": "passed exact new CI step",
+  "independent_source_review": "Final four-source and snapshot/docs review passed with no remaining actionable findings. P3 public proof pointer fixed and re-reviewed; original review hashes retained in final-review.json.",
+  "SDK_CI": "5checks passed at ee5523d",
+  "viewer_CI": "all4requiredchecks pass atb7; 33Linuxbrowsergroups/25rawaxe scans0violations/13sourcehashes+runner match; root21qualitysource/97retainedfindings/42Python/109npm/11docs verified. Repeated apt and chooser failures retained separately.",
+  "limits": [
+    "No protected merge/candidate deployment/submission; G1-G5 remains active.",
+    "Frozen model/holdout/media/native measurements retain their own original sources.",
+    "Exact combined-head and final browser proof separate from component checks."
+  ],
+  "execution_snapshot": "968b48886991223278ae0671848279b16e93e157"
+}

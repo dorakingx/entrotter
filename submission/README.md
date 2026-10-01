@@ -57,7 +57,7 @@ the canonical contract identity fix and original signed transaction-prefix repla
 The [current composition evidence](../evidence/canonical-mine-integration/summary.json)
 binds the tested engine/schema sources, original receipt match and exact inputs.
 The prefix is a separate technical case; full-block/end-state, same-block funding
-admission and trace SDK/viewer coverage remain open. The
+admission and broader oracle/missing-state coverage remain open. The
 [recorded-agent viewer evidence](../evidence/agent-viewer-integration/summary.json)
 adds original decision/provenance inspection and preserves original reports. Current
 combined checks and public reproduction measurements are recorded in
@@ -68,12 +68,19 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [e3e9c84](https://github.com/entrotter/entrotter/tree/e3e9c84e14183d23aedef728d26d95b41bd7263c) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [968b488](https://github.com/entrotter/entrotter/tree/968b48886991223278ae0671848279b16e93e157) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
 | Bounded agent engine, contract identity and signed transaction-prefix replay | [8176597](https://github.com/entrotter/engine/tree/8176597af994dddb7a3dc6721db623580ebc9601) | [#30](https://github.com/entrotter/engine/pull/30) |
-| Python SDK | [b0c2ba3](https://github.com/entrotter/sdk-python/tree/b0c2ba3bba411e548af44101ae06e879bd7b5dc0) | [#6](https://github.com/entrotter/sdk-python/pull/6) |
+| Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, recorded agent evidence, accessibility and quality | [49914a2](https://github.com/entrotter/entrotter.github.io/tree/49914a2ca7358a9e45befc9b458f7f3ac52c6142) | [#14](https://github.com/entrotter/entrotter.github.io/pull/14) |
+| Console, recorded agent and signed-prefix inspection, accessibility and quality | [b7c20ce](https://github.com/entrotter/entrotter.github.io/tree/b7c20ce2c080427fe0742a1afcb5dbc49277de70) | [#15](https://github.com/entrotter/entrotter.github.io/pull/15) |
+
+The [signed-prefix reader composition](../evidence/trace-reader-integration/README.md)
+adds SDK and browser inspection of the actual four-receipt case. SDK all5checks
+and viewer all4checks pass; root artifact verification confirms33Linux browser
+groups/25raw axe scans without reported violations. Checksums and internal
+relationships do not authenticate source state or prove economic/EVM truth.
+Final combined CI remains separate. No new video/model/holdout result is implied.
 
 ## Recorded review sources
 

@@ -58,6 +58,13 @@ accidentally resolving an unrelated package with the same name. Run it only afte
 the pinned checkout steps; it does not select candidate revisions, install Docker
 or build/configure the worker. Build-time package tooling may require network access.
 
+The proposed [signed-prefix reader integration](evidence/trace-reader-integration/README.md)
+adds typed offline SDK inspection and a separate local browser view of original
+transactions, receipt differences and nonce conflicts. Its exact component and
+combined CI evidence is distinct from the older deployed site. Follow the
+[optional replay instructions](docs/QUICK_START.md#optional-original-transaction-prefix-replay)
+for the recorded four-transaction case and archive requirements.
+
 ## Local API and SDK
 
 After completing the quick start, keep its environment variables in both terminals.
