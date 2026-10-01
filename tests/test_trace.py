@@ -16,7 +16,7 @@ from entrotter_engine.rpc import OwnedTraceRPC, RPC, RPCError
 from entrotter_engine.trace import (
     capture_source, data, quantity, receipt_projection, rlp, run_trace_native,
     signed_transaction, validate_plan,
-    run_trace, verify_trace,
+    run_trace, verify_trace, replay_branch,
 )
 
 
@@ -172,6 +172,75 @@ class TraceValidationTests(unittest.TestCase):
             capture_source(plan(), WrongSource(), time.monotonic()+30)
         r=receipt(); del r['gasUsed']
         with self.assertRaises(ValueError): receipt_projection(r)
+
+
+class TraceMineDeadlineTests(unittest.TestCase):
+    def replay(self, *, remaining=30, failure=False):
+        original = receipt()
+        captured = {
+            'parent': {'chain_id': 1, 'block_number': 18999999,
+                       'block_hash': '0x' + 'ab' * 32},
+            'header': {'timestamp': 1705173443, 'gas_limit': 30000000,
+                       'base_fee': 1, 'coinbase': '0x' + 'cd' * 20,
+                       'prevrandao': '0x' + 'ef' * 32},
+            'inputs': [{'index': 0, 'hash': original['transactionHash'],
+                        'sender': original['from'], 'nonce': 0, 'raw': '0x00',
+                        'original_receipt': receipt_projection(original)}],
+        }
+        class SlowMiningRPC:
+            timeout = 10
+            mine_timeout = None
+            block_reads = 0
+            def call(self, method, params=None):
+                if method == 'eth_getBlockByNumber':
+                    self.block_reads += 1
+                    if self.block_reads == 1:
+                        return {'hash': captured['parent']['block_hash']}
+                    header = captured['header']
+                    return {'number': hex(19000000), 'timestamp': hex(header['timestamp']),
+                            'gasLimit': hex(header['gas_limit']), 'baseFeePerGas': '0x1',
+                            'miner': header['coinbase'], 'mixHash': header['prevrandao']}
+                if method == 'eth_getTransactionCount': return '0x0'
+                if method == 'eth_sendRawTransaction': return original['transactionHash']
+                if method == 'eth_getTransactionReceipt': return original
+                if method == 'evm_mine':
+                    self.mine_timeout = self.timeout
+                    # A valid archive-backed mine exceeds the ordinary read cap.
+                    if failure or (remaining > 10 and self.timeout <= 10):
+                        raise RPCError('simulated mining socket timeout')
+                    return None
+                if method in OwnedTraceRPC.LOCAL_METHODS: return None
+                raise AssertionError(method)
+        rpc = SlowMiningRPC()
+        with patch('entrotter_engine.trace.AnvilSession') as node, \
+             patch('entrotter_engine.trace.time.monotonic', return_value=1000):
+            node.return_value.__enter__.return_value.rpc = rpc
+            node.return_value.__enter__.return_value.version = 'test node'
+            if failure:
+                with self.assertRaisesRegex(RPCError, 'mining socket timeout'):
+                    replay_branch(captured, 'https://example.com', [], 1000 + remaining)
+                result = None
+            else:
+                result = replay_branch(captured, 'https://example.com', [], 1000 + remaining)
+            node.return_value.__exit__.assert_called_once()
+            self.assertEqual(node.call_args.kwargs['lifetime'], remaining)
+        self.assertEqual(rpc.timeout, 10)
+        return rpc.mine_timeout, result
+
+    def test_slow_mine_uses_remaining_primitive_budget_then_restores_reads(self):
+        timeout, result = self.replay()
+        self.assertEqual(timeout, 30)
+        self.assertTrue(result['matches_original_receipts'])
+
+    def test_mine_never_gets_a_fresh_budget_when_deadline_is_near(self):
+        timeout, result = self.replay(remaining=2.5)
+        self.assertEqual(timeout, 2.5)
+        self.assertTrue(result['matches_original_receipts'])
+
+    def test_failed_mine_restores_timeout_and_exits_owned_context(self):
+        timeout, result = self.replay(failure=True)
+        self.assertEqual(timeout, 30)
+        self.assertIsNone(result)
 
 
 @unittest.skipUnless(shutil.which('anvil') and shutil.which('cast'), 'Real Anvil/cast required; no synthetic pass')

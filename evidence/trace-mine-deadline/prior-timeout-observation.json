@@ -1,0 +1,214 @@
+{
+  "exit_code": 1,
+  "events": [
+    {
+      "method": "eth_chainId",
+      "transport": "read_only_upstream",
+      "result": "returned",
+      "seconds": 0.055986
+    },
+    {
+      "method": "eth_getBlockByNumber",
+      "transport": "read_only_upstream",
+      "result": "returned",
+      "seconds": 0.263458
+    },
+    {
+      "method": "eth_getBlockByNumber",
+      "transport": "read_only_upstream",
+      "result": "returned",
+      "seconds": 0.409845
+    },
+    {
+      "method": "eth_getTransactionReceipt",
+      "transport": "read_only_upstream",
+      "result": "returned",
+      "seconds": 0.22566
+    },
+    {
+      "method": "eth_getTransactionReceipt",
+      "transport": "read_only_upstream",
+      "result": "returned",
+      "seconds": 0.261708
+    },
+    {
+      "method": "eth_getTransactionReceipt",
+      "transport": "read_only_upstream",
+      "result": "returned",
+      "seconds": 0.379153
+    },
+    {
+      "method": "eth_getTransactionReceipt",
+      "transport": "read_only_upstream",
+      "result": "returned",
+      "seconds": 0.218065
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for web3_clientVersion; check connectivity and archive access",
+      "seconds": 0.000509
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for web3_clientVersion; check connectivity and archive access",
+      "seconds": 0.000431
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for web3_clientVersion; check connectivity and archive access",
+      "seconds": 0.000586
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for web3_clientVersion; check connectivity and archive access",
+      "seconds": 0.001235
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for web3_clientVersion; check connectivity and archive access",
+      "seconds": 0.001813
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for web3_clientVersion; check connectivity and archive access",
+      "seconds": 0.001301
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for web3_clientVersion; check connectivity and archive access",
+      "seconds": 0.001285
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for web3_clientVersion; check connectivity and archive access",
+      "seconds": 0.001036
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for web3_clientVersion; check connectivity and archive access",
+      "seconds": 0.000353
+    },
+    {
+      "method": "web3_clientVersion",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.008264
+    },
+    {
+      "method": "eth_chainId",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.000697
+    },
+    {
+      "method": "eth_getBlockByNumber",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.380517
+    },
+    {
+      "method": "evm_setNextBlockTimestamp",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.001966
+    },
+    {
+      "method": "evm_setBlockGasLimit",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.001277
+    },
+    {
+      "method": "anvil_setCoinbase",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.001362
+    },
+    {
+      "method": "anvil_setNextBlockBaseFeePerGas",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.001004
+    },
+    {
+      "method": "anvil_setNextBlockPrevRandao",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.001173
+    },
+    {
+      "method": "eth_getTransactionCount",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.416967
+    },
+    {
+      "method": "eth_sendRawTransaction",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.010227
+    },
+    {
+      "method": "eth_getTransactionCount",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.417131
+    },
+    {
+      "method": "eth_sendRawTransaction",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.004783
+    },
+    {
+      "method": "eth_getTransactionCount",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.395595
+    },
+    {
+      "method": "eth_sendRawTransaction",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.003339
+    },
+    {
+      "method": "eth_sendRawTransaction",
+      "transport": "owned_local",
+      "result": "returned",
+      "seconds": 0.001998
+    },
+    {
+      "method": "evm_mine",
+      "transport": "owned_local",
+      "result": "RPCError",
+      "error": "RPC request failed for evm_mine; check connectivity and archive access",
+      "seconds": 10.003215
+    }
+  ],
+  "owned_ports": [
+    {
+      "port": 60056,
+      "closed": true
+    }
+  ],
+  "instrumentation": "Observers forward exact RPC init/call arguments and results; no source/state/funding/nonce change."
+}

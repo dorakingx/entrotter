@@ -109,6 +109,11 @@ prefix. Only Ethereum mainnet's Shanghai interval and legacy/type-1/type-2
 signatures are currently supported. Input is bounded to 256 KiB, individual
 calldata to 64 KiB, access lists to 256 entries/keys, receipt logs to 512 entries,
 and exported reports to 8 MiB with the existing shared export ledger.
+Both branches share a 150-second primitive deadline. Archive-backed mining may
+take longer than an ordinary read, so only the owned `evm_mine` call receives the
+remaining deadline; normal ten-second RPC reads resume afterward. The node's
+independent guardian lifetime is unchanged. Native cleanup has its existing
+grace period; this is not a claim of whole-process native resource isolation.
 
 The result has `execution_kind: "canonical_transaction_prefix_replay"` and
 `trace_version`, **not** the v0.1 `schema_version`. The v0.1 SDK/viewer deliberately
@@ -139,6 +144,9 @@ not a model evaluation, profitability claim or newly untouched holdout. See
 [recorded evidence](evidence/trace-replay/README.md). The separate
 `canonical-local-inputs.json` is an artificially funded local fixture, generated
 with a disposable key; only public signed inputs are retained.
+The [four-transaction case](evidence/trace-mine-deadline/README.md) also matches
+all four original receipts and shows changed gas/logs plus a nonce conflict after
+omitting transaction 0. Its native and bounded evidence have separate scopes.
 
 Encoding follows [EIP-155](https://eips.ethereum.org/EIPS/eip-155),
 [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) and

@@ -475,8 +475,15 @@ def replay_branch(
                         expected_nonces[sender] += 1
                         record["status"] = "queued"
             outcomes.append(record)
-        _remaining(deadline)
-        rpc.call("evm_mine")
+        # Mining can fetch archive state for every queued transaction. Use only
+        # the primitive's remaining budget, not the normal ten-second read cap.
+        # The independently owned node guardian retains its absolute lifetime.
+        read_timeout = rpc.timeout
+        rpc.timeout = _remaining(deadline)
+        try:
+            rpc.call("evm_mine")
+        finally:
+            rpc.timeout = read_timeout
         mined = rpc.call("eth_getBlockByNumber", ["latest", False])
         if (
             not isinstance(mined, dict)
