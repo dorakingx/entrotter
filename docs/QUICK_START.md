@@ -19,23 +19,20 @@ five-minute reproduction claim. See [worker security](WORKER_SECURITY.md) for
 the tested daemon and limits, and [bounded host service](BOUNDED_HOST_SERVICE.md)
 for the optional Linux API-process and VM configuration.
 
-The [latest candidate walkthrough](../evidence/latest-candidate/summary.json)
-completed in 24.431 seconds: six clean public checkouts, a fresh pipless venv,
-actual Foundry download/build/doctor, and complete fixture/local-Anvil equality.
-Docker was running with potentially warm base/build caches; installation and VM
-startup are excluded. The guide's four shell blocks were executed verbatim, with
-the documented local socket, OS TLS bundle and a private temporary export ledger
-supplied in the environment. This is not a cold-machine setup benchmark.
+The latest [agent CLI candidate evidence](../evidence/latest-agent-cli/summary.json)
+uses engine c167193 and CLI 87cfe40. Its automated clean public replay includes
+five pinned dependency checkouts, a new pipless venv, actual Foundry download/build
+and complete recorded-model equality through the standalone CLI. Docker was
+running and caches may be warm; installation/VM startup is excluded. The complete
+five-block guide walkthrough is recorded separately in that evidence.
 
-The earlier October 1 commands were [executed from a fresh workspace](../evidence/quick-start-oct01/summary.json)
-in 24.35 seconds, including source fetches, venv creation, the Foundry download,
-image build and both report checks. That measurement used coordination 03f8786
-and engine d5b3003. The commands below now select coordination dcef3ee (including
-the optional Linux CLI helper) and engine fa37380 (including the bounded build
-diagnostic stream). The SDK, CLI, schema and console pins are unchanged. Docker was already running and image/build
-caches were warm; installation and VM startup are excluded. The
-[September 20 measurement](../evidence/quick-start/summary.json) uses earlier pins
-and remains separate. Neither measurement is a cold-machine setup benchmark.
+The earlier October 1 [24.431-second walkthrough](../evidence/latest-candidate/summary.json)
+selected coordination dcef3ee/engine fa37380 and did not include the new agent CLI.
+The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordination
+03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
+also retains its earlier pins. These are separate measurements with potentially
+warm caches, not cold-machine setup benchmarks. The current commands select
+coordination 924f60e, engine c167193 and CLI 87cfe40; SDK/schema/site pins are retained.
 
 ## 1. Fetch a compatible snapshot
 
@@ -49,7 +46,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git dcef3ee06af060b17b52e0f3d59c060a9ab17fd6
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 924f60ee90364218a700bf7416496ab86132b339
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
@@ -135,6 +132,43 @@ shown in the [README](../README.md#local-api-and-sdk). Per-worker controls do no
 cap the entire host CLI, Docker build cache or VM; the optional
 [bounded CLI](BOUNDED_CLI.md) and host service have separate scope. Missing worker configuration fails instead of falling back to
 native execution.
+
+## 4. Run agent decisions and replay the recorded model
+
+The built-in risk policy needs no model account. The model example re-executes
+already recorded choices; no model is called. Both use the bounded local worker,
+with synthetic local EVM state and no archive access. Decision steps and the
+original requested-gas budget are recovered from the recording for replay.
+
+```bash
+.venv/bin/python -m entrotter_cli agent-run scenarios/evm/local-branch-revert.json --steps 0 1 -o risk-agent.json
+.venv/bin/python -m entrotter_cli replay risk-agent.json -o risk-replayed.json
+.venv/bin/python -m entrotter_cli replay cli/tests/data/agent-recorded-local.json -o model-replayed.json
+.venv/bin/python -m entrotter_cli verify model-replayed.json
+.venv/bin/python -m entrotter_cli inspect model-replayed.json
+.venv/bin/python - <<'PY'
+import json
+from pathlib import Path
+
+for actual, reference in [
+    ("risk-agent.json", "cli/tests/data/agent-risk-local.json"),
+    ("risk-replayed.json", "cli/tests/data/agent-risk-local.json"),
+    ("model-replayed.json", "cli/tests/data/agent-recorded-local.json"),
+]:
+    if json.loads(Path(actual).read_text()) != json.loads(Path(reference).read_text()):
+        raise SystemExit(f"Complete agent report differs: {actual}")
+print("Risk execution/replay and recorded-model replay match complete original reports")
+PY
+```
+
+Inspect displays the original decisions, reasons and provider provenance. The
+sample keeps its nondeterministic generation, requested model alias and unknown
+original monetary cost. Zero new model calls during replay does not mean the
+original generation was free or deterministic. This is supplied-action replay
+under matching observations, not later-block historical trace replay or new model
+quality/holdout evidence. Invalid or diverged replay preserves an existing output.
+The optional Linux service/CLI installation guides retain their separately tested
+operator pins; this walkthrough does not claim those service installs were repeated.
 
 ## Measurement and cleanup
 

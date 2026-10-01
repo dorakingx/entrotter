@@ -60,10 +60,10 @@ tools; this snapshot is proposed code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [dcef3ee](https://github.com/entrotter/entrotter/tree/dcef3ee06af060b17b52e0f3d59c060a9ab17fd6) | Current composition builds on [#53](https://github.com/entrotter/entrotter/pull/53) |
-| Bounded agent engine, build lifetime and diagnostics | [fa37380](https://github.com/entrotter/engine/tree/fa3738078079ffa8f8350a26dca60b560d8aa32f) | [#26](https://github.com/entrotter/engine/pull/26) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [924f60e](https://github.com/entrotter/entrotter/tree/924f60ee90364218a700bf7416496ab86132b339) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Bounded agent engine, build lifetime/diagnostics and metadata | [c167193](https://github.com/entrotter/engine/tree/c1671938edde03c59deef64dbb81d7c41a33406b) | [#27](https://github.com/entrotter/engine/pull/27) |
 | Python SDK | [b0c2ba3](https://github.com/entrotter/sdk-python/tree/b0c2ba3bba411e548af44101ae06e879bd7b5dc0) | [#6](https://github.com/entrotter/sdk-python/pull/6) |
-| CLI | [a63a390](https://github.com/entrotter/cli/tree/a63a39000e03d151e80b5a9c47dd4df449281b93) | [#9](https://github.com/entrotter/cli/pull/9) |
+| CLI | [87cfe40](https://github.com/entrotter/cli/tree/87cfe4078dfaaaa3eebcbff65bcedc8d60013cc8) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Schema contracts | [3a78ecc](https://github.com/entrotter/scenarios/tree/3a78ecca24334ae87119a5a0b64c84ba6dd71de1) | [#8](https://github.com/entrotter/scenarios/pull/8) |
 | Current console, accessibility and quality | [8671ab2](https://github.com/entrotter/entrotter.github.io/tree/8671ab2ee481a894784afe2a2cc216fb6931b02c) | [#11](https://github.com/entrotter/entrotter.github.io/pull/11) |
 

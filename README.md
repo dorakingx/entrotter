@@ -160,6 +160,11 @@ preflight rule made identical decisions; the rule was faster. See
 metadata, exact replay commands and pending historical/holdout work. The engine
 and schema PRs require independent review before this becomes a main-branch release.
 
+The [pinned quick start](docs/QUICK_START.md#4-run-agent-decisions-and-replay-the-recorded-model)
+now includes proposed standalone CLI risk execution and complete recorded-model
+replay. These commands reuse original decisions and make no new model call;
+independent review and main integration remain pending.
+
 The [frozen historical comparison](docs/HISTORICAL_AGENT_EVALUATION.md) now includes
 three sourced cases and two previously unused implementation holdouts. All ten
 risk/model recordings replayed exactly on fresh forks. The model matched the
