@@ -32,7 +32,7 @@ Configure Settings > Pages > Source as GitHub Actions, or use the parent
 workspace's reviewed `scripts/publish.py --apply`. Push to main triggers
 `.github/workflows/pages.yml`. A workflow file alone is not proof of a live site.
 
-The deploy artifact contains only index.html, 404.html, style.css, app.js, public
+The deploy artifact contains only index.html, 404.html, style.css, app.js, comparison.mjs, report-validation.mjs, public
 assets, schemas and public example reports. It never uploads the repository root,
 private logs or a local .env. Pull requests run checks; only main deploys.
 
@@ -66,6 +66,10 @@ It checks all four public samples at 1280, 390 and 320 CSS pixels, skip-link
 focus, keyboard sample selection/local-file import, exact chart data, scrollable
 tables/JSON, error clearing, reduced motion, forced colors and the 404 page.
 Hostile imported text remains inert; requests must be same-origin GETs.
+The experiment console is also checked at all three widths, including local
+command validation, malformed/oversized imports, recovery and a delayed sample
+response racing a newer import. It uses its own unchanged UTF-8 wire format;
+the older v0.1 reports continue to use their ASCII canonicalization.
 Playwright and axe are development tools and are never deployed to Pages.
 
 Full axe results, screenshots and a summary with source/tool hashes are written
@@ -116,7 +120,7 @@ Python website tests. CI discovers the tracked sources and refuses empty scans.
 
 All 14 rules from eslint-plugin-security run without inline suppressions. Full
 findings are saved in `.quality/security.json` before the source-bound review
-policy is checked. `security-reviewed.json` retains 32 findings with individual
+policy is checked. `security-reviewed.json` retains 51 findings with individual
 rationales (bounded numeric grammar, inert indexed reads and trusted developer
 file operations). It pins every JS/declaration source and tool configuration/lock;
 source drift, new/missing findings or missing rationale fail the gate. These are
@@ -135,3 +139,22 @@ Imports make no network request. Existing report/schema/mascot files are unchang
 Quality, browser and unit jobs all gate Pages builds; PRs never deploy. After an
 independent reviewer approves and merges the changes, verify the live deployment
 separately before calling this implementation released.
+
+## The experiment console
+
+The home page combines the four-action Uniswap comparison and the existing v0.1
+report explorer. There is no event-specific subpage. The purple UFO and orbital
+visuals reuse existing project artwork. The interface identifies recorded results,
+local imports and reproducible execution distinctly; the website never runs swaps.
+
+`comparison.mjs` renders the console; `report-validation.mjs` checks its data.
+The immutable measured example is in `assets/examples/action-comparison.json`.
+Its original wire format and provenance are preserved for compatibility. The
+original v0.1 reports remain in `reports/` and use the existing v0.1 `app.js` validator.
+The reproduction link pins the existing runner commit while that code awaits review.
+
+Run `npm test` for both report formats, and the Python tests above for the home
+page contract and deployment allowlist. Browser verification covers desktop/mobile,
+local imports, malformed input, command generation and the earlier report explorer.
+
+Publication remains protected-main-only. An open PR is not a deployed result.

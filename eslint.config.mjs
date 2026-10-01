@@ -25,6 +25,7 @@ export default [
     languageOptions: { sourceType: "script", globals: globals.browser },
   },
   { files: ["**/*.mjs"], languageOptions: { globals: globals.node } },
+  { files: ["comparison.mjs"], languageOptions: { globals: globals.browser } },
   {
     files: ["scripts/check_accessibility.mjs"],
     languageOptions: { globals: { ...globals.browser, axe: "readonly" } },

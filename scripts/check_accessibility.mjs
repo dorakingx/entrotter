@@ -21,6 +21,8 @@ const axeSource = await readFile(
 const types = {
   ".html": "text/html",
   ".js": "text/javascript",
+  ".mjs": "text/javascript",
+  ".webp": "image/webp",
   ".css": "text/css",
   ".json": "application/json",
   ".png": "image/png",
@@ -30,7 +32,7 @@ const server = createServer(async (request, response) => {
     const pathname = new URL(request.url || "/", "http://127.0.0.1").pathname;
     const name = pathname === "/" ? "index.html" : pathname.slice(1);
     if (
-      !/^(index\.html|404\.html|style\.css|app\.js|(?:assets|reports|schemas)\/[a-zA-Z0-9_.-]+)$/.test(
+      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
         name,
       )
     ) {
@@ -86,12 +88,21 @@ async function pageAt(width = 1280, path = "/") {
     requests.push({ url: request.url(), method: request.method() }),
   );
   await page.goto(origin + path);
-  if (path === "/")
+  if (path === "/") {
     await page.waitForFunction(() =>
       document
         .querySelector("#report-status")
         ?.textContent?.includes("Integrity verified locally"),
     );
+    await page.waitForFunction(
+      () =>
+        document.querySelector("#c-results") instanceof HTMLElement &&
+        !document.getElementById("c-results")?.hidden,
+    );
+    await page
+      .locator("details.archive")
+      .evaluate((node) => node.setAttribute("open", ""));
+  }
   return page;
 }
 /** @param {number} width @param {(page: import("playwright").Page) => Promise<void>} work @param {string} [path] */
@@ -244,6 +255,156 @@ function canonical(x) {
 
 try {
   browser = await chromium.launch();
+  for (const width of [1280, 390, 320]) {
+    await check(`${width}px console: recorded cards, command and axe`, () =>
+      withPage(width, async (page) => {
+        await page
+          .locator("details.archive")
+          .evaluate((node) => node.removeAttribute("open"));
+        assert.equal(await page.locator("#c-cards .card").count(), 4);
+        assert.equal(await page.locator("#c-cards .recommended").count(), 1);
+        await page.locator("#c-amount").fill("0.3");
+        await page.getByRole("button", { name: "Build local command" }).click();
+        assert.match(
+          await page.locator("#c-command").innerText(),
+          /--amount 0\.3 /,
+        );
+        await page.locator("#c-amount").fill("1; curl attacker");
+        await page.getByRole("button", { name: "Build local command" }).click();
+        assert.match(
+          await page.locator("#c-command").innerText(),
+          /positive decimal/,
+        );
+        await noOverflow(page);
+        await scan(page, `${width}-console`);
+        await page.screenshot({
+          path: resolve(output, `${width}-console.png`),
+          fullPage: true,
+        });
+      }),
+    );
+  }
+  await check(
+    "Console imports stay local, reject invalid evidence and recover",
+    () =>
+      withPage(390, async (page) => {
+        const original = JSON.parse(
+          await readFile(
+            resolve(root, "assets/examples/action-comparison.json"),
+            "utf8",
+          ),
+        );
+        const hostile = structuredClone(original);
+        hostile.report.trials[0].reason = "<img src=x onerror=alert(1)>";
+        // This format uses UTF-8 canonical JSON, unlike the older ASCII v0.1 format.
+        const { canonical: canonicalComparison } =
+          await import("../report-validation.mjs");
+        hostile.sha256 = createHash("sha256")
+          .update(canonicalComparison(hostile.report))
+          .digest("hex");
+        const count = requests.length;
+        await page.locator("#c-report-file").setInputFiles({
+          name: "local.json",
+          mimeType: "application/json",
+          buffer: Buffer.from(JSON.stringify(hostile)),
+        });
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#c-mode")
+            ?.textContent?.includes("Imported local"),
+        );
+        assert.equal(await page.locator("#c-cards img").count(), 0);
+        assert.match(await page.locator("#c-cards").innerText(), /<img/);
+        assert.equal(requests.length, count);
+        for (const bytes of [
+          "{",
+          JSON.stringify({ ...original, sha256: "0".repeat(64) }),
+          " ".repeat(2_000_001),
+        ]) {
+          await page.locator("#c-report-file").setInputFiles({
+            name: "invalid.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(bytes),
+          });
+          await page.waitForFunction(
+            () =>
+              document.querySelector("#c-mode")?.textContent ===
+              "Report rejected",
+          );
+          assert.equal(await page.locator("#c-results").isVisible(), false);
+          assert.equal(await page.locator("#c-download").isDisabled(), true);
+          assert.equal(await page.locator("#c-cards").innerHTML(), "");
+          assert.equal(requests.length, count);
+        }
+        await page.locator("#c-report-file").setInputFiles({
+          name: "valid.json",
+          mimeType: "application/json",
+          buffer: Buffer.from(JSON.stringify(original)),
+        });
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#c-mode")
+            ?.textContent?.includes("Imported local"),
+        );
+        assert.equal(await page.locator("#c-results").isVisible(), true);
+        await scan(page, "console-import");
+      }),
+  );
+  await check(
+    "A slow recorded load cannot replace a newer rejected import",
+    () =>
+      withPage(390, async (page) => {
+        let release;
+        const held = new Promise((resolve) => {
+          release = resolve;
+        });
+        let started;
+        const intercepted = new Promise((resolve) => {
+          started = resolve;
+        });
+        await page.route(
+          "**/assets/examples/action-comparison.json",
+          async (route) => {
+            started();
+            await held;
+            await route.fulfill({
+              contentType: "application/json",
+              body: await readFile(
+                resolve(root, "assets/examples/action-comparison.json"),
+                "utf8",
+              ),
+            });
+          },
+        );
+        await page.locator("#c-sample").click();
+        await intercepted;
+        await page.locator("#c-report-file").setInputFiles({
+          name: "invalid.json",
+          mimeType: "application/json",
+          buffer: Buffer.from("{"),
+        });
+        await page.waitForFunction(
+          () =>
+            document.querySelector("#c-mode")?.textContent ===
+            "Report rejected",
+        );
+        const response = page.waitForResponse(
+          "**/assets/examples/action-comparison.json",
+        );
+        release();
+        await (await response).finished();
+        // Wait for the stale response's validation digests to drain, with no sleep.
+        await page.evaluate(async () => {
+          for (let i = 0; i < 8; i++)
+            await crypto.subtle.digest("SHA-256", new Uint8Array());
+        });
+        assert.equal(
+          await page.locator("#c-mode").innerText(),
+          "Report rejected",
+        );
+        assert.equal(await page.locator("#c-results").isVisible(), false);
+      }),
+  );
   await check(
     "Keyboard skip link moves focus into main and skips navigation",
     () =>
@@ -259,7 +420,7 @@ try {
         await page.keyboard.press("Tab");
         assert.match(
           await page.locator(":focus").innerText(),
-          /Run it locally/,
+          /Enter the console/,
         );
       }),
   );
@@ -577,6 +738,9 @@ try {
   for (const name of [
     "index.html",
     "app.js",
+    "comparison.mjs",
+    "report-validation.mjs",
+    "assets/examples/action-comparison.json",
     "style.css",
     "404.html",
     "package.json",

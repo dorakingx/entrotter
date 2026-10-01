@@ -14,6 +14,10 @@ class HTML(HTMLParser):
         self.ids = []
         self.links = []
         self.meta = []
+        self.text = []
+
+    def handle_data(self, data):
+        self.text.append(data)
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -37,7 +41,11 @@ class SiteTests(unittest.TestCase):
             self.html.scripts,
             [
                 "app.js?v="
-                + hashlib.sha256((ROOT / "app.js").read_bytes()).hexdigest()[:12]
+                + hashlib.sha256((ROOT / "app.js").read_bytes()).hexdigest()[:12],
+                "comparison.mjs?v="
+                + hashlib.sha256((ROOT / "comparison.mjs").read_bytes()).hexdigest()[
+                    :12
+                ],
             ],
         )
 
@@ -81,7 +89,8 @@ class SiteTests(unittest.TestCase):
 
     def test_not_business_saas(self):
         text = (ROOT / "index.html").read_text().lower()
-        self.assertNotIn("<form", text)
+        self.assertEqual(text.count("<form"), 1)
+        self.assertIn('id="c-command-form"', text)
         self.assertNotIn("connect wallet", text)
         self.assertNotIn("stripe", text)
 
@@ -90,6 +99,13 @@ class SiteTests(unittest.TestCase):
         self.assertIn("path: _site", text)
         self.assertIn("cp index.html", text)
         self.assertNotIn("path: .\n", text)
+
+    def test_comparison_is_part_of_home(self):
+        self.assertIn("compare", self.html.ids)
+        self.assertIn("c-report-file", self.html.ids)
+        self.assertFalse((ROOT / "tokyo2026").exists())
+        self.assertNotIn("TOKYO", " ".join(self.html.text).upper())
+        self.assertNotIn("2026", " ".join(self.html.text))
 
     def test_mascot_asset(self):
         self.assertTrue((ROOT / "assets/icon.png").is_file())
