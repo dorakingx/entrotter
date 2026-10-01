@@ -16,7 +16,8 @@
         "paired process isolation and fault-injection cleanup",
         "ERC-20 decimal and balance observations",
         "Uniswap exact-input action adapter",
-        "two identical archived Ethereum state executions with source hash and receipts"
+        "two identical archived Ethereum state executions with source hash and receipts",
+        "Engine PR #28/6e13f34 resolves independent source review P2: canonically equal case-alias local contract overrides gave order-dependent real Anvil outcomes. Both orders now refuse before native/default/agent work; one mixed-case address remains valid. All 8 head checks pass: 214 native tests and 22 actual Docker cases, full 22-source/17-wheel/18-image-input binding verified. Coordination selects this tested source; combined CI and mandatory GitHub approval remain separate."
       ],
       "blocked": [],
       "todo": [
@@ -112,7 +113,8 @@
         "Engine PR #22 now bounds whole POSIX image preparation at 600 seconds using an independent owned-session watchdog/lifetime pipe; blocked native call, actual stalled HTTP, SIGTERM and owner SIGKILL tests pass. Actual 60-second BuildKit RUN stops in 10.013 seconds under a ten-second cap with no guest probe process left. All 204 pinned-native local tests, quality and unchanged-image fixture match pass; current CI/independent review recorded in PR, integration pending.",
         "Latest host-service guide freshly installed at engine d5b3003, SDK b0c2ba3 and CLI a63a390 after canonical share repair. Complete fixture/Anvil API reports match current quick start; real CPU/PID/OOM/scaled timer and unbounded-start rejection pass. Both shares reject writes with EROFS; all disks classified including read-only cloud-init ISO. Service/owned work cleaned; historical proof retained separately.",
         "Optional bounded Linux CLI: fixed per-user user-service admission, actual CPU/memory/swap/tasks/FD/core/NNP startup guard, original-owner pidfd cancellation and full 180.170-second timer. CWD package spoof failed before safe-path fix and passes after; complete fixture/local-Anvil/API reports match. Four controller tests, full 21-source quality and 78 retained findings pass; independent review and ordinary caller/host overhead limits remain.",
-        "Engine PR #26/fa37380: builder diagnostics stream in <=64 KiB chunks with <=1 MiB + one 68-byte notice, keeping failure status and the independent deadline. Failing-before/noisy-exit/endless-session regressions, 206 pinned-native tests, all 22 production source checks and 24 retained findings pass. Actual four-step BuildKit requests 16 MiB and emits exactly 1,048,644 stderr bytes; full fixture and image inputs agree. Current CI/review recorded in PR; other Docker captures/storage and native callers remain separately scoped."
+        "Engine PR #26/fa37380: builder diagnostics stream in <=64 KiB chunks with <=1 MiB + one 68-byte notice, keeping failure status and the independent deadline. Failing-before/noisy-exit/endless-session regressions, 206 pinned-native tests, all 22 production source checks and 24 retained findings pass. Actual four-step BuildKit requests 16 MiB and emits exactly 1,048,644 stderr bytes; full fixture and image inputs agree. Current CI/review recorded in PR; other Docker captures/storage and native callers remain separately scoped.",
+        "Engine PR #28/6e13f34 resolves independent source review P2: canonically equal case-alias local contract overrides gave order-dependent real Anvil outcomes. Both orders now refuse before native/default/agent work; one mixed-case address remains valid. All 8 head checks pass: 214 native tests and 22 actual Docker cases, full 22-source/17-wheel/18-image-input binding verified. Coordination selects this tested source; combined CI and mandatory GitHub approval remain separate."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
@@ -296,7 +298,8 @@
     "evidence/submission-preparation/oct01-rules-recheck.json",
     "evidence/bounded-cli/summary.json",
     "https://github.com/entrotter/engine/blob/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json",
-    "evidence/latest-candidate/summary.json"
+    "evidence/latest-candidate/summary.json",
+    "evidence/contract-identity-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

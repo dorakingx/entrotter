@@ -1069,3 +1069,33 @@ Independent GitHub approval remains empty; main protections and original reports
 and evaluations stay intact. No model/archive evaluation, protected merge,
 deployment, user outreach or submission occurred. The stopped dedicated VM is
 not restarted for this parse-only local fix; Linux CI supplies fresh Docker proof.
+
+## October 1 — Canonical local-contract identity fix composition
+
+Independent engine source review found that two case spellings of the same
+contract address can carry different code under identical canonical scenario
+bytes. Actual Anvil v1.8.3 changed from success/21,000 gas to revert/21,006 gas
+when only object insertion order changed. Engine #28/6e13f34 rejects duplicate
+normalized addresses before native/default/agent execution and retains one valid
+mixed-case address. The separate reviewer confirmed the fix; this is not a
+GitHub approving review.
+
+All eight engine current-head checks pass: 214 Linux native tests in31.108s,
+22 actual Docker enforcement/lifetime/cleanup tests in213.988s and no test worker
+left. Downloaded artifacts match all22 scanner sources,17 wheel modules and18
+worker inputs. Full security scan retains23 reviewed findings without skips;
+42 Python/26 image OS/1,126 signed native Cargo identities have zero reported
+advisories, with172 non-Cargo signed entries explicitly outside the Cargo scan.
+Base/native provenance and auditor/report/manifest hashes match. Host/kernel/VM
+safety is not inferred from those inventories.
+
+This existing coordination PR #55 now selects engine6e13f34 and CLI22b514c.
+Frozen native/provider/benchmark/holdout/report and media inputs stay unchanged;
+no new model/archive calls or local Docker/VM startup. Prior328f4c1 all-five CI
+and its fixture6.308s/model6.830s measurements belong to enginec167193. The old
+26.043s all-five-block guide run retains its original CLI87cfe40 sources. Neither
+is a measurement of this new composition. Current combined CI must run on the
+final guide commit; its exact artifact/readback links will be recorded in PR55.
+See evidence/contract-identity-integration/summary.json. Mandatory independent
+GitHub approval, protected integration/publication and personal/media/submission
+gates remain open. Discord is discontinued and excluded.
