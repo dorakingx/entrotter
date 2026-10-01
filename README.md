@@ -145,10 +145,18 @@ streaming SHA-256 check before extraction. `--archive` accepts regular files;
 FIFOs and devices are rejected without waiting for a writer. The same byte bound
 applies to downloads and files that grow while being copied. A 300-second transfer
 budget is checked between reads; HTTP operations use a ten-second socket timeout.
-This is not a hard whole-build deadline: connection/DNS, blocked filesystem I/O,
-extraction and Docker builds are outside that transfer timer. Temporary staging is
-cleaned on ordinary failure; SIGKILL can leave temporary files. Docker image/build
-cache, total VM disk and caller-process quotas remain separate operator limits.
+The POSIX preparation CLI also has a 600-second whole-build budget, covering
+daemon verification, connection/download, extraction, hashing and Docker build.
+`--timeout-seconds` can shorten this budget but cannot increase it. Preparation
+runs in an owned process session with an independent watchdog; expiry or owner
+pipe closure kills the session, including the local Docker CLI and descendants.
+The watchdog also stops the session if the owner is SIGKILLed or the preparation
+process is blocked in a native call. Parent-side cleanup allows up to two more
+seconds to confirm exit. Existing manifests are replaced atomically only after
+successful preparation. Temporary staging is cleaned on ordinary failure;
+SIGKILL of the owner can leave staged files and its empty Docker configuration.
+This does not impose quotas on Docker build cache/images, the VM, arbitrary host
+callers or uninterruptible kernel faults. Those remain separate operator limits.
 
 ```bash
 export PYTHONPATH="$PWD/src"

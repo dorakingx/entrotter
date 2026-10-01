@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-01T06:43:43.619734+00:00",
+  "base_engine_commit": "2c843842dc57387150e3bb080c720bc94ce18bc5",
+  "source_sha256": {
+    "scripts/build_worker.py": "cff0e5a7329b5f7c3260a1b44914c69e7027689c0fc1204f67e71d8fd21c1285",
+    "tests/test_worker_build.py": "0cbbc22714df492ebff85c9f218438bc6b0404c64fa9617ccf5c2939541c9900",
+    "security-reviewed.json": "1b445cad1ba551182241ee889cff54e5e75041127625daf6fa93b158cf63abfd"
+  },
+  "local_tests": 204,
+  "worker_build_tests": 15,
+  "real_docker_timeout": {
+    "deadline_seconds": 10,
+    "elapsed_seconds": 10.013,
+    "daemon_probe_processes_remaining": [],
+    "scope": "Actual isolated BuildKit RUN sleeping for 60 seconds; local Docker client lifetime/session termination"
+  },
+  "image_id": "sha256:626ca28986b4ca5da93df1438a705f1757bb35afcd42f77b539bab7d66d7a485",
+  "fixture_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "runtime_source_unchanged": true,
+  "independent_review": "pending",
+  "remaining_limits": [
+    "SIGKILL staging/config leftovers",
+    "Docker image/build cache and VM storage quotas",
+    "Arbitrary host caller quotas",
+    "Uninterruptible kernel faults"
+  ],
+  "initial_unit_failure": {
+    "cause": "Unrelated Homebrew Anvil 1.6.0 selected by PATH; recorded observation divergence rejected",
+    "resolution": "Use the existing pinned verified Foundry 1.8.3 directory first in PATH; all 204 tests pass"
+  }
+}

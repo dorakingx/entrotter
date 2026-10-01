@@ -5,26 +5,26 @@
     {
       "file": "scripts/build_worker.py",
       "test_id": "B404",
-      "line": 11,
-      "code_sha256": "7cb9f5b524bc8242a0294e079a51fc328d77f98ea0583a0b72e0b93c1e971901",
+      "line": 16,
+      "code_sha256": "68ddfa671c9706fa17d4b8d6d2963af15a0043905ed918295fdd1323ef67d531",
       "severity": "LOW",
-      "reason": "This module imports subprocess for the fixed, individually reviewed calls below. No shell or scenario-selected executable is accepted; command construction is reviewed at each call site."
-    },
-    {
-      "file": "scripts/build_worker.py",
-      "test_id": "B310",
-      "line": 96,
-      "code_sha256": "f0c1868eea23895bcf9e363bce2d980fffff1c4246c492c744627207be4c1bc4",
-      "severity": "MEDIUM",
-      "reason": "The URL is constructed from a literal HTTPS GitHub release origin and a fixed architecture lookup, not user input. TLS validation remains enabled and the complete downloaded archive must match its pinned SHA-256 before extraction. Only the regular anvil member is copied."
+      "reason": "This module imports subprocess for the fixed Docker build call below. It never accepts an executable from report, scenario or agent content and never uses a shell."
     },
     {
       "file": "scripts/build_worker.py",
       "test_id": "B603",
-      "line": 127,
-      "code_sha256": "65cfc116741cf6692a2a4b4bbf6d9afd5fb5c7a77679150f9528af63b5bb92e1",
+      "line": 74,
+      "code_sha256": "9e11ffb847da4240ca24c02a8a181d384a309f3a489414f99068094c052ca3df",
       "severity": "LOW",
-      "reason": "Docker executable/socket are trusted local operator configuration. Arguments are a fixed build operation plus a private temporary context and computed source hash; shell=False. Source is local trusted checkout, no supplied scenario command is executed."
+      "reason": "The command comes only from the literal local Docker build operation and the verified operator-selected local client prefix. No shell, report-selected executable or untrusted agent code is accepted. The entire preparation runs in an owned POSIX session with a separate lifetime/deadline watchdog; timeout/cancellation closes the lifetime pipe and kills its CLI descendants. Standalone unit probes use the same trusted helper."
+    },
+    {
+      "file": "scripts/build_worker.py",
+      "test_id": "B310",
+      "line": 302,
+      "code_sha256": "eb414564c9b960a67a1f3a4076ccd52a947c1efba0dcaa9e449c2e786bd6bd7d",
+      "severity": "MEDIUM",
+      "reason": "The URL uses the literal HTTPS GitHub Foundry v1.8.3 release origin and a fixed architecture lookup. TLS is verified and every streamed byte must match the pinned digest before extraction. Transfer bytes and process lifetime are bounded; report input cannot choose an origin."
     },
     {
       "file": "scripts/check_image_security.py",
@@ -213,7 +213,7 @@
     "src/entrotter_engine/runner.py": "d483df0825e3185548e68d6ead02d9e3fb89d8a12d9b0134b04b1a6a57d4d3df",
     "src/entrotter_engine/store.py": "25a6b9fe252cd0c8eef00ce5c3eb869d3a54044b00e9a67653a5c00b41749b3b",
     "src/entrotter_engine/worker_protocol.py": "14bbaa33e89bd30a3bbcf6d0f437bb1347d806d93155b1279729f011c759afd5",
-    "scripts/build_worker.py": "084f9ba63465ecf99b781d57869603d142373c5c8d0fc5ad210f0b42d9fed3c7",
+    "scripts/build_worker.py": "cff0e5a7329b5f7c3260a1b44914c69e7027689c0fc1204f67e71d8fd21c1285",
     "scripts/check_dependency_manifest.py": "d9c90b75f8c26ef0aa3723ab07580f05c7391a78ef12fcf20b99e80ef198deef",
     "scripts/check_image_security.py": "e84d1c8d37c33a176706b6cad3fe32c5f3b1f8faf96422f694cc088763ea8261",
     "scripts/check_native_security.py": "f32a97e5c0b7fd3cd611d31f83dc98c5150b0ec6249669ac2ad17d8ca5f4c29d",
