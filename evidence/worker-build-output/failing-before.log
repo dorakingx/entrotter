@@ -1,0 +1,15 @@
+test_noisy_command_has_bounded_diagnostics_and_preserves_failure (test_worker_build.WorkerBuildTests.test_noisy_command_has_bounded_diagnostics_and_preserves_failure) ... FAIL
+
+======================================================================
+FAIL: test_noisy_command_has_bounded_diagnostics_and_preserves_failure (test_worker_build.WorkerBuildTests.test_noisy_command_has_bounded_diagnostics_and_preserves_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>/tests/test_worker_build.py", line 45, in test_noisy_command_has_bounded_diagnostics_and_preserves_failure
+    self.assertEqual(result.stdout, b"command-failed:7\n")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'ooooooooooooooooooooooooooooooooooooooooo[2097125 chars]:7\n' != b'command-failed:7\n'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.079s
+
+FAILED (failures=1)

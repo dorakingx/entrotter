@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-10-01T08:59:45.670963+00:00",
+  "base_engine_commit": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+  "status": "verified_pending_independent_review",
+  "source_sha256": {
+    "scripts/build_worker.py": "6f930024a7da99b545fbe8b5e005f9aa961ef38defdc0777f0184662b10880a2",
+    "tests/test_worker_build.py": "70bdb095c16569b12156bb939d9763afef29c219189314e90666b400478b1fbc",
+    "tests_isolated/test_build_output.py": "d78b2702569e1922852a3a3288e3eecd95565572a43bb38d54c57ef6be56c59b",
+    "security-reviewed.json": "cd43c244a82c2df687fc861e55c400478f57d5ecf9725c1bc8d214a0d86a42ee",
+    ".github/workflows/isolated.yml": "94b3e4dc7c68ebaeba87d68d390c21f205635b93b2a09c364f85c1095fd04fa0"
+  },
+  "local_native_tests": 206,
+  "local_worker_build_tests": 17,
+  "failing_before": "failing-before.log",
+  "actual_docker": "actual-docker.json",
+  "commands": [
+    "PATH=<pinned-Foundry-1.8.3>:$PATH PYTHONPATH=src python -m unittest discover -s tests -v",
+    "python -m ruff check src scripts",
+    "python -m ruff format --check src scripts",
+    "python -m mypy src scripts",
+    "PYTHONPATH=src python scripts/check_security.py",
+    "PYTHONPATH=src ENTROTTER_WORKER_IMAGE=<verified-built-image> python -m unittest discover -s tests_isolated -p test_build_output.py -v"
+  ],
+  "quality": {
+    "production_sources": 22,
+    "type_errors": 0,
+    "retained_security_findings": 24,
+    "skipped_security_rules": 0,
+    "review": "Author-written source-bound reasons; independent review pending"
+  },
+  "output_limit": {
+    "read_chunk_bytes": 65536,
+    "forwarded_data_bytes": 1048576,
+    "fixed_notice_bytes": 68,
+    "stderr_observed_bytes": 1048644,
+    "build_stdout_bytes": 0,
+    "notice_count": 1,
+    "status_preservation": "Actual noisy child exits 7; original CalledProcessError status remains 7",
+    "deadline": "Endless producer uses the actual owned preparation session; a shortened 0.4-second independent budget cleans the process group. This does not claim a new full 600-second expiry test."
+  },
+  "runtime_image_inputs_unchanged": true,
+  "complete_fixture_equality": true,
+  "fixture_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "ci": "New actual BuildKit regression is collected by the existing mandatory isolated job; current-head CI will be linked in the PR",
+  "setup_failures": [
+    {
+      "cause": "Dockerfile FROM sha256:<image-ID> was treated as a registry reference",
+      "fix": "Use the verified locally built tag and compare its exact image ID first"
+    },
+    {
+      "cause": "Single-step Docker output did not exceed the helper limit (observed 414062 bytes and no quota notice)",
+      "fix": "Four real RUN steps exercise the aggregate production quota without changing daemon settings"
+    }
+  ],
+  "cleanup": {
+    "owned_probe_image": "Removed after label/full-ID verification",
+    "owned_workers": 0,
+    "normal_image": "Retained locally as the normal build result; no registry publication",
+    "dedicated_VM": "Stopped, actual colima list readback",
+    "default_VM": "Pre-existing default VM Running, left untouched"
+  },
+  "limitations": [
+    "Only the build helper diagnostic stream; other Docker JSON captures remain separately scoped",
+    "Docker daemon/BuildKit storage, image/cache and host log/VM overhead quotas are not supplied by this fix",
+    "Existing watchdog/owner lifetime remains; SIGKILL can leave charged staging/configuration files",
+    "This is trusted operator preparation, not arbitrary-agent isolation or independent security approval"
+  ],
+  "new_model_calls": 0,
+  "new_archive_rpc_calls": 0,
+  "standalone_docker_regression": "docker-test.json"
+}

@@ -158,6 +158,16 @@ SIGKILL of the owner can leave staged files and its empty Docker configuration.
 This does not impose quotas on Docker build cache/images, the VM, arbitrary host
 callers or uninterruptible kernel faults. Those remain separate operator limits.
 
+Build stdout/stderr are merged and streamed in chunks of at most 64 KiB. At most
+1 MiB plus one fixed truncation notice is forwarded to stderr. Further diagnostics
+are drained and discarded without accumulating them in memory or blocking the
+producer because its output allowance is exhausted. The same whole-build deadline
+still applies; a command failure retains its nonzero status. Truncation is visible
+and does not bypass image/source verification. Standard output is reserved for the
+final JSON manifest summary. This bounds this helper's forwarded build diagnostics,
+not Docker daemon/BuildKit storage or other Docker JSON-response captures. See
+[the current-source proof](evidence/worker-build-output/summary.json).
+
 ```bash
 export PYTHONPATH="$PWD/src"
 # Set this to your local daemon's absolute Unix socket if different.

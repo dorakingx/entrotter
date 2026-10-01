@@ -14,6 +14,7 @@ import shutil
 import signal
 import stat
 import subprocess
+import sys
 import tarfile
 import tempfile
 import time
@@ -27,6 +28,8 @@ MAX_ARCHIVE_BYTES = 256 * 1024 * 1024
 ARCHIVE_SECONDS = 300
 BUILD_SECONDS = 600
 READ_BYTES = 1024 * 1024
+MAX_BUILD_LOG_BYTES = 1024 * 1024
+LOG_READ_BYTES = 64 * 1024
 ARCHIVES = {
     "aarch64": (
         "arm64",
@@ -70,9 +73,34 @@ def build_deadline(seconds: float):
 
 
 def run_build_command(command: list[str], *, own_session: bool = True) -> None:
-    """Keep the fixed Docker CLI and its local descendants in an owned session."""
-    with subprocess.Popen(command, start_new_session=own_session) as process:
+    """Bound streamed diagnostics; keep the fixed CLI in its owned session."""
+    with subprocess.Popen(
+        command,
+        start_new_session=own_session,
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    ) as process:
         try:
+            if process.stdout is None:
+                raise ValueError("Build diagnostic pipe was not created")
+            remaining = MAX_BUILD_LOG_BYTES
+            truncated = False
+            while chunk := os.read(process.stdout.fileno(), LOG_READ_BYTES):
+                visible = chunk[:remaining]
+                if visible:
+                    sys.stderr.buffer.write(visible)
+                    sys.stderr.buffer.flush()
+                    remaining -= len(visible)
+                if len(visible) < len(chunk) and not truncated:
+                    sys.stderr.buffer.write(
+                        b"\nEntrotter: 1 MiB diagnostic limit; further build output discarded.\n"
+                    )
+                    sys.stderr.buffer.flush()
+                    truncated = True
+                # Continue draining in bounded chunks, without buffering or
+                # blocking the producer after the output allowance is used.
+                # The existing independent whole-build deadline still applies.
             status = process.wait()
             if status:
                 raise subprocess.CalledProcessError(status, command)

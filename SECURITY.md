@@ -6,8 +6,12 @@ This is not a trading execution service. Mainnet broadcast is not supported.
 
 Worker setup stages at most 256 MiB of a Foundry archive and verifies its pinned
 digest in bounded chunks before extraction. Local archive inputs must be regular
-files. Transfer time checks and socket timeouts do not provide a hard whole-build
-deadline, a total temporary-directory quota after SIGKILL, or image/VM disk limits.
+files. POSIX preparation has a separate 600-second lifetime watchdog. Build
+diagnostics are streamed in at most 64 KiB chunks and forwarded at most 1 MiB plus
+one explicit truncation notice; excess is discarded without accumulation. A total
+temporary-directory quota after SIGKILL, Docker daemon/BuildKit storage and other
+Docker JSON-response captures remain outside these bounds. Image/VM disk limits
+are separate operator controls.
 
 The engine runs only built-in policies. A Python import or a subprocess is
 not a security sandbox for untrusted agent code. Container/process sandboxing,
