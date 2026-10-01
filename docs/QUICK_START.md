@@ -19,10 +19,12 @@ five-minute reproduction claim. See [worker security](WORKER_SECURITY.md) for
 the tested daemon and limits, and [bounded host service](BOUNDED_HOST_SERVICE.md)
 for the optional Linux API-process and VM configuration.
 
-The October 1 commands were [executed from a fresh workspace](../evidence/quick-start-oct01/summary.json)
+The earlier October 1 commands were [executed from a fresh workspace](../evidence/quick-start-oct01/summary.json)
 in 24.35 seconds, including source fetches, venv creation, the Foundry download,
-image build and both report checks. They select the tested whole worker-build
-deadline and current console candidates. Docker was already running and image/build
+image build and both report checks. That measurement used coordination 03f8786
+and engine d5b3003. The commands below now select coordination dcef3ee (including
+the optional Linux CLI helper) and engine fa37380 (including the bounded build
+diagnostic stream). The SDK, CLI, schema and console pins are unchanged. Docker was already running and image/build
 caches were warm; installation and VM startup are excluded. The
 [September 20 measurement](../evidence/quick-start/summary.json) uses earlier pins
 and remains separate. Neither measurement is a cold-machine setup benchmark.
@@ -39,7 +41,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 03f878613b56240002c83422f3540757b2848634
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git dcef3ee06af060b17b52e0f3d59c060a9ab17fd6
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
@@ -82,7 +84,8 @@ export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.lo
 
 The builder verifies the daemon and upstream checksums and builds locally; it
 does not publish an image. Preparation has a 600-second lifetime cap, with a
-separate watchdog for blocked downloads/builds. A previously downloaded release archive can be passed
+separate watchdog for blocked downloads/builds, and forwards at most 1 MiB of build
+diagnostics plus one explicit truncation notice. A previously downloaded release archive can be passed
 with `--archive /absolute/path/to/release.tar.gz`; it is still checksum-verified.
 Image IDs vary by architecture/build; use the manifest from your own build.
 On macOS, if Python needs the OS certificate bundle, set
@@ -121,8 +124,8 @@ The same configured worker can run real local Anvil without archive access:
 
 Keep the exported socket, image and `PYTHONPATH` when starting a local API as
 shown in the [README](../README.md#local-api-and-sdk). Per-worker controls do not
-cap the entire host CLI, Docker build cache or VM; the optional host service has
-separate scope. Missing worker configuration fails instead of falling back to
+cap the entire host CLI, Docker build cache or VM; the optional
+[bounded CLI](BOUNDED_CLI.md) and host service have separate scope. Missing worker configuration fails instead of falling back to
 native execution.
 
 ## Measurement and cleanup
