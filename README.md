@@ -197,6 +197,9 @@ object memory remain subject to the engine/operator's documented scope limits.
 
 `inspect` adds decisions, reasons, request IDs and original provider provenance
 when present. It still works without an installed engine or a model account.
+Agent responses must contain exactly `request_id`, `choice` and `reason`;
+inspection rejects additional fields, and displayed steps come from the causal
+observation. Replay rejects these malformed responses before requesting execution.
 The sample preserves the original model's nondeterminism, requested alias and
 unknown monetary cost. Zero new model calls during replay does not mean its
 original generation was free, deterministic or economically correct. These are

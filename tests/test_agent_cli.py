@@ -72,6 +72,32 @@ class AgentCLITests(unittest.TestCase):
             self.assertEqual(main(['inspect',str(REFERENCE)]),0)
         summary=json.loads(out.getvalue())['agent'];self.assertEqual([d['choice'] for d in summary['decisions']],['execute','hold']);self.assertFalse(summary['provider']['deterministic']);self.assertIsNone(summary['provider']['cost_usd'])
 
+    def test_inspection_rejects_response_fields_that_can_mislabel_a_step(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source=Path(directory)/'reference.json'
+            report=json.loads(REFERENCE.read_text())
+            report['agent']['exchanges'][0]['response']['step']=31
+            source.write_text(json.dumps(self.seal(report)))
+            out,err=io.StringIO(),io.StringIO()
+            with patch.dict(sys.modules, {'entrotter_engine':None,'entrotter_engine.runner':None}), redirect_stdout(out), redirect_stderr(err):
+                self.assertEqual(main(['inspect',str(source)]),1)
+            self.assertEqual(out.getvalue(),'')
+            self.assertIn('supported agent recording',err.getvalue())
+
+    def test_replay_rejects_extra_response_fields_before_execution(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source=Path(directory)/'reference.json'
+            target=Path(directory)/'report.json';target.write_text('incumbent')
+            for extra in [{'step':31},{'unused_field':'unsupported'}]:
+                with self.subTest(extra=extra):
+                    report=json.loads(REFERENCE.read_text())
+                    report['agent']['exchanges'][0]['response'].update(extra)
+                    source.write_text(json.dumps(self.seal(report)))
+                    status,execute=self.invoke(['replay',str(source),'-o',str(target)])
+                    self.assertEqual(status,1)
+                    execute.assert_not_called()
+                    self.assertEqual(target.read_text(),'incumbent')
+
     def test_missing_engine_is_explicit_and_preserves_destination(self):
         with tempfile.TemporaryDirectory() as directory:
             target=Path(directory)/'report.json';target.write_text('incumbent')

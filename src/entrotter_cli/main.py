@@ -97,7 +97,9 @@ def agent_configuration(report: dict) -> tuple[dict, list[int], int]:
             request, response = exchange["request"], exchange["response"]
             step = request["observation"]["step"]
             if (
-                type(step) is not int
+                not isinstance(response, dict)
+                or set(response) != {"request_id", "choice", "reason"}
+                or type(step) is not int
                 or not 0 <= step <= 31
                 or response["choice"] not in {"execute", "hold"}
                 or not isinstance(response["reason"], str)
@@ -125,7 +127,7 @@ def agent_summary(report: dict) -> dict:
         "provider": recording["provider"],
         "initial_requested_gas_budget": budget,
         "decisions": [
-            {"step": step, **exchange["response"]}
+            {**exchange["response"], "step": step}
             for step, exchange in zip(steps, recording["exchanges"])
         ],
         "scope": "Recorded choices; integrity is not proof of policy or economic correctness",
