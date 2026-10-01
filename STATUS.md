@@ -1029,3 +1029,16 @@ review fails before refresh; all 78 full findings remain visible, with a changed
 reproduction-loop scope/fingerprint author rationale. Independent review remains
 pending. Source pins, guide/public measurements and current-head CI are recorded
 separately in this candidate evidence and PR.
+
+The corrected guide's five Bash blocks executed verbatim in a fresh temporary
+public workspace in 26.043 seconds. All six checkouts were clean at their exact
+immutable pins; a new pipless venv/network Foundry download/build/doctor and full
+fixture/local-Anvil/risk/risk-replay/model-replay comparisons passed. The first
+guide attempt incorrectly paired a candidate-only general scenario with the
+original two-baseline-action risk report. Its complete equality check failed;
+extracting the exact recorded scenario fixes the input mismatch without changing
+reports, policy or consumed holdouts. Running Docker/potentially warm caches are
+explicit prerequisites; this is not cold machine setup. Source service/CLI guides
+retain separately tested older installation pins, without a new install claim.
+See evidence/latest-agent-cli/summary.json; current-head CI remains separately
+recorded in the PR. Main integration, independent review and submission gates stay open.

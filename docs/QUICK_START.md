@@ -24,7 +24,9 @@ uses engine c167193 and CLI 87cfe40. Its automated clean public replay includes
 five pinned dependency checkouts, a new pipless venv, actual Foundry download/build
 and complete recorded-model equality through the standalone CLI. Docker was
 running and caches may be warm; installation/VM startup is excluded. The complete
-five-block guide walkthrough is recorded separately in that evidence.
+five-block guide walkthrough passed in 26.043 seconds with all six public
+checkouts clean and complete fixture/local-Anvil/risk/model equality. That
+measurement is recorded separately from the 19.266-second automated replay.
 
 The earlier October 1 [24.431-second walkthrough](../evidence/latest-candidate/summary.json)
 selected coordination dcef3ee/engine fa37380 and did not include the new agent CLI.
@@ -139,9 +141,19 @@ The built-in risk policy needs no model account. The model example re-executes
 already recorded choices; no model is called. Both use the bounded local worker,
 with synthetic local EVM state and no archive access. Decision steps and the
 original requested-gas budget are recovered from the recording for replay.
+The recorded risk example contains two explicit baseline transactions. Extract
+its embedded scenario so the original input is reproduced exactly; the general
+local example above has an empty baseline.
 
 ```bash
-.venv/bin/python -m entrotter_cli agent-run scenarios/evm/local-branch-revert.json --steps 0 1 -o risk-agent.json
+.venv/bin/python - <<'PY'
+import json
+from pathlib import Path
+
+reference = json.loads(Path("cli/tests/data/agent-risk-local.json").read_text())
+Path("recorded-agent-scenario.json").write_text(json.dumps(reference["scenario"]))
+PY
+.venv/bin/python -m entrotter_cli agent-run recorded-agent-scenario.json --steps 0 1 -o risk-agent.json
 .venv/bin/python -m entrotter_cli replay risk-agent.json -o risk-replayed.json
 .venv/bin/python -m entrotter_cli replay cli/tests/data/agent-recorded-local.json -o model-replayed.json
 .venv/bin/python -m entrotter_cli verify model-replayed.json

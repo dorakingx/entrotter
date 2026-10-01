@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<coordination-checkout>/scripts/reproduce_clean.py", line 158, in <module>
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+        command, cwd=work, env=env, check=True, capture_output=True, text=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['<temporary-path>', '-m', 'entrotter_cli', 'replay', 'recorded.json', '-o', 'report.json']' returned non-zero exit status 2.
