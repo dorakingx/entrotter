@@ -34,7 +34,7 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination cda73fe, engine 0d4faf7, schemas 8785bb0 and CLI 22b514c; SDK and
+coordination e3e9c84, engine 8176597, schemas 8785bb0 and CLI 22b514c; SDK and
 recorded-agent viewer pins remain b0c2ba3/49914a2. Older timings do not measure
 this new signed-prefix composition.
 
@@ -70,7 +70,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git cda73fe04e3e525bfcf253afcea06e63029e7af0
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git e3e9c84e14183d23aedef728d26d95b41bd7263c
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json
@@ -227,19 +227,24 @@ above does not include this optional viewer step or claim a cold installation.
 
 ## Optional original transaction-prefix replay
 
-The [signed-prefix composition](../evidence/canonical-replay-integration/summary.json)
-selects engine #29 and separate schema #11. From `entrotter-candidate`, an operator
+The [signed-prefix composition](../evidence/canonical-mine-integration/summary.json)
+selects engine #30 and separate schema #11. From `entrotter-candidate`, an operator
 with an archive-capable `ENTROTTER_RPC_URL` can run
-`python3 -m entrotter_engine trace-run scenarios/traces/ethereum-mainnet-prefix.plan.json -o transaction-replay.json`
+`python3 -m entrotter_engine trace-run engine/tests/data/canonical-mainnet-prefix-four.json -o transaction-replay.json`
 using the configured bounded worker. It forks the original parent with canonical
 header context, preserves original signatures/order/nonces, and records candidate
 omissions/conflicts or receipt differences. Missing archive state fails explicitly.
 
-The actual engine CI replay matched the pinned Ethereum 19M transaction's 208,144 gas
-and 8 logs in 4.484323s; its complete output matches the native 9.951108s result except
-runtime/hash. The [raw bounded report](../evidence/canonical-replay-integration/bounded-mainnet-prefix.json)
-is a separate technical receipt case, with no new model/holdout evaluation.
-This archive step is outside the timed offline guide walkthrough.
+The actual engine CI replay matched all four original Ethereum 19M receipt
+projections in 14.539113s, including gas 208,144 / 234,720 / 175,305 / 178,980 and
+8 / 10 / 6 / 8 ordered logs. Omitting transaction 0 changes gas/logs in 1 and 2,
+and leaves transaction 3 at original nonce 5,523 versus expected 5,522. Complete
+output matches the native 46.982404s result except runtime/hash. These different
+environments are not a speed comparison. The [raw bounded report](../evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json)
+is a separate technical receipt case with no new model/holdout evaluation.
+Both branches share a 150-second primitive budget; only owned mining gets its
+remaining deadline, and ordinary reads resume afterward. This archive step is
+outside the timed offline guide walkthrough.
 
 The result uses `trace_version`; the current v0.1 SDK/viewer does not accept it.
 Inspect the JSON and its `baseline_verified` flag. At most 32 original transactions

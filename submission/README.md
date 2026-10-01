@@ -54,7 +54,7 @@ their original source versions.
 
 The execution snapshot below contains the optional bounded Linux CLI launcher,
 the canonical contract identity fix and original signed transaction-prefix replay.
-The [current composition evidence](../evidence/canonical-replay-integration/summary.json)
+The [current composition evidence](../evidence/canonical-mine-integration/summary.json)
 binds the tested engine/schema sources, original receipt match and exact inputs.
 The prefix is a separate technical case; full-block/end-state, same-block funding
 admission and trace SDK/viewer coverage remain open. The
@@ -68,8 +68,8 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [cda73fe](https://github.com/entrotter/entrotter/tree/cda73fe04e3e525bfcf253afcea06e63029e7af0) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
-| Bounded agent engine, contract identity and signed transaction-prefix replay | [0d4faf7](https://github.com/entrotter/engine/tree/0d4faf7d4feda817499ea19e8797a0e03504fbad) | [#29](https://github.com/entrotter/engine/pull/29) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [e3e9c84](https://github.com/entrotter/entrotter/tree/e3e9c84e14183d23aedef728d26d95b41bd7263c) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Bounded agent engine, contract identity and signed transaction-prefix replay | [8176597](https://github.com/entrotter/engine/tree/8176597af994dddb7a3dc6721db623580ebc9601) | [#30](https://github.com/entrotter/engine/pull/30) |
 | Python SDK | [b0c2ba3](https://github.com/entrotter/sdk-python/tree/b0c2ba3bba411e548af44101ae06e879bd7b5dc0) | [#6](https://github.com/entrotter/sdk-python/pull/6) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
