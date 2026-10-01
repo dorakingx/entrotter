@@ -32,7 +32,7 @@ Configure Settings > Pages > Source as GitHub Actions, or use the parent
 workspace's reviewed `scripts/publish.py --apply`. Push to main triggers
 `.github/workflows/pages.yml`. A workflow file alone is not proof of a live site.
 
-The deploy artifact contains only index.html, 404.html, style.css, app.js, comparison.mjs, report-validation.mjs, public
+The deploy artifact contains only index.html, 404.html, style.css, app.js, comparison.mjs, report-validation.mjs, trace-report.mjs, trace-viewer.mjs, public
 assets, schemas and public example reports. It never uploads the repository root,
 private logs or a local .env. Pull requests run checks; only main deploys.
 
@@ -120,7 +120,7 @@ Python website tests. CI discovers the tracked sources and refuses empty scans.
 
 All 14 rules from eslint-plugin-security run without inline suppressions. Full
 findings are saved in `.quality/security.json` before the source-bound review
-policy is checked. `security-reviewed.json` retains 55 findings with individual
+policy is checked. `security-reviewed.json` retains 97 findings with individual
 rationales (bounded numeric grammar, inert indexed reads and trusted developer
 file operations). It pins every JS/declaration source and tool configuration/lock;
 source drift, new/missing findings or missing rationale fail the gate. These are
@@ -185,3 +185,52 @@ page contract and deployment allowlist. Browser verification covers desktop/mobi
 local imports, malformed input, command generation and the earlier report explorer.
 
 Publication remains protected-main-only. An open PR is not a deployed result.
+
+## Original signed-prefix replay viewer
+
+Open **Inspect a historical prefix** and load the recorded four-transaction case,
+or import a separate `trace_version: "0.1.0"` JSON file. The browser displays the
+pinned source/parent/Shanghai header, original signed transaction identities and
+nonces, original versus baseline/candidate gas and log counts, and exact receipt
+fields/log bytes. Skipped, rejected, unmined and nonce-conflicting outcomes remain
+visible; an unmatched baseline is explicitly **UNVERIFIED**. The existing v0.1
+scenario/model explorer remains separate and unchanged.
+
+`reports/trace-mainnet-prefix-four.json` preserves the exact actual default-worker
+report from [engine817 / PR30](https://github.com/entrotter/engine/blob/8176597af994dddb7a3dc6721db623580ebc9601/evidence/trace-mine-deadline/README.md),
+isolated CI run36878173559, artifact `cf1b51833babf17c1b39c5d37af0ff7945da43422e2efc3453d36e72b2d0810f`.
+It matches all four original receipt projections and shows gas/log changes plus a
+preserved nonce conflict after omission0. Its 14.539113s Docker runtime and the
+46.982404s native run use different environments and are not a speed comparison.
+The older engine0d one-transaction native report is a separate test-only fixture;
+neither case is new model evaluation, profit, or an untouched holdout.
+
+The browser checks the exact separate family shape, SHA-256, receipt identities,
+original prefix/nonces, same-parent inferred nonce progression, cumulative gas,
+plan skips, every receipt difference and declared verification flags. Canonical
+RLP decoding binds raw type/nonce/destination, chain ID when encoded, and bounded
+envelope fields. Supported unprotected legacy signatures (27/28) have no chain ID.
+Object-key order does not matter; declared differences must be an exact unique
+field set. Bundled trace schemas are byte-identical to scenarios8785 and serve as
+wire-contract references; JavaScript additionally checks display relationships.
+
+Imports are limited to 8 MiB, source inputs/individual receipts 256 KiB, prefixes 32,
+logs 512/topics 4, raw wire envelopes 131071 bytes, and log/calldata 64 KiB. Text
+limits count Unicode codepoints (assumptions 4000, Anvil version 1000). Numeric JSON
+integer fields must fit the browser's safe-integer range; larger numeric JSON
+integers are rejected rather than rounded. Hex uint256 quantities remain exact BigInt.
+Imports never fetch, upload, select an RPC, or execute code. Imported strings use
+textContent. Invalid files clear all trace values/downloads; stale sample loads
+cannot replace a newer local import. Validation takes a synchronous deep snapshot
+before hashing, isolating displayed rows from later caller mutations. Canonical
+hashing preserves Python ASCII escaping and float runtime spelling; integral runtime
+metadata also permits the exact Python integer encoding of that same number.
+
+These are consistency/integrity checks, not authenticity, Ethereum Keccak hash
+verification, recovered-sender/signature verification, parent-state nonce
+attestation or EVM proof. A report author can recompute a checksum. Parent-state
+pool admission can reject valid same-block funding; broader oracle/missing-state,
+full-block/opcode/root/end-withdrawal and alternate-market coverage remain open.
+Original in-prefix oracle updates remain; external responses are not invented.
+This proposed browser view does not add a trace HTTP endpoint or run a transaction.
+Protected review and live publication remain separate gates.

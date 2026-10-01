@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entrotter transaction-prefix replay plan 0.1.0",
+  "$comment": "Separate trace_version family, not a v0.1 scenario. Sorted skip indices and indices <= through_index require engine validation.",
+  "type": "object",
+  "required": [
+    "trace_version",
+    "source",
+    "through_index",
+    "skip_indices"
+  ],
+  "properties": {
+    "trace_version": {
+      "const": "0.1.0"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "chain_id",
+        "block_number",
+        "block_hash"
+      ],
+      "properties": {
+        "chain_id": {
+          "const": 1,
+          "type": "integer"
+        },
+        "block_number": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "block_hash": {
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "through_index": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 31
+    },
+    "skip_indices": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 31
+      },
+      "minItems": 0,
+      "maxItems": 32,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

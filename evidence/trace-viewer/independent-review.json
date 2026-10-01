@@ -1,0 +1,46 @@
+{
+  "reviewed_at_utc": "2026-10-01T15:57:25.868033+00:00",
+  "base": "49914a2ca7358a9e45befc9b458f7f3ac52c6142",
+  "scope": "Independent source/UI/workflow/static-policy review plus focused offline cross-codec and mutation probes; no duplicate full browser/chain/model runs.",
+  "findings_resolved": [
+    "Python float/integer runtime canonical hash compatibility",
+    "Synchronous snapshot before awaited digest, including original receipt/report references",
+    "Raw envelope cap131071 independent of calldata64KiB",
+    "Anvil version maximum1000",
+    "Python ASCII codec includes U+007F DEL",
+    "Unicode codepoint rather than UTF16-unit string bounds"
+  ],
+  "additional_consistency_guards": "Minimum receipt21000gas and zero bloom on revert aligned with SDK in same source batch.",
+  "focused_observations": {
+    "Python_sealed_runtime1_float": true,
+    "Python_sealed_DEL_assumption": true,
+    "Python_sealed_2001_astral_codepoints": true,
+    "caller_baseline_receipt_mutation_pending_digest_isolated": true,
+    "Python_sealed_runtime_boundary_seeded_cases": 52,
+    "runtime_probe_failures": 0
+  },
+  "source_sha256": {
+    "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+    "trace-viewer.mjs": "2c25d1f30c1cfb2490e0eb3ace31a77f9367818bbc5a68782660c77529d031fb",
+    "tests/trace.test.mjs": "e8861d7c3157fa64a39ceb8e4d58f3f8490bf0dff28be51d3f820fa8ce3b6ec1",
+    "index.html": "d42c77d002ae68f0803a7dfedeacaff39845a1cd6531c5c7a2f5eb729766be75",
+    ".github/workflows/pages.yml": "1ebafee4f19b8eff502d661d41e239dd5461886f79c6ac518edd2d7c6311519a"
+  },
+  "visual_review": "320px retained screenshot inspected: readable headings/controls/pins/receipt JSON; visible keyboard table focus and intended horizontal scrolling.",
+  "otherwise_reviewed": [
+    "Strict source/parent/input/type/nonce/receipt identities, aggregate limits and same reported parent nonce anchors retained.",
+    "Honest unverified outcome rows remain readable; flags and unique differences recomputed.",
+    "All imported strings go through textContent and static same-origin sample URL only.",
+    "Generation guard prevents stale sample/import completion overwrite.",
+    "Existing app.js byte-identical and existing reports retained.",
+    "PR checks only; staging allowlist adds two static modules, no deployment before approvedmain.",
+    "Full source-bound security findings/rationales retained without disabled rules."
+  ],
+  "remaining_actionable": 0,
+  "limits": [
+    "Not required GitHub approval or complete security/consensus certification.",
+    "Retained browser screenshot prior source; final author/CI browser refresh remains separate.",
+    "Browser restricts numeric integer fields to exactly representable safe range; hex quantities remain BigInt.",
+    "Signature/Keccak/source state/authenticity/EVM truth not independently established by display."
+  ]
+}

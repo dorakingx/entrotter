@@ -1,0 +1,12 @@
+[
+  {
+    "assumption": "inert DEL \u007f data",
+    "artifact_id": "988128044aa0cdc6974dd6efae3a2bf9d73d1cc355c2cfa0099ede8d8276dd97",
+    "runtime_seconds": 9.951108
+  },
+  {
+    "assumption": "ASCII boundary ~\u0080, astral \ud83d\ude00, combining e\u0301, quote \" and newline\n",
+    "artifact_id": "13edb141ab68d7584579405e1a6932ea52b09f661fc749a78d80d753e21d4f65",
+    "runtime_seconds": 9.951108
+  }
+]

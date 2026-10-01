@@ -1,0 +1,529 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entrotter transaction-prefix replay result 0.1.0",
+  "$comment": "Shape and terminal-outcome consistency only. Does not recompute hashes, signatures, receipts, EVM execution, input/result correspondence, aggregate bytes or prefix/order constraints. No entire-block/state-root equivalence is asserted.",
+  "type": "object",
+  "required": [
+    "trace_version",
+    "execution_kind",
+    "plan",
+    "source",
+    "baseline",
+    "candidate",
+    "baseline_verified",
+    "runtime_seconds",
+    "assumptions",
+    "artifact_id"
+  ],
+  "properties": {
+    "trace_version": {
+      "const": "0.1.0"
+    },
+    "execution_kind": {
+      "const": "canonical_transaction_prefix_replay"
+    },
+    "plan": {
+      "$ref": "trace-plan.v0.1.schema.json"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "parent",
+        "header",
+        "inputs",
+        "block_transaction_count"
+      ],
+      "properties": {
+        "parent": {
+          "type": "object",
+          "required": [
+            "chain_id",
+            "block_number",
+            "block_hash"
+          ],
+          "properties": {
+            "chain_id": {
+              "const": 1,
+              "type": "integer"
+            },
+            "block_number": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 18446744073709551614
+            },
+            "block_hash": {
+              "type": "string",
+              "pattern": "^0x[0-9a-fA-F]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "header": {
+          "type": "object",
+          "required": [
+            "timestamp",
+            "gas_limit",
+            "base_fee",
+            "coinbase",
+            "prevrandao"
+          ],
+          "properties": {
+            "timestamp": {
+              "type": "integer",
+              "minimum": 1681338455,
+              "maximum": 1710338134
+            },
+            "gas_limit": {
+              "type": "integer",
+              "minimum": 21000,
+              "maximum": 30000000
+            },
+            "base_fee": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+            },
+            "coinbase": {
+              "type": "string",
+              "pattern": "^0x[0-9a-fA-F]{40}$"
+            },
+            "prevrandao": {
+              "type": "string",
+              "pattern": "^0x[0-9a-fA-F]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "index",
+              "hash",
+              "sender",
+              "nonce",
+              "raw",
+              "original_receipt"
+            ],
+            "properties": {
+              "index": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 31
+              },
+              "hash": {
+                "type": "string",
+                "pattern": "^0x[0-9a-fA-F]{64}$"
+              },
+              "sender": {
+                "type": "string",
+                "pattern": "^0x[0-9a-fA-F]{40}$"
+              },
+              "nonce": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+              },
+              "raw": {
+                "type": "string",
+                "pattern": "^0x(?:[0-9a-fA-F]{2})+$",
+                "maxLength": 262144
+              },
+              "original_receipt": {
+                "$ref": "#/$defs/receipt"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "block_transaction_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "baseline": {
+      "$ref": "#/$defs/branch"
+    },
+    "candidate": {
+      "$ref": "#/$defs/branch"
+    },
+    "baseline_verified": {
+      "type": "boolean"
+    },
+    "runtime_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4000
+      },
+      "minItems": 1,
+      "maxItems": 32
+    },
+    "artifact_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "receipt": {
+      "type": "object",
+      "required": [
+        "gasUsed",
+        "cumulativeGasUsed",
+        "effectiveGasPrice",
+        "transactionIndex",
+        "type",
+        "status",
+        "transactionHash",
+        "from",
+        "logsBloom",
+        "to",
+        "contractAddress",
+        "logs"
+      ],
+      "properties": {
+        "gasUsed": {
+          "type": "string",
+          "pattern": "^0x(?:0|[1-9a-fA-F][0-9a-fA-F]{0,63})$"
+        },
+        "cumulativeGasUsed": {
+          "type": "string",
+          "pattern": "^0x(?:0|[1-9a-fA-F][0-9a-fA-F]{0,63})$"
+        },
+        "effectiveGasPrice": {
+          "type": "string",
+          "pattern": "^0x(?:0|[1-9a-fA-F][0-9a-fA-F]{0,63})$"
+        },
+        "transactionIndex": {
+          "type": "string",
+          "pattern": "^0x(?:0|[1-9a-fA-F][0-9a-fA-F]{0,63})$"
+        },
+        "type": {
+          "enum": [
+            "0x0",
+            "0x1",
+            "0x2"
+          ]
+        },
+        "status": {
+          "enum": [
+            "0x0",
+            "0x1"
+          ]
+        },
+        "transactionHash": {
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{64}$"
+        },
+        "from": {
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{40}$"
+        },
+        "logsBloom": {
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{512}$"
+        },
+        "to": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^0x[0-9a-fA-F]{40}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "contractAddress": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^0x[0-9a-fA-F]{40}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "address",
+              "topics",
+              "data"
+            ],
+            "properties": {
+              "address": {
+                "type": "string",
+                "pattern": "^0x[0-9a-fA-F]{40}$"
+              },
+              "topics": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^0x[0-9a-fA-F]{64}$"
+                },
+                "minItems": 0,
+                "maxItems": 4
+              },
+              "data": {
+                "type": "string",
+                "pattern": "^0x(?:[0-9a-fA-F]{2})*$",
+                "maxLength": 131074
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 512
+        }
+      },
+      "additionalProperties": false
+    },
+    "outcome": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "index",
+            "hash",
+            "status",
+            "receipt",
+            "differing_fields"
+          ],
+          "properties": {
+            "index": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 31
+            },
+            "hash": {
+              "type": "string",
+              "pattern": "^0x[0-9a-fA-F]{64}$"
+            },
+            "status": {
+              "const": "executed"
+            },
+            "receipt": {
+              "$ref": "#/$defs/receipt"
+            },
+            "differing_fields": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "gasUsed",
+                  "cumulativeGasUsed",
+                  "effectiveGasPrice",
+                  "transactionIndex",
+                  "type",
+                  "status",
+                  "transactionHash",
+                  "from",
+                  "logsBloom",
+                  "to",
+                  "contractAddress",
+                  "logs"
+                ]
+              },
+              "minItems": 0,
+              "maxItems": 12,
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "index",
+            "hash",
+            "status",
+            "expected_nonce",
+            "original_nonce"
+          ],
+          "properties": {
+            "index": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 31
+            },
+            "hash": {
+              "type": "string",
+              "pattern": "^0x[0-9a-fA-F]{64}$"
+            },
+            "status": {
+              "const": "nonce_conflict"
+            },
+            "expected_nonce": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+            },
+            "original_nonce": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 115792089237316195423570985008687907853269984665640564039457584007913129639935
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "index",
+            "hash",
+            "status"
+          ],
+          "properties": {
+            "index": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 31
+            },
+            "hash": {
+              "type": "string",
+              "pattern": "^0x[0-9a-fA-F]{64}$"
+            },
+            "status": {
+              "enum": [
+                "skipped",
+                "rejected",
+                "not_mined"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "branch": {
+      "type": "object",
+      "required": [
+        "anvil_version",
+        "outcomes",
+        "matches_original_receipts"
+      ],
+      "properties": {
+        "anvil_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/outcome"
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "matches_original_receipts": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "matches_original_receipts": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "outcomes": {
+                "items": {
+                  "properties": {
+                    "status": {
+                      "const": "executed"
+                    },
+                    "differing_fields": {
+                      "maxItems": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "outcomes": {
+                "contains": {
+                  "anyOf": [
+                    {
+                      "properties": {
+                        "status": {
+                          "not": {
+                            "const": "executed"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "required": [
+                        "differing_fields"
+                      ],
+                      "properties": {
+                        "differing_fields": {
+                          "minItems": 1
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "baseline_verified": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "baseline": {
+            "properties": {
+              "matches_original_receipts": {
+                "const": true
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "baseline": {
+            "properties": {
+              "matches_original_receipts": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

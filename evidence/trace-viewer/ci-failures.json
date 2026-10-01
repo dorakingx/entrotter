@@ -1,0 +1,27 @@
+{
+  "prior_head": "fd7ab3cc0296e90bf08be7236c987e5def844fa7",
+  "run": "https://github.com/entrotter/entrotter.github.io/actions/runs/36889016929",
+  "attempt1": {
+    "job": "110459582260",
+    "cause": "Existing10minute setup timeout: Ubuntu azure.archive.ubuntu.com apt mirror stalled before browser harness started.",
+    "harness_executed": false
+  },
+  "attempt2": {
+    "job": "110464802195",
+    "setup": "success21seconds",
+    "cause": "Only1280px trace filechooser event timed out5000ms after direct programmatic focus;32other groups/25axe scans passed.",
+    "harness_failed": true
+  },
+  "fix": "Sequential native focus via actual Tab from preceding trace sample button; same Enter/filechooser timeout/import/no-network gates and new visible-focus assertion.",
+  "validation": "Final local33groups/25axe full browser pass; separate3group/3scan focused visual probe confirms visible parentlabel focus outline at1280/390/320. Linux exact-head CI remains required.",
+  "passed_check_reuse": "Original check7s/quality26s/docs10s unchanged; attempt2 check/quality IDs reindexed but original timestamps retained.",
+  "second_setup_timeout": {
+    "head": "0ccef43990a7a31a6fb2b21af70a0c4c1f1465ce",
+    "run": "https://github.com/entrotter/entrotter.github.io/actions/runs/36892139052",
+    "job": "110470109255",
+    "cause": "Azure HTTP font/package transfer delays consumed job deadline; fonts-wqy7.5MB delayed16:32:18\u219216:35:43 then retried; browser download completed16:37:42 as unchanged10minute job canceled.",
+    "harness_executed": false,
+    "other_checks": "check6s/quality33s/docs13s passed; full original quality/docs root-verified."
+  },
+  "setup_fix": "Only Azure Ubuntu URI becomes official HTTPS archive in legacy/deb822 apt source files. Signed-By/suites/components/third-party sources, full Playwright with-deps/allchecks/10mtimeout preserved. Exact extracted script YAML/AST/temp-filesystem checks and independent review pass; actual finalCI still pending."
+}

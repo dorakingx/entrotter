@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "workflow_sha256": "289feb80218e4b0cdc4cb30485053fa81ef1b305f863bbb92d290bdc965c08d6",
+  "script_sha256": "37d3aacd739e360d213f71abb0f314b2a295de649cbe6e45fe8842fee77627c7",
+  "scope": "YAML parse + exact extracted script AST compile and temp filesystem application; no local sudo/APT/browser/network work.",
+  "checks": [
+    "Legacy source and deb822 mirror endpoints changed only to official HTTPS archive.",
+    "Signed-By/suite/components/security/Docker endpoints preserved.",
+    "Idempotent and absent legacy source safe."
+  ],
+  "retained": "Full Playwright --with-deps install,10minute job timeout, full browser/axe/nativechooser/import/no-network gates unchanged."
+}

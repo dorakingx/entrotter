@@ -1,0 +1,31 @@
+TAP version 13
+# Subtest: Unicode text limits count codepoints for assumptions and Anvil versions
+not ok 1 - Unicode text limits count codepoints for assumptions and Anvil versions
+  ---
+  duration_ms: 7.342875
+  type: 'test'
+  location: '<viewer-repository>/tests/trace.test.mjs:354:1'
+  failureType: 'testCodeFailure'
+  error: 'Invalid transaction-prefix report: assumption.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    fail (file://<viewer-repository>/trace-report.mjs:26:9)
+    file://<viewer-repository>/trace-report.mjs:426:7
+    Array.map (<anonymous>)
+    traceViewModel (file://<viewer-repository>/trace-report.mjs:424:56)
+    validateTraceReport (file://<viewer-repository>/trace-report.mjs:547:16)
+    TestContext.<anonymous> (file://<viewer-repository>/tests/trace.test.mjs:361:31)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 94.676292

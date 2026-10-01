@@ -1,0 +1,10 @@
+{
+  "status": "no_actionable_finding",
+  "workflow_sha256": "289feb80218e4b0cdc4cb30485053fa81ef1b305f863bbb92d290bdc965c08d6",
+  "root_independent_review": "Exact repeated Azure mirror install stall; only matching Ubuntu mirror URI changed to official HTTPS archive, keeping suites/components/keyring, apt signature validation, 10-minute job and all browser gates. Synthetic legacy/deb822/security/third-party examples checked; Python snippet parses. Actual Linux install/full browser CI still required.",
+  "official_source": "https://ubuntu.com/server/docs/how-to/software/package-management/",
+  "limitations": [
+    "No actual local Ubuntu package install; local host is macOS.",
+    "Review does not establish future network availability or GitHub approval."
+  ]
+}

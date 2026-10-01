@@ -39,3 +39,14 @@ body { background: var(--bg); }
 .takeaway { background: #291b37; }
 .constraints span, .metrics div { background: #16121f; }
 .pill { background: #17261f; }
+
+#transaction-replay .archive { margin-top: 24px; }
+#transaction-replay table { min-width: 60rem; }
+#transaction-replay td { overflow-wrap: anywhere; max-width: 22rem; min-width: 7rem; }
+#transaction-replay .report-toolbar button { max-width: 100%; white-space: normal; }
+#trace-assumptions { color: var(--muted); font-size: 12px; }
+
+.trace-archive { padding: 20px 24px; border: 1px solid var(--line); border-radius: 12px; background: #14101d; }
+.trace-archive > summary { display: list-item; font-size: 15px; }
+.trace-archive > summary span { display: block; color: var(--muted); font-size: 11px; font-weight: 400; margin-top: 5px; }
+@media (max-width:700px) { .trace-archive { padding: 20px 15px; } }
