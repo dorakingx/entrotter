@@ -1126,3 +1126,47 @@ consumed holdout/report/media sources stay distinct. See
 evidence/agent-viewer-integration/summary.json. All protected-main approvals,
 manual assistive-tech/full WCAG and live candidate publication/submission gates
 remain open. Discord remains abandoned; no localDocker/VM startup.
+
+## October 1 — Original signed transaction-prefix replay composition
+
+Engine #29/0d4faf7 adds a distinct trace-version result and default bounded CLI,
+preserving the v0.1 action/model-record contracts. It reconstructs original
+legacy/type-1/type-2 signatures, forks the pinned parent twice with Shanghai
+header context, preserves order/nonces and explicitly reports omitted,
+conflicting, rejected, unmined and receipt-diverged outcomes. Independent source
+review found/fixed caller-input mutation; re-review passed. Ordinary/upstream RPC
+still denies raw broadcast; only the owned trace profile permits signed inputs.
+
+All eight exact-head checks pass first attempt: 241 Linux native tests in 33.082s,
+23 actual Docker tests in 215.933s, 23 source/18 wheel/19 image input hashes verified.
+Ethereum block 19,000,000 transaction 0 matches the original receipt's 208,144 gas
+and 8 ordered logs through the default bounded CLI in 4.484323s. Its complete result
+matches the native 9.951108s record except runtime/hash. No upstream write, model
+generation or holdout retuning occurred. Image/native reports, inventories,
+manifests and auditors match; 42 Python/26 OS/1,126 signed Cargo identities have zero
+reported advisories, with 172 non-Cargo entries outside coverage. Database metadata
+matches; the CI-recorded binary database digest cannot be locally rehashed from
+the exported metadata alone. No local Docker/VM startup occurred.
+
+Schemas #11/8785bb0 adds distinct offline trace-plan/result contracts. Independent
+review corrected the example from an early ignored attempt to the exact committed
+engine report. All five head checks pass: 23 tests on three Python/legacy-engine
+compositions, 13 source/schema/lock hashes, six Python files fully scanned, zero
+findings/skips and 48 tool/6 contract package identities without reported advisories.
+All 19 original result shapes remain valid; schemas verify declared shape, not
+signatures, hashes, sorted/cross-field input binding or EVM truth. The actual
+default-worker mainnet report also validates against these new contracts.
+
+This existing coordination PR55 selects engine0d4faf7 and schemas8785bb0, with
+CLI22/SDKb0/site499 unchanged. Frozen native/provider/model/evaluation/consumed
+holdout/report/media sources remain independent. Combined exact-head CI and guide
+reproduction are separate from component proof; prior5c1/2204 timings retain
+their actual old pins. See evidence/canonical-replay-integration/summary.json.
+
+The full goal remains active. At most 32 original Shanghai-prefix transactions
+are currently supported; Anvil parent-state pool admission can reject valid
+same-block funding dependencies and must leave those baselines unverified.
+Full-block/opcode/root/end-withdrawal equivalence, broader oracle/divergence cases
+and trace SDK/viewer integration remain open. Software review is not protected
+GitHub approval. No protected merge, candidate deployment, outreach, media upload
+or formal competition submission occurred. Discord remains excluded.

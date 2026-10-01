@@ -1,0 +1,220 @@
+{
+  "status": "tested_engine_and_schema_sources_selected_combined_current_head_CI_pending",
+  "previous_coordination_head": "5c1cbe5d0c1aba1add91df8c3a3b4f1e725a1273",
+  "previous_execution_snapshot": "2204fcad3dfe329d433806126ee68adb796925b6",
+  "engine_pr": "https://github.com/entrotter/engine/pull/29",
+  "schema_pr": "https://github.com/entrotter/scenarios/pull/11",
+  "engine": {
+    "head": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+    "quality_run": 36869886021,
+    "evm_run": 36869886207,
+    "source_files": 23,
+    "full_findings": 23,
+    "skipped_security_rules": 0,
+    "wheel_modules_byte_equal": 18,
+    "audited_python_packages": 42,
+    "python_advisories": 0,
+    "linux_native_tests": 241,
+    "linux_native_seconds": 33.082,
+    "all_required_checks": "All8passed first attempt",
+    "runtime_boundaries": "Actual synthetic signed fixture in no-network worker and actual default-host bounded mainnet prefix; not whole-block/root/opcode replay or universal host/VM safety.",
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:36:24Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36869886175/job/110394633014",
+        "name": "docs-links",
+        "startedAt": "2026-10-01T13:36:13Z",
+        "status": "COMPLETED",
+        "workflowName": "Documentation links"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:36:40Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36869886021/job/110394631981",
+        "name": "quality",
+        "startedAt": "2026-10-01T13:36:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Engine quality and Python dependency audit"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:40:34Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36869886169/job/110394632868",
+        "name": "isolated",
+        "startedAt": "2026-10-01T13:36:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Isolated worker enforcement"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:36:56Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36869886207/job/110394633923",
+        "name": "evm",
+        "startedAt": "2026-10-01T13:36:13Z",
+        "status": "COMPLETED",
+        "workflowName": "Local EVM integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:36:45Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36869886127/job/110394632939",
+        "name": "unit (3.11)",
+        "startedAt": "2026-10-01T13:36:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:36:50Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36869886127/job/110394632974",
+        "name": "unit (3.12)",
+        "startedAt": "2026-10-01T13:36:14Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:36:45Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36869886127/job/110394633104",
+        "name": "unit (3.13)",
+        "startedAt": "2026-10-01T13:36:13Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:36:48Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36869886127/job/110394633009",
+        "name": "unit (3.14)",
+        "startedAt": "2026-10-01T13:36:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      }
+    ],
+    "GitHub_reviews": [],
+    "isolated_run": 36869886169,
+    "actual_Docker_tests": 23,
+    "actual_Docker_seconds": 215.933,
+    "image_input_hashes_match": 19,
+    "image_source_digest": "0ccddc105c5e6cc30c7a38c7d089fa5164f0ea68c5029e13606c0fe4729083a3",
+    "image_OS_packages": 26,
+    "signed_native_Cargo_packages": 1126,
+    "signed_inventory_outside_Cargo": 172,
+    "image_native_report_manifest_auditor_hashes": "all matched",
+    "database_metadata_matches": true,
+    "database_binary_digest_scope": "Image/native summaries record the same digest; database binary is not exported for local rehash.",
+    "default_worker_historical_report": {
+      "artifact_id": "435061a58711ae8b31df6c27d65a1f8ef31b89beee2e9062cf550f8883c4033b",
+      "sha256": "fae80a74a67e9c9419cf4e3384762abe7ce5f28c90ad80c562b747b8713afa99",
+      "runtime_seconds": 4.484323,
+      "baseline_verified": true,
+      "gas_used": 208144,
+      "log_count": 8,
+      "complete_native_result_matches_except_runtime_hash": true
+    }
+  },
+  "schemas": {
+    "head": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "all5checks": "passed first attempt",
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:55:04Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/36872248201/job/110402694653",
+        "name": "docs-links",
+        "startedAt": "2026-10-01T13:54:56Z",
+        "status": "COMPLETED",
+        "workflowName": "Documentation links"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:55:20Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/36872248138/job/110402695004",
+        "name": "quality",
+        "startedAt": "2026-10-01T13:54:56Z",
+        "status": "COMPLETED",
+        "workflowName": "Scenario Python quality"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:55:12Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/36872248127/job/110402694566",
+        "name": "validate",
+        "startedAt": "2026-10-01T13:54:57Z",
+        "status": "COMPLETED",
+        "workflowName": "Scenario contracts"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:55:15Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/36872248127/job/110402694386",
+        "name": "compatibility (3.11, bb8b3e8d32c7cbd49629d337758f30bfdf805045)",
+        "startedAt": "2026-10-01T13:54:57Z",
+        "status": "COMPLETED",
+        "workflowName": "Scenario contracts"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T13:55:13Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/scenarios/actions/runs/36872248127/job/110402694321",
+        "name": "compatibility (3.13, 0d3857839b2187541e573bec2e58042ad5bf0b45)",
+        "startedAt": "2026-10-01T13:54:57Z",
+        "status": "COMPLETED",
+        "workflowName": "Scenario contracts"
+      }
+    ],
+    "GitHub_reviews": [],
+    "source_schema_lock_files_byte_match": 13,
+    "Python_sources_scanned": 6,
+    "security_findings": 0,
+    "skipped_security_rules": 0,
+    "audited_dependencies": {
+      "dependencies.json": 48,
+      "contracts-dependencies.json": 6
+    },
+    "reported_advisories": 0,
+    "tests_per_three_python_engine_compositions": 23,
+    "test_runtimes_seconds": [
+      4.397,
+      3.041,
+      4.346
+    ],
+    "original_public_reports_valid": 19,
+    "trace_fixture_source": "Exact committed engine0d public native report, verified byte equality. Default-worker report435061 also schema-validated independently.",
+    "independent_review": "Source/schema inspected, provenance mismatch fixed/retested; no remaining actionable finding in current change. Not GitHub approval.",
+    "engine_pins_in_legacy_jobs": [
+      "6a3e03341eccd44fcd04a990db21cc5509e0c84d",
+      "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+      "0d3857839b2187541e573bec2e58042ad5bf0b45"
+    ],
+    "limits": "Schemas check shape/declared terminal consistency, not canonical hashes/signatures/EVM/oracle truth or sorted/crossfield prefix rules."
+  },
+  "bounded_worker_pins": {
+    "engine": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "49914a2ca7358a9e45befc9b458f7f3ac52c6142"
+  },
+  "new_model_calls": 0,
+  "original_models_evaluation_consumed_holdout_media": "Unchanged; original frozen source/records retained. The prefix is a separate technical receipt case, not a model experiment.",
+  "archive_scope": "New actual technical source replay is evidenced in engine#29/native and Docker artifacts. Combined existing guide/agent smoke will not add archive/model calls.",
+  "full_goal": "Active. Prefix Shanghai/type0-1-2/<=32 support does not close full-block/opcode/end-state, same-block funding admission, SDK/viewer or broader oracle/divergence cases.",
+  "mandatory_approval": "No GitHub approving review; source software reviews do not bypass protected main.",
+  "VM_scope": "No local Docker/VM startup; actual bounded proof from LinuxCI.",
+  "community": "Discord abandoned/excluded"
+}

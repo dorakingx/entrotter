@@ -17,12 +17,13 @@
         "ERC-20 decimal and balance observations",
         "Uniswap exact-input action adapter",
         "two identical archived Ethereum state executions with source hash and receipts",
-        "Engine PR #28/6e13f34 resolves independent source review P2: canonically equal case-alias local contract overrides gave order-dependent real Anvil outcomes. Both orders now refuse before native/default/agent work; one mixed-case address remains valid. All 8 head checks pass: 214 native tests and 22 actual Docker cases, full 22-source/17-wheel/18-image-input binding verified. Coordination selects this tested source; combined CI and mandatory GitHub approval remain separate."
+        "Engine PR #28/6e13f34 resolves independent source review P2: canonically equal case-alias local contract overrides gave order-dependent real Anvil outcomes. Both orders now refuse before native/default/agent work; one mixed-case address remains valid. All 8 head checks pass: 214 native tests and 22 actual Docker cases, full 22-source/17-wheel/18-image-input binding verified. Coordination selects this tested source; combined CI and mandatory GitHub approval remain separate.",
+        "Engine#29/0d4faf7 adds bounded original signed transaction-prefix replay separate from v0.1 actions/model records. All8headchecks pass;241native/23actualDocker tests and23source/18wheel/19image hashes verified. Ethereum19Mtx0 matches208144gas/8logs and complete native outcomes in default Docker4.484323s (native9.951108s). Independent mutable-input defect fixed. Schemas#11/8785 adds distinct offline contracts; all5checks/13hashes/23tests on3compositions/19original report shapes pass. Software review differs from mandatory GitHub approval; combined new-source candidate CI pending."
       ],
       "blocked": [],
       "todo": [
         "stronger execution budgets and signal/process fault coverage",
-        "historical trace replay is unsupported; preserve explicit separation",
+        "Extend signed-prefix replay coverage for parent-state pool/same-block funding, full-block/opcode/end-state scope and broader nonce/order/oracle/missing-state divergence cases; add trace SDK/viewer integration while preserving explicit mode separation",
         "more assumptions and adverse scenarios in benchmark"
       ]
     },
@@ -301,7 +302,8 @@
     "https://github.com/entrotter/engine/blob/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json",
     "evidence/latest-candidate/summary.json",
     "evidence/contract-identity-integration/summary.json",
-    "evidence/agent-viewer-integration/summary.json"
+    "evidence/agent-viewer-integration/summary.json",
+    "evidence/canonical-replay-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }
