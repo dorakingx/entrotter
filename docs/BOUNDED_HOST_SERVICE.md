@@ -29,6 +29,10 @@ The measured environment is Colima 0.8.1, Linux arm64, Python 3.12.3 and systemd
 Docker context and provides an explicit read-only mount instead of sharing the
 operator's home directory. Choose a fresh profile and replace its placeholder
 with an existing empty directory. Do not overwrite an existing profile's data.
+Use the directory's canonical absolute path: a symlink mount source can fail to
+mount after a workspace move. Preserve compatibility symlinks for other tools,
+but do not rely on them as Lima mount sources. Verify the actual mount and an
+EROFS write rejection before treating the configured read-only share as enforced.
 
 Colima's [versioned configuration implementation](https://github.com/abiosoft/colima/blob/v0.8.1/environment/vm/lima/yaml.go)
 is the source for the tested mapping; newer versions can have separate root/data
@@ -64,7 +68,7 @@ test ! -e "$HOME/.config/systemd/user/entrotter-engine.service"
 mkdir -p "$app_dir" "$config_dir" "$HOME/.config/systemd/user"
 chmod 700 "$app_dir" "$config_dir"
 git clone https://github.com/entrotter/engine.git "$app_dir/engine"
-git -C "$app_dir/engine" checkout --detach 2c843842dc57387150e3bb080c720bc94ce18bc5
+git -C "$app_dir/engine" checkout --detach d5b30035b4a2a1c292db24f6caf81ed419a2684e
 export PYTHONPATH="$app_dir/engine/src"
 export ENTROTTER_DOCKER_SOCKET=/var/run/docker.sock
 python3 "$app_dir/engine/scripts/build_worker.py" --output "$app_dir/worker-image.json"
@@ -104,7 +108,13 @@ then verifies CPU throttling, EAGAIN at the task ceiling, OOM-kill, a two-second
 scaled timeout, and refusal to start a main executable with unlimited memory.
 Transient units are stopped/reset afterward. This is not a simulated resource test.
 
-The [measured evidence](../evidence/host-service/summary.json) includes kernel
+The [October 1 current-candidate evidence](../evidence/host-service-oct01/summary.json)
+re-runs the documented fresh installation at engine d5b3003, SDK b0c2ba3 and CLI
+a63a390 after repairing the legacy symlink mount source. Both full reports match
+the current quick start; all four real resource probes and the startup guard pass.
+The two actual host-share writes fail with EROFS. The extra 48,384,000-byte
+cloud-init ISO is kernel read-only; every writable tested path uses the single
+10 GiB root disk. Earlier [September 20 evidence](../evidence/host-service/summary.json) includes kernel
 controls, full test results, source hashes, VM topology and read-only write probes.
 The fixture and local-EVM artifact IDs match the earlier integration records.
 The one-hour production expiry was read back, not waited out; the timer fault test

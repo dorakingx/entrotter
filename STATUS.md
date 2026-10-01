@@ -841,3 +841,31 @@ The dedicated VM was stopped and the pre-existing default VM left running. Lima
 warned that its legacy symlink source share was not mounted; this walkthrough needs
 no guest source share and does not revalidate the historical host-service mount
 topology. Candidate reviews/integration and final submission remain uncompleted.
+
+## October 1 — Canonical VM share and latest bounded host service
+
+The dedicated Colima profile still pointed to the workspace compatibility symlink.
+Lima did not mount that source. Its location now resolves directly to the same
+existing empty host directory; quotas, read-only permissions and network settings
+are unchanged, and the compatibility symlink is preserved. Actual shares include
+that directory and Colima's cache, both read-only with EROFS write rejection.
+
+The updated host-service guide's install block was executed on fresh guest paths
+at engine d5b3003. The inactive previous application/configuration/unit and reports
+were retained as backups. SDK b0c2ba3 and CLI a63a390 were fetched by immutable SHA.
+All three guest worktrees are clean. Real CLI/SDK/API fixture and Anvil results
+match the complete current quick-start reports. Real CPU throttling, task ceiling,
+OOM-kill, two-second timeout and rejection of unbounded memory before main pass.
+
+The guest has two CPUs, 2,054,631,424 bytes of usable memory, no swap and one
+10 GiB writable disk. An additional 48,384,000-byte cloud-init ISO is kernel
+read-only and is explicitly retained in the topology proof. The first probe's
+single-total-disk assumption was corrected after direct inspection, without
+excluding a writable device. App, reports, Docker and /tmp use the root filesystem.
+API service is stopped with PID 0, not enabled at boot; no worker/probe units remain.
+The dedicated VM is stopped after validation; the default VM is left untouched.
+
+See evidence/host-service-oct01/. This verifies the optional guest deployment,
+not universal host limits, hard host cache/backup storage bounds, independent
+review or goal completion. The original hour expiry and live root exhaustion
+remain untested; the scaled timer and actual block topology are the stated proof.

@@ -1,0 +1,100 @@
+{
+  "checked_at": "2026-10-01T07:28:54.064900+00:00",
+  "status": "verified_current_candidate_reference_deployment",
+  "coordination_service_checker_source": "dc5c86b1df00b512c31712728c4faed6e98e3f8d",
+  "engine_commit": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+  "sdk_commit": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+  "cli_commit": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+  "source_sha256": {
+    "deploy/entrotter-engine.service": "3a92a3bbe5d2b585c727a42cc96cd510fa6e541aebd5abfd5141d8173e22f486",
+    "scripts/check_host_envelope.py": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb",
+    "tests_host/check_service.py": "3176cfd65787342d150949def6aa2c0f59cdb639daafa8dd0ba823d364961e49",
+    "deploy/colima-entrotter.yaml": "277f64bc86f19013025c002e3475b3ccd693d7712b4db163bb586efa995de84a"
+  },
+  "profile_repair": {
+    "checked_at": "2026-10-01T07:18:37.662218+00:00",
+    "before_sha256": "be9bb8116d7214edd570be015dac58b50eae2b1464ee8259650dd6056778080f",
+    "after_sha256": "2176da653f08030b7ad280454bfd2c7dc32b7fe85fdf5d18a5731a6450555f69",
+    "change": "Only legacy symlink source-share location replaced by canonical path to the same existing empty directory; writable:false and all resource/network settings preserved",
+    "compatibility_symlink_preserved": true
+  },
+  "installation": "Current documented shell block with only coordination_checkout placeholder substituted; fresh guest application/environment/unit paths. Old inactive installation, configuration, reports and service unit preserved under .before-oct01-dc5c86b backups. Current source repositories are clean and pinned.",
+  "documented_install_commands_match": true,
+  "actual_api_roundtrips": 2,
+  "full_report_equality": "Both complete current API/SDK/CLI outputs equal evidence/quick-start-oct01 report.json and local-evm.json; hashes and stored API equality verified",
+  "artifact_ids": {
+    "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+    "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+  },
+  "actual_resource_probes": {
+    "cpu": "success",
+    "pids": "success",
+    "memory": "oom-kill",
+    "runtime": "timeout"
+  },
+  "unbounded_start_rejected_before_main": true,
+  "host_share_probes": [
+    {
+      "name": "colima",
+      "mount_readonly": true,
+      "write_errno": 30
+    },
+    {
+      "name": ".sandbox-share",
+      "mount_readonly": true,
+      "write_errno": 30
+    }
+  ],
+  "worker_source_digest": "fba06f6dd633858f91dd89d4f48a51c8447696f32e9eb3820302d09bcb379f42",
+  "worker_image_id": "sha256:64a94ba205d604f03f0d1b4ddf5afd1c933010313a13553fd9afc58fc19c0a68",
+  "kernel_limits": {
+    "cpu.max": "100000 100000",
+    "memory.max": "268435456",
+    "memory.swap.max": "0",
+    "pids.max": "64"
+  },
+  "capacity": {
+    "cpu_count": 2,
+    "memory_total_bytes": 2054631424,
+    "swap_total_bytes": 0,
+    "writable_root_block_device_bytes": 10737418240,
+    "other_devices": [
+      {
+        "name": "vdb",
+        "size": 48384000,
+        "type": "disk",
+        "ro": true,
+        "fstype": "iso9660",
+        "mountpoints": [
+          "/mnt/lima-cidata"
+        ]
+      }
+    ]
+  },
+  "setup_note": "The first topology probe assumed a single total block device. Direct inspection found an additional 48,384,000-byte read-only cloud-init ISO; final proof classifies every disk and verifies each additional device kernel RO flag. No writable device excluded.",
+  "files_sha256": {
+    "validation.log": "6f923802daf8378a956837d6825a09e02ad97c1dac6ca3c2675eca3f19754a60",
+    "validation-commands.sh": "8467433e5f0bb08afb097a0aceea7fc3d11bd01a2e84bf02f152981f534582a7",
+    "service-checks.json": "18c35da209b62ef929f6d9028fceccca3797c7229bf0629a348c6777ec73f529",
+    "topology-probe.py": "625a33fcc89a0cc72c68d144ca8690bbb1e222145f1f867d301cad528a57a176",
+    "worker-image.json": "8c903cd324f6153d593dbaae02d8a6ae251daab82d26b9823b96d118fd73d185",
+    "vm-topology.json": "c653d5c090f03d902d7c2fed40c849ee09d6970cb99db2dd0d526f7daea0d241",
+    "install-commands.sh": "5b58aa74f8cd69d6b80933ded23a7852cc313c70ab3985c2efbb71a325d78db6",
+    "install.log": "404ff09137759cb2ef3cfeb31701b74f5d06e6590b798250305ee3c4f975ac7f"
+  },
+  "new_model_calls": 0,
+  "archive_rpc_calls": 0,
+  "production_hour_expiry_waited": false,
+  "live_vm_disk_exhausted": false,
+  "claim_scope": "Owned user-service cgroup, actual guest writable block/mount topology, and current candidate roundtrips; not universal macOS caller limits, hypervisor/cache/backup footprint, arbitrary-code isolation, or independent code approval.",
+  "cleanup": {
+    "service": "inactive",
+    "service_main_pid": 0,
+    "boot_enabled": false,
+    "owned_worker_containers": 0,
+    "transient_proof_units": 0,
+    "dedicated_profile": "Stopped; Colima shutdown completed and list readback confirmed",
+    "default_profile": "pre-existing instance left untouched"
+  },
+  "log_normalization": "Guest-home and workspace prefixes replaced with placeholders; local private profile backup excluded."
+}

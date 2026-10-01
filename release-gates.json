@@ -105,7 +105,8 @@
         "Engine PR #22 bounds setup archive staging to 256 MiB with at most 1 MiB chunks and streaming pinned digest verification, regular-file/FIFO checks and between-read deadlines. Failing-before regression, 196 local native/unit tests, full quality policy and an actual unchanged-source Docker fixture pass. Host/image/VM quotas and hard whole-build deadlines remain outside this fix; independent review pending.",
         "All six repositories have an open, scoped good first issue, verified by GitHub body/state/label readback. Four missing documentation opportunities were created, existing SDK/CLI tasks reused, and the contribution directory linked from README/CONTRIBUTING. This proves issue availability, not task completion or adoption.",
         "Proposed Linux API host service: actual cgroup startup guard, one CPU/256 MiB/no swap/64 tasks, descriptor/core and session limits. Real VM CLI-SDK-API fixture/Anvil equality, CPU/PID/OOM/scaled timeout and missing-cap startup rejection pass. Dedicated guest block geometry/mounts and host-share EROFS verified. Scope excludes ordinary host callers, hypervisor/log/base-cache overhead and hard whole-build deadlines; independent review pending.",
-        "Engine PR #22 now bounds whole POSIX image preparation at 600 seconds using an independent owned-session watchdog/lifetime pipe; blocked native call, actual stalled HTTP, SIGTERM and owner SIGKILL tests pass. Actual 60-second BuildKit RUN stops in 10.013 seconds under a ten-second cap with no guest probe process left. All 204 pinned-native local tests, quality and unchanged-image fixture match pass; current CI/independent review recorded in PR, integration pending."
+        "Engine PR #22 now bounds whole POSIX image preparation at 600 seconds using an independent owned-session watchdog/lifetime pipe; blocked native call, actual stalled HTTP, SIGTERM and owner SIGKILL tests pass. Actual 60-second BuildKit RUN stops in 10.013 seconds under a ten-second cap with no guest probe process left. All 204 pinned-native local tests, quality and unchanged-image fixture match pass; current CI/independent review recorded in PR, integration pending.",
+        "Latest host-service guide freshly installed at engine d5b3003, SDK b0c2ba3 and CLI a63a390 after canonical share repair. Complete fixture/Anvil API reports match current quick start; real CPU/PID/OOM/scaled timer and unbounded-start rejection pass. Both shares reject writes with EROFS; all disks classified including read-only cloud-init ISO. Service/owned work cleaned; historical proof retained separately."
       ],
       "todo": [
         "Bound host caller overhead and image/VM storage; independently review/integrate shared export retention, default worker admission and the separate agent branch; preserve older-client, separate-root/daemon, operator-manipulation and crash-recovery limits",
@@ -284,7 +285,8 @@
     "evidence/submission-preparation/summary.json",
     "evidence/worker-build-deadline.json",
     "evidence/quick-start-oct01/summary.json",
-    "evidence/submission-preparation/oct01-checkpoint.json"
+    "evidence/submission-preparation/oct01-checkpoint.json",
+    "evidence/host-service-oct01/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }
