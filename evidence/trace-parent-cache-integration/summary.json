@@ -1,0 +1,58 @@
+{
+  "status": "prepared_component_promotion_pending_independent_review_and_combined_CI",
+  "previous_coordinator": "ccc4780763b2c7c409486ea81e5fabf2e1065134",
+  "selected_engine": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
+  "previous_engine": "65c28330bdc694535da0074b2e3d68ab433806d8",
+  "pins": {
+    "engine": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+  },
+  "selector_scope": "Exactly four one-occurrence engine65c\u2192198 replacements; every frozen native/agent/host variant and all other pins unchanged.",
+  "component_checks": 8,
+  "component_full_artifact_review": "passed",
+  "local_types": "21 production sources; three unchanged explicit frozen diagnostics",
+  "offline_reader_steps": 3,
+  "offline_result_scope": "Whole prior results unchanged apart from selected engine pin; exact immutable viewer b7 blobs used; no chain/model call or rendered browser check.",
+  "native005": {
+    "paired_replay": "passed",
+    "original_prefix": 32,
+    "whole_block_transactions": 181,
+    "candidate_skip_index": 12,
+    "baseline_receipts_equal": 32,
+    "candidate_executed": 31,
+    "runtime_seconds_native": 125.358258,
+    "remaining_candidate_receipt_fields": "Gas/status/logs/bloom/identities unchanged; position/cumulative gas shifts exact omitted transaction.",
+    "producer_answer_baseline_before": 257082415000,
+    "producer_answer_baseline_after": 256292441874,
+    "producer_answer_candidate_before_and_after": 257082415000,
+    "cache_requests": 1871,
+    "cache_upstream": 966,
+    "cache_hits": 899,
+    "cache_errors_aggregate_cause": "six; unknown",
+    "owned_nodes_and_cache_cleanup": "PID/groups absent, ports/pipes closed; root independently probed",
+    "public_raw": "https://github.com/entrotter/engine/tree/198139ff0b3bf37781b4232b27d8eeb0a5da5365/evidence/trace-parent-cache/native-005",
+    "prior_four_failed_runs": "immutable and preserved"
+  },
+  "public_copy_sha256": {
+    "engine-CI.json": "bb91130c43e88a6aad15c58f8dc924be4f64569da78eb48b44fe41735130d514",
+    "engine-doc-bindings.json": "1bb09c7307b0f15613c08b20f1c54f485bc9d108f31505fa1152555259bf77fa",
+    "engine-docs-first.json": "83bfde33fa33d7b22b875dc8952d98640e32258955382f490b27a9da8212659b",
+    "engine-docs-second.json": "008fbbd27bba55c63ea53391ae8000f388e035039c542ad1ff2406c35edfe555",
+    "engine-docs.json": "fc0ddf5e5e17cc1f69fb49d8c44d8eabe241be9a2b9a02048daf12ee6786991c",
+    "engine-link-recovery.json": "4863266e3bb20252104039af4d9653e0fcc1403bb63b8ab6c0a1a1255e65f933",
+    "local-reader-execution.json": "34b6f2808509142e0c67e5723ccb256ff9898f56f2c4355217d6a9cf5eb0cd1d",
+    "local-types.json": "bb81ad6391465e0fd592621a55e1268925c82d72cc96e25db6496a04b1f56e4c",
+    "trace-funding-reader.json": "b2866ef19f676f8ae074e995c7a3647dfae305c225d92f51bd5414b57cd45875",
+    "trace-oracle-reader.json": "8f414886d31a1a1157d11cfb39ad5687ff157b7068812341b2a9d9182cf2131d",
+    "trace-reader.json": "42a7a03868fb4dde6180580bc21ffa1b94da205000035cc78006d109493479df"
+  },
+  "limits": [
+    "All8 component checks are separate from new combined CI/protected main approval/Pages deployment.",
+    "Native32 producer outcome does not demonstrate dependent consumer/strategy/profit or default Docker32 replay.",
+    "No full-block/root/end-state/opcode/provider authenticity, throughput comparison or timeout-cause proof.",
+    "Original videos retain original source versions; no new recording or submission claim."
+  ]
+}

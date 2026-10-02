@@ -1,0 +1,2227 @@
+{
+  "checked_at": "2026-10-02T10:26:46.590475+00:00",
+  "source_commit": "c56a4c4343ee655079be8c0a9631d5b70ebbdee2",
+  "worktree_dirty": false,
+  "checker": "lychee 0.24.2",
+  "checker_sha256": "87e6e75195df5753f08c53b5c0a13694b8328edd8df009914ae9e29b5000162d",
+  "files": {
+    ".github/PULL_REQUEST_TEMPLATE.md": "f8840c1975bc5aabfdedbd13d69de905fc19b7c9ad4c9b965f48e2b4c20b405d",
+    "AGENTS.md": "d1d8e6c41d67cbcd2ee82f7dcbb50568189acfcf92508b60731eed8de480e303",
+    "CONTRIBUTING.md": "93b12d0e124c7c07dcc389404a02732272c2b22dd7967c97b9e10b82658243b1",
+    "README.md": "d1a31a417fa2155f0ef4ab6ad7b6baf15adc039cc26152664d471dca2f2783dc",
+    "SECURITY.md": "a8eb529ab224ef550feced80ab3a3e17cb544d7e2597824875464f229d88c7cb",
+    "STATUS.md": "939c07562a08be7c0e1719c8dd5d77cd85fa9d0ef9d50da3845322fd2f5d27ff",
+    "evidence/local-contract-identity/commands.md": "1cb00e16ec9f66885d85e5ac82b46b87532e7868a07b430476b3bdb1c9751d7b",
+    "evidence/rpc-diagnostics/README.md": "c26c829068d3d7e5bce09e7782751dacf8ebb03e49109ff310b4d542ebe37fd1",
+    "evidence/trace-funding-admission/README.md": "48afaf17c6a62a8a4962887c11a1b883b9be32caa15a7855eedb88a54b89859a",
+    "evidence/trace-mine-deadline/README.md": "5ca51ba5866386224fa6c21495e9311f0ee09fb8648270d1addf528ef89e2eec",
+    "evidence/trace-oracle-provider/README.md": "441a09f97c526b5ad7af7ac0debbde2627656188beedb1d52fb4b391bd62e4c0",
+    "evidence/trace-oracle-provider/ci-diagnostics/README.md": "765ceb74e3f49e5466f7717823e19bff8bdc48ad942ad421113bb39b5d981a23",
+    "evidence/trace-oracle-provider/same-run-observer/README.md": "8e3f83a193db3c10b57e4f505a126ce4d07ad34bee0f6a5248d0975a60d1820c",
+    "evidence/trace-parent-cache/README.md": "c888ca786d6858278f5431b68f13fe4a2b97a15750fbed7c35a67d3ef2ba8aa2",
+    "evidence/trace-replay/README.md": "8c4cc278911a821e7f7cbc0f47c4dab76c4f303ba2fda5c31a2c4dec44341abf",
+    "tests/data/README.md": "52bde1fe33291c1afe442964b8b019391d66664953b0bd40365430b6524e6ee0"
+  },
+  "lychee_exit_code": 2,
+  "passed": false,
+  "path_redaction": "Local checkout prefix replaced with /workspace/repository",
+  "report": {
+    "total": 143,
+    "unique": 140,
+    "successful": 140,
+    "unknown": 0,
+    "unsupported": 0,
+    "timeouts": 0,
+    "redirects": 0,
+    "remaps": 0,
+    "excludes": 0,
+    "errors": 3,
+    "cached": 0,
+    "success_map": {
+      "evidence/trace-replay/README.md": [
+        {
+          "url": "file:///workspace/repository/evidence/trace-replay/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 77,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10509
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-replay/mainnet-prefix.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 28,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11522
+          }
+        }
+      ],
+      "evidence/trace-oracle-provider/same-run-observer/README.md": [
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/prototype-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 66,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 9267
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/readiness.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 69,
+            "column": 51
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11842
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/copy-provenance.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 71,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8596
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/independent-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 76,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8346
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 80,
+            "column": 22
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8005
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/frozen/test_trace_observer-003.py",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 54,
+            "column": 61
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8135
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/package-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 84,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8456
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/results/finite-observations.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 48,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7604
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/engine/actions/runs/36913460373",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 24
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 790173380
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/frozen/probe.py",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 40,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10931
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/results/worker-request.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 42,
+            "column": 18
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8506
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/prior-aac-ci/root-partial-verification.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 8,
+            "column": 43
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 12604
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/checks/initial-import-harness-failure.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 60,
+            "column": 64
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 29265
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/results/unobserved-original-report.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 43,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7895
+          }
+        }
+      ],
+      "evidence/trace-oracle-provider/README.md": [
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/prior-initial-oracle-report.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 77,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10399
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/independent-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 89,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6412
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/root-direction-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 75,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6792
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/evidence-handling.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 83,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6241
+          }
+        },
+        {
+          "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/executor.rs#L610-L617",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 47,
+            "column": 2
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 176037731
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/diagnostic-setup-failure.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 78,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10740
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/security.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 60,
+            "column": 6
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 33553
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/native-suite-import-failure.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 66,
+            "column": 9
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11191
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/focused.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 67,
+            "column": 22
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 9928
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/prior-initial-observations.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 76,
+            "column": 14
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7404
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/security-before-refresh.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 59,
+            "column": 23
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 48220
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/prior-followup-probe.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 82,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6312
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/native-provider-control.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 34,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10459
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/public-copy-provenance.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 63,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10439
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/bandit.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 62,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10991
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/dependencies.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 62,
+            "column": 35
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10289
+          }
+        },
+        {
+          "url": "file:///workspace/repository/tests/data/canonical-local-oracle-inputs.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 13,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11772
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/native-oracle-prefix.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 22,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10149
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/native-missing-storage.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 44,
+            "column": 35
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 9448
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/native-suite-summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 36,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10249
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/prior-investigation.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 74,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10520
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 61,
+            "column": 17
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 15049
+          }
+        },
+        {
+          "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/executor.rs#L717-L726",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 48,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 733870163
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/native-suite.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 68,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11130
+          }
+        }
+      ],
+      "STATUS.md": [
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 236,
+            "column": 25
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 14917
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 272,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10961
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/same-run-observer/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 300,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8526
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 27,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11342
+          }
+        }
+      ],
+      "evidence/trace-mine-deadline/README.md": [
+        {
+          "url": "file:///workspace/repository/evidence/trace-mine-deadline/native-prefix-four.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 28,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10450
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-mine-deadline/plan.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 33,
+            "column": 13
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10279
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-mine-deadline/prior-timeout-observation.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 7,
+            "column": 38
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 24435
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-mine-deadline/independent-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 58,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10930
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-mine-deadline/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 63,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10519
+          }
+        }
+      ],
+      "README.md": [
+        {
+          "url": "https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 140,
+            "column": 42
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 178856714
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-mine-deadline/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 225,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11772
+          }
+        },
+        {
+          "url": "https://eips.ethereum.org/EIPS/eip-155",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 240,
+            "column": 18
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 304714416
+          }
+        },
+        {
+          "url": "file:///workspace/repository/CONTRIBUTING.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 108
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 17212
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 209,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8967
+          }
+        },
+        {
+          "url": "file:///workspace/repository/LICENSE",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 168
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7314
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-replay/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 222,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 24957
+          }
+        },
+        {
+          "url": "https://eips.ethereum.org/EIPS/eip-2930",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 241,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 208895122
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter.github.io/tree/b7c20ce2c080427fe0742a1afcb5dbc49277de70",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 141,
+            "column": 5
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 310149429
+          }
+        },
+        {
+          "url": "file:///workspace/repository/SECURITY.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 142
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8196
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 191,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 21610
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/docker-metadata/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 365,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11090
+          }
+        },
+        {
+          "url": "https://github.com/ethereum/go-ethereum/blob/v1.14.0/params/config.go",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 243,
+            "column": 4
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 814646290
+          }
+        },
+        {
+          "url": "https://eips.ethereum.org/EIPS/eip-1559",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 242,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 399940252
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 229,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10900
+          }
+        },
+        {
+          "url": "https://github.com/aquasecurity/trivy/blob/v0.74.0/docs/guide/coverage/language/rust.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 561,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 615544454
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/engine/pull/31",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 211,
+            "column": 1
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 722883377
+          }
+        },
+        {
+          "url": "https://images.chainguard.dev/directory/image/python/provenance",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 560,
+            "column": 22
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 607567901
+          }
+        },
+        {
+          "url": "https://github.com/foundry-rs/foundry/blob/v1.8.3/crates/anvil/src/eth/api.rs",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 244,
+            "column": 20
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 160325758
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/worker-build-output/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 336,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 52326
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 1
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 564598972
+          }
+        }
+      ],
+      "evidence/rpc-diagnostics/README.md": [
+        {
+          "url": "file:///workspace/repository/evidence/rpc-diagnostics/root-trace-pinned.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 24,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8155
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/rpc-diagnostics/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 9,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 12915
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/rpc-diagnostics/native-suite-proof.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 12,
+            "column": 14
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8656
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/rpc-diagnostics/root-trace-wrong-version.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 25,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8155
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/rpc-diagnostics/readiness.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 10,
+            "column": 53
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8777
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/rpc-diagnostics/independent-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 11,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8306
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/rpc-diagnostics/root-native-suite-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 14,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8075
+          }
+        }
+      ],
+      "evidence/trace-funding-admission/README.md": [
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/state-probes.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 14,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10439
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/synthetic-prefix.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 26,
+            "column": 30
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6222
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/static-checks.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 41,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 9748
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/security-before-refresh.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 43,
+            "column": 24
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10379
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/prior-and-deferred-probes.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 11,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10369
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/investigation.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 9,
+            "column": 16
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10680
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/author-runner-failure.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 35,
+            "column": 23
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10931
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/native-suite.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 24,
+            "column": 58
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6673
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/bandit.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 42,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10640
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/regression-after.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 24,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 9969
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 48,
+            "column": 57
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11722
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/regression-before.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 22,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10310
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/independent-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 62,
+            "column": 27
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10700
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-funding-admission/security.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 44,
+            "column": 52
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10300
+          }
+        }
+      ],
+      "evidence/trace-oracle-provider/ci-diagnostics/README.md": [
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/ci-diagnostics/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 51,
+            "column": 33
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7985
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/ci-diagnostics/isolated-attempt1.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 10,
+            "column": 49
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 603209
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/ci-diagnostics/copy-provenance.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 52,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8646
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/ci-diagnostics/helper-regression-after.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 46,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8346
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/ci-diagnostics/independent-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 54,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8777
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/ci-diagnostics/helper-regression-before.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 45,
+            "column": 26
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 9568
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/ci-diagnostics/isolated-attempt2.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 11,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10269
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-oracle-provider/ci-diagnostics/helper-entrypoint-regression.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 47,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 8075
+          }
+        }
+      ],
+      "evidence/trace-parent-cache/README.md": [
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/format.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 13,
+            "column": 26
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11101
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/prior-failures/final-004-native.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 96,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 13305
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/earlier-owner-and-handler-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 29,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 40926
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/concurrency/loopback-final.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 22,
+            "column": 16
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11351
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/policy-refresh.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 16,
+            "column": 13
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6943
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/source-and-native-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 31,
+            "column": 37
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11271
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/native-005-execution-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 73,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 34925
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/full-proof.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 11,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11061
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/native-005/report.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 37,
+            "column": 56
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 20198
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/native-005/worker-request.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 36,
+            "column": 35
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6933
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/native-005/observations.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 77,
+            "column": 56
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 12263
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/prior-failures/final-001-native.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 94,
+            "column": 44
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11160
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/prior-failures/final-002-native.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 95,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11261
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/summary.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 112,
+            "column": 25
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6272
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/concurrency/corrected-header-and-cancellation.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 23,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11392
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/security-before-refresh.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 15,
+            "column": 39
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10710
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/prior-failures/native-004/terminal-record.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 98,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 12514
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/readiness.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 10,
+            "column": 12
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11041
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/packaging.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 17,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7794
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/earlier-uncached-receipt-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 30,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 12514
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/native-005-prelaunch-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 39,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11803
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/final-readiness.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 10,
+            "column": 62
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11301
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/concurrent-helper-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 25,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 7183
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/native-005-sdk-reader.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 88,
+            "column": 53
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 14447
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/prior-failures/serialized314-full-proof.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 97,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10941
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/native-005/host-owned-cleanup.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 86,
+            "column": 9
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11571
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/native-005/host-cache-cleanup.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 87,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10400
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/native-005/plan.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 36,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10390
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/prior-failures/final-003-native.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 95,
+            "column": 50
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11662
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/concurrency/regression-after.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 21,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 12042
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/native-004-execution-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 100,
+            "column": 35
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10620
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/lint.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 13,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 12985
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/native-005-viewer-reader.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 89,
+            "column": 5
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 12413
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/bandit.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 14,
+            "column": 9
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11011
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/native-005/owned-cache.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 83,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11912
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/independent/public-package-review.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 114,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6613
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/concurrency/regression-before.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 20,
+            "column": 38
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 11712
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/author/types.log",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 13,
+            "column": 59
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10941
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/provenance.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 106,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6913
+          }
+        },
+        {
+          "url": "file:///workspace/repository/evidence/trace-parent-cache/native-005/captured-source.json",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 37,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 6582
+          }
+        }
+      ],
+      "CONTRIBUTING.md": [
+        {
+          "url": "file:///workspace/repository/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 5,
+            "column": 28
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 10269
+          }
+        }
+      ]
+    },
+    "error_map": {
+      "README.md": [
+        {
+          "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/.github/workflows/release.yml",
+          "status": {
+            "text": "Rejected status code: 503 Service Unavailable",
+            "code": 503
+          },
+          "span": {
+            "line": 592,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 671470294
+          }
+        }
+      ],
+      "tests/data/README.md": [
+        {
+          "url": "https://github.com/entrotter/entrotter/blob/062cce134ad1e55396587992823654705a669849/evidence/agent-local-codex.json",
+          "status": {
+            "text": "Rejected status code: 503 Service Unavailable",
+            "code": 503
+          },
+          "span": {
+            "line": 4,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 196378170
+          }
+        }
+      ],
+      "evidence/trace-oracle-provider/same-run-observer/README.md": [
+        {
+          "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/lib.rs#L471-L506",
+          "status": {
+            "text": "Rejected status code: 503 Service Unavailable",
+            "code": 503
+          },
+          "span": {
+            "line": 23,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 718817361
+          }
+        }
+      ]
+    },
+    "timeout_map": {},
+    "suggestion_map": {},
+    "redirect_map": {},
+    "excluded_map": {},
+    "duration": {
+      "secs": 3,
+      "nanos": 865502773
+    },
+    "detailed_stats": true
+  }
+}
