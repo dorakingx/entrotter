@@ -462,3 +462,20 @@ model call, historical32 result, main merge, deployment or formal submission is
 claimed. See [raw outcomes, provenance and reviews](evidence/owned-consumer-observations/remediation/README.md).
 Fresh exact-head mandatory CI and protected-main independent human review remain
 required; historical and current outcomes are distinct.
+
+
+### Copied-base manifest binding
+
+Public7b50 passes seven mandatory checks, including native354/83.227s with zero
+skips and all four unit versions354/40 declared Anvil skips. Quality/source/wheel/
+Python/research and20-doc/208-link artifacts are reviewed. Isolated25/218.049s and
+default one/four replay pass, then the unchanged image guard correctly rejects
+old011 metadata against new892 Dockerfile. The builder had a stale constant;
+image/Cargo audits were not reached. New preparation derives the fixed flat
+single-stage immutable base from copied Dockerfile before launch. Two metadata/
+prelaunch controls use real copying/hashes with simulated Docker;20 build methods
+pass before the independent continuation correction, and both base controls pass
+after it. All eight malformed/floating/multiple/continued variants refuse before
+launch. Final26-source scan retains all25 findings/reasons and original audit
+guards. Current whole356/eight CI and real image audit remain pending; parent354
+results are historical. See [cause, controls and final reviews](evidence/owned-consumer-observations/remediation/manifest-binding/README.md).

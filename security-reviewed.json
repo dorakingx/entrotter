@@ -227,7 +227,7 @@
     "src/entrotter_engine/_isolated_worker.py": "ec3ae2219ce1bce01e9d9aa97d67a0f1cbc354abcdda3e5514d028b0dfc271de",
     "scripts/check_image_security.py": "e84d1c8d37c33a176706b6cad3fe32c5f3b1f8faf96422f694cc088763ea8261",
     "scripts/check_dependency_manifest.py": "d9c90b75f8c26ef0aa3723ab07580f05c7391a78ef12fcf20b99e80ef198deef",
-    "scripts/build_worker.py": "a14f457ff3f701a52530f74818ddeb5db7e06fb6ef0de822d34090fd75f1435a",
+    "scripts/build_worker.py": "fe2dd9a1104582758f072413f3d0455397b5dc3f685e4df328cdc44ede9ffef8",
     "scripts/check_native_security.py": "f32a97e5c0b7fd3cd611d31f83dc98c5150b0ec6249669ac2ad17d8ca5f4c29d",
     "scripts/check_security.py": "515db8c5988e21ff3910e93cb08c8f53dec3ce557d6a5a09377583f4fb6fe1a7"
   }
