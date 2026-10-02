@@ -1535,3 +1535,45 @@ precede any new archived paired run. No time budget, signed input, nonce, fundin
 state or header repair substitutes for a successful original-scope run. Main
 approval, candidate Pages, owner facts/video Terms and formal submission remain
 open; the full G1–G5 improvement goal is active and Discord is excluded.
+
+
+## October 2 — Concurrent parent cache: original prefix completes
+
+Engine198139f/PR34 shares bounded pinned-parent reads without serializing distinct
+keys; receipts/errors/volatile reads remain uncached. All8 exact component checks
+and independent full source/wheel/image/security/receipt artifact review pass:
+323 native tests/74.006s/0 skips, four323-unit jobs/33 explicit Anvil skips each,
+25 actual Docker tests/216.854s,25 production sources/findings,20 wheel modules,
+21 image inputs,42 locked Python packages,26 OS packages and1126 signed Cargo
+identities with0 reported advisories.172 native components remain outside Cargo
+advisory coverage; the non-exported database binary is not locally rehashed.
+
+The first two mandatory docs attempts failed on6 then3 existing GitHub HTML
+HTTP503 links. After13 targets recovered with the pinned bounded settings, only
+the failed existing job was rerun. Attempt3 passes143 links/0 errors/timeouts,
+16 exact document hashes and complete merge-tree equality to198139f. Failures
+are retained; no exclusions, assertions, source or required gate were weakened.
+
+Actual native005 retains original32 signed inputs from block18999892, skip12
+and shared150s trace cap. It completes in125.358s with all32 complete projected
+baseline receipts byte-equal to originals and003; candidate executes31 and skips12.
+Initial owned heads/getters match. Baseline producer answer changes257082415000
+to256292441874; candidate keeps the initial answer. Other31 gas/status/logs/bloom/
+identity fields match; later position/cumulative gas shifts exactly by omission.
+Owned2 Anvil nodes and cache PID/groups/ports/pipes close, independently probed.
+Cache1871 requests/966 upstream/899 hits includes6 aggregate errors of unknown
+cause. Prior001–004 failed runs remain immutable. This32-of181 native producer
+case establishes no dependent-consumer/strategy/profit/full-block/root/opcode/
+provider-authenticity/default Docker32 or speed/timeout-causality result.
+
+The current coordinator selection changes exactly4 engine selectors65c→198;
+frozen native/agent/host variants and other components are unchanged. Local21-
+source type checks retain3 explicit frozen diagnostics; all3 offline SDK/Node
+reader steps preserve complete prior outcomes exceptenginepin. Exact b7 Git
+blobs insulate that parser proof from concurrent local viewer development.
+See [component and preparation evidence](evidence/trace-parent-cache-integration/README.md).
+The previousccc/65c composition passes all5 combined checks and its clean replay
+measurements retain their original scope. New combined CI, protected-main human
+approval and candidate Pages publication remain separate. No main merge, new
+video, package publication or formal submission is claimed. Goal active through
+the officialOctober13 15:59JST deadline, recheckedOctober2; Discord excluded.

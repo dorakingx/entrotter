@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-10-02T06:28:12.198086+00:00",
+  "updated_at": "2026-10-02T10:43:39Z",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -36,7 +36,8 @@
         "Resolve same-invocation four-prefix candidate not_mined outcome at engineaac525c without state repair or weakening expected statuses; later successful diagnostic does not identify cause. Current99fd component8/8 passes; prior failure cause remains unknown; currentaffc805 all5 composition is verified, protected approval/publication remain separate."
       ],
       "evidence": [
-        "Safe RPC diagnostics engine65c/PR33 passes all8 component checks and fresh independent artifacts; current65c selection has21-source type and3 complete reader checks. Actualnative003 same32/skip12/150s baseline exactly equals002, but candidateevm_mine transport timeout is observed; underlying cause and omission outcome unknown. New combined CI/main approval remain pending; no archive/state authenticity or full-block pass."
+        "Historical safe-RPC preparation: engine65c/PR33 passes all8 component checks and fresh independent artifacts; then-current65c selection has21-source type and3 complete reader checks. Actualnative003 same32/skip12/150s baseline exactly equals002, but candidateevm_mine transport timeout is observed; underlying cause and omission outcome unknown. That preparation preceded ccc/65c combined CI, whose all5 checks subsequently pass; protected-main approval remains pending; no archive/state authenticity or full-block pass.",
+        "Engine198/PR34 all8 and independent raw artifact review pass; original32/skip12/shared150s native005 completes with exact32 baseline receipts and producer-only answer change. Four prior failures retained. No dependent consumer/profit/full-block/root/provider-authenticity/timeout-cause evidence; current4-selector integration preparation passes types/3readers, combinedCI/main approval pending."
       ]
     },
     {
@@ -321,7 +322,8 @@
     "evidence/trace-oracle-integration/summary.json",
     "evidence/trace-oracle-integration/diagnostic-ci-partial.json",
     "evidence/archived-oracle-diagnostic/summary.json",
-    "evidence/rpc-diagnostics-integration/summary.json"
+    "evidence/rpc-diagnostics-integration/summary.json",
+    "evidence/trace-parent-cache-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

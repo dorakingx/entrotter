@@ -47,12 +47,15 @@ feature. The pitch does not establish founder communication skills or market fit
 
 ## Latest candidate sources
 
-The [safe RPC diagnostic composition](../evidence/rpc-diagnostics-integration/README.md)
-selects the reviewed65c engine. Detailed native transport codes distinguish future
-failures without publishing provider strings. Actual diagnostic003 retains all32
-original baseline receipt projections, but candidate mining times out and its
-underlying cause remains unknown. No archived omission or updated video result is
-claimed. The new component passes all8 checks; combined CI/approval remain separate.
+The [parent-read cache composition](../evidence/trace-parent-cache-integration/README.md)
+selects engine198139f/PR34, retaining safe private RPC diagnostics. All8 component
+checks and independent complete raw-artifact review pass. Actual native005 keeps
+the same original32 signed inputs, skip12 and150-second shared budget; both
+branches complete and all32 baseline receipt projections equal originals.
+The producer feed update occurs only in baseline. This is a32-of181 producer
+prefix, not dependent-consumer/profit/full-block/provider-authenticity or historical
+speed evidence. Previous failures remain preserved. New combined CI and protected
+main approval remain separate; recordings keep their original source versions.
 
 These are the October 2 candidate sources, still awaiting independent approval
 and protected integration. Follow the [current pinned quick start](../docs/QUICK_START.md)
@@ -69,10 +72,10 @@ native synthetic same-block funding and an adverse omission without state repair
 The [oracle/provider composition](../evidence/trace-oracle-integration/README.md)
 adds native signed update/consumer causal proof and actual read-only fault/control
 coverage, including an integrity-valid unverified storage-failure report. Archived
-funding/oracle, provider authenticity and full-block/end-state remain open. The
+funding/dependent oracle-consumer, provider authenticity and full-block/end-state remain open. The
 [recorded-agent viewer evidence](../evidence/agent-viewer-integration/summary.json)
-adds original decision/provenance inspection and preserves original reports. Current
-combined checks and public reproduction measurements are recorded in
+adds original decision/provenance inspection and preserves original reports. Prior combined checks and reproduction measurements retain their source pins;
+current candidate verification is recorded in
 [candidate PR55](https://github.com/entrotter/entrotter/pull/55). Prior walkthroughs
 retain their actual older pins. Guide and evidence updates occur in later
 documentation commits with the same production tools; this snapshot is proposed
@@ -80,8 +83,8 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [530ebc2](https://github.com/entrotter/entrotter/tree/530ebc290064f824a2f1465f49dd2f2635ec559a) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
-| Bounded agent engine, contract identity and signed transaction-prefix replay | [65c2833](https://github.com/entrotter/engine/tree/65c28330bdc694535da0074b2e3d68ab433806d8) | [#33](https://github.com/entrotter/engine/pull/33) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [efda6f2](https://github.com/entrotter/entrotter/tree/efda6f2024a36224aa1486cb389a9902ce7b584b) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Bounded agent engine, contract identity and signed transaction-prefix replay | [198139f](https://github.com/entrotter/engine/tree/198139ff0b3bf37781b4232b27d8eeb0a5da5365) | [#34](https://github.com/entrotter/engine/pull/34) |
 | Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |

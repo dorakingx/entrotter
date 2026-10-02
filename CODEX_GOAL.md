@@ -11,9 +11,9 @@ at 23:59 Pacific. CI success, completed checklists, prepared PRs, readiness or
 formal submission are checkpoints, not reasons to finish the improvement goal.
 
 Resume the latest tested candidates and existing evidence, recordings and videos.
-PR47's f1421ff is an ancestor of the current PR55 affc805 candidate; preserve its
-work rather than returning to old main or the initial ZIP. Verify current remote
-heads before integration. Do not create a duplicate goal or session.
+PR47's f1421ff remains an ancestor of the evolving PR55 candidate. Preserve its
+work rather than returning to old main or the initial ZIP. Use current STATUS.md
+and dependency pins, and verify remote heads before integration. Do not create a duplicate goal or session.
 
 Once quality, required owner facts and submission materials are verified and the
 portal is open, formal submission of the existing entry is already authorized

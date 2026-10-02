@@ -1,5 +1,5 @@
 {
-  "status": "prepared_component_promotion_pending_independent_review_and_combined_CI",
+  "status": "independently_reviewed_selection_pending_combined_CI_and_protected_main",
   "previous_coordinator": "ccc4780763b2c7c409486ea81e5fabf2e1065134",
   "selected_engine": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
   "previous_engine": "65c28330bdc694535da0074b2e3d68ab433806d8",
@@ -47,12 +47,16 @@
     "local-types.json": "bb81ad6391465e0fd592621a55e1268925c82d72cc96e25db6496a04b1f56e4c",
     "trace-funding-reader.json": "b2866ef19f676f8ae074e995c7a3647dfae305c225d92f51bd5414b57cd45875",
     "trace-oracle-reader.json": "8f414886d31a1a1157d11cfb39ad5687ff157b7068812341b2a9d9182cf2131d",
-    "trace-reader.json": "42a7a03868fb4dde6180580bc21ffa1b94da205000035cc78006d109493479df"
+    "trace-reader.json": "42a7a03868fb4dde6180580bc21ffa1b94da205000035cc78006d109493479df",
+    "independent-preparation-review.json": "b80816441c2738dd1c22eca9993867129b77513861100072adb4bd3da56f0de0"
   },
   "limits": [
     "All8 component checks are separate from new combined CI/protected main approval/Pages deployment.",
     "Native32 producer outcome does not demonstrate dependent consumer/strategy/profit or default Docker32 replay.",
     "No full-block/root/end-state/opcode/provider authenticity, throughput comparison or timeout-cause proof.",
     "Original videos retain original source versions; no new recording or submission claim."
-  ]
+  ],
+  "execution_snapshot": "efda6f2024a36224aa1486cb389a9902ce7b584b",
+  "independent_preparation_review_sha256": "b80816441c2738dd1c22eca9993867129b77513861100072adb4bd3da56f0de0",
+  "preparation_review_scope": "Frozen17-file preparation atccc before publication; later docs and exact copy of review are separately checked."
 }
