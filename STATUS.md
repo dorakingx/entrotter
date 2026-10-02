@@ -945,7 +945,7 @@ helper quota; four steps do. These setup failures are distinct from final proof.
 The probe image was removed only after its unique label/full ID matched, with no
 worker left. Dedicated VM stop/default VM preservation are verified. Normal worker
 image/cache stays local; no registry publication, model call or archive-RPC call.
-See https://github.com/entrotter/engine/blob/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json.
+See https://raw.githubusercontent.com/entrotter/engine/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json.
 
 Current-head CI and independent review are recorded in PR #26. Other Docker JSON
 captures, daemon/BuildKit storage, image/cache/host overhead quotas and abrupt-death

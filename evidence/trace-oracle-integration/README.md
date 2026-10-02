@@ -38,7 +38,7 @@ An ignored generator overwrote two earlier investigation raw files. Their
 original bytes are unavailable; the engine discloses the loss and preserves the
 original aggregate/review and initial raw proof. Current native evidence is a
 separately named fresh run; old hashes are never presented as revalidated bytes.
-See the pinned [engine disclosure](https://github.com/entrotter/engine/blob/e84980edd3945d405bf118790b8166c95bd75c7b/evidence/trace-oracle-provider/evidence-handling.json).
+See the pinned [engine disclosure](https://raw.githubusercontent.com/entrotter/engine/e84980edd3945d405bf118790b8166c95bd75c7b/evidence/trace-oracle-provider/evidence-handling.json).
 
 New engine exact-head CI and this composition's exact-head CI are separate gates;
 see summary.json and PR55 for their current states. Synthetic oracle/control/

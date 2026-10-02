@@ -146,7 +146,7 @@ Do not stop after building a landing page. Do not mark blockers as completed.
 
 ## Actual archived-state evidence
 
-The [Uniswap scenario](https://github.com/entrotter/scenarios/blob/main/evm/ethereum-uniswap-slippage.json)
+The [Uniswap scenario](https://raw.githubusercontent.com/entrotter/scenarios/8785bb090c13390b783fe8c42f01b26f1d5e7c24/evm/ethereum-uniswap-slippage.json)
 compares a successful 1 WETH swap with a reverted minimum-output intervention on
 identical Ethereum block 19,000,000 state. Two runs yielded identical artifacts;
 see `evidence/historical-verification.json` for timings and resource scope.

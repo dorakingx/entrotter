@@ -19,7 +19,7 @@ fixed by publishing the [referenced quality/docs proof](mirror-quality-docs-veri
 skips,42exact locked audit identities without advisories, fresh isolated-wheel
 readback and7doc hashes. Downloaded source/wheel/lock/docs match its ee5523d head.
 Independent source review found/fixed four metadata/receipt consistency gaps.
-See [SDK scope and reviews](https://github.com/entrotter/sdk-python/blob/ee5523ded16488af32d1f64040f1996cd002f8f3/evidence/trace-reader/README.md).
+See [SDK scope and reviews](https://raw.githubusercontent.com/entrotter/sdk-python/ee5523ded16488af32d1f64040f1996cd002f8f3/evidence/trace-reader/README.md).
 
 [Viewer#15](https://github.com/entrotter/entrotter.github.io/pull/15) at
 b7c20ce2c080427fe0742a1afcb5dbc49277de70 passes all four required checks.

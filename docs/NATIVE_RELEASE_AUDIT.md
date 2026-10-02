@@ -61,7 +61,7 @@ does not strip findings, packages, signatures or certificates.
 
 ## Boundaries that remain
 
-The pinned upstream [release workflow](https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/.github/workflows/release.yml)
+The pinned upstream [release workflow](https://raw.githubusercontent.com/foundry-rs/foundry/cae51ad458f6abb64852b7709eb784352429825d/.github/workflows/release.yml)
 uses Syft to scan the whole checkout. This is an overinclusive source inventory,
 not an exact record of libraries linked into the Anvil binary for a given target
 and feature set. It cannot establish that no linked dependency was missed by the
