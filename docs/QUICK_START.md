@@ -34,7 +34,7 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination e46b392, engine99fd3a6, schemas8785bb0 and CLI22b514c; SDK and
+coordination 530ebc2, engine65c2833, schemas8785bb0 and CLI22b514c; SDK and
 signed-prefix reader/viewer pins are ee5523d/b7c20ce. Older timings do not measure
 this new signed-prefix inspection composition.
 
@@ -58,6 +58,14 @@ recorded in [candidate PR55](https://github.com/entrotter/entrotter/pull/55);
 the older timings above do not measure this new composition. Independent GitHub
 approval and protected integration remain pending.
 
+The current [RPC diagnostic composition](../evidence/rpc-diagnostics-integration/README.md)
+selects engine65c2833/PR33. Its eight component checks and complete source/image/
+receipt/security artifact review pass. Native trace errors expose finite RPC code
+and method diagnostics; default worker/HTTP error envelopes remain fixed. All
+three offline SDK/viewer reader steps and the coordination type checks pass with
+this selection. New combined checks, protected-main approval and Pages publication
+remain separate gates; previous timings do not measure this composition.
+
 ## 1. Fetch a compatible snapshot
 
 Run from a directory where `entrotter-candidate` does not exist. The initial
@@ -70,7 +78,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git e46b392a4047bd680e5c03feb6bdc1a05a02269b
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 530ebc290064f824a2f1465f49dd2f2635ec559a
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json

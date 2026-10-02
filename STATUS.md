@@ -1,9 +1,15 @@
 # Verified implementation status
 
-Updated 2026-09-20 JST. **Goal active; not submission-ready.** Implementation
+Updated 2026-10-02 JST. **Goal active; not submission-ready.** Implementation
 and deployment checkpoints are recorded below. All six repositories exist publicly
 under https://github.com/entrotter. Do not repeat archive bootstrap or overwrite
 remote history. Use the existing six sibling Git checkouts and focused PRs.
+
+Latest prepared selection: engine65c/PR33 with coordination execution snapshot530ebc2;
+component CI and offline readers pass, while new combined CI and protected-main
+approval remain pending. The [latest evidence](evidence/rpc-diagnostics-integration/README.md)
+separates the classified native archive timeout from successful synthetic checks.
+The older milestones below retain their original sources and measurements.
 
 ## Verified progress
 
@@ -1488,3 +1494,44 @@ is now being implemented so future failures can expose safe finite causes withou
 provider URLs/messages. New source tests/review/publication/required CI remain
 separate from the historical99fd/affc805 checks. Protected integration, Pages,
 owner facts/video Terms and formal submission remain open; Discord excluded.
+
+
+## October 2 — Safe RPC diagnostics selected; archive timeout classified
+
+The previous public158fbc0/engine99fd composition passes all5 first-attempt
+checks and complete independent21-source/78-findings/50-package/19-image/
+57-document/API/CLI/admission/export/3-reader artifact review. Clean fixture
+6.674s and recorded-model6.853s retain original report identities, with Docker
+already running/potentially warm caches and installation/VM startup excluded.
+These measurements belong to the previous composition, not the new selection.
+
+Engine65c2833/PR33 adds finite private-safe RPC transport diagnostics and rejects
+valid-JSON truncated HTTP responses. All8 current-head checks and complete fresh
+artifact review pass:294 Linux native tests0 skips/47.122s, four294-test unit jobs
+with31 explicit Anvil skips each,25 actual Docker tests/214.044s,23 source/security
+findings,18 wheel modules,42 Python/26 OS/1126 signed Cargo packages,19 image inputs
+and15 documentation hashes. Default worker/HTTP envelopes remain unchanged;
+detailed codes cross trusted Python/native CLI only. Historical component records
+remain distinct. The current bounded/quality selection promotes65c through four
+exact selectors; frozen native/agent/host variants and all other pins are unchanged.
+Local21-source type checks retain3 frozen diagnostics, and all3 exact offline
+SDK/viewer reader steps retain complete previous outcomes apart from the engine pin.
+New combined CI and protected-main approval are separate pending gates.
+
+Actual native diagnostic003 retains the same32 signed inputs, skip12 and shared
+150s trace budget. Independent review verifies72 frozen bindings, source and all
+32 full projected baseline receipts byte-identical to002, identical initial owned
+parent/getters and baseline feed update. Candidateevm_mine is classified as an RPC
+transport timeout in this invocation:152.059s child/152.162s host. The underlying
+archive/miner/provider cause remains unknown; no retrospective001/002 cause or
+candidate branch/final protocol result is inferred. Both guardians exit0, ports
+close and final independent OS/port checks pass. Earlier public evidence remains
+unchanged. See [raw evidence and full limitations](evidence/rpc-diagnostics-integration/README.md).
+
+A separate bounded parent-state read cache is under implementation on a local
+engine branch. No cache performance/archive success is established yet. Source
+review, actual synthetic outcome/duplicate-read/cleanup controls and required CI
+precede any new archived paired run. No time budget, signed input, nonce, funding,
+state or header repair substitutes for a successful original-scope run. Main
+approval, candidate Pages, owner facts/video Terms and formal submission remain
+open; the full G1–G5 improvement goal is active and Discord is excluded.

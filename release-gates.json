@@ -34,6 +34,9 @@
         "Extend signed-prefix replay coverage for archive-backed same-block funding, full-block/opcode/end-state scope and archived oracle/provider state authenticity and broader divergence cases; complete cross-repository trace-reader integration proof while preserving explicit mode separation",
         "more assumptions and adverse scenarios in benchmark",
         "Resolve same-invocation four-prefix candidate not_mined outcome at engineaac525c without state repair or weakening expected statuses; later successful diagnostic does not identify cause. Current99fd component8/8 passes; prior failure cause remains unknown; currentaffc805 all5 composition is verified, protected approval/publication remain separate."
+      ],
+      "evidence": [
+        "Safe RPC diagnostics engine65c/PR33 passes all8 component checks and fresh independent artifacts; current65c selection has21-source type and3 complete reader checks. Actualnative003 same32/skip12/150s baseline exactly equals002, but candidateevm_mine transport timeout is observed; underlying cause and omission outcome unknown. New combined CI/main approval remain pending; no archive/state authenticity or full-block pass."
       ]
     },
     {
@@ -317,7 +320,8 @@
     "evidence/trace-reader-integration/summary.json",
     "evidence/trace-oracle-integration/summary.json",
     "evidence/trace-oracle-integration/diagnostic-ci-partial.json",
-    "evidence/archived-oracle-diagnostic/summary.json"
+    "evidence/archived-oracle-diagnostic/summary.json",
+    "evidence/rpc-diagnostics-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

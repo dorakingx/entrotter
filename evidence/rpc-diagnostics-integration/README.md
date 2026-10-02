@@ -28,6 +28,12 @@ are unchanged apart from the engine pin. The [execution record](local-reader-exe
 discloses the initial missing-Python PATH error; that attempt executed no product
 code. New combined CI and protected-main approval remain separate pending gates.
 
+The [independent preparation review](independent-preparation-review.json) and
+[bindings](preparation-bindings.json) verify all23 original source/evidence files at
+[530ebc2](https://github.com/entrotter/entrotter/tree/530ebc2), before these later guide
+links and review copies. The [execution snapshot](execution-snapshot.json) freezes
+that exact selection; a source review is distinct from required GitHub approval.
+
 ## Actual archive diagnostic003: classified timeout, failed candidate
 
 Using the same first32 signed transactions of original Ethereum block18999892,

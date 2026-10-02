@@ -47,6 +47,13 @@ feature. The pitch does not establish founder communication skills or market fit
 
 ## Latest candidate sources
 
+The [safe RPC diagnostic composition](../evidence/rpc-diagnostics-integration/README.md)
+selects the reviewed65c engine. Detailed native transport codes distinguish future
+failures without publishing provider strings. Actual diagnostic003 retains all32
+original baseline receipt projections, but candidate mining times out and its
+underlying cause remains unknown. No archived omission or updated video result is
+claimed. The new component passes all8 checks; combined CI/approval remain separate.
+
 These are the October 2 candidate sources, still awaiting independent approval
 and protected integration. Follow the [current pinned quick start](../docs/QUICK_START.md)
 instead of rebuilding from moving main branches. The recordings below retain
@@ -73,8 +80,8 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [e46b392](https://github.com/entrotter/entrotter/tree/e46b392a4047bd680e5c03feb6bdc1a05a02269b) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
-| Bounded agent engine, contract identity and signed transaction-prefix replay | [99fd3a6](https://github.com/entrotter/engine/tree/99fd3a60a754f129c78d1324f2a01787a6538917) | [#32](https://github.com/entrotter/engine/pull/32) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [530ebc2](https://github.com/entrotter/entrotter/tree/530ebc290064f824a2f1465f49dd2f2635ec559a) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Bounded agent engine, contract identity and signed transaction-prefix replay | [65c2833](https://github.com/entrotter/engine/tree/65c28330bdc694535da0074b2e3d68ab433806d8) | [#33](https://github.com/entrotter/engine/pull/33) |
 | Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
@@ -95,13 +102,14 @@ has seven successful checks but a failed four-prefix candidate gate: all origina
 receipts match, while one changed-branch transaction lacks a receipt. A later
 diagnostic succeeds and does not establish the first failure's cause. The
 [partial proof](../evidence/trace-oracle-integration/diagnostic-ci-partial.json)
-keeps those outcomes separate. The current engine99fd passes all eight checks
+keeps those outcomes separate. The prior selected engine99fd passes all eight checks
 on its first attempt, including normal default1/4 and image/native advisory gates.
 [Independent full proof](../evidence/trace-oracle-integration/root-engine-full-CI.json)
 binds those raw reports and audits. Its conditional observation diagnostic was
-skipped, so the original failure cause remains unknown. Current coordinatione46
-in the table is reviewed but unpublished; combined CI remains a separate gate.
-The latest fully tested public composition remains8029/a253 with engine935.
+skipped, so the original failure cause remains unknown. These99fd/e46 and older
+8029/a253/935 records are historical. The table now selects530ebc2/65c, with new
+combined CI pending. The previously tested public158fbc0/99fd composition passes
+all five checks and complete artifact review; see the latest evidence above.
 
 
 ## Recorded review sources

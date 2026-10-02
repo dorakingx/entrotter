@@ -1,0 +1,45 @@
+{
+  "result": "passed_final_independent_coordination_review",
+  "base": "530ebc290064f824a2f1465f49dd2f2635ec559a",
+  "final_bindings_sha256": "07eac3c5d3e9d4ebfe99653739f142d7058795e0133ccd835deeb4df5c657ad9",
+  "files_sha256": {
+    "docs/QUICK_START.md": "673e5f444f02c866c84bc22128246612d549ea674dabe88e6235b69957173317",
+    "submission/README.md": "005f1b3ab39f038804a6b9c95f8107880c477465d17757f2a64b6dae4e4970ff",
+    "STATUS.md": "a5c99884023e68c55f85ccb224495698bf315d2199fd5c310c26525240571808",
+    "release-gates.json": "06b0d4bed26ff24136185aa963906f505aae256af337d2275021743303be8df3",
+    "evidence/rpc-diagnostics-integration/summary.json": "9051f66afec754810692b2b0d9fd0f113dfc099088ad8d24ee0a519d255e71f1",
+    "evidence/rpc-diagnostics-integration/engine-CI.json": "dcca1a6100b947065326690e615974dd9a1e475b3f3983aeb168d1a03712fbe6",
+    "evidence/rpc-diagnostics-integration/preparation-bindings.json": "502c78f78cd69cc793786aff2d4263424e031555ba83fed8d0a577f7389d60c8",
+    "evidence/rpc-diagnostics-integration/trace-reader.json": "1b4861e3ef298f9c7ec1d77744f4358f8c259a1373ad68600c276567fba55605",
+    "evidence/rpc-diagnostics-integration/local-types.json": "85fe4406de10a224d2ad7e741d3494302066fde99c285c9b483eec6f0b4b4230",
+    "evidence/rpc-diagnostics-integration/previous-coordination-CI.json": "1d82524b070d8e80ff98e3ea4b3f7eeb166a5f7d5252f486ef4014f2da612f4f",
+    "evidence/rpc-diagnostics-integration/execution-snapshot.json": "05584a5e6d69b100f0e1e1a5b3850cd3d916133a6989317bd13fcf86031f4f06",
+    "evidence/rpc-diagnostics-integration/README.md": "c0617304c81e90a241c3fbc881ea986cb17b5582c0dd57e8987c9af8bb09ffd1",
+    "evidence/rpc-diagnostics-integration/local-reader-execution.json": "d8311eb4fbceaea7bd6fdbad9be657e946c4c11be0702dc666efe82402851e8b",
+    "evidence/rpc-diagnostics-integration/independent-preparation-review.json": "625d66535fe1bfe5e83a6f3aa5fc37f5984ba24cdc781a7ba3ad173f3e3300f9",
+    "evidence/rpc-diagnostics-integration/trace-funding-reader.json": "201fed54a80aea9f7bfd66a69d0b3012767281a43a5948491f36321b3ff34b25",
+    "evidence/rpc-diagnostics-integration/trace-oracle-reader.json": "09839b9b870afe1399539b2dde2a4c0a6160cf8218ba999c2154656f2a418fe9"
+  },
+  "production_snapshot_byte_equality": {
+    ".github/workflows/ci.yml": "61139971e59c8a720e973191308e466873803a54ca830cfacedbdd5bed5b93cc",
+    ".github/workflows/quality.yml": "3ab570eb03a5456db3adce19fbd9e1c17d0482ac43f9afab3f117ba9721cb2e1",
+    "bounded-worker-pins.json": "fa89f2666a2e23794975ed6d661693f941d01fd6596d72e1fa4b2606fd281c6f",
+    "quality-inputs.json": "38750a2aaf885a75f592b8c98651fdb2e7f2aae6c4d0042fb6ace0d1842f8f35"
+  },
+  "preserved_public_raw_bindings": 17,
+  "prior_public_records_unchanged": 19,
+  "resolved_finding": "P3 submission current/table pointer now explicitly historicale46/8029 and current530/65c pending plus previousverified158/99fd. No new link or execution needed.",
+  "findings": [],
+  "reviewer_harness_correction": "Initial whole-doc privacy regex also matched unchanged legitimate loopback/API and environment placeholder commands. Final added-line privacy check passes; new17raw copies already bound and checked in preparation review. No private provider value inferred from those historical commands.",
+  "scope": [
+    "Guide fetch/top/table snapshot and selected source hashes",
+    "Exact raw/preparation/review copies and local/current/component/historical scope distinctions",
+    "Native003 failed candidate and finite timeout, no underlying causal/profit/oracle authentication claim",
+    "Pending combinedCI/publication/independentGitHubapproval; unchanged frozen evaluation/model/holdout/media sources"
+  ],
+  "limits": [
+    "Read-only local source/evidence review; no test, archive, browser or CI rerun/download.",
+    "Not GitHub human protected-main approval or remote/deployment validation.",
+    "Public raw17-file bundle cannot reconstruct private72-input native readiness alone."
+  ]
+}
