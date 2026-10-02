@@ -1,0 +1,28 @@
+{
+  "status": "prepared_only_review_fixes_no_archive_launch",
+  "changes": [
+    "Private native watchdog/cancellation SignalStop derives directly fromBaseException with no message; category timeout. Production RPC.call cannot normalize it as an ordinary transport timeout.",
+    "Consumer observe/save and Evidence.snapshot use Exception-only ordinary-failure recording. Observer after path explicitly rethrows SignalStop through owned cleanup; before path naturally propagates it. Cache startup snapshot caller now Exception-only; cache helper itself unchanged.",
+    "ObservedSession ledger cleanup propagates non-Exception stop if no earlier primary error; terminal cleanup/evidence catches never start another RPC/replay.",
+    "Duplicate/fifth/invalid phase prechecked before any query; nonfinite/bool/invalid deadline rejected before any query. Ordinary RPC TimeoutError remains finite RPCError, not cancellation."
+  ],
+  "intentional_AST_changes": [
+    "category",
+    "expired",
+    "ObservedSession.__exit__",
+    "ObservedCache.__enter__",
+    "Evidence.snapshot",
+    "ConsumerObserver observation/save/phase checks"
+  ],
+  "unchanged": "25production/git198, host/node/cache ownership, original150/180/190/10 deadlines, source/signatures/header/state/replay/protocol and old001\u2013005 bytes.",
+  "test_scope": {
+    "stop-regressions-before.log": "Initial6 new controls actually reproduced11 failures/subcases against preserved pre-fix runtime. Exact initial6-test source was not separately snapshotted before adding2 further controls; do not claim a matching frozen test-file digest for that historical run.",
+    "stop-regressions-after.log": "4 controls pass, before/after entrypoint controls still fail finite category because initial literal replacement missed category function form; retained and corrected source.",
+    "stop-regressions-final.log": "6 PASS0.037s after exact category/cache caller corrections.",
+    "final-offline-tests.log": "33 tests0.156s;32pass,1 newly added snapshot test injected the stop at after-view instead of snapshot due a test-only selector bug. All16 inherited controls and9 consumer controls pass on final runtime/evidence bytes.",
+    "stop-controls-final8.log": "Affected8controls PASS0.050s after one test-only injection selector correction. Runtime unchanged after33-test run. No services/processes/native nodes/HTTP/archive started. Cache-startup cleanup fixture performs actual read-only os.killpg(fake PID2147483647,0) and loopback socket.connect_ex(127.0.0.1,1) probes; these are local OS/port observations with fake-owner metadata, not actual native hardware ownership/closure proof."
+  },
+  "setup_scope": "Preserved optional dependency inspection and metadata relative-path setup gaps; no product/EVM/launch activity.",
+  "remaining_limits": "Independent prelaunch review remains required; read-only Aave observations do not create signed consumer transactions or establish provider/code authentication/strategy/profit/full G1.",
+  "scope_wording_addendum": "Post-review scope correction only; final test module docstring changed while all test/executable AST remains identical. No behavior/test rerun or launch. Previousc3 readiness and source/summary bytes preserved superseded-scope-003."
+}

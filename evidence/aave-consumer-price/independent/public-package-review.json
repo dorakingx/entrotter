@@ -1,0 +1,459 @@
+{
+  "actual_fixed_binary_CA_match_locked_environment": true,
+  "addenda_scope": "Authorc81 outcome and bounds clarification exact copies;64KiB accepted decoded code/output differs from unchanged RPC4MiB+1read/4MiBoversize rejection. Original54copy rows preserved.",
+  "copy_bindings": [
+    {
+      "byte_identical": true,
+      "file": "native-006/baseline-branch.json",
+      "original_sha256": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+      "public_sha256": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/candidate-branch.json",
+      "original_sha256": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0",
+      "public_sha256": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/captured-source.json",
+      "original_sha256": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+      "public_sha256": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/consumer-observations.json",
+      "original_sha256": "b9e979c9f363559c5ab79131b602b7b7538da84f2c19928c089219b00dcc831d",
+      "public_sha256": "b9e979c9f363559c5ab79131b602b7b7538da84f2c19928c089219b00dcc831d"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/host-cache-cleanup.json",
+      "original_sha256": "50651e6ef8a37d6c00bc10631b1431506920387ae8db0594ba32e6a5ac33b23a",
+      "public_sha256": "50651e6ef8a37d6c00bc10631b1431506920387ae8db0594ba32e6a5ac33b23a"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/host-owned-cleanup.json",
+      "original_sha256": "e470ce072e43d7531ed555701cd3366866137d908817dfd544eaf2e5c6cdc365",
+      "public_sha256": "e470ce072e43d7531ed555701cd3366866137d908817dfd544eaf2e5c6cdc365"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/host-result.json",
+      "original_sha256": "471b870b5b738287d87a3f8bf850a280ff3e4a7fe0c7aa036a58a297190b6dd5",
+      "public_sha256": "471b870b5b738287d87a3f8bf850a280ff3e4a7fe0c7aa036a58a297190b6dd5"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/observations.json",
+      "original_sha256": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+      "public_sha256": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/owned-cache.json",
+      "original_sha256": "6eee953bbb5875c6128bb6d46fef0f51bf21c6faa1cbf9583a5baa7d795a3377",
+      "public_sha256": "6eee953bbb5875c6128bb6d46fef0f51bf21c6faa1cbf9583a5baa7d795a3377"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/owned-nodes.json",
+      "original_sha256": "e60b616d12b7ad16e48e788c59735596cba4a7963db8abae883620f6114010b5",
+      "public_sha256": "e60b616d12b7ad16e48e788c59735596cba4a7963db8abae883620f6114010b5"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/protocol-response.json",
+      "original_sha256": "dbfec7da07a0e0b533207faf4ca150d540d5ed4f41af0fe69fb853ce7979d6df",
+      "public_sha256": "dbfec7da07a0e0b533207faf4ca150d540d5ed4f41af0fe69fb853ce7979d6df"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/report.json",
+      "original_sha256": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79",
+      "public_sha256": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/result.json",
+      "original_sha256": "f04eff69975018b165fc7464d3204697ac3ff7183f8c5d0238578ecdcafa0df4",
+      "public_sha256": "f04eff69975018b165fc7464d3204697ac3ff7183f8c5d0238578ecdcafa0df4"
+    },
+    {
+      "byte_identical": false,
+      "file": "native-006/readiness.json",
+      "original_sha256": "063e00eec63f879198b971b60e18fc48dc10e9f3d0bdafc9af388bdfc75f610c",
+      "public_sha256": "96df90357db3b69c2e6e50351a661f7ab3f3b7528347ceeb3e49546a5f53211b"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/plan.json",
+      "original_sha256": "2e5e8dee72e27c327ffd77e259962e7d96f1ea972a2f98118b508cda64c3bc94",
+      "public_sha256": "2e5e8dee72e27c327ffd77e259962e7d96f1ea972a2f98118b508cda64c3bc94"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/worker-request.json",
+      "original_sha256": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522",
+      "public_sha256": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522"
+    },
+    {
+      "byte_identical": true,
+      "file": "native-006/signed-prefix.json",
+      "original_sha256": "b8b77af431561395d802109c3bd71a7eeb07e1088b4d5a7b12c39a8cea0a182f",
+      "public_sha256": "b8b77af431561395d802109c3bd71a7eeb07e1088b4d5a7b12c39a8cea0a182f"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/consumer_observer.py",
+      "original_sha256": "b2279b48b2c51522675bbb991532ec9505089ddf614134d9aa5ff5ddf3bb2fea",
+      "public_sha256": "b2279b48b2c51522675bbb991532ec9505089ddf614134d9aa5ff5ddf3bb2fea"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/native_runner.py",
+      "original_sha256": "8846ff9a465e83c6c42e7684992cb0fa4e86764603077a25d90e3e4a9d87e2b4",
+      "public_sha256": "8846ff9a465e83c6c42e7684992cb0fa4e86764603077a25d90e3e4a9d87e2b4"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/evidence.py",
+      "original_sha256": "73ef890f76f5f001af36b6bfeee2962e6d0a3f2b039634935c1a3797990c137b",
+      "public_sha256": "73ef890f76f5f001af36b6bfeee2962e6d0a3f2b039634935c1a3797990c137b"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/cache_evidence.py",
+      "original_sha256": "085ccc9df5847bc985fd5e98c3485f0acdbb993afc43a62fdc123c63bb16257e",
+      "public_sha256": "085ccc9df5847bc985fd5e98c3485f0acdbb993afc43a62fdc123c63bb16257e"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/test_consumer_observer.py",
+      "original_sha256": "b1fb942bc5b2bee3b52608e580c368f249d8f10cd6cda0714e986f65f75ba0cf",
+      "public_sha256": "b1fb942bc5b2bee3b52608e580c368f249d8f10cd6cda0714e986f65f75ba0cf"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/test_stop_controls.py",
+      "original_sha256": "7193473a54d07bf175bb6f6fd26d2745d3ce33cab7afeb455cfa6bbfd340a6b6",
+      "public_sha256": "7193473a54d07bf175bb6f6fd26d2745d3ce33cab7afeb455cfa6bbfd340a6b6"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/test_evidence.py",
+      "original_sha256": "34d7a2104abe3f6442a2e0810dc7a01475e5d5950c3d3b24e9f36eb1f3ebadd8",
+      "public_sha256": "34d7a2104abe3f6442a2e0810dc7a01475e5d5950c3d3b24e9f36eb1f3ebadd8"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/test_cache_evidence.py",
+      "original_sha256": "7e2ad71edc88f02a92c984d682173654ac8da8cd71d7f9956238569f08cbe2ea",
+      "public_sha256": "7e2ad71edc88f02a92c984d682173654ac8da8cd71d7f9956238569f08cbe2ea"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/signed-prefix.json",
+      "original_sha256": "b8b77af431561395d802109c3bd71a7eeb07e1088b4d5a7b12c39a8cea0a182f",
+      "public_sha256": "b8b77af431561395d802109c3bd71a7eeb07e1088b4d5a7b12c39a8cea0a182f"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/worker-request.json",
+      "original_sha256": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522",
+      "public_sha256": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/review-fix-summary.json",
+      "original_sha256": "2f95a026b907801f838cffecba3b105c84d12d309ca4fb5e0988b650496d8184",
+      "public_sha256": "2f95a026b907801f838cffecba3b105c84d12d309ca4fb5e0988b650496d8184"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/scope-correction.json",
+      "original_sha256": "dd9a5c9b16a19c8c2a5075832409abe56fc4a99d1d63e83a733f9c008c91137e",
+      "public_sha256": "dd9a5c9b16a19c8c2a5075832409abe56fc4a99d1d63e83a733f9c008c91137e"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/scope-correction-setup-failure.json",
+      "original_sha256": "8ed15872fb74cb67fc6ac20e16baef029c12638916a57c88dc0934eb5d52c487",
+      "public_sha256": "8ed15872fb74cb67fc6ac20e16baef029c12638916a57c88dc0934eb5d52c487"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/setup-failure.json",
+      "original_sha256": "69ed5210bb8ac03e6489d124027c8af374a9bddb6b8b3ab5d41280803b12fb06",
+      "public_sha256": "69ed5210bb8ac03e6489d124027c8af374a9bddb6b8b3ab5d41280803b12fb06"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/historical-addendum-setup-failure.json",
+      "original_sha256": "0298f6466ca20dc7a4bafa3a79176074ffb9b2dc0ae6b00b98831ba8ee7cbf65",
+      "public_sha256": "0298f6466ca20dc7a4bafa3a79176074ffb9b2dc0ae6b00b98831ba8ee7cbf65"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/historical-reference-addendum.json",
+      "original_sha256": "32950b5115e76ce843f5d33dcbe29debabe3d39109054fa4eec5fd8f3245fb39",
+      "public_sha256": "32950b5115e76ce843f5d33dcbe29debabe3d39109054fa4eec5fd8f3245fb39"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/selector-derivation.json",
+      "original_sha256": "2b49dd08d9ee56cfaa611e7b0e63d0b4151027796bb9549aeebb601ca40d214d",
+      "public_sha256": "2b49dd08d9ee56cfaa611e7b0e63d0b4151027796bb9549aeebb601ca40d214d"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/offline-tests.log",
+      "original_sha256": "446dde66e0704ef7e6184fe6e724cdb1dda91816c5f7170cb884f041c39a3e35",
+      "public_sha256": "446dde66e0704ef7e6184fe6e724cdb1dda91816c5f7170cb884f041c39a3e35"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/offline-integration-followup.log",
+      "original_sha256": "ddad92b0b0791e397a1b6f88c04b3bd94794dbc0d9583a2fa2c074f5d010a56b",
+      "public_sha256": "ddad92b0b0791e397a1b6f88c04b3bd94794dbc0d9583a2fa2c074f5d010a56b"
+    },
+    {
+      "byte_identical": false,
+      "file": "preparation/stop-regressions-before.log",
+      "original_sha256": "aedcc41c1d24e3ed15c069dc492dd8ac45eac4862918e860d6a0b89b4c17ae0c",
+      "public_sha256": "6e26f23acdb635c715a44d6b60dd4b543bbf9c6e5bf1ca46ec407fcea5b6f032"
+    },
+    {
+      "byte_identical": false,
+      "file": "preparation/stop-regressions-after.log",
+      "original_sha256": "fce27c61b55691c2e350907c52b4501d3058851dcab771f86e503fe90b153627",
+      "public_sha256": "8ac1a14730795b2aee5d3a5871d802bbc598b3818a6b9651fd947101a0ff0727"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/stop-regressions-final.log",
+      "original_sha256": "0a191b12b99468e661b29627086bf74e4c04d0d7c4e16c288c0519290bedbd4a",
+      "public_sha256": "0a191b12b99468e661b29627086bf74e4c04d0d7c4e16c288c0519290bedbd4a"
+    },
+    {
+      "byte_identical": false,
+      "file": "preparation/final-offline-tests.log",
+      "original_sha256": "ae24497abf79c7cf6ed0d92998943f6d4351b2c276357f0bf4559cea58b75fda",
+      "public_sha256": "b422de1f6b1bdec5c06aba0f25b248c84e8053e826ab17aa9df30b5acc64443e"
+    },
+    {
+      "byte_identical": true,
+      "file": "preparation/stop-controls-final8.log",
+      "original_sha256": "a8f3d39bd69e0b15112ec13ddac07fec610ff07f1fabd4f76bd8deafd43cf1d5",
+      "public_sha256": "a8f3d39bd69e0b15112ec13ddac07fec610ff07f1fabd4f76bd8deafd43cf1d5"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/prelaunch-review.json",
+      "original_sha256": "d068938c14d7ffb4e2f1ca074e717d617b707797a66305ea3939f3e227d5ab92",
+      "public_sha256": "d068938c14d7ffb4e2f1ca074e717d617b707797a66305ea3939f3e227d5ab92"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/native-006-execution-review.json",
+      "original_sha256": "11e22513f11c744836a4d1551027878bbfc371a52ff94696a2f70d2b1dbbd61e",
+      "public_sha256": "11e22513f11c744836a4d1551027878bbfc371a52ff94696a2f70d2b1dbbd61e"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/terminal-record.json",
+      "original_sha256": "2b53751123e43e4d303f35e56ab7755c62722afb4b12dcc89f9cb3343a3c2da7",
+      "public_sha256": "2b53751123e43e4d303f35e56ab7755c62722afb4b12dcc89f9cb3343a3c2da7"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/native006-host-stdout-002.log",
+      "original_sha256": "37de52758b7f6023d9a777497c42e5cf96f494225c7653e39beb67b9fba404ce",
+      "public_sha256": "37de52758b7f6023d9a777497c42e5cf96f494225c7653e39beb67b9fba404ce"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/native006-host-stderr-002.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/host-import-setup-failure.json",
+      "original_sha256": "d2ac1df0c82d6fa6405e47ec2b3dc868b8e54af8fbbabbcc1f50d63186225fd8",
+      "public_sha256": "d2ac1df0c82d6fa6405e47ec2b3dc868b8e54af8fbbabbcc1f50d63186225fd8"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/native006-host-stdout.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_identical": false,
+      "file": "independent/native006-host-stderr.log",
+      "original_sha256": "53ab140667ada70af6906466868acd90cefc27d03a7c053e9d4d271ee4bd502b",
+      "public_sha256": "a94a86966a0d83ef2a8f13b00b5b51834baecb6434385c4f01fa2c6af6341a8a"
+    },
+    {
+      "byte_identical": true,
+      "file": "references/historical-reference-summary.json",
+      "original_sha256": "a6dfb82a58f95005527d8964c040d75bb2821d3c368a40054a4c065138ef5903",
+      "public_sha256": "a6dfb82a58f95005527d8964c040d75bb2821d3c368a40054a4c065138ef5903"
+    },
+    {
+      "byte_identical": true,
+      "file": "references/current-reference-manifest.json",
+      "original_sha256": "b9bc1c3295643c25f7d6de05045e2eea1896569c9def06a0d296d2f4c69748c7",
+      "public_sha256": "b9bc1c3295643c25f7d6de05045e2eea1896569c9def06a0d296d2f4c69748c7"
+    },
+    {
+      "byte_identical": true,
+      "file": "harness/run.py",
+      "original_sha256": "7a8811dbeb484f79e319418dda08474392c99965489b5913b68268b67d144e6e",
+      "public_sha256": "7a8811dbeb484f79e319418dda08474392c99965489b5913b68268b67d144e6e"
+    },
+    {
+      "byte_identical": false,
+      "file": "independent/public-layout-controls.log",
+      "original_sha256": "6fb60c3a693a95985b9b7b898e541ee4e14e9d953a87d9d19d06c7e9d6b3d09d",
+      "public_sha256": "c22732476f2f0e55f6fa1c108f4c7b644c22a5be6dd4f5d15b6dc73f01713c9c"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/public-layout-controls-002.log",
+      "original_sha256": "d9946491aa35e0a248d5e24cbc291fcf210fffde8fe566268594782734c2b9ee",
+      "public_sha256": "d9946491aa35e0a248d5e24cbc291fcf210fffde8fe566268594782734c2b9ee"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/author-outcome-independent-review.json",
+      "original_sha256": "c81d1a9a79e084f70d7721a462a22643a3b94cb8404ae90f430d4c92b3dc2c1b",
+      "public_sha256": "c81d1a9a79e084f70d7721a462a22643a3b94cb8404ae90f430d4c92b3dc2c1b"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/bounds-clarification.json",
+      "original_sha256": "49e586ff3d425f442fa898af36d3d058b937ba55549119ec1981257c72aa32e0",
+      "public_sha256": "49e586ff3d425f442fa898af36d3d058b937ba55549119ec1981257c72aa32e0"
+    },
+    {
+      "byte_identical": true,
+      "file": "independent/sdk-viewer-reader.json",
+      "original_sha256": "691d06d723bb78caf574c0ac46a52dec02e92556dbe96cb0790f052ee6549140",
+      "public_sha256": "691d06d723bb78caf574c0ac46a52dec02e92556dbe96cb0790f052ee6549140"
+    }
+  ],
+  "current100_prior284_bindings_unchanged": true,
+  "exact_disclosed_path_only_redactions": 6,
+  "files_reviewed_sha256": {
+    ".github/workflows/quality.yml": "07474f10c2f56800c3e2624da1604232bdb2518d9b18e0533666648118fcae1d",
+    "STATUS.md": "503654afcd877ad8d2a963d2e936e094a80dddb52835925df329d07739dd89e8",
+    "evidence/aave-consumer-price/README.md": "cf49b27b3fb812d0483d4b73b21999b9136cd1554f67b3d48be6f81b01a3dc60",
+    "evidence/aave-consumer-price/harness/cache_evidence.py": "085ccc9df5847bc985fd5e98c3485f0acdbb993afc43a62fdc123c63bb16257e",
+    "evidence/aave-consumer-price/harness/consumer_observer.py": "b2279b48b2c51522675bbb991532ec9505089ddf614134d9aa5ff5ddf3bb2fea",
+    "evidence/aave-consumer-price/harness/evidence.py": "73ef890f76f5f001af36b6bfeee2962e6d0a3f2b039634935c1a3797990c137b",
+    "evidence/aave-consumer-price/harness/native_runner.py": "8846ff9a465e83c6c42e7684992cb0fa4e86764603077a25d90e3e4a9d87e2b4",
+    "evidence/aave-consumer-price/harness/run.py": "7a8811dbeb484f79e319418dda08474392c99965489b5913b68268b67d144e6e",
+    "evidence/aave-consumer-price/harness/signed-prefix.json": "b8b77af431561395d802109c3bd71a7eeb07e1088b4d5a7b12c39a8cea0a182f",
+    "evidence/aave-consumer-price/harness/test_cache_evidence.py": "7e2ad71edc88f02a92c984d682173654ac8da8cd71d7f9956238569f08cbe2ea",
+    "evidence/aave-consumer-price/harness/test_consumer_observer.py": "b1fb942bc5b2bee3b52608e580c368f249d8f10cd6cda0714e986f65f75ba0cf",
+    "evidence/aave-consumer-price/harness/test_evidence.py": "34d7a2104abe3f6442a2e0810dc7a01475e5d5950c3d3b24e9f36eb1f3ebadd8",
+    "evidence/aave-consumer-price/harness/test_stop_controls.py": "7193473a54d07bf175bb6f6fd26d2745d3ce33cab7afeb455cfa6bbfd340a6b6",
+    "evidence/aave-consumer-price/harness/worker-request.json": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522",
+    "evidence/aave-consumer-price/independent/author-outcome-independent-review.json": "c81d1a9a79e084f70d7721a462a22643a3b94cb8404ae90f430d4c92b3dc2c1b",
+    "evidence/aave-consumer-price/independent/bounds-clarification.json": "49e586ff3d425f442fa898af36d3d058b937ba55549119ec1981257c72aa32e0",
+    "evidence/aave-consumer-price/independent/host-import-setup-failure.json": "d2ac1df0c82d6fa6405e47ec2b3dc868b8e54af8fbbabbcc1f50d63186225fd8",
+    "evidence/aave-consumer-price/independent/native-006-execution-review.json": "11e22513f11c744836a4d1551027878bbfc371a52ff94696a2f70d2b1dbbd61e",
+    "evidence/aave-consumer-price/independent/native006-host-stderr-002.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/aave-consumer-price/independent/native006-host-stderr.log": "a94a86966a0d83ef2a8f13b00b5b51834baecb6434385c4f01fa2c6af6341a8a",
+    "evidence/aave-consumer-price/independent/native006-host-stdout-002.log": "37de52758b7f6023d9a777497c42e5cf96f494225c7653e39beb67b9fba404ce",
+    "evidence/aave-consumer-price/independent/native006-host-stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/aave-consumer-price/independent/prelaunch-review.json": "d068938c14d7ffb4e2f1ca074e717d617b707797a66305ea3939f3e227d5ab92",
+    "evidence/aave-consumer-price/independent/public-layout-controls-002.log": "d9946491aa35e0a248d5e24cbc291fcf210fffde8fe566268594782734c2b9ee",
+    "evidence/aave-consumer-price/independent/public-layout-controls.log": "c22732476f2f0e55f6fa1c108f4c7b644c22a5be6dd4f5d15b6dc73f01713c9c",
+    "evidence/aave-consumer-price/independent/sdk-viewer-reader.json": "691d06d723bb78caf574c0ac46a52dec02e92556dbe96cb0790f052ee6549140",
+    "evidence/aave-consumer-price/independent/terminal-record.json": "2b53751123e43e4d303f35e56ab7755c62722afb4b12dcc89f9cb3343a3c2da7",
+    "evidence/aave-consumer-price/native-006/baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "evidence/aave-consumer-price/native-006/candidate-branch.json": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0",
+    "evidence/aave-consumer-price/native-006/captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "evidence/aave-consumer-price/native-006/consumer-observations.json": "b9e979c9f363559c5ab79131b602b7b7538da84f2c19928c089219b00dcc831d",
+    "evidence/aave-consumer-price/native-006/host-cache-cleanup.json": "50651e6ef8a37d6c00bc10631b1431506920387ae8db0594ba32e6a5ac33b23a",
+    "evidence/aave-consumer-price/native-006/host-owned-cleanup.json": "e470ce072e43d7531ed555701cd3366866137d908817dfd544eaf2e5c6cdc365",
+    "evidence/aave-consumer-price/native-006/host-result.json": "471b870b5b738287d87a3f8bf850a280ff3e4a7fe0c7aa036a58a297190b6dd5",
+    "evidence/aave-consumer-price/native-006/observations.json": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+    "evidence/aave-consumer-price/native-006/owned-cache.json": "6eee953bbb5875c6128bb6d46fef0f51bf21c6faa1cbf9583a5baa7d795a3377",
+    "evidence/aave-consumer-price/native-006/owned-nodes.json": "e60b616d12b7ad16e48e788c59735596cba4a7963db8abae883620f6114010b5",
+    "evidence/aave-consumer-price/native-006/plan.json": "2e5e8dee72e27c327ffd77e259962e7d96f1ea972a2f98118b508cda64c3bc94",
+    "evidence/aave-consumer-price/native-006/protocol-response.json": "dbfec7da07a0e0b533207faf4ca150d540d5ed4f41af0fe69fb853ce7979d6df",
+    "evidence/aave-consumer-price/native-006/readiness.json": "96df90357db3b69c2e6e50351a661f7ab3f3b7528347ceeb3e49546a5f53211b",
+    "evidence/aave-consumer-price/native-006/report.json": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79",
+    "evidence/aave-consumer-price/native-006/result.json": "f04eff69975018b165fc7464d3204697ac3ff7183f8c5d0238578ecdcafa0df4",
+    "evidence/aave-consumer-price/native-006/signed-prefix.json": "b8b77af431561395d802109c3bd71a7eeb07e1088b4d5a7b12c39a8cea0a182f",
+    "evidence/aave-consumer-price/native-006/worker-request.json": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522",
+    "evidence/aave-consumer-price/preparation/final-offline-tests.log": "b422de1f6b1bdec5c06aba0f25b248c84e8053e826ab17aa9df30b5acc64443e",
+    "evidence/aave-consumer-price/preparation/historical-addendum-setup-failure.json": "0298f6466ca20dc7a4bafa3a79176074ffb9b2dc0ae6b00b98831ba8ee7cbf65",
+    "evidence/aave-consumer-price/preparation/historical-reference-addendum.json": "32950b5115e76ce843f5d33dcbe29debabe3d39109054fa4eec5fd8f3245fb39",
+    "evidence/aave-consumer-price/preparation/offline-integration-followup.log": "ddad92b0b0791e397a1b6f88c04b3bd94794dbc0d9583a2fa2c074f5d010a56b",
+    "evidence/aave-consumer-price/preparation/offline-tests.log": "446dde66e0704ef7e6184fe6e724cdb1dda91816c5f7170cb884f041c39a3e35",
+    "evidence/aave-consumer-price/preparation/review-fix-summary.json": "2f95a026b907801f838cffecba3b105c84d12d309ca4fb5e0988b650496d8184",
+    "evidence/aave-consumer-price/preparation/scope-correction-setup-failure.json": "8ed15872fb74cb67fc6ac20e16baef029c12638916a57c88dc0934eb5d52c487",
+    "evidence/aave-consumer-price/preparation/scope-correction.json": "dd9a5c9b16a19c8c2a5075832409abe56fc4a99d1d63e83a733f9c008c91137e",
+    "evidence/aave-consumer-price/preparation/selector-derivation.json": "2b49dd08d9ee56cfaa611e7b0e63d0b4151027796bb9549aeebb601ca40d214d",
+    "evidence/aave-consumer-price/preparation/setup-failure.json": "69ed5210bb8ac03e6489d124027c8af374a9bddb6b8b3ab5d41280803b12fb06",
+    "evidence/aave-consumer-price/preparation/stop-controls-final8.log": "a8f3d39bd69e0b15112ec13ddac07fec610ff07f1fabd4f76bd8deafd43cf1d5",
+    "evidence/aave-consumer-price/preparation/stop-regressions-after.log": "8ac1a14730795b2aee5d3a5871d802bbc598b3818a6b9651fd947101a0ff0727",
+    "evidence/aave-consumer-price/preparation/stop-regressions-before.log": "6e26f23acdb635c715a44d6b60dd4b543bbf9c6e5bf1ca46ec407fcea5b6f032",
+    "evidence/aave-consumer-price/preparation/stop-regressions-final.log": "0a191b12b99468e661b29627086bf74e4c04d0d7c4e16c288c0519290bedbd4a",
+    "evidence/aave-consumer-price/provenance.json": "6bf55ee129a11d2e87caf424145c6139b092f997f4070e669ebd68b90ef136cf",
+    "evidence/aave-consumer-price/references/current-reference-manifest.json": "b9bc1c3295643c25f7d6de05045e2eea1896569c9def06a0d296d2f4c69748c7",
+    "evidence/aave-consumer-price/references/historical-reference-summary.json": "a6dfb82a58f95005527d8964c040d75bb2821d3c368a40054a4c065138ef5903",
+    "evidence/aave-consumer-price/summary.json": "8adcad0e10f9586775cc2735505a46fd0b25b2c8e84958cada29f6f62f743fe3"
+  },
+  "identical_copies": 51,
+  "package_file_count": 60,
+  "privacy": "All60 files scanned; no real personal home/handle/private keys/provider-secret URL. Official public Aave refs/docs and exact fake/template privacy test values only. All57 original/public byte mappings equal exact disclosed path substitutions.",
+  "provenance_copies": 57,
+  "public_layout_evidence": {
+    "final": "Actual retained33PASS0.188s and33source ASTmethods; no reviewer rerun.",
+    "initial": "Retained26-attempt missing run helper failure; run.py subsequently copied byte-identically."
+  },
+  "quality_workflow_scope": "Exactly4 additive lines: mkdir .quality and mandatory locked-environment33-test command. Removing block yields prior HEAD workflow byte-for-byte; lock/action/timeout/scanner/advisory/build/artifact gates unchanged.",
+  "relative_README_links_checked_existing": [
+    "native-006/consumer-observations.json",
+    "native-006/observations.json",
+    "native-006/report.json",
+    "../trace-parent-cache/native-005/report.json",
+    "independent/sdk-viewer-reader.json",
+    "native-006/plan.json",
+    "native-006/result.json",
+    "native-006/host-result.json",
+    "independent/native-006-execution-review.json",
+    "harness/consumer_observer.py",
+    "harness/native_runner.py",
+    "independent/prelaunch-review.json",
+    "native-006/readiness.json",
+    "preparation/review-fix-summary.json",
+    "independent/host-import-setup-failure.json",
+    "references/historical-reference-summary.json",
+    "references/current-reference-manifest.json",
+    "provenance.json"
+  ],
+  "research_helper_scan_scope": "All11 harness sources/tests/inputs exact prelaunch-reviewed copies; new research helpers are NOT part of25production Bandit/wheel/shipped-module coverage. Source manually reviewed, portable controls separately recorded. No third-party code/CA/license vendored.",
+  "reviewed_at_UTC": "2026-10-02T12:56:23.467448+00:00",
+  "reviewer_gaps": [
+    "Initial package56-row addendum raced an expected54-row guard; no record was written, final review binds60files.",
+    "System python3 certifi mismatched pinned CA; actual locked quality environment confirms both binary+CA. No product/replay defect inferred.",
+    "Generic home/URL privacy guard flagged exact synthetic /Users/example?secret=1 and fake loopback/user:PRIVATE template strings in prelaunch-reviewed privacy tests; explicitly allow only these exact test sentinels, not real paths/endpoints/credentials."
+  ],
+  "scope_limits": [
+    "Read-only Aave price dependence only: no signed consumer/action/liquidation/strategy/profit/fullG1 or provider/code authentication.",
+    "Native/defaultDocker/browser/Pages/human approval/publication/CI scopes separate; exact-head CI pending and agent review is not human main approval.",
+    "Standard trace-run exports original trace report; extra host-bound getter instrumentation remains private and copied readiness is provenance, not runnable public prerequisite.",
+    "No new test/native/archive/model/browser/HTTP calls or source/public mutations; retained evidence and exact source inspected only."
+  ],
+  "sdk_viewer_reader_scope": "New native006 report independently read by unchanged SDKee and actual viewerb1cf Node validator/classifier; getter records are outside this report and not validated by readers. No rendered browser/archive/model calls.",
+  "status": "PASS_NO_ACTIONABLE_FINDINGS_WITHIN_PACKAGE_SCOPE",
+  "verifier_sha256": "773d93f9de699d44eb015fc9458e68c804750b1613441b0af775d626dbe78bd4"
+}

@@ -303,3 +303,31 @@ and protected-main human approval remain separate. No local Docker/VM or new
 archive/model/holdout/media operation. Current public composition remains
 coordinator8029/engine935; unpublished integration awaits all component gates.
 Overall goal active, with earlier raw-evidence loss disclosure retained.
+
+## October 2 — Historical Aave read-only consumer price dependence
+
+On unchanged engine198 production sources, native006 repeats original32 signed
+inputs/block18999892/skip12 within the same150s trace cap. The baseline completes
+with all32 full projected receipts equal to originals/prior successful baseline;
+candidate executes31 and omits12. Later19 receipts change only index/cumulative
+gas by the exact omission. New bounded owned-node reads show Aave's WETH source
+equals the historical updated proxy, currency/unit and returned-code identities
+stay fixed, and its price matches producer answers in all4 phases:257082415000
+initially,256292441874 after baseline,257082415000 after omission. This shows
+read-only consumer dependence despite unchanged remaining gas/status/logs, not
+a signed consumer action, strategy benefit, profit or broader G1 completion.
+
+Report132.703057s/native132.738311s/host132.865456s; one actual trial, no primary/
+getter/snapshot/cleanup errors. Exact2Anvil+1cache closures and fresh root owned
+PID/group/port probes pass. Aggregate cache7errors have unknown causes. Prior
+001–005 immutable records are preserved; no speed/timeout-causality claim.
+
+Root prelaunch review verifies100 fixed bindings/284prior records/25Git198
+production files and corrected private stop delivery, finite deadlines and
+unique4phase/24read bounds. Historical failures and the host-import setup gap
+remain disclosed. Public portable33control sources and one mandatory quality
+step make decoder/failure/cancellation controls reproducible offline; those
+controlled tests are distinct from the actual native closure evidence. See
+[raw evidence, source and reproduction scope](evidence/aave-consumer-price/README.md).
+Public-layout verification, fresh exact-headCI and human main approval remain
+separate gates. No candidate Pages, new model/video or submission claim.

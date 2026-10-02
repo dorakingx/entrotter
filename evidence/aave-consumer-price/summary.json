@@ -1,0 +1,32 @@
+{
+  "status": "actual_native_read_only_consumer_price_observation_pass_public_layout_controls_pass_CI_pending",
+  "production_source": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
+  "readiness_SHA256": "063e00eec63f879198b971b60e18fc48dc10e9f3d0bdafc9af388bdfc75f610c",
+  "root_outcome_review_SHA256": "11e22513f11c744836a4d1551027878bbfc371a52ff94696a2f70d2b1dbbd61e",
+  "report_SHA256": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79",
+  "root_public_layout_command": "PYTHONPATH=src:evidence/aave-consumer-price/harness quality-venv-python -m unittest discover -s evidence/aave-consumer-price/harness -p test_*.py -v",
+  "public_layout_tests": 33,
+  "public_layout_first_failure": "missing copied run helper before test_cache_evidence import; retained26-attempt failure, not native execution",
+  "public_layout_corrected_result": "33pass in 0.188s",
+  "new_CI_step": "existing required quality job invokes exact public-layout33 controls, locked certifi import/noarchive; required CI pending publication",
+  "limits": [
+    "Research-only owned view evidence, not signed consumer action/strategy/profit/fullG1",
+    "Standard CLI produces original trace report, not additional observations",
+    "Native CPU/RSS/PID Docker quotas not established here",
+    "Current mandatory CI/software/publication review and independent human main approval remain separate"
+  ],
+  "author_outcome_review_SHA256": "c81d1a9a79e084f70d7721a462a22643a3b94cb8404ae90f430d4c92b3dc2c1b",
+  "accepted_code_not_transport_cap": {
+    "scope": "Metadata boundary clarification; frozen readiness and actual sources/input/result remain unchanged",
+    "frozen_readiness_field": "consumer_code_response_bytes=65536",
+    "meaning": "Maximum accepted decoded code payload, not maximum transport read",
+    "consumer_accepted_code_bytes": 65536,
+    "consumer_evidence_output_bytes": 65536,
+    "unchanged_RPC_transport_read_bytes": 4194305,
+    "RPC_transport_oversize_reject_bytes": 4194304,
+    "production_RPC_sha256": "3e3f9c593d3a26a483c4f8f1e220bd32f959b4e87def846868b7491e70312a52",
+    "no_new_execution_or_rerun": true
+  },
+  "sdk_viewer_offline_reader_SHA256": "691d06d723bb78caf574c0ac46a52dec02e92556dbe96cb0790f052ee6549140",
+  "sdk_viewer_scope": "Exact new native006 report SDKee typed receipts and viewerb1cf Node validator/classifier:12identical/1omitted/19structural/0execution/0unavailable. No browser/chain/model call; separateAave getters not validated by standardreader."
+}

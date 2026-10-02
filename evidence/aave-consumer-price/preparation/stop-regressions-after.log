@@ -1,0 +1,41 @@
+test_actual_after_observer_hard_alarm_stops_replay_and_runs_owned_exit (test_stop_controls.StopControls.test_actual_after_observer_hard_alarm_stops_replay_and_runs_owned_exit) ... FAIL
+test_actual_before_observer_signal_stops_real_rpc_and_rescues_owned_session (test_stop_controls.StopControls.test_actual_before_observer_signal_stops_real_rpc_and_rescues_owned_session) ... FAIL
+test_duplicate_invalid_and_fifth_phase_do_not_issue_reads (test_stop_controls.StopControls.test_duplicate_invalid_and_fifth_phase_do_not_issue_reads) ... ok
+test_nonfinite_bool_and_invalid_deadlines_refuse_before_reads (test_stop_controls.StopControls.test_nonfinite_bool_and_invalid_deadlines_refuse_before_reads) ... ok
+test_observer_and_snapshot_propagate_nonexception_stop (test_stop_controls.StopControls.test_observer_and_snapshot_propagate_nonexception_stop) ... ok
+test_plain_rpc_timeout_is_normalized_and_recorded_finitely (test_stop_controls.StopControls.test_plain_rpc_timeout_is_normalized_and_recorded_finitely) ... ok
+
+======================================================================
+FAIL: test_actual_after_observer_hard_alarm_stops_replay_and_runs_owned_exit (test_stop_controls.StopControls.test_actual_after_observer_hard_alarm_stops_replay_and_runs_owned_exit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/.quality/archived-oracle/native-006/test_stop_controls.py", line 130, in test_actual_after_observer_hard_alarm_stops_replay_and_runs_owned_exit
+    self.entrypoint('after',signal.SIGALRM)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/repository/.quality/archived-oracle/native-006/test_stop_controls.py", line 118, in entrypoint
+    self.assertEqual(result['primary_error'],'timeout');self.assertEqual(result['primary_stage'],'baseline_replay')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'other' != 'timeout'
+- other
++ timeout
+
+
+======================================================================
+FAIL: test_actual_before_observer_signal_stops_real_rpc_and_rescues_owned_session (test_stop_controls.StopControls.test_actual_before_observer_signal_stops_real_rpc_and_rescues_owned_session)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/.quality/archived-oracle/native-006/test_stop_controls.py", line 127, in test_actual_before_observer_signal_stops_real_rpc_and_rescues_owned_session
+    self.entrypoint('before',signal.SIGTERM)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/repository/.quality/archived-oracle/native-006/test_stop_controls.py", line 118, in entrypoint
+    self.assertEqual(result['primary_error'],'timeout');self.assertEqual(result['primary_stage'],'baseline_replay')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'other' != 'timeout'
+- other
++ timeout
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.036s
+
+FAILED (failures=2)

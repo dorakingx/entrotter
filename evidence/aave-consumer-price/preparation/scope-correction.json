@@ -1,0 +1,12 @@
+{
+  "status": "scope_only_no_behavior_change_or_test_rerun",
+  "previous_readiness_sha256": "c3a51e878df2f30c45a87a2f8448579ff57b53e137aba47be6c4f4ff4051399f",
+  "previous_file_sha256": {
+    "readiness.json": "c3a51e878df2f30c45a87a2f8448579ff57b53e137aba47be6c4f4ff4051399f",
+    "review-fix-summary.json": "efa5455565ee2f6cc7b35623bee8ce4e5220862e873677ceaa8a5b9bfba38707",
+    "test_stop_controls.py": "33fe44fdfe5c48eaa30926c86003d1e052d0deaf7993b6890e7f5c3b19dae91e",
+    "freeze-final.py": "7ed9ea2f338c6541daf13c49ecdc25cb77faaea7c6ce43de0cf504c5bb4371a7"
+  },
+  "executable_test_AST_identical_ignoring_module_docstring": true,
+  "scope": "Affected8controls PASS0.050s after one test-only injection selector correction. Runtime unchanged after33-test run. No services/processes/native nodes/HTTP/archive started. Cache-startup cleanup fixture performs actual read-only os.killpg(fake PID2147483647,0) and loopback socket.connect_ex(127.0.0.1,1) probes; these are local OS/port observations with fake-owner metadata, not actual native hardware ownership/closure proof."
+}

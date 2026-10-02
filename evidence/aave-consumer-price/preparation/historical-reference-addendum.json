@@ -1,0 +1,27 @@
+{
+  "scope": "Reference-only addendum after initial prepared74-binding freeze. No runtime/tests/input/production changes or reruns. No additional network calls by author. Root independently fetched historical address-book; no commit/author/email API raw copied.",
+  "initial_readiness_sha256": "27aa7b462595b9d454edc79e3d761cf956e1b81b3098a6f25cc7f096f5a52bf8",
+  "historical_reference": {
+    "status": "primary_historical_reference_not_state_authentication",
+    "commit": "575eac6d595d5d15ba5e6ca9192a2f2a5c719022",
+    "commit_date": "2024-01-04T10:26:01Z",
+    "source_SHA256": "01dd6396dbd409259f59d9c400b7139086ba2362ada44778ea8a625ca30ce421",
+    "source_url": "https://github.com/aave-dao/aave-address-book/blob/575eac6d595d5d15ba5e6ca9192a2f2a5c719022/src/AaveV3Ethereum.sol",
+    "selected_lines": [
+      {
+        "line": 21,
+        "text": "IAaveOracle internal constant ORACLE = IAaveOracle(0x54586bE62E3c3580375aE3723C145253060Ca0C2);"
+      },
+      {
+        "line": 118,
+        "text": "address internal constant WETH_UNDERLYING = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;"
+      },
+      {
+        "line": 132,
+        "text": "address internal constant WETH_ORACLE = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;"
+      }
+    ]
+  },
+  "historical_source_spdx": "MIT (original source SPDX retained)",
+  "limits": "Historical address book names the expected originalPROXY forWETH; this is not deployed-code/provider state authentication. Current f648 reference uses a different adapter. Actual owned4phase source/code/baseunits/price checks remain required."
+}
