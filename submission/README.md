@@ -90,8 +90,8 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [baf58f4](https://github.com/entrotter/entrotter/tree/baf58f4771f294a4eccb657495ed61dccce5a1e5) | [#55](https://github.com/entrotter/entrotter/pull/55) |
-| Bounded agent engine, contract identity and signed transaction-prefix replay | [198139f](https://github.com/entrotter/engine/tree/198139ff0b3bf37781b4232b27d8eeb0a5da5365) | [#34](https://github.com/entrotter/engine/pull/34) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [2f6a56e](https://github.com/entrotter/entrotter/tree/2f6a56e533935c93f4688c13feeeaa0e771c427a) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Bounded agent engine, contract identity and signed transaction-prefix replay | [bd5527f](https://github.com/entrotter/engine/tree/bd5527f71d3c561335e7786b6f4421572cd9aad6) | [#34](https://github.com/entrotter/engine/pull/34) |
 | Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
@@ -184,3 +184,15 @@ See the [October 1 authenticated draft readback](../evidence/submission-preparat
 and [original preparation evidence](../evidence/submission-preparation/summary.json).
 
 The material is not a claim of a win, market validation or complete goal acceptance.
+
+
+The latest [Aave price observation composition](../evidence/consumer-price-integration/README.md)
+selects enginebd5527f and retains all other pins and recordings. Its actual
+native006 original32/skip12 replay verifies full projected baseline receipts and
+4 owned consumer view phases: baseline257082415000→256292441874, candidate
+keeps257082415000. All8 component checks/complete raw artifacts and all5 local
+SDK/Node22 reader steps pass. Combined current-head CI, protected-main approval
+and live candidate Pages remain separate gates. These read-only observations
+are distinct from signed consumer transactions, strategy/profit, full-block/root
+or provider authenticity. Standard trace-run has no extra-view option at this
+selected head; supported CLI work is separate. No new submission is claimed.

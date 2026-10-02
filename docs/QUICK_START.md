@@ -34,7 +34,7 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination baf58f4, engine198139f, schemas8785bb0 and CLI22b514c; SDK and
+coordination 2f6a56e, enginebd5527f, schemas8785bb0 and CLI22b514c; SDK and
 signed-prefix reader/viewer pins are ee5523d/b1cfb00. Older timings do not measure
 this new signed-prefix inspection composition.
 
@@ -71,7 +71,7 @@ The earlier404e8db/198 composition passed all5 combined checks and its independe
 full artifact review; its clean fixture6.779s/model7.012s measurements retain that
 source selection and running Docker/cgroup-v2/warm-cache scope.
 
-The current [receipt comparison composition](../evidence/trace-comparison-integration/README.md)
+The prior [receipt comparison composition](../evidence/trace-comparison-integration/README.md)
 selects viewerb1cfb00/PR16. All4 component checks and independent complete Linux
 artifact review pass. The display groups original receipt differences while
 retaining every field, and identifies the loaded input count/omissions. All4 local
@@ -80,6 +80,26 @@ workflow reader steps pass, including the unchanged native00532-report inspectio
 changed execution receipt fields. This is offline recorded evidence inspection,
 not a fresh chain run or contract-state/consumer/profit conclusion. New combined
 CI, protected-main human approval and live candidate Pages remain separate.
+
+
+The previous bb9cada/engine198/viewerb1cf composition passed all5 combined checks
+and full artifact review. Its fixture6.276s/model5.564s measurements retain the
+running Docker/cgroup-v2 and potentially warm-cache scope above.
+
+The current [Aave price observation composition](../evidence/consumer-price-integration/README.md)
+selects enginebd5527f. All8 component checks and independent complete artifact
+review pass;25 production source files remain byte-identical to198139f. The
+recorded native006 case verifies original32 receipts and Aave/WETH read-only
+price dependence from matching initial owned state. The baseline price changes
+257082415000→256292441874 while omission keeps257082415000, in100000000 base units.
+A fifth mandatory SDK/Node22 integration case checks every receipt, raw ABI word,
+phase/head binding and returned code identity. All5 local reader steps and21-source
+type checks with3 explicit frozen diagnostics pass. No fresh archive/model/browser
+execution occurs in those reader steps. Standard trace-run does not collect extra
+consumer views at this selected head; its public research package has the fixed
+observation harness. New combined CI, protected-main human approval and current
+candidate Pages remain separate. Read-only price dependence proves no signed
+consumer action, strategy, profit, full-block/root or provider authenticity.
 
 ## 1. Fetch a compatible snapshot
 
@@ -93,7 +113,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git baf58f4771f294a4eccb657495ed61dccce5a1e5
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git 2f6a56e533935c93f4688c13feeeaa0e771c427a
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json

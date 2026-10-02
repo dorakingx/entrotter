@@ -88,5 +88,6 @@
     "Standard public trace-run has no consumer observation option at this selected head; supported CLI implementation remains separate local work."
   ],
   "independent_preparation_review_sha256": "4a3a397c45b6b5ed7520a473d9df58633aba42aeb762f1e90a5eb4e5af2cc892",
-  "preparation_review_scope": "Seventeen frozen input files; sole P3 historical/current CI scope finding corrected and rebound. Exact review copy and summary reference added afterward; no runtime/selector/reader changes."
+  "preparation_review_scope": "Seventeen frozen input files; sole P3 historical/current CI scope finding corrected and rebound. Exact review copy and summary reference added afterward; no runtime/selector/reader changes.",
+  "execution_snapshot": "2f6a56e533935c93f4688c13feeeaa0e771c427a"
 }
