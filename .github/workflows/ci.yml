@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: bd5527f71d3c561335e7786b6f4421572cd9aad6
+          ref: 40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -508,6 +508,97 @@ jobs:
                          'Synthetic native source is not archived oracle or host default-worker proof.',
                          'Viewer codec inspection is separate from rendered browser verification.',
                          'Checksums/internal consistency do not authenticate provider state or oracle truth.'],
+          }, indent=2) + '\n')
+          PY
+      - name: Inspect the supported observation wrapper with engine, SDK and viewer
+        run: |
+          python - <<'PY'
+          from dataclasses import replace
+          import hashlib, json, os, subprocess
+          from pathlib import Path
+          from entrotter_engine.consumer_observations import load_observed_trace
+          from entrotter_engine.trace import write_trace
+          from entrotter_sdk import load_trace
+          source = Path('engine/evidence/owned-consumer-observations/historical-32/observed-trace.json')
+          digest = '7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          observed = load_observed_trace(source)
+          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-observed-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          os.environ['ENTROTTER_EXPORT_STATE_DIR'] = str(Path(os.environ.get('RUNNER_TEMP', '.quality')) / 'observed-reader-export-state')
+          exported = out.with_name('observed-transaction-replay.json')
+          write_trace(observed['trace_report'], exported)
+          export_digest = hashlib.sha256(exported.read_bytes()).hexdigest()
+          assert export_digest == '245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f'
+          report = load_trace(exported)
+          assert report.artifact_id == observed['trace_artifact_id']
+          assert report.baseline_verified and len(report.transactions) == 32
+          assert report.report['source']['block_transaction_count'] == 181
+          assert report.report['plan']['through_index'] == 31 and report.report['plan']['skip_indices'] == [12]
+          for i, row in enumerate(report.transactions):
+              assert row.baseline.status == 'executed' and row.baseline.receipt == row.original_receipt
+              if i == 12:
+                  assert row.candidate.status == 'skipped' and row.candidate.receipt is None
+              else:
+                  expected = row.original_receipt if i < 12 else replace(
+                      row.original_receipt,
+                      transaction_index=row.original_receipt.transaction_index - 1,
+                      cumulative_gas_used=row.original_receipt.cumulative_gas_used - 336752,
+                  )
+                  assert row.candidate.status == 'executed' and row.candidate.receipt == expected
+                  assert row.candidate.differing_fields == (() if i < 12 else ('cumulativeGasUsed', 'transactionIndex'))
+          prices = []
+          for row, expected in zip(observed['observations'], [257082415000, 256292441874, 257082415000, 257082415000]):
+              price = int(row['raw']['price'], 16)
+              answer = int(row['raw']['latest_round_data'][66:130], 16)
+              assert not row['errors'] and price == answer == expected
+              assert int(row['raw']['base_currency'], 16) == 0 and int(row['raw']['base_unit'], 16) == 100000000
+              prices.append({'branch': row['branch'], 'phase': row['phase'], 'consumer_price': price,
+                             'producer_answer': answer, 'head': row['head'], 'code_identities': row['code']})
+          assert observed['classification'] == {
+              'complete_price_views': True, 'baseline_receipts_verified': True, 'unproven_reasons': [],
+              'baseline_price': 256292441874, 'candidate_price': 257082415000, 'price_difference': 789973126,
+          }
+          module = Path('entrotter.github.io/trace-report.mjs')
+          comparison = Path('entrotter.github.io/trace-comparison.mjs')
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const {traceComparison} = await import(process.argv[2]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
+          assert.equal(view.baseline.matches, true);
+          assert.equal(view.candidate.rows.length, 32);
+          const counts = {identical: 0, omitted: 0, structural: 0, execution: 0, unavailable: 0};
+          const classifications = view.candidate.rows.map((row, i) => {
+            const group = traceComparison(row);
+            assert.equal(group.kind, i < 12 ? 'identical' : i === 12 ? 'omitted' : 'structural');
+            assert.deepEqual(group.structuralFields, i > 12 ? ['cumulativeGasUsed', 'transactionIndex'] : []);
+            assert.deepEqual(group.executionFields, []);
+            counts[group.kind] += 1;
+            return {index: row.index, status: row.status, ...group};
+          });
+          assert.deepEqual(counts, {identical: 12, omitted: 1, structural: 19, execution: 0, unavailable: 0});
+          console.log(JSON.stringify({artifact_id: view.report.artifact_id, counts, classifications, node: process.version}));
+          """
+          completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                      module.resolve().as_uri(), comparison.resolve().as_uri(), str(exported)],
+                                     check=True, capture_output=True, text=True, timeout=30)
+          viewer = json.loads(completed.stdout)
+          assert viewer['artifact_id'] == report.artifact_id
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline supported sealed wrapper to normal quota-bound report export, SDK and actual Node viewer; no fresh archive/EVM/model/browser call',
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'wrapper_sha256': digest, 'wrapper_artifact_id': observed['artifact_id'],
+              'trace_artifact_id': report.artifact_id, 'export_sha256': export_digest,
+              'baseline_receipts_equal_originals': 32, 'candidate_executed': 31, 'skip_indices': [12],
+              'consumer_classification': observed['classification'], 'prices': prices,
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
+              'comparison_module_sha256': hashlib.sha256(comparison.read_bytes()).hexdigest(), 'viewer': viewer,
+              'limits': ['Strict wrapper validation and offline parsing do not authenticate provider/deployed state.',
+                         'Read-only price views are not signed consumer strategy or profit;32-of181 is not full-block/root/opcode proof.',
+                         'Existing SDK/viewer inspect the exported nested trace; they do not validate or display the extra wrapper price views.',
+                         'Node codec checks are separate from rendered browser/Pages verification and real Docker execution.'],
           }, indent=2) + '\n')
           PY
       - name: Build source-bound local image

@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-10-02",
+  "updated_at": "2026-10-03",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "historical_live_viewer_verified_latest_candidate_unmerged",
@@ -39,7 +39,8 @@
         "Historical safe-RPC preparation: engine65c/PR33 passes all8 component checks and fresh independent artifacts; then-current65c selection has21-source type and3 complete reader checks. Actualnative003 same32/skip12/150s baseline exactly equals002, but candidateevm_mine transport timeout is observed; underlying cause and omission outcome unknown. That preparation preceded ccc/65c combined CI, whose all5 checks subsequently pass; protected-main approval remains pending; no archive/state authenticity or full-block pass.",
         "Historical Engine198/PR34 preparation: all8 component checks and independent raw artifact review pass; original32/skip12/shared150s native005 completes with exact32 baseline receipts and producer-only answer change. Four prior failures retained. No dependent consumer/profit/full-block/root/provider-authenticity/timeout-cause evidence. That four-engine-selector preparation passed types/3readers and preceded404e8db/198 combined CI, whose all5 checks subsequently pass with independent artifact review; human protected-main approval remains pending. Current viewer promotion is recorded separately.",
         "Viewerb1cf/PR16 all4 component checks and independent56-blob/full Linux artifact review pass. Historical2-selector promotion adds mandatory original32 SDK/Node classifier inspection; all4 local readers pass, all32 baseline receipts exact/1 omission/19 index-1+cumulativegas-336752/0 execution fields changed. Prior404/198 all5 CI retains its scope; subsequent bb9cada/b1cf composition all5 first-attempt checks and full artifact review passed. Current bd combined CI, protected-main human approval and Pages remain separate. Recorded native producer evidence is not consumer/profit/full-block/provider authenticity proof.",
-        "Enginebd/PR34 all8 first attempt/full artifact review and actual native006 original32/skip12/150s paired receipts plus owned Aave/WETH price dependence pass. Coordinator changes4 engine selectors, adds5th mandatory offline SDK/Node22/raw ABI/head reader; all5 local cases/type21sources3 retained frozen diagnostics pass, prior4 complete results unchanged exceptpin. Read-only views do not establish signed consumer/strategy/profit/provider authenticity/full-block/default Docker32. New combined CI/independent human main approval/Pages remain separate. See evidence/consumer-price-integration/summary.json."
+        "Historical Enginebd/PR34 all8 first attempt/full artifact review and actual native006 original32/skip12/150s paired receipts plus owned Aave/WETH price dependence pass. Coordinator changes4 engine selectors, adds5th mandatory offline SDK/Node22/raw ABI/head reader; all5 local cases/type21sources3 retained frozen diagnostics pass, prior4 complete results unchanged exceptpin. Read-only views do not establish signed consumer/strategy/profit/provider authenticity/full-block/default Docker32. Subsequent9b49fe2 combined CI passed all5 original mandatory checks and full raw review; this verified composition is historical. Independent human main approval/Pages remain separate. Current engine40 combined CI is recorded separately. See evidence/consumer-price-integration/summary.json.",
+        "Supported CLI engine40bea57/PR35 all8 original mandatory CI/full raw independent source, image, dependency and docs review pass. Actual original32-of181/skip12 native wrapper has32 complete baseline receipt matches,4 raw Aave/producer views and owned2Anvil+cache closure within original150s. Proposed coordinator changes exactly4 engine selectors and adds sixth mandatory strict-wrapper\u2192normal quota-bound export\u2192SDKee\u2192Node22 viewer case. All6 local exact workflow scripts pass; prior5 complete outcomes remain unchanged exceptenginepin;21source type checks retain3 frozen diagnostics. New combined current-head CI/human main approval/Pages remain separate. No new chain/model/browser execution by integration readers; no signedconsumer/profit/provider-auth/fullblock/defaultDocker32 claim."
       ]
     },
     {
@@ -235,7 +236,34 @@
     "website_quality_javascript": 21,
     "website_quality_python": 10,
     "website_quality_browser_groups": 19,
-    "website_quality_note": "Separate proposed website suite, overlapping prior site tests; no addition to frozen workspace totals"
+    "website_quality_note": "Separate proposed website suite, overlapping prior site tests; no addition to frozen workspace totals",
+    "supported_observation_composition": {
+      "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+      "engine_required_checks": 8,
+      "native_tests": 356,
+      "native_skips": 0,
+      "real_Docker_cases": 25,
+      "Python_versions": 4,
+      "unit_Anvil_skips_each": 40,
+      "source_files": 26,
+      "wheel_modules": 21,
+      "retained_findings": 25,
+      "python_packages": 42,
+      "OS_packages": 31,
+      "signed_Cargo_packages": 1126,
+      "reported_advisories": 0,
+      "native_actual_original32_attempts": 1,
+      "baseline_complete_receipt_matches": 32,
+      "consumer_raw_price_phases": 4,
+      "original_replay_cap_seconds": 150,
+      "actual_replay_seconds": 127.599511,
+      "integration_offline_reader_steps": 6,
+      "previous_five_complete_outcomes_unchanged_except_engine_pin": true,
+      "coordinator_production_sources": 21,
+      "coordinator_frozen_type_diagnostics": 3,
+      "combined_candidate_CI": "pending",
+      "scope": "Native read-only partial block observation, not signedconsumer/profit/provider-auth/fullblock/defaultDocker32; current Node readers do not display addedpriceviews."
+    }
   },
   "evidence": [
     "evidence/verification.json",
@@ -328,7 +356,8 @@
     "evidence/rpc-diagnostics-integration/summary.json",
     "evidence/trace-parent-cache-integration/summary.json",
     "evidence/trace-comparison-integration/summary.json",
-    "evidence/consumer-price-integration/summary.json"
+    "evidence/consumer-price-integration/summary.json",
+    "evidence/observed-wrapper-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

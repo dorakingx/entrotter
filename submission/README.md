@@ -91,7 +91,7 @@ code, not an independently approved release.
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
 | Coordination execution snapshot, dependency pins and Linux CLI helper | [2f6a56e](https://github.com/entrotter/entrotter/tree/2f6a56e533935c93f4688c13feeeaa0e771c427a) | [#55](https://github.com/entrotter/entrotter/pull/55) |
-| Bounded agent engine, contract identity and signed transaction-prefix replay | [bd5527f](https://github.com/entrotter/engine/tree/bd5527f71d3c561335e7786b6f4421572cd9aad6) | [#34](https://github.com/entrotter/engine/pull/34) |
+| Bounded agent engine, signed-prefix replay and supported Aave price observations | [40bea57](https://github.com/entrotter/engine/tree/40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d) | [#35](https://github.com/entrotter/engine/pull/35) |
 | Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
@@ -186,13 +186,30 @@ and [original preparation evidence](../evidence/submission-preparation/summary.j
 The material is not a claim of a win, market validation or complete goal acceptance.
 
 
-The latest [Aave price observation composition](../evidence/consumer-price-integration/README.md)
-selects enginebd5527f and retains all other pins and recordings. Its actual
+The historical [Aave price observation composition](../evidence/consumer-price-integration/README.md)
+selected enginebd5527f and retained all other pins and recordings. Its actual
 native006 original32/skip12 replay verifies full projected baseline receipts and
 4 owned consumer view phases: baseline257082415000→256292441874, candidate
 keeps257082415000. All8 component checks/complete raw artifacts and all5 local
-SDK/Node22 reader steps pass. Combined current-head CI, protected-main approval
-and live candidate Pages remain separate gates. These read-only observations
+SDK/Node22 reader steps pass. Subsequent9b49fe2 combined CI passed all5 original
+mandatory checks and full raw review; that verified composition is historical.
+Protected-main approval and live candidate Pages remain separate gates. These read-only observations
 are distinct from signed consumer transactions, strategy/profit, full-block/root
 or provider authenticity. Standard trace-run has no extra-view option at this
 selected head; supported CLI work is separate. No new submission is claimed.
+
+
+The [supported price-wrapper composition](../evidence/observed-wrapper-integration/README.md)
+now selects engine40bea57/PR35, whose all8 original mandatory checks and full raw
+source/artifact independent review pass. Its actual supported CLI exported a
+strict wrapper for original32-of181/skip12, matching all32 complete baseline
+receipts and four raw Aave/producer price phases within the original150s cap.
+A sixth mandatory integration case validates that wrapper before exporting the
+unchanged trace format for SDKee and viewerb1cf. All6 exact local reader scripts
+pass; previous5 complete outcomes remain unchanged except the engine pin.
+The component/pin table proposes the new engine; the coordination snapshot row
+retains its older verified source. New combined candidate CI, protected-main
+human approval and candidate Pages are separate. Videos/model/holdouts and the
+existing application draft are unchanged; no formal submission is claimed.
+Read-only prices establish no signed consumer strategy, profit, provider
+authenticity or full-block/root/opcode result.

@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-02T17:09:49.295476+00:00",
+  "head": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+  "remote_ref_exact": true,
+  "published_changed_blobs": 29,
+  "all_changed_git_blob_ids_equal": true,
+  "remote_tree_sha256": "4ffa497bb0db8511a4998b227feabc7625017639278596a626633932f98555b3",
+  "scope": "Publication of source/evidence bytes; not main merge, deployment or mandatory CI success."
+}

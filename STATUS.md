@@ -1659,3 +1659,40 @@ work is isolated on a separate engine branch. Videos and model/holdout inputs
 are unchanged; no formal submission or overall G1–G5 completion is claimed.
 Goal remains active through the officialOctober13 15:59JST deadline, freshly
 recheckedOctober2 13:26UTC; Discord excluded.
+
+## October3 — Supported observation wrapper enters the selected composition
+
+Engine40bea57/PR35 is ready for review with all8 original mandatory checks and
+complete root/independent raw-source/artifact review:356native/0skips, four unit
+versions356/40explicit Anvil skips,25real Docker cases,33research controls,
+26production sources/25retained findings/21wheel modules,42Python/31OS/1126signed
+Cargo identities with0 reported advisories,22documents/255links. The actual
+supported CLI separately executes original32-of181/skip12 once, validating all32
+full baseline receipts and four raw Aave/producer price views within original150s.
+Actual replay127.599511s; owned2Anvil+cache groups/ports/pipes close. Its passive
+lifecycle profile and6cache aggregate errors of unknown cause remain disclosed.
+172nonCargo entries and unexported database/tool binaries remain audit limits.
+
+Exactly4 selected engine references now propose bd→40; other components and every
+frozen native/agent/host/model/holdout variant remain unchanged. A sixth mandatory
+integration step uses the strict engine wrapper loader, normal quota-bound report
+export, SDKee and actual Node22 viewer validator/classifier. The exported nested
+report preserves all32 receipts and12identical/1omission/19structural/0execution
+classifications; four raw price/currency/unit values and complete classification
+match the source wrapper. All6 exact workflow run scripts pass in fresh isolated
+local output paths. Complete previous5 outputs remain unchanged exceptenginepin.
+21tool-source typing retains exactly3 byte-frozen provider diagnostics. These
+reader checks are offline recorded-byte inspections, not fresh EVM/archive/model/
+browser execution. Existing SDK/viewer do not validate/display extra price views.
+
+The prior9b49fe2/bd composition's all5 mandatory checks, full raw review and clean
+fixture7.798s/model8.182s are historical, with running Docker/cgroup-v2 and
+potentially warm caches, excluding installation/VM startup. New combined candidate
+CI, protected-main human approval and candidate Pages remain separate. The guide
+retains its earlier frozen Docker walkthrough and adds an explicitly selected
+engine40 offline inspection path. See [source pins, exact reader outcomes and limits](evidence/observed-wrapper-integration/README.md).
+Read-only price dependence is not signed consumer strategy, profit, provider/
+deployed-code authenticity, full-block/root/opcode or defaultDocker32 proof.
+Videos and recorded model inputs remain unchanged; formal submission is not
+claimed. Goal active through October13 15:59JST, official rules section5 rechecked
+this turn; Discord excluded.

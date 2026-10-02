@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "execution": "offline synthetic report inspection; no new EVM/model call",
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "report_sha256": "fbfed29e8e25c069ba74a5b405f828543213a88a8dc913e15e2dc9b89806e28f",
+  "artifact_id": "a0c72b846faf16b9a87ebf8447e80106ad4600f3cf131114641cf20f3241fe06",
+  "viewer_module_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+  "baseline_gas": [
+    21000,
+    21000
+  ],
+  "baseline_cumulative_gas": [
+    21000,
+    42000
+  ],
+  "candidate_statuses": [
+    "skipped",
+    "not_mined"
+  ],
+  "candidate_receipts": [
+    null,
+    null
+  ],
+  "viewer": {
+    "status": "passed",
+    "artifact_id": "a0c72b846faf16b9a87ebf8447e80106ad4600f3cf131114641cf20f3241fe06",
+    "node": "v22.23.1"
+  },
+  "limits": [
+    "Native synthetic source; not archived funding or host default-worker execution proof.",
+    "Viewer codec inspection is separate from rendered browser verification.",
+    "Checksum/internal consistency is not authenticity/EVM truth."
+  ]
+}

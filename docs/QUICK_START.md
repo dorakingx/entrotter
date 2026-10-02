@@ -4,6 +4,40 @@ This guide uses tested candidate commits awaiting independent review and main
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
+The proposed [supported observation composition](../evidence/observed-wrapper-integration/README.md)
+selects engine40bea57 and adds a mandatory strict-wrapper→SDK→viewer path.
+Its six offline reader cases pass locally; combined current-head CI and protected
+main approval remain separate. The frozen Docker walkthrough below retains its
+earlier2f6a56e/enginebd5527f source and measurements.
+
+## Inspect the supported historical price result offline
+
+In a clean six-sibling inspection checkout, select the exact reviewed engine source:
+
+```bash
+git -C engine fetch --depth=1 origin 40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d
+git -C engine checkout --detach FETCH_HEAD
+PYTHONPATH=engine/src:sdk-python/src python3 - <<'PY'
+from entrotter_engine.consumer_observations import load_observed_trace
+from entrotter_engine.trace import write_trace
+from entrotter_sdk import load_trace
+observed = load_observed_trace("engine/evidence/owned-consumer-observations/historical-32/observed-trace.json")
+print(observed["classification"])
+write_trace(observed["trace_report"], "observed-transaction-replay.json")
+print("Verified baseline receipts:", load_trace("observed-transaction-replay.json").baseline_verified)
+PY
+```
+
+This path needs neither Docker, Anvil, an archive account nor a model call. Import
+the exported `observed-transaction-replay.json` in the report viewer for all32
+receipts and omission classifications. Existing SDK/viewer trace readers do not
+validate or display the wrapper's extra price views; the engine loader validates
+them first. Export uses its normal shared quota. The source record is an actual
+native32-of181/skip12 replay with four fixed Aave/WETH price phases, not a signed
+consumer strategy, profit or full-block/provider-authenticity proof. The
+[engine's exact replay command and original scope](https://github.com/entrotter/engine/tree/40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d/evidence/owned-consumer-observations/historical-32)
+requires pinned Anvil and explicit read-only historical state access.
+
 ## Requirements
 
 - Python 3.11 or newer and Git, with a POSIX shell (Linux/macOS).
