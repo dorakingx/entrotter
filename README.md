@@ -32,7 +32,7 @@ Configure Settings > Pages > Source as GitHub Actions, or use the parent
 workspace's reviewed `scripts/publish.py --apply`. Push to main triggers
 `.github/workflows/pages.yml`. A workflow file alone is not proof of a live site.
 
-The deploy artifact contains only index.html, 404.html, style.css, app.js, comparison.mjs, report-validation.mjs, trace-report.mjs, trace-viewer.mjs, public
+The deploy artifact contains only index.html, 404.html, style.css, app.js, comparison.mjs, report-validation.mjs, trace-report.mjs, trace-comparison.mjs, trace-viewer.mjs, public
 assets, schemas and public example reports. It never uploads the repository root,
 private logs or a local .env. Pull requests run checks; only main deploys.
 
@@ -193,8 +193,25 @@ or import a separate `trace_version: "0.1.0"` JSON file. The browser displays th
 pinned source/parent/Shanghai header, original signed transaction identities and
 nonces, original versus baseline/candidate gas and log counts, and exact receipt
 fields/log bytes. Skipped, rejected, unmined and nonce-conflicting outcomes remain
-visible; an unmatched baseline is explicitly **UNVERIFIED**. The existing v0.1
+visible; an unmatched baseline is explicitly **UNVERIFIED**. A current-case caption
+shows the validated loaded count, through_index and skip_indices; static four-case
+text is explicitly the recorded sample. Failed imports clear both the caption and
+comparison overview. Candidate differences
+are grouped against the original projected receipts, rather than the baseline:
+omitted/no receipt, position or cumulative gas only, other execution receipt
+fields, or an exact original receipt match. Every exact differing field remains
+visible, including structural shifts, and the full three receipts remain available.
+Receipt matches do not establish unchanged contract state or consumer behavior;
+omitted gas is not a benefit or profit measurement. The existing v0.1
 scenario/model explorer remains separate and unchanged.
+
+`tests/data/trace-oracle-prefix-32.json` is a byte-identical test-only copy of the
+[engine198 native005 report](https://github.com/entrotter/engine/blob/198139ff0b3bf37781b4232b27d8eeb0a5da5365/evidence/trace-parent-cache/native-005/report.json),
+SHA-256 `72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120`.
+It shows 12 exact original receipt matches, one omission and 19 structural-only
+receipt shifts. This UI work imports existing bytes; it runs no new historical
+replay, model evaluation or live consumer validation. The bundled recorded case
+below retains its original report and sources.
 
 `reports/trace-mainnet-prefix-four.json` preserves the exact actual default-worker
 report from [engine817 / PR30](https://github.com/entrotter/engine/blob/8176597af994dddb7a3dc6721db623580ebc9601/evidence/trace-mine-deadline/README.md),

@@ -32,7 +32,7 @@ const server = createServer(async (request, response) => {
     const pathname = new URL(request.url || "/", "http://127.0.0.1").pathname;
     const name = pathname === "/" ? "index.html" : pathname.slice(1);
     if (
-      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|trace-report\.mjs|trace-viewer\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
+      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|trace-report\.mjs|trace-comparison\.mjs|trace-viewer\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
         name,
       )
     ) {
@@ -872,6 +872,10 @@ try {
               .querySelector("#trace-status")
               ?.textContent?.includes("matches all original"),
           );
+          assert.equal(
+            await page.locator("#trace-case").innerText(),
+            "Loaded prefix: 4 original transactions · through_index 3 · skip_indices [0]",
+          );
           assert.equal(await page.locator("#trace-inputs tr").count(), 4);
           const table = await page.locator("#trace-outcomes").innerText();
           for (const value of [
@@ -973,6 +977,105 @@ try {
         }),
     );
   }
+  for (const width of [1280, 390, 320]) {
+    await check(
+      `${width}px original32 local import: omission, structural shifts and exact fields`,
+      () =>
+        withPage(width, async (page) => {
+          await page.locator(".trace-archive > summary").click();
+          const before = requests.length;
+          await page
+            .locator("#trace-import")
+            .setInputFiles(
+              resolve(root, "tests/data/trace-oracle-prefix-32.json"),
+            );
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-comparison-summary")
+              ?.textContent?.includes("19 position / cumulative gas only"),
+          );
+          const summary = await page
+            .locator("#trace-comparison-summary")
+            .innerText();
+          for (const value of [
+            "1 omitted",
+            "0 execution receipt differences",
+            "12 exact original receipt matches",
+            "0 unavailable receipts",
+          ])
+            assert.ok(summary.includes(value), value);
+          assert.equal(requests.length, before);
+          assert.equal(
+            await page.locator("#trace-case").innerText(),
+            "Loaded prefix: 32 original transactions · through_index 31 · skip_indices [12]",
+          );
+          assert.equal(await page.locator("#trace-outcomes tr").count(), 32);
+          const omitted = page.locator("#trace-outcomes tr").nth(12);
+          assert.ok(
+            (await omitted.innerText()).includes("Omitted · no receipt"),
+          );
+          const shifted = page.locator("#trace-outcomes tr").nth(13);
+          assert.ok(
+            (await shifted.innerText()).includes(
+              "Position / cumulative gas only",
+            ),
+          );
+          assert.equal(
+            await shifted.locator("td").last().innerText(),
+            "cumulativeGasUsed, transactionIndex",
+          );
+          await page
+            .locator("#trace-receipts details")
+            .nth(13)
+            .locator("summary")
+            .focus();
+          await page.keyboard.press("Enter");
+          const exact = JSON.parse(
+            await page.locator("#trace-receipts pre").nth(13).innerText(),
+          );
+          assert.equal(exact.original.gasUsed, exact.candidate.gasUsed);
+          assert.deepEqual(exact.original.logs, exact.candidate.logs);
+          assert.notEqual(
+            exact.original.transactionIndex,
+            exact.candidate.transactionIndex,
+          );
+          assert.equal(
+            await page.locator("#trace-download").isVisible(),
+            false,
+          );
+          await page
+            .locator("#trace-outcomes")
+            .locator("..")
+            .locator("..")
+            .focus();
+          await visibleFocus(page);
+          await page.keyboard.press("ArrowRight");
+          if (width < 700)
+            await page.waitForFunction(() => {
+              const wrapper =
+                document.querySelector("#trace-outcomes")?.parentElement
+                  ?.parentElement;
+              return (
+                wrapper !== null &&
+                wrapper !== undefined &&
+                wrapper.scrollLeft > 0
+              );
+            });
+          await noOverflow(page);
+          await scan(page, `original32-${width}`);
+          await page
+            .locator("#trace-comparison-summary")
+            .scrollIntoViewIfNeeded();
+          await page.screenshot({
+            path: resolve(output, `${width}-original32-summary.png`),
+          });
+          await shifted.scrollIntoViewIfNeeded();
+          await page.screenshot({
+            path: resolve(output, `${width}-original32-shift.png`),
+          });
+        }),
+    );
+  }
   await check(
     "Signed prefix: resealed contradictions, oversized import and honest unverified recovery",
     () =>
@@ -1020,6 +1123,11 @@ try {
           assert.equal(await page.locator("#trace-results").isVisible(), false);
           assert.equal(await page.locator("#trace-outcomes tr").count(), 0);
           assert.equal(await page.locator("#trace-raw").textContent(), "");
+          assert.equal(
+            await page.locator("#trace-comparison-summary").textContent(),
+            "",
+          );
+          assert.equal(await page.locator("#trace-case").textContent(), "");
           assert.equal(
             await page.locator("#trace-download").getAttribute("href"),
             null,
@@ -1181,8 +1289,10 @@ try {
     "comparison.mjs",
     "report-validation.mjs",
     "trace-report.mjs",
+    "trace-comparison.mjs",
     "trace-viewer.mjs",
     "reports/trace-mainnet-prefix-four.json",
+    "tests/data/trace-oracle-prefix-32.json",
     "assets/examples/action-comparison.json",
     "reports/agent-local-codex.json",
     "style.css",

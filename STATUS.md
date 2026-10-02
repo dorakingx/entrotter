@@ -142,3 +142,39 @@ zero remaining actionable findings within scope; public proof is retained. Manda
 GitHub approval, exact-head CI and publication remain separate. No archive/model
 call, new chain execution, local Docker/VM startup, deployment, protected merge,
 media/holdout change or competition submission occurred. Discord is excluded.
+
+
+## October 2 — Separate structural and execution receipt differences
+
+Candidate branch feat/trace-execution-differences starts from tested b7c20ce. A
+pure display module groups candidate receipts against the original projected
+receipts: omission, transactionIndex/cumulativeGasUsed only, other execution
+receipt fields, exact match, or unavailable. All exact differing fields and full
+original/baseline/candidate receipts remain visible; baseline verification stays
+separate. Receipt matches establish no contract-state/consumer equivalence or
+profit/benefit. Validators/hash codecs and existing v0.1 app remain byte-identical.
+
+The test-only32 fixture is the exact existing engine198 native005 report (SHA
+72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120):
+12 exact matches,1 omission,19 structural-only differences. No new historical
+replay, model evaluation or consumer validation ran. Source review found old
+recorded-four/skip0 text misleading on local32/skip12 imports. Static text is now
+explicitly sample-only; the current-case caption displays validated count/through/
+skips and clears on malformed imports. Prior frozen browser proof remains retained.
+
+Final66 Node/11 Python tests, full lint/format/checkJs and Python static checks pass.
+Full15-JS/16-type scans retain all97 old rationales and review2 new findings (99
+visible, zero suppressions); one Python source has zero Bandit findings. Unchanged
+109-node/42-Python locks audit with zero advisories. Final local darwin Chromium
+153.0.8010.12/Playwright1.63.0/axe4.13.0 on Node22.23.1 passes36 groups and28 scans
+with zero violations:1280/390/320px import, exact counts/fields, current-case/default
+case/invalid-clear assertions, keyboard expansion/scroll and original safety gates.
+Desktop/320px screenshots were visually inspected. Axe incomplete contrast remains
+explicit; no complete WCAG/manual assistive-tech certification. Imports emit zero
+requests, only same-originGETs occur, and owned pages/browser/server close in finally.
+
+See evidence/trace-differences for source-bound logs, full findings, compressed
+byte-identical raw axe outputs and immutable report provenance. Before-test helper
+import failure and a later preparation anchor mismatch are retained as setup gaps,
+not behavioral failures. Final exact-head CI, independent review, protected-main
+human approval and Pages publication remain separate; no merge/deployment/submission.

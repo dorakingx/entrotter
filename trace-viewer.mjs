@@ -1,4 +1,5 @@
 import { MAX_TRACE_BYTES, validateTraceReport } from "./trace-report.mjs";
+import { traceComparison } from "./trace-comparison.mjs";
 
 /** @param {string} id */
 function element(id) {
@@ -18,6 +19,8 @@ function clear() {
     "trace-raw",
     "trace-hash",
     "trace-origin",
+    "trace-comparison-summary",
+    "trace-case",
   ])
     element(id).replaceChildren();
   element("trace-download").hidden = true;
@@ -68,6 +71,17 @@ async function render(input, seq, recorded) {
     candidate,
     assumptions,
   } = view;
+  const comparisons = candidate.rows.map(traceComparison);
+  element("trace-case").textContent =
+    `Loaded prefix: ${inputs.length} original transactions · through_index ${inputs.length - 1} · ` +
+    `skip_indices ${JSON.stringify(/** @type {Record<string, unknown>} */ (report.plan).skip_indices)}`;
+  element("trace-comparison-summary").textContent =
+    "Candidate vs original projected receipts: " +
+    `${comparisons.filter((r) => r.kind === "omitted").length} omitted · ` +
+    `${comparisons.filter((r) => r.kind === "structural").length} position / cumulative gas only · ` +
+    `${comparisons.filter((r) => r.kind === "execution").length} execution receipt differences · ` +
+    `${comparisons.filter((r) => r.kind === "identical").length} exact original receipt matches · ` +
+    `${comparisons.filter((r) => r.kind === "unavailable").length} unavailable receipts.`;
   element("trace-origin").textContent = recorded
     ? "Recorded technical case · exact engine #30 Docker report. Different native/Docker environments are not a speed comparison."
     : "Local import · author and execution provenance are not authenticated. This file remains in your browser.";
@@ -108,6 +122,7 @@ async function render(input, seq, recorded) {
       `${gas(baseline.rows[i].receipt)} / ${logs(baseline.rows[i].receipt)}`,
       outcome(candidate.rows[i]),
       `${gas(candidate.rows[i].receipt)} / ${logs(candidate.rows[i].receipt)}`,
+      comparisons[i].label,
       candidate.rows[i].differing_fields.join(", ") || "—",
     ]),
   );
