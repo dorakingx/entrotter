@@ -1,5 +1,6 @@
 import { MAX_TRACE_BYTES, validateTraceReport } from "./trace-report.mjs";
 import { traceComparison } from "./trace-comparison.mjs";
+import { validateObservedTrace } from "./observed-trace.mjs";
 
 /** @param {string} id */
 function element(id) {
@@ -21,10 +22,14 @@ function clear() {
     "trace-origin",
     "trace-comparison-summary",
     "trace-case",
+    "trace-price-summary",
+    "trace-price-rows",
+    "trace-price-identities",
   ])
     element(id).replaceChildren();
   element("trace-download").hidden = true;
   element("trace-download").removeAttribute("href");
+  element("trace-price-results").hidden = true;
 }
 function status(text, error = false) {
   element("trace-status").textContent = text;
@@ -57,9 +62,16 @@ function outcome(row) {
       ? `executed · ${row.receipt.status === "0x1" ? "success" : "revert"}`
       : row.status;
 }
-/** @param {unknown} input @param {number} seq @param {boolean} recorded */
-async function render(input, seq, recorded) {
-  const view = await validateTraceReport(input);
+/** @param {string} text @param {number} seq @param {string | null} recorded */
+async function render(text, seq, recorded) {
+  const input = JSON.parse(text);
+  const observed =
+    input &&
+    typeof input === "object" &&
+    Object.hasOwn(input, "observation_version")
+      ? await validateObservedTrace(text)
+      : null;
+  const view = observed ? observed.trace : await validateTraceReport(input);
   if (seq !== generation) return;
   const {
     report,
@@ -83,7 +95,9 @@ async function render(input, seq, recorded) {
     `${comparisons.filter((r) => r.kind === "identical").length} exact original receipt matches · ` +
     `${comparisons.filter((r) => r.kind === "unavailable").length} unavailable receipts.`;
   element("trace-origin").textContent = recorded
-    ? "Recorded technical case · exact engine #30 Docker report. Different native/Docker environments are not a speed comparison."
+    ? observed
+      ? "Recorded read-only price case · exact engine #35 native 32-of-181 / omission 12 result. The page inspects recorded bytes; it runs no EVM or model."
+      : "Recorded technical case · exact engine #30 Docker report. Different native/Docker environments are not a speed comparison."
     : "Local import · author and execution provenance are not authenticated. This file remains in your browser.";
   element("trace-pins").textContent = JSON.stringify(
     {
@@ -153,32 +167,76 @@ async function render(input, seq, recorded) {
     li.textContent = assumption;
     element("trace-assumptions").append(li);
   }
-  element("trace-raw").textContent = JSON.stringify(report, null, 2);
-  element("trace-hash").textContent = String(report.artifact_id);
+  if (observed) {
+    const result = observed.classification;
+    const format = (value) => {
+      const n = BigInt(value),
+        negative = n < 0n;
+      const digits = (negative ? -n : n).toString().padStart(9, "0");
+      return (
+        (negative ? "−" : "") + digits.slice(0, -8) + "." + digits.slice(-8)
+      );
+    };
+    element("trace-price-summary").textContent = result.complete_price_views
+      ? `Complete read-only price views · baseline after USD ${format(result.baseline_price)} · candidate after USD ${format(result.candidate_price)} · candidate − baseline USD ${format(result.price_difference)}. This is a price difference, not profit or a trading result.`
+      : `UNPROVEN price comparison · ${result.unproven_reasons.join(", ")}. No validated price difference is available.`;
+    rows(
+      "trace-price-rows",
+      observed.wrapper.observations.map((row, i) => [
+        row.branch,
+        row.phase,
+        observed.phases[i].price ?? "Unavailable",
+        typeof observed.phases[i].latest_round_data === "object"
+          ? observed.phases[i].latest_round_data.answer
+          : "Unavailable",
+        row.head?.number ?? "Unavailable",
+        row.head?.timestamp ?? "Unavailable",
+        row.errors
+          .map((error) => `${error.query}: ${error.category}`)
+          .join(", ") || "None",
+      ]),
+    );
+    rows(
+      "trace-price-identities",
+      observed.wrapper.observations.map((row, i) => [
+        `${row.branch} / ${row.phase}`,
+        observed.phases[i].source ?? "Unavailable",
+        observed.phases[i].aggregator ?? "Unavailable",
+        observed.phases[i].base_currency ?? "Unavailable",
+        observed.phases[i].base_unit ?? "Unavailable",
+        row.code.oracle_code?.sha256 ?? "Unavailable",
+        row.code.source_code?.sha256 ?? "Unavailable",
+      ]),
+    );
+    element("trace-price-results").hidden = false;
+  }
+  element("trace-raw").textContent = observed
+    ? text
+    : JSON.stringify(report, null, 2);
+  element("trace-hash").textContent = String(
+    observed ? observed.wrapper.artifact_id : report.artifact_id,
+  );
   status(
     `Integrity and display consistency checked locally · baseline ${baseline.matches ? "matches all original projected receipts" : "UNVERIFIED: original projected receipts do not all match"}. This is not authenticity or EVM proof.`,
   );
   element("trace-results").hidden = false;
   if (recorded) {
-    element("trace-download").setAttribute(
-      "href",
-      "reports/trace-mainnet-prefix-four.json",
-    );
+    element("trace-download").setAttribute("href", recorded);
     element("trace-download").hidden = false;
   }
 }
-element("trace-sample").addEventListener("click", async () => {
+async function sample(path) {
   const seq = ++generation;
   clear();
   status("Loading the recorded signed-prefix case…");
   try {
-    const response = await fetch("reports/trace-mainnet-prefix-four.json");
+    const response = await fetch(path);
     if (!response.ok)
       throw new Error("The signed-prefix example could not be loaded.");
     const text = await response.text();
     if (new TextEncoder().encode(text).byteLength > MAX_TRACE_BYTES)
       throw new Error("Trace report limit is 8 MiB.");
-    await render(JSON.parse(text), seq, true);
+    await render(text, seq, path);
   } catch (error) {
     if (seq === generation) {
       clear();
@@ -188,18 +246,24 @@ element("trace-sample").addEventListener("click", async () => {
       );
     }
   }
-});
+}
+element("trace-sample").addEventListener("click", () =>
+  sample("reports/trace-mainnet-prefix-four.json"),
+);
+element("trace-price-sample").addEventListener("click", () =>
+  sample("reports/trace-observed-price32.json"),
+);
 element("trace-import").addEventListener("change", async (event) => {
   if (!(event.target instanceof HTMLInputElement)) return;
   const file = event.target.files?.[0];
   if (!file) return;
   const seq = ++generation;
   clear();
-  status("Checking local signed-prefix report…");
+  status("Checking local signed-prefix or observed-price report…");
   try {
     if (file.size > MAX_TRACE_BYTES)
       throw new Error("Local trace report limit is 8 MiB.");
-    await render(JSON.parse(await file.text()), seq, false);
+    await render(await file.text(), seq, null);
   } catch (error) {
     if (seq === generation) {
       clear();

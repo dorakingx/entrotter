@@ -6,6 +6,10 @@ import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { resolve, extname } from "node:path";
 import { createRequire } from "node:module";
 import { chromium } from "playwright";
+import {
+  parseObservationJSON,
+  observationCanonical,
+} from "../observed-trace.mjs";
 
 const require = createRequire(import.meta.url);
 const runnerHash = createHash("sha256")
@@ -32,7 +36,7 @@ const server = createServer(async (request, response) => {
     const pathname = new URL(request.url || "/", "http://127.0.0.1").pathname;
     const name = pathname === "/" ? "index.html" : pathname.slice(1);
     if (
-      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|trace-report\.mjs|trace-comparison\.mjs|trace-viewer\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
+      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|trace-report\.mjs|trace-comparison\.mjs|trace-viewer\.mjs|observed-trace\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
         name,
       )
     ) {
@@ -941,6 +945,8 @@ try {
           // as in the existing console chooser check, after leaving the table.
           await page.locator("#trace-sample").focus();
           await page.keyboard.press("Tab");
+          await focusIs(page, "trace-price-sample");
+          await page.keyboard.press("Tab");
           await focusIs(page, "trace-import");
           await visibleFocus(page);
           const chooser = page.waitForEvent("filechooser");
@@ -1073,6 +1079,159 @@ try {
           await page.screenshot({
             path: resolve(output, `${width}-original32-shift.png`),
           });
+        }),
+    );
+  }
+  for (const width of [1280, 390, 320]) {
+    await check(
+      `Observed prices: exact values, unproven views, rejection and clearing ${width}px`,
+      () =>
+        withPage(width, async (page) => {
+          await page.locator(".trace-archive > summary").click();
+          await page.locator("#trace-price-sample").focus();
+          await page.keyboard.press("Enter");
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-price-summary")
+              ?.textContent?.includes("7.89973126"),
+          );
+          assert.equal(await page.locator("#trace-price-rows tr").count(), 4);
+          assert.equal(await page.locator("#trace-outcomes tr").count(), 32);
+          assert.ok(
+            (await page.locator("#trace-price-summary").innerText()).includes(
+              "not profit",
+            ),
+          );
+          assert.ok(
+            (await page.locator("#trace-price-rows").innerText()).includes(
+              "256292441874",
+            ),
+          );
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            "reports/trace-observed-price32.json",
+          );
+          await page
+            .locator("#trace-price-rows")
+            .locator("..")
+            .locator("..")
+            .focus();
+          await visibleFocus(page);
+          await noOverflow(page);
+          await scan(page, `observed-price-${width}`);
+          await page.locator("#trace-price-heading").scrollIntoViewIfNeeded();
+          await page.screenshot({
+            path: resolve(output, `${width}-observed-price.png`),
+          });
+          const template = parseObservationJSON(
+            await readFile(
+              resolve(root, "reports/trace-observed-price32.json"),
+              "utf8",
+            ),
+          );
+          const controls = parseObservationJSON(
+            await readFile(
+              resolve(root, "tests/data/observed-controls.json"),
+              "utf8",
+            ),
+          );
+          const importRow = async (row) => {
+            const text = observationCanonical(row);
+            const before = requests.length;
+            await page.locator("#trace-import").setInputFiles({
+              name: "local-price.json",
+              mimeType: "application/json",
+              buffer: Buffer.from(text),
+            });
+            await page.waitForFunction(
+              (id) => document.querySelector("#trace-hash")?.textContent === id,
+              row.artifact_id,
+            );
+            assert.equal(requests.length, before);
+          };
+          const large = controls.find((row) => row.name === "large_integer");
+          const big = {
+            ...template,
+            observations: large.observations,
+            classification: large.classification,
+            artifact_id: large.artifact_id,
+          };
+          await importRow(big);
+          assert.ok(
+            (await page.locator("#trace-price-rows").innerText()).includes(
+              (2n ** 200n).toString(),
+            ),
+          );
+          assert.ok(
+            (await page.locator("#trace-price-summary").innerText()).includes(
+              "USD 0.00000010",
+            ),
+          );
+          assert.equal(
+            await page.locator("#trace-raw").textContent(),
+            observationCanonical(big),
+          );
+          const missing = controls.find(
+            (row) => row.name === "rpc_missing_head",
+          );
+          await importRow({
+            ...template,
+            observations: missing.observations,
+            classification: missing.classification,
+            artifact_id: missing.artifact_id,
+          });
+          assert.ok(
+            (await page.locator("#trace-price-summary").innerText()).startsWith(
+              "UNPROVEN",
+            ),
+          );
+          assert.ok(
+            (await page.locator("#trace-price-rows").innerText()).includes(
+              "head: rpc_error",
+            ),
+          );
+          await scan(page, `observed-unproven-${width}`);
+          const bad = structuredClone(template);
+          bad.classification.price_difference++;
+          const { artifact_id, ...body } = bad;
+          bad.artifact_id = createHash("sha256")
+            .update(observationCanonical(body))
+            .digest("hex");
+          await page.locator("#trace-import").setInputFiles({
+            name: "invalid-price.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(observationCanonical(bad)),
+          });
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-status")
+              ?.classList.contains("error"),
+          );
+          assert.equal(
+            await page.locator("#trace-price-results").isVisible(),
+            false,
+          );
+          for (const id of [
+            "trace-price-summary",
+            "trace-price-rows",
+            "trace-price-identities",
+            "trace-raw",
+            "trace-hash",
+          ])
+            assert.equal(await page.locator(`#${id}`).textContent(), "");
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            null,
+          );
+          await page.locator("#trace-sample").click();
+          await page.waitForFunction(
+            () => document.querySelectorAll("#trace-outcomes tr").length === 4,
+          );
+          assert.equal(
+            await page.locator("#trace-price-results").isVisible(),
+            false,
+          );
+          assert.equal(await page.locator("#trace-price-rows tr").count(), 0);
         }),
     );
   }
@@ -1291,6 +1450,9 @@ try {
     "trace-report.mjs",
     "trace-comparison.mjs",
     "trace-viewer.mjs",
+    "observed-trace.mjs",
+    "reports/trace-observed-price32.json",
+    "tests/data/observed-controls.json",
     "reports/trace-mainnet-prefix-four.json",
     "tests/data/trace-oracle-prefix-32.json",
     "assets/examples/action-comparison.json",

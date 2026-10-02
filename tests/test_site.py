@@ -82,6 +82,19 @@ class SiteTests(unittest.TestCase):
                 d, sort_keys=True, separators=(",", ":"), ensure_ascii=True
             ).encode()
             self.assertEqual(hashlib.sha256(data).hexdigest(), supplied)
+            if d.get("observation_version") == "0.1.0":
+                self.assertEqual(d["profile"], "aave-v3-ethereum-weth-price")
+                nested = d["trace_report"].copy()
+                nested_id = nested.pop("artifact_id")
+                self.assertEqual(d["trace_artifact_id"], nested_id)
+                nested_data = json.dumps(
+                    nested, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+                ).encode()
+                self.assertEqual(hashlib.sha256(nested_data).hexdigest(), nested_id)
+                self.assertEqual(nested["trace_version"], "0.1.0")
+                self.assertEqual(len(d["observations"]), 4)
+                self.assertEqual(len(nested["source"]["inputs"]), 32)
+                continue
             if d.get("trace_version") == "0.1.0":
                 self.assertEqual(
                     d["execution_kind"], "canonical_transaction_prefix_replay"

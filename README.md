@@ -32,7 +32,7 @@ Configure Settings > Pages > Source as GitHub Actions, or use the parent
 workspace's reviewed `scripts/publish.py --apply`. Push to main triggers
 `.github/workflows/pages.yml`. A workflow file alone is not proof of a live site.
 
-The deploy artifact contains only index.html, 404.html, style.css, app.js, comparison.mjs, report-validation.mjs, trace-report.mjs, trace-comparison.mjs, trace-viewer.mjs, public
+The deploy artifact contains only index.html, 404.html, style.css, app.js, comparison.mjs, report-validation.mjs, trace-report.mjs, trace-comparison.mjs, trace-viewer.mjs, observed-trace.mjs, public
 assets, schemas and public example reports. It never uploads the repository root,
 private logs or a local .env. Pull requests run checks; only main deploys.
 
@@ -120,7 +120,7 @@ Python website tests. CI discovers the tracked sources and refuses empty scans.
 
 All 14 rules from eslint-plugin-security run without inline suppressions. Full
 findings are saved in `.quality/security.json` before the source-bound review
-policy is checked. `security-reviewed.json` retains 97 findings with individual
+policy is checked. `security-reviewed.json` retains 122 findings with individual
 rationales (bounded numeric grammar, inert indexed reads and trusted developer
 file operations). It pins every JS/declaration source and tool configuration/lock;
 source drift, new/missing findings or missing rationale fail the gate. These are
@@ -251,3 +251,34 @@ full-block/opcode/root/end-withdrawal and alternate-market coverage remain open.
 Original in-prefix oracle updates remain; external responses are not invented.
 This proposed browser view does not add a trace HTTP endpoint or run a transaction.
 Protected review and live publication remain separate gates.
+
+
+## Read-only Aave price observations
+
+Choose **Inspect recorded Aave price change**, or import the engine's separate
+`observation_version: "0.1.0"` wrapper directly in the historical-prefix panel.
+The browser checks the fixed profile, sealed nested trace and wrapper, four
+phases, complete query coverage, raw ABI, heads, code identities and declared
+classification. It displays consumer/producer prices, exact USD units when
+supported, and reasons for an **UNPROVEN** comparison when views are incomplete.
+Integers beyond JavaScript Number precision remain exact; the original imported
+JSON stays available. Invalid imports and switching to an ordinary replay clear
+all prior price rows. Imports make no network request.
+
+`reports/trace-observed-price32.json` is byte-identical to the
+[engine40 supported native32 source](https://github.com/entrotter/engine/tree/40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d/evidence/owned-consumer-observations/historical-32),
+SHA-256 `7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d`.
+It contains 32-of-181 transactions with omission12 and four read-only Aave/WETH
+price phases. The page inspects recorded bytes; it runs no EVM, model or strategy.
+The price difference is not profit, provider/deployed-code authenticity or
+full-block/root equivalence. Native execution is separate from default Docker.
+The pre-existing nested trace validator's browser-safe numeric limits remain;
+this is selected consistency checking, not execution or full engine validation.
+
+The six compact controls in `tests/data/observed-controls.json` are deliberately
+mutated synthetic tests, each sealed and accepted by the engine40 Python wrapper
+validator. They cover large integers, unavailable queries/code, future feed
+values and negative producer answers. They reuse the sample's unchanged nested
+trace and do not represent new chain execution. Browser regressions check exact
+prices, unproven reasons, invalid-file clearing, valid recovery, keyboard use and
+reflow at 1280/390/320 CSS pixels. Protected main and live Pages remain separate.
