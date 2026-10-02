@@ -1,0 +1,1023 @@
+{
+  "status": "passed",
+  "head": "a19d3b17fcf44e58a237b622de8cef89842eb6e7",
+  "findings": [],
+  "original_runs": {
+    "pages": {
+      "id": 37047157220,
+      "attempt": 1,
+      "url": "https://github.com/entrotter/entrotter.github.io/actions/runs/37047157220"
+    },
+    "docs": {
+      "id": 37047157381,
+      "attempt": 1,
+      "url": "https://github.com/entrotter/entrotter.github.io/actions/runs/37047157381"
+    }
+  },
+  "mandatory_checks": [
+    "accessibility",
+    "check",
+    "docs-links",
+    "quality"
+  ],
+  "source_config_files": 24,
+  "JS_sources": 17,
+  "typed_inputs": 18,
+  "security_findings": 122,
+  "preserved_prior_rationales": 99,
+  "new_reviewed_contexts": 23,
+  "Node_tests": 94,
+  "Python_tests": 11,
+  "npm_lock_packages": 109,
+  "npm_lock_identities": {
+    "node_modules/@cacheable/memory": {
+      "version": "2.2.0",
+      "integrity": "sha512-CTLKqLItRCEixEAewD3/j9DB3/o96gpTPD4eJ1v+DGOlxZRZncRQkGYqqnAGCscYd6RNeXfGeiuCphsPtqyIfQ=="
+    },
+    "node_modules/@cacheable/utils": {
+      "version": "2.5.0",
+      "integrity": "sha512-buipgOVDkkPXNR5+xBpDw7Zk2n1EvU7qBJCNUcL7rhQ//kfpOXPAvQ511Os0vpLYJ1pZnvudNytkQt2hst3wqA=="
+    },
+    "node_modules/@eslint-community/eslint-utils": {
+      "version": "4.10.1",
+      "integrity": "sha512-cuadcxVFE8sDK6iWJbs8Sn0av2Nrh2QSGQhVlBW9AaAHqHwjWsZHT8LJ4hFGPh7ASBV2deFdM7H/DPjulmh8rg=="
+    },
+    "node_modules/@eslint-community/eslint-utils/node_modules/eslint-visitor-keys": {
+      "version": "3.4.3",
+      "integrity": "sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag=="
+    },
+    "node_modules/@eslint-community/regexpp": {
+      "version": "4.12.2",
+      "integrity": "sha512-EriSTlt5OC9/7SXkRSCAhfSxxoSUgBm33OH+IkwbdpgoqsSsUg7y3uh+IICI/Qg4BBWr3U2i39RpmycbxMq4ew=="
+    },
+    "node_modules/@eslint/config-array": {
+      "version": "0.23.5",
+      "integrity": "sha512-Y3kKLvC1dvTOT+oGlqNQ1XLqK6D1HU2YXPc52NmAlJZbMMWDzGYXMiPRJ8TYD39muD/OTjlZmNJ4ib7dvSrMBA=="
+    },
+    "node_modules/@eslint/config-helpers": {
+      "version": "0.7.0",
+      "integrity": "sha512-DObd/KKUsU+FaFv4PLxSRenpXfQWmPXXP3pPZ6/K1PCrMu2vQpMDMuQe/BqYeoLcz8ro0bVDF1RxOJgfVEdhUw=="
+    },
+    "node_modules/@eslint/core": {
+      "version": "1.2.1",
+      "integrity": "sha512-MwcE1P+AZ4C6DWlpin/OmOA54mmIZ/+xZuJiQd4SyB29oAJjN30UW9wkKNptW2ctp4cEsvhlLY/CsQ1uoHDloQ=="
+    },
+    "node_modules/@eslint/js": {
+      "version": "10.0.1",
+      "integrity": "sha512-zeR9k5pd4gxjZ0abRoIaxdc7I3nDktoXZk2qOv9gCNWx3mVwEn32VRhyLaRsDiJjTs0xq/T8mfPtyuXu7GWBcA=="
+    },
+    "node_modules/@eslint/object-schema": {
+      "version": "3.0.5",
+      "integrity": "sha512-vqTaUEgxzm+YDSdElad6PiRoX4t8VGDjCtt05zn4nU810UIx/uNEV7/lZJ6KwFThKZOzOxzXy48da+No7HZaMw=="
+    },
+    "node_modules/@eslint/plugin-kit": {
+      "version": "0.7.3",
+      "integrity": "sha512-IkO+/KEUvwbVpiURZg+P7zF74z5Jxe0UgJxVni+RtoHQ6IZieXaO02kmadomap/q+l6bc/jdPGGqTjhuZnuz1Q=="
+    },
+    "node_modules/@humanfs/core": {
+      "version": "0.19.2",
+      "integrity": "sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA=="
+    },
+    "node_modules/@humanfs/node": {
+      "version": "0.16.8",
+      "integrity": "sha512-gE1eQNZ3R++kTzFUpdGlpmy8kDZD/MLyHqDwqjkVQI0JMdI1D51sy1H958PNXYkM2rAac7e5/CnIKZrHtPh3BQ=="
+    },
+    "node_modules/@humanfs/types": {
+      "version": "0.15.0",
+      "integrity": "sha512-ZZ1w0aoQkwuUuC7Yf+7sdeaNfqQiiLcSRbfI08oAxqLtpXQr9AIVX7Ay7HLDuiLYAaFPu8oBYNq/QIi9URHJ3Q=="
+    },
+    "node_modules/@humanwhocodes/module-importer": {
+      "version": "1.0.1",
+      "integrity": "sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA=="
+    },
+    "node_modules/@humanwhocodes/retry": {
+      "version": "0.4.3",
+      "integrity": "sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ=="
+    },
+    "node_modules/@keyv/bigmap": {
+      "version": "1.3.1",
+      "integrity": "sha512-WbzE9sdmQtKy8vrNPa9BRnwZh5UF4s1KTmSK0KUVLo3eff5BlQNNWDnFOouNpKfPKDnms9xynJjsMYjMaT/aFQ=="
+    },
+    "node_modules/@keyv/serialize": {
+      "version": "1.1.1",
+      "integrity": "sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA=="
+    },
+    "node_modules/@types/esrecurse": {
+      "version": "4.3.1",
+      "integrity": "sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw=="
+    },
+    "node_modules/@types/estree": {
+      "version": "1.0.9",
+      "integrity": "sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg=="
+    },
+    "node_modules/@types/json-schema": {
+      "version": "7.0.15",
+      "integrity": "sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA=="
+    },
+    "node_modules/@types/node": {
+      "version": "22.20.4",
+      "integrity": "sha512-zJRE40jpHtKqE/C4fgHrAKQLJuSpzEnP9ff9Y7YtoR3Wd2pwqzlekDeEuUQXjRd+QCYnVnNwuJYmhdk9XV8gvA=="
+    },
+    "node_modules/@typescript/typescript-aix-ppc64": {
+      "version": "7.0.2",
+      "integrity": "sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ=="
+    },
+    "node_modules/@typescript/typescript-darwin-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-gowzar9MwS/aRWp6f3a4KUqzRjAZjOsmGNCM6LcTgXum+dBfgsBVMN+AgvOCCbguXyick6LJhpBszxMebJ8syA=="
+    },
+    "node_modules/@typescript/typescript-darwin-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-SZ9xZInqApNlNGc9s0W1VSsktYSOe9cFqNOIqmN1Gs8SmkjKZYFt017G4VwPxASInODuAdbTW7sXiFUf893RgA=="
+    },
+    "node_modules/@typescript/typescript-freebsd-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-W5NH4y/J0plIIS5b2xvTEkU7JFxyqdMAOgf+Ilhl0vHQXKO5dZoxd+C/jEtq56c4F3wk71RB4BMRQ2XdI+bwYQ=="
+    },
+    "node_modules/@typescript/typescript-freebsd-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-UMGDx5sTpzNw3WiPebH7l90IWfJggEd+egHt/q6p7/Cm3zqoV7VxkGXt+3DxPIw8CcmvAB0j3sVVfbhX+M4Tpw=="
+    },
+    "node_modules/@typescript/typescript-linux-arm": {
+      "version": "7.0.2",
+      "integrity": "sha512-gffT3xPz9sR7j/YJExkyPntrI0P2EP9XbOyWzth2/Gs0RstK+90RBcO0ncXoXy/beYll1SXw846Nf2zdnEz0QQ=="
+    },
+    "node_modules/@typescript/typescript-linux-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-Qh4eU4/y3yDjnfjjyPYihMj5/ODIlmt+Bzu17OI+fiSRDW57QmU5SiN63exPRNJPKUzcc1INa1NXdrJ+MqHjUQ=="
+    },
+    "node_modules/@typescript/typescript-linux-loong64": {
+      "version": "7.0.2",
+      "integrity": "sha512-uEHck9i8hoAzXPiYRib1O7miOnz23SxIeVl6F4LXox+qov1K35jHcEW6VHKvZI+pyvl7fZEP4MCU5LYvIq1GuQ=="
+    },
+    "node_modules/@typescript/typescript-linux-mips64el": {
+      "version": "7.0.2",
+      "integrity": "sha512-R4KvAMnE43W5Qeqb0Ly56O3mWMWIAgsMyz36DCaycd5nbg/9kzm0liw3JocfRqyJY0KPmzFjbswozXyW0DnIYA=="
+    },
+    "node_modules/@typescript/typescript-linux-ppc64": {
+      "version": "7.0.2",
+      "integrity": "sha512-DORx5b3sd/4S7eayxm4FQv+A7CrkUIGRaHiwI8oiHTAI1fAPWhF4J0vAlkC8biAlHSVVwxMQ3tjZ2/DVbnQiiA=="
+    },
+    "node_modules/@typescript/typescript-linux-riscv64": {
+      "version": "7.0.2",
+      "integrity": "sha512-wf0jqEDOjrPRnKwYRyyJDRo11KMbvMFrU+q4zqKyChODBzvlkbhNQfKvLxQCcwTpdDaXSHZTVuh0JoCrKCUMHQ=="
+    },
+    "node_modules/@typescript/typescript-linux-s390x": {
+      "version": "7.0.2",
+      "integrity": "sha512-IkwJc3L7yhytWd/ewjyxNDfOmswCm9GWMJT/ue/dU4aZNbwZeYAetq42VyLmsmSjvoX7z74X6ZaYCtzAr0EuGw=="
+    },
+    "node_modules/@typescript/typescript-linux-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-EYdf2cNg7rgCWJnxCdJ+F3V39O8ihb37eHAu1LK8oAFizgTQbPOK7zHHXbPt8rX24COqODXeI3sIf0fCXG7H/A=="
+    },
+    "node_modules/@typescript/typescript-netbsd-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-+polYF4MF04aPpO5FTkHran9yUQDSXqy5GiSDKpsll5jy3l3+g9QLhpf39T+ePtefhXLOGrLl0QIjkQP6VnelA=="
+    },
+    "node_modules/@typescript/typescript-netbsd-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-8YIT0EHM/3dq10ZOVF/A7pc/YSMtbcecct4rWtexrnSCHOPcpC2KTLXfTCR6vDpnSiY12heNb1GiN/wu+T/FyA=="
+    },
+    "node_modules/@typescript/typescript-openbsd-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-APT8+ClYnuYm1u9+kgGXoMj2VzWzcymwh2gNSQVySHfkRDGOTVkoWLjCmOQSaO+PoqQ57B0flRp9SA+7GnnkzQ=="
+    },
+    "node_modules/@typescript/typescript-openbsd-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-yX7s+Q0Dln0Dt9tEzZsAjXXR/+ytBM7AlglaqyeMPxQszJ1JhlJdZ6jLA+IzldHtflX81em7lDao1xXu+aRRkg=="
+    },
+    "node_modules/@typescript/typescript-sunos-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-dLJDGaLZ1D4HPQn62u1n8mBDkJREwMsAkCdkwd4Ieqw+x3TUyTsqY0YiBCtE6H6OzzgGk3iuZ3vFWRS+E8/d1g=="
+    },
+    "node_modules/@typescript/typescript-win32-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-Gyl1Vy6OsWesLzmq+EP0Fb7b4Nid5232AvcA2SFcdYreldpNtYFFofPjnt62y9hQy7VTaZp65ICJjuAQRaVcIQ=="
+    },
+    "node_modules/@typescript/typescript-win32-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-0BQ3HkAHHlKLSp1qRvf3SUhGpGsDuhB/jgFw75guyqbxJqEaS0Cw/VFO8i2nHglJUzQCRtMMR/IBAKE3ETMC4g=="
+    },
+    "node_modules/acorn": {
+      "version": "8.18.0",
+      "integrity": "sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ=="
+    },
+    "node_modules/acorn-jsx": {
+      "version": "5.3.2",
+      "integrity": "sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ=="
+    },
+    "node_modules/ajv": {
+      "version": "6.15.0",
+      "integrity": "sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw=="
+    },
+    "node_modules/axe-core": {
+      "version": "4.13.0",
+      "integrity": "sha512-UzGt8zg7Ny8djbYMhxl2zuEevVa7r2gJjYY5Lwr1xM7+XU2nd6CkIWFTVcCIbAP63vSz71NaVyyuSk9lHKcy0A=="
+    },
+    "node_modules/balanced-match": {
+      "version": "4.0.4",
+      "integrity": "sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA=="
+    },
+    "node_modules/brace-expansion": {
+      "version": "5.0.12",
+      "integrity": "sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ=="
+    },
+    "node_modules/cacheable": {
+      "version": "2.5.0",
+      "integrity": "sha512-60cyAOytib/OzBw1JNSoSV/boK1AtHryDIjvVBk7XbN4ugfkM3+Sry7fEjNgPMGgOjuaZPAp8ruZ0Cxafwyq9g=="
+    },
+    "node_modules/cross-spawn": {
+      "version": "7.0.6",
+      "integrity": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA=="
+    },
+    "node_modules/debug": {
+      "version": "4.4.3",
+      "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA=="
+    },
+    "node_modules/deep-is": {
+      "version": "0.1.4",
+      "integrity": "sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ=="
+    },
+    "node_modules/escape-string-regexp": {
+      "version": "4.0.0",
+      "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA=="
+    },
+    "node_modules/eslint": {
+      "version": "10.11.0",
+      "integrity": "sha512-P7a6UEEqb9G95MYAtqkmsTbVXIYyzIfl6NGOIJk162PaahFxFyeGcrlXYFSiagECg4sEm8IseJdZBKR3rx6MsQ=="
+    },
+    "node_modules/eslint-plugin-security": {
+      "version": "4.0.1",
+      "integrity": "sha512-/lZCkOxPOWaf1jXAqgICrS8St3BMBccIPvhOSUYuV6VCr1o5nFVG998FnTLt6w2Nxb8Uo0nM8fzmnhp+GY/aEg=="
+    },
+    "node_modules/eslint-scope": {
+      "version": "9.1.2",
+      "integrity": "sha512-xS90H51cKw0jltxmvmHy2Iai1LIqrfbw57b79w/J7MfvDfkIkFZ+kj6zC3BjtUwh150HsSSdxXZcsuv72miDFQ=="
+    },
+    "node_modules/eslint-visitor-keys": {
+      "version": "5.0.1",
+      "integrity": "sha512-tD40eHxA35h0PEIZNeIjkHoDR4YjjJp34biM0mDvplBe//mB+IHCqHDGV7pxF+7MklTvighcCPPZC7ynWyjdTA=="
+    },
+    "node_modules/espree": {
+      "version": "11.2.0",
+      "integrity": "sha512-7p3DrVEIopW1B1avAGLuCSh1jubc01H2JHc8B4qqGblmg5gI9yumBgACjWo4JlIc04ufug4xJ3SQI8HkS/Rgzw=="
+    },
+    "node_modules/esquery": {
+      "version": "1.7.0",
+      "integrity": "sha512-Ap6G0WQwcU/LHsvLwON1fAQX9Zp0A2Y6Y/cJBl9r/JbW90Zyg4/zbG6zzKa2OTALELarYHmKu0GhpM5EO+7T0g=="
+    },
+    "node_modules/esrecurse": {
+      "version": "4.3.0",
+      "integrity": "sha512-KmfKL3b6G+RXvP8N1vr3Tq1kL/oCFgn2NYXEtqP8/L3pKapUA4G8cFVaoF3SU323CD4XypR/ffioHmkti6/Tag=="
+    },
+    "node_modules/estraverse": {
+      "version": "5.3.0",
+      "integrity": "sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA=="
+    },
+    "node_modules/esutils": {
+      "version": "2.0.3",
+      "integrity": "sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g=="
+    },
+    "node_modules/fast-deep-equal": {
+      "version": "3.1.3",
+      "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
+    },
+    "node_modules/fast-json-stable-stringify": {
+      "version": "2.1.0",
+      "integrity": "sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw=="
+    },
+    "node_modules/fast-levenshtein": {
+      "version": "2.0.6",
+      "integrity": "sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw=="
+    },
+    "node_modules/file-entry-cache": {
+      "version": "11.1.5",
+      "integrity": "sha512-+PFTHITI08JIGhnNpGNI8T8inUpgZfk3GNEqfT9R2zZV2iFXg3CvqzSl/uEhs7TSGujYRELEANyDvS8Fj7+S7Q=="
+    },
+    "node_modules/find-up": {
+      "version": "5.0.0",
+      "integrity": "sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng=="
+    },
+    "node_modules/flat-cache": {
+      "version": "6.1.23",
+      "integrity": "sha512-f++BY9pTk+983xK1FLzlLpmM0i0z+jHmx3QESGkURMXujQZz1k5wzwX6hjnQ8goaD0B+sYnDK1yZ6MTyZfUaqA=="
+    },
+    "node_modules/flatted": {
+      "version": "3.4.4",
+      "integrity": "sha512-5+ybhBZANEJxaH3X5evAFatUxLfEHSr7n6kYJ+1Qd0mUqr4eu9gIf6GDbWHf8RJijHrjjO8G+la14SlL2SeS1Q=="
+    },
+    "node_modules/glob-parent": {
+      "version": "6.0.2",
+      "integrity": "sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A=="
+    },
+    "node_modules/globals": {
+      "version": "17.4.0",
+      "integrity": "sha512-hjrNztw/VajQwOLsMNT1cbJiH2muO3OROCHnbehc8eY5JyD2gqz4AcMHPqgaOR59DjgUjYAYLeH699g/eWi2jw=="
+    },
+    "node_modules/hashery": {
+      "version": "1.5.1",
+      "integrity": "sha512-iZyKG96/JwPz1N55vj2Ie2vXbhu440zfUfJvSwEqEbeLluk7NnapfGqa7LH0mOsnDxTF85Mx8/dyR6HfqcbmbQ=="
+    },
+    "node_modules/hookified": {
+      "version": "1.15.1",
+      "integrity": "sha512-MvG/clsADq1GPM2KGo2nyfaWVyn9naPiXrqIe4jYjXNZQt238kWyOGrsyc/DmRAQ+Re6yeo6yX/yoNCG5KAEVg=="
+    },
+    "node_modules/ignore": {
+      "version": "5.3.2",
+      "integrity": "sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g=="
+    },
+    "node_modules/imurmurhash": {
+      "version": "0.1.4",
+      "integrity": "sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA=="
+    },
+    "node_modules/is-extglob": {
+      "version": "2.1.1",
+      "integrity": "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ=="
+    },
+    "node_modules/is-glob": {
+      "version": "4.0.3",
+      "integrity": "sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg=="
+    },
+    "node_modules/isexe": {
+      "version": "2.0.0",
+      "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
+    },
+    "node_modules/json-schema-traverse": {
+      "version": "0.4.1",
+      "integrity": "sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg=="
+    },
+    "node_modules/json-stable-stringify-without-jsonify": {
+      "version": "1.0.1",
+      "integrity": "sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw=="
+    },
+    "node_modules/keyv": {
+      "version": "5.6.0",
+      "integrity": "sha512-CYDD3SOtsHtyXeEORYRx2qBtpDJFjRTGXUtmNEMGyzYOKj1TE3tycdlho7kA1Ufx9OYWZzg52QFBGALTirzDSw=="
+    },
+    "node_modules/levn": {
+      "version": "0.4.1",
+      "integrity": "sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ=="
+    },
+    "node_modules/locate-path": {
+      "version": "6.0.0",
+      "integrity": "sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw=="
+    },
+    "node_modules/minimatch": {
+      "version": "10.2.6",
+      "integrity": "sha512-vpLQEs+VLCr1nU0BXS07maYoFwlDAH0gngQuuttxIwutDFEMHq2blX+8vpgxDdK3J1PwjCJiep77OitTZ4Ll1A=="
+    },
+    "node_modules/ms": {
+      "version": "2.1.3",
+      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="
+    },
+    "node_modules/natural-compare": {
+      "version": "1.4.0",
+      "integrity": "sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw=="
+    },
+    "node_modules/optionator": {
+      "version": "0.9.4",
+      "integrity": "sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g=="
+    },
+    "node_modules/p-limit": {
+      "version": "3.1.0",
+      "integrity": "sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ=="
+    },
+    "node_modules/p-locate": {
+      "version": "5.0.0",
+      "integrity": "sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw=="
+    },
+    "node_modules/path-exists": {
+      "version": "4.0.0",
+      "integrity": "sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w=="
+    },
+    "node_modules/path-key": {
+      "version": "3.1.1",
+      "integrity": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="
+    },
+    "node_modules/playwright": {
+      "version": "1.63.0",
+      "integrity": "sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg=="
+    },
+    "node_modules/playwright-core": {
+      "version": "1.63.0",
+      "integrity": "sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg=="
+    },
+    "node_modules/prelude-ls": {
+      "version": "1.2.1",
+      "integrity": "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="
+    },
+    "node_modules/prettier": {
+      "version": "3.9.8",
+      "integrity": "sha512-WRFq3Wn3WId7LLROfMLdH7xaFr2jR62wU8nLO6rQUOLOxNZUviyJQs1M0iIhLexSFy+L+w0ch66wtoO2jRjG0A=="
+    },
+    "node_modules/punycode": {
+      "version": "2.3.1",
+      "integrity": "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg=="
+    },
+    "node_modules/qified": {
+      "version": "0.10.1",
+      "integrity": "sha512-+Owyggi9IxT1ePKGafcI87ubSmxol6smwJ+RAHDQlx9+9cPwFWDiKFFCPuWhr9ignlGpZ9vDQLw67N4dcTVFEA=="
+    },
+    "node_modules/qified/node_modules/hookified": {
+      "version": "2.2.0",
+      "integrity": "sha512-p/LgFzRN5FeoD3DLS6bkUapeye6E4SI6yJs6KetENd18S+FBthqYq2amJUWpt5z0EQwwHemidjY5OqJGEKm5uA=="
+    },
+    "node_modules/regexp-tree": {
+      "version": "0.1.27",
+      "integrity": "sha512-iETxpjK6YoRWJG5o6hXLwvjYAoW+FEZn9os0PD/b6AP6xQwsa/Y7lCVgIixBbUPMfhu+i2LtdeAqVTgGlQarfA=="
+    },
+    "node_modules/safe-regex": {
+      "version": "2.1.1",
+      "integrity": "sha512-rx+x8AMzKb5Q5lQ95Zoi6ZbJqwCLkqi3XuJXp5P3rT8OEc6sZCJG5AE5dU3lsgRr/F4Bs31jSlVN+j5KrsGu9A=="
+    },
+    "node_modules/shebang-command": {
+      "version": "2.0.0",
+      "integrity": "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA=="
+    },
+    "node_modules/shebang-regex": {
+      "version": "3.0.0",
+      "integrity": "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A=="
+    },
+    "node_modules/type-check": {
+      "version": "0.4.0",
+      "integrity": "sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew=="
+    },
+    "node_modules/typescript": {
+      "version": "7.0.2",
+      "integrity": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA=="
+    },
+    "node_modules/undici-types": {
+      "version": "6.21.0",
+      "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
+    },
+    "node_modules/uri-js": {
+      "version": "4.4.1",
+      "integrity": "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="
+    },
+    "node_modules/which": {
+      "version": "2.0.2",
+      "integrity": "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA=="
+    },
+    "node_modules/word-wrap": {
+      "version": "1.2.5",
+      "integrity": "sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA=="
+    },
+    "node_modules/yocto-queue": {
+      "version": "0.1.0",
+      "integrity": "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
+    }
+  },
+  "Python_lock_packages": 42,
+  "Python_lock_identities": {
+    "bandit": "1.9.4",
+    "boolean-py": "5.0",
+    "build": "1.6.1",
+    "cachecontrol": "0.14.4",
+    "certifi": "2026.7.22",
+    "charset-normalizer": "3.5.1",
+    "click": "8.5.0",
+    "cyclonedx-python-lib": "11.12.0",
+    "defusedxml": "0.7.1",
+    "filelock": "4.0.1",
+    "idna": "3.20",
+    "license-expression": "30.4.4",
+    "markdown-it-py": "4.2.0",
+    "mdurl": "0.1.2",
+    "msgpack": "1.2.2",
+    "mypy": "1.18.2",
+    "mypy-extensions": "1.1.0",
+    "packageurl-python": "0.17.6",
+    "packaging": "26.3",
+    "pathspec": "1.1.1",
+    "pip-api": "0.0.35",
+    "pip-audit": "2.10.1",
+    "pip-requirements-parser": "32.0.1",
+    "pip-tools": "7.6.1",
+    "platformdirs": "4.11.11",
+    "py-serializable": "2.1.0",
+    "pygments": "2.21.0",
+    "pyparsing": "3.3.2",
+    "pyproject-hooks": "1.3.3",
+    "pyyaml": "6.0.3",
+    "requests": "2.34.2",
+    "rich": "15.0.0",
+    "ruff": "0.15.16",
+    "sortedcontainers": "2.4.0",
+    "stevedore": "5.9.1",
+    "tomli": "2.4.1",
+    "tomli-w": "1.2.0",
+    "typing-extensions": "4.16.0",
+    "urllib3": "2.8.0",
+    "wheel": "0.48.0",
+    "pip": "26.2.1",
+    "setuptools": "84.0.0"
+  },
+  "browser": {
+    "platform": "linux",
+    "checks": 39,
+    "raw_axe": 34,
+    "violations": 0,
+    "runtime_sources": 18,
+    "runner_sha256": "056f08b192c0b5a5626fe55df817a75f3b30d45bf3390c60efa4a7e3432fb330",
+    "incomplete": "color-contrast remains explicit; opaque supplemental checks only",
+    "visuals": "Reviewer inspected actual CI 1280/320 observed-price pixels: readable summary/exact four rows; deliberate horizontal scrolling at320."
+  },
+  "docs": {
+    "files": 13,
+    "links": 66,
+    "merge_commit": "cc7094169bb41964a5e382ecaaa786ef5f461a9c",
+    "full_tree": "90bde7c4fe2ad8ec0e71e6a6046c8ff3ff5d336b"
+  },
+  "published_changed_blobs": 25,
+  "reviewer_corrections": [
+    "Initial Python-lock parser omitted extras-bearing cachecontrol[filecache]; corrected optional extras parsing. A second reviewer status-label assumption was corrected to the retained passed_no_actionable_final_findings enum; original29ec bytes unchanged. These were reviewer assumptions, not source/CI failures."
+  ],
+  "checks_performed": [
+    "local current head",
+    "pages original run first attempt success",
+    "pages complete step statuses",
+    "website-quality-reports exact artifact metadata",
+    "accessibility-evidence exact artifact metadata",
+    "docs original run first attempt success",
+    "docs complete step statuses",
+    "docs-links exact artifact metadata",
+    "PR exact open/unmerged",
+    "four exact mandatory checks success",
+    "Pages build/deploy skipped",
+    "main strict/admin/one human approval intact",
+    "root retained remote publication proof",
+    "prepublication25 inputs",
+    ".github/workflows/pages.yml checksum",
+    ".github/workflows/pages.yml exact published Git blob",
+    ".github/workflows/pages.yml remote Git blob match",
+    "README.md checksum",
+    "README.md exact published Git blob",
+    "README.md remote Git blob match",
+    "evidence/observed-prices/1280-observed-price.png checksum",
+    "evidence/observed-prices/1280-observed-price.png exact published Git blob",
+    "evidence/observed-prices/1280-observed-price.png remote Git blob match",
+    "evidence/observed-prices/320-observed-price.png checksum",
+    "evidence/observed-prices/320-observed-price.png exact published Git blob",
+    "evidence/observed-prices/320-observed-price.png remote Git blob match",
+    "evidence/observed-prices/README.md checksum",
+    "evidence/observed-prices/README.md exact published Git blob",
+    "evidence/observed-prices/README.md remote Git blob match",
+    "evidence/observed-prices/axe-observed-price-1280.json.gz checksum",
+    "evidence/observed-prices/axe-observed-price-1280.json.gz exact published Git blob",
+    "evidence/observed-prices/axe-observed-price-1280.json.gz remote Git blob match",
+    "evidence/observed-prices/axe-observed-price-320.json.gz checksum",
+    "evidence/observed-prices/axe-observed-price-320.json.gz exact published Git blob",
+    "evidence/observed-prices/axe-observed-price-320.json.gz remote Git blob match",
+    "evidence/observed-prices/axe-observed-price-390.json.gz checksum",
+    "evidence/observed-prices/axe-observed-price-390.json.gz exact published Git blob",
+    "evidence/observed-prices/axe-observed-price-390.json.gz remote Git blob match",
+    "evidence/observed-prices/axe-observed-unproven-1280.json.gz checksum",
+    "evidence/observed-prices/axe-observed-unproven-1280.json.gz exact published Git blob",
+    "evidence/observed-prices/axe-observed-unproven-1280.json.gz remote Git blob match",
+    "evidence/observed-prices/axe-observed-unproven-320.json.gz checksum",
+    "evidence/observed-prices/axe-observed-unproven-320.json.gz exact published Git blob",
+    "evidence/observed-prices/axe-observed-unproven-320.json.gz remote Git blob match",
+    "evidence/observed-prices/axe-observed-unproven-390.json.gz checksum",
+    "evidence/observed-prices/axe-observed-unproven-390.json.gz exact published Git blob",
+    "evidence/observed-prices/axe-observed-unproven-390.json.gz remote Git blob match",
+    "evidence/observed-prices/browser-runner-format-proof.json checksum",
+    "evidence/observed-prices/browser-runner-format-proof.json exact published Git blob",
+    "evidence/observed-prices/browser-runner-format-proof.json remote Git blob match",
+    "evidence/observed-prices/browser.json checksum",
+    "evidence/observed-prices/browser.json exact published Git blob",
+    "evidence/observed-prices/browser.json remote Git blob match",
+    "evidence/observed-prices/provenance.json checksum",
+    "evidence/observed-prices/provenance.json exact published Git blob",
+    "evidence/observed-prices/provenance.json remote Git blob match",
+    "evidence/observed-prices/python-controls.json checksum",
+    "evidence/observed-prices/python-controls.json exact published Git blob",
+    "evidence/observed-prices/python-controls.json remote Git blob match",
+    "evidence/observed-prices/summary.json checksum",
+    "evidence/observed-prices/summary.json exact published Git blob",
+    "evidence/observed-prices/summary.json remote Git blob match",
+    "index.html checksum",
+    "index.html exact published Git blob",
+    "index.html remote Git blob match",
+    "observed-trace.mjs checksum",
+    "observed-trace.mjs exact published Git blob",
+    "observed-trace.mjs remote Git blob match",
+    "reports/trace-observed-price32.json checksum",
+    "reports/trace-observed-price32.json exact published Git blob",
+    "reports/trace-observed-price32.json remote Git blob match",
+    "scripts/check_accessibility.mjs checksum",
+    "scripts/check_accessibility.mjs exact published Git blob",
+    "scripts/check_accessibility.mjs remote Git blob match",
+    "security-reviewed.json checksum",
+    "security-reviewed.json exact published Git blob",
+    "security-reviewed.json remote Git blob match",
+    "tests/data/observed-controls.json checksum",
+    "tests/data/observed-controls.json exact published Git blob",
+    "tests/data/observed-controls.json remote Git blob match",
+    "tests/observed.test.mjs checksum",
+    "tests/observed.test.mjs exact published Git blob",
+    "tests/observed.test.mjs remote Git blob match",
+    "tests/test_site.py checksum",
+    "tests/test_site.py exact published Git blob",
+    "tests/test_site.py remote Git blob match",
+    "trace-viewer.mjs checksum",
+    "trace-viewer.mjs exact published Git blob",
+    "trace-viewer.mjs remote Git blob match",
+    "full JS/types/rules scope",
+    "all24 policy/source/config bindings",
+    "app.js checksum",
+    "app.js exact published Git blob",
+    "comparison.mjs checksum",
+    "comparison.mjs exact published Git blob",
+    "eslint.config.mjs checksum",
+    "eslint.config.mjs exact published Git blob",
+    "eslint.security.config.mjs checksum",
+    "eslint.security.config.mjs exact published Git blob",
+    "observed-trace.mjs checksum",
+    "observed-trace.mjs exact published Git blob",
+    "package-lock.json checksum",
+    "package-lock.json exact published Git blob",
+    "package.json checksum",
+    "package.json exact published Git blob",
+    "pyproject.toml checksum",
+    "pyproject.toml exact published Git blob",
+    "report-validation.mjs checksum",
+    "report-validation.mjs exact published Git blob",
+    "requirements-quality.in checksum",
+    "requirements-quality.in exact published Git blob",
+    "requirements-quality.txt checksum",
+    "requirements-quality.txt exact published Git blob",
+    "scripts/check_accessibility.mjs checksum",
+    "scripts/check_accessibility.mjs exact published Git blob",
+    "scripts/check_quality.mjs checksum",
+    "scripts/check_quality.mjs exact published Git blob",
+    "scripts/quality_policy.mjs checksum",
+    "scripts/quality_policy.mjs exact published Git blob",
+    "tests/comparison.test.mjs checksum",
+    "tests/comparison.test.mjs exact published Git blob",
+    "tests/observed.test.mjs checksum",
+    "tests/observed.test.mjs exact published Git blob",
+    "tests/quality.test.mjs checksum",
+    "tests/quality.test.mjs exact published Git blob",
+    "tests/report.test.mjs checksum",
+    "tests/report.test.mjs exact published Git blob",
+    "tests/trace.test.mjs checksum",
+    "tests/trace.test.mjs exact published Git blob",
+    "trace-comparison.mjs checksum",
+    "trace-comparison.mjs exact published Git blob",
+    "trace-report.mjs checksum",
+    "trace-report.mjs exact published Git blob",
+    "trace-viewer.mjs checksum",
+    "trace-viewer.mjs exact published Git blob",
+    "tsconfig.json checksum",
+    "tsconfig.json exact published Git blob",
+    "types/browser-tools.d.ts checksum",
+    "types/browser-tools.d.ts exact published Git blob",
+    "all17 raw ESLint security reports",
+    "app.js no hidden/error findings",
+    "comparison.mjs no hidden/error findings",
+    "eslint.config.mjs no hidden/error findings",
+    "eslint.security.config.mjs no hidden/error findings",
+    "observed-trace.mjs no hidden/error findings",
+    "report-validation.mjs no hidden/error findings",
+    "scripts/check_accessibility.mjs no hidden/error findings",
+    "scripts/check_quality.mjs no hidden/error findings",
+    "scripts/quality_policy.mjs no hidden/error findings",
+    "tests/comparison.test.mjs no hidden/error findings",
+    "tests/observed.test.mjs no hidden/error findings",
+    "tests/quality.test.mjs no hidden/error findings",
+    "tests/report.test.mjs no hidden/error findings",
+    "tests/trace.test.mjs no hidden/error findings",
+    "trace-comparison.mjs no hidden/error findings",
+    "trace-report.mjs no hidden/error findings",
+    "trace-viewer.mjs no hidden/error findings",
+    "all122 exact raw fingerprints and source-bound rationales",
+    "reuse exact99 full AST/rationale independent source review",
+    "full17 lint clean",
+    "quality94 actual Node tests zero failures/skips",
+    "actual11 Python tests",
+    "both check and quality94 Node results",
+    "all109 exact npm lock package identities/integrities",
+    "pages/website-quality-reports/npm-audit.json full109 audit zero reported advisories",
+    "pages/accessibility-evidence/npm-audit.json full109 audit zero reported advisories",
+    "all42 exact Python lock identities zero reported advisories",
+    "tests/test_site.py checksum",
+    "tests/test_site.py exact published Git blob",
+    "requirements-quality.txt checksum",
+    "requirements-quality.txt exact published Git blob",
+    "all tracked Python source selected",
+    "full Python Bandit zero findings/skips/suppressions",
+    "actualLinux39 browser groups pass",
+    "scripts/check_accessibility.mjs checksum",
+    "scripts/check_accessibility.mjs exact published Git blob",
+    "index.html checksum",
+    "index.html exact published Git blob",
+    "app.js checksum",
+    "app.js exact published Git blob",
+    "comparison.mjs checksum",
+    "comparison.mjs exact published Git blob",
+    "report-validation.mjs checksum",
+    "report-validation.mjs exact published Git blob",
+    "trace-report.mjs checksum",
+    "trace-report.mjs exact published Git blob",
+    "trace-comparison.mjs checksum",
+    "trace-comparison.mjs exact published Git blob",
+    "trace-viewer.mjs checksum",
+    "trace-viewer.mjs exact published Git blob",
+    "observed-trace.mjs checksum",
+    "observed-trace.mjs exact published Git blob",
+    "reports/trace-observed-price32.json checksum",
+    "reports/trace-observed-price32.json exact published Git blob",
+    "tests/data/observed-controls.json checksum",
+    "tests/data/observed-controls.json exact published Git blob",
+    "reports/trace-mainnet-prefix-four.json checksum",
+    "reports/trace-mainnet-prefix-four.json exact published Git blob",
+    "tests/data/trace-oracle-prefix-32.json checksum",
+    "tests/data/trace-oracle-prefix-32.json exact published Git blob",
+    "assets/examples/action-comparison.json checksum",
+    "assets/examples/action-comparison.json exact published Git blob",
+    "reports/agent-local-codex.json checksum",
+    "reports/agent-local-codex.json exact published Git blob",
+    "style.css checksum",
+    "style.css exact published Git blob",
+    "404.html checksum",
+    "404.html exact published Git blob",
+    "package.json checksum",
+    "package.json exact published Git blob",
+    "package-lock.json checksum",
+    "package-lock.json exact published Git blob",
+    "browser18 source/locked tool versions",
+    "all34 raw axe outputs present",
+    "1280-console exact raw axe/summary zero violations",
+    "1280-console scoped opaque contrast evidence",
+    "390-console exact raw axe/summary zero violations",
+    "390-console scoped opaque contrast evidence",
+    "320-console exact raw axe/summary zero violations",
+    "320-console scoped opaque contrast evidence",
+    "console-import exact raw axe/summary zero violations",
+    "console-import scoped opaque contrast evidence",
+    "1280-liquidity-shock exact raw axe/summary zero violations",
+    "1280-liquidity-shock scoped opaque contrast evidence",
+    "1280-recovery-trap exact raw axe/summary zero violations",
+    "1280-recovery-trap scoped opaque contrast evidence",
+    "1280-depeg-stress exact raw axe/summary zero violations",
+    "1280-depeg-stress scoped opaque contrast evidence",
+    "1280-ethereum-uniswap-slippage exact raw axe/summary zero violations",
+    "1280-ethereum-uniswap-slippage scoped opaque contrast evidence",
+    "1280-agent-local-codex exact raw axe/summary zero violations",
+    "1280-agent-local-codex scoped opaque contrast evidence",
+    "390-liquidity-shock exact raw axe/summary zero violations",
+    "390-liquidity-shock scoped opaque contrast evidence",
+    "390-recovery-trap exact raw axe/summary zero violations",
+    "390-recovery-trap scoped opaque contrast evidence",
+    "390-depeg-stress exact raw axe/summary zero violations",
+    "390-depeg-stress scoped opaque contrast evidence",
+    "390-ethereum-uniswap-slippage exact raw axe/summary zero violations",
+    "390-ethereum-uniswap-slippage scoped opaque contrast evidence",
+    "390-agent-local-codex exact raw axe/summary zero violations",
+    "390-agent-local-codex scoped opaque contrast evidence",
+    "320-liquidity-shock exact raw axe/summary zero violations",
+    "320-liquidity-shock scoped opaque contrast evidence",
+    "320-recovery-trap exact raw axe/summary zero violations",
+    "320-recovery-trap scoped opaque contrast evidence",
+    "320-depeg-stress exact raw axe/summary zero violations",
+    "320-depeg-stress scoped opaque contrast evidence",
+    "320-ethereum-uniswap-slippage exact raw axe/summary zero violations",
+    "320-ethereum-uniswap-slippage scoped opaque contrast evidence",
+    "320-agent-local-codex exact raw axe/summary zero violations",
+    "320-agent-local-codex scoped opaque contrast evidence",
+    "error exact raw axe/summary zero violations",
+    "error scoped opaque contrast evidence",
+    "404 exact raw axe/summary zero violations",
+    "404 scoped opaque contrast evidence",
+    "signed-prefix-1280 exact raw axe/summary zero violations",
+    "signed-prefix-1280 scoped opaque contrast evidence",
+    "signed-prefix-390 exact raw axe/summary zero violations",
+    "signed-prefix-390 scoped opaque contrast evidence",
+    "signed-prefix-320 exact raw axe/summary zero violations",
+    "signed-prefix-320 scoped opaque contrast evidence",
+    "original32-1280 exact raw axe/summary zero violations",
+    "original32-1280 scoped opaque contrast evidence",
+    "original32-390 exact raw axe/summary zero violations",
+    "original32-390 scoped opaque contrast evidence",
+    "original32-320 exact raw axe/summary zero violations",
+    "original32-320 scoped opaque contrast evidence",
+    "observed-price-1280 exact raw axe/summary zero violations",
+    "observed-price-1280 scoped opaque contrast evidence",
+    "observed-unproven-1280 exact raw axe/summary zero violations",
+    "observed-unproven-1280 scoped opaque contrast evidence",
+    "observed-price-390 exact raw axe/summary zero violations",
+    "observed-price-390 scoped opaque contrast evidence",
+    "observed-unproven-390 exact raw axe/summary zero violations",
+    "observed-unproven-390 scoped opaque contrast evidence",
+    "observed-price-320 exact raw axe/summary zero violations",
+    "observed-price-320 scoped opaque contrast evidence",
+    "observed-unproven-320 exact raw axe/summary zero violations",
+    "observed-unproven-320 scoped opaque contrast evidence",
+    "signed-prefix-unverified exact raw axe/summary zero violations",
+    "signed-prefix-unverified scoped opaque contrast evidence",
+    "browser no exception/upload/third-party request group",
+    "1280 exact/incomplete/rejection/clear group",
+    "390 exact/incomplete/rejection/clear group",
+    "320 exact/incomplete/rejection/clear group",
+    "six preserved Python-engine-sealed controls/source binding",
+    "whole synthetic merge tree equals exact head",
+    "all13docs/66links no errors/exclusions",
+    "pinnedLinux checker identity",
+    ".github/PULL_REQUEST_TEMPLATE.md checksum",
+    ".github/PULL_REQUEST_TEMPLATE.md exact published Git blob",
+    "404.html checksum",
+    "404.html exact published Git blob",
+    "AGENTS.md checksum",
+    "AGENTS.md exact published Git blob",
+    "CONTRIBUTING.md checksum",
+    "CONTRIBUTING.md exact published Git blob",
+    "README.md checksum",
+    "README.md exact published Git blob",
+    "SECURITY.md checksum",
+    "SECURITY.md exact published Git blob",
+    "STATUS.md checksum",
+    "STATUS.md exact published Git blob",
+    "evidence/agent-decisions/commands.md checksum",
+    "evidence/agent-decisions/commands.md exact published Git blob",
+    "evidence/observed-prices/README.md checksum",
+    "evidence/observed-prices/README.md exact published Git blob",
+    "evidence/trace-differences/README.md checksum",
+    "evidence/trace-differences/README.md exact published Git blob",
+    "evidence/trace-viewer/commands.md checksum",
+    "evidence/trace-viewer/commands.md exact published Git blob",
+    "index.html checksum",
+    "index.html exact published Git blob",
+    "style.css checksum",
+    "style.css exact published Git blob",
+    "all tracked Markdown plus HTML/styles checked",
+    ".github/workflows/docs-links.yml checksum",
+    ".github/workflows/docs-links.yml exact published Git blob",
+    "exact pinned docs composite action executed",
+    "unchanged final independent source/rationale review29ec"
+  ],
+  "input_sha256": {
+    ".quality/observed-price-viewer/ci-a19/pages-run.json": "79f1870dfec72660667472aea11edb7302e929d54a32df1c26e66a1f850d7e9d",
+    ".quality/observed-price-viewer/ci-a19/pages-artifacts.json": "a90f06ea65318bfaf356144d9956cd34687391894d991e395259f8b30e731e21",
+    ".quality/observed-price-viewer/ci-a19/pages.log": "68518b28862f4085279db1fe7c1f5aa605066723d44e16c70c4694fa19591799",
+    ".quality/observed-price-viewer/ci-a19/docs-run.json": "c2ed6992cd55c2513724459f96fe24ecaebde3843b12c79827ae4e4d01a3714f",
+    ".quality/observed-price-viewer/ci-a19/docs-artifacts.json": "2d0d8ed8d70e5f085e437ff698da8c4e0b228a9713339d255aa4c3c925675dbb",
+    ".quality/observed-price-viewer/ci-a19/docs.log": "157f45c6d360c45f3429569808b403f670ae91d000a1c3bb4e8862c0cda6d832",
+    ".quality/observed-price-viewer/ci-a19/checks.json": "5f8c32f9d6709d28086ca58ddb75a5800798b0ccb0739d9fea4bf66d9ef05c0c",
+    ".quality/observed-price-viewer/ci-a19/main-protection.json": "5d86fed4b1664da51dfad382447793d5ea1f923aee5ea646565e1aacb5491c7c",
+    ".quality/observed-price-viewer/remote-publication-proof.json": "b2860f0f75901affcb0d2d5e23b82f05e15536344564236ec4556ba6683ba29f",
+    ".quality/observed-price-viewer/remote-current-tree.json": "439f5842a401286b88964f51c27eb4dd67fe7d5e7c93c9408ec40bb84bf4cc1d",
+    ".quality/observed-price-viewer/independent-final-review.json": "29ecc85fbd78f0532e16f5faedb56014ce90d18ade871b4b9296657eb00205f6",
+    ".github/workflows/pages.yml": "eeb44df987f4a17076a643102ed18b2e3eae01f8aa7b06c1e7204c056e108c5b",
+    "README.md": "9205e164f33e444280766f6d7f80712b1d868cde62d3e2bb34105a1612c6710b",
+    "evidence/observed-prices/1280-observed-price.png": "5560d7ec4c72281d02e2ffa2e617722a211bec1cfdc79f38352591fd2863c1b4",
+    "evidence/observed-prices/320-observed-price.png": "53f87c643984f99304d22105942248ecdf23b4642bdc5016dee820d7a68a8df9",
+    "evidence/observed-prices/README.md": "fd601ef1c108e1d91cf7c83e9ce1bcd9ba78d6c1d808008c84658bf2fd04fd52",
+    "evidence/observed-prices/axe-observed-price-1280.json.gz": "e99c85d33777647dca8920bf24b885cdb1d234c876fd372ea0a5261a95241468",
+    "evidence/observed-prices/axe-observed-price-320.json.gz": "39ab7703add4d20af0f7bb01945ff446e6cb840fefb2f0cbe43b6c72d5fd8d7d",
+    "evidence/observed-prices/axe-observed-price-390.json.gz": "f06d7f5d16babb3e6b913afb03f80e0e5ac4352c37ea270908148b0fb38b3e10",
+    "evidence/observed-prices/axe-observed-unproven-1280.json.gz": "05d08761bdf8428d9fdad5e82894b93863efbeab8d01765b3b45949ac8637270",
+    "evidence/observed-prices/axe-observed-unproven-320.json.gz": "1fe3760fb8812fab3bcb66bed650edb1b7e816faad45184a5d080521e0bbd481",
+    "evidence/observed-prices/axe-observed-unproven-390.json.gz": "50a310d4b100a563047052aabceeca257ce9995e8af1e3af38d75ef2f309eef7",
+    "evidence/observed-prices/browser-runner-format-proof.json": "955ede31fe7ce1f8d7f907993f7b82e8920f4a89fe1273da8d853ce4851629c8",
+    "evidence/observed-prices/browser.json": "ca5866c9f35539834d893e17bdaa5e26ddb7db0d72593f71ca513ae4930e0041",
+    "evidence/observed-prices/provenance.json": "6f65dad0c1684fd0fc07fe10717ca1547bf41076e212c19a7569dd160b43a2b1",
+    "evidence/observed-prices/python-controls.json": "731aac55aeb6fd3afb1f1fc0d682be4ed3da93bb7c0ee64802f606c40c7f631f",
+    "evidence/observed-prices/summary.json": "e63b73466c4854b67414aa0cc7a2ad3ab160e661d32e9ca0b597d7156b0c30bf",
+    "index.html": "f963ac6f1394c7037ebd94e284705a4ca6fe2897ae9e39ea9f2fe8c4d3754450",
+    "observed-trace.mjs": "980ff5172f61b82413e9898955f7a60ee23ba10a6374e6b259a91034624fe9ee",
+    "reports/trace-observed-price32.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "scripts/check_accessibility.mjs": "056f08b192c0b5a5626fe55df817a75f3b30d45bf3390c60efa4a7e3432fb330",
+    "security-reviewed.json": "3d13d2609f0b5d46870faac1c95a516fe3b57433d6a8fdc5d7e523390bb0890c",
+    "tests/data/observed-controls.json": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
+    "tests/observed.test.mjs": "b0b1391ce47970cdbedd3fbde881b91b5ec76f2d59ba070222edfe975eb7b95b",
+    "tests/test_site.py": "508e0274398e82aa4a77c115ffe448fb25e4b5823b19c2d817195f7dc803f4d3",
+    "trace-viewer.mjs": "6cbe085c8fc71b870497297477d18176f255891633ebe960c5220fcf7e93e46f",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/scope.json": "cffc754a47f181b8edeff6dd2b119019dc99fbc4c4899295eee05d05fa831709",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/source-sha256.json": "33c275b984900bd08084add1fd05d0e5e81e779beb2065aa4d31aed3b832ad71",
+    "app.js": "36786b0c3db6a8016101648a5b86ccb3253ac8ce20867cdc01cfe48b88e8325a",
+    "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
+    "eslint.config.mjs": "7acf03efd74c5422b646cb4635fd1321222832ad7a92527c77a8f94e8274234a",
+    "eslint.security.config.mjs": "fb2ab88ae816262fd1cef89709826491797957b8ee04835fae10bc6ab83ca7f2",
+    "package-lock.json": "199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342",
+    "package.json": "d4ae0a0b1a412c70cf38bace34efd9fd459736f0e8c4d13ded0c53cab43e772d",
+    "pyproject.toml": "1fa3f76b9d84bb385aa4a7557416c172a54572c6d380c1ca1d64ddae31457f38",
+    "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
+    "requirements-quality.in": "eccd79884fb38364cc396e59e22eb5a78f48bbf92e2c0b47825dcff473692185",
+    "requirements-quality.txt": "845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722",
+    "scripts/check_quality.mjs": "51d72e7ccb7e9716acfc50e39bdf692a2512532e6da91491358da1437f4794d8",
+    "scripts/quality_policy.mjs": "e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89",
+    "tests/comparison.test.mjs": "35a035d9e806548d20224070fa707e8866783c639e860ccc3afece23376b6327",
+    "tests/quality.test.mjs": "71150f603988dcb2429b56de76e3535b0268fbf180b12ecbe998c23c235e52c1",
+    "tests/report.test.mjs": "7669919663e3486783dc39b97d7e5f892b5a4955ef7696d084f244db502ceffd",
+    "tests/trace.test.mjs": "f68f5e426f9cc470728c43ac58a04a49804839a7f5e647ce95ee244d60d62d21",
+    "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+    "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+    "tsconfig.json": "b11349591a0d0c9933d0ee3ff60b0b874df53834e8f2e3c6c45b788aa35cb661",
+    "types/browser-tools.d.ts": "0a5352e697b9e2a51651016ac789287acb71d48fdc04027d80a4050b604f579e",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/security.json": "80bc20725c7be7d437954ee94a09e1ee2085e841a4b5afbbeeb45451b0991a68",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/lint.json": "eacac024ee028430034ec686ca3824f1f4514c477fb0906ef459337116e36892",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/types.log": "10886242e507423a2e416506fd816a6941e14ccaa78ba061209021fdcb79277c",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/python-types.log": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/tests.log": "ebd94af4d19bf340f7d7f00e8f675f4d7cf9cbaf052816f30563d24ac1a1ed61",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/python-dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/python-source-sha256.txt": "2de1c8cf79bfb1c8ccb66bfcb0b0092cf5eb5247f2cc0c1c3a607d1e5b1a199e",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/python-files.bin": "0c7605d69193b0c6dbda57f845fe6a088efeab0857ed59c4bb9c5afc85468b36",
+    ".quality/observed-price-viewer/ci-a19/pages/website-quality-reports/python-security.json": "6c9b0de796e0530c2d3c14631c2a4dbcacacfff4100f605de54b89b5fe4bcf41",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/accessibility.json": "f96f83c2276b070406ad65a80a1e10d740cad32f8942317481e79466752cb68e",
+    "reports/trace-mainnet-prefix-four.json": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+    "tests/data/trace-oracle-prefix-32.json": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+    "assets/examples/action-comparison.json": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67",
+    "reports/agent-local-codex.json": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+    "style.css": "4646e82f1b31e2e416cc06717f427225b5f8c0518500cf012fdd9405b8933130",
+    "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-1280-console.json": "8abcd3c416f0ac48952475a427c2b4ab4fb65755c9b37760f01f39236c139720",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-390-console.json": "fddde2c01825aca50406f5e876daba4ab2377dcb60641333f4b520b6d166a231",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-320-console.json": "4e4e613ef95afa2d4625cc2317b140b104e412b865b93a19aaf72c6dd82f284a",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-console-import.json": "dd202dad664897e889f8aa708dc90f898cf2a4cc094641a442ac144e62ad4456",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-1280-liquidity-shock.json": "a0a851b995b3c25247693e18e9a15bbc1cab8ada0e9404b84cf11ef97e049360",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-1280-recovery-trap.json": "84ae15287b6f3fa76303962de08f0b2a63c5f742be958102fa6bf66f79e682d3",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-1280-depeg-stress.json": "9a6e4745d74f0a87e300652d483285af94a750cff6049401d40baadc11942f65",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-1280-ethereum-uniswap-slippage.json": "aea3d0167d5399ea46d95b9555da3f748de4505c7d4504d2c48339786ecd53a2",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-1280-agent-local-codex.json": "48e61d314aae8abb69da7691a9aae96edb8bbe8a2bca45f8339073998cc218fb",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-390-liquidity-shock.json": "dec1a1848df7a944e236c68d14988dc3c73b0449f1258be3c5c849baeb1e19ba",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-390-recovery-trap.json": "02945a4a95343e5430dfb0bad446f6977034f8fc23df6cf12a9ffa3fb8007e2b",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-390-depeg-stress.json": "0374d76a25bf34391bcc5e912a363649cd1fce4c3e771f859c633bedafb88026",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-390-ethereum-uniswap-slippage.json": "752287ea8ee17a6f72361299e51bf1b42a7f0ab669b6e2de74726683a38e5cd7",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-390-agent-local-codex.json": "45f14a18eecefdf1894b099befedb587d23dfed00240e0f5514b87bb3780bf3e",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-320-liquidity-shock.json": "467514c5cc48e942a6d6bd016195560a5a78d24ef340d4bef6c9b8861a27f825",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-320-recovery-trap.json": "d404a5f9d656935ab0710aa133debf0758d8220cc15c2b3522de3444be4a0f95",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-320-depeg-stress.json": "82c612237348021feef48e17a4493b837b5441994637c14c439e243cb013ca08",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-320-ethereum-uniswap-slippage.json": "ae0f3837e19a45930fe3d05502af5870f1719a93baada0cc3b3df34eed2c42bf",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-320-agent-local-codex.json": "ec5f881ed03062a5747fbf63f5c7f066c0fd5dcf8ff801a77c7a8c666e31b63e",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-error.json": "591ded5caaf36f2d31741c1c41b4b21a06cc0d9b20c0597c74a034cc6997d96b",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-404.json": "9bbf58fd51810c7318dc0e8a296f34e2702e670a09618bf84f78c1affc8ac83b",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-signed-prefix-1280.json": "1f8050cd6f0bce934752b053393ff36ea5607d84f5584cd0d751221251bcdce2",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-signed-prefix-390.json": "f81021b052233501a992e4bca712f1ab680b19ea1917276fccd63a91c88f6540",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-signed-prefix-320.json": "bf7df0a47f8c022af4ba969ba1ed0e5c12d6615cba077203309cfed8f589e13c",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-original32-1280.json": "7acca560916cfa26bf676c3963044407b4d72c11b3a1bfa86cd73c11b2b742e9",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-original32-390.json": "83688cc302192564757395d3695f4783918c7311b91183f635a51a75965a0cbc",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-original32-320.json": "8b4e49444f79995b74803d08aac03f88870a19340bc3c451487b3be9d4fc270b",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-observed-price-1280.json": "6c14b2717c14cabafaa7676fe7cb013ff6288a347d09c549cf14e42fbee90105",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-observed-unproven-1280.json": "fa723236ca85285a344c8ff751c651573ada863606019b4ed67afb94b113a487",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-observed-price-390.json": "10c5d395a4ef6846730244835557f0f9d0fdc00b2196ccb482fd682a7cf7b36a",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-observed-unproven-390.json": "da6696481ad1797e610a95ff5ac58ae732bdfc07f7c1fcc62466283c3b05e11e",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-observed-price-320.json": "432bcd09184f32b1e58ee49103a91e436501957a3911d00a7e9eef732b69f68f",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-observed-unproven-320.json": "7015afdf3ce8c415e8ade770c1c4fa929d3f8de7db78f0bf67a42a9baf8774f8",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/axe-signed-prefix-unverified.json": "fef6e2d3cc24e39cf49909a0bda22aaf8efeca571d40273d0692c5664c1c9f59",
+    ".quality/observed-price-viewer/python-controls.json": "731aac55aeb6fd3afb1f1fc0d682be4ed3da93bb7c0ee64802f606c40c7f631f",
+    ".quality/observed-price-viewer/ci-a19/docs/docs-links/report.json": "0fb642443ad5cc224f477a4651347b399b29a6c08759c5c4ff86298724a6f40a",
+    ".quality/observed-price-viewer/ci-a19/merge-commit.json": "1aa454b28bc5b71e59d39eeaf5b3d880d8e0ce300e5bfb3bc4d291ca8e341736",
+    ".github/PULL_REQUEST_TEMPLATE.md": "f8840c1975bc5aabfdedbd13d69de905fc19b7c9ad4c9b965f48e2b4c20b405d",
+    "AGENTS.md": "d1d8e6c41d67cbcd2ee82f7dcbb50568189acfcf92508b60731eed8de480e303",
+    "CONTRIBUTING.md": "3f4f1bb0b0c9b21635b8ba3cde4a7d34dfaad55e4c2b5ac6cd69ee905cd0e581",
+    "SECURITY.md": "06f4d07eae20821a11549334d9f6733aa84ce18847bc8ec59459ac93b2b49514",
+    "STATUS.md": "eeee9e901b13d133e9fb1fec20c64a7830574697dab7c785cfc2b64ee14ea12a",
+    "evidence/agent-decisions/commands.md": "4a33c46c26a240b50d36bdff5d72df075ff3b6b7464585aec494b044a0f2148e",
+    "evidence/trace-differences/README.md": "97605ea3ad88f37142e6455d4f50b538c6c057d0c58a88c77d168a93a8fc7a99",
+    "evidence/trace-viewer/commands.md": "7eb9590a6e1b7b23d49eadce5efcbfa2687c09143e0e00f18bd7acb1d2c63b23",
+    ".github/workflows/docs-links.yml": "72842da81db99136b6bd471a063ede24f224966ebf071c0896a0f8ec12865ebc",
+    ".quality/observed-price-viewer/ci-a19/docs-initial.json": "32c3f0f8d1ce41f72f02ab357d069629b1d7fe555e42495d98614bccde3d6e80",
+    ".quality/observed-price-viewer/ci-a19/download.py": "18b3386f71748acdf2a07fa5af45229d868e994d443c0f0be9626a346d77f269",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-agent-evidence.png": "36c3d68481267449ee703c1ebee4a4ca25156e1d2a9fffd56fbf3c23982dc47a",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-console.png": "fd20ae96ad6dbb79e8c7c15df738bdc2fb7be11be03f1c58a345a78c0d063132",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-ethereum-uniswap-slippage-viewport.png": "3d73f75f2fa70696b2bc398cc31475b6f469f22cd04965f99bb3c98716fd2b11",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-ethereum-uniswap-slippage.png": "95935e0c47f3ff477195b11e7cc06e4dc45e83b512029a01ef0842378df9633b",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-liquidity-shock-viewport.png": "4825463b9201e9816ef4e491970800e3c217db8cbc96d0c702c3ad19da7c9ee7",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-liquidity-shock.png": "49910317824384bf9db3992015534729ee45888148758684635935e099e64fe0",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-observed-price.png": "a42d418b308a97cc3c99794cdde23b469a7be2107fa7e77e51d62f2094217948",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-original32-shift.png": "9bd58d0c48f74e1133c9fe83cc988cda140954be60a6b9c75313e6d3748c62bc",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-original32-summary.png": "18c65120d24e3d11278cabc45eb5b35b4b3b54d64f912171ae5391d398b5da60",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/1280-signed-prefix.png": "7518d2ca1f4eb88d017e3213601fc11114f7f835e37e4b0f155def15bb18d414",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/320-agent-evidence.png": "3c5b8e23ad287f875d7d20965f081ae1e1f6d81ebe24835d9467e55151620233",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/320-console.png": "0d697bffe2e5d83c203721c5310f3ab27915c7b0e5d504fac880e207a3ba496d",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/320-ethereum-uniswap-slippage-viewport.png": "190b91bba64672d6e1158580a94bda2e5448afee7d3168935c8f658a6bc18046",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/320-ethereum-uniswap-slippage.png": "3dc9f553212f09c24baf0f332b43be369106ad3649efb22ecd18f2a8e77a11f9",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/320-observed-price.png": "b54271e73e8cf09fd828029e1d951c6d14720546bbb58f062aa010740bf493e1",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/320-original32-shift.png": "379b3cc9499cf685c405a897462faa5283247cbee730603fef19a40aef9bf804",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/320-original32-summary.png": "1e2449c686bb6c09b0580562f2e8f918582e1fac5c43d7dc4e35d01385bf6808",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/320-signed-prefix.png": "afc1e285bed538eb7d8bec629c55b457a18d02744c5f422126a0c9af12141b22",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/390-agent-evidence.png": "535b3e6acbae3d00cb451daeda6fdbe215cd66d9ffc334c8bba605b07bd71be9",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/390-console.png": "3ff6eb41609616a93a02830006c190a2840f55b08d5ba43ec3fd9281a62ecd8c",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/390-ethereum-uniswap-slippage-viewport.png": "18d54f3df4e3277c872362bab9fb8eb4c1cf308e59ead3691117e6ed3a2552c6",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/390-ethereum-uniswap-slippage.png": "9bba5ec951677f10cc2bbb91a372d520bdbe149f311f91074b4dbe7eb07493fb",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/390-observed-price.png": "bbf764786bd6425a609c24229991d323e9c715b3a708acda558ca7f6971cc409",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/390-original32-shift.png": "6f4eb9dc01c0ebc3709f7c308f53a63e0f6782985c83bad86d14e08ffdbb7ec3",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/390-original32-summary.png": "d126ddbbd98d0f651f0a3a703321ddd6f58bd1b1a502be488b0cf8e6a7ac442b",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/390-signed-prefix.png": "5a48fe03faff67ad71f2f09be69c5c0f2a0b256f2d7b4d98affe864c650eae0e",
+    ".quality/observed-price-viewer/ci-a19/pages/accessibility-evidence/forced-colors.png": "dd57af53a0cfe06234a00d371a800cae5780d01b21277b09f692fdd23651396d",
+    ".quality/observed-price-viewer/ci-a19/pages-initial.json": "cc4d08bec8cc77e372b5869b801b0db243a15061afd2812a05da69053ef39d0f",
+    ".quality/observed-price-viewer/ci-a19/pr-initial.json": "5f8c32f9d6709d28086ca58ddb75a5800798b0ccb0739d9fea4bf66d9ef05c0c",
+    ".quality/observed-price-viewer/ci-a19/watch.log": "448753c0bf046b145a15b4dc972349bfc594cecc51359242a24d397a01aa08fa"
+  },
+  "review_script_sha256": "ef5181e2a0ad6a26425ac8381b2285156a03c14dbdacb48f9604235ef1407e91",
+  "limits": [
+    "Offline independent artifact/source audit; no tests, scanners, browser, EVM, archive or CI reruns.",
+    "No independent archive-provider/signature/execution authentication. Recorded read-only observations do not prove signed consumer actions, strategy, profit or full-block/state-root equivalence.",
+    "Npm audit full lock metadata and Python42 raw advisory identities reviewed; audit service/database correctness and downloaded tool/DB binary signatures not independently re-executed.",
+    "Artifact digest metadata retained; gh-extracted files individually SHA-bound, original ZIP archive bytes not separately retained/rehashed.",
+    "No manual screen-reader certification or complete WCAG claim; raw axe color-contrast incomplete records retained.",
+    "PR remains open/unmerged with zero human reviews; build/deploy skipped. Software audit does not satisfy required independent human GitHub main approval or Pages publication."
+  ]
+}

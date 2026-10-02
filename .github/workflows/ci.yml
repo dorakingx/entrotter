@@ -119,7 +119,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/entrotter.github.io
-          ref: b1cfb001ad642d4b7423ea914045abb56166c903
+          ref: a19d3b17fcf44e58a237b622de8cef89842eb6e7
           path: entrotter.github.io
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
@@ -561,6 +561,9 @@ jobs:
           }
           module = Path('entrotter.github.io/trace-report.mjs')
           comparison = Path('entrotter.github.io/trace-comparison.mjs')
+          observer_module = Path('entrotter.github.io/observed-trace.mjs')
+          viewer_record = Path('entrotter.github.io/reports/trace-observed-price32.json')
+          assert viewer_record.read_bytes() == source.read_bytes()
           program = """
           import fs from 'node:fs';
           import assert from 'node:assert/strict';
@@ -579,13 +582,47 @@ jobs:
             return {index: row.index, status: row.status, ...group};
           });
           assert.deepEqual(counts, {identical: 12, omitted: 1, structural: 19, execution: 0, unavailable: 0});
-          console.log(JSON.stringify({artifact_id: view.report.artifact_id, counts, classifications, node: process.version}));
+          const {validateObservedTrace} = await import(process.argv[4]);
+          const observed = await validateObservedTrace(fs.readFileSync(process.argv[5], 'utf8'));
+          assert.equal(observed.trace.report.artifact_id, view.report.artifact_id);
+          assert.deepEqual(observed.trace.report, view.report);
+          const direct_observation = {
+            artifact_id: observed.wrapper.artifact_id,
+            trace_artifact_id: observed.trace.report.artifact_id,
+            profile: observed.wrapper.profile,
+            classification: observed.classification,
+            phases: observed.wrapper.observations.map((row, i) => ({
+              branch: row.branch, phase: row.phase,
+              consumer_price: observed.phases[i].price,
+              producer_answer: observed.phases[i].latest_round_data.answer,
+              source: observed.phases[i].source, aggregator: observed.phases[i].aggregator,
+              base_currency: observed.phases[i].base_currency, base_unit: observed.phases[i].base_unit,
+              head: row.head, code_identities: row.code,
+            })),
+          };
+          console.log(JSON.stringify({artifact_id: view.report.artifact_id, counts, classifications,
+            node: process.version, direct_observation}, (_, value) => typeof value === 'bigint' ? value.toString() : value));
           """
           completed = subprocess.run(['node', '--input-type=module', '-e', program,
-                                      module.resolve().as_uri(), comparison.resolve().as_uri(), str(exported)],
+                                      module.resolve().as_uri(), comparison.resolve().as_uri(), str(exported),
+                                      observer_module.resolve().as_uri(), str(viewer_record)],
                                      check=True, capture_output=True, text=True, timeout=30)
           viewer = json.loads(completed.stdout)
+          direct = viewer.pop('direct_observation')
           assert viewer['artifact_id'] == report.artifact_id
+          assert direct['artifact_id'] == observed['artifact_id'] and direct['trace_artifact_id'] == report.artifact_id
+          assert direct['profile'] == observed['profile']
+          assert direct['classification'] == {
+              **observed['classification'], **{key: str(observed['classification'][key])
+                  for key in ('baseline_price', 'candidate_price', 'price_difference')},
+          }
+          assert direct['phases'] == [{
+              **price, 'consumer_price': str(price['consumer_price']), 'producer_answer': str(price['producer_answer']),
+              'source': '0x' + row['raw']['source'][26:].lower(),
+              'aggregator': '0x' + row['raw']['aggregator'][26:].lower(),
+              'base_currency': '0x' + row['raw']['base_currency'][26:].lower(),
+              'base_unit': str(int(row['raw']['base_unit'], 16)),
+          } for price, row in zip(prices, observed['observations'])]
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'offline supported sealed wrapper to normal quota-bound report export, SDK and actual Node viewer; no fresh archive/EVM/model/browser call',
               'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
@@ -595,9 +632,11 @@ jobs:
               'consumer_classification': observed['classification'], 'prices': prices,
               'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
               'comparison_module_sha256': hashlib.sha256(comparison.read_bytes()).hexdigest(), 'viewer': viewer,
+              'observed_viewer_module_sha256': hashlib.sha256(observer_module.read_bytes()).hexdigest(),
+              'viewer_observation': direct,
               'limits': ['Strict wrapper validation and offline parsing do not authenticate provider/deployed state.',
                          'Read-only price views are not signed consumer strategy or profit;32-of181 is not full-block/root/opcode proof.',
-                         'Existing SDK/viewer inspect the exported nested trace; they do not validate or display the extra wrapper price views.',
+                         'SDK inspects the exported nested trace; the viewer codec additionally validates recorded wrapper price views.',
                          'Node codec checks are separate from rendered browser/Pages verification and real Docker execution.'],
           }, indent=2) + '\n')
           PY

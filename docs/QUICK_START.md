@@ -4,20 +4,42 @@ This guide uses tested candidate commits awaiting independent review and main
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [supported observation composition](../evidence/observed-wrapper-integration/README.md)
-selects engine40bea57 and adds a mandatory strict-wrapper→SDK→viewer path.
-Its six offline reader cases pass locally; combined current-head CI and protected
+The proposed [direct price observation composition](../evidence/direct-observed-wrapper-integration/README.md)
+selects engine40bea57 and viewera19d3b1. Its six offline integration cases pass
+locally, including direct wrapper validation; combined current-head CI and human
 main approval remain separate. The frozen Docker walkthrough below retains its
 earlier2f6a56e/enginebd5527f source and measurements.
 
-## Inspect the supported historical price result offline
+<a id="inspect-the-supported-historical-price-result-offline"></a>
 
-In a clean six-sibling inspection checkout, select the exact reviewed engine source:
+## Inspect the historical price result locally
+
+In an existing six-sibling checkout, select the reviewed viewer source:
+
+```bash
+git -C entrotter.github.io fetch --depth=1 origin a19d3b17fcf44e58a237b622de8cef89842eb6e7
+git -C entrotter.github.io checkout --detach FETCH_HEAD
+python3 -m http.server 8880 --bind 127.0.0.1 --directory entrotter.github.io
+```
+
+Open `http://127.0.0.1:8880/` and choose **Inspect recorded Aave price change** in the
+transaction replay viewer. It validates the sealed wrapper and displays four
+consumer/producer phases, exact USD prices, observed block and contract-code
+identities alongside all32 receipts and the omission classification. You can
+also import the original `observed-trace.json` from a supported CLI run directly.
+Imports stay in the browser; the sample button fetches the local recorded file.
+This inspection needs no Docker, Anvil, archive account or model call. It is a
+local candidate preview; it does not confirm the latest source is deployed.
+
+For optional Python verification and quota-bound export of the nested trace,
+select the matching engine and SDK sources in a second terminal:
 
 ```bash
 git -C engine fetch --depth=1 origin 40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d
 git -C engine checkout --detach FETCH_HEAD
-PYTHONPATH=engine/src:sdk-python/src python3 - <<'PY'
+git -C sdk-python fetch --depth=1 origin ee5523ded16488af32d1f64040f1996cd002f8f3
+git -C sdk-python checkout --detach FETCH_HEAD
+PYTHONPATH=engine/src:sdk-python/src python3 - <<'PYTHON'
 from entrotter_engine.consumer_observations import load_observed_trace
 from entrotter_engine.trace import write_trace
 from entrotter_sdk import load_trace
@@ -25,17 +47,14 @@ observed = load_observed_trace("engine/evidence/owned-consumer-observations/hist
 print(observed["classification"])
 write_trace(observed["trace_report"], "observed-transaction-replay.json")
 print("Verified baseline receipts:", load_trace("observed-transaction-replay.json").baseline_verified)
-PY
+PYTHON
 ```
 
-This path needs neither Docker, Anvil, an archive account nor a model call. Import
-the exported `observed-transaction-replay.json` in the report viewer for all32
-receipts and omission classifications. Existing SDK/viewer trace readers do not
-validate or display the wrapper's extra price views; the engine loader validates
-them first. Export uses its normal shared quota. The source record is an actual
-native32-of181/skip12 replay with four fixed Aave/WETH price phases, not a signed
-consumer strategy, profit or full-block/provider-authenticity proof. The
-[engine's exact replay command and original scope](https://github.com/entrotter/engine/tree/40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d/evidence/owned-consumer-observations/historical-32)
+The SDK reads the exported nested trace; the engine and viewer additionally
+validate the wrapper's price observations. The source is an actual native
+32-of181/skip12 replay with four fixed Aave/WETH phases. Read-only dependence
+is not signed consumer strategy, profit or full-block/provider authenticity.
+The [engine's exact replay command and original scope](https://github.com/entrotter/engine/tree/40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d/evidence/owned-consumer-observations/historical-32)
 requires pinned Anvil and explicit read-only historical state access.
 
 ## Requirements

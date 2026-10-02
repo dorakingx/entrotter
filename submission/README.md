@@ -95,7 +95,7 @@ code, not an independently approved release.
 | Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, recorded agent and signed-prefix inspection, accessibility and quality | [b1cfb00](https://github.com/entrotter/entrotter.github.io/tree/b1cfb001ad642d4b7423ea914045abb56166c903) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
+| Console, recorded agent and signed-prefix inspection, accessibility and quality | [a19d3b1](https://github.com/entrotter/entrotter.github.io/tree/a19d3b17fcf44e58a237b622de8cef89842eb6e7) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
 The [signed-prefix reader composition](../evidence/trace-reader-integration/README.md)
 adds SDK and browser inspection of the actual four-receipt case. SDK all5checks
@@ -199,17 +199,18 @@ or provider authenticity. Standard trace-run has no extra-view option at this
 selected head; supported CLI work is separate. No new submission is claimed.
 
 
-The [supported price-wrapper composition](../evidence/observed-wrapper-integration/README.md)
-now selects engine40bea57/PR35, whose all8 original mandatory checks and full raw
-source/artifact independent review pass. Its actual supported CLI exported a
-strict wrapper for original32-of181/skip12, matching all32 complete baseline
-receipts and four raw Aave/producer price phases within the original150s cap.
-A sixth mandatory integration case validates that wrapper before exporting the
-unchanged trace format for SDKee and viewerb1cf. All6 exact local reader scripts
-pass; previous5 complete outcomes remain unchanged except the engine pin.
-The component/pin table proposes the new engine; the coordination snapshot row
-retains its older verified source. New combined candidate CI, protected-main
-human approval and candidate Pages are separate. Videos/model/holdouts and the
-existing application draft are unchanged; no formal submission is claimed.
-Read-only prices establish no signed consumer strategy, profit, provider
-authenticity or full-block/root/opcode result.
+The [direct price-wrapper composition](../evidence/direct-observed-wrapper-integration/README.md)
+selects engine40bea57/PR35 and viewera19d3b1/PR16. The engine's all8 and viewer's
+all4 original mandatory checks and full raw independent reviews pass. The viewer
+now accepts the original sealed wrapper directly, displaying four price phases
+beside all32 receipt comparisons. The sixth mandatory integration case compares
+its complete nested report, classification and raw price/address/unit/head/code
+records with the engine validator; all6 exact local scripts pass, and prior5
+complete outcomes remain unchanged except the viewer pin.
+
+The prior coordinator213 composition passed all5 original checks and full raw
+review. The coordination execution snapshot row retains older verified source;
+new combined candidate CI, protected-main human approval and Pages remain
+separate. Videos/model/holdouts and the application draft are unchanged; no
+formal submission is claimed. Read-only prices establish no signed consumer
+strategy, profit, provider authenticity or full-block/root/opcode result.

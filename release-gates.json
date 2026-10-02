@@ -261,8 +261,24 @@
       "previous_five_complete_outcomes_unchanged_except_engine_pin": true,
       "coordinator_production_sources": 21,
       "coordinator_frozen_type_diagnostics": 3,
-      "combined_candidate_CI": "pending",
-      "scope": "Native read-only partial block observation, not signedconsumer/profit/provider-auth/fullblock/defaultDocker32; current Node readers do not display addedpriceviews."
+      "combined_candidate_CI": "Historical213b0bc/engine40/viewerb1cf: all5 original mandatory checks and full raw review passed (37043199268/37043199336/37043199602); new a19 composition CI remains pending.",
+      "scope": "Historical213/engine40+b1cf composition: its viewer reads nested traces only. New direct-wrapper a19 composition recorded separately. Native read-only partial-block observation is not signedconsumer/profit/provider-auth/fullblock/defaultDocker32 proof."
+    },
+    "direct_observed_price_viewer": {
+      "source": "a19d3b17fcf44e58a237b622de8cef89842eb6e7",
+      "PR": "https://github.com/entrotter/entrotter.github.io/pull/16",
+      "local_Node_tests": 94,
+      "local_Python_tests": 11,
+      "actual_local_browser_checks": 39,
+      "axe_scans": 34,
+      "axe_violations": 0,
+      "local_documents": 13,
+      "local_links": 66,
+      "retained_security_findings": 122,
+      "component_CI": "All4 original a19 mandatory checks and full raw independent review passed; SHA20ad24e37a23f3740348ad6636977397576af7b5f5e4ba787f9d5712fa1366ca; build/deploy skipped on PR",
+      "selected_coordinator_viewer": "a19d3b17fcf44e58a237b622de8cef89842eb6e7; exactly two selectors promoted in proposed composition",
+      "scope": "Direct recordedwrapper consumption, not newEVM/model/strategy/profit/provider-auth/defaultDocker32; protected-main/Pages separate.",
+      "direct_integration": "Six exact local scripts pass; first5 full outcomes unchanged except viewerpin; sixth actual codec compares full trace and four raw decoded price/address/unit/head/code records. New combined CI pending."
     }
   },
   "evidence": [
@@ -357,7 +373,8 @@
     "evidence/trace-parent-cache-integration/summary.json",
     "evidence/trace-comparison-integration/summary.json",
     "evidence/consumer-price-integration/summary.json",
-    "evidence/observed-wrapper-integration/summary.json"
+    "evidence/observed-wrapper-integration/summary.json",
+    "evidence/direct-observed-wrapper-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

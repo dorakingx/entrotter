@@ -1696,3 +1696,54 @@ deployed-code authenticity, full-block/root/opcode or defaultDocker32 proof.
 Videos and recorded model inputs remain unchanged; formal submission is not
 claimed. Goal active through October13 15:59JST, official rules section5 rechecked
 this turn; Discord excluded.
+
+
+## October3 — Direct price-wrapper browser candidate
+
+Coordinator213b0bc/PR55 subsequently passed all5 original mandatory checks;
+independent full raw review binds1014 inputs, complete6reader outcomes,21typed
+sources/3frozen diagnostics,78retained findings/50locked Python identities with
+0reported advisories,22engine40 image inputs and62documents/397links. Its clean
+fixture7.635240s/recorded-agent7.390132s retain configured runningDocker/cgroup-v2
+and potentiallywarmcaches; installation/VM startup excluded. Source/merge trees
+match213. These actual combined results supersede its publication-time pending
+CI record; historical9b timings and all frozen variants remain distinct. See
+PR55's exact originalCI links and retained .quality/observed-wrapper-integration/
+ci-213/independent-ci-review.json (SHA5dc73f44033caa1e34eeda3961e2d956908fc7bc09c5c1b855f89093d26e602d).
+
+ViewerPR16 now publishes a19d3b1 with direct sealed observation-wrapper import
+and a recorded Aave/WETH price button. Four consumer/producer phases, exact large
+integers, price difference and UNPROVEN reasons are visible beside all32 receipt
+comparisons; invalid imports/replay switching clear old price rows. Public sample
+is exactengine40 SHA70108483; six deliberately mutated controls were sealed and
+accepted by the engine40 Python validator, not new chain execution. Local94Node/
+11Python/39actualChromium checks at1280/390/320,34axe scans0violations,17JS/18typed/
+24source/config inputs,122retained security findings and13docs/66links pass.
+Final independent review binds127 inputs/all25published blobs (SHA29ecc85fbd78f0532e16f5faedb56014ce90d18ade871b4b9296657eb00205f6).
+It found/fixed rationale correspondence: all99existing reasons preserved and23
+new contexts individually explained. Original browser runner is retained; two
+formatting-only call-chain changes have identical complete Acorn ASTs without
+positions. Exact published runner CI remains a separate check. See public
+viewer evidence/observed-prices and PR16.
+
+Current originala19 CI passed all4 mandatory checks (37047157220;
+docs37047157381). Independent full raw review passes321 offline assertions with
+154 bound files, exact25 published Git blobs,109 npm/42 Python lock identities
+and0 reported advisories; exact final Linux runner39groups/34rawaxe scans and
+13docs/66links pass. Original review SHA20ad24e37a23f3740348ad6636977397576af7b5f5e4ba787f9d5712fa1366ca.
+Protected build/deploy correctly remain skipped on the PR.
+
+The next coordinator candidate promotes exactly2 viewer selectors b1cf→a19 and
+extends the sixth mandatory reader to validate the original wrapper through the
+actual viewer codec. Engine/SDK/CLI/schema and every frozen job/model/holdout
+remain unchanged. All6 exact scripts pass in fresh isolated output: first5 scripts
+and complete outcomes identical except viewerpin; sixth retains old fields and
+compares the complete nested report plus four decoded price/address/unit/head/code
+records and classification with engine40. BigInts are decimal strings in recorded
+outcomes, preserving full precision.21tool-source typing retains3 frozen diagnostics.
+Quick start now loads the recorded sample/direct wrapper through the local viewer;
+optional Python export remains available. See [direct integration evidence](evidence/direct-observed-wrapper-integration/README.md).
+New combined CI, human protected-main approval and live candidate Pages remain
+separate. No new EVM/model evaluation, video change or formal submission is claimed.
+Goal active through October13 15:59JST; official rules section5 rechecked this turn;
+Discord excluded.
