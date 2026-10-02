@@ -1,0 +1,148 @@
+{
+  "status": "passed",
+  "scope": "Three actual owned private helpers and loopback HTTP providers; concurrency, handler cap, successful duplicate coalescing, independent receipts, owner error recovery, raw tokens/fresh IDs, exact PID/group/port/pipes cleanup. No Anvil/archive/Docker or performance claim.",
+  "source_sha256": {
+    "src/entrotter_engine/parent_cache.py": "73ba002c6cce32a8a7acd6580aa432af3ebdb5aa292432f7751dbd35ac080706",
+    "src/entrotter_engine/_parent_cache.py": "95ce590fe177c947926e5c068c8db2b01749129dc36b16d8e43b74587e500075",
+    "src/entrotter_engine/rpc.py": "3e3f9c593d3a26a483c4f8f1e220bd32f959b4e87def846868b7491e70312a52"
+  },
+  "cases": [
+    {
+      "case": "handler-cap",
+      "stats": {
+        "requests": 4,
+        "upstream": 4,
+        "hits": 0,
+        "entries": 4,
+        "bytes": 692,
+        "uncached": 0,
+        "errors": 0,
+        "refused_handlers": 1
+      },
+      "requests": [
+        {
+          "jsonrpc": "2.0",
+          "id": 0,
+          "method": "eth_getBalance",
+          "params": [
+            "0x0000000000000000000000000000000000000000",
+            "0xabababababababababababababababababababababababababababababababab"
+          ]
+        },
+        {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "eth_getBalance",
+          "params": [
+            "0x0000000000000000000000000000000000000001",
+            "0xabababababababababababababababababababababababababababababababab"
+          ]
+        },
+        {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "eth_getBalance",
+          "params": [
+            "0x0000000000000000000000000000000000000002",
+            "0xabababababababababababababababababababababababababababababababab"
+          ]
+        },
+        {
+          "jsonrpc": "2.0",
+          "id": 3,
+          "method": "eth_getBalance",
+          "params": [
+            "0x0000000000000000000000000000000000000003",
+            "0xabababababababababababababababababababababababababababababababab"
+          ]
+        }
+      ],
+      "closed": true
+    },
+    {
+      "case": "mixed",
+      "stats": {
+        "requests": 4,
+        "upstream": 3,
+        "hits": 1,
+        "entries": 1,
+        "bytes": 173,
+        "uncached": 2,
+        "errors": 0,
+        "refused_handlers": 0
+      },
+      "requests": [
+        {
+          "jsonrpc": "2.0",
+          "id": "owner",
+          "method": "eth_getBalance",
+          "params": [
+            "0x0000000000000000000000000000000000000000",
+            "0xabababababababababababababababababababababababababababababababab"
+          ]
+        },
+        {
+          "jsonrpc": "2.0",
+          "id": "receipt-a",
+          "method": "eth_getTransactionReceipt",
+          "params": [
+            "0xcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+          ]
+        },
+        {
+          "jsonrpc": "2.0",
+          "id": "receipt-b",
+          "method": "eth_getTransactionReceipt",
+          "params": [
+            "0xcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+          ]
+        }
+      ],
+      "closed": true
+    },
+    {
+      "case": "owner-error",
+      "stats": {
+        "requests": 3,
+        "upstream": 3,
+        "hits": 0,
+        "entries": 2,
+        "bytes": 346,
+        "uncached": 0,
+        "errors": 1,
+        "refused_handlers": 0
+      },
+      "requests": [
+        {
+          "jsonrpc": "2.0",
+          "id": "owner",
+          "method": "eth_getBalance",
+          "params": [
+            "0x0000000000000000000000000000000000000000",
+            "0xabababababababababababababababababababababababababababababababab"
+          ]
+        },
+        {
+          "jsonrpc": "2.0",
+          "id": "other",
+          "method": "eth_getBalance",
+          "params": [
+            "0x0000000000000000000000000000000000000001",
+            "0xabababababababababababababababababababababababababababababababab"
+          ]
+        },
+        {
+          "jsonrpc": "2.0",
+          "id": "waiter",
+          "method": "eth_getBalance",
+          "params": [
+            "0x0000000000000000000000000000000000000000",
+            "0xabababababababababababababababababababababababababababababababab"
+          ]
+        }
+      ],
+      "closed": true
+    }
+  ],
+  "reviewer_sha256": "722be67f6b17e005427fed0dcc248c87f621efb5b7cbce0f55ad92e2acd6157f"
+}

@@ -158,6 +158,48 @@ transactions can change later execution, without inventing oracle inputs or
 future market responses. CLI success means a valid report was exported; check
 `baseline_verified` before claiming successful historical replay.
 
+Trace execution owns one experiment-local archive bridge shared by its two
+independent forks. It caches successful state reads only when the complete
+method/parameters specify the exact captured parent hash. A parent header read
+by its captured number is cached only after its returned hash matches that
+parent. The exact JSON result token is retained and the response gets the
+current request ID. Errors, `latest`/`pending`, different blocks and volatile
+chain/gas-price reads and receipt fallback reads are never cached. Anvil retains
+its existing filtering of source receipts beyond the fork parent, so original
+upstream receipts cannot replace unmined owned transactions. This reuses
+provider responses; it does not authenticate provider state or repair inputs.
+
+At most four eligible keys can be in flight. Concurrent requests for the same
+key share only a successfully cached result; errors, null and oversized results
+release waiters without caching. Different keys, volatile reads and receipt
+reads can progress independently within the existing four-handler limit. Cache
+and counter locks never cover upstream I/O, and waits retain the shared deadline.
+
+The bridge uses an owned loopback child, private bounded stdin configuration,
+the existing shared150-second deadline, at most4 handlers and4096 RPC calls,
+4KiB request bodies,4MiB upstream/downstream response bounds and an8MiB in-memory
+cache (1024 entries,1MiB per result). Excess cache entries are forwarded without
+retention; request/response/time limits refuse explicitly. Only the eight read
+methods observed from pinned Anvil are forwarded; redirects, proxy environment
+settings and upstream writes are refused. Closing the owner pipe ends the
+child; kill/reap cleanup also runs on errors and cancellation. No host disk cache
+or `HOME` change is used. Default worker quotas still cover the child; native
+execution supplies no whole-process CPU/RSS/PID quota. This is a local candidate
+and does not establish improved historical runtime or explain earlier mining
+timeouts.
+
+The [parent-cache evidence](evidence/trace-parent-cache/README.md) includes one
+instrumented native Ethereum block18999892 prefix through index31, omitting
+index12 in the candidate. All32 complete projected baseline receipts match the
+originals. The candidate executes31 remaining transactions, with unchanged
+gas/status/logs and shifted positions/cumulative gas. Owned getter observations
+show the price update only in the baseline; no dependent consumer effect or
+profit is established. This covers32 of181 block transactions, without state-root,
+full-block, opcode or provider-authenticity proof. Prior failed runs are retained.
+Published SDK/viewer checks read the new report offline; they are not new browser
+or deployment checks. Required exact-head CI and protected-main review remain
+separate gates.
+
 Owned trace nodes use Foundryv1.8.3's `--disable-pool-balance-checks` to defer
 parent-state balance, gas and fee admission checks to ordered EVM/block execution.
 This allows a transaction funded by an earlier transaction in the same block.

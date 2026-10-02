@@ -1,0 +1,14 @@
+test_actual_entrypoint_candidate_failure_preserves_new_rows_and_original_primary (test_consumer_observer.ConsumerTest.test_actual_entrypoint_candidate_failure_preserves_new_rows_and_original_primary) ... ok
+test_deadline_refuses_reads_and_restores_timeout (test_consumer_observer.ConsumerTest.test_deadline_refuses_reads_and_restores_timeout) ... ok
+test_exact_complete_observations_have_narrow_view_only_flag (test_consumer_observer.ConsumerTest.test_exact_complete_observations_have_narrow_view_only_flag) ... ok
+test_exact_queries_timeout_and_hash_only_raw_code (test_consumer_observer.ConsumerTest.test_exact_queries_timeout_and_hash_only_raw_code) ... ok
+test_hostile_and_forged_rpc_errors_are_finite (test_consumer_observer.ConsumerTest.test_hostile_and_forged_rpc_errors_are_finite) ... ok
+test_midphase_deadline_stops_remaining_queries (test_consumer_observer.ConsumerTest.test_midphase_deadline_stops_remaining_queries) ... ok
+test_mismatches_and_missing_or_empty_evidence_never_claim_complete (test_consumer_observer.ConsumerTest.test_mismatches_and_missing_or_empty_evidence_never_claim_complete) ... ok
+test_primary_failure_skip_and_snapshot_error_retained (test_consumer_observer.ConsumerTest.test_primary_failure_skip_and_snapshot_error_retained) ... ok
+test_strict_fixed_abi_and_code_bounds (test_consumer_observer.ConsumerTest.test_strict_fixed_abi_and_code_bounds) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.065s
+
+OK

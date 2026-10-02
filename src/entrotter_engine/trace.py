@@ -19,6 +19,7 @@ from .artifact import MAX_REPORT_BYTES, canonical, seal
 from .export_budget import ExportBudget
 from .evm import AnvilSession, ExecutionError
 from .rpc import RPC, RPCError, RPCRejected, safe_diagnostics
+from .parent_cache import ParentCache
 
 TRACE_VERSION = "0.1.0"
 SHANGHAI_TIME = 1681338455
@@ -549,8 +550,11 @@ def run_trace_native(plan: dict) -> dict:
     started = time.monotonic()
     try:
         captured = capture_source(plan, RPC(url), deadline)
-        baseline = replay_branch(captured, url, [], deadline)
-        candidate = replay_branch(captured, url, plan["skip_indices"], deadline)
+        with ParentCache(url, captured["parent"], deadline) as archive:
+            baseline = replay_branch(captured, archive.url, [], deadline)
+            candidate = replay_branch(
+                captured, archive.url, plan["skip_indices"], deadline
+            )
     except RPCError as error:
         diagnostic = safe_diagnostics(error)
         code, method = diagnostic["code"], diagnostic["method"] or "unknown"
@@ -571,6 +575,7 @@ def run_trace_native(plan: dict) -> dict:
             "assumptions": [
                 "Original signed legacy/type-1/type-2 transaction prefix only, Ethereum mainnet Shanghai rules, FIFO order; no new signatures or artificial funding.",
                 "Both branches fork the pinned parent with original timestamp, coinbase, gas limit, base fee and prevrandao. Original transactions supply any in-prefix oracle updates; external responses and later transactions are not invented.",
+                "A bounded experiment-local read-through bridge shares only successful exact-parent-hash state reads and hash-checked parent headers between the isolated branches. Errors, volatile reads and other blocks are not cached; no host disk cache or state repair is used.",
                 "Skipping original transactions preserves every remaining signature/nonce. Nonce conflicts and rejected/unmined transactions are reported, never repaired.",
                 "Owned trace nodes defer parent-state pool balance/fee/gas admission checks to ordered EVM/block execution, allowing earlier in-block funding. Accepted inputs can still remain unmined; no balance/nonce repair or sequential different-block mining is substituted.",
                 "Exact projected receipts include status, gas/cumulative gas, effective price, identities, ordered log bytes and bloom. Divergence is reported; an unmatched baseline is not verified historical replay.",

@@ -11,7 +11,9 @@ diagnostics are streamed in at most 64 KiB chunks and forwarded at most 1 MiB pl
 one explicit truncation notice; excess is discarded without accumulation. A total
 temporary-directory quota after SIGKILL, Docker daemon/BuildKit storage and other
 Docker JSON-response captures remain outside these bounds. Image/VM disk limits
-are separate operator controls.
+are separate operator controls. Preparation reaps its exact owned watchdog PID
+with SIGKILL even when inherited signal handling has not initialized; it does
+not wait for a consumed SIGTERM to run down the whole build deadline.
 
 The engine runs only built-in policies. A Python import or a subprocess is
 not a security sandbox for untrusted agent code. Container/process sandboxing,
@@ -34,6 +36,25 @@ the cause or attest parent state; no fixture state or oracle response is supplie
 Trace checksums and
 worker request binding establish integrity, not independently recomputed receipt
 equivalence. See README.md and the raw evidence for limits.
+
+The trace-only parent read bridge runs fixed installed code in an owned child,
+never code or a URL selected by a plan. Private configuration crosses a bounded
+stdin pipe; only a finite startup record and counters appear on stdout, and
+stderr is discarded. The same pipe binds the child lifetime to its owner. It
+listens only on loopback with an unpredictable per-run path, rejects browser
+Origin and transfer-encoded requests, bounds handlers/requests/response/cache
+bytes and shares the original trace deadline. No redirects, proxy-environment
+settings or upstream writes are allowed. Successful exact-parent-hash read
+results and hash-checked parent headers are reused; provider failures and other
+blocks are not cached. This is an optimization of declared provider responses,
+with at most four eligible in-flight keys and no additional handler threads.
+Only cached successes are shared; failed owners release waiters on every exit.
+Distinct keys and uncached receipt/volatile reads perform I/O independently;
+short cache/counter locks do not extend the shared deadline. This is
+not provider/state authentication or an egress firewall. Child process-group
+kill/reap closes blocked upstream handlers on cancellation; normal worker
+CPU/RSS/PID controls remain the only whole-process quotas. No host disk cache or
+HOME mutation is used.
 
 Do not post secrets or exploit details in public issues. Use GitHub private
 vulnerability reporting where enabled. If it is not yet enabled, ask the
@@ -71,7 +92,7 @@ README.md for the exact boundaries and operator-trusted Docker image/socket
 requirements. Docker administrator access
 can reveal the archive URL; never use a production signing key in this tool.
 
-The quality workflow publishes the full Bandit report, including 23 explicitly
+The quality workflow publishes the full Bandit report, including 25 explicitly
 reviewed expected findings, and audits the hash-locked Python tool/build graph.
 It does not suppress Bandit rules or advisory IDs. Exact source/finding changes
 invalidate the review manifest. These author-provided rationales require human

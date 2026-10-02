@@ -1,0 +1,1 @@
+[{"closed":true,"group_absent":true,"host_group_absent":true,"host_pid_absent":true,"host_port_closed":true,"pgid":12449,"pid":12449,"port":57192,"port_closed":true,"returncode":0,"stats":{"bytes":2647997,"entries":964,"errors":7,"hits":903,"refused_handlers":0,"requests":1879,"uncached":6,"upstream":970},"stdin_closed":true,"stdout_closed":true}]

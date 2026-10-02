@@ -30,6 +30,10 @@ class IsolatedProtocolTests(unittest.TestCase):
         self.script.write_text('''import json,os,sys,time
 from pathlib import Path
 state=Path(os.environ['FAKE_STATE'])
+def publish(path, text):
+    pending=path.with_suffix('.ready')
+    pending.write_text(text)
+    pending.replace(path)
 if sys.argv[1]=='ps':
     if state.exists():
         data=json.loads(state.read_text())
@@ -43,9 +47,10 @@ if sys.argv[1]=='rm':
 owner=next(x.split('=',1)[1] for x in sys.argv if x.startswith('org.entrotter.owner='))
 container='b'*64
 if os.environ.get('FAKE_CONFLICT'):
-    state.write_text(json.dumps({'owner':'winner','id':'c'*64}))
+    publish(state,json.dumps({'owner':'winner','id':'c'*64}))
     sys.exit(125)
-state.write_text(json.dumps({'owner':owner,'id':container}))
+time.sleep(float(os.environ.get('FAKE_START_DELAY','0')))
+publish(state,json.dumps({'owner':owner,'id':container}))
 sys.stdin.buffer.read()
 if os.environ.get('FAKE_HANG'): time.sleep(10)
 sys.stdout.write(os.environ['FAKE_RESPONSE']);sys.stdout.flush()
@@ -86,10 +91,54 @@ if os.environ.get('FAKE_FAIL_AFTER_CREATE'): sys.exit(125)
         self.assert_cleanup()
 
     def test_timeout_terminates_client_and_requests_container_removal(self):
-        with patch.dict(os.environ, {'FAKE_HANG': '1'}), patch('entrotter_engine.isolated.HOST_TIMEOUT', .15):
+        original_popen = subprocess.Popen
+        processes = []
+        def started_client(args, **kwargs):
+            process = original_popen(args, **kwargs)
+            if args[2] == 'run':
+                processes.append(process)
+                # This test exercises removal after owned creation. Python
+                # startup time cannot attest that the fake container exists.
+                deadline = time.monotonic() + 2
+                while not (self.root / 'state').exists():
+                    if process.poll() is not None or time.monotonic() >= deadline:
+                        process.kill()
+                        process.wait(timeout=2)
+                        if process.stdout is not None:
+                            process.stdout.close()
+                        self.fail('Fake owned worker did not finish startup')
+                    time.sleep(.01)
+            return process
+        with patch.dict(os.environ, {'FAKE_HANG': '1', 'FAKE_START_DELAY': '.3'}), \
+                patch('entrotter_engine.isolated.HOST_TIMEOUT', .15), \
+                patch('entrotter_engine.isolated.subprocess.Popen', side_effect=started_client):
             with self.assertRaisesRegex(ExecutionError, 'timed out'):
                 run_isolated(self.scenario)
         self.assert_cleanup()
+        self.assertEqual(len(processes), 1)
+        self.assertIsNotNone(processes[0].poll())
+        with self.assertRaises(ProcessLookupError):
+            os.killpg(processes[0].pid, 0)
+
+    def test_timeout_before_creation_stops_client_without_removing_any_owner(self):
+        original_popen = subprocess.Popen
+        processes = []
+        def launched_client(args, **kwargs):
+            process = original_popen(args, **kwargs)
+            if args[2] == 'run':
+                processes.append(process)
+            return process
+        with patch.dict(os.environ, {'FAKE_START_DELAY': '.3'}), \
+                patch('entrotter_engine.isolated.HOST_TIMEOUT', .15), \
+                patch('entrotter_engine.isolated.subprocess.Popen', side_effect=launched_client):
+            with self.assertRaisesRegex(ExecutionError, 'timed out'):
+                run_isolated(self.scenario)
+        self.assertFalse((self.root / 'state').exists())
+        self.assertFalse((self.root / 'cleanup').exists())
+        self.assertEqual(len(processes), 1)
+        self.assertIsNotNone(processes[0].poll())
+        with self.assertRaises(ProcessLookupError):
+            os.killpg(processes[0].pid, 0)
 
     def test_cleanup_failure_is_explicit(self):
         with patch('entrotter_engine.isolated._slot', side_effect=[None, ExecutionError('query failed')]):
@@ -233,17 +282,49 @@ else:
             isolated._read_metadata([sys.executable, '-c', 'import sys; sys.exit(7)'], 128)
         self.assertEqual(caught.exception.returncode, 7)
 
+    def test_before_ready_cancellation_kills_known_owned_group(self):
+        original_popen = subprocess.Popen
+        original_select = isolated.selectors.DefaultSelector.select
+        processes = []
+        observed = {'empty_poll': False}
+        def launch(*args, **kwargs):
+            process = original_popen(*args, **kwargs)
+            processes.append(process)
+            return process
+        def cancelled(selector, *args):
+            ready = original_select(selector, *args)
+            observed['empty_poll'] = not ready
+            raise KeyboardInterrupt
+        code = "import os,time; time.sleep(.25); os.write(1,b'x'); time.sleep(60)"
+        with patch.object(isolated.subprocess, 'Popen', side_effect=launch), \
+                patch.object(isolated.selectors.DefaultSelector, 'select', new=cancelled):
+            with self.assertRaises(KeyboardInterrupt):
+                isolated._read_metadata([sys.executable, '-c', code], 128)
+        self.assertTrue(observed['empty_poll'])
+        self.assertEqual(len(processes), 1)
+        self.assertIsNotNone(processes[0].poll())
+        self.assert_no_active_group(processes[0].pid)
+
     def test_reader_cancellation_kills_owned_group(self):
         with tempfile.TemporaryDirectory() as directory:
             marker = Path(directory)/'pid'
-            code = "import os,sys,time; from pathlib import Path; Path(sys.argv[1]).write_text(str(os.getpid())); os.write(1,b'x'); time.sleep(60)"
+            code = "import os,sys,time; from pathlib import Path; time.sleep(.25); Path(sys.argv[1]).write_text(str(os.getpid())); os.write(1,b'x'); time.sleep(60)"
             original_select = isolated.selectors.DefaultSelector.select
+            observed = {'empty_polls': 0, 'ready_cancellation': False}
             def cancelled(selector, *args):
-                original_select(selector, *args)
-                raise KeyboardInterrupt
+                ready = original_select(selector, *args)
+                if ready:
+                    # The child writes its owned PID before its first stdout
+                    # byte. Empty polling cannot attest that it has started.
+                    observed['ready_cancellation'] = True
+                    raise KeyboardInterrupt
+                observed['empty_polls'] += 1
+                return ready
             with patch.object(isolated.selectors.DefaultSelector, 'select', new=cancelled):
                 with self.assertRaises(KeyboardInterrupt):
                     isolated._read_metadata([sys.executable, '-c', code, str(marker)], 128)
+            self.assertGreater(observed['empty_polls'], 0)
+            self.assertTrue(observed['ready_cancellation'])
             self.assert_no_active_group(int(marker.read_text()))
 
 

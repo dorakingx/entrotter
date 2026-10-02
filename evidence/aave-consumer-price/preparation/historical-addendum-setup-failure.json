@@ -1,0 +1,6 @@
+{
+  "step": "historical_reference_metadata_addendum",
+  "exception_type": "ValueError",
+  "cause": "Relative file path compared to absolute repository root during metadata binding.",
+  "effects": "Reference copies/addendum written; initial readiness remains byte-identical27aa. No source/runtime/test/archive/node execution. Corrected path resolution only."
+}

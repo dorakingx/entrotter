@@ -210,9 +210,11 @@ def preparation_job(
         sender.send(str(error)[:2048])
     finally:
         sender.close()
-        # This PID remains our unreaped child; it cannot be reused here.
+        # This PID remains our unreaped child; it cannot be reused here. SIGTERM
+        # may hit inherited handlers inside Python's after-fork initialization,
+        # before guard_build resets them. SIGKILL cannot be consumed in that gap.
         try:
-            os.kill(watchdog, signal.SIGTERM)
+            os.kill(watchdog, signal.SIGKILL)
         except ProcessLookupError:
             pass
         os.waitpid(watchdog, 0)

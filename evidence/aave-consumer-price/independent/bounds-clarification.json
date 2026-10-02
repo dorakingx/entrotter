@@ -1,0 +1,11 @@
+{
+  "scope": "Metadata boundary clarification; frozen readiness and actual sources/input/result remain unchanged",
+  "frozen_readiness_field": "consumer_code_response_bytes=65536",
+  "meaning": "Maximum accepted decoded code payload, not maximum transport read",
+  "consumer_accepted_code_bytes": 65536,
+  "consumer_evidence_output_bytes": 65536,
+  "unchanged_RPC_transport_read_bytes": 4194305,
+  "RPC_transport_oversize_reject_bytes": 4194304,
+  "production_RPC_sha256": "3e3f9c593d3a26a483c4f8f1e220bd32f959b4e87def846868b7491e70312a52",
+  "no_new_execution_or_rerun": true
+}

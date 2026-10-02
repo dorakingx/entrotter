@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/repository/.quality/archived-oracle/native-006/run.py", line 14, in <module>
+    from cache_evidence import finite_row, group_absent, port_closed
+  File "/workspace/repository/.quality/archived-oracle/native-006/cache_evidence.py", line 6, in <module>
+    from evidence import atomic
+  File "/workspace/repository/.quality/archived-oracle/native-006/evidence.py", line 4, in <module>
+    from entrotter_engine.artifact import canonical
+ModuleNotFoundError: No module named 'entrotter_engine'

@@ -54,7 +54,7 @@ from pathlib import Path
 sys.path.insert(0,'scripts')
 import build_worker as b
 def flooded(*args):
-    child="import os,sys,signal; from pathlib import Path; signal.signal(signal.SIGTERM,signal.SIG_IGN); Path(sys.argv[1]).write_text(str(os.getpgrp())); exec('while True: os.write(1,b\\\"x\\\"*65536)')"
+    child="import os,sys,signal; from pathlib import Path; signal.signal(signal.SIGTERM,signal.SIG_IGN); marker=Path(sys.argv[1]); pending=marker.with_suffix('.ready'); pending.write_text(str(os.getpgrp())); pending.replace(marker); exec('while True: os.write(1,b\\\"x\\\"*65536)')"
     b.run_build_command([sys.executable,'-c',child,sys.argv[1]],own_session=False)
 b.prepare_image=flooded
 started=time.monotonic()
@@ -122,7 +122,8 @@ sys.path.insert(0, 'scripts')
 import build_worker as b
 def stalled(*args):
     signal.signal(signal.SIGTERM, signal.SIG_IGN)
-    Path(sys.argv[1]).write_text(str(os.getpid()))
+    marker=Path(sys.argv[1]);pending=marker.with_suffix('.ready')
+    pending.write_text(str(os.getpid()));pending.replace(marker)
     time.sleep(10)
 b.prepare_image=stalled
 b.prepare_supervised([], Path(sys.argv[2]), None, 10)
@@ -183,7 +184,15 @@ b.prepare_supervised([], Path(sys.argv[2]), None, 10)
     def test_timeout_kills_owned_command_and_term_ignoring_descendant(self):
         with tempfile.TemporaryDirectory() as directory:
             marker = Path(directory) / "child-pid"
-            code = "import os,signal,time; from pathlib import Path; signal.signal(signal.SIGTERM, signal.SIG_IGN); pid=os.fork(); Path(%r).write_text(str(os.getpid())) if pid==0 else None; time.sleep(10)" % str(marker)
+            code = """import os,signal,time
+from pathlib import Path
+signal.signal(signal.SIGTERM, signal.SIG_IGN)
+pid=os.fork()
+if pid==0:
+    marker=Path(%r);pending=marker.with_suffix('.ready')
+    pending.write_text(str(os.getpid()));pending.replace(marker)
+time.sleep(10)
+""" % str(marker)
             started = time.monotonic()
             with self.assertRaisesRegex(ValueError, "deadline"):
                 with builder.build_deadline(0.5):
@@ -329,6 +338,59 @@ b.prepare_supervised([], Path(sys.argv[2]), None, 10)
             )
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("must be a regular file", result.stderr)
+
+    @unittest.skipUnless(os.name == "posix", "requires owned fork watchdog")
+    def test_early_failed_job_reaps_watchdog_before_signal_initialization(self):
+        # Force the exact fork initialization gap. An inherited handler can
+        # consume SIGTERM before guard_build installs default signal handling.
+        script = r'''
+from contextlib import nullcontext
+import json,os,signal,sys,time
+from pathlib import Path
+from unittest.mock import patch
+sys.path.insert(0,'scripts')
+import build_worker as builder
+root=Path(sys.argv[1]);parent=os.getpid();marker=root/'watchdog';job=root/'job'
+def publish(path, text):
+    pending=path.with_suffix('.ready')
+    pending.write_text(text);pending.replace(path)
+def gap():
+    if os.getppid()!=parent:
+        signal.signal(signal.SIGTERM,signal.SIG_IGN)
+        publish(marker,str(os.getpid()))
+        time.sleep(.6)
+os.register_at_fork(after_in_child=gap)
+def reject(*args):
+    publish(job,str(os.getpid()))
+    end=time.monotonic()+1
+    while not marker.exists() and time.monotonic()<end:time.sleep(.005)
+    raise ValueError('Synthetic early archive rejection')
+started=time.monotonic();error=None
+try:
+    with patch.object(builder,'prepare_image',side_effect=reject),patch.object(builder,'client',return_value=nullcontext([])),patch('sys.argv',['build_worker','--timeout-seconds','2','--output',str(root/'result')]):
+        builder.main()
+except ValueError as failure:
+    error=str(failure)
+print(json.dumps({'seconds':time.monotonic()-started,'error':error,'pids':[int(job.read_text()),int(marker.read_text())]}))
+'''
+        with tempfile.TemporaryDirectory() as directory:
+            result = subprocess.run([sys.executable, "-c", script, directory], cwd=ROOT,
+                                    capture_output=True, text=True, timeout=6,
+                                    start_new_session=True)
+            self.assertEqual(result.returncode, 0)
+            observed = json.loads(result.stdout)
+            self.assertEqual(observed["error"], "Synthetic early archive rejection")
+            self.assertLess(observed["seconds"], .6)
+            for pid in observed["pids"]:
+                end = time.monotonic()+2
+                while time.monotonic()<end:
+                    try:
+                        os.kill(pid, 0)
+                    except ProcessLookupError:
+                        break
+                    time.sleep(.01)
+                with self.assertRaises(ProcessLookupError):
+                    os.kill(pid, 0)
 
     def test_oversized_archive_rejected_before_digest_or_extraction(self):
         with tempfile.TemporaryDirectory() as directory:

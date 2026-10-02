@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "independent actual loopback concurrency-cap/owner-death proof; no Anvil/archive/default-Docker pass",
+  "cases": [
+    {
+      "case": "four incomplete-body handlers saturate; fifth refused",
+      "upstream_calls": 0,
+      "refused_handlers": 1,
+      "child_reaped_and_port_closed": true
+    },
+    {
+      "case": "kill owner without explicit cache cleanup",
+      "owner_signal": "SIGKILL",
+      "child_absent_and_port_closed": true
+    }
+  ],
+  "reviewer_sha256": "d8db18a423d693f00a9f53fb7bfc6ccebf3580021f06ca1ad0212fceab5c2387",
+  "source_sha256": {
+    "src/entrotter_engine/parent_cache.py": "73ba002c6cce32a8a7acd6580aa432af3ebdb5aa292432f7751dbd35ac080706",
+    "src/entrotter_engine/_parent_cache.py": "ab74d80e98e71b009a9fe9dabf89d387ae26fe818e8cc704ee0b3801d3d6055f",
+    "src/entrotter_engine/trace.py": "58a00a79fab0e8eb2ffd7ed0011f8b6157f1f277871e8a6eeadc6b1a9bfb263e"
+  },
+  "upstream_calls": 0,
+  "root_provider_thread_closed": true
+}

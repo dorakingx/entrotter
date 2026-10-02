@@ -25,6 +25,10 @@ jobs:
           .venv/bin/python -m ruff format --check src scripts
       - name: Check types including unannotated function bodies
         run: .venv/bin/python -m mypy src scripts
+      - name: Verify public read-only consumer observation controls
+        run: |
+          mkdir -p .quality
+          PYTHONPATH=src:evidence/aave-consumer-price/harness .venv/bin/python -m unittest discover -s evidence/aave-consumer-price/harness -p 'test_*.py' -v > .quality/aave-consumer-controls.log 2>&1
       - name: Full security scan and exact finding review policy
         run: .venv/bin/python scripts/check_security.py
       - name: Verify declared dependency coverage and query Python advisories

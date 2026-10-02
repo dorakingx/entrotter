@@ -1,5 +1,119 @@
 # Engine candidate status
 
+## 2026-10-02 — Changed-source native32-prefix evidence, publication prepared
+
+After independent source/package and frozen prelaunch review, one root-owned
+instrumented native replay completes the original32 signed transactions of
+block18999892 and candidate skip[12]. All32 complete projected baseline receipts
+match originals and the prior baseline. The candidate executes31 transactions;
+their gas/status/logs/bloom/identities remain unchanged, with later indices
+shifted by one and cumulative gas reduced by exactly336752 (the omitted gas).
+Initial heads and getter bytes match. The baseline feed answer changes from
+257082415000 to256292441874 with a round increment; the candidate retains the
+parent answer. All four getter phases have zero errors. This establishes
+producer update omission, without an identified dependent consumer or profit.
+
+Native elapsed time is125.358258s and report runtime125.330162s. Cache counters
+are1871 requests,966 upstream reads,899 hits,960 entries/2640492 bytes,6 uncached
+responses,6 aggregate errors and0 handler refusals; these errors do not identify
+a provider cause. Two owned Anvil nodes and one separate cache child close with
+PID/group/port/pipe checks. All earlier failed experiments and source bindings
+remain immutable. One success after changed source does not establish speed or
+timeout causality. This is32 of181 transactions, not full-block/state-root/opcode
+equivalence or authenticated provider state; native has no default Docker
+CPU/RSS/PID quota proof. Published SDKee and viewerb7 accept the report offline;
+there is no fresh rendered-browser or Pages check.
+
+See [public raw evidence and copy provenance](evidence/trace-parent-cache/README.md).
+Final source323-test/security/wheel and actual native evidence independent
+reviews pass. A material draft PR and all eight exact-head checks are pending;
+no merge, deployment, integration pin change or broader G1 completion is claimed.
+
+## 2026-10-02 — Per-key parent-read concurrency, local candidate
+
+The serialized cache candidate's frozen full suite passed314 tests/123.790s with
+zero skips, and independent source/security/wheel review passed. Its one owned
+historical32-transaction experiment then failed during baseline mining at
+150.157490s. The initial latestRoundData getter also failed; no initial price,
+baseline receipts, candidate or final protocol report is asserted. Captured
+inputs remain byte-identical to the prior experiment. Aggregate cache counters
+show739 upstream reads and zero hits; all owned Anvil/cache processes and ports
+close. These observations do not identify the cause of the mining timeout.
+
+The current local change removes global serialization of upstream I/O. Up to
+four eligible keys coalesce successful cached results; unrelated keys and
+uncached receipt/volatile reads progress independently. All original limits,
+method rules, raw JSON tokens, ownership and shared deadlines remain unchanged.
+Two actual loopback concurrency regressions fail before the change (4.553s)
+and pass after it (1.029s). An expanded23-test run retains one erroneous header
+fixture failure; correcting that fixture and testing owner cancellation passes
+two focused controls (1.024s). Independent actual-helper tests also verify
+four-key concurrency/refusal, duplicate-key/receipt behavior, owner-error wakeup
+and complete child/group/port/pipe closure. The frozen full323-test run passes
+in75.836s with zero skips; all25 production lint/type/security checks retain
+all25 reviewed findings. A fresh wheel matches all20 modules, and21 declared
+image inputs match source; no actual image was started. Final independent
+source/package review and publication were pending at that checkpoint. Prior314 proof and
+failed historical experiment remain separate from this new candidate. No new
+archive execution or Docker/CI run occurred before that source-review checkpoint;
+the later native experiment is reported separately above.
+
+## 2026-10-02 — Experiment-local parent read cache, local candidate
+
+The trace-only bridge shares successful exact-parent-hash state responses and
+hash-checked parent headers between independent original/candidate forks. It
+preserves result JSON bytes with the current request ID, fixed read methods,
+the shared150-second deadline and default resource/ownership guards. It uses a
+bounded loopback child and in-memory cache; no disk/HOME/state repair is added.
+
+The first owned synthetic run failed at startup because optional JSON-RPC
+parameters and unsupported-method response IDs were mishandled. That frozen
+failure is retained separately. After correcting those envelope cases, the same
+signed oracle update/consumer omission case preserves complete source and both
+receipt projections, reducing actual upstream state reads from29 to16 (15 cache
+hits including two header reads). Seven owned nodes and two proxies close, with
+zero added reader threads left. Fourteen initial loopback tests pass against the
+stdin transport. The first full suite retains306 tests/662.692s with two actual
+unmined-receipt forwarding errors and a600-second build-watchdog failure; it is
+not a successful full check. A separately frozen missing-storage probe identifies
+three additional Anvil receipt fallback calls, now forwarded read-only without
+caching. The owned node still filters future source receipts: missing-storage
+outputs remain unverified/not_mined without receipts, identical to uncached.
+
+A deterministic watchdog initialization-gap test fails before the fix: an
+inherited signal handler can consume SIGTERM before the watchdog initializes.
+The fixed preparation kills its exact unreaped child with SIGKILL and reaps it;
+the original early archive rejection and owned PID closure are preserved.
+All27 focused checks pass after these fixes, including15 loopback cases, actual
+complete original/omission/funding/oracle/provider controls and watchdog cleanup.
+The second full suite runs312 tests/116.378s with one pre-existing cancellation
+test synchronization error: its mock cancels on an empty selector poll before
+the child writes its PID. A delayed-start regression reproduces that error;
+the test now cancels on actual stdout readiness and checks empty polls plus the
+unchanged owned-group cleanup. Production metadata code and10-second timeout
+remain unchanged. Its targeted corrected check passes; both failed full logs
+and the second run's explicitly after-launch source binding stay retained.
+The third frozen full suite runs313 tests/146.341s with one pre-existing fake
+worker startup race: a150ms timeout can precede its owned-state marker, so no
+container exists to remove. A delayed-start regression reproduces the error.
+The test now waits boundedly for actual creation before starting the unchanged
+150ms timeout; a separate before-creation control proves no owner is removed
+and the known client group closes. Both focused controls pass. All three failed
+full logs remain distinct; production host timeouts and cleanup are unchanged.
+The fourth frozen full suite runs314 tests/185.594s with an existing PID marker
+read during its open/truncate/write window. Deliberately publishing an empty
+marker reproduces the error; atomic sibling-file publication fixes it without
+changing readiness bounds or owned-session assertions. Related worker markers
+and fake owned-state fixtures now publish atomically;19 related controls pass.
+One initial before-fix harness lacked its relative fixture and failed setup;
+that raw record is retained separately from the corrected behavioral failure.
+The25-source lint/type/security gate passes with all25 findings retained. A new
+full native run and independent final review remain pending. Current
+source coverage includes25 production files and25 retained security findings;
+wheel coverage includes20 modules, and21 dynamic image inputs still need actual
+image/default-worker CI. No archive replay, historical runtime improvement or
+retrospective timeout-cause claim is made.
+
 ## 2026-10-02 — Safe RPC diagnostics, unpublished candidate
 
 RPC exceptions now expose only fixed codes and allowlisted methods, while native
@@ -189,3 +303,31 @@ and protected-main human approval remain separate. No local Docker/VM or new
 archive/model/holdout/media operation. Current public composition remains
 coordinator8029/engine935; unpublished integration awaits all component gates.
 Overall goal active, with earlier raw-evidence loss disclosure retained.
+
+## October 2 — Historical Aave read-only consumer price dependence
+
+On unchanged engine198 production sources, native006 repeats original32 signed
+inputs/block18999892/skip12 within the same150s trace cap. The baseline completes
+with all32 full projected receipts equal to originals/prior successful baseline;
+candidate executes31 and omits12. Later19 receipts change only index/cumulative
+gas by the exact omission. New bounded owned-node reads show Aave's WETH source
+equals the historical updated proxy, currency/unit and returned-code identities
+stay fixed, and its price matches producer answers in all4 phases:257082415000
+initially,256292441874 after baseline,257082415000 after omission. This shows
+read-only consumer dependence despite unchanged remaining gas/status/logs, not
+a signed consumer action, strategy benefit, profit or broader G1 completion.
+
+Report132.703057s/native132.738311s/host132.865456s; one actual trial, no primary/
+getter/snapshot/cleanup errors. Exact2Anvil+1cache closures and fresh root owned
+PID/group/port probes pass. Aggregate cache7errors have unknown causes. Prior
+001–005 immutable records are preserved; no speed/timeout-causality claim.
+
+Root prelaunch review verifies100 fixed bindings/284prior records/25Git198
+production files and corrected private stop delivery, finite deadlines and
+unique4phase/24read bounds. Historical failures and the host-import setup gap
+remain disclosed. Public portable33control sources and one mandatory quality
+step make decoder/failure/cancellation controls reproducible offline; those
+controlled tests are distinct from the actual native closure evidence. See
+[raw evidence, source and reproduction scope](evidence/aave-consumer-price/README.md).
+Public-layout verification, fresh exact-headCI and human main approval remain
+separate gates. No candidate Pages, new model/video or submission claim.

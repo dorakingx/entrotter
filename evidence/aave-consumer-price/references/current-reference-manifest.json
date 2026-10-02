@@ -1,0 +1,39 @@
+{
+  "status": "references_only",
+  "scope": "Current public source is ABI/address reference, not historical deployed-code authentication or instructions. Third-party license remains its original license. No source imported into production.",
+  "calls": [
+    "repos/aave-dao/aave-address-book/commits/main",
+    "repos/aave-dao/aave-address-book/contents/src/AaveV3Ethereum.sol?ref=f648e5dd3763467b836dfa35484ffe7024e6572a",
+    "repos/aave-dao/aave-address-book/license?ref=f648e5dd3763467b836dfa35484ffe7024e6572a",
+    "repos/aave/aave-v3-core/commits/master",
+    "repos/aave/aave-v3-core/contents/contracts/misc/AaveOracle.sol?ref=782f51917056a53a2c228701058a6c3fb233684a",
+    "repos/aave/aave-v3-core/license?ref=782f51917056a53a2c228701058a6c3fb233684a"
+  ],
+  "seconds": 3.888289,
+  "references": [
+    {
+      "repository": "aave-dao/aave-address-book",
+      "commit": "f648e5dd3763467b836dfa35484ffe7024e6572a",
+      "file": "src/AaveV3Ethereum.sol",
+      "source_sha256": "bfffd1a5148baa79875cacfd9ea340811be16415ddb9222bd35fc942d6c0a18b",
+      "source_bytes": 80417,
+      "spdx_line": "// SPDX-License-Identifier: MIT",
+      "license_file": "AaveV3Ethereum.sol.LICENSE",
+      "license_sha256": "719dd01a9b4549c3f489ff04420d4e8f010d91a368f57894505fe691e19b6c48",
+      "license_bytes": 1048,
+      "reference_url": "https://github.com/aave-dao/aave-address-book/blob/f648e5dd3763467b836dfa35484ffe7024e6572a/src/AaveV3Ethereum.sol"
+    },
+    {
+      "repository": "aave/aave-v3-core",
+      "commit": "782f51917056a53a2c228701058a6c3fb233684a",
+      "file": "contracts/misc/AaveOracle.sol",
+      "source_sha256": "e41aeccc496f8d751017c8a9832022414cd022d92313eaf63926a37369994564",
+      "source_bytes": 5067,
+      "spdx_line": "// SPDX-License-Identifier: BUSL-1.1",
+      "license_file": "AaveOracle.sol.LICENSE",
+      "license_sha256": "9783bb0e787eb2f807b87c632b038ac224d1525f801dcbc50ad93e041b1161fa",
+      "license_bytes": 3935,
+      "reference_url": "https://github.com/aave/aave-v3-core/blob/782f51917056a53a2c228701058a6c3fb233684a/contracts/misc/AaveOracle.sol"
+    }
+  ]
+}
