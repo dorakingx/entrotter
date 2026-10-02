@@ -18,7 +18,7 @@ from typing import Any
 from .artifact import MAX_REPORT_BYTES, canonical, seal
 from .export_budget import ExportBudget
 from .evm import AnvilSession, ExecutionError
-from .rpc import RPC, RPCError, RPCRejected
+from .rpc import RPC, RPCError, RPCRejected, safe_diagnostics
 
 TRACE_VERSION = "0.1.0"
 SHANGHAI_TIME = 1681338455
@@ -551,9 +551,12 @@ def run_trace_native(plan: dict) -> dict:
         captured = capture_source(plan, RPC(url), deadline)
         baseline = replay_branch(captured, url, [], deadline)
         candidate = replay_branch(captured, url, plan["skip_indices"], deadline)
-    except RPCError:
+    except RPCError as error:
+        diagnostic = safe_diagnostics(error)
+        code, method = diagnostic["code"], diagnostic["method"] or "unknown"
         raise ExecutionError(
             "Canonical trace RPC failed; original inputs/state may be unavailable. No fixture substitution."
+            f" [rpc_code={code}; rpc_method={method}]"
         ) from None
     return seal(
         {

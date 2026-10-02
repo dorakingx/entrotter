@@ -1,5 +1,24 @@
 # Engine candidate status
 
+## 2026-10-02 — Safe RPC diagnostics, unpublished candidate
+
+RPC exceptions now expose only fixed codes and allowlisted methods, while native
+trace CLI failures retain the existing explanation with a safe classification
+suffix. Provider error data/messages, URLs, parameters and partial HTTP body bytes
+are excluded. An actual loopback response with valid JSON but a prematurely ended
+Content-Length was accepted by the prior transport and is now refused. The
+RuntimeError/RPCRejected relationships, method allowlists, response cap, default
+worker error envelope and HTTP v0.1 contract remain unchanged.
+
+Targeted author checks cover hostile exceptions/forged metadata, native CLI
+propagation, actual loopback timeout/HTTP/rejection/malformed/truncated responses,
+owned server closure and existing trace validation/mining deadline behavior. Full
+source static/security checks retain all 23 reviewed findings without suppression.
+Exact author logs and frozen sources are preserved privately pending independent
+source review. This is not a full native/Docker suite or current-head CI result;
+there is no new archive run or retrospective classification of retained failures.
+Protected integration, publication and independent approval remain pending.
+
 ## 2026-10-01 — Whole worker preparation deadline, PR #22
 
 The current bounded archive candidate now prepares the image in an owned POSIX

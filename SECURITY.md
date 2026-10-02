@@ -42,6 +42,14 @@ RPC URLs can contain secrets: never include them in reports, commands in
 screenshots, logs, pull requests, or issue bodies. The optional fork URL may
 be visible to other processes owned by your OS user; run on a trusted machine.
 
+RPC exception diagnostics contain only locally validated finite codes and fixed
+allowlisted methods. Native trace errors can display these safe fields; worker
+and HTTP error envelopes remain fixed. Provider messages/codes, partial HTTP
+bodies, URLs and request parameters must not be included. Transport errors are
+classified by exception types rather than error text; the normalized transport exception is raised outside
+the original private exception handler. A code describes an observed
+transport failure, not a diagnosis of provider state or miner internals.
+
 The default worker checks bound Docker `info` to 1 MiB and its `ps` admission/
 ownership response to 128 bytes before parsing. Both use bounded chunk reads,
 a ten-second pipe/client deadline and owned-process-group cleanup on timeout,

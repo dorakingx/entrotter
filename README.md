@@ -52,6 +52,26 @@ results. Public source RPC URLs are never embedded in artifacts.
 The runner admits only JSON-defined, built-in actions. It does not execute
 arbitrary Python, shell commands, downloaded agent code or LLM tool calls.
 
+## Safe RPC failure diagnostics
+
+`RPCError` remains a `RuntimeError`, and `RPCRejected` remains its subclass.
+Trusted Python callers can inspect a fresh `error.diagnostics` dictionary with
+only a finite `code` and an allowlisted `method` (or `None`). Codes distinguish
+`timeout`, `http_error`, `connection_error`, `tls_error`, `invalid_response`,
+`response_too_large`, `rejected` and `transport_error`; local validation uses
+`invalid_request`, and errors without trusted classification use `unknown`.
+Provider error codes/messages, bodies, URLs and parameters are excluded. Invalid
+JSON, failed HTTP reads and premature EOF against a parsed Content-Length are
+reported as `invalid_response`. Responses still have the existing 4 MiB cap.
+
+`trace-run --native` preserves its existing failure explanation and appends, for
+example, `[rpc_code=timeout; rpc_method=evm_mine]`. This identifies the transport
+operation/classification observed in that invocation, not the underlying cause of
+an archive or EVM failure. The default worker keeps its exact fixed error
+response; HTTP v0.1 failure envelopes are unchanged. Detailed codes do not cross
+those boundaries. A successful RPC with `not_mined` outcomes still does not explain
+missing receipts. These changes do not retrospectively classify earlier failures.
+
 ## EVM verification
 
 Install Foundry/Anvil for the explicit native developer path and native tests:

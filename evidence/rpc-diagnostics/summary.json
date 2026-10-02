@@ -1,0 +1,158 @@
+{
+  "status": "independently_reviewed_unpublished_candidate",
+  "base": "99fd3a60a754f129c78d1324f2a01787a6538917",
+  "branch": "feat/safe-rpc-diagnostics",
+  "improvement": "Finite validated RPC failure code/method; safe native trace CLI suffix; HTTP protocol/read/decode/size failures normalized without provider text or immediate original transport context.",
+  "targeted_tests": 32,
+  "targeted_seconds": 0.158,
+  "native_tests": 294,
+  "native_seconds": 45.076,
+  "native_skips": 0,
+  "static_sources": 23,
+  "bandit_full_findings": 23,
+  "bandit_errors": 0,
+  "bandit_skips": 0,
+  "review_findings_and_rationales_unchanged": true,
+  "source_hash_bindings_refreshed": [
+    "src/entrotter_engine/rpc.py",
+    "src/entrotter_engine/trace.py"
+  ],
+  "root_rpc_tests": 15,
+  "root_pinned_trace_tests": 22,
+  "failed_before": "Original99fd accepted validJSON with shorter-than-declared HTTP body; prepared code rejects it. Initialdiagnostic regression failed because metadata absent. Logs kept with scope limits.",
+  "original_runtime_limits": "Method allowlists,4MiB response bound/defaultworker fixed error/HTTPv0.1 envelopes unchanged; no budget/state/signature repair.",
+  "source_review_sha256": "01805f7e78b94ad54a50a3aef12a6f696dd6c2b41045d8430c93fb362afbf1ff",
+  "initial_readiness_sha256": "8cf391e65394a19a0856ceaf8b0d227b75dfbec7780268954a5cddb20cf2ac7c",
+  "full_native_addendum_sha256": "387b33f37fe32b9868ff6f9b47a9862ea773ade400ac61db678656e3be64cbbd",
+  "artifacts": [
+    {
+      "file": "readiness.json",
+      "original_sha256": "8cf391e65394a19a0856ceaf8b0d227b75dfbec7780268954a5cddb20cf2ac7c",
+      "public_sha256": "8cf391e65394a19a0856ceaf8b0d227b75dfbec7780268954a5cddb20cf2ac7c",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "native-suite-proof.json",
+      "original_sha256": "387b33f37fe32b9868ff6f9b47a9862ea773ade400ac61db678656e3be64cbbd",
+      "public_sha256": "387b33f37fe32b9868ff6f9b47a9862ea773ade400ac61db678656e3be64cbbd",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "independent-review.json",
+      "original_sha256": "01805f7e78b94ad54a50a3aef12a6f696dd6c2b41045d8430c93fb362afbf1ff",
+      "public_sha256": "01805f7e78b94ad54a50a3aef12a6f696dd6c2b41045d8430c93fb362afbf1ff",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "unit.log",
+      "original_sha256": "6e44a58554fa4790b86bbfb92ed4b6809e23b5d5bd0cc383dc4f3a063aab822d",
+      "public_sha256": "6e44a58554fa4790b86bbfb92ed4b6809e23b5d5bd0cc383dc4f3a063aab822d",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "native.log",
+      "original_sha256": "585ed2a6a1589e984e7807fab461be7bb0a800e1a16841913dc9091acd67f3ce",
+      "public_sha256": "d06dcf56da6ec001f4948734eb8082044741fae6992a469a20e9a79ee1ce08f1",
+      "byte_identical": false,
+      "redaction": "Only local checkout/tools absolute paths replaced by /workspace/repository or /workspace/tools; ignored originals retained."
+    },
+    {
+      "file": "lint.log",
+      "original_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "public_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "format.log",
+      "original_sha256": "37c44e3c541f952bfef4bd8a6bef640b548ef20e76674da09517c0dfcb0e512e",
+      "public_sha256": "37c44e3c541f952bfef4bd8a6bef640b548ef20e76674da09517c0dfcb0e512e",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "types.log",
+      "original_sha256": "7f43e759c997a0af903a210f4a10fd709457c5a5125336929ab037d3ed6702ce",
+      "public_sha256": "7f43e759c997a0af903a210f4a10fd709457c5a5125336929ab037d3ed6702ce",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "security.log",
+      "original_sha256": "f913ad59a4e229f195efe876758810407d6abc734cc799d07ece92e4f2a24a10",
+      "public_sha256": "f913ad59a4e229f195efe876758810407d6abc734cc799d07ece92e4f2a24a10",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "bandit.json",
+      "original_sha256": "09e0883a633dd9e994a64c6b50b5e396e9aa641486eb79b253f73dd8f8756589",
+      "public_sha256": "09e0883a633dd9e994a64c6b50b5e396e9aa641486eb79b253f73dd8f8756589",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "policy-refresh.json",
+      "original_sha256": "07e476f1690dd431568dbdc467c4aef6aa882a77aae3d5a5c6a567f0f4c1bbc5",
+      "public_sha256": "07e476f1690dd431568dbdc467c4aef6aa882a77aae3d5a5c6a567f0f4c1bbc5",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "root-rpc.log",
+      "original_sha256": "5aee17d98d2f4ef492cb19837a6e1d82f7b803b3f3d68d3f00734a2c2c1759b9",
+      "public_sha256": "5aee17d98d2f4ef492cb19837a6e1d82f7b803b3f3d68d3f00734a2c2c1759b9",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "root-trace-pinned.log",
+      "original_sha256": "6b882b14979a871d4a20e17a4ad4820011bd10a360923fa5aaa4d0b7689b6a67",
+      "public_sha256": "6b882b14979a871d4a20e17a4ad4820011bd10a360923fa5aaa4d0b7689b6a67",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "root-trace-wrong-version.log",
+      "original_sha256": "855fa83fe65000bad660b841a67f2de41a55db70f8c42baa995c45828bf4c162",
+      "public_sha256": "8ba1c830f7590979ace537106a7f1ccb83156e377b936e5a06cc86652336a527",
+      "byte_identical": false,
+      "redaction": "Only local checkout/tools absolute paths replaced by /workspace/repository or /workspace/tools; ignored originals retained."
+    },
+    {
+      "file": "regression-before.log",
+      "original_sha256": "358322a1fe26271c2038dcb4d904bae837af3545684fb4fa0f62a1738884ea6b",
+      "public_sha256": "20e24c654be02556bd0237e5b5ad27a956c78c11902773d6996b60df486d8f16",
+      "byte_identical": false,
+      "redaction": "Only local checkout/tools absolute paths replaced by /workspace/repository or /workspace/tools; ignored originals retained."
+    },
+    {
+      "file": "truncation-before.log",
+      "original_sha256": "10601b66e043fb4e509afa8c4ccffeb2d5462e3281480741ef1c87ec3701b18f",
+      "public_sha256": "10601b66e043fb4e509afa8c4ccffeb2d5462e3281480741ef1c87ec3701b18f",
+      "byte_identical": true,
+      "redaction": "None"
+    },
+    {
+      "file": "root-native-suite-review.json",
+      "original_sha256": "1876799ac0debe9e680b6e87ad496b9002026dad04833b1c6fca8a1a3c28eb47",
+      "public_sha256": "1876799ac0debe9e680b6e87ad496b9002026dad04833b1c6fca8a1a3c28eb47",
+      "byte_identical": true,
+      "redaction": "None"
+    }
+  ],
+  "scope_limits": [
+    "No new archive/native003,Docker/currentheadCI/dependency/build/wheel/publication/merge/humanapproval proof.",
+    "Native002 cause cannot be retrospectively classified. Code names identify actualtransport category, not provider state/miner truth.",
+    "The root initial trace run used unrelatedHomebrewAnvil1.6.0 and failed one setup at anvil_setNextBlockPrevRandao;17others pass. Its rawlog retained/sanitized. Corrected pinned1.8.3 trace22 pass separately.",
+    "Initialreadiness/source review predate additive full294proof. Their historical descriptions are not regenerated.",
+    "Initialregression/preliminary edited test bytes were not frozen; only final32logs bind finalsource. Truncationbefore script retained privately; its imported intermediate fulltestfixture bytes were not frozen.",
+    "Root review and initialreadiness record originalraw log hashes, which may differ from narrowly sanitized publiccopies explicitly mapped above.",
+    "No new documentation link targets in frozen7files; fullpipeline required only after reviewed publication."
+  ],
+  "full_native_independent_review_sha256": "1876799ac0debe9e680b6e87ad496b9002026dad04833b1c6fca8a1a3c28eb47"
+}
