@@ -39,5 +39,6 @@
     "Receipt classification preserves every original field; receipt identity does not establish contract-state/economic identity.",
     "Combined candidate CI, independent human protected-main approval and Pages publication remain separate."
   ],
-  "independent_preparation_review_sha256": "56ba1771720964ab93e22331e4f2d516bf2698058de06ccbdc9bc5fdbad4746d"
+  "independent_preparation_review_sha256": "56ba1771720964ab93e22331e4f2d516bf2698058de06ccbdc9bc5fdbad4746d",
+  "execution_snapshot": "baf58f4771f294a4eccb657495ed61dccce5a1e5"
 }

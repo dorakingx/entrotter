@@ -1577,3 +1577,40 @@ measurements retain their original scope. New combined CI, protected-main human
 approval and candidate Pages publication remain separate. No main merge, new
 video, package publication or formal submission is claimed. Goal active through
 the officialOctober13 15:59JST deadline, recheckedOctober2; Discord excluded.
+
+
+## October 2 — Original receipt comparison enters the pinned composition
+
+Viewerb1cfb00/PR16 classifies candidate differences against original projected
+receipts, retains every exact differing field and distinguishes omitted/unavailable
+receipts. Import captions show actual32/through31/skip12 separately from the
+recorded four-input sample. Independent local source/visual review and fresh Linux
+CI artifacts pass: all4 required first attempt,66 Node/11 Python tests,15 JS/16
+type inputs,99 unsuppressed source-bound findings,109 npm/42 Python identities
+with0 reported advisories,36 browser groups/28 raw axe scans0 violations. Contrast
+incomplete results remain; no manual accessibility certification is claimed.
+All56 committed source/evidence blobs,22 quality hashes,15 browser input hashes,
+12 documents/51 links and the complete synthetic merge tree match the head.
+
+The current execution snapshotbaf58f4 selects viewerb1cf through exactly2 pins,
+retaining engine198, SDKee, CLI22b, schemas878 and every frozen compatibility
+variant. One mandatory integration step inspects the original native00532 report
+through both SDK and the actual Node viewer validator/classifier. Engine/fixture
+bytes matchSHA72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120;
+all32 baseline receipts equal originals. Candidate omits12; the later19 full
+receipts differ only by index-1/cumulativegas-336752. Summary12matches/1omission/
+19structural/0execution differences preserves all32 classification records.
+All4 exact local workflow reader steps pass; other3 complete outcomes match prior
+404e8db except viewer pin. Initial private checkout guards refused old direct
+CLI/schema branches before executing any product code; exact pinned worktrees
+resolved the setup. No EVM/archive/model/browser call was added by this integration.
+
+The404e8db/198 composition's all5 required CI/full raw review and clean fixture
+6.779s/model7.012s timings remain historical, with running Docker/cgroup-v2,
+potentially warm caches and installation/VM startup excluded. Current composition
+CI and protected-main human approval/Pages remain separate. See
+[exact source and reader evidence](evidence/trace-comparison-integration/README.md).
+Original32 native producer proof is not a dependent-consumer/profit/full-block/
+provider-authenticity result. Videos/model/holdout inputs remain unchanged; formal
+submission is not claimed. Goal remains active; official rules section5 rechecked
+October2 11:37:37UTC still endsOctober12 23:59PT/October13 15:59JST. Discord excluded.

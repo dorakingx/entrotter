@@ -34,8 +34,8 @@ The [24.35-second run](../evidence/quick-start-oct01/summary.json) used coordina
 03f8786/engine d5b3003. The [September 20 measurement](../evidence/quick-start/summary.json)
 also retains its earlier pins. These are separate measurements with potentially
 warm caches, not cold-machine setup benchmarks. The current commands select
-coordination efda6f2, engine198139f, schemas8785bb0 and CLI22b514c; SDK and
-signed-prefix reader/viewer pins are ee5523d/b7c20ce. Older timings do not measure
+coordination baf58f4, engine198139f, schemas8785bb0 and CLI22b514c; SDK and
+signed-prefix reader/viewer pins are ee5523d/b1cfb00. Older timings do not measure
 this new signed-prefix inspection composition.
 
 The prior [inspection-fix composition](../evidence/agent-inspection-integration/summary.json)
@@ -58,7 +58,7 @@ recorded in [candidate PR55](https://github.com/entrotter/entrotter/pull/55);
 the older timings above do not measure this new composition. Independent GitHub
 approval and protected integration remain pending.
 
-The current [parent-read cache composition](../evidence/trace-parent-cache-integration/README.md)
+The prior [parent-read cache composition](../evidence/trace-parent-cache-integration/README.md)
 selects engine198139f/PR34. All8 exact component checks and independent full
 source/wheel/image/security/receipt review pass. Exact-parent reads share bounded
 cache entries; distinct keys progress independently and receipts stay uncached.
@@ -67,10 +67,19 @@ baseline receipts matching originals; prior failures remain preserved. It is
 separate from the mandatory default Docker1/4-prefix cases. No dependent-consumer,
 profit, full-block/root/provider-authenticity or speed claim follows.
 
-Local21-source type checks and all3 SDK/viewer reader steps pass. The previous
-ccc4780/65c composition passed its5 combined checks; those checks and reproduction
-timings belong to that earlier selection. New combined CI, protected-main approval
-and candidate Pages publication remain separate gates for this selection.
+The earlier404e8db/198 composition passed all5 combined checks and its independent
+full artifact review; its clean fixture6.779s/model7.012s measurements retain that
+source selection and running Docker/cgroup-v2/warm-cache scope.
+
+The current [receipt comparison composition](../evidence/trace-comparison-integration/README.md)
+selects viewerb1cfb00/PR16. All4 component checks and independent complete Linux
+artifact review pass. The display groups original receipt differences while
+retaining every field, and identifies the loaded input count/omissions. All4 local
+workflow reader steps pass, including the unchanged native00532-report inspection:
+12 exact matches,1 omission,19 position/cumulative-gas-only differences and no
+changed execution receipt fields. This is offline recorded evidence inspection,
+not a fresh chain run or contract-state/consumer/profit conclusion. New combined
+CI, protected-main human approval and live candidate Pages remain separate.
 
 ## 1. Fetch a compatible snapshot
 
@@ -84,7 +93,7 @@ set -eu
 mkdir entrotter-candidate
 cd entrotter-candidate
 git init --quiet entrotter
-git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git efda6f2024a36224aa1486cb389a9902ce7b584b
+git -C entrotter fetch --quiet --depth=1 https://github.com/entrotter/entrotter.git baf58f4771f294a4eccb657495ed61dccce5a1e5
 git -C entrotter checkout --quiet --detach FETCH_HEAD
 python3 - <<'PY'
 import json

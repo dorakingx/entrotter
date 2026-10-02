@@ -54,8 +54,15 @@ the same original32 signed inputs, skip12 and150-second shared budget; both
 branches complete and all32 baseline receipt projections equal originals.
 The producer feed update occurs only in baseline. This is a32-of181 producer
 prefix, not dependent-consumer/profit/full-block/provider-authenticity or historical
-speed evidence. Previous failures remain preserved. New combined CI and protected
-main approval remain separate; recordings keep their original source versions.
+speed evidence. Previous failures remain preserved. The404e8db/198 composition passed all5 combined checks and full artifact review;
+recordings keep their original source versions. The current
+[receipt comparison composition](../evidence/trace-comparison-integration/README.md)
+adopts viewerb1cfb00 with all4 component checks and independent Linux artifact
+review. Four offline reader steps pass, including the unchanged native00532-input
+report. Candidate receipt grouping preserves exact field differences and shows
+12 matches/1 omission/19 position-cumulative-gas-only/0 execution-field changes.
+Receipt matches do not establish unchanged contract state, consumer behavior or
+profit. New combined CI and protected-main/Pages approval remain separate.
 
 These are the October 2 candidate sources, still awaiting independent approval
 and protected integration. Follow the [current pinned quick start](../docs/QUICK_START.md)
@@ -83,12 +90,12 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Coordination execution snapshot, dependency pins and Linux CLI helper | [efda6f2](https://github.com/entrotter/entrotter/tree/efda6f2024a36224aa1486cb389a9902ce7b584b) | Current composition builds on [#54](https://github.com/entrotter/entrotter/pull/54) |
+| Coordination execution snapshot, dependency pins and Linux CLI helper | [baf58f4](https://github.com/entrotter/entrotter/tree/baf58f4771f294a4eccb657495ed61dccce5a1e5) | [#55](https://github.com/entrotter/entrotter/pull/55) |
 | Bounded agent engine, contract identity and signed transaction-prefix replay | [198139f](https://github.com/entrotter/engine/tree/198139ff0b3bf37781b4232b27d8eeb0a5da5365) | [#34](https://github.com/entrotter/engine/pull/34) |
 | Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, recorded agent and signed-prefix inspection, accessibility and quality | [b7c20ce](https://github.com/entrotter/entrotter.github.io/tree/b7c20ce2c080427fe0742a1afcb5dbc49277de70) | [#15](https://github.com/entrotter/entrotter.github.io/pull/15) |
+| Console, recorded agent and signed-prefix inspection, accessibility and quality | [b1cfb00](https://github.com/entrotter/entrotter.github.io/tree/b1cfb001ad642d4b7423ea914045abb56166c903) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
 The [signed-prefix reader composition](../evidence/trace-reader-integration/README.md)
 adds SDK and browser inspection of the actual four-receipt case. SDK all5checks
