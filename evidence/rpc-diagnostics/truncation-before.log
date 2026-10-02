@@ -1,0 +1,1 @@
+{"base": "99fd3a60a754f129c78d1324f2a01787a6538917", "real_loopback_response_claimed_content_length": 9999, "original_accepted_incomplete_HTTP_body": true, "result": "valid-JSON-in-truncated-body", "no_private_response_or_URL_recorded": true, "owned_server_thread_closed": true}
