@@ -479,3 +479,39 @@ after it. All eight malformed/floating/multiple/continued variants refuse before
 launch. Final26-source scan retains all25 findings/reasons and original audit
 guards. Current whole356/eight CI and real image audit remain pending; parent354
 results are historical. See [cause, controls and final reviews](evidence/owned-consumer-observations/remediation/manifest-binding/README.md).
+
+### October3 — Supported CLI reproduces the original32-input consumer case
+
+Enginee9d629e supersedes the preceding pending356/image-audit checkpoint: all8
+original mandatory CI runs pass and complete raw source/artifact reviews agree.
+Native356/85.466s has zero skips; unit3.11–3.14 each356 has40 explicit Anvil skips;
+actual isolated25/218.122s and default1/four replay pass. Current copied worker22
+inputs/base892/source digest agree. Unsuppressed26-source/25retained findings,
+21wheel modules,42Python/31OS/1126signedCargo identities have0 reported advisories;
+21documents/222links pass. Database/tool binaries are not exported for independent
+rehash;172nonCargo entries remain outside advisory coverage. Main still requires
+strict/admin-enforced independent human approval.
+
+The actual supported trace-observe native CLI now executes original32-of181
+block18999892/skip12 once, exporting a strict sealed wrapper. All32 complete
+baseline receipts and both full branch outcomes match original/native006 evidence.
+Candidate executes31; later19 changes remain index-1/cumulativegas-336752 only.
+All4 raw Aave consumer prices equal their producer answer: baseline257082415000
+to256292441874, candidate unchanged257082415000, USD unit100000000. Both initial
+heads/getters and stable nonempty oracle/source identities are verified. Replay
+127.599511s/CLI127.803665s/host127.921839s retains original150s;31source/5input hashes
+stay unchanged. Passive lifecycle profiling makes no production/RPC/state/limit
+changes and does not support a speed claim. Owned2Anvil+one cache groups/ports/
+pipes close, with independent host group/port probes. Cache1879/970upstream/903hits
+retains6 aggregate errors of unknown cause and0refusals. Initial telemetry/host/
+verifier preparation findings and five passing fault controls are preserved;
+fixes precede the sole archive attempt. Initial overwritten readiness bytes are
+explicitly unavailable; later raw readiness/reviews are retained.
+
+See [usable offline wrapper, exact command, raw outcomes and scope](evidence/owned-consumer-observations/historical-32/README.md).
+Read-only dependence is not a signed consumer strategy, profit, authenticated
+provider/deployed code, full-block/root/opcode or default Docker32 result. New
+documentation/evidence publication checks, protected-main review, deployment and
+formal submission remain separate. No model call or upstream transaction broadcast was
+added. Goal remains active through the official October13 15:59JST deadline;
+Discord excluded.

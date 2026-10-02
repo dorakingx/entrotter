@@ -123,6 +123,13 @@ export ENTROTTER_RPC_URL='https://YOUR_ARCHIVE_PROVIDER'
 PYTHONPATH=src python3 -m entrotter_engine trace-observe tests/data/canonical-mainnet-prefix.json --native -o observed-trace.json
 ```
 
+For the recorded original32-input case, use
+`evidence/aave-consumer-price/native-006/plan.json` instead of the one-input plan.
+The [supported32-input result](evidence/owned-consumer-observations/historical-32/README.md)
+includes a sealed wrapper that can be inspected offline without an archive key.
+This is a partial block replay with one original transaction omitted, not a
+signed consumer strategy or profit demonstration.
+
 The separate wrapper has `observation_version: "0.1.0"` and profile
 `aave-v3-ethereum-weth-price`. It contains the unchanged trace-report format,
 its artifact ID, four ordered observation records and a content hash over the

@@ -85,8 +85,10 @@ Read an exported wrapper offline through
 
 ## Scope and pending gates
 
-The supported command has **not** executed the historical32-input case. Prior
-native006 research evidence remains distinct. The synthetic plan in this package
+At this initial package's publication, the supported command had not executed
+the historical32-input case. The later [supported32-input execution](historical-32/README.md)
+records that actual run separately; prior native006 research remains distinct.
+The synthetic plan in this package
 requires its disposable source setup; its local loopback endpoint is closed and
 is not an independently available archive service.
 
