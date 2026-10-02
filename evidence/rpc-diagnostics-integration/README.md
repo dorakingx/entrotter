@@ -13,7 +13,7 @@ control reports. Native Linux CI ran294 tests with0 skips in47.122s and actual
 Docker enforcement/cleanup ran25 tests in214.044s. The four Python unit jobs each
 ran294 tests with31 explicit Anvil skips. Documentation uses a synthetic merge
 with the identical65c tree. The source review and raw local records are in the
-[pinned engine evidence](https://github.com/entrotter/engine/blob/65c28330bdc694535da0074b2e3d68ab433806d8/evidence/rpc-diagnostics/README.md).
+[pinned engine evidence](https://raw.githubusercontent.com/entrotter/engine/65c28330bdc694535da0074b2e3d68ab433806d8/evidence/rpc-diagnostics/README.md).
 
 The [previous coordinator CI review](previous-coordination-CI.json) applies to
 158fbc0 selecting engine99fd, not this newly selected65c composition. Its five
