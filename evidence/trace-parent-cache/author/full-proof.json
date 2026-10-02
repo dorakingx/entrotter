@@ -1,0 +1,28 @@
+{
+  "all64_source_bindings_unchanged": true,
+  "authoritative_original_session": 14349,
+  "base": "65c28330bdc694535da0074b2e3d68ab433806d8",
+  "cleanup_scope": "Fresh comm/argv-filtered OS observation; actual owned node/child/proxy/client ports/groups/pipes and threads checked by relevant native/lifetime/loopback tests. No Docker process claim.",
+  "native_log_sha256": "0872d50401230befc41fe7159ed9e99042b74b81025c8531b8a98a7312003ced",
+  "native_seconds": 75.836,
+  "native_tests": 323,
+  "observed_anvil_pids": [],
+  "observed_fixed_parent_cache_child_pids": [],
+  "prior314_full_proof_sha256": "c70a806f7b00a19ceaf0a70f47a01eea14688cecf546e7d8944762b8ec710aef",
+  "prior_archive004_readiness_sha256": "efab24f9b0fc18be7a69ccf358c2a9d2be94930e5c890e04bac756bea50db9c1",
+  "readiness_sha256": "69dbbd363c00c7e8433e52da955aedbb91a31f096d74518d2ee391fd7ae193e5",
+  "root_helper_review_sha256": "454b03a0f924535948880701646a6a28eb757ac4165986039bfd48e62684ef43",
+  "scope": "323 tests with pinnedAnvil1.8.3, zero skips. Current per-key implementation differs from serialized314 candidate only in child production source and refreshed exact policy hash; all25 findings retained. Prior failures/invalid fixture scope remain. No archive005, actual image/default-worker/CI/runtime-cause claim or publication approval.",
+  "skipped": 0,
+  "static_and_scan_sha256": {
+    "bandit-before-refresh.json": "adcb44a9745b37b89f4210001845bd291e8f991ce28948dcef3f8cffdfda85f8",
+    "bandit.json": "6b7d28042713103fa370406377163bf97263657dea9aae06981a118efa459a4b",
+    "format.log": "7715b02781372f8741fb309aee97a6483e689c9039f0d78081dd910f70b0256e",
+    "lint.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "policy-refresh.json": "4b38b50e73853982e4fae9dbf3a227fe1666533920628b5f1e537cde0d0e0952",
+    "security-before-refresh.log": "dfd6742d36a194196e6e45e00b1827cb1f57e6c4f71eb74eb0f0ce49c5e68cab",
+    "security.log": "8eeed1128ac8456daa6ad765b6d87d7f0379c8157ada9036bdf49204d4d238ea",
+    "types.log": "521e53066a363ec69a3862127d20de642114463485e6923ba593c38250537f8d"
+  },
+  "terminal_exit_code": 0
+}

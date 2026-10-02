@@ -1,0 +1,66 @@
+{
+  "status": "passed independent original32 paired native replay and producer-state observation review",
+  "paired_prefix_replay_pass": true,
+  "readiness_sha256": "60afb1daf5f031d5c4f1b52857b275ed0608688b7ec55738bfa871520b9ba81d",
+  "terminal_sha256": "aeca46f8a43725583064c88839a23ffff5c89226a28d6e5590bcbf4a7efbb1aa",
+  "frozen_bindings": 76,
+  "signature_inputs": 32,
+  "original_block_transactions": 181,
+  "through_index": 31,
+  "skip_indices": [
+    12
+  ],
+  "all32_complete_projected_baseline_receipts_equal_source_and_prior003": true,
+  "candidate_executed": 31,
+  "candidate_skipped": 1,
+  "candidate_remaining_gas_status_logs_bloom_identity_unchanged": true,
+  "candidate_position_cumulative_gas_adjusted_exactly": true,
+  "producer_feed_answers_raw": {
+    "initial_both": 257082415000,
+    "baseline_after": 256292441874,
+    "candidate_after": 257082415000
+  },
+  "producer_round_increment_baseline_only": true,
+  "identical_owned_initial_head_and_getters": true,
+  "report_artifact_id": "30da1a0aad1be09f26d2f4f06dfaa567d9cedfe8bec8e8a69dbed18bb11ef7b0",
+  "report_sha256": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+  "report_seconds": 125.330162,
+  "native_seconds": 125.358258,
+  "host_seconds": 125.460378,
+  "cache_aggregate": {
+    "requests": 1871,
+    "upstream": 966,
+    "hits": 899,
+    "entries": 960,
+    "bytes": 2640492,
+    "uncached": 6,
+    "errors": 6,
+    "refused_handlers": 0
+  },
+  "owned_Anvil_closed": 2,
+  "owned_cache_closed": 1,
+  "fresh_owned_PID_group_port_checks_pass": true,
+  "prior001002003004_failures_immutable": true,
+  "raw_sha256": {
+    "baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "candidate-branch.json": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0",
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "host-cache-cleanup.json": "29c935d7c897eb669f7edf10d3b64ba44ddf36906334862ed8237e52d6092f89",
+    "host-owned-cleanup.json": "1c70856500b4beb2a4f17cbfeed5bba43b6ac0b271f3c7e173dab016a0c64152",
+    "host-result.json": "0fb1619f246ba8bc83c34d009929074e781f3a3e8196c2f453198c0868ec0840",
+    "observations.json": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+    "owned-cache.json": "f09a4f651eab1217902cb97560ff6a4a3c473273517d223d5e6ec94222ee043e",
+    "owned-nodes.json": "a44b809bfd366b04d1c803ee530ad8dcadc1af72da61c9166851eb931fe17f94",
+    "protocol-response.json": "85d33cc8fa47f2f0d77616600def3632a15d0b56731050dd9def97f1534924cc",
+    "report.json": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+    "result.json": "7138bf252273a58f89b09b99445deb995637aa11712ce8215e37913f6a6b3f36"
+  },
+  "limits": [
+    "Prefix32 of181 is not full-block replay, state-root equality or opcode equivalence.",
+    "Provider state is declared, not authenticated; owner getter bytes show producer update omission only.",
+    "Remaining31 transactions have unchanged gas/status/logs; no dependent consumer, strategy benefit, profit or changed market behavior established.",
+    "One successful changed-source run and four failed historical runs do not prove performance or timeout causality.",
+    "Native lacks defaultDockerCPU/RSS/PID quotas; publication/mandatoryCI/protectedmain/humanapproval remain separate gates."
+  ],
+  "reviewer_sha256": "56bc2416326d6cc966013107d2924e57a7dcafefec77e17d01a0a687ea551dcb"
+}

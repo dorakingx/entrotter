@@ -1,0 +1,25 @@
+{
+  "authoritative_original_session": 12096,
+  "terminal_exit_code": 0,
+  "readiness_sha256": "60afb1daf5f031d5c4f1b52857b275ed0608688b7ec55738bfa871520b9ba81d",
+  "actual_host_log_sha256": "d4d4d4914e1874583d6f7abfa44f096db7566058c4beca1b3579045a398bd64d",
+  "run_sha256": {
+    "baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "candidate-branch.json": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0",
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "host-cache-cleanup.json": "29c935d7c897eb669f7edf10d3b64ba44ddf36906334862ed8237e52d6092f89",
+    "host-owned-cleanup.json": "1c70856500b4beb2a4f17cbfeed5bba43b6ac0b271f3c7e173dab016a0c64152",
+    "host-result.json": "0fb1619f246ba8bc83c34d009929074e781f3a3e8196c2f453198c0868ec0840",
+    "observations.json": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+    "owned-cache.json": "f09a4f651eab1217902cb97560ff6a4a3c473273517d223d5e6ec94222ee043e",
+    "owned-nodes.json": "a44b809bfd366b04d1c803ee530ad8dcadc1af72da61c9166851eb931fe17f94",
+    "protocol-response.json": "85d33cc8fa47f2f0d77616600def3632a15d0b56731050dd9def97f1534924cc",
+    "report.json": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+    "result.json": "7138bf252273a58f89b09b99445deb995637aa11712ce8215e37913f6a6b3f36"
+  },
+  "native_status": "completed",
+  "baseline_verified": true,
+  "native_seconds": 125.358258,
+  "host_seconds": 125.460378,
+  "scope": "Root-owned ONE changed-source native005 original32/skip12/150s run; host exit0 is not independent replay proof. All raw outputs retained; rootreview next."
+}

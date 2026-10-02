@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "scope": "Actual native005 offline SDK typed reader, no chain/model/browser call",
+  "sdk_head": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+  "sdk_trace_sha256": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+  "report_sha256": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+  "artifact_id": "30da1a0aad1be09f26d2f4f06dfaa567d9cedfe8bec8e8a69dbed18bb11ef7b0",
+  "transactions": 32,
+  "baseline_verified": true,
+  "candidate_executed": 31,
+  "candidate_skipped_index": 12,
+  "baseline_gas": 6403065,
+  "candidate_gas": 6066313,
+  "runtime_seconds": 125.330162,
+  "limits": [
+    "Reader integrity/internal consistency is not provider authentication or EVM truth."
+  ]
+}

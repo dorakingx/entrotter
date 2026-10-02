@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "scope": "Actual native005 offline browser parser/view model; Node execution, no rendered browser/network/chain/model call",
+  "viewer_head": "b7c20ce2c080427fe0742a1afcb5dbc49277de70",
+  "parser_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+  "report_sha256": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+  "artifact_id": "30da1a0aad1be09f26d2f4f06dfaa567d9cedfe8bec8e8a69dbed18bb11ef7b0",
+  "inputs": 32,
+  "baseline_matches": true,
+  "candidate_executed": 31,
+  "candidate_skipped_index": 12,
+  "limits": [
+    "Parser integrity is not provider authentication/EVM truth/rendered browser verification."
+  ]
+}

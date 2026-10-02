@@ -1,0 +1,17 @@
+{
+  "all39_source_bindings_unchanged": true,
+  "authoritative_original_session": 51311,
+  "base": "65c28330bdc694535da0074b2e3d68ab433806d8",
+  "cleanup_scope": "Fresh comm/argv-filtered OS observation only; actual node/proxy/client ownership and port/thread cleanup also asserted by relevant native/loopback/lifecycle tests. No Docker daemon/process claim.",
+  "native_log_sha256": "deedb26f228c1b9db75b49695e68ed936c9fcdabb2a4ebcdc35946d81b3f939b",
+  "native_seconds": 123.79,
+  "native_tests": 314,
+  "observed_anvil_pids": [],
+  "observed_fixed_parent_cache_child_pids": [],
+  "packaging_sha256": "37934b70df7c920377fdb46fade8f7fce947ee17f9c8d323d7bf81b1c1c7272f",
+  "readiness_sha256": "a7e8e079a263b137401242e8eee136082b78a9ab08f7e7184c86215410100dcd",
+  "scope": "314 native tests using pinnedAnvil1.8.3;25source lint/type/security pass reuses byte-identical production/policy; all prior failures and bad fixture-harness limitation retained. No archive004, actual image/default worker/CI, historical runtime/cause proof or publication approval.",
+  "skipped": 0,
+  "terminal_exit_code": 0,
+  "wheel_sha256": "860877e4974db1d0bf428f6770c91c61a5611038a6bdf2c21a87c079264a225a"
+}

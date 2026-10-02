@@ -1,0 +1,9 @@
+{
+  "scope": "2 real loopback structural concurrency controls failed before production fix,4.553s; readsserialized/waiteradmissionblocked, allcallerthreads joined/provider closed.",
+  "source_sha256": {
+    "src/entrotter_engine/_parent_cache.py": "46f8b3769db4e5d165359100c7a2ab7e1498a7c6d4c7bcc43ab1069adc93bb64",
+    "src/entrotter_engine/parent_cache.py": "73ba002c6cce32a8a7acd6580aa432af3ebdb5aa292432f7751dbd35ac080706",
+    "tests/test_parent_cache.py": "fb064838ad880ab7fcbe74472d8d749da8a82ee6f667d7d7915ef8ea1623ca64"
+  },
+  "raw_log_sha256": "2d37696d14fb0f98fa8b1c7e666e6d0132653bb630edb57ef5d44b37e7cfce48"
+}

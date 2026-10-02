@@ -1,0 +1,59 @@
+{
+  "status": "passed independent review of failedactual native004",
+  "paired_replay_pass": false,
+  "readiness_sha256": "efab24f9b0fc18be7a69ccf358c2a9d2be94930e5c890e04bac756bea50db9c1",
+  "terminal_sha256": "748e6bb82f29e438c8b358531a17436b7a3ecbcb75042a7ac9b920d2c361e20f",
+  "frozen_bindings": 79,
+  "historical_production_provenance": "Use frozen-production for25 originallyuncommitted candidate modules/scripts; publishedHEAD65c alone does not identify this executable",
+  "signed32_inputs_exact": true,
+  "captured_source_bytes_equal003": true,
+  "baseline_receipts_available": false,
+  "candidate_started": false,
+  "final_protocol_available": false,
+  "observed_failed_operation": {
+    "category": "rpc_error",
+    "code": "other_error",
+    "method": "evm_mine",
+    "rpc_diagnostics": {
+      "code": "timeout",
+      "method": "evm_mine"
+    },
+    "rpc_method_matches_observed": true,
+    "stage": "baseline_replay"
+  },
+  "native_seconds": 150.15749,
+  "host_seconds": 150.462171,
+  "cache_aggregate": {
+    "bytes": 2091435,
+    "entries": 735,
+    "errors": 21,
+    "hits": 0,
+    "refused_handlers": 0,
+    "requests": 742,
+    "uncached": 3,
+    "upstream": 739
+  },
+  "owned_Anvil_closed": 1,
+  "owned_fixed_cache_closed": 1,
+  "fresh_PID_group_port_checks_pass": true,
+  "baseline_initial_observation": "Pinned head+aggregator match; latestRoundData readfailsRPC, answer notobserved; do not infer originalgetter/economicstate authenticity",
+  "raw_sha256": {
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "host-cache-cleanup.json": "59aa16e387c3b6d048aa19e7a8bffc3ef4d6654c713955765c182cac61060919",
+    "host-owned-cleanup.json": "3104eba7ca745682fb3636987b11f6d4696f79675f5e7360ef007a5f9aa52003",
+    "host-result.json": "79a5e6553355050638b5815b57990a8acb8b27e358170ae7cba03bd523800945",
+    "observations.json": "e132fcb37bdb4902cd5b1dbcf08a7a8466b6265a7fcd34a35b7b6587f1117ddb",
+    "owned-cache.json": "c69e79da0e6189fea2accbe5236090f50dbb156ac8f9c03fa1a85a63836e3dcb",
+    "owned-nodes.json": "fa661e4dc69d00e6566a2efe4d24f2bab738aa941a77bc6502b32c57c674a4f1",
+    "result.json": "128778effc3d3afcb34e1d0cc9beb3c6786f1e7b0280d26643f3d2c62a5f22bf"
+  },
+  "prior001002003_immutable": true,
+  "setup_only_launch_error_disclosed": true,
+  "next_investigation": "Global cachelock serializes distinct735successfulcoldstate reads; plausible throughput issue, not proven cause. Preserve originalscope/budgets and independently prove per-key coalescing plus distinct-key concurrency before another materiallychanged trial.",
+  "limits": [
+    "No archivedsuccess/runtimeimprovement/baselinecomplete/candidate/consumer/profit/state-root/opcode/defaultDockerCPU/RSS/PID claim",
+    "21aggregate errors are not provider-cause classification; do not retrospectively explain001002003",
+    "No retry on same unchanged source; fix/review/test meaningfulnextsource first"
+  ],
+  "reviewer_sha256": "e64051b93985bbf6590c82f5dd70329dff2cbc512d40d4c4b5866ce94f9d8789"
+}

@@ -79,10 +79,12 @@ class TraceValidationTests(unittest.TestCase):
         p=plan(); original=deepcopy(p)
         def capture(snapshot, upstream, deadline):
             p['skip_indices']=[-1]
-            return {'sentinel':True}
+            return {'sentinel':True, 'parent': {'chain_id':1,'block_number':2,'block_hash':'0x'+'ab'*32}}
         with patch.dict(os.environ, {'ENTROTTER_RPC_URL':'https://example.com'}), \
              patch('entrotter_engine.trace.capture_source', side_effect=capture), \
+             patch('entrotter_engine.trace.ParentCache') as cache, \
              patch('entrotter_engine.trace.replay_branch', return_value={'matches_original_receipts':True}) as replay:
+            cache.return_value.__enter__.return_value.url='http://127.0.0.1:1'
             r=run_trace_native(p)
         self.assertEqual(r['plan'], original)
         self.assertEqual(replay.call_args_list[1].args[2], original['skip_indices'])

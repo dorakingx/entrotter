@@ -1,0 +1,7 @@
+test_matching_parent_header_coalesces_with_fresh_ids (test_parent_cache.ParentCacheTests.test_matching_parent_header_coalesces_with_fresh_ids) ... ok
+test_owner_cancellation_releases_waiter_and_preserves_exact_exception (test_parent_cache.ParentCacheTests.test_owner_cancellation_releases_waiter_and_preserves_exact_exception) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.024s
+
+OK
