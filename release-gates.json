@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-10-02T11:37:37Z",
+  "updated_at": "2026-10-02",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "historical_live_viewer_verified_latest_candidate_unmerged",
@@ -38,7 +38,8 @@
       "evidence": [
         "Historical safe-RPC preparation: engine65c/PR33 passes all8 component checks and fresh independent artifacts; then-current65c selection has21-source type and3 complete reader checks. Actualnative003 same32/skip12/150s baseline exactly equals002, but candidateevm_mine transport timeout is observed; underlying cause and omission outcome unknown. That preparation preceded ccc/65c combined CI, whose all5 checks subsequently pass; protected-main approval remains pending; no archive/state authenticity or full-block pass.",
         "Historical Engine198/PR34 preparation: all8 component checks and independent raw artifact review pass; original32/skip12/shared150s native005 completes with exact32 baseline receipts and producer-only answer change. Four prior failures retained. No dependent consumer/profit/full-block/root/provider-authenticity/timeout-cause evidence. That four-engine-selector preparation passed types/3readers and preceded404e8db/198 combined CI, whose all5 checks subsequently pass with independent artifact review; human protected-main approval remains pending. Current viewer promotion is recorded separately.",
-        "Viewerb1cf/PR16 all4 component checks and independent56-blob/full Linux artifact review pass. Current2-selector promotion adds mandatory original32 SDK/Node classifier inspection; all4 local readers pass, all32 baseline receipts exact/1 omission/19 index-1+cumulativegas-336752/0 execution fields changed. Prior404/198 all5 CI remains separate historical scope; new combined CI/protected-main/Pages pending. Recorded native producer evidence is not consumer/profit/full-block/provider authenticity proof."
+        "Viewerb1cf/PR16 all4 component checks and independent56-blob/full Linux artifact review pass. Historical2-selector promotion adds mandatory original32 SDK/Node classifier inspection; all4 local readers pass, all32 baseline receipts exact/1 omission/19 index-1+cumulativegas-336752/0 execution fields changed. Prior404/198 all5 CI retains its scope; subsequent bb9cada/b1cf composition all5 first-attempt checks and full artifact review passed. Current bd combined CI, protected-main human approval and Pages remain separate. Recorded native producer evidence is not consumer/profit/full-block/provider authenticity proof.",
+        "Enginebd/PR34 all8 first attempt/full artifact review and actual native006 original32/skip12/150s paired receipts plus owned Aave/WETH price dependence pass. Coordinator changes4 engine selectors, adds5th mandatory offline SDK/Node22/raw ABI/head reader; all5 local cases/type21sources3 retained frozen diagnostics pass, prior4 complete results unchanged exceptpin. Read-only views do not establish signed consumer/strategy/profit/provider authenticity/full-block/default Docker32. New combined CI/independent human main approval/Pages remain separate. See evidence/consumer-price-integration/summary.json."
       ]
     },
     {
@@ -326,7 +327,8 @@
     "evidence/archived-oracle-diagnostic/summary.json",
     "evidence/rpc-diagnostics-integration/summary.json",
     "evidence/trace-parent-cache-integration/summary.json",
-    "evidence/trace-comparison-integration/summary.json"
+    "evidence/trace-comparison-integration/summary.json",
+    "evidence/consumer-price-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

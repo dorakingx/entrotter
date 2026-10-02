@@ -1614,3 +1614,48 @@ Original32 native producer proof is not a dependent-consumer/profit/full-block/
 provider-authenticity result. Videos/model/holdout inputs remain unchanged; formal
 submission is not claimed. Goal remains active; official rules section5 rechecked
 October2 11:37:37UTC still endsOctober12 23:59PT/October13 15:59JST. Discord excluded.
+
+
+## October 2 — Recorded Aave consumer price dependence enters integration
+
+Enginebd5527f/PR34 publishes the actual native006 original32-of181 Ethereum
+block18999892/skip12 paired replay and fixed owned Aave/WETH view records. All32
+complete projected baseline receipts equal originals; candidate executes31.
+Aave price matches producer answer in all4 phases: baseline257082415000→
+256292441874, candidate keeps257082415000; base unit100000000. Same initial owned
+heads/getters, nonempty/stable returned oracle/proxy code and closed owned2Anvil+
+cache are independently reviewed. Runtime132.703s retains original shared150s
+cap. Seven cache aggregate errors have unknown cause. Read-only dependence does
+not establish signed consumer action/strategy/profit/full-block/root/opcode/
+provider authenticity/default Docker32 or timeout/speed causality.
+
+The public component's all8 first-attempt checks and complete source/wheel/image/
+dependency/docs review pass:323 native0skips/25Docker/33 research controls,
+25 production sources unchanged from198,20 wheel/21 image inputs,42 Python/
+26OS/1126 signed Cargo identities with0 reported advisories,17 documents/164 links.
+172 native components remain outside Cargo advisory coverage; non-exported
+security database binary is not rehashed. The63 published changed blobs and57
+provenance copies are verified. Publication-time pending CI is superseded by the
+later component review, while both original records remain preserved.
+
+Exactly4 selected engine references now point198→bd; other components and every
+frozen native/agent/host variant are unchanged. A fifth mandatory integration
+step inspects native006 through SDKee and actual Node22.23.1 viewerb1cf. It checks
+all32 receipts/classifications,4 strict raw ABI consumer/producer phases, pinned
+initial head and post number/timestamp, currency/unit/source and returned code
+identities. All5 offline cases pass; complete previous4 outcomes remain unchanged
+exceptenginepin. Local21-source typing retains3 explicit frozen diagnostics.
+These are recorded-byte inspections, no new EVM/archive/model/browser execution.
+See [scope, source bindings and full outputs](evidence/consumer-price-integration/README.md).
+
+The previous bb9cada/engine198/viewerb1cf composition passed all5 first-attempt
+checks and full artifact review; its clean fixture6.276s/model5.564s retains
+running Docker/cgroup-v2 and potentially warm caches, excluding installation/VM
+startup. That verified snapshot is historical. Independent preparation review
+and new bd-composition CI precede publication. Protected
+main human approval and candidate Pages remain separate; standard selected
+trace-run does not yet collect extra consumer views. Supported observation CLI
+work is isolated on a separate engine branch. Videos and model/holdout inputs
+are unchanged; no formal submission or overall G1–G5 completion is claimed.
+Goal remains active through the officialOctober13 15:59JST deadline, freshly
+recheckedOctober2 13:26UTC; Discord excluded.

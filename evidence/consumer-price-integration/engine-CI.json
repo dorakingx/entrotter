@@ -1,0 +1,120 @@
+{
+  "head": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+  "status": "all8_first_attempt_success_full_independent_component_review_pass",
+  "runtime_review_SHA256": "e716c2f9ee4c59474cdcb8e7acaae2ec9f025beaa086b62e36d22017efdea2af",
+  "quality_docs_review_SHA256": "dc2356a9903c80a7020014c0dccc65e7ad5763e7561c1f9400e5c4bc25f18ee3",
+  "public_source_review_SHA256": "14b31232fa0454d75e37cf6eb6265458133d8be3b6a6689f44d674252c90f5f0",
+  "public_Git63_blobs_verified": true,
+  "production_sources_unchanged": 25,
+  "wheel_modules": 20,
+  "image_inputs": 21,
+  "native_tests": 323,
+  "native_seconds": 74.462,
+  "native_skips": 0,
+  "unit_scope": "323 each Python3.11\u20133.14;33 explicit real-Anvil skips; separate native323/0skip",
+  "Docker_tests": 25,
+  "Docker_seconds": 217.666,
+  "Linux_public_observation_controls": 33,
+  "Linux_control_seconds": 0.154,
+  "docs": 17,
+  "links": 164,
+  "docs_errors": 0,
+  "docs_timeouts": 0,
+  "dependencies": {
+    "Python": 42,
+    "OS": 26,
+    "signed_Cargo": 1126,
+    "reported_advisories": 0,
+    "native_outside_Cargo": 172
+  },
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-02T12:59:02Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/37009983760/job/110847138809",
+      "name": "docs-links",
+      "startedAt": "2026-10-02T12:58:49Z",
+      "status": "COMPLETED",
+      "workflowName": "Documentation links"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-02T12:59:10Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/37009983722/job/110847138528",
+      "name": "quality",
+      "startedAt": "2026-10-02T12:58:47Z",
+      "status": "COMPLETED",
+      "workflowName": "Engine quality and Python dependency audit"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-02T13:03:30Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/37009983739/job/110847139455",
+      "name": "isolated",
+      "startedAt": "2026-10-02T12:58:47Z",
+      "status": "COMPLETED",
+      "workflowName": "Isolated worker enforcement"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-02T13:00:10Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/37009983707/job/110847138576",
+      "name": "evm",
+      "startedAt": "2026-10-02T12:58:47Z",
+      "status": "COMPLETED",
+      "workflowName": "Local EVM integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-02T12:59:46Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/37009983653/job/110847139005",
+      "name": "unit (3.11)",
+      "startedAt": "2026-10-02T12:58:48Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-02T12:59:53Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/37009983653/job/110847139119",
+      "name": "unit (3.12)",
+      "startedAt": "2026-10-02T12:58:48Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-02T12:59:48Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/37009983653/job/110847138879",
+      "name": "unit (3.13)",
+      "startedAt": "2026-10-02T12:58:48Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-02T12:59:49Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/37009983653/job/110847139036",
+      "name": "unit (3.14)",
+      "startedAt": "2026-10-02T12:58:48Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    }
+  ],
+  "source_scope": "Core production unchanged from198; new published research helpers/33controls, evidence andquality step. Exact artifact/source/wheel/image/docs/merge bindings reviewed.",
+  "limits": [
+    "Research helpers outside25production Bandit/wheel inputs",
+    "Native original32andread-onlyAave consumer observations separate fromCI defaultDocker1/4reports",
+    "No freshrenderedbrowser/Pages or formal submission",
+    "No signedconsumer action/strategy/profit/providerauthentication/fullG1 claim",
+    "Human main approval and combinedcoordinatorbdselectionCI remain separate"
+  ]
+}

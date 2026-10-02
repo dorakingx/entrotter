@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "execution": "offline synthetic oracle/provider-fault reports; no new EVM/model call",
+  "pins": {
+    "engine": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "viewer_module_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+  "reports": [
+    {
+      "source": "engine/evidence/trace-oracle-provider/native-oracle-prefix.json",
+      "report_sha256": "b97f34c9396f76eb352f870c0235422b77fa3aaaa58c25a97262c2995f2bd1ae",
+      "artifact_id": "b8c5b8d1e162bbcb304693cb09f986c46d7bfc42d19e334741d6374f66e6d10d",
+      "baseline_verified": true,
+      "baseline_statuses": [
+        "executed",
+        "executed"
+      ],
+      "candidate_statuses": [
+        "skipped",
+        "executed"
+      ],
+      "viewer": {
+        "status": "passed",
+        "artifact_id": "b8c5b8d1e162bbcb304693cb09f986c46d7bfc42d19e334741d6374f66e6d10d",
+        "baseline_verified": true,
+        "node": "v22.23.1"
+      }
+    },
+    {
+      "source": "engine/evidence/trace-oracle-provider/native-provider-control.json",
+      "report_sha256": "66c1d555ad0068e128c8e5cdc0619f71824c4401177b0c3f1b84a77be4572b5d",
+      "artifact_id": "a3a298730e3df6acc9941fd074a4f271d93a1d3c4334c1e448eaa4fb675dd652",
+      "baseline_verified": true,
+      "baseline_statuses": [
+        "executed",
+        "executed"
+      ],
+      "candidate_statuses": [
+        "skipped",
+        "executed"
+      ],
+      "viewer": {
+        "status": "passed",
+        "artifact_id": "a3a298730e3df6acc9941fd074a4f271d93a1d3c4334c1e448eaa4fb675dd652",
+        "baseline_verified": true,
+        "node": "v22.23.1"
+      }
+    },
+    {
+      "source": "engine/evidence/trace-oracle-provider/native-missing-storage.json",
+      "report_sha256": "2d1449f0807329e6f70799c0ff02ec69d2c8e1050c15425fd3f13aad034c034b",
+      "artifact_id": "95c846086b441d0b307548ad6a4db7fda2d3c443431786a5ed7241f7462ce2ed",
+      "baseline_verified": false,
+      "baseline_statuses": [
+        "not_mined",
+        "not_mined"
+      ],
+      "candidate_statuses": [
+        "skipped",
+        "not_mined"
+      ],
+      "viewer": {
+        "status": "passed",
+        "artifact_id": "95c846086b441d0b307548ad6a4db7fda2d3c443431786a5ed7241f7462ce2ed",
+        "baseline_verified": false,
+        "node": "v22.23.1"
+      }
+    }
+  ],
+  "limits": [
+    "Known storage-fault cause comes from separate test controls, not receipt absence.",
+    "Synthetic native source is not archived oracle or host default-worker proof.",
+    "Viewer codec inspection is separate from rendered browser verification.",
+    "Checksums/internal consistency do not authenticate provider state or oracle truth."
+  ]
+}

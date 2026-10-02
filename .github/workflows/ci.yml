@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: 198139ff0b3bf37781b4232b27d8eeb0a5da5365
+          ref: bd5527f71d3c561335e7786b6f4421572cd9aad6
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -242,6 +242,151 @@ jobs:
               'limits': ['Display classification preserves original differences; receipt identity is not contract-state or economic identity.',
                          'Recorded native producer prefix is not dependent-consumer/profit/full-block/provider-authenticity proof.',
                          'Browser behavior and actual native execution retain their separately pinned evidence.'],
+          }, indent=2) + '\n')
+          PY
+      - name: Inspect the historical Aave consumer price records with SDK and viewer
+        run: |
+          python - <<'PY'
+          from dataclasses import replace
+          import hashlib,json,subprocess
+          from pathlib import Path
+          from entrotter_sdk import load_trace
+          source = Path('engine/evidence/aave-consumer-price/native-006/report.json')
+          digest = '2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          report = load_trace(source)
+          rows = report.transactions
+          assert report.baseline_verified and len(rows) == 32
+          assert report.report['plan']['skip_indices'] == [12]
+          assert report.report['plan']['through_index'] == 31
+          assert report.report['source']['block_transaction_count'] == 181
+          omitted_gas = rows[12].original_receipt.gas_used
+          assert omitted_gas == 336752
+          for i, row in enumerate(rows):
+              assert row.baseline.status == 'executed'
+              assert row.baseline.receipt == row.original_receipt
+              if i == 12:
+                  assert row.candidate.status == 'skipped' and row.candidate.receipt is None
+                  continue
+              assert row.candidate.status == 'executed'
+              expected = row.original_receipt if i < 12 else replace(
+                  row.original_receipt,
+                  transaction_index=row.original_receipt.transaction_index - 1,
+                  cumulative_gas_used=row.original_receipt.cumulative_gas_used - omitted_gas,
+              )
+              assert row.candidate.receipt == expected
+              assert row.candidate.differing_fields == (() if i < 12 else ('cumulativeGasUsed', 'transactionIndex'))
+          module = Path('entrotter.github.io/trace-report.mjs')
+          classification = Path('entrotter.github.io/trace-comparison.mjs')
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const {traceComparison} = await import(process.argv[2]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
+          assert.equal(view.baseline.matches, true);
+          assert.equal(view.candidate.rows.length, 32);
+          const counts = {identical: 0, omitted: 0, structural: 0, execution: 0, unavailable: 0};
+          const classifications = view.candidate.rows.map((row, i) => {
+            const group = traceComparison(row);
+            assert.equal(group.kind, i < 12 ? 'identical' : i === 12 ? 'omitted' : 'structural');
+            assert.deepEqual(group.structuralFields, i > 12 ? ['cumulativeGasUsed', 'transactionIndex'] : []);
+            assert.deepEqual(group.executionFields, []);
+            counts[group.kind] += 1;
+            return {index: row.index, status: row.status, differing_fields: row.differing_fields, ...group};
+          });
+          assert.deepEqual(counts, {identical: 12, omitted: 1, structural: 19, execution: 0, unavailable: 0});
+          console.log(JSON.stringify({status: 'passed', artifact_id: view.report.artifact_id, node: process.version,
+                                     counts, classifications}));
+          """
+          completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                      module.resolve().as_uri(), classification.resolve().as_uri(), str(source)],
+                                     check=True, capture_output=True, text=True, timeout=30)
+          viewer = json.loads(completed.stdout)
+          assert viewer['artifact_id'] == report.artifact_id
+
+          import sys
+          root = source.parent.parent
+          helper = root / 'harness' / 'consumer_observer.py'
+          assert hashlib.sha256(helper.read_bytes()).hexdigest() == 'b2279b48b2c51522675bbb991532ec9505089ddf614134d9aa5ff5ddf3bb2fea'
+          sys.path.insert(0, str(root / 'harness'))
+          from consumer_observer import ConsumerObserver, address, uint, PHASES, UNIT, ZERO, PROXY
+          decoder_helper = root / 'harness' / 'native_runner.py'
+          assert hashlib.sha256(decoder_helper.read_bytes()).hexdigest() == '8846ff9a465e83c6c42e7684992cb0fa4e86764603077a25d90e3e4a9d87e2b4'
+          from native_runner import decode
+          consumer_source = root / 'native-006' / 'consumer-observations.json'
+          producer_source = root / 'native-006' / 'observations.json'
+          request_source = root / 'native-006' / 'worker-request.json'
+          request_digest = hashlib.sha256(request_source.read_bytes()).hexdigest()
+          assert request_digest == 'c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522'
+          assert json.loads(request_source.read_text())['trace'] == report.report['plan']
+          assert hashlib.sha256(consumer_source.read_bytes()).hexdigest() == 'b9e979c9f363559c5ab79131b602b7b7538da84f2c19928c089219b00dcc831d'
+          assert hashlib.sha256(producer_source.read_bytes()).hexdigest() == '87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b'
+          consumer = json.loads(consumer_source.read_text())
+          producer = json.loads(producer_source.read_text())
+          assert consumer['request_id'] == request_digest
+          assert len(consumer['rows']) == len(producer) == 4
+          producer_rows = {(row['branch'], row['phase']): row for row in producer}
+          consumer_rows = {(row['branch'], row['phase']): row for row in consumer['rows']}
+          assert set(producer_rows) == set(consumer_rows) == PHASES
+          codes = {'oracle_code': set(), 'proxy_code': set()}
+          prices = {}
+          for key in sorted(PHASES):
+              row, feed = consumer_rows[key], producer_rows[key]
+              assert not row['errors'] and not feed['errors']
+              assert set(row['raw']) == set(row['decoded']) == {'source', 'price', 'base_currency', 'base_unit'}
+              assert set(row['code']) == set(codes)
+              for name, value in row['raw'].items():
+                  decoder = address if name in ('source', 'base_currency') else uint
+                  assert decoder(value) == row['decoded'][name]
+              assert row['decoded']['source'] == PROXY
+              assert row['decoded']['base_currency'] == ZERO and row['decoded']['base_unit'] == UNIT
+              for name in ('latestRoundData', 'aggregator'):
+                  assert decode(name, feed['values'][name]) == feed['decoded'][name]
+              assert row['decoded']['price'] == feed['decoded']['latestRoundData']['answer']
+              head = feed['values']['head']
+              assert int(head['number'], 16) == report.report['source']['parent']['block_number'] + (key[1] == 'after')
+              if key[1] == 'before':
+                  assert head['hash'] == report.report['source']['parent']['block_hash']
+              else:
+                  assert int(head['timestamp'], 16) == report.report['source']['header']['timestamp']
+              for name, identity in row['code'].items():
+                  assert set(identity) == {'bytes', 'sha256', 'nonempty'} and identity['nonempty'] is True
+                  assert type(identity['bytes']) is int and 0 < identity['bytes'] <= 65536
+                  assert len(bytes.fromhex(identity['sha256'])) == 32
+                  codes[name].add((identity['bytes'], identity['sha256']))
+              prices['_'.join(key)] = row['decoded']['price']
+          assert all(len(values) == 1 for values in codes.values())
+          assert producer_rows['baseline', 'before']['values'] == producer_rows['candidate', 'before']['values']
+          assert prices == {'baseline_before': 257082415000, 'baseline_after': 256292441874,
+                            'candidate_before': 257082415000, 'candidate_after': 257082415000}
+          checker = ConsumerObserver(Path('.'), request_digest)
+          checker.rows = consumer['rows']
+          observed = checker.classify(producer, report.baseline_verified)
+          assert observed['owned_read_only_price_observation_complete'] is True and observed['unproven_reasons'] == []
+          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-consumer-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'Offline native006 report and separate owned view records; no new EVM/archive/model/browser call',
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'report_sha256': digest, 'artifact_id': report.artifact_id,
+              'consumer_observations_sha256': hashlib.sha256(consumer_source.read_bytes()).hexdigest(),
+              'producer_observations_sha256': hashlib.sha256(producer_source.read_bytes()).hexdigest(),
+              'request_sha256': request_digest, 'helper_sha256': hashlib.sha256(helper.read_bytes()).hexdigest(),
+              'decoder_helper_sha256': hashlib.sha256(decoder_helper.read_bytes()).hexdigest(),
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
+              'classification_module_sha256': hashlib.sha256(classification.read_bytes()).hexdigest(),
+              'baseline_verified': report.baseline_verified, 'input_count': 32, 'block_transaction_count': 181,
+              'through_index': 31, 'skip_indices': [12], 'omitted_gas': omitted_gas,
+              'baseline_receipts_equal_originals': True,
+              'candidate_receipts_equal_originals_except_exact_omission_shifts': True,
+              'consumer_raw_ABI_matches_decoded': True, 'producer_raw_ABI_matches_decoded': True,
+              'initial_owned_heads_equal_pinned_parent': True, 'post_headers_equal_pinned_number_timestamp': True,
+              'consumer_prices': prices, 'stable_returned_code_identities': {name: list(values)[0] for name, values in codes.items()},
+              'consumer_classification': observed, 'consumer_records': consumer['rows'], 'viewer': viewer,
+              'limits': ['Parsing recorded bytes does not constitute a fresh archive execution or prove provider/deployed-code authenticity.',
+                         'Read-only price dependence is separate from signed consumer transactions, strategies, profit and full G1.',
+                         'Node parsing is not rendered browser/Pages verification; standard trace report remains unchanged.'],
           }, indent=2) + '\n')
           PY
       - name: Inspect the synthetic same-block funding report with SDK and viewer
