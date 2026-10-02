@@ -1,0 +1,62 @@
+{
+  "scope": "Single reviewed instrumented native65c2833 diagnostic, same32/skip12/bounds. No defaultDocker/CPU/RSS/PID/fullG1 claim.",
+  "actual_session": 36207,
+  "terminal_exec_exit": 0,
+  "replay_status": "failed",
+  "host_exit_not_replay_success": true,
+  "host_seconds": 152.161653,
+  "child_seconds": 152.058653,
+  "primary_stage": "candidate_replay",
+  "primary_code": "trace_rpc_failed",
+  "observed_failed_operation": {
+    "category": "rpc_error",
+    "code": "other_error",
+    "method": "evm_mine",
+    "rpc_diagnostics": {
+      "code": "timeout",
+      "method": "evm_mine"
+    },
+    "rpc_method_matches_observed": true,
+    "stage": "candidate_replay"
+  },
+  "observed_transport_category": "timeout",
+  "cause_scope": "Categorytimeout andmethodevm_mine observed onownedRPC inthisinvocation. Underlyingarchive/provider/minerreason remainsunknown; cannotclassify earlier001002retrospectively.",
+  "baseline_32raw_projected_receipts_exactly_match_originals": true,
+  "source32_signed_request_binding_verified": true,
+  "captured_source_and_baseline_bytes_equal002": true,
+  "candidate_branch_and_final_protocol_absent": true,
+  "observations_file_equals_result": true,
+  "cleanup_checks": [
+    {
+      "branch": "baseline",
+      "guardian_pid": 64143,
+      "guardian_pid_exists": false,
+      "port": 52823,
+      "port_closed_independent_final_check": true
+    },
+    {
+      "branch": "candidate",
+      "guardian_pid": 64606,
+      "guardian_pid_exists": false,
+      "port": 53011,
+      "port_closed_independent_final_check": true
+    }
+  ],
+  "remaining_anvil_processes": [],
+  "prior_raw_readiness_unchanged": {
+    "native-001": true,
+    "native-002": true
+  },
+  "source_bindings_unchanged": true,
+  "readiness_sha256": "9379e3bf1100825321663fdbb46a84a55fcad54dfbd286bacb51913683c028ce",
+  "run_sha256": {
+    "baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "host-owned-cleanup.json": "9e3d4c49093baaba354f03cf4685a5003df9616e1483c48fd461179d7beef9f2",
+    "host-result.json": "ca8fde11f6168e464cd9fba61594df7daf36996b9da2c6f36c3cfadf95c7f74e",
+    "observations.json": "38ee45f2051debfb36fcd5fa13cc60ff3697aacd7456e25ae633b83d66d18e4d",
+    "owned-nodes.json": "63402430595536f7e65d012587ac2dd64e5b745ca3f14f93ea9787441348aba9",
+    "result.json": "54f60737b39a86cb42390d23562ef33ca54eea52e9469af24bf912c313cdbec0"
+  },
+  "no_retry_or_production_change": true
+}

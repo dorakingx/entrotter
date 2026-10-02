@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "engine": "65c28330bdc694535da0074b2e3d68ab433806d8",
+  "steps": [
+    {
+      "name": "Verify offline reader and viewer retain the actual signed-prefix evidence",
+      "original_step_sha256": "f2dc8d5edb44ea12d37cab8b8d3cbfcdaf374d2c2e32d33bb792ebb69a92636a",
+      "executed_script_sha256": "de86b469fabf892a9392a57c396991aec3f376817a0e8fea299d5a4015393e1a",
+      "only_change": "output path to unique retained local evidence",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the synthetic same-block funding report with SDK and viewer",
+      "original_step_sha256": "adaf874f5dc073337e7577cac42a5af5c06f428334ac17d418b04b25db43eb49",
+      "executed_script_sha256": "7b3278c30a98ce15c672c18a5101038d1c9a4f2f3ea2d9f112c929b8fb106482",
+      "only_change": "output path to unique retained local evidence",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect oracle omission and unverified storage reports with SDK and viewer",
+      "original_step_sha256": "345ed9ecf904b91505a6abcf061d9a9c75fd6a760de33eb821ae3d670e8e9b62",
+      "executed_script_sha256": "2b46135cec965a30e19dab6d0841cb2942efc311fb33495c34734ead7e99b92d",
+      "only_change": "output path to unique retained local evidence",
+      "returncode": 0
+    }
+  ],
+  "execution": "offline actual SDK/Node codec inspection only; zero chain/model calls",
+  "harness_correction": "Initial attempt had no python in PATH and executed no product code; prior evidence retained."
+}
