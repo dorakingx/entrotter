@@ -37,6 +37,20 @@ Trace checksums and
 worker request binding establish integrity, not independently recomputed receipt
 equivalence. See README.md and the raw evidence for limits.
 
+The separate `trace-observe --native` command runs only a fixed owned-node
+Aave/WETH view profile. It does not extend worker/HTTP envelopes or admit
+callbacks, caller-selected addresses/selectors or code. A strictly decoded
+on-chain source address selects bounded read-only code/ABI calls on the owned
+node. Unsupported sources remain unproven. Four phases/36 queries share the
+150-second trace deadline with at most two seconds per read; accepted code and
+observation records are each capped at 64 KiB (transport remains 4 MiB). The
+8 MiB wrapper uses existing export accounting. Main-thread POSIX cancellation
+uses a non-Exception stop that cannot become an ordinary RPC timeout; it reaches
+owned cleanup. Existing caller alarms are refused and prior handlers restored.
+Sealing/export occur after owned resources close and outside that execution
+guard. Native whole-process CPU/RSS quotas, provider/deployed-code authenticity
+and signed consumer actions are not established by view/hash checks.
+
 The trace-only parent read bridge runs fixed installed code in an owned child,
 never code or a URL selected by a plan. Private configuration crosses a bounded
 stdin pipe; only a finite startup record and counters appear on stdout, and

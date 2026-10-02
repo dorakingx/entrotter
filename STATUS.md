@@ -331,3 +331,71 @@ controlled tests are distinct from the actual native closure evidence. See
 [raw evidence, source and reproduction scope](evidence/aave-consumer-price/README.md).
 Public-layout verification, fresh exact-headCI and human main approval remain
 separate gates. No candidate Pages, new model/video or submission claim.
+
+## October 2 — Supported owned consumer observations (local candidate)
+
+The separate native `trace-observe --native` CLI and
+`consumer_observations.run_trace_observed_native` export version0.1.0 wrappers
+containing the original trace report and four bounded fixed Aave/WETH view phases.
+The actual Aave source is decoded on each owned node rather than assuming the
+historical2024 proxy. Unsupported ABI/code/source/currency/unit remains unproven.
+Price-read completeness and raw price difference are separate from historical
+baseline receipt verification, signed consumer actions and economic benefit.
+
+Local pinned Anvil1.8.3 controls cover signed synthetic oracle update20 versus
+omission10 with an actual consumer revert, no-omission price difference0, missing
+Aave code/unproven reads, native CLI export, SIGTERM before/after branch views and
+sealing interruption after owned cleanup. Source-only synthetic genesis/code
+adapters are explicit; there are no replay state/nonce/signature repairs or
+archive calls. Six actual owned test methods pass, with recorded guardian/cache
+group/port/pipe closure. Eighteen unit methods cover strict ABI/head/content
+binding, bounds, finite hostile errors and cancellation through actual RPC
+normalization. The24-method targeted run initially has one wrong expected error
+count (six versus actual seven); its corrected single control passes separately.
+Earlier19-method pass and the exact failed24 log remain retained privately.
+
+Existing30 trace/protocol compatibility tests pass3.702s without skips. Full
+26-source lint/format/mypy passes; the complete unsuppressed Bandit scan retains
+all25 original exact findings/rationales and0 skipped rules. Only changed/new
+source hashes are refreshed. The new module is packaged in a freshly built
+wheel. Full native suite, independent source review, exact-head CI, historical
+execution of this supported workflow and protected-main human approval remain
+pending. Prior native006 research evidence is unchanged and does not constitute
+execution of this new command. No Docker/model/browser/Pages/submission claim.
+
+### Supported workflow final local checkpoint
+
+The preceding targeted counts and initial wheel describe the earlier local
+checkpoint. Two additional resealed controls now refuse mismatched initial-head
+timestamps and mark future feed timestamps `feed_timestamp_unproven`; raw views
+remain preserved. Round consistency and future-time sanity do not implement a
+maximum-age freshness policy. The final new-method count is26:20 unit controls
+and six real owned synthetic methods.
+
+The first full native run007 failed:349 tests/205.173s, one failure and one error
+in unchanged diagnostic cleanup controls. Its raw log is retained. An instrumented
+repeat of only those two controls passes3.253s and does not identify the original
+cause. One authorized plain full retry009, with identical production/tests/docs/
+security digests, then passes all349 tests80.699s with0 skips. No runtime or test
+fix, signal instrumentation, archive call or budget increase was applied for this
+retry; no causal or speed claim follows from the different durations.
+
+Current26-source lint/format/mypy and the full unsuppressed Bandit scan pass with
+all25 exact prior findings/rationales retained. The new current wheel010 contains
+all21 modules byte-identical to source; earlier wheel004 is retained as historical
+pre-future-timestamp evidence. Actual synthetic results include signed source
+transactions, adverse consumer reversion, finite unsupported views, cancellation
+and owned Anvil/cache closure. Source-only fixture adapters are explicit.
+
+Independent final source approval, public packaging/exact-head CI, execution of
+this supported command against the historical32-input case, default-worker
+wrapper support and protected-main human approval remain separate pending gates.
+Normal trace/default-worker/HTTP envelopes remain unchanged. The150s signal guard
+covers replay and owned cleanup; wrapper sealing/export happen afterward. No
+whole-command sandbox, signed historical consumer action, profit, provider
+state authentication or broader G1 completion is claimed.
+
+The reviewed local checkpoint and retained failed/successful runs are now collected
+in [owned consumer observation evidence](evidence/owned-consumer-observations/README.md).
+Public-package review and exact-head CI are still pending; adding these copies
+does not repeat the historical research trial or test suite.

@@ -111,6 +111,71 @@ prevrandao, base fee and gas limit, queues the original signatures in FIFO order
 and mines one block. The candidate may skip selected original transactions;
 remaining nonces/signatures are never repaired, funded or impersonated.
 
+### Owned Aave/WETH price observations (explicit native development)
+
+`trace-observe` is a supported fixed-profile native workflow. It executes the
+same original signed prefix and collects bounded read-only Aave V3 Ethereum WETH
+views on each owned branch, before and after replay. It requires `--native`;
+there is no Docker/HTTP/worker-protocol observation command or silent fallback.
+
+```bash
+export ENTROTTER_RPC_URL='https://YOUR_ARCHIVE_PROVIDER'
+PYTHONPATH=src python3 -m entrotter_engine trace-observe tests/data/canonical-mainnet-prefix.json --native -o observed-trace.json
+```
+
+The separate wrapper has `observation_version: "0.1.0"` and profile
+`aave-v3-ethereum-weth-price`. It contains the unchanged trace-report format,
+its artifact ID, four ordered observation records and a content hash over the
+complete wrapper. Existing SDK/viewer trace readers can inspect its `trace_report`
+member separately; they do not validate the new wrapper or its extra views.
+
+```python
+from entrotter_engine.consumer_observations import load_observed_trace
+from entrotter_engine.trace import write_trace
+
+observed = load_observed_trace("observed-trace.json")
+print(observed["classification"])
+write_trace(observed["trace_report"], "transaction-replay.json")
+```
+
+The fixed oracle is `0x54586bE62E3c3580375aE3723C145253060Ca0C2` and the asset
+is WETH `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`. Each phase reads its owned
+head (number/hash/timestamp), oracle code identity, `getSourceOfAsset(WETH)`,
+`getAssetPrice(WETH)`, `BASE_CURRENCY` and `BASE_CURRENCY_UNIT`. The strictly
+decoded nonzero source address selects only owned-node code, `aggregator()` and
+`latestRoundData()` reads. No plan can select an address, selector, callback,
+endpoint or executable. Raw fixed-width ABI words, finite errors and code
+SHA256/length are retained. Source adapters without that ABI, missing/empty code,
+inconsistent round metadata, nonpositive feed values, non-USD currency or a unit other than `100000000`
+produce explicit unproven reasons. Historical source/aggregator identities are
+observed, not assumed from today's configuration.
+
+Feed start/update times beyond the observed owned-head timestamp remain explicitly
+unproven. Round metadata must be consistent; no maximum-age freshness policy is
+applied, so old but internally consistent answers are not automatically rejected.
+
+`complete_price_views` requires all four views, stable nonempty code/source/
+aggregator identities, equal initial heads/views and positive feed prices equal
+to Aave prices in the declared USD unit. Post-head number/timestamp must bind to
+the trace source. It does not require prices to change. `price_difference` is
+candidate-after minus baseline-after in raw `100000000` units; it is not profit
+or strategy value. `baseline_receipts_verified` is reported independently:
+complete reads do not make an unmatched replay historically verified. These
+views are separate from signed consumer actions and do not authenticate deployed
+code/provider state or establish full-block/state-root/opcode equivalence.
+
+All nine fixed queries per phase (36 maximum) have at most two seconds each and
+share the original 150-second trace deadline and owned Anvil/cache lifetimes.
+The explicit interface requires a POSIX main thread and refuses an existing
+caller alarm. SIGTERM/deadline stops propagate through owned cleanup;
+KeyboardInterrupt/SystemExit are not normalized into RPC errors. Previous signal
+handlers are restored. The guard covers execution and cleanup, not later wrapper
+sealing/file export or whole-command CPU/RSS usage. Observation records and
+accepted decoded code are each bounded to 64 KiB; the unchanged RPC transport
+reads at most 4 MiB plus one byte and rejects responses above 4 MiB. The whole
+exported wrapper is at most 8 MiB and uses the shared export ledger. Checksum and
+shape binding are integrity checks, not proof of EVM or provider truth.
+
 ```bash
 export ENTROTTER_RPC_URL='https://YOUR_ARCHIVE_PROVIDER'
 PYTHONPATH=src python3 -m entrotter_engine trace-run tests/data/canonical-mainnet-prefix.json -o transaction-replay.json
@@ -703,3 +768,7 @@ than 256 KiB, gas-budget refusal, state divergence, cleanup/recovery and equalit
 with native risk decisions. Offline protocol faults do not replace those real
 executions. All integrated production modules receive the same unsuppressed
 lint/type/security checks; independent PR review remains required.
+
+Local source/test/security/wheel evidence for the supported native observation
+workflow, including retained failures and pending gates, is in
+[owned consumer observation evidence](evidence/owned-consumer-observations/README.md).
