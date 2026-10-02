@@ -1434,3 +1434,57 @@ Current source/docs remain local pending consolidated publication and all5combin
 checks. Previous public8029/a253/935 remains the fully tested public composition.
 Human protected-main approval and candidate Pages publication remain separate.
 Full G1–G5 and official submission stay active; Discord excluded.
+
+
+## October 2 — Published affc805 composition: all five first-attempt checks
+
+The current public PR55 compositionaffc805/sourcee46 selects engine99fd,
+SDKee/CLI22/schema8785/viewerb7. All5first-attempt checks pass. Root independently
+verifies21source/78full retained findings/50locked packages/19image/56docs and
+complete API/CLI/shared admission/normal-optimized exports/3offline reader proof.
+Clean fixture7.169045s and recorded model replay7.622255s preserve exact artifacts;
+Docker/cgroup-v2 was running and caches may be warm, installation/VM startup
+excluded. No new model/holdout call or current rendered-browser proof. Separate
+native compatibility jobs keep their frozen variants; current logs and older
+uploaded browser/archive/model evidence are not conflated.
+
+CI36925370461(workspace),36925370527(quality),36925370525(docs) and the exact full
+root proof SHA7d1d2709c971ea780adf24790c88b1cc9e8306fd893020e8078753ef48207b49
+are recorded in existing PR55; local .quality/oracle-integration/ci-verification.json
+and its raw artifacts are the durable full proof. Public pre-CI preparation docs
+are historical snapshots; this local completion checkpoint is held for the next
+substantive change instead of a status-only commit/extra CI. Human GitHub approval
+remains0; strict main protection/one approval/admin enforcement stay enabled.
+Candidate Pages publication, required owner facts/Terms and formal submission
+remain open. Archived oracle/provider authenticity/full-block/root/end-state/
+opcode scope and earlier intermittent failure cause remain unresolved. Full goal
+active; Discord excluded. No protected merge, package publication or submission.
+
+
+## October 2 — Archived oracle baseline preserved; candidate still fails
+
+The active October2 owner policy continues improvement until the official
+October13 15:59JST deadline; official section5 was rechecked during this work.
+Current public candidates remain coordinatoraffc805/engine99fd, with their earlier
+all5/all8 checks scoped to those exact heads. PR47f142 is an ancestor ofaffc805.
+
+A bounded read-only discovery identifies original signed transaction12 updating
+the ETH/USD aggregator in Ethereumblock18999892. Two explicit native diagnostic
+attempts preserve the same first32 inputs, skip12 and150s trace budget. Both
+paired executions fail. Native001 loses in-memory baseline receipts on candidate
+failure; a separately reviewed atomic recording fix addresses that evidence loss.
+Five offline fault/privacy tests pass, without changing production source for
+these diagnostic attempts. Root independently reviews native002's72frozen
+bindings and all32 complete projected baseline receipts against captured originals.
+Initial owned parent/getter values match; baseline answer changes257082415000
+to256292441874. Candidateevm_mine fails; underlying cause and omission outcome
+remain unknown because the original transport discarded the cause. Both attempts'
+owned guardians exit0 and ports close; final OS/port checks confirm cleanup.
+
+See [retained raw evidence and limits](evidence/archived-oracle-diagnostic/README.md).
+No default Docker/archive omission/actual consumer/provider authenticity/full-block
+claim follows. Existing errors remain preserved. A product RPC diagnostic change
+is now being implemented so future failures can expose safe finite causes without
+provider URLs/messages. New source tests/review/publication/required CI remain
+separate from the historical99fd/affc805 checks. Protected integration, Pages,
+owner facts/video Terms and formal submission remain open; Discord excluded.

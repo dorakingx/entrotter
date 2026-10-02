@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-10-01T20:48:47.168114+00:00",
+  "updated_at": "2026-10-02T06:28:12.198086+00:00",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "live_latest_evm_viewer_verified",
@@ -24,14 +24,16 @@
         "EnginePR31/935 native synthetic same-block signed funding and omission regression proof passes248fullnative tests with0skips; independent source/evidence review passes. Trace-only pool balance/fee/gas deferral retains actual EVM/block validation and bounds. All8exact935checks and root full23source/18wheel/19image/42Python/26OS/1126signedCargo/11doc bindings pass;248Linuxnative/24actualDocker no skips. Actual four-prefix receipt projections match current default worker24.17299s, no speed comparison. Archive-backed same-block funding and combined CI remain separate. Coordinatora253 source review/offline SDK+viewer codec/types pass; human GitHub approval separate.",
         "Engine#32/e849 adds signed synthetic oracle update and adverse unchanged-signature consumer omission, plus read-only provider control/parent/code/balance/storage fault coverage.252localnative/252Linuxnative38.944s no skips; independent source/evidence review23sources/18wheel/42packages passes. Positive/control/unverified-storage reports pass SDKee and actual siteb7 codec offline. Only production change accurately explains missing receipts cannot diagnose cause or attest state. First isolated historical1 failed after all25Docker/oracle cases passed and before later four-prefix/image/native audit gates; all8component/combined checks remain incomplete, not deployment proof.",
         "Local integrated diagnostic observer independently reviewed:33frozen source/protocol/binary/fixture bindings,23production sources and mandatory workflow unchanged from aac; raw original/control receipts exact and injected missing-storage execution_skip2/1 bound to input indices. Seven nodes/eight readers/two proxy handlers/listeners/ports close; SDKee and actual viewerb7 validate all3reports.14focused observer tests plus separately added descendant collector regression and15existing diagnostic tests pass. Synthetic native diagnostic only; component new-head CI and original historical cause remain unproven. See evidence/trace-oracle-integration/root-integrated-observer-review.json.",
-        "Engine99fd/PR32 all8firstattempt checks independently verified:282native0skips/25Docker217.324s,23source18wheel19image42Python26OS1126signedCargo14docs; current normal default1/4 original receipts and full prior935outcomes exact except runtime/hash/added assumption. SDK/site codec verify current reports. Diagnostic conditional skipped; older failed cause unknown. Reviewed coordinatione46 selects99fd,21types/same3diagnostics/3offline bodies pass; combinedCI/human approval/publication separate. See evidence/trace-oracle-integration/root-engine-full-CI.json."
+        "Engine99fd/PR32 all8firstattempt checks independently verified:282native0skips/25Docker217.324s,23source18wheel19image42Python26OS1126signedCargo14docs; current normal default1/4 original receipts and full prior935outcomes exact except runtime/hash/added assumption. SDK/site codec verify current reports. Diagnostic conditional skipped; older failed cause unknown. Reviewed coordinatione46 selects99fd,21types/same3diagnostics/3offline bodies pass; combinedCI/human approval/publication separate. See evidence/trace-oracle-integration/root-engine-full-CI.json.",
+        "Publishedaffc805/sourcee46/engine99fd passes all5firstattempt combined checks; root raw21source78findings50locked19image56docs/APICLIadmissionexport/3readers verified. Clean fixture7.169s/recordedmodel7.622s preserve artifacts, runningDocker/warmcache scope, no newmodel/archive/browser current invocation in these combined jobs. Frozen native compatibility variants remain separately identified. Full local proof SHA7d1d2709c971ea780adf24790c88b1cc9e8306fd893020e8078753ef48207b49 and CI links recorded PR55; protected approval/publication/archived authenticity remain separate.",
+        "Archivedblock18999892 native002 independently reviewed: same32 signed inputs/skip12/150s;32baseline projected receipts exactly equal captured originals, initial owned parent/getters match, original oracle answer update observed. Candidateevm_mine fails with underlying cause unknown. Native001 lost baseline receipts; reviewed atomic research recording fix/5offline fault tests prevent repeat loss. Two owned guardian/port closures per attempt verified. This is partial native evidence, not complete oracle/consumer/default Docker validation. See evidence/archived-oracle-diagnostic/README.md."
       ],
       "blocked": [],
       "todo": [
         "stronger execution budgets and signal/process fault coverage",
         "Extend signed-prefix replay coverage for archive-backed same-block funding, full-block/opcode/end-state scope and archived oracle/provider state authenticity and broader divergence cases; complete cross-repository trace-reader integration proof while preserving explicit mode separation",
         "more assumptions and adverse scenarios in benchmark",
-        "Resolve same-invocation four-prefix candidate not_mined outcome at engineaac525c without state repair or weakening expected statuses; later successful diagnostic does not identify cause. Current99fd component8/8 passes; prior failure cause and current combined composition remain unverified."
+        "Resolve same-invocation four-prefix candidate not_mined outcome at engineaac525c without state repair or weakening expected statuses; later successful diagnostic does not identify cause. Current99fd component8/8 passes; prior failure cause remains unknown; currentaffc805 all5 composition is verified, protected approval/publication remain separate."
       ]
     },
     {
@@ -314,7 +316,8 @@
     "evidence/canonical-replay-integration/summary.json",
     "evidence/trace-reader-integration/summary.json",
     "evidence/trace-oracle-integration/summary.json",
-    "evidence/trace-oracle-integration/diagnostic-ci-partial.json"
+    "evidence/trace-oracle-integration/diagnostic-ci-partial.json",
+    "evidence/archived-oracle-diagnostic/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

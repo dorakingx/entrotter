@@ -1,0 +1,42 @@
+{
+  "result": "passed_review_of_failed_execution",
+  "review_source_sha256": "9e94cce7656b6933fa6284147316e76976275a45c92557d304107fe1f8a5bf85",
+  "source_bindings": 68,
+  "readiness_sha256": "0b6cc3d610a9c8e7b9f7ec7c460638af1966e6eda1807165daaf1f6db1ef776a",
+  "terminal_record_sha256": "ba9751892aaeaf4809d53a1488fda0681871def454b8fe7c1643d586d88bccc9",
+  "raw_sha256": {
+    "host-result.json": "99be5b1f36cd1fb997a61d259f5c7d026ebd41fd17bc797a5185df20bb5307c9",
+    "owned-nodes.json": "b9bd5a5aab1159c946025c460aebc8a8776ead5e2c65c63e0b1dec69312f1c4e",
+    "result.json": "c41cc0938cb4a9e4610eb2f5ba8d53d4927b1c67dcd49c4af486d22b76d7bd2e",
+    "host-owned-cleanup.json": "6e47c4266e0bc86ec722e58ebab5eb9f1581ab425efdc299b097d343d04e8e12",
+    "observations.json": "00b8896613232412d861d6a46cf1487bf2ffcbc4ab03dc8c5e94f3a8596fcdd4"
+  },
+  "status": "paired execution failed; no default-worker or complete historical oracle replay pass",
+  "host_child_exit": 0,
+  "primary_error": "execution_error",
+  "instrumented_native_seconds": 152.055966,
+  "owned_guards_absent_and_ports_closed": 2,
+  "identical_initial_getter_and_head_bytes": true,
+  "parent_round": {
+    "answer": 257082415000,
+    "answered_in_round": 110680464442257320173,
+    "round_id": 110680464442257320173,
+    "started_at": 1705170659,
+    "updated_at": 1705170659
+  },
+  "baseline_after_round": {
+    "answer": 256292441874,
+    "answered_in_round": 110680464442257320174,
+    "round_id": 110680464442257320174,
+    "started_at": 1705172135,
+    "updated_at": 1705172135
+  },
+  "limits": [
+    "No original baseline receipt outcomes persisted; their equality cannot be independently reviewed or reconstructed.",
+    "Candidate-after deliberately skipped on primary failure; omission outcome unverified.",
+    "Elapsed152s does not establish deadline/provider/mining cause; exact cause discarded and unknown.",
+    "Native getter observations do not prove Docker bounds, provider truth or oracle authentication.",
+    "Raw observations file contains3 actual phases; skipped fourth marker is only in result. Initial root verifier assumed4 raw rows and was corrected.",
+    "Initial HTTP400/403 source failures remain separate; no fallback or repair."
+  ]
+}
