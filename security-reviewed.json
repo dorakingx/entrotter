@@ -212,7 +212,7 @@
     "src/entrotter_engine/evm.py": "1ec41f147a517c4372bdf72fb5763bde1adc3075e462786ba656ff87c26dba55",
     "src/entrotter_engine/artifact.py": "a76cfe6d83e28f2f15ef7fb4f9b06dc5c5d51db0c89c7fa9c9e627161527787c",
     "src/entrotter_engine/models.py": "80de1f5ab1e52f9dd00c0f3deaa3ea1a16a0ae159eab50c0a130a2431084b7e7",
-    "src/entrotter_engine/_parent_cache.py": "95ce590fe177c947926e5c068c8db2b01749129dc36b16d8e43b74587e500075",
+    "src/entrotter_engine/_parent_cache.py": "56844c41bfdab2ec43e741942726b88af95702806a2a8be1476f873deb1b90da",
     "src/entrotter_engine/isolated.py": "61f99e799a7056f009e2181bd4df42da9c2a9a57ae8e7c642a46c46cd94fa70d",
     "src/entrotter_engine/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
     "src/entrotter_engine/api.py": "cab74cd6a4e62230e5d6ce5c386a341e290fb1658ba8fc75892d02f859ebae3c",

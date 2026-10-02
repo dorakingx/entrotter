@@ -1,5 +1,21 @@
 # Engine candidate status
 
+## 2026-10-03 — Fixed base-image advisory candidate, CI pending
+
+The Dockerfile now selects a signature-verified immutable public Chainguard
+Python base with pip bootstrap wheel26.2.1-r2. This addresses the three observed
+CVE-2026-97687/97689/97688 findings without suppressing any advisory. Full remote
+amd64 and arm64 base scans use pinned Trivy0.74.0, a fresh database and unchanged
+all-severity/required-inventory checks; each inventories31 OS packages with zero
+detected findings. All26 former package names remain, with five additional
+Brotli/OpenSSL libraries and a newer Python3.14 micro revision. Existing Cosign
+3.1.3 identity/issuer requirements pass for the exact new index digest.
+
+This is remote base evidence, not an executed built-worker result. The current
+image/source binding, Anvil/worker compatibility, complete replay and full native
+security gates still require new-head CI. Old image and failure reports remain
+immutable; no merge, deployment or historical replay cause is inferred.
+
 ## 2026-10-02 — Changed-source native32-prefix evidence, publication prepared
 
 After independent source/package and frozen prelaunch review, one root-owned
@@ -421,3 +437,28 @@ verification failure remains unclassified; no controller or gate is relaxed.
 See [focused logs, independent review and limits](evidence/owned-consumer-observations/followup/README.md).
 Historical349 success is distinct from latest350 validation. Human main approval,
 supported historical32 execution and deployment remain separate pending gates.
+
+
+### October3 — Bounded admission and signed base remediation
+
+Current native observation follow-up preserves four active cache handlers and
+the shared trace deadline, adding at most100ms bounded admission for transient
+slot overlap with explicit four-socket listen backlog. Actual HTTP before/after
+controls and26 cache tests support the change; original Linux nonce rejection
+cause remains unproven. The signed immutable Python base89281daa replaces the
+old base with three pip-wheel findings; both remote platforms retain all26 old
+OS names and scan31 packages/zero reported findings. Current built-worker/Linux
+Anvil compatibility is still required by mandatory CI. No finding is ignored.
+
+A full352 run failed one diagnostic cleanup assertion with unknown cause. Its
+raw record is preserved. Finite secondary diagnostics and an actual overflowing
+live-client control were added. Independent review found an assertion could skip
+test rescue; try/finally plus false-success fault injection corrects it. Prefinal
+353/82.985s passes; final354/79.788s passes with zero skips and all75 prelaunch
+inputs unchanged. Eight owned replay cleanup records and three strict synthetic
+wrappers are verified,21 wheel modules match current source. Production security
+retains26 sources/all25 reviewed findings without suppression. No new archive or
+model call, historical32 result, main merge, deployment or formal submission is
+claimed. See [raw outcomes, provenance and reviews](evidence/owned-consumer-observations/remediation/README.md).
+Fresh exact-head mandatory CI and protected-main independent human review remain
+required; historical and current outcomes are distinct.

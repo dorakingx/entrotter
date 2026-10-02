@@ -239,6 +239,10 @@ key share only a successfully cached result; errors, null and oversized results
 release waiters without caching. Different keys, volatile reads and receipt
 reads can progress independently within the existing four-handler limit. Cache
 and counter locks never cover upstream I/O, and waits retain the shared deadline.
+The accepting thread may hold one accepted socket for at most100 milliseconds
+while a slot closes, bounded by the same remaining deadline. It creates no fifth
+active handler; persistent overload still refuses the request. This does not
+identify the cause of earlier replay failures.
 
 The bridge uses an owned loopback child, private bounded stdin configuration,
 the existing shared150-second deadline, at most4 handlers and4096 RPC calls,
@@ -597,6 +601,15 @@ same checksum-verified Foundry 1.8.3 binary; build manifests also record its SHA
 The host supports Python 3.11 through 3.14; native and container runtimes are
 separately tested. No registry account or paid image tag is used.
 
+The current base pin updates the pip bootstrap wheel from26.2.1-r1 to26.2.1-r2
+for CVE-2026-97687, CVE-2026-97689 and CVE-2026-97688. Both Linux platforms
+retain all26 prior OS package names and inventory31 packages, including five
+added Brotli/OpenSSL libraries; Python remains3.14 with a newer micro revision.
+Pinned Cosign signer/issuer verification and remote base scans have passed with
+a fresh database and zero detected findings. These checks cover the base only;
+current built-worker inventory, Anvil compatibility and replay checks remain
+mandatory CI gates. Earlier image reports remain historical evidence.
+
 After building, run the advisory gate from the checkout:
 
 ```bash
@@ -772,3 +785,9 @@ lint/type/security checks; independent PR review remains required.
 Local source/test/security/wheel evidence for the supported native observation
 workflow, including retained failures and pending gates, is in
 [owned consumer observation evidence](evidence/owned-consumer-observations/README.md).
+
+
+The [bounded admission and signed base follow-up](evidence/owned-consumer-observations/remediation/README.md)
+retains the original limits, records the actual HTTP regression and final local
+354-test run, and distinguishes remote base security checks from mandatory
+current built-worker/Linux verification.
