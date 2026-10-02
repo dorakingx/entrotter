@@ -11,6 +11,13 @@ archive authenticity or EVM truth. An attacker can forge internally consistent
 data and reseal it. Preserve the report's source and limitations when sharing
 results. It adds no trace HTTP endpoint or arbitrary agent execution.
 
+The observed-price reader is also offline and executes no report code. It
+accepts one fixed profile and finite diagnostic fields, caps regular-file input
+and raw observations, and validates the nested trace and reported classification.
+Checksums, ABI consistency and recorded price dependence do not authenticate
+providers, deployed contracts or a signed strategy. Never treat a complete price
+view as profit or financial advice. The wrapper's original scope is preserved.
+
 The engine runs only built-in policies. A Python import or a subprocess is
 not a security sandbox for untrusted agent code. Container/process sandboxing,
 egress controls, authenticated multi-tenancy and a production job queue remain

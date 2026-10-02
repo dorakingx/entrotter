@@ -42,6 +42,7 @@ jobs:
           "$RUNNER_TEMP/sdk-wheel-venv/bin/python" -m pip install --no-index --no-deps .quality/wheels/*.whl
           "$RUNNER_TEMP/sdk-wheel-venv/bin/python" -I -c 'import entrotter_sdk, importlib.resources; from pathlib import Path; import sys; assert Path(entrotter_sdk.__file__).resolve().is_relative_to(Path(sys.prefix).resolve()); assert importlib.resources.files("entrotter_sdk").joinpath("py.typed").is_file(); assert entrotter_sdk.Client().base_url == "http://127.0.0.1:8787"'
           "$RUNNER_TEMP/sdk-wheel-venv/bin/python" -I -c 'from entrotter_sdk import load_trace; r = load_trace("tests/data/canonical-mainnet-prefix-four.result.json"); assert r.baseline_verified; assert r.transactions[3].candidate.expected_nonce == 5522; assert r.transactions[1].candidate.receipt.gas_used == 245136'
+          "$RUNNER_TEMP/sdk-wheel-venv/bin/python" -I -c 'from entrotter_sdk import load_observed_trace; r = load_observed_trace("tests/data/observed-price32.json"); assert r.classification.price_difference == 789973126; assert len(r.trace.transactions) == 32; assert r.observations[1].latest_round_data.answer == 256292441874'
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:

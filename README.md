@@ -86,6 +86,58 @@ Ethereum-only prefix limits, same-block funding admission and full-block/root/
 opcode/end-state limitations remain the engine's responsibility. Packages remain
 unpublished and required protected-main approval is still pending.
 
+## Read historical price observations offline
+
+`load_observed_trace(path)` accepts the supported `observation_version: "0.1.0"`
+wrapper from engine `trace-observe --native`. It validates both the
+wrapper and nested transaction report without an engine import, server, RPC or
+model call. The current fixed profile is `aave-v3-ethereum-weth-price`:
+
+```python
+from entrotter_sdk import load_observed_trace
+
+observed = load_observed_trace("tests/data/observed-price32.json")
+print(observed.artifact_id, observed.trace.baseline_verified)
+for row in observed.observations:
+    print(row.branch, row.phase, row.price, row.base_unit)
+classification = observed.classification
+if classification.complete_price_views:
+    print("Candidate minus baseline, raw USD units:", classification.price_difference)
+else:
+    print("Price difference unproven:", classification.unproven_reasons)
+```
+
+Run this from the source checkout with `PYTHONPATH=src`; the example uses an
+[actual recorded native replay](evidence/observed-reader/README.md), not a new chain
+execution. Prices and feed fields are exact Python integers, including values
+above2**53. Raw USD prices use the recorded1e8 base unit; the recorded difference
+is789973126 raw units. Do not divide through a floating-point value when exact
+formatting matters. Complete price views and matching baseline receipts are
+separate facts; neither proves a signed consumer strategy or profit.
+
+`ObservedTraceResult.parse(value)` and `verify_observed_trace(value)` provide
+in-memory validation and boolean verification. Typed frozen `PriceObservation`
+records include `ObservationHead`, `ObservationCode`, `PriceRound` and a tuple
+of `ObservationError` values. Missing getters or heads are `None`, preserving
+finite query/category/RPC diagnostics. `PriceClassification` exposes sorted
+`unproven_reasons` and returns `None` for price deltas if any required view is
+unproven. Negative feed answers remain readable as unproven evidence.
+
+Validation checks fixed version/profile/scope, both content IDs, the complete
+nested trace, four ordered phases, query success/error coverage, exact ABI widths,
+address padding, uint80 round IDs and signed int256 answers. It binds phase heads
+to the reported parent/block and recomputes price classification from raw values,
+including timestamps, base unit/currency, source/aggregator and code identities.
+A wrong classification remains invalid after resealing. These checks follow the
+engine40 fixed-profile contract; they do not authenticate a provider or deployed
+code. All fields can still be forged consistently and resealed.
+
+The regular-file reader caps input at8 MiB, observations at64 KiB, rejects duplicate
+JSON keys and caps integer tokens at512 characters. Result snapshots and nested
+typed values are immutable; `.report` provides a fresh copy including raw ABI.
+The original `load_trace`, action/model-record and HTTP APIs are unchanged.
+Packages remain unpublished; human protected-main approval is separate.
+
 ## Quality checks
 
 The CI quality job checks every production Python file under `src/` and `scripts/`

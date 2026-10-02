@@ -1,0 +1,53 @@
+{
+  "status": "local tested candidate; current-head component CI pending after publication",
+  "base": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+  "engine_fixed_profile_source": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+  "viewer_control_source": "a19d3b17fcf44e58a237b622de8cef89842eb6e7",
+  "supported_wrapper_sha256": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+  "six_synthetic_controls_sha256": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
+  "units": {
+    "total": 45,
+    "new_observed_test_groups": 9,
+    "new_contradictions": 22,
+    "RPC_mutations": 5,
+    "zero_skips": true
+  },
+  "local_quality": {
+    "source_files": 6,
+    "Ruff_lint_format": "passed",
+    "mypy": "passed",
+    "Bandit_findings": 0,
+    "skipped_security_rules": 0,
+    "locked_tool_build_packages": 42,
+    "runtime_dependencies": [],
+    "fresh_advisory_lookup": "Not repeated locally for unchanged lock; mandatory current-head CI queries original locked identities after publication."
+  },
+  "source_sha256": {
+    "src/entrotter_sdk/__init__.py": "8accc01cc6b8b684fc70f244c595d61dbc8bc6b064e83f85f3f534d51ce36e71",
+    "src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "scripts/check_dependency_manifest.py": "d9c90b75f8c26ef0aa3723ab07580f05c7391a78ef12fcf20b99e80ef198deef",
+    "scripts/check_security.py": "58de6896402c89d235a22a9e9bb2895ece68f20e7b9dd91966ea15fefad24c07"
+  },
+  "wheel": {
+    "status": "passed",
+    "engine_import_available": false,
+    "typed_marker": true,
+    "nested_transactions": 32,
+    "raw_price_difference": 789973126,
+    "prior_four_prefix_preserved": true,
+    "python": "3.13.0",
+    "environment": "Initially fresh venv; final wheel replaced only SDK after CLI README correction."
+  },
+  "wheel_sha256": {
+    "entrotter_sdk-0.1.0-py3-none-any.whl": "f111762831406e0cd198dd7c36107419396fe94b30ccd0ae5866b3d2a99ef555"
+  },
+  "regression_history": "Missing SDK API regression failed initially, then passes. First new-control assertions assumed wrong missing-head phase; tests fixed to golden phase0; source unchanged. Original logs retained privately.",
+  "limits": [
+    "Offline recorded-wrapper inspection, not fresh chain/model/browser execution.",
+    "Full nested trace/internal ABI/head/code/classifier consistency does not authenticate providers, deployed code or signed consumer/profit/full-block/root/opcode claims.",
+    "Normal source typing is not strict JSON typing; OS/Python runtime outside Python-package audit.",
+    "Protected human main approval and root integration are separate."
+  ]
+}
