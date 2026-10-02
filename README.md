@@ -305,8 +305,8 @@ awaits CI; it is separate from host default dispatch/lifecycle coverage.
 Encoding follows [EIP-155](https://eips.ethereum.org/EIPS/eip-155),
 [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) and
 [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559). Mainnet activation is pinned
-to [go-ethereum v1.14.0](https://github.com/ethereum/go-ethereum/blob/v1.14.0/params/config.go);
-header methods use [Anvil v1.8.3](https://github.com/foundry-rs/foundry/blob/v1.8.3/crates/anvil/src/eth/api.rs).
+to [go-ethereum v1.14.0](https://raw.githubusercontent.com/ethereum/go-ethereum/v1.14.0/params/config.go);
+header methods use [Anvil v1.8.3](https://raw.githubusercontent.com/foundry-rs/foundry/v1.8.3/crates/anvil/src/eth/api.rs).
 
 ## Limits and contribution priorities
 
@@ -623,7 +623,7 @@ real worker and complete-report equivalence checks. Never weaken filters or
 suppress findings to restore a passing job.
 
 Upstream references: [image provenance](https://images.chainguard.dev/directory/image/python/provenance),
-[Trivy Rust inventory coverage](https://github.com/aquasecurity/trivy/blob/v0.74.0/docs/guide/coverage/language/rust.md).
+[Trivy Rust inventory coverage](https://raw.githubusercontent.com/aquasecurity/trivy/v0.74.0/docs/guide/coverage/language/rust.md).
 
 
 ## Native Foundry release inventory
@@ -654,7 +654,7 @@ remain limitations. Provenance proves origin/claims, not independent code review
 or bit-for-bit reproducible compilation. The separate image gate covers detected
 OS/interpreter packages; broader security/release gates remain open.
 
-[Upstream pinned release workflow](https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/.github/workflows/release.yml).
+[Upstream pinned release workflow](https://raw.githubusercontent.com/foundry-rs/foundry/cae51ad458f6abb64852b7709eb784352429825d/.github/workflows/release.yml).
 
 ## Shared report export budget
 

@@ -399,3 +399,25 @@ The reviewed local checkpoint and retained failed/successful runs are now collec
 in [owned consumer observation evidence](evidence/owned-consumer-observations/README.md).
 Public-package review and exact-head CI are still pending; adding these copies
 does not repeat the historical research trial or test suite.
+
+### First public CI and failure-preserving test correction
+
+Public candidate d300a24 passes quality and all four Python unit jobs; native,
+isolated and documentation jobs fail. Native349/82.348s rejects a sender nonce
+read in the missing-code control; a secondary expected-two-node assertion masks
+that primary error and skips subsequent cache checks. The original rejection's
+cause remains unknown. The test helper now checks all actually owned resources
+before count checks and preserves unexpected primary errors. Intended-stop
+cleanup failures still fail. Production/scripts/policy and original evidence
+remain unchanged. Existing missing-code and a new actual primary-error regression
+each pass once; the latter closes one replay node and one cache while preserving
+the exact primary exception and keeping diagnostics free of private text/URLs.
+Current27-method/whole350 verification is pending fresh mandatory CI.
+
+Nine observed existing503 source links are repaired with matching versioned raw
+files and three explicit source line ranges; all8unique targets pass the same
+pinned checker with independent source review. Isolated CI's Docker metadata
+verification failure remains unclassified; no controller or gate is relaxed.
+See [focused logs, independent review and limits](evidence/owned-consumer-observations/followup/README.md).
+Historical349 success is distinct from latest350 validation. Human main approval,
+supported historical32 execution and deployment remain separate pending gates.

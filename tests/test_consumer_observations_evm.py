@@ -1,6 +1,6 @@
 """Real owned synthetic parent/transactions; no archive, wallet keys or profit."""
 
-from contextlib import redirect_stdout
+from contextlib import redirect_stderr, redirect_stdout
 from io import StringIO
 import json
 import os
@@ -9,7 +9,9 @@ from pathlib import Path
 import shutil
 import socket
 import subprocess
+import sys
 import tempfile
+import threading
 import unittest
 from unittest.mock import patch
 from urllib.parse import urlsplit
@@ -192,6 +194,52 @@ class ConsumerObservationEVMTests(unittest.TestCase):
     def run_owned(self, *, stop=None, plan=None):
         nodes = []
         caches = []
+        counters = {}
+        counter_lock = threading.Lock()
+        last_view = None
+        original_reply = self.proxy.reply
+
+        def reply(request):
+            method = request.get("method")
+            method = (
+                method
+                if type(method) is str and method in oracle_tests.READS
+                else "other"
+            )
+            params = request.get("params")
+            address = params[0] if isinstance(params, list) and params else None
+            if isinstance(address, dict):
+                address = address.get("to")
+            addresses = {
+                views.ORACLE: "aave_oracle",
+                SOURCE: "price_source",
+                self.fixture["oracle"]: "synthetic_oracle",
+                self.fixture["consumer"]: "synthetic_consumer",
+                **{a: "signed_actor" for a in self.fixture["actors"]},
+            }
+            address_class = (
+                addresses.get(address.lower(), "other")
+                if isinstance(address, str)
+                else "none"
+            )
+            key = (method, address_class)
+
+            def count(field):
+                with counter_lock:
+                    row = counters.setdefault(
+                        key, {"requests": 0, "errors": 0, "exceptions": 0}
+                    )
+                    row[field] = min(4096, row[field] + 1)
+
+            count("requests")
+            try:
+                result = original_reply(request)
+            except Exception:
+                count("exceptions")
+                raise
+            if isinstance(result, dict) and "error" in result:
+                count("errors")
+            return result
 
         def session(*args, **kwargs):
             node = AnvilSession(*args, **kwargs)
@@ -206,6 +254,8 @@ class ConsumerObservationEVMTests(unittest.TestCase):
             return owned
 
         def observe(collector, rpc, branch, phase, deadline):
+            nonlocal last_view
+            last_view = [branch, phase]
             if stop == (branch, phase):
                 # Real SIGTERM delivery through actual supported guard/owned nodes.
                 os.kill(os.getpid(), signal.SIGTERM)
@@ -218,6 +268,7 @@ class ConsumerObservationEVMTests(unittest.TestCase):
                 patch("entrotter_engine.trace.AnvilSession", side_effect=session),
                 patch("entrotter_engine.trace.ParentCache", side_effect=cache),
                 patch.object(views.OwnedPriceObserver, "observe", observe),
+                patch.object(self.proxy, "reply", side_effect=reply),
             ):
                 result = views.run_trace_observed_native(plan or self.plan)
                 if self.evidence:
@@ -225,31 +276,108 @@ class ConsumerObservationEVMTests(unittest.TestCase):
                     file.write_text(json.dumps(result, indent=2) + "\n")
                 return result
         finally:
+            primary = sys.exception()
+            expected_stop = isinstance(primary, views.ObservationStopped) and (
+                stop is not None
+                or self._testMethodName
+                == "test_sealing_stop_occurs_after_real_owned_cleanup"
+            )
+            failures = []
+            checked = []
+
+            def check(kind, function):
+                try:
+                    function()
+                except BaseException as error:
+                    failures.append((kind, error))
+                    checked.append({"check": kind, "closed": False})
+                else:
+                    checked.append({"check": kind, "closed": True})
+
             for node in nodes:
-                assert_closed(node)
-            self.assertEqual(len(nodes), 1 if stop and stop[0] == "baseline" else 2)
+                check("anvil", lambda node=node: assert_closed(node))
             for owned in caches:
-                self.assertIsNotNone(owned.process.poll())
-                self.assertTrue(
-                    owned.process.stdin.closed and owned.process.stdout.closed
-                )
-                with socket.socket() as connection:
-                    connection.settimeout(0.2)
-                    self.assertNotEqual(
-                        connection.connect_ex(("127.0.0.1", urlsplit(owned.url).port)),
-                        0,
+
+                def cache_closed(owned=owned):
+                    self.assertIsNotNone(owned.process.poll())
+                    self.assertTrue(
+                        owned.process.stdin.closed and owned.process.stdout.closed
                     )
-                with self.assertRaises(ProcessLookupError):
-                    os.killpg(owned.process.pid, 0)
+                    with socket.socket() as connection:
+                        connection.settimeout(0.2)
+                        self.assertNotEqual(
+                            connection.connect_ex(
+                                ("127.0.0.1", urlsplit(owned.url).port)
+                            ),
+                            0,
+                        )
+                    with self.assertRaises(ProcessLookupError):
+                        os.killpg(owned.process.pid, 0)
+
+                check("cache", cache_closed)
+            if primary is None or expected_stop:
+                check(
+                    "expected_node_count",
+                    lambda: self.assertEqual(
+                        len(nodes), 1 if stop and stop[0] == "baseline" else 2
+                    ),
+                )
             self.cleanup_records.append(
                 {
                     "case": self._testMethodName,
                     "stop_phase": stop,
-                    "anvil_groups_ports_reaped": len(nodes),
-                    "cache_groups_ports_pipes_reaped": len(caches),
+                    "anvil_groups_ports_reaped": sum(
+                        r["closed"] for r in checked if r["check"] == "anvil"
+                    ),
+                    "cache_groups_ports_pipes_reaped": sum(
+                        r["closed"] for r in checked if r["check"] == "cache"
+                    ),
                     "cache_stats": [owned.stats for owned in caches],
+                    "cleanup_checks": checked,
+                    "upstream_method_address_counts": [
+                        {"method": key[0], "address_class": key[1], **row}
+                        for key, row in sorted(counters.items())
+                    ],
                 }
             )
+            if primary is not None and not expected_stop or failures:
+                diagnostic = {
+                    "scope": "owned_synthetic_test_failure_only",
+                    "primary": "observation_stopped"
+                    if isinstance(primary, views.ObservationStopped)
+                    else "execution_error"
+                    if isinstance(primary, views.ExecutionError)
+                    else "other"
+                    if primary is not None
+                    else "none",
+                    "last_view": last_view,
+                    "owned_nodes": len(nodes),
+                    "owned_caches": len(caches),
+                    "cleanup_checks": checked,
+                    "cache_stats": [owned.stats for owned in caches],
+                    "upstream": [
+                        {"method": key[0], "address_class": key[1], **row}
+                        for key, row in sorted(counters.items())
+                    ],
+                }
+                try:
+                    print(
+                        json.dumps(diagnostic, separators=(",", ":")), file=sys.stderr
+                    )
+                except Exception:
+                    if primary is not None:
+                        primary.add_note("Secondary finite diagnostic output failure")
+                    elif not failures:
+                        raise
+            if expected_stop and failures:
+                raise AssertionError(
+                    "Owned test cleanup failed during intended stop"
+                ) from None
+            if primary is not None:
+                for kind, _ in failures:
+                    primary.add_note("Secondary owned test cleanup failure: " + kind)
+            elif failures:
+                raise failures[0][1]
 
     def test_real_paired_receipts_price_effect_and_exact_original_source(self):
         result = self.run_owned()
@@ -334,6 +462,33 @@ class ConsumerObservationEVMTests(unittest.TestCase):
         self.assertFalse(result["classification"]["complete_price_views"])
         self.assertIsNone(result["classification"]["price_difference"])
         self.assertNotIn("PRIVATE", json.dumps(result))
+
+    def test_primary_baseline_observation_error_preserves_exception_and_cleanup(self):
+        primary = views.ExecutionError("PRIVATE https://provider.invalid/token")
+        output = StringIO()
+        with (
+            patch.object(views.OwnedPriceObserver, "observe", side_effect=primary),
+            redirect_stderr(output),
+            self.assertRaises(views.ExecutionError) as caught,
+        ):
+            self.run_owned()
+        self.assertIs(caught.exception, primary)
+        record = self.cleanup_records[-1]
+        self.assertEqual(record["anvil_groups_ports_reaped"], 1)
+        self.assertEqual(record["cache_groups_ports_pipes_reaped"], 1)
+        self.assertEqual(
+            record["cleanup_checks"],
+            [{"check": "anvil", "closed": True}, {"check": "cache", "closed": True}],
+        )
+        diagnostic = json.loads(output.getvalue())
+        self.assertEqual(diagnostic["primary"], "execution_error")
+        self.assertEqual(diagnostic["last_view"], ["baseline", "before"])
+        self.assertEqual(diagnostic["cleanup_checks"], record["cleanup_checks"])
+        self.assertEqual(diagnostic["owned_nodes"], 1)
+        self.assertEqual(diagnostic["owned_caches"], 1)
+        self.assertNotIn("PRIVATE", output.getvalue())
+        self.assertNotIn("https://", output.getvalue())
+        self.assertNotIn("token", output.getvalue())
 
     def test_sealing_stop_occurs_after_real_owned_cleanup(self):
         with (
