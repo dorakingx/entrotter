@@ -65,7 +65,8 @@ python3 -m venv .venv
 .venv/bin/python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-quality.txt
 mkdir -p _deps
 git clone https://github.com/entrotter/sdk-python.git _deps/sdk
-git -C _deps/sdk checkout --detach eb9921f30c1f0f3750140f66023e3b10d255cb20
+ENTROTTER_SDK_COMMIT="$(.venv/bin/python -c 'import json; print(json.load(open("quality-inputs.json"))["sdk_commit"])')"
+git -C _deps/sdk checkout --detach "$ENTROTTER_SDK_COMMIT"
 .venv/bin/python -m build --no-isolation --wheel --outdir .quality/sdk-wheels _deps/sdk
 .venv/bin/python -m pip install --no-index --no-deps .quality/sdk-wheels/*.whl
 .venv/bin/python -m pip check
@@ -79,6 +80,10 @@ mkdir -p .quality
 .venv/bin/python -m pip_audit --strict --require-hashes --disable-pip -r requirements-quality.txt --progress-spinner off -f json -o .quality/dependencies.json
 .venv/bin/python -m build --no-isolation --wheel --outdir .quality/wheels
 ```
+
+The quality recipe reads `sdk_commit` from the same manifest as CI. The separate
+real agent/price jobs retain their older `agent_sdk_commit` and
+`observed_sdk_commit` inputs; those frozen execution pins are independent.
 
 All 42 tool/build packages are version/hash locked and audited with no ignored
 advisories. The local SDK is source-checked separately, not claimed to have a
