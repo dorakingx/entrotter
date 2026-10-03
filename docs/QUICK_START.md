@@ -1,11 +1,11 @@
 # Reproduce a local report from pinned public sources
 
-This guide uses tested candidate commits awaiting independent review and main
+This guide uses tested candidate commits awaiting independent human approval and main
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [standalone SDK price observation composition](../evidence/sdk-observed-integration/README.md)
-selects engine40bea57, SDKeb9921f and viewera19d3b1. Its six offline integration cases pass
+The proposed [terminal price observation composition](../evidence/cli-observed-integration/README.md)
+selects engine40bea57, SDKeb9921f, CLI1ee3d3a and viewera19d3b1. Its six offline integration cases pass
 locally, including direct wrapper validation; combined current-head CI and human
 main approval remain separate. The frozen Docker walkthrough below retains its
 earlier2f6a56e/enginebd5527f source and measurements.
@@ -31,11 +31,26 @@ Imports stay in the browser; the sample button fetches the local recorded file.
 This inspection needs no Docker, Anvil, archive account or model call. It is a
 local candidate preview; it does not confirm the latest source is deployed.
 
-For Python inspection, select the standalone SDK in a second terminal:
+For terminal inspection, select matching SDK and CLI sources in a second terminal:
 
 ```bash
 git -C sdk-python fetch --depth=1 origin eb9921f30c1f0f3750140f66023e3b10d255cb20
 git -C sdk-python checkout --detach FETCH_HEAD
+git -C cli fetch --depth=1 origin 1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e
+git -C cli checkout --detach FETCH_HEAD
+PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-verify entrotter.github.io/reports/trace-observed-price32.json
+PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-inspect entrotter.github.io/reports/trace-observed-price32.json
+```
+
+Both commands validate the recorded wrapper and nested trace before printing JSON.
+Inspect also prints all four typed price/feed/head/code/error records. A valid
+incomplete record still returns status0 with explicit unproven reasons and a null
+price difference. The commands make no network, model or engine call and create no
+export ledger. See the [CLI's exact command and component evidence](https://github.com/entrotter/cli/tree/1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e/evidence/observed-cli).
+
+For optional Python API inspection:
+
+```bash
 PYTHONPATH=sdk-python/src python3 - <<'PYTHON'
 from entrotter_sdk import load_observed_trace
 observed = load_observed_trace("entrotter.github.io/reports/trace-observed-price32.json")

@@ -93,7 +93,7 @@ code, not an independently approved release.
 | Coordination execution snapshot, dependency pins and Linux CLI helper | [2f6a56e](https://github.com/entrotter/entrotter/tree/2f6a56e533935c93f4688c13feeeaa0e771c427a) | [#55](https://github.com/entrotter/entrotter/pull/55) |
 | Bounded agent engine, signed-prefix replay and supported Aave price observations | [40bea57](https://github.com/entrotter/engine/tree/40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d) | [#35](https://github.com/entrotter/engine/pull/35) |
 | Python SDK with offline typed signed-prefix and price observation inspection | [eb9921f](https://github.com/entrotter/sdk-python/tree/eb9921f30c1f0f3750140f66023e3b10d255cb20) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
-| CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
+| CLI with bounded agent replay and offline price observation commands | [1ee3d3a](https://github.com/entrotter/cli/tree/1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
 | Console, recorded agent and signed-prefix inspection, accessibility and quality | [a19d3b1](https://github.com/entrotter/entrotter.github.io/tree/a19d3b17fcf44e58a237b622de8cef89842eb6e7) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
@@ -225,6 +225,20 @@ pass. Python developers can inspect the supported original wrapper directly,
 without importing the engine or creating an intermediate trace export. The sixth
 mandatory reader compares the complete SDK snapshot, typed classification and
 four full typed price/feed/address/unit/head/code/error records with engine40 and
-viewera19. Local six-script/type results, new combined CI and human protected-main
-approval remain separate evidence gates. Frozen recordings, model/holdouts and
+viewera19. Its subsequent coordinator4b037fe passed all5 original required
+checks and full independent raw review (workspace37096639467,
+quality37096639463, docs37096639482; reviewSHA3d13d25613e0b6cee85ea8e305f65b78ccd7a79ded03b4fc708d8aa3cf7632ea).
+That historical verified source selects CLI22; the newer CLI composition below
+has a separate current-head CI gate. Human protected-main approval remains separate. Frozen recordings, model/holdouts and
 submission draft remain unchanged; no new chain/model/browser or submission claim.
+
+
+The [terminal price-wrapper composition](../evidence/cli-observed-integration/README.md)
+selects CLI1ee3d3a, whose all6 original required checks and full raw independent
+review pass. Developers can run observed-verify/observed-inspect without custom
+Python or engine conversion. The sixth exact workflow reader runs both commands
+and compares complete JSON classification, trace IDs/count and all four typed
+records with the reviewed SDK/engine/viewer facts. First5 exact scripts and full
+outcomes stay unchanged except the selected CLI pin. New combined candidate CI,
+protected-main approval and Pages remain separate; no new chain/model/browser
+execution or submission is claimed.

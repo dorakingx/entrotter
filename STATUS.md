@@ -1795,3 +1795,48 @@ local sample through SDK alone. See [integration source/evidence](evidence/sdk-o
 New combined current-head CI, human main approval, Pages and formal submission
 remain separate. No fresh EVM/model/browser evaluation is claimed. Goal active
 through October13 15:59JST; official section5 rechecked this turn; Discord excluded.
+
+
+## October 3 — terminal observed-price inspection
+
+Coordinator4b037fe publishes the reviewed SDKeb composition; all5 original
+mandatory checks pass firstattempt (37096639467/37096639463/37096639482).
+Full independent raw1044-file review passes, SHA3d13d25613e0b6cee85ea8e305f65b78ccd7a79ded03b4fc708d8aa3cf7632ea.
+All21 publishedblobs,21types/3frozen,78exactfindings/50lockedidentities0reported
+advisories,image22/engine40,six full outcomes and64docs/438links match.
+Configured runningDocker/cgroupv2 cleanfixture9.040621573s/recordedagent8.187395178s
+include sourceclone/venv/image/execution with potentiallywarmcaches, excluding
+installation/VMstartup; reproduction evidence, not a speed comparison.
+
+CLI1ee3d3a/PR10 adds observed-inspect/observed-verify through SDKeb alone.
+Two input-only commands validate both wrappers/nestedtrace before stdout, expose
+exact full4typed records and keep null unproven differences/reasons. Existing
+v0.1/agent AST unchanged; exactly4 SDKselectors advance, frozenc167 engine retained.
+49local/0skip,seven new groups,6source Ruff/mypy/fullBandit0,42lockmanifest pass.
+Lock byte-identical to independently audited SDKeb; local advisory reuse disclosed,
+current CI still queries. Fresh-Iwheel5commands/noengine pass; finalwheel1115a1c3
+contains all4currentmodules/README, with metadata-only prose fix disclosed.
+Nine exact public copies in CLI evidence/observed-cli. Independent170assertions/
+52inputs/all21stageblobs passes (e66fa8dc056021087aef6207c40af2ea084c6e43fccc9dfa3a042e6c2ae6381a).
+All21 publishedremote Gitblobs match. Docs7/13/12success/1existingloopbackexclude pass.
+
+CLI all6 original checks firstattempt pass (37097572628/37097572600/37097572586).
+Full raw independent156checks/22artifactfiles/49immutableGit inputs pass,
+SHAdd6ca1460954c63a763a10837a4008bb6b51fd31f4af58bdb5399e3f31d7bb48.
+49tests/0skip on each Python3.11/3.12/3.13; frozenc167 actualDocker agent4/0skip
+and labeledworker cleanup pass. Image18source inputs/historical base scope,
+6source fullBandit0/42exactlocks0reported advisories, bothactualCIwheels/allRECORD/
+currentREADME/SDKmarker and all5-I smokes bound. InstalledFS/temp exports not
+separately exported; tool/DB/ZIP/oldbase crypto gaps stay explicit. This is not
+new engine40 OS/Cargo or model/chain/browser proof.
+
+Proposed coordinator promotes exactly4 CLIrefs22→1ee, preserving allfrozen native/
+agent/host/model/holdout inputs. Sixth reader executes both actualCLIcommands,
+compares fullJSON classification/traceIDs/count and4phase records against SDK,
+engine and viewer. All6 exact localscripts pass; first5 bodies/fulloutputs unchanged
+exceptCLIpins. Type21/3frozen pass. New package reuses prior5fullreader facts and
+binds their pins-only change/hashes; only new sixth output copied to avoid duplicate
+evidence. Quickstart now offers direct terminal inspection, with optional Python.
+New current-head combined CI, human protected-main approval, Pages and formal
+submission remain separate. Goal remains active until official deadline; no
+new archive/model/browser run, spending, disclosure or Discord work.

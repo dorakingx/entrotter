@@ -1,0 +1,49 @@
+{
+  "status": "prepared proposed composition; new combined CI pending",
+  "coordinator_base": "4b037fe0dac9350fbf546339258ebc269d13659f",
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+    "cli": "1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "CLI_selectors_changed": 4,
+  "all_frozen_job_inputs_preserved": true,
+  "local_exact_readers": 6,
+  "first5_exact_scripts_full_outcomes_unchanged_except_CLIpin": true,
+  "sixth": "Runs both actual CLI observed commands; complete classification/trace IDs/count/full4typedphase fields match SDK, engine and viewer",
+  "source_wrapper_sha256": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+  "nested_trace_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+  "local_type_sources": 21,
+  "retained_frozen_diagnostics": 3,
+  "CLI_component_original_CI": {
+    "required_checks": 6,
+    "runs": [
+      37097572628,
+      37097572600,
+      37097572586
+    ],
+    "tests_each_Python": 49,
+    "actual_frozen_Docker_agent_cases": 4,
+    "source_files": 6,
+    "locked_identities": 42,
+    "reported_advisories": 0,
+    "independent_raw_review_original_sha256": "dd6ca1460954c63a763a10837a4008bb6b51fd31f4af58bdb5399e3f31d7bb48"
+  },
+  "previous_4b037_original_CI": {
+    "all5": "passed firstattempt; full independent1044raw audit",
+    "runs": [
+      37096639467,
+      37096639463,
+      37096639482
+    ],
+    "independent_review_sha256": "3d13d25613e0b6cee85ea8e305f65b78ccd7a79ded03b4fc708d8aa3cf7632ea"
+  },
+  "limits": [
+    "Offline recorded data inspection; no new chain/model/browser/strategy/profit/provider/fullblock proof.",
+    "New combinedCI, human main approval/Pages/submission remain separate.",
+    "CLI frozen agentc167 Docker image18 historicalbase/tool scope is separate from root selectedengine40 image22/OS/Cargo audits.",
+    "Original component/CI installed filesystems/ZIP/tool/DB crypto gaps stay explicit."
+  ]
+}

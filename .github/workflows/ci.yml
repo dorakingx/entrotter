@@ -114,7 +114,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: 22b514cbba2ecd0c41ae99c330f8396c97acebf2
+          ref: 1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e
           path: cli
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -510,11 +510,11 @@ jobs:
                          'Checksums/internal consistency do not authenticate provider state or oracle truth.'],
           }, indent=2) + '\n')
           PY
-      - name: Inspect the supported observation wrapper with engine, SDK and viewer
+      - name: Inspect the supported observation wrapper with engine, SDK, CLI and viewer
         run: |
           python - <<'PY'
           from dataclasses import asdict, replace
-          import hashlib, json, os, subprocess
+          import hashlib, json, os, subprocess, sys
           from pathlib import Path
           from entrotter_engine.consumer_observations import load_observed_trace
           from entrotter_engine.trace import write_trace
@@ -578,6 +578,26 @@ jobs:
                   words[1] -= 2**256
               assert row['latest_round_data'] == dict(zip(
                   ('round_id', 'answer', 'started_at', 'updated_at', 'answered_in_round'), words))
+          cli_records = {}
+          for command in ('observed-verify', 'observed-inspect'):
+              completed = subprocess.run(
+                  [sys.executable, '-m', 'entrotter_cli', command, str(source)],
+                  capture_output=True, text=True, check=True, timeout=30)
+              assert completed.stderr == ''
+              cli_records[command] = json.loads(completed.stdout)
+          cli_verified = cli_records['observed-verify']
+          cli_inspected = cli_records['observed-inspect']
+          assert cli_verified['artifact_id'] == observed['artifact_id']
+          assert cli_verified['profile'] == sdk_observed.profile and cli_verified['integrity_verified'] is True
+          assert cli_verified['classification'] == sdk_classification
+          assert cli_verified['trace'] == {
+              'artifact_id': report.artifact_id, 'baseline_receipts_verified': True, 'transaction_count': 32}
+          assert 'not provider authentication' in cli_verified['scope']
+          assert 'not signed consumer strategy' in cli_verified['scope']
+          assert 'observations' not in cli_verified
+          assert {k: v for k, v in cli_inspected.items() if k != 'observations'} == cli_verified
+          assert cli_inspected['observations'] == json.loads(json.dumps(sdk_phases))
+          cli_module = Path('cli/src/entrotter_cli/main.py')
           sdk_module = Path('sdk-python/src/entrotter_sdk/observed.py')
           module = Path('entrotter.github.io/trace-report.mjs')
           comparison = Path('entrotter.github.io/trace-comparison.mjs')
@@ -654,12 +674,14 @@ jobs:
               'comparison_module_sha256': hashlib.sha256(comparison.read_bytes()).hexdigest(), 'viewer': viewer,
               'observed_viewer_module_sha256': hashlib.sha256(observer_module.read_bytes()).hexdigest(),
               'viewer_observation': direct,
+              'cli_module_sha256': hashlib.sha256(cli_module.read_bytes()).hexdigest(),
+              'cli_observation': cli_records,
               'sdk_observed_module_sha256': hashlib.sha256(sdk_module.read_bytes()).hexdigest(),
               'sdk_observation': {'artifact_id': sdk_observed.artifact_id, 'profile': sdk_observed.profile,
                                   'classification': sdk_classification, 'phases': sdk_phases},
               'limits': ['Strict wrapper validation and offline parsing do not authenticate provider/deployed state.',
                          'Read-only price views are not signed consumer strategy or profit;32-of181 is not full-block/root/opcode proof.',
-                         'SDK and viewer additionally validate recorded wrapper price views; SDK exposes exact typed records.',
+                         'SDK, CLI and viewer additionally inspect recorded wrapper price views and exact typed records.',
                          'Node codec checks are separate from rendered browser/Pages verification and real Docker execution.'],
           }, indent=2) + '\n')
           PY

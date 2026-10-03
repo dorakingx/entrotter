@@ -291,8 +291,22 @@
       "locked_identities": 42,
       "reported_advisories": 0,
       "direct_API": "Offline wrapper load/verify +immutable exact typed observations/classification and nested TraceResult; no engine dependency/import",
-      "integration": "Exactly4 selected SDK selectors promoted; frozen hostEE preserved. All6 local exact scripts/type21/3frozen pass; full SDK raw typed records compare with engine40/viewera19. New combined CI pending.",
+      "integration": "Historical4b037fe withCLI22 passed all5 original required checks and full raw independent1044-file review; SHA3d13d25613e0b6cee85ea8e305f65b78ccd7a79ded03b4fc708d8aa3cf7632ea. Current CLI1ee composition separately proposed.",
       "scope": "Recorded price dependence/internal consistency, not fresh chain/model/browser or provider/auth/signedconsumer/profit/fullblock proof; human main/Pages separate."
+    },
+    "offline_observed_price_CLI": {
+      "source": "1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e",
+      "PR": "https://github.com/entrotter/cli/pull/10",
+      "all6_original_CI": "SUCCESS firstattempt;tests37097572628/quality37097572600/docs37097572586",
+      "independent_raw_review_sha256": "dd6ca1460954c63a763a10837a4008bb6b51fd31f4af58bdb5399e3f31d7bb48",
+      "Python_matrix_tests_each": 49,
+      "actual_frozen_Docker_agent_tests": 4,
+      "production_sources": 6,
+      "locked_identities": 42,
+      "reported_advisories": 0,
+      "direct_commands": "observed-inspect/observed-verify; input-only, standaloneSDK; exact typed records/null reasons; no engine/network/export/model",
+      "integration": "Exactly4 CLIrefs promoted; frozenjobs/inputs unchanged. Six exact local readers/type21/3 pass; sixth compares both actual CLI JSON commands with SDK full4phase records. New combined CI pending.",
+      "scope": "Recorded data inspection, not newchain/model/browser/provider/strategy/profit/fullblock proof; human main/Pages separate."
     }
   },
   "evidence": [
@@ -389,7 +403,8 @@
     "evidence/consumer-price-integration/summary.json",
     "evidence/observed-wrapper-integration/summary.json",
     "evidence/direct-observed-wrapper-integration/summary.json",
-    "evidence/sdk-observed-integration/summary.json"
+    "evidence/sdk-observed-integration/summary.json",
+    "evidence/cli-observed-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }
