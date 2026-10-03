@@ -1,0 +1,101 @@
+{
+  "scope": "Derived command/status summary. Only the local interpreter path is replaced; original full raw output is retained privately.",
+  "original_sha256": "b7ae2acfdf9c2726aebfc93e0ef3e8107b8703e83147c2e69081d26048b22b64",
+  "checks": [
+    {
+      "name": "lint",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.09523670794442296
+    },
+    {
+      "name": "format",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "scripts"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.048721584025770426
+    },
+    {
+      "name": "types",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.8696121249813586
+    },
+    {
+      "name": "security-source-change",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "scripts/check_security.py",
+        "--output",
+        ".quality/aave-actions/bandit.json"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 0.8833416251000017
+    },
+    {
+      "name": "dependency-coverage",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "scripts/check_dependency_manifest.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.06359879206866026
+    },
+    {
+      "name": "dependency-audit",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "-m",
+        "pip_audit",
+        "--strict",
+        "--require-hashes",
+        "--disable-pip",
+        "-r",
+        "requirements-quality.txt",
+        "--progress-spinner",
+        "off",
+        "-f",
+        "json",
+        "-o",
+        ".quality/aave-actions/dependencies.json"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 2.0872682500630617
+    },
+    {
+      "name": "wheel",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "-m",
+        "build",
+        "--no-isolation",
+        "--wheel",
+        "--outdir",
+        ".quality/aave-actions/wheels"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.7038411251269281
+    }
+  ],
+  "security_gate_note": "The full scan returned the expected changed-source error. All original finding fingerprints were checked unchanged; exact source hashes were refreshed and reverified. Current CI runs the final security gate."
+}

@@ -1,0 +1,9 @@
+test_amount_referral_and_addresses_are_bounded_before_any_execution (test_aave_actions.AaveActionTests.test_amount_referral_and_addresses_are_bounded_before_any_execution) ... ok
+test_borrow_mode_is_fixed_and_zero_amount_keeps_protocol_semantics (test_aave_actions.AaveActionTests.test_borrow_mode_is_fixed_and_zero_amount_keeps_protocol_semantics) ... ok
+test_fork_example_uses_current_builders_and_identical_proposals (test_aave_actions.AaveActionTests.test_fork_example_uses_current_builders_and_identical_proposals) ... ok
+test_supply_and_variable_borrow_match_solidity_abi (test_aave_actions.AaveActionTests.test_supply_and_variable_borrow_match_solidity_abi) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.119s
+
+OK

@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "findings_unchanged": 25,
+  "changed_sources": [
+    "scripts/aave_borrow.py"
+  ],
+  "scanned_sources": 28
+}

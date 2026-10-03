@@ -1,0 +1,39 @@
+{
+  "artifact_id": "728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00",
+  "evidence_sha256": {
+    "evidence/aave-borrow-actions/borrow-topic.txt": "872a3d34929b817cbd0b3a4c96f6ae5ad0c30d7cce9856cb043ee10e4e1dd03e",
+    "evidence/aave-borrow-actions/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "evidence/aave-borrow-actions/historical-AaveV3Ethereum.sol": "01dd6396dbd409259f59d9c400b7139086ba2362ada44778ea8a625ca30ce421",
+    "evidence/aave-borrow-actions/final-quality.json": "ed49cff4f8f3a477f19b45088a1992ed2ba64b922b2f1be329a5f950500b8548",
+    "evidence/aave-borrow-actions/report.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "evidence/aave-borrow-actions/replay-summary.json": "0aecb5a96e124c726ea8bf6aacc165ac6ccf7d1b000bdf1041e23196d771018d",
+    "evidence/aave-borrow-actions/recording.json": "c0b75e9a625efb7f1401b8ef705ee0dfa8d72a2c773e7c37dc36b3592b4fedb5",
+    "evidence/aave-borrow-actions/provider-readiness.json": "acbb999b8399f4586318e4ae52a078e74fb138a492d17b9079b2540759a3af3c",
+    "evidence/aave-borrow-actions/authoring-failures.json": "33e1159d2c8ca88d334d4590dfd41babb17a4bd2e3ab4d0b9884580b13b14d76",
+    "evidence/aave-borrow-actions/initial-quality.json": "c7817e1b7054640772d7cad52fc392017ceec7162280eac4f77f939b2b622505",
+    "evidence/aave-borrow-actions/semantic-check.json": "0aecb5a96e124c726ea8bf6aacc165ac6ccf7d1b000bdf1041e23196d771018d",
+    "evidence/aave-borrow-actions/semantic-controls.log": "e538a6e7adfc31f169aa0d2a55d275cf7b3f9d6adf6168e0602d4902d1f3056b",
+    "evidence/aave-borrow-actions/README.md": "019cb41d8fa9627d845bc09978b39ffcf65cdae9216af57fe7cea8597a37ddb2",
+    "evidence/aave-borrow-actions/worker-image.json": "f126b316a7aaf9255b35943e94d5853938b7d89741ed914e81ae7110c41d3a39",
+    "evidence/aave-borrow-actions/replay-equality.json": "22bad496b53f1f8a3dbd15090ca41597bf484e27d768a82c0b7e1e2835988f90",
+    "evidence/aave-borrow-actions/borrow-interface-source.json": "71097aa80bc239824a72900d144514b1776f10acaa3604107c2b9be1e4c03758",
+    "evidence/aave-borrow-actions/borrow-abi.txt": "f4ff7cd1e58289570d22fca60374ce481275a489d60e9f496ea142cbcbbea4e0",
+    "evidence/aave-borrow-actions/bandit.json": "6af369a76904c5872b3f38d74065f659338335af03e9968e088dbf05a903fe0e",
+    "evidence/aave-borrow-actions/replay-report.json.gz": "6af436a99ba4bbd75bcf8bcf1fd5666424624cb066461bcadefb702ed47451be",
+    "evidence/aave-borrow-actions/final-script-check.json": "0aecb5a96e124c726ea8bf6aacc165ac6ccf7d1b000bdf1041e23196d771018d",
+    "evidence/aave-borrow-actions/abi-controls.log": "c3eb352562fe6395631a8845a86e7b222767011ac2608e3299b456a4bb4678d3",
+    "evidence/aave-borrow-actions/full-native.log": "a8d3d775e3ca7b034b8fc34c862549c0c6c21ec8b70ecfaf43364ae48ec581eb",
+    "evidence/aave-borrow-actions/security-review.json": "bd99cd2f183ab2cc548e0f41cc089aa23b4dfd1aa6e29cc4b9af93293c4326cf",
+    "evidence/aave-borrow-actions/execution.json": "2cd020704f442ddbe9cb932a0cc58f05318bb56b3effbc01d3ba16ca29a824d8"
+  },
+  "source_sha256": {
+    "src/entrotter_engine/defi.py": "eb533a7761950a12324781101f579508b3d24136c6ebea945c89f7e07c33cb7a",
+    "scripts/aave_borrow.py": "8b3f46308f14d3803ca03c5c7d69a12311b9e01f1f16b72d96151b1046a8394e",
+    "tests/test_aave_actions.py": "3e21ed62165d643b3c346905404d42f3a54bca11177bd9a65fb2643571a3ca33",
+    "tests/test_aave_borrow_example.py": "62b27dfc97e30fe75108593faaa75aeb1910907f81b3a66efc6b6508a6c42f1c",
+    "tests/data/aave-borrow-actions.json": "f39d9367f9731d90af66a84e4eaf4eac04e57bfbc834d30fbd27e28d6ff4079b",
+    ".github/workflows/isolated.yml": "843b2218a238e502e4edd1bf498ac390bb2eaec24b736a8509c6d46da5538def",
+    "security-reviewed.json": "8fdd6b15d5cec27097b084911298207a35b2fb1abffb6726e76a297bf8a3e857"
+  },
+  "scope": "Local actual bounded supply/borrow risk execution and exact recorded replay; CI, protected main, Pages and submission are separately verified."
+}

@@ -1,0 +1,10 @@
+Authored ABI reference notes, not a copy of an upstream Solidity interface.
+
+Event signature: Borrow(address,address,address,uint256,uint8,uint256,uint16)
+Topic 0: Keccak-256 of that canonical ABI signature (borrow-topic.txt).
+Indexed fields: reserve address, onBehalfOf address, referralCode uint16.
+Data words: user address, amount uint256, interestRateMode uint8, borrowRate uint256.
+Variable mode is 2. Amount is in the reserve's raw underlying token units.
+
+Reference identity and upstream source license: borrow-interface-source.json.
+These field notes do not authenticate a provider or deployed implementation.

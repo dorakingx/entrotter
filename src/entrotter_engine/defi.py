@@ -32,6 +32,48 @@ def wrap_native(weth: str, amount: int) -> dict:
     }
 
 
+def aave_supply(
+    *, pool: str, asset: str, amount: int, on_behalf_of: str, referral_code: int = 0
+) -> dict:
+    """Aave V3 Pool.supply; raw underlying units, with prior ERC-20 allowance.
+
+    The beneficiary receives aTokens. This only builds calldata: it does not
+    select a network, sign, check protocol configuration or send a transaction.
+    Zero amounts retain the ABI value and can be rejected by the actual Pool.
+    """
+    return {
+        "to": address(pool, "Aave pool"),
+        "data": "0x617ba037"
+        + address_word(asset)
+        + uint_word(amount)
+        + address_word(on_behalf_of)
+        + uint_word(referral_code, 16),
+        "gas": 500000,
+    }
+
+
+def aave_borrow_variable(
+    *, pool: str, asset: str, amount: int, on_behalf_of: str, referral_code: int = 0
+) -> dict:
+    """Aave V3 Pool.borrow with fixed variable-rate mode2, raw underlying units.
+
+    The beneficiary owes the debt; the caller receives the borrowed asset.
+    A different beneficiary requires protocol credit delegation. Collateral,
+    liquidity, reserve restrictions and execution are checked by the Pool,
+    not predicted by this builder. No key, RPC or broadcast is involved.
+    """
+    return {
+        "to": address(pool, "Aave pool"),
+        "data": "0xa415bcad"
+        + address_word(asset)
+        + uint_word(amount)
+        + uint_word(2)
+        + uint_word(referral_code, 16)
+        + address_word(on_behalf_of),
+        "gas": 500000,
+    }
+
+
 def exact_input_single(
     *,
     router: str,
