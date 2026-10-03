@@ -114,7 +114,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: 24bbb916555ef18528300f995e127d50ff29167e
+          ref: 169b759aff9280ce44fb0d15569c7ae0a4a40889
           path: cli
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -1179,7 +1179,7 @@ jobs:
           import hashlib, json, os, subprocess, sys
           from pathlib import Path
           source = Path('engine/evidence/aave-borrow-actions/report.json')
-          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/aave-actions.json')
+          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/aave-actions-text.json')
           guard = "import socket; socket.socket.connect=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted network')); "
           engine_guard = guard + "import runpy,sys; sys.argv=['engine/scripts/aave_borrow.py','--check',sys.argv[1]]; runpy.run_path(sys.argv[0],run_name='__main__')"
           cli_guard = guard + "import runpy,sys; sys.modules['entrotter_engine']=None; from entrotter_sdk import Client; Client._request=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted API')); import entrotter_cli.main as c; c.ExportBudget=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted export')); sys.argv=['entrotter_cli',*sys.argv[1:]]; runpy.run_module('entrotter_cli',run_name='__main__')"
@@ -1187,6 +1187,7 @@ jobs:
               ('check', [sys.executable, '-c', engine_guard, str(source)]),
               ('verify', [sys.executable, '-c', cli_guard, 'verify', str(source)]),
               ('inspect', [sys.executable, '-c', cli_guard, 'inspect', str(source)]),
+              ('inspect-text', [sys.executable, '-c', cli_guard, 'inspect', str(source), '--format', 'text']),
           ]
           results = []
           environment = dict(os.environ)
@@ -1197,6 +1198,8 @@ jobs:
                               'stdout': process.stdout, 'stderr': process.stderr})
           sources = [source, Path('engine/scripts/aave_borrow.py'),
                      Path('engine/tests/data/aave-borrow-actions.json'),
+                     Path('cli/tests/data/aave-borrow-result.json'),
+                     Path('cli/tests/data/aave-borrow-result.txt'),
                      *sorted(Path('cli/src/entrotter_cli').glob('*.py')),
                      *sorted(Path('sdk-python/src/entrotter_sdk').glob('*.py'))]
           result = {
@@ -1210,10 +1213,13 @@ jobs:
           assert all(item['returncode'] == 0 and item['stderr'] == '' for item in results), result
           assert len(source.read_bytes()) == 59506, result
           assert result['source_sha256'][str(source)] == 'e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622', result
+          assert Path('cli/tests/data/aave-borrow-result.json').read_bytes() == source.read_bytes(), result
           evidence = Path('entrotter/evidence/aave-action-integration')
           for item in results:
-              assert item['stdout'].encode() == (evidence / (item['name'] + '.stdout')).read_bytes(), item
-          print('Recorded supply, reverted borrow, causal hold and successful smaller borrow agree across Engine and standalone CLI/SDK')
+              folder = Path('entrotter/evidence/aave-result-text-integration') if item['name'] == 'inspect-text' else evidence
+              assert item['stdout'].encode() == (folder / (item['name'] + '.stdout')).read_bytes(), item
+          assert results[-1]['stdout'].encode() == Path('cli/tests/data/aave-borrow-result.txt').read_bytes(), result
+          print('Recorded supply, reverted borrow, causal hold and successful smaller borrow agree across Engine and standalone CLI/SDK with exact native/ERC20 text')
           PYAAVE
       - name: Build source-bound local image
         run: |

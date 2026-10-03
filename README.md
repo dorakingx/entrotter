@@ -22,7 +22,7 @@ All six repositories are public at the links below. The documentation site is
 live at https://entrotter.github.io/. Packages remain unpublished and the engine
 runs locally. See STATUS.md for current verification and open acceptance gates.
 
-The candidate CLI's [development setup](https://github.com/entrotter/cli/blob/24bbb916555ef18528300f995e127d50ff29167e/README.md)
+The candidate CLI's [development setup](https://github.com/entrotter/cli/blob/169b759aff9280ce44fb0d15569c7ae0a4a40889/README.md)
 now selects the quality SDK directly from its manifest. The
 [setup composition evidence](evidence/setup-pin-integration/README.md) records the
 executed recipe and separates this documentation fix from runtime verification.
@@ -102,7 +102,7 @@ a rejected file. [Source-label verification](https://github.com/entrotter/entrot
 Terminal users can also inspect the same account record with
 `position-inspect --format text`: all six exact account fields and differences,
 health status, source IDs and unproven reasons appear without manual unit scaling.
-The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/24bbb916555ef18528300f995e127d50ff29167e/evidence/position-text/README.md)
+The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/169b759aff9280ce44fb0d15569c7ae0a4a40889/evidence/position-text/README.md)
 separates current offline controls and installed-package proof from the original
 historical execution. Protected integration and live publication remain separate.
 
@@ -117,7 +117,7 @@ Scripts can use `position-verify --require-complete` or
 matching baseline receipts. An unproven comparison returns3 with the same JSON
 and reasons on stderr; ordinary verification retains its prior exit behavior.
 Negative differences and valid no-debt states can pass: completeness does not
-prove profit or authenticate a provider. [CLI exit-contract evidence](https://github.com/entrotter/cli/blob/24bbb916555ef18528300f995e127d50ff29167e/evidence/require-complete/README.md)
+prove profit or authenticate a provider. [CLI exit-contract evidence](https://github.com/entrotter/cli/blob/169b759aff9280ce44fb0d15569c7ae0a4a40889/evidence/require-complete/README.md)
 records the offline and installed-package checks.
 
 ## Local API and SDK
@@ -131,6 +131,11 @@ execution against pinned archived state, with artificial funding and local
 impersonation. It does not establish an original signed strategy or profit.
 [Composition evidence](evidence/aave-action-integration/README.md) distinguishes
 the actual Engine runs from standalone CLI/SDK inspection and current integration.
+The candidate also supports `inspect --format text` for exact native/ERC-20
+initial/final/change and gas/revert differences. The
+[text composition](evidence/aave-result-text-integration/README.md) preserves
+all decimal units, distinguishes missing records from zero and retains unchanged
+default JSON; it does not infer valuation or authenticate execution.
 
 After completing the quick start, keep its environment variables in both terminals.
 For additional Linux API-process limits, use the optional

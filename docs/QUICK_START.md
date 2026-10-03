@@ -4,8 +4,8 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The candidate [Aave action composition](../evidence/aave-action-integration/README.md)
-selects enginef53a66a, SDKba4af51, CLI24bbb91 and viewer422d98a. It adds supplied
+The candidate [Aave action and text composition](../evidence/aave-result-text-integration/README.md)
+selects enginef53a66a, SDKba4af51, CLI169b759 and viewer422d98a. It adds supplied
 collateral and variable-rate borrowing to the existing bounded replay and exact
 recorded price/account inspection. The action result can be checked and inspected
 offline; reproducing its archived-state execution needs Docker and an archive
@@ -27,18 +27,24 @@ git -C engine fetch --depth=1 origin f53a66a303e67ca4fbb4322a06b36b036f4db599
 git -C engine checkout --detach FETCH_HEAD
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 24bbb916555ef18528300f995e127d50ff29167e
+git -C cli fetch --depth=1 origin 169b759aff9280ce44fb0d15569c7ae0a4a40889
 git -C cli checkout --detach FETCH_HEAD
 export PYTHONPATH=engine/src:sdk-python/src:cli/src
 python3 engine/scripts/aave_borrow.py --check engine/evidence/aave-borrow-actions/report.json
 python3 -m entrotter_cli verify engine/evidence/aave-borrow-actions/report.json
 python3 -m entrotter_cli inspect engine/evidence/aave-borrow-actions/report.json
+python3 -m entrotter_cli inspect engine/evidence/aave-borrow-actions/report.json --format text
 ```
 
 The Engine example checker shows the five action statuses, gas used and exact
-borrowed WETH/variable-debt units. CLI inspection shows both branch metrics,
-assumptions and the recorded hold at step 3; its general summary does not print
-the full token/receipt table. The whole report retains those details. Hash
+borrowed WETH/variable-debt units. CLI text inspection shows exact native and pinned ERC-20 initial/final/change
+amounts, gas cost/usage, revert/reject counts and candidate-minus-baseline
+differences, with assumptions and the recorded hold at step 3. Both end with
+1 WETH, 10.000000094454558462 aWETH and 1 variable-debt token. Missing records
+remain Unavailable, and default JSON remains unchanged. Display checks reject
+contradictory units and raw arithmetic; they do not authenticate the execution.
+The whole report retains the complete receipts. Read the
+[text composition evidence](../evidence/aave-result-text-integration/README.md). Hash
 verification proves content integrity, not model correctness or provider truth.
 
 For fresh execution, first complete the Docker setup below, select these
@@ -104,7 +110,7 @@ For terminal inspection, select matching SDK and CLI sources in a second termina
 ```bash
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 24bbb916555ef18528300f995e127d50ff29167e
+git -C cli fetch --depth=1 origin 169b759aff9280ce44fb0d15569c7ae0a4a40889
 git -C cli checkout --detach FETCH_HEAD
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-verify entrotter.github.io/reports/trace-observed-price32.json
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-inspect entrotter.github.io/reports/trace-observed-price32.json
@@ -495,7 +501,7 @@ git -C engine fetch --depth=1 origin f53a66a303e67ca4fbb4322a06b36b036f4db599
 git -C engine checkout --detach FETCH_HEAD
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 24bbb916555ef18528300f995e127d50ff29167e
+git -C cli fetch --depth=1 origin 169b759aff9280ce44fb0d15569c7ae0a4a40889
 git -C cli checkout --detach FETCH_HEAD
 .venv/bin/python engine/scripts/build_worker.py --output worker-image.json
 export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.load(open("worker-image.json"))["image_id"])')"

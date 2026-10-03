@@ -62,6 +62,7 @@ The October 4 candidate provides bounded local agent replay, supplied Aave
 collateral/variable-borrow action comparison, exact recorded price/account
 inspection and script completeness gates. Use the
 [current pinned quick start](../docs/QUICK_START.md) to reproduce it.
+`inspect --format text` adds exact native/ERC-20 outcomes;
 `observed-inspect --format text` and `position-inspect --format text` retain exact
 units; `--require-complete` on either verifier returns3 for valid but unproven
 views or baseline receipts. Default JSON remains unchanged. This is inspection
@@ -70,15 +71,18 @@ consumer strategy or the full block's state.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Last independently audited coordinator snapshot before the action composition | [d871e27](https://github.com/entrotter/entrotter/tree/d871e270c13285c249f66056f8e8b4ff37097049) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Last independently audited coordinator snapshot before the text composition (CLI24 selected) | [452c068](https://github.com/entrotter/entrotter/tree/452c0689e3c7fedcb24a35e409328cd525ba89ff) | [#55](https://github.com/entrotter/entrotter/pull/55) |
 | Bounded agent engine, Aave supply/variable borrow and historical price/account observations | [f53a66a](https://github.com/entrotter/engine/tree/f53a66a303e67ca4fbb4322a06b36b036f4db599) | [#35](https://github.com/entrotter/engine/pull/35) |
 | Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
-| CLI with bounded replay, exact account/price text and completeness exits | [24bbb91](https://github.com/entrotter/cli/tree/24bbb916555ef18528300f995e127d50ff29167e) | [#10](https://github.com/entrotter/cli/pull/10) |
+| CLI with bounded replay, exact native/token/account/price text and completeness exits | [169b759](https://github.com/entrotter/cli/tree/169b759aff9280ce44fb0d15569c7ae0a4a40889) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
 | Console, local source selection, recorded agent and Aave account inspection | [422d98a](https://github.com/entrotter/entrotter.github.io/tree/422d98a7cf753bfc9be9b86553cd76f3a549f70c) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
-All five mandatory coordinator checks atd871e27 and all six CLI checks at24bbb91
-passed their original attempts, with independent raw-artifact/source review.
+All five mandatory coordinator checks at452c068 passed: four on originalattempt1
+and docs-links on unchanged attempt2 after two inherited Piper links returned
+HTTP429. Original failed artifacts remain retained. All six CLI169b checks pass
+on originalattempt1. Both have independent raw-artifact/source review and parent
+rehash; the new selected combination requires its own coordinator CI.
 The [price text composition](../evidence/observed-text-integration/README.md)
 and [account/completeness composition](../evidence/require-complete-integration/README.md)
 retain the exact commands, full outputs and scope. The [Aave action composition](../evidence/aave-action-integration/README.md)
@@ -268,3 +272,8 @@ apart from the selected viewer pin. New combined rootCI and human protected-main
 approval remain separate from component CI. Existing approved recordings retain
 their original source versions; this new UI is not yet in those recordings.
 No fresh chain/model/user evaluation, deployment or formal submission is claimed.
+
+The candidate [exact Aave result text](../evidence/aave-result-text-integration/README.md)
+lets developers inspect native/ERC-20 initial/final/change, gas and the recorded
+hold without manually scaling raw integers. This is offline inspection of the
+original recorded execution; media and protected-main publication remain separate.

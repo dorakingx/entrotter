@@ -1,15 +1,16 @@
 # Verified implementation status
 
-Updated 2026-10-02 JST. **Goal active; not submission-ready.** Implementation
+Updated 2026-10-04 JST. **Goal active; not submission-ready.** Implementation
 and deployment checkpoints are recorded below. All six repositories exist publicly
 under https://github.com/entrotter. Do not repeat archive bootstrap or overwrite
 remote history. Use the existing six sibling Git checkouts and focused PRs.
 
-Latest prepared selection: engine65c/PR33 with coordination execution snapshot530ebc2;
-component CI and offline readers pass, while new combined CI and protected-main
-approval remain pending. The [latest evidence](evidence/rpc-diagnostics-integration/README.md)
-separates the classified native archive timeout from successful synthetic checks.
-The older milestones below retain their original sources and measurements.
+Latest prepared selection: Enginef53/PR35, SDKba4/PR7 and CLI169b/PR10 in
+coordinator PR55. Component checks and the four-command offline Aave reader pass;
+current combined CI, independent integration review and protected-main approval
+remain separate gates. The [latest evidence](evidence/aave-result-text-integration/README.md)
+separates exact recorded execution from offline native/ERC-20 text inspection.
+Older milestones retain their original sources, failures and measurements.
 
 ## Verified progress
 
@@ -2199,3 +2200,31 @@ match immutableGit; old workflow bodies, frozen inputs, quality variants and
 media are preserved. No fresh local EVM/model/browser/timing run is claimed.
 Current coordinator CI and independent review/publication are separate; protected
 main/Pages and submission remain pending. Goalactive, Discordexcluded.
+
+## October 4 — exact native and ERC-20 result text enters integration
+
+The candidate selects CLI169b759/PR10 with Enginef53/SDKba4. General
+`inspect --format text` shows exact native/token initial/final/change and
+candidate-minus-baseline, gas cost/usage and revert/reject counts. Missing records
+stay Unavailable; default JSON and earlier price/account commands are unchanged.
+Display controls reject contradictory pinned units, identities and raw arithmetic
+without partial output, preserve uint256/36-decimal amounts and escape metadata.
+They do not authenticate execution or infer valuation/profit.
+
+Current CLI has all6 mandatory checks successful on originalattempt1,107 tests
+per supported Python with0 skips,24 installed cases and14 matching runtime module
+identities. Complete raw independent review SHAf8431a22 and parent rehash pass;
+public actualtree5bf matches CI merge tree. The commit-addressed tree response
+is retained, with actual tree SHA/entire entry list checked separately. CLI quality
+reports0 findings/advisories across11 sources/42 locked Python dependencies;
+OS/Cargo/kernel audit scope remains separate frozen Engine evidence.
+
+[Text composition](evidence/aave-result-text-integration/README.md) executes the
+updated four-command offline reader against the exact original59506-byte Aave
+result. New3013-byte text matches the selected CLI golden; original3 whole
+outputs are unchanged. All19 source/sample hashes match immutable selectedGit.
+Only the bounded-default CLI checkout and this step change; all other workflow
+content, frozen pins/locks, old evidence and media remain unchanged. No new local
+EVM, model, browser or performance run. Current coordinator CI and independent
+review/publication are separate gates; protected-main/Pages and submission remain
+pending. Goalactive through officialOctober13 15:59JST; Discordexcluded.
