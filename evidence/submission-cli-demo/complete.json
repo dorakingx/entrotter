@@ -1,0 +1,71 @@
+{
+  "artifact_id": "5c67c4bcf4fc4de614153fc86c0c3814c188b4551212ce55ec9f533fa3e2ad4f",
+  "profile": "aave-v3-ethereum-account",
+  "account": "0x16aa9154557f1394089db90d3cbe212d9a7f33bb",
+  "plan": {
+    "account": "0x16aa9154557f1394089db90d3cbe212d9a7f33bb",
+    "position_version": "0.1.0",
+    "trace": {
+      "skip_indices": [
+        12
+      ],
+      "source": {
+        "block_hash": "0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6",
+        "block_number": 18999892,
+        "chain_id": 1
+      },
+      "through_index": 12,
+      "trace_version": "0.1.0"
+    }
+  },
+  "integrity_verified": true,
+  "trace": {
+    "artifact_id": "52044d0f2292fad47d150e0f1cfc46d3346667705d3f43ef25641bc35f5a9737",
+    "baseline_receipts_verified": true,
+    "transaction_count": 13
+  },
+  "prices": {
+    "artifact_id": "678309d700aa919ac87501a60278053777c062f1b597922ca6da910b125086f5",
+    "classification": {
+      "complete_price_views": true,
+      "baseline_receipts_verified": true,
+      "unproven_reasons": [],
+      "baseline_price": 256292441874,
+      "candidate_price": 257082415000,
+      "price_difference": 789973126
+    }
+  },
+  "classification": {
+    "complete_account_views": true,
+    "unproven_reasons": [],
+    "baseline": {
+      "total_collateral_base": 41049031017510,
+      "total_debt_base": 16199140199548,
+      "available_borrows_base": 16845329769548,
+      "liquidation_threshold_bps": 8300,
+      "ltv_bps": 8050,
+      "health_factor_wad": 2103240994573506125
+    },
+    "candidate": {
+      "total_collateral_base": 41175556915484,
+      "total_debt_base": 16219364581293,
+      "available_borrows_base": 16926958735672,
+      "liquidation_threshold_bps": 8300,
+      "ltv_bps": 8050,
+      "health_factor_wad": 2107093164381383462
+    },
+    "differences": {
+      "total_collateral_base": 126525897974,
+      "total_debt_base": 20224381745,
+      "available_borrows_base": 81628966124,
+      "liquidation_threshold_bps": 0,
+      "ltv_bps": 0,
+      "health_factor_wad": 3852169807877337
+    },
+    "baseline_health_status": "at_or_above_one",
+    "candidate_health_status": "at_or_above_one",
+    "base_unit": 100000000,
+    "health_factor_unit": 1000000000000000000
+  },
+  "scope": "Owned-node read-only Aave account views. Differences compare the submitted transaction-prefix branches; they do not isolate price as the sole cause. No signed consumer action, loan/liquidation execution, profit, provider or proxy-implementation authentication, full-block/state-root proof. All-account base-currency values, not token balances; WAD health factor, basis-point thresholds. Native execution has no whole-process sandbox."
+}

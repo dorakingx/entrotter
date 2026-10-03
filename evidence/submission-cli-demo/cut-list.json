@@ -1,0 +1,48 @@
+{
+  "source": "submission/media/entrotter-demo-account.mp4",
+  "source_sha256": "8bf4541c49aa7482bb495464c9dddd7fc689dad2b0ba1472f9c1dfd1fa7f0a07",
+  "source_interval_seconds": [
+    0,
+    156.8
+  ],
+  "target_duration_seconds": 156.8,
+  "geometry": {
+    "x": 0,
+    "y": 0,
+    "width": 1600,
+    "height": 762
+  },
+  "audio": "Map source 0:a:0 once, stream copy; retain every packet and timestamp",
+  "captions": "Original burned captions below y=762 and VTT/SRT bytes unchanged",
+  "layers": [
+    {
+      "file": "price.png",
+      "start_frame": 1243,
+      "end_frame_exclusive": 1472,
+      "purpose": "Caption6: previously recorded Ethereum/Aave price case, explicitly separate32 prefix",
+      "source_sha256": "a5475461317822b5d29c6387b7d2eda0485bb09d04c886b297c640fe0aee98b4",
+      "start_seconds": 49.72,
+      "end_seconds_exclusive": 58.88
+    },
+    {
+      "file": "account.png",
+      "start_frame": 2114,
+      "end_frame_exclusive": 2373,
+      "purpose": "Caption9: aggregate account changes, exact units and limitations",
+      "source_sha256": "04b23cbe5b111ded1ce7361f69054dd674b15008dca4cb641500fafa96e16edc",
+      "start_seconds": 84.56,
+      "end_seconds_exclusive": 94.92
+    },
+    {
+      "file": "gate.png",
+      "start_frame": 3400,
+      "end_frame_exclusive": 3653,
+      "purpose": "Caption14: use same sealed account report in CLI scripts; explicit synthetic incomplete control",
+      "source_sha256": "9031b5c5dfa4baea72ddd39b27ceafaecca6f4923ed2de8fb49f3765bad4b43f",
+      "start_seconds": 136.0,
+      "end_seconds_exclusive": 146.12
+    }
+  ],
+  "frame_rate": 25,
+  "scope": "Edited review cut mixing viewer8aa/CLI696 original footage with actual CLI24/SDKba4 offline outputs; no fresh viewer/EVM/model/archive call"
+}

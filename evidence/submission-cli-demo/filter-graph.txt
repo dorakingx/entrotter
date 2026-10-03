@@ -1,0 +1,3 @@
+[0:v][1:v]overlay=x=0:y=0:enable='gte(n,1243)*lt(n,1472)':eof_action=repeat[v1];
+[v1][2:v]overlay=x=0:y=0:enable='gte(n,2114)*lt(n,2373)':eof_action=repeat[v2];
+[v2][3:v]overlay=x=0:y=0:enable='gte(n,3400)*lt(n,3653)':eof_action=repeat[v3]

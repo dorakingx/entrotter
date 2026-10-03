@@ -28,6 +28,7 @@ a prediction of future markets, or a measurement of profit.
 
 | Material | Artifact | Status |
 | --- | --- | --- |
+| Exact CLI inspection demo | [MP4](media/entrotter-demo-cli.mp4), [VTT](media/entrotter-demo-cli.vtt), [SRT](media/entrotter-demo-cli.srt) · 2:36.80 | Additional edited cut: real current CLI price/account text and complete0/synthetic incomplete3 script exits; preserves October 3 footage, soundtrack, captions and all prior media |
 | Updated account-impact demo | [MP4](media/entrotter-demo-account.mp4), [VTT](media/entrotter-demo-account.vtt), [SRT](media/entrotter-demo-account.srt) · 2:36.80 | Additional current-viewer cut: two fresh bounded local calls, recorded account 13/card/receipt inspection, lossless bad-ID rejection and recovery; original owner-approved cut retained |
 | Product demo | [MP4](media/entrotter-demo.mp4), [VTT](media/entrotter-demo.vtt), [SRT](media/entrotter-demo.srt) · 2:54.24 | Recorded actual Chromium interactions and bounded engine calls; owner approved |
 | Product pitch | [Short MP4](media/entrotter-pitch-short.mp4), [VTT](media/entrotter-pitch-short.vtt) · 1:46.07 | New six-card pitch with confirmed solo-founder context; synthetic narration. The original 2:51.44 review cut is retained but exceeds the current form limit |
@@ -38,7 +39,14 @@ a prediction of future markets, or a measurement of profit.
 | Development/AI disclosure | [Disclosure](DISCLOSURE.md) | Supplied archive and substantial Codex assistance disclosed; owner reports event-period AI generation; original archive digest unavailable |
 | Rules, deadline and eligibility | [Competition requirements](../docs/COMPETITION.md) | Public requirements rechecked; authenticated event draft verified; owner confirms eligibility |
 
-The [new account-impact recording evidence](../evidence/submission-account-demo/README.md) binds viewer 8aa0/Engine 88c6 and the exact generated local report. This new cut is additional material; human auditory review and supported-host delivery remain pending. The [15 current narration cues](../evidence/submission-account-demo/timeline.json) preserve the exact new script.
+The [account-impact recording evidence](../evidence/submission-account-demo/README.md)
+binds viewer8aa0/Engine88c6 and the exact generated local report. The
+[October 4 CLI edit](../evidence/submission-cli-demo/README.md) inserts actual
+CLI24bbb91/SDKba4af51 offline outputs into three picture intervals; original
+viewer footage and its earlier EVM calls are reused, not executed again.
+Both additional cuts await human auditory review and supported-host delivery.
+The [15 narration cues](../evidence/submission-account-demo/timeline.json), audio
+packets and caption bytes remain unchanged in the CLI edit.
 
 The original recordings label synthetic narration and their historical review
 status; the owner has since approved them. The short pitch retains explicit
@@ -50,80 +58,41 @@ feature. The pitch does not establish founder communication skills or market fit
 
 ## Latest candidate sources
 
-The [parent-read cache composition](../evidence/trace-parent-cache-integration/README.md)
-selects engine198139f/PR34, retaining safe private RPC diagnostics. All8 component
-checks and independent complete raw-artifact review pass. Actual native005 keeps
-the same original32 signed inputs, skip12 and150-second shared budget; both
-branches complete and all32 baseline receipt projections equal originals.
-The producer feed update occurs only in baseline. This is a32-of181 producer
-prefix, not dependent-consumer/profit/full-block/provider-authenticity or historical
-speed evidence. Previous failures remain preserved. The404e8db/198 composition passed all5 combined checks and full artifact review;
-recordings keep their original source versions. The current
-[receipt comparison composition](../evidence/trace-comparison-integration/README.md)
-adopts viewerb1cfb00 with all4 component checks and independent Linux artifact
-review. Four offline reader steps pass, including the unchanged native00532-input
-report. Candidate receipt grouping preserves exact field differences and shows
-12 matches/1 omission/19 position-cumulative-gas-only/0 execution-field changes.
-Receipt matches do not establish unchanged contract state, consumer behavior or
-profit. New combined CI and protected-main/Pages approval remain separate.
-
-These are the October 2 candidate sources, still awaiting independent approval
-and protected integration. Follow the [current pinned quick start](../docs/QUICK_START.md)
-instead of rebuilding from moving main branches. The recordings below retain
-their original source versions.
-
-The execution snapshot below contains the optional bounded Linux CLI launcher,
-the canonical contract identity fix and original signed transaction-prefix replay.
-The [prior four-prefix receipt evidence](../evidence/canonical-mine-integration/summary.json)
-binds its original engine817/schema sources, receipt match and exact inputs.
-The prefix is a separate technical case. The new
-[funding composition](../evidence/trace-funding-integration/README.md) verifies
-native synthetic same-block funding and an adverse omission without state repair.
-The [oracle/provider composition](../evidence/trace-oracle-integration/README.md)
-adds native signed update/consumer causal proof and actual read-only fault/control
-coverage, including an integrity-valid unverified storage-failure report. Archived
-funding/dependent oracle-consumer, provider authenticity and full-block/end-state remain open. The
-[recorded-agent viewer evidence](../evidence/agent-viewer-integration/summary.json)
-adds original decision/provenance inspection and preserves original reports. Prior combined checks and reproduction measurements retain their source pins;
-current candidate verification is recorded in
-[candidate PR55](https://github.com/entrotter/entrotter/pull/55). Prior walkthroughs
-retain their actual older pins. Guide and evidence updates occur in later
-documentation commits with the same production tools; this snapshot is proposed
-code, not an independently approved release.
+The October 4 candidate provides bounded local agent replay, exact recorded
+price/account inspection and script completeness gates. Use the
+[current pinned quick start](../docs/QUICK_START.md) to reproduce it.
+`observed-inspect --format text` and `position-inspect --format text` retain exact
+units; `--require-complete` on either verifier returns3 for valid but unproven
+views or baseline receipts. Default JSON remains unchanged. This is inspection
+of recorded evidence, not proof of profit, provider authenticity, a signed
+consumer strategy or the full block's state.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Last independently audited coordinator execution snapshot | [2e0504b](https://github.com/entrotter/entrotter/tree/2e0504b8800081beb50b4f733a20d20401ddfd9d) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Last independently audited coordinator execution snapshot before this media edit | [5bee12d](https://github.com/entrotter/entrotter/tree/5bee12dd794200b90a22b70522e943b6c8c879b3) | [#55](https://github.com/entrotter/entrotter/pull/55) |
 | Bounded agent engine and default-worker historical Aave price/account observations | [88c6cd0](https://github.com/entrotter/engine/tree/88c6cd0d00f466ed7e870bd57c118aa50984f8b1) | [#35](https://github.com/entrotter/engine/pull/35) |
 | Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
-| CLI with bounded agent replay, local price/account execution and offline inspection | [696511c](https://github.com/entrotter/cli/tree/696511c5cb46482c96cf6f609c83877fcf16e922) | [#10](https://github.com/entrotter/cli/pull/10) |
+| CLI with bounded replay, exact account/price text and completeness exits | [24bbb91](https://github.com/entrotter/cli/tree/24bbb916555ef18528300f995e127d50ff29167e) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, recorded agent and signed-prefix and Aave account inspection, accessibility and quality | [8aa0e58](https://github.com/entrotter/entrotter.github.io/tree/8aa0e582dfa56ec795cf0adc83303ac1eb952528) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
+| Console, local source selection, recorded agent and Aave account inspection | [422d98a](https://github.com/entrotter/entrotter.github.io/tree/422d98a7cf753bfc9be9b86553cd76f3a549f70c) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
-The [signed-prefix reader composition](../evidence/trace-reader-integration/README.md)
-adds SDK and browser inspection of the actual four-receipt case. SDK all5checks
-and viewer all4checks pass; root artifact verification confirms33Linux browser
-groups/25raw axe scans without reported violations. Checksums and internal
-relationships do not authenticate source state or prove economic/EVM truth.
-The previous8029/a253 funding composition passed all five combined checks and55
-document hashes, with complete API/CLI/export and both offline reader proofs. The
-new oracle/provider composition requires its own exact-head CI. No new
-video/model/holdout result is implied.
+All five mandatory coordinator checks at5bee12d and all six CLI checks at24bbb91
+passed their original attempts, with independent raw-artifact/source review.
+The [price text composition](../evidence/observed-text-integration/README.md)
+and [account/completeness composition](../evidence/require-complete-integration/README.md)
+retain the exact commands, full outputs and scope. This media edit preserves all
+selected worker sources, runtime tooling, locks and frozen inputs; its own current
+CI is a separate checkpoint in [candidate PR55](https://github.com/entrotter/entrotter/pull/55).
+Independent human approval and protected main/Pages integration remain pending.
 
-The earlier diagnostic successor [engineaac525c](https://github.com/entrotter/engine/tree/aac525c8279005a3a8468fe3928e691c3ce80148)
-has seven successful checks but a failed four-prefix candidate gate: all original
-receipts match, while one changed-branch transaction lacks a receipt. A later
-diagnostic succeeds and does not establish the first failure's cause. The
-[partial proof](../evidence/trace-oracle-integration/diagnostic-ci-partial.json)
-keeps those outcomes separate. The prior selected engine99fd passes all eight checks
-on its first attempt, including normal default1/4 and image/native advisory gates.
-[Independent full proof](../evidence/trace-oracle-integration/root-engine-full-CI.json)
-binds those raw reports and audits. Its conditional observation diagnostic was
-skipped, so the original failure cause remains unknown. These99fd/e46 and older
-8029/a253/935 records are historical. The table now selects530ebc2/65c, with new
-combined CI pending. The previously tested public158fbc0/99fd composition passes
-all five checks and complete artifact review; see the latest evidence above.
-
+Recordings preserve their actual sources: original September review cuts use the
+versions listed below, the October 3 account cut uses viewer8aa0/CLI6965, and the
+October 4 picture edit adds CLI24bbb91 outputs to that existing footage. The
+current candidate viewer422d has its own browser/CI evidence; it was not used to
+recapture the October 4 footage. Packages and images remain unpublished to
+registries. Historical execution, archived provider, funding and adverse-case
+records retain their own source pins and limitations in
+[project status](../STATUS.md); later success does not explain earlier failures.
 
 ## Recorded review sources
 
@@ -146,7 +115,9 @@ code is MIT licensed. Packages and worker images are not published to registries
 
 [Bounded reproduction](../docs/BOUNDED_AGENT_REPLAY.md) matched all 19 original
 complete EVM reports, including 12 agent recordings, with no new agent-model call.
-The new demo performs an additional real local risk run and frozen-model replay.
+The October 3 account recording performs an additional real local risk run and
+frozen-model replay. The October 4 CLI edit reuses those recorded calls and adds
+only offline inspection and an explicitly synthetic incomplete-record control.
 This proves a reproducible observation/action contract, not a better model.
 [Fresh public bounded replay](../docs/BOUNDED_AGENT_INTEGRATION.md) now provides
 a single measured checkout/build/replay/CLI-verification command, with Docker

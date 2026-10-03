@@ -81,3 +81,13 @@ historical account evidence. It reuses the pinned local synthetic voice, makes
 no new model/archive/paid voice API call and preserves every original approved
 media file. Its exact 15-cue script and authoring-attempt limitations are retained
 in the [new recording evidence](../evidence/submission-account-demo/README.md).
+
+The October 4 [CLI inspection edit](../evidence/submission-cli-demo/README.md)
+reuses that footage and synthetic soundtrack. It substitutes three picture
+intervals with actual current offline CLI output, clearly separates price32 from
+account13 and labels the incomplete account as a synthetic control. The terminal
+panels display saved real stdout/JSON/exit codes; they do not simulate typing or
+claim a continuous new terminal/EVM recording. All7331 audio packets/timestamps,
+VTT/SRT bytes, duration and prior media files are preserved. No new narration,
+model, archive, EVM, paid API or video-platform upload occurs; no later viewer
+deployment or human auditory approval is implied.

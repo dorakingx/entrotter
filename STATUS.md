@@ -2154,3 +2154,24 @@ local new reader from current combinedCI and protected publication. Other source
 production/scripts/locks/frozen inputs and media remain unchanged; no fresh local
 EVM/model/browser/performance/user run claimed. Human main/Pages/submission pending;
 goal active through the official deadline, Discord excluded.
+
+## October 4 — demonstrate exact CLI inspection without replacing original media
+
+The additional2:36.80 edited demo now shows actual CLI24/SDKba4 price32/account13
+text and the same account's complete0/synthetic missing-view3 script exits.
+Four offline calls save all raw outputs before assertions;13 installed sources
+match immutable Git and both full text goldens match. Three picture intervals
+replace older visuals, preserving viewer8aa/CLI696 footage, its earlier EVM calls,
+all13 prior media files and15 narration cues. No fresh EVM/model/archive call,
+current viewer capture, paid generation or upload is claimed.
+
+The final3920-frame H2641600×90025fps MP4 fully decodes with0 errors. Every7331
+AAC packet's content/timestamps/metadata and whole VTT/SRT bytes match the source.
+All12 transition-boundary frames compare expected pictures and retained captions;
+actual Chromium checks three local GETs/full stdout/layout/0JSerrors. Account
+overflow, removed FFmpeg option and malformed extraction filter failures remain
+retained separately. [Media evidence](evidence/submission-cli-demo/README.md)
+records exact sources, cut ranges, outputs and limitations. Independent review,
+current mandatoryCI, protected main/Pages, human auditory review, supported-host
+delivery and formal submission remain separate. Goal active through the official
+October13 15:59JST deadline; Discord excluded.

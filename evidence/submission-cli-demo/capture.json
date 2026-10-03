@@ -1,0 +1,112 @@
+{
+  "browser": "153.0.8010.12",
+  "requests": [
+    {
+      "url": "/price.html",
+      "method": "GET"
+    },
+    {
+      "url": "/account.html",
+      "method": "GET"
+    },
+    {
+      "url": "/gate.html",
+      "method": "GET"
+    }
+  ],
+  "served_sha256": {
+    "/price.html": "9bbce45ef8e6b073d4805a5e6b5361de18d87277fe47f6e9c50d17551aa6b86c",
+    "/account.html": "6dc562283c1611fc8d28cd1472829aed899d7e69453d48ca284ef1d84a682d87",
+    "/gate.html": "70201ee667b18395ca484982eb008457566a1dea4c9e62e10e1be9bcc9c0b8ec"
+  },
+  "errors": [],
+  "checks": [
+    {
+      "name": "price",
+      "bounds": {
+        "x": 32,
+        "y": 74,
+        "width": 1536,
+        "height": 602
+      },
+      "textBounds": [
+        {
+          "x": 55,
+          "y": 123,
+          "width": 1490,
+          "height": 540,
+          "scrollWidth": 1490,
+          "clientWidth": 1490
+        }
+      ],
+      "footer": {
+        "x": 34,
+        "y": 735,
+        "width": 1532,
+        "height": 18
+      },
+      "body": "Entrotter\nRECORDED PRICE CASE · 32 TRANSACTIONS\nCLI 24bbb91 · SDK ba4af51 · offline\n$ entrotter observed-inspect price32.json --format text\nAave V3 Ethereum WETH price (recorded comparison)\nPrice artifact: 9084b6952866470fd20c3cbffab310feca5cacba5ba39cfaa9c6ffbb5caf80e9\nTrace artifact: c4050aeb2f7db54bf17354da3756356ae809b8be9fabccacdb26745ae209826f\nInternal integrity: verified (not provider or execution authentication)\nSource: chain 1, block 18999892\nBlock hash: 0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6\nPrefix: 32 original transactions; candidate omits indices [12]\nOriginal receipts: verified\nPrice comparison: Complete recorded views\n\nBaseline after (USD): 2562.92441874\nCandidate after (USD): 2570.82415\nCandidate - baseline (USD): +7.89973126\n\nRecorded view prices (USD; a quoted value alone does not prove completeness):\nbaseline before: 2570.82415; head block 18999891\nbaseline after: 2562.92441874; head block 18999892\ncandidate before: 2570.82415; head block 18999891\ncandidate after: 2570.82415; head block 18999892\n\nUSD uses the fixed profile's 100000000 base unit; values are not rounded.\nUnproven comparison values remain unavailable, even if some views have prices.\nUse --format json for full signed feed rounds, head/code identities and errors.\n\nScope: Owned-node read-only price views only; no signed consumer action, strategy,\nloan/liquidation/trade, benefit/profit, deployed-code/provider authentication,\nfull-block/opcode/state-root proof or whole-process native sandbox.\n\nActual CLI stdout · recorded evidence, no new historical execution · synthetic narration retained"
+    },
+    {
+      "name": "account",
+      "bounds": {
+        "x": 32,
+        "y": 74,
+        "width": 1536,
+        "height": 656
+      },
+      "textBounds": [
+        {
+          "x": 55,
+          "y": 123,
+          "width": 1490,
+          "height": 594,
+          "scrollWidth": 1490,
+          "clientWidth": 1490
+        }
+      ],
+      "footer": {
+        "x": 34,
+        "y": 735,
+        "width": 1532,
+        "height": 18
+      },
+      "body": "Entrotter\nRECORDED ACCOUNT CASE · 13 TRANSACTIONS\nCLI 24bbb91 · SDK ba4af51 · offline\n$ entrotter position-inspect account13.json --format text\nAave V3 Ethereum account impact (recorded comparison)\nAccount: 0x16aa9154557f1394089db90d3cbe212d9a7f33bb\nPosition artifact: 5c67c4bcf4fc4de614153fc86c0c3814c188b4551212ce55ec9f533fa3e2ad4f\nPrice artifact: 678309d700aa919ac87501a60278053777c062f1b597922ca6da910b125086f5\nTrace artifact: 52044d0f2292fad47d150e0f1cfc46d3346667705d3f43ef25641bc35f5a9737\nInternal integrity: verified (not provider or execution authentication)\nSource: chain 1, block 18999892\nBlock hash: 0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6\nPrefix: 13 original transactions; candidate omits indices [12]\nOriginal receipts: verified\nAccount comparison: Complete recorded views\nPrice views: Complete recorded views\n\nAfter-prefix values        Baseline              Candidate             Candidate - baseline\nCollateral (USD)           410490.3101751        411755.56915484       +1265.25897974\nDebt (USD)                 161991.40199548       162193.64581293       +202.24381745\nAvailable borrowing (USD)  168453.29769548       169269.58735672       +816.28966124\nLiquidation threshold (%)  83                    83                    0 pp\nLTV (%)                    80.5                  80.5                  0 pp\nHealth factor              2.103240994573506125  2.107093164381383462  +0.003852169807877337\n\nBaseline health: At or above 1\nCandidate health: At or above 1\nUSD denotes the fixed profile's base currency; pp denotes percentage points.\nNo-debt health has no finite normalized delta. The input report retains raw ABI words.\nUse --format json for the full classifications and recorded observation details.\n\nScope: Owned-node read-only Aave account views. Differences compare the submitted\ntransaction-prefix branches; they do not isolate price as the sole cause. No signed\nconsumer action, loan/liquidation execution, profit, provider or proxy-implementation\nauthentication, full-block/state-root proof. All-account base-currency values, not token\nbalances; WAD health factor, basis-point thresholds. Native execution has no\nwhole-process sandbox.\n\nActual CLI stdout · recorded evidence, no new historical execution · synthetic narration retained"
+    },
+    {
+      "name": "gate",
+      "bounds": {
+        "x": 32,
+        "y": 74,
+        "width": 1536,
+        "height": 570
+      },
+      "textBounds": [
+        {
+          "x": 63,
+          "y": 197,
+          "width": 1474,
+          "height": 120,
+          "scrollWidth": 1474,
+          "clientWidth": 1474
+        },
+        {
+          "x": 63,
+          "y": 457,
+          "width": 1474,
+          "height": 160,
+          "scrollWidth": 1474,
+          "clientWidth": 1474
+        }
+      ],
+      "footer": {
+        "x": 34,
+        "y": 735,
+        "width": 1532,
+        "height": 18
+      },
+      "body": "Entrotter\nUSE THE SAME ACCOUNT RECORD IN SCRIPTS\nCLI 24bbb91 · SDK ba4af51 · offline\nOriginal recorded account\n$ entrotter position-verify account13.json --require-complete > complete.json\nexit: 0\nintegrity_verified: true\ncomplete_account_views: true\n\nSynthetic control · one account view removed\n$ entrotter position-verify synthetic-missing-account.json --require-complete > incomplete.json\nexit: 3\nintegrity_verified: true\ncomplete_account_views: false\nIncomplete recorded comparison: incomplete_account_views\n\nActual exit/stderr; displayed fields extracted from saved full JSON · integrity alone does not prove a complete comparison"
+    }
+  ],
+  "scope": "Saved actual offline stdout/exit displays, not continuous terminal typing or fresh EVM"
+}
