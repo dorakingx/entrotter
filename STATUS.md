@@ -2011,3 +2011,32 @@ submission or Discord work is claimed. New exact-root combinedCI/raw review, hum
 main approval and live Pages remain separate. Approved media retains older pins;
 this newer UI is not yet recorded. Goal active through official deadline, section5
 freshly rechecked; no completion claim.
+
+
+## October 3 — current account-impact product recording
+
+Root 3b9 completed all 5 original mandatory checks on attempt1 and full original
+raw independent review a32868f4. Parent externally rehashed1093 raw files/29 current
+sources/70 docs/19 immutable Git/19 reused/4 helpers/12 published blobs; imported 1045 Git
+evidence remains distinct from8 fresh verification files. PR55 exact body/head
+readback retains currentCI links and historical scopes. No main/Pages merge.
+
+The [additional2:36.80 account-impact demo](evidence/submission-account-demo/README.md)
+records actual viewer 8aa0/Engine 88c6 and two fresh bounded local runs. The recorded-decision replay's full
+JSON equals the existing model recording, with zero agent-model/archive calls.
+Previously recorded account 13 is inspected offline, not rerun historically.
+Both exact cards/all 6 after-state rows and all 13 receipt rows are readable; index 12
+visibly skipped/no receipt. The bad input changes only64 identifier bytes, preserving
+all exact large integers, shows hash mismatch/clear, and recovers with the original.
+18 loopback GET/18status 200/16 served sourcehashes/0 page errors, complete MP4 decode
+0 errors,15 captions within156.80 s and owned worker containers 0 are evidenced. The
+original 10 media files and public voice/configuration remain hash-identical.
+
+Retained earlier authoring failures/limited cuts are described exactly; corrected
+harness opens real accordions, serves the known nested asset and preserves negative
+input precision. No product/frozen model/holdout source changed. New image 23 sources
+bind to currentEngine/pinnedbase; no fresh image advisory scan or speed claim.
+Expanded raw candidate-null text lies below the iframe, distinct from visible
+skipped/no-receipt table proof. Human auditory review/hosting, this media/docs
+commit mandatory CI, protected human main approval/Pages/formal submission remain
+separate. Existing Docker VM/unrelated services were left running. Goal stays active.

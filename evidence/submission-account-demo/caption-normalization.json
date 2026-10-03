@@ -1,0 +1,16 @@
+{
+  "vtt": {
+    "before_sha256": "1a8172c7cdecc614629ecaeb2725215520023f57a387cb7f1d6215019bdaf5db",
+    "after_sha256": "55b3d93ab73d51e493bb0aec7d148a5ff9e6d2a3051226f63844a9bc880d7295",
+    "before_bytes": 2770,
+    "after_bytes": 2769,
+    "scope": "Only EOF surplus newline removal; no cue text, separator, order or timestamp changes."
+  },
+  "srt": {
+    "before_sha256": "0418596fa4f30eb027c6ae0a45d6adf63a1c323588e1ff5828ff64b124f77324",
+    "after_sha256": "d710f64c22401a82a86cb3cda819e7d974a1530c99e9343453be05de7cf646b7",
+    "before_bytes": 2798,
+    "after_bytes": 2797,
+    "scope": "Only EOF surplus newline removal; no cue text, separator, order or timestamp changes."
+  }
+}

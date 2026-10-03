@@ -74,3 +74,10 @@ Supported-host uploads remain pending. Formal submission is authorized once qual
 conditions and required facts are verified and the portal is open; no final entry
 has occurred. These videos are real recorded review deliverables,
 not proof of founder communication, customer demand or a submitted entry.
+
+The October 3 account-impact cut adds actual current-viewer interactions and two
+fresh bounded local calls, while explicitly inspecting previously recorded
+historical account evidence. It reuses the pinned local synthetic voice, makes
+no new model/archive/paid voice API call and preserves every original approved
+media file. Its exact 15-cue script and authoring-attempt limitations are retained
+in the [new recording evidence](../evidence/submission-account-demo/README.md).

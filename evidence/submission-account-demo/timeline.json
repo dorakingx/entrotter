@@ -1,0 +1,176 @@
+{
+  "scenes": [
+    {
+      "id": "intro",
+      "label": "01 / THE ACTUAL VIEWER",
+      "narration": [
+        "Before giving an onchain agent permissions, inspect what its decision changes. This is the actual Entrotter viewer, with synthetic narration."
+      ],
+      "start": 1.0,
+      "end": 10.413673469387755
+    },
+    {
+      "id": "run",
+      "label": "02 / REAL LOCAL EXECUTION",
+      "narration": [
+        "This console starts the bounded Docker engine on a local EVM. The risk policy sees a transfer, then a reverting proposal. It can execute or hold the supplied action.",
+        "Next, recorded model decisions run against fresh observations. The command checks complete JSON equality. It makes no new model or archive request."
+      ],
+      "start": 10.413673469387755,
+      "end": 32.04986394557823
+    },
+    {
+      "id": "agent",
+      "label": "03 / OPEN THE GENERATED RESULT",
+      "narration": [
+        "Open the file that this command just generated. The baseline includes a revert, while the candidate holds that proposal.",
+        "The report retains observations, choices and receipts. A content identifier detects changes; it does not prove that a model made a good decision."
+      ],
+      "start": 32.04986394557823,
+      "end": 49.56451247165533
+    },
+    {
+      "id": "account",
+      "label": "04 / WHAT CHANGES FOR AN AAVE ACCOUNT?",
+      "narration": [
+        "Now inspect a previously recorded Ethereum and Aave case. The browser displays evidence; it does not execute a new historical replay.",
+        "Skipping transaction twelve increases this account\u2019s recorded borrowing capacity by eight hundred sixteen dollars and twenty eight cents, approximately. The card preserves all eight decimals. The health factor increases by about zero point zero zero three eight five."
+      ],
+      "start": 49.56451247165533,
+      "end": 76.55290249433106
+    },
+    {
+      "id": "scope",
+      "label": "05 / FOUR PHASES, EXACT UNITS",
+      "narration": [
+        "Expand the four account phases. Compare before and after values, with debt, collateral and the recorded pool configuration.",
+        "These are aggregate effects of the changed prefix. They are not profit, sole price causality, a signed borrowing strategy, or a prediction of later market behavior."
+      ],
+      "start": 76.55290249433106,
+      "end": 95.77421768707484
+    },
+    {
+      "id": "receipts",
+      "label": "06 / FOLLOW THE RECEIPT EVIDENCE",
+      "narration": [
+        "Thirteen original transactions form this prefix. All thirteen baseline receipt projections match. The candidate executes twelve and skips transaction twelve.",
+        "Expand the receipt differences to inspect gas, ordered logs and exact values. This is prefix evidence, not proof of the entire block or state root."
+      ],
+      "start": 95.77421768707484,
+      "end": 117.34074829931974
+    },
+    {
+      "id": "invalid",
+      "label": "07 / REJECT ALTERED CONTENT",
+      "narration": [
+        "Import the same account file with an incorrect content identifier. The viewer rejects it and clears the previous account values.",
+        "Importing the unchanged file recovers normally. Both files stay in this browser. The recording checks for uploads and unexpected external requests."
+      ],
+      "start": 117.34074829931974,
+      "end": 135.86546485260772
+    },
+    {
+      "id": "end",
+      "label": "08 / REPRODUCE AND REVIEW",
+      "narration": [
+        "Use the public code to compare a decision your team needs to explain. The engine, command line, Python reader and browser inspect the same sealed account report.",
+        "These changes are on reviewed development branches. Main integration, public deployment and the competition submission remain separate."
+      ],
+      "start": 135.86546485260772,
+      "end": 155.35380952380953
+    }
+  ],
+  "captions": [
+    {
+      "start": 1.0,
+      "end": 9.463673469387755,
+      "text": "Before giving an onchain agent permissions, inspect what its decision changes. This is the actual Entrotter viewer, with synthetic narration.",
+      "scene": "intro"
+    },
+    {
+      "start": 10.413673469387755,
+      "end": 20.932312925170066,
+      "text": "This console starts the bounded Docker engine on a local EVM. The risk policy sees a transfer, then a reverting proposal. It can execute or hold the supplied action.",
+      "scene": "run"
+    },
+    {
+      "start": 21.38231292517007,
+      "end": 31.09986394557823,
+      "text": "Next, recorded model decisions run against fresh observations. The command checks complete JSON equality. It makes no new model or archive request.",
+      "scene": "run"
+    },
+    {
+      "start": 32.04986394557823,
+      "end": 38.72560090702948,
+      "text": "Open the file that this command just generated. The baseline includes a revert, while the candidate holds that proposal.",
+      "scene": "agent"
+    },
+    {
+      "start": 39.17560090702948,
+      "end": 48.61451247165533,
+      "text": "The report retains observations, choices and receipts. A content identifier detects changes; it does not prove that a model made a good decision.",
+      "scene": "agent"
+    },
+    {
+      "start": 49.56451247165533,
+      "end": 58.306825396825396,
+      "text": "Now inspect a previously recorded Ethereum and Aave case. The browser displays evidence; it does not execute a new historical replay.",
+      "scene": "account"
+    },
+    {
+      "start": 58.75682539682539,
+      "end": 75.60290249433106,
+      "text": "Skipping transaction twelve increases this account\u2019s recorded borrowing capacity by eight hundred sixteen dollars and twenty eight cents, approximately. The card preserves all eight decimals. The health factor increases by about zero point zero zero three eight five.",
+      "scene": "account"
+    },
+    {
+      "start": 76.55290249433106,
+      "end": 83.99489795918367,
+      "text": "Expand the four account phases. Compare before and after values, with debt, collateral and the recorded pool configuration.",
+      "scene": "scope"
+    },
+    {
+      "start": 84.44489795918368,
+      "end": 94.82421768707484,
+      "text": "These are aggregate effects of the changed prefix. They are not profit, sole price causality, a signed borrowing strategy, or a prediction of later market behavior.",
+      "scene": "scope"
+    },
+    {
+      "start": 95.77421768707484,
+      "end": 105.5846485260771,
+      "text": "Thirteen original transactions form this prefix. All thirteen baseline receipt projections match. The candidate executes twelve and skips transaction twelve.",
+      "scene": "receipts"
+    },
+    {
+      "start": 106.0346485260771,
+      "end": 116.39074829931974,
+      "text": "Expand the receipt differences to inspect gas, ordered logs and exact values. This is prefix evidence, not proof of the entire block or state root.",
+      "scene": "receipts"
+    },
+    {
+      "start": 117.34074829931974,
+      "end": 125.22392290249435,
+      "text": "Import the same account file with an incorrect content identifier. The viewer rejects it and clears the previous account values.",
+      "scene": "invalid"
+    },
+    {
+      "start": 125.67392290249434,
+      "end": 134.91546485260773,
+      "text": "Importing the unchanged file recovers normally. Both files stay in this browser. The recording checks for uploads and unexpected external requests.",
+      "scene": "invalid"
+    },
+    {
+      "start": 135.86546485260772,
+      "end": 146.00097505668936,
+      "text": "Use the public code to compare a decision your team needs to explain. The engine, command line, Python reader and browser inspect the same sealed account report.",
+      "scene": "end"
+    },
+    {
+      "start": 146.45097505668934,
+      "end": 154.4038095238095,
+      "text": "These changes are on reviewed development branches. Main integration, public deployment and the competition submission remain separate.",
+      "scene": "end"
+    }
+  ],
+  "duration": 156.35380952380953
+}

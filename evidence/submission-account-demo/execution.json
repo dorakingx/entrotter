@@ -1,0 +1,12 @@
+{
+  "complete_json_equality": true,
+  "artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b",
+  "risk_artifact_id": "bae842845d882b3007fbb497c4d6abbbc86bb935b7e0cb1d504cecf6dad57e52",
+  "agent_model_calls": 0,
+  "archive_requests": 0,
+  "elapsed_seconds": 3.4105243331287056,
+  "source": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+  "image_id": "sha256:dd32bd89f9e038e9b7770eb9cad927bc86649f1857062b493823bdbbed7bede1",
+  "report_sha256": "6998b9d58b9286af42efc873a3c2d736016dd9ef1822a369c512d8688f37b1ea",
+  "scope": "Two actual local bounded worker calls; historical account13 is a separate previously recorded file."
+}

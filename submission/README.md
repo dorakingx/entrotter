@@ -28,6 +28,7 @@ a prediction of future markets, or a measurement of profit.
 
 | Material | Artifact | Status |
 | --- | --- | --- |
+| Updated account-impact demo | [MP4](media/entrotter-demo-account.mp4), [VTT](media/entrotter-demo-account.vtt), [SRT](media/entrotter-demo-account.srt) · 2:36.80 | Additional current-viewer cut: two fresh bounded local calls, recorded account 13/card/receipt inspection, lossless bad-ID rejection and recovery; original owner-approved cut retained |
 | Product demo | [MP4](media/entrotter-demo.mp4), [VTT](media/entrotter-demo.vtt), [SRT](media/entrotter-demo.srt) · 2:54.24 | Recorded actual Chromium interactions and bounded engine calls; owner approved |
 | Product pitch | [Short MP4](media/entrotter-pitch-short.mp4), [VTT](media/entrotter-pitch-short.vtt) · 1:46.07 | New six-card pitch with confirmed solo-founder context; synthetic narration. The original 2:51.44 review cut is retained but exceeds the current form limit |
 | Video production evidence | [Manifest](../evidence/submission-media/manifest.json) | Source pins, exact scripts/timelines, output hashes, execution and rendering checks |
@@ -36,6 +37,8 @@ a prediction of future markets, or a measurement of profit.
 | Target-user evaluation | [Evaluation protocol](EVALUATIONS.md) | Deferred by owner; zero completed records, no demand claim |
 | Development/AI disclosure | [Disclosure](DISCLOSURE.md) | Supplied archive and substantial Codex assistance disclosed; owner reports event-period AI generation; original archive digest unavailable |
 | Rules, deadline and eligibility | [Competition requirements](../docs/COMPETITION.md) | Public requirements rechecked; authenticated event draft verified; owner confirms eligibility |
+
+The [new account-impact recording evidence](../evidence/submission-account-demo/README.md) binds viewer 8aa0/Engine 88c6 and the exact generated local report. This new cut is additional material; human auditory review and supported-host delivery remain pending. The [15 current narration cues](../evidence/submission-account-demo/timeline.json) preserve the exact new script.
 
 The original recordings label synthetic narration and their historical review
 status; the owner has since approved them. The short pitch retains explicit

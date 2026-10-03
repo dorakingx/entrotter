@@ -263,6 +263,8 @@ all 19 existing EVM reports under the worker quotas, including 12 agent-recordin
 replays without model calls. This is verified on an open branch; independent
 approval and dependency-pin integration remain pending.
 
+[Current account-impact demo](submission/media/entrotter-demo-account.mp4) shows exact account changes, receipt evidence and altered-file rejection in 2:36.80; its [source-bound recording evidence](evidence/submission-account-demo/README.md) distinguishes new local execution from recorded historical inspection. Original approved media remains unchanged.
+
 [Submission review package](submission/README.md) includes recorded pitch/demo
 videos, measured evidence, explicit AI/prior-work disclosure and unvalidated
 market/evaluation plans. Owner review and genuine demand validation remain open.
