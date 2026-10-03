@@ -4,10 +4,10 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [CLI historical price composition](../evidence/cli-observed-run-integration/README.md)
-selects enginec2eb54d, SDKeb9921f, CLId437ad1 and viewera19d3b1. Seven offline
-integration cases pass locally, including the actual default-worker32 result
-with all four readers. Component CI and current combined CI are separate;
+The proposed [historical account composition](../evidence/account-impact-integration/README.md)
+selects engine88c6cd0, SDKba4af51, CLI696511c and viewera19d3b1. Eight offline
+integration cases pass locally, including the recorded default-worker32 price
+result and13-input account result. Component CI and current combined CI are separate;
 independent human main approval remains pending. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
 below retains its earlier2f6a56e/enginebd5527f source and measurements.
 
@@ -35,9 +35,9 @@ local candidate preview; it does not confirm the latest source is deployed.
 For terminal inspection, select matching SDK and CLI sources in a second terminal:
 
 ```bash
-git -C sdk-python fetch --depth=1 origin eb9921f30c1f0f3750140f66023e3b10d255cb20
+git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin d437ad14828cf63f19091656b68e4b9a2b842ad4
+git -C cli fetch --depth=1 origin 696511c5cb46482c96cf6f609c83877fcf16e922
 git -C cli checkout --detach FETCH_HEAD
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-verify entrotter.github.io/reports/trace-observed-price32.json
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-inspect entrotter.github.io/reports/trace-observed-price32.json
@@ -417,11 +417,11 @@ the matching SDK and CLI too; the frozen walkthrough uses older revisions. Earli
 support this job; an unavailable or incompatible worker fails explicitly.
 
 ```bash
-git -C engine fetch --depth=1 origin c2eb54dc97509e7318216c01f98adade1da5bc6e
+git -C engine fetch --depth=1 origin 88c6cd0d00f466ed7e870bd57c118aa50984f8b1
 git -C engine checkout --detach FETCH_HEAD
-git -C sdk-python fetch --depth=1 origin eb9921f30c1f0f3750140f66023e3b10d255cb20
+git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin d437ad14828cf63f19091656b68e4b9a2b842ad4
+git -C cli fetch --depth=1 origin 696511c5cb46482c96cf6f609c83877fcf16e922
 git -C cli checkout --detach FETCH_HEAD
 .venv/bin/python engine/scripts/build_worker.py --output worker-image.json
 export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.load(open("worker-image.json"))["image_id"])')"
@@ -463,6 +463,60 @@ checks every receipt and the complete raw/typed four-phase records with all four
 readers. Its offline checks are separate from fresh replay, protected-main
 approval and Pages deployment. This optional replay is outside the older timed
 fixture walkthroughs and makes no new model call.
+
+## Compare historical Aave account impact
+
+The selected Engine, SDK and CLI also support the fixed read-only Aave account
+profile. After checking out the matching revisions and rebuilding the worker as
+above, inspect its original recorded result entirely offline:
+
+```bash
+.venv/bin/python -m entrotter_cli position-verify engine/evidence/aave-account-impact/position.json
+.venv/bin/python -m entrotter_cli position-inspect engine/evidence/aave-account-impact/position.json
+```
+
+The recorded borrower account is public transaction-source evidence, not an
+identified user. This case replays the original first13 of181 inputs at block
+18999892 and omits index12. All13 baseline receipt projections match originals;
+the candidate executes12. Four paired account and price views retain the exact
+raw ABI, Pool/provider/oracle binding, code identities, block heads and errors.
+Borrowing capacity differs by81628966124 base units (816.28966124 USD at the
+recorded1e8 base unit); health factor differs by3852169807877337 WAD units.
+Both recorded health factors remain at or above one. These are aggregate account
+state differences, not profit or a successfully executed borrowing strategy.
+The prefix changes multiple state effects; it does not isolate WETH price as the
+sole cause. The fixed profile does not authenticate proxy implementations or the
+archive provider, reconstruct a full block or prove its state root.
+
+To reproduce with your own private archive-capable `ENTROTTER_RPC_URL`, use the
+same configured local Docker worker:
+
+```bash
+.venv/bin/python - <<'PYPLAN'
+import json
+from pathlib import Path
+record = json.loads(Path('engine/evidence/aave-account-impact/position.json').read_text())
+Path('account-plan.json').write_text(json.dumps(record['plan']) + '\n')
+PYPLAN
+.venv/bin/python -m entrotter_cli trace-position account-plan.json -o account-position.json
+.venv/bin/python -m entrotter_cli position-inspect account-position.json
+```
+
+The data-only plan is retained in the sealed recorded wrapper; see component
+[evidence instructions](https://github.com/entrotter/engine/tree/88c6cd0d00f466ed7e870bd57c118aa50984f8b1/evidence/aave-account-impact).
+The extraction above keeps execution metadata out of the closed plan contract.
+
+A successful command can export an unverified baseline or unproven account views.
+Read `complete_account_views`, `unproven_reasons` and receipt status before using
+any differences; unproven differences stay null. Zero debt preserves the raw
+uint256 health sentinel and reports `no_debt`, with no normalized health delta.
+Original150/180-second bounds, shared worker admission and atomic quota exports
+still apply; missing workers fail without fallback, cancellation130 preserves an
+incumbent, and explicit observation deadlines return124. No native/API/ABI/callback
+or contract override is accepted. This replay is outside timed offline walkthroughs.
+The selected viewer currently supports the nested price/trace family; open the
+account wrapper through the SDK or CLI until a separately reviewed viewer update.
+See [combined account inspection evidence](../evidence/account-impact-integration/README.md).
 
 ## Optional synthetic oracle and provider-fault inspection
 

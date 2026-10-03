@@ -1,0 +1,87 @@
+{
+  "base": "01e8f516c257c4ba5a41decf6c6f5f4ed57caf6a",
+  "pins": {
+    "engine": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "696511c5cb46482c96cf6f609c83877fcf16e922",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "workflow_sha256": "eb9a880e5052f5565c79646cc11bd983165817223eb3ce9f33b5a84c34ca0b4a",
+  "copies_sha256": {
+    "account-position-reader.json": "da9940983f07c4b7b273986e9e0ecc5d06d81883ab854a0df85b1698863e5bb4",
+    "cli-ci-independent.json": "3324c05a4026726cba8ed61047a82d890b8fb9072ee0809ecbb287229a8bbdef",
+    "engine-ci-independent.json": "69351542055f5e2365cc74deb3dd5b72620e81953f1195f34382cc2e3864edd0",
+    "local-execution.json": "47d8d1fbb98222c170c72006ec131ace8fd6c7391f30b1b6402640d666b4a4ee",
+    "sdk-ci-independent.json": "aeaeb9adf8b976893032358520a94ab8c09deceb3e84f9c6bd2923011c6e07c0",
+    "workflow-parse.json": "09aea0fa39c159308eb62a6b50e57a8f7d939f429586d2d55f7379df2d3c6728",
+    "local-types.json": "7d8bd2540fbc32f5f04fe2c441ccb52cab130fd06e9346d2afef6c84baf386e9"
+  },
+  "seven_historical_full_outputs_reused": {
+    "bounded-observed-transaction-replay.json": {
+      "current_full_output_sha256": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+      "scope": "Auxiliary export checked by full original reader; no duplicate copy."
+    },
+    "observed-transaction-replay.json": {
+      "current_full_output_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+      "scope": "Auxiliary export checked by full original reader; no duplicate copy."
+    },
+    "trace-bounded-observed-reader.json": {
+      "prior_public_path": "evidence/bounded-observed-integration/trace-bounded-observed-reader.json",
+      "prior_public_sha256": "ca16be7c5a2b5d2c4163c61db5f7f796f6b6f790e61454e18a26ac7320c2b8f2",
+      "current_full_output_sha256": "f2d2fbe65093597a8d69266315296fe94132cbcb591163d9ee06256339fe414c"
+    },
+    "trace-comparison-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-comparison-reader.json",
+      "prior_public_sha256": "56b64864aa3d2c3ec8184d92c2c157af5ba46a8a815704df846718487d806646",
+      "current_full_output_sha256": "9aaa0db65ce3d16338a4058a3fce4904f26ecaa74be0ea9417902143d2f0c880"
+    },
+    "trace-consumer-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-consumer-reader.json",
+      "prior_public_sha256": "35a3801be11b7880b87cf088d888ea7ebfbfa5295701017c8079636526993bdf",
+      "current_full_output_sha256": "04a27034870c15b1d8b0c662426a1517fbf1ab6c1416bf735fbb4c8bcfbc5d63"
+    },
+    "trace-funding-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-funding-reader.json",
+      "prior_public_sha256": "77bd0749930ca712edfd34013dd948d886e9d2c76c2234b5918a669b306170ac",
+      "current_full_output_sha256": "ffeb515e6cfc7012a75ebca2ad8a66f7e13d32db19323b4d4b8c4e574d5f3e9c"
+    },
+    "trace-observed-reader.json": {
+      "prior_public_path": "evidence/cli-observed-integration/trace-observed-reader.json",
+      "prior_public_sha256": "27218526aa4effd81afaee14b36faa7300af7c026fc07659bd6121a663847221",
+      "current_full_output_sha256": "8ab82281a7f4f1738e2b54fd2dd6248fe08e036b9f19f63b292e3641befc459e"
+    },
+    "trace-oracle-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-oracle-reader.json",
+      "prior_public_sha256": "d992b0142dc12c945ef82b3b8d10969acd8cd9848cc47581654805e9d8159104",
+      "current_full_output_sha256": "3f543bba2b79ac10f44678000cd3e9c78254cff22bbf94d7daa63c48e0e41b58"
+    },
+    "trace-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-reader.json",
+      "prior_public_sha256": "869c323315000678cecde4a7cd31b5c3001075ab81022e0234ff8dfcf34d25a6",
+      "current_full_output_sha256": "d03cb0dd8fb049505fed80828a36cc50f406a86b4023c04800e7543a0d8c4d04"
+    }
+  },
+  "scope": "All eight exact offline reader bodies passed; first seven preserved full historical facts. No archive/model/browser/performance rerun. Type-check setup selected incomplete general tool venv initially; missing playwright import fixed by selecting existing full coordination quality venv without source/lock change.",
+  "local_docs": {
+    "raw_sha256": "22f4bea830816624112799324732ec3740ad86a4e396981443c4cb46cfa55662",
+    "raw_source": ".quality/account-impact-integration/docs-links.json",
+    "files": 68,
+    "passed": true,
+    "report_totals": {
+      "total": 490,
+      "unique": 392,
+      "successful": 490,
+      "unknown": 0,
+      "unsupported": 0,
+      "timeouts": 0,
+      "redirects": 1,
+      "remaps": 0,
+      "excludes": 0,
+      "errors": 0,
+      "cached": 27,
+      "detailed_stats": true
+    },
+    "note": "Post-check whitespace-only YAML blank line correction; parsed executable bodies held exactly; no documentation or link changed."
+  }
+}

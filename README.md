@@ -78,6 +78,12 @@ baseline receipt and four complete price views; missing state and worker deadlin
 remain explicit. Read-only price dependence does not establish a signed consumer
 strategy or profit. Candidate integration and protected publication remain separate.
 
+The proposed [Aave account composition](evidence/account-impact-integration/README.md)
+adds exact collateral, debt, borrowing-capacity and health-factor inspection beside
+the recorded price and receipt evidence. Its [offline commands and replay guide](docs/QUICK_START.md#compare-historical-aave-account-impact)
+use the same bounded worker and disclose unproven views. This is read-only account
+state comparison; signed strategy execution and financial return remain unproven.
+
 ## Local API and SDK
 
 After completing the quick start, keep its environment variables in both terminals.

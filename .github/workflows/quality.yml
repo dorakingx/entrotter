@@ -29,19 +29,19 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: c2eb54dc97509e7318216c01f98adade1da5bc6e
+          ref: 88c6cd0d00f466ed7e870bd57c118aa50984f8b1
           path: worker-engine
           persist-credentials: false
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/sdk-python
-          ref: eb9921f30c1f0f3750140f66023e3b10d255cb20
+          ref: ba4af512784119f23b6dea63fd24c7f5d1fdde44
           path: sdk-python
           persist-credentials: false
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: d437ad14828cf63f19091656b68e4b9a2b842ad4
+          ref: 696511c5cb46482c96cf6f609c83877fcf16e922
           path: cli
           persist-credentials: false
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262

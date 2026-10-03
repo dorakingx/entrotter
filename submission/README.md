@@ -90,10 +90,10 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Last independently audited coordinator execution snapshot | [6c228f0](https://github.com/entrotter/entrotter/tree/6c228f0794dbed37b035c41e1d7be2b794af1f5e) | [#55](https://github.com/entrotter/entrotter/pull/55) |
-| Bounded agent engine and default-worker historical Aave price observations | [c2eb54d](https://github.com/entrotter/engine/tree/c2eb54dc97509e7318216c01f98adade1da5bc6e) | [#35](https://github.com/entrotter/engine/pull/35) |
-| Python SDK with offline typed signed-prefix and price observation inspection | [eb9921f](https://github.com/entrotter/sdk-python/tree/eb9921f30c1f0f3750140f66023e3b10d255cb20) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
-| CLI with bounded agent replay, local price execution and offline inspection | [d437ad1](https://github.com/entrotter/cli/tree/d437ad14828cf63f19091656b68e4b9a2b842ad4) | [#10](https://github.com/entrotter/cli/pull/10) |
+| Last independently audited coordinator execution snapshot | [01e8f51](https://github.com/entrotter/entrotter/tree/01e8f516c257c4ba5a41decf6c6f5f4ed57caf6a) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Bounded agent engine and default-worker historical Aave price/account observations | [88c6cd0](https://github.com/entrotter/engine/tree/88c6cd0d00f466ed7e870bd57c118aa50984f8b1) | [#35](https://github.com/entrotter/engine/pull/35) |
+| Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
+| CLI with bounded agent replay, local price/account execution and offline inspection | [696511c](https://github.com/entrotter/cli/tree/696511c5cb46482c96cf6f609c83877fcf16e922) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
 | Console, recorded agent and signed-prefix inspection, accessibility and quality | [a19d3b1](https://github.com/entrotter/entrotter.github.io/tree/a19d3b17fcf44e58a237b622de8cef89842eb6e7) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
@@ -253,3 +253,13 @@ exact source hash change. The coordinator table identifies the last audited
 execution snapshot, not this new selector update's combined CI. New combined CI,
 human main approval, Pages and formal submission remain separate. Frozen media,
 model/holdouts, timed walkthroughs and the unsubmitted draft are unchanged.
+
+
+The [account inspection composition](../evidence/account-impact-integration/README.md)
+selects Engine88c6, SDKba4 and CLI6965 after each component's full required CI and
+raw independent review. The recorded13-input account case retains all4 phase
+views and exact deltas; it is not profit or a signed borrowing strategy. The
+prior CLI c04d baseline-unverified failure remains documented with unknown cause;
+new passing CI does not establish that cause. Account display in the selected
+viewer, new coordinator combined CI, human main approval, Pages and formal
+submission are separate. Frozen model, holdout and media sources stay unchanged.

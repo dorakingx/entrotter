@@ -1912,3 +1912,38 @@ jobs, inputs and policies remain unchanged. See [current composition evidence](e
 New combined current-head CI, human protected-main approval, candidate Pages and
 submission remain separate. Goal remains active through the official deadline;
 Discord excluded. No newCLI32/model/browser/OS-Cargo/kernel/performance claim.
+
+
+## October 3 — exact historical Aave account impact
+
+Engine88c6/PR35 adds the closed read-only Aave account profile over the default
+Docker worker, alongside existing price observations. All8 original current CI
+checks and full raw independent review pass (SHA69351542). SDKba4/PR7 adds the
+standalone exact-integer typed reader with no Engine/network dependency; all5
+checks and full raw review pass (SHAaeaeb9ad). CLI6965/PR10 adds trace-position,
+position-verify/inspect, unchanged quota/atomic exports and owned cancellation;
+all6 original firstattempt current checks and full raw review pass (SHA3324c05a).
+Current75 units on each Python3.11/12/13, actual frozen-agent4, fixed-price3 and
+account3 pass. The final CLI raw proof binds37 artifact files/130 immutable Git
+sources/8 reused inputs and28 published changed paths. The earlier c04d account
+CI baseline-unverified failure and absent preassertion output remain retained
+with unknown cause; current passing CI does not prove its cause or a runtime fix.
+
+Actual default-Docker account evidence replays first13 of181 original inputs at
+block18999892, verifies all13 original receipt projections, and executes12 plus
+skip12. Complete four-phase account/price/config/code/head views support exact
+borrowing-capacity difference81628966124 base units and health-factor difference
+3852169807877337 WAD. Both health factors remain at or above one. Aggregate
+account-state dependence is not sole-WETH causality, profit, a signed borrowing
+strategy, authenticated provider/proxy or full-block/root evidence. Zero-debt
+sentinels/unproven nulls remain explicit. CLI's trace40.615703s and Engine local
+92.565119s are separate environments, not a controlled speed comparison.
+
+The proposed [account composition](evidence/account-impact-integration/README.md)
+promotes exactly twelve Engine/SDK/CLI references together, preserves all frozen
+native/agent/host/model/holdout jobs and seven original full-reader bodies, and
+adds an eighth complete Engine/SDK/CLI account reader plus runnable guide. New
+exact-root combined CI, independent human main approval, viewer account display,
+Pages and formal submission remain separate. No new chain/model/browser run
+or spending/disclosure/Discord work. The improvement goal remains active until
+the official deadline.

@@ -104,17 +104,17 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: c2eb54dc97509e7318216c01f98adade1da5bc6e
+          ref: 88c6cd0d00f466ed7e870bd57c118aa50984f8b1
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/sdk-python
-          ref: eb9921f30c1f0f3750140f66023e3b10d255cb20
+          ref: ba4af512784119f23b6dea63fd24c7f5d1fdde44
           path: sdk-python
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: d437ad14828cf63f19091656b68e4b9a2b842ad4
+          ref: 696511c5cb46482c96cf6f609c83877fcf16e922
           path: cli
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -865,6 +865,98 @@ jobs:
                          'SDK, CLI and viewer additionally inspect recorded wrapper price views and exact typed records.',
                          'Node codec checks are separate from rendered browser/Pages verification and real Docker execution.'],
           }, indent=2) + '\n')
+          PY
+      - name: Inspect historical Aave account impact with engine, SDK and CLI
+        run: |
+          python - <<'PY'
+          from dataclasses import asdict
+          import hashlib, json, subprocess, sys
+          from pathlib import Path
+          from entrotter_engine.position_observations import load_position as engine_load, decode_account, classify
+          from entrotter_sdk import load_position
+
+          source = Path('engine/evidence/aave-account-impact/position.json')
+          digest = 'cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          assert source.read_bytes() == Path('sdk-python/tests/data/aave-account-position13.json').read_bytes()
+          assert source.read_bytes() == Path('cli/tests/data/aave-account-position13.json').read_bytes()
+          raw = engine_load(source)
+          position = load_position(source)
+          assert position.report == raw
+          assert position.account == '0x16aa9154557f1394089db90d3cbe212d9a7f33bb'
+          assert position.trace.baseline_verified and len(position.trace.transactions) == 13
+          trace = position.trace.report
+          assert trace['plan']['source']['block_number'] == 18999892
+          assert trace['source']['block_transaction_count'] == 181
+          assert trace['plan']['through_index'] == 12 and trace['plan']['skip_indices'] == [12]
+          for i, row in enumerate(position.trace.transactions):
+              assert row.baseline.status == 'executed' and row.baseline.receipt == row.original_receipt
+              assert row.candidate.status == ('skipped' if i == 12 else 'executed')
+              assert row.candidate.receipt == (None if i == 12 else row.original_receipt)
+              assert not row.candidate.differing_fields
+          assert position.prices.report == raw['price_report']
+          assert position.prices.trace.report == trace
+          assert [row.price for row in position.prices.observations] == [257082415000, 256292441874, 257082415000, 257082415000]
+          assert position.prices.classification.price_difference == 789973126
+          classification = json.loads(json.dumps(asdict(position.classification)))
+          assert classification == raw['classification'] == classify(raw['observations'], raw['price_report'])
+          assert classification['complete_account_views'] and classification['unproven_reasons'] == []
+          assert classification['base_unit'] == 100000000 and classification['health_factor_unit'] == 10**18
+          assert classification['baseline_health_status'] == classification['candidate_health_status'] == 'at_or_above_one'
+          fields = ('total_collateral_base', 'total_debt_base', 'available_borrows_base', 'liquidation_threshold_bps', 'ltv_bps', 'health_factor_wad')
+          baseline = (41049031017510, 16199140199548, 16845329769548, 8300, 8050, 2103240994573506125)
+          candidate = (41175556915484, 16219364581293, 16926958735672, 8300, 8050, 2107093164381383462)
+          assert classification['baseline'] == dict(zip(fields, baseline))
+          assert classification['candidate'] == dict(zip(fields, candidate))
+          assert classification['differences'] == dict(zip(fields, (126525897974, 20224381745, 81628966124, 0, 0, 3852169807877337)))
+          phases = json.loads(json.dumps([asdict(row) for row in position.observations]))
+          for i, (row, recorded) in enumerate(zip(phases, raw['observations'])):
+              assert row['branch'] == recorded['branch'] and row['phase'] == recorded['phase']
+              assert row['account'] == position.account and row['head'] == recorded['head']
+              assert row['head'] == raw['price_report']['observations'][i]['head']
+              assert row['values'] == decode_account(recorded['raw'])
+              assert row['provider'] == '0x2f39d218133afab8f2b819b1066c7e434ad94e9e' == '0x' + recorded['provider'][26:]
+              assert row['oracle'] == '0x54586be62e3c3580375ae3723c145253060ca0c2' == '0x' + recorded['oracle'][26:]
+              assert row['pool_code'] == recorded['code'] and row['pool_code']['bytes'] > 0
+              assert row['errors'] == []
+          assert phases[0]['values'] == phases[2]['values']
+          assert all(row['pool_code'] == phases[0]['pool_code'] for row in phases)
+          cli = {}
+          for command in ('position-verify', 'position-inspect'):
+              completed = subprocess.run([sys.executable, '-m', 'entrotter_cli', command, str(source)],
+                                         check=True, capture_output=True, text=True, timeout=30)
+              assert completed.stderr == ''
+              cli[command] = json.loads(completed.stdout)
+          verified, inspected = cli['position-verify'], cli['position-inspect']
+          assert verified['artifact_id'] == position.artifact_id and verified['account'] == position.account
+          assert verified['integrity_verified'] is True and verified['profile'] == position.profile
+          assert verified['classification'] == classification
+          assert verified['plan'] == position.plan and verified['scope'] == raw['scope']
+          assert verified['prices'] == {'artifact_id': position.prices.artifact_id, 'classification': json.loads(json.dumps(asdict(position.prices.classification)))}
+          assert verified['trace'] == {'artifact_id': position.trace.artifact_id, 'baseline_receipts_verified': True, 'transaction_count': 13}
+          assert 'observations' not in verified
+          assert {k: v for k, v in inspected.items() if k not in ('observations', 'price_observations')} == verified
+          assert inspected['observations'] == phases
+          assert inspected['price_observations'] == json.loads(json.dumps([asdict(row) for row in position.prices.observations]))
+          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/account-position-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          modules = ('engine/src/entrotter_engine/position_observations.py', 'sdk-python/src/entrotter_sdk/position.py', 'cli/src/entrotter_cli/main.py')
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'Offline full Engine/SDK/CLI consistency inspection; no new chain/model/browser execution.',
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'wrapper_sha256': digest, 'artifact_id': position.artifact_id,
+              'price_artifact_id': position.prices.artifact_id, 'trace_artifact_id': position.trace.artifact_id,
+              'baseline_receipts_equal_originals': 13, 'candidate_executed': 12, 'skip_indices': [12],
+              'account': position.account, 'classification': classification,
+              'account_phases': phases, 'price_classification': json.loads(json.dumps(asdict(position.prices.classification))),
+              'price_phases': json.loads(json.dumps([asdict(row) for row in position.prices.observations])),
+              'cli': cli, 'module_sha256': {name: hashlib.sha256(Path(name).read_bytes()).hexdigest() for name in modules},
+              'limits': ['Read-only aggregate account difference includes all prefix effects, not sole-price causality.',
+                         'No signed borrowing/liquidation, profit, authenticated provider/proxy or full-block/state-root proof.',
+                         'Account wrapper display is not yet supported by the selected viewer; nested price/trace readers remain separate.',
+                         'Protected-main approval, Pages and submission are separate gates.'],
+          }, indent=2) + '\n')
+          print('Complete 13-input baseline and four account/price phases agree across Engine, SDK and CLI')
           PY
       - name: Build source-bound local image
         run: |
