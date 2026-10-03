@@ -1947,3 +1947,41 @@ exact-root combined CI, independent human main approval, viewer account display,
 Pages and formal submission remain separate. No new chain/model/browser run
 or spending/disclosure/Discord work. The improvement goal remains active until
 the official deadline.
+
+
+## October 3 — exact SDK-to-browser account report composition
+
+The candidate selects viewer4c6e/PR16 after all4 original mandatory checks and
+full original independent raw review SHA665b429d. Parent rehashed257 raw/current
+inputs,4 owning immutable contract sources and34 published blobs. Linux42groups/
+49 raw axe outputs,126Node/12Python,137 unsuppressed findings/19JS/20types,
+Node109/Python42 zero reported advisories and14docs/75links are source-bound.
+Prior local320 native-filechooser timeout remains causeunknown; unchanged local
+rerun and fresh Linux CI pass, without weakening assertions. Human main approval
+and live Pages remain separate; component CI is not publication.
+
+The proposed two-reference viewer update and new ninth offline reader make the
+same closed account wrapper readable across Engine/SDK/CLI/Node. Actual13 plus
+nine synthetic controls compare full classified values, all four typed/raw
+account/config/code/head/error records, plan/scope, three seals and entire nested
+trace facts. Original13 baseline receipts and candidate12+skip12 remain exact.
+Big integers, missing/null values, no-debt sentinel, debt transition and HF-one
+boundary are retained; synthetic controls are not chain or genuine user data.
+The local guide adds direct account sample/import inspection beside price32,
+with explicit independent source and execution scopes.
+
+All9 local readers pass. First7 bodies remain byte-identical; old8 changes only
+its now-obsolete viewer-limit sentence and preserves every executable assertion.
+All previous full outcomes match except viewer pin and that scope text. Initial
+new-reader comparison lacked SDK tuple/error JSON normalization; test mapping
+fixed, only9 rerun; successful8 originals reused and outputs compared offline.
+Full Node output is retained before assertions. Production21 scripts/type pins/
+locks/frozen3 diagnostics are unchanged from audited root670e; local type results
+reused, mandatory currentCI still runs full quality. Normalized workflow differs
+only in viewerref/newreader/one scope literal; no original job, policy, timeout,
+model/holdout or host/native input changes. See [composition evidence](evidence/viewer-position-integration/README.md).
+
+Current-root combined CI, independent human approval, Pages and formal submission
+are separate gates. No new EVM/RPC/model/browser/performance run, merge/deployment,
+user evaluation or Discord work occurred. Goal stays active through the official
+October13 15:59JST deadline, section5 freshly rechecked this turn.

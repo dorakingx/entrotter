@@ -119,7 +119,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/entrotter.github.io
-          ref: a19d3b17fcf44e58a237b622de8cef89842eb6e7
+          ref: 4c6e27ed6db398d51d1c0d68ef429f869a61b4c3
           path: entrotter.github.io
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
@@ -953,10 +953,144 @@ jobs:
               'cli': cli, 'module_sha256': {name: hashlib.sha256(Path(name).read_bytes()).hexdigest() for name in modules},
               'limits': ['Read-only aggregate account difference includes all prefix effects, not sole-price causality.',
                          'No signed borrowing/liquidation, profit, authenticated provider/proxy or full-block/state-root proof.',
-                         'Account wrapper display is not yet supported by the selected viewer; nested price/trace readers remain separate.',
+                         'This reader verifies Engine/SDK/CLI account records; the separate Node reader verifies account display records.',
                          'Protected-main approval, Pages and submission are separate gates.'],
           }, indent=2) + '\n')
           print('Complete 13-input baseline and four account/price phases agree across Engine, SDK and CLI')
+          PY
+      - name: Inspect the actual Aave account wrapper and synthetic controls with SDK and viewer
+        run: |
+          python - <<'PY'
+          from dataclasses import asdict
+          import copy, hashlib, json, subprocess
+          from pathlib import Path
+          from entrotter_sdk import PositionResult, load_position
+
+          source = Path('engine/evidence/aave-account-impact/position.json')
+          viewer_source = Path('entrotter.github.io/reports/aave-account-impact13.json')
+          controls_path = Path('entrotter.github.io/tests/data/position-controls.json')
+          digest = 'cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          assert source.read_bytes() == viewer_source.read_bytes()
+          assert source.read_bytes() == Path('sdk-python/tests/data/aave-account-position13.json').read_bytes()
+          assert source.read_bytes() == Path('cli/tests/data/aave-account-position13.json').read_bytes()
+          position = load_position(source)
+          base = position.report
+          controls = json.loads(controls_path.read_text())
+          assert [row['name'] for row in controls] == ['missing_account', 'wrong_provider', 'empty_pool_code', 'changed_pool_code', 'initial_difference', 'large_integer', 'no_debt', 'debt_transition', 'health_boundary']
+          reports = [('actual13', position)]
+          for control in controls:
+              record = {**copy.deepcopy(base), **control}
+              name = record.pop('name')
+              parsed = PositionResult.parse(record)
+              assert parsed.prices.report == position.prices.report
+              assert parsed.trace.report == position.trace.report
+              reports.append((name, parsed))
+
+          # Convert only exact ABI-derived integer dictionaries; transport/head integers
+          # retain their original ordinary JSON types. No Number rounding is permitted.
+          def quantities(value):
+              if type(value) is int:
+                  return str(value)
+              if isinstance(value, dict):
+                  return {key: quantities(item) for key, item in value.items()}
+              if isinstance(value, list):
+                  return [quantities(item) for item in value]
+              return value
+
+          module = Path('entrotter.github.io/position-report.mjs').resolve()
+          observer = Path('entrotter.github.io/observed-trace.mjs').resolve()
+          program = r'''
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const { validatePositionReport, exactUnits } = await import(process.argv[1]);
+          const { observationCanonical } = await import(process.argv[2]);
+          const cases = JSON.parse(fs.readFileSync(0, 'utf8'));
+          const results = [];
+          for (const item of cases) {
+            const view = await validatePositionReport(item.text);
+            const trace = view.trace.report;
+            assert.equal(view.trace.baseline.matches, true);
+            assert.equal(trace.source.inputs.length, 13);
+            const classification = view.classification;
+            results.push({
+              name: item.name,
+              artifact_id: view.wrapper.artifact_id,
+              profile: view.wrapper.profile,
+              plan: view.wrapper.plan,
+              scope: view.wrapper.scope,
+              price_artifact_id: view.observed.wrapper.artifact_id,
+              trace_artifact_id: trace.artifact_id,
+              classification,
+              phases: view.phases.map(row => ({...row, errors: row.errors.map(error => ({query: error.query, category: error.category, code: error.diagnostics?.code ?? null, method: error.diagnostics?.method ?? null}))})),
+              raw_observations: view.wrapper.observations,
+              price_classification: view.observed.classification,
+              trace_report: trace,
+              capacity_difference: exactUnits(classification.differences.available_borrows_base, 8),
+              health_difference: exactUnits(classification.differences.health_factor_wad, 18),
+              lossless_classification_canonical: observationCanonical(classification),
+            });
+          }
+          console.log(JSON.stringify({node: process.version, results}, (_, value) => typeof value === 'bigint' ? value.toString() : value));
+          '''
+          payload = json.dumps([{'name': name, 'text': json.dumps(report.report, sort_keys=True, separators=(',', ':'), ensure_ascii=True)} for name, report in reports])
+          completed = subprocess.run(['node', '--input-type=module', '-e', program, module.as_uri(), observer.as_uri()],
+                                     input=payload, check=True, capture_output=True, text=True, timeout=30)
+          assert completed.stderr == ''
+          raw_out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/account-viewer-node-output.json')
+          raw_out.parent.mkdir(parents=True, exist_ok=True)
+          raw_out.write_text(completed.stdout)
+          viewer = json.loads(completed.stdout)
+          assert len(viewer['results']) == len(reports) == 10
+          for row, (name, report) in zip(viewer['results'], reports):
+              assert row['name'] == name and row['artifact_id'] == report.artifact_id
+              assert row['profile'] == report.profile and row['plan'] == report.plan and row['scope'] == report.report['scope']
+              assert row['price_artifact_id'] == report.prices.artifact_id
+              assert row['trace_artifact_id'] == report.trace.artifact_id
+              assert row['trace_report'] == report.trace.report
+              classification = json.loads(json.dumps(asdict(report.classification)))
+              assert row['classification'] == quantities(classification)
+              assert row['lossless_classification_canonical'] == json.dumps(classification, sort_keys=True, separators=(',', ':'), ensure_ascii=True)
+              phases = json.loads(json.dumps([asdict(phase) for phase in report.observations]))
+              expected_phases = [{**phase, 'values': quantities(phase['values'])} for phase in phases]
+              assert row['phases'] == expected_phases
+              assert row['raw_observations'] == report.report['observations']
+              assert row['price_classification'] == quantities(json.loads(json.dumps(asdict(report.prices.classification))))
+              if not classification['complete_account_views']:
+                  assert all(value is None for value in classification['differences'].values())
+                  assert row['capacity_difference'] == row['health_difference'] == 'Unavailable'
+              elif name in ('no_debt', 'debt_transition'):
+                  assert classification['differences']['health_factor_wad'] is None
+                  assert row['health_difference'] == 'Unavailable'
+              elif name == 'large_integer':
+                  assert classification['candidate']['total_collateral_base'] == 2**200 + 1
+                  assert classification['differences']['total_collateral_base'] == 1
+              elif name == 'health_boundary':
+                  assert classification['baseline_health_status'] == 'below_one'
+                  assert classification['candidate_health_status'] == 'at_or_above_one'
+          actual = viewer['results'][0]
+          assert actual['capacity_difference'] == '816.28966124'
+          assert actual['health_difference'] == '0.003852169807877337'
+          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/account-viewer-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          # Full trace is already retained by the original eighth reader/owning sample;
+          # compare every byte-semantic field above and bind its unchanged artifact here.
+          results = [{key: value for key, value in row.items() if key != 'trace_report'} for row in viewer['results']]
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'Offline full SDK/Node account-plan, classification, four-phase and nested trace consistency; no new RPC/EVM/model/browser execution.',
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'wrapper_sha256': digest, 'controls_sha256': hashlib.sha256(controls_path.read_bytes()).hexdigest(),
+              'node': viewer['node'], 'results': results,
+              'baseline_receipts_equal_originals': 13, 'candidate_executed': 12, 'skip_indices': [12],
+              'module_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in [
+                  Path('entrotter.github.io/position-report.mjs'), Path('entrotter.github.io/observed-trace.mjs'),
+                  Path('entrotter.github.io/trace-report.mjs'), Path('sdk-python/src/entrotter_sdk/position.py')]},
+              'limits': ['Nine synthetic controls reuse unchanged nested price/trace evidence; they are not new chain or user data.',
+                         'Three recomputable seals/internal consistency do not authenticate providers/proxies/EVM state or profit.',
+                         'Node codec coupling is separate from the viewer\'s actual Linux browser CI and live Pages.',
+                         'The existing eighth reader independently retains complete Engine/SDK/CLI account facts.'],
+          }, indent=2) + '\n')
+          print('Actual13 and nine synthetic controls agree exactly across full SDK and Node account/price/trace records')
           PY
       - name: Build source-bound local image
         run: |

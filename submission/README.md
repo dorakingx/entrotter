@@ -90,12 +90,12 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Last independently audited coordinator execution snapshot | [01e8f51](https://github.com/entrotter/entrotter/tree/01e8f516c257c4ba5a41decf6c6f5f4ed57caf6a) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Last independently audited coordinator execution snapshot | [670e717](https://github.com/entrotter/entrotter/tree/670e71780ee865ba7308e2270b3264f1f69a7125) | [#55](https://github.com/entrotter/entrotter/pull/55) |
 | Bounded agent engine and default-worker historical Aave price/account observations | [88c6cd0](https://github.com/entrotter/engine/tree/88c6cd0d00f466ed7e870bd57c118aa50984f8b1) | [#35](https://github.com/entrotter/engine/pull/35) |
 | Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI with bounded agent replay, local price/account execution and offline inspection | [696511c](https://github.com/entrotter/cli/tree/696511c5cb46482c96cf6f609c83877fcf16e922) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, recorded agent and signed-prefix inspection, accessibility and quality | [a19d3b1](https://github.com/entrotter/entrotter.github.io/tree/a19d3b17fcf44e58a237b622de8cef89842eb6e7) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
+| Console, recorded agent and signed-prefix and Aave account inspection, accessibility and quality | [4c6e27e](https://github.com/entrotter/entrotter.github.io/tree/4c6e27ed6db398d51d1c0d68ef429f869a61b4c3) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
 The [signed-prefix reader composition](../evidence/trace-reader-integration/README.md)
 adds SDK and browser inspection of the actual four-receipt case. SDK all5checks
@@ -255,11 +255,24 @@ human main approval, Pages and formal submission remain separate. Frozen media,
 model/holdouts, timed walkthroughs and the unsubmitted draft are unchanged.
 
 
-The [account inspection composition](../evidence/account-impact-integration/README.md)
-selects Engine88c6, SDKba4 and CLI6965 after each component's full required CI and
-raw independent review. The recorded13-input account case retains all4 phase
-views and exact deltas; it is not profit or a signed borrowing strategy. The
-prior CLI c04d baseline-unverified failure remains documented with unknown cause;
-new passing CI does not establish that cause. Account display in the selected
-viewer, new coordinator combined CI, human main approval, Pages and formal
-submission are separate. Frozen model, holdout and media sources stay unchanged.
+The historical [account inspection composition](../evidence/account-impact-integration/README.md)
+at root670e selected Engine88c6, SDKba4 and CLI6965 after each component's full
+required CI/raw review. All five root670e checks and full raw review SHA6753979f
+subsequently passed. At that checkpoint the selected viewera19 did not support
+account wrappers; the new viewer composition below adds that display coupling.
+The recorded13-input case retains all4 views and exact deltas, not profit or a
+signed strategy. The prior CLI c04d baseline-unverified failure remains documented
+with unknown cause; later passing CI does not establish that cause. Human main
+approval, Pages and formal submission remain separate. Frozen model, holdout and
+media sources stay unchanged.
+
+
+The proposed [account viewer composition](../evidence/viewer-position-integration/README.md)
+selects viewer4c6e after all four original mandatory checks and full raw independent
+review pass. The ninth offline reader compares the original13 wrapper and nine
+explicit synthetic controls with full SDK/Node classification, four typed/raw
+phases, plan, three seals and nested trace facts. The earlier eight readers retain
+all executable assertions; only the eighth's now-stale display-limit sentence is
+updated. Historical facts remain unchanged except the selected viewer pin and
+that scope text. Component browser verification remains separate from new combined
+CI, human protected-main approval and live Pages. No new chain/model/user run.

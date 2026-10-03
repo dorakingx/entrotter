@@ -83,6 +83,9 @@ adds exact collateral, debt, borrowing-capacity and health-factor inspection bes
 the recorded price and receipt evidence. Its [offline commands and replay guide](docs/QUICK_START.md#compare-historical-aave-account-impact)
 use the same bounded worker and disclose unproven views. This is read-only account
 state comparison; signed strategy execution and financial return remain unproven.
+The [account viewer composition](evidence/viewer-position-integration/README.md)
+adds exact SDK-to-browser inspection of the same sealed records, including explicit
+synthetic missing/large-integer/no-debt/boundary controls.
 
 ## Local API and SDK
 

@@ -4,8 +4,8 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [historical account composition](../evidence/account-impact-integration/README.md)
-selects engine88c6cd0, SDKba4af51, CLI696511c and viewera19d3b1. Eight offline
+The proposed [account viewer composition](../evidence/viewer-position-integration/README.md)
+selects engine88c6cd0, SDKba4af51, CLI696511c and viewer4c6e27e. Nine offline
 integration cases pass locally, including the recorded default-worker32 price
 result and13-input account result. Component CI and current combined CI are separate;
 independent human main approval remains pending. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
@@ -18,7 +18,7 @@ below retains its earlier2f6a56e/enginebd5527f source and measurements.
 In an existing six-sibling checkout, select the reviewed viewer source:
 
 ```bash
-git -C entrotter.github.io fetch --depth=1 origin a19d3b17fcf44e58a237b622de8cef89842eb6e7
+git -C entrotter.github.io fetch --depth=1 origin 4c6e27ed6db398d51d1c0d68ef429f869a61b4c3
 git -C entrotter.github.io checkout --detach FETCH_HEAD
 python3 -m http.server 8880 --bind 127.0.0.1 --directory entrotter.github.io
 ```
@@ -29,6 +29,12 @@ consumer/producer phases, exact USD prices, observed block and contract-code
 identities alongside all32 receipts and the omission classification. You can
 also import the original `observed-trace.json` from a supported CLI run directly.
 Imports stay in the browser; the sample button fetches the local recorded file.
+Choose **Compare recorded Aave account impact** to inspect the separate original
+default-Docker13-of-181/omission12 case. Six exact after-state values and deltas
+include borrowing capacity and health factor, with all four raw account/config/
+code/head phases expandable. Missing views remain UNPROVEN; zero debt shows No debt
+and no health-factor delta. This is aggregate account-state dependence, not profit
+or a signed strategy. The price32 and account13 cases retain distinct sources.
 This inspection needs no Docker, Anvil, archive account or model call. It is a
 local candidate preview; it does not confirm the latest source is deployed.
 
@@ -514,8 +520,12 @@ Original150/180-second bounds, shared worker admission and atomic quota exports
 still apply; missing workers fail without fallback, cancellation130 preserves an
 incumbent, and explicit observation deadlines return124. No native/API/ABI/callback
 or contract override is accepted. This replay is outside timed offline walkthroughs.
-The selected viewer currently supports the nested price/trace family; open the
-account wrapper through the SDK or CLI until a separately reviewed viewer update.
+The selected viewer also accepts this account wrapper directly. Use the local
+preview command above and choose **Compare recorded Aave account impact**, or
+import `account-position.json` in the same historical-prefix panel. Rendering
+uses exact BigInt units and keeps unproven differences unavailable; this browser
+inspection makes no RPC or model call. Component Linux browser CI is separate
+from this coordinator's offline codec coupling and from live Pages publication.
 See [combined account inspection evidence](../evidence/account-impact-integration/README.md).
 
 ## Optional synthetic oracle and provider-fault inspection
