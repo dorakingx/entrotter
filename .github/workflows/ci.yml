@@ -114,7 +114,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: 99e0ecfab9702aeaf5a96913e3d830faeef80570
+          ref: 1ce7677d809847bc9f5917f2ca633878b1761c3c
           path: cli
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -1118,6 +1118,33 @@ jobs:
           assert process.stdout.encode() == expected.read_bytes(), result
           print('Exact CLI text retains all six recorded account fields and scope')
           PYTEXT
+      - name: Verify offline reader completeness exit contracts
+        run: |
+          python - <<'PYCOMPLETE'
+          import hashlib, json, subprocess, sys
+          from pathlib import Path
+          command = [sys.executable, '-m', 'unittest', 'discover', '-s', 'cli/tests',
+                     '-p', 'test_require_complete.py', '-v']
+          process = subprocess.run(command, capture_output=True, text=True, timeout=60)
+          sources = [Path(name) for name in [
+              'cli/src/entrotter_cli/main.py', 'cli/tests/test_require_complete.py',
+              'cli/tests/test_position_text.py', 'sdk-python/src/entrotter_sdk/observed.py',
+              'sdk-python/src/entrotter_sdk/position.py', 'sdk-python/src/entrotter_sdk/trace.py',
+              'cli/tests/data/aave-account-position13.json', 'cli/tests/data/observed-price32.json',
+              'cli/tests/data/observed-controls.json']]
+          result = {
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'command': command[1:], 'returncode': process.returncode,
+              'stdout': process.stdout, 'stderr': process.stderr,
+              'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
+              'scope': 'Offline CLI process exit contracts with selected SDK; synthetic controls are not fresh EVM evidence.',
+          }
+          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/cli-require-complete.json')
+          output.write_text(json.dumps(result, indent=2) + '\n')
+          assert process.returncode == 0, result
+          assert 'Ran 9 tests' in process.stderr and process.stderr.endswith('\nOK\n'), result
+          print('Complete, unproven, invalid and argument exit contracts agree with the selected standalone SDK')
+          PYCOMPLETE
       - name: Build source-bound local image
         run: |
           mkdir -p entrotter/evidence/bounded-agent-integration/integration-ci

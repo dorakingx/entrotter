@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-10-03",
+  "updated_at": "2026-10-04",
   "overall": "in_progress",
   "repository_publication": "six_public_repositories_verified",
   "pages_publication": "historical_live_viewer_verified_latest_candidate_unmerged",
@@ -382,6 +382,19 @@
       "integration_readers": 8,
       "combined_CI": "Pending new exact-root mandatory CI; subsequent links/reviews belong in existing PR55, no status-only commits.",
       "scope": "Offline full composition; actual component default-Docker13 proof separate; no signed borrowing strategy, profit, sole-price causality, authenticated provider/proxy, full block/root or fresh model/browser. Prior c04 failed baseline cause unknown. Viewer account support and human main/Pages/submission pending."
+    },
+    "recorded_comparison_exit_policy": {
+      "cli": "1ce7677d809847bc9f5917f2ca633878b1761c3c",
+      "sdk": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "local_cli_units": 92,
+      "new_exit_contract_groups": 9,
+      "skips": 0,
+      "cli_original_mandatory_checks_passed": 6,
+      "new_local_integration_reader_groups": 9,
+      "prior_ten_reader_bodies_byte_exact": true,
+      "planned_current_ci_offline_readers": 11,
+      "combined_current_ci": "Pending for this new composition; earlier root7c20 full5 original checks remain historical.",
+      "scope": "Existing recorded evidence plus synthetic exit-policy controls. Overlaps prior CLI tests; not added to frozen workspace totals. No new local EVM/model/browser/performance/media/main/Pages/submission execution."
     }
   },
   "evidence": [
@@ -479,7 +492,10 @@
     "evidence/observed-wrapper-integration/summary.json",
     "evidence/direct-observed-wrapper-integration/summary.json",
     "evidence/sdk-observed-integration/summary.json",
-    "evidence/cli-observed-integration/summary.json"
+    "evidence/cli-observed-integration/summary.json",
+    "evidence/require-complete-integration/README.md",
+    "evidence/require-complete-integration/local-reader.json",
+    "evidence/require-complete-integration/cli-require-complete.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

@@ -97,9 +97,17 @@ a rejected file. [Source-label verification](https://github.com/entrotter/entrot
 Terminal users can also inspect the same account record with
 `position-inspect --format text`: all six exact account fields and differences,
 health status, source IDs and unproven reasons appear without manual unit scaling.
-The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/99e0ecfab9702aeaf5a96913e3d830faeef80570/evidence/position-text/README.md)
+The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/1ce7677d809847bc9f5917f2ca633878b1761c3c/evidence/position-text/README.md)
 separates current offline controls and installed-package proof from the original
 historical execution. Protected integration and live publication remain separate.
+
+Scripts can use `position-verify --require-complete` or
+`observed-verify --require-complete` to require both complete recorded views and
+matching baseline receipts. An unproven comparison returns3 with the same JSON
+and reasons on stderr; ordinary verification retains its prior exit behavior.
+Negative differences and valid no-debt states can pass: completeness does not
+prove profit or authenticate a provider. [CLI exit-contract evidence](https://github.com/entrotter/cli/blob/1ce7677d809847bc9f5917f2ca633878b1761c3c/evidence/require-complete/README.md)
+records the offline and installed-package checks.
 
 ## Local API and SDK
 

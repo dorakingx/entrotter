@@ -4,10 +4,12 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [terminal account inspection](../evidence/position-text-integration/README.md)
-selects engine88c6cd0, SDKba4af51, CLI99e0ecf and viewer422d98a. Ten offline
-integration cases pass locally, including the recorded default-worker32 price
-result and13-input account result. Component CI and current combined CI are separate;
+The proposed [recorded comparison exit policy](../evidence/require-complete-integration/README.md)
+selects engine88c6cd0, SDKba4af51, CLI1ce7677 and viewer422d98a. The prior ten
+offline readers passed in the earlier composition, including the recorded
+default-worker32 price and13-input account results. Only the new eleventh reader's
+nine exit-contract groups ran locally for this update and passed. Current combined
+CI separately executes all eleven; component CI and combined CI are separate.
 independent human main approval remains pending. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
 below retains its earlier2f6a56e/enginebd5527f source and measurements.
 
@@ -49,7 +51,7 @@ For terminal inspection, select matching SDK and CLI sources in a second termina
 ```bash
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 99e0ecfab9702aeaf5a96913e3d830faeef80570
+git -C cli fetch --depth=1 origin 1ce7677d809847bc9f5917f2ca633878b1761c3c
 git -C cli checkout --detach FETCH_HEAD
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-verify entrotter.github.io/reports/trace-observed-price32.json
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-inspect entrotter.github.io/reports/trace-observed-price32.json
@@ -433,7 +435,7 @@ git -C engine fetch --depth=1 origin 88c6cd0d00f466ed7e870bd57c118aa50984f8b1
 git -C engine checkout --detach FETCH_HEAD
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 99e0ecfab9702aeaf5a96913e3d830faeef80570
+git -C cli fetch --depth=1 origin 1ce7677d809847bc9f5917f2ca633878b1761c3c
 git -C cli checkout --detach FETCH_HEAD
 .venv/bin/python engine/scripts/build_worker.py --output worker-image.json
 export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.load(open("worker-image.json"))["image_id"])')"
@@ -495,6 +497,14 @@ default and includes full typed observation details; the input retains raw ABI.
 Both modes validate the complete recorded chain before rendering and need no
 Engine execution, network or export ledger. This optional inspection is outside
 previous timed walkthrough measurements.
+
+To stop a script when recorded evidence is unproven, add `--require-complete`
+to `position-verify` or `observed-verify`. Exit0 requires complete views and
+matching original baseline receipts. Valid but unproven records return3, keeping
+the same full JSON on stdout and finite reasons on stderr; invalid input returns1
+without JSON. Negative differences and valid no-debt states can pass. Default
+verification behavior is unchanged, and completeness does not prove profit,
+authenticate a provider or rerun the source execution.
 
 The recorded borrower account is public transaction-source evidence, not an
 identified user. This case replays the original first13 of181 inputs at block

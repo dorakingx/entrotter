@@ -2090,3 +2090,27 @@ full raw review and combined-rootCI remain separate checkpoint records.
 No main integration, new live Pages/video or formal submission is claimed.
 Human independent approval remains required. Goal stays active to the official
 October13 15:59JST deadline; Discord and owner-deferred user evaluations excluded.
+
+
+## October 4 — gate unproven recorded comparisons in scripts
+
+CLI1ce7677 adds opt-in `--require-complete` to account/price verification.
+A valid but unproven record returns3 while retaining unchanged full JSON;
+success requires complete views and matching original baseline receipts.
+Default behavior, invalid1/argument2, negative/zero/no-debt success and offline
+Engine/network/export-ledger isolation are covered by9 new groups/full92 units.
+Fresh installed wheels preserve source/README/RECORD and old JSON/text goldens;
+local quality and all6 original CLI mandatory checks passed. Original argparse
+regression and two malformed synthetic fixture failures remain retained and
+scoped; SDK validation was preserved. Independent core review has no finding.
+
+The candidate selects this CLI, adds a contributor-facing script option and an
+eleventh offline CI reader. Its actual9 groups passed locally and complete raw
+stdout/stderr/status/pins/source hashes are saved before assertions. Previous ten
+reader bodies are byte-exact and their historical local results reused; current
+combinedCI is separate. Production/scripts, locks, other selected workers, frozen
+inputs and original media remain unchanged. [Composition evidence](evidence/require-complete-integration/README.md)
+records the exact source/step scope. No main merge, Pages, formal submission,
+new EVM/model/browser/timing or user evaluation is claimed; human independent
+approval remains required. Goal active to the rechecked October13 15:59JST
+competition deadline, with Discord excluded.
