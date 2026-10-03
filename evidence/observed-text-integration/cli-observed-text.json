@@ -1,0 +1,30 @@
+{
+  "pins": {
+    "engine": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "24bbb916555ef18528300f995e127d50ff29167e",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "422d98a7cf753bfc9be9b86553cd76f3a549f70c"
+  },
+  "command": [
+    "-m",
+    "entrotter_cli",
+    "observed-inspect",
+    "engine/evidence/owned-consumer-observations/historical-32/observed-trace.json",
+    "--format",
+    "text"
+  ],
+  "returncode": 0,
+  "stdout": "Aave V3 Ethereum WETH price (recorded comparison)\nPrice artifact: 9084b6952866470fd20c3cbffab310feca5cacba5ba39cfaa9c6ffbb5caf80e9\nTrace artifact: c4050aeb2f7db54bf17354da3756356ae809b8be9fabccacdb26745ae209826f\nInternal integrity: verified (not provider or execution authentication)\nSource: chain 1, block 18999892\nBlock hash: 0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6\nPrefix: 32 original transactions; candidate omits indices [12]\nOriginal receipts: verified\nPrice comparison: Complete recorded views\n\nBaseline after (USD): 2562.92441874\nCandidate after (USD): 2570.82415\nCandidate - baseline (USD): +7.89973126\n\nRecorded view prices (USD; a quoted value alone does not prove completeness):\nbaseline before: 2570.82415; head block 18999891\nbaseline after: 2562.92441874; head block 18999892\ncandidate before: 2570.82415; head block 18999891\ncandidate after: 2570.82415; head block 18999892\n\nUSD uses the fixed profile's 100000000 base unit; values are not rounded.\nUnproven comparison values remain unavailable, even if some views have prices.\nUse --format json for full signed feed rounds, head/code identities and errors.\n\nScope: Owned-node read-only price views only; no signed consumer action, strategy,\nloan/liquidation/trade, benefit/profit, deployed-code/provider authentication,\nfull-block/opcode/state-root proof or whole-process native sandbox.\n",
+  "stderr": "",
+  "source_sha256": {
+    "engine/evidence/owned-consumer-observations/historical-32/observed-trace.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "cli/tests/data/observed-price32.txt": "ff4bf4ee19426cb142443e0996da5323f3d7dc9b1f5c827e11fc354b7c458433",
+    "cli/src/entrotter_cli/main.py": "26e00193e5a935785109552460463c63a30be997478849f03118ed2ffd4bd0a5",
+    "cli/src/entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+    "cli/src/entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+    "sdk-python/src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "sdk-python/src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+  },
+  "scope": "Offline exact presentation of original native32 recorded views; no fresh EVM/model/timing claim."
+}

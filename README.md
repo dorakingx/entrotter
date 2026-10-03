@@ -22,7 +22,7 @@ All six repositories are public at the links below. The documentation site is
 live at https://entrotter.github.io/. Packages remain unpublished and the engine
 runs locally. See STATUS.md for current verification and open acceptance gates.
 
-The candidate CLI's [development setup](https://github.com/entrotter/cli/blob/a10c28df460cd7ae9a00f04180417440da7d5f88/README.md)
+The candidate CLI's [development setup](https://github.com/entrotter/cli/blob/24bbb916555ef18528300f995e127d50ff29167e/README.md)
 now selects the quality SDK directly from its manifest. The
 [setup composition evidence](evidence/setup-pin-integration/README.md) records the
 executed recipe and separates this documentation fix from runtime verification.
@@ -102,16 +102,22 @@ a rejected file. [Source-label verification](https://github.com/entrotter/entrot
 Terminal users can also inspect the same account record with
 `position-inspect --format text`: all six exact account fields and differences,
 health status, source IDs and unproven reasons appear without manual unit scaling.
-The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/a10c28df460cd7ae9a00f04180417440da7d5f88/evidence/position-text/README.md)
+The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/24bbb916555ef18528300f995e127d50ff29167e/evidence/position-text/README.md)
 separates current offline controls and installed-package proof from the original
 historical execution. Protected integration and live publication remain separate.
+
+Price inspection also accepts `observed-inspect --format text`: exact USD
+baseline/candidate/difference, four recorded phases and unproven reasons can be
+read without converting raw integer units. [Price text composition](evidence/observed-text-integration/README.md)
+compares the entire output with the original32-record sample; default JSON is
+unchanged and a quoted phase value alone does not establish completeness.
 
 Scripts can use `position-verify --require-complete` or
 `observed-verify --require-complete` to require both complete recorded views and
 matching baseline receipts. An unproven comparison returns3 with the same JSON
 and reasons on stderr; ordinary verification retains its prior exit behavior.
 Negative differences and valid no-debt states can pass: completeness does not
-prove profit or authenticate a provider. [CLI exit-contract evidence](https://github.com/entrotter/cli/blob/a10c28df460cd7ae9a00f04180417440da7d5f88/evidence/require-complete/README.md)
+prove profit or authenticate a provider. [CLI exit-contract evidence](https://github.com/entrotter/cli/blob/24bbb916555ef18528300f995e127d50ff29167e/evidence/require-complete/README.md)
 records the offline and installed-package checks.
 
 ## Local API and SDK

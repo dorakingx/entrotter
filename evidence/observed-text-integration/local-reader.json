@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "base_commit": "5193366bea67c37d8900ae8cd62747c8e55fbedc",
+  "pins": {
+    "engine": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "24bbb916555ef18528300f995e127d50ff29167e",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "422d98a7cf753bfc9be9b86553cd76f3a549f70c"
+  },
+  "original_eleven_steps_byte_exact": true,
+  "original_eleven_step_body_sha256": {
+    "Verify offline reader and viewer retain the actual signed-prefix evidence": "f2dc8d5edb44ea12d37cab8b8d3cbfcdaf374d2c2e32d33bb792ebb69a92636a",
+    "Inspect the original 32-receipt case and display classification with SDK and viewer": "09fed780bae31612d9e22e6ef4c89b84be6726c0cc1a23c877888a07c76d119c",
+    "Inspect the historical Aave consumer price records with SDK and viewer": "47cc1b92fef09890744a071f9f5fc6ad9fa32f6b223301eaf697943bed2adb2a",
+    "Inspect the synthetic same-block funding report with SDK and viewer": "adaf874f5dc073337e7577cac42a5af5c06f428334ac17d418b04b25db43eb49",
+    "Inspect oracle omission and unverified storage reports with SDK and viewer": "345ed9ecf904b91505a6abcf061d9a9c75fd6a760de33eb821ae3d670e8e9b62",
+    "Inspect the supported observation wrapper with engine, SDK, CLI and viewer": "647a610411796594076e353539c1a65d327782f2398a627274da9217302e3535",
+    "Inspect the actual bounded historical price wrapper across engine, SDK, CLI and viewer": "5b9dc7265adfe5575b75e42512399d278015c1c0598eec8f3f01b9f3213b6636",
+    "Inspect historical Aave account impact with engine, SDK and CLI": "f79278d33e1c4bb2a235d5212e68c522f306debb6be7cb46f79cb65e18350ade",
+    "Inspect the actual Aave account wrapper and synthetic controls with SDK and viewer": "9b9193ef87852c173e9bd3b676a6d6d2ee76e2c2d764c57848bd0a4292dc306b",
+    "Inspect exact terminal account summary offline": "d2af9bbe376fd2fcedf5080410b9d98d2b3a6830fe01f36ff242185f80b5730c",
+    "Verify offline reader completeness exit contracts": "9101b2254c9f0eeabcd776c2701e954a63f4b503329b35ccab96ff8db1d1c3d2"
+  },
+  "new_step": "Inspect exact recorded WETH price summary offline",
+  "new_step_body_sha256": "c456d0fd0364da6da1f07be2bf5adc861ae150ce272c8d5828a3b08bee2a0619",
+  "actual_returncode": 0,
+  "report_sha256": "5c98736e17567d467fa068b9eddd9f90cf1d3a9f13d87ab4ef7995e5b7d36cb5",
+  "scope": "Only new twelfth price-text offline reader executed locally; previous eleven historical passing results reused, not claimed rerun. Current mandatory CI will execute the full composition separately. No fresh EVM/model/browser/performance execution."
+}

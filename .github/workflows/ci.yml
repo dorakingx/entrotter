@@ -114,7 +114,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: a10c28df460cd7ae9a00f04180417440da7d5f88
+          ref: 24bbb916555ef18528300f995e127d50ff29167e
           path: cli
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -1145,6 +1145,34 @@ jobs:
           assert 'Ran 9 tests' in process.stderr and process.stderr.endswith('\nOK\n'), result
           print('Complete, unproven, invalid and argument exit contracts agree with the selected standalone SDK')
           PYCOMPLETE
+      - name: Inspect exact recorded WETH price summary offline
+        run: |
+          python - <<'PYPRICE'
+          import hashlib, json, subprocess, sys
+          from pathlib import Path
+          source = Path('engine/evidence/owned-consumer-observations/historical-32/observed-trace.json')
+          command = [sys.executable, '-m', 'entrotter_cli', 'observed-inspect', str(source), '--format', 'text']
+          process = subprocess.run(command, capture_output=True, text=True, timeout=30)
+          expected = Path('cli/tests/data/observed-price32.txt')
+          sources = [source, expected, Path('cli/src/entrotter_cli/main.py'),
+                     Path('cli/src/entrotter_cli/observed_text.py'), Path('cli/src/entrotter_cli/position_text.py'),
+                     Path('sdk-python/src/entrotter_sdk/observed.py'), Path('sdk-python/src/entrotter_sdk/trace.py')]
+          result = {
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'command': command[1:], 'returncode': process.returncode,
+              'stdout': process.stdout, 'stderr': process.stderr,
+              'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
+              'scope': 'Offline exact presentation of original native32 recorded views; no fresh EVM/model/timing claim.',
+          }
+          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/cli-observed-text.json')
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_text(json.dumps(result, indent=2) + '\n')
+          assert process.returncode == 0, result
+          assert process.stderr == '', result
+          assert source.read_bytes() == Path('cli/tests/data/observed-price32.json').read_bytes(), result
+          assert process.stdout.encode() == expected.read_bytes(), result
+          print('Exact CLI text retains the original32 prices, phases, receipt status and scope')
+          PYPRICE
       - name: Build source-bound local image
         run: |
           mkdir -p entrotter/evidence/bounded-agent-integration/integration-ci

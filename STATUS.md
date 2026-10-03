@@ -2133,3 +2133,24 @@ and independent review are separate. [Setup composition](evidence/setup-pin-inte
 links the actual recipe evidence without rerunning unchanged local readers.
 Human main approval, latest Pages and submission remain pending. No fresh
 EVM/model/browser/performance/user execution is claimed; goal active, Discord excluded.
+
+
+## October 4 — select exact terminal price inspection
+
+The candidate selects CLI24bbb91's `observed-inspect --format text`. Exact USD
+prices/differences, four phases, finite unproven reasons and receipt status now
+appear in the quick start; default JSON and existing account text are unchanged.
+CLI8 new groups/full100/installed8, full10-source static checks and all6 original
+mandatory checks passed. Giant integers and unsupported currency/unit are covered;
+this is recorded/synthetic inspection, not fresh EVM or price/profit prediction.
+
+The new twelfth offline reader actually matches the whole Engine88c6 original32
+wrapper to the CLI fixture and the entire1382-byte text to its golden. Full raw
+stdout/stderr/status/pins/seven hashes are saved before assertions. Prior11 bodies
+are byte-exact; their prior5193 CI facts are reused, not locally rerun. The initial
+helper's ten-step expectation failed before execution and was corrected to eleven.
+[Composition evidence](evidence/observed-text-integration/README.md) separates the
+local new reader from current combinedCI and protected publication. Other sources,
+production/scripts/locks/frozen inputs and media remain unchanged; no fresh local
+EVM/model/browser/performance/user run claimed. Human main/Pages/submission pending;
+goal active through the official deadline, Discord excluded.

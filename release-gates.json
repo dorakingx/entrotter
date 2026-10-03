@@ -406,6 +406,20 @@
         "sdk": 5
       },
       "scope": "README-only setup pin fix. Original current CLI six mandatory checks passed; prior rootb605 eleven-reader/five-check evidence reused. Current root mandatory CI remains separate; no new EVM/model/browser/performance/media/main/Pages/submission claim."
+    },
+    "recorded_price_terminal_text": {
+      "cli": "24bbb916555ef18528300f995e127d50ff29167e",
+      "sdk": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "local_CLI_units": 100,
+      "new_groups": 8,
+      "installed_groups": 8,
+      "skips": 0,
+      "CLI_original_mandatory_checks_passed": 6,
+      "new_local_integration_reader": "Whole original32 source and1382-byte text match",
+      "prior_eleven_reader_bodies_byte_exact": true,
+      "planned_current_ci_offline_readers": 12,
+      "combined_current_ci": "Pending for this new composition; prior5193 full5 original checks historical.",
+      "scope": "Recorded inspection and synthetic presentation controls. Overlaps earlier tests; no addition to frozen workspace totals. No new local EVM/model/browser/performance/media/main/Pages/submission execution."
     }
   },
   "evidence": [
@@ -507,7 +521,10 @@
     "evidence/require-complete-integration/README.md",
     "evidence/require-complete-integration/local-reader.json",
     "evidence/require-complete-integration/cli-require-complete.json",
-    "evidence/setup-pin-integration/README.md"
+    "evidence/setup-pin-integration/README.md",
+    "evidence/observed-text-integration/README.md",
+    "evidence/observed-text-integration/local-reader.json",
+    "evidence/observed-text-integration/cli-observed-text.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }
