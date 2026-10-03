@@ -227,8 +227,10 @@ recovery and missing-image rejection. Exact sample/source pins are in
 
 ## Inspect recorded price observations without an engine
 
-The proposed SDK source is pinned to
-`eb9921f30c1f0f3750140f66023e3b10d255cb20` in [quality-inputs.json](quality-inputs.json).
+The original observed recording retains SDK
+`eb9921f30c1f0f3750140f66023e3b10d255cb20` as `observed_sdk_commit` in
+[quality-inputs.json](quality-inputs.json); the current quality setup separately
+selects its `sdk_commit`.
 The separate observed-wrapper commands read the fixed Aave/WETH price observation
 format; ordinary `inspect` and `verify` retain their v0.1 result behavior.
 From a workspace with matching CLI and SDK sources:
@@ -237,20 +239,34 @@ From a workspace with matching CLI and SDK sources:
 export PYTHONPATH="$PWD/cli/src:$PWD/sdk-python/src"
 python3 -m entrotter_cli observed-verify cli/tests/data/observed-price32.json
 python3 -m entrotter_cli observed-inspect cli/tests/data/observed-price32.json
+python3 -m entrotter_cli observed-inspect cli/tests/data/observed-price32.json --format text
 ```
 
 No engine, Docker, API server, RPC account, model call or export ledger is needed.
-The commands accept only an input path. The SDK reads a regular JSON file of at
+Inspection accepts an input path and optional `--format json|text`. The SDK
+reads a regular JSON file of at
 most 8 MiB, rejects duplicate keys and validates the sealed wrapper, nested trace
 and recorded observation consistency before anything is printed. Invalid input
 returns status 1 with a finite error; an older SDK gets a matching-source error.
 
-Both commands print JSON with wrapper/trace IDs, the profile, receipt verification,
+Both commands default to JSON with wrapper/trace IDs, the profile, receipt verification,
 transaction count, exact integer classification and its unproven reasons.
 `observed-inspect` additionally prints all four typed observation records: prices,
 units, source/aggregator addresses, full signed feed-round fields, head/code
 identities and finite errors. Python integer output preserves decimal digits
 above JavaScript's safe integer range; use a lossless JSON reader for such values.
+
+The opt-in text view shows exact after-prefix baseline and candidate prices in
+USD, their signed difference, all four recorded phase prices/head numbers,
+receipt matching, artifact/source IDs and finite unproven reasons. It uses only
+integer arithmetic, so even values above JavaScript's safe range retain all
+significant digits. The original sample displays 2562.92441874 USD versus
+2570.82415 USD, with a +7.89973126 USD difference. Unproven comparisons show
+`Unavailable`, not zero; unsupported currencies or units are never labelled as
+USD view prices. A recorded phase value alone does not prove completeness, and
+matching baseline receipts remain a separate condition. Use JSON for the full
+signed feed rounds, head/code identities and observation errors. See
+[text presentation evidence](evidence/observed-text/README.md).
 
 Status 0 means successful integrity/consistency inspection. An internally valid
 record with missing or unproven price views still returns 0, with

@@ -119,3 +119,18 @@ This formatter adds no dependency, RPC/model call, execution/export behavior or
 report/schema change. Mandatory CI includes installed text/golden comparison;
 current-head CI, independent review, root composition, human main approval,
 Pages publication and final competition submission remain separate checkpoints.
+
+
+## October 4 — inspect exact recorded price comparisons in the terminal
+
+The opt-in `observed-inspect --format text` shows exact USD baseline/candidate/
+difference, four recorded phases, finite reasons and receipt matching after SDK
+validation. Default/explicit JSON bytes remain unchanged.8 new presentation
+and invalid/offline controls pass; full100 units/14 Ruff/10 types/full10-source
+Bandit pass. Fresh installed CLI8/SDK5 bytes/README/RECORD,8 groups and old/new
+whole output goldens match. The initial executable-module verifier error remains
+retained and was corrected without reinstall or producer reruns. Original price32,
+six synthetic controls and account13 samples, SDK/locks and frozen execution
+inputs are unchanged. [Evidence](evidence/observed-text/README.md) separates this
+from fresh EVM/model/browser/media/performance proof and current mandatoryCI.
+Independent main approval, latest Pages and submission remain separate; goal active.

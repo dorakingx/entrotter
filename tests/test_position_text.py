@@ -232,10 +232,10 @@ class PositionTextTests(unittest.TestCase):
             )
             self.assertEqual((code, out), (1, ""))
 
-    def test_text_is_opt_in_only_for_position_inspect(self):
+    def test_text_is_opt_in_only_for_inspection_commands(self):
         for args in [
             ["position-verify", str(SAMPLE), "--format", "text"],
-            ["observed-inspect", str(SAMPLE), "--format", "text"],
+            ["observed-inspect", str(SAMPLE), "--format", "html"],
             ["position-inspect", str(SAMPLE), "--format", "html"],
         ]:
             code, out, err = self.invoke(args)

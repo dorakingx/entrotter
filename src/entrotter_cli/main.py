@@ -70,13 +70,13 @@ def parser():
                 action="store_true",
                 help="Return 3 for unproven views or baseline receipts; retain JSON output",
             )
-        if name == "position-inspect":
+        if name in {"position-inspect", "observed-inspect"}:
             command.add_argument(
                 "--format",
                 dest="output_format",
                 choices=("json", "text"),
                 default="json",
-                help="Output format (default: json); text shows exact scaled account values",
+                help="Output format (default: json); text shows exact scaled recorded values",
             )
     observed = sub.add_parser(
         "trace-observe",
@@ -267,6 +267,11 @@ def main(argv=None) -> int:
                     "use the SDK source pinned in quality-inputs.json"
                 ) from None
             observed = load_observed_trace(args.report)
+            if args.command == "observed-inspect" and args.output_format == "text":
+                from .observed_text import format_observed
+
+                print(format_observed(observed))
+                return 0
             trace = observed.trace
             summary = {
                 "artifact_id": observed.artifact_id,
