@@ -215,3 +215,38 @@ See [source-bound account viewer evidence](evidence/position-viewer/README.md).
 Independent staged review and exact-head CI are pending separately from human
 protected-main approval, live Pages and formal submission. Goal remains active
 through the official October13 15:59JST deadline. Discord remains excluded.
+
+
+## October 3 — key account changes before the full table
+
+Viewer4c6e subsequently passed all4 mandatory checks and full independent raw
+review665b429d; the preceding account-viewer section records its preparation-time
+state. This next proposed UI change puts exact borrowing-capacity and health-
+factor differences before the account address and full six-metric table. A
+semantic definition list stacks on mobile and preserves positive/negative/zero,
+missing/null and no-debt semantics using the unchanged exact BigInt formatter.
+All original metric/raw/config/price/receipt views and closed validators remain.
+
+Original immutable4c6e Chromium320 fails the new summary-presence regression.
+Final-source local42 browser groups/58 full axe outputs pass at1280/390/320,
+with0violations/0JSerrors. All prior42 groups/49 scans are retained; nine additional
+scans cover debt transition and explicit synthetic reversed/equal after-values.
+No new chain/model/transaction/user evaluation ran. Final desktop/320 screenshots
+retain all digits; long exact values wrap. Local126 Node/12 Python checks pass.
+Lint19JS/checkJs20/format and Python Ruff/mypy/full Bandit0 pass; Python formatting
+repair preserves AST, successful earlier checks reused. All137 prior individual
+security explanations remain exact (85 unchanged/52 moved whole-expression
+occurrences), with0new findings and no rule/suppression changes. Full final
+scanner/source gate pass. Locks unchanged; local advisory evidence reuses4c6e
+Node109/Python42 zero-advisory proof, new mandatoryCI still queries afresh.
+
+First new negative expectations used ASCII hyphen instead of the existing Unicode
+minus; test-only glyph correction preserves the formatter. A subsequent existing
+keyboard/native-filechooser5000ms timeout retains unknown cause; full unchanged-
+source replay then passes42/58. Original raw failures stay private, no assertions
+or time budgets weakened. Axe incomplete contrast and supplemental calculations
+remain distinct from manual assistive-tech or full WCAG certification. See
+[source-bound summary evidence](evidence/account-summary/README.md). Independent
+final staged review/current-head CI, human main approval, live Pages and formal
+submission remain separate. Goal active through the official deadline; Discord
+excluded.

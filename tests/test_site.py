@@ -53,11 +53,12 @@ class SiteTests(unittest.TestCase):
             ],
         )
 
-    def test_stylesheet_cache_identity_matches_source(self):
-        digest = hashlib.sha256((ROOT / "style.css").read_bytes()).hexdigest()[:12]
-        self.assertIn(
-            'href="style.css?v=' + digest + '"', (ROOT / "index.html").read_text()
-        )
+    def test_entrypoint_cache_identity_matches_source(self):
+        html = (ROOT / "index.html").read_text()
+        for path, attribute in [("style.css", "href"), ("trace-viewer.mjs", "src")]:
+            with self.subTest(path=path):
+                digest = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()[:12]
+                self.assertIn(attribute + '="' + path + "?v=" + digest + '"', html)
 
     def test_no_duplicate_ids(self):
         self.assertEqual(len(self.html.ids), len(set(self.html.ids)))

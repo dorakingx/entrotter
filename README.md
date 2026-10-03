@@ -297,6 +297,14 @@ records and the recomputed account classification must agree. Existing report
 families and their validation remain separate and unchanged. No report import
 fetches, uploads, calls an RPC or executes a transaction/model.
 
+Before the account address and full table, two summary values show exact
+**Borrowing capacity change (USD)** and **Health factor change**. They use
+candidate minus baseline, an explicit plus sign for positive values, a minus
+sign for negative values and zero without a sign. Missing comparisons stay
+**Unavailable**; either branch with no debt keeps the health delta
+**Not defined (no debt)**. The values stack on small screens and retain every
+decimal; a positive account delta is not a profit or strategy recommendation.
+
 The six-metric comparison shows exact collateral, debt, borrowing capacity,
 liquidation threshold, LTV and health factor after both branches, with candidate
 minus baseline deltas. USD conversion is available only when currency/config
@@ -330,3 +338,10 @@ clear the account values and download. The new module joins the explicit static
 deployment allowlist; private logs and evidence remain outside the deploy bundle.
 Independent review, exact-head mandatory CI, human main approval and live Pages
 publication remain separate gates. This viewer adds no new chain/model run.
+
+The browser also constructs two explicit synthetic after-state display controls:
+reversed account values and equal account values. They check negative and zero
+summary changes without changing the nested recorded trace/price evidence.
+The existing nine fixed controls remain unchanged. See the
+[account summary validation](evidence/account-summary/README.md) for results and
+limitations; protected-main review and Pages publication remain separate.

@@ -12,7 +12,7 @@
     "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
     "requirements-quality.in": "eccd79884fb38364cc396e59e22eb5a78f48bbf92e2c0b47825dcff473692185",
     "requirements-quality.txt": "845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722",
-    "scripts/check_accessibility.mjs": "bb9b6ab452e60c48a296bd1995389279edcfd987a9ed79669d3d2680008aa300",
+    "scripts/check_accessibility.mjs": "7553c6ed2a40c8de2f4b49a4b773f45e685d3fce1ab8dcd9116e13d9e706a345",
     "scripts/check_quality.mjs": "51d72e7ccb7e9716acfc50e39bdf692a2512532e6da91491358da1437f4794d8",
     "scripts/quality_policy.mjs": "e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89",
     "tests/comparison.test.mjs": "35a035d9e806548d20224070fa707e8866783c639e860ccc3afece23376b6327",
@@ -23,7 +23,7 @@
     "tests/trace.test.mjs": "f68f5e426f9cc470728c43ac58a04a49804839a7f5e647ce95ee244d60d62d21",
     "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
     "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
-    "trace-viewer.mjs": "bffcde1611f85b4edbcd1ed1e937bc42939113362bda803414760518a7140bbd",
+    "trace-viewer.mjs": "e87805dcef59dce8905671c73802c42448abee827c4d12bd0abfd7adb1bda06a",
     "tsconfig.json": "b11349591a0d0c9933d0ee3ff60b0b874df53834e8f2e3c6c45b788aa35cb661",
     "types/browser-tools.d.ts": "0a5352e697b9e2a51651016ac789287acb71d48fdc04027d80a4050b604f579e"
   },
@@ -853,9 +853,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1296,
+        "line": 1333,
         "column": 19,
-        "endLine": 1299,
+        "endLine": 1336,
         "endColumn": 14
       },
       "reason": "The development runner reads this explicit literal account report or synthetic control path resolved under the developer-chosen repository root. The HTTP report importer never chooses filesystem paths. These test-only reads remain bounded local fixtures; no network upload, executable dispatch or private path is selected by report data."
@@ -866,9 +866,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1302,
+        "line": 1339,
         "column": 19,
-        "endLine": 1305,
+        "endLine": 1342,
         "endColumn": 14
       },
       "reason": "The development runner reads this explicit literal account report or synthetic control path resolved under the developer-chosen repository root. The HTTP report importer never chooses filesystem paths. These test-only reads remain bounded local fixtures; no network upload, executable dispatch or private path is selected by report data."
@@ -879,9 +879,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1456,
+        "line": 1560,
         "column": 17,
-        "endLine": 1459,
+        "endLine": 1563,
         "endColumn": 12
       },
       "reason": "The trusted browser harness indexes fixed viewport/report fixtures and explicitly bounded arrays while testing hostile resealed data as inert JSON. File names/routes and loopback origin are developer constants; indexed report values never select shell commands or remote destinations."
@@ -892,9 +892,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1532,
+        "line": 1636,
         "column": 17,
-        "endLine": 1535,
+        "endLine": 1639,
         "endColumn": 12
       },
       "reason": "The trusted browser harness indexes fixed viewport/report fixtures and explicitly bounded arrays while testing hostile resealed data as inert JSON. File names/routes and loopback origin are developer constants; indexed report values never select shell commands or remote destinations."
@@ -905,9 +905,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1538,
+        "line": 1642,
         "column": 17,
-        "endLine": 1541,
+        "endLine": 1645,
         "endColumn": 12
       },
       "reason": "This hashes only the fixed nine-item source inventory beneath trusted operator SITE_DIR. Imported reports cannot select paths; missing files become explicit null evidence."
@@ -918,9 +918,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1546,
+        "line": 1650,
         "column": 19,
-        "endLine": 1549,
+        "endLine": 1653,
         "endColumn": 14
       },
       "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
@@ -931,9 +931,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1582,
+        "line": 1686,
         "column": 32,
-        "endLine": 1585,
+        "endLine": 1689,
         "endColumn": 10
       },
       "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
@@ -944,9 +944,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 1681,
+        "line": 1785,
         "column": 7,
-        "endLine": 1681,
+        "endLine": 1785,
         "endColumn": 19
       },
       "reason": "Missing source bytes assign null only to a key from the fixed inventory. Imported report fields cannot select property names or mutate object prototypes."
@@ -957,9 +957,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1682,
+        "line": 1786,
         "column": 23,
-        "endLine": 1682,
+        "endLine": 1786,
         "endColumn": 52
       },
       "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
@@ -970,9 +970,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 1685,
+        "line": 1789,
         "column": 7,
-        "endLine": 1685,
+        "endLine": 1789,
         "endColumn": 19
       },
       "reason": "The evidence inventory assigns hashes only to keys from the fixed source file list. No imported report key can select a property or prototype mutation."
@@ -983,9 +983,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found writeFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1712,
+        "line": 1816,
         "column": 9,
-        "endLine": 1715,
+        "endLine": 1819,
         "endColumn": 4
       },
       "reason": "The final evidence report uses the fixed accessibility.json filename under the operator/CI-selected output directory. Imported report contents cannot select its destination."
@@ -1503,9 +1503,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 154,
+        "line": 156,
         "column": 15,
-        "endLine": 154,
+        "endLine": 156,
         "endColumn": 31
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1516,9 +1516,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 155,
+        "line": 157,
         "column": 14,
-        "endLine": 155,
+        "endLine": 157,
         "endColumn": 30
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1529,9 +1529,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 155,
+        "line": 157,
         "column": 50,
-        "endLine": 155,
+        "endLine": 157,
         "endColumn": 66
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1542,9 +1542,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 156,
+        "line": 158,
         "column": 15,
-        "endLine": 156,
+        "endLine": 158,
         "endColumn": 32
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1555,9 +1555,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 157,
+        "line": 159,
         "column": 14,
-        "endLine": 157,
+        "endLine": 159,
         "endColumn": 31
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1568,9 +1568,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 157,
+        "line": 159,
         "column": 51,
-        "endLine": 157,
+        "endLine": 159,
         "endColumn": 68
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1581,9 +1581,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 158,
+        "line": 160,
         "column": 7,
-        "endLine": 158,
+        "endLine": 160,
         "endColumn": 21
       },
       "reason": "The index comes from mapping the validated original prefix of at most32 entries. comparisons is built one-to-one from validated candidate rows; the selected label is assigned only to textContent, with no property writes or executable selection."
@@ -1594,9 +1594,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 159,
+        "line": 161,
         "column": 7,
-        "endLine": 159,
+        "endLine": 161,
         "endColumn": 24
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1607,9 +1607,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 170,
+        "line": 172,
         "column": 19,
-        "endLine": 170,
+        "endLine": 172,
         "endColumn": 35
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1620,9 +1620,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 171,
+        "line": 173,
         "column": 36,
-        "endLine": 171,
+        "endLine": 173,
         "endColumn": 52
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1633,9 +1633,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 172,
+        "line": 174,
         "column": 20,
-        "endLine": 172,
+        "endLine": 174,
         "endColumn": 37
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1646,9 +1646,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 173,
+        "line": 175,
         "column": 37,
-        "endLine": 173,
+        "endLine": 175,
         "endColumn": 54
       },
       "reason": "Each indexed branch/input/receipt row has passed exact trace shape, count, order, identity and display-consistency validation. Rows are bounded to32 and placed only through textContent/JSON serialization; no indexed value becomes HTML, code or a URL."
@@ -1659,9 +1659,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 207,
+        "line": 209,
         "column": 9,
-        "endLine": 207,
+        "endLine": 209,
         "endColumn": 27
       },
       "reason": "The display reads a validated four-phase decoded array using the matching fixed observation row index. Price, source, currency and code values are formatted as exact inert textContent; no value selects code or a network endpoint."
@@ -1672,9 +1672,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 208,
+        "line": 210,
         "column": 16,
-        "endLine": 208,
+        "endLine": 210,
         "endColumn": 34
       },
       "reason": "The display reads a validated four-phase decoded array using the matching fixed observation row index. Price, source, currency and code values are formatted as exact inert textContent; no value selects code or a network endpoint."
@@ -1685,36 +1685,10 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 209,
+        "line": 211,
         "column": 13,
-        "endLine": 209,
+        "endLine": 211,
         "endColumn": 31
-      },
-      "reason": "The display reads a validated four-phase decoded array using the matching fixed observation row index. Price, source, currency and code values are formatted as exact inert textContent; no value selects code or a network endpoint."
-    },
-    {
-      "finding": {
-        "file": "trace-viewer.mjs",
-        "ruleId": "security/detect-object-injection",
-        "severity": 1,
-        "message": "Generic Object Injection Sink",
-        "line": 222,
-        "column": 9,
-        "endLine": 222,
-        "endColumn": 27
-      },
-      "reason": "The display reads a validated four-phase decoded array using the matching fixed observation row index. Price, source, currency and code values are formatted as exact inert textContent; no value selects code or a network endpoint."
-    },
-    {
-      "finding": {
-        "file": "trace-viewer.mjs",
-        "ruleId": "security/detect-object-injection",
-        "severity": 1,
-        "message": "Generic Object Injection Sink",
-        "line": 223,
-        "column": 9,
-        "endLine": 223,
-        "endColumn": 27
       },
       "reason": "The display reads a validated four-phase decoded array using the matching fixed observation row index. Price, source, currency and code values are formatted as exact inert textContent; no value selects code or a network endpoint."
     },
@@ -1749,10 +1723,36 @@
         "file": "trace-viewer.mjs",
         "ruleId": "security/detect-object-injection",
         "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 226,
+        "column": 9,
+        "endLine": 226,
+        "endColumn": 27
+      },
+      "reason": "The display reads a validated four-phase decoded array using the matching fixed observation row index. Price, source, currency and code values are formatted as exact inert textContent; no value selects code or a network endpoint."
+    },
+    {
+      "finding": {
+        "file": "trace-viewer.mjs",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 227,
+        "column": 9,
+        "endLine": 227,
+        "endColumn": 27
+      },
+      "reason": "The display reads a validated four-phase decoded array using the matching fixed observation row index. Price, source, currency and code values are formatted as exact inert textContent; no value selects code or a network endpoint."
+    },
+    {
+      "finding": {
+        "file": "trace-viewer.mjs",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 260,
+        "line": 273,
         "column": 25,
-        "endLine": 260,
+        "endLine": 273,
         "endColumn": 36
       },
       "reason": "Account display loops only over the fixed six ACCOUNT_FIELDS names and same-length hardcoded labels. Values and deltas come from independently validated/decode-derived dictionaries with exact BigInt/null values. Reads format numeric text for textContent; no imported key selects markup, code or a property write."
@@ -1763,9 +1763,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 265,
+        "line": 278,
         "column": 9,
-        "endLine": 265,
+        "endLine": 278,
         "endColumn": 18
       },
       "reason": "Account display loops only over the fixed six ACCOUNT_FIELDS names and same-length hardcoded labels. Values and deltas come from independently validated/decode-derived dictionaries with exact BigInt/null values. Reads format numeric text for textContent; no imported key selects markup, code or a property write."
@@ -1776,9 +1776,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 270,
+        "line": 283,
         "column": 9,
-        "endLine": 270,
+        "endLine": 283,
         "endColumn": 32
       },
       "reason": "Account display loops only over the fixed six ACCOUNT_FIELDS names and same-length hardcoded labels. Values and deltas come from independently validated/decode-derived dictionaries with exact BigInt/null values. Reads format numeric text for textContent; no imported key selects markup, code or a property write."
@@ -1789,9 +1789,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 272,
+        "line": 285,
         "column": 24,
-        "endLine": 272,
+        "endLine": 285,
         "endColumn": 47
       },
       "reason": "Account display loops only over the fixed six ACCOUNT_FIELDS names and same-length hardcoded labels. Values and deltas come from independently validated/decode-derived dictionaries with exact BigInt/null values. Reads format numeric text for textContent; no imported key selects markup, code or a property write."
@@ -1802,9 +1802,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 280,
+        "line": 293,
         "column": 49,
-        "endLine": 280,
+        "endLine": 293,
         "endColumn": 64
       },
       "reason": "Account display loops only over the fixed six ACCOUNT_FIELDS names and same-length hardcoded labels. Values and deltas come from independently validated/decode-derived dictionaries with exact BigInt/null values. Reads format numeric text for textContent; no imported key selects markup, code or a property write."

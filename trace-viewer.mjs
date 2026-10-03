@@ -31,6 +31,8 @@ function clear() {
     "trace-price-rows",
     "trace-price-identities",
     "trace-account-summary",
+    "trace-account-capacity-delta",
+    "trace-account-health-delta",
     "trace-account-comparison",
     "trace-account-rows",
     "trace-account-identities",
@@ -231,6 +233,17 @@ async function render(text, seq, recorded) {
   }
   if (position) {
     const result = position.classification;
+    const signed = (value, decimals) =>
+      (value !== null && value > 0n ? "+" : "") + exactUnits(value, decimals);
+    element("trace-account-capacity-delta").textContent = signed(
+      result.differences.available_borrows_base,
+      8,
+    );
+    element("trace-account-health-delta").textContent =
+      result.complete_account_views &&
+      result.differences.health_factor_wad === null
+        ? "Not defined (no debt)"
+        : signed(result.differences.health_factor_wad, 18);
     const healthLabel = (value) =>
       value === "at_or_above_one"
         ? "at or above 1"

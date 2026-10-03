@@ -8,10 +8,10 @@
   <meta name="color-scheme" content="dark">
   <title>Entrotter · A time machine for onchain agents</title>
   <link rel="icon" href="assets/icon.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=abd759c97109">
+  <link rel="stylesheet" href="style.css?v=2e72483077e4">
   <script src="app.js?v=36786b0c3db6" defer></script>
   <script type="module" src="comparison.mjs?v=e0dac48fe543"></script>
-  <script type="module" src="trace-viewer.mjs?v=bffcde1611f8"></script>
+  <script type="module" src="trace-viewer.mjs?v=e87805dcef59"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -87,6 +87,11 @@
       </section>
       <section id="trace-account-results" hidden aria-labelledby="trace-account-heading">
         <h3 id="trace-account-heading">Aave account impact</h3>
+        <p class="small">Candidate − baseline · exact changes in read-only account values</p>
+        <dl class="account-impact-summary" aria-label="Key account differences">
+          <div><dt>Borrowing capacity change (USD)</dt><dd id="trace-account-capacity-delta"></dd></div>
+          <div><dt>Health factor change</dt><dd id="trace-account-health-delta"></dd></div>
+        </dl>
         <p id="trace-account-summary"></p>
         <div class="table-wrap" role="region" aria-labelledby="trace-account-comparison-caption" tabindex="0"><table><caption id="trace-account-comparison-caption">After-state comparison · exact units when all account and currency bindings are complete</caption><thead><tr><th scope="col">Account metric</th><th scope="col">Baseline after</th><th scope="col">Candidate after</th><th scope="col">Candidate − baseline</th></tr></thead><tbody id="trace-account-comparison"></tbody></table></div>
         <details><summary>Four account phases in exact raw units</summary><div class="table-wrap" role="region" aria-labelledby="trace-account-caption" tabindex="0"><table><caption id="trace-account-caption">Raw ABI values · base-currency amounts, basis-point limits and WAD health factor; zero debt retains uint256 sentinel</caption><thead><tr><th scope="col">Phase</th><th scope="col">Collateral base</th><th scope="col">Debt base</th><th scope="col">Borrowing capacity base</th><th scope="col">Liquidation threshold bps</th><th scope="col">LTV bps</th><th scope="col">Health factor WAD</th><th scope="col">Failed queries</th></tr></thead><tbody id="trace-account-rows"></tbody></table></div></details>

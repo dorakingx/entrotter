@@ -1274,6 +1274,43 @@ try {
             await page.locator("#trace-account-comparison tr").count(),
             6,
           );
+          assert.equal(
+            await page.locator("#trace-account-capacity-delta").innerText(),
+            "+816.28966124",
+          );
+          assert.equal(
+            await page.locator("#trace-account-health-delta").innerText(),
+            "+0.003852169807877337",
+          );
+          const summaryTree = await page
+            .locator(".account-impact-summary")
+            .ariaSnapshot();
+          assert.ok(summaryTree.includes("Borrowing capacity change (USD)"));
+          assert.ok(summaryTree.includes("Health factor change"));
+          const summaryBox = await page
+            .locator(".account-impact-summary")
+            .boundingBox();
+          const tableBox = await page
+            .locator("#trace-account-comparison")
+            .boundingBox();
+          assert.ok(
+            summaryBox &&
+              tableBox &&
+              summaryBox.y + summaryBox.height <= tableBox.y,
+          );
+          if (width <= 680) {
+            const capacityBox = await page
+              .locator("#trace-account-capacity-delta")
+              .boundingBox();
+            const healthBox = await page
+              .locator("#trace-account-health-delta")
+              .boundingBox();
+            assert.ok(
+              capacityBox &&
+                healthBox &&
+                capacityBox.y + capacityBox.height < healthBox.y,
+            );
+          }
           assert.equal(await page.locator("#trace-account-rows tr").count(), 4);
           assert.equal(await page.locator("#trace-price-rows tr").count(), 4);
           assert.equal(
@@ -1304,12 +1341,41 @@ try {
               "utf8",
             ),
           );
+          // Explicit synthetic display controls: reverse both after-values or
+          // make them equal. Provider/price/trace records remain unchanged.
+          for (const name of ["negative_change", "zero_change"]) {
+            const synthetic = structuredClone(template);
+            const before = structuredClone(template.classification.baseline);
+            const after = structuredClone(template.classification.candidate);
+            if (name === "negative_change") {
+              synthetic.observations[1].raw = template.observations[3].raw;
+              synthetic.observations[3].raw = template.observations[1].raw;
+              synthetic.classification.baseline = after;
+              synthetic.classification.candidate = before;
+            } else {
+              synthetic.observations[3].raw = template.observations[1].raw;
+              synthetic.classification.candidate = before;
+            }
+            synthetic.classification.differences = Object.fromEntries(
+              Object.entries(template.classification.differences).map(
+                ([key, value]) => [key, name === "zero_change" ? 0n : -value],
+              ),
+            );
+            const { artifact_id, ...body } = synthetic;
+            synthetic.artifact_id = createHash("sha256")
+              .update(observationCanonical(body))
+              .digest("hex");
+            controls.push({ name, ...synthetic });
+          }
           const importsStart = requests.length;
           for (const name of [
             "missing_account",
             "large_integer",
             "no_debt",
+            "debt_transition",
             "health_boundary",
+            "negative_change",
+            "zero_change",
           ]) {
             const control = controls.find((row) => row.name === name);
             assert.ok(control);
@@ -1327,6 +1393,34 @@ try {
             await page.waitForFunction(
               (id) => document.querySelector("#trace-hash")?.textContent === id,
               control.artifact_id,
+            );
+            const expectedCapacity =
+              name === "missing_account"
+                ? "Unavailable"
+                : name === "large_integer"
+                  ? "+0.0000001"
+                  : name === "negative_change"
+                    ? "−816.28966124"
+                    : name === "zero_change"
+                      ? "0"
+                      : "+0.00000001";
+            const expectedHealth =
+              name === "missing_account"
+                ? "Unavailable"
+                : name === "no_debt" || name === "debt_transition"
+                  ? "Not defined (no debt)"
+                  : name === "negative_change"
+                    ? "−0.003852169807877337"
+                    : name === "zero_change"
+                      ? "0"
+                      : "+0.000000000000000001";
+            assert.equal(
+              await page.locator("#trace-account-capacity-delta").innerText(),
+              expectedCapacity,
+            );
+            assert.equal(
+              await page.locator("#trace-account-health-delta").innerText(),
+              expectedHealth,
             );
             if (name === "missing_account") {
               assert.ok(
@@ -1362,7 +1456,7 @@ try {
                   await page.locator("#trace-account-comparison").innerText()
                 ).includes("0.00000001"),
               );
-            } else if (name === "no_debt") {
+            } else if (name === "no_debt" || name === "debt_transition") {
               assert.ok(
                 (
                   await page.locator("#trace-account-comparison").innerText()
@@ -1373,7 +1467,7 @@ try {
                   await page.locator("#trace-account-comparison").innerText()
                 ).includes("Not defined (no debt)"),
               );
-            } else {
+            } else if (name === "health_boundary") {
               assert.ok(
                 (
                   await page.locator("#trace-account-summary").innerText()
@@ -1409,6 +1503,8 @@ try {
           );
           for (const id of [
             "trace-account-summary",
+            "trace-account-capacity-delta",
+            "trace-account-health-delta",
             "trace-account-comparison",
             "trace-account-rows",
             "trace-account-identities",
@@ -1443,6 +1539,14 @@ try {
           assert.equal(
             await page.locator("#trace-account-comparison tr").count(),
             0,
+          );
+          assert.equal(
+            await page.locator("#trace-account-capacity-delta").textContent(),
+            "",
+          );
+          assert.equal(
+            await page.locator("#trace-account-health-delta").textContent(),
+            "",
           );
         }),
     );
