@@ -1,0 +1,152 @@
+{
+  "status": "passed",
+  "pins": {
+    "engine": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "99e0ecfab9702aeaf5a96913e3d830faeef80570",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "422d98a7cf753bfc9be9b86553cd76f3a549f70c"
+  },
+  "steps": [
+    {
+      "name": "Verify offline reader and viewer retain the actual signed-prefix evidence",
+      "script_sha256": "f2dc8d5edb44ea12d37cab8b8d3cbfcdaf374d2c2e32d33bb792ebb69a92636a",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the original 32-receipt case and display classification with SDK and viewer",
+      "script_sha256": "09fed780bae31612d9e22e6ef4c89b84be6726c0cc1a23c877888a07c76d119c",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the historical Aave consumer price records with SDK and viewer",
+      "script_sha256": "47cc1b92fef09890744a071f9f5fc6ad9fa32f6b223301eaf697943bed2adb2a",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the synthetic same-block funding report with SDK and viewer",
+      "script_sha256": "adaf874f5dc073337e7577cac42a5af5c06f428334ac17d418b04b25db43eb49",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect oracle omission and unverified storage reports with SDK and viewer",
+      "script_sha256": "345ed9ecf904b91505a6abcf061d9a9c75fd6a760de33eb821ae3d670e8e9b62",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the supported observation wrapper with engine, SDK, CLI and viewer",
+      "script_sha256": "647a610411796594076e353539c1a65d327782f2398a627274da9217302e3535",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the actual bounded historical price wrapper across engine, SDK, CLI and viewer",
+      "script_sha256": "5b9dc7265adfe5575b75e42512399d278015c1c0598eec8f3f01b9f3213b6636",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect historical Aave account impact with engine, SDK and CLI",
+      "script_sha256": "f79278d33e1c4bb2a235d5212e68c522f306debb6be7cb46f79cb65e18350ade",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the actual Aave account wrapper and synthetic controls with SDK and viewer",
+      "script_sha256": "9b9193ef87852c173e9bd3b676a6d6d2ee76e2c2d764c57848bd0a4292dc306b",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect exact terminal account summary offline",
+      "script_sha256": "d2af9bbe376fd2fcedf5080410b9d98d2b3a6830fe01f36ff242185f80b5730c",
+      "returncode": 0
+    }
+  ],
+  "prior_nine_bodies_byte_exact": true,
+  "all_twelve_full_outputs_unchanged_except_cli_pin_and_exact_main_source_binding": true,
+  "preserved_outputs": {
+    "account-position-reader.json": {
+      "prior_sha256": "eb2e009d829cebc27597210627c499d35845096f32577c7ddb08871a44fd7a87",
+      "current_sha256": "e52e8c47730453b19f00160aa5236748b00da0680fbcefe2cce37c4341506a20"
+    },
+    "account-viewer-node-output.json": {
+      "prior_sha256": "770c0a551f4e3b1321098ee6f497a3abe7536a04314a2868ea71e65d44f2440e",
+      "current_sha256": "770c0a551f4e3b1321098ee6f497a3abe7536a04314a2868ea71e65d44f2440e"
+    },
+    "account-viewer-reader.json": {
+      "prior_sha256": "31208ad527d8b11e4f32cb5c1d234d3d9dd089cfa98b4062c5bbe44f06bd1038",
+      "current_sha256": "aa0f3022037e80f2b8912b11d4e2100c507fcc33f75a44e349ba7549197ee192"
+    },
+    "bounded-observed-transaction-replay.json": {
+      "prior_sha256": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+      "current_sha256": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4"
+    },
+    "observed-transaction-replay.json": {
+      "prior_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+      "current_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f"
+    },
+    "trace-bounded-observed-reader.json": {
+      "prior_sha256": "d1d99b4d5a6d0f35054b82929376cfc89baf42bbb7e715848f432142bc6b6c4e",
+      "current_sha256": "c62a8890ddc4915a93b4894b6ce5b0b8edd05e8468999f93ccd18493e1acce76"
+    },
+    "trace-comparison-reader.json": {
+      "prior_sha256": "9515b07681209ce522ce8fae3d194b8cf2d98d3e98fcbff39a5a2a846f0027c9",
+      "current_sha256": "bdf791f677a23ab91c9b27eb4c3b0ef0d50a3c36f7af83df9bb4bf42249527fe"
+    },
+    "trace-consumer-reader.json": {
+      "prior_sha256": "71b48c2e7c8eb514b32bff2ec2b7129cc973a0ae866b8be1bd2bf0ac2dd08ead",
+      "current_sha256": "b7827e11d1b87b119b5b1646ef0d578d0ea573578a02a6259cf9d14e6a0431de"
+    },
+    "trace-funding-reader.json": {
+      "prior_sha256": "951da6d6c2f3b2e417ea0a96755f26fd0a96b00b36c58ef98bb7b94fd19db2c5",
+      "current_sha256": "9b22c9796a733a36b7833af469a62bef6eb6465513e54f885c13b9a6a358079e"
+    },
+    "trace-observed-reader.json": {
+      "prior_sha256": "768a4ec129c9e3a15c79d2bab5d09e31a51b11ed77b1639fc50d818cdf683a90",
+      "current_sha256": "c708bcbaad206b5701b1731994f2f1e5922e7b2ff0da050fe1bca38fa5dfe964"
+    },
+    "trace-oracle-reader.json": {
+      "prior_sha256": "d090159332e4fbaf174330f843a64e570796c22beef6e95c3c199b7bad49dc6c",
+      "current_sha256": "d9fa620967a177b4104cc6893b5a12713d2edfc99fe2cdf82c7846255ddc6ed5"
+    },
+    "trace-reader.json": {
+      "prior_sha256": "28aa84b19bf6a126781f51989674b458ba086041352a1113cd576195108d7d98",
+      "current_sha256": "d1e39c2e8cee400b1d709203208ed4e31fbb00a994554014d62fcb127e20d29b"
+    }
+  },
+  "output_sha256": {
+    "account-position-reader.json": "e52e8c47730453b19f00160aa5236748b00da0680fbcefe2cce37c4341506a20",
+    "account-viewer-node-output.json": "770c0a551f4e3b1321098ee6f497a3abe7536a04314a2868ea71e65d44f2440e",
+    "account-viewer-reader.json": "aa0f3022037e80f2b8912b11d4e2100c507fcc33f75a44e349ba7549197ee192",
+    "bounded-observed-transaction-replay.json": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+    "cli-position-text.json": "91e87312a690744158192d1d18aa528cc07b50b69a5a38c3be1a5f9904c26931",
+    "observed-transaction-replay.json": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+    "trace-bounded-observed-reader.json": "c62a8890ddc4915a93b4894b6ce5b0b8edd05e8468999f93ccd18493e1acce76",
+    "trace-comparison-reader.json": "bdf791f677a23ab91c9b27eb4c3b0ef0d50a3c36f7af83df9bb4bf42249527fe",
+    "trace-consumer-reader.json": "b7827e11d1b87b119b5b1646ef0d578d0ea573578a02a6259cf9d14e6a0431de",
+    "trace-funding-reader.json": "9b22c9796a733a36b7833af469a62bef6eb6465513e54f885c13b9a6a358079e",
+    "trace-observed-reader.json": "c708bcbaad206b5701b1731994f2f1e5922e7b2ff0da050fe1bca38fa5dfe964",
+    "trace-oracle-reader.json": "d9fa620967a177b4104cc6893b5a12713d2edfc99fe2cdf82c7846255ddc6ed5",
+    "trace-reader.json": "d1e39c2e8cee400b1d709203208ed4e31fbb00a994554014d62fcb127e20d29b"
+  },
+  "scope": "Ten actual offline full readers executed once, including exact CLI text. Verification reuses retained outputs; strict previous comparison caught three new main.py bindings, now individually verified against immutable old/current sources; no fresh chain/model/browser/performance execution. Prior immutable13/32 inputs and every complete nested fact preserved.",
+  "helpers_sha256": {
+    "run-readers-executed.py": "dc9720bb437238596c8d40f79d3a12904822bbb4550a9057d3aec2756c8daeef",
+    "run-readers.py": "44d1a5d88b17470caaf6ecf63cf5262a290bd48794950be22a0926430e1a188a"
+  },
+  "actual_producer_log_sha256": "b536d5888a9022f80fdcab08dccb68fdbf3142b4845bb370b6fd6a1bb64154ca",
+  "verification_only_log_sha256": "2b89634c99572f7a5d3153a27c49ecfb8ca4bca6128e087b74af9445e5adcebd",
+  "zip_sha256": "7d233426cef4c8c59f57549a15a9146842c76939deeb50d46f3ce68375061b0e",
+  "retained_failures": [
+    "Initial helper cwd was workspace root without Git repository; failed before readers.",
+    "All10 actual readers passed; strict previous-output comparison then rejected three changed main.py source hashes. Preserved outputs; verification-only adapter individually binds old/current source hashes without reader reruns or broader normalization."
+  ],
+  "component_review_sha256": "1428c3be28b683fb5c70cadabd96dc8437b76d572bca4657fc348656a21951c2",
+  "component_current_ci": {
+    "tests": 37141107017,
+    "quality": 37141107037,
+    "docs": 37141107015,
+    "all_six_checks": "SUCCESS",
+    "original_attempt": 1,
+    "raw_independent_review": "PASS",
+    "raw_independent_review_sha256": "25c0107d646114c4d49f4529db6f90f2685ff7a816a94393410376679201e656",
+    "parent_external_rehash_bindings": 196
+  }
+}

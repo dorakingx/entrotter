@@ -2067,3 +2067,26 @@ EVM/model/upstream/user or performance run, deployment or submission is claimed.
 Current root staged review/mandatoryCI/raw review and independent human main
 approval remain separate. Goal active through the rechecked official deadline;
 Discord excluded.
+
+## October 4 — select exact terminal account inspection
+
+The default candidate selects CLI99e0's opt-in `position-inspect --format text`
+with existing SDKba4/Engine88c6/viewer422d/scenarios8785. The quick start now
+shows exact baseline/candidate/delta units directly; default JSON is unchanged.
+A new30-second offline CLI step saves complete stdout/stderr/status/source hashes
+before comparing the full committed expected text. Original nine reader bodies,
+required jobs, production/scripts, locks and frozen native inputs are unchanged.
+
+All ten full offline readers actually passed once. The original twelve complete
+outputs preserve every recorded fact after individually checking the new CLI pin
+and three exact main.py source bindings; new output13 equals the expected text.
+Initial wrong-cwd setup and overly strict old-source comparison failures remain
+retained. Final verification uses existing results, without reader reruns or broad
+field normalization. [Manifest/full outputs and scope](evidence/position-text-integration/README.md)
+separate this from fresh EVM/model/browser/timing evidence. CLI83unit/quality/
+installed-package/staged independent review and original-attempt6CI pass; current
+full raw review and combined-rootCI remain separate checkpoint records.
+
+No main integration, new live Pages/video or formal submission is claimed.
+Human independent approval remains required. Goal stays active to the official
+October13 15:59JST deadline; Discord and owner-deferred user evaluations excluded.

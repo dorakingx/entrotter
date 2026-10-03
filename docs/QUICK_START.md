@@ -4,8 +4,8 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [report source composition](../evidence/report-source-integration/README.md)
-selects engine88c6cd0, SDKba4af51, CLI696511c and viewer422d98a. Nine offline
+The proposed [terminal account inspection](../evidence/position-text-integration/README.md)
+selects engine88c6cd0, SDKba4af51, CLI99e0ecf and viewer422d98a. Ten offline
 integration cases pass locally, including the recorded default-worker32 price
 result and13-input account result. Component CI and current combined CI are separate;
 independent human main approval remains pending. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
@@ -49,7 +49,7 @@ For terminal inspection, select matching SDK and CLI sources in a second termina
 ```bash
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 696511c5cb46482c96cf6f609c83877fcf16e922
+git -C cli fetch --depth=1 origin 99e0ecfab9702aeaf5a96913e3d830faeef80570
 git -C cli checkout --detach FETCH_HEAD
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-verify entrotter.github.io/reports/trace-observed-price32.json
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-inspect entrotter.github.io/reports/trace-observed-price32.json
@@ -433,7 +433,7 @@ git -C engine fetch --depth=1 origin 88c6cd0d00f466ed7e870bd57c118aa50984f8b1
 git -C engine checkout --detach FETCH_HEAD
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 696511c5cb46482c96cf6f609c83877fcf16e922
+git -C cli fetch --depth=1 origin 99e0ecfab9702aeaf5a96913e3d830faeef80570
 git -C cli checkout --detach FETCH_HEAD
 .venv/bin/python engine/scripts/build_worker.py --output worker-image.json
 export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.load(open("worker-image.json"))["image_id"])')"
@@ -484,8 +484,17 @@ above, inspect its original recorded result entirely offline:
 
 ```bash
 .venv/bin/python -m entrotter_cli position-verify engine/evidence/aave-account-impact/position.json
+.venv/bin/python -m entrotter_cli position-inspect engine/evidence/aave-account-impact/position.json --format text
 .venv/bin/python -m entrotter_cli position-inspect engine/evidence/aave-account-impact/position.json
 ```
+
+Text displays all six baseline/candidate account values and exact deltas directly
+in USD, percentages/percentage points and health-factor units. It keeps missing
+values unavailable and no-debt health differences undefined. JSON is still the
+default and includes full typed observation details; the input retains raw ABI.
+Both modes validate the complete recorded chain before rendering and need no
+Engine execution, network or export ledger. This optional inspection is outside
+previous timed walkthrough measurements.
 
 The recorded borrower account is public transaction-source evidence, not an
 identified user. This case replays the original first13 of181 inputs at block

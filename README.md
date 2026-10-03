@@ -94,6 +94,13 @@ remain unchanged. The current viewer also identifies local v0.1 imports explicit
 clears previous results while loading, and lets the same example be selected after
 a rejected file. [Source-label verification](https://github.com/entrotter/entrotter.github.io/blob/422d98a7cf753bfc9be9b86553cd76f3a549f70c/evidence/report-source/README.md) preserves the actual regression and full browser evidence.
 
+Terminal users can also inspect the same account record with
+`position-inspect --format text`: all six exact account fields and differences,
+health status, source IDs and unproven reasons appear without manual unit scaling.
+The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/99e0ecfab9702aeaf5a96913e3d830faeef80570/evidence/position-text/README.md)
+separates current offline controls and installed-package proof from the original
+historical execution. Protected integration and live publication remain separate.
+
 ## Local API and SDK
 
 After completing the quick start, keep its environment variables in both terminals.

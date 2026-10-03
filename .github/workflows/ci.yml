@@ -114,7 +114,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: 696511c5cb46482c96cf6f609c83877fcf16e922
+          ref: 99e0ecfab9702aeaf5a96913e3d830faeef80570
           path: cli
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -1092,6 +1092,32 @@ jobs:
           }, indent=2) + '\n')
           print('Actual13 and nine synthetic controls agree exactly across full SDK and Node account/price/trace records')
           PY
+      - name: Inspect exact terminal account summary offline
+        run: |
+          python - <<'PYTEXT'
+          import hashlib, json, subprocess, sys
+          from pathlib import Path
+          command = [sys.executable, '-m', 'entrotter_cli', 'position-inspect',
+                     'engine/evidence/aave-account-impact/position.json', '--format', 'text']
+          process = subprocess.run(command, capture_output=True, text=True, timeout=30)
+          expected = Path('cli/tests/data/aave-account-position13.txt')
+          result = {
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'command': command[1:], 'returncode': process.returncode,
+              'stdout': process.stdout, 'stderr': process.stderr,
+              'expected_sha256': hashlib.sha256(expected.read_bytes()).hexdigest(),
+              'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in [
+                  Path('cli/src/entrotter_cli/main.py'), Path('cli/src/entrotter_cli/position_text.py'),
+                  Path('sdk-python/src/entrotter_sdk/position.py')]},
+              'scope': 'Offline presentation of the unchanged recorded13 result; no fresh EVM, model or timing claim.',
+          }
+          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/cli-position-text.json')
+          output.write_text(json.dumps(result, indent=2) + '\n')
+          assert process.returncode == 0, result
+          assert process.stderr == '', result
+          assert process.stdout.encode() == expected.read_bytes(), result
+          print('Exact CLI text retains all six recorded account fields and scope')
+          PYTEXT
       - name: Build source-bound local image
         run: |
           mkdir -p entrotter/evidence/bounded-agent-integration/integration-ci
