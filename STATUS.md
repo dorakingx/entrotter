@@ -75,3 +75,16 @@ plan and all imported module hashes) and a frozen 840d03 worker manifest whose
 22 inputs match Engine c2eb. All three actual cases were rerun (22.459s, no skips);
 new required CI retains that same launch record. The earlier mutable 43e14e
 manifest had different isolated-module bytes and is not used as execution proof.
+
+
+## October 3 — account replay and offline inspection
+
+The candidate exposes `trace-position`, `position-verify` and `position-inspect`
+with SDKba4/Engine88c6. Existing risk/model and price gates retain their frozen
+SDK/Engine versions. Closed account/plan binding, full standalone validation,
+owned execution/cancellation and quota/atomic export are required. Actual
+default13 data, missing worker and admittedSIGTERM tests pass separately from
+synthetic dispatch and offline tests; [evidence](evidence/position-cli/README.md)
+retains exact current sources/image, full values and scoped results. No new model
+call, signed strategy, profit or provider authentication is claimed. Current-head
+CI, coordinator pins, human main approval and Pages remain separate.

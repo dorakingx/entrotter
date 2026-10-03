@@ -57,6 +57,8 @@ def parser():
     v = sub.add_parser("inspect", help="Summarize a verified result")
     v.add_argument("report")
     for name, description in (
+        ("position-inspect", "Inspect recorded Aave account impact offline"),
+        ("position-verify", "Verify recorded account, price and trace evidence"),
         ("observed-inspect", "Inspect recorded price observations offline"),
         ("observed-verify", "Verify a recorded price wrapper and its nested trace"),
     ):
@@ -67,6 +69,11 @@ def parser():
     )
     observed.add_argument("plan")
     observed.add_argument("-o", "--output", default="observed-trace.json")
+    position = sub.add_parser(
+        "trace-position", help="Compare Aave account views in the local bounded worker"
+    )
+    position.add_argument("plan")
+    position.add_argument("-o", "--output", default="position.json")
     return p
 
 
@@ -169,6 +176,45 @@ def main(argv=None) -> int:
                 )
             )
             return 0
+        if args.command in {"position-inspect", "position-verify"}:
+            try:
+                from entrotter_sdk import load_position
+            except ImportError:
+                raise ValueError(
+                    "Matching SDK with position support is required; "
+                    "use the SDK source pinned in quality-inputs.json"
+                ) from None
+            position = load_position(args.report)
+            prices, trace = position.prices, position.trace
+            summary = {
+                "artifact_id": position.artifact_id,
+                "profile": position.profile,
+                "account": position.account,
+                "plan": position.plan,
+                "integrity_verified": True,
+                "trace": {
+                    "artifact_id": trace.artifact_id,
+                    "baseline_receipts_verified": trace.baseline_verified,
+                    "transaction_count": len(trace.transactions),
+                },
+                "prices": {
+                    "artifact_id": prices.artifact_id,
+                    "classification": asdict(prices.classification),
+                },
+                "classification": asdict(position.classification),
+                "scope": position.report["scope"],
+            }
+            if args.command == "position-inspect":
+                summary["observations"] = [asdict(row) for row in position.observations]
+                summary["price_observations"] = [
+                    asdict(row) for row in prices.observations
+                ]
+            print(json.dumps(summary, indent=2, allow_nan=False))
+            return 0
+        if args.command == "trace-position":
+            from .position_run import execute_position
+
+            return execute_position(args.plan, Path(args.output))
         if args.command in {"observed-inspect", "observed-verify"}:
             try:
                 from entrotter_sdk import load_observed_trace

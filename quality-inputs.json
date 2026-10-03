@@ -1,6 +1,6 @@
 {
   "sdk_repository": "https://github.com/entrotter/sdk-python",
-  "sdk_commit": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+  "sdk_commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
   "sdk_package": "entrotter-sdk==0.1.0",
   "sample_report": "tests/data/report.json",
   "sample_provenance": "Synthetic liquidity-shock report copied byte-for-byte from entrotter.github.io ab121348b0ffbec5650f9eadf0a0b11f639d9780; not historical market evidence",
@@ -18,5 +18,13 @@
     "synthetic_controls_sha256": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
     "provenance": "Byte-for-byte SDK eb9921f tests/data copies: actual native32-of181/skip12 recorded wrapper from engine40; six engine-sealed synthetic diagnostic controls, not new EVM/model results."
   },
-  "observed_engine_commit": "c2eb54dc97509e7318216c01f98adade1da5bc6e"
+  "observed_engine_commit": "c2eb54dc97509e7318216c01f98adade1da5bc6e",
+  "agent_sdk_commit": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+  "observed_sdk_commit": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+  "position_engine_commit": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+  "position_samples": {
+    "actual": "tests/data/aave-account-position13.json",
+    "actual_sha256": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "provenance": "Byte-identical original Engine88c6 defaultDocker13 result through SDKba4. This recorded inspection sample is distinct from the new CLI actual execution result and synthetic dispatch/invalid-input controls."
+  }
 }

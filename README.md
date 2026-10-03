@@ -312,3 +312,54 @@ that 32-input execution again. Required original risk/recorded-agent checks keep
 their frozen c167 Engine; the new fixed-price gate builds c2eb separately.
 Current local execution, cancellation and installed-package evidence is in
 [evidence/observed-run](evidence/observed-run/README.md).
+
+## Compare historical Aave account impact
+
+The matching standalone SDK is [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44).
+Read the committed record without an Engine, Docker, RPC or model call:
+
+```bash
+export PYTHONPATH="$PWD/cli/src:$PWD/sdk-python/src"
+python3 -m entrotter_cli position-verify cli/tests/data/aave-account-position13.json
+python3 -m entrotter_cli position-inspect cli/tests/data/aave-account-position13.json
+```
+
+Both commands print all three artifact IDs, the account/plan, receipt verification
+and exact account/price classification. Inspection adds all four typed account
+and price records, preserving raw integer precision, head/configuration/code
+identities and finite errors. Status0 means verified internal consistency;
+incomplete evidence keeps null differences and explicit reasons. Hashes do not
+authenticate a provider, source execution or proxy implementation.
+
+For a fresh local replay, select [Engine88c6](https://github.com/entrotter/engine/tree/88c6cd0d00f466ed7e870bd57c118aa50984f8b1),
+build/configure its worker and private read-only archive source as in the price
+setup above, then run:
+
+```bash
+export PYTHONPATH="$PWD/cli/src:$PWD/sdk-python/src:$PWD/engine/src"
+python3 -m entrotter_cli trace-position engine/tests/data/aave-account-prefix.json -o position.json
+python3 -m entrotter_cli position-verify position.json
+python3 -m entrotter_cli position-inspect position.json
+```
+
+The closed256KiB plan contains exactly `position_version`, `account` and the
+original `trace` plan. Only the fixed Aave V3 Ethereum account profile is supported.
+No API/native/profile/callback/contract/selector options or automatic fallback
+are offered. Engine150/180-second limits, owned nodes and read-only upstream
+policy remain unchanged. The SDK independently checks the full returned record,
+then the CLI compares the admitted account/plan snapshot before the existing
+shared quota-protected atomic export. Invalid/foreign/mutated results, quota
+refusal and cancellation preserve the incumbent output and emit no success JSON.
+SIGTERM/Ctrl-C returns130; explicit observation deadline124; ordinary failure1.
+Cancellation after an atomic commit does not roll back a valid committed file.
+
+The original13-input record omits transaction12; all13 original receipts and
+12 candidate receipts remain complete. Available borrowing differs81628966124
+raw base units (denominator1e8), health3852169807877337 WAD units (denominator1e18).
+Both health factors remain above one. These are aggregate account measurements,
+not token balances, profit, a signed loan, liquidation or proof that WETH price
+is the sole cause. No-debt health preserves raw uint256-max and a null normalized
+difference. [Current CLI evidence and limits](evidence/position-cli/README.md)
+separate offline inspection, synthetic dispatch tests and new actual Docker3.
+Frozen agent and fixed-price gates retain their earlier SDK/Engine pins; the
+new account gate uses separate matching checkouts. Packages remain unpublished.

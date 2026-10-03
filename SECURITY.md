@@ -51,3 +51,12 @@ operator worker/RPC environment remains the Engine's trust boundary. No native
 fallback is offered. SIGTERM is converted to cancellation only during owned
 execution/validation/export and the previous handler is restored. Repeated signals,
 forced process death and host/daemon/VM limits retain the Engine/operator scope.
+
+Account inspection is offline and validates the entire fixed account/price/trace
+chain through the standalone SDK; neither an Engine nor an export ledger is
+used. Account execution imports the fixed matching Engine only, snapshots the
+closed admitted plan and validates its complete returned binding before existing
+quota/atomic export. Shared signal/regular-file guards retain their original
+scope; no metadata selects an executable, RPC, image, contract or ABI. Valid
+incomplete views retain null deltas, and internal consistency does not establish
+financial benefit, provider/proxy authenticity or a signed consumer strategy.
