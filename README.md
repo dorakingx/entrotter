@@ -138,6 +138,52 @@ typed values are immutable; `.report` provides a fresh copy including raw ABI.
 The original `load_trace`, action/model-record and HTTP APIs are unchanged.
 Packages remain unpublished; human protected-main approval is separate.
 
+## Read Aave account impact offline
+
+`load_position` reads the separate fixed `aave-v3-ethereum-account` wrapper.
+It checks all three content hashes, the complete price/trace report, admitted
+account/plan, four phase heads, strict six-word ABI, finite errors and recomputed
+classification. It imports no Engine and requires no RPC, Docker or model call:
+
+```python
+from entrotter_sdk import load_position
+
+position = load_position("tests/data/aave-account-position13.json")
+comparison = position.classification
+if comparison.complete_account_views:
+    print("Available borrowing, candidate minus baseline:",
+          comparison.differences.available_borrows_base,
+          "raw base units; denominator:", comparison.base_unit)
+    print("Health factor difference:", comparison.differences.health_factor_wad)
+else:
+    print("Account difference unproven:", comparison.unproven_reasons)
+```
+
+Run from the source checkout with `PYTHONPATH=src`. The [original recorded
+13-input Docker result and reader evidence](evidence/position-reader/README.md)
+retains all original baseline receipts, 12 candidate receipts and omission12.
+Its available-borrowing difference is81628966124 raw USD base units (denominator1e8),
+and health-factor difference3852169807877337 WAD units (denominator1e18).
+These are aggregate account measurements, not token balances, profit, a signed
+loan or proof that WETH price is the sole cause. This reader performs no replay.
+
+`PositionResult.parse(value)` and `verify_position(value)` offer in-memory and
+boolean verification. `.prices` and `.trace` expose the existing typed readers.
+Frozen `AccountObservation` values retain full head/code/configuration/error
+identities; `AccountValues`, `AccountDifferences` and `PositionClassification`
+keep exact Python integers and nullable differences. `.report` and `.plan`
+return fresh copies. Inputs remain regular JSON within8 MiB; account rows
+within64 KiB, duplicate keys and integer tokens over512 characters are refused.
+
+Missing account/price views, changed initial values/code, unverified original
+receipts or a failed Pool→addresses-provider→oracle binding keep all differences
+null and explicit reasons. Zero debt retains raw uint256-max health, `no_debt`
+status and a null normalized health difference. The observed base denomination
+is reported only when the configured pool and oracle agree. Integrity is internal
+consistency: provider/proxy implementation, EVM execution and financial safety
+are not authenticated, and a producer can forge all values and reseal them.
+The existing v0.1 action/model/HTTP and separate trace/price formats are unchanged.
+
 ## Quality checks
 
 The CI quality job checks every production Python file under `src/` and `scripts/`

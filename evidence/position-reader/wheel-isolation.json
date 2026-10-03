@@ -1,0 +1,155 @@
+{
+  "status": "pass",
+  "engine_available": false,
+  "module_sha256": {
+    "trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+    "position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+  },
+  "position_artifact_id": "5c67c4bcf4fc4de614153fc86c0c3814c188b4551212ce55ec9f533fa3e2ad4f",
+  "price_artifact_id": "678309d700aa919ac87501a60278053777c062f1b597922ca6da910b125086f5",
+  "trace_artifact_id": "52044d0f2292fad47d150e0f1cfc46d3346667705d3f43ef25641bc35f5a9737",
+  "transaction_count": 13,
+  "classification": {
+    "complete_account_views": true,
+    "unproven_reasons": [],
+    "baseline": {
+      "total_collateral_base": 41049031017510,
+      "total_debt_base": 16199140199548,
+      "available_borrows_base": 16845329769548,
+      "liquidation_threshold_bps": 8300,
+      "ltv_bps": 8050,
+      "health_factor_wad": 2103240994573506125
+    },
+    "candidate": {
+      "total_collateral_base": 41175556915484,
+      "total_debt_base": 16219364581293,
+      "available_borrows_base": 16926958735672,
+      "liquidation_threshold_bps": 8300,
+      "ltv_bps": 8050,
+      "health_factor_wad": 2107093164381383462
+    },
+    "differences": {
+      "total_collateral_base": 126525897974,
+      "total_debt_base": 20224381745,
+      "available_borrows_base": 81628966124,
+      "liquidation_threshold_bps": 0,
+      "ltv_bps": 0,
+      "health_factor_wad": 3852169807877337
+    },
+    "baseline_health_status": "at_or_above_one",
+    "candidate_health_status": "at_or_above_one",
+    "base_unit": 100000000,
+    "health_factor_unit": 1000000000000000000
+  },
+  "four_observations": [
+    {
+      "branch": "baseline",
+      "phase": "before",
+      "account": "0x16aa9154557f1394089db90d3cbe212d9a7f33bb",
+      "head": {
+        "number": 18999891,
+        "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+        "timestamp": 1705172123
+      },
+      "values": {
+        "total_collateral_base": 41175556721017,
+        "total_debt_base": 16219364296569,
+        "available_borrows_base": 16926958863850,
+        "liquidation_threshold_bps": 8300,
+        "ltv_bps": 8050,
+        "health_factor_wad": 2107093191418940922
+      },
+      "provider": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+      "oracle": "0x54586be62e3c3580375ae3723c145253060ca0c2",
+      "pool_code": {
+        "bytes": 2400,
+        "sha256": "bf8a408a1f5440c167d91fa2d972deb23bb4d809e8dd089009885ec88a826f88"
+      },
+      "errors": []
+    },
+    {
+      "branch": "baseline",
+      "phase": "after",
+      "account": "0x16aa9154557f1394089db90d3cbe212d9a7f33bb",
+      "head": {
+        "number": 18999892,
+        "hash": "0x055d61bf88c47402253a330eccca3629fb5b1f31146eb52c9aa6e9afd6479127",
+        "timestamp": 1705172135
+      },
+      "values": {
+        "total_collateral_base": 41049031017510,
+        "total_debt_base": 16199140199548,
+        "available_borrows_base": 16845329769548,
+        "liquidation_threshold_bps": 8300,
+        "ltv_bps": 8050,
+        "health_factor_wad": 2103240994573506125
+      },
+      "provider": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+      "oracle": "0x54586be62e3c3580375ae3723c145253060ca0c2",
+      "pool_code": {
+        "bytes": 2400,
+        "sha256": "bf8a408a1f5440c167d91fa2d972deb23bb4d809e8dd089009885ec88a826f88"
+      },
+      "errors": []
+    },
+    {
+      "branch": "candidate",
+      "phase": "before",
+      "account": "0x16aa9154557f1394089db90d3cbe212d9a7f33bb",
+      "head": {
+        "number": 18999891,
+        "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+        "timestamp": 1705172123
+      },
+      "values": {
+        "total_collateral_base": 41175556721017,
+        "total_debt_base": 16219364296569,
+        "available_borrows_base": 16926958863850,
+        "liquidation_threshold_bps": 8300,
+        "ltv_bps": 8050,
+        "health_factor_wad": 2107093191418940922
+      },
+      "provider": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+      "oracle": "0x54586be62e3c3580375ae3723c145253060ca0c2",
+      "pool_code": {
+        "bytes": 2400,
+        "sha256": "bf8a408a1f5440c167d91fa2d972deb23bb4d809e8dd089009885ec88a826f88"
+      },
+      "errors": []
+    },
+    {
+      "branch": "candidate",
+      "phase": "after",
+      "account": "0x16aa9154557f1394089db90d3cbe212d9a7f33bb",
+      "head": {
+        "number": 18999892,
+        "hash": "0x221fe9ca1ca8887e21677825b9dd68fba3b6338edfede025722ac8a17f442aba",
+        "timestamp": 1705172135
+      },
+      "values": {
+        "total_collateral_base": 41175556915484,
+        "total_debt_base": 16219364581293,
+        "available_borrows_base": 16926958735672,
+        "liquidation_threshold_bps": 8300,
+        "ltv_bps": 8050,
+        "health_factor_wad": 2107093164381383462
+      },
+      "provider": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+      "oracle": "0x54586be62e3c3580375ae3723c145253060ca0c2",
+      "pool_code": {
+        "bytes": 2400,
+        "sha256": "bf8a408a1f5440c167d91fa2d972deb23bb4d809e8dd089009885ec88a826f88"
+      },
+      "errors": []
+    }
+  ],
+  "old_price_and_four_prefix_readers": true,
+  "wheel_sha256": "b13878facfda9106858deac67bae1976175fb0ff030483a02ba396f783e27797",
+  "wheel_modules": 5,
+  "record_entries": 11,
+  "isolated_no_index_no_deps_install": true,
+  "full_current_readme": true
+}

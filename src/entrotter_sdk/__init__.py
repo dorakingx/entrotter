@@ -10,6 +10,15 @@ from .observed import (
     load_observed_trace,
     verify_observed_trace,
 )
+from .position import (
+    AccountValues,
+    AccountDifferences,
+    AccountObservation,
+    PositionClassification,
+    PositionResult,
+    load_position,
+    verify_position,
+)
 from .trace import (
     TraceLog,
     TraceOutcome,
@@ -22,6 +31,13 @@ from .trace import (
 
 __version__ = "0.1.0"
 __all__ = [
+    "AccountValues",
+    "AccountDifferences",
+    "AccountObservation",
+    "PositionClassification",
+    "PositionResult",
+    "load_position",
+    "verify_position",
     "ObservationHead",
     "ObservationCode",
     "ObservationError",

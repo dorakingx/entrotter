@@ -29,3 +29,12 @@ maintainers in an issue to enable a private channel without disclosing details.
 RPC URLs can contain secrets: never include them in reports, commands in
 screenshots, logs, pull requests, or issue bodies. The optional fork URL may
 be visible to other processes owned by your OS user; run on a trusted machine.
+
+The offline account reader has a closed fixed profile and validates the complete
+price/trace chain before exposing typed account values. It makes no imports or
+execution decisions from report metadata. Fixed pool/provider/oracle, six uint256
+ABI words, phase/head/account bindings, query coverage and classification are
+checked; incomplete evidence preserves null deltas. These are reported getter/code
+identities, not proxy-implementation authentication, signed consumer actions,
+financial correctness or proof of source state. No execution or HTTP endpoint is
+added. A valid sealed record can still be fabricated consistently.
