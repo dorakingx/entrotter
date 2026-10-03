@@ -64,6 +64,12 @@ def parser():
     ):
         command = sub.add_parser(name, help=description)
         command.add_argument("report")
+        if name in {"position-verify", "observed-verify"}:
+            command.add_argument(
+                "--require-complete",
+                action="store_true",
+                help="Return 3 for unproven views or baseline receipts; retain JSON output",
+            )
         if name == "position-inspect":
             command.add_argument(
                 "--format",
@@ -162,6 +168,22 @@ def agent_summary(report: dict) -> dict:
     }
 
 
+def completeness_status(
+    complete_views: bool, baseline_verified: bool, reasons: tuple[str, ...]
+) -> int:
+    """Apply opt-in exit policy to already validated SDK classifications."""
+    if complete_views and baseline_verified:
+        return 0
+    unproven = set(reasons)
+    if not baseline_verified:
+        unproven.add("baseline_receipts_unverified")
+    print(
+        "Incomplete recorded comparison: " + ", ".join(sorted(unproven)),
+        file=sys.stderr,
+    )
+    return 3
+
+
 def main(argv=None) -> int:
     args = parser().parse_args(argv)
     try:
@@ -224,6 +246,13 @@ def main(argv=None) -> int:
                     asdict(row) for row in prices.observations
                 ]
             print(json.dumps(summary, indent=2, allow_nan=False))
+            if args.command == "position-verify" and args.require_complete:
+                classification = position.classification
+                return completeness_status(
+                    classification.complete_account_views,
+                    trace.baseline_verified,
+                    classification.unproven_reasons,
+                )
             return 0
         if args.command == "trace-position":
             from .position_run import execute_position
@@ -258,6 +287,13 @@ def main(argv=None) -> int:
             if args.command == "observed-inspect":
                 summary["observations"] = [asdict(row) for row in observed.observations]
             print(json.dumps(summary, indent=2, allow_nan=False))
+            if args.command == "observed-verify" and args.require_complete:
+                price_classification = observed.classification
+                return completeness_status(
+                    price_classification.complete_price_views,
+                    trace.baseline_verified,
+                    price_classification.unproven_reasons,
+                )
             return 0
         if args.command == "trace-observe":
             from .observed_run import execute_observed

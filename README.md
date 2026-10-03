@@ -331,6 +331,27 @@ identities and finite errors. Status0 means verified internal consistency;
 incomplete evidence keeps null differences and explicit reasons. Hashes do not
 authenticate a provider, source execution or proxy implementation.
 
+For scripts that require a complete recorded comparison, opt in when verifying:
+
+```bash
+python3 -m entrotter_cli position-verify position.json --require-complete > account-check.json
+python3 -m entrotter_cli observed-verify observed-trace.json --require-complete > price-check.json
+```
+
+With this option, exit `0` requires complete account/price views and matching
+baseline receipts. A valid but unproven comparison returns `3`, retains the same
+complete JSON on stdout, and lists finite reasons on stderr. Redirected JSON
+remains available for diagnosis; a shell `&&` continuation runs only on success.
+Invalid or inconsistent reports return `1` with no JSON; argument errors return
+`2`. Without the option, valid unproven records still return `0` as before.
+Only `position-verify` and `observed-verify` accept `--require-complete`.
+
+Completeness describes the recorded evidence, not investment quality. Zero or
+negative differences, health below one, and valid no-debt states can pass.
+No-debt health differences remain null by definition. The option does not
+authenticate a provider or prove a signed strategy, profit or source execution;
+it reads existing files offline without an Engine or export ledger.
+
 For a readable terminal comparison, opt in to text output:
 
 ```bash

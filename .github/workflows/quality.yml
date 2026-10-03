@@ -62,6 +62,7 @@ jobs:
           "$RUNNER_TEMP/cli-wheel-venv/bin/python" -I -m entrotter_cli position-inspect tests/data/aave-account-position13.json
           "$RUNNER_TEMP/cli-wheel-venv/bin/python" -I -m entrotter_cli position-inspect tests/data/aave-account-position13.json --format text > .quality/position-text-installed.txt
           cmp tests/data/aave-account-position13.txt .quality/position-text-installed.txt
+          "$RUNNER_TEMP/cli-wheel-venv/bin/python" -I -m unittest discover -s tests -p test_require_complete.py -v
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
