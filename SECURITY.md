@@ -40,3 +40,14 @@ engine, executes a report, consumes provider metadata as configuration or writes
 an export. SHA-256 and consistency checks establish internal record integrity,
 not provider authentication or economic correctness. Valid incomplete views keep
 null differences and explicit reasons; status 0 does not mean complete price proof.
+
+Local `trace-observe` loads only the separately installed fixed-profile Engine.
+The input is bounded regular-file JSON with duplicate keys and excessive nesting
+refused. Plan validation occurs before execution; the admitted deep snapshot cannot
+be replaced by a mutating executor or a valid wrapper for another plan. The pinned
+standalone SDK validates the full returned wrapper before quota-protected export.
+No metadata chooses a provider executable, image, URL, contract, selector or API;
+operator worker/RPC environment remains the Engine's trust boundary. No native
+fallback is offered. SIGTERM is converted to cancellation only during owned
+execution/validation/export and the previous handler is restored. Repeated signals,
+forced process death and host/daemon/VM limits retain the Engine/operator scope.

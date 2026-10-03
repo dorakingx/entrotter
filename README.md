@@ -262,3 +262,53 @@ state and integers at 2**200; they are not new historical execution.
 Local command and isolated wheel evidence is in
 [evidence/observed-cli](evidence/observed-cli/README.md); new mandatory CI and
 independent review remain distinct from the original recorded EVM evidence.
+
+## Run fixed historical price observations locally
+
+Select the matching Engine revision recorded as `observed_engine_commit` in
+[quality-inputs.json](quality-inputs.json), currently
+[c2eb54d](https://github.com/entrotter/engine/tree/c2eb54dc97509e7318216c01f98adade1da5bc6e).
+Use the pinned SDK source above, rebuild that Engine's worker and configure your
+local Unix Docker socket/image and private archive-capable `ENTROTTER_RPC_URL`.
+The installed CLI remains optional to the Engine; recorded inspection needs only
+SDK and CLI. This command requires a POSIX main thread, not an API server.
+
+From the six-repository workspace:
+
+```bash
+export PYTHONPATH="$PWD/cli/src:$PWD/sdk-python/src:$PWD/engine/src"
+python3 engine/scripts/build_worker.py --output worker-image.json
+export ENTROTTER_WORKER_IMAGE="$(python3 -c 'import json; print(json.load(open("worker-image.json"))["image_id"])')"
+# Set ENTROTTER_DOCKER_SOCKET to your local Docker Unix socket and
+# ENTROTTER_RPC_URL privately to your archive-capable read-only source.
+python3 -m entrotter_cli trace-observe engine/evidence/aave-consumer-price/native-006/plan.json -o observed-trace.json
+python3 -m entrotter_cli observed-verify observed-trace.json
+python3 -m entrotter_cli observed-inspect observed-trace.json
+```
+
+`trace-observe` validates a regular plan of at most 256 KiB, rejecting duplicate keys
+and excess nesting. It uses only the installed fixed Aave/WETH observation profile;
+there are no API, native, callback, contract or selector options. Missing/old
+packages or unavailable workers fail explicitly without fallback. The Engine
+retains its 150-second trace/180-second worker/resource/admission limits and permits
+writes only to owned local nodes. The upstream source is read-only.
+
+Before the shared quota-protected atomic export, the standalone SDK verifies the
+complete wrapper/nested trace and the CLI checks its plan against an independent
+admitted snapshot. Invalid, foreign or mutated results preserve the old destination
+and emit no success JSON. SIGTERM/Ctrl-C reaches owned cleanup and returns 130;
+ordinary worker failures return 1. An explicit Engine `ObservationStopped` deadline
+returns 124; a worker failure is not inferred to have that precise cause. Cancellation
+after the atomic export commits does not roll back that valid committed file.
+
+The success JSON contains both artifact IDs, output path and the complete
+classification. Exit 0 means a valid exported record, not complete price proof;
+missing views retain null differences and unproven reasons. The source 32-input
+plan above is partial historical replay, not a signed consumer strategy, profit,
+authenticated provider or full-block/root/opcode reconstruction. Inspect the
+[Engine's actual bounded replay and limits](https://github.com/entrotter/engine/tree/c2eb54dc97509e7318216c01f98adade1da5bc6e/evidence/bounded-consumer-observations).
+The separate CLI CI gate executes a one-input canonical plan, rather than claiming
+that 32-input execution again. Required original risk/recorded-agent checks keep
+their frozen c167 Engine; the new fixed-price gate builds c2eb separately.
+Current local execution, cancellation and installed-package evidence is in
+[evidence/observed-run](evidence/observed-run/README.md).

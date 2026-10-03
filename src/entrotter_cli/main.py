@@ -61,6 +61,12 @@ def parser():
         ("observed-verify", "Verify a recorded price wrapper and its nested trace"),
     ):
         sub.add_parser(name, help=description).add_argument("report")
+    observed = sub.add_parser(
+        "trace-observe",
+        help="Replay fixed historical price views in the local bounded worker",
+    )
+    observed.add_argument("plan")
+    observed.add_argument("-o", "--output", default="observed-trace.json")
     return p
 
 
@@ -193,6 +199,10 @@ def main(argv=None) -> int:
                 summary["observations"] = [asdict(row) for row in observed.observations]
             print(json.dumps(summary, indent=2, allow_nan=False))
             return 0
+        if args.command == "trace-observe":
+            from .observed_run import execute_observed
+
+            return execute_observed(args.plan, Path(args.output))
         from entrotter_sdk import Client, RunResult
 
         if args.command in {"agent-run", "replay"}:
