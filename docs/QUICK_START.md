@@ -4,11 +4,12 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [terminal price observation composition](../evidence/cli-observed-integration/README.md)
-selects engine40bea57, SDKeb9921f, CLI1ee3d3a and viewera19d3b1. Its six offline integration cases pass
-locally, including direct wrapper validation; combined current-head CI and human
-main approval remain separate. The frozen Docker walkthrough below retains its
-earlier2f6a56e/enginebd5527f source and measurements.
+The proposed [bounded historical price composition](../evidence/bounded-observed-integration/README.md)
+selects enginec2eb54d, SDKeb9921f, CLI1ee3d3a and viewera19d3b1. Seven offline
+integration cases pass locally, including the actual default-worker32 result
+with all four readers. Component CI and current combined CI are separate;
+independent human main approval remains pending. The frozen Docker walkthrough
+below retains its earlier2f6a56e/enginebd5527f source and measurements.
 
 <a id="inspect-the-supported-historical-price-result-offline"></a>
 
@@ -407,6 +408,52 @@ archived oracle cases, provider state authenticity and full-block/opcode/root/
 end-state equivalence remain open. See the pinned engine README
 for complete limits and upstream write denial. This inspection is outside all
 previous timed guide walkthroughs; frozen model/holdout/media sources are unchanged.
+
+## Replay historical prices through the bounded worker
+
+After the existing Docker walkthrough, select the reviewed Engine candidate and
+rebuild your local image before collecting fixed Aave/WETH observations. Select
+the matching SDK and CLI too; the frozen walkthrough uses older revisions. Earlier images do not
+support this job; an unavailable or incompatible worker fails explicitly.
+
+```bash
+git -C engine fetch --depth=1 origin c2eb54dc97509e7318216c01f98adade1da5bc6e
+git -C engine checkout --detach FETCH_HEAD
+git -C sdk-python fetch --depth=1 origin eb9921f30c1f0f3750140f66023e3b10d255cb20
+git -C sdk-python checkout --detach FETCH_HEAD
+git -C cli fetch --depth=1 origin 1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e
+git -C cli checkout --detach FETCH_HEAD
+.venv/bin/python engine/scripts/build_worker.py --output worker-image.json
+export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.load(open("worker-image.json"))["image_id"])')"
+.venv/bin/python -m entrotter_engine trace-observe engine/evidence/aave-consumer-price/native-006/plan.json -o observed-trace.json
+.venv/bin/python -m entrotter_cli observed-verify observed-trace.json
+.venv/bin/python -m entrotter_cli observed-inspect observed-trace.json
+```
+
+Configure your own archive-capable `ENTROTTER_RPC_URL` privately before the replay.
+The fixed plan replays the first32 of181 original inputs in Ethereum block18999892
+and omits index12 in the candidate. All writes target owned local nodes; the
+upstream transport is read-only. The default worker retains the150-second trace
+and180-second worker budgets and shared admission slot. It does not extend a
+deadline, repair state/nonces, substitute a fixture or fall back to native execution.
+No external callback, contract, selector or executable code is accepted by this
+fixed observation profile.
+
+The [actual bounded result and raw evidence](https://github.com/entrotter/engine/tree/c2eb54dc97509e7318216c01f98adade1da5bc6e/evidence/bounded-consumer-observations)
+verified32 baseline receipts and all four price phases. Its trace took141.443232s
+on the recorded running Docker/provider setup, close to the fixed150-second
+budget. This is one successful run, not a speed comparison or guarantee for your
+provider. Missing state, unavailable RPCs and deadline exhaustion remain explicit
+failures or unproven observations. Read-only price dependence establishes no
+signed consumer strategy, profit, full-block/root or provider authenticity.
+
+Open the generated `observed-trace.json` with **Open local signed-prefix JSON**
+in the reviewed local viewer. SDK, CLI and viewer can also inspect the recorded
+result offline. The [proposed cross-repository composition](../evidence/bounded-observed-integration/README.md)
+checks every receipt and the complete raw/typed four-phase records with all four
+readers. Its offline checks are separate from fresh replay, protected-main
+approval and Pages deployment. This optional replay is outside the older timed
+fixture walkthroughs and makes no new model call.
 
 ## Optional synthetic oracle and provider-fault inspection
 

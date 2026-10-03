@@ -305,8 +305,40 @@
       "locked_identities": 42,
       "reported_advisories": 0,
       "direct_commands": "observed-inspect/observed-verify; input-only, standaloneSDK; exact typed records/null reasons; no engine/network/export/model",
-      "integration": "Exactly4 CLIrefs promoted; frozenjobs/inputs unchanged. Six exact local readers/type21/3 pass; sixth compares both actual CLI JSON commands with SDK full4phase records. New combined CI pending.",
+      "integration": "Historical3270117 withengine40 passed all5 original required checks and full1050-file independent raw review SHA d8594629c62d253a8c7f0344081b468783669893161b9a15dc83be4b5c1224bc. Current bounded-enginec2eb composition separately proposed.",
       "scope": "Recorded data inspection, not newchain/model/browser/provider/strategy/profit/fullblock proof; human main/Pages separate."
+    },
+    "bounded_historical_price_observations": {
+      "engine": "c2eb54dc97509e7318216c01f98adade1da5bc6e",
+      "PR": "https://github.com/entrotter/engine/pull/35",
+      "component_CI": "All8 original required c2eb checks SUCCESS; full independent raw review passed",
+      "component_review_sha256": "4a9c77cb32540e0f68ae2e14072d49400535bd8e176d90aa388244844a75ffca",
+      "native_tests": 366,
+      "native_skips": 0,
+      "unit_tests_each": 366,
+      "unit_Anvil_skips_each": 40,
+      "real_Docker_tests": 26,
+      "source_files": 26,
+      "wheel_modules": 21,
+      "retained_findings": 25,
+      "Python_locked_identities": 42,
+      "scoped_OS_packages": 31,
+      "signed_Cargo_packages": 1126,
+      "reported_advisories": 0,
+      "actual_default32_baseline_verified": 32,
+      "actual_default32_prices": [
+        257082415000,
+        256292441874,
+        257082415000,
+        257082415000
+      ],
+      "actual_default32_trace_seconds": 141.443232,
+      "trace_cap_seconds": 150,
+      "worker_cap_seconds": 180,
+      "CI_actual_observed_prefix": 1,
+      "CI_observed_difference": 0,
+      "integration": "Four selected engine references promoted; all frozen jobs and six existing readers preserved. Seventh full recorded Docker wrapper reader added; seven local readers pass. New combined current-head CI and protected human approval pending.",
+      "scope": "DefaultDocker read-only partial32 replay; no native fallback or repaired nonce/state/provider fixture. Not signed consumer strategy, profit, provider authentication, full-block/root/opcode or CI32 proof. Native macOS cleanup EPERM cause unknown; first4f Linux fixture transport failures retained; test-only c2eb repair all8 pass."
     }
   },
   "evidence": [

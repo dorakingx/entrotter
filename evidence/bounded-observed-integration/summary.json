@@ -1,0 +1,110 @@
+{
+  "status": "prepared proposed composition; combined current-head CI pending",
+  "coordinator_base": "32701177d8e8d7cbf88b6f92f47d3c3a6933633b",
+  "pins": {
+    "engine": "c2eb54dc97509e7318216c01f98adade1da5bc6e",
+    "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+    "cli": "1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "engine_selectors_changed": 4,
+  "all_frozen_jobs_models_holdouts_and_six_existing_reader_bodies_preserved": true,
+  "local_reader_steps": 7,
+  "first_six_complete_fact_bodies_unchanged_except_selected_engine_pin": true,
+  "new_seventh_reader": "Actual recorded Docker32 wrapper through engine export, standalone SDK and two actual CLI commands, Node22 trace/observation codecs; full outcomes/raw ABI/four exact typed records equal original native32 evidence. No new chain/model/browser call in these offline steps.",
+  "source_wrapper_sha256": "724c3786efa78f666725022955c4df53b1c22458241f8ae994e5875d690da0d1",
+  "nested_export_sha256": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+  "actual_default_Docker32": {
+    "trace_seconds": 141.443232,
+    "host_seconds": 142.4472716250457,
+    "verified_baseline_receipts": 32,
+    "candidate_executed": 31,
+    "complete_price_views": 4,
+    "prices": [
+      257082415000,
+      256292441874,
+      257082415000,
+      257082415000
+    ],
+    "difference": 789973126,
+    "base_unit": 100000000,
+    "scope": "Recorded actual default CLI execution at feature source4fdb; c2eb only repairs Linux test fixture transport. Trace150/worker180 caps; no native fallback/provider/fixture/state/nonce repair; owned slot removed. One executed attempt claimed."
+  },
+  "current_engine_component_CI": {
+    "head": "c2eb54dc97509e7318216c01f98adade1da5bc6e",
+    "mandatory_checks": 8,
+    "runs": {
+      "units": 37102146980,
+      "evm": 37102147035,
+      "isolated": 37102147018,
+      "quality": 37102146988,
+      "docs": 37102146979
+    },
+    "full_raw_independent_sha256": "4a9c77cb32540e0f68ae2e14072d49400535bd8e176d90aa388244844a75ffca",
+    "native": {
+      "tests": 366,
+      "seconds": [
+        87.858
+      ],
+      "skips": 0
+    },
+    "units": {
+      "versions": [
+        "3.11",
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "tests_each": 366,
+      "skips_each": 40,
+      "seconds_in_log_order": [
+        51.633,
+        55.344,
+        55.964,
+        54.849
+      ]
+    },
+    "real_Docker_tests": 26,
+    "quality": {
+      "sources": 26,
+      "retained_findings": 25,
+      "exact_4fdb_policy_retained": true,
+      "wheel_full_RECORD_and_current_README": true,
+      "nosec_skipped_errors": 0,
+      "wheel_modules": 21,
+      "python_locked_identities": 42,
+      "python_reported_advisories": 0,
+      "public_research_controls": 33
+    },
+    "actual_observed_one_runtime": 7.87843,
+    "actual_observed_one_difference": 0,
+    "OS_packages": 31,
+    "signed_Cargo_packages": 1126,
+    "reported_OS_Cargo_findings": 0,
+    "docs": {
+      "files": 23,
+      "links": 277,
+      "unique": 265,
+      "errors_timeouts_exclusions": 0,
+      "all_git_document_bytes_match": true,
+      "checker": "lychee 0.24.2",
+      "checker_sha256": "87e6e75195df5753f08c53b5c0a13694b8328edd8df009914ae9e29b5000162d"
+    }
+  },
+  "prior_coordinator": {
+    "head": "32701177d8e8d7cbf88b6f92f47d3c3a6933633b",
+    "all5": "SUCCESS originalattempt1/fullraw review",
+    "independent_review_sha256": "d8594629c62d253a8c7f0344081b468783669893161b9a15dc83be4b5c1224bc",
+    "scope": "Historical engine40 composition; measurements not assigned to new c2eb."
+  },
+  "coordinator_tool_sources": 21,
+  "retained_frozen_type_diagnostics": 3,
+  "limitations": [
+    "First feature4fdb Linux unit/EVM transport failures and cancelled matrix jobs retained; c2eb material test-only repair all8 success.",
+    "Local macOS native metadata cleanup PermissionError cause unknown; focused/full unchanged-source retries pass and failures remain retained.",
+    "No signed consumer strategy, profit, provider authentication, full-block/root/opcode truth or CI32 claim.",
+    "Image local only; no registry/package publication. Tool/DB binaries and server ZIP digests not independently rerun; engine CI installed-wheel smoke not exported/claimed.",
+    "New combined current-head CI, independent human main approval, Pages and formal submission remain separate."
+  ]
+}

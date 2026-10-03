@@ -70,6 +70,14 @@ adds a trace-only admission fix and cross-repository inspection of the synthetic
 original-signature baseline and adverse funding omission. Historical and bounded
 execution, combined CI and protected publication remain distinct evidence gates.
 
+The proposed [bounded historical price composition](evidence/bounded-observed-integration/README.md)
+lets the fixed Aave/WETH observation command use the default Docker worker.
+[Replay and inspect the result](docs/QUICK_START.md#replay-historical-prices-through-the-bounded-worker)
+with the SDK, CLI or local viewer. The recorded32-input run verified every original
+baseline receipt and four complete price views; missing state and worker deadlines
+remain explicit. Read-only price dependence does not establish a signed consumer
+strategy or profit. Candidate integration and protected publication remain separate.
+
 ## Local API and SDK
 
 After completing the quick start, keep its environment variables in both terminals.

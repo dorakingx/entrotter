@@ -1840,3 +1840,46 @@ evidence. Quickstart now offers direct terminal inspection, with optional Python
 New current-head combined CI, human protected-main approval, Pages and formal
 submission remain separate. Goal remains active until official deadline; no
 new archive/model/browser run, spending, disclosure or Discord work.
+
+
+## October 3 — bounded historical price replay
+
+Enginec2eb54d/PR35 now collects the fixed Aave/WETH price profile through the
+default Docker worker; explicit native remains separate. Fixed data-only plan/
+profile/full request hash and nested-plan result binding preserve existing formats.
+Observation150/worker180 deadlines compose without restart; explicit builtin
+seccomp keeps actual filtering on even under an unconfined daemon default.
+
+All8 original current checks and full134-file independent raw review pass,
+SHA4a9c77cb32540e0f68ae2e14072d49400535bd8e176d90aa388244844a75ffca.
+Runs units37102146980/native37102147035/isolated37102147018/quality37102146988/
+docs37102146979. Native366/0skip, four unit versions366/40Anvilskips each,
+Docker26/0skip,26qualitysources/25retainedfindings/42Python0advisories,
+31scopedOS/1126signedCargo0reportedfindings,21wheelmodules/22imageinputs and
+23docs/277links bound. Required actual observed1 CI preserves the original receipt
+and all4 complete prices256292441874/difference0, runtime7.87843s.
+First4f Linux test-only full-response env-size failures/cancelled matrix jobs are
+retained; full owned-file fixtures repair transport without changing production,
+image, policy, dependencies or workflows. Local macOS native metadata cleanup
+PermissionError cause remains unknown despite focused/full unchanged-source pass.
+
+The separate actual default32 run at the same production source verifies32
+original receipts,1omit/31executed and4complete prices257082415000/256292441874/
+257082415000/257082415000. Trace141.443232s/host142.447272s are within original
+150/180 caps; ownedslot absent after exit. Full outcomes/plan/classification/rawABI
+match native evidence. One executed attempt claimed; no native fallback, fixture,
+provider/state/nonce repair or fresh model call. It is read-only partial-block
+dependence, not signed consumer strategy/profit/full-block/root/provider truth.
+
+Prior coordinator3270117/engine40 passed all5 original combined checks and full
+1050-file independent raw review SHAd8594629c62d253a8c7f0344081b468783669893161b9a15dc83be4b5c1224bc.
+Its fixture7.47777061s/model8.067954531s retain the configured runningDocker/cgroupv2/
+potentiallywarmcache scope, with VM/install excluded; not newc2eb measurements.
+The new proposed composition promotes exactly4 Engine selectors, preserves every
+frozen model/holdout/job and six exact reader bodies, and adds a seventh full
+Engine/SDK/CLI/Node22 reader for the actual Docker32 wrapper. All7 local readers
+pass; first6 complete fact bodies differ only in engine pin. The quick start adds
+matching source/image/replay instructions. See [composition source/evidence](evidence/bounded-observed-integration/README.md).
+New combined current-head CI, independent human protected-main approval, candidate
+Pages and formal submission remain separate. Goal active until the official
+October13 15:59JST deadline (section5 rechecked this turn); Discord excluded.
