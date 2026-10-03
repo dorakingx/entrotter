@@ -1,0 +1,56 @@
+{
+  "base": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+  "branch": "feat/trace-report-reader",
+  "status": "local_checks_passed_independent_source_findings_resolved_remote_CI_pending",
+  "api": [
+    "TraceResult",
+    "load_trace",
+    "verify_trace",
+    "TraceTransaction",
+    "TraceOutcome",
+    "TraceReceipt",
+    "TraceLog"
+  ],
+  "original_four_prefix": {
+    "engine": "8176597af994dddb7a3dc6721db623580ebc9601",
+    "artifact_id": "cf1b51833babf17c1b39c5d37af0ff7945da43422e2efc3453d36e72b2d0810f",
+    "sha256": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+    "new_execution": false
+  },
+  "checks": {
+    "tests": 36,
+    "trace_tests": 18,
+    "production_quality_sources": 5,
+    "ruff_lint_format_mypy": "passed",
+    "full_Bandit_findings": 0,
+    "skipped_rules": 0,
+    "fresh_isolated_wheel": "passed; source module bytes and py.typed match; actual four-prefix gas/nonce rows checked",
+    "runtime_dependencies": []
+  },
+  "review_fixes": [
+    "Unprotected legacy v27/v28 permitted as in engine; these contain no chain ID.",
+    "256 access keys enforced across all entries.",
+    "Original and branch gas tied to raw signed gas ceiling.",
+    "Reverts require empty logs/zero bloom/null creation address; calls cannot declare creation address."
+  ],
+  "limits": [
+    "Internal consistency/checksum only; no recovered sender/signature/Keccak transaction hash/source archive/EVM truth attestation.",
+    "Same initial nonce anchors inferred from reported baseline outcomes, not independently sourced.",
+    "Coherent fabricated/resealed data can pass; a readable false baseline remains false.",
+    "No chain/node/model/holdout/media/network execution by reader; no trace HTTP route added.",
+    "Existing client.py and v0.1 result contract unchanged; no package publication, protected merge or GitHub approving review."
+  ],
+  "source_sha256": {
+    "src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "src/entrotter_sdk/__init__.py": "0b38ae9a28d64e3948a930bdeb343b27b22433218695a73d5b9980dc27cccb16",
+    "tests/test_trace.py": "9b39ef1e523c4e5c8154b7a89db865b53b2230d01e6c82b300478b3f4b1bd478",
+    ".github/workflows/quality.yml": "97d9f5de93c4af41d40c5fba939c86c656a8ddbfe9ad2de62d4fa0953cfe73ae"
+  },
+  "independent_review": {
+    "findings": 4,
+    "resolved": 4,
+    "remaining_actionable": 0,
+    "scope": "Source and focused offline regression review; not GitHub approving review."
+  }
+}

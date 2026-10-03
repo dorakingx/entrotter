@@ -1,0 +1,1 @@
+{"status": "passed", "engine_import_available": false, "typed_marker": true, "nested_transactions": 32, "raw_price_difference": 789973126, "prior_four_prefix_preserved": true, "python": "3.13.0", "environment": "Initially fresh venv; final wheel replaced only SDK after CLI README correction."}
