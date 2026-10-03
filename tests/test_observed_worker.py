@@ -1,6 +1,6 @@
 """Closed observed-job binding and timer probes; mocks do not prove isolation."""
 
-from contextlib import redirect_stderr, redirect_stdout
+from contextlib import contextmanager, redirect_stderr, redirect_stdout
 from copy import deepcopy
 from hashlib import sha256
 from io import StringIO
@@ -133,11 +133,20 @@ class ObservedHostBindingTests(unittest.TestCase):
     setUp = harness.IsolatedProtocolTests.setUp
     assert_cleanup = harness.IsolatedProtocolTests.assert_cleanup
 
+    @contextmanager
+    def response(self, envelope):
+        # Preserve the full32 fixture without exceeding Linux's per-string
+        # environment limit. Only the fake client reads this owned test file.
+        path = self.root / 'response.json'
+        path.write_text(json.dumps(envelope))
+        with patch.dict(os.environ, {'FAKE_RESPONSE': '', 'FAKE_RESPONSE_FILE': str(path)}):
+            yield
+
     def invoke(self, report):
         plan = sample_wrapper()['trace_report']['plan']
         raw = encode_observed_trace_request(plan)
         envelope = {'worker_version': '1', 'request_id': sha256(raw).hexdigest(), 'report': report}
-        with patch.dict(os.environ, {'FAKE_RESPONSE': json.dumps(envelope)}):
+        with self.response(envelope):
             return views.run_trace_observed(plan)
 
     def test_valid_wrapper_and_resealed_foreign_plan_and_wrong_family(self):
@@ -164,7 +173,7 @@ class ObservedHostBindingTests(unittest.TestCase):
         plan = observed['trace_report']['plan']
         trace_hash = sha256(encode_trace_request(plan)).hexdigest()
         response = {'worker_version': '1', 'request_id': trace_hash, 'report': observed}
-        with patch.dict(os.environ, {'FAKE_RESPONSE': json.dumps(response)}):
+        with self.response(response):
             with self.assertRaisesRegex(ExecutionError, 'request binding'):
                 views.run_trace_observed(plan)
             self.assert_cleanup()

@@ -57,6 +57,15 @@ system-call list or authorization to execute supplied code.
 
 ## Validation and retained limits
 
+The first4fdb664 CI unit/EVM runs exposed a Linux-only fake-client transport
+defect: the complete observed fixture exceeded Linux's per-string environment
+limit. An actual bounded Linux probe reproduced errno7 and both failures, then
+both passed after moving only fake response transport to an owned test file.
+The full fixture and every request/plan/family assertion remain; production
+worker transport already uses stdin and is unchanged. The same4fdb664 isolated
+job passed all real worker/historical/security gates. Corrected unit/EVM CI is
+separate from those retained first-attempt outcomes.
+
 - [Native366 tests](native.log) and [actual Docker26 tests](docker.log) pass,
   including the real observed entrypoint, owned node cleanup, CPU/RSS/PID/tmpfs
   enforcement, admission races, cancellation and the actual180s idle deadline.

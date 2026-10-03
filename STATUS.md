@@ -517,6 +517,16 @@ added. Goal remains active through the official October13 15:59JST deadline;
 Discord excluded.
 # October 3 — default bounded fixed-price observations
 
+Published4fdb664/PR35 with all31 remote Gitblobs verified and independent final
+review297assertions/99inputs (SHAe99a429e840f2e5f53d3397724ad29bf1fdeb7d7f3f27c3c5ab619eb3af0dcac).
+Its real isolated historical/security job37101478969 and quality/docs pass.
+Original unit/EVM jobs fail at the new fake-client tests because a full wrapper
+in one environment value exceeds Linux MAX_ARG_STRLEN; two actual bounded Linux
+host probes reproduce errno7/both failures, then pass after owned response-file
+transport. Full fixtures/controls and all production/image sources are retained.
+Focused current protocol/metadata40 tests pass; no archive/model/Docker-suite
+repeat is needed for this test-only repair. Corrected-head CI remains required.
+
 The normal `trace-observe` CLI and `run_trace_observed` Python entry now use the
 existing Docker worker. A closed fixed-profile JSON job retains256KiB input,
 8MiB output, full request-hash/profile/nested-plan binding, shared admission and
