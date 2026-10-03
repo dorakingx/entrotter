@@ -52,6 +52,51 @@ results. Public source RPC URLs are never embedded in artifacts.
 The runner admits only JSON-defined, built-in actions. It does not execute
 arbitrary Python, shell commands, downloaded agent code or LLM tool calls.
 
+## Test an Aave supply and borrow decision
+
+The pure `aave_supply()` and `aave_borrow_variable()` builders encode Pool
+actions without RPC calls, keys or signing. Variable borrowing fixes rate mode
+to 2. Supply needs prior token allowance; borrowing needs collateral and, when
+acting for another beneficiary, protocol credit delegation. The Pool decides
+whether an encoded action can execute. See the
+[Aave Pool interface](https://www.aave.com/docs/aave-v3/smart-contracts/pool).
+
+After the bounded worker setup below, run this supplied-action example:
+
+```bash
+export ENTROTTER_RPC_URL='https://YOUR_ARCHIVE_PROVIDER'
+PYTHONPATH=src python3 scripts/aave_borrow.py --output aave-borrow-report.json
+```
+
+Both branches start at pinned Ethereum block 18999892 with an explicitly
+overridden 20 ETH native balance and local account impersonation. They wrap 10 ETH,
+approve and supply 10 WETH, propose borrowing 9 WETH, then borrow 1 WETH. Only the
+candidate's 9 WETH proposal reaches the built-in current-state preflight policy;
+the final 1 WETH action is supplied, not selected by an agent. Full results are
+saved before the example checks receipts, gas, token/debt units and the causal
+decision. Archive failure stops execution; no fixture or native fallback exists.
+
+The [recorded run](evidence/aave-borrow-actions/README.md) has a mined baseline
+revert and a candidate hold at the 9 WETH proposal. Both final 1 WETH borrows
+succeed and create equal variable debt. Rejection alone does not establish its
+cause. Native/token differences are exact local units, not profit, a forecast,
+or validation of a real wallet strategy. This workflow differs from original
+signed transaction-prefix replay and from the read-only account comparison below.
+
+Inspect the retained result offline, or re-execute its exact causal recording
+on the same archive source and configured bounded worker:
+
+```bash
+PYTHONPATH=src python3 scripts/aave_borrow.py --check evidence/aave-borrow-actions/report.json
+PYTHONPATH=src python3 scripts/aave_borrow.py --recording evidence/aave-borrow-actions/recording.json --output replay.json
+```
+
+The latter performs real local execution and still needs archive access.
+Recordings contain requests and typed decisions, not executable agent code.
+Changed observations fail exact replay. The example imports bounded regular
+files, rejects symlinks and duplicate fields, and retains the existing export
+quota. Content hashes and semantic checks do not authenticate upstream state.
+
 ## Compare a historical borrowing position
 
 `trace-position` adds fixed Aave V3 Ethereum `getUserAccountData(account)`
@@ -331,7 +376,7 @@ and does not establish improved historical runtime or explain earlier mining
 timeouts.
 
 The [parent-cache evidence](evidence/trace-parent-cache/README.md) includes one
-instrumented native Ethereum block18999892 prefix through index31, omitting
+instrumented native Ethereum block 18999892 prefix through index31, omitting
 index12 in the candidate. All32 complete projected baseline receipts match the
 originals. The candidate executes31 remaining transactions, with unchanged
 gas/status/logs and shifted positions/cumulative gas. Owned getter observations

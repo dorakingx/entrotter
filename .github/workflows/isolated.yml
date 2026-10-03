@@ -107,6 +107,11 @@ jobs:
         run: |
           python -m entrotter_engine trace-position tests/data/aave-account-prefix.json -o .quality/trace-replay/aave-position.json
           python tests_isolated/check_position_result.py .quality/trace-replay/aave-position.json
+      - name: Compare supplied Aave supply and variable borrow actions with a risk decision
+        id: mainnet_aave_actions
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+        run: python scripts/aave_borrow.py --output .quality/trace-replay/aave-borrow-actions.json
       - name: Record privacy-safe bounded diagnostics after a historical replay failure
         if: ${{ failure() && (steps.mainnet_one.outcome == 'failure' || steps.mainnet_four.outcome == 'failure') }}
         env:
