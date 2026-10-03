@@ -52,6 +52,56 @@ results. Public source RPC URLs are never embedded in artifacts.
 The runner admits only JSON-defined, built-in actions. It does not execute
 arbitrary Python, shell commands, downloaded agent code or LLM tool calls.
 
+## Compare a historical borrowing position
+
+`trace-position` adds fixed Aave V3 Ethereum `getUserAccountData(account)`
+reads to both owned trace branches, before and after replay. An agent developer
+can inspect whether an omitted original transaction changes an existing account's
+aggregate collateral, debt, borrowing capacity or health factor, instead of
+equating unchanged receipts with unchanged downstream state.
+
+After the bounded worker setup below, supply the versioned
+[13-transaction example plan](tests/data/aave-account-prefix.json):
+
+```bash
+export ENTROTTER_RPC_URL='https://YOUR_ARCHIVE_PROVIDER'
+PYTHONPATH=src python3 -m entrotter_engine trace-position tests/data/aave-account-prefix.json -o position.json
+```
+
+The plan has exactly `position_version`, `trace` (the unchanged trace plan) and
+one lowercase, nonzero `account`. Pool, ABI, selectors and profile are fixed;
+the input cannot select code, callbacks, RPC endpoints or other contracts.
+Default execution uses the configured immutable Docker worker with no native
+fallback; `--native` explicitly opts out of whole-process Docker limits.
+`load_position()` validates the sealed result, nested price observations and
+original trace. Export shares the existing atomic filesystem quota.
+
+Only complete views with matching initial account values, matching initial
+heads, stable nonempty pool code, a matching Pool→addresses-provider→observed-oracle
+configuration and verified original baseline receipts yield
+account differences. Missing or invalid views retain finite errors and null
+differences. Base amounts are integers in the observed USD unit of 100000000;
+threshold/LTV values use basis points and health uses WAD (1000000000000000000).
+The no-debt uint256-max health sentinel remains in raw data, with `no_debt`
+status and a null health-factor difference. No floats or monetary benefit score
+are inferred.
+
+The example covers only 13 original transactions and skips transaction12;
+the earlier 32-transaction evidence is a separate execution. Account data
+aggregates all reserves. Branch differences do not prove that WETH price is
+the sole cause, an executed loan/liquidation, profit or provider authenticity.
+Stable proxy code does not authenticate its implementation. The same shared
+150-second trace/observation and 180-second worker limits apply: 52 fixed reads
+across four phases, existing price/pool-code/configuration calls capped at two seconds and
+aggregate account calls capped at ten seconds, always within the remaining
+deadline. No retries, invented funding or state substitution are added.
+
+[Actual13 execution and complete account evidence](evidence/aave-account-impact/README.md)
+records the observed result, source and remaining limits.
+
+Getter semantics are documented in the [official Pool API](https://www.aave.com/docs/aave-v3/smart-contracts/pool);
+the fixed pool address is from the [January 4, 2024 primary address book](https://github.com/aave-dao/aave-address-book/blob/575eac6d595d5d15ba5e6ca9192a2f2a5c719022/src/AaveV3Ethereum.sol).
+
 ## Safe RPC failure diagnostics
 
 `RPCError` remains a `RuntimeError`, and `RPCRejected` remains its subclass.

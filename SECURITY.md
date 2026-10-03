@@ -1,5 +1,17 @@
 # Security
 
+The separate `trace-position` format admits one bounded account address and an
+unchanged trace plan, and only the built-in fixed Aave Ethereum pool getter.
+Two fixed getters bind Pool→addresses-provider→the observed price oracle before
+account base-unit claims. Its exact worker envelope and complete result bind the requested account and
+trace, every phase head and nested price/trace hashes. It cannot select supplied
+callbacks, arbitrary selectors, contracts or transaction actions. Read-only
+account observations share existing owned-node cleanup, 150/180-second limits,
+64 KiB observation/8 MiB result bounds and atomic export quota. An account call
+has a fixed ten-second cap within the same deadline; it never retries.
+Missing/incomplete/state-mismatched views have null differences. Content hashes
+are integrity checks, not authentication of pool implementations or providers.
+
 Experimental research software. Do not use production keys, custody real
 funds, or expose the local engine port or Anvil JSON-RPC to the Internet.
 This is not a trading execution service. Mainnet broadcast is not supported.

@@ -29,10 +29,16 @@ def main(argv=None):
     )
     c.add_argument("plan")
     c.add_argument("-o", "--output", required=True)
+    position = s.add_parser(
+        "trace-position",
+        help="Compare fixed Aave account views on owned historical branches",
+    )
+    position.add_argument("plan")
+    position.add_argument("-o", "--output", required=True)
     a = s.add_parser("serve")
     a.add_argument("--port", type=int, default=8787)
     a.add_argument("--output", default="artifacts")
-    for command in (r, t, c, a):
+    for command in (r, t, c, position, a):
         mode = command.add_mutually_exclusive_group()
         mode.add_argument(
             "--isolated",
@@ -61,6 +67,33 @@ def main(argv=None):
                     {
                         "artifact_id": result["artifact_id"],
                         "mode": result["mode"],
+                        "output": args.output,
+                    }
+                )
+            )
+        elif args.command == "trace-position":
+            from .consumer_observations import ObservationStopped
+            from .position_observations import (
+                load_plan,
+                run_position,
+                run_position_native,
+                write_position,
+            )
+
+            try:
+                position_executor = (
+                    run_position if args.isolated else run_position_native
+                )
+                result = position_executor(load_plan(args.plan))
+            except ObservationStopped as stop:
+                print("Error: Owned account observation stopped", file=sys.stderr)
+                return 124 if stop.code == "deadline" else 130
+            write_position(result, args.output)
+            print(
+                json.dumps(
+                    {
+                        "artifact_id": result["artifact_id"],
+                        "classification": result["classification"],
                         "output": args.output,
                     }
                 )

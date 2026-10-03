@@ -23,6 +23,7 @@ from .parent_cache import ParentCache
 
 if TYPE_CHECKING:
     from .consumer_observations import OwnedPriceObserver
+    from .position_observations import OwnedPositionObserver
 
 TRACE_VERSION = "0.1.0"
 SHANGHAI_TIME = 1681338455
@@ -433,7 +434,7 @@ def _replay_branch(
     skipped: list[int],
     deadline: float,
     *,
-    observations: OwnedPriceObserver | None = None,
+    observations: OwnedPriceObserver | OwnedPositionObserver | None = None,
     branch: str = "baseline",
 ) -> dict:
     with AnvilSession(
@@ -563,13 +564,15 @@ def run_trace_native(plan: dict) -> dict:
 
 
 def _run_trace_native(
-    plan: dict, observations: OwnedPriceObserver | None = None
+    plan: dict, observations: OwnedPriceObserver | OwnedPositionObserver | None = None
 ) -> dict:
     if observations is not None:
         from .consumer_observations import OwnedPriceObserver
 
-        if type(observations) is not OwnedPriceObserver:
-            raise ValueError("Only the built-in owned price observer is supported")
+        from .position_observations import OwnedPositionObserver
+
+        if type(observations) not in {OwnedPriceObserver, OwnedPositionObserver}:
+            raise ValueError("Only built-in owned observers are supported")
     plan = json.loads(canonical(plan))
     validate_plan(plan)
     url = os.environ.get("ENTROTTER_RPC_URL")

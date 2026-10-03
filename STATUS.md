@@ -564,3 +564,37 @@ queries, final artifact-bound independent review, main approval, coordinator
 promotion, live Pages and formal submission remain separate. Goal stays active
 through the official deadline; no model/video/broadcast/paid/Discord work.
 See [exact current evidence](evidence/bounded-consumer-observations/README.md).
+
+
+## October 3 — Historical Aave account impact through the default worker
+
+The separate trace-position format now compares a bounded existing account with
+fixed Pool/provider/oracle/ABI queries on all four owned phases. Default Docker
+request binds complete version/trace/account/profile; full result binds nested
+price/trace seals, account and phase heads. Preserved v0.1 scenario/trace/price
+formats, resources, original signatures, missing-state behavior and 150/180 caps.
+Independent prelaunch found the account-unit relation unproven; two fixed returned
+configuration getters now require matching historical provider/observed oracle
+before any unit/difference claim. Unproven data has null differences; no-debt
+uintmax health remains raw with no_debt status/null normalized difference.
+
+One actual default13 replay passes: all13 original baseline receipts byte-match
+priornative32 first13, candidate12exec/skip12, four fullprice/account/config/code
+views error-free and initialaccount/head equal. Availableborrowbase difference
+81628966124 (USD816.28966124), healthWAD3852169807877337; both aboveone. Trace
+92.565119s/host95.486630s, exactimage2a0f2bc/source2af2329a23inputs, ownedslot absent.
+Prelaunch harness wrongDockerfile-path failure retained; no actual restart.
+
+Full27source Ruff/mypy/fullBandit25existingfindings0new pass;42tool locks/runtime
+empty unchanged. Fullnative379/97.300s passes/0skips; later test-only quota variable
+repair and additional closed hostbinding case pass final15/8.395s after host and checker-source binding, not a local
+full381 claim. Previousfull374/103.769s has1 unchangedmacOS diagnosticcleanup
+os_error, focused1pass and later379pass; cause remainsunknown. Legacy33controls
+pass. Finalsame-image Docker26 passes with pinnedhostAnvil1.8.3 after initial
+unpinnedhost26/3comparisonfailures; initialfailure retained, no image/resource
+change. Finalwheel395276f9 binds22modules/all26RECORD/fullREADME and actual-I
+installedread/CLIhelp; initial inheritedPYTHONPATH pip setup corrected. Docs24/293
+allpass after badPoolfragment fix/noexclusions. Finalstage review, exacthead8CI/publication, coordinator
+promotion/humanmain/Pages/submission remain separate. No signedloan/liquidation/
+profit, soleWETHcausality or freshmodel/browser claimed. See
+[evidence](evidence/aave-account-impact/README.md). Goalactive; Discordexcluded.

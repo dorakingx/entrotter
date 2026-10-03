@@ -100,6 +100,13 @@ jobs:
               raise RuntimeError('Observed worker changed the pinned original receipt')
           print(json.dumps({'artifact_id': result['artifact_id'], 'trace_artifact_id': result['trace_artifact_id'], 'runtime_seconds': report['runtime_seconds'], 'classification': result['classification']}))
           PY
+      - name: Compare an actual historical Aave debt account through the default worker
+        id: mainnet_position
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+        run: |
+          python -m entrotter_engine trace-position tests/data/aave-account-prefix.json -o .quality/trace-replay/aave-position.json
+          python tests_isolated/check_position_result.py .quality/trace-replay/aave-position.json
       - name: Record privacy-safe bounded diagnostics after a historical replay failure
         if: ${{ failure() && (steps.mainnet_one.outcome == 'failure' || steps.mainnet_four.outcome == 'failure') }}
         env:
