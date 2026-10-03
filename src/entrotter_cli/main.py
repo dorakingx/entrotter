@@ -62,7 +62,16 @@ def parser():
         ("observed-inspect", "Inspect recorded price observations offline"),
         ("observed-verify", "Verify a recorded price wrapper and its nested trace"),
     ):
-        sub.add_parser(name, help=description).add_argument("report")
+        command = sub.add_parser(name, help=description)
+        command.add_argument("report")
+        if name == "position-inspect":
+            command.add_argument(
+                "--format",
+                dest="output_format",
+                choices=("json", "text"),
+                default="json",
+                help="Output format (default: json); text shows exact scaled account values",
+            )
     observed = sub.add_parser(
         "trace-observe",
         help="Replay fixed historical price views in the local bounded worker",
@@ -185,6 +194,11 @@ def main(argv=None) -> int:
                     "use the SDK source pinned in quality-inputs.json"
                 ) from None
             position = load_position(args.report)
+            if args.command == "position-inspect" and args.output_format == "text":
+                from .position_text import format_position
+
+                print(format_position(position))
+                return 0
             prices, trace = position.prices, position.trace
             summary = {
                 "artifact_id": position.artifact_id,

@@ -1,0 +1,33 @@
+Aave V3 Ethereum account impact (recorded comparison)
+Account: 0x16aa9154557f1394089db90d3cbe212d9a7f33bb
+Position artifact: 5c67c4bcf4fc4de614153fc86c0c3814c188b4551212ce55ec9f533fa3e2ad4f
+Price artifact: 678309d700aa919ac87501a60278053777c062f1b597922ca6da910b125086f5
+Trace artifact: 52044d0f2292fad47d150e0f1cfc46d3346667705d3f43ef25641bc35f5a9737
+Internal integrity: verified (not provider or execution authentication)
+Source: chain 1, block 18999892
+Block hash: 0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6
+Prefix: 13 original transactions; candidate omits indices [12]
+Original receipts: verified
+Account comparison: Complete recorded views
+Price views: Complete recorded views
+
+After-prefix values        Baseline              Candidate             Candidate - baseline
+Collateral (USD)           410490.3101751        411755.56915484       +1265.25897974
+Debt (USD)                 161991.40199548       162193.64581293       +202.24381745
+Available borrowing (USD)  168453.29769548       169269.58735672       +816.28966124
+Liquidation threshold (%)  83                    83                    0 pp
+LTV (%)                    80.5                  80.5                  0 pp
+Health factor              2.103240994573506125  2.107093164381383462  +0.003852169807877337
+
+Baseline health: At or above 1
+Candidate health: At or above 1
+USD denotes the fixed profile's base currency; pp denotes percentage points.
+No-debt health has no finite normalized delta. The input report retains raw ABI words.
+Use --format json for the full classifications and recorded observation details.
+
+Scope: Owned-node read-only Aave account views. Differences compare the submitted
+transaction-prefix branches; they do not isolate price as the sole cause. No signed
+consumer action, loan/liquidation execution, profit, provider or proxy-implementation
+authentication, full-block/state-root proof. All-account base-currency values, not token
+balances; WAD health factor, basis-point thresholds. Native execution has no
+whole-process sandbox.

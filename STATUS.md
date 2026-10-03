@@ -98,3 +98,24 @@ output before all original assertions; a synthetic focused regression confirms
 failure remains strict while evidence survives. See [scoped failure evidence](evidence/position-cli/c04-failure-retention.json).
 Production, images, limits, dependencies and workflows are unchanged. New-head
 mandatory actual CI and full original raw review remain required.
+
+## October 4 — exact account summary for terminal users
+
+`position-inspect --format text` now displays baseline/candidate/differences for
+all six account fields, exact USD/percentage/WAD scaling, source IDs, original
+receipt status and scope. Default JSON and `position-verify` remain byte-compatible.
+No-debt health is explicit with an undefined normalized delta; valid-unproven
+records retain unavailable values/reasons. Inspection remains offline and uses
+the complete standalone SDK validator before rendering.
+
+Current83 engine-free units, including8 new formatter groups, pass with no skips.
+Full Ruff/format/mypy and unsuppressed9-source Bandit pass. A fresh isolated
+no-index CLI/SDK wheel installation matches whole expected text and original JSON;
+all package module bytes/README/RECORD are source-bound. Earlier missing-option
+regression, golden wrap mismatch and local setup failures remain retained.
+[Local evidence and exact reproduction](evidence/position-text/README.md) scope
+synthetic controls separately from the unchanged original13 historical sample.
+This formatter adds no dependency, RPC/model call, execution/export behavior or
+report/schema change. Mandatory CI includes installed text/golden comparison;
+current-head CI, independent review, root composition, human main approval,
+Pages publication and final competition submission remain separate checkpoints.

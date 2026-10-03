@@ -331,6 +331,25 @@ identities and finite errors. Status0 means verified internal consistency;
 incomplete evidence keeps null differences and explicit reasons. Hashes do not
 authenticate a provider, source execution or proxy implementation.
 
+For a readable terminal comparison, opt in to text output:
+
+```bash
+python3 -m entrotter_cli position-inspect cli/tests/data/aave-account-position13.json --format text
+```
+
+Text shows baseline, candidate and exact differences for all six account fields.
+USD values use the fixed Aave profile's base unit; thresholds are percentages
+and their differences are percentage points. The recorded sample's borrowing
+capacity difference is `+816.28966124 USD` and its health-factor difference is
+`+0.003852169807877337`; both health factors are at or above one. All scaling uses
+integer arithmetic, including uint256 values. Missing or unproven comparisons
+remain `Unavailable` with reasons, rather than zero. No-debt health reads
+`No debt`, with `Not defined (no debt)` for a normalized health difference.
+The full source IDs, receipt status and scope accompany the comparison.
+`--format json` (the default) retains all typed observation details and the original
+JSON output. `position-verify` keeps its JSON-only behavior. Text inspection
+does not execute a replay, contact a network or write an export ledger.
+
 For a fresh local replay, select [Engine88c6](https://github.com/entrotter/engine/tree/88c6cd0d00f466ed7e870bd57c118aa50984f8b1),
 build/configure its worker and private read-only archive source as in the price
 setup above, then run:
