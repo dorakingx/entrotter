@@ -114,7 +114,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/cli
-          ref: 1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e
+          ref: d437ad14828cf63f19091656b68e4b9a2b842ad4
           path: cli
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:

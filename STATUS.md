@@ -1883,3 +1883,32 @@ matching source/image/replay instructions. See [composition source/evidence](evi
 New combined current-head CI, independent human protected-main approval, candidate
 Pages and formal submission remain separate. Goal active until the official
 October13 15:59JST deadline (section5 rechecked this turn); Discord excluded.
+
+
+## October 3 — historical price execution through the CLI
+
+CLId437ad1/PR10 adds `trace-observe` through the matching optional default Engine,
+standalone full SDK/admitted-plan validation and shared quota/atomic export.
+All6 original current checks pass firstattempt (tests37107029565/quality37107029556/
+docs37107029542), and full original raw independent review passes with585assertions,
+35stable raw files/77immutable sources, SHAad73c100fc3cb87f199a1321c224a1fb66f7650d9e6235ae976842db332e5ee3.
+59units/0skip each3.11/12/13, full7source Bandit0 and42exact locked identities0
+reported advisories, CLI5/SDK4 wheel modules/UTF8README/everyRECORD and installed
+inspection outputs are bound. Frozen c167 agent4 retains original scope; newc2eb
+actualDocker3 covers complete one-input original208144gas/eightlogs/four complete
+prices256292441874, missingworker1 and admittedSIGTERM130/incumbent/slot cleanup.
+CI launch records exact amd64 image/source22 and importedCLI5/SDK4/Engine21/plan;
+local final840 image is separate. Docs8/21 pass (one existing loopback exclusion).
+Original import/buildenv failures and local image-provenance gaps are retained;
+final explicit-image local3 run closes the latter without relabelling old records.
+
+This proposed coordinator updates four CLI selectors and makes the guide's replay
+command use the CLI. All seven exact offline readers executed once; all9 complete
+fact/export outputs are unchanged except the selected CLI pin and sixth/seventh
+exact CLI main source hashes. The provisional post-run comparison expected a pin-
+only difference; corrected offline against exact old/new source hashes, without
+rerunning readers or altering outcomes. All frozen native/agent/host/model/holdout
+jobs, inputs and policies remain unchanged. See [current composition evidence](evidence/cli-observed-run-integration/README.md).
+New combined current-head CI, human protected-main approval, candidate Pages and
+submission remain separate. Goal remains active through the official deadline;
+Discord excluded. No newCLI32/model/browser/OS-Cargo/kernel/performance claim.

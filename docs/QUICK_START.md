@@ -4,11 +4,11 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [bounded historical price composition](../evidence/bounded-observed-integration/README.md)
-selects enginec2eb54d, SDKeb9921f, CLI1ee3d3a and viewera19d3b1. Seven offline
+The proposed [CLI historical price composition](../evidence/cli-observed-run-integration/README.md)
+selects enginec2eb54d, SDKeb9921f, CLId437ad1 and viewera19d3b1. Seven offline
 integration cases pass locally, including the actual default-worker32 result
 with all four readers. Component CI and current combined CI are separate;
-independent human main approval remains pending. The frozen Docker walkthrough
+independent human main approval remains pending. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
 below retains its earlier2f6a56e/enginebd5527f source and measurements.
 
 <a id="inspect-the-supported-historical-price-result-offline"></a>
@@ -37,7 +37,7 @@ For terminal inspection, select matching SDK and CLI sources in a second termina
 ```bash
 git -C sdk-python fetch --depth=1 origin eb9921f30c1f0f3750140f66023e3b10d255cb20
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e
+git -C cli fetch --depth=1 origin d437ad14828cf63f19091656b68e4b9a2b842ad4
 git -C cli checkout --detach FETCH_HEAD
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-verify entrotter.github.io/reports/trace-observed-price32.json
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-inspect entrotter.github.io/reports/trace-observed-price32.json
@@ -47,7 +47,7 @@ Both commands validate the recorded wrapper and nested trace before printing JSO
 Inspect also prints all four typed price/feed/head/code/error records. A valid
 incomplete record still returns status0 with explicit unproven reasons and a null
 price difference. The commands make no network, model or engine call and create no
-export ledger. See the [CLI's exact command and component evidence](https://github.com/entrotter/cli/tree/1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e/evidence/observed-cli).
+export ledger. See the [CLI's exact command and component evidence](https://github.com/entrotter/cli/tree/d437ad14828cf63f19091656b68e4b9a2b842ad4/evidence/observed-cli).
 
 For optional Python API inspection:
 
@@ -421,11 +421,11 @@ git -C engine fetch --depth=1 origin c2eb54dc97509e7318216c01f98adade1da5bc6e
 git -C engine checkout --detach FETCH_HEAD
 git -C sdk-python fetch --depth=1 origin eb9921f30c1f0f3750140f66023e3b10d255cb20
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e
+git -C cli fetch --depth=1 origin d437ad14828cf63f19091656b68e4b9a2b842ad4
 git -C cli checkout --detach FETCH_HEAD
 .venv/bin/python engine/scripts/build_worker.py --output worker-image.json
 export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.load(open("worker-image.json"))["image_id"])')"
-.venv/bin/python -m entrotter_engine trace-observe engine/evidence/aave-consumer-price/native-006/plan.json -o observed-trace.json
+.venv/bin/python -m entrotter_cli trace-observe engine/evidence/aave-consumer-price/native-006/plan.json -o observed-trace.json
 .venv/bin/python -m entrotter_cli observed-verify observed-trace.json
 .venv/bin/python -m entrotter_cli observed-inspect observed-trace.json
 ```
@@ -437,7 +437,16 @@ upstream transport is read-only. The default worker retains the150-second trace
 and180-second worker budgets and shared admission slot. It does not extend a
 deadline, repair state/nonces, substitute a fixture or fall back to native execution.
 No external callback, contract, selector or executable code is accepted by this
-fixed observation profile.
+fixed observation profile. The CLI rejects non-regular or larger-than-256-KiB plans,
+duplicate keys and excessive nesting, checks the complete SDK result against an
+independent admitted plan and uses the shared quota-protected atomic export.
+SIGTERM/Ctrl-C during owned execution returns 130 after cleanup; an unavailable
+worker returns 1. An explicit Engine observation deadline returns 124, without
+inferring that cause from every worker failure. Cancellation after a valid atomic
+commit does not roll back the file. The [CLI's exact execution evidence](https://github.com/entrotter/cli/tree/d437ad14828cf63f19091656b68e4b9a2b842ad4/evidence/observed-run)
+is a separate one-input real Docker gate, not a new 32-input CLI run. A successful
+export can still contain unproven views and null differences; inspection preserves
+the reasons. No API/native/profile/callback override or fallback is available.
 
 The [actual bounded result and raw evidence](https://github.com/entrotter/engine/tree/c2eb54dc97509e7318216c01f98adade1da5bc6e/evidence/bounded-consumer-observations)
 verified32 baseline receipts and all four price phases. Its trace took141.443232s
