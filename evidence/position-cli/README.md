@@ -39,3 +39,14 @@ shared export ledger's documented behavior. Frozen original agent/fixed-price
 CI gates stay intact; mandatory new actual3 uses separately pinned SDK/Engine.
 Current-head CI, coordinator integration, human main approval, Pages and submission
 are separate. Packages remain unpublished.
+
+The first current account CI at c04de30 failed its original-baseline verification
+assertion after producing a valid unverified record. All other five checks,
+frozen agent4/fixed-price3, missing-image and admitted cancellation/cleanup
+passed. Its failed full result was not saved before the assertion, so the cause
+remains unknown. [Failure and retention correction](c04-failure-retention.json)
+records the original run/log digest and a focused synthetic regression: the
+assertion still fails while exact child output survives. No production/image/
+SDK/limit/workflow is changed and no required proof assertion is weakened.
+Corrected-head actual CI remains required; old local success is not relabelled
+as evidence for the failed CI result.

@@ -88,3 +88,13 @@ synthetic dispatch and offline tests; [evidence](evidence/position-cli/README.md
 retains exact current sources/image, full values and scoped results. No new model
 call, signed strategy, profit or provider authentication is claimed. Current-head
 CI, coordinator pins, human main approval and Pages remain separate.
+
+
+The first c04de30 required account CI failed original-baseline verification;
+its full returned artifact was not retained before proof assertions and the
+cause remains unknown. Other5 CI plus frozen agent4/price3 and account missing/
+cancellation cleanup passed. The test-only correction retains exact child
+output before all original assertions; a synthetic focused regression confirms
+failure remains strict while evidence survives. See [scoped failure evidence](evidence/position-cli/c04-failure-retention.json).
+Production, images, limits, dependencies and workflows are unchanged. New-head
+mandatory actual CI and full original raw review remain required.

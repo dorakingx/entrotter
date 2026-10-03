@@ -55,6 +55,15 @@ class ActualPositionCLI(unittest.TestCase):
 
     def test_actual_default_account_replay_exports_full_verified_records(self):
         run=subprocess.run(self.command(),env=self.env,capture_output=True,text=True,timeout=190)
+        # Preserve the original child result before any proof assertion can fail.
+        # This is evidence retention, not a change to replay success semantics.
+        if self.output.exists():
+            (self.evidence/'position.json').write_bytes(self.output.read_bytes())
+        (self.evidence/'process.json').write_text(json.dumps({
+            'returncode':run.returncode,'stdout':run.stdout,'stderr':run.stderr,
+            'owned_workers_after':self.workers(),
+            'scope':'Exact child output retained before receipt/record assertions; no RPC configuration recorded.'
+        },indent=2)+'\n')
         self.assertEqual(run.returncode,0,run.stderr);self.assertEqual(run.stderr,'')
         observed=load_position(self.output);report=observed.report
         self.assertEqual(report['plan'],self.source)
