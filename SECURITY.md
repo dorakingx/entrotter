@@ -1,5 +1,12 @@
 # Security
 
+General `inspect --format text` runs offline after content-hash verification.
+Its displayed ERC-20 identities/units must match the scenario, and native/token
+changes must match integer accounting. Missing token records stay unavailable;
+free-form strings are JSON escaped. These display checks do not validate the
+whole EVM execution, authenticate provider state, infer token roles or measure
+profit. The default JSON contract and existing specialized readers are separate.
+
 Experimental research software. Do not use production keys, custody real
 funds, or expose the local engine port or Anvil JSON-RPC to the Internet.
 This is not a trading execution service. Mainnet broadcast is not supported.

@@ -26,5 +26,12 @@
     "actual": "tests/data/aave-account-position13.json",
     "actual_sha256": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
     "provenance": "Byte-identical original Engine88c6 defaultDocker13 result through SDKba4. This recorded inspection sample is distinct from the new CLI actual execution result and synthetic dispatch/invalid-input controls."
+  },
+  "action_result_sample": {
+    "path": "tests/data/aave-borrow-result.json",
+    "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "engine_commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+    "original_path": "evidence/aave-borrow-actions/report.json",
+    "provenance": "Byte-identical actual Engine f53 default-Docker supplied Aave actions result. Archived Ethereum block18999892, artificial20 ETH/local impersonation, built-in policy step3 and supplied smaller borrow. Recorded presentation, not a new EVM execution, original signed strategy or profit."
   }
 }

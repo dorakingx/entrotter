@@ -1,0 +1,26 @@
+{
+  "sample_sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+  "sample_bytes": 59506,
+  "sample_engine_commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+  "sample_engine_path": "evidence/aave-borrow-actions/report.json",
+  "text_sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+  "original_default_json_stdout_sha256": "9e45e81fd5d5a111cfeffe51ad95010cc442679e1bdfcec40fdff759b66b6d99",
+  "before_implementation": {
+    "groups": 7,
+    "failures": 18,
+    "raw_log_sha256": "4f52c39caee990e32eed48a38b8fb52cc6037fd198edff73ce5b71be7ad84e8e",
+    "scope": "Expected unsupported --format option before implementing general text inspection."
+  },
+  "current": {
+    "new_groups": 7,
+    "full_groups": 107,
+    "full_seconds": 16.301,
+    "skips": 0,
+    "production_script_sources": 11,
+    "bandit_findings": 0,
+    "types_errors": 0,
+    "installed_runtime_modules": 14,
+    "installed_new_groups": 7
+  },
+  "scope": "Actual offline source tests and isolated installed-wheel inspection of a byte-identical original Aave result plus explicitly synthetic sealed controls. No fresh EVM, model, provider, browser, speed, valuation or advisory test."
+}

@@ -56,6 +56,7 @@ def parser():
     v.add_argument("report")
     v = sub.add_parser("inspect", help="Summarize a verified result")
     v.add_argument("report")
+    v.add_argument("--format", choices=["json", "text"], default="json")
     for name, description in (
         ("position-inspect", "Inspect recorded Aave account impact offline"),
         ("position-verify", "Verify recorded account, price and trace evidence"),
@@ -363,6 +364,14 @@ def main(argv=None) -> int:
             if args.command == "verify":
                 print(
                     f"SHA-256 verified: {parsed.artifact_id}. Integrity is not proof of model correctness."
+                )
+            elif args.format == "text":
+                from .result_text import format_result
+
+                print(
+                    format_result(
+                        report, agent_summary(report) if "agent" in report else None
+                    )
                 )
             else:
                 summary = {

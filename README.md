@@ -13,6 +13,7 @@ python3 -m entrotter_cli doctor
 python3 -m entrotter_cli run scenarios/fixtures/liquidity-shock.json --local -o report.json
 python3 -m entrotter_cli verify report.json
 python3 -m entrotter_cli inspect report.json
+python3 -m entrotter_cli inspect report.json --format text
 ```
 
 From this repository, run unit tests with:
@@ -32,6 +33,39 @@ bearer token comes from ENTROTTER_API_TOKEN, never from command-line arguments.
 No command submits a transaction to a live chain. The CLI does not require
 or accept a real wallet private key. Monetary results describe a model and
 are not a trading recommendation.
+
+## Inspect exact native and ERC-20 balances
+
+`inspect --format text` displays EVM native balance, gas cost/usage, revert/reject
+counts and each tracked token's initial/final/change values beside
+candidate-minus-baseline. Integer arithmetic retains all supplied decimals;
+addresses identify tokens even when symbols match. Missing branch token records
+show `Unavailable`, while actual zero stays `0`. Displayed metadata must match
+the scenario's token address/symbol/decimals and balance changes must equal final
+minus initial. Contradictory units, duplicate identities and malformed or
+overflowing integers return1 without partial stdout. Free-form metadata is JSON
+escaped before reaching the terminal. Content integrity and these accounting
+checks do not authenticate execution or the upstream provider.
+
+```bash
+python3 -m entrotter_cli inspect tests/data/aave-borrow-result.json --format text
+```
+
+The committed sample is the original Enginef53 archived-state Aave action
+result: artificial20 ETH/local impersonation,10 WETH supplied, a baseline9 WETH
+borrow revert versus the built-in candidate hold at step3, then a supplied1 WETH
+borrow. The table shows1 WETH,10.000000094454558462 aWETH and1 variable-debt token
+in each final branch. Generic token roles/valuations are not inferred from
+symbols; balance differences do not measure profit. The output retains the
+source pin, whole artifact ID, recorded policy decision and assumptions. Read the
+[sample and presentation evidence](evidence/result-text/README.md) for original
+sources and synthetic controls. Inspection is offline and creates no export
+ledger. It requires only the CLI and SDK, with no Engine or Docker installation.
+
+Default `inspect` JSON remains byte-for-byte compatible; `--format json` is
+explicitly available. Synthetic fixture mode retains its model metrics and
+comparison with a synthetic label. This presentation does not run a fresh EVM
+experiment, repair missing state, or verify original transaction receipts.
 
 Report exports are limited to 8 MiB of serialized file contents. The CLI writes
 an exclusively created private temporary file and atomically replaces the chosen
