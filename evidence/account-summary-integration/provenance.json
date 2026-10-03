@@ -1,0 +1,107 @@
+{
+  "source_pins": {
+    "engine": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "696511c5cb46482c96cf6f609c83877fcf16e922",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "8aa0e582dfa56ec795cf0adc83303ac1eb952528"
+  },
+  "local_helper_sha256": "15ffaa08e1cad9c9ec90fc3f469d3aa5566960a8ec987bb4e810322c07f029eb",
+  "evidence_sha256": {
+    "local-readers.json": "bdbe284801ab8943aca3a731532d58f3bb4c66d819687b12bbee71698bcbc793",
+    "viewer-ci-independent.json": "d54be9be7d39dec9c9298ca422b1935e0fea5d3026695aa2f56dede007df5d63",
+    "README.md": "46e3306ce777c6465f60ec373afef21c00aa2581dc38ac6bb57ce179955ec820",
+    "source-and-reuse.json": "c538cb874deae63946465a2ef0022c51b0d16f658c33122073bd8948ff1f98e9",
+    "docs-links.json": "043b23003e784172b1f5d643be79fe82b3faa540cf39641f503aba3ddc3dba33"
+  },
+  "new_local_outputs": {
+    "account-position-reader.json": "430b3ea549c327068b965c9cf51f2d31a935ebd7b788479322b0b4891faa8853",
+    "account-viewer-node-output.json": "770c0a551f4e3b1321098ee6f497a3abe7536a04314a2868ea71e65d44f2440e",
+    "account-viewer-reader.json": "c6707ade9d357381bfce303892b4de0cff2f8b35059781ff767f524a4f75008a",
+    "bounded-observed-transaction-replay.json": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+    "observed-transaction-replay.json": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+    "trace-bounded-observed-reader.json": "cab1de94a92724cdad629a7b7660abaf0120ea5ef43b59e8bd69aa22f582a51c",
+    "trace-comparison-reader.json": "14c89b897e4bdffc37f54adcd7c28da0d363547f069b87df4ad974cff49e3033",
+    "trace-consumer-reader.json": "87b1b9d5faa16d06f248f86807ea3a9f78eb21a0a16ba4970bba6e53644bb9d3",
+    "trace-funding-reader.json": "84f4469b9985b8ea249b7d3f7f8f40e9dc089ed6a1c4fcaaf5bbc762d69d11a0",
+    "trace-observed-reader.json": "fec4979b94cf7afb85f1e333fba67afdc0545d9fd38895d9a255b5888a70fb95",
+    "trace-oracle-reader.json": "2ce6af91ce348eaa10f9d2d5b60465cd3d073185a542232e3026a5deae8425ac",
+    "trace-reader.json": "e1a07fd5113663a7585b39bdc69b5d709804b7c8bfad1dc2ef54cf25e30c1c20"
+  },
+  "prior_full_outputs": {
+    "account-position-reader.json": {
+      "prior_sha256": "ae2525160df1305a8da601dc05a683b37b12778d439e61f89760816930d4b8ac",
+      "current_sha256": "430b3ea549c327068b965c9cf51f2d31a935ebd7b788479322b0b4891faa8853"
+    },
+    "account-viewer-node-output.json": {
+      "prior_sha256": "770c0a551f4e3b1321098ee6f497a3abe7536a04314a2868ea71e65d44f2440e",
+      "current_sha256": "770c0a551f4e3b1321098ee6f497a3abe7536a04314a2868ea71e65d44f2440e"
+    },
+    "account-viewer-reader.json": {
+      "prior_sha256": "12c6893f0c425b2949b853d69e82e2c0af3ce23f7dc4a674cb16b8d1ee59ab42",
+      "current_sha256": "c6707ade9d357381bfce303892b4de0cff2f8b35059781ff767f524a4f75008a"
+    },
+    "bounded-observed-transaction-replay.json": {
+      "prior_sha256": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+      "current_sha256": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4"
+    },
+    "observed-transaction-replay.json": {
+      "prior_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+      "current_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f"
+    },
+    "trace-bounded-observed-reader.json": {
+      "prior_sha256": "0d973254dfa3a7507732cfc62b3ffdb15d9e101cec83fa1afb3f373fbc22dd00",
+      "current_sha256": "cab1de94a92724cdad629a7b7660abaf0120ea5ef43b59e8bd69aa22f582a51c"
+    },
+    "trace-comparison-reader.json": {
+      "prior_sha256": "c406d3979c00a72611ab44a651f6c9671d12125cd376a99dfba6d6cdc691c1be",
+      "current_sha256": "14c89b897e4bdffc37f54adcd7c28da0d363547f069b87df4ad974cff49e3033"
+    },
+    "trace-consumer-reader.json": {
+      "prior_sha256": "64cd8113f4d64c664512e7b513fd289acbc8d7bfe9512236f3f3f8520b6eef64",
+      "current_sha256": "87b1b9d5faa16d06f248f86807ea3a9f78eb21a0a16ba4970bba6e53644bb9d3"
+    },
+    "trace-funding-reader.json": {
+      "prior_sha256": "062faf50a956c2e3e92100010ffb36a54d1510e701e3c9b3733ebfdfb65b884c",
+      "current_sha256": "84f4469b9985b8ea249b7d3f7f8f40e9dc089ed6a1c4fcaaf5bbc762d69d11a0"
+    },
+    "trace-observed-reader.json": {
+      "prior_sha256": "ed5c4f1a4e8277aeeb7b5fc36644b5da235f7517e531c40c99aaa550b77e22c3",
+      "current_sha256": "fec4979b94cf7afb85f1e333fba67afdc0545d9fd38895d9a255b5888a70fb95"
+    },
+    "trace-oracle-reader.json": {
+      "prior_sha256": "69120e827f02c87eceaee84bc12ce1675cf289e02025147ca0ab37e13ee6e616",
+      "current_sha256": "2ce6af91ce348eaa10f9d2d5b60465cd3d073185a542232e3026a5deae8425ac"
+    },
+    "trace-reader.json": {
+      "prior_sha256": "ff85a9c641a26ee2045909b833be1c7eb6e77608053bb60af74b31e9c36e4150",
+      "current_sha256": "e1a07fd5113663a7585b39bdc69b5d709804b7c8bfad1dc2ef54cf25e30c1c20"
+    }
+  },
+  "previous_root_full_CI_proof_sha256": "6868f2530a333e52df5adf085c04156efd0eb29f858f8dba1fac67f4214b9326",
+  "local_reader_logs_sha256": {
+    "step-9.log": "1bba5afa385ccc00839d151bf01464125f80540f934c1336feb78e3e39e9428a",
+    "step-8.log": "8d4b0eda497f80f27b9fccd55f2a6cce8cc6ad25b79b2b687373deb81bec80b4",
+    "step-6.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step-7.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step-5.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step-4.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step-3.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "step-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "limitations": [
+    "All9 offline readers freshly executed; component browser runs are original CI artifacts, no local browser/chain/model rerun.",
+    "Python quality reuse is source-byte bound, not a fresh local typecheck. Mandatory current rootCI retains all required gates.",
+    "Independent software audit does not satisfy protected-main human approval/live Pages/formal submission."
+  ],
+  "local_docs": {
+    "files": 70,
+    "links": 506,
+    "unique": 404,
+    "errors": 0,
+    "timeouts": 0,
+    "exclusions": 0,
+    "raw": "docs-links.json"
+  }
+}

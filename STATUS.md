@@ -1985,3 +1985,29 @@ Current-root combined CI, independent human approval, Pages and formal submissio
 are separate gates. No new EVM/RPC/model/browser/performance run, merge/deployment,
 user evaluation or Discord work occurred. Goal stays active through the official
 October13 15:59JST deadline, section5 freshly rechecked this turn.
+
+
+## October 3 — compose prominent exact account changes
+
+Root2e05 subsequently passed all5 original mandatory checks and full raw review
+SHA6868f253; the preceding section records preparation-time state. Viewer8aa0
+now passes all4 original current checks and full raw independent reviewd54be9be
+(389bound inputs/19immutableGit/17published blobs parentrehashed). Linux42groups/
+58rawaxes/0violations/0JSerrors preserve42old groups/49scans plus9 explicit debt-
+transition/negative/zero scans.126Node/12Python,137old security reasons/19JS/20types,
+109Node/42Python fresh zero-advisory identities and15docs/84links are source-bound.
+Exact borrowing-capacity/HF changes precede the address and full table, with
+semantic mobile stacking, sign/null/no-debt semantics and no rounding. Original
+macOS chooser timeout cause remains unknown; Linux pass does not establish cause.
+
+This composition promotes only two default viewer references and updates the
+local guide. All9 exact offline readers executed once; their bodies are identical
+and all12 full outcomes are unchanged except viewer pin. Production Python21,
+type pins/locks/frozen3 diagnostics and all native/host/agent/model/holdout jobs
+remain exact; prior source-bound local quality is reused, mandatory rootCI runs
+afresh. See [current summary composition](evidence/account-summary-integration/README.md).
+No new chain/model/browser/performance/user execution, main merge, deployment,
+submission or Discord work is claimed. New exact-root combinedCI/raw review, human
+main approval and live Pages remain separate. Approved media retains older pins;
+this newer UI is not yet recorded. Goal active through official deadline, section5
+freshly rechecked; no completion claim.

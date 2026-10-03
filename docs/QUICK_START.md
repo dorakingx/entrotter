@@ -4,8 +4,8 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [account viewer composition](../evidence/viewer-position-integration/README.md)
-selects engine88c6cd0, SDKba4af51, CLI696511c and viewer4c6e27e. Nine offline
+The proposed [account summary composition](../evidence/account-summary-integration/README.md)
+selects engine88c6cd0, SDKba4af51, CLI696511c and viewer8aa0e58. Nine offline
 integration cases pass locally, including the recorded default-worker32 price
 result and13-input account result. Component CI and current combined CI are separate;
 independent human main approval remains pending. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
@@ -18,7 +18,7 @@ below retains its earlier2f6a56e/enginebd5527f source and measurements.
 In an existing six-sibling checkout, select the reviewed viewer source:
 
 ```bash
-git -C entrotter.github.io fetch --depth=1 origin 4c6e27ed6db398d51d1c0d68ef429f869a61b4c3
+git -C entrotter.github.io fetch --depth=1 origin 8aa0e582dfa56ec795cf0adc83303ac1eb952528
 git -C entrotter.github.io checkout --detach FETCH_HEAD
 python3 -m http.server 8880 --bind 127.0.0.1 --directory entrotter.github.io
 ```
@@ -30,9 +30,12 @@ identities alongside all32 receipts and the omission classification. You can
 also import the original `observed-trace.json` from a supported CLI run directly.
 Imports stay in the browser; the sample button fetches the local recorded file.
 Choose **Compare recorded Aave account impact** to inspect the separate original
-default-Docker13-of-181/omission12 case. Six exact after-state values and deltas
-include borrowing capacity and health factor, with all four raw account/config/
-code/head phases expandable. Missing views remain UNPROVEN; zero debt shows No debt
+default-Docker13-of-181/omission12 case. Borrowing-capacity change in USD and
+health-factor change appear first, before the account address and six-metric
+table. Positive changes show a plus sign; negative and zero values remain exact.
+Missing differences stay unavailable, and either no-debt branch has no normalized
+health delta. The summary stacks on narrow screens without rounding. All four raw account/config/
+code/head phases are expandable. Missing views remain UNPROVEN; zero debt shows No debt
 and no health-factor delta. This is aggregate account-state dependence, not profit
 or a signed strategy. The price32 and account13 cases retain distinct sources.
 This inspection needs no Docker, Anvil, archive account or model call. It is a

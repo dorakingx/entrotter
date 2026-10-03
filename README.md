@@ -85,7 +85,12 @@ use the same bounded worker and disclose unproven views. This is read-only accou
 state comparison; signed strategy execution and financial return remain unproven.
 The [account viewer composition](evidence/viewer-position-integration/README.md)
 adds exact SDK-to-browser inspection of the same sealed records, including explicit
-synthetic missing/large-integer/no-debt/boundary controls.
+synthetic missing/large-integer/no-debt/boundary controls. The next
+[account summary composition](evidence/account-summary-integration/README.md)
+selects the independently verified mobile summary: exact borrowing-capacity and
+health-factor changes before the full table, with positive/negative/zero and
+unavailable/no-debt behavior. Original report facts and all nine reader bodies
+remain unchanged.
 
 ## Local API and SDK
 

@@ -90,12 +90,12 @@ code, not an independently approved release.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Last independently audited coordinator execution snapshot | [670e717](https://github.com/entrotter/entrotter/tree/670e71780ee865ba7308e2270b3264f1f69a7125) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Last independently audited coordinator execution snapshot | [2e0504b](https://github.com/entrotter/entrotter/tree/2e0504b8800081beb50b4f733a20d20401ddfd9d) | [#55](https://github.com/entrotter/entrotter/pull/55) |
 | Bounded agent engine and default-worker historical Aave price/account observations | [88c6cd0](https://github.com/entrotter/engine/tree/88c6cd0d00f466ed7e870bd57c118aa50984f8b1) | [#35](https://github.com/entrotter/engine/pull/35) |
 | Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI with bounded agent replay, local price/account execution and offline inspection | [696511c](https://github.com/entrotter/cli/tree/696511c5cb46482c96cf6f609c83877fcf16e922) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, recorded agent and signed-prefix and Aave account inspection, accessibility and quality | [4c6e27e](https://github.com/entrotter/entrotter.github.io/tree/4c6e27ed6db398d51d1c0d68ef429f869a61b4c3) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
+| Console, recorded agent and signed-prefix and Aave account inspection, accessibility and quality | [8aa0e58](https://github.com/entrotter/entrotter.github.io/tree/8aa0e582dfa56ec795cf0adc83303ac1eb952528) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
 The [signed-prefix reader composition](../evidence/trace-reader-integration/README.md)
 adds SDK and browser inspection of the actual four-receipt case. SDK all5checks
@@ -276,3 +276,16 @@ all executable assertions; only the eighth's now-stale display-limit sentence is
 updated. Historical facts remain unchanged except the selected viewer pin and
 that scope text. Component browser verification remains separate from new combined
 CI, human protected-main approval and live Pages. No new chain/model/user run.
+
+
+The subsequent root2e05 SDK-to-browser composition passed all5 original checks
+and full independent raw review6868f253. The next
+[account summary composition](../evidence/account-summary-integration/README.md)
+selects viewer8aa0 after all4 current mandatory checks and full original raw
+reviewd54be9be. Its two exact changes precede the address and wide table, with
+accessible mobile stacking and explicit null/no-debt/sign handling. Existing
+nine reader bodies, complete recorded outputs and frozen sources remain exact
+apart from the selected viewer pin. New combined rootCI and human protected-main
+approval remain separate from component CI. Existing approved recordings retain
+their original source versions; this new UI is not yet in those recordings.
+No fresh chain/model/user evaluation, deployment or formal submission is claimed.
