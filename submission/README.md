@@ -58,8 +58,9 @@ feature. The pitch does not establish founder communication skills or market fit
 
 ## Latest candidate sources
 
-The October 4 candidate provides bounded local agent replay, exact recorded
-price/account inspection and script completeness gates. Use the
+The October 4 candidate provides bounded local agent replay, supplied Aave
+collateral/variable-borrow action comparison, exact recorded price/account
+inspection and script completeness gates. Use the
 [current pinned quick start](../docs/QUICK_START.md) to reproduce it.
 `observed-inspect --format text` and `position-inspect --format text` retain exact
 units; `--require-complete` on either verifier returns3 for valid but unproven
@@ -69,20 +70,24 @@ consumer strategy or the full block's state.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Last independently audited coordinator execution snapshot before this media edit | [5bee12d](https://github.com/entrotter/entrotter/tree/5bee12dd794200b90a22b70522e943b6c8c879b3) | [#55](https://github.com/entrotter/entrotter/pull/55) |
-| Bounded agent engine and default-worker historical Aave price/account observations | [88c6cd0](https://github.com/entrotter/engine/tree/88c6cd0d00f466ed7e870bd57c118aa50984f8b1) | [#35](https://github.com/entrotter/engine/pull/35) |
+| Last independently audited coordinator snapshot before the action composition | [d871e27](https://github.com/entrotter/entrotter/tree/d871e270c13285c249f66056f8e8b4ff37097049) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Bounded agent engine, Aave supply/variable borrow and historical price/account observations | [f53a66a](https://github.com/entrotter/engine/tree/f53a66a303e67ca4fbb4322a06b36b036f4db599) | [#35](https://github.com/entrotter/engine/pull/35) |
 | Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI with bounded replay, exact account/price text and completeness exits | [24bbb91](https://github.com/entrotter/cli/tree/24bbb916555ef18528300f995e127d50ff29167e) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
 | Console, local source selection, recorded agent and Aave account inspection | [422d98a](https://github.com/entrotter/entrotter.github.io/tree/422d98a7cf753bfc9be9b86553cd76f3a549f70c) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
-All five mandatory coordinator checks at5bee12d and all six CLI checks at24bbb91
+All five mandatory coordinator checks atd871e27 and all six CLI checks at24bbb91
 passed their original attempts, with independent raw-artifact/source review.
 The [price text composition](../evidence/observed-text-integration/README.md)
 and [account/completeness composition](../evidence/require-complete-integration/README.md)
-retain the exact commands, full outputs and scope. This media edit preserves all
-selected worker sources, runtime tooling, locks and frozen inputs; its own current
-CI is a separate checkpoint in [candidate PR55](https://github.com/entrotter/entrotter/pull/55).
+retain the exact commands, full outputs and scope. The [Aave action composition](../evidence/aave-action-integration/README.md)
+selects Enginef53 and adds one offline Engine/CLI/SDK reader. All eight Engine
+checks are successful, with isolated passing on attempt2 after an initial old
+account-case failure of unknown cause; the new real-action output matches the
+original report completely. Current coordinator CI remains a separate checkpoint
+in [candidate PR55](https://github.com/entrotter/entrotter/pull/55). Runtime tooling,
+locks, frozen inputs and previous videos keep their original versions.
 Independent human approval and protected main/Pages integration remain pending.
 
 Recordings preserve their actual sources: original September review cuts use the

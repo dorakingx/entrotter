@@ -122,6 +122,16 @@ records the offline and installed-package checks.
 
 ## Local API and SDK
 
+The candidate also compares [supplied Aave collateral and borrowing actions](docs/QUICK_START.md#compare-supplied-aave-borrowing-actions).
+Both branches wrap and supply 10 WETH; the baseline's proposed 9 WETH borrow
+reverts, while the built-in current-state risk policy holds that candidate step.
+Both then execute the supplied 1 WETH borrow. Exact token/debt units, receipts,
+gas and the recorded decision remain inspectable offline. This is local action
+execution against pinned archived state, with artificial funding and local
+impersonation. It does not establish an original signed strategy or profit.
+[Composition evidence](evidence/aave-action-integration/README.md) distinguishes
+the actual Engine runs from standalone CLI/SDK inspection and current integration.
+
 After completing the quick start, keep its environment variables in both terminals.
 For additional Linux API-process limits, use the optional
 [bounded host service](docs/BOUNDED_HOST_SERVICE.md).

@@ -2175,3 +2175,27 @@ records exact sources, cut ranges, outputs and limitations. Independent review,
 current mandatoryCI, protected main/Pages, human auditory review, supported-host
 delivery and formal submission remain separate. Goal active through the official
 October13 15:59JST deadline; Discord excluded.
+
+## October 4 — compose supplied Aave collateral and variable borrowing
+
+The candidate now selects Enginef53a66a, whose actual default-Docker Aave action
+experiment supplies10 WETH, compares the proposed9 WETH borrow at policy step3
+and then executes a supplied1 WETH borrow. Baseline mines a162805-gas revert;
+candidate holds without that transaction. Both finish with1 WETH and1 WETH
+variable debt. The smaller action is supplied, not policy-generated; artificial
+20 ETH/local impersonation, differing gas prices and archived-state scope remain
+explicit. First execution, actual recorded replay and final EngineCI action output
+match the complete59506-byte report. This is not signed-strategy replay or profit.
+
+All8 Engine checks succeeded:7 originalattempt1 plus isolatedattempt2. First
+isolated failure retained old account baseline index9 `not_mined`; causeunknown,
+new action step skipped. The unchanged diagnostic is non-authoritative; one
+failed-job retry passed the original gates without changing caps/source/checkers.
+[Action composition](evidence/aave-action-integration/README.md) links exact
+Engine evidence, currentCI and the one successful new offline reader. It checks
+the Engine semantic result and standalone CLI/SDK whole outputs, with network,
+Engine-import/API/export denial on CLI paths. Earlier installed13 module hashes
+match immutableGit; old workflow bodies, frozen inputs, quality variants and
+media are preserved. No fresh local EVM/model/browser/timing run is claimed.
+Current coordinator CI and independent review/publication are separate; protected
+main/Pages and submission remain pending. Goalactive, Discordexcluded.

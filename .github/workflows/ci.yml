@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/engine
-          ref: 88c6cd0d00f466ed7e870bd57c118aa50984f8b1
+          ref: f53a66a303e67ca4fbb4322a06b36b036f4db599
           path: engine
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -1173,6 +1173,48 @@ jobs:
           assert process.stdout.encode() == expected.read_bytes(), result
           print('Exact CLI text retains the original32 prices, phases, receipt status and scope')
           PYPRICE
+      - name: Inspect recorded Aave supply and borrow actions offline
+        run: |
+          python - <<'PYAAVE'
+          import hashlib, json, os, subprocess, sys
+          from pathlib import Path
+          source = Path('engine/evidence/aave-borrow-actions/report.json')
+          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/aave-actions.json')
+          guard = "import socket; socket.socket.connect=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted network')); "
+          engine_guard = guard + "import runpy,sys; sys.argv=['engine/scripts/aave_borrow.py','--check',sys.argv[1]]; runpy.run_path(sys.argv[0],run_name='__main__')"
+          cli_guard = guard + "import runpy,sys; sys.modules['entrotter_engine']=None; from entrotter_sdk import Client; Client._request=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted API')); import entrotter_cli.main as c; c.ExportBudget=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted export')); sys.argv=['entrotter_cli',*sys.argv[1:]]; runpy.run_module('entrotter_cli',run_name='__main__')"
+          commands = [
+              ('check', [sys.executable, '-c', engine_guard, str(source)]),
+              ('verify', [sys.executable, '-c', cli_guard, 'verify', str(source)]),
+              ('inspect', [sys.executable, '-c', cli_guard, 'inspect', str(source)]),
+          ]
+          results = []
+          environment = dict(os.environ)
+          environment.pop('PYTHONOPTIMIZE', None)
+          for name, command in commands:
+              process = subprocess.run(command, capture_output=True, text=True, timeout=30, env=environment)
+              results.append({'name': name, 'returncode': process.returncode,
+                              'stdout': process.stdout, 'stderr': process.stderr})
+          sources = [source, Path('engine/scripts/aave_borrow.py'),
+                     Path('engine/tests/data/aave-borrow-actions.json'),
+                     *sorted(Path('cli/src/entrotter_cli').glob('*.py')),
+                     *sorted(Path('sdk-python/src/entrotter_sdk').glob('*.py'))]
+          result = {
+              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'commands': results,
+              'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
+              'scope': 'Offline check and standalone CLI/SDK inspection of the recorded real Aave action result; no fresh EVM, RPC, model or export.',
+          }
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_text(json.dumps(result, indent=2) + '\n')
+          assert all(item['returncode'] == 0 and item['stderr'] == '' for item in results), result
+          assert len(source.read_bytes()) == 59506, result
+          assert result['source_sha256'][str(source)] == 'e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622', result
+          evidence = Path('entrotter/evidence/aave-action-integration')
+          for item in results:
+              assert item['stdout'].encode() == (evidence / (item['name'] + '.stdout')).read_bytes(), item
+          print('Recorded supply, reverted borrow, causal hold and successful smaller borrow agree across Engine and standalone CLI/SDK')
+          PYAAVE
       - name: Build source-bound local image
         run: |
           mkdir -p entrotter/evidence/bounded-agent-integration/integration-ci

@@ -4,14 +4,67 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [exact recorded price text](../evidence/observed-text-integration/README.md)
-selects engine88c6cd0, SDKba4af51, CLI24bbb91 and viewer422d98a. Prior root5193
-passed all eleven offline readers and five required checks. This update adds a
-separate whole-text reader using the original native32 observation record; the
-selected CLI preserves JSON and existing account text. Current combinedCI
-and independent human main approval remain separate. The corrected quality
+The candidate [Aave action composition](../evidence/aave-action-integration/README.md)
+selects enginef53a66a, SDKba4af51, CLI24bbb91 and viewer422d98a. It adds supplied
+collateral and variable-rate borrowing to the existing bounded replay and exact
+recorded price/account inspection. The action result can be checked and inspected
+offline; reproducing its archived-state execution needs Docker and an archive
+source. Current combined CI and independent human main approval remain separate.
+The corrected quality
 setup still reads the SDK pin from its manifest. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
 below retains its earlier2f6a56e/enginebd5527f source and measurements.
+
+<a id="compare-supplied-aave-borrowing-actions"></a>
+
+## Compare supplied Aave borrowing actions
+
+Select the candidate sources as sibling checkouts. These inspection commands
+need only Python and the source files; they do not start Docker, contact an
+archive or call a model.
+
+```bash
+git -C engine fetch --depth=1 origin f53a66a303e67ca4fbb4322a06b36b036f4db599
+git -C engine checkout --detach FETCH_HEAD
+git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
+git -C sdk-python checkout --detach FETCH_HEAD
+git -C cli fetch --depth=1 origin 24bbb916555ef18528300f995e127d50ff29167e
+git -C cli checkout --detach FETCH_HEAD
+export PYTHONPATH=engine/src:sdk-python/src:cli/src
+python3 engine/scripts/aave_borrow.py --check engine/evidence/aave-borrow-actions/report.json
+python3 -m entrotter_cli verify engine/evidence/aave-borrow-actions/report.json
+python3 -m entrotter_cli inspect engine/evidence/aave-borrow-actions/report.json
+```
+
+The Engine example checker shows the five action statuses, gas used and exact
+borrowed WETH/variable-debt units. CLI inspection shows both branch metrics,
+assumptions and the recorded hold at step 3; its general summary does not print
+the full token/receipt table. The whole report retains those details. Hash
+verification proves content integrity, not model correctness or provider truth.
+
+For fresh execution, first complete the Docker setup below, select these
+candidate sources again and rebuild the source-bound worker. Configure your own
+archive-capable `ENTROTTER_RPC_URL` privately, then run:
+
+```bash
+.venv/bin/python engine/scripts/build_worker.py --output worker-image.json
+export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.load(open("worker-image.json"))["image_id"])')"
+.venv/bin/python engine/scripts/aave_borrow.py --output aave-borrow-report.json
+.venv/bin/python engine/scripts/aave_borrow.py --output aave-borrow-replayed.json --recording engine/evidence/aave-borrow-actions/recording.json
+```
+
+The script executes through the default bounded worker and saves the whole
+returned report before semantic checks. Exact recorded replay refuses a changed
+observation. Source block 18999892 is pinned by chain ID and hash. Both branches
+start with artificial 20 ETH and local impersonation, wrap/approve/supply 10 WETH,
+propose borrowing 9 WETH, then borrow 1 WETH. Only candidate step 3 uses the
+built-in preflight policy; the final smaller borrow is supplied by the scenario.
+The recorded baseline mines a revert using 162805 gas; the candidate holds and
+submits no transaction. Both finish with 1 WETH and 1 WETH variable debt.
+The native-balance difference includes differing gas prices and is not profit.
+Archive failures remain failures; there is no native fallback, extra deadline
+or automatic retry. Read the [exact original execution and replay evidence](https://github.com/entrotter/engine/tree/f53a66a303e67ca4fbb4322a06b36b036f4db599/evidence/aave-borrow-actions)
+for complete receipts, token amounts, overrides and limitations. This action
+experiment is separate from the original signed-prefix price/account cases below.
 
 <a id="inspect-the-supported-historical-price-result-offline"></a>
 
@@ -438,7 +491,7 @@ the matching SDK and CLI too; the frozen walkthrough uses older revisions. Earli
 support this job; an unavailable or incompatible worker fails explicitly.
 
 ```bash
-git -C engine fetch --depth=1 origin 88c6cd0d00f466ed7e870bd57c118aa50984f8b1
+git -C engine fetch --depth=1 origin f53a66a303e67ca4fbb4322a06b36b036f4db599
 git -C engine checkout --detach FETCH_HEAD
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD

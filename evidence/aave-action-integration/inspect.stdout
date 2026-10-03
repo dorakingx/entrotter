@@ -1,0 +1,55 @@
+{
+  "mode": "evm-fork",
+  "scenario": "aave-weth-borrow-preflight",
+  "baseline": {
+    "balance_delta_wei": "-10011172440829680288",
+    "final_balance_wei": "9988827559170319712",
+    "gas_cost_wei": "11172440829680288",
+    "gas_used": "723131",
+    "initial_balance_wei": "20000000000000000000",
+    "rejected_transactions": 0,
+    "reverted_transactions": 1
+  },
+  "candidate": {
+    "balance_delta_wei": "-10008750018396830500",
+    "final_balance_wei": "9991249981603169500",
+    "gas_cost_wei": "8750018396830500",
+    "gas_used": "560326",
+    "initial_balance_wei": "20000000000000000000",
+    "rejected_transactions": 0,
+    "reverted_transactions": 0
+  },
+  "comparison": {
+    "final_balance_delta_wei": "2422422432849788"
+  },
+  "assumptions": [
+    "Paired isolated Anvil instances start from the same source state.",
+    "Actor native balance is overridden equally and account impersonation is local only.",
+    "This re-executes supplied actions, not subsequent historical blocks or market responses.",
+    "Each slot mines one block at a fixed 12-second interval. Transaction order is supplied.",
+    "Native and tracked token changes are exact units, not profit or portfolio valuation. Unlisted assets are not tracked.",
+    "No MEV, mempool, external price or bridge model is provided.",
+    "Agent sees the current proposal, completed actions and current-state eth_call only; generation may be nondeterministic. Replay requires identical observations.",
+    "Preflight uses the current block; the execution block advances 12 seconds. Success is not guaranteed. Shared setup is outside the agent requested-gas budget."
+  ],
+  "agent": {
+    "agent_version": "0.1.0",
+    "provider": {
+      "cost_usd": "0",
+      "deterministic": true,
+      "model": "preflight-risk-v1",
+      "provider": "builtin",
+      "seed": null
+    },
+    "initial_requested_gas_budget": 2000000,
+    "decisions": [
+      {
+        "choice": "hold",
+        "reason": "Current-state preflight or requested gas exceeds the policy",
+        "request_id": "92d6b4445795e0060bce7bb193bcaba8cc85a76c1065191724bf545f940e6c46",
+        "step": 3
+      }
+    ],
+    "scope": "Recorded choices; integrity is not proof of policy or economic correctness"
+  }
+}
