@@ -515,3 +515,42 @@ documentation/evidence publication checks, protected-main review, deployment and
 formal submission remain separate. No model call or upstream transaction broadcast was
 added. Goal remains active through the official October13 15:59JST deadline;
 Discord excluded.
+# October 3 — default bounded fixed-price observations
+
+The normal `trace-observe` CLI and `run_trace_observed` Python entry now use the
+existing Docker worker. A closed fixed-profile JSON job retains256KiB input,
+8MiB output, full request-hash/profile/nested-plan binding, shared admission and
+exact owned cleanup. Native remains explicit; no HTTP endpoint or executable
+extension is added. Observation150s and original worker180s deadlines compose
+without resetting the outer lifetime. Independent review found and fixed clock
+sampling order so scheduling cannot extend the inherited deadline. Native caller
+alarm refusal and BaseException cancellation remain unchanged.
+
+Actual default host Docker replay of32 original signed inputs at Ethereum
+block18999892 passed:32 verified baseline receipts, one omitted candidate input,
+complete four price phases and raw price difference789973126 in100000000 USD
+units. Replay141.443232s/host142.447272s fit original limits; shared worker slot
+is absent afterward. Full baseline/candidate outcomes, plan, raw ABI views and
+classification equal historical native evidence. Both offline CLI readers using
+SDKeb inspect the new wrapper. This is partial-block price dependence, not a
+signed consumer strategy, profit or provider/full-block/root/opcode proof.
+
+Native366/84.525s and actual Docker26/246.103s pass. The first current native366
+attempt had an unchanged metadata cleanup PermissionError on macOS; focused and
+full unchanged-source retry pass, with original failure retained and cause
+unestablished. Initial Docker suite exposed three mismatched host Anvil1.6 vs
+image1.8.3 comparisons and daemon-default unconfined seccomp. Host selection was
+corrected to1.8.3 and every worker now explicitly requests seccomp=builtin;
+actual kernel filtering passes without changing global settings or assertions.
+One concurrent32 admission was refused before execution; only one executed
+historical32 attempt is claimed.
+
+Full26source/script Ruff/mypy/Bandit retain25 findings/0skips,42locked Python
+identities/0reported advisories. Actual final local image840d03 has22exact source
+inputs, unchanged base892 and pinned Anvil1.8.3. New required CI adds real default
+observed historical one-input validation while preserving existing one/four
+replays, security and lifecycle gates. New current-head CI, fresh image OS/Cargo
+queries, final artifact-bound independent review, main approval, coordinator
+promotion, live Pages and formal submission remain separate. Goal stays active
+through the official deadline; no model/video/broadcast/paid/Discord work.
+See [exact current evidence](evidence/bounded-consumer-observations/README.md).

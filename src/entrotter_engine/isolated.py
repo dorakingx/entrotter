@@ -164,6 +164,7 @@ def worker_args(prefix, image, name, *, fork=False):
         "/tmp:rw,noexec,nosuid,nodev,size=64m,mode=1777",
         "--cap-drop=ALL",
         "--security-opt=no-new-privileges=true",
+        "--security-opt=seccomp=builtin",
         "--log-driver=none",
         "--user=65534:65534",
         "--workdir=/app",
@@ -238,12 +239,26 @@ def run_trace_isolated(plan: dict) -> dict:
     )
 
 
+def run_trace_observed_isolated(plan: dict) -> dict:
+    from .worker_protocol import encode_observed_trace_request
+
+    payload = encode_observed_trace_request(plan)
+    return _run_worker(
+        None,
+        payload,
+        request_id=sha256(payload).hexdigest(),
+        trace_plan=json.loads(payload)["trace"],
+        observed=True,
+    )
+
+
 def _run_worker(
     scenario: dict | None,
     payload: bytes,
     *,
     request_id: str | None = None,
     trace_plan: dict | None = None,
+    observed: bool = False,
 ) -> dict:
     image = os.environ.get("ENTROTTER_WORKER_IMAGE", "")
     owner = uuid.uuid4().hex
@@ -321,6 +336,17 @@ def _run_worker(
                     raise ExecutionError("Agent worker request binding failed")
                 report = report["report"]
                 if trace_plan is not None:
+                    if observed:
+                        from .consumer_observations import verify_observed_trace
+
+                        if (
+                            not verify_observed_trace(report)
+                            or report["trace_report"]["plan"] != trace_plan
+                        ):
+                            raise ExecutionError(
+                                "Observed replay worker integrity or plan binding failed"
+                            )
+                        return report
                     from .trace import verify_trace
 
                     if not verify_trace(report) or report["plan"] != trace_plan:

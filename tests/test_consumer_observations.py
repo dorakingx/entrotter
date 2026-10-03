@@ -387,9 +387,7 @@ class ConsumerObservationTests(unittest.TestCase):
             self.assertEqual(results, ["refused"])
             execution.assert_not_called()
 
-    def test_cli_requires_native_and_never_defaults_to_worker(self):
-        with redirect_stderr(StringIO()), self.assertRaises(SystemExit):
-            main(["trace-observe", "unused", "-o", "unused"])
+    def test_cli_explicit_native_preserves_observation_export(self):
         with (
             patch(
                 "entrotter_engine.consumer_observations.run_trace_observed_native",

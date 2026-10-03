@@ -25,20 +25,14 @@ def main(argv=None):
     t.add_argument("-o", "--output", required=True)
     c = s.add_parser(
         "trace-observe",
-        help="Export fixed owned Aave/WETH views with native trace replay",
+        help="Export fixed owned Aave/WETH views with bounded trace replay",
     )
     c.add_argument("plan")
     c.add_argument("-o", "--output", required=True)
-    c.add_argument(
-        "--native",
-        action="store_true",
-        required=True,
-        help="Explicit trusted-native path; no default-worker support",
-    )
     a = s.add_parser("serve")
     a.add_argument("--port", type=int, default=8787)
     a.add_argument("--output", default="artifacts")
-    for command in (r, t, a):
+    for command in (r, t, c, a):
         mode = command.add_mutually_exclusive_group()
         mode.add_argument(
             "--isolated",
@@ -74,13 +68,17 @@ def main(argv=None):
         elif args.command == "trace-observe":
             from .consumer_observations import (
                 ObservationStopped,
+                run_trace_observed,
                 run_trace_observed_native,
                 write_observed_trace,
             )
             from .trace import load_trace
 
             try:
-                result = run_trace_observed_native(load_trace(args.plan))
+                observed_executor = (
+                    run_trace_observed if args.isolated else run_trace_observed_native
+                )
+                result = observed_executor(load_trace(args.plan))
             except ObservationStopped as stop:
                 print("Error: Owned consumer observation stopped", file=sys.stderr)
                 return 124 if stop.code == "deadline" else 130

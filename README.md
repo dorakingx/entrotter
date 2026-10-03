@@ -111,16 +111,23 @@ prevrandao, base fee and gas limit, queues the original signatures in FIFO order
 and mines one block. The candidate may skip selected original transactions;
 remaining nonces/signatures are never repaired, funded or impersonated.
 
-### Owned Aave/WETH price observations (explicit native development)
+### Owned Aave/WETH price observations
 
-`trace-observe` is a supported fixed-profile native workflow. It executes the
+`trace-observe` is a supported fixed-profile workflow. It executes the
 same original signed prefix and collects bounded read-only Aave V3 Ethereum WETH
-views on each owned branch, before and after replay. It requires `--native`;
-there is no Docker/HTTP/worker-protocol observation command or silent fallback.
+views on each owned branch, before and after replay. It uses the configured
+bounded Docker worker by default; missing Docker or an invalid image fails
+without a native fallback. Use `--native` only for explicit trusted development.
+No observation endpoint is added to HTTP v0.1.
+Rebuild the configured worker image from the current checkout after updating;
+an older image without this closed job fails execution rather than falling back.
+The [actual bounded32-input replay](evidence/bounded-consumer-observations/README.md)
+records complete price views, verified baseline receipts and cleanup with the
+original time limits. Provider availability and latency still constrain execution.
 
 ```bash
 export ENTROTTER_RPC_URL='https://YOUR_ARCHIVE_PROVIDER'
-PYTHONPATH=src python3 -m entrotter_engine trace-observe tests/data/canonical-mainnet-prefix.json --native -o observed-trace.json
+PYTHONPATH=src python3 -m entrotter_engine trace-observe tests/data/canonical-mainnet-prefix.json -o observed-trace.json
 ```
 
 For the recorded original32-input case, use
@@ -133,8 +140,11 @@ signed consumer strategy or profit demonstration.
 The separate wrapper has `observation_version: "0.1.0"` and profile
 `aave-v3-ethereum-weth-price`. It contains the unchanged trace-report format,
 its artifact ID, four ordered observation records and a content hash over the
-complete wrapper. Existing SDK/viewer trace readers can inspect its `trace_report`
-member separately; they do not validate the new wrapper or its extra views.
+complete wrapper. The reviewed [SDK candidate](https://github.com/entrotter/sdk-python/pull/7),
+[terminal reader](https://github.com/entrotter/cli/pull/10) and
+[local viewer](https://github.com/entrotter/entrotter.github.io/pull/16) can validate
+and inspect the complete wrapper offline. These candidates remain separate from
+main-branch approval and live Pages deployment.
 
 ```python
 from entrotter_engine.consumer_observations import load_observed_trace
@@ -173,7 +183,13 @@ code/provider state or establish full-block/state-root/opcode equivalence.
 
 All nine fixed queries per phase (36 maximum) have at most two seconds each and
 share the original 150-second trace deadline and owned Anvil/cache lifetimes.
-The explicit interface requires a POSIX main thread and refuses an existing
+The worker request admits exactly that fixed profile and a validated trace plan,
+never a callback, selector or network destination. The host verifies the complete
+request hash, both report hashes and the nested plan against its admitted snapshot.
+Observed and ordinary trace results cannot replace one another. The observation
+guard preserves the worker's original 180-second lifetime deadline, including the
+remaining time for sealing/output; it does not restart that timer after replay.
+The explicit native interface requires a POSIX main thread and refuses an existing
 caller alarm. SIGTERM/deadline stops propagate through owned cleanup;
 KeyboardInterrupt/SystemExit are not normalized into RPC errors. Previous signal
 handlers are restored. The guard covers execution and cleanup, not later wrapper

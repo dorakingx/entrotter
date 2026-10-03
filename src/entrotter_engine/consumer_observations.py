@@ -63,13 +63,22 @@ class ObservationStopped(BaseException):
 
 
 @contextmanager
-def _deadline_guard():
+def _deadline_guard(*, _worker_alarm: bool = False):
     # The explicit native interface is synchronous and needs reliable SIGTERM
     # delivery through all owned context managers. Refuse unsafe embedding.
     if os.name != "posix" or threading.current_thread() is not threading.main_thread():
         raise ExecutionError("Observed native replay requires the POSIX main thread")
-    if signal.getitimer(signal.ITIMER_REAL) != (0.0, 0.0):
+    # Sample the clock first: scheduling during getitimer must shorten the
+    # inherited bound conservatively, rather than moving its deadline forward.
+    outer_started = time.monotonic() if _worker_alarm else None
+    alarm, interval = signal.getitimer(signal.ITIMER_REAL)
+    if _worker_alarm and (alarm <= 0 or interval != 0):
+        raise ExecutionError("Observed worker needs its active one-shot lifetime alarm")
+    if not _worker_alarm and (alarm, interval) != (0.0, 0.0):
         raise ExecutionError("Observed native replay refuses an active caller alarm")
+    # Only the container entrypoint admits this path. Preserve its original
+    # deadline across observation execution/cleanup; never restart 180 seconds.
+    outer_deadline = outer_started + alarm if outer_started is not None else None
     previous = {sig: signal.getsignal(sig) for sig in (signal.SIGALRM, signal.SIGTERM)}
 
     def stopped(sig, frame):
@@ -78,12 +87,24 @@ def _deadline_guard():
     try:
         for sig in previous:
             signal.signal(sig, stopped)
-        signal.setitimer(signal.ITIMER_REAL, 150)
+        lifetime = (
+            min(150, outer_deadline - time.monotonic())
+            if outer_deadline is not None
+            else 150
+        )
+        if lifetime <= 0:
+            raise ObservationStopped("deadline")
+        signal.setitimer(signal.ITIMER_REAL, lifetime)
         yield
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)
         for sig, handler in previous.items():
             signal.signal(sig, handler)
+        if outer_deadline is not None:
+            remaining = outer_deadline - time.monotonic()
+            if remaining <= 0:
+                raise ObservationStopped("deadline")
+            signal.setitimer(signal.ITIMER_REAL, remaining)
 
 
 def _word(value: Any) -> bytes:
@@ -301,8 +322,19 @@ def _classification(rows: list[dict], report: dict) -> dict:
 
 def run_trace_observed_native(plan: dict) -> dict:
     """Explicit trusted-native, fixed-profile workflow; no default-worker fallback."""
+    return _run_trace_observed(plan)
+
+
+def run_trace_observed(plan: dict) -> dict:
+    """Default bounded Docker execution of the fixed read-only price profile."""
+    from .isolated import run_trace_observed_isolated
+
+    return run_trace_observed_isolated(plan)
+
+
+def _run_trace_observed(plan: dict, *, _worker_alarm: bool = False) -> dict:
     collector = OwnedPriceObserver()
-    with _deadline_guard():
+    with _deadline_guard(_worker_alarm=_worker_alarm):
         report = _run_trace_native(plan, collector)
     result = seal(
         {
