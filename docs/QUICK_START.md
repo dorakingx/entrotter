@@ -5,12 +5,13 @@ integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
 The proposed [recorded comparison exit policy](../evidence/require-complete-integration/README.md)
-selects engine88c6cd0, SDKba4af51, CLI1ce7677 and viewer422d98a. The prior ten
-offline readers passed in the earlier composition, including the recorded
-default-worker32 price and13-input account results. Only the new eleventh reader's
-nine exit-contract groups ran locally for this update and passed. Current combined
-CI separately executes all eleven; component CI and combined CI are separate.
-independent human main approval remains pending. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
+selects engine88c6cd0, SDKba4af51, CLIa10c28d and viewer422d98a. All eleven
+offline readers and the five required checks passed at the prior rootb605
+composition. This update selects the same CLI runtime with corrected
+quality setup instructions; its recipe now reads the SDK pin from the manifest.
+[Setup verification](../evidence/setup-pin-integration/README.md) distinguishes
+fresh recipe execution from reused runtime results and the current combined CI.
+Independent human main approval remains pending. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
 below retains its earlier2f6a56e/enginebd5527f source and measurements.
 
 <a id="inspect-the-supported-historical-price-result-offline"></a>
@@ -51,7 +52,7 @@ For terminal inspection, select matching SDK and CLI sources in a second termina
 ```bash
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 1ce7677d809847bc9f5917f2ca633878b1761c3c
+git -C cli fetch --depth=1 origin a10c28df460cd7ae9a00f04180417440da7d5f88
 git -C cli checkout --detach FETCH_HEAD
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-verify entrotter.github.io/reports/trace-observed-price32.json
 PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli observed-inspect entrotter.github.io/reports/trace-observed-price32.json
@@ -435,7 +436,7 @@ git -C engine fetch --depth=1 origin 88c6cd0d00f466ed7e870bd57c118aa50984f8b1
 git -C engine checkout --detach FETCH_HEAD
 git -C sdk-python fetch --depth=1 origin ba4af512784119f23b6dea63fd24c7f5d1fdde44
 git -C sdk-python checkout --detach FETCH_HEAD
-git -C cli fetch --depth=1 origin 1ce7677d809847bc9f5917f2ca633878b1761c3c
+git -C cli fetch --depth=1 origin a10c28df460cd7ae9a00f04180417440da7d5f88
 git -C cli checkout --detach FETCH_HEAD
 .venv/bin/python engine/scripts/build_worker.py --output worker-image.json
 export ENTROTTER_WORKER_IMAGE="$(.venv/bin/python -c 'import json; print(json.load(open("worker-image.json"))["image_id"])')"

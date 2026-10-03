@@ -2114,3 +2114,22 @@ records the exact source/step scope. No main merge, Pages, formal submission,
 new EVM/model/browser/timing or user evaluation is claimed; human independent
 approval remains required. Goal active to the rechecked October13 15:59JST
 competition deadline, with Discord excluded.
+
+
+## October 4 — keep contributor quality setup consistent with CI
+
+Select CLIa10c28d, whose development recipe now reads the quality SDK directly
+from its manifest instead of an obsolete literal pin. The exact fresh copied
+checkout recipe completed successfully, including local wheel installation,
+full quality checks and42 locked identities with0 reported advisories. Seven CLI
+and five SDK runtime module bytes match prior1ce wheels; original complete JSON
+goldens remain unchanged. The initial wrong-cwd attempt was interrupted130 and
+retained separately. All six original current CLI mandatory checks passed.
+
+The root pin/current guidance change preserves all eleven reader bodies,
+production/scripts/locks, other workers, frozen inputs and existing videos.
+Prior rootb605 five-check/full-reader CI remains historical; current required CI
+and independent review are separate. [Setup composition](evidence/setup-pin-integration/README.md)
+links the actual recipe evidence without rerunning unchanged local readers.
+Human main approval, latest Pages and submission remain pending. No fresh
+EVM/model/browser/performance/user execution is claimed; goal active, Discord excluded.

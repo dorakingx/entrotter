@@ -22,6 +22,11 @@ All six repositories are public at the links below. The documentation site is
 live at https://entrotter.github.io/. Packages remain unpublished and the engine
 runs locally. See STATUS.md for current verification and open acceptance gates.
 
+The candidate CLI's [development setup](https://github.com/entrotter/cli/blob/a10c28df460cd7ae9a00f04180417440da7d5f88/README.md)
+now selects the quality SDK directly from its manifest. The
+[setup composition evidence](evidence/setup-pin-integration/README.md) records the
+executed recipe and separates this documentation fix from runtime verification.
+
 ## Repositories
 
 | Repository | Owns | Does not own |
@@ -97,7 +102,7 @@ a rejected file. [Source-label verification](https://github.com/entrotter/entrot
 Terminal users can also inspect the same account record with
 `position-inspect --format text`: all six exact account fields and differences,
 health status, source IDs and unproven reasons appear without manual unit scaling.
-The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/1ce7677d809847bc9f5917f2ca633878b1761c3c/evidence/position-text/README.md)
+The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/a10c28df460cd7ae9a00f04180417440da7d5f88/evidence/position-text/README.md)
 separates current offline controls and installed-package proof from the original
 historical execution. Protected integration and live publication remain separate.
 
@@ -106,7 +111,7 @@ Scripts can use `position-verify --require-complete` or
 matching baseline receipts. An unproven comparison returns3 with the same JSON
 and reasons on stderr; ordinary verification retains its prior exit behavior.
 Negative differences and valid no-debt states can pass: completeness does not
-prove profit or authenticate a provider. [CLI exit-contract evidence](https://github.com/entrotter/cli/blob/1ce7677d809847bc9f5917f2ca633878b1761c3c/evidence/require-complete/README.md)
+prove profit or authenticate a provider. [CLI exit-contract evidence](https://github.com/entrotter/cli/blob/a10c28df460cd7ae9a00f04180417440da7d5f88/evidence/require-complete/README.md)
 records the offline and installed-package checks.
 
 ## Local API and SDK

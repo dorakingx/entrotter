@@ -395,6 +395,17 @@
       "planned_current_ci_offline_readers": 11,
       "combined_current_ci": "Pending for this new composition; earlier root7c20 full5 original checks remain historical.",
       "scope": "Existing recorded evidence plus synthetic exit-policy controls. Overlaps prior CLI tests; not added to frozen workspace totals. No new local EVM/model/browser/performance/media/main/Pages/submission execution."
+    },
+    "quality_setup_instructions": {
+      "cli": "a10c28df460cd7ae9a00f04180417440da7d5f88",
+      "sdk": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "documented_recipe_returncode": 0,
+      "fresh_source_built_installed_wheels": true,
+      "runtime_modules_unchanged": {
+        "cli": 7,
+        "sdk": 5
+      },
+      "scope": "README-only setup pin fix. Original current CLI six mandatory checks passed; prior rootb605 eleven-reader/five-check evidence reused. Current root mandatory CI remains separate; no new EVM/model/browser/performance/media/main/Pages/submission claim."
     }
   },
   "evidence": [
@@ -495,7 +506,8 @@
     "evidence/cli-observed-integration/summary.json",
     "evidence/require-complete-integration/README.md",
     "evidence/require-complete-integration/local-reader.json",
-    "evidence/require-complete-integration/cli-require-complete.json"
+    "evidence/require-complete-integration/cli-require-complete.json",
+    "evidence/setup-pin-integration/README.md"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }
