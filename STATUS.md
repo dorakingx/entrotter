@@ -1747,3 +1747,51 @@ New combined CI, human protected-main approval and live candidate Pages remain
 separate. No new EVM/model evaluation, video change or formal submission is claimed.
 Goal active through October13 15:59JST; official rules section5 rechecked this turn;
 Discord excluded.
+
+
+## October3 — Standalone observed-price SDK candidate
+
+The coordinator d90f4a9 direct-viewer composition subsequently passed all5 original
+mandatory checks (37049503304/37049503150/37049503339), with full independent
+raw review binding1032 files, all6 exact reader outcomes,21typed tools/3frozen
+diagnostics,78findings/50locked identities0reported advisories and22engine40
+image inputs. Docs63/417 pass. Clean fixture8.205260s/recorded-agent8.875339s use
+configured runningDocker/cgroup-v2, potentiallywarmcaches, excluding install/VM
+startup; this is reproduction evidence, not a speed comparison. Raw review SHA
+b80f5995958eb643a3b3c8033487e7c736b0f2b72e2322b9ee6320f26dffd7c6, retained
+.quality/direct-observed-wrapper-integration/ci-d90f; PR55 has originalCI links.
+
+SDKPR7 publishes eb9921f with direct load/verify_observed_trace, frozen typed
+price/feed/head/code/error/classification records and complete nested TraceResult.
+No engine runtime dependency/import, server, RPC, model or fresh chain call is
+needed. Seven offline ABI/coverage/classifier functions preserve engine40 semantics
+with SDK-local canonical/hex adapters.45local tests (9newgroups/22resealed/5RPC
+controls),6source Ruff/mypy/Bandit0 findings,42locked manifest/runtimeempty and
+final isolatedwheel f1117628 pass. Actualsample701 and6engine-sealed synthetic
+goldens b688 retain complete32 baseline receipts/19structural differences and
+exact2**200/None unproven handling. Immutable snapshots preserve raw ABI and
+finite diagnostics. Independent final review124assertions/48bound inputs/all15
+staged blobs passes (SHAd82844aa58fe031aeead6c0cc47209f3ec2e3f999e92bc2a1673888053d9d07b).
+Root verifies all15 published Git blob IDs at exacteb992. README's supported CLI command was corrected to trace-observe --native; final
+wheel metadata rebuilt while all runtime package bytes remained identical. Docs
+8/26 pass. See SDK evidence/observed-reader and PR7.
+
+Original component all5 checks and full raw independent review pass: units
+37052557032/quality37052557013/docs37052557015, allfirstattempt,45/0skip on each
+Python3.11/3.12/3.13. Raw review118assertions/52bound inputs verifies42exact locked
+identities/0reported advisories,6source/wheel/full README+RECORD and wholemerge
+tree==eb992. SHA3852b7acb5185af14886e672d2fa3fc7a5c721ad56d1414d3bc12c6c81cb72f1.
+Installed filesystem was not separately exported; actual isolated import/read
+logs and wheel bytes are retained. Tool/DB/ZIP cryptographic gaps stay explicit.
+
+The proposed coordinator promotes exactly4 selected SDK references ee→eb992,
+preserving frozen hostEE and all other native/agent/model/holdout jobs. Sixth
+actual reader now compares full SDK wrapper/nested snapshot, classification and
+four typed records, including every signed round field, source/aggregator/currency/
+unit, head/code identity and errors, with recorded engine/viewer facts. All6 exact
+local scripts pass; first5 bodies and complete results unchanged except SDKpin.
+21tool-source typing retains3 frozen diagnostics. Quick start directly reads the
+local sample through SDK alone. See [integration source/evidence](evidence/sdk-observed-integration/README.md).
+New combined current-head CI, human main approval, Pages and formal submission
+remain separate. No fresh EVM/model/browser evaluation is claimed. Goal active
+through October13 15:59JST; official section5 rechecked this turn; Discord excluded.

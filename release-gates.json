@@ -278,7 +278,21 @@
       "component_CI": "All4 original a19 mandatory checks and full raw independent review passed; SHA20ad24e37a23f3740348ad6636977397576af7b5f5e4ba787f9d5712fa1366ca; build/deploy skipped on PR",
       "selected_coordinator_viewer": "a19d3b17fcf44e58a237b622de8cef89842eb6e7; exactly two selectors promoted in proposed composition",
       "scope": "Direct recordedwrapper consumption, not newEVM/model/strategy/profit/provider-auth/defaultDocker32; protected-main/Pages separate.",
-      "direct_integration": "Six exact local scripts pass; first5 full outcomes unchanged except viewerpin; sixth actual codec compares full trace and four raw decoded price/address/unit/head/code records. New combined CI pending."
+      "direct_integration": "Historical d90f4a9/SDKee all5 original mandatory checks and fullraw independent1032-file review passed; current SDKeb composition recorded separately."
+    },
+    "standalone_observed_price_sdk": {
+      "source": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+      "PR": "https://github.com/entrotter/sdk-python/pull/7",
+      "component_CI": "All5 original mandatory checks +full raw review passed; units37052557032/quality37052557013/docs37052557015",
+      "independent_CI_sha256": "3852b7acb5185af14886e672d2fa3fc7a5c721ad56d1414d3bc12c6c81cb72f1",
+      "Python_matrix_tests_each": 45,
+      "production_sources": 6,
+      "security_findings": 0,
+      "locked_identities": 42,
+      "reported_advisories": 0,
+      "direct_API": "Offline wrapper load/verify +immutable exact typed observations/classification and nested TraceResult; no engine dependency/import",
+      "integration": "Exactly4 selected SDK selectors promoted; frozen hostEE preserved. All6 local exact scripts/type21/3frozen pass; full SDK raw typed records compare with engine40/viewera19. New combined CI pending.",
+      "scope": "Recorded price dependence/internal consistency, not fresh chain/model/browser or provider/auth/signedconsumer/profit/fullblock proof; human main/Pages separate."
     }
   },
   "evidence": [
@@ -374,7 +388,8 @@
     "evidence/trace-comparison-integration/summary.json",
     "evidence/consumer-price-integration/summary.json",
     "evidence/observed-wrapper-integration/summary.json",
-    "evidence/direct-observed-wrapper-integration/summary.json"
+    "evidence/direct-observed-wrapper-integration/summary.json",
+    "evidence/sdk-observed-integration/summary.json"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

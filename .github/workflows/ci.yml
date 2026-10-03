@@ -109,7 +109,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: entrotter/sdk-python
-          ref: ee5523ded16488af32d1f64040f1996cd002f8f3
+          ref: eb9921f30c1f0f3750140f66023e3b10d255cb20
           path: sdk-python
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -513,12 +513,12 @@ jobs:
       - name: Inspect the supported observation wrapper with engine, SDK and viewer
         run: |
           python - <<'PY'
-          from dataclasses import replace
+          from dataclasses import asdict, replace
           import hashlib, json, os, subprocess
           from pathlib import Path
           from entrotter_engine.consumer_observations import load_observed_trace
           from entrotter_engine.trace import write_trace
-          from entrotter_sdk import load_trace
+          from entrotter_sdk import load_trace, load_observed_trace as load_sdk_observed_trace
           source = Path('engine/evidence/owned-consumer-observations/historical-32/observed-trace.json')
           digest = '7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d'
           assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
@@ -559,6 +559,26 @@ jobs:
               'complete_price_views': True, 'baseline_receipts_verified': True, 'unproven_reasons': [],
               'baseline_price': 256292441874, 'candidate_price': 257082415000, 'price_difference': 789973126,
           }
+          sdk_observed = load_sdk_observed_trace(source)
+          assert sdk_observed.report == observed and sdk_observed.trace.report == report.report
+          sdk_classification = asdict(sdk_observed.classification)
+          sdk_classification['unproven_reasons'] = list(sdk_classification['unproven_reasons'])
+          assert sdk_classification == observed['classification']
+          sdk_phases = [asdict(row) for row in sdk_observed.observations]
+          for row, raw, price in zip(sdk_phases, observed['observations'], prices):
+              assert row['branch'] == raw['branch'] and row['phase'] == raw['phase']
+              assert row['price'] == price['consumer_price'] and row['latest_round_data']['answer'] == price['producer_answer']
+              assert row['head'] == raw['head'] and row['errors'] == ()
+              assert row['oracle_code'] == raw['code']['oracle_code'] and row['source_code'] == raw['code']['source_code']
+              for name in ('source', 'aggregator', 'base_currency'):
+                  assert row[name] == '0x' + raw['raw'][name][26:].lower()
+              assert row['base_unit'] == int(raw['raw']['base_unit'], 16)
+              words = [int(raw['raw']['latest_round_data'][2 + i * 64:2 + (i + 1) * 64], 16) for i in range(5)]
+              if words[1] >= 2**255:
+                  words[1] -= 2**256
+              assert row['latest_round_data'] == dict(zip(
+                  ('round_id', 'answer', 'started_at', 'updated_at', 'answered_in_round'), words))
+          sdk_module = Path('sdk-python/src/entrotter_sdk/observed.py')
           module = Path('entrotter.github.io/trace-report.mjs')
           comparison = Path('entrotter.github.io/trace-comparison.mjs')
           observer_module = Path('entrotter.github.io/observed-trace.mjs')
@@ -634,9 +654,12 @@ jobs:
               'comparison_module_sha256': hashlib.sha256(comparison.read_bytes()).hexdigest(), 'viewer': viewer,
               'observed_viewer_module_sha256': hashlib.sha256(observer_module.read_bytes()).hexdigest(),
               'viewer_observation': direct,
+              'sdk_observed_module_sha256': hashlib.sha256(sdk_module.read_bytes()).hexdigest(),
+              'sdk_observation': {'artifact_id': sdk_observed.artifact_id, 'profile': sdk_observed.profile,
+                                  'classification': sdk_classification, 'phases': sdk_phases},
               'limits': ['Strict wrapper validation and offline parsing do not authenticate provider/deployed state.',
                          'Read-only price views are not signed consumer strategy or profit;32-of181 is not full-block/root/opcode proof.',
-                         'SDK inspects the exported nested trace; the viewer codec additionally validates recorded wrapper price views.',
+                         'SDK and viewer additionally validate recorded wrapper price views; SDK exposes exact typed records.',
                          'Node codec checks are separate from rendered browser/Pages verification and real Docker execution.'],
           }, indent=2) + '\n')
           PY

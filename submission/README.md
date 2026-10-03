@@ -92,7 +92,7 @@ code, not an independently approved release.
 | --- | --- | --- |
 | Coordination execution snapshot, dependency pins and Linux CLI helper | [2f6a56e](https://github.com/entrotter/entrotter/tree/2f6a56e533935c93f4688c13feeeaa0e771c427a) | [#55](https://github.com/entrotter/entrotter/pull/55) |
 | Bounded agent engine, signed-prefix replay and supported Aave price observations | [40bea57](https://github.com/entrotter/engine/tree/40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d) | [#35](https://github.com/entrotter/engine/pull/35) |
-| Python SDK with offline typed signed-prefix inspection | [ee5523d](https://github.com/entrotter/sdk-python/tree/ee5523ded16488af32d1f64040f1996cd002f8f3) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
+| Python SDK with offline typed signed-prefix and price observation inspection | [eb9921f](https://github.com/entrotter/sdk-python/tree/eb9921f30c1f0f3750140f66023e3b10d255cb20) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI | [22b514c](https://github.com/entrotter/cli/tree/22b514cbba2ecd0c41ae99c330f8396c97acebf2) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
 | Console, recorded agent and signed-prefix inspection, accessibility and quality | [a19d3b1](https://github.com/entrotter/entrotter.github.io/tree/a19d3b17fcf44e58a237b622de8cef89842eb6e7) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
@@ -209,8 +209,22 @@ records with the engine validator; all6 exact local scripts pass, and prior5
 complete outcomes remain unchanged except the viewer pin.
 
 The prior coordinator213 composition passed all5 original checks and full raw
-review. The coordination execution snapshot row retains older verified source;
-new combined candidate CI, protected-main human approval and Pages remain
-separate. Videos/model/holdouts and the application draft are unchanged; no
-formal submission is claimed. Read-only prices establish no signed consumer
+review. Its subsequent direct-wrapper composition d90f4a9 also passed all5
+original checks and full independent raw review (workspace37049503304,
+quality37049503150, docs37049503339). These are historical verified compositions;
+the current SDKeb candidate's combined CI is recorded separately below. The
+coordination execution snapshot row retains older verified source. Protected-main
+human approval and Pages remain separate. Videos/model/holdouts and the
+application draft are unchanged; no formal submission is claimed. Read-only prices establish no signed consumer
 strategy, profit, provider authenticity or full-block/root/opcode result.
+
+
+The [standalone SDK wrapper composition](../evidence/sdk-observed-integration/README.md)
+selects SDKeb9921f, whose all5 original mandatory checks and complete raw review
+pass. Python developers can inspect the supported original wrapper directly,
+without importing the engine or creating an intermediate trace export. The sixth
+mandatory reader compares the complete SDK snapshot, typed classification and
+four full typed price/feed/address/unit/head/code/error records with engine40 and
+viewera19. Local six-script/type results, new combined CI and human protected-main
+approval remain separate evidence gates. Frozen recordings, model/holdouts and
+submission draft remain unchanged; no new chain/model/browser or submission claim.

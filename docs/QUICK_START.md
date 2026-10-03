@@ -4,8 +4,8 @@ This guide uses tested candidate commits awaiting independent review and main
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [direct price observation composition](../evidence/direct-observed-wrapper-integration/README.md)
-selects engine40bea57 and viewera19d3b1. Its six offline integration cases pass
+The proposed [standalone SDK price observation composition](../evidence/sdk-observed-integration/README.md)
+selects engine40bea57, SDKeb9921f and viewera19d3b1. Its six offline integration cases pass
 locally, including direct wrapper validation; combined current-head CI and human
 main approval remain separate. The frozen Docker walkthrough below retains its
 earlier2f6a56e/enginebd5527f source and measurements.
@@ -31,31 +31,33 @@ Imports stay in the browser; the sample button fetches the local recorded file.
 This inspection needs no Docker, Anvil, archive account or model call. It is a
 local candidate preview; it does not confirm the latest source is deployed.
 
-For optional Python verification and quota-bound export of the nested trace,
-select the matching engine and SDK sources in a second terminal:
+For Python inspection, select the standalone SDK in a second terminal:
 
 ```bash
-git -C engine fetch --depth=1 origin 40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d
-git -C engine checkout --detach FETCH_HEAD
-git -C sdk-python fetch --depth=1 origin ee5523ded16488af32d1f64040f1996cd002f8f3
+git -C sdk-python fetch --depth=1 origin eb9921f30c1f0f3750140f66023e3b10d255cb20
 git -C sdk-python checkout --detach FETCH_HEAD
-PYTHONPATH=engine/src:sdk-python/src python3 - <<'PYTHON'
-from entrotter_engine.consumer_observations import load_observed_trace
-from entrotter_engine.trace import write_trace
-from entrotter_sdk import load_trace
-observed = load_observed_trace("engine/evidence/owned-consumer-observations/historical-32/observed-trace.json")
-print(observed["classification"])
-write_trace(observed["trace_report"], "observed-transaction-replay.json")
-print("Verified baseline receipts:", load_trace("observed-transaction-replay.json").baseline_verified)
+PYTHONPATH=sdk-python/src python3 - <<'PYTHON'
+from entrotter_sdk import load_observed_trace
+observed = load_observed_trace("entrotter.github.io/reports/trace-observed-price32.json")
+print(observed.classification)
+print("Verified baseline receipts:", observed.trace.baseline_verified)
+for row in observed.observations:
+    print(row.branch, row.phase, row.price, row.base_unit)
 PYTHON
 ```
 
-The SDK reads the exported nested trace; the engine and viewer additionally
-validate the wrapper's price observations. The source is an actual native
-32-of181/skip12 replay with four fixed Aave/WETH phases. Read-only dependence
-is not signed consumer strategy, profit or full-block/provider authenticity.
-The [engine's exact replay command and original scope](https://github.com/entrotter/engine/tree/40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d/evidence/owned-consumer-observations/historical-32)
-requires pinned Anvil and explicit read-only historical state access.
+Both SDK and viewer validate the wrapper's four price observations and preserve
+the complete nested transaction report. The SDK exposes exact integer prices,
+round/head/code records and finite errors; missing or unproven price deltas are
+`None`. It needs no engine import or conversion. Its [component evidence](https://github.com/entrotter/sdk-python/tree/eb9921f30c1f0f3750140f66023e3b10d255cb20/evidence/observed-reader)
+records45 tests on each supported Python version and a separate isolated wheel.
+
+The source is an actual native32-of181/skip12 replay with four fixed Aave/WETH
+phases. Read-only dependence is not signed consumer strategy, profit or
+full-block/provider authenticity. If you need a separate trace-family JSON file,
+use the engine's normal quota-bound `write_trace` export; the [engine's exact
+export/replay command and original scope](https://github.com/entrotter/engine/tree/40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d/evidence/owned-consumer-observations/historical-32)
+also documents pinned Anvil and read-only historical state access for a new replay.
 
 ## Requirements
 
