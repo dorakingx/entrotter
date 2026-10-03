@@ -65,7 +65,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-quality.txt
 mkdir -p _deps
 git clone https://github.com/entrotter/sdk-python.git _deps/sdk
-git -C _deps/sdk checkout --detach b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+git -C _deps/sdk checkout --detach eb9921f30c1f0f3750140f66023e3b10d255cb20
 .venv/bin/python -m build --no-isolation --wheel --outdir .quality/sdk-wheels _deps/sdk
 .venv/bin/python -m pip install --no-index --no-deps .quality/sdk-wheels/*.whl
 .venv/bin/python -m pip check
@@ -166,7 +166,7 @@ migrated protocol version; never silently reset existing reservations.
 
 The proposed agent CLI requires the matching bounded engine API. The actual
 integration job pins engine `c1671938edde03c59deef64dbb81d7c41a33406b` and SDK
-`b0c2ba3bba411e548af44101ae06e879bd7b5dc0`; these candidates require independent
+`eb9921f30c1f0f3750140f66023e3b10d255cb20`; these candidates require independent
 review before protected integration. Build/configure that engine's local Docker
 worker first. In a workspace with these source checkouts:
 
@@ -218,3 +218,47 @@ gate. They compare complete original risk/model reports, changed-state refusal,
 recovery and missing-image rejection. Exact sample/source pins are in
 [quality-inputs.json](quality-inputs.json); measured local evidence is in
 [evidence/agent-cli/summary.json](evidence/agent-cli/summary.json).
+
+
+## Inspect recorded price observations without an engine
+
+The proposed SDK source is pinned to
+`eb9921f30c1f0f3750140f66023e3b10d255cb20` in [quality-inputs.json](quality-inputs.json).
+The separate observed-wrapper commands read the fixed Aave/WETH price observation
+format; ordinary `inspect` and `verify` retain their v0.1 result behavior.
+From a workspace with matching CLI and SDK sources:
+
+```bash
+export PYTHONPATH="$PWD/cli/src:$PWD/sdk-python/src"
+python3 -m entrotter_cli observed-verify cli/tests/data/observed-price32.json
+python3 -m entrotter_cli observed-inspect cli/tests/data/observed-price32.json
+```
+
+No engine, Docker, API server, RPC account, model call or export ledger is needed.
+The commands accept only an input path. The SDK reads a regular JSON file of at
+most 8 MiB, rejects duplicate keys and validates the sealed wrapper, nested trace
+and recorded observation consistency before anything is printed. Invalid input
+returns status 1 with a finite error; an older SDK gets a matching-source error.
+
+Both commands print JSON with wrapper/trace IDs, the profile, receipt verification,
+transaction count, exact integer classification and its unproven reasons.
+`observed-inspect` additionally prints all four typed observation records: prices,
+units, source/aggregator addresses, full signed feed-round fields, head/code
+identities and finite errors. Python integer output preserves decimal digits
+above JavaScript's safe integer range; use a lossless JSON reader for such values.
+
+Status 0 means successful integrity/consistency inspection. An internally valid
+record with missing or unproven price views still returns 0, with
+`complete_price_views: false`, an explicit reason and `price_difference: null`.
+It must not be interpreted as a zero difference or proof of a profitable strategy.
+`integrity_verified` does not authenticate provider or deployed state.
+
+The actual sample is copied byte-for-byte from SDK eb9921f: original native
+32-of181/skip12 Ethereum replay and four recorded Aave/WETH view phases. Its price
+difference is 789973126 raw units with unit 100000000. Read-only dependence is
+not signed consumer strategy, profit or full-block/root/opcode proof. The six
+separate controls are engine-sealed synthetic diagnostics, including missing
+state and integers at 2**200; they are not new historical execution.
+Local command and isolated wheel evidence is in
+[evidence/observed-cli](evidence/observed-cli/README.md); new mandatory CI and
+independent review remain distinct from the original recorded EVM evidence.

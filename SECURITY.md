@@ -32,3 +32,11 @@ export; these hashes detect corruption, not dishonest producer assumptions.
 The engine validates causal request/response bindings and enforces its existing
 worker limits. Fork egress, trusted installed packages/images and host overhead
 retain the engine's documented boundaries. Do not publish private recordings.
+
+
+Recorded price inspection delegates bounded file parsing and observation validation
+to the pinned standalone SDK. It never instantiates an API client, imports the
+engine, executes a report, consumes provider metadata as configuration or writes
+an export. SHA-256 and consistency checks establish internal record integrity,
+not provider authentication or economic correctness. Valid incomplete views keep
+null differences and explicit reasons; status 0 does not mean complete price proof.

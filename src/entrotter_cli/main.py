@@ -1,5 +1,6 @@
 from __future__ import annotations
 import argparse
+from dataclasses import asdict
 import json
 import os
 from pathlib import Path
@@ -55,6 +56,11 @@ def parser():
     v.add_argument("report")
     v = sub.add_parser("inspect", help="Summarize a verified result")
     v.add_argument("report")
+    for name, description in (
+        ("observed-inspect", "Inspect recorded price observations offline"),
+        ("observed-verify", "Verify a recorded price wrapper and its nested trace"),
+    ):
+        sub.add_parser(name, help=description).add_argument("report")
     return p
 
 
@@ -156,6 +162,36 @@ def main(argv=None) -> int:
                     indent=2,
                 )
             )
+            return 0
+        if args.command in {"observed-inspect", "observed-verify"}:
+            try:
+                from entrotter_sdk import load_observed_trace
+            except ImportError:
+                raise ValueError(
+                    "Matching SDK with observed trace support is required; "
+                    "use the SDK source pinned in quality-inputs.json"
+                ) from None
+            observed = load_observed_trace(args.report)
+            trace = observed.trace
+            summary = {
+                "artifact_id": observed.artifact_id,
+                "profile": observed.profile,
+                "integrity_verified": True,
+                "trace": {
+                    "artifact_id": trace.artifact_id,
+                    "baseline_receipts_verified": trace.baseline_verified,
+                    "transaction_count": len(trace.transactions),
+                },
+                "classification": asdict(observed.classification),
+                "scope": (
+                    "Recorded wrapper and nested trace checks; not provider authentication. "
+                    "Read-only price dependence is not signed consumer strategy, profit "
+                    "or full-block/root/opcode proof. Missing or unproven differences are null."
+                ),
+            }
+            if args.command == "observed-inspect":
+                summary["observations"] = [asdict(row) for row in observed.observations]
+            print(json.dumps(summary, indent=2, allow_nan=False))
             return 0
         from entrotter_sdk import Client, RunResult
 
