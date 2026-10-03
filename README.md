@@ -90,7 +90,9 @@ synthetic missing/large-integer/no-debt/boundary controls. The next
 selects the independently verified mobile summary: exact borrowing-capacity and
 health-factor changes before the full table, with positive/negative/zero and
 unavailable/no-debt behavior. Original report facts and all nine reader bodies
-remain unchanged.
+remain unchanged. The current viewer also identifies local v0.1 imports explicitly,
+clears previous results while loading, and lets the same example be selected after
+a rejected file. [Source-label verification](https://github.com/entrotter/entrotter.github.io/blob/422d98a7cf753bfc9be9b86553cd76f3a549f70c/evidence/report-source/README.md) preserves the actual regression and full browser evidence.
 
 ## Local API and SDK
 

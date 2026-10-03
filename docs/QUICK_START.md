@@ -4,8 +4,8 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The proposed [account summary composition](../evidence/account-summary-integration/README.md)
-selects engine88c6cd0, SDKba4af51, CLI696511c and viewer8aa0e58. Nine offline
+The proposed [report source composition](../evidence/report-source-integration/README.md)
+selects engine88c6cd0, SDKba4af51, CLI696511c and viewer422d98a. Nine offline
 integration cases pass locally, including the recorded default-worker32 price
 result and13-input account result. Component CI and current combined CI are separate;
 independent human main approval remains pending. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
@@ -18,7 +18,7 @@ below retains its earlier2f6a56e/enginebd5527f source and measurements.
 In an existing six-sibling checkout, select the reviewed viewer source:
 
 ```bash
-git -C entrotter.github.io fetch --depth=1 origin 8aa0e582dfa56ec795cf0adc83303ac1eb952528
+git -C entrotter.github.io fetch --depth=1 origin 422d98a7cf753bfc9be9b86553cd76f3a549f70c
 git -C entrotter.github.io checkout --detach FETCH_HEAD
 python3 -m http.server 8880 --bind 127.0.0.1 --directory entrotter.github.io
 ```
@@ -40,6 +40,9 @@ and no health-factor delta. This is aggregate account-state dependence, not prof
 or a signed strategy. The price32 and account13 cases retain distinct sources.
 This inspection needs no Docker, Anvil, archive account or model call. It is a
 local candidate preview; it does not confirm the latest source is deployed.
+In the separate v0.1 explorer, **Report source** identifies verified local files
+as **Local report**. Loading clears old values; rejection shows no verified report.
+Select any example, including the previously selected one, to restore its data.
 
 For terminal inspection, select matching SDK and CLI sources in a second terminal:
 

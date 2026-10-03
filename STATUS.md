@@ -2040,3 +2040,30 @@ Expanded raw candidate-null text lies below the iframe, distinct from visible
 skipped/no-receipt table proof. Human auditory review/hosting, this media/docs
 commit mandatory CI, protected human main approval/Pages/formal submission remain
 separate. Existing Docker VM/unrelated services were left running. Goal stays active.
+
+
+## October 4 — local-report source viewer composition
+
+Root b67a completed all5 first-attempt mandatory checks and original-raw
+independent review018b0f4f; parent externally rehashed1120 raw/29 source/71doc/57
+immutable/21reused/4helper/34publication inputs. Historical imported1072 evidence
+files remain distinct from8fresh verification files. No new media, main or Pages
+claim is inferred. The demo remains source-bound to viewer8aa0.
+
+Viewer422d98a fixes the actual local import retaining “Liquidity shock”: local
+origin, clear-on-load/error and same-example recovery now pass43groups/58rawaxe,
+126Node/12Python,19JS/20types/139full security rationales and16docs/94links. All4
+original mandatory checks passed. Independent full raw reviewe75a7ccc and parent
+rehash bind187inputs/64currentGit/20reuse/18publication blobs, with no new reported
+Node109/Python42 advisories. The original native chooser timeout cause remains
+unknown; raw incomplete contrast remains distinct from manual WCAG assurance.
+
+The composition selects only two new viewer references and updates the local
+guide. All9 reader bodies are byte-exact and execute once; all12 complete nested
+outputs remain unchanged except the selected viewer pin. Other pins, production
+Python21/locks/frozen3/jobs and original recording bytes are preserved. See
+[composition evidence](evidence/report-source-integration/README.md). No fresh
+EVM/model/upstream/user or performance run, deployment or submission is claimed.
+Current root staged review/mandatoryCI/raw review and independent human main
+approval remain separate. Goal active through the rechecked official deadline;
+Discord excluded.
