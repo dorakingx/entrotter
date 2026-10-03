@@ -53,6 +53,12 @@ class SiteTests(unittest.TestCase):
             ],
         )
 
+    def test_stylesheet_cache_identity_matches_source(self):
+        digest = hashlib.sha256((ROOT / "style.css").read_bytes()).hexdigest()[:12]
+        self.assertIn(
+            'href="style.css?v=' + digest + '"', (ROOT / "index.html").read_text()
+        )
+
     def test_no_duplicate_ids(self):
         self.assertEqual(len(self.html.ids), len(set(self.html.ids)))
 
@@ -82,6 +88,25 @@ class SiteTests(unittest.TestCase):
                 d, sort_keys=True, separators=(",", ":"), ensure_ascii=True
             ).encode()
             self.assertEqual(hashlib.sha256(data).hexdigest(), supplied)
+            if d.get("position_version") == "0.1.0":
+                self.assertEqual(d["profile"], "aave-v3-ethereum-account")
+                price = d["price_report"].copy()
+                price_id = price.pop("artifact_id")
+                encoded = json.dumps(
+                    price, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+                ).encode()
+                self.assertEqual(hashlib.sha256(encoded).hexdigest(), price_id)
+                trace = price["trace_report"].copy()
+                trace_id = trace.pop("artifact_id")
+                self.assertEqual(price["trace_artifact_id"], trace_id)
+                encoded = json.dumps(
+                    trace, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+                ).encode()
+                self.assertEqual(hashlib.sha256(encoded).hexdigest(), trace_id)
+                self.assertEqual(trace["plan"], d["plan"]["trace"])
+                self.assertEqual(len(trace["source"]["inputs"]), 13)
+                self.assertEqual(len(d["observations"]), 4)
+                continue
             if d.get("observation_version") == "0.1.0":
                 self.assertEqual(d["profile"], "aave-v3-ethereum-weth-price")
                 nested = d["trace_report"].copy()

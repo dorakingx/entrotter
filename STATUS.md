@@ -178,3 +178,40 @@ byte-identical raw axe outputs and immutable report provenance. Before-test help
 import failure and a later preparation anchor mismatch are retained as setup gaps,
 not behavioral failures. Final exact-head CI, independent review, protected-main
 human approval and Pages publication remain separate; no merge/deployment/submission.
+
+
+## October 3 — exact recorded Aave account impact viewer
+
+The proposed account wrapper viewer validates a closed fixed plan, three seals,
+full four-phase account/config/code/head/query records and recomputed exact
+classification. Six after-state metrics/deltas use BigInt without rounding.
+Missing data remains UNPROVEN/null; zero debt shows No debt with no HF delta;
+loaded health statuses are human-readable. Invalid imports clear all account and
+price values, and switches to old families remove the account view. Old codecs,
+v0.1 UI, locks and frozen report bytes remain exact. The deploy allowlist adds
+position-report.mjs, excluding private/evidence files. No new EVM/model/user run.
+
+The bundled original Engine88c6 Docker13 report SHAcd96 is byte-identical, with
+all13 baseline receipts/candidate12+skip12 and complete four account/price views.
+Capacity differs816.28966124 USD; health factor0.003852169807877337. These are
+aggregate prefix-state dependencies, not profit, signed execution, sole-price
+causality, provider/proxy authentication or full-block/root proof. Nine synthetic
+controls are separately sealed/SDKba4 accepted, with unchanged nested evidence.
+
+Local126 Node/12 Python tests and lint/format/checkJs/Python static checks pass.
+Full19JS/20type coverage retains137 visible security findings, no suppressions;
+all122 original reasons preserved exactly plus15 new contexts. Initial metadata
+mapping collisions were independently found and fixed before final review.
+Node109/Python42 dependency audits report0 advisories. Final-source local macOS
+Chromium153/Playwright1.63/axe4.13 passes42 groups/49 scans/0 violations/0JS errors
+at1280/390/320px. Desktop/320 screenshots visually checked; keyboard/local import,
+exact large integers, missing/null/no-debt/boundary, invalid-clear and recovery
+are exercised. Imports issue0 requests; only same-originGETs allowed. Incomplete
+contrast remains recorded; supplemental CSS checks are not axe/full WCAG proof.
+The preceding same-source run timed out in the existing320 native filechooser;
+cause unknown. Unchanged rerun passes all groups; no assertions were relaxed.
+
+See [source-bound account viewer evidence](evidence/position-viewer/README.md).
+Independent staged review and exact-head CI are pending separately from human
+protected-main approval, live Pages and formal submission. Goal remains active
+through the official October13 15:59JST deadline. Discord remains excluded.

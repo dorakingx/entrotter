@@ -8,10 +8,10 @@
   <meta name="color-scheme" content="dark">
   <title>Entrotter · A time machine for onchain agents</title>
   <link rel="icon" href="assets/icon.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=873629f64bbf">
+  <link rel="stylesheet" href="style.css?v=abd759c97109">
   <script src="app.js?v=36786b0c3db6" defer></script>
   <script type="module" src="comparison.mjs?v=e0dac48fe543"></script>
-  <script type="module" src="trace-viewer.mjs?v=6cbe085c8fc7"></script>
+  <script type="module" src="trace-viewer.mjs?v=bffcde1611f8"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -70,9 +70,9 @@
 <section class="section shell" id="transaction-replay" tabindex="-1">
   <div class="section-head"><p class="eyebrow">ORIGINAL SIGNED TRANSACTIONS</p><h2>Inspect a historical prefix</h2><p>The recorded four-transaction case compares original receipts with a replay from the same pinned parent and a branch that omits transaction 0. It shows changed gas, logs and a nonce conflict; it is not a model evaluation or profit claim. Import another signed-prefix report to inspect its own count and omissions below.</p></div>
   <details class="trace-archive"><summary>Open signed-prefix replay <span>Recorded sample: Ethereum mainnet · four original transactions · trace_version 0.1.0</span></summary><div class="report-panel">
-    <div class="report-toolbar"><button id="trace-sample" type="button">Load recorded four-transaction case</button><button id="trace-price-sample" type="button">Inspect recorded Aave price change</button><label class="file-button" for="trace-import">Open local replay or price JSON<input id="trace-import" type="file" accept="application/json,.json"></label></div>
+    <div class="report-toolbar"><button id="trace-sample" type="button">Load recorded four-transaction case</button><button id="trace-price-sample" type="button">Inspect recorded Aave price change</button><button id="trace-account-sample" type="button">Compare recorded Aave account impact</button><label class="file-button" for="trace-import">Open local replay, price or account JSON<input id="trace-import" type="file" accept="application/json,.json"></label></div>
     <p class="privacy">Local files stay in your browser. Import makes no network request. A recomputable checksum and internal consistency do not authenticate a provider, signature, image or execution.</p>
-    <p id="trace-status" class="report-status" role="status" aria-live="polite" aria-atomic="true">Load a recorded case or import a local trace / observed-price report (8 MiB maximum).</p>
+    <p id="trace-status" class="report-status" role="status" aria-live="polite" aria-atomic="true">Load a recorded case or import a local replay / price / account report (8 MiB maximum).</p>
     <div id="trace-results" hidden>
       <p id="trace-origin" class="small"></p>
       <p id="trace-case" class="small"></p>
@@ -84,6 +84,14 @@
         <div class="table-wrap" role="region" aria-labelledby="trace-price-caption" tabindex="0"><table><caption id="trace-price-caption">Four owned-node phases · exact raw prices (USD × 100,000,000 only when the comparison is complete)</caption><thead><tr><th scope="col">Branch</th><th scope="col">Phase</th><th scope="col">Consumer price</th><th scope="col">Producer answer</th><th scope="col">Head number</th><th scope="col">Head timestamp</th><th scope="col">Missing / failed queries</th></tr></thead><tbody id="trace-price-rows"></tbody></table></div>
         <details><summary>Returned source, aggregator, currency and code identities</summary><div class="table-wrap" role="region" aria-labelledby="trace-price-identity-caption" tabindex="0"><table><caption id="trace-price-identity-caption">Recorded declarations · these hashes do not authenticate deployed code or providers</caption><thead><tr><th scope="col">Phase</th><th scope="col">Source address</th><th scope="col">Aggregator</th><th scope="col">Currency</th><th scope="col">Unit</th><th scope="col">Oracle code SHA-256</th><th scope="col">Source code SHA-256</th></tr></thead><tbody id="trace-price-identities"></tbody></table></div></details>
         <p class="small">Fixed Aave Ethereum oracle 0x54586be62e3c3580375ae3723c145253060ca0c2 and WETH 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2. Read-only views do not prove signed consumer behavior, a strategy, profit, provider authenticity or full-block/state-root equivalence. The native source is separate from the default Docker case.</p>
+      </section>
+      <section id="trace-account-results" hidden aria-labelledby="trace-account-heading">
+        <h3 id="trace-account-heading">Aave account impact</h3>
+        <p id="trace-account-summary"></p>
+        <div class="table-wrap" role="region" aria-labelledby="trace-account-comparison-caption" tabindex="0"><table><caption id="trace-account-comparison-caption">After-state comparison · exact units when all account and currency bindings are complete</caption><thead><tr><th scope="col">Account metric</th><th scope="col">Baseline after</th><th scope="col">Candidate after</th><th scope="col">Candidate − baseline</th></tr></thead><tbody id="trace-account-comparison"></tbody></table></div>
+        <details><summary>Four account phases in exact raw units</summary><div class="table-wrap" role="region" aria-labelledby="trace-account-caption" tabindex="0"><table><caption id="trace-account-caption">Raw ABI values · base-currency amounts, basis-point limits and WAD health factor; zero debt retains uint256 sentinel</caption><thead><tr><th scope="col">Phase</th><th scope="col">Collateral base</th><th scope="col">Debt base</th><th scope="col">Borrowing capacity base</th><th scope="col">Liquidation threshold bps</th><th scope="col">LTV bps</th><th scope="col">Health factor WAD</th><th scope="col">Failed queries</th></tr></thead><tbody id="trace-account-rows"></tbody></table></div></details>
+        <details><summary>Pool/provider/oracle binding and observed heads</summary><div class="table-wrap" role="region" aria-labelledby="trace-account-identity-caption" tabindex="0"><table><caption id="trace-account-identity-caption">Pool 0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2 · recorded config/code/head identities; no provider or proxy authentication</caption><thead><tr><th scope="col">Phase</th><th scope="col">Provider</th><th scope="col">Oracle</th><th scope="col">Pool code SHA-256</th><th scope="col">Head number</th><th scope="col">Head hash</th></tr></thead><tbody id="trace-account-identities"></tbody></table></div></details>
+        <p class="small">Read-only totals include all prefix effects; they do not isolate price as the sole cause. These are account values, not token balances, profit or an executed borrowing/liquidation strategy. The bundled sample has both health factors at or above one. Unproven views keep unavailable differences; zero debt has no normalized health-factor delta. Checksums and config bindings do not authenticate a provider, proxy implementation or full-block state root. The public recorded account is not an identified user.</p>
       </section>
       <p class="small">Compared with the original projected receipts. “Position / cumulative gas only” means only transactionIndex or cumulativeGasUsed differs; all exact fields remain available below. Receipt matches do not establish unchanged contract state or consumer behavior, and omitted gas is not a benefit or profit measurement.</p>
       <p class="small">Gas is shown in exact units. On narrow screens, focus a table and use the arrow keys to scroll. Open each receipt comparison for exact log bytes and every difference, including an unverified baseline.</p>

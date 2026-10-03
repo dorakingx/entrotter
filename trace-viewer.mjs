@@ -1,6 +1,11 @@
 import { MAX_TRACE_BYTES, validateTraceReport } from "./trace-report.mjs";
 import { traceComparison } from "./trace-comparison.mjs";
 import { validateObservedTrace } from "./observed-trace.mjs";
+import {
+  ACCOUNT_FIELDS,
+  exactUnits,
+  validatePositionReport,
+} from "./position-report.mjs";
 
 /** @param {string} id */
 function element(id) {
@@ -25,11 +30,16 @@ function clear() {
     "trace-price-summary",
     "trace-price-rows",
     "trace-price-identities",
+    "trace-account-summary",
+    "trace-account-comparison",
+    "trace-account-rows",
+    "trace-account-identities",
   ])
     element(id).replaceChildren();
   element("trace-download").hidden = true;
   element("trace-download").removeAttribute("href");
   element("trace-price-results").hidden = true;
+  element("trace-account-results").hidden = true;
 }
 function status(text, error = false) {
   element("trace-status").textContent = text;
@@ -65,10 +75,17 @@ function outcome(row) {
 /** @param {string} text @param {number} seq @param {string | null} recorded */
 async function render(text, seq, recorded) {
   const input = JSON.parse(text);
-  const observed =
+  const position =
     input &&
     typeof input === "object" &&
-    Object.hasOwn(input, "observation_version")
+    Object.hasOwn(input, "position_version")
+      ? await validatePositionReport(text)
+      : null;
+  const observed = position
+    ? position.observed
+    : input &&
+        typeof input === "object" &&
+        Object.hasOwn(input, "observation_version")
       ? await validateObservedTrace(text)
       : null;
   const view = observed ? observed.trace : await validateTraceReport(input);
@@ -95,9 +112,11 @@ async function render(text, seq, recorded) {
     `${comparisons.filter((r) => r.kind === "identical").length} exact original receipt matches · ` +
     `${comparisons.filter((r) => r.kind === "unavailable").length} unavailable receipts.`;
   element("trace-origin").textContent = recorded
-    ? observed
-      ? "Recorded read-only price case · exact engine #35 native 32-of-181 / omission 12 result. The page inspects recorded bytes; it runs no EVM or model."
-      : "Recorded technical case · exact engine #30 Docker report. Different native/Docker environments are not a speed comparison."
+    ? position
+      ? "Recorded read-only account case · exact Engine88c6 default-Docker13-of-181 / omission12 result. The page inspects recorded bytes; it runs no EVM or model."
+      : observed
+        ? "Recorded read-only price case · exact engine #35 native 32-of-181 / omission 12 result. The page inspects recorded bytes; it runs no EVM or model."
+        : "Recorded technical case · exact engine #30 Docker report. Different native/Docker environments are not a speed comparison."
     : "Local import · author and execution provenance are not authenticated. This file remains in your browser.";
   element("trace-pins").textContent = JSON.stringify(
     {
@@ -210,11 +229,83 @@ async function render(text, seq, recorded) {
     );
     element("trace-price-results").hidden = false;
   }
+  if (position) {
+    const result = position.classification;
+    const healthLabel = (value) =>
+      value === "at_or_above_one"
+        ? "at or above 1"
+        : value === "below_one"
+          ? "below 1"
+          : value === "no_debt"
+            ? "no debt"
+            : "unproven";
+    element("trace-account-summary").textContent =
+      `Account ${position.wrapper.plan.account} · ` +
+      (result.complete_account_views
+        ? `Complete read-only account views · baseline ${healthLabel(result.baseline_health_status)} · candidate ${healthLabel(result.candidate_health_status)}. Exact candidate − baseline deltas below; account changes include all prefix effects.`
+        : `UNPROVEN account comparison · ${result.unproven_reasons.join(", ")}. No validated account difference is available.`);
+    const labels = [
+      "Collateral (USD)",
+      "Debt (USD)",
+      "Available borrowing capacity (USD)",
+      "Liquidation threshold (%)",
+      "Loan-to-value limit (%)",
+      "Health factor (WAD / 10^18)",
+    ];
+    const show = (values, key) => {
+      if (values === null) return "Unavailable";
+      if (key === "health_factor_wad" && values.total_debt_base === 0n)
+        return "No debt (uint256 sentinel)";
+      const index = ACCOUNT_FIELDS.indexOf(key);
+      return exactUnits(values[key], index < 3 ? 8 : index < 5 ? 2 : 18);
+    };
+    rows(
+      "trace-account-comparison",
+      ACCOUNT_FIELDS.map((key, i) => [
+        labels[i],
+        show(result.baseline, key),
+        show(result.candidate, key),
+        key === "health_factor_wad" &&
+        result.complete_account_views &&
+        result.differences[key] === null
+          ? "Not defined (no debt)"
+          : exactUnits(result.differences[key], i < 3 ? 8 : i < 5 ? 2 : 18),
+      ]),
+    );
+    rows(
+      "trace-account-rows",
+      position.phases.map((row) => [
+        `${row.branch} / ${row.phase}`,
+        ...ACCOUNT_FIELDS.map((key) =>
+          row.values === null ? "Unavailable" : row.values[key].toString(),
+        ),
+        row.errors
+          .map((error) => `${error.query}: ${error.category}`)
+          .join(", ") || "None",
+      ]),
+    );
+    rows(
+      "trace-account-identities",
+      position.phases.map((row) => [
+        `${row.branch} / ${row.phase}`,
+        row.provider ?? "Unavailable",
+        row.oracle ?? "Unavailable",
+        row.pool_code?.sha256 ?? "Unavailable",
+        row.head?.number ?? "Unavailable",
+        row.head?.hash ?? "Unavailable",
+      ]),
+    );
+    element("trace-account-results").hidden = false;
+  }
   element("trace-raw").textContent = observed
     ? text
     : JSON.stringify(report, null, 2);
   element("trace-hash").textContent = String(
-    observed ? observed.wrapper.artifact_id : report.artifact_id,
+    position
+      ? position.wrapper.artifact_id
+      : observed
+        ? observed.wrapper.artifact_id
+        : report.artifact_id,
   );
   status(
     `Integrity and display consistency checked locally · baseline ${baseline.matches ? "matches all original projected receipts" : "UNVERIFIED: original projected receipts do not all match"}. This is not authenticity or EVM proof.`,
@@ -253,13 +344,16 @@ element("trace-sample").addEventListener("click", () =>
 element("trace-price-sample").addEventListener("click", () =>
   sample("reports/trace-observed-price32.json"),
 );
+element("trace-account-sample").addEventListener("click", () =>
+  sample("reports/aave-account-impact13.json"),
+);
 element("trace-import").addEventListener("change", async (event) => {
   if (!(event.target instanceof HTMLInputElement)) return;
   const file = event.target.files?.[0];
   if (!file) return;
   const seq = ++generation;
   clear();
-  status("Checking local signed-prefix or observed-price report…");
+  status("Checking local replay, price or account report…");
   try {
     if (file.size > MAX_TRACE_BYTES)
       throw new Error("Local trace report limit is 8 MiB.");

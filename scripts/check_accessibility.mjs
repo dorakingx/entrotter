@@ -36,7 +36,7 @@ const server = createServer(async (request, response) => {
     const pathname = new URL(request.url || "/", "http://127.0.0.1").pathname;
     const name = pathname === "/" ? "index.html" : pathname.slice(1);
     if (
-      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|trace-report\.mjs|trace-comparison\.mjs|trace-viewer\.mjs|observed-trace\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
+      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|trace-report\.mjs|trace-comparison\.mjs|trace-viewer\.mjs|observed-trace\.mjs|position-report\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
         name,
       )
     ) {
@@ -947,6 +947,8 @@ try {
           await page.keyboard.press("Tab");
           await focusIs(page, "trace-price-sample");
           await page.keyboard.press("Tab");
+          await focusIs(page, "trace-account-sample");
+          await page.keyboard.press("Tab");
           await focusIs(page, "trace-import");
           await visibleFocus(page);
           const chooser = page.waitForEvent("filechooser");
@@ -1235,6 +1237,216 @@ try {
         }),
     );
   }
+  for (const width of [1280, 390, 320]) {
+    await check(
+      `Account impact: exact units, missing views, sentinel, recovery and keyboard ${width}px`,
+      () =>
+        withPage(width, async (page) => {
+          await page.locator(".trace-archive > summary").click();
+          await page.locator("#trace-price-sample").focus();
+          await page.keyboard.press("Tab");
+          await focusIs(page, "trace-account-sample");
+          await visibleFocus(page);
+          await page.keyboard.press("Enter");
+          await page.waitForFunction(
+            () => document.querySelectorAll("#trace-outcomes tr").length === 13,
+          );
+          assert.equal(
+            await page.locator("#trace-account-results").isVisible(),
+            true,
+          );
+          assert.ok(
+            (await page.locator("#trace-origin").innerText()).includes(
+              "default-Docker13",
+            ),
+          );
+          assert.ok(
+            (
+              await page.locator("#trace-account-comparison").innerText()
+            ).includes("816.28966124"),
+          );
+          assert.ok(
+            (
+              await page.locator("#trace-account-comparison").innerText()
+            ).includes("0.003852169807877337"),
+          );
+          assert.equal(
+            await page.locator("#trace-account-comparison tr").count(),
+            6,
+          );
+          assert.equal(await page.locator("#trace-account-rows tr").count(), 4);
+          assert.equal(await page.locator("#trace-price-rows tr").count(), 4);
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            "reports/aave-account-impact13.json",
+          );
+          await page
+            .locator("#trace-account-comparison")
+            .locator("..")
+            .locator("..")
+            .focus();
+          await visibleFocus(page);
+          await noOverflow(page);
+          await scan(page, `account-impact-${width}`);
+          await page.locator("#trace-account-heading").scrollIntoViewIfNeeded();
+          await page.screenshot({
+            path: resolve(output, `${width}-account-impact.png`),
+          });
+          const template = parseObservationJSON(
+            await readFile(
+              resolve(root, "reports/aave-account-impact13.json"),
+              "utf8",
+            ),
+          );
+          const controls = parseObservationJSON(
+            await readFile(
+              resolve(root, "tests/data/position-controls.json"),
+              "utf8",
+            ),
+          );
+          const importsStart = requests.length;
+          for (const name of [
+            "missing_account",
+            "large_integer",
+            "no_debt",
+            "health_boundary",
+          ]) {
+            const control = controls.find((row) => row.name === name);
+            assert.ok(control);
+            const imported = structuredClone(template);
+            Object.assign(imported, {
+              observations: control.observations,
+              classification: control.classification,
+              artifact_id: control.artifact_id,
+            });
+            await page.locator("#trace-import").setInputFiles({
+              name: `${name}.json`,
+              mimeType: "application/json",
+              buffer: Buffer.from(observationCanonical(imported)),
+            });
+            await page.waitForFunction(
+              (id) => document.querySelector("#trace-hash")?.textContent === id,
+              control.artifact_id,
+            );
+            if (name === "missing_account") {
+              assert.ok(
+                (
+                  await page.locator("#trace-account-summary").innerText()
+                ).includes("UNPROVEN"),
+              );
+              assert.ok(
+                (
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("Unavailable"),
+              );
+              assert.ok(
+                !(
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("816.28966124"),
+              );
+            } else if (name === "large_integer") {
+              await page
+                .locator("#trace-account-rows")
+                .locator("..")
+                .locator("..")
+                .locator("..")
+                .evaluate((node) => node.setAttribute("open", ""));
+              assert.ok(
+                (
+                  (await page.locator("#trace-account-rows").textContent()) ??
+                  ""
+                ).includes((2n ** 200n + 1n).toString()),
+              );
+              assert.ok(
+                (
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("0.00000001"),
+              );
+            } else if (name === "no_debt") {
+              assert.ok(
+                (
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("No debt (uint256 sentinel)"),
+              );
+              assert.ok(
+                (
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("Not defined (no debt)"),
+              );
+            } else {
+              assert.ok(
+                (
+                  await page.locator("#trace-account-summary").innerText()
+                ).includes("baseline below 1"),
+              );
+            }
+            assert.equal(
+              await page.locator("#trace-download").getAttribute("href"),
+              null,
+            );
+            await noOverflow(page);
+            await scan(page, `account-${name}-${width}`);
+          }
+          const bad = structuredClone(template);
+          bad.classification.differences.available_borrows_base++;
+          const { artifact_id, ...body } = bad;
+          bad.artifact_id = createHash("sha256")
+            .update(observationCanonical(body))
+            .digest("hex");
+          await page.locator("#trace-import").setInputFiles({
+            name: "resealed-account-contradiction.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(observationCanonical(bad)),
+          });
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-status")
+              ?.classList.contains("error"),
+          );
+          assert.equal(
+            await page.locator("#trace-account-results").isVisible(),
+            false,
+          );
+          for (const id of [
+            "trace-account-summary",
+            "trace-account-comparison",
+            "trace-account-rows",
+            "trace-account-identities",
+            "trace-price-rows",
+            "trace-raw",
+            "trace-hash",
+          ])
+            assert.equal(await page.locator(`#${id}`).textContent(), "");
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            null,
+          );
+          assert.equal(
+            requests.length,
+            importsStart,
+            "Local account imports made a request",
+          );
+          await page.locator("#trace-account-sample").click();
+          await page.waitForFunction(
+            () =>
+              document.querySelectorAll("#trace-account-comparison tr")
+                .length === 6,
+          );
+          await page.locator("#trace-sample").click();
+          await page.waitForFunction(
+            () => document.querySelectorAll("#trace-outcomes tr").length === 4,
+          );
+          assert.equal(
+            await page.locator("#trace-account-results").isVisible(),
+            false,
+          );
+          assert.equal(
+            await page.locator("#trace-account-comparison tr").count(),
+            0,
+          );
+        }),
+    );
+  }
   await check(
     "Signed prefix: resealed contradictions, oversized import and honest unverified recovery",
     () =>
@@ -1451,6 +1663,9 @@ try {
     "trace-comparison.mjs",
     "trace-viewer.mjs",
     "observed-trace.mjs",
+    "position-report.mjs",
+    "reports/aave-account-impact13.json",
+    "tests/data/position-controls.json",
     "reports/trace-observed-price32.json",
     "tests/data/observed-controls.json",
     "reports/trace-mainnet-prefix-four.json",
