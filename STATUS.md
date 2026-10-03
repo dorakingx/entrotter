@@ -250,3 +250,29 @@ remain distinct from manual assistive-tech or full WCAG certification. See
 final staged review/current-head CI, human main approval, live Pages and formal
 submission remain separate. Goal active through the official deadline; Discord
 excluded.
+
+
+## October 4 — identify local v0.1 report sources
+
+The actual Chromium baseline on 8aa0e58 imports the existing Local EVM agent
+report but leaves liquidity-shock selected. The new source selector shows local
+reports explicitly, clears previous values while loading, shows no verified
+report after rejection, and permits returning to the same example. Latest
+selection/download writes remain generation-guarded; no-file cancellation keeps
+the current report. Validators, report/schema bytes and all locks are unchanged.
+
+Final local 126 Node/12 Python tests, lint/format/checkJs, and the full 19 JS/20
+type-input/139-finding security gate pass. All preceding 137 security reasons
+remain exact; two fixed fixture reads have separate reviewed reasons. Chromium
+43 groups and all 58 raw axe scans pass, with zero violations/JS errors. The new
+390px race control awaits actual stale sample-handler completion, verifies local
+import/request behavior, same-example recovery and reflow. All earlier groups,
+scans, timeouts and assertions remain. The original old-source full run had one
+existing native chooser timeout of unknown cause; original raw output is retained.
+The first updated full run passed; final run followed a stronger completion
+observation and screenshot/reflow assertion. See [source evidence](evidence/report-source/README.md).
+
+Independent staged review, exact-head mandatory CI, protected human main approval
+and live Pages verification remain separate. No fresh EVM/model/upstream/user
+execution or performance claim; existing videos keep their original source pins.
+Goal remains active through the official deadline, Discord excluded.

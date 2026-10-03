@@ -476,9 +476,128 @@ try {
             .querySelector("#report-status")
             ?.textContent?.includes("<img"),
         );
+        assert.equal(
+          await page.locator("#scenario").inputValue(),
+          "local-report",
+        );
         assert.equal(await page.locator("#report-status img").count(), 0);
         assert.equal(requests.length, count);
         assert.equal(await page.locator("#download").isVisible(), false);
+      }),
+  );
+  await check(
+    "Local report source survives stale samples and restores the same example",
+    () =>
+      withPage(390, async (page) => {
+        for (const outcome of ["valid", "invalid", "stale-error"]) {
+          let release;
+          let started;
+          const held = new Promise((resolve) => {
+            release = resolve;
+          });
+          const intercepted = new Promise((resolve) => {
+            started = resolve;
+          });
+          await page.route("**/reports/recovery-trap.json", async (route) => {
+            started();
+            await held;
+            await route.fulfill({
+              status: outcome === "stale-error" ? 500 : 200,
+              contentType: "application/json",
+              body: await readFile(
+                resolve(root, "reports/recovery-trap.json"),
+                "utf8",
+              ),
+            });
+          });
+          try {
+            // Capture the actual handler promise so stale completion is observed,
+            // rather than inferred from a delay or unrelated digest scheduling.
+            await page.evaluate(() => {
+              const selection = document.querySelector("#scenario");
+              if (!(selection instanceof HTMLSelectElement))
+                throw new Error("Missing selector");
+              selection.value = "recovery-trap";
+              Object.defineProperty(window, "sampleLoadCompletion", {
+                value: Reflect.get(window, "loadSample")(),
+                configurable: true,
+              });
+            });
+            await intercepted;
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              "loading",
+            );
+            assert.equal(
+              await page.locator("#metric-table").isVisible(),
+              false,
+            );
+            assert.equal(await page.locator("#raw-report").textContent(), "");
+            const count = requests.length;
+            await page.locator("#import").setInputFiles({
+              name: "local-report.json",
+              mimeType: "application/json",
+              buffer:
+                outcome === "invalid"
+                  ? Buffer.from("{")
+                  : await readFile(
+                      resolve(root, "reports/liquidity-shock.json"),
+                    ),
+            });
+            const expected =
+              outcome === "invalid" ? "no-report" : "local-report";
+            await page.waitForFunction((value) => {
+              const node = document.querySelector("#scenario");
+              return node instanceof HTMLSelectElement && node.value === value;
+            }, expected);
+            assert.equal(requests.length, count);
+            const response = page.waitForResponse(
+              "**/reports/recovery-trap.json",
+            );
+            release();
+            await (await response).finished();
+            await page.evaluate(() =>
+              Reflect.get(window, "sampleLoadCompletion"),
+            );
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              expected,
+            );
+            assert.equal(await page.locator("#download").isVisible(), false);
+            assert.equal(
+              await page.locator("#metric-table").isVisible(),
+              outcome !== "invalid",
+            );
+            await noOverflow(page);
+            if (outcome === "valid")
+              await page.locator("#reports").screenshot({
+                path: resolve(output, "local-report-source-390.png"),
+              });
+            await page.locator("#import").setInputFiles([]);
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              expected,
+            );
+          } finally {
+            release();
+            await page.unroute("**/reports/recovery-trap.json");
+          }
+          await page.selectOption("#scenario", "liquidity-shock");
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#report-status")
+              ?.textContent?.includes("Integrity verified locally"),
+          );
+          assert.equal(
+            await page.locator("#scenario").inputValue(),
+            "liquidity-shock",
+          );
+          assert.equal(
+            await page.locator("#download").getAttribute("href"),
+            "reports/liquidity-shock.json",
+          );
+          assert.equal(await page.locator("#download").isVisible(), true);
+        }
       }),
   );
   await check(
@@ -745,6 +864,7 @@ try {
             .querySelector("#report-status")
             ?.textContent?.includes("mismatch"),
         );
+        assert.equal(await page.locator("#scenario").inputValue(), "no-report");
         assert.equal(await page.locator("#candidate-value").innerText(), "—");
         assert.equal(await page.locator("#equity-rows tr").count(), 0);
         assert.equal(await page.locator("#fixture-chart").isVisible(), false);
@@ -754,6 +874,10 @@ try {
           document
             .querySelector("#report-status")
             ?.textContent?.includes("Synthetic recovery trap"),
+        );
+        assert.equal(
+          await page.locator("#scenario").inputValue(),
+          "recovery-trap",
         );
         assert.equal(await page.locator("#metric-table").isVisible(), true);
         assert.equal(await page.locator("#fixture-chart").isVisible(), true);

@@ -24,6 +24,12 @@ The browser converts decimal strings to JavaScript numbers for visualization
 only. The original exact strings remain in the JSON and the expandable observation table. Do not treat chart labels
 as an exact financial ledger. No imported file is uploaded or saved remotely.
 
+The v0.1 explorer’s **Report source** selector identifies a verified local file
+as **Local report**, even when it contains a copy of a bundled example. Loading
+clears the previous result; a rejected file leaves **No verified report**. Choose
+any example, including the previously selected one, to return to recorded data.
+A cancelled file chooser preserves the current report.
+
 ## Deployment
 
 Repository name: `entrotter/entrotter.github.io` (public).
@@ -120,11 +126,12 @@ Python website tests. CI discovers the tracked sources and refuses empty scans.
 
 All 14 rules from eslint-plugin-security run without inline suppressions. Full
 findings are saved in `.quality/security.json` before the source-bound review
-policy is checked. `security-reviewed.json` retains 137 findings with individual
+policy is checked. `security-reviewed.json` retains 139 findings with individual
 rationales (bounded numeric grammar, inert indexed reads and trusted developer
 file operations). All 122 previous per-context explanations remain exact; 15 new
 account codec, display and fixed-fixture findings have separate explanations.
-It pins every JS/declaration source and tool configuration/lock;
+The two additional fixed-fixture reads in the local-source race control have
+individual reasons; all 137 preceding reasons remain exact. It pins every JS/declaration source and tool configuration/lock;
 source drift, new/missing findings or missing rationale fail the gate. These are
 author-reviewed explanations, not independent approval or proof of security.
 The policy's negative tests run with the existing Node unit suite. Scanner
@@ -205,7 +212,7 @@ fields, or an exact original receipt match. Every exact differing field remains
 visible, including structural shifts, and the full three receipts remain available.
 Receipt matches do not establish unchanged contract state or consumer behavior;
 omitted gas is not a benefit or profit measurement. The existing v0.1
-scenario/model explorer remains separate and unchanged.
+scenario/model explorer remains separate; its report validation is unchanged.
 
 `tests/data/trace-oracle-prefix-32.json` is a byte-identical test-only copy of the
 [engine198 native005 report](https://github.com/entrotter/engine/blob/198139ff0b3bf37781b4232b27d8eeb0a5da5365/evidence/trace-parent-cache/native-005/report.json),
