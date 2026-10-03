@@ -1,0 +1,27 @@
+Aave V3 Ethereum WETH price (recorded comparison)
+Price artifact: 9084b6952866470fd20c3cbffab310feca5cacba5ba39cfaa9c6ffbb5caf80e9
+Trace artifact: c4050aeb2f7db54bf17354da3756356ae809b8be9fabccacdb26745ae209826f
+Internal integrity: verified (not provider or execution authentication)
+Source: chain 1, block 18999892
+Block hash: 0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6
+Prefix: 32 original transactions; candidate omits indices [12]
+Original receipts: verified
+Price comparison: Complete recorded views
+
+Baseline after (USD): 2562.92441874
+Candidate after (USD): 2570.82415
+Candidate - baseline (USD): +7.89973126
+
+Recorded view prices (USD; a quoted value alone does not prove completeness):
+baseline before: 2570.82415; head block 18999891
+baseline after: 2562.92441874; head block 18999892
+candidate before: 2570.82415; head block 18999891
+candidate after: 2570.82415; head block 18999892
+
+USD uses the fixed profile's 100000000 base unit; values are not rounded.
+Unproven comparison values remain unavailable, even if some views have prices.
+Use --format json for full signed feed rounds, head/code identities and errors.
+
+Scope: Owned-node read-only price views only; no signed consumer action, strategy,
+loan/liquidation/trade, benefit/profit, deployed-code/provider authentication,
+full-block/opcode/state-root proof or whole-process native sandbox.

@@ -1,0 +1,50 @@
+{
+  "runtime_sources": {
+    "entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+    "entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "entrotter_cli/main.py": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc",
+    "entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+    "entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+    "entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+    "entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+    "entrotter_cli/result_text.py": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47",
+    "entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+    "entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2",
+    "entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+  },
+  "origins": {
+    "entrotter_cli/__init__.py": "lib/python3.13/site-packages/entrotter_cli/__init__.py",
+    "entrotter_cli/__main__.py": "lib/python3.13/site-packages/entrotter_cli/__main__.py",
+    "entrotter_cli/export_budget.py": "lib/python3.13/site-packages/entrotter_cli/export_budget.py",
+    "entrotter_cli/main.py": "lib/python3.13/site-packages/entrotter_cli/main.py",
+    "entrotter_cli/observed_run.py": "lib/python3.13/site-packages/entrotter_cli/observed_run.py",
+    "entrotter_cli/observed_text.py": "lib/python3.13/site-packages/entrotter_cli/observed_text.py",
+    "entrotter_cli/position_run.py": "lib/python3.13/site-packages/entrotter_cli/position_run.py",
+    "entrotter_cli/position_text.py": "lib/python3.13/site-packages/entrotter_cli/position_text.py",
+    "entrotter_cli/result_text.py": "lib/python3.13/site-packages/entrotter_cli/result_text.py",
+    "entrotter_sdk/__init__.py": "lib/python3.13/site-packages/entrotter_sdk/__init__.py",
+    "entrotter_sdk/client.py": "lib/python3.13/site-packages/entrotter_sdk/client.py",
+    "entrotter_sdk/observed.py": "lib/python3.13/site-packages/entrotter_sdk/observed.py",
+    "entrotter_sdk/position.py": "lib/python3.13/site-packages/entrotter_sdk/position.py",
+    "entrotter_sdk/trace.py": "lib/python3.13/site-packages/entrotter_sdk/trace.py"
+  },
+  "wheels": {
+    "entrotter_cli-0.1.0-py3-none-any.whl": "2796609a4541a6fbabdc1ce8e1f501481229164acbc53229a0b4bbacaaa2bdae",
+    "entrotter_sdk-0.1.0-py3-none-any.whl": "8a84b66d87303d4d3960c94606c4affa9a7c326f18ddc499c83471e2ce9ce389"
+  },
+  "source_sha256": {
+    "README.md": "a620ad2a1b715ab0aef65a3668ea33d9e86af3bdb82fb3147aba48f8b78d46ec",
+    "src/entrotter_cli/main.py": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc",
+    "src/entrotter_cli/result_text.py": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47",
+    "tests/test_result_text.py": "aa78ce0fcbb8ba534e5df41342c629472c6bfd354e3296ed64bafc0c82b80012",
+    "tests/data/aave-borrow-result.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "tests/data/aave-borrow-result.txt": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+    "quality-inputs.json": "9d1b9e9343bde3ee771993f6b14b4235ffa4a25a62a8710fc1e5d5092a6ad478"
+  },
+  "sample_engine_commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+  "sdk_commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+  "scope": "Source-checked actual isolated local wheel install; all14 runtime modules match. Presentation of original archived-state result; no fresh EVM/model/archive/browser/timing or advisory claim."
+}

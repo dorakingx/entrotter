@@ -1,0 +1,41 @@
+{
+  "commands": [
+    {
+      "name": "full-suite",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "935fde9c98ec2688ad121931b717807452a0db72445c033f248f097688ea275a"
+    },
+    {
+      "name": "lint",
+      "returncode": 0,
+      "stdout_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "format",
+      "returncode": 0,
+      "stdout_sha256": "d41ae50829b47e318b0787bc39d2a2ea2d52b518cfc7900d2efd569e6d26ab88",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "types",
+      "returncode": 0,
+      "stdout_sha256": "049f51b850512be193c74d3fbb731e25fbc6374a66560d8ec0d6569d79c88ea6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "bandit",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1a0fe6b2a13f252d3dc66bf65870a0a28b15bb0dd770ed972d1fad39f848d583"
+    },
+    {
+      "name": "security",
+      "returncode": 0,
+      "stdout_sha256": "d637ebc2c55f34591f08c6a67b5e17ce2384e8b97495a3d54c7c9ffc0bcb9ed0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Current full offline suite and source static/security controls. Unchanged dependency audit/package execution is separate."
+}
