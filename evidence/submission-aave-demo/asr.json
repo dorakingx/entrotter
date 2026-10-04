@@ -1,0 +1,2185 @@
+{
+  "model": "small.en",
+  "audio_input": "actual WAV PCM resampled by ffmpeg to 16000Hz, normalized float32 ndarray; avoids incompatible PyAV19 metadata_errors API",
+  "device": "cpu",
+  "compute_type": "int8",
+  "cpu_threads": 2,
+  "elapsed_seconds": 185.57099974993616,
+  "packages": {
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.2",
+    "av": "19.0.1",
+    "huggingface-hub": "1.33.0"
+  },
+  "model_files": [
+    {
+      "path": ".locks/models--Systran--faster-whisper-small.en/15d7bdf9ba25718ca2504eec6a8f02bc55af0a6a.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".locks/models--Systran--faster-whisper-small.en/62b2a45b05ee59acb4a5341b33ee35e041395d378d418a18acfe4c9e768ee37a.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".locks/models--Systran--faster-whisper-small.en/ced3fd5bbb3e9f7664658065d2d36164712cf1d5.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".locks/models--Systran--faster-whisper-small.en/ee695b8d3e3c10d488304e04468efec4ca27554a.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "CACHEDIR.TAG",
+      "bytes": 191,
+      "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+    },
+    {
+      "path": "blobs/.huggingface-shared-blobs",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "blobs/e6/e69fec6e40a2e2d94f4aa4d57d93cd238f81300502d7d86a9180621d75c2567b",
+      "bytes": 483545366,
+      "sha256": "62b2a45b05ee59acb4a5341b33ee35e041395d378d418a18acfe4c9e768ee37a"
+    },
+    {
+      "path": "blobs/e6/e69fec6e40a2e2d94f4aa4d57d93cd238f81300502d7d86a9180621d75c2567b.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "blobs/e6/e69fec6e40a2e2d94f4aa4d57d93cd238f81300502d7d86a9180621d75c2567b.refs",
+      "bytes": 112,
+      "sha256": "4e006d8f4f22ca510a24958a546d25579bf113443a90e5a975a1af2409882a5a"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/blobs/15d7bdf9ba25718ca2504eec6a8f02bc55af0a6a",
+      "bytes": 2128466,
+      "sha256": "929c5252409436dce1b38a75d1abbcb5e132d170d8e324e4e04ed915fa2d22df"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/blobs/62b2a45b05ee59acb4a5341b33ee35e041395d378d418a18acfe4c9e768ee37a",
+      "bytes": 483545366,
+      "sha256": "62b2a45b05ee59acb4a5341b33ee35e041395d378d418a18acfe4c9e768ee37a"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/blobs/ced3fd5bbb3e9f7664658065d2d36164712cf1d5",
+      "bytes": 2657,
+      "sha256": "666a9605530ac1f61fa8177f3702b4dacec9966749e42610839fcc32661d5fae"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/blobs/ee695b8d3e3c10d488304e04468efec4ca27554a",
+      "bytes": 422309,
+      "sha256": "ff77588746d3a2595d32ab5b69ffd7b95ce2441ac57533cb66fc3eb575a115cf"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/refs/main",
+      "bytes": 40,
+      "sha256": "1d24b612fce8e857b0a53e2ab5e0dfc3f0b19467959205e6779ba2504c93d85a"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/snapshots/d1d751a5f8271d482d14ca55d9e2deeebbae577f/config.json",
+      "bytes": 2657,
+      "sha256": "666a9605530ac1f61fa8177f3702b4dacec9966749e42610839fcc32661d5fae"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/snapshots/d1d751a5f8271d482d14ca55d9e2deeebbae577f/model.bin",
+      "bytes": 483545366,
+      "sha256": "62b2a45b05ee59acb4a5341b33ee35e041395d378d418a18acfe4c9e768ee37a"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/snapshots/d1d751a5f8271d482d14ca55d9e2deeebbae577f/tokenizer.json",
+      "bytes": 2128466,
+      "sha256": "929c5252409436dce1b38a75d1abbcb5e132d170d8e324e4e04ed915fa2d22df"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/snapshots/d1d751a5f8271d482d14ca55d9e2deeebbae577f/vocabulary.txt",
+      "bytes": 422309,
+      "sha256": "ff77588746d3a2595d32ab5b69ffd7b95ce2441ac57533cb66fc3eb575a115cf"
+    },
+    {
+      "path": "models--Systran--faster-whisper-small.en/trees/d1d751a5f8271d482d14ca55d9e2deeebbae577f.json",
+      "bytes": 836,
+      "sha256": "3d22a70e5c7ad0eee99b1c32d9a3ee0be85446d628b1a93a713b0343f3c80dff"
+    }
+  ],
+  "results": [
+    {
+      "take": "demo-intro-0.wav",
+      "expected_text": "Before allowing an onchain agent to act, compare what its decision changes.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 4.58,
+          "text": " Before allowing an on-chain agent to act, compare what its decision changes.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.28,
+              "word": " Before",
+              "probability": 0.7090452313423157
+            },
+            {
+              "start": 0.28,
+              "end": 0.74,
+              "word": " allowing",
+              "probability": 0.9976937174797058
+            },
+            {
+              "start": 0.74,
+              "end": 0.94,
+              "word": " an",
+              "probability": 0.9852024912834167
+            },
+            {
+              "start": 0.94,
+              "end": 1.12,
+              "word": " on",
+              "probability": 0.14800724387168884
+            },
+            {
+              "start": 1.12,
+              "end": 1.32,
+              "word": "-chain",
+              "probability": 0.8966161906719208
+            },
+            {
+              "start": 1.32,
+              "end": 1.66,
+              "word": " agent",
+              "probability": 0.998094379901886
+            },
+            {
+              "start": 1.66,
+              "end": 2.02,
+              "word": " to",
+              "probability": 0.9954099059104919
+            },
+            {
+              "start": 2.02,
+              "end": 2.44,
+              "word": " act,",
+              "probability": 0.9848092198371887
+            },
+            {
+              "start": 2.86,
+              "end": 3.14,
+              "word": " compare",
+              "probability": 0.9881321787834167
+            },
+            {
+              "start": 3.14,
+              "end": 3.46,
+              "word": " what",
+              "probability": 0.9944897890090942
+            },
+            {
+              "start": 3.46,
+              "end": 3.68,
+              "word": " its",
+              "probability": 0.9745611548423767
+            },
+            {
+              "start": 3.68,
+              "end": 4.1,
+              "word": " decision",
+              "probability": 0.9910011887550354
+            },
+            {
+              "start": 4.1,
+              "end": 4.58,
+              "word": " changes.",
+              "probability": 0.998219907283783
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-intro-1.wav",
+      "expected_text": "This is the actual Entrotter viewer, with synthetic narration.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 3.34,
+          "text": " This is the actual enterata viewer with synthetic narration.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.14,
+              "word": " This",
+              "probability": 0.7411680221557617
+            },
+            {
+              "start": 0.14,
+              "end": 0.32,
+              "word": " is",
+              "probability": 0.9958022236824036
+            },
+            {
+              "start": 0.32,
+              "end": 0.48,
+              "word": " the",
+              "probability": 0.9902612566947937
+            },
+            {
+              "start": 0.48,
+              "end": 0.92,
+              "word": " actual",
+              "probability": 0.9853302240371704
+            },
+            {
+              "start": 0.92,
+              "end": 1.42,
+              "word": " enterata",
+              "probability": 0.3569408804178238
+            },
+            {
+              "start": 1.42,
+              "end": 1.8,
+              "word": " viewer",
+              "probability": 0.9986249208450317
+            },
+            {
+              "start": 1.8,
+              "end": 2.32,
+              "word": " with",
+              "probability": 0.8865062594413757
+            },
+            {
+              "start": 2.32,
+              "end": 2.76,
+              "word": " synthetic",
+              "probability": 0.9559836387634277
+            },
+            {
+              "start": 2.76,
+              "end": 3.34,
+              "word": " narration.",
+              "probability": 0.9923015832901001
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-record-0.wav",
+      "expected_text": "This saved recording tests supplied collateral and borrow actions on Ethereum.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 5.38,
+          "text": " This saved recording tests, supplied collateral and borrow actions on aetherium.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.16,
+              "word": " This",
+              "probability": 0.9290643930435181
+            },
+            {
+              "start": 0.16,
+              "end": 0.62,
+              "word": " saved",
+              "probability": 0.9912554025650024
+            },
+            {
+              "start": 0.62,
+              "end": 1.12,
+              "word": " recording",
+              "probability": 0.9970270991325378
+            },
+            {
+              "start": 1.12,
+              "end": 1.74,
+              "word": " tests,",
+              "probability": 0.983359694480896
+            },
+            {
+              "start": 2.08,
+              "end": 2.58,
+              "word": " supplied",
+              "probability": 0.9992133378982544
+            },
+            {
+              "start": 2.58,
+              "end": 3.16,
+              "word": " collateral",
+              "probability": 0.4797249138355255
+            },
+            {
+              "start": 3.16,
+              "end": 3.58,
+              "word": " and",
+              "probability": 0.9799228310585022
+            },
+            {
+              "start": 3.58,
+              "end": 3.82,
+              "word": " borrow",
+              "probability": 0.8443886041641235
+            },
+            {
+              "start": 3.82,
+              "end": 4.4,
+              "word": " actions",
+              "probability": 0.9841883182525635
+            },
+            {
+              "start": 4.4,
+              "end": 4.66,
+              "word": " on",
+              "probability": 0.9943959712982178
+            },
+            {
+              "start": 4.66,
+              "end": 5.38,
+              "word": " aetherium.",
+              "probability": 0.7486202021439871
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-record-1.wav",
+      "expected_text": "Today we inspect that recording. We do not execute a new historical run.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 1.88,
+          "text": " Today, we inspect that recording.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.36,
+              "word": " Today,",
+              "probability": 0.7550395131111145
+            },
+            {
+              "start": 0.58,
+              "end": 0.72,
+              "word": " we",
+              "probability": 0.9953581690788269
+            },
+            {
+              "start": 0.72,
+              "end": 1.16,
+              "word": " inspect",
+              "probability": 0.9813147187232971
+            },
+            {
+              "start": 1.16,
+              "end": 1.42,
+              "word": " that",
+              "probability": 0.9899076223373413
+            },
+            {
+              "start": 1.42,
+              "end": 1.88,
+              "word": " recording.",
+              "probability": 0.9970683455467224
+            }
+          ]
+        },
+        {
+          "start": 2.2,
+          "end": 4.38,
+          "text": " We do not execute a new historical run.",
+          "words": [
+            {
+              "start": 2.2,
+              "end": 2.26,
+              "word": " We",
+              "probability": 0.9949098229408264
+            },
+            {
+              "start": 2.26,
+              "end": 2.38,
+              "word": " do",
+              "probability": 0.9949008226394653
+            },
+            {
+              "start": 2.38,
+              "end": 2.54,
+              "word": " not",
+              "probability": 0.999060332775116
+            },
+            {
+              "start": 2.54,
+              "end": 3.0,
+              "word": " execute",
+              "probability": 0.998830258846283
+            },
+            {
+              "start": 3.0,
+              "end": 3.2,
+              "word": " a",
+              "probability": 0.9979233145713806
+            },
+            {
+              "start": 3.2,
+              "end": 3.4,
+              "word": " new",
+              "probability": 0.9967819452285767
+            },
+            {
+              "start": 3.4,
+              "end": 3.94,
+              "word": " historical",
+              "probability": 0.9672126173973083
+            },
+            {
+              "start": 3.94,
+              "end": 4.38,
+              "word": " run.",
+              "probability": 0.9943432807922363
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-setup-0.wav",
+      "expected_text": "Both isolated branches start with the same artificial twenty Ether and local account impersonation.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 6.68,
+          "text": " All the isolated branches start with the same artificial 20 ether and local account impersonation.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.16,
+              "word": " All",
+              "probability": 0.5145120620727539
+            },
+            {
+              "start": 0.16,
+              "end": 0.34,
+              "word": " the",
+              "probability": 0.9370638728141785
+            },
+            {
+              "start": 0.34,
+              "end": 0.88,
+              "word": " isolated",
+              "probability": 0.9973210692405701
+            },
+            {
+              "start": 0.88,
+              "end": 1.46,
+              "word": " branches",
+              "probability": 0.9883348941802979
+            },
+            {
+              "start": 1.46,
+              "end": 1.96,
+              "word": " start",
+              "probability": 0.9944789409637451
+            },
+            {
+              "start": 1.96,
+              "end": 2.6,
+              "word": " with",
+              "probability": 0.9720432758331299
+            },
+            {
+              "start": 2.6,
+              "end": 2.8,
+              "word": " the",
+              "probability": 0.995697021484375
+            },
+            {
+              "start": 2.8,
+              "end": 3.04,
+              "word": " same",
+              "probability": 0.9980126619338989
+            },
+            {
+              "start": 3.04,
+              "end": 3.46,
+              "word": " artificial",
+              "probability": 0.816073477268219
+            },
+            {
+              "start": 3.46,
+              "end": 4.0,
+              "word": " 20",
+              "probability": 0.887972891330719
+            },
+            {
+              "start": 4.0,
+              "end": 4.4,
+              "word": " ether",
+              "probability": 0.6977853775024414
+            },
+            {
+              "start": 4.4,
+              "end": 4.9,
+              "word": " and",
+              "probability": 0.9538310170173645
+            },
+            {
+              "start": 4.9,
+              "end": 5.2,
+              "word": " local",
+              "probability": 0.9916089177131653
+            },
+            {
+              "start": 5.2,
+              "end": 5.68,
+              "word": " account",
+              "probability": 0.9853798747062683
+            },
+            {
+              "start": 5.68,
+              "end": 6.68,
+              "word": " impersonation.",
+              "probability": 0.9969823360443115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-setup-1.wav",
+      "expected_text": "The supplied setup wraps, approves, and supplies ten wrapped Ether.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 4.08,
+          "text": " supplied setup wraps, approves, and supplies 10 wrapped ether.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.46,
+              "word": " supplied",
+              "probability": 0.44357916712760925
+            },
+            {
+              "start": 0.46,
+              "end": 0.92,
+              "word": " setup",
+              "probability": 0.8206830620765686
+            },
+            {
+              "start": 0.92,
+              "end": 1.38,
+              "word": " wraps,",
+              "probability": 0.8952823877334595
+            },
+            {
+              "start": 1.72,
+              "end": 2.14,
+              "word": " approves,",
+              "probability": 0.987092912197113
+            },
+            {
+              "start": 2.52,
+              "end": 2.6,
+              "word": " and",
+              "probability": 0.9972203969955444
+            },
+            {
+              "start": 2.6,
+              "end": 2.98,
+              "word": " supplies",
+              "probability": 0.9924232959747314
+            },
+            {
+              "start": 2.98,
+              "end": 3.34,
+              "word": " 10",
+              "probability": 0.8307689428329468
+            },
+            {
+              "start": 3.34,
+              "end": 3.72,
+              "word": " wrapped",
+              "probability": 0.9718540906906128
+            },
+            {
+              "start": 3.72,
+              "end": 4.08,
+              "word": " ether.",
+              "probability": 0.18954221904277802
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-decision-0.wav",
+      "expected_text": "A nine wrapped Ether borrow reverts in the baseline.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.96,
+          "text": " a 9-wrapped ether-borrow reverts in the baseline.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.12,
+              "word": " a",
+              "probability": 0.5984710454940796
+            },
+            {
+              "start": 0.12,
+              "end": 0.42,
+              "word": " 9",
+              "probability": 0.3784859776496887
+            },
+            {
+              "start": 0.42,
+              "end": 1.0,
+              "word": "-wrapped",
+              "probability": 0.8902548750241598
+            },
+            {
+              "start": 1.0,
+              "end": 1.3,
+              "word": " ether",
+              "probability": 0.42376115918159485
+            },
+            {
+              "start": 1.3,
+              "end": 1.8,
+              "word": "-borrow",
+              "probability": 0.7524303098519644
+            },
+            {
+              "start": 1.8,
+              "end": 2.2,
+              "word": " reverts",
+              "probability": 0.8880321383476257
+            },
+            {
+              "start": 2.2,
+              "end": 2.46,
+              "word": " in",
+              "probability": 0.9935212731361389
+            },
+            {
+              "start": 2.46,
+              "end": 2.58,
+              "word": " the",
+              "probability": 0.998417854309082
+            },
+            {
+              "start": 2.58,
+              "end": 2.96,
+              "word": " baseline.",
+              "probability": 0.49148690700531006
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-decision-1.wav",
+      "expected_text": "The candidate uses a built in current state preflight policy and holds that proposal.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 5.06,
+          "text": " The candidate uses a built-in current state pro-flight policy and holds the proposal.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.16,
+              "word": " The",
+              "probability": 0.6742576360702515
+            },
+            {
+              "start": 0.16,
+              "end": 0.56,
+              "word": " candidate",
+              "probability": 0.9904971122741699
+            },
+            {
+              "start": 0.56,
+              "end": 1.02,
+              "word": " uses",
+              "probability": 0.9944348931312561
+            },
+            {
+              "start": 1.02,
+              "end": 1.26,
+              "word": " a",
+              "probability": 0.9848663210868835
+            },
+            {
+              "start": 1.26,
+              "end": 1.42,
+              "word": " built",
+              "probability": 0.9885010719299316
+            },
+            {
+              "start": 1.42,
+              "end": 1.62,
+              "word": "-in",
+              "probability": 0.9476271271705627
+            },
+            {
+              "start": 1.62,
+              "end": 1.88,
+              "word": " current",
+              "probability": 0.9781965613365173
+            },
+            {
+              "start": 1.88,
+              "end": 2.28,
+              "word": " state",
+              "probability": 0.926239013671875
+            },
+            {
+              "start": 2.28,
+              "end": 2.5,
+              "word": " pro",
+              "probability": 0.524726927280426
+            },
+            {
+              "start": 2.5,
+              "end": 2.78,
+              "word": "-flight",
+              "probability": 0.779941737651825
+            },
+            {
+              "start": 2.78,
+              "end": 3.34,
+              "word": " policy",
+              "probability": 0.995591938495636
+            },
+            {
+              "start": 3.34,
+              "end": 3.6,
+              "word": " and",
+              "probability": 0.9576622247695923
+            },
+            {
+              "start": 3.6,
+              "end": 4.0,
+              "word": " holds",
+              "probability": 0.9953085780143738
+            },
+            {
+              "start": 4.0,
+              "end": 4.64,
+              "word": " the",
+              "probability": 0.6186704635620117
+            },
+            {
+              "start": 4.64,
+              "end": 5.06,
+              "word": " proposal.",
+              "probability": 0.9853567481040955
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-decision-2.wav",
+      "expected_text": "This case uses a deterministic policy, not a new language model call.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 4.88,
+          "text": " This case uses a deterministic policy, not a new language model call.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.26,
+              "word": " This",
+              "probability": 0.946551501750946
+            },
+            {
+              "start": 0.26,
+              "end": 0.58,
+              "word": " case",
+              "probability": 0.9968152642250061
+            },
+            {
+              "start": 0.58,
+              "end": 1.24,
+              "word": " uses",
+              "probability": 0.9924629926681519
+            },
+            {
+              "start": 1.24,
+              "end": 1.68,
+              "word": " a",
+              "probability": 0.967730700969696
+            },
+            {
+              "start": 1.68,
+              "end": 2.28,
+              "word": " deterministic",
+              "probability": 0.9892457723617554
+            },
+            {
+              "start": 2.28,
+              "end": 2.92,
+              "word": " policy,",
+              "probability": 0.9979531764984131
+            },
+            {
+              "start": 3.28,
+              "end": 3.42,
+              "word": " not",
+              "probability": 0.9983413219451904
+            },
+            {
+              "start": 3.42,
+              "end": 3.58,
+              "word": " a",
+              "probability": 0.9948964715003967
+            },
+            {
+              "start": 3.58,
+              "end": 3.76,
+              "word": " new",
+              "probability": 0.9768242239952087
+            },
+            {
+              "start": 3.76,
+              "end": 4.16,
+              "word": " language",
+              "probability": 0.8535350561141968
+            },
+            {
+              "start": 4.16,
+              "end": 4.56,
+              "word": " model",
+              "probability": 0.9829198122024536
+            },
+            {
+              "start": 4.56,
+              "end": 4.88,
+              "word": " call.",
+              "probability": 0.980530858039856
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-final-0.wav",
+      "expected_text": "A later one wrapped Ether borrow succeeds in both branches.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 3.84,
+          "text": " A later one-wrapped aether burrow succeeds in both branches.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.12,
+              "word": " A",
+              "probability": 0.7388593554496765
+            },
+            {
+              "start": 0.12,
+              "end": 0.36,
+              "word": " later",
+              "probability": 0.994496762752533
+            },
+            {
+              "start": 0.36,
+              "end": 0.7,
+              "word": " one",
+              "probability": 0.9446718096733093
+            },
+            {
+              "start": 0.7,
+              "end": 1.18,
+              "word": "-wrapped",
+              "probability": 0.9061876535415649
+            },
+            {
+              "start": 1.18,
+              "end": 1.52,
+              "word": " aether",
+              "probability": 0.6601947396993637
+            },
+            {
+              "start": 1.52,
+              "end": 2.06,
+              "word": " burrow",
+              "probability": 0.857966274023056
+            },
+            {
+              "start": 2.06,
+              "end": 2.66,
+              "word": " succeeds",
+              "probability": 0.9888337254524231
+            },
+            {
+              "start": 2.66,
+              "end": 3.1,
+              "word": " in",
+              "probability": 0.9967415928840637
+            },
+            {
+              "start": 3.1,
+              "end": 3.36,
+              "word": " both",
+              "probability": 0.99698406457901
+            },
+            {
+              "start": 3.36,
+              "end": 3.84,
+              "word": " branches.",
+              "probability": 0.997378945350647
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-final-1.wav",
+      "expected_text": "That smaller action was supplied in advance. The policy did not generate it.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.48,
+          "text": " That smaller action was supplied in advance.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.14,
+              "word": " That",
+              "probability": 0.8634030222892761
+            },
+            {
+              "start": 0.14,
+              "end": 0.52,
+              "word": " smaller",
+              "probability": 0.9748252034187317
+            },
+            {
+              "start": 0.52,
+              "end": 1.06,
+              "word": " action",
+              "probability": 0.996324360370636
+            },
+            {
+              "start": 1.06,
+              "end": 1.28,
+              "word": " was",
+              "probability": 0.9986503720283508
+            },
+            {
+              "start": 1.28,
+              "end": 1.78,
+              "word": " supplied",
+              "probability": 0.9957341551780701
+            },
+            {
+              "start": 1.78,
+              "end": 2.08,
+              "word": " in",
+              "probability": 0.9953437447547913
+            },
+            {
+              "start": 2.08,
+              "end": 2.48,
+              "word": " advance.",
+              "probability": 0.9068066477775574
+            }
+          ]
+        },
+        {
+          "start": 2.94,
+          "end": 4.58,
+          "text": " The policy did not generate it.",
+          "words": [
+            {
+              "start": 2.94,
+              "end": 3.02,
+              "word": " The",
+              "probability": 0.9663580060005188
+            },
+            {
+              "start": 3.02,
+              "end": 3.36,
+              "word": " policy",
+              "probability": 0.9987278580665588
+            },
+            {
+              "start": 3.36,
+              "end": 3.66,
+              "word": " did",
+              "probability": 0.9984283447265625
+            },
+            {
+              "start": 3.66,
+              "end": 3.86,
+              "word": " not",
+              "probability": 0.9997439980506897
+            },
+            {
+              "start": 3.86,
+              "end": 4.28,
+              "word": " generate",
+              "probability": 0.9954239726066589
+            },
+            {
+              "start": 4.28,
+              "end": 4.58,
+              "word": " it.",
+              "probability": 0.9953345656394958
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-balances-0.wav",
+      "expected_text": "Compare every recorded native and token balance without losing decimal precision.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 4.86,
+          "text": " Compare every recorded native and token balance without losing decimal precision.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.3,
+              "word": " Compare",
+              "probability": 0.692320704460144
+            },
+            {
+              "start": 0.3,
+              "end": 0.72,
+              "word": " every",
+              "probability": 0.9912625551223755
+            },
+            {
+              "start": 0.72,
+              "end": 1.2,
+              "word": " recorded",
+              "probability": 0.9757912158966064
+            },
+            {
+              "start": 1.2,
+              "end": 1.68,
+              "word": " native",
+              "probability": 0.9743626713752747
+            },
+            {
+              "start": 1.68,
+              "end": 2.3,
+              "word": " and",
+              "probability": 0.7786207795143127
+            },
+            {
+              "start": 2.3,
+              "end": 2.62,
+              "word": " token",
+              "probability": 0.8561913967132568
+            },
+            {
+              "start": 2.62,
+              "end": 3.14,
+              "word": " balance",
+              "probability": 0.9938422441482544
+            },
+            {
+              "start": 3.14,
+              "end": 3.52,
+              "word": " without",
+              "probability": 0.9897582530975342
+            },
+            {
+              "start": 3.52,
+              "end": 3.96,
+              "word": " losing",
+              "probability": 0.9931193590164185
+            },
+            {
+              "start": 3.96,
+              "end": 4.42,
+              "word": " decimal",
+              "probability": 0.9906004667282104
+            },
+            {
+              "start": 4.42,
+              "end": 4.86,
+              "word": " precision.",
+              "probability": 0.9960414171218872
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-balances-1.wav",
+      "expected_text": "The held revert changes gas use, but gas prices also differ. These differences are not profit.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 4.24,
+          "text": " The held revert changes gas use, but gas prices also differ.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.1,
+              "word": " The",
+              "probability": 0.9207278490066528
+            },
+            {
+              "start": 0.1,
+              "end": 0.34,
+              "word": " held",
+              "probability": 0.3299935758113861
+            },
+            {
+              "start": 0.34,
+              "end": 0.58,
+              "word": " revert",
+              "probability": 0.7723082304000854
+            },
+            {
+              "start": 0.58,
+              "end": 1.08,
+              "word": " changes",
+              "probability": 0.968390166759491
+            },
+            {
+              "start": 1.08,
+              "end": 1.52,
+              "word": " gas",
+              "probability": 0.9779190421104431
+            },
+            {
+              "start": 1.52,
+              "end": 1.94,
+              "word": " use,",
+              "probability": 0.9814498424530029
+            },
+            {
+              "start": 2.6,
+              "end": 2.68,
+              "word": " but",
+              "probability": 0.9956424236297607
+            },
+            {
+              "start": 2.68,
+              "end": 2.98,
+              "word": " gas",
+              "probability": 0.9838638305664062
+            },
+            {
+              "start": 2.98,
+              "end": 3.44,
+              "word": " prices",
+              "probability": 0.9861602187156677
+            },
+            {
+              "start": 3.44,
+              "end": 3.78,
+              "word": " also",
+              "probability": 0.9911298751831055
+            },
+            {
+              "start": 3.78,
+              "end": 4.24,
+              "word": " differ.",
+              "probability": 0.9978052973747253
+            }
+          ]
+        },
+        {
+          "start": 4.5,
+          "end": 6.18,
+          "text": " These differences are not profit.",
+          "words": [
+            {
+              "start": 4.5,
+              "end": 4.78,
+              "word": " These",
+              "probability": 0.9856512546539307
+            },
+            {
+              "start": 4.78,
+              "end": 5.18,
+              "word": " differences",
+              "probability": 0.996402382850647
+            },
+            {
+              "start": 5.18,
+              "end": 5.58,
+              "word": " are",
+              "probability": 0.996350884437561
+            },
+            {
+              "start": 5.58,
+              "end": 5.78,
+              "word": " not",
+              "probability": 0.9915671944618225
+            },
+            {
+              "start": 5.78,
+              "end": 6.18,
+              "word": " profit.",
+              "probability": 0.9613960981369019
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-download-0.wav",
+      "expected_text": "Download the exact source recording, then open the pinned command recipe.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 4.2,
+          "text": " Download the exact source recording, then open the pin command recipe.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.38,
+              "word": " Download",
+              "probability": 0.5330027937889099
+            },
+            {
+              "start": 0.38,
+              "end": 0.64,
+              "word": " the",
+              "probability": 0.9972772002220154
+            },
+            {
+              "start": 0.64,
+              "end": 0.98,
+              "word": " exact",
+              "probability": 0.9774048924446106
+            },
+            {
+              "start": 0.98,
+              "end": 1.34,
+              "word": " source",
+              "probability": 0.9939451813697815
+            },
+            {
+              "start": 1.34,
+              "end": 2.02,
+              "word": " recording,",
+              "probability": 0.9946004152297974
+            },
+            {
+              "start": 2.6,
+              "end": 2.7,
+              "word": " then",
+              "probability": 0.9634050726890564
+            },
+            {
+              "start": 2.7,
+              "end": 3.02,
+              "word": " open",
+              "probability": 0.9895938634872437
+            },
+            {
+              "start": 3.02,
+              "end": 3.18,
+              "word": " the",
+              "probability": 0.9940446019172668
+            },
+            {
+              "start": 3.18,
+              "end": 3.38,
+              "word": " pin",
+              "probability": 0.7712565660476685
+            },
+            {
+              "start": 3.38,
+              "end": 3.78,
+              "word": " command",
+              "probability": 0.9574215412139893
+            },
+            {
+              "start": 3.78,
+              "end": 4.2,
+              "word": " recipe.",
+              "probability": 0.8520539402961731
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-download-1.wav",
+      "expected_text": "The setup selects immutable public command line and Python reader versions.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.58,
+          "text": " The setup selects immutable public command,",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.12,
+              "word": " The",
+              "probability": 0.8738825917243958
+            },
+            {
+              "start": 0.12,
+              "end": 0.36,
+              "word": " setup",
+              "probability": 0.8501262664794922
+            },
+            {
+              "start": 0.36,
+              "end": 0.98,
+              "word": " selects",
+              "probability": 0.9960165619850159
+            },
+            {
+              "start": 0.98,
+              "end": 1.42,
+              "word": " immutable",
+              "probability": 0.828035295009613
+            },
+            {
+              "start": 1.42,
+              "end": 2.02,
+              "word": " public",
+              "probability": 0.9874637126922607
+            },
+            {
+              "start": 2.02,
+              "end": 2.58,
+              "word": " command,",
+              "probability": 0.9483392834663391
+            }
+          ]
+        },
+        {
+          "start": 3.1,
+          "end": 4.68,
+          "text": " line, and Python reader versions.",
+          "words": [
+            {
+              "start": 3.1,
+              "end": 3.18,
+              "word": " line,",
+              "probability": 0.8951115608215332
+            },
+            {
+              "start": 3.42,
+              "end": 3.5,
+              "word": " and",
+              "probability": 0.9984776377677917
+            },
+            {
+              "start": 3.5,
+              "end": 3.86,
+              "word": " Python",
+              "probability": 0.6847001314163208
+            },
+            {
+              "start": 3.86,
+              "end": 4.22,
+              "word": " reader",
+              "probability": 0.9188304543495178
+            },
+            {
+              "start": 4.22,
+              "end": 4.68,
+              "word": " versions.",
+              "probability": 0.9956645369529724
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-copy-0.wav",
+      "expected_text": "Use the keyboard to copy the inspection command for this sample.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 3.42,
+          "text": " Use the keyboard to copy the inspection command for this sample.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.2,
+              "word": " Use",
+              "probability": 0.8260314464569092
+            },
+            {
+              "start": 0.2,
+              "end": 0.44,
+              "word": " the",
+              "probability": 0.9964046478271484
+            },
+            {
+              "start": 0.44,
+              "end": 0.84,
+              "word": " keyboard",
+              "probability": 0.9933772683143616
+            },
+            {
+              "start": 0.84,
+              "end": 1.16,
+              "word": " to",
+              "probability": 0.9965758919715881
+            },
+            {
+              "start": 1.16,
+              "end": 1.46,
+              "word": " copy",
+              "probability": 0.9986491799354553
+            },
+            {
+              "start": 1.46,
+              "end": 1.62,
+              "word": " the",
+              "probability": 0.9961231350898743
+            },
+            {
+              "start": 1.62,
+              "end": 2.08,
+              "word": " inspection",
+              "probability": 0.9115025401115417
+            },
+            {
+              "start": 2.08,
+              "end": 2.56,
+              "word": " command",
+              "probability": 0.9894943833351135
+            },
+            {
+              "start": 2.56,
+              "end": 2.86,
+              "word": " for",
+              "probability": 0.9903960227966309
+            },
+            {
+              "start": 2.86,
+              "end": 3.02,
+              "word": " this",
+              "probability": 0.6460763812065125
+            },
+            {
+              "start": 3.02,
+              "end": 3.42,
+              "word": " sample.",
+              "probability": 0.9971603155136108
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-copy-1.wav",
+      "expected_text": "Only the fixed public command is copied. Local report metadata never enters shell text.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.66,
+          "text": " only the fixed public command is copied.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.28,
+              "word": " only",
+              "probability": 0.45316410064697266
+            },
+            {
+              "start": 0.28,
+              "end": 0.52,
+              "word": " the",
+              "probability": 0.986717939376831
+            },
+            {
+              "start": 0.52,
+              "end": 0.82,
+              "word": " fixed",
+              "probability": 0.6295304894447327
+            },
+            {
+              "start": 0.82,
+              "end": 1.28,
+              "word": " public",
+              "probability": 0.9502182006835938
+            },
+            {
+              "start": 1.28,
+              "end": 1.76,
+              "word": " command",
+              "probability": 0.9616521596908569
+            },
+            {
+              "start": 1.76,
+              "end": 2.22,
+              "word": " is",
+              "probability": 0.9937565326690674
+            },
+            {
+              "start": 2.22,
+              "end": 2.66,
+              "word": " copied.",
+              "probability": 0.9983993172645569
+            }
+          ]
+        },
+        {
+          "start": 3.16,
+          "end": 5.58,
+          "text": " Local report metadata never enters shell text.",
+          "words": [
+            {
+              "start": 3.16,
+              "end": 3.16,
+              "word": " Local",
+              "probability": 0.9360462427139282
+            },
+            {
+              "start": 3.16,
+              "end": 3.58,
+              "word": " report",
+              "probability": 0.9109575152397156
+            },
+            {
+              "start": 3.58,
+              "end": 4.1,
+              "word": " metadata",
+              "probability": 0.9656082987785339
+            },
+            {
+              "start": 4.1,
+              "end": 4.46,
+              "word": " never",
+              "probability": 0.9958886504173279
+            },
+            {
+              "start": 4.46,
+              "end": 4.9,
+              "word": " enters",
+              "probability": 0.9958544969558716
+            },
+            {
+              "start": 4.9,
+              "end": 5.26,
+              "word": " shell",
+              "probability": 0.8354111909866333
+            },
+            {
+              "start": 5.26,
+              "end": 5.58,
+              "word": " text.",
+              "probability": 0.9582529664039612
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-cli-0.wav",
+      "expected_text": "Here is actual command output from the downloaded recording, using those pinned sources.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 5.1,
+          "text": " Here is actual command output from the downloaded recording using those pin sources.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.18,
+              "word": " Here",
+              "probability": 0.8995840549468994
+            },
+            {
+              "start": 0.18,
+              "end": 0.36,
+              "word": " is",
+              "probability": 0.9703219532966614
+            },
+            {
+              "start": 0.36,
+              "end": 0.84,
+              "word": " actual",
+              "probability": 0.9136053919792175
+            },
+            {
+              "start": 0.84,
+              "end": 1.22,
+              "word": " command",
+              "probability": 0.9624199271202087
+            },
+            {
+              "start": 1.22,
+              "end": 1.68,
+              "word": " output",
+              "probability": 0.9957728981971741
+            },
+            {
+              "start": 1.68,
+              "end": 1.98,
+              "word": " from",
+              "probability": 0.9647942185401917
+            },
+            {
+              "start": 1.98,
+              "end": 2.16,
+              "word": " the",
+              "probability": 0.994513750076294
+            },
+            {
+              "start": 2.16,
+              "end": 2.62,
+              "word": " downloaded",
+              "probability": 0.9864524602890015
+            },
+            {
+              "start": 2.62,
+              "end": 3.26,
+              "word": " recording",
+              "probability": 0.9985787868499756
+            },
+            {
+              "start": 3.26,
+              "end": 3.98,
+              "word": " using",
+              "probability": 0.879923939704895
+            },
+            {
+              "start": 3.98,
+              "end": 4.4,
+              "word": " those",
+              "probability": 0.9898735284805298
+            },
+            {
+              "start": 4.4,
+              "end": 4.64,
+              "word": " pin",
+              "probability": 0.42788541316986084
+            },
+            {
+              "start": 4.64,
+              "end": 5.1,
+              "word": " sources.",
+              "probability": 0.9639230966567993
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-cli-1.wav",
+      "expected_text": "The command verifies the content hash and preserves the same exact units and recorded decision.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 5.32,
+          "text": " The command verifies the content hash and preserves the same exact units and recorded decision.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.1,
+              "word": " The",
+              "probability": 0.8660596609115601
+            },
+            {
+              "start": 0.1,
+              "end": 0.4,
+              "word": " command",
+              "probability": 0.9783259630203247
+            },
+            {
+              "start": 0.4,
+              "end": 1.04,
+              "word": " verifies",
+              "probability": 0.9802252352237701
+            },
+            {
+              "start": 1.04,
+              "end": 1.26,
+              "word": " the",
+              "probability": 0.9964841604232788
+            },
+            {
+              "start": 1.26,
+              "end": 1.6,
+              "word": " content",
+              "probability": 0.9364001750946045
+            },
+            {
+              "start": 1.6,
+              "end": 1.94,
+              "word": " hash",
+              "probability": 0.9787311553955078
+            },
+            {
+              "start": 1.94,
+              "end": 2.2,
+              "word": " and",
+              "probability": 0.9609788060188293
+            },
+            {
+              "start": 2.2,
+              "end": 2.62,
+              "word": " preserves",
+              "probability": 0.9729158878326416
+            },
+            {
+              "start": 2.62,
+              "end": 3.22,
+              "word": " the",
+              "probability": 0.9392520189285278
+            },
+            {
+              "start": 3.22,
+              "end": 3.42,
+              "word": " same",
+              "probability": 0.9913184642791748
+            },
+            {
+              "start": 3.42,
+              "end": 3.82,
+              "word": " exact",
+              "probability": 0.9978967905044556
+            },
+            {
+              "start": 3.82,
+              "end": 4.2,
+              "word": " units",
+              "probability": 0.9902848601341248
+            },
+            {
+              "start": 4.2,
+              "end": 4.46,
+              "word": " and",
+              "probability": 0.9733853936195374
+            },
+            {
+              "start": 4.46,
+              "end": 4.88,
+              "word": " recorded",
+              "probability": 0.9901784658432007
+            },
+            {
+              "start": 4.88,
+              "end": 5.32,
+              "word": " decision.",
+              "probability": 0.968705952167511
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-limit-0.wav",
+      "expected_text": "Integrity does not establish provider authenticity, a correct policy, or future market behavior.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 6.06,
+          "text": " Integrity does not establish provider authenticity, a correct policy, or future market behavior.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.46,
+              "word": " Integrity",
+              "probability": 0.5929322242736816
+            },
+            {
+              "start": 0.46,
+              "end": 0.8,
+              "word": " does",
+              "probability": 0.9955205917358398
+            },
+            {
+              "start": 0.8,
+              "end": 1.04,
+              "word": " not",
+              "probability": 0.9982002973556519
+            },
+            {
+              "start": 1.04,
+              "end": 1.64,
+              "word": " establish",
+              "probability": 0.9971099495887756
+            },
+            {
+              "start": 1.64,
+              "end": 2.22,
+              "word": " provider",
+              "probability": 0.9338386058807373
+            },
+            {
+              "start": 2.22,
+              "end": 2.8,
+              "word": " authenticity,",
+              "probability": 0.9979994893074036
+            },
+            {
+              "start": 3.48,
+              "end": 3.5,
+              "word": " a",
+              "probability": 0.9865480065345764
+            },
+            {
+              "start": 3.5,
+              "end": 3.86,
+              "word": " correct",
+              "probability": 0.9844225645065308
+            },
+            {
+              "start": 3.86,
+              "end": 4.46,
+              "word": " policy,",
+              "probability": 0.9987614154815674
+            },
+            {
+              "start": 4.74,
+              "end": 4.8,
+              "word": " or",
+              "probability": 0.9985659718513489
+            },
+            {
+              "start": 4.8,
+              "end": 5.14,
+              "word": " future",
+              "probability": 0.9816884398460388
+            },
+            {
+              "start": 5.14,
+              "end": 5.68,
+              "word": " market",
+              "probability": 0.9890080690383911
+            },
+            {
+              "start": 5.68,
+              "end": 6.06,
+              "word": " behavior.",
+              "probability": 0.9206352233886719
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-limit-1.wav",
+      "expected_text": "This is supplied action execution on archived state, not replay of original signed transactions.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 3.58,
+          "text": " This is supplied action execution on archived state,",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.16,
+              "word": " This",
+              "probability": 0.953713595867157
+            },
+            {
+              "start": 0.16,
+              "end": 0.34,
+              "word": " is",
+              "probability": 0.9827017188072205
+            },
+            {
+              "start": 0.34,
+              "end": 0.7,
+              "word": " supplied",
+              "probability": 0.9721257090568542
+            },
+            {
+              "start": 0.7,
+              "end": 1.12,
+              "word": " action",
+              "probability": 0.8739712238311768
+            },
+            {
+              "start": 1.12,
+              "end": 1.76,
+              "word": " execution",
+              "probability": 0.9888024926185608
+            },
+            {
+              "start": 1.76,
+              "end": 2.58,
+              "word": " on",
+              "probability": 0.961249828338623
+            },
+            {
+              "start": 2.58,
+              "end": 3.06,
+              "word": " archived",
+              "probability": 0.9374142289161682
+            },
+            {
+              "start": 3.06,
+              "end": 3.58,
+              "word": " state,",
+              "probability": 0.9725685715675354
+            }
+          ]
+        },
+        {
+          "start": 4.08,
+          "end": 6.26,
+          "text": " not replay of original signed transactions.",
+          "words": [
+            {
+              "start": 4.08,
+              "end": 4.28,
+              "word": " not",
+              "probability": 0.9977085590362549
+            },
+            {
+              "start": 4.28,
+              "end": 4.66,
+              "word": " replay",
+              "probability": 0.9723610281944275
+            },
+            {
+              "start": 4.66,
+              "end": 4.86,
+              "word": " of",
+              "probability": 0.9918193817138672
+            },
+            {
+              "start": 4.86,
+              "end": 5.24,
+              "word": " original",
+              "probability": 0.9907510876655579
+            },
+            {
+              "start": 5.24,
+              "end": 5.6,
+              "word": " signed",
+              "probability": 0.9585727453231812
+            },
+            {
+              "start": 5.6,
+              "end": 6.26,
+              "word": " transactions.",
+              "probability": 0.9941242337226868
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-end-0.wav",
+      "expected_text": "Use Entrotter to keep the inputs, receipts, assumptions, and decisions together for review.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 5.1,
+          "text": " Use Entrutter to keep the inputs, receipts, assumptions and decisions together for review.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.24,
+              "word": " Use",
+              "probability": 0.8251408338546753
+            },
+            {
+              "start": 0.24,
+              "end": 0.7,
+              "word": " Entrutter",
+              "probability": 0.5214168826738993
+            },
+            {
+              "start": 0.7,
+              "end": 0.96,
+              "word": " to",
+              "probability": 0.9884092807769775
+            },
+            {
+              "start": 0.96,
+              "end": 1.16,
+              "word": " keep",
+              "probability": 0.9982787370681763
+            },
+            {
+              "start": 1.16,
+              "end": 1.34,
+              "word": " the",
+              "probability": 0.9983783960342407
+            },
+            {
+              "start": 1.34,
+              "end": 1.7,
+              "word": " inputs,",
+              "probability": 0.3400428891181946
+            },
+            {
+              "start": 2.0,
+              "end": 2.34,
+              "word": " receipts,",
+              "probability": 0.9917239546775818
+            },
+            {
+              "start": 2.84,
+              "end": 2.96,
+              "word": " assumptions",
+              "probability": 0.9945630431175232
+            },
+            {
+              "start": 2.96,
+              "end": 3.46,
+              "word": " and",
+              "probability": 0.6757714152336121
+            },
+            {
+              "start": 3.46,
+              "end": 3.88,
+              "word": " decisions",
+              "probability": 0.9965388774871826
+            },
+            {
+              "start": 3.88,
+              "end": 4.4,
+              "word": " together",
+              "probability": 0.9849063754081726
+            },
+            {
+              "start": 4.4,
+              "end": 4.72,
+              "word": " for",
+              "probability": 0.9982471466064453
+            },
+            {
+              "start": 4.72,
+              "end": 5.1,
+              "word": " review.",
+              "probability": 0.9990257024765015
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "take": "demo-end-1.wav",
+      "expected_text": "The current code is on development branches. Main integration, public deployment, and submission remain separate.",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.26,
+          "text": " The current code is on development branches.",
+          "words": [
+            {
+              "start": 0.0,
+              "end": 0.12,
+              "word": " The",
+              "probability": 0.870457649230957
+            },
+            {
+              "start": 0.12,
+              "end": 0.36,
+              "word": " current",
+              "probability": 0.9966163039207458
+            },
+            {
+              "start": 0.36,
+              "end": 0.7,
+              "word": " code",
+              "probability": 0.9492777585983276
+            },
+            {
+              "start": 0.7,
+              "end": 0.98,
+              "word": " is",
+              "probability": 0.9957311749458313
+            },
+            {
+              "start": 0.98,
+              "end": 1.16,
+              "word": " on",
+              "probability": 0.9955881834030151
+            },
+            {
+              "start": 1.16,
+              "end": 1.6,
+              "word": " development",
+              "probability": 0.8747265934944153
+            },
+            {
+              "start": 1.6,
+              "end": 2.26,
+              "word": " branches.",
+              "probability": 0.9856557846069336
+            }
+          ]
+        },
+        {
+          "start": 2.72,
+          "end": 4.86,
+          "text": " Main integration, public deployment,",
+          "words": [
+            {
+              "start": 2.72,
+              "end": 2.8,
+              "word": " Main",
+              "probability": 0.9605094194412231
+            },
+            {
+              "start": 2.8,
+              "end": 3.44,
+              "word": " integration,",
+              "probability": 0.9698024392127991
+            },
+            {
+              "start": 4.12,
+              "end": 4.32,
+              "word": " public",
+              "probability": 0.9842857718467712
+            },
+            {
+              "start": 4.32,
+              "end": 4.86,
+              "word": " deployment,",
+              "probability": 0.9920921325683594
+            }
+          ]
+        },
+        {
+          "start": 5.34,
+          "end": 6.74,
+          "text": " and submission remain separate.",
+          "words": [
+            {
+              "start": 5.34,
+              "end": 5.44,
+              "word": " and",
+              "probability": 0.9982746839523315
+            },
+            {
+              "start": 5.44,
+              "end": 5.92,
+              "word": " submission",
+              "probability": 0.9982303977012634
+            },
+            {
+              "start": 5.92,
+              "end": 6.32,
+              "word": " remain",
+              "probability": 0.9109166860580444
+            },
+            {
+              "start": 6.32,
+              "end": 6.74,
+              "word": " separate.",
+              "probability": 0.9969996809959412
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "ASR of actual WAV takes, independently recognized text; ASR is not human audio approval"
+}

@@ -28,6 +28,7 @@ a prediction of future markets, or a measurement of profit.
 
 | Material | Artifact | Status |
 | --- | --- | --- |
+| Aave decision and pinned-copy review demo | [MP4](media/entrotter-demo-aave-review.mp4), [draft VTT](media/entrotter-demo-aave-review.vtt), [draft SRT](media/entrotter-demo-aave-review.srt) · 2:18.48 | Additional current-viewer recording: supplied9 WETH baseline revert/candidate hold, supplied1 WETH success, exact Source JSON download, keyboard copy and actual pinned offline CLI; human pronunciation/caption review and hosting pending |
 | Exact CLI inspection demo | [MP4](media/entrotter-demo-cli.mp4), [VTT](media/entrotter-demo-cli.vtt), [SRT](media/entrotter-demo-cli.srt) · 2:36.80 | Additional edited cut: real current CLI price/account text and complete0/synthetic incomplete3 script exits; preserves October 3 footage, soundtrack, captions and all prior media |
 | Updated account-impact demo | [MP4](media/entrotter-demo-account.mp4), [VTT](media/entrotter-demo-account.vtt), [SRT](media/entrotter-demo-account.srt) · 2:36.80 | Additional current-viewer cut: two fresh bounded local calls, recorded account 13/card/receipt inspection, lossless bad-ID rejection and recovery; original owner-approved cut retained |
 | Product demo | [MP4](media/entrotter-demo.mp4), [VTT](media/entrotter-demo.vtt), [SRT](media/entrotter-demo.srt) · 2:54.24 | Recorded actual Chromium interactions and bounded engine calls; owner approved |
@@ -44,7 +45,11 @@ binds viewer8aa0/Engine88c6 and the exact generated local report. The
 [October 4 CLI edit](../evidence/submission-cli-demo/README.md) inserts actual
 CLI24bbb91/SDKba4af51 offline outputs into three picture intervals; original
 viewer footage and its earlier EVM calls are reused, not executed again.
-Both additional cuts await human auditory review and supported-host delivery.
+These additional cuts await human auditory review and supported-host delivery.
+The [Aave decision recording](../evidence/submission-aave-demo/README.md) binds
+viewerad697dc/CLI169b759/SDKba4af51 and the original Aave recording. It preserves
+all earlier media and explicitly labels its new authored captions as drafts.
+It performs current offline inspection, with no fresh archived-state execution.
 The [15 narration cues](../evidence/submission-account-demo/timeline.json), audio
 packets and caption bytes remain unchanged in the CLI edit.
 

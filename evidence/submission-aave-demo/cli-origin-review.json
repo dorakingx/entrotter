@@ -1,0 +1,118 @@
+{
+  "returncode": 0,
+  "argv": [
+    "<workspace>/.tools/quality-venv/bin/python",
+    "<workspace>/entrotter/.quality/aave-demo/inspect-offline.py"
+  ],
+  "cwd": "<workspace>/entrotter/.quality/aave-demo/cli-work",
+  "PYTHONPATH": "entrotter-cli/src:entrotter-sdk/src",
+  "elapsed_seconds": 0.16705220798030496,
+  "guard": {
+    "blocked_events": [],
+    "aliases": {
+      "entrotter-cli": "<workspace>/.worktrees/cli-bounded",
+      "entrotter-sdk": "<workspace>/sdk-python"
+    },
+    "module_origins": {
+      "entrotter_cli": {
+        "path": "<workspace>/.worktrees/cli-bounded/src/entrotter_cli/__init__.py",
+        "sha256": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6"
+      },
+      "entrotter_cli.export_budget": {
+        "path": "<workspace>/.worktrees/cli-bounded/src/entrotter_cli/export_budget.py",
+        "sha256": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f"
+      },
+      "entrotter_cli.main": {
+        "path": "<workspace>/.worktrees/cli-bounded/src/entrotter_cli/main.py",
+        "sha256": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc"
+      },
+      "entrotter_sdk.client": {
+        "path": "<workspace>/sdk-python/src/entrotter_sdk/client.py",
+        "sha256": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543"
+      },
+      "entrotter_sdk.trace": {
+        "path": "<workspace>/sdk-python/src/entrotter_sdk/trace.py",
+        "sha256": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+      },
+      "entrotter_sdk.observed": {
+        "path": "<workspace>/sdk-python/src/entrotter_sdk/observed.py",
+        "sha256": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5"
+      },
+      "entrotter_sdk.position": {
+        "path": "<workspace>/sdk-python/src/entrotter_sdk/position.py",
+        "sha256": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+      },
+      "entrotter_sdk": {
+        "path": "<workspace>/sdk-python/src/entrotter_sdk/__init__.py",
+        "sha256": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568"
+      },
+      "entrotter_cli.result_text": {
+        "path": "<workspace>/.worktrees/cli-bounded/src/entrotter_cli/result_text.py",
+        "sha256": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47"
+      }
+    },
+    "helper_sha256": "bd37c0fad9fc4d1d643c0237d47e35527b626ff0b2b0d700a45b705cf935fc79",
+    "scope": "Python audit hook rejects audited outbound DNS/connect and child processes; not a universal OS sandbox; no engine execution"
+  },
+  "stdout_sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "Focused actual offline CLI re-execution to resolve missing original module-origin evidence; current guarded aliases checked within child. Earlier capture CLI origins were not exported; whole outputs match.",
+  "status": "PASS guarded current CLI origin and byte equality",
+  "immutable_origins": {
+    "entrotter_cli": {
+      "repo": "cli-bounded",
+      "ref": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "path": "src/entrotter_cli/__init__.py",
+      "sha256": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6"
+    },
+    "entrotter_cli.export_budget": {
+      "repo": "cli-bounded",
+      "ref": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "path": "src/entrotter_cli/export_budget.py",
+      "sha256": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f"
+    },
+    "entrotter_cli.main": {
+      "repo": "cli-bounded",
+      "ref": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "path": "src/entrotter_cli/main.py",
+      "sha256": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc"
+    },
+    "entrotter_sdk.client": {
+      "repo": "sdk-python",
+      "ref": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "path": "src/entrotter_sdk/client.py",
+      "sha256": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543"
+    },
+    "entrotter_sdk.trace": {
+      "repo": "sdk-python",
+      "ref": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "path": "src/entrotter_sdk/trace.py",
+      "sha256": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+    },
+    "entrotter_sdk.observed": {
+      "repo": "sdk-python",
+      "ref": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "path": "src/entrotter_sdk/observed.py",
+      "sha256": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5"
+    },
+    "entrotter_sdk.position": {
+      "repo": "sdk-python",
+      "ref": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "path": "src/entrotter_sdk/position.py",
+      "sha256": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+    },
+    "entrotter_sdk": {
+      "repo": "sdk-python",
+      "ref": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "path": "src/entrotter_sdk/__init__.py",
+      "sha256": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568"
+    },
+    "entrotter_cli.result_text": {
+      "repo": "cli-bounded",
+      "ref": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "path": "src/entrotter_cli/result_text.py",
+      "sha256": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47"
+    }
+  },
+  "modules": 9
+}

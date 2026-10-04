@@ -1,0 +1,980 @@
+{
+  "status": "PASS rendered draft caption geometry",
+  "caption_status": "DRAFT captions and pronunciation review pending",
+  "browser": "153.0.8010.12",
+  "duration": 138.4655328798186,
+  "cards": [
+    {
+      "file": "blank.png",
+      "sha256": "c65dca4f13e2178d9e9739da09f14bd0765e9372ab73fc16af4d2e28ff35657b",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [],
+        "scroll_height": 78,
+        "text": ""
+      }
+    },
+    {
+      "file": "cue-00.png",
+      "sha256": "065e2f1818a37a207e425b70bc9871889b38e4466394f79c47928f065764bdfe",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 949.484375,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1019.484375,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Before allowing an onchain agent to act, compare what its decision changes."
+      }
+    },
+    {
+      "file": "cue-01.png",
+      "sha256": "c8b34abc22ded84675cc1029012e08ba96be10838a0f5fc08092362692bb01b5",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 722.09375,
+            "height": 31,
+            "top": 42.796875,
+            "right": 792.09375,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "This is the actual Entrotter viewer, with synthetic narration."
+      }
+    },
+    {
+      "file": "cue-02.png",
+      "sha256": "e940c5c1da1d71f8238d6822230a7536eda910f70af515e748f6f4e5b7ee4c28",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 978.96875,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1048.96875,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "This saved recording tests supplied collateral and borrow actions on Ethereum."
+      }
+    },
+    {
+      "file": "cue-03.png",
+      "sha256": "c7488925600d951aff3b1f13c427d8ea7e33a50589b6e83df5f336d9c9e57661",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 899.09375,
+            "height": 31,
+            "top": 42.796875,
+            "right": 969.09375,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Today we inspect that recording. We do not execute a new historical run."
+      }
+    },
+    {
+      "file": "cue-04.png",
+      "sha256": "16d8761ecacf3e6165686c1b953011b537ab1ef163459011acb831313c601c66",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1210.859375,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1280.859375,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Both isolated branches start with the same artificial twenty Ether and local account impersonation."
+      }
+    },
+    {
+      "file": "cue-05.png",
+      "sha256": "42eb1b8684f84eb89e1b311a05184c843949715dfe3e7b4b3b3e6bea126edf66",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 865.4375,
+            "height": 31,
+            "top": 42.796875,
+            "right": 935.4375,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "The supplied setup wraps, approves, and supplies ten wrapped Ether."
+      }
+    },
+    {
+      "file": "cue-06.png",
+      "sha256": "e872cff31baf4c2acf2db5a848e5af637651c4f67e76db6ca033b796779a8f4f",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 650.59375,
+            "height": 31,
+            "top": 42.796875,
+            "right": 720.59375,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "A nine wrapped Ether borrow reverts in the baseline."
+      }
+    },
+    {
+      "file": "cue-07.png",
+      "sha256": "d3670911336ccaaf3fa4663b1f35841984d8cfb9c6975c2ed85d1da0a7eb03b7",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1013.28125,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1083.28125,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "The candidate uses a built in current state preflight policy and holds that proposal."
+      }
+    },
+    {
+      "file": "cue-08.png",
+      "sha256": "147cc8f058cec1893e309430507ed60d9f5200858a031ca3d967031122f4b684",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 853.921875,
+            "height": 31,
+            "top": 42.796875,
+            "right": 923.921875,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "This case uses a deterministic policy, not a new language model call."
+      }
+    },
+    {
+      "file": "cue-09.png",
+      "sha256": "95378b42b9b772d8dc55fcb855793f4d260702b72e1f5849ed2ef50c9ede9903",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 765.796875,
+            "height": 31,
+            "top": 42.796875,
+            "right": 835.796875,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "A later one wrapped Ether borrow succeeds in both branches."
+      }
+    },
+    {
+      "file": "cue-10.png",
+      "sha256": "5581eedea0e8466b4570817cb57a3ef45e3d1e70dd5a618fb903413011cba260",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 931.796875,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1001.796875,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "That smaller action was supplied in advance. The policy did not generate it."
+      }
+    },
+    {
+      "file": "cue-11.png",
+      "sha256": "7f50fef09da93b13a1a339a85847db2b1f5e6dd55199eaae51ff95e420aa048a",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1038.140625,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1108.140625,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Compare every recorded native and token balance without losing decimal precision."
+      }
+    },
+    {
+      "file": "cue-12.png",
+      "sha256": "59e57dfcb3320ef8df96256156c3e15a11ae8ac39a6379be11fc134079bdc79d",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1134.671875,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1204.671875,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "The held revert changes gas use, but gas prices also differ. These differences are not profit."
+      }
+    },
+    {
+      "file": "cue-13.png",
+      "sha256": "47527be76374143aee00faa711ba9d3f9dd269d08dd54968acb2ce0c9d1e44ec",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 963.484375,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1033.484375,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Download the exact source recording, then open the pinned command recipe."
+      }
+    },
+    {
+      "file": "cue-14.png",
+      "sha256": "641e4b1f2f1cffdd904cfa9388ea5526682883ff3a0c985a602dbf5ad1dbe698",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 977.390625,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1047.390625,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "The setup selects immutable public command line and Python reader versions."
+      }
+    },
+    {
+      "file": "cue-15.png",
+      "sha256": "9f1d3e77a7923887e58f54080e0ba2f4ee51384d8e8d904574f1fd9c2bac024e",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 826.4375,
+            "height": 31,
+            "top": 42.796875,
+            "right": 896.4375,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Use the keyboard to copy the inspection command for this sample."
+      }
+    },
+    {
+      "file": "cue-16.png",
+      "sha256": "517c026272a2a2d3e6e89ef6b34c6c90903e5cb5a944143a4ec5eb3b93045510",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1078.5625,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1148.5625,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Only the fixed public command is copied. Local report metadata never enters shell text."
+      }
+    },
+    {
+      "file": "cue-17.png",
+      "sha256": "09165cf8c20e8af014fb591e22d32ac0c06175d78dbce2605d813d3bd9599210",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1145.5625,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1215.5625,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Here is actual command output from the downloaded recording, using those pinned sources."
+      }
+    },
+    {
+      "file": "cue-18.png",
+      "sha256": "0423c13d2fca56c0dc596f36156d29c07c2c72aafaff8236f1e1b41f37ec6ec6",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1231.125,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1301.125,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "The command verifies the content hash and preserves the same exact units and recorded decision."
+      }
+    },
+    {
+      "file": "cue-19.png",
+      "sha256": "950517a3caffdb0832a7842e3d42400bf89cffe2ca95b07389cc9b7c90d132de",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1125.75,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1195.75,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Integrity does not establish provider authenticity, a correct policy, or future market behavior."
+      }
+    },
+    {
+      "file": "cue-20.png",
+      "sha256": "fc6c41fbd91443df715b2dba55f67b8b6a2286e5318ea1cf701313cc04630fb8",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1148.65625,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1218.65625,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "This is supplied action execution on archived state, not replay of original signed transactions."
+      }
+    },
+    {
+      "file": "cue-21.png",
+      "sha256": "f9cc22dacc12f8d86e1d9ac594c7a544c834d115a5e8aca1aca52844435fca9f",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1112.8125,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1182.8125,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "Use Entrotter to keep the inputs, receipts, assumptions, and decisions together for review."
+      }
+    },
+    {
+      "file": "cue-22.png",
+      "sha256": "ea11c69ed4799d6e8c7cd70b6f8a76ed57e65aa888f3bf7b9041c9d43171302d",
+      "metrics": {
+        "font": "28px / 36.4px Arial, Helvetica, sans-serif",
+        "box": {
+          "x": 70,
+          "y": 20,
+          "width": 1460,
+          "height": 78,
+          "top": 20,
+          "right": 1530,
+          "bottom": 98,
+          "left": 70
+        },
+        "text_rects": [
+          {
+            "x": 70,
+            "y": 42.796875,
+            "width": 1453.703125,
+            "height": 31,
+            "top": 42.796875,
+            "right": 1523.703125,
+            "bottom": 73.796875,
+            "left": 70
+          }
+        ],
+        "scroll_height": 78,
+        "text": "The current code is on development branches. Main integration, public deployment, and submission remain separate."
+      }
+    }
+  ],
+  "cuts": [
+    {
+      "file": "blank.png",
+      "start": 0,
+      "duration": 1
+    },
+    {
+      "file": "cue-00.png",
+      "start": 1,
+      "duration": 4.94875283446712
+    },
+    {
+      "file": "blank.png",
+      "start": 5.94875283446712,
+      "duration": 0.5383219954648526
+    },
+    {
+      "file": "cue-01.png",
+      "start": 6.487074829931973,
+      "duration": 3.591836734693877
+    },
+    {
+      "file": "blank.png",
+      "start": 10.07891156462585,
+      "duration": 1.051746031746033
+    },
+    {
+      "file": "cue-02.png",
+      "start": 11.130657596371883,
+      "duration": 5.497505668934242
+    },
+    {
+      "file": "blank.png",
+      "start": 16.628163265306124,
+      "duration": 0.5584580498866174
+    },
+    {
+      "file": "cue-03.png",
+      "start": 17.186621315192742,
+      "duration": 4.499773242630386
+    },
+    {
+      "file": "blank.png",
+      "start": 21.686394557823128,
+      "duration": 1.0377777777777801
+    },
+    {
+      "file": "cue-04.png",
+      "start": 22.724172335600908,
+      "duration": 6.794557823129253
+    },
+    {
+      "file": "blank.png",
+      "start": 29.51873015873016,
+      "duration": 0.5833106575963711
+    },
+    {
+      "file": "cue-05.png",
+      "start": 30.102040816326532,
+      "duration": 4.260317460317463
+    },
+    {
+      "file": "blank.png",
+      "start": 34.362358276643995,
+      "duration": 1.0682539682539627
+    },
+    {
+      "file": "cue-06.png",
+      "start": 35.43061224489796,
+      "duration": 3.1528344671201793
+    },
+    {
+      "file": "blank.png",
+      "start": 38.58344671201814,
+      "duration": 0.5595464852607748
+    },
+    {
+      "file": "cue-07.png",
+      "start": 39.14299319727891,
+      "duration": 5.268027210884355
+    },
+    {
+      "file": "blank.png",
+      "start": 44.41102040816327,
+      "duration": 0.5789569160997701
+    },
+    {
+      "file": "cue-08.png",
+      "start": 44.98997732426304,
+      "duration": 5.008616780045358
+    },
+    {
+      "file": "blank.png",
+      "start": 49.998594104308395,
+      "duration": 1.0397732426303818
+    },
+    {
+      "file": "cue-09.png",
+      "start": 51.03836734693878,
+      "duration": 4.170521541950109
+    },
+    {
+      "file": "blank.png",
+      "start": 55.208888888888886,
+      "duration": 0.5187301587301647
+    },
+    {
+      "file": "cue-10.png",
+      "start": 55.72761904761905,
+      "duration": 4.6294784580498884
+    },
+    {
+      "file": "blank.png",
+      "start": 60.35709750566894,
+      "duration": 1.0457596371882047
+    },
+    {
+      "file": "cue-11.png",
+      "start": 61.402857142857144,
+      "duration": 5.0784580498866205
+    },
+    {
+      "file": "blank.png",
+      "start": 66.48131519274376,
+      "duration": 0.5263492063492095
+    },
+    {
+      "file": "cue-12.png",
+      "start": 67.00766439909297,
+      "duration": 6.415419501133783
+    },
+    {
+      "file": "blank.png",
+      "start": 73.42308390022676,
+      "duration": 1.0776870748299245
+    },
+    {
+      "file": "cue-13.png",
+      "start": 74.50077097505668,
+      "duration": 4.400000000000006
+    },
+    {
+      "file": "blank.png",
+      "start": 78.90077097505669,
+      "duration": 0.5579138321995458
+    },
+    {
+      "file": "cue-14.png",
+      "start": 79.45868480725623,
+      "duration": 5.008616780045358
+    },
+    {
+      "file": "blank.png",
+      "start": 84.46730158730159,
+      "duration": 1.0149206349206281
+    },
+    {
+      "file": "cue-15.png",
+      "start": 85.48222222222222,
+      "duration": 3.512018140589575
+    },
+    {
+      "file": "blank.png",
+      "start": 88.9942403628118,
+      "duration": 0.5653514739229024
+    },
+    {
+      "file": "cue-16.png",
+      "start": 89.5595918367347,
+      "duration": 5.806802721088431
+    },
+    {
+      "file": "blank.png",
+      "start": 95.36639455782313,
+      "duration": 1.0591836734693771
+    },
+    {
+      "file": "cue-17.png",
+      "start": 96.4255782312925,
+      "duration": 5.3678004535147466
+    },
+    {
+      "file": "blank.png",
+      "start": 101.79337868480725,
+      "duration": 0.5488435374149816
+    },
+    {
+      "file": "cue-18.png",
+      "start": 102.34222222222223,
+      "duration": 5.537414965986386
+    },
+    {
+      "file": "blank.png",
+      "start": 107.87963718820862,
+      "duration": 1.066621315192748
+    },
+    {
+      "file": "cue-19.png",
+      "start": 108.94625850340137,
+      "duration": 6.285714285714278
+    },
+    {
+      "file": "blank.png",
+      "start": 115.23197278911564,
+      "duration": 0.55972789115647
+    },
+    {
+      "file": "cue-20.png",
+      "start": 115.79170068027211,
+      "duration": 6.764625850340138
+    },
+    {
+      "file": "blank.png",
+      "start": 122.55632653061225,
+      "duration": 1.0385034013605292
+    },
+    {
+      "file": "cue-21.png",
+      "start": 123.59482993197278,
+      "duration": 5.29795918367347
+    },
+    {
+      "file": "blank.png",
+      "start": 128.89278911564625,
+      "duration": 0.5522902494330992
+    },
+    {
+      "file": "cue-22.png",
+      "start": 129.44507936507935,
+      "duration": 6.97414965986394
+    },
+    {
+      "file": "blank.png",
+      "start": 136.4192290249433,
+      "duration": 2.0463038548753048
+    }
+  ],
+  "requests": [],
+  "scope": "Actual Chromium rasterized authored draft text at actual PCM sentence spans. Pronunciation/word accuracy not approved; clean video remains separate. Footer overlay only; no product UI edits."
+}

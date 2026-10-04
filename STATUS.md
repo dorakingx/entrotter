@@ -2324,3 +2324,22 @@ workflow composition; all other jobs/inputs/locks/pins/media are preserved. No n
 chain/RPC/model/performance execution is claimed. Coordinator CI and protected
 independent human-main approval/live Pages remain separate; submission ownerfacts/
 audio/hosting pending, goalactive until officialOctober13 15:59JST, Discordexcluded.
+
+
+## October 4 — recorded Aave decision and pinned-copy review demo
+
+An [additional2:18.48 review cut](evidence/submission-aave-demo/README.md) shows
+viewerad697dc inspecting the original supplied-action Aave recording: baseline
+9WETH revert/candidate builtin hold, later supplied1WETH success, exact units,
+actual Source JSON download/native keyboard copy and CLI169/SDKba4 offline output.
+All3013CLI bytes equal the immutable golden; a focused origin check binds both
+aliases and9 loaded modules. Original16media files remain byte-identical.
+
+Producer134 and the initial recorder selector timeout are retained honestly.
+Completed23PCM payloads verify exactly; firstsix valid scenes are reused and only
+lastfive recaptured. Actual encoded marker frames bind cuts. H264/AAC full decode
+passes; draft captions retain14 normalized ASR matches/9differences and require
+human listening. No new EVM/RPC/model/paid calls or execution/provider authenticity
+is claimed. The inherited local-model comparison paragraph is not Aave model
+evidence. Supported hosting, independent-human main approval/Pages and submission
+facts remain pending; goalactive through officialOctober13 15:59JST, Discordexcluded.

@@ -1,0 +1,143 @@
+{
+  "status": "AUDIO_PAYLOAD_VERIFIED_CAPTURE_FIXES_REQUIRED",
+  "findings": [
+    {
+      "priority": "P2",
+      "issue": "Existing CLI/SDK alias links are accepted without resolving them to selected pinned source paths.",
+      "status": "Bind actual PYTHONPATH alias resolution/module origin before claiming selected immutable runtime."
+    }
+  ],
+  "audio": {
+    "takes": 23,
+    "scenes": 11,
+    "PCM_format": "mono signed16-bit 22050Hz",
+    "duration_seconds": 138.4655328798186,
+    "combined_payload_exact": true,
+    "all_caption_sample_frames_exact": true,
+    "producer_exit": "134 recursive_mutex; preserved unknown cause, not successful synthesis process exit"
+  },
+  "ASR": {
+    "model": "small.en",
+    "device": "cpu",
+    "takes": 23,
+    "exact_string_mismatches": [
+      {
+        "take": "demo-intro-0.wav",
+        "expected": "Before allowing an onchain agent to act, compare what its decision changes.",
+        "recognized": "Before allowing an on-chain agent to act, compare what its decision changes."
+      },
+      {
+        "take": "demo-intro-1.wav",
+        "expected": "This is the actual Entrotter viewer, with synthetic narration.",
+        "recognized": "This is the actual enterata viewer with synthetic narration."
+      },
+      {
+        "take": "demo-record-0.wav",
+        "expected": "This saved recording tests supplied collateral and borrow actions on Ethereum.",
+        "recognized": "This saved recording tests, supplied collateral and borrow actions on aetherium."
+      },
+      {
+        "take": "demo-record-1.wav",
+        "expected": "Today we inspect that recording. We do not execute a new historical run.",
+        "recognized": "Today, we inspect that recording. We do not execute a new historical run."
+      },
+      {
+        "take": "demo-setup-0.wav",
+        "expected": "Both isolated branches start with the same artificial twenty Ether and local account impersonation.",
+        "recognized": "All the isolated branches start with the same artificial 20 ether and local account impersonation."
+      },
+      {
+        "take": "demo-setup-1.wav",
+        "expected": "The supplied setup wraps, approves, and supplies ten wrapped Ether.",
+        "recognized": "supplied setup wraps, approves, and supplies 10 wrapped ether."
+      },
+      {
+        "take": "demo-decision-0.wav",
+        "expected": "A nine wrapped Ether borrow reverts in the baseline.",
+        "recognized": "a 9-wrapped ether-borrow reverts in the baseline."
+      },
+      {
+        "take": "demo-decision-1.wav",
+        "expected": "The candidate uses a built in current state preflight policy and holds that proposal.",
+        "recognized": "The candidate uses a built-in current state pro-flight policy and holds the proposal."
+      },
+      {
+        "take": "demo-final-0.wav",
+        "expected": "A later one wrapped Ether borrow succeeds in both branches.",
+        "recognized": "A later one-wrapped aether burrow succeeds in both branches."
+      },
+      {
+        "take": "demo-download-0.wav",
+        "expected": "Download the exact source recording, then open the pinned command recipe.",
+        "recognized": "Download the exact source recording, then open the pin command recipe."
+      },
+      {
+        "take": "demo-download-1.wav",
+        "expected": "The setup selects immutable public command line and Python reader versions.",
+        "recognized": "The setup selects immutable public command, line, and Python reader versions."
+      },
+      {
+        "take": "demo-copy-1.wav",
+        "expected": "Only the fixed public command is copied. Local report metadata never enters shell text.",
+        "recognized": "only the fixed public command is copied. Local report metadata never enters shell text."
+      },
+      {
+        "take": "demo-cli-0.wav",
+        "expected": "Here is actual command output from the downloaded recording, using those pinned sources.",
+        "recognized": "Here is actual command output from the downloaded recording using those pin sources."
+      },
+      {
+        "take": "demo-end-0.wav",
+        "expected": "Use Entrotter to keep the inputs, receipts, assumptions, and decisions together for review.",
+        "recognized": "Use Entrutter to keep the inputs, receipts, assumptions and decisions together for review."
+      }
+    ],
+    "scope": "ASR word differences include proper names, All/Both, pro-flight/preflight and the/that. Exact PCM correspondence cannot prove audible wording. No human listening/caption approval inferred."
+  },
+  "capture_scope": "Current partial first capture already timed out on old selector; valid recorded prefix is not a successful complete video/CLI/copy proof. Resumed segments must be disclosed and source-bound in final timeline.",
+  "offline_scope": "Python audit-event DNS/connect/subprocess refusal for fixed local inspect main. Not a universal OS/network sandbox. Actual downloaded bytes, imports, output goldens and closure must be retained after execution.",
+  "limits": [
+    "No producer/audio/ASR/browser/CLI/EVM/model/RPC rerun by reviewer.",
+    "This reviews actual WAV bytes and saved CPU ASR; no human audio listening or authoring-caption approval.",
+    "Capture helpers may still change after these time-bound source hashes; final media must bind executed snapshots and final artifacts.",
+    "Original media preservation, complete video, downloaded-source CLI/clipboard success and <=3minute final container remain pending."
+  ],
+  "local_inputs_sha256": {
+    ".quality/aave-demo/scenes.json": "86888a88686fb4f36be23cfca35b5a911ae377521c059b280f95f592b43ebf9c",
+    ".quality/aave-demo/audio-file-review.json": "2f59627b3edcc3fc2afbceef013e91f73989150aac1c59743e9c05a3c1ae10f4",
+    ".quality/aave-demo/audio/frame-timeline.json": "d12fbeeb7b16cc617c91335b6322e23dd0764397469abc34b1dd886b179864b9",
+    ".quality/aave-demo/audio/demo-timeline.json": "7a7fd1d6e5911145d56155ee6f7cb5c90ed062d0dbc65e16abbc41a640d9923d",
+    ".quality/aave-demo/audio/demo-intro-0.wav": "9f2eacfd82d9c562b637037051f10c7feb3fe3eb9d9e2ace9c85b82d301e8310",
+    ".quality/aave-demo/audio/demo-intro-1.wav": "3dfbfcc602ad0330da02d8adb1fa308d4c2eae589df5dae5358d88c44a623183",
+    ".quality/aave-demo/audio/demo-record-0.wav": "39ec400f9b3c3aba96137fa0f559fc3dd7cf0ab4664c2f95a5f8df30020a8b62",
+    ".quality/aave-demo/audio/demo-record-1.wav": "0deabd5356026a431b760cbe46cfa4050f7ef618794294c297e7eb158cba77b9",
+    ".quality/aave-demo/audio/demo-setup-0.wav": "e827ffe3e0756206d91c82b92c8d71c954bbb5933940288d544943e7ed290f1f",
+    ".quality/aave-demo/audio/demo-setup-1.wav": "06ec69584a0bdc65c0be1cd9a96508aedb495f2fa3b1cafa4c29b97a0ef7a042",
+    ".quality/aave-demo/audio/demo-decision-0.wav": "6809b7eb2e5d3b02ca982b358163dec6e6318ae9158bbf58ccf276c7a21dbfa4",
+    ".quality/aave-demo/audio/demo-decision-1.wav": "59d48e87d3d643373df07a9b8326502597ef9cac724d663ec9a9faff8bd3a736",
+    ".quality/aave-demo/audio/demo-decision-2.wav": "3f9f36d19a80e2b941801b9ba45d922916885c1c5dba060b3f46a676add1f586",
+    ".quality/aave-demo/audio/demo-final-0.wav": "84b788040d66f189472ab7ea25017ff17384f91149f6581c4bacc27f45c5fc70",
+    ".quality/aave-demo/audio/demo-final-1.wav": "af1e8bd8e20e5bb4c7308b812e3cea4f19fee561dc9a51d2e511b2d6428b9970",
+    ".quality/aave-demo/audio/demo-balances-0.wav": "769e70764d731afec2b7193af135543bfc64befcc26bd49e6b6dfdfa927a8cf7",
+    ".quality/aave-demo/audio/demo-balances-1.wav": "b2098f1bc6d7f2736a61c1f33c8effc4dae16603b7c7ed9733a1856e0ee5988b",
+    ".quality/aave-demo/audio/demo-download-0.wav": "dd9bffa9ecfe3870732dccbd7384f53cb60cf635ad3f68d33d9dfce160db39d7",
+    ".quality/aave-demo/audio/demo-download-1.wav": "3beffb2e83821d134e807a57265f7fc56faf2d32adf2d4a308fc753d83f806aa",
+    ".quality/aave-demo/audio/demo-copy-0.wav": "0305a3f05bcaa9193a6a2ba20d5030c7375de8da63895b0b28f053aa68443bae",
+    ".quality/aave-demo/audio/demo-copy-1.wav": "265f5f36dc45fc06656efe400222b95327b26c36583d00890e01bb8d4c7e986b",
+    ".quality/aave-demo/audio/demo-cli-0.wav": "9ef21f663cd971794429c47f57b5d6efdcf995898ab5db28ec8b99cabe6f4dcc",
+    ".quality/aave-demo/audio/demo-cli-1.wav": "b83bd4bc71fde5bb5db04ba64b25e22127184397b8ea012ec26245e016e4e21e",
+    ".quality/aave-demo/audio/demo-limit-0.wav": "c76e58e86d38aa0d91a09e2ee5a86061154c8d6b38ff86cc29214b066f7a6c3c",
+    ".quality/aave-demo/audio/demo-limit-1.wav": "ae1f10dc1d7e487582f6b0030fe570f712d81b51cbb59becda381da27b4c27b9",
+    ".quality/aave-demo/audio/demo-end-0.wav": "5ec9ef03c7dca1dd2afbae5b16ee62d81c461edd200f3381e5376488a8a77d92",
+    ".quality/aave-demo/audio/demo-end-1.wav": "cbe17fcf0da547c726562d8970576251b6abdcd0939e27b26873bc8273162088",
+    ".quality/aave-demo/audio/demo.wav": "6233a3234429aabdc54e0bb70e47f49b9e3c737beb81cd02c545d6d352d686e1",
+    ".quality/aave-demo/asr.json": "13d8c38be041e3dab0b52e2247243b84942d7641737098cffde996cddf488931",
+    ".quality/aave-demo/record.mjs": "9485a68c282cbf82069f3587194f50d3d0d698ed08deedc8e864ceaf1641b2aa",
+    ".quality/aave-demo/inspect-offline.py": "bd37c0fad9fc4d1d643c0237d47e35527b626ff0b2b0d700a45b705cf935fc79",
+    ".quality/aave-demo/browser-common.mjs": "3142f607eb87c948e9bdc2bd28a0b75a200348dc214201ca0692e58516dddb0c",
+    ".quality/aave-demo/verify-audio.py": "047b9a3e1522fb7b2d8493b8113d2ed32bfea19565767b52e88c159a1b860a8f",
+    ".quality/aave-demo/narrate.py": "f29b22021c77ba2e417cf42cd3877dbb9e1805824803ce811b46938162dc282c",
+    ".quality/aave-demo/asr-decode-failed.stderr": "7c0ca03c9a11c620ef52e94ac6daa659d7307344bbdad0986e09c7ca90672691"
+  },
+  "helper_sha256": "5653f795acbcbf069e2d2de413025e3fe288246b3e6ac55a2e89859bb3f5398f"
+}
