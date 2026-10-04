@@ -107,7 +107,7 @@ all sixteen browser rows beside the original Engine/SDK/CLI outputs. The current
 viewer component has passed its own mandatory CI; combined integration, protected
 human main approval and live Pages remain separate.
 
-The current candidate selects viewer035f2eb and retains the
+The current candidate selects viewer3fd98b6 and retains the
 [CLI copy controls](evidence/cli-copy-integration/README.md). Verified bundled
 recordings provide fixed download filenames and
 pinned CLI/SDK setup with selected read-only inspection commands. All six recipes
@@ -119,6 +119,9 @@ reader retains all original outputs and uses the current source-bound view golde
 The [separate evaluation composition](evidence/agent-scope-integration/README.md)
 labels the native-transfer model comparison as evidence for that example only;
 it does not evaluate every Aave or imported recording shown in the panel.
+The [setup failure correction](evidence/setup-chain-integration/README.md) stops
+copyable setup commands at the first Git failure and refreshes the application
+cache token. Actual fresh public clones reproduce all six original CLI outputs.
 
 Terminal users can also inspect the same account record with
 `position-inspect --format text`: all six exact account fields and differences,

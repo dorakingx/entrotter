@@ -2366,3 +2366,27 @@ Current coordinator CI and protected human-main approval/Pages remain separate.
 No fresh EVM/RPC/model/performance execution is claimed. Submission profile,
 audio/caption and hosting gates remain pending; goalactive through official
 October13 15:59JST, Discordexcluded.
+
+
+## October 4 — copied setup stops on the first Git failure
+
+The candidate selects viewer3fd98b6 with unchanged Enginef53/SDKba4/CLI169.
+Copied setup joins four fixed Git commands with `&&`; clone/checkout failures
+stop the recipe instead of being masked by a later success. The application
+cache token is refreshed. Actual Git failure128 preserves the existing file
+and avoids the next clone; clean public clones reproduce all six exact CLI
+outputs. Local137 Node/12 site/20lint/21types/156security pass with152 original
+reasons plus four reviewed finite-test paths. Final51 browser groups/64 raw
+axe scans have zero violations/JS errors and63 explicit incomplete items.
+[Composition evidence](evidence/setup-chain-integration/README.md) separates
+original component CI, source/publication review and retained initial failures.
+
+The existing five-command offline reader passes with all whole outputs exact.
+All22 immutable source identities verify:20 bytes unchanged, currentapp and
+source-bound viewgolden deliberately changed. One manifest/workflow viewer pin
+changes; reversing it restores the whole prior de0c composition. Other pins,
+frozen jobs, locks and originalmedia remain. No new EVM/RPC/model/performance
+execution is claimed. The Aave review video still captures ad697dc. Coordinator
+CI, protected independent human-main approval/Pages and profile/audio/hosting
+requirements remain separate; goalactive through October13 15:59JST,
+Discordexcluded.

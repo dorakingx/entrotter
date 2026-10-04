@@ -542,7 +542,8 @@
     "evidence/observed-text-integration/README.md",
     "evidence/observed-text-integration/local-reader.json",
     "evidence/observed-text-integration/cli-observed-text.json",
-    "evidence/agent-scope-integration/README.md"
+    "evidence/agent-scope-integration/README.md",
+    "evidence/setup-chain-integration/README.md"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }
