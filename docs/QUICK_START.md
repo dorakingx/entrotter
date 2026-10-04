@@ -4,8 +4,8 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The candidate [CLI recipe composition](../evidence/cli-recipe-integration/README.md)
-selects enginef53a66a, SDKba4af51, CLI169b759 and viewer05a0059. It adds supplied
+The candidate [CLI copy composition](../evidence/cli-copy-integration/README.md)
+selects enginef53a66a, SDKba4af51, CLI169b759 and viewerad697dc. It adds supplied
 collateral and variable-rate borrowing to the existing bounded replay and exact
 recorded price/account inspection. The action result can be checked and inspected
 offline; reproducing its archived-state execution needs Docker and an archive
@@ -86,7 +86,7 @@ experiment is separate from the original signed-prefix price/account cases below
 In an existing six-sibling checkout, select the reviewed viewer source:
 
 ```bash
-git -C entrotter.github.io fetch --depth=1 origin 05a005977b3850607be047895807a811f63267c8
+git -C entrotter.github.io fetch --depth=1 origin ad697dc5c7c9506ed8ec54386da727b0ef2f0b81
 git -C entrotter.github.io checkout --detach FETCH_HEAD
 python3 -m http.server 8880 --bind 127.0.0.1 --directory entrotter.github.io
 ```

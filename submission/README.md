@@ -76,20 +76,23 @@ consumer strategy or the full block's state.
 | Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI with bounded replay, exact native/token/account/price text and completeness exits | [169b759](https://github.com/entrotter/cli/tree/169b759aff9280ce44fb0d15569c7ae0a4a40889) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, exact native/token/Aave inspection, links and pinned CLI recipes | [05a0059](https://github.com/entrotter/entrotter.github.io/tree/05a005977b3850607be047895807a811f63267c8) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
+| Console, exact native/token/Aave inspection, links and copyable pinned CLI recipes | [ad697dc](https://github.com/entrotter/entrotter.github.io/tree/ad697dc5c7c9506ed8ec54386da727b0ef2f0b81) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
 All five mandatory coordinator checks atf1621b0 passed on originalattempt1.
 Earlier452c068 documentation HTTP429 failures and unchanged attempt2 remain
 historical evidence, not the current coordinator run. All six CLI169b checks pass
 on originalattempt1. Both have independent raw-artifact/source review and parent
 rehash; the new selected combination requires its own coordinator CI.
-The selected viewer05a0059 adds pinned CLI inspection recipes to verified bundled
-recordings and retains the native chooser diagnostics. Local135 Node/12 site
-checks and49 browser groups/62 raw axe scans pass, as do all six clean CLI recipes.
-Current component CI and exact source publication are recorded in the [CLI recipe
-composition](../evidence/cli-recipe-integration/README.md). All five original reader
-outputs and the original action recording remain unchanged. Prior chooser failures
-retain their unknown cause; newer success does not explain them.
+The selected viewerad697dc adds keyboard copying of fixed public CLI recipes
+and retains shared links, exact outcomes and chooser diagnostics. Actual six
+native clipboard write/readback cases, finite async/fallback controls and current
+51 browser groups/64 raw axe scans pass. Unchanged136 Node/12 site sources retain
+their actual results. Full19-file ESLint and20 typed inputs pass;152 reviewed
+findings retain every prior reason. Initial88a9bb2 CI quality failed a test-hook
+`no-undef`; the corrected reference leaves production/rules/locks unchanged.
+Current source publication/component CI are recorded in the [CLI copy composition](../evidence/cli-copy-integration/README.md).
+All five original reader outputs and the original action recording remain exact.
+Prior chooser/scroll failures retain unknown causes; no new reliability claim.
 The [price text composition](../evidence/observed-text-integration/README.md)
 and [account/completeness composition](../evidence/require-complete-integration/README.md)
 retain the exact commands, full outputs and scope. The [Aave action composition](../evidence/aave-action-integration/README.md)

@@ -2304,3 +2304,23 @@ byte, frozen input, component pin, lock and media remains. No new EVM/RPC/model,
 performance or historical-execution authenticity is claimed. Current combined CI
 and protected human-main approval/Pages remain separate. Submission facts/audio/
 hosting remain pending, goalactive through officialOctober13 15:59JST; Discordexcluded.
+
+## October 4 — copyable public CLI recipes join the selected candidate
+
+The candidate selects viewerad697dc with unchanged Enginef53/SDKba4/CLI169. Verified
+bundled examples provide native keyboard copy controls for fixed public recipes,
+manual fallback and serialized pending writes with stale feedback clearing. Six
+actual Clipboard write/readback cases and finite320px controls pass within current
+51 groups/64 raw axe/zero violations and JS errors. The original88 quality CI and
+local lint had a test-hook no-undef, overlooked by the initial review; corrective
+same-global reference leaves production/rules/types/locks unchanged and full19
+lint/20 typed/152 exact retained reasons pass. Original failures remain recorded.
+Component source/publication and fresh CI are separately bound in the [CLI copy composition](evidence/cli-copy-integration/README.md).
+
+The actual existing five-command reader passes with22 immutable inputs and every
+prior whole output unchanged. Original59506-byte Aave/3013-byte text and16 exact
+four-column rows remain. Only selected viewer and two currentgolden paths change
+workflow composition; all other jobs/inputs/locks/pins/media are preserved. No new
+chain/RPC/model/performance execution is claimed. Coordinator CI and protected
+independent human-main approval/live Pages remain separate; submission ownerfacts/
+audio/hosting pending, goalactive until officialOctober13 15:59JST, Discordexcluded.
