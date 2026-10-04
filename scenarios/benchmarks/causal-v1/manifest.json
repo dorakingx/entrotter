@@ -1,0 +1,114 @@
+{
+  "version": "causal-v1",
+  "prepared_at": "2026-09-19T16:26:42.255540+00:00",
+  "status": "frozen-before-new-protocol-state-execution",
+  "cases": [
+    {
+      "id": "causal-uniswap-17000000",
+      "path": "cases/17000000.json",
+      "sha256": "872aee0c3fca50e4ba4a4eb7d5cd6b34e4c6df85fe8c53655f329d691133339b",
+      "split": "evaluation",
+      "source": {
+        "chain_id": 1,
+        "block_number": 17000000,
+        "block_hash": "0x96cfa0fb5e50b0a3f6cc76f3299cfbf48f17e8b41798d1394474e67ec8a97e9f",
+        "timestamp": 1680911891
+      },
+      "minimum_out_raw": "1500000000",
+      "decision_steps": [
+        2
+      ]
+    },
+    {
+      "id": "causal-uniswap-18000000",
+      "path": "cases/18000000.json",
+      "sha256": "5b82f881e4163fa667a9729a7d40e60917222d6925a9fc32d317aab68d2103f3",
+      "split": "evaluation",
+      "source": {
+        "chain_id": 1,
+        "block_number": 18000000,
+        "block_hash": "0x95b198e154acbfc64109dfd22d8224fe927fd8dfdedfae01587674482ba4baf3",
+        "timestamp": 1693066895
+      },
+      "minimum_out_raw": "2000000000",
+      "decision_steps": [
+        2
+      ]
+    },
+    {
+      "id": "causal-uniswap-19000000",
+      "path": "cases/19000000.json",
+      "sha256": "2059263c6e3eb9dfd8ef3549ef82f1e070225dcb5430c6301349da51d4a4d02f",
+      "split": "development",
+      "source": {
+        "chain_id": 1,
+        "block_number": 19000000,
+        "block_hash": "0xcf384012b91b081230cdf17a3f7dd370d8e67056058af6b272b3d54aa2714fac",
+        "timestamp": 1705173443
+      },
+      "minimum_out_raw": "1000000000000",
+      "decision_steps": [
+        2
+      ]
+    },
+    {
+      "id": "causal-uniswap-20000000",
+      "path": "cases/20000000.json",
+      "sha256": "749b12bb349dd2ebdeac9f234d0c0553056a3f0ee8b78f7f8db42beeee8953d6",
+      "split": "holdout",
+      "source": {
+        "chain_id": 1,
+        "block_number": 20000000,
+        "block_hash": "0xd24fd73f794058a3807db926d8898c6481e902b7edb91ce0d479d6760f276183",
+        "timestamp": 1717281407
+      },
+      "minimum_out_raw": "3000000000",
+      "decision_steps": [
+        2
+      ]
+    },
+    {
+      "id": "causal-uniswap-21000000",
+      "path": "cases/21000000.json",
+      "sha256": "600f4a1e6b935ed3c82ab0f3d2c25839d06c0523d006a7348567e456a10bce8b",
+      "split": "holdout",
+      "source": {
+        "chain_id": 1,
+        "block_number": 21000000,
+        "block_hash": "0xf5e1d15a3e380006bd271e73c8eeed75fafc3ae6942b16f63c21361079bba709",
+        "timestamp": 1729345547
+      },
+      "minimum_out_raw": "3000000000",
+      "decision_steps": [
+        2
+      ]
+    }
+  ],
+  "policy": {
+    "engine_commit": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+    "coordination_commit": "057c3423eaec12e80b7e575944d27c60a3375fbd",
+    "codex_adapter_sha256": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76",
+    "codex_cli_version": "0.145.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "prompt_version": "evm-proposal-gate-v1",
+    "prompt_sha256": "1bdd4e81178e6d9cd4691bd48d0b08dbf9c4df31c6395229670f87c658580c37",
+    "seed": null,
+    "max_requested_gas": 500000,
+    "timeout_seconds_per_decision": 50
+  },
+  "comparison": {
+    "non_agent": "execute all supplied proposals",
+    "risk": "execute iff current preflight succeeds and requested gas fits",
+    "model": "same objective, model chooses execute or hold over identical causal request",
+    "setup": "wrap 1 ETH and approve exactly 1 WETH; shared and excluded from decision budget",
+    "valuation": "none; retain exact native/WETH/USDC units and gas; drawdown is undefined"
+  },
+  "holdout_boundary": [
+    "Only source headers were queried during split preparation. No protocol state calls, preflights or swaps were run at blocks 20000000 or 21000000 in this implementation before this freeze.",
+    "Block 19000000 was explored during development; never count it as untouched.",
+    "Historical market knowledge and model training data may include these periods. Holdout means unused by this implementation, not unseen by the model or a blind market forecast.",
+    "Thresholds and model prompt must not change after observing holdout results. A change requires a new named benchmark and new unused cases."
+  ],
+  "failure_policy": "Archive, model or replay failures are recorded as failures; no replacement scenarios or hidden fallback policies."
+}

@@ -1,0 +1,28 @@
+test_frozen_inputs_and_split_are_unchanged (test_benchmark_cases.FrozenCaseTests.test_frozen_inputs_and_split_are_unchanged) ... ok
+test_all_schema_meta_validation_with_network_disabled (test_offline_contracts.OfflineContractTests.test_all_schema_meta_validation_with_network_disabled) ... ok
+test_command_rejects_invalid_result_without_success_output (test_offline_contracts.OfflineContractTests.test_command_rejects_invalid_result_without_success_output) ... ok
+test_command_validates_local_scenario (test_offline_contracts.OfflineContractTests.test_command_validates_local_scenario) ... ok
+test_invalid_schema_fails_at_load (test_offline_contracts.OfflineContractTests.test_invalid_schema_fails_at_load) ... ok
+test_missing_schema_fails_even_without_agent (test_offline_contracts.OfflineContractTests.test_missing_schema_fails_even_without_agent) ... ok
+test_unknown_kind_fails (test_offline_contracts.OfflineContractTests.test_unknown_kind_fails) ... ok
+test_unregistered_references_fail_without_io (test_offline_contracts.OfflineContractTests.test_unregistered_references_fail_without_io) ... ok
+test_existing_report_envelope_still_accepts_no_agent (test_recording_schema.RecordingSchemaTests.test_existing_report_envelope_still_accepts_no_agent) ... ok
+test_shape_rejects_executable_action_extensions (test_recording_schema.RecordingSchemaTests.test_shape_rejects_executable_action_extensions) ... ok
+test_all_runtime_validate (test_scenarios.ScenarioTests.test_all_runtime_validate) ... ok
+test_json_schema (test_scenarios.ScenarioTests.test_json_schema) ... ok
+test_manifest_paths (test_scenarios.ScenarioTests.test_manifest_paths) ... ok
+test_no_real_claims_in_synthetic (test_scenarios.ScenarioTests.test_no_real_claims_in_synthetic) ... ok
+test_original_plan_and_receipt_result_validate_offline (test_trace_contracts.TraceContractTests.test_original_plan_and_receipt_result_validate_offline) ... ok
+test_plan_rejects_unknown_versions_sources_and_executable_fields (test_trace_contracts.TraceContractTests.test_plan_rejects_unknown_versions_sources_and_executable_fields) ... ok
+test_projected_receipts_reject_malformed_quantities_addresses_and_logs (test_trace_contracts.TraceContractTests.test_projected_receipts_reject_malformed_quantities_addresses_and_logs) ... ok
+test_schema_does_not_recompute_receipt_equivalence_or_hashes (test_trace_contracts.TraceContractTests.test_schema_does_not_recompute_receipt_equivalence_or_hashes) ... ok
+test_separate_family_preserves_v01_contract_boundaries (test_trace_contracts.TraceContractTests.test_separate_family_preserves_v01_contract_boundaries) ... ok
+test_sorted_and_prefix_dependent_skip_rules_remain_engine_semantics (test_trace_contracts.TraceContractTests.test_sorted_and_prefix_dependent_skip_rules_remain_engine_semantics) ... ok
+test_source_header_prefix_and_assumption_bounds (test_trace_contracts.TraceContractTests.test_source_header_prefix_and_assumption_bounds) ... ok
+test_terminal_outcomes_require_their_status_specific_fields (test_trace_contracts.TraceContractTests.test_terminal_outcomes_require_their_status_specific_fields) ... ok
+test_verified_flags_cannot_contradict_branch_outcome_shape (test_trace_contracts.TraceContractTests.test_verified_flags_cannot_contradict_branch_outcome_shape) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.407s
+
+OK

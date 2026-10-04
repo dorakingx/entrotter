@@ -1,0 +1,9 @@
+-r requirements-dev.in
+ruff==0.15.16
+mypy==1.18.2
+types-jsonschema==4.23.0.20250516
+bandit==1.9.4
+pip-audit==2.10.1
+pip-tools==7.6.1
+setuptools==84.0.0
+pip==26.2.1
