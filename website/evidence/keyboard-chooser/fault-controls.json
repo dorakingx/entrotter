@@ -1,0 +1,66 @@
+{
+  "runnerHash": "7b634c6da4aa277ccab5a1f94af1c13b3529f09b302a246b70e7a488119321d0",
+  "outcomes": [
+    {
+      "name": "Blocked actual Enter still fails at original 5000ms and saves bounded state",
+      "status": "passed",
+      "error": "TimeoutError: page.waitForEvent: Timeout 5000ms exceeded while waiting for event \"filechooser\"\n=========================== logs ===========================\nwaiting for event \"filechooser\"\n============================================================",
+      "diagnostic": {
+        "id": "import",
+        "enterCompleted": true,
+        "state": {
+          "activeId": "import",
+          "documentFocused": true,
+          "connected": true,
+          "type": "file",
+          "disabled": false,
+          "hidden": false,
+          "visibility": "visible",
+          "display": "block"
+        }
+      }
+    },
+    {
+      "name": "Actual native chooser recovers without retry in helper",
+      "status": "passed"
+    },
+    {
+      "name": "Chooser for renamed input fails identity assertion and retains state",
+      "status": "passed",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'unexpected'\n- 'import'\n",
+      "diagnostic": {
+        "id": "import",
+        "enterCompleted": true,
+        "state": {
+          "activeId": "unexpected",
+          "documentFocused": true,
+          "connected": false,
+          "type": null,
+          "disabled": null,
+          "hidden": null,
+          "visibility": null,
+          "display": null
+        }
+      }
+    },
+    {
+      "name": "Actual check serializes primary timeout and diagnostic write failure",
+      "status": "passed",
+      "check": {
+        "name": "Forced chooser and diagnostic failure",
+        "status": "failed",
+        "error": "AggregateError: File chooser failed; diagnostic capture also failed\n    at keyboardFileChooser (file://<local-checkout>/.quality/chooser/fault-formatted.mjs:180:13)\n    at async check (file://<local-checkout>/.quality/chooser/fault-formatted.mjs:73:5)\n    at async file://<local-checkout>/.quality/chooser/fault-formatted.mjs:347:3\n\npage.waitForEvent: Timeout 5000ms exceeded while waiting for event \"filechooser\"\n=========================== logs ===========================\nwaiting for event \"filechooser\"\n============================================================\n    at keyboardFileChooser (<local-checkout>/.quality/chooser/fault-formatted.mjs:150:24)\n    at async check (<local-checkout>/.quality/chooser/fault-formatted.mjs:73:5)\n    at async file://<local-checkout>/.quality/chooser/fault-formatted.mjs:347:3\n\nError: EISDIR: illegal operation on a directory, open '<local-checkout>/.quality/chooser/fault-formatted/chooser-import-1280.json'\n    at async open (node:internal/fs/promises:639:25)\n    at async writeFile (node:internal/fs/promises:1222:14)\n    at async keyboardFileChooser (file://<local-checkout>/.quality/chooser/fault-formatted.mjs:175:7)\n    at async check (file://<local-checkout>/.quality/chooser/fault-formatted.mjs:73:5)\n    at async file://<local-checkout>/.quality/chooser/fault-formatted.mjs:347:3"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Forced chooser and diagnostic failure",
+      "status": "failed",
+      "error": "AggregateError: File chooser failed; diagnostic capture also failed\n    at keyboardFileChooser (file://<local-checkout>/.quality/chooser/fault-formatted.mjs:180:13)\n    at async check (file://<local-checkout>/.quality/chooser/fault-formatted.mjs:73:5)\n    at async file://<local-checkout>/.quality/chooser/fault-formatted.mjs:347:3\n\npage.waitForEvent: Timeout 5000ms exceeded while waiting for event \"filechooser\"\n=========================== logs ===========================\nwaiting for event \"filechooser\"\n============================================================\n    at keyboardFileChooser (<local-checkout>/.quality/chooser/fault-formatted.mjs:150:24)\n    at async check (<local-checkout>/.quality/chooser/fault-formatted.mjs:73:5)\n    at async file://<local-checkout>/.quality/chooser/fault-formatted.mjs:347:3\n\nError: EISDIR: illegal operation on a directory, open '<local-checkout>/.quality/chooser/fault-formatted/chooser-import-1280.json'\n    at async open (node:internal/fs/promises:639:25)\n    at async writeFile (node:internal/fs/promises:1222:14)\n    at async keyboardFileChooser (file://<local-checkout>/.quality/chooser/fault-formatted.mjs:175:7)\n    at async check (file://<local-checkout>/.quality/chooser/fault-formatted.mjs:73:5)\n    at async file://<local-checkout>/.quality/chooser/fault-formatted.mjs:347:3"
+    }
+  ],
+  "errors": [],
+  "scope": "Actual Chromium failure injection into native controls; helper extracted unchanged from candidate runner. Deliberate DOM mutations are tests, not original timeout reproduction.",
+  "node_version": "v22.23.1"
+}

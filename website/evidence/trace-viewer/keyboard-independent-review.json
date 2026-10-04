@@ -1,0 +1,11 @@
+{
+  "scope": "Independent4-line harness fix review against fd7; no duplicate browser run",
+  "finding": "Programmatic native-file-control focus timed out once at1280Linux while other32groups passed; sequential keyboard navigation is the intended user path.",
+  "change": "Focus preceding trace sample button, actual Tab to native input, assert input focus and visible focus, then retain Enter/actual native chooser/local import/no-network assertions.",
+  "remaining_actionable": 0,
+  "no_weakened_checks": "Timeout, filechooser event, fixture import, response checks and resource bounds unchanged; new visible-focus assertion strengthens coverage.",
+  "runner_sha256": "892752eaf701319a2b99f7b58ff8ac95f97ef5f05740fd9b7c6222d022228825",
+  "limits": [
+    "Final local/Linux full browser proof remains separate; not GitHub approving review or product behavior certification."
+  ]
+}

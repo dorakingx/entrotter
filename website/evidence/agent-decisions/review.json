@@ -1,0 +1,24 @@
+{
+  "reviewer": "Separate Codex source-review agent",
+  "kind": "Independent software review, not an approving GitHub review",
+  "findings": [
+    {
+      "priority": "P2",
+      "problem": "String(choice) admitted an array-valued hold while the strict branch executed its action",
+      "resolution": "Require actual string choices and preflight status before enum checks"
+    },
+    {
+      "priority": "P2",
+      "problem": "Resealed proposal and trace could target a different action from scenario",
+      "resolution": "Bind proposal to scenario.steps[observation.step].candidate"
+    },
+    {
+      "priority": "P2",
+      "problem": "A held action could claim success and nonzero gas",
+      "resolution": "Hold/rejection zero gas/no receipt/hash; execution success/revert receipt status/gas/hash equality"
+    }
+  ],
+  "regression": "Four fully request/report-resealed contradictions fail before fix and pass refusal afterward;47 complete Node tests pass",
+  "followup": "All three findings resolved; seven focused tests and original model/risk display pass, no remaining actionable finding in fix",
+  "limits": "Selected internal consistency, no imported authenticity or execution/model provenance proof; no full engine validation; no GitHub approval"
+}

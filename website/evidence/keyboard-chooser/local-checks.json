@@ -1,0 +1,51 @@
+{
+  "scope": "Actual local Chromium keyboard controls. No original timeout-cause proof or reliability-rate estimate; no production app/report changes. Full pre-format candidate execution is bound to an exact snapshot; pinned Prettier transforms that snapshot byte-for-byte to current runner. Current-head CI remains separate.",
+  "baseline_activations": 9,
+  "baseline_failures": 0,
+  "original_candidate_failure": {
+    "runner_sha256": "e7c9b5124c20bfde1f2f9f71fe0f9456ffdf8e2efc3fe49d9568e17a9dac143a",
+    "checks": 49,
+    "failed": [
+      {
+        "name": "320px signed prefix: exact evidence, keyboard, reflow and axe",
+        "status": "failed",
+        "error": "page.waitForEvent: Timeout 5000ms exceeded while waiting for event \"filechooser\"\n=========================== logs ===========================\nwaiting for event \"filechooser\"\n============================================================\n    at keyboardFileChooser (<local-checkout>/scripts/check_accessibility.mjs:137:24)\n    at async file://<local-checkout>/scripts/check_accessibility.mjs:1440:27\n    at async withPage (<local-checkout>/scripts/check_accessibility.mjs:116:5)\n    at async check (<local-checkout>/scripts/check_accessibility.mjs:73:5)\n    at async file://<local-checkout>/scripts/check_accessibility.mjs:1351:5"
+      }
+    ],
+    "state": {
+      "id": "trace-import",
+      "enterCompleted": true,
+      "state": {
+        "activeId": "trace-import",
+        "documentFocused": true,
+        "connected": true,
+        "type": "file",
+        "disabled": false,
+        "hidden": false,
+        "visibility": "visible",
+        "display": "block"
+      }
+    },
+    "scans": 62,
+    "js_errors": []
+  },
+  "armed_candidate": {
+    "runner_sha256": "a4caaf12e11f1f0eb06135f03bc894b7296e2990cb701ae0a36b73e07cb182cd",
+    "status": "passed",
+    "checks": 49,
+    "scans": 62,
+    "js_errors": [],
+    "browser": "153.0.8010.12",
+    "axe": "4.13.0",
+    "playwright": "1.63.0"
+  },
+  "formatted_runner_sha256": "b4fed2b60f36394e4fde7cfb3c5c618acc9c19925ec90950a9c6e63764377d52",
+  "prettier": "3.9.8; exact transformed snapshot equality verified",
+  "fault_groups": 4,
+  "security": {
+    "inherited_exact_reasons": 149,
+    "new_reasons": 1,
+    "full_findings": 150
+  },
+  "unchanged_production": "All files except the development runner/security source review and new documentation/evidence match280958c; no lock/workflow/runtime/report/schema changes."
+}

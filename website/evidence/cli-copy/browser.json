@@ -1,0 +1,826 @@
+{
+  "checked_at": "2026-10-04T04:44:43.995Z",
+  "node": "v22.23.1",
+  "platform": "darwin",
+  "runner_sha256": "4b55d6a0f159fd5014407105998eb322994a11bdf4e9c236accfa06fb8219240",
+  "status": "passed",
+  "browser": "153.0.8010.12",
+  "axe": "4.13.0",
+  "playwright": "1.63.0",
+  "source_sha256": {
+    "index.html": "5cbe2be7e02662ef7d5b7e892792fcaf16a24e750ea9f26b2251e1efa7958563",
+    "app.js": "7c3b1992938e5c7d1a60635519412b1988b9f058d1e7275991501d82adeaefca",
+    "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
+    "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
+    "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+    "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+    "trace-viewer.mjs": "e87805dcef59dce8905671c73802c42448abee827c4d12bd0abfd7adb1bda06a",
+    "observed-trace.mjs": "980ff5172f61b82413e9898955f7a60ee23ba10a6374e6b259a91034624fe9ee",
+    "position-report.mjs": "38f31262e2248ae6af2d07bf7ee02de3d24316eaaac164e3dc2ae597e00c8f7f",
+    "reports/aave-account-impact13.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "tests/data/position-controls.json": "033383cc85af549cf4f9e1bda7d506e342af2a1f385a6afe88025e9dcd2deb9f",
+    "reports/trace-observed-price32.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "tests/data/observed-controls.json": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
+    "reports/trace-mainnet-prefix-four.json": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+    "tests/data/trace-oracle-prefix-32.json": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+    "assets/examples/action-comparison.json": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67",
+    "reports/agent-local-codex.json": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+    "reports/aave-borrow-actions.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "style.css": "eb30a5dd529732cc220cf31fa589e5aa9198339d7471c425e5c1e6036ccf286c",
+    "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+    "package.json": "d4ae0a0b1a412c70cf38bace34efd9fd459736f0e8c4d13ded0c53cab43e772d",
+    "package-lock.json": "199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342"
+  },
+  "checks": [
+    {
+      "name": "CLI recipes: native keyboard copying of all six public examples",
+      "status": "passed"
+    },
+    {
+      "name": "CLI copying: denied API, serialization, stale feedback and private clearing",
+      "status": "passed"
+    },
+    {
+      "name": "Bundled report links: direct entry, navigation and local-file privacy",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid report links: bounded allowlist and unchanged default entry",
+      "status": "passed"
+    },
+    {
+      "name": "Aave units: local imports, resealed false units, unavailable records and recovery",
+      "status": "passed"
+    },
+    {
+      "name": "1280px console: recorded cards, command and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px console: recorded cards, command and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px console: recorded cards, command and axe",
+      "status": "passed"
+    },
+    {
+      "name": "Console imports stay local, reject invalid evidence and recover",
+      "status": "passed"
+    },
+    {
+      "name": "A slow recorded load cannot replace a newer rejected import",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard skip link moves focus into main and skips navigation",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard sample selection, native local-file chooser, live status and inert import",
+      "status": "passed"
+    },
+    {
+      "name": "Local report source survives stale samples and restores the same example",
+      "status": "passed"
+    },
+    {
+      "name": "Recorded agent imports preserve reasons, reject resealed mismatches, clear and recover",
+      "status": "passed"
+    },
+    {
+      "name": "1280px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px recovery-trap: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px depeg-stress: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px agent-local-codex: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px aave-borrow-actions: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px recovery-trap: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px depeg-stress: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px agent-local-codex: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px aave-borrow-actions: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px recovery-trap: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px depeg-stress: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px agent-local-codex: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px aave-borrow-actions: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "Tampered import clears data, reports an accessible error and recovers",
+      "status": "passed"
+    },
+    {
+      "name": "Correctly hashed non-decimal metrics fail, clear data and recover without uploads",
+      "status": "passed"
+    },
+    {
+      "name": "Forced colors, reduced motion and keyboard focus remain usable",
+      "status": "passed"
+    },
+    {
+      "name": "404 page at 320px: keyboard home link, no overflow and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px signed prefix: exact evidence, keyboard, reflow and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px signed prefix: exact evidence, keyboard, reflow and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px signed prefix: exact evidence, keyboard, reflow and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px original32 local import: omission, structural shifts and exact fields",
+      "status": "passed"
+    },
+    {
+      "name": "390px original32 local import: omission, structural shifts and exact fields",
+      "status": "passed"
+    },
+    {
+      "name": "320px original32 local import: omission, structural shifts and exact fields",
+      "status": "passed"
+    },
+    {
+      "name": "Observed prices: exact values, unproven views, rejection and clearing 1280px",
+      "status": "passed"
+    },
+    {
+      "name": "Observed prices: exact values, unproven views, rejection and clearing 390px",
+      "status": "passed"
+    },
+    {
+      "name": "Observed prices: exact values, unproven views, rejection and clearing 320px",
+      "status": "passed"
+    },
+    {
+      "name": "Account impact: exact units, missing views, sentinel, recovery and keyboard 1280px",
+      "status": "passed"
+    },
+    {
+      "name": "Account impact: exact units, missing views, sentinel, recovery and keyboard 390px",
+      "status": "passed"
+    },
+    {
+      "name": "Account impact: exact units, missing views, sentinel, recovery and keyboard 320px",
+      "status": "passed"
+    },
+    {
+      "name": "Signed prefix: resealed contradictions, oversized import and honest unverified recovery",
+      "status": "passed"
+    },
+    {
+      "name": "Signed prefix: delayed sample cannot replace a newer local import",
+      "status": "passed"
+    },
+    {
+      "name": "No JavaScript exceptions, uploads or unexpected third-party requests",
+      "status": "passed"
+    }
+  ],
+  "request_count": 842,
+  "errors": [],
+  "limitations": [
+    "Automated Chromium and accessibility-tree/keyboard evidence; no claim of manual screen-reader certification or complete WCAG conformance.",
+    "320 CSS-pixel viewport checks reflow; it is not a hardware/browser zoom measurement.",
+    "Axe incomplete contrast items remain explicit; supplemental checks apply only to opaque solid CSS colors.",
+    "Local fixture/archived report display; no new chain/model execution."
+  ],
+  "raw_browser_report_sha256": "2f881851665602035fb57aadcfe8b36e8edf71f3def6e231456e7d34e5fbe057",
+  "normalization": "Complete check/source/tool results retained; supplemental color lists summarized by count. Full original raw64scans remain separately retained and exact hashes bind them. No semantic scanner results removed or converted to passes.",
+  "scans": [
+    {
+      "name": "390-cli-native-copy",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 49,
+      "complete_raw_sha256": "2d07ca2cc76a50daf9a70d0776d33790c399de1e6da9f7e72c00a36b89557600"
+    },
+    {
+      "name": "320-cli-copy-faults",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "f10ebd75bf415a8aa9ab1e0cdd0403669ed4c84bd90f9ba90d7ba612b8810bed"
+    },
+    {
+      "name": "390-direct-aave-link",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 49,
+      "complete_raw_sha256": "e3acebf97a1b7a7c2b577290d464fbd4533c23fbef7dd917c0694a2f7ee461a3"
+    },
+    {
+      "name": "1280-console",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "e806ec2a87acdf3f8a50cbfe9120a13e2347de3ac0cfb7e59b9e4a5a4fa57e1c"
+    },
+    {
+      "name": "390-console",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "00eb65a53e690ae235c613ee09f158e842668e6670c575c4cf4b80fdaa1f730c"
+    },
+    {
+      "name": "320-console",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "fb76239a6113ebdf9227209d3c0ea79c2b393ee7fe5d7ba9e339b8c2818ad418"
+    },
+    {
+      "name": "console-import",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "107ddb912397b26e7d572719f0dec618155cc9960696ba74f06e5682e64de751"
+    },
+    {
+      "name": "1280-liquidity-shock",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "8be0c25824fefe7ca78e1477414a5dc759d789f35372a7f7c2899fd80e81e52d"
+    },
+    {
+      "name": "1280-recovery-trap",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "d0dcea0902931801d986609acb1f5ccd225a3e593cfceb35809672fb4be18ab2"
+    },
+    {
+      "name": "1280-depeg-stress",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "a6e6661f64a2284b165915e1ef0b782b41f6fc80b9570faf4ce593066e99cbc8"
+    },
+    {
+      "name": "1280-ethereum-uniswap-slippage",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "f3b072b67bd09785a25dcbcf09e5453ebeb234cc5afa53d82d129528066de4d8"
+    },
+    {
+      "name": "1280-agent-local-codex",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "e55bdad22b69da667faa7a8e9f3f1e5ea3dfeb0d4af008f23e5e01951fe1a54a"
+    },
+    {
+      "name": "1280-aave-borrow-actions",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "fadc703183b14bcde1763a626d07bc654ecf5d6fa8db5e9c82e22b11e6735d91"
+    },
+    {
+      "name": "390-liquidity-shock",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "d400f6089133406db2dfcce3f553bd2559c04997f1b23b6e7dee284e5313f8ed"
+    },
+    {
+      "name": "390-recovery-trap",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "28baaf4a197e2801e67635820f3bfa13397e3e4b1f2eeda9fac4d64bcd547ba3"
+    },
+    {
+      "name": "390-depeg-stress",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "d93769deb997bb4bb7a7ff53af665f2b966865c94935b18c34ee0450899cdb6a"
+    },
+    {
+      "name": "390-ethereum-uniswap-slippage",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 30,
+      "complete_raw_sha256": "1b0a01b89f522d254973e06b0642414170b48c085c469b3c3315107c19f2657b"
+    },
+    {
+      "name": "390-agent-local-codex",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 26,
+      "complete_raw_sha256": "982e2b37f5548835244c238a62ee5380195402b399f663e54956e622a1916f10"
+    },
+    {
+      "name": "390-aave-borrow-actions",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 49,
+      "complete_raw_sha256": "bc624e38aec6a69dddebbc074921449c5c546ff5dd30f660239ea66d2df04296"
+    },
+    {
+      "name": "320-liquidity-shock",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "614cd6132da347192c1ef2908da591e17326edb20ad1b922c1e2388981d4f61f"
+    },
+    {
+      "name": "320-recovery-trap",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "d3c8514248bd498fd7d65daa9f75250849b3a725b62d1c6ec6229c42313d02a2"
+    },
+    {
+      "name": "320-depeg-stress",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "826ee236ab725fdac20ad79fc4149edb740206719207c364cfcf58459c0b492e"
+    },
+    {
+      "name": "320-ethereum-uniswap-slippage",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 52,
+      "complete_raw_sha256": "fd8fccebdbae61f2fa0720cee4f7f8c278b4b81a73290e4938124a46fedce63d"
+    },
+    {
+      "name": "320-agent-local-codex",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 48,
+      "complete_raw_sha256": "ce811564e3f4de441eb2986e580cfe1508f93873c933cd98be24d19a16f5eb75"
+    },
+    {
+      "name": "320-aave-borrow-actions",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 85,
+      "complete_raw_sha256": "19f69d7bb2cd9687b743c5c2477a602bbf6fbe968b12e11b5268d2fa43e8d2ae"
+    },
+    {
+      "name": "error",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "1a0bf290afd46d9537943c4c270cf6ffc650bf0e83419cee7960ea6e479aacb7"
+    },
+    {
+      "name": "404",
+      "violations": [],
+      "incomplete": [],
+      "supplemental_count": 0,
+      "complete_raw_sha256": "0f8a0deef3a78130c5787b9feef383d6d495137f3f2f427f87cc20f91283bc64"
+    },
+    {
+      "name": "signed-prefix-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "36c3b9bbcbfd45e0b506f22d5aa15c7ce4f22b9122392c7e8e3ecea5a6b8efe9"
+    },
+    {
+      "name": "signed-prefix-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 48,
+      "complete_raw_sha256": "d9eb1ab1081e1526d6ba021082137f78fe182db0047d91021ea9308e28c43e26"
+    },
+    {
+      "name": "signed-prefix-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 56,
+      "complete_raw_sha256": "33bc7e139e8d1fb13f313861a62c58e1ac881caf1fbd371381ab1311b8dd4a18"
+    },
+    {
+      "name": "original32-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "1de2f8c161821a4cfb54a178e06fdfcfdf104af0d065f95d32e2ca8a0e8550db"
+    },
+    {
+      "name": "original32-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 290,
+      "complete_raw_sha256": "07a401563d29a8adfbc22a8890ee1d8411aac0b5e7384e9258a44e64786a4a41"
+    },
+    {
+      "name": "original32-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 353,
+      "complete_raw_sha256": "bf24d287707dbd6bacc5e57cf8cc79f23db849f7373566085fb195daf3c5bd12"
+    },
+    {
+      "name": "observed-price-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "8071186d838704b294349f2d607be33eafc816b71afb3ca3b8fa988ce4c1906b"
+    },
+    {
+      "name": "observed-unproven-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "b9fdd21d3c9c8c34c90fe7fd479bc0bd7a3e12eaf66c01f7aa8b465ad1770afe"
+    },
+    {
+      "name": "observed-price-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 309,
+      "complete_raw_sha256": "786b61320b8ac4836818761aef805c236f90fac9ba3191b1657fb2c44f4a61f8"
+    },
+    {
+      "name": "observed-unproven-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 309,
+      "complete_raw_sha256": "552e49d19631ab97ed651aba29614f23ab2e6298196818ce799c8eb72ce46f56"
+    },
+    {
+      "name": "observed-price-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 349,
+      "complete_raw_sha256": "950d2c4836d1eca47123ee5f8377f3002a0c631e3ade3b20ba6ba7d4fabb09fa"
+    },
+    {
+      "name": "observed-unproven-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 349,
+      "complete_raw_sha256": "e27343afd6898063c32240c1aa9d1593d3cf64ebb28bee9e8bc7d8f687883bfe"
+    },
+    {
+      "name": "account-impact-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "891878df30ad7901ea84b0c1121e556311b1f9ed9cf9b3b27f0a952ed9dd9391"
+    },
+    {
+      "name": "account-missing_account-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "5aad2764fd562ade7cd9c87c2a2f3fd49f242072dd579a8df3a2f62c8aa8a8b8"
+    },
+    {
+      "name": "account-large_integer-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "f2ecb7cd414c72c9f8d5372e6b6c2098a2efe845922e98f3279ee200862d14ef"
+    },
+    {
+      "name": "account-no_debt-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "4cd2487e0aa4ec5996d639c2910a11bd43219bec5c6f8d32f1ce7a8c0248cab0"
+    },
+    {
+      "name": "account-debt_transition-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "2a96894374c6532fc8fcd2e574c8470a93d35f36e4f1e56d1f229b33910a4182"
+    },
+    {
+      "name": "account-health_boundary-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "82f007c26501a415d617a7be025f9bb933af11c88c000d8612e6b0856e1f1134"
+    },
+    {
+      "name": "account-negative_change-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "2ebbd8a2dbef4ab2bfb91eff66ca77a03d1943ff97272900e8a50aaee190215e"
+    },
+    {
+      "name": "account-zero_change-1280",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 2,
+      "complete_raw_sha256": "d59d35aa0036670a3e31f85890abd84b82d640aa7523e0b50857f2dc2fe6c06d"
+    },
+    {
+      "name": "account-impact-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 153,
+      "complete_raw_sha256": "11bb07d586881184af5e53f126c31e31ca0cea144e9752333fd853a0a6f14b45"
+    },
+    {
+      "name": "account-missing_account-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 153,
+      "complete_raw_sha256": "456cb3ab6e802ef401834f7d392de5084598a756d95aa168d5c2187c0383f2bd"
+    },
+    {
+      "name": "account-large_integer-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 181,
+      "complete_raw_sha256": "6c572007f3c177d3e287ab9f9a32558d7a68815cb01c0a9eda301443e01c59ab"
+    },
+    {
+      "name": "account-no_debt-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 175,
+      "complete_raw_sha256": "a5103c3003311165c65cd766c5d2c4bbe0c8a7ce9da9979c6719e513de872b33"
+    },
+    {
+      "name": "account-debt_transition-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 175,
+      "complete_raw_sha256": "8c989ae987e8876e478ae9e59a73e57c0b8e76f8fb888025e16e94b3ae4d107b"
+    },
+    {
+      "name": "account-health_boundary-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 179,
+      "complete_raw_sha256": "8bbbefead9721cdf82f46d7b016b7f5391b9dab9990c385528bbc99d183c9f8f"
+    },
+    {
+      "name": "account-negative_change-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 179,
+      "complete_raw_sha256": "a4ca0650f03bcf1786d8d49720da11c802dd188a19a32d0c3e545dd9433803c0"
+    },
+    {
+      "name": "account-zero_change-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 179,
+      "complete_raw_sha256": "72510edde3c749246e2e57086d65e4a67977c7242e25fa147619014330eb5c7c"
+    },
+    {
+      "name": "account-impact-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 175,
+      "complete_raw_sha256": "f8f95db384bbb05cd1a325c25d8631bfbdf977bfac5baca69fb5838c56e1c585"
+    },
+    {
+      "name": "account-missing_account-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 174,
+      "complete_raw_sha256": "1c1d9b14af347f9d496b554c3090ef0f84e7eebe7b4f05b72308ea16ee2edd9e"
+    },
+    {
+      "name": "account-large_integer-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 203,
+      "complete_raw_sha256": "9ecef457dfdbf6efa3e2ec5dcf60801e5e5bd174beba6a122a632ddafe8daaf6"
+    },
+    {
+      "name": "account-no_debt-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 202,
+      "complete_raw_sha256": "0e6ee672a450248b09a2bca2a3ee26260c44881f33312fffb0b415a71cf4fb47"
+    },
+    {
+      "name": "account-debt_transition-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 202,
+      "complete_raw_sha256": "4d95c5f0fd4ad46bb396723aaffb67e92892a952d97e06a910e6dd27197fa09b"
+    },
+    {
+      "name": "account-health_boundary-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 202,
+      "complete_raw_sha256": "2a99cdd880c14672e03839bbe7ed8fda35e4cdcdd53357bda34dbcc1bdae8188"
+    },
+    {
+      "name": "account-negative_change-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 206,
+      "complete_raw_sha256": "31122c91b5af86f8dd0c7e9ff9388a788d379557e7e286ca55cf4d9b18ea30bf"
+    },
+    {
+      "name": "account-zero_change-320",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 206,
+      "complete_raw_sha256": "cb35049f6f36d51d0fb9099983e29ecaf4b3a52e8eb6f927daae17b4c9fb980b"
+    },
+    {
+      "name": "signed-prefix-unverified",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "supplemental_count": 46,
+      "complete_raw_sha256": "7d582a5a1c80e16dbb3fe200f49aa0d9809907f35fad61ce0d1e1fd74945c139"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+# Security
+
+Experimental research software. Do not use production keys, custody real
+funds, or expose the local engine port or Anvil JSON-RPC to the Internet.
+This is not a trading execution service. Mainnet broadcast is not supported.
+
+The engine runs only built-in policies. A Python import or a subprocess is
+not a security sandbox for untrusted agent code. Container/process sandboxing,
+egress controls, authenticated multi-tenancy and a production job queue remain
+release gates before any hosted service is made available.
+
+Do not post secrets or exploit details in public issues. Use GitHub private
+vulnerability reporting where enabled. If it is not yet enabled, ask the
+maintainers in an issue to enable a private channel without disclosing details.
+RPC URLs can contain secrets: never include them in reports, commands in
+screenshots, logs, pull requests, or issue bodies. The optional fork URL may
+be visible to other processes owned by your OS user; run on a trusted machine.
+
+
+Account-position imports use the same8 MiB/depth32/lossless integer parser and
+fixed four-phase64 KiB view bounds as recorded price observations. Only the
+closed Aave Ethereum account profile is supported; imported plan/config values
+never select executable code, a transport, ABI or callback. Raw account ABI
+requires six uint256 words, basis-point limits at most10000 and the zero-debt
+health sentinel. The recomputed classification gates normalized/delta displays.
+Three recomputable seals bind account/price/trace records and selected internal
+relationships; they do not authenticate providers, proxies, signatures or EVM
+state. Account changes include all prefix effects and are not financial advice,
+profit, signed borrowing/liquidation execution or sole-price causality.
+
+General EVM balance display binds token address/symbol/decimals to scenario
+metadata, rejects duplicate identities and validates canonical uint256-bounded
+initial/final/change and native comparison arithmetic. Missing records remain
+unavailable. Exact BigInt formatting avoids Number rounding. These are internal
+consistency checks on a recomputable report, not execution/provider authentication,
+full EVM receipt validation or valuation. Imported strings remain textContent.
+
+Example links accept one exact name from the fixed six-sample allowlist, with a
+2048-character query bound. Query values never become arbitrary paths or remote
+fetch targets. Generated links retain the current HTTP(S) origin/path, remove
+credentials and unrelated query/fragment state, and include only a public sample
+name and explorer anchor. Local imports are never serialized into links; loading
+and error states remove both the href and visibility. A stale sample response
+cannot restore a link after a newer selection/import. Links identify bundled
+examples, not authenticity, execution, trading performance or valuation.
+
+CLI inspection recipes accept only the same six fixed public sample names. CLI
+and SDK repository URLs, checkout hashes and directory names are literals;
+commands are rendered as textContent and never executed by the website. No local
+filename, report metadata or query/origin string is interpolated. Loading, local
+imports and errors clear both setup and inspection text, with the current
+sample-generation guard preventing stale restoration.
+
+CLI recipe copy controls write only the current verified bundled recipe cache to
+the native Clipboard API after activation; they never read the clipboard or take
+text from imported reports, URLs or mutable codeboxes. One write is pending at a
+time. Report changes invalidate feedback and disable hidden controls, but cannot
+cancel an already requested write of public text. No command is executed; missing
+or denied APIs keep manual selection available.
