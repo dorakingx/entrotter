@@ -2258,3 +2258,25 @@ are unchanged. No new local EVM/RPC/model/browser/performance execution is claim
 Current coordinator CI and independent stage review remain separate. Goalactive
 through officialOctober13 15:59JST, Discordexcluded; submission facts/audio/hosting
 and protected independent-human review remain pending.
+
+## October 4 — shareable bundled examples join the pinned integration
+
+The candidate selects viewer280958c with Enginef53/SDKba4/CLI169. An allowlisted
+URL opens the original Aave v0.1 example automatically; verified example links
+remove unrelated URL state and never serialize local imports. Loading, errors
+and stale responses cannot restore a link. The current component has all4 checks
+successful, with actual browser49/62 on attempt2 after an original native chooser
+timeout of unknown cause; independent complete223ZIP/source review and parent
+rehash pass. Original check/quality timestamps/results are retained in retry API
+metadata, not counted as new execution. Main/Pages remain independently protected.
+
+[Report-link composition](evidence/report-link-integration/README.md) updates the
+viewer pin and two current-golden references in the existing Aave reader. The
+new source against the old golden first fails the strict appSHA assertion; final
+current golden passes with every original five-command whole object unchanged,
+all16 exact four-column rows/source/identities/agent output and22 immutable input
+identities. Original golden/report/workflows/locks/media are retained. This is
+one successful local offline composition, not fresh EVM/RPC/model/browser/timing.
+Current coordinator CI and independent review/publication remain separate gates.
+Goalactive through officialOctober13 15:59JST; submission facts/audio/hosting and
+protected human-main review remain pending, Discordexcluded.

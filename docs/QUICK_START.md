@@ -4,12 +4,15 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The candidate [Aave browser-outcome composition](../evidence/aave-viewer-integration/README.md)
-selects enginef53a66a, SDKba4af51, CLI169b759 and viewer37c43d0. It adds supplied
+The candidate [bundled report-link composition](../evidence/report-link-integration/README.md)
+selects enginef53a66a, SDKba4af51, CLI169b759 and viewer280958c. It adds supplied
 collateral and variable-rate borrowing to the existing bounded replay and exact
 recorded price/account inspection. The action result can be checked and inspected
 offline; reproducing its archived-state execution needs Docker and an archive
 source. Current combined CI and independent human main approval remain separate.
+To open the original action result directly after serving the selected viewer,
+use `http://127.0.0.1:8880/?report=aave-borrow-actions#report-explorer`. The link
+selects a bundled example; a local import is never included in its URL.
 The corrected quality
 setup still reads the SDK pin from its manifest. The [CLI execution update](../evidence/cli-observed-run-integration/README.md) adds the fixed-profile local command with separately verified cancellation and exports. The frozen Docker walkthrough
 below retains its earlier2f6a56e/enginebd5527f source and measurements.
@@ -79,7 +82,7 @@ experiment is separate from the original signed-prefix price/account cases below
 In an existing six-sibling checkout, select the reviewed viewer source:
 
 ```bash
-git -C entrotter.github.io fetch --depth=1 origin 37c43d0cf8be61dfd33253bc2d3401429ca9cd9b
+git -C entrotter.github.io fetch --depth=1 origin 280958c483bd1e42c02f12bce6430fb936973076
 git -C entrotter.github.io checkout --detach FETCH_HEAD
 python3 -m http.server 8880 --bind 127.0.0.1 --directory entrotter.github.io
 ```

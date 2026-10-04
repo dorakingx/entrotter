@@ -107,6 +107,12 @@ all sixteen browser rows beside the original Engine/SDK/CLI outputs. The current
 viewer component has passed its own mandatory CI; combined integration, protected
 human main approval and live Pages remain separate.
 
+The [bundled report-link composition](evidence/report-link-integration/README.md)
+selects the independently reviewed viewer280958c. One URL opens the original
+Aave example; links never serialize local imports and clear during loading/errors.
+The same five-command reader and all original outcomes remain identical. The
+current view golden binds the changed app hash without rewriting earlier evidence.
+
 Terminal users can also inspect the same account record with
 `position-inspect --format text`: all six exact account fields and differences,
 health status, source IDs and unproven reasons appear without manual unit scaling.

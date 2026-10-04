@@ -71,18 +71,24 @@ consumer strategy or the full block's state.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Last independently audited coordinator snapshot before browser-outcome composition (CLI169/viewer422 selected) | [07389e3](https://github.com/entrotter/entrotter/tree/07389e3a96530cdb2f7980f20c1827997c15e1b4) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Last independently audited coordinator before report-link composition (CLI169/viewer37c selected) | [f1621b0](https://github.com/entrotter/entrotter/tree/f1621b0214b02cbda1538809a2e6d93ded11704d) | [#55](https://github.com/entrotter/entrotter/pull/55) |
 | Bounded agent engine, Aave supply/variable borrow and historical price/account observations | [f53a66a](https://github.com/entrotter/engine/tree/f53a66a303e67ca4fbb4322a06b36b036f4db599) | [#35](https://github.com/entrotter/engine/pull/35) |
 | Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI with bounded replay, exact native/token/account/price text and completeness exits | [169b759](https://github.com/entrotter/cli/tree/169b759aff9280ce44fb0d15569c7ae0a4a40889) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, local source selection and exact native/token/Aave account inspection | [37c43d0](https://github.com/entrotter/entrotter.github.io/tree/37c43d0cf8be61dfd33253bc2d3401429ca9cd9b) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
+| Console, exact native/token/Aave inspection and bundled report links | [280958c](https://github.com/entrotter/entrotter.github.io/tree/280958c483bd1e42c02f12bce6430fb936973076) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
-All five mandatory coordinator checks at07389e3 passed on originalattempt1.
+All five mandatory coordinator checks atf1621b0 passed on originalattempt1.
 Earlier452c068 documentation HTTP429 failures and unchanged attempt2 remain
 historical evidence, not the current coordinator run. All six CLI169b checks pass
 on originalattempt1. Both have independent raw-artifact/source review and parent
 rehash; the new selected combination requires its own coordinator CI.
+The selected viewer280958c has all4 mandatory checks successful: original unit,
+quality and docs results plus browser attempt2. The first native file-chooser
+timeout is retained with cause unknown. Full current source/raw review and parent
+rehash bind all13 public blobs and223 original/retry ZIP entries. [Report-link
+composition](../evidence/report-link-integration/README.md) changes only the viewer
+pin and current view golden; the action result and five reader outputs stay exact.
 The [price text composition](../evidence/observed-text-integration/README.md)
 and [account/completeness composition](../evidence/require-complete-integration/README.md)
 retain the exact commands, full outputs and scope. The [Aave action composition](../evidence/aave-action-integration/README.md)
