@@ -1,0 +1,68 @@
+{
+  "reviewed_at_utc": "2026-10-01T15:34:44.858219+00:00",
+  "base": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+  "scope": "Read-only SDK trace source/interfaces/workflow/tests/required docs plus four focused stdlib adversarial probes; no full test or chain execution.",
+  "findings": [
+    {
+      "priority": "P2",
+      "file": "src/entrotter_sdk/trace.py",
+      "line": 160,
+      "title": "Accept the unprotected legacy signatures supported by the engine",
+      "trigger": "Read an engine trace containing a historical legacy transaction with v27/v28.",
+      "evidence": "_signed_metadata only allows37/38, while engine817 signed_transaction permits27/28/37/38. A canonical RLP legacy envelope with v27 is rejected by the SDK helper. Existing legacy fixture only covers protected signatures.",
+      "expected": "Align allowed legacy parity/chain semantics with engine817, retaining all scalar/shape checks."
+    },
+    {
+      "priority": "P3",
+      "file": "src/entrotter_sdk/trace.py",
+      "line": 146,
+      "title": "Bound total storage keys across access-list entries",
+      "trigger": "Canonical type1 RLP access list with8entries each containing33storage keys.",
+      "evidence": "264 total keys are admitted by _signed_metadata, while engine capture supports at most256total keys. Per-entry<=256 does not enforce the aggregate limit.",
+      "expected": "Refuse aggregate access-list storage keys above256 as well as oversized individual lists."
+    },
+    {
+      "priority": "P2",
+      "file": "src/entrotter_sdk/trace.py",
+      "line": 172,
+      "title": "Bind receipt gas to the original signed transaction gas budget",
+      "trigger": "Reseal the actual one-prefix report after changing both original and baseline gasUsed/cumulativeGasUsed to30,000,000.",
+      "evidence": "The original raw typed envelope gas budget is297,348. verify_trace still returnsTrue and baseline_verified remainsTrue because _receipt compares only against the block gas limit; raw gas is decoded and discarded.",
+      "expected": "Return signed gas budget in metadata and require original/executed gasUsed<=that budget."
+    },
+    {
+      "priority": "P2",
+      "file": "src/entrotter_sdk/trace.py",
+      "line": 180,
+      "title": "Refuse reverted receipts retaining logs or contract creation output",
+      "trigger": "Reseal the actual one-prefix report after changing both original and baseline status to0x0 but retaining their8logs.",
+      "evidence": "verify_trace returnsTrue and baseline_verified remainsTrue for internally impossible projected receipts. Existing checks do not tie revert status to empty logs/null contractAddress, or non-null to to null contractAddress.",
+      "expected": "Enforce these known receipt relationships before accepting declared match flags."
+    }
+  ],
+  "sources_sha256": {
+    "src/entrotter_sdk/trace.py": "44f47caec5e7f85a62e46e763d860387c8cba4ab0f7e4ead7b461354936edd1c",
+    "tests/test_trace.py": "23de6764f6087a5bec59704370a3281b78b8f78547bcc70ce0a76cae58bfa2fe",
+    "src/entrotter_sdk/__init__.py": "0b38ae9a28d64e3948a930bdeb343b27b22433218695a73d5b9980dc27cccb16",
+    ".github/workflows/quality.yml": "97d9f5de93c4af41d40c5fba939c86c656a8ddbfe9ad2de62d4fa0953cfe73ae"
+  },
+  "probe_command": "PYTHONPATH=src:../.worktrees/engine-agent-worker/src python3 heredoc; decode fixed public RLP vectors and reseal only in-memory copies of fixed public reports; no signature key, RPC or Anvil involved.",
+  "observations": [
+    "Legacy v27 admitted=False; engine constructor permits v27/v28.",
+    "Access total264 keys admitted=True.",
+    "Receipt30,000,000gas versus raw signed297,348gas admitted=True.",
+    "Revert0x0 retaining8logs admitted=True."
+  ],
+  "otherwise_reviewed": [
+    "Frozen typed rows/receipts/logs and fresh serialized snapshots resist caller mutations.",
+    "Exact plan/source/prefix identities, baseline-derived shared nonce anchors and queued-not_mined counter policy are consistent.",
+    "Exact unique difference field sets tolerate object key ordering.",
+    "Regular-file/nonblocking8MiB loader and duplicate-key refusal remain offline; no trace HTTP path added."
+  ],
+  "limits": [
+    "Canonical metadata probes are synthetic edits of existing public wire data, not newly signed or executed transactions.",
+    "No public/private chain access, upstream writes, model/holdout changes, Docker startup, installed-wheel build or full suite rerun.",
+    "No protected-main GitHub approval; review findings require owner fixes and focused re-review."
+  ],
+  "source_edits_by_reviewer": false
+}

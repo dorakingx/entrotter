@@ -1,0 +1,43 @@
+{
+  "copies": [
+    {
+      "source": ".quality/observed-reader/full-units.log",
+      "public": "units.log",
+      "original_sha256": "9ab116d36d9455672b39591a537d2e51872aafeabc212ae558efbc58d09f995a",
+      "public_sha256": "9ab116d36d9455672b39591a537d2e51872aafeabc212ae558efbc58d09f995a",
+      "normalization": "byte identical"
+    },
+    {
+      "source": ".quality/observed-reader/wheel-isolation.json",
+      "public": "wheel-isolation.json",
+      "original_sha256": "54ac04a2e2979d33f825204cf4c4afe1fb6c2ae845482d80ccde5d1fdad51073",
+      "public_sha256": "54ac04a2e2979d33f825204cf4c4afe1fb6c2ae845482d80ccde5d1fdad51073",
+      "normalization": "byte identical"
+    },
+    {
+      "source": ".quality/bandit.json",
+      "public": "bandit.json",
+      "original_sha256": "4932659dda3fe8cd2b3ad118f85f88e6ef9b30ec24b33256a37d5736bdec694b",
+      "public_sha256": "4932659dda3fe8cd2b3ad118f85f88e6ef9b30ec24b33256a37d5736bdec694b",
+      "normalization": "byte identical"
+    },
+    {
+      "source": ".quality/security-scope.json",
+      "public": "security-scope.json",
+      "original_sha256": "f09eb90ae5df27c7d5eb6d52b0c3e4658161efd322e0aa26b78910d8d7373aed",
+      "public_sha256": "f09eb90ae5df27c7d5eb6d52b0c3e4658161efd322e0aa26b78910d8d7373aed",
+      "normalization": "byte identical"
+    }
+  ],
+  "test_data": {
+    "observed-price32.json": {
+      "source": "engine/evidence/owned-consumer-observations/historical-32/observed-trace.json",
+      "original_and_copy_sha256": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d"
+    },
+    "observed-controls.json": {
+      "source": "entrotter.github.io/tests/data/observed-controls.json",
+      "original_and_copy_sha256": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67"
+    }
+  },
+  "normalization": "Only an actual workspace prefix is replaced, if present."
+}

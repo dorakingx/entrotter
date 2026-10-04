@@ -1,0 +1,17 @@
+{
+  "kind": "synthetic",
+  "provenance": "Generated locally with Anvil/cast v1.8.3 and a randomly generated disposable key. Only public signed inputs retained; private key discarded. No real-chain claim.",
+  "actor": "0xb5781543a7e6a69dcb695d6bbdf38021528f9cb5",
+  "actor_balance_wei": "100000000000000000000",
+  "local_contracts": {
+    "0xabababababababababababababababababababab": "0x60006000fd",
+    "0xcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd": "0x600160005260206000a000"
+  },
+  "raw_transactions": [
+    "0xf86380847735940082c35094efefefefefefefefefefefefefefefefefefefef018025a04b4f879ac2cdffcca57cf422b0c905ba8423faabdd81eaf425e289fb9f38f07da0046beb1ba8262a7b9da6437c6bae2a7fc4bd5bddfe70f79f13c2f1c58b11664f",
+    "0x01f8650101847735940082c35094abababababababababababababababababababab8080c080a0c70cad6467c90978f0de4b4b40a595d9b5a0c80ca485692f615fbc116b053f21a06306000174e2289db2252df8ccad4facf167d1f4248697d82b4d86fcf6d60409",
+    "0x02f86a0102843b9aca00847735940082c35094cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd8080c080a0354c4a5d3c206b558fa380f1018ae27c2c9b9bedc222e88b7c015e8cb3d131e9a02b7862bd4fd524d74f9ba54db2f67a499cd197effb196e8ebccb27124a157c65"
+  ],
+  "parent_timestamp": 1700000012,
+  "target_timestamp": 1700000024
+}

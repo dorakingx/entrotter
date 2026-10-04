@@ -1,0 +1,24 @@
+{
+  "four": {
+    "file": "tests/data/canonical-mainnet-prefix-four.result.json",
+    "source": "../entrotter/evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json",
+    "sha256": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2"
+  },
+  "one": {
+    "file": "tests/data/canonical-mainnet-prefix.result.json",
+    "source": "../.worktrees/engine-agent-worker/evidence/trace-replay/mainnet-prefix.json",
+    "sha256": "c3ece9113161842d37a59bb348dc7c086119ca57b3d9f8bb13e236a3bafda84b"
+  },
+  "synthetic_signed": {
+    "file": "tests/data/signed-local-inputs.json",
+    "source": "../.worktrees/engine-agent-worker/tests/data/canonical-local-inputs.json",
+    "sha256": "19f7fc1c426b2cb1de62e61182ab6a67f829ecad9e398e3eb836ed67a6f137e5"
+  },
+  "wheel": {
+    "sha256": "be1a803b7ec01f4542fdd10c0e3b0b9e51e0469eece07b98dbf19986d748f59a",
+    "modules_byte_equal": true,
+    "installed_isolated": true,
+    "runtime_dependencies": [],
+    "four_receipt_and_nonce_read": true
+  }
+}
