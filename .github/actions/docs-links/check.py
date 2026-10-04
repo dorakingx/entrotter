@@ -8,9 +8,10 @@ import os
 from pathlib import Path
 import subprocess
 import tempfile
+from typing import Any
 
 
-def scan(binary, root, files, allow_test_loopback=False):
+def scan(binary, root, files, allow_test_loopback=False, link_root=None):
     """The loopback exception is used only by local HTTP regression tests."""
     environment = {
         key: value
@@ -39,7 +40,7 @@ def scan(binary, root, files, allow_test_loopback=False):
             "--timeout",
             "15",
             "--root-dir",
-            str(root),
+            str(link_root or root),
             "--format",
             "json",
             "--verbose",
@@ -81,7 +82,36 @@ def main():
     )
     if not files:
         raise SystemExit("No tracked documents: refusing an empty green scan")
-    code, report = scan(binary, root, files)
+    website_files = [
+        name
+        for name in files
+        if name.startswith("website/")
+        and Path(name).suffix.lower() in {".html", ".css"}
+    ]
+    document_files = [name for name in files if name not in website_files]
+    scans = []
+    for names, link_root in [(document_files, root), (website_files, root / "website")]:
+        if names:
+            code, result = scan(binary, root, names, link_root=link_root)
+            scans.append({"exit_code": code, "root": str(link_root), "report": result})
+    code = int(any(item["exit_code"] != 0 for item in scans))
+    report: dict[str, Any] = {}
+    for item in scans:
+        for key, value in item["report"].items():
+            if isinstance(value, int) and not isinstance(value, bool):
+                report[key] = report.get(key, 0) + value
+            elif key.endswith("_map"):
+                combined = report.setdefault(key, {})
+                for filename, entries in value.items():
+                    combined.setdefault(filename, []).extend(entries)
+    report["unique"] = len(
+        {
+            entry["url"]
+            for key in ("success_map", "error_map", "timeout_map", "excluded_map")
+            for entries in report.get(key, {}).values()
+            for entry in entries
+        }
+    )
     failed = code != 0 or report["successful"] == 0
     evidence = {
         "checked_at": datetime.now(timezone.utc).isoformat(),
@@ -101,6 +131,7 @@ def main():
         "passed": not failed,
         "path_redaction": "Local checkout prefix replaced with /workspace/repository",
         "report": report,
+        "scan_groups": scans,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     serialized = json.dumps(evidence, indent=2).replace(

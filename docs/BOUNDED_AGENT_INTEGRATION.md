@@ -8,7 +8,7 @@ selects the quality-checked scenario and viewer branches, at
 `3a78ecca24334ae87119a5a0b64c84ba6dd71de1` and
 `61740312f281f7e911e0eb6e9482a3c372cb1fae` respectively. These are proposed source
 pins pending independent approval, not new merged releases or registry packages.
-[Issue #38](https://github.com/entrotter/entrotter/issues/38) tracks the integration.
+[Issue #38](https://github.com/dorakingx/entrotter/issues/38) tracks the integration.
 
 Previously, the multi-repository bounded CI still selected the pre-agent engine.
 The new check connects the integrated risk/replay engine with the existing default

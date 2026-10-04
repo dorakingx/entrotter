@@ -556,11 +556,11 @@
     "monorepo_deployment": "pending"
   },
   "migration": {
-    "history_integration": "local_unsquashed_source_tree_matches",
-    "backup": "initial_Git_workspace_release_CI_independent_restore_PASS_final_asset_delta_audit_pending",
-    "one_clone_tests": "local_uncommitted_source_764_tests_no_skips_PASS_fresh_committed_clone_pending",
+    "history_integration": "public_unsquashed_candidate_425_remote_preservation_refs_exact_PR56_draft",
+    "backup": "initial_Git_workspace_release_CI_and_committed_candidate_independent_restore_PASS_preTransfer_delta_PASS_deletion_delta_pending",
+    "one_clone_tests": "local_764_tests_no_skips_and_initial_remote_bounded_default_clean_clones_PASS_followup_CI_pending",
     "independent_source_review": "scoped_history_source_and_policy_PASS_remote_CI_and_main_approval_pending",
-    "formal_transfer": "pending",
+    "formal_transfer": "PASS_repository_id_Issue_PR_IDs_refs_and_main_protection_preserved",
     "Org_deletion": "prohibited_until_full_audit"
   }
 }

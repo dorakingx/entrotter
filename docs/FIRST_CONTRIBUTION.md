@@ -7,7 +7,7 @@ not a claim that the tasks have been completed or that contributors have joined.
 
 | Repository | Task | Starting scope |
 | --- | --- | --- |
-| entrotter | [Add a safe, reproducible bug-report walkthrough](https://github.com/entrotter/entrotter/issues/44) | New documentation task |
+| entrotter | [Add a safe, reproducible bug-report walkthrough](https://github.com/dorakingx/entrotter/issues/44) | New documentation task |
 | engine | [Explain success, reverted, rejected and noop EVM outcomes](https://github.com/entrotter/engine/issues/23) | New documentation task |
 | sdk-python | [Add a small end-to-end SDK example](https://github.com/entrotter/sdk-python/issues/1) | Existing example/diagnostic task |
 | cli | [Improve CLI errors and command examples](https://github.com/entrotter/cli/issues/1) | Existing example/diagnostic task |

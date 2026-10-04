@@ -2,7 +2,7 @@
 
 Engine [PR #20](https://github.com/entrotter/engine/pull/20) and standalone CLI
 [PR #9](https://github.com/entrotter/cli/pull/9) address
-[issue #30](https://github.com/entrotter/entrotter/issues/30). Both older writers
+[issue #30](https://github.com/dorakingx/entrotter/issues/30). Both older writers
 could create 129 distinct reports despite the existing 8 MiB per-report cap.
 The proposed writers now share a private, durable ledger across output folders
 and processes. These changes are unmerged and require independent review.

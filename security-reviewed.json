@@ -12,57 +12,57 @@
     {
       "file": ".github/actions/docs-links/check.py",
       "test_id": "B603",
-      "line": 51,
-      "code_sha256": "9b4f4a19ba6132e01d5662177987a2f799de340133969035e09022837970b231",
+      "line": 52,
+      "code_sha256": "602b92095a78a50b008799f91678474c8d4b2ced3eed804a208dafa867797833",
       "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
     },
     {
       "file": ".github/actions/docs-links/check.py",
       "test_id": "B603",
-      "line": 73,
-      "code_sha256": "e69765521c6aed29fa39a7cb00f67f879c4d1f6b802adbe94265c3006531ee2a",
-      "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
-    },
-    {
-      "file": ".github/actions/docs-links/check.py",
-      "test_id": "B607",
-      "line": 76,
-      "code_sha256": "4b88aaf446f07c2e572dadba480a6675a31b55016f48c568a53cbb4f8b7dc8d5",
-      "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
-    },
-    {
-      "file": ".github/actions/docs-links/check.py",
-      "test_id": "B603",
-      "line": 76,
-      "code_sha256": "4b88aaf446f07c2e572dadba480a6675a31b55016f48c568a53cbb4f8b7dc8d5",
+      "line": 74,
+      "code_sha256": "c0a71307c6f482a78d9e1af525e386051e8ef8211707333aadcb1b78523776dc",
       "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
     },
     {
       "file": ".github/actions/docs-links/check.py",
       "test_id": "B607",
-      "line": 88,
-      "code_sha256": "684fedab15a6c2a6b4846faf39cca8756eb968b7eb8e53a9fc577ce449274712",
+      "line": 77,
+      "code_sha256": "e4a4f8fde062c1f74507e64bab29652a8f9faf13510822e5bfd24b341b27a86a",
       "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
     },
     {
       "file": ".github/actions/docs-links/check.py",
       "test_id": "B603",
-      "line": 88,
-      "code_sha256": "684fedab15a6c2a6b4846faf39cca8756eb968b7eb8e53a9fc577ce449274712",
+      "line": 77,
+      "code_sha256": "e4a4f8fde062c1f74507e64bab29652a8f9faf13510822e5bfd24b341b27a86a",
       "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
     },
     {
       "file": ".github/actions/docs-links/check.py",
       "test_id": "B607",
-      "line": 92,
-      "code_sha256": "4c738fc6189f5c5b702ae733b87b68ee54533a750b0c198682d0316d96eb0cb7",
+      "line": 118,
+      "code_sha256": "9e83fec6d58196ddbf07fa8881f0dfaa8034f0c94822ea69fd2ef883681e1967",
       "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
     },
     {
       "file": ".github/actions/docs-links/check.py",
       "test_id": "B603",
-      "line": 92,
-      "code_sha256": "4c738fc6189f5c5b702ae733b87b68ee54533a750b0c198682d0316d96eb0cb7",
+      "line": 118,
+      "code_sha256": "9e83fec6d58196ddbf07fa8881f0dfaa8034f0c94822ea69fd2ef883681e1967",
+      "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B607",
+      "line": 122,
+      "code_sha256": "a585216d57fa39f49aa1e62a253f9e4f7f18cc009599421ba260b20ff3435178",
+      "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B603",
+      "line": 122,
+      "code_sha256": "a585216d57fa39f49aa1e62a253f9e4f7f18cc009599421ba260b20ff3435178",
       "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
     },
     {
@@ -620,7 +620,7 @@
     }
   ],
   "source_sha256": {
-    ".github/actions/docs-links/check.py": "34f7173772099c0ce8fc01fe39693c6f88c25bba27b07444d7cbf74263d8beac",
+    ".github/actions/docs-links/check.py": "d54426e199e30b80d1bfc5cf9e4d9b40ccf5494de74e0a53145f7fb23f0e6169",
     "scripts/benchmark_agent.py": "2780c9eb9b7d861e0f31f976534011e9514e9d9a4e0aa4d60590e15acdff3460",
     "scripts/benchmark_direct.py": "2567dc57563e9c93b2d336316dcfe914bd213139ab33fda8e6bd5c9756c0666d",
     "scripts/bounded_cli.py": "df96abd74fb22e3d9b16f60d8b1e93f3cc39129a8cb11a63b61cdfbcaf4cd1c2",

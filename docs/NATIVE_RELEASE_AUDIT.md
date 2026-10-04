@@ -1,6 +1,6 @@
 # Native Anvil provenance and Cargo advisory coverage
 
-[Tracking issue](https://github.com/entrotter/entrotter/issues/28).
+[Tracking issue](https://github.com/dorakingx/entrotter/issues/28).
 [Engine implementation](https://github.com/entrotter/engine/pull/19).
 The existing image audit covers detected OS/interpreter packages but does not
 identify Anvil's native dependency inventory. Foundry v1.8.3 publishes a signed

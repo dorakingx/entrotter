@@ -1,18 +1,36 @@
 # Current migration checkpoint — October 4, 2026
 
-The active candidate is the single public MIT monorepo dorakingx/entrotter, with
-engine/, sdk-python/, cli/, scenarios/ and website/. Its formal transfer and
-public branch/CI/main integration are pending. The new Vercel initial reviewed
-static site is live at https://entrotter.vercel.app/. This foundation is on the local review branch; it is not the deployed site. See MIGRATION_STATUS.md.
+Formal Transfer completed: the public MIT repository is now
+https://github.com/dorakingx/entrotter, preserving coordinator repository ID
+1377315140, existing Issue/PR identities, Git refs and administrator-enforced
+main protection. All423 archival refs and two migration/work branches were
+published and read back exactly. [Migration PR56](https://github.com/dorakingx/entrotter/pull/56)
+remains a draft requiring remote CI and one independent GitHub approval; main
+5401d56 is unchanged. The proposed layout is engine/, sdk-python/, cli/,
+scenarios/ and website/.
 
-All659 initial inventoried CI archives were backed up and independently
-reconstructed exactly, with CRC checks; final remote delta remains pending. Independent history
-preservation review passed for the six selected repositories. Fresh scoped tests
-passed (Engine390, SDK55, CLI107, scenarios23, root39, website Python12/JS138),
-including skip/native-model guard regressions. Final aggregate, source quality
-and scoped independent source/policy reviews passed. Fresh committed-clone
-demo, current browser/audits, remote CI and independent main approval remain pending. Tokyo disposition and the old Org deletion audit
-remain open. Historical evidence below retains its original source/version scope.
+The initial reviewed Vercel viewer remains live at https://entrotter.vercel.app/.
+The monorepo candidate is not its deployed source; automatic Git integration
+and protected-main publication remain pending. All659 initial CI archives,
+seven original Git repositories, media and the committed candidate were backed
+up outside the Org and actually restored. Backup/source preservation review
+passed; storage remains on the same physical Mac disk.
+
+Foundation2003 passed764 local tests without skips, types/security and scoped
+independent reviews. Current Chromium passed52 checks/66 axe scans, with no
+browser errors; Node/Python audits reported no known vulnerabilities. Initial
+remote CI passed component suites, quality, host bounds and bounded-default
+clean-clone/recorded-agent reproduction; integration and docs-links exposed
+missing output-directory setup and migrated link/root/fragment errors. This
+follow-up fixes those causes, retains strict checking and adds a real Lychee
+regression for separate repository and website roots. Full local link scan
+passed170 tracked documents (1,213 links, zero errors);7 link regressions passed.
+Remote CI for the follow-up remains pending. Local clone attempts on the Mac
+hit disk exhaustion; no local clean-clone success is claimed.
+
+Tokyo disposition, external ETHGlobal continuity and the final Org deletion
+and submission gates remain open. Goal active. Historical evidence below
+retains its original source/version scope. See MIGRATION_STATUS.md.
 
 ## Historical coordination checkpoints
 

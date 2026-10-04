@@ -3,7 +3,7 @@
 [Engine PR #16](https://github.com/entrotter/engine/pull/16) and
 [CLI PR #8](https://github.com/entrotter/cli/pull/8) change the proposed default from
 native execution to the existing Docker worker. They are unmerged and require
-independent review. [Issue #22](https://github.com/entrotter/entrotter/issues/22)
+independent review. [Issue #22](https://github.com/dorakingx/entrotter/issues/22)
 tracks this migration. Exact tested revisions are in
 [bounded-worker-pins.json](../bounded-worker-pins.json); frozen benchmark pins
 are unchanged. The separate agent branch is not incorporated into this change.

@@ -34,13 +34,31 @@ through the verified official deadline.
   all 29 public-file bytes/MIME types, Aave display, sample switching and CLI
   recipes were checked. Automatic Git integration is pending migration.
 
+## Formal Transfer and candidate publication
+
+Formal Transfer retained coordinator repository ID1377315140, all existing Git
+refs and Issue/PR IDs. The new owner is dorakingx, visibility public, license MIT.
+All425 candidate/archive/work refs were read back exactly; protected main5401d56
+is unchanged. Required checks and one independent approval remain enforced.
+The migration is reviewed in [draft PR56](https://github.com/dorakingx/entrotter/pull/56).
+
+Initial remote CI passed the bounded-default clean-clone and recorded replay
+checks, alongside component suites, quality and host bounds. This follow-up
+fixes the missing integration output directory, moved Issue URLs, two preserved
+fragments and website root-relative link scanning. Strict link checks remain
+active with a real two-root regression. Follow-up remote CI remains pending.
+Current local Chromium52 checks/66 scans and zero-known-vulnerability dependency
+audits passed. Local fresh-clone reproduction hit Mac disk exhaustion; it is
+not reported as a success. No new model call was made.
+
 ## Still required
 
 All659 CI archives from the initial authenticated inventory now have exact-byte
 backup and independent reconstruction/CRC verification, including actual restored
 copies of84 archives found in the workspace snapshot. All seven public wiki
 routes redirect to the repository, corroborating authenticated missing wiki Git
-refs; both Pages environment policies/names are exported. Final remote delta,
+refs; both Pages environment policies/names are exported. Pre-Transfer delta
+found no new source refs or CI archives and captured metadata changes. Final deletion delta,
 external app disposition and the complete backup/deletion audit remain pending.
 The extra Tokyo project's disposition is pending. Do not delete the Org.
 
@@ -53,20 +71,20 @@ Node138 (764 tests, no skips), lint/format/types and source-bound security gates
 All88 root and159 website findings remain visible with individual rationales;
 the three original frozen-provider type diagnostics remain unchanged. Independent
 history, foundation-source and policy reviews passed for their explicit scopes.
-A fresh committed-clone/demo, current browser/audit results and remote mandatory
-CI are still separate gates; local passing tests are not their substitutes.
+Remote mandatory CI for this follow-up and independent main approval are
+still separate gates; initial CI and local checks are not their substitutes.
 
-Formal coordinator transfer has not occurred. Destination ownership, current
-refs/issues/PR delta and collisions must be freshly verified before transfer.
+ETHGlobal was installed on the old Org. Its personal access is not proven:
+the current GitHub OAuth token cannot enumerate user App installations.
+Do not claim automatic continuity or delete the old Org on that basis.
 Root and component main branches remain unmerged/protected. Component PR metadata
 is not automatically transferred or approved by a history merge.
 
-Next: retain a reviewed committed candidate and backup; independently audit the
-final asset delta; run fresh one-clone demo/real Anvil/browser checks; create a reviewed migration PR;
-verify formal transfer by repository ID; link the existing new Vercel project;
-resolve old Org runtime/app dependencies and capture final deltas before the
-separate deletion audit. Update the existing submission only within the official
-portal and after all required facts/materials/quality gates are verified.
+Next: finish follow-up CI and independent approval, then link the existing new
+Vercel project and verify candidate publication; resolve old Org runtime/app
+and extra-asset disposition and capture final deltas before deletion audit.
+Update the existing submission only within the official portal and after all
+required facts/materials/quality gates are verified.
 
 Private inventories, auth/session data, producer logs and owner contacts are
 retained outside public Git. No credentials are exported or committed.

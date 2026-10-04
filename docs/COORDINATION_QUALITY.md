@@ -1,6 +1,6 @@
 # Coordination tooling quality
 
-[Issue #32](https://github.com/entrotter/entrotter/issues/32) tracks lint, type,
+[Issue #32](https://github.com/dorakingx/entrotter/issues/32) tracks lint, type,
 security and dependency gates for all executable Python coordination tools and
 the shared documentation action. Historical evidence, frozen engine/scenario
 inputs and the exact pre-evaluation Codex adapter remain unchanged.

@@ -1,7 +1,7 @@
 # Website quality and numeric report input validation
 
 Website PR [#11](https://github.com/entrotter/entrotter.github.io/pull/11), tracking
-issue [#36](https://github.com/entrotter/entrotter/issues/36), closes a numeric display
+issue [#36](https://github.com/dorakingx/entrotter/issues/36), closes a numeric display
 coercion bug and adds complete source quality gates. A correctly hashed report
 could contain an empty/whitespace metric and display it as zero, or use `0x10`
 and display it as 16. Integrity alone does not establish valid report semantics.

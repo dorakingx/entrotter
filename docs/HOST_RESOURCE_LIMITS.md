@@ -2,7 +2,7 @@
 
 The proposed changes in [engine #12](https://github.com/entrotter/engine/pull/12)
 and [CLI #5](https://github.com/entrotter/cli/pull/5) bound saved reports and local
-API connections. They are tracked by [coordination #12](https://github.com/entrotter/entrotter/issues/12)
+API connections. They are tracked by [coordination #12](https://github.com/dorakingx/entrotter/issues/12)
 and require independent review before merge. They preserve v0.1 JSON and the
 frozen agent benchmark engine checkout.
 

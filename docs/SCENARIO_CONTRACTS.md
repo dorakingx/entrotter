@@ -5,7 +5,7 @@ raised `Unresolvable: agent-recording.v0.1.schema.json` instead of validating.
 Scenarios PR [#8](https://github.com/entrotter/scenarios/pull/8) fixes this with a
 small standalone validator and a fully local registry of the three existing
 v0.1 schemas. The failure is retained in `evidence/scenario-contracts/before.log`.
-Issue [#34](https://github.com/entrotter/entrotter/issues/34) tracks this slice.
+Issue [#34](https://github.com/dorakingx/entrotter/issues/34) tracks this slice.
 
 The helper follows jsonschema's documented [in-memory registry approach](https://python-jsonschema.readthedocs.io/en/stable/referencing/).
 Schema URIs identify bundled resources; no HTTP/file retriever is configured.

@@ -1,6 +1,6 @@
 # Worker image provenance and package advisory checks
 
-[Tracking issue](https://github.com/entrotter/entrotter/issues/26).
+[Tracking issue](https://github.com/dorakingx/entrotter/issues/26).
 The worker image now uses a digest-pinned public Chainguard Python 3.14 base.
 The engine verifies its exact signing identity with checksum-pinned Cosign and
 scans the actual locally built image ID using checksum-pinned Trivy. All detected

@@ -3,7 +3,7 @@
 Website [PR #10](https://github.com/entrotter/entrotter.github.io/pull/10), commit
 `d7785e201a4de50b72623a1e7522762738abab54`, fixes keyboard focus and narrow-screen
 report access. It is stacked on the documentation-link PR and remains unmerged.
-The [tracking issue](https://github.com/entrotter/entrotter/issues/20) and
+The [tracking issue](https://github.com/dorakingx/entrotter/issues/20) and
 [complete evidence summary](../evidence/website-accessibility/summary.json)
 distinguish proposed behavior from the deployed site.
 

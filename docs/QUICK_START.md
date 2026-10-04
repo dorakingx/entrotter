@@ -92,6 +92,8 @@ Do not put credentials in a report, shell history, screenshot or public issue.
 <a id="optional-original-transaction-prefix-replay"></a>
 <a id="replay-historical-prices-through-the-bounded-worker"></a>
 <a id="compare-historical-aave-account-impact"></a>
+<a id="inspect-the-historical-price-result-locally"></a>
+<a id="inspect-the-supported-historical-price-result-offline"></a>
 
 ## Original prefix, price and account records
 

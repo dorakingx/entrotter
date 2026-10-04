@@ -5,7 +5,7 @@
     "repository": "entrotter",
     "visibility": "public",
     "license": "MIT",
-    "formal_transfer": "pending",
+    "formal_transfer": "PASS_same_repository_id_existing_refs_Issue_PR_IDs_and_main_protection",
     "expected_coordinator_repository_id": 1377315140
   },
   "root_source": {
@@ -2643,7 +2643,8 @@
     "full_asset_and_deletion_audit": "pending",
     "CI_archives": 659,
     "CI_original_zip_bytes": 1582420349,
-    "CI_restore_proof_sha256": "2de9890b2f68b8a5427a4875f44cd13503d881d5114e7d9c19efcdc2371a4b65"
+    "CI_restore_proof_sha256": "2de9890b2f68b8a5427a4875f44cd13503d881d5114e7d9c19efcdc2371a4b65",
+    "pre_transfer_delta": "PASS_no_new_source_refs_or_CI_archives_metadata_changes_saved"
   },
   "hosting": {
     "provider": "Vercel",
@@ -2654,7 +2655,7 @@
     "monorepo_Git_integration": "pending"
   },
   "metadata_migration": {
-    "coordinator_issues_and_PRs": "formal transfer pending; preserve original IDs",
+    "coordinator_issues_and_PRs": "PASS_original_IDs_preserved_by_formal_Transfer",
     "component_issues_PR_reviews": "authenticated private export preserved; provenance and unfinished-work mapping pending",
     "stars": "not merged or fabricated"
   },
@@ -2676,8 +2677,16 @@
       "coordination": 88,
       "website": 159
     },
-    "fresh_committed_clone": "pending",
-    "remote_CI": "pending",
+    "fresh_committed_clone": "initial_remote_bounded_default_PASS_local_Mac_disk_failure_explicit",
+    "remote_CI": "initial_integration_and_docs_links_failure_fixed_followup_pending",
     "main_approval": "pending"
+  },
+  "remote_preservation_refs": {
+    "count": 425,
+    "archival": 423,
+    "candidate_commit": "2003cae5c14774e484834fe3bda911f3bc9cc42f",
+    "unfinished_commit": "79340eae730d4bbdca1bd88597ffda1362953c8a",
+    "readback": "PASS_all_refs_exact_main_unchanged",
+    "migration_PR": "https://github.com/dorakingx/entrotter/pull/56"
   }
 }

@@ -99,6 +99,30 @@ class LinkChecks(unittest.TestCase):
             thread.join(timeout=5)
             self.assertFalse(thread.is_alive())
 
+    def test_monorepo_website_and_document_roots(self):
+        subprocess.run(["git", "init", "--quiet"], cwd=self.root, check=True)
+        (self.root / "README.md").write_text("[root](/target.md#existing-heading)")
+        site = self.root / "website"
+        site.mkdir()
+        (site / "404.html").write_text('<link rel="stylesheet" href="/style.css">')
+        (site / "style.css").write_text("body { color: black; }")
+        subprocess.run(["git", "add", "README.md", "target.md", "website"],
+                       cwd=self.root, check=True)
+        subprocess.run(["git", "-c", "user.name=Checker test", "-c",
+                        "user.email=checker@example.invalid", "commit", "--quiet",
+                        "-m", "Local monorepo link fixture"], cwd=self.root, check=True)
+        output = self.root / "report.json"
+        command = [sys.executable, str(Path(__file__).with_name("check.py")),
+                   "--binary", str(BINARY), "--repo", str(self.root),
+                   "--output", str(output)]
+        result = subprocess.run(command, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(len(json.loads(output.read_text())["scan_groups"]), 2)
+        (site / "404.html").write_text('<link rel="stylesheet" href="/missing.css">')
+        result = subprocess.run(command, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 1, result.stderr)
+        self.assertFalse(json.loads(output.read_text())["passed"])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

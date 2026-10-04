@@ -30,6 +30,7 @@ jobs:
           python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-contracts.txt
       - name: Build the source-bound current worker
         run: |
+          mkdir -p .quality
           python engine/scripts/build_worker.py --output .quality/integration-image.json
           python - <<'PYIMAGE'
           import json, os

@@ -1,6 +1,6 @@
 # One default worker per Docker daemon
 
-[Tracking issue](https://github.com/entrotter/entrotter/issues/24).
+[Tracking issue](https://github.com/dorakingx/entrotter/issues/24).
 The proposed engine change builds on [bounded defaults](BOUNDED_DEFAULT.md).
 It preserves the v0.1 scenario/result contract and is subject to independent
 review. Frozen historical engine/scenario inputs remain unchanged.

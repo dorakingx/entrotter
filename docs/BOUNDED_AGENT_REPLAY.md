@@ -7,7 +7,7 @@ agent contract into the hardened worker at
 causal observations/decisions from frozen agent
 `bb8b3e8d32c7cbd49629d337758f30bfdf805045`; that checkout, the scenarios,
 provider source, prompt, benchmark inputs and original reports stay unchanged.
-[Tracking issue #38](https://github.com/entrotter/entrotter/issues/38) covers this
+[Tracking issue #38](https://github.com/dorakingx/entrotter/issues/38) covers this
 integration. The code and stacked prerequisites require independent approval.
 
 ## What is now bounded
