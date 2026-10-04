@@ -1237,9 +1237,9 @@ jobs:
       - name: Verify export failures still reject under Python optimization
         run: python -O scripts/check_export_budget.py --output evidence/monorepo-verification/integration-ci/optimized-export-contract.json
       - name: Measure a clean public checkout with the bounded default
-        run: python scripts/reproduce_clean.py --bounded --output evidence/monorepo-verification/integration-ci/clean-fixture.json
+        run: python scripts/reproduce_clean.py --public --bounded --output evidence/monorepo-verification/integration-ci/clean-fixture.json
       - name: Measure clean public bounded agent replay and standalone CLI verification
-        run: python scripts/reproduce_clean.py --bounded-agent --output evidence/monorepo-verification/integration-ci/clean-agent.json
+        run: python scripts/reproduce_clean.py --public --bounded-agent --output evidence/monorepo-verification/integration-ci/clean-agent.json
       - name: Verify no owned worker remains
         if: always()
         run: |

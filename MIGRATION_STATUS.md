@@ -112,3 +112,17 @@ editable source scope, and final quality checks pass with the stage present.
 [New evidence](website/evidence/local-cli-input/README.md) is separate from frozen
 reports, original view goldens and media. Independent review, remote CI, main
 approval and production integration remain separate gates for this candidate.
+
+## Direct public-clone reproduction gate
+
+The Mac's actual HTTPS clone verified all2480 tracked file blobs,427 preserved
+refs and three fresh-venv package origins. Its subsequent worker build failed
+with ENOSPC; no executed report or under-five-minute result is claimed. The
+failure and partial independent review remain private original evidence.
+The clean reproduction tool now offers `--public`, and bounded-default CI uses
+it for both fixture and recorded local-agent replay. It must fetch the exact
+reviewed GitHub revision, create its own venv, build the same bounded worker and
+verify full original JSON-object equality without local source cloning or old Org
+fetches.
+Current remote execution/review remain pending; neither source changes nor a
+public clone alone prove full reproduction, main approval or Vercel deployment.

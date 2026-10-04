@@ -127,10 +127,19 @@ python3 scripts/verify.py --require-anvil
 ```
 
 Fresh results go to evidence/monorepo-verification; old evidence is not overwritten.
-A clean-clone reproduction uses scripts/reproduce_clean.py --bounded or
---bounded-agent. It clones only the current local monorepo into a temporary
-directory, builds the worker and verifies exact output; it is distinct from a
-fresh public GitHub clone, which remains a publication gate.
+A clean-clone reproduction uses `scripts/reproduce_clean.py --bounded` or
+`--bounded-agent`. Add `--public` to clone the personal monorepo over HTTPS and
+fetch/check out the exact current revision, including a GitHub PR merge commit.
+The public mode never copies local source or uses a sibling repository. It
+ignores inherited Git config, helpers, headers and cookie settings; it does not
+claim anonymity for an operator's separate netrc or proxy configuration. Both
+modes build the source-bound worker in a fresh no-pip virtual environment and
+verify exact output. CI requires the public mode for both fixture and recorded
+agent replay. Docker/VM setup is a prerequisite and build caches may be warm.
+The current revision must already be reachable on GitHub; a local unpublished
+commit fails instead of silently falling back to a local clone. Enough disk
+space for the clone, Foundry archive, extracted executable and image preparation
+is required. A local capacity failure is not a passing reproduction result.
 
 ## Preserved native model experiments
 

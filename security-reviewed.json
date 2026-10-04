@@ -488,93 +488,121 @@
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B607",
-      "line": 49,
-      "code_sha256": "8ec909639d1c5a1083c083e85b89f4e7f5f2ff814ae76f7edc80d2cb0fefb40a",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+      "line": 64,
+      "code_sha256": "95fc3418ef038f84bf3b674bb9edc66661e488e653ad5d7bacd56d1c5c5c954a",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 49,
-      "code_sha256": "8ec909639d1c5a1083c083e85b89f4e7f5f2ff814ae76f7edc80d2cb0fefb40a",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
-    },
-    {
-      "file": "scripts/reproduce_clean.py",
-      "test_id": "B607",
-      "line": 52,
-      "code_sha256": "a58155a1c9d27b04cdfebbd226851f5c5985fb9fe5e06bd3226e5aeeec91a136",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
-    },
-    {
-      "file": "scripts/reproduce_clean.py",
-      "test_id": "B603",
-      "line": 52,
-      "code_sha256": "a58155a1c9d27b04cdfebbd226851f5c5985fb9fe5e06bd3226e5aeeec91a136",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
-    },
-    {
-      "file": "scripts/reproduce_clean.py",
-      "test_id": "B607",
-      "line": 55,
-      "code_sha256": "cadfa91b4a227426881e1be09ad30dbf0355377a73600185a52f8b6b938d5382",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
-    },
-    {
-      "file": "scripts/reproduce_clean.py",
-      "test_id": "B603",
-      "line": 55,
-      "code_sha256": "cadfa91b4a227426881e1be09ad30dbf0355377a73600185a52f8b6b938d5382",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+      "line": 64,
+      "code_sha256": "95fc3418ef038f84bf3b674bb9edc66661e488e653ad5d7bacd56d1c5c5c954a",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B607",
       "line": 67,
-      "code_sha256": "ac5c6db37be8afab5a4cf84e04b3483074fd96f57378a984019bcb8b297a4ac5",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+      "code_sha256": "ba4521d5c001a3760d965fa0707c747bf721f2df1a5a8442361a04583b1deec5",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
       "line": 67,
-      "code_sha256": "ac5c6db37be8afab5a4cf84e04b3483074fd96f57378a984019bcb8b297a4ac5",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+      "code_sha256": "ba4521d5c001a3760d965fa0707c747bf721f2df1a5a8442361a04583b1deec5",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B607",
-      "line": 81,
-      "code_sha256": "ef0f8fb79eaecbfe9d25e45acd9a0894a8bb9cca606019be8da1d83cefc3b964",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+      "line": 72,
+      "code_sha256": "0383fd25aaf945edbff15eb3d6a02bff9acf50456170cdfba57d78f889265a95",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 81,
-      "code_sha256": "ef0f8fb79eaecbfe9d25e45acd9a0894a8bb9cca606019be8da1d83cefc3b964",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+      "line": 72,
+      "code_sha256": "0383fd25aaf945edbff15eb3d6a02bff9acf50456170cdfba57d78f889265a95",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 87,
-      "code_sha256": "c4e632de9829fae678460d55365a77ab9320a6c410adf709c448f06220e199af",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+      "line": 116,
+      "code_sha256": "a6ccbfb8ee3025e55a8b20d1d2e514d62063c9a1f36e1ec53715544656563c20",
+      "reason": "Trusted developer tooling performs one fixed personal-public HTTPS clone, fetches only a validated40-hex current revision, and detaches that checkout. Explicit argv disables inherited credential/config/header/cookie settings and hooks. No shell, arbitrary remote, report-selected executable, local-source fallback or Org mutation is used; developer Git/PATH and selected source are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B607",
+      "line": 118,
+      "code_sha256": "c502e8fa289fdc01025d4c8b578cbf32132ce13d41885b28fbd767fd5da19891",
+      "reason": "Trusted developer tooling performs one fixed personal-public HTTPS clone, fetches only a validated40-hex current revision, and detaches that checkout. Explicit argv disables inherited credential/config/header/cookie settings and hooks. No shell, arbitrary remote, report-selected executable, local-source fallback or Org mutation is used; developer Git/PATH and selected source are trusted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 107,
-      "code_sha256": "d4b094d7666c1289528ac7f1c7fae9891197f0e2413efffc1101d9f1d296cc79",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+      "line": 118,
+      "code_sha256": "c502e8fa289fdc01025d4c8b578cbf32132ce13d41885b28fbd767fd5da19891",
+      "reason": "Trusted developer tooling performs one fixed personal-public HTTPS clone, fetches only a validated40-hex current revision, and detaches that checkout. Explicit argv disables inherited credential/config/header/cookie settings and hooks. No shell, arbitrary remote, report-selected executable, local-source fallback or Org mutation is used; developer Git/PATH and selected source are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B607",
+      "line": 129,
+      "code_sha256": "8519ff780cdd0f23b8519b494f7fef668a9696a2dedf212fd9678abb787c7965",
+      "reason": "Fixed Git argv verify the fresh checkout origin/revision or create the existing isolated local-copy mode. Paths belong to its own TemporaryDirectory and current trusted source. Public metadata reads use the stripped child Git configuration; no report chooses a command, remote or shell. Developer Git/PATH are trusted."
     },
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 154,
-      "code_sha256": "e0859602996e06559c7acf0b67064e12c6686a814815ff683ba6d55ae8c833e9",
-      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+      "line": 129,
+      "code_sha256": "8519ff780cdd0f23b8519b494f7fef668a9696a2dedf212fd9678abb787c7965",
+      "reason": "Fixed Git argv verify the fresh checkout origin/revision or create the existing isolated local-copy mode. Paths belong to its own TemporaryDirectory and current trusted source. Public metadata reads use the stripped child Git configuration; no report chooses a command, remote or shell. Developer Git/PATH are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B607",
+      "line": 143,
+      "code_sha256": "15ec2de2e757e3e04df77fa82c36879aad70f81893a2156698337687f7db6b4f",
+      "reason": "Fixed Git argv verify the fresh checkout origin/revision or create the existing isolated local-copy mode. Paths belong to its own TemporaryDirectory and current trusted source. Public metadata reads use the stripped child Git configuration; no report chooses a command, remote or shell. Developer Git/PATH are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 143,
+      "code_sha256": "15ec2de2e757e3e04df77fa82c36879aad70f81893a2156698337687f7db6b4f",
+      "reason": "Fixed Git argv verify the fresh checkout origin/revision or create the existing isolated local-copy mode. Paths belong to its own TemporaryDirectory and current trusted source. Public metadata reads use the stripped child Git configuration; no report chooses a command, remote or shell. Developer Git/PATH are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 152,
+      "code_sha256": "7edecd1f987ca4cd084c58558e0d9b951e22f45d4663132df9782c1a73095b82",
+      "reason": "Fixed argv create a no-pip venv and import the three declared packages using its Python and clone-only PYTHONPATH. The source literal prints package file origins; outside-clone origins and system site packages fail before build/execution. No report selects Python code or an executable; the operator explicitly trusts the selected monorepo source."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 163,
+      "code_sha256": "1df9a2ea21a4431dfc781d7e63ba974a8587bbe2ac59f12e65bfb326b0e65619",
+      "reason": "Fixed argv create a no-pip venv and import the three declared packages using its Python and clone-only PYTHONPATH. The source literal prints package file origins; outside-clone origins and system site packages fail before build/execution. No report selects Python code or an executable; the operator explicitly trusts the selected monorepo source."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 197,
+      "code_sha256": "e73ab27a29a303c0ea32dd1e3288c5ee76a7950807926dcddfbf03265c1de39b",
+      "reason": "Fixed argv invoke the fresh clone worker builder and fixed manifest output. An optional operator archive is an ordinary argv path and the builder still enforces its pinned digest, bounded preparation and Docker default. No shell or report-selected command is used; the selected source and developer environment are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 244,
+      "code_sha256": "bdd1bc6cb788dce01b172f15c6e739f42295d1ed90f7b9d89a9dd8df539ced40",
+      "reason": "Commands are fixed CLI run/replay/verify/inspect argv using the fresh clone Python/source and fixed scenario/record filenames. Recordings come from the clone, not local external source. Only the existing source-bound bounded worker executes local scenarios; no report value selects an executable/shell, model generation or upstream broadcast."
     },
     {
       "file": "scripts/verify.py",
@@ -639,7 +667,7 @@
     "scripts/export_reports.py": "70a64f668cb602f63d7db73210d78464d9f82d0cdc1f470fb6cf45f56cce8c6e",
     "scripts/publish.py": "ca71114c3a8e1ad1457e4503164cd5c79e75c649139020d5517f477eb3a24fb3",
     "scripts/quality_scope.py": "f39cbd50586f57a73973e28e1c901148ebb9cb779c7ceda845d86289d102fb11",
-    "scripts/reproduce_clean.py": "c9c133f979cb8a67aa833d976981b2ed764a2890d35442076911e31938d65c12",
+    "scripts/reproduce_clean.py": "f1ba809050f056e3798dbfb973b25e3a48cb584992408a5afc6bb8a4cd4805b6",
     "scripts/verification_log.py": "4f882ab4dcaf32863cb080b76bf0b9f35fc993359e1f2054649f1d1f2ddf12b4",
     "scripts/verify.py": "40b4749e8067a1d0242fd3ecf9c19703f8a22dfd0e31801bbb572faa3498027d"
   }

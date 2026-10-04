@@ -41,45 +41,110 @@ parser.add_argument(
 parser.add_argument(
     "--output", type=Path, help="Write verification evidence to this file"
 )
+parser.add_argument(
+    "--public",
+    action="store_true",
+    help="Clone the personal public monorepo over HTTPS at the exact current revision",
+)
 args = parser.parse_args()
+git_env = dict(os.environ)
+if args.public:
+    # Scoped child configuration; do not modify account/global settings.
+    git_env = {k: v for k, v in git_env.items() if not k.startswith("GIT_")}
+    git_env.update(
+        GIT_CONFIG_NOSYSTEM="1",
+        GIT_CONFIG_GLOBAL="/dev/null",
+        GIT_TERMINAL_PROMPT="0",
+        GIT_ASKPASS="/usr/bin/false",
+    )
 # Every execution mode uses the current bounded default. The legacy --bounded
 # spellings remain aliases; no native fallback or old-Org download is introduced.
 bounded = True
 recorded = args.agent or args.bounded_agent
 revision = subprocess.check_output(
-    ["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True, timeout=10
+    ["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True, timeout=10, env=git_env
 ).strip()
-if subprocess.check_output(["git", "-C", str(ROOT), "diff", "HEAD", "--"], timeout=10):
+if subprocess.check_output(
+    ["git", "-C", str(ROOT), "diff", "HEAD", "--"], timeout=10, env=git_env
+):
     raise ValueError("Commit the reviewed source before measuring a clean clone")
 pins = {
     name: subprocess.check_output(
         ["git", "-C", str(ROOT), "rev-parse", f"HEAD:{name}"],
         text=True,
         timeout=10,
+        env=git_env,
     ).strip()
     for name in ["engine", "sdk-python", "cli", "scenarios", "website"]
 }
 started = time.perf_counter()
 with tempfile.TemporaryDirectory(prefix="entrotter-reproduce-") as folder:
     work = Path(folder)
-    # Clone only the current local repository; no sibling fetches or remote code.
-    # No shared object store: this check reads its own copied Git objects.
-    subprocess.run(
-        [
+    public_url = "https://github.com/dorakingx/entrotter.git"
+    if args.public:
+        if len(revision) != 40 or any(c not in "0123456789abcdef" for c in revision):
+            raise ValueError("Public reproduction requires an exact Git commit")
+        # Ignore inherited Git configuration/credentials, including checkout's
+        # headers. These are child-process settings, not account/global changes.
+        git = [
             "git",
-            "clone",
-            "--quiet",
-            "--no-hardlinks",
-            "--single-branch",
-            str(ROOT),
-            str(work),
-        ],
-        check=True,
-        timeout=120,
-    )
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.extraHeader=",
+            "-c",
+            "http.cookieFile=",
+            "-c",
+            "http.saveCookies=false",
+            "-c",
+            "core.hooksPath=/dev/null",
+        ]
+        for command in [
+            [*git, "clone", "--quiet", "--no-checkout", public_url, str(work)],
+            [
+                *git,
+                "-C",
+                str(work),
+                "fetch",
+                "--quiet",
+                "--no-tags",
+                "origin",
+                revision,
+            ],
+            [*git, "-C", str(work), "checkout", "--quiet", "--detach", revision],
+        ]:
+            subprocess.run(command, env=git_env, check=True, timeout=120)
+        if (
+            subprocess.check_output(
+                ["git", "-C", str(work), "remote", "get-url", "origin"],
+                text=True,
+                timeout=10,
+                env=git_env,
+            ).strip()
+            != public_url
+        ):
+            raise ValueError("Public clone origin changed")
+    else:
+        # Local regression mode copies its own objects, without sibling clones.
+        subprocess.run(
+            [
+                "git",
+                "clone",
+                "--quiet",
+                "--no-hardlinks",
+                "--single-branch",
+                str(ROOT),
+                str(work),
+            ],
+            check=True,
+            timeout=120,
+        )
     if (
         subprocess.check_output(
-            ["git", "-C", str(work), "rev-parse", "HEAD"], text=True, timeout=10
+            ["git", "-C", str(work), "rev-parse", "HEAD"],
+            text=True,
+            timeout=10,
+            env=git_env,
         ).strip()
         != revision
     ):
@@ -94,6 +159,31 @@ with tempfile.TemporaryDirectory(prefix="entrotter-reproduce-") as folder:
     env["PYTHONPATH"] = os.pathsep.join(
         str(work / name / "src") for name in ["engine", "sdk-python", "cli"]
     )
+    origins = json.loads(
+        subprocess.check_output(
+            [
+                python,
+                "-c",
+                "import json, entrotter_cli, entrotter_sdk, entrotter_engine; "
+                "print(json.dumps({m.__name__: m.__file__ for m in "
+                "[entrotter_cli, entrotter_sdk, entrotter_engine]}))",
+            ],
+            cwd=work,
+            env=env,
+            text=True,
+            timeout=10,
+        )
+    )
+    module_origins = {}
+    for name, path in origins.items():
+        if not Path(path).is_relative_to(work):
+            raise ValueError("Runtime package did not load from the fresh clone")
+        module_origins[name] = Path(path).relative_to(work).as_posix()
+    if (
+        "include-system-site-packages = false"
+        not in (work / "venv/pyvenv.cfg").read_text()
+    ):
+        raise ValueError("Fresh venv unexpectedly includes system site packages")
     image_manifest = None
     if bounded:
         build = [
@@ -139,7 +229,7 @@ with tempfile.TemporaryDirectory(prefix="entrotter-reproduce-") as folder:
     ]
     if recorded:
         (work / "recorded.json").write_bytes(
-            (ROOT / "evidence/agent-local-codex.json").read_bytes()
+            (work / "evidence/agent-local-codex.json").read_bytes()
         )
         commands[0] = [
             python,
@@ -178,11 +268,20 @@ result = {
     "under_five_minutes": elapsed < 300,
     "monorepo_commit": revision,
     "component_trees": pins,
-    "environment": "fresh local clone and venv without pip; no system site packages or third-party runtime dependencies",
+    "environment": "fresh public HTTPS clone and venv without pip; no system site packages or third-party runtime dependencies"
+    if args.public
+    else "fresh local clone and venv without pip; no system site packages or third-party runtime dependencies",
     "artifact_id": report["artifact_id"],
     "matches_recorded_sample" if recorded else "matches_public_sample": True,
-    "scope": "one local monorepo clone; current code, data, website and coordination",
-    "remote_public_clone_verified": False,
+    "scope": "one public HTTPS monorepo clone at the exact tested revision"
+    if args.public
+    else "one local monorepo clone; current code, data, website and coordination",
+    "remote_public_clone_verified": args.public,
+    "runtime_module_origins": module_origins,
+    "source_origin": public_url if args.public else "current local checkout",
+    "public_mode_credentials": "Inherited Git config, helpers, headers and cookies disabled; no claim about operator netrc/proxy configuration"
+    if args.public
+    else "not applicable",
 }
 if bounded:
     result["bounded_worker"] = image_manifest
