@@ -496,7 +496,7 @@ try {
             value: {
               writeText: async (/** @type {string} */ text) => {
                 try {
-                  await holdCliCopy(text);
+                  await globalThis.holdCliCopy(text);
                 } finally {
                   document
                     .getElementById("cli-copy-status")

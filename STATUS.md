@@ -389,3 +389,15 @@ assertions, historical failures/reports, recipe/pins, videos and CLI outputs rem
 Current Aave production view retains all prior fields except appSHA. Current CI,
 independent review/publication and protected human-main/Pages remain separate.
 No new EVM/model/RPC/performance or reliability-rate claim; goalactive, Discordexcluded.
+
+### October 4 — correct the clipboard test hook's lint reference
+
+Initial88a9bb2 CI quality failed `no-undef holdCliCopy`. Its original local lint
+log already contained the error; a following command masked the failure and the
+initial independent review did not interpret it. Original evidence is retained
+as failure. The runner now refers to the same DevTools-exposed function through
+`globalThis.holdCliCopy`, with production/rules/types/locks unchanged. Full19-file
+ESLint reports zero messages;20 typed inputs and152 exact-reviewed findings pass.
+The current actual Chromium run passes51 groups/64 full raw axe records with zero
+violations/JS errors. Initial CI browser51/64 and docs22/126 also passed; current
+corrective source review, exact stage and required CI remain separate checks.

@@ -35,3 +35,13 @@ appSHA. Prior CLI recipe/function/pins and actual six clean-clone inspection res
 are reused unchanged; no new chain, model, RPC, authenticity, profit or performance
 result is claimed. Current-head CI/publication, independent human-main approval
 and live Pages remain separate. Goal continues; Discord is excluded.
+
+The initial88a9bb2 CI quality job failed at ESLint (`holdCliCopy` was undeclared).
+The original local lint log contained the same error, masked by a later successful
+command; the initial review bound that log but missed its diagnostics. Those
+original results are retained as failures. Referencing the same DevTools hook as
+`globalThis.holdCliCopy` fixes the runner without weakening rules or changing
+production, types or locks. Current full19-file ESLint has zero messages, types
+and152 reviewed findings pass, and current real Chromium again passes51/64.
+Initial CI independently passed51/64 browser and22 docs/126 links; its failed
+quality run provides no new successful type/security/dependency audit claim.

@@ -30,7 +30,7 @@
     "package.json": "d4ae0a0b1a412c70cf38bace34efd9fd459736f0e8c4d13ded0c53cab43e772d",
     "package-lock.json": "199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342"
   },
-  "runner_sha256": "b7b3e7b28ee9eea9810c817c6c8645e869302f2ba640c98caf64cd126c14ce51",
+  "runner_sha256": "4b55d6a0f159fd5014407105998eb322994a11bdf4e9c236accfa06fb8219240",
   "security": {
     "JS": 19,
     "typed_inputs": 20,
@@ -87,5 +87,39 @@
     "visual.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "visual/320-cli-copy.png": "9d4de4046406463ade6cb9c5819b78f3b01d27adcdb5a671de25c4c1db75c9d6"
   },
-  "scope": "Actual current unit/site/source/Chromium clipboard/finite faults; offline productionview and320px visual capture also pass. Existing six clean CLI command outputs reused because recipe text and component pins unchanged. No new EVM/model/RPC/price/performance or original-timeout-cause claim. Pending native clipboard writes cannot be cancelled; only fixed public request text may settle after a report switch."
+  "scope": "Actual current unit/site/source/Chromium clipboard/finite faults; offline productionview and320px visual capture also pass. Existing six clean CLI command outputs reused because recipe text and component pins unchanged. No new EVM/model/RPC/price/performance or original-timeout-cause claim. Pending native clipboard writes cannot be cancelled; only fixed public request text may settle after a report switch.",
+  "lint_correction": {
+    "prior_head": "88a9bb2910d772f7b330fa717004796db676ee88",
+    "CI_run": 37177656833,
+    "quality_job": 111363561247,
+    "quality_artifact_sha256": "4c9b04ee43c4e88f73a790e43324358d301832aaaba1a9459e656991cdf779ef",
+    "original_error": "no-undef holdCliCopy, also present in the original local lint.stdout; a later successful command masked that original command failure. Initial independent review hashed but did not interpret that error.",
+    "source_change": "Only test runner reference becomes globalThis.holdCliCopy; production, types, ESLint rules, locks and prior unit/site sources unchanged.",
+    "current_full_lint_files": 19,
+    "current_full_lint_messages": 0,
+    "current_browser_groups": 51,
+    "current_raw_axe": 64,
+    "current_typed_inputs": 20,
+    "current_full_security_findings": 152,
+    "original_CI_browser": {
+      "groups": 51,
+      "raw_axe": 64,
+      "JS_errors": 0
+    },
+    "browser_output_scope": "Actual current runner wrote its default output/playwright; the report and its64 referenced full raw scans were then preserved here. CLI --output argument was ignored; no duplicate producer run claimed.",
+    "current_outputs_sha256": {
+      "lint.json": "2d7ff30f2794be55363f0b42ef230d4b4d4bd36d826b2ce5f95e5c6594195e74",
+      "lint.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "lint.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "types.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "types.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "security.stdout": "bd74b572e85b8d3c40ae20ec990d951f757b99bda20bf3400776acda4f25aa37",
+      "security.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "format.stdout": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "format.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "browser.stdout": "9f3891677b029edf30dcadde836b5100a1bfc8d81b8f916135b1158b410bde1a",
+      "browser.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "browser/accessibility.json": "2f881851665602035fb57aadcfe8b36e8edf71f3def6e231456e7d34e5fbe057"
+    }
+  }
 }
