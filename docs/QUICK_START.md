@@ -4,6 +4,11 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
+For a new checkout that only needs to inspect an existing recording, start with
+the [Git/Python recorded-result walkthrough](../README.md#quick-start-without-dependencies-or-an-api-key).
+It uses the Aave report bundled in the pinned CLI and requires no Docker or Engine
+checkout. Return to this guide when you want to run a new bounded simulation.
+
 The candidate [CLI copy composition](../evidence/cli-copy-integration/README.md)
 selects enginef53a66a, SDKba4af51, CLI169b759 and viewerad697dc. It adds supplied
 collateral and variable-rate borrowing to the existing bounded replay and exact

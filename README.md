@@ -44,7 +44,39 @@ contribution boundary that justifies another repository.
 
 <a id="quick-start-without-dependencies-or-an-api-key"></a>
 
-## Quick start: reproduce the tested candidate locally
+## Quick start: inspect a recorded result
+
+To see what an Entrotter report contains, you need Git and Python 3.11+ on
+macOS or Linux. The CLI already includes the original Aave recording, so this
+path needs no Docker, package installation, wallet or API key. Setup downloads
+public source; verification and inspection afterward run locally.
+
+Paste the following block in a shell from a directory where
+`entrotter-inspection` does not exist. It creates an isolated folder and stops
+at the first failure; it does not change your existing Entrotter checkouts.
+
+```bash
+mkdir entrotter-inspection &&
+cd entrotter-inspection &&
+git clone https://github.com/entrotter/cli.git entrotter-cli &&
+git -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889 &&
+git clone https://github.com/entrotter/sdk-python.git entrotter-sdk &&
+git -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44 &&
+PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli verify entrotter-cli/tests/data/aave-borrow-result.json &&
+PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect entrotter-cli/tests/data/aave-borrow-result.json --format text
+```
+
+The text shows exact native/token balance changes, gas, failed transactions and
+assumptions. In this recording, the supplied baseline 9 WETH borrow reverts while
+the candidate preflight policy holds; the later supplied 1 WETH borrow succeeds
+in both branches. This reads an existing report. It does not run new chain
+transactions or prove model advantage, execution authenticity or financial return.
+Hash verification checks content integrity. The pinned sources are reviewed
+candidates awaiting independent human-main approval, not published packages.
+Read the [recording and limits](https://github.com/entrotter/engine/tree/f53a66a303e67ca4fbb4322a06b36b036f4db599/evidence/aave-borrow-actions)
+and [executed walkthrough evidence](evidence/recorded-quick-start/README.md).
+
+## Run a new simulation
 
 Follow the [pinned quick start](docs/QUICK_START.md) to fetch compatible public
 source revisions, build the Docker worker and produce a verified offline report.

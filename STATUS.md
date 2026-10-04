@@ -2390,3 +2390,19 @@ execution is claimed. The Aave review video still captures ad697dc. Coordinator
 CI, protected independent human-main approval/Pages and profile/audio/hosting
 requirements remain separate; goalactive through October13 15:59JST,
 Discordexcluded.
+
+
+## October 4 — inspect the recorded result without Docker
+
+The README starts with an isolated Git/Python walkthrough using CLI169/SDKba4
+and the original Aave report already included in CLI. It needs no package install,
+Engine checkout, separate report download, Docker, wallet or API key. The literal
+README block passes with real public clones and a new no-pip/no-distribution Python
+venv: original59506 report,129 verification/3013 inspection bytes and14 cloned
+runtime files match immutable sources and prior whole outputs. No fresh EVM/RPC/
+model execution, cross-platform run or speed guarantee is claimed.
+[Evidence](evidence/recorded-quick-start/README.md) separates the measured command
+from mandatory currentCI, independent review and protected human-main/Pages.
+Source pins, workflows, frozen inputs and media stay unchanged. Submission
+profile/audio/hosting requirements remain pending; goalactive through official
+October13 15:59JST, Discordexcluded.
