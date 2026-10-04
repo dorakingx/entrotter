@@ -404,3 +404,7 @@ and independent approval remain separate from this proposed branch.
 Verified bundled CLI recipes also have [native copy controls](evidence/cli-copy/README.md).
 They copy only fixed public setup/inspection text, with explicit manual fallback,
 serialized pending writes and generation-safe feedback after report changes.
+
+Recorded agent panels label the linked local native-transfer evaluation as a
+**separate example**. Its matching model/preflight decisions are not an evaluation
+of every selected or imported report. See [scope validation](evidence/agent-evaluation-scope/README.md).

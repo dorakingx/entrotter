@@ -1,0 +1,26 @@
+{
+  "status": "PASS targeted HTML/browser checks; full required CI separate",
+  "site": {
+    "tests": 12,
+    "returncode": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "8701b20bcb98b21a68674a5aef172b5a0397d0c5cf4c1f402469c2a5963cd545"
+  },
+  "browser": {
+    "actual_views": 6,
+    "raw_axe_reports": 6,
+    "violations": 0,
+    "incomplete": 3,
+    "JS_errors": 0,
+    "html_sha256": "31e7bcddb79f95d312d9c889bebae79b7f35283de9af33918ff39eecd4360753",
+    "helper_sha256": "56f11eb5103bf71bc3a321707b6e1ea4c4c67260e2574fcfbf02d7afd3c46788",
+    "public_browser_sha256": "bf8c734c49a83bea0ec0325a26541299a92712c4f9bd03a2a6e6c5eb03c7e22f",
+    "public_compressed_helper_sha256": "a16632750a1eec5fb09ac3f50c0e60050b0b3c0642d15ae8eaf06739203f98fb"
+  },
+  "corrections": [
+    "Initial inline axe injection was blocked by the unchanged production CSP. Original failure retained; known axe bundle then served explicitly at same loopback origin. No CSP bypass.",
+    "First six DOM/width/axe views succeeded but screenshot paragraphs were outside viewport during smooth scrolling. They do not prove readability. Original proof/screenshots/helper retained privately; final run explicitly scrolls instantly and verifies vertical+horizontal bounds.",
+    "Link focus is programmatic focus, not a native Tab traversal or external-navigation test."
+  ],
+  "source_scope": "Only one HTML paragraph/link label changed. JS/CSS/report/schema/runtime/locks/CI configuration and original media remain unchanged. No EVM/model/performance/advantage/provider-authenticity claim."
+}
