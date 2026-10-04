@@ -1,0 +1,114 @@
+{
+  "base_commit": "99e0ecfab9702aeaf5a96913e3d830faeef80570",
+  "sdk_commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+  "scope": "Offline exit policy for existing validated records. No new EVM/RPC/model, performance, user, main merge, Pages or submission execution. Mutated controls are synthetic.",
+  "source_sha256": {
+    "src/entrotter_cli/main.py": "40adc67020f47b911fbad283dad794cc1ee1786c78f6329e51c977a89b1e8b6a",
+    "tests/test_require_complete.py": "8c7f90c0c3b7160081498999c56c019876e5a88ee9cf58c46bb48d293db66e68",
+    "README.md": "10e469f53f409bb8497d189f3e8c6f706580fb04c3ed4a5595798f00a921615e",
+    ".github/workflows/quality.yml": "ead7a2ee0dec5ee5b8370ac5cf4b35d62a39cfec5d8d27cd77192bf3d57f7b01",
+    "tests/test_position_text.py": "5e7c0772835c122ab0ca6712c82ee160e27f6589ca79c878f2e993890f8afc38",
+    "tests/data/aave-account-position13.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "tests/data/observed-price32.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "tests/data/observed-controls.json": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
+    "tests/data/aave-account-position13.txt": "c49bd8cb6178fcf0a90518d32da6b5a3135f7a63457b38eacc74a58085266619"
+  },
+  "python": "3.13.0 (v3.13.0:60403a5409f, Oct  7 2024, 00:37:40) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "local_checks": {
+    "full_units": 92,
+    "new_groups": 9,
+    "skips": 0,
+    "ruff_lint": "All checks passed",
+    "ruff_format": "13 files already formatted",
+    "mypy": "Success: no issues found in 9 source files",
+    "bandit": "9 source files; no findings or skipped rules"
+  },
+  "installed": {
+    "entrotter_cli": {
+      "wheel_sha256": "c00ea587d2b8152cc4ce4948e716e891c413888c99f8b4d79e52a9f089671e4e",
+      "modules": {
+        "entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+        "entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+        "entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+        "entrotter_cli/main.py": "40adc67020f47b911fbad283dad794cc1ee1786c78f6329e51c977a89b1e8b6a",
+        "entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+        "entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+        "entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f"
+      },
+      "metadata_readme_and_all_record_rows": "PASS"
+    },
+    "entrotter_sdk": {
+      "wheel_sha256": "2fb0620bcd2d821ab22e9c7636ece62f0ab473e3d2c2e03a5a123c85b45640c2",
+      "modules": {
+        "entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+        "entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+        "entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+        "entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2",
+        "entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+      },
+      "metadata_readme_and_all_record_rows": "PASS"
+    },
+    "required_groups": 9,
+    "no_engine": true,
+    "default_stdout_and_text_goldens": "PASS"
+  },
+  "baseline_stdout": [
+    {
+      "command": [
+        "position-verify",
+        "aave-account-position13.json"
+      ],
+      "status": 0,
+      "stdout_bytes": 2672,
+      "stdout_sha256": "85121fd50da2ba2290a5c4bbb820efd02dcb3b6848f6718d90959878ecde552f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "position-verify",
+        "aave-account-position13.json",
+        "--require-complete"
+      ],
+      "status": 2,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "2eeb611fcb61250ce537f3add3e3cfe9e3e643e4562263ad6457088d546cc5ec"
+    },
+    {
+      "command": [
+        "observed-verify",
+        "observed-price32.json"
+      ],
+      "status": 0,
+      "stdout_bytes": 798,
+      "stdout_sha256": "7be2cf3ff1da0820eea9d8e2f544df7f6bb54d398da23ac57939bcbbc1d46291",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "observed-verify",
+        "observed-price32.json",
+        "--require-complete"
+      ],
+      "status": 2,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "2eeb611fcb61250ce537f3add3e3cfe9e3e643e4562263ad6457088d546cc5ec"
+    }
+  ],
+  "retained_failures": [
+    "Old implementation rejects the new option with argument status2; focused pre-change run had17 failures and1 argparse SystemExit error.",
+    "Initial synthetic position controls accidentally added unsupported top-level price_artifact_id; focused and first full92 run failed2 controls before CLI dispatch. Removed those extra keys without changing SDK validation; corrected9 and full92 pass."
+  ],
+  "raw_logs_sha256": {
+    "build.log": "831c96e7fc983bb6261e6ced3ad35496adbd9801a7e454b7beea5135cf8e1854",
+    "docs-links.log": "cdcadf1fc4179324722dff6db1cd105ac3dbbf7989ecb4ee8ad47abb23018c34",
+    "installed.log": "aa0ee96ae72874c45391874e0e61dbe2c89f8f8bd5fdaa3e81df910ae56bfaa6",
+    "regression-after.log": "82522f6ae46d3e7271d4ea422f08179dbeb51ae2fa40873ad5c58f6dba77387d",
+    "regression-before.log": "d25035ae7f5e15f4987afe57f19cfd35f94cfaa1908584a67462eb471c6236b6",
+    "regression-fixed.log": "f918ca6de55c71b3cde6d856cef38754b1388f60625ddcda486406206bebce86",
+    "unit-fixed.log": "f6e9271f37f62dae579fa9070014fa3fc3ff652b5e79373629de2c9c627aca0b",
+    "unit.log": "62d309450239d7a1d38b6aca2fe275a5e779743f9dd3bae0ad31907cce0b1db4"
+  }
+}

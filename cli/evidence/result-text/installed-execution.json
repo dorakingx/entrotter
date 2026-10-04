@@ -1,0 +1,59 @@
+{
+  "commands": [
+    {
+      "name": "build-cli",
+      "returncode": 0,
+      "stdout_sha256": "c9287caee1d2496745f0a7013d2cc6f76c6cbbc2c83626bbbdc6770b49c4c221",
+      "stderr_sha256": "3fbf5c81df4d6f7774a09a7694742996e64ed07ccaea033ef3d34574059a981c"
+    },
+    {
+      "name": "build-sdk",
+      "returncode": 0,
+      "stdout_sha256": "65a819cfefad56444f425f08d127f70aea1963784e5124c098a4fddd956be107",
+      "stderr_sha256": "3fbf5c81df4d6f7774a09a7694742996e64ed07ccaea033ef3d34574059a981c"
+    },
+    {
+      "name": "new-venv",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "install",
+      "returncode": 0,
+      "stdout_sha256": "91dea09ca4e5162930f0d6c4fc0f298ece2f6e393090765c221c54cc0786705a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "pip-check",
+      "returncode": 0,
+      "stdout_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "origins",
+      "returncode": 0,
+      "stdout_sha256": "ea97a011377c1c313e21c161f077156941c7612b7290cded4f1e6dd870f930ec",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "text",
+      "returncode": 0,
+      "stdout_sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "default-json",
+      "returncode": 0,
+      "stdout_sha256": "9e45e81fd5d5a111cfeffe51ad95010cc442679e1bdfcec40fdff759b66b6d99",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "new-controls",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5b94ebe190e3d40ff9511d1b072395707c965fa9f6775cda1b4f899037723a6d"
+    }
+  ],
+  "scope": "Actual local unpublished wheel install and isolated offline CLI/SDK controls; no Engine, EVM, RPC, model or registry install."
+}

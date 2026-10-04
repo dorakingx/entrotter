@@ -1,0 +1,52 @@
+Recorded EVM result (evm-fork)
+Scenario: "aave-weth-borrow-preflight"
+Artifact: 728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00
+Content hash: verified; execution and provider authenticity unproven
+Source pin (reported): {"block_hash": "0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6", "block_number": 18999892, "chain_id": 1}
+
+Native balance (10^18 wei per native unit)
+Value     Baseline                Candidate             Candidate - baseline
+Initial   20                      20                    0
+Final     9.988827559170319712    9.9912499816031695    +0.002422422432849788
+Change    -10.011172440829680288  -10.0087500183968305  +0.002422422432849788
+Gas cost  0.011172440829680288    0.0087500183968305    -0.002422422432849788
+
+Value                  Baseline  Candidate  Candidate - baseline
+Gas used               723131    560326     -162805
+Reverted transactions  1         0          -1
+Rejected transactions  0         0          0
+
+WETH (0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2; 18 decimals)
+Value    Baseline  Candidate  Candidate - baseline
+Initial  0         0          0
+Final    1         1          0
+Change   +1        +1         0
+
+AWETH (0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8; 18 decimals)
+Value    Baseline                Candidate               Candidate - baseline
+Initial  0                       0                       0
+Final    10.000000094454558462   10.000000094454558462   0
+Change   +10.000000094454558462  +10.000000094454558462  0
+
+VWETH (0xea51d7853eefb32b6ee06b1c12e6dcca88be0ffe; 18 decimals)
+Value    Baseline  Candidate  Candidate - baseline
+Initial  0         0          0
+Final    1         1          0
+Change   +1        +1         0
+
+Balance differences do not measure profit; token roles and valuations are not inferred.
+
+Recorded agent: {"cost_usd": "0", "deterministic": true, "model": "preflight-risk-v1", "provider": "builtin", "seed": null}
+Initial requested gas budget: 2000000
+Step 3: hold | "Current-state preflight or requested gas exceeds the policy"
+Recorded choices; integrity is not proof of policy or economic correctness
+
+Recorded assumptions:
+- "Paired isolated Anvil instances start from the same source state."
+- "Actor native balance is overridden equally and account impersonation is local only."
+- "This re-executes supplied actions, not subsequent historical blocks or market responses."
+- "Each slot mines one block at a fixed 12-second interval. Transaction order is supplied."
+- "Native and tracked token changes are exact units, not profit or portfolio valuation. Unlisted assets are not tracked."
+- "No MEV, mempool, external price or bridge model is provided."
+- "Agent sees the current proposal, completed actions and current-state eth_call only; generation may be nondeterministic. Replay requires identical observations."
+- "Preflight uses the current block; the execution block advances 12 seconds. Success is not guaranteed. Shared setup is outside the agent requested-gas budget."

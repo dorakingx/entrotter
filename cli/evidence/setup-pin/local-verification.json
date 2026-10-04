@@ -1,0 +1,65 @@
+{
+  "base_commit": "1ce7677d809847bc9f5917f2ca633878b1761c3c",
+  "README_sha256": "9372fa83a896335e936cb56d32584dbee1d53dfb4169f8276b3b6e3a18cdf2ad",
+  "sdk_commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+  "recipe_sha256": "e94380d054489f574c6ea7126aaf854ac7ac96e5be7985d7ef2ca149a3998659",
+  "recipe_terminal_returncode": 0,
+  "setup": "Fresh copied checkout and venv; whole exact README quality recipe executed once with set -euo pipefail. Running host and caches not controlled; no timing claim.",
+  "dependency_scope": {
+    "runtime": [
+      "entrotter-sdk==0.1.0"
+    ],
+    "build": [
+      "setuptools==84.0.0"
+    ],
+    "optional_runtime": {},
+    "audited_locked_packages": 42,
+    "local_runtime": {
+      "entrotter-sdk": "0.1.0"
+    },
+    "local_runtime_scope": "Pinned source checked separately, not a registry advisory audit",
+    "local_sdk_commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44"
+  },
+  "Bandit_source_count": 9,
+  "reported_Python_advisories": 0,
+  "installed": {
+    "entrotter_cli": {
+      "sha256": "81f8ff5d546ce5b4591d3a72d8845a40922acfc60966aaaeb3298c601e21cd1a",
+      "modules": {
+        "entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+        "entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+        "entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+        "entrotter_cli/main.py": "40adc67020f47b911fbad283dad794cc1ee1786c78f6329e51c977a89b1e8b6a",
+        "entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+        "entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+        "entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f"
+      },
+      "whole_metadata_and_RECORD": "PASS",
+      "changed_members_vs_original_1ce7_CI": [
+        "entrotter_cli-0.1.0.dist-info/METADATA",
+        "entrotter_cli-0.1.0.dist-info/RECORD"
+      ]
+    },
+    "entrotter_sdk": {
+      "sha256": "263463fb155434eb19be4e9584363191da88c604c1edd52d15d0fd5b2d81c17a",
+      "modules": {
+        "entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+        "entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+        "entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+        "entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2",
+        "entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+      },
+      "whole_metadata_and_RECORD": "PASS",
+      "changed_members_vs_original_1ce7_CI": []
+    }
+  },
+  "original_complete_stdout_goldens": "PASS",
+  "original_runtime_and_scripts_byte_exact": "PASS",
+  "retained_failure": "First launch used wrong cwd and was interrupted130 after Ruff before type/security gates. Correct fresh-cwd attempt succeeded; no success inference from interrupted run.",
+  "scope": "Docs/setup/package metadata only; no runtime/SDK/workflow/lock/schema/frozen sample change, no new local EVM/model/browser/media/main/Pages/submission execution. Prior92 tests remain historical until current mandatoryCI.",
+  "raw_logs_sha256": {
+    "recipe.log": "3a809f38c488961c8e94dd25d40c119e1696d19690d1196e0025eaae58b625db",
+    "recipe-correct-cwd.log": "e8145a6d818348d2c2c357e2b90d4508b57a8008dca55fefcf57955e0fe73ba9",
+    "installed.log": "19771a9a79654b75e9f2b9d702bbf91731a328212bd302a0ffdb2ddfba38c7ab"
+  }
+}
