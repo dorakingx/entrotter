@@ -107,11 +107,12 @@ all sixteen browser rows beside the original Engine/SDK/CLI outputs. The current
 viewer component has passed its own mandatory CI; combined integration, protected
 human main approval and live Pages remain separate.
 
-The [bundled report-link composition](evidence/report-link-integration/README.md)
-selects the independently reviewed viewer280958c. One URL opens the original
-Aave example; links never serialize local imports and clear during loading/errors.
-The same five-command reader and all original outcomes remain identical. The
-current view golden binds the changed app hash without rewriting earlier evidence.
+The [CLI recipe composition](evidence/cli-recipe-integration/README.md) selects
+viewer05a0059. Verified bundled recordings provide fixed download filenames and
+pinned CLI/SDK setup with selected read-only inspection commands. All six recipes
+have actual clean-checkout results; commands never include local report metadata.
+Shared example links and exact outcomes remain intact. The existing five-command
+reader retains all original outputs and uses the current source-bound view golden.
 
 Terminal users can also inspect the same account record with
 `position-inspect --format text`: all six exact account fields and differences,

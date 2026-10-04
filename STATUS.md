@@ -2280,3 +2280,27 @@ one successful local offline composition, not fresh EVM/RPC/model/browser/timing
 Current coordinator CI and independent review/publication remain separate gates.
 Goalactive through officialOctober13 15:59JST; submission facts/audio/hosting and
 protected human-main review remain pending, Discordexcluded.
+
+
+## October 4 — bundled recordings offer pinned CLI inspection recipes
+
+The candidate selects viewer05a0059 with Enginef53/SDKba4/CLI169. All six verified
+bundled recordings offer exact Source JSON filenames and immutable public CLI/SDK
+setup and read-only inspection commands. Actual clean-clone setup and every
+inspection pass; metadata/imports cannot enter shell text. Scoped keyboard-scroll
+controls corrected12 actual mobile failures without changing browser assertions.
+Original recipe feature2f83987 passed local135 Node/12 site/49 browser groups/
+62 raw axe/security150; its Linux CI passed48/49 browser groups and timed out on
+one320px ArrowRight check, cause unknown. The selected05a diagnostics candidate
+passed fresh local49/62 browser checks and4 fault controls, with19JS/20typed and
+151 full findings (150 exact inherited reasons plus one diagnostic write).
+Independent staged review and current component CI/publication are recorded separately in the [CLI recipe composition](evidence/cli-recipe-integration/README.md).
+
+The actual existing five-command offline reader passes against current22 immutable
+inputs. All prior whole command objects, original59506-byte recording/3013-byte
+CLI text and16 exact four-column browser rows remain unchanged. Only viewerpins
+and two viewgolden references change executable composition; every otherworkflow
+byte, frozen input, component pin, lock and media remains. No new EVM/RPC/model,
+performance or historical-execution authenticity is claimed. Current combined CI
+and protected human-main approval/Pages remain separate. Submission facts/audio/
+hosting remain pending, goalactive through officialOctober13 15:59JST; Discordexcluded.

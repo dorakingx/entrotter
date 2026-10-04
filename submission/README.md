@@ -76,19 +76,20 @@ consumer strategy or the full block's state.
 | Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI with bounded replay, exact native/token/account/price text and completeness exits | [169b759](https://github.com/entrotter/cli/tree/169b759aff9280ce44fb0d15569c7ae0a4a40889) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, exact native/token/Aave inspection and bundled report links | [280958c](https://github.com/entrotter/entrotter.github.io/tree/280958c483bd1e42c02f12bce6430fb936973076) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
+| Console, exact native/token/Aave inspection, links and pinned CLI recipes | [05a0059](https://github.com/entrotter/entrotter.github.io/tree/05a005977b3850607be047895807a811f63267c8) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
 All five mandatory coordinator checks atf1621b0 passed on originalattempt1.
 Earlier452c068 documentation HTTP429 failures and unchanged attempt2 remain
 historical evidence, not the current coordinator run. All six CLI169b checks pass
 on originalattempt1. Both have independent raw-artifact/source review and parent
 rehash; the new selected combination requires its own coordinator CI.
-The selected viewer280958c has all4 mandatory checks successful: original unit,
-quality and docs results plus browser attempt2. The first native file-chooser
-timeout is retained with cause unknown. Full current source/raw review and parent
-rehash bind all13 public blobs and223 original/retry ZIP entries. [Report-link
-composition](../evidence/report-link-integration/README.md) changes only the viewer
-pin and current view golden; the action result and five reader outputs stay exact.
+The selected viewer05a0059 adds pinned CLI inspection recipes to verified bundled
+recordings and retains the native chooser diagnostics. Local135 Node/12 site
+checks and49 browser groups/62 raw axe scans pass, as do all six clean CLI recipes.
+Current component CI and exact source publication are recorded in the [CLI recipe
+composition](../evidence/cli-recipe-integration/README.md). All five original reader
+outputs and the original action recording remain unchanged. Prior chooser failures
+retain their unknown cause; newer success does not explain them.
 The [price text composition](../evidence/observed-text-integration/README.md)
 and [account/completeness composition](../evidence/require-complete-integration/README.md)
 retain the exact commands, full outputs and scope. The [Aave action composition](../evidence/aave-action-integration/README.md)

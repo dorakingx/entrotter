@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "head": "05a005977b3850607be047895807a811f63267c8",
+  "tree": "8579cd073d4944af6d149cc500d779e5a1a643f4",
+  "merge": "9064d721c77c98344d1ca62eee9642623213b78d",
+  "mandatory_checks": {
+    "accessibility": "success",
+    "check": "success",
+    "quality": "success",
+    "docs-links": "success"
+  },
+  "runs": [
+    37175143044,
+    37175143063
+  ],
+  "browser": {
+    "groups": 49,
+    "raw_axe": 62,
+    "js_errors": 0,
+    "runner_sha256": "1ce8bed1cf3bddf922d05634147f0be0735d171aa2a4f236519cf9cb4ef9f4ab",
+    "node": "v22.23.3",
+    "platform": "linux",
+    "chromium": "153.0.8010.12"
+  },
+  "quality": {
+    "js": 19,
+    "typed": 20,
+    "full_findings": 151,
+    "node_dependencies": 109,
+    "python_dependencies": 42,
+    "reported_advisories": 0
+  },
+  "docs": {
+    "files": 21,
+    "links": 121,
+    "unique": 105,
+    "errors": 0,
+    "timeouts": 0,
+    "excludes": 0
+  },
+  "independent_staged_review_sha256": "a6d9bcb84044557311fe11919b444667eaba4ec7449d42e71949aa21642dc6fb",
+  "limits": [
+    "Parent interpretation of fresh CI; independently reviewed source/local actual checks reused, no duplicate independent semantic audit of unchanged corpus.",
+    "All original attempt1 CI metadata/logs/API-digest ZIP memberships and current source hashes bound. Many ZIP members are byte identity, not fresh image/render interpretation.",
+    "Original keyboard scroll and chooser timeout causes/reliability rates remain unknown. Axe color-contrast incompletes remain explicit; no assistive-technology certification.",
+    "Protected independent human main approval, merge/Pages and submission remain separate; no new EVM/model/performance run."
+  ],
+  "parent_ci_review_sha256": "d7d7358caeb1538e1727053b3c6bc51106ffb5e8ddaf44fb78cc9213e0f0eace",
+  "parent_ci_helper_sha256": "9e20ef35f1ee265c3a709401fd441c345a2ba05599cd054c65986cf6b0a8ab85",
+  "whole_ZIP_members": 118,
+  "node_tests_each_check_and_quality": 135,
+  "site_tests": 12,
+  "independent_feature_staged_review_sha256": "104e8b5a94a16f3ae46a1f8e33008f890e6f29f78adea69de520739a6d3008bf",
+  "independent_diagnostic_assertions": 477,
+  "independent_feature_assertions": 559,
+  "actual_current_publication": {
+    "tree_entries": 269,
+    "new_diagnostic_blobs": 5,
+    "feature_ancestor_blobs": 14
+  },
+  "original_recipe_CI_failure": {
+    "head": "2f839872dde4be33e2f7d56e67e823b71e6e152e",
+    "run": 37174502987,
+    "attempt": 1,
+    "passed_groups": 48,
+    "groups": 49,
+    "raw_axe": 61,
+    "failure": "320px liquidity-shock ArrowRight >0 timeout5000ms; causeunproven",
+    "parent_original_failure_review_sha256": "6db0461341f96ddcaa9f85ede20d612659637ad0d3bc93198608c7bde38165c7"
+  }
+}
