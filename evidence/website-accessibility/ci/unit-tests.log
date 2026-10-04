@@ -1,0 +1,315 @@
+check	Set up job	﻿2026-09-19T19:24:20.7770375Z Current runner version: '2.337.0'
+check	Set up job	2026-09-19T19:24:20.7796151Z ##[group]Runner Image Provisioner
+check	Set up job	2026-09-19T19:24:20.7797126Z Hosted Compute Agent
+check	Set up job	2026-09-19T19:24:20.7797732Z Version: 20260828.587
+check	Set up job	2026-09-19T19:24:20.7798676Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+check	Set up job	2026-09-19T19:24:20.7799527Z Build Date: 2026-08-28T16:44:25Z
+check	Set up job	2026-09-19T19:24:20.7800211Z Worker ID: {f09c964b-21fe-424f-a3b0-9baed411fa61}
+check	Set up job	2026-09-19T19:24:20.7801005Z Azure Region: westus2
+check	Set up job	2026-09-19T19:24:20.7801591Z ##[endgroup]
+check	Set up job	2026-09-19T19:24:20.7803112Z ##[group]Operating System
+check	Set up job	2026-09-19T19:24:20.7803821Z Ubuntu
+check	Set up job	2026-09-19T19:24:20.7804341Z 24.04.5
+check	Set up job	2026-09-19T19:24:20.7804907Z LTS
+check	Set up job	2026-09-19T19:24:20.7805423Z ##[endgroup]
+check	Set up job	2026-09-19T19:24:20.7805953Z ##[group]Runner Image
+check	Set up job	2026-09-19T19:24:20.7806679Z Image: ubuntu-24.04
+check	Set up job	2026-09-19T19:24:20.7807236Z Version: 20260907.300.1
+check	Set up job	2026-09-19T19:24:20.7808864Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+check	Set up job	2026-09-19T19:24:20.7810783Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+check	Set up job	2026-09-19T19:24:20.7811778Z ##[endgroup]
+check	Set up job	2026-09-19T19:24:20.7812829Z ##[group]GITHUB_TOKEN Permissions
+check	Set up job	2026-09-19T19:24:20.7815017Z Contents: read
+check	Set up job	2026-09-19T19:24:20.7815652Z Metadata: read
+check	Set up job	2026-09-19T19:24:20.7816329Z ##[endgroup]
+check	Set up job	2026-09-19T19:24:20.7818743Z Secret source: Actions
+check	Set up job	2026-09-19T19:24:20.7819824Z Cache mode: write
+check	Set up job	2026-09-19T19:24:20.7820537Z Prepare workflow directory
+check	Set up job	2026-09-19T19:24:20.8154184Z Prepare all required actions
+check	Set up job	2026-09-19T19:24:20.8204154Z Getting action download info
+check	Set up job	2026-09-19T19:24:21.1747893Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+check	Set up job	2026-09-19T19:24:21.2809822Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+check	Set up job	2026-09-19T19:24:21.3621986Z Download action repository 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+check	Set up job	2026-09-19T19:24:21.5589298Z Complete job name: check
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T19:24:21.6338730Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6347686Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6348895Z with:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6349388Z   repository: entrotter/entrotter.github.io
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6353092Z   token: ***
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6353533Z   ssh-strict: true
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6353981Z   ssh-user: git
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6354436Z   persist-credentials: true
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6354929Z   clean: true
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6355377Z   sparse-checkout-cone-mode: true
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6355921Z   fetch-depth: 1
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6356345Z   fetch-tags: false
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6356787Z   show-progress: true
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6357227Z   lfs: false
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6357676Z   submodules: false
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6358284Z   set-safe-directory: true
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6358797Z   allow-unsafe-pr-checkout: false
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.6359569Z ##[endgroup]
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7356672Z Syncing repository: entrotter/entrotter.github.io
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7359145Z ##[group]Getting Git version info
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7360203Z Working directory is '/home/runner/work/entrotter.github.io/entrotter.github.io'
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7361552Z [command]/usr/bin/git version
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7479301Z git version 2.55.0
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7522016Z ##[endgroup]
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7527938Z Temporarily overriding HOME='/home/runner/work/_temp/a4b2534d-ba35-483d-9d4b-1bbc779c4b93' before making global git config changes
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7530762Z Adding repository directory to the temporary git global config as a safe directory
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7549734Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter.github.io/entrotter.github.io
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7586120Z Deleting the contents of '/home/runner/work/entrotter.github.io/entrotter.github.io'
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7592688Z ##[group]Initializing the repository
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7598478Z [command]/usr/bin/git init /home/runner/work/entrotter.github.io/entrotter.github.io
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7727558Z hint: Using 'master' as the name for the initial branch. This default branch name
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7729464Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7733138Z hint: to use in all of your new repositories, which will suppress this warning,
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7734574Z hint: call:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7735199Z hint:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7735983Z hint: 	git config --global init.defaultBranch <name>
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7737032Z hint:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7738277Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7739860Z hint: 'development'. The just-created branch can be renamed via this command:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7741107Z hint:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7741786Z hint: 	git branch -m <name>
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7742567Z hint:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7746401Z hint: Disable this message with "git config set advice.defaultBranchName false"
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7748398Z Initialized empty Git repository in /home/runner/work/entrotter.github.io/entrotter.github.io/.git/
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7754719Z [command]/usr/bin/git remote add origin https://github.com/entrotter/entrotter.github.io
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7801698Z ##[endgroup]
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7803174Z ##[group]Disabling automatic garbage collection
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7804805Z [command]/usr/bin/git config --local gc.auto 0
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7836161Z ##[endgroup]
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7837513Z ##[group]Setting up auth
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7843689Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.7882100Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.8341357Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.8388486Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.8641571Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.8680807Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.8935110Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.8973747Z ##[endgroup]
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.8974602Z ##[group]Fetching the repository
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:21.8984358Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2bfc99850d355d22815a78e6e4250138491c8986:refs/remotes/pull/10/merge
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2694049Z From https://github.com/entrotter/entrotter.github.io
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2695770Z  * [new ref]         2bfc99850d355d22815a78e6e4250138491c8986 -> pull/10/merge
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2700532Z ##[endgroup]
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2701883Z ##[group]Determining the checkout info
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2703803Z ##[endgroup]
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2710553Z [command]/usr/bin/git sparse-checkout disable
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2763171Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2797349Z ##[group]Checking out the ref
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2802262Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/10/merge
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2875807Z Note: switching to 'refs/remotes/pull/10/merge'.
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2876873Z
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2877494Z You are in 'detached HEAD' state. You can look around, make experimental
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2878970Z changes and commit them, and you can discard any commits you make in this
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2879883Z state without impacting any branches by switching back to a branch.
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2880422Z
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2880786Z If you want to create a new branch to retain commits you create, you may
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2881626Z do so (now or later) by using -c with the switch command. Example:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2882096Z
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2882322Z   git switch -c <new-branch-name>
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2882651Z
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2882866Z Or undo this operation with:
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2883181Z
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2883369Z   git switch -
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2883622Z
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2884022Z Turn off this advice by setting config variable advice.detachedHead to false
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2884616Z
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2885236Z HEAD is now at 2bfc998 Merge d7785e201a4de50b72623a1e7522762738abab54 into 692bb467bda71078f37bbeb1658f42f3f7212f7f
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2887558Z ##[endgroup]
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2928822Z [command]/usr/bin/git log -1 --format=%H
+check	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:22.2955684Z 2bfc99850d355d22815a78e6e4250138491c8986
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-09-19T19:24:22.3318480Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.3321547Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.3322284Z with:
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.3322703Z   python-version: 3.12
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.3323194Z   check-latest: false
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.3326742Z   token: ***
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.3327203Z   update-environment: true
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.3327747Z   allow-prereleases: false
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.3328419Z   freethreaded: false
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.3328880Z ##[endgroup]
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.4642770Z ##[group]Installed versions
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.4755946Z (node:2216) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.4758625Z (Use `node --trace-deprecation ...` to show where the warning was created)
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.4759965Z Successfully set up CPython (3.12.14)
+check	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:22.4761468Z ##[endgroup]
+check	Run python -m unittest discover -s tests -v	﻿2026-09-19T19:24:22.4922729Z ##[group]Run python -m unittest discover -s tests -v
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4923570Z [36;1mpython -m unittest discover -s tests -v[0m
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4980461Z shell: /usr/bin/bash -e {0}
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4981200Z env:
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4981736Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4983085Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4984276Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4985315Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4986453Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4987240Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.4987897Z ##[endgroup]
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.6873096Z test_csp (test_site.SiteTests.test_csp) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.6897911Z test_internal_anchors (test_site.SiteTests.test_internal_anchors) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.6922414Z test_mascot_asset (test_site.SiteTests.test_mascot_asset) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.6946948Z test_no_custom_domain (test_site.SiteTests.test_no_custom_domain) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.6970877Z test_no_duplicate_ids (test_site.SiteTests.test_no_duplicate_ids) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.6994951Z test_no_inner_html (test_site.SiteTests.test_no_inner_html) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.7019494Z test_no_remote_scripts (test_site.SiteTests.test_no_remote_scripts) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.7044670Z test_not_business_saas (test_site.SiteTests.test_not_business_saas) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.7078429Z test_public_reports_valid_hashes (test_site.SiteTests.test_public_reports_valid_hashes) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.7104164Z test_workflow_stages_allowlisted_files (test_site.SiteTests.test_workflow_stages_allowlisted_files) ... ok
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.7105021Z
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.7105332Z ----------------------------------------------------------------------
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.7106016Z Ran 10 tests in 0.026s
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.7106314Z
+check	Run python -m unittest discover -s tests -v	2026-09-19T19:24:22.7106485Z OK
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	﻿2026-09-19T19:24:22.7282487Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7284808Z ##[group]Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7285533Z with:
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7285945Z   node-version: 22
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7286385Z   always-auth: false
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7286830Z   check-latest: false
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7290588Z   token: ***
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7291011Z env:
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7291532Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7292358Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7293165Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7293910Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7294684Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7295437Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.7296076Z ##[endgroup]
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.8710503Z Found in cache @ /opt/hostedtoolcache/node/22.23.2/x64
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.8713611Z (node:2226) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.8714915Z (Use `node --trace-deprecation ...` to show where the warning was created)
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:22.8716848Z ##[group]Environment details
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:23.3076913Z node: v22.23.2
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:23.3078623Z npm: 10.9.8
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:23.3079707Z yarn: 1.22.22
+check	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:23.3081875Z ##[endgroup]
+check	Run npm test	﻿2026-09-19T19:24:23.3255398Z ##[group]Run npm test
+check	Run npm test	2026-09-19T19:24:23.3256470Z [36;1mnpm test[0m
+check	Run npm test	2026-09-19T19:24:23.3305093Z shell: /usr/bin/bash -e {0}
+check	Run npm test	2026-09-19T19:24:23.3306180Z env:
+check	Run npm test	2026-09-19T19:24:23.3307267Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run npm test	2026-09-19T19:24:23.3309464Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+check	Run npm test	2026-09-19T19:24:23.3311347Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run npm test	2026-09-19T19:24:23.3313008Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run npm test	2026-09-19T19:24:23.3314721Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+check	Run npm test	2026-09-19T19:24:23.3316430Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+check	Run npm test	2026-09-19T19:24:23.3317864Z ##[endgroup]
+check	Run npm test	2026-09-19T19:24:23.4428825Z
+check	Run npm test	2026-09-19T19:24:23.4435956Z > entrotter-oss-website@0.1.0 test
+check	Run npm test	2026-09-19T19:24:23.4437467Z > node --test tests/report.test.mjs
+check	Run npm test	2026-09-19T19:24:23.4438562Z
+check	Run npm test	2026-09-19T19:24:23.4900024Z TAP version 13
+check	Run npm test	2026-09-19T19:24:23.5375853Z # Subtest: production JS verifies Python artifact: liquidity-shock
+check	Run npm test	2026-09-19T19:24:23.5380846Z ok 1 - production JS verifies Python artifact: liquidity-shock
+check	Run npm test	2026-09-19T19:24:23.5383752Z   ---
+check	Run npm test	2026-09-19T19:24:23.5385656Z   duration_ms: 7.527168
+check	Run npm test	2026-09-19T19:24:23.5387505Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5389289Z   ...
+check	Run npm test	2026-09-19T19:24:23.5391521Z # Subtest: production JS verifies Python artifact: recovery-trap
+check	Run npm test	2026-09-19T19:24:23.5394809Z ok 2 - production JS verifies Python artifact: recovery-trap
+check	Run npm test	2026-09-19T19:24:23.5397372Z   ---
+check	Run npm test	2026-09-19T19:24:23.5399601Z   duration_ms: 1.307307
+check	Run npm test	2026-09-19T19:24:23.5401331Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5402746Z   ...
+check	Run npm test	2026-09-19T19:24:23.5404924Z # Subtest: production JS verifies Python artifact: depeg-stress
+check	Run npm test	2026-09-19T19:24:23.5412102Z ok 3 - production JS verifies Python artifact: depeg-stress
+check	Run npm test	2026-09-19T19:24:23.5415234Z   ---
+check	Run npm test	2026-09-19T19:24:23.5417265Z   duration_ms: 1.339577
+check	Run npm test	2026-09-19T19:24:23.5419727Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5421751Z   ...
+check	Run npm test	2026-09-19T19:24:23.5459038Z # Subtest: tampered metric fails integrity validation
+check	Run npm test	2026-09-19T19:24:23.5462029Z ok 4 - tampered metric fails integrity validation
+check	Run npm test	2026-09-19T19:24:23.5479710Z   ---
+check	Run npm test	2026-09-19T19:24:23.5486189Z   duration_ms: 3.01557
+check	Run npm test	2026-09-19T19:24:23.5487273Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5488423Z   ...
+check	Run npm test	2026-09-19T19:24:23.5489475Z # Subtest: unknown schema is not accepted
+check	Run npm test	2026-09-19T19:24:23.5490867Z ok 5 - unknown schema is not accepted
+check	Run npm test	2026-09-19T19:24:23.5492040Z   ---
+check	Run npm test	2026-09-19T19:24:23.5492865Z   duration_ms: 0.595856
+check	Run npm test	2026-09-19T19:24:23.5493840Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5494672Z   ...
+check	Run npm test	2026-09-19T19:24:23.5496009Z # Subtest: canonical ASCII escaping includes supplementary Unicode
+check	Run npm test	2026-09-19T19:24:23.5498318Z ok 6 - canonical ASCII escaping includes supplementary Unicode
+check	Run npm test	2026-09-19T19:24:23.5499848Z   ---
+check	Run npm test	2026-09-19T19:24:23.5500664Z   duration_ms: 0.305898
+check	Run npm test	2026-09-19T19:24:23.5501607Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5502449Z   ...
+check	Run npm test	2026-09-19T19:24:23.5503520Z # Subtest: finite numerical display validation
+check	Run npm test	2026-09-19T19:24:23.5505000Z ok 7 - finite numerical display validation
+check	Run npm test	2026-09-19T19:24:23.5506186Z   ---
+check	Run npm test	2026-09-19T19:24:23.5506997Z   duration_ms: 0.27499
+check	Run npm test	2026-09-19T19:24:23.5507942Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5509358Z   ...
+check	Run npm test	2026-09-19T19:24:23.5511638Z # Subtest: JS re-canonicalization matches exported content hash
+check	Run npm test	2026-09-19T19:24:23.5514945Z ok 8 - JS re-canonicalization matches exported content hash
+check	Run npm test	2026-09-19T19:24:23.5517416Z   ---
+check	Run npm test	2026-09-19T19:24:23.5519202Z   duration_ms: 0.884272
+check	Run npm test	2026-09-19T19:24:23.5520936Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5522454Z   ...
+check	Run npm test	2026-09-19T19:24:23.5525165Z # Subtest: real archived-state artifact passes hash and receipt view validation
+check	Run npm test	2026-09-19T19:24:23.5529631Z ok 9 - real archived-state artifact passes hash and receipt view validation
+check	Run npm test	2026-09-19T19:24:23.5534283Z   ---
+check	Run npm test	2026-09-19T19:24:23.5536181Z   duration_ms: 4.50199
+check	Run npm test	2026-09-19T19:24:23.5538295Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5539862Z   ...
+check	Run npm test	2026-09-19T19:24:23.5542780Z # Subtest: token units preserve integers beyond Number safe precision
+check	Run npm test	2026-09-19T19:24:23.5572997Z ok 10 - token units preserve integers beyond Number safe precision
+check	Run npm test	2026-09-19T19:24:23.5575771Z   ---
+check	Run npm test	2026-09-19T19:24:23.5577194Z   duration_ms: 0.698777
+check	Run npm test	2026-09-19T19:24:23.5579150Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5580587Z   ...
+check	Run npm test	2026-09-19T19:24:23.5582093Z # Subtest: missing source hash cannot appear as a historical report
+check	Run npm test	2026-09-19T19:24:23.5584107Z ok 11 - missing source hash cannot appear as a historical report
+check	Run npm test	2026-09-19T19:24:23.5585970Z   ---
+check	Run npm test	2026-09-19T19:24:23.5587252Z   duration_ms: 0.408449
+check	Run npm test	2026-09-19T19:24:23.5589065Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5590326Z   ...
+check	Run npm test	2026-09-19T19:24:23.5592534Z # Subtest: mismatched token addresses cannot share a comparison row
+check	Run npm test	2026-09-19T19:24:23.5595480Z ok 12 - mismatched token addresses cannot share a comparison row
+check	Run npm test	2026-09-19T19:24:23.5597503Z   ---
+check	Run npm test	2026-09-19T19:24:23.5599075Z   duration_ms: 0.393411
+check	Run npm test	2026-09-19T19:24:23.5600315Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5601153Z   ...
+check	Run npm test	2026-09-19T19:24:23.5602424Z # Subtest: malformed receipt state and oversized traces fail closed
+check	Run npm test	2026-09-19T19:24:23.5604357Z ok 13 - malformed receipt state and oversized traces fail closed
+check	Run npm test	2026-09-19T19:24:23.5605750Z   ---
+check	Run npm test	2026-09-19T19:24:23.5606508Z   duration_ms: 0.512181
+check	Run npm test	2026-09-19T19:24:23.5607393Z   type: 'test'
+check	Run npm test	2026-09-19T19:24:23.5608515Z   ...
+check	Run npm test	2026-09-19T19:24:23.5653082Z 1..13
+check	Run npm test	2026-09-19T19:24:23.5654449Z # tests 13
+check	Run npm test	2026-09-19T19:24:23.5655778Z # suites 0
+check	Run npm test	2026-09-19T19:24:23.5657075Z # pass 13
+check	Run npm test	2026-09-19T19:24:23.5659185Z # fail 0
+check	Run npm test	2026-09-19T19:24:23.5669518Z # cancelled 0
+check	Run npm test	2026-09-19T19:24:23.5683566Z # skipped 0
+check	Run npm test	2026-09-19T19:24:23.5689593Z # todo 0
+check	Run npm test	2026-09-19T19:24:23.5690999Z # duration_ms 87.982173
+check	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	﻿2026-09-19T19:24:23.5933695Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+check	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:23.5935596Z Post job cleanup.
+check	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:23.7221871Z (node:2287) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+check	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-09-19T19:24:23.7224091Z (Use `node --trace-deprecation ...` to show where the warning was created)
+check	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-09-19T19:24:23.7451088Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+check	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:23.7454228Z Post job cleanup.
+check	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:23.8732637Z (node:2296) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+check	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T19:24:23.8733895Z (Use `node --trace-deprecation ...` to show where the warning was created)
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T19:24:23.8943395Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:23.8945257Z Post job cleanup.
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:23.9839897Z [command]/usr/bin/git version
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:23.9885044Z git version 2.55.0
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:23.9928455Z Temporarily overriding HOME='/home/runner/work/_temp/6bc03aff-ac1c-403f-a357-3fcff94abe2a' before making global git config changes
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:23.9930554Z Adding repository directory to the temporary git global config as a safe directory
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:23.9933416Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter.github.io/entrotter.github.io
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:23.9976037Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:24.0015839Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:24.0286948Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:24.0316248Z http.https://github.com/.extraheader
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:24.0331046Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:24.0366186Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:24.0709922Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+check	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T19:24:24.0769716Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+check	Complete job	﻿2026-09-19T19:24:24.1166859Z Cleaning up orphan processes
+check	Complete job	2026-09-19T19:24:24.1480928Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

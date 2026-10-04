@@ -8,50 +8,1247 @@ permissions:
   contents: read
 jobs:
   integration:
+    env:
+      PYTHONPATH: engine/src:sdk-python/src:cli/src
+      ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          repository: entrotter/entrotter
-          path: entrotter
-      - uses: actions/checkout@v4
-        with:
-          repository: entrotter/engine
-          ref: 6a3e03341eccd44fcd04a990db21cc5509e0c84d
-          path: engine
-      - uses: actions/checkout@v4
-        with:
-          repository: entrotter/sdk-python
-          ref: f65f45de26c2658e2269a02a5dbe7c90c74b1cba
-          path: sdk-python
-      - uses: actions/checkout@v4
-        with:
-          repository: entrotter/cli
-          ref: b6a7f4d96cec08f4779968b9f63bab3f9b405fe8
-          path: cli
-      - uses: actions/checkout@v4
-        with:
-          repository: entrotter/scenarios
-          ref: b8bf6f025a872dbc6854965c08f3dba587c86d28
-          path: scenarios
-      - uses: actions/checkout@v4
-        with:
-          repository: entrotter/entrotter.github.io
-          ref: da2f2e73d6b9599f72930678aac4b41d208ba74e
-          path: entrotter.github.io
-      - uses: actions/setup-python@v5
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
-      - uses: foundry-rs/foundry-toolchain@v1
+      - uses: foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09
         with:
           version: v1.8.3
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '22'
-      - run: pip install -r scenarios/requirements-dev.txt
-      - run: python entrotter/scripts/verify.py --require-anvil
-      - uses: actions/upload-artifact@v4
+      - run: |
+          python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-contracts.txt
+      - name: Build the source-bound current worker
+        run: |
+          mkdir -p .quality
+          python engine/scripts/build_worker.py --output .quality/integration-image.json
+          python - <<'PYIMAGE'
+          import json, os
+          with open(os.environ['GITHUB_ENV'], 'a') as stream:
+              stream.write('ENTROTTER_WORKER_IMAGE=' + json.load(open('.quality/integration-image.json'))['image_id'] + '\n')
+          PYIMAGE
+      - run: python scripts/verify.py --require-anvil
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: verification-evidence
-          path: entrotter/evidence/
+          path: evidence/monorepo-verification/
+  host-bounds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09
+        with:
+          version: v1.8.3
+      - name: Materialize historical host regression variants from local history
+        run: |
+          mkdir -p .quality/host-history
+          git worktree add --detach .quality/host-history/engine 80e8ce2386812daa8f6150048f84ab316624cc0d
+          git worktree add --detach .quality/host-history/sdk-python ee5523ded16488af32d1f64040f1996cd002f8f3
+          git worktree add --detach .quality/host-history/cli aba6a6147b2b4b96facf758f9b95b63d8e6b5952
+      - name: Verify CLI-SDK-API success, quota errors and connection recovery
+        run: PYTHONPATH=.quality/host-history/engine/src:.quality/host-history/sdk-python/src:.quality/host-history/cli/src python scripts/check_host_limits.py --output evidence/monorepo-verification/host-limits-ci.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: host-limits-evidence
+          path: evidence/monorepo-verification/host-limits-ci.json
+          if-no-files-found: error
+  bounded-default:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONPATH: engine/src:sdk-python/src:cli/src
+      ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Verify offline reader and viewer retain the actual signed-prefix evidence
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from entrotter_sdk import load_trace
+          files = [
+              Path('evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json'),
+              Path('sdk-python/tests/data/canonical-mainnet-prefix-four.result.json'),
+              Path('website/reports/trace-mainnet-prefix-four.json'),
+          ]
+          digest = '1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2'
+          assert all(hashlib.sha256(p.read_bytes()).hexdigest() == digest for p in files)
+          report = load_trace(files[0])
+          rows = report.transactions
+          assert report.baseline_verified
+          assert [r.original_receipt.gas_used for r in rows] == [208144, 234720, 175305, 178980]
+          assert [len(r.original_receipt.logs) for r in rows] == [8, 10, 6, 8]
+          assert [r.candidate.status for r in rows] == ['skipped', 'executed', 'executed', 'nonce_conflict']
+          assert rows[1].candidate.receipt.gas_used == 245136
+          assert rows[2].candidate.receipt.gas_used == 185721
+          assert rows[3].candidate.expected_nonce == 5522 and rows[3].candidate.original_nonce == 5523
+          out = Path('evidence/monorepo-verification/integration-ci/trace-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline original-report inspection; no new chain/model call',
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'artifact_id': report.artifact_id, 'report_sha256': digest,
+              'identical_report_files': [str(p) for p in files],
+              'baseline_verified': report.baseline_verified,
+              'candidate_statuses': [r.candidate.status for r in rows],
+              'candidate_gas': [r.candidate.receipt.gas_used if r.candidate.receipt else None for r in rows],
+              'nonce_conflict': {'original': 5523, 'expected': 5522},
+              'limits': ['Checksum/internal consistency is not authenticity/EVM truth.',
+                         'Browser behavior is tested by the separate exact-head viewer CI.'],
+          }, indent=2) + '\n')
+          PY
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.23.1'
+      - name: Inspect the original 32-receipt case and display classification with SDK and viewer
+        run: |
+          python - <<'PY'
+          import hashlib, json, subprocess
+          from dataclasses import replace
+          from pathlib import Path
+          from entrotter_sdk import load_trace
+          source = Path('engine/evidence/trace-parent-cache/native-005/report.json')
+          fixture = Path('website/tests/data/trace-oracle-prefix-32.json')
+          digest = '72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120'
+          assert source.read_bytes() == fixture.read_bytes()
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          report = load_trace(source)
+          rows = report.transactions
+          assert report.baseline_verified and len(rows) == 32
+          assert report.report['plan']['skip_indices'] == [12]
+          assert report.report['plan']['through_index'] == 31
+          assert report.report['source']['block_transaction_count'] == 181
+          omitted_gas = rows[12].original_receipt.gas_used
+          assert omitted_gas == 336752
+          for i, row in enumerate(rows):
+              assert row.baseline.status == 'executed'
+              assert row.baseline.receipt == row.original_receipt
+              if i == 12:
+                  assert row.candidate.status == 'skipped' and row.candidate.receipt is None
+                  continue
+              assert row.candidate.status == 'executed'
+              expected = row.original_receipt if i < 12 else replace(
+                  row.original_receipt,
+                  transaction_index=row.original_receipt.transaction_index - 1,
+                  cumulative_gas_used=row.original_receipt.cumulative_gas_used - omitted_gas,
+              )
+              assert row.candidate.receipt == expected
+              assert row.candidate.differing_fields == (() if i < 12 else ('cumulativeGasUsed', 'transactionIndex'))
+          module = Path('website/trace-report.mjs')
+          classification = Path('website/trace-comparison.mjs')
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const {traceComparison} = await import(process.argv[2]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
+          assert.equal(view.baseline.matches, true);
+          assert.equal(view.candidate.rows.length, 32);
+          const counts = {identical: 0, omitted: 0, structural: 0, execution: 0, unavailable: 0};
+          const classifications = view.candidate.rows.map((row, i) => {
+            const group = traceComparison(row);
+            assert.equal(group.kind, i < 12 ? 'identical' : i === 12 ? 'omitted' : 'structural');
+            assert.deepEqual(group.structuralFields, i > 12 ? ['cumulativeGasUsed', 'transactionIndex'] : []);
+            assert.deepEqual(group.executionFields, []);
+            counts[group.kind] += 1;
+            return {index: row.index, status: row.status, differing_fields: row.differing_fields, ...group};
+          });
+          assert.deepEqual(counts, {identical: 12, omitted: 1, structural: 19, execution: 0, unavailable: 0});
+          console.log(JSON.stringify({status: 'passed', artifact_id: view.report.artifact_id, node: process.version,
+                                     counts, classifications}));
+          """
+          completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                      module.resolve().as_uri(), classification.resolve().as_uri(), str(source)],
+                                     check=True, capture_output=True, text=True, timeout=30)
+          viewer = json.loads(completed.stdout)
+          assert viewer['artifact_id'] == report.artifact_id
+          out = Path('evidence/monorepo-verification/integration-ci/trace-comparison-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline original32 report inspection; no new EVM/archive/model call',
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'report_sha256': digest, 'artifact_id': report.artifact_id,
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
+              'classification_module_sha256': hashlib.sha256(classification.read_bytes()).hexdigest(),
+              'baseline_verified': report.baseline_verified, 'input_count': 32, 'block_transaction_count': 181,
+              'through_index': 31, 'skip_indices': [12], 'omitted_gas': omitted_gas,
+              'baseline_receipts_equal_originals': True,
+              'candidate_receipts_equal_originals_except_exact_omission_shifts': True,
+              'viewer': viewer,
+              'limits': ['Display classification preserves original differences; receipt identity is not contract-state or economic identity.',
+                         'Recorded native producer prefix is not dependent-consumer/profit/full-block/provider-authenticity proof.',
+                         'Browser behavior and actual native execution retain their separately pinned evidence.'],
+          }, indent=2) + '\n')
+          PY
+      - name: Inspect the historical Aave consumer price records with SDK and viewer
+        run: |
+          python - <<'PY'
+          from dataclasses import replace
+          import hashlib,json,subprocess
+          from pathlib import Path
+          from entrotter_sdk import load_trace
+          source = Path('engine/evidence/aave-consumer-price/native-006/report.json')
+          digest = '2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          report = load_trace(source)
+          rows = report.transactions
+          assert report.baseline_verified and len(rows) == 32
+          assert report.report['plan']['skip_indices'] == [12]
+          assert report.report['plan']['through_index'] == 31
+          assert report.report['source']['block_transaction_count'] == 181
+          omitted_gas = rows[12].original_receipt.gas_used
+          assert omitted_gas == 336752
+          for i, row in enumerate(rows):
+              assert row.baseline.status == 'executed'
+              assert row.baseline.receipt == row.original_receipt
+              if i == 12:
+                  assert row.candidate.status == 'skipped' and row.candidate.receipt is None
+                  continue
+              assert row.candidate.status == 'executed'
+              expected = row.original_receipt if i < 12 else replace(
+                  row.original_receipt,
+                  transaction_index=row.original_receipt.transaction_index - 1,
+                  cumulative_gas_used=row.original_receipt.cumulative_gas_used - omitted_gas,
+              )
+              assert row.candidate.receipt == expected
+              assert row.candidate.differing_fields == (() if i < 12 else ('cumulativeGasUsed', 'transactionIndex'))
+          module = Path('website/trace-report.mjs')
+          classification = Path('website/trace-comparison.mjs')
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const {traceComparison} = await import(process.argv[2]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
+          assert.equal(view.baseline.matches, true);
+          assert.equal(view.candidate.rows.length, 32);
+          const counts = {identical: 0, omitted: 0, structural: 0, execution: 0, unavailable: 0};
+          const classifications = view.candidate.rows.map((row, i) => {
+            const group = traceComparison(row);
+            assert.equal(group.kind, i < 12 ? 'identical' : i === 12 ? 'omitted' : 'structural');
+            assert.deepEqual(group.structuralFields, i > 12 ? ['cumulativeGasUsed', 'transactionIndex'] : []);
+            assert.deepEqual(group.executionFields, []);
+            counts[group.kind] += 1;
+            return {index: row.index, status: row.status, differing_fields: row.differing_fields, ...group};
+          });
+          assert.deepEqual(counts, {identical: 12, omitted: 1, structural: 19, execution: 0, unavailable: 0});
+          console.log(JSON.stringify({status: 'passed', artifact_id: view.report.artifact_id, node: process.version,
+                                     counts, classifications}));
+          """
+          completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                      module.resolve().as_uri(), classification.resolve().as_uri(), str(source)],
+                                     check=True, capture_output=True, text=True, timeout=30)
+          viewer = json.loads(completed.stdout)
+          assert viewer['artifact_id'] == report.artifact_id
+
+          import sys
+          root = source.parent.parent
+          helper = root / 'harness' / 'consumer_observer.py'
+          assert hashlib.sha256(helper.read_bytes()).hexdigest() == 'b2279b48b2c51522675bbb991532ec9505089ddf614134d9aa5ff5ddf3bb2fea'
+          sys.path.insert(0, str(root / 'harness'))
+          from consumer_observer import ConsumerObserver, address, uint, PHASES, UNIT, ZERO, PROXY
+          decoder_helper = root / 'harness' / 'native_runner.py'
+          assert hashlib.sha256(decoder_helper.read_bytes()).hexdigest() == '8846ff9a465e83c6c42e7684992cb0fa4e86764603077a25d90e3e4a9d87e2b4'
+          from native_runner import decode
+          consumer_source = root / 'native-006' / 'consumer-observations.json'
+          producer_source = root / 'native-006' / 'observations.json'
+          request_source = root / 'native-006' / 'worker-request.json'
+          request_digest = hashlib.sha256(request_source.read_bytes()).hexdigest()
+          assert request_digest == 'c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522'
+          assert json.loads(request_source.read_text())['trace'] == report.report['plan']
+          assert hashlib.sha256(consumer_source.read_bytes()).hexdigest() == 'b9e979c9f363559c5ab79131b602b7b7538da84f2c19928c089219b00dcc831d'
+          assert hashlib.sha256(producer_source.read_bytes()).hexdigest() == '87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b'
+          consumer = json.loads(consumer_source.read_text())
+          producer = json.loads(producer_source.read_text())
+          assert consumer['request_id'] == request_digest
+          assert len(consumer['rows']) == len(producer) == 4
+          producer_rows = {(row['branch'], row['phase']): row for row in producer}
+          consumer_rows = {(row['branch'], row['phase']): row for row in consumer['rows']}
+          assert set(producer_rows) == set(consumer_rows) == PHASES
+          codes = {'oracle_code': set(), 'proxy_code': set()}
+          prices = {}
+          for key in sorted(PHASES):
+              row, feed = consumer_rows[key], producer_rows[key]
+              assert not row['errors'] and not feed['errors']
+              assert set(row['raw']) == set(row['decoded']) == {'source', 'price', 'base_currency', 'base_unit'}
+              assert set(row['code']) == set(codes)
+              for name, value in row['raw'].items():
+                  decoder = address if name in ('source', 'base_currency') else uint
+                  assert decoder(value) == row['decoded'][name]
+              assert row['decoded']['source'] == PROXY
+              assert row['decoded']['base_currency'] == ZERO and row['decoded']['base_unit'] == UNIT
+              for name in ('latestRoundData', 'aggregator'):
+                  assert decode(name, feed['values'][name]) == feed['decoded'][name]
+              assert row['decoded']['price'] == feed['decoded']['latestRoundData']['answer']
+              head = feed['values']['head']
+              assert int(head['number'], 16) == report.report['source']['parent']['block_number'] + (key[1] == 'after')
+              if key[1] == 'before':
+                  assert head['hash'] == report.report['source']['parent']['block_hash']
+              else:
+                  assert int(head['timestamp'], 16) == report.report['source']['header']['timestamp']
+              for name, identity in row['code'].items():
+                  assert set(identity) == {'bytes', 'sha256', 'nonempty'} and identity['nonempty'] is True
+                  assert type(identity['bytes']) is int and 0 < identity['bytes'] <= 65536
+                  assert len(bytes.fromhex(identity['sha256'])) == 32
+                  codes[name].add((identity['bytes'], identity['sha256']))
+              prices['_'.join(key)] = row['decoded']['price']
+          assert all(len(values) == 1 for values in codes.values())
+          assert producer_rows['baseline', 'before']['values'] == producer_rows['candidate', 'before']['values']
+          assert prices == {'baseline_before': 257082415000, 'baseline_after': 256292441874,
+                            'candidate_before': 257082415000, 'candidate_after': 257082415000}
+          checker = ConsumerObserver(Path('.'), request_digest)
+          checker.rows = consumer['rows']
+          observed = checker.classify(producer, report.baseline_verified)
+          assert observed['owned_read_only_price_observation_complete'] is True and observed['unproven_reasons'] == []
+          out = Path('evidence/monorepo-verification/integration-ci/trace-consumer-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'Offline native006 report and separate owned view records; no new EVM/archive/model/browser call',
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'report_sha256': digest, 'artifact_id': report.artifact_id,
+              'consumer_observations_sha256': hashlib.sha256(consumer_source.read_bytes()).hexdigest(),
+              'producer_observations_sha256': hashlib.sha256(producer_source.read_bytes()).hexdigest(),
+              'request_sha256': request_digest, 'helper_sha256': hashlib.sha256(helper.read_bytes()).hexdigest(),
+              'decoder_helper_sha256': hashlib.sha256(decoder_helper.read_bytes()).hexdigest(),
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
+              'classification_module_sha256': hashlib.sha256(classification.read_bytes()).hexdigest(),
+              'baseline_verified': report.baseline_verified, 'input_count': 32, 'block_transaction_count': 181,
+              'through_index': 31, 'skip_indices': [12], 'omitted_gas': omitted_gas,
+              'baseline_receipts_equal_originals': True,
+              'candidate_receipts_equal_originals_except_exact_omission_shifts': True,
+              'consumer_raw_ABI_matches_decoded': True, 'producer_raw_ABI_matches_decoded': True,
+              'initial_owned_heads_equal_pinned_parent': True, 'post_headers_equal_pinned_number_timestamp': True,
+              'consumer_prices': prices, 'stable_returned_code_identities': {name: list(values)[0] for name, values in codes.items()},
+              'consumer_classification': observed, 'consumer_records': consumer['rows'], 'viewer': viewer,
+              'limits': ['Parsing recorded bytes does not constitute a fresh archive execution or prove provider/deployed-code authenticity.',
+                         'Read-only price dependence is separate from signed consumer transactions, strategies, profit and full G1.',
+                         'Node parsing is not rendered browser/Pages verification; standard trace report remains unchanged.'],
+          }, indent=2) + '\n')
+          PY
+      - name: Inspect the synthetic same-block funding report with SDK and viewer
+        run: |
+          python - <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+          from entrotter_sdk import load_trace
+          source = Path('engine/evidence/trace-funding-admission/synthetic-prefix.json')
+          digest = 'fbfed29e8e25c069ba74a5b405f828543213a88a8dc913e15e2dc9b89806e28f'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          report = load_trace(source)
+          assert report.baseline_verified
+          assert [r.baseline.status for r in report.transactions] == ['executed', 'executed']
+          assert [r.baseline.receipt.gas_used for r in report.transactions] == [21000, 21000]
+          assert [r.baseline.receipt.cumulative_gas_used for r in report.transactions] == [21000, 42000]
+          assert [r.candidate.status for r in report.transactions] == ['skipped', 'not_mined']
+          assert all(r.candidate.receipt is None for r in report.transactions)
+          module = Path('website/trace-report.mjs')
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[2], 'utf8')));
+          assert.equal(view.baseline.matches, true);
+          assert.deepEqual(view.baseline.rows.map(r => r.receipt.gasUsed), ['0x5208', '0x5208']);
+          assert.deepEqual(view.baseline.rows.map(r => r.receipt.cumulativeGasUsed), ['0x5208', '0xa410']);
+          assert.deepEqual(view.candidate.rows.map(r => r.status), ['skipped', 'not_mined']);
+          assert(view.candidate.rows.every(r => r.receipt === null));
+          console.log(JSON.stringify({status: 'passed', artifact_id: view.report.artifact_id, node: process.version}));
+          """
+          completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                      module.resolve().as_uri(), str(source)],
+                                     check=True, capture_output=True, text=True, timeout=30)
+          viewer = json.loads(completed.stdout)
+          assert viewer['artifact_id'] == report.artifact_id
+          out = Path('evidence/monorepo-verification/integration-ci/trace-funding-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline synthetic report inspection; no new EVM/model call',
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'report_sha256': digest, 'artifact_id': report.artifact_id,
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
+              'baseline_gas': [21000, 21000], 'baseline_cumulative_gas': [21000, 42000],
+              'candidate_statuses': ['skipped', 'not_mined'], 'candidate_receipts': [None, None],
+              'viewer': viewer,
+              'limits': ['Native synthetic source; not archived funding or host default-worker execution proof.',
+                         'Viewer codec inspection is separate from rendered browser verification.',
+                         'Checksum/internal consistency is not authenticity/EVM truth.'],
+          }, indent=2) + '\n')
+          PY
+      - name: Inspect oracle omission and unverified storage reports with SDK and viewer
+        run: |
+          python - <<'PY'
+          import hashlib, json, subprocess
+          from pathlib import Path
+          from entrotter_sdk import load_trace
+          sources = {
+              'native-oracle-prefix.json': 'b97f34c9396f76eb352f870c0235422b77fa3aaaa58c25a97262c2995f2bd1ae',
+              'native-provider-control.json': '66c1d555ad0068e128c8e5cdc0619f71824c4401177b0c3f1b84a77be4572b5d',
+              'native-missing-storage.json': '2d1449f0807329e6f70799c0ff02ec69d2c8e1050c15425fd3f13aad034c034b',
+          }
+          module = Path('website/trace-report.mjs')
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[2], 'utf8')));
+          const missing = process.argv[3] === 'true';
+          assert.equal(view.baseline.matches, !missing);
+          assert.deepEqual(view.baseline.rows.map(r => r.status), missing ? ['not_mined', 'not_mined'] : ['executed', 'executed']);
+          assert.deepEqual(view.candidate.rows.map(r => r.status), missing ? ['skipped', 'not_mined'] : ['skipped', 'executed']);
+          if (missing) {
+            assert([...view.baseline.rows, ...view.candidate.rows].every(r => r.receipt === null));
+          } else {
+            assert.deepEqual(view.baseline.rows.map(r => parseInt(r.receipt.gasUsed, 16)), [26167, 26438]);
+            assert.deepEqual(view.baseline.rows.map(r => parseInt(r.receipt.cumulativeGasUsed, 16)), [26167, 52605]);
+            assert.equal(view.baseline.rows[1].receipt.logs[0].data, '0x' + (20n).toString(16).padStart(64, '0'));
+            assert.equal(view.candidate.rows[1].receipt.status, '0x0');
+            assert.equal(parseInt(view.candidate.rows[1].receipt.gasUsed, 16), 25808);
+            assert.deepEqual(view.candidate.rows[1].receipt.logs, []);
+          }
+          console.log(JSON.stringify({status: 'passed', artifact_id: view.report.artifact_id, baseline_verified: view.baseline.matches, node: process.version}));
+          """
+          results = []
+          for name, digest in sources.items():
+              source = Path('engine/evidence/trace-oracle-provider') / name
+              assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+              report = load_trace(source)
+              missing = name == 'native-missing-storage.json'
+              assert report.baseline_verified == (not missing)
+              assert [r.baseline.status for r in report.transactions] == (['not_mined', 'not_mined'] if missing else ['executed', 'executed'])
+              assert [r.candidate.status for r in report.transactions] == (['skipped', 'not_mined'] if missing else ['skipped', 'executed'])
+              if missing:
+                  assert all(r.baseline.receipt is None and r.candidate.receipt is None for r in report.transactions)
+              else:
+                  assert [r.baseline.receipt.gas_used for r in report.transactions] == [26167, 26438]
+                  assert [r.baseline.receipt.cumulative_gas_used for r in report.transactions] == [26167, 52605]
+                  assert report.transactions[1].baseline.receipt.logs[0].data == '0x' + (20).to_bytes(32, 'big').hex()
+                  adverse = report.transactions[1].candidate.receipt
+                  assert adverse.status == 0 and adverse.gas_used == 25808 and not adverse.logs
+                  assert report.transactions[1].candidate.hash == report.transactions[1].hash
+              completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                          module.resolve().as_uri(), str(source), str(missing).lower()],
+                                         check=True, capture_output=True, text=True, timeout=30)
+              viewer = json.loads(completed.stdout)
+              assert viewer['artifact_id'] == report.artifact_id and viewer['baseline_verified'] == report.baseline_verified
+              results.append({'source': str(source), 'report_sha256': digest,
+                              'artifact_id': report.artifact_id, 'baseline_verified': report.baseline_verified,
+                              'baseline_statuses': [r.baseline.status for r in report.transactions],
+                              'candidate_statuses': [r.candidate.status for r in report.transactions], 'viewer': viewer})
+          out = Path('evidence/monorepo-verification/integration-ci/trace-oracle-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline synthetic oracle/provider-fault reports; no new EVM/model call',
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(), 'reports': results,
+              'limits': ['Known storage-fault cause comes from separate test controls, not receipt absence.',
+                         'Synthetic native source is not archived oracle or host default-worker proof.',
+                         'Viewer codec inspection is separate from rendered browser verification.',
+                         'Checksums/internal consistency do not authenticate provider state or oracle truth.'],
+          }, indent=2) + '\n')
+          PY
+      - name: Inspect the supported observation wrapper with engine, SDK, CLI and viewer
+        run: |
+          python - <<'PY'
+          from dataclasses import asdict, replace
+          import hashlib, json, os, subprocess, sys
+          from pathlib import Path
+          from entrotter_engine.consumer_observations import load_observed_trace
+          from entrotter_engine.trace import write_trace
+          from entrotter_sdk import load_trace, load_observed_trace as load_sdk_observed_trace
+          source = Path('engine/evidence/owned-consumer-observations/historical-32/observed-trace.json')
+          digest = '7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          observed = load_observed_trace(source)
+          out = Path('evidence/monorepo-verification/integration-ci/trace-observed-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          os.environ['ENTROTTER_EXPORT_STATE_DIR'] = str(Path(os.environ.get('RUNNER_TEMP', '.quality')) / 'observed-reader-export-state')
+          exported = out.with_name('observed-transaction-replay.json')
+          write_trace(observed['trace_report'], exported)
+          export_digest = hashlib.sha256(exported.read_bytes()).hexdigest()
+          assert export_digest == '245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f'
+          report = load_trace(exported)
+          assert report.artifact_id == observed['trace_artifact_id']
+          assert report.baseline_verified and len(report.transactions) == 32
+          assert report.report['source']['block_transaction_count'] == 181
+          assert report.report['plan']['through_index'] == 31 and report.report['plan']['skip_indices'] == [12]
+          for i, row in enumerate(report.transactions):
+              assert row.baseline.status == 'executed' and row.baseline.receipt == row.original_receipt
+              if i == 12:
+                  assert row.candidate.status == 'skipped' and row.candidate.receipt is None
+              else:
+                  expected = row.original_receipt if i < 12 else replace(
+                      row.original_receipt,
+                      transaction_index=row.original_receipt.transaction_index - 1,
+                      cumulative_gas_used=row.original_receipt.cumulative_gas_used - 336752,
+                  )
+                  assert row.candidate.status == 'executed' and row.candidate.receipt == expected
+                  assert row.candidate.differing_fields == (() if i < 12 else ('cumulativeGasUsed', 'transactionIndex'))
+          prices = []
+          for row, expected in zip(observed['observations'], [257082415000, 256292441874, 257082415000, 257082415000]):
+              price = int(row['raw']['price'], 16)
+              answer = int(row['raw']['latest_round_data'][66:130], 16)
+              assert not row['errors'] and price == answer == expected
+              assert int(row['raw']['base_currency'], 16) == 0 and int(row['raw']['base_unit'], 16) == 100000000
+              prices.append({'branch': row['branch'], 'phase': row['phase'], 'consumer_price': price,
+                             'producer_answer': answer, 'head': row['head'], 'code_identities': row['code']})
+          assert observed['classification'] == {
+              'complete_price_views': True, 'baseline_receipts_verified': True, 'unproven_reasons': [],
+              'baseline_price': 256292441874, 'candidate_price': 257082415000, 'price_difference': 789973126,
+          }
+          sdk_observed = load_sdk_observed_trace(source)
+          assert sdk_observed.report == observed and sdk_observed.trace.report == report.report
+          sdk_classification = asdict(sdk_observed.classification)
+          sdk_classification['unproven_reasons'] = list(sdk_classification['unproven_reasons'])
+          assert sdk_classification == observed['classification']
+          sdk_phases = [asdict(row) for row in sdk_observed.observations]
+          for row, raw, price in zip(sdk_phases, observed['observations'], prices):
+              assert row['branch'] == raw['branch'] and row['phase'] == raw['phase']
+              assert row['price'] == price['consumer_price'] and row['latest_round_data']['answer'] == price['producer_answer']
+              assert row['head'] == raw['head'] and row['errors'] == ()
+              assert row['oracle_code'] == raw['code']['oracle_code'] and row['source_code'] == raw['code']['source_code']
+              for name in ('source', 'aggregator', 'base_currency'):
+                  assert row[name] == '0x' + raw['raw'][name][26:].lower()
+              assert row['base_unit'] == int(raw['raw']['base_unit'], 16)
+              words = [int(raw['raw']['latest_round_data'][2 + i * 64:2 + (i + 1) * 64], 16) for i in range(5)]
+              if words[1] >= 2**255:
+                  words[1] -= 2**256
+              assert row['latest_round_data'] == dict(zip(
+                  ('round_id', 'answer', 'started_at', 'updated_at', 'answered_in_round'), words))
+          cli_records = {}
+          for command in ('observed-verify', 'observed-inspect'):
+              completed = subprocess.run(
+                  [sys.executable, '-m', 'entrotter_cli', command, str(source)],
+                  capture_output=True, text=True, check=True, timeout=30)
+              assert completed.stderr == ''
+              cli_records[command] = json.loads(completed.stdout)
+          cli_verified = cli_records['observed-verify']
+          cli_inspected = cli_records['observed-inspect']
+          assert cli_verified['artifact_id'] == observed['artifact_id']
+          assert cli_verified['profile'] == sdk_observed.profile and cli_verified['integrity_verified'] is True
+          assert cli_verified['classification'] == sdk_classification
+          assert cli_verified['trace'] == {
+              'artifact_id': report.artifact_id, 'baseline_receipts_verified': True, 'transaction_count': 32}
+          assert 'not provider authentication' in cli_verified['scope']
+          assert 'not signed consumer strategy' in cli_verified['scope']
+          assert 'observations' not in cli_verified
+          assert {k: v for k, v in cli_inspected.items() if k != 'observations'} == cli_verified
+          assert cli_inspected['observations'] == json.loads(json.dumps(sdk_phases))
+          cli_module = Path('cli/src/entrotter_cli/main.py')
+          sdk_module = Path('sdk-python/src/entrotter_sdk/observed.py')
+          module = Path('website/trace-report.mjs')
+          comparison = Path('website/trace-comparison.mjs')
+          observer_module = Path('website/observed-trace.mjs')
+          viewer_record = Path('website/reports/trace-observed-price32.json')
+          assert viewer_record.read_bytes() == source.read_bytes()
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const {traceComparison} = await import(process.argv[2]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
+          assert.equal(view.baseline.matches, true);
+          assert.equal(view.candidate.rows.length, 32);
+          const counts = {identical: 0, omitted: 0, structural: 0, execution: 0, unavailable: 0};
+          const classifications = view.candidate.rows.map((row, i) => {
+            const group = traceComparison(row);
+            assert.equal(group.kind, i < 12 ? 'identical' : i === 12 ? 'omitted' : 'structural');
+            assert.deepEqual(group.structuralFields, i > 12 ? ['cumulativeGasUsed', 'transactionIndex'] : []);
+            assert.deepEqual(group.executionFields, []);
+            counts[group.kind] += 1;
+            return {index: row.index, status: row.status, ...group};
+          });
+          assert.deepEqual(counts, {identical: 12, omitted: 1, structural: 19, execution: 0, unavailable: 0});
+          const {validateObservedTrace} = await import(process.argv[4]);
+          const observed = await validateObservedTrace(fs.readFileSync(process.argv[5], 'utf8'));
+          assert.equal(observed.trace.report.artifact_id, view.report.artifact_id);
+          assert.deepEqual(observed.trace.report, view.report);
+          const direct_observation = {
+            artifact_id: observed.wrapper.artifact_id,
+            trace_artifact_id: observed.trace.report.artifact_id,
+            profile: observed.wrapper.profile,
+            classification: observed.classification,
+            phases: observed.wrapper.observations.map((row, i) => ({
+              branch: row.branch, phase: row.phase,
+              consumer_price: observed.phases[i].price,
+              producer_answer: observed.phases[i].latest_round_data.answer,
+              source: observed.phases[i].source, aggregator: observed.phases[i].aggregator,
+              base_currency: observed.phases[i].base_currency, base_unit: observed.phases[i].base_unit,
+              head: row.head, code_identities: row.code,
+            })),
+          };
+          console.log(JSON.stringify({artifact_id: view.report.artifact_id, counts, classifications,
+            node: process.version, direct_observation}, (_, value) => typeof value === 'bigint' ? value.toString() : value));
+          """
+          completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                      module.resolve().as_uri(), comparison.resolve().as_uri(), str(exported),
+                                      observer_module.resolve().as_uri(), str(viewer_record)],
+                                     check=True, capture_output=True, text=True, timeout=30)
+          viewer = json.loads(completed.stdout)
+          direct = viewer.pop('direct_observation')
+          assert viewer['artifact_id'] == report.artifact_id
+          assert direct['artifact_id'] == observed['artifact_id'] and direct['trace_artifact_id'] == report.artifact_id
+          assert direct['profile'] == observed['profile']
+          assert direct['classification'] == {
+              **observed['classification'], **{key: str(observed['classification'][key])
+                  for key in ('baseline_price', 'candidate_price', 'price_difference')},
+          }
+          assert direct['phases'] == [{
+              **price, 'consumer_price': str(price['consumer_price']), 'producer_answer': str(price['producer_answer']),
+              'source': '0x' + row['raw']['source'][26:].lower(),
+              'aggregator': '0x' + row['raw']['aggregator'][26:].lower(),
+              'base_currency': '0x' + row['raw']['base_currency'][26:].lower(),
+              'base_unit': str(int(row['raw']['base_unit'], 16)),
+          } for price, row in zip(prices, observed['observations'])]
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline supported sealed wrapper to normal quota-bound report export, SDK and actual Node viewer; no fresh archive/EVM/model/browser call',
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'wrapper_sha256': digest, 'wrapper_artifact_id': observed['artifact_id'],
+              'trace_artifact_id': report.artifact_id, 'export_sha256': export_digest,
+              'baseline_receipts_equal_originals': 32, 'candidate_executed': 31, 'skip_indices': [12],
+              'consumer_classification': observed['classification'], 'prices': prices,
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
+              'comparison_module_sha256': hashlib.sha256(comparison.read_bytes()).hexdigest(), 'viewer': viewer,
+              'observed_viewer_module_sha256': hashlib.sha256(observer_module.read_bytes()).hexdigest(),
+              'viewer_observation': direct,
+              'cli_module_sha256': hashlib.sha256(cli_module.read_bytes()).hexdigest(),
+              'cli_observation': cli_records,
+              'sdk_observed_module_sha256': hashlib.sha256(sdk_module.read_bytes()).hexdigest(),
+              'sdk_observation': {'artifact_id': sdk_observed.artifact_id, 'profile': sdk_observed.profile,
+                                  'classification': sdk_classification, 'phases': sdk_phases},
+              'limits': ['Strict wrapper validation and offline parsing do not authenticate provider/deployed state.',
+                         'Read-only price views are not signed consumer strategy or profit;32-of181 is not full-block/root/opcode proof.',
+                         'SDK, CLI and viewer additionally inspect recorded wrapper price views and exact typed records.',
+                         'Node codec checks are separate from rendered browser/Pages verification and real Docker execution.'],
+          }, indent=2) + '\n')
+          PY
+      - name: Inspect the actual bounded historical price wrapper across engine, SDK, CLI and viewer
+        run: |
+          python - <<'PY'
+          from dataclasses import asdict, replace
+          import hashlib, json, os, subprocess, sys
+          from pathlib import Path
+          from entrotter_engine.consumer_observations import load_observed_trace
+          from entrotter_engine.trace import write_trace
+          from entrotter_sdk import load_trace, load_observed_trace as load_sdk_observed_trace
+          source = Path('engine/evidence/bounded-consumer-observations/observed-trace.json')
+          digest = '724c3786efa78f666725022955c4df53b1c22458241f8ae994e5875d690da0d1'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          observed = load_observed_trace(source)
+          out = Path('evidence/monorepo-verification/integration-ci/trace-bounded-observed-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          os.environ['ENTROTTER_EXPORT_STATE_DIR'] = str(Path(os.environ.get('RUNNER_TEMP', '.quality')) / 'bounded-observed-reader-export-state')
+          exported = out.with_name('bounded-observed-transaction-replay.json')
+          write_trace(observed['trace_report'], exported)
+          export_digest = hashlib.sha256(exported.read_bytes()).hexdigest()
+          assert export_digest == '34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4'
+          report = load_trace(exported)
+          assert report.artifact_id == observed['trace_artifact_id']
+          assert report.baseline_verified and len(report.transactions) == 32
+          assert report.report['source']['block_transaction_count'] == 181
+          assert report.report['plan']['through_index'] == 31 and report.report['plan']['skip_indices'] == [12]
+          for i, row in enumerate(report.transactions):
+              assert row.baseline.status == 'executed' and row.baseline.receipt == row.original_receipt
+              if i == 12:
+                  assert row.candidate.status == 'skipped' and row.candidate.receipt is None
+              else:
+                  expected = row.original_receipt if i < 12 else replace(
+                      row.original_receipt,
+                      transaction_index=row.original_receipt.transaction_index - 1,
+                      cumulative_gas_used=row.original_receipt.cumulative_gas_used - 336752,
+                  )
+                  assert row.candidate.status == 'executed' and row.candidate.receipt == expected
+                  assert row.candidate.differing_fields == (() if i < 12 else ('cumulativeGasUsed', 'transactionIndex'))
+          prices = []
+          for row, expected in zip(observed['observations'], [257082415000, 256292441874, 257082415000, 257082415000]):
+              price = int(row['raw']['price'], 16)
+              answer = int(row['raw']['latest_round_data'][66:130], 16)
+              assert not row['errors'] and price == answer == expected
+              assert int(row['raw']['base_currency'], 16) == 0 and int(row['raw']['base_unit'], 16) == 100000000
+              prices.append({'branch': row['branch'], 'phase': row['phase'], 'consumer_price': price,
+                             'producer_answer': answer, 'head': row['head'], 'code_identities': row['code']})
+          assert observed['classification'] == {
+              'complete_price_views': True, 'baseline_receipts_verified': True, 'unproven_reasons': [],
+              'baseline_price': 256292441874, 'candidate_price': 257082415000, 'price_difference': 789973126,
+          }
+          sdk_observed = load_sdk_observed_trace(source)
+          assert sdk_observed.report == observed and sdk_observed.trace.report == report.report
+          sdk_classification = asdict(sdk_observed.classification)
+          sdk_classification['unproven_reasons'] = list(sdk_classification['unproven_reasons'])
+          assert sdk_classification == observed['classification']
+          sdk_phases = [asdict(row) for row in sdk_observed.observations]
+          for row, raw, price in zip(sdk_phases, observed['observations'], prices):
+              assert row['branch'] == raw['branch'] and row['phase'] == raw['phase']
+              assert row['price'] == price['consumer_price'] and row['latest_round_data']['answer'] == price['producer_answer']
+              assert row['head'] == raw['head'] and row['errors'] == ()
+              assert row['oracle_code'] == raw['code']['oracle_code'] and row['source_code'] == raw['code']['source_code']
+              for name in ('source', 'aggregator', 'base_currency'):
+                  assert row[name] == '0x' + raw['raw'][name][26:].lower()
+              assert row['base_unit'] == int(raw['raw']['base_unit'], 16)
+              words = [int(raw['raw']['latest_round_data'][2 + i * 64:2 + (i + 1) * 64], 16) for i in range(5)]
+              if words[1] >= 2**255:
+                  words[1] -= 2**256
+              assert row['latest_round_data'] == dict(zip(
+                  ('round_id', 'answer', 'started_at', 'updated_at', 'answered_in_round'), words))
+          cli_records = {}
+          for command in ('observed-verify', 'observed-inspect'):
+              completed = subprocess.run(
+                  [sys.executable, '-m', 'entrotter_cli', command, str(source)],
+                  capture_output=True, text=True, check=True, timeout=30)
+              assert completed.stderr == ''
+              cli_records[command] = json.loads(completed.stdout)
+          cli_verified = cli_records['observed-verify']
+          cli_inspected = cli_records['observed-inspect']
+          assert cli_verified['artifact_id'] == observed['artifact_id']
+          assert cli_verified['profile'] == sdk_observed.profile and cli_verified['integrity_verified'] is True
+          assert cli_verified['classification'] == sdk_classification
+          assert cli_verified['trace'] == {
+              'artifact_id': report.artifact_id, 'baseline_receipts_verified': True, 'transaction_count': 32}
+          assert 'not provider authentication' in cli_verified['scope']
+          assert 'not signed consumer strategy' in cli_verified['scope']
+          assert 'observations' not in cli_verified
+          assert {k: v for k, v in cli_inspected.items() if k != 'observations'} == cli_verified
+          assert cli_inspected['observations'] == json.loads(json.dumps(sdk_phases))
+          cli_module = Path('cli/src/entrotter_cli/main.py')
+          sdk_module = Path('sdk-python/src/entrotter_sdk/observed.py')
+          module = Path('website/trace-report.mjs')
+          comparison = Path('website/trace-comparison.mjs')
+          observer_module = Path('website/observed-trace.mjs')
+          viewer_record = Path('website/reports/trace-observed-price32.json')
+          native = load_observed_trace(viewer_record)
+          for key in ('observations', 'classification', 'profile', 'scope'):
+              assert observed[key] == native[key]
+          for key in ('plan', 'baseline', 'candidate', 'source', 'assumptions', 'baseline_verified', 'execution_kind'):
+              assert observed['trace_report'][key] == native['trace_report'][key]
+          # The default Docker wrapper is the actual input for both independent viewer codecs.
+          viewer_record = source
+          program = """
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const {validateTraceReport} = await import(process.argv[1]);
+          const {traceComparison} = await import(process.argv[2]);
+          const view = await validateTraceReport(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
+          assert.equal(view.baseline.matches, true);
+          assert.equal(view.candidate.rows.length, 32);
+          const counts = {identical: 0, omitted: 0, structural: 0, execution: 0, unavailable: 0};
+          const classifications = view.candidate.rows.map((row, i) => {
+            const group = traceComparison(row);
+            assert.equal(group.kind, i < 12 ? 'identical' : i === 12 ? 'omitted' : 'structural');
+            assert.deepEqual(group.structuralFields, i > 12 ? ['cumulativeGasUsed', 'transactionIndex'] : []);
+            assert.deepEqual(group.executionFields, []);
+            counts[group.kind] += 1;
+            return {index: row.index, status: row.status, ...group};
+          });
+          assert.deepEqual(counts, {identical: 12, omitted: 1, structural: 19, execution: 0, unavailable: 0});
+          const {validateObservedTrace} = await import(process.argv[4]);
+          const observed = await validateObservedTrace(fs.readFileSync(process.argv[5], 'utf8'));
+          assert.equal(observed.trace.report.artifact_id, view.report.artifact_id);
+          assert.deepEqual(observed.trace.report, view.report);
+          const direct_observation = {
+            artifact_id: observed.wrapper.artifact_id,
+            trace_artifact_id: observed.trace.report.artifact_id,
+            profile: observed.wrapper.profile,
+            classification: observed.classification,
+            phases: observed.wrapper.observations.map((row, i) => ({
+              branch: row.branch, phase: row.phase,
+              consumer_price: observed.phases[i].price,
+              producer_answer: observed.phases[i].latest_round_data.answer,
+              source: observed.phases[i].source, aggregator: observed.phases[i].aggregator,
+              base_currency: observed.phases[i].base_currency, base_unit: observed.phases[i].base_unit,
+              head: row.head, code_identities: row.code,
+            })),
+          };
+          console.log(JSON.stringify({artifact_id: view.report.artifact_id, counts, classifications,
+            node: process.version, direct_observation}, (_, value) => typeof value === 'bigint' ? value.toString() : value));
+          """
+          completed = subprocess.run(['node', '--input-type=module', '-e', program,
+                                      module.resolve().as_uri(), comparison.resolve().as_uri(), str(exported),
+                                      observer_module.resolve().as_uri(), str(viewer_record)],
+                                     check=True, capture_output=True, text=True, timeout=30)
+          viewer = json.loads(completed.stdout)
+          direct = viewer.pop('direct_observation')
+          assert viewer['artifact_id'] == report.artifact_id
+          assert direct['artifact_id'] == observed['artifact_id'] and direct['trace_artifact_id'] == report.artifact_id
+          assert direct['profile'] == observed['profile']
+          assert direct['classification'] == {
+              **observed['classification'], **{key: str(observed['classification'][key])
+                  for key in ('baseline_price', 'candidate_price', 'price_difference')},
+          }
+          assert direct['phases'] == [{
+              **price, 'consumer_price': str(price['consumer_price']), 'producer_answer': str(price['producer_answer']),
+              'source': '0x' + row['raw']['source'][26:].lower(),
+              'aggregator': '0x' + row['raw']['aggregator'][26:].lower(),
+              'base_currency': '0x' + row['raw']['base_currency'][26:].lower(),
+              'base_unit': str(int(row['raw']['base_unit'], 16)),
+          } for price, row in zip(prices, observed['observations'])]
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'offline supported sealed wrapper to normal quota-bound report export, SDK and actual Node viewer; no fresh archive/EVM/model/browser call',
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'wrapper_sha256': digest, 'wrapper_artifact_id': observed['artifact_id'],
+              'trace_artifact_id': report.artifact_id, 'export_sha256': export_digest,
+              'baseline_receipts_equal_originals': 32, 'candidate_executed': 31, 'skip_indices': [12],
+              'consumer_classification': observed['classification'], 'prices': prices,
+              'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
+              'comparison_module_sha256': hashlib.sha256(comparison.read_bytes()).hexdigest(), 'viewer': viewer,
+              'observed_viewer_module_sha256': hashlib.sha256(observer_module.read_bytes()).hexdigest(),
+              'viewer_observation': direct,
+              'cli_module_sha256': hashlib.sha256(cli_module.read_bytes()).hexdigest(),
+              'cli_observation': cli_records,
+              'sdk_observed_module_sha256': hashlib.sha256(sdk_module.read_bytes()).hexdigest(),
+              'sdk_observation': {'artifact_id': sdk_observed.artifact_id, 'profile': sdk_observed.profile,
+                                  'classification': sdk_classification, 'phases': sdk_phases},
+              'limits': ['Strict wrapper validation and offline parsing do not authenticate provider/deployed state.',
+                         'Read-only price views are not signed consumer strategy or profit;32-of181 is not full-block/root/opcode proof.',
+                         'SDK, CLI and viewer additionally inspect recorded wrapper price views and exact typed records.',
+                         'Node codec checks are separate from rendered browser/Pages verification and real Docker execution.'],
+          }, indent=2) + '\n')
+          PY
+      - name: Inspect historical Aave account impact with engine, SDK and CLI
+        run: |
+          python - <<'PY'
+          from dataclasses import asdict
+          import hashlib, json, subprocess, sys
+          from pathlib import Path
+          from entrotter_engine.position_observations import load_position as engine_load, decode_account, classify
+          from entrotter_sdk import load_position
+
+          source = Path('engine/evidence/aave-account-impact/position.json')
+          digest = 'cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          assert source.read_bytes() == Path('sdk-python/tests/data/aave-account-position13.json').read_bytes()
+          assert source.read_bytes() == Path('cli/tests/data/aave-account-position13.json').read_bytes()
+          raw = engine_load(source)
+          position = load_position(source)
+          assert position.report == raw
+          assert position.account == '0x16aa9154557f1394089db90d3cbe212d9a7f33bb'
+          assert position.trace.baseline_verified and len(position.trace.transactions) == 13
+          trace = position.trace.report
+          assert trace['plan']['source']['block_number'] == 18999892
+          assert trace['source']['block_transaction_count'] == 181
+          assert trace['plan']['through_index'] == 12 and trace['plan']['skip_indices'] == [12]
+          for i, row in enumerate(position.trace.transactions):
+              assert row.baseline.status == 'executed' and row.baseline.receipt == row.original_receipt
+              assert row.candidate.status == ('skipped' if i == 12 else 'executed')
+              assert row.candidate.receipt == (None if i == 12 else row.original_receipt)
+              assert not row.candidate.differing_fields
+          assert position.prices.report == raw['price_report']
+          assert position.prices.trace.report == trace
+          assert [row.price for row in position.prices.observations] == [257082415000, 256292441874, 257082415000, 257082415000]
+          assert position.prices.classification.price_difference == 789973126
+          classification = json.loads(json.dumps(asdict(position.classification)))
+          assert classification == raw['classification'] == classify(raw['observations'], raw['price_report'])
+          assert classification['complete_account_views'] and classification['unproven_reasons'] == []
+          assert classification['base_unit'] == 100000000 and classification['health_factor_unit'] == 10**18
+          assert classification['baseline_health_status'] == classification['candidate_health_status'] == 'at_or_above_one'
+          fields = ('total_collateral_base', 'total_debt_base', 'available_borrows_base', 'liquidation_threshold_bps', 'ltv_bps', 'health_factor_wad')
+          baseline = (41049031017510, 16199140199548, 16845329769548, 8300, 8050, 2103240994573506125)
+          candidate = (41175556915484, 16219364581293, 16926958735672, 8300, 8050, 2107093164381383462)
+          assert classification['baseline'] == dict(zip(fields, baseline))
+          assert classification['candidate'] == dict(zip(fields, candidate))
+          assert classification['differences'] == dict(zip(fields, (126525897974, 20224381745, 81628966124, 0, 0, 3852169807877337)))
+          phases = json.loads(json.dumps([asdict(row) for row in position.observations]))
+          for i, (row, recorded) in enumerate(zip(phases, raw['observations'])):
+              assert row['branch'] == recorded['branch'] and row['phase'] == recorded['phase']
+              assert row['account'] == position.account and row['head'] == recorded['head']
+              assert row['head'] == raw['price_report']['observations'][i]['head']
+              assert row['values'] == decode_account(recorded['raw'])
+              assert row['provider'] == '0x2f39d218133afab8f2b819b1066c7e434ad94e9e' == '0x' + recorded['provider'][26:]
+              assert row['oracle'] == '0x54586be62e3c3580375ae3723c145253060ca0c2' == '0x' + recorded['oracle'][26:]
+              assert row['pool_code'] == recorded['code'] and row['pool_code']['bytes'] > 0
+              assert row['errors'] == []
+          assert phases[0]['values'] == phases[2]['values']
+          assert all(row['pool_code'] == phases[0]['pool_code'] for row in phases)
+          cli = {}
+          for command in ('position-verify', 'position-inspect'):
+              completed = subprocess.run([sys.executable, '-m', 'entrotter_cli', command, str(source)],
+                                         check=True, capture_output=True, text=True, timeout=30)
+              assert completed.stderr == ''
+              cli[command] = json.loads(completed.stdout)
+          verified, inspected = cli['position-verify'], cli['position-inspect']
+          assert verified['artifact_id'] == position.artifact_id and verified['account'] == position.account
+          assert verified['integrity_verified'] is True and verified['profile'] == position.profile
+          assert verified['classification'] == classification
+          assert verified['plan'] == position.plan and verified['scope'] == raw['scope']
+          assert verified['prices'] == {'artifact_id': position.prices.artifact_id, 'classification': json.loads(json.dumps(asdict(position.prices.classification)))}
+          assert verified['trace'] == {'artifact_id': position.trace.artifact_id, 'baseline_receipts_verified': True, 'transaction_count': 13}
+          assert 'observations' not in verified
+          assert {k: v for k, v in inspected.items() if k not in ('observations', 'price_observations')} == verified
+          assert inspected['observations'] == phases
+          assert inspected['price_observations'] == json.loads(json.dumps([asdict(row) for row in position.prices.observations]))
+          out = Path('evidence/monorepo-verification/integration-ci/account-position-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          modules = ('engine/src/entrotter_engine/position_observations.py', 'sdk-python/src/entrotter_sdk/position.py', 'cli/src/entrotter_cli/main.py')
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'Offline full Engine/SDK/CLI consistency inspection; no new chain/model/browser execution.',
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'wrapper_sha256': digest, 'artifact_id': position.artifact_id,
+              'price_artifact_id': position.prices.artifact_id, 'trace_artifact_id': position.trace.artifact_id,
+              'baseline_receipts_equal_originals': 13, 'candidate_executed': 12, 'skip_indices': [12],
+              'account': position.account, 'classification': classification,
+              'account_phases': phases, 'price_classification': json.loads(json.dumps(asdict(position.prices.classification))),
+              'price_phases': json.loads(json.dumps([asdict(row) for row in position.prices.observations])),
+              'cli': cli, 'module_sha256': {name: hashlib.sha256(Path(name).read_bytes()).hexdigest() for name in modules},
+              'limits': ['Read-only aggregate account difference includes all prefix effects, not sole-price causality.',
+                         'No signed borrowing/liquidation, profit, authenticated provider/proxy or full-block/state-root proof.',
+                         'This reader verifies Engine/SDK/CLI account records; the separate Node reader verifies account display records.',
+                         'Protected-main approval, Pages and submission are separate gates.'],
+          }, indent=2) + '\n')
+          print('Complete 13-input baseline and four account/price phases agree across Engine, SDK and CLI')
+          PY
+      - name: Inspect the actual Aave account wrapper and synthetic controls with SDK and viewer
+        run: |
+          python - <<'PY'
+          from dataclasses import asdict
+          import copy, hashlib, json, subprocess
+          from pathlib import Path
+          from entrotter_sdk import PositionResult, load_position
+
+          source = Path('engine/evidence/aave-account-impact/position.json')
+          viewer_source = Path('website/reports/aave-account-impact13.json')
+          controls_path = Path('website/tests/data/position-controls.json')
+          digest = 'cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978'
+          assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
+          assert source.read_bytes() == viewer_source.read_bytes()
+          assert source.read_bytes() == Path('sdk-python/tests/data/aave-account-position13.json').read_bytes()
+          assert source.read_bytes() == Path('cli/tests/data/aave-account-position13.json').read_bytes()
+          position = load_position(source)
+          base = position.report
+          controls = json.loads(controls_path.read_text())
+          assert [row['name'] for row in controls] == ['missing_account', 'wrong_provider', 'empty_pool_code', 'changed_pool_code', 'initial_difference', 'large_integer', 'no_debt', 'debt_transition', 'health_boundary']
+          reports = [('actual13', position)]
+          for control in controls:
+              record = {**copy.deepcopy(base), **control}
+              name = record.pop('name')
+              parsed = PositionResult.parse(record)
+              assert parsed.prices.report == position.prices.report
+              assert parsed.trace.report == position.trace.report
+              reports.append((name, parsed))
+
+          # Convert only exact ABI-derived integer dictionaries; transport/head integers
+          # retain their original ordinary JSON types. No Number rounding is permitted.
+          def quantities(value):
+              if type(value) is int:
+                  return str(value)
+              if isinstance(value, dict):
+                  return {key: quantities(item) for key, item in value.items()}
+              if isinstance(value, list):
+                  return [quantities(item) for item in value]
+              return value
+
+          module = Path('website/position-report.mjs').resolve()
+          observer = Path('website/observed-trace.mjs').resolve()
+          program = r'''
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const { validatePositionReport, exactUnits } = await import(process.argv[1]);
+          const { observationCanonical } = await import(process.argv[2]);
+          const cases = JSON.parse(fs.readFileSync(0, 'utf8'));
+          const results = [];
+          for (const item of cases) {
+            const view = await validatePositionReport(item.text);
+            const trace = view.trace.report;
+            assert.equal(view.trace.baseline.matches, true);
+            assert.equal(trace.source.inputs.length, 13);
+            const classification = view.classification;
+            results.push({
+              name: item.name,
+              artifact_id: view.wrapper.artifact_id,
+              profile: view.wrapper.profile,
+              plan: view.wrapper.plan,
+              scope: view.wrapper.scope,
+              price_artifact_id: view.observed.wrapper.artifact_id,
+              trace_artifact_id: trace.artifact_id,
+              classification,
+              phases: view.phases.map(row => ({...row, errors: row.errors.map(error => ({query: error.query, category: error.category, code: error.diagnostics?.code ?? null, method: error.diagnostics?.method ?? null}))})),
+              raw_observations: view.wrapper.observations,
+              price_classification: view.observed.classification,
+              trace_report: trace,
+              capacity_difference: exactUnits(classification.differences.available_borrows_base, 8),
+              health_difference: exactUnits(classification.differences.health_factor_wad, 18),
+              lossless_classification_canonical: observationCanonical(classification),
+            });
+          }
+          console.log(JSON.stringify({node: process.version, results}, (_, value) => typeof value === 'bigint' ? value.toString() : value));
+          '''
+          payload = json.dumps([{'name': name, 'text': json.dumps(report.report, sort_keys=True, separators=(',', ':'), ensure_ascii=True)} for name, report in reports])
+          completed = subprocess.run(['node', '--input-type=module', '-e', program, module.as_uri(), observer.as_uri()],
+                                     input=payload, check=True, capture_output=True, text=True, timeout=30)
+          assert completed.stderr == ''
+          raw_out = Path('evidence/monorepo-verification/integration-ci/account-viewer-node-output.json')
+          raw_out.parent.mkdir(parents=True, exist_ok=True)
+          raw_out.write_text(completed.stdout)
+          viewer = json.loads(completed.stdout)
+          assert len(viewer['results']) == len(reports) == 10
+          for row, (name, report) in zip(viewer['results'], reports):
+              assert row['name'] == name and row['artifact_id'] == report.artifact_id
+              assert row['profile'] == report.profile and row['plan'] == report.plan and row['scope'] == report.report['scope']
+              assert row['price_artifact_id'] == report.prices.artifact_id
+              assert row['trace_artifact_id'] == report.trace.artifact_id
+              assert row['trace_report'] == report.trace.report
+              classification = json.loads(json.dumps(asdict(report.classification)))
+              assert row['classification'] == quantities(classification)
+              assert row['lossless_classification_canonical'] == json.dumps(classification, sort_keys=True, separators=(',', ':'), ensure_ascii=True)
+              phases = json.loads(json.dumps([asdict(phase) for phase in report.observations]))
+              expected_phases = [{**phase, 'values': quantities(phase['values'])} for phase in phases]
+              assert row['phases'] == expected_phases
+              assert row['raw_observations'] == report.report['observations']
+              assert row['price_classification'] == quantities(json.loads(json.dumps(asdict(report.prices.classification))))
+              if not classification['complete_account_views']:
+                  assert all(value is None for value in classification['differences'].values())
+                  assert row['capacity_difference'] == row['health_difference'] == 'Unavailable'
+              elif name in ('no_debt', 'debt_transition'):
+                  assert classification['differences']['health_factor_wad'] is None
+                  assert row['health_difference'] == 'Unavailable'
+              elif name == 'large_integer':
+                  assert classification['candidate']['total_collateral_base'] == 2**200 + 1
+                  assert classification['differences']['total_collateral_base'] == 1
+              elif name == 'health_boundary':
+                  assert classification['baseline_health_status'] == 'below_one'
+                  assert classification['candidate_health_status'] == 'at_or_above_one'
+          actual = viewer['results'][0]
+          assert actual['capacity_difference'] == '816.28966124'
+          assert actual['health_difference'] == '0.003852169807877337'
+          out = Path('evidence/monorepo-verification/integration-ci/account-viewer-reader.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          # Full trace is already retained by the original eighth reader/owning sample;
+          # compare every byte-semantic field above and bind its unchanged artifact here.
+          results = [{key: value for key, value in row.items() if key != 'trace_report'} for row in viewer['results']]
+          out.write_text(json.dumps({
+              'status': 'passed', 'execution': 'Offline full SDK/Node account-plan, classification, four-phase and nested trace consistency; no new RPC/EVM/model/browser execution.',
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'wrapper_sha256': digest, 'controls_sha256': hashlib.sha256(controls_path.read_bytes()).hexdigest(),
+              'node': viewer['node'], 'results': results,
+              'baseline_receipts_equal_originals': 13, 'candidate_executed': 12, 'skip_indices': [12],
+              'module_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in [
+                  Path('website/position-report.mjs'), Path('website/observed-trace.mjs'),
+                  Path('website/trace-report.mjs'), Path('sdk-python/src/entrotter_sdk/position.py')]},
+              'limits': ['Nine synthetic controls reuse unchanged nested price/trace evidence; they are not new chain or user data.',
+                         'Three recomputable seals/internal consistency do not authenticate providers/proxies/EVM state or profit.',
+                         'Node codec coupling is separate from the viewer\'s actual Linux browser CI and live Pages.',
+                         'The existing eighth reader independently retains complete Engine/SDK/CLI account facts.'],
+          }, indent=2) + '\n')
+          print('Actual13 and nine synthetic controls agree exactly across full SDK and Node account/price/trace records')
+          PY
+      - name: Inspect exact terminal account summary offline
+        run: |
+          python - <<'PYTEXT'
+          import hashlib, json, subprocess, sys
+          from pathlib import Path
+          command = [sys.executable, '-m', 'entrotter_cli', 'position-inspect',
+                     'engine/evidence/aave-account-impact/position.json', '--format', 'text']
+          process = subprocess.run(command, capture_output=True, text=True, timeout=30)
+          expected = Path('cli/tests/data/aave-account-position13.txt')
+          result = {
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'command': command[1:], 'returncode': process.returncode,
+              'stdout': process.stdout, 'stderr': process.stderr,
+              'expected_sha256': hashlib.sha256(expected.read_bytes()).hexdigest(),
+              'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in [
+                  Path('cli/src/entrotter_cli/main.py'), Path('cli/src/entrotter_cli/position_text.py'),
+                  Path('sdk-python/src/entrotter_sdk/position.py')]},
+              'scope': 'Offline presentation of the unchanged recorded13 result; no fresh EVM, model or timing claim.',
+          }
+          output = Path('evidence/monorepo-verification/integration-ci/cli-position-text.json')
+          output.write_text(json.dumps(result, indent=2) + '\n')
+          assert process.returncode == 0, result
+          assert process.stderr == '', result
+          assert process.stdout.encode() == expected.read_bytes(), result
+          print('Exact CLI text retains all six recorded account fields and scope')
+          PYTEXT
+      - name: Verify offline reader completeness exit contracts
+        run: |
+          python - <<'PYCOMPLETE'
+          import hashlib, json, subprocess, sys
+          from pathlib import Path
+          command = [sys.executable, '-m', 'unittest', 'discover', '-s', 'cli/tests',
+                     '-p', 'test_require_complete.py', '-v']
+          process = subprocess.run(command, capture_output=True, text=True, timeout=60)
+          sources = [Path(name) for name in [
+              'cli/src/entrotter_cli/main.py', 'cli/tests/test_require_complete.py',
+              'cli/tests/test_position_text.py', 'sdk-python/src/entrotter_sdk/observed.py',
+              'sdk-python/src/entrotter_sdk/position.py', 'sdk-python/src/entrotter_sdk/trace.py',
+              'cli/tests/data/aave-account-position13.json', 'cli/tests/data/observed-price32.json',
+              'cli/tests/data/observed-controls.json']]
+          result = {
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'command': command[1:], 'returncode': process.returncode,
+              'stdout': process.stdout, 'stderr': process.stderr,
+              'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
+              'scope': 'Offline CLI process exit contracts with selected SDK; synthetic controls are not fresh EVM evidence.',
+          }
+          output = Path('evidence/monorepo-verification/integration-ci/cli-require-complete.json')
+          output.write_text(json.dumps(result, indent=2) + '\n')
+          assert process.returncode == 0, result
+          assert 'Ran 9 tests' in process.stderr and process.stderr.endswith('\nOK\n'), result
+          print('Complete, unproven, invalid and argument exit contracts agree with the selected standalone SDK')
+          PYCOMPLETE
+      - name: Inspect exact recorded WETH price summary offline
+        run: |
+          python - <<'PYPRICE'
+          import hashlib, json, subprocess, sys
+          from pathlib import Path
+          source = Path('engine/evidence/owned-consumer-observations/historical-32/observed-trace.json')
+          command = [sys.executable, '-m', 'entrotter_cli', 'observed-inspect', str(source), '--format', 'text']
+          process = subprocess.run(command, capture_output=True, text=True, timeout=30)
+          expected = Path('cli/tests/data/observed-price32.txt')
+          sources = [source, expected, Path('cli/src/entrotter_cli/main.py'),
+                     Path('cli/src/entrotter_cli/observed_text.py'), Path('cli/src/entrotter_cli/position_text.py'),
+                     Path('sdk-python/src/entrotter_sdk/observed.py'), Path('sdk-python/src/entrotter_sdk/trace.py')]
+          result = {
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'command': command[1:], 'returncode': process.returncode,
+              'stdout': process.stdout, 'stderr': process.stderr,
+              'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
+              'scope': 'Offline exact presentation of original native32 recorded views; no fresh EVM/model/timing claim.',
+          }
+          output = Path('evidence/monorepo-verification/integration-ci/cli-observed-text.json')
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_text(json.dumps(result, indent=2) + '\n')
+          assert process.returncode == 0, result
+          assert process.stderr == '', result
+          assert source.read_bytes() == Path('cli/tests/data/observed-price32.json').read_bytes(), result
+          assert process.stdout.encode() == expected.read_bytes(), result
+          print('Exact CLI text retains the original32 prices, phases, receipt status and scope')
+          PYPRICE
+      - name: Inspect recorded Aave supply and borrow actions offline
+        run: |
+          python - <<'PYAAVE'
+          import hashlib, json, os, subprocess, sys
+          from pathlib import Path
+          source = Path('engine/evidence/aave-borrow-actions/report.json')
+          output = Path('evidence/monorepo-verification/integration-ci/aave-actions-viewer.json')
+          guard = "import socket; socket.socket.connect=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted network')); "
+          engine_guard = guard + "import runpy,sys; sys.argv=['engine/scripts/aave_borrow.py','--check',sys.argv[1]]; runpy.run_path(sys.argv[0],run_name='__main__')"
+          cli_guard = guard + "import runpy,sys; sys.modules['entrotter_engine']=None; from entrotter_sdk import Client; Client._request=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted API')); import entrotter_cli.main as c; c.ExportBudget=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted export')); sys.argv=['entrotter_cli',*sys.argv[1:]]; runpy.run_module('entrotter_cli',run_name='__main__')"
+          viewer_guard = """
+          import { readFileSync } from 'node:fs';
+          import { webcrypto } from 'node:crypto';
+          import vm from 'node:vm';
+          const context = vm.createContext({
+            document: { getElementById: () => ({ value: 'not-an-allowed-sample', addEventListener: () => {} }) },
+            crypto: webcrypto, TextEncoder,
+            fetch: () => { throw new Error('Offline viewer attempted network'); },
+          });
+          vm.runInContext(readFileSync('website/app.js', 'utf8'), context, {timeout: 2000});
+          const report = JSON.parse(readFileSync(process.argv[1], 'utf8'));
+          await context.checkHash(report);
+          const view = context.evmViewModel(report), agent = await context.agentViewModel(report);
+          console.log(JSON.stringify({artifact_id: report.artifact_id, balanceRows: view.balanceRows,
+            tokenIdentities: view.tokenIdentities, source: view.source, recorded_agent_rows: agent.rows}));
+          """
+          commands = [
+              ('check', [sys.executable, '-c', engine_guard, str(source)]),
+              ('verify', [sys.executable, '-c', cli_guard, 'verify', str(source)]),
+              ('inspect', [sys.executable, '-c', cli_guard, 'inspect', str(source)]),
+              ('inspect-text', [sys.executable, '-c', cli_guard, 'inspect', str(source), '--format', 'text']),
+              ('viewer', ['node', '--input-type=module', '-e', viewer_guard, str(source)]),
+          ]
+          results = []
+          environment = dict(os.environ)
+          environment.pop('PYTHONOPTIMIZE', None)
+          for name, command in commands:
+              process = subprocess.run(command, capture_output=True, text=True, timeout=30, env=environment)
+              results.append({'name': name, 'returncode': process.returncode,
+                              'stdout': process.stdout, 'stderr': process.stderr})
+          sources = [source, Path('engine/scripts/aave_borrow.py'),
+                     Path('engine/tests/data/aave-borrow-actions.json'),
+                     Path('cli/tests/data/aave-borrow-result.json'),
+                     Path('cli/tests/data/aave-borrow-result.txt'),
+                     Path('website/app.js'),
+                     Path('website/reports/aave-borrow-actions.json'),
+                     Path('website/evidence/cli-copy/view.json'),
+                     *sorted(Path('cli/src/entrotter_cli').glob('*.py')),
+                     *sorted(Path('sdk-python/src/entrotter_sdk').glob('*.py'))]
+          result = {
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
+              'commands': results,
+              'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
+              'scope': 'Offline check and standalone CLI/SDK/production browser view-model inspection of the recorded real Aave action result; no fresh EVM, RPC, model or export.',
+          }
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_text(json.dumps(result, indent=2) + '\n')
+          assert all(item['returncode'] == 0 and item['stderr'] == '' for item in results), result
+          assert len(source.read_bytes()) == 59506, result
+          assert result['source_sha256'][str(source)] == 'e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622', result
+          assert Path('cli/tests/data/aave-borrow-result.json').read_bytes() == source.read_bytes(), result
+          evidence = Path('evidence/aave-action-integration')
+          for item in results[:4]:
+              folder = Path('evidence/aave-result-text-integration') if item['name'] == 'inspect-text' else evidence
+              assert item['stdout'].encode() == (folder / (item['name'] + '.stdout')).read_bytes(), item
+          assert results[3]['stdout'].encode() == Path('cli/tests/data/aave-borrow-result.txt').read_bytes(), result
+          assert Path('website/reports/aave-borrow-actions.json').read_bytes() == source.read_bytes(), result
+          expected = json.loads(Path('website/evidence/cli-copy/view.json').read_text())
+          observed = json.loads(results[4]['stdout'])
+          assert observed == {key: expected[key] for key in observed}, result
+          assert set(observed) == {'artifact_id', 'balanceRows', 'tokenIdentities', 'source', 'recorded_agent_rows'}, result
+          assert len(observed['balanceRows']) == 16 and all(len(row) == 4 for row in observed['balanceRows']), result
+          historical_app = subprocess.check_output([
+              'git', 'show', 'dacd13415cf3babcff69f6f64ccad1382b273ba8:app.js'])
+          assert expected['app_sha256'] == hashlib.sha256(historical_app).hexdigest(), result
+          # Frozen browser evidence stays bound to its original app. Current
+          # migration app runs here and in the current viewer/recipe tests.
+          result['historical_view_binding'] = {
+              'commit': 'dacd13415cf3babcff69f6f64ccad1382b273ba8',
+              'app_sha256': expected['app_sha256'],
+              'is_current_app_evidence': False,
+          }
+          assert expected['report_sha256'] == result['source_sha256'][str(source)], result
+          output.write_text(json.dumps(result, indent=2) + '\n')
+          print('Recorded supply, reverted borrow, causal hold and successful smaller borrow agree across Engine and standalone CLI/SDK with exact native/ERC20 text and all16 browser initial/final/change/difference rows')
+          PYAAVE
+      - name: Build source-bound local image
+        run: |
+          mkdir -p evidence/bounded-agent-integration/integration-ci
+          python engine/scripts/build_worker.py --output evidence/monorepo-verification/integration-ci/image.json
+          python - <<'PY'
+          import json, os
+          image = json.load(open('evidence/monorepo-verification/integration-ci/image.json'))['image_id']
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+              output.write('ENTROTTER_WORKER_IMAGE=' + image + '\n')
+              output.write('ENTROTTER_EXPORT_STATE_DIR=' + os.path.join(os.environ['RUNNER_TEMP'], 'entrotter-export-state') + '\n')
+          PY
+      - name: Verify shared daemon admission, default CLI-SDK-API, preservation and quotas
+        run: python scripts/check_host_limits.py --worker-manifest evidence/monorepo-verification/integration-ci/image.json --output evidence/monorepo-verification/integration-ci/integration.json
+      - name: Verify shared export accounting across real CLI processes
+        run: python scripts/check_export_budget.py --output evidence/monorepo-verification/integration-ci/export-contract.json
+      - name: Verify export failures still reject under Python optimization
+        run: python -O scripts/check_export_budget.py --output evidence/monorepo-verification/integration-ci/optimized-export-contract.json
+      - name: Measure a clean public checkout with the bounded default
+        run: python scripts/reproduce_clean.py --public --bounded --output evidence/monorepo-verification/integration-ci/clean-fixture.json
+      - name: Measure clean public bounded agent replay and standalone CLI verification
+        run: python scripts/reproduce_clean.py --public --bounded-agent --output evidence/monorepo-verification/integration-ci/clean-agent.json
+      - name: Verify no owned worker remains
+        if: always()
+        run: |
+          workers=$(docker ps --all --filter label=org.entrotter.worker=true --format '{{.ID}}')
+          test -z "$workers"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: coordination-integration-evidence
+          path: |
+            evidence/monorepo-verification/integration-ci/
+          if-no-files-found: error

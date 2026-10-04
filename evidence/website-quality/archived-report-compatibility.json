@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "reports": [
+    {
+      "path": "evidence/agent-local-codex.json",
+      "file_sha256": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+      "artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/agent-local-prescribed.json",
+      "file_sha256": "00cf64f73e1e0ce45b7366ef2a057525741d2eff21ee474eb7cb462fd47805ed",
+      "artifact_id": "65c7d1584a0dd577ac4bb8646ac3fe62f233d58c5b73a5b5d7d6e4e98fc374d2",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/agent-local-risk.json",
+      "file_sha256": "30975546117ecd7b70a496e398d303cd9b9575a1228429e446016cc247e2822b",
+      "artifact_id": "bae842845d882b3007fbb497c4d6abbbc86bb935b7e0cb1d504cecf6dad57e52",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-17000000-model.json",
+      "file_sha256": "fae0a26ee55655c9b7069c674a97e989114e8c98e4fcbefd55305756a623e6d9",
+      "artifact_id": "26d85a53b90d57b7b7e127ccfa32b751efc0175f411c28cf7cea1038cd3cf66e",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-17000000-non-agent.json",
+      "file_sha256": "c47aec904ba862b941ad504822da0f8041d428579e98ad52da06403707512d2f",
+      "artifact_id": "11e1ff93362c392d5500232cd71e82685e26e8362a39e4215c72276c9bc15e36",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-17000000-risk.json",
+      "file_sha256": "2440bca66dedb386be71b641d3590f7d6007b2e34f5251236c8a0878fb30b88f",
+      "artifact_id": "47c8a7835cf8928273e61d2919f449b8e1d33310fe8f4f8800a0efd782c99581",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-18000000-model.json",
+      "file_sha256": "ac077c3290c1e5fdda11aa865e9d0bfdffc63eeb70302e96cc125f6985144892",
+      "artifact_id": "f8804e55a7cdb75c1a08849fd2e975a9ca9426f3d62f6261987ad9c6a2f09d0a",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-18000000-non-agent.json",
+      "file_sha256": "a34c038adfbbd1b2a98436ace2b548440c663c0333099e55f9a2cc5ec95bf2a7",
+      "artifact_id": "0498c9baf2d44a36861a4dd59c07a6721992fafb1fb346a0c9a0011d5e4607d5",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-18000000-risk.json",
+      "file_sha256": "60f3dabf223495785065916102cc8d94f31bc9a4f58b5da5abb409d363d44cde",
+      "artifact_id": "d3d5c385c1ec74a71f91d302a92575eff3a9b04366aff0a3be8fed61ed1f4bc6",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-19000000-model.json",
+      "file_sha256": "0de40939692c8cc67503d6cc72e42d9f4c1e7250fae548dce755790808083895",
+      "artifact_id": "d96c919d7ddc4dabde5126914bc40fe8e44736e6bd7be37ed84b3dc6400699c9",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-19000000-non-agent.json",
+      "file_sha256": "11b0fce3f106f8f50c3a2b3ace7f5038f555776da928020de3986d4d6b59eada",
+      "artifact_id": "61a14ab2a3b813273e93b14908e7e147654440b349efcb4441714f7a523796d5",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-19000000-risk.json",
+      "file_sha256": "4503ebdaff4d9f89fabdd89d6a3989fb422abecfbb146c997bbd3f8b77a1e4b6",
+      "artifact_id": "5a607b9aff978b08156f3eddc802376d373cd8c8a3dc4b51e8076dbdd97018f5",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-20000000-model.json",
+      "file_sha256": "23fa6f1afb88f18fe4b3397c3af2b493e06b3d6d96079e615726dc1dbe6f412f",
+      "artifact_id": "0646fa5235c1e651d853283bca84f440c179982dc8107ba296150d7b117d2801",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-20000000-non-agent.json",
+      "file_sha256": "5e4b47a6963530f3401e452631ada8e9e5a9cf5f4a70aabb670093c56ec1ee4a",
+      "artifact_id": "29ac524a9d2eb383da95f1a13e59bce4d4308ae3dbaccbd8c2c207e096bb9063",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-20000000-risk.json",
+      "file_sha256": "bfc0042261b4982bdcf9535b1aaa43c3fc55db30abfb6394964095df59900e7b",
+      "artifact_id": "e43c616a90fcb22a7a9a4e9ddd18db953b20e1de7f06307e0349839a2dba229c",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-21000000-model.json",
+      "file_sha256": "f578745fc7a460d16b98821155a80816621cfa01cca39c4be6a53463acd25c76",
+      "artifact_id": "d7aeab72783f5ae5474b5d356769ec93a77c9bbc85be34ae84df0dbf7402ea93",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-21000000-non-agent.json",
+      "file_sha256": "79e79f1fcc38ea13c46e2283de95d784982ce8f929613dfce4ba6e3aee12348b",
+      "artifact_id": "b968fb9b6e9cb8e9ad638c3db1ae699bda6a76cf4707d73f2bfe0a72d88ef7dc",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/causal-v1/causal-uniswap-21000000-risk.json",
+      "file_sha256": "2ce78866332adf66375b94c973862f2d15360102419da7e31b1a1b37a488d7d6",
+      "artifact_id": "64f96197e622ccc39e04189044b7edded4fdb71d259bc68df92473b9968ffb6d",
+      "unchanged_evm_view_model": true
+    },
+    {
+      "path": "evidence/historical-uniswap.json",
+      "file_sha256": "2d32bb9c7dccb3db5ebaaa11b7a65a4ab02bf2228c93933ec57b411480c341df",
+      "artifact_id": "6c358340e3b1227fccb4398802d30fefe27877aeacbacf8bd313c9c65c13a453",
+      "unchanged_evm_view_model": true
+    }
+  ],
+  "old_source_sha256": "76db722f03c0d71e3ee092a030dabc40a6fe6dda8370dae05cb4c547670f5f91",
+  "new_source_sha256": "645675eab6c3b159a0234bc1847238f8e4e8c1ae589c3c85df5679c8e7b319d6",
+  "scope": "Offline exact production hash and EVM view-model comparison on 19 existing public reports; no new chain/model execution"
+}

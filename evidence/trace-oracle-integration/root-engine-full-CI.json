@@ -1,0 +1,185 @@
+{
+  "head": "99fd3a60a754f129c78d1324f2a01787a6538917",
+  "all8checks": "passed at exact diagnostic source head; previous e849 failure attempts retained separately",
+  "independent_root_review": "Raw quality/source/wheel/image/signed inventory/docs/log/history artifacts inspected; separate from mandatory human GitHub approval.",
+  "source_policy_hashes": 23,
+  "wheel_modules": 18,
+  "retained_full_findings": 23,
+  "exact_Python_packages": 42,
+  "image_source_inputs": 19,
+  "image_OS_packages": 26,
+  "signed_native_Cargo_packages": 1126,
+  "outside_Cargo": 172,
+  "native_tests": 282,
+  "native_seconds": 48.391,
+  "actual_Docker_tests": 25,
+  "actual_Docker_seconds": 217.324,
+  "unit_matrix_scope": "282tests each3.11-3.14,31realAnvil skips each; separate native282 no skips",
+  "historical_reports": [
+    {
+      "file": "mainnet-prefix.json",
+      "sha256": "abc276351b7076e43639a8184764948c32bb615e40301b45a4e973545085f721",
+      "receipt_count": 1,
+      "runtime_seconds": 7.021339,
+      "candidate_statuses": [
+        "skipped"
+      ],
+      "complete_previous_outcomes_equal_except_runtime_hash_and_exact_added_assumption": true
+    },
+    {
+      "file": "mainnet-prefix-four.json",
+      "sha256": "a771f1a07a5023ee9b2f297abe9616bc49a4c0ece5d75d6576522daf5a584176",
+      "receipt_count": 4,
+      "runtime_seconds": 19.281316,
+      "candidate_statuses": [
+        "skipped",
+        "executed",
+        "executed",
+        "nonce_conflict"
+      ],
+      "complete_previous_outcomes_equal_except_runtime_hash_and_exact_added_assumption": true
+    }
+  ],
+  "docs_file_hashes": 14,
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T20:34:26Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36922529100/job/110571809688",
+      "name": "docs-links",
+      "startedAt": "2026-10-01T20:34:12Z",
+      "status": "COMPLETED",
+      "workflowName": "Documentation links"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T20:34:36Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36922529036/job/110571809443",
+      "name": "quality",
+      "startedAt": "2026-10-01T20:34:12Z",
+      "status": "COMPLETED",
+      "workflowName": "Engine quality and Python dependency audit"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T20:38:58Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36922529032/job/110571818336",
+      "name": "isolated",
+      "startedAt": "2026-10-01T20:34:15Z",
+      "status": "COMPLETED",
+      "workflowName": "Isolated worker enforcement"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T20:35:09Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36922529041/job/110571808605",
+      "name": "evm",
+      "startedAt": "2026-10-01T20:34:11Z",
+      "status": "COMPLETED",
+      "workflowName": "Local EVM integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T20:34:54Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36922529028/job/110571808956",
+      "name": "unit (3.11)",
+      "startedAt": "2026-10-01T20:34:13Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T20:34:51Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36922529028/job/110571808757",
+      "name": "unit (3.12)",
+      "startedAt": "2026-10-01T20:34:12Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T20:34:51Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36922529028/job/110571809127",
+      "name": "unit (3.13)",
+      "startedAt": "2026-10-01T20:34:12Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T20:34:52Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36922529028/job/110571808870",
+      "name": "unit (3.14)",
+      "startedAt": "2026-10-01T20:34:12Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    }
+  ],
+  "GitHub_reviews": [],
+  "diagnostic_dispatch_scope": "Failure-only observed diagnostic skipped on this successful isolated run; native004 proves separate synthetic observed transport, not actual historical/Docker observer dispatch. Original aac/e849 causes remain unknown.",
+  "attempt1": "25Docker tests216.086s passed, later defaultmainnet1 failed~2.84s genericworkererror/no report; cause unknown. Healthy same-source readonly followup does not prove initial cause. Exact failed-check retry kept same head/all gates.",
+  "database_binary_scope": "CI recorded matching native/image digest; actual database binary not exported for root independent rehash.",
+  "signed_provenance_scope": "Root verifies signed statement/subject/source/archive/binary/SBOM claims and complete raw Cargo scan identity; cryptographic Cosign verification ran in CI with retained logs, not a fresh local signature verification.",
+  "proxy_cleanup_scope": "Original oracle evidence nine nodes/five proxy listener closures; integrated004 separately proves seven nodes/eight readers/two proxy handler/listener/port closures. Neither scopes provider truth.",
+  "artifact_sha256": {
+    "ci-quality/bandit.json": "3f958d699b9b547ce0bf5aecff76470d3f1974a6033905b1b3055392bd62eb2b",
+    "ci-quality/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "ci-quality/dependency-scope.json": "523c22b99543db0f4d3f92a40e38ee0dd88d784eb57c88e176f2155edc5fbc56",
+    "ci-quality/wheels/entrotter_engine-0.1.0-py3-none-any.whl": "381b1c8dd60ee8d87ffae672b664dec04e6e49e750cb4283b72c9f2089ba1f11",
+    "ci-bounded/worker-image-security/.quality/build-output-docker.json": "0047c89e086cb97f21863a97d3addf84887d33e66b573795a049b0e4786f57b6",
+    "ci-bounded/worker-image-security/.quality/image-security/database.json": "e7e911e82f5fdab37a9cca8ba314e391eed0830e93c24f135cddd69d10f79b30",
+    "ci-bounded/worker-image-security/.quality/image-security/packages.json": "83c47de565b270d0268d18231dba9f29a0bc36d210a92f6e08fd4296dd6a2de4",
+    "ci-bounded/worker-image-security/.quality/image-security/signature.json": "87549afd369855be386ea55f6315372e9a0875b498940f1cedc9bb76fe8a5897",
+    "ci-bounded/worker-image-security/.quality/image-security/summary.json": "e3a8ed195fe2609037dbc43b6478544bc9f2d3077af519d9fc9dece77957e7b3",
+    "ci-bounded/worker-image-security/.quality/native-security/attestations.json": "fd3dd5ae535b07edb7ec78dc9b1797d65658ee219fb16c88ec3f08b530330a2f",
+    "ci-bounded/worker-image-security/.quality/native-security/database.json": "e7e911e82f5fdab37a9cca8ba314e391eed0830e93c24f135cddd69d10f79b30",
+    "ci-bounded/worker-image-security/.quality/native-security/packages.json": "7574e701ea01ff3b9a5f105952336e1ce06a06b02c0dd65f1703041b2d833ca1",
+    "ci-bounded/worker-image-security/.quality/native-security/provenance-bundle.json": "e493c74342af32d79e1ae7bf923be7738a2e7bfb569005f259d3f5be6a7076fb",
+    "ci-bounded/worker-image-security/.quality/native-security/sbom-bundle.json": "348e077f65c1c94b63bb54ffb6c51c78f3d5d8fbc60d2af57f9b61867585f823",
+    "ci-bounded/worker-image-security/.quality/native-security/signed-inventory.json": "8fb1fd40f45ff7eb97f40a6f020586e1e486ba701ae891e6ee6f63fff9ea6c7b",
+    "ci-bounded/worker-image-security/.quality/native-security/summary.json": "8c25cb8b71530a5586254d23069113e1d4f8807f4d3b5a63de071c00e891f95c",
+    "ci-bounded/worker-image-security/.quality/trace-replay/mainnet-prefix-four.json": "a771f1a07a5023ee9b2f297abe9616bc49a4c0ece5d75d6576522daf5a584176",
+    "ci-bounded/worker-image-security/.quality/trace-replay/mainnet-prefix.json": "abc276351b7076e43639a8184764948c32bb615e40301b45a4e973545085f721",
+    "ci-bounded/worker-image-security/worker-image.json": "2b63d296bccc9174022c934906807387dd038566e80c75d4af5f0687cfbba633",
+    "ci-docs/report.json": "d0321e8bab0a51a7d3e33380f6f28dec6aa024292a80aedad9e08edc1ace11c9"
+  },
+  "remaining": [
+    "Archived funding/oracle/provider authenticity/fullblock/root/endstate/opcode proof incomplete.",
+    "Human protected-main approval/candidate Pages publication and submission remain separate."
+  ],
+  "SDK_actual_site_codec_reports": [
+    {
+      "artifact_id": "9fd94975a963f46637593f99ab556c924b15668275dffd34f02f91b38662b5ac",
+      "baseline_verified": true,
+      "candidate": [
+        "skipped"
+      ]
+    },
+    {
+      "artifact_id": "7efcc0c57db9b345e573acecb0c0925c9fb1ffa428423eb9f7314981d95c8637",
+      "baseline_verified": true,
+      "candidate": [
+        "skipped",
+        "executed",
+        "executed",
+        "nonce_conflict"
+      ]
+    }
+  ],
+  "reader_scope": "Actual SDKee and viewerb7 codec verify current1/4 files/checksums/statuses offline; no new browser rendering/state authenticity.",
+  "raw_logs_sha256": {
+    "ci-native.log": "f771487a875e5a9b134481ef896017f58049a37ce4e82c24c02b13dedc150e01",
+    "ci-units.log": "d5b160cfc6fbf7b83d7951595a48864b5b7805cb38dff9519e1334a50534c451",
+    "ci-bounded.log": "4d8f4614ba6ae7deb5842408946f9a67bcd7ad31913762e0d2b508c3d69ca9db",
+    "ci-bounded/worker-image-security/.quality/native-security/provenance-verification.log": "80a53f76c7ed6969dade3b6ee47cdb753162db7c00be625448999d08bae77ed8",
+    "ci-bounded/worker-image-security/.quality/native-security/sbom-verification.log": "80a53f76c7ed6969dade3b6ee47cdb753162db7c00be625448999d08bae77ed8"
+  }
+}

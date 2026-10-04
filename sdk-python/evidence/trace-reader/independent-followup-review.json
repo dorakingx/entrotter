@@ -1,0 +1,39 @@
+{
+  "reviewed_at_utc": "2026-10-01T15:42:58.564621+00:00",
+  "base": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+  "prior_review_sha256": "bb0f778660e7078a68570ca716a15a3ca4f1651b5a5109379563d6407aaaa9c1",
+  "scope": "Read-only followup of four accepted fixes, two focused regression methods, source/docs/status/evidence and fixture hashes; no full suite or EVM execution.",
+  "resolved": [
+    "Legacy27/28/37/38 aligned with engine; unprotected signatures explicitly contain no chainID.",
+    "Access-list storage keys capped to256in total across all entries.",
+    "Fourth signed metadata field preserves gas_limit and every original/executed receipt binds gasUsed<=signed limit.",
+    "Revert logs/bloom/contractAddress and call/creation relationships refused before match flags are accepted."
+  ],
+  "remaining_actionable_findings": [],
+  "focused_checks": {
+    "command": "PYTHONPATH=src:tests python3 -m unittest test_trace.TraceReaderTests.test_supported_unprotected_legacy_and_total_access_keys test_trace.TraceReaderTests.test_resealed_impossible_gas_revert_and_contract_receipts -v",
+    "tests": 2,
+    "exit_code": 0
+  },
+  "verified_without_execution": [
+    "All5summary source hashes match current bytes.",
+    "All3fixture hashes match declared original bytes.",
+    "Existing client.py unchanged fromb0; no trace HTTP route.",
+    "Evidence/docs distinguish36author tests/full5source scans/fresh wheel proof from pending CI/protected approval.",
+    "Coherently fabricated revert acceptance is explicitly scoped as consistency, not EVM truth.",
+    "Original review preserved."
+  ],
+  "source_sha256": {
+    "src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "src/entrotter_sdk/__init__.py": "0b38ae9a28d64e3948a930bdeb343b27b22433218695a73d5b9980dc27cccb16",
+    "tests/test_trace.py": "9b39ef1e523c4e5c8154b7a89db865b53b2230d01e6c82b300478b3f4b1bd478",
+    ".github/workflows/quality.yml": "97d9f5de93c4af41d40c5fba939c86c656a8ddbfe9ad2de62d4fa0953cfe73ae"
+  },
+  "limits": [
+    "Root-produced full36tests/wheel installation/security checks not duplicated; reviewer ran only two affected offline regression methods.",
+    "No external/archive/model/Anvil/Docker calls, private keys, source edits or GitHub approval.",
+    "This source review does not satisfy protected-main approval or independently verify root CI artifacts."
+  ],
+  "source_edits_by_reviewer": false
+}

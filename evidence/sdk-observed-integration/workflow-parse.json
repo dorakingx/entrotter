@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "workflows": {
+    ".github/workflows/quality.yml": {
+      "sha256": "3d396736f852d071b6073eeeed6757e60202121e78977c5ba1a219ffa37d574f",
+      "jobs": [
+        "quality"
+      ]
+    },
+    ".github/workflows/docs-links.yml": {
+      "sha256": "324f81999cfa3424a205bff86bc38ce03a9f9539f21bb2969e9a26413d657734",
+      "jobs": [
+        "docs-links"
+      ]
+    },
+    ".github/workflows/ci.yml": {
+      "sha256": "45ed2072b265e95bafc796d4f24c3bb213d0babc6f6ff20a863d88987c93113a",
+      "jobs": [
+        "integration",
+        "host-bounds",
+        "bounded-default"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "status": "no_actionable_source_findings",
+  "coordination_base": "8029d3a77d94cdd6b27c2abe294de0bc4e83d4c2",
+  "candidate_worker_engine": "e84980edd3945d405bf118790b8166c95bd75c7b",
+  "scope": [
+    "Four source/pin diffs reviewed; allimmutable worker checkout/typepolicy/manifest pins agree; othercomponent/frozenoriginal pins unchanged.",
+    "New offline step binds3report byteSHA before SDKtyped parsing and actual viewerb7 Node22.23.1 codec; checks positivegas/cumulative/log20/adverserevert/no-log/sameconsumerhash and unmatched receipt-less storage outcomes.",
+    "Read-only offline module subprocess hasfixedprogram/fileURI,30secondtimeout,noHTTP/EVM/model calls; fullsource-bound default image/lifecycle/worker gate unchanged.",
+    "Assertions establish exactfixture/declared consistency, neverproviderstate/oracletruth/authenticity; renderedbrowser/hostdefault distinct."
+  ],
+  "findings": [],
+  "observed_local_proof": "Rootpreliminary offline-result.json stillold935pinmetadata, explicitlyprior draft perrootmessage. Its report bytes/output matchnewactual e849fixture. Finalpublic proof must regenerate metadata withfinalpins; notcurrentfinale849CI proof.",
+  "root_types_summary": "Existing final root21-source frozen3diagnostic proof read; no duplicate tests run by reviewer.",
+  "source_sha256": {
+    ".github/workflows/ci.yml": "86eff356577a1d201f51f9f8ba35850bf87f520f2f5c8a2fa9a6caf53b30af3d",
+    ".github/workflows/quality.yml": "d24726b8967f5d2bed057435e4a2128a617b40a12d850ae4a889c70bae5d9f66",
+    "bounded-worker-pins.json": "7e9bfd91e97afff3a1ddcd0273939552717488a1b554916d9d52b331c920551b",
+    "quality-inputs.json": "1760b09a7641881dbaad78de74e93e70627b4a83628f6a8ce9c890654f01eb08"
+  },
+  "proof_sha256": {
+    ".quality/oracle-integration/offline-result.json": "0f95da277b49e58d976f80c02f7c02d41237010ec7d61b82d140c1e4429eee37",
+    ".quality/types/summary.json": "6e1ad116774305e010b6243062fe8ea30207e77c3151727f79d2ae619b38085c"
+  },
+  "limits": [
+    "ExactcombinedCI/publicfinaldocs/snapshot remains pending; thisis source-onlyreview.",
+    "Mandatory independent humanGitHubprotectedmainapproval remains separate."
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "scenes": [
+    {
+      "id": "promise",
+      "eyebrow": "ENTROTTER / EXPERIMENTAL 0.1",
+      "title": "Before permissions,\ninspect the decision.",
+      "body": "A local test bench for onchain agents.",
+      "lines": [
+        "Known state",
+        "Changed decision",
+        "Reproducible evidence"
+      ],
+      "narration": [
+        "Before an onchain agent gets production permissions, its decisions need a reproducible test.",
+        "Entrotter lets a developer start from known blockchain state, change a decision, and keep a record another developer can inspect."
+      ],
+      "start": 1.0,
+      "end": 15.983673469387757
+    },
+    {
+      "id": "problem",
+      "eyebrow": "THE DEVELOPER PROBLEM",
+      "title": "A passing simulation\nis only the beginning.",
+      "body": "The proposed problem: experiments become hard to review when their context is lost.",
+      "lines": [
+        "Which block and overrides?",
+        "What did the policy actually see?",
+        "Can a teammate reproduce the result?"
+      ],
+      "narration": [
+        "A passing simulation alone does not explain a decision. Which block did it use? Which balances were overridden? What information reached the policy?",
+        "Our hypothesis is that teams need these answers together, instead of scattered across scripts, terminal logs, and screenshots."
+      ],
+      "start": 15.983673469387757,
+      "end": 33.86984126984127
+    },
+    {
+      "id": "workflow",
+      "eyebrow": "ONE REVIEWABLE EXPERIMENT",
+      "title": "Fork. Compare.\nRecord. Replay.",
+      "body": "Real Anvil execution, explicit assumptions and a content-addressed JSON result.",
+      "lines": [
+        "Paired branches start from the same state",
+        "Policy can hold or execute the exact proposal",
+        "Replay refuses changed observations"
+      ],
+      "narration": [
+        "Entrotter runs baseline and candidate actions from identical initial state in separate Anvil instances. A constrained policy sees the current proposal, current state, and completed actions, not future steps.",
+        "It can hold, or execute the unchanged proposal. The report keeps source pins, receipts, token units, assumptions, and the recorded decisions."
+      ],
+      "start": 33.86984126984127,
+      "end": 56.922448979591834
+    },
+    {
+      "id": "proof",
+      "eyebrow": "MEASURED / OPEN REVIEW BRANCH",
+      "title": "19 reports.\n19 exact reproductions.",
+      "body": "16 archived-state executions + 3 local cases. 12 agent records replayed. No new model calls.",
+      "lines": [
+        "189 native and unit tests",
+        "21 real Docker tests",
+        "CPU, memory and lifetime bounds"
+      ],
+      "narration": [
+        "The current review branch reproduces all nineteen existing EVM reports as exactly equal complete artifacts, including twelve agent recordings, without calling a model again.",
+        "One hundred eighty nine native and unit tests, and twenty one real Docker tests, verify behavior and resource controls. All results and limitations are public."
+      ],
+      "start": 56.922448979591834,
+      "end": 79.37133786848072
+    },
+    {
+      "id": "honesty",
+      "eyebrow": "WHAT THE EVIDENCE DOES NOT SAY",
+      "title": "No claimed model edge.\nNo claimed speed edge.",
+      "body": "Negative results are part of the product, not something to hide.",
+      "lines": [
+        "Recorded model matched the risk rule in five cases",
+        "Direct Anvil 8.653 s \u00b7 Entrotter 8.689 s median",
+        "Token balance changes are not profit"
+      ],
+      "narration": [
+        "The model matched the deterministic risk rule in the five evaluated historical cases, and took longer. A same-task comparison also showed no speed advantage over a direct Anvil script.",
+        "The proposed value is a reusable, reviewable experiment and replay record. It is not a claim of smarter trading, future prediction, or profit."
+      ],
+      "start": 79.37133786848072,
+      "end": 101.17006802721087
+    },
+    {
+      "id": "users",
+      "eyebrow": "INITIAL USER / HYPOTHESIS",
+      "title": "For teams reviewing\nonchain agent decisions.",
+      "body": "Start with EVM agent developers who already build their own simulation scripts.",
+      "lines": [
+        "Local execution and private report files",
+        "Versioned scenarios that fit code review",
+        "Three independent user sessions planned"
+      ],
+      "narration": [
+        "The initial audience is small EVM agent teams that already write simulation scripts and need a teammate to reproduce a questionable decision.",
+        "The first validation target is three genuine developer sessions: run their own case, reproduce a colleague's result, and identify what would make this workflow useful. Those sessions have not happened yet."
+      ],
+      "start": 101.17006802721087,
+      "end": 123.56090702947844
+    },
+    {
+      "id": "business",
+      "eyebrow": "BUSINESS / UNVALIDATED",
+      "title": "Free OSS core.\nTest paid team value.",
+      "body": "A pricing experiment, not an available product or proven willingness to pay.",
+      "lines": [
+        "MIT local engine and report viewer",
+        "Hypothesis: shared reviews and scenario management",
+        "Interview anchor: $99 / team / month"
+      ],
+      "narration": [
+        "The local engine and viewer are MIT licensed. A business hypothesis is paid team collaboration around shared scenarios and reviews, while local execution stays open source.",
+        "Ninety nine dollars per team per month is an interview anchor, not a live offer or validated willingness to pay. There are no verified customer or revenue claims."
+      ],
+      "start": 123.56090702947844,
+      "end": 146.5902947845805
+    },
+    {
+      "id": "close",
+      "eyebrow": "TRY THE EVIDENCE",
+      "title": "Bring one decision\nyou need to explain.",
+      "body": "entrotter.github.io \u00b7 github.com/entrotter",
+      "lines": [
+        "Run locally \u00b7 inspect an artifact \u00b7 contribute a failure case",
+        "Current integration requires independent review",
+        "Synthetic narration \u00b7 Codex-assisted work disclosed"
+      ],
+      "narration": [
+        "Start with the public example, inspect the assumptions, then bring one decision you need to explain. The site and six repositories provide the code and measured evidence.",
+        "The bounded agent integration still needs independent review. Team details and demand validation remain pending. This presentation uses synthetic narration and discloses Codex assisted development."
+      ],
+      "start": 146.5902947845805,
+      "end": 170.30467120181405
+    }
+  ],
+  "captions": [
+    {
+      "start": 1.0,
+      "end": 6.863038548752835,
+      "text": "Before an onchain agent gets production permissions, its decisions need a reproducible test.",
+      "scene": "promise"
+    },
+    {
+      "start": 7.313038548752835,
+      "end": 15.033673469387756,
+      "text": "Entrotter lets a developer start from known blockchain state, change a decision, and keep a record another developer can inspect.",
+      "scene": "promise"
+    },
+    {
+      "start": 15.983673469387757,
+      "end": 24.377687074829936,
+      "text": "A passing simulation alone does not explain a decision. Which block did it use? Which balances were overridden? What information reached the policy?",
+      "scene": "problem"
+    },
+    {
+      "start": 24.82768707482993,
+      "end": 32.91984126984127,
+      "text": "Our hypothesis is that teams need these answers together, instead of scattered across scripts, terminal logs, and screenshots.",
+      "scene": "problem"
+    },
+    {
+      "start": 33.86984126984127,
+      "end": 46.83818594104308,
+      "text": "Entrotter runs baseline and candidate actions from identical initial state in separate Anvil instances. A constrained policy sees the current proposal, current state, and completed actions, not future steps.",
+      "scene": "workflow"
+    },
+    {
+      "start": 47.28818594104308,
+      "end": 55.97244897959183,
+      "text": "It can hold, or execute the unchanged proposal. The report keeps source pins, receipts, token units, assumptions, and the recorded decisions.",
+      "scene": "workflow"
+    },
+    {
+      "start": 56.922448979591834,
+      "end": 68.2421768707483,
+      "text": "The current review branch reproduces all nineteen existing EVM reports as exactly equal complete artifacts, including twelve agent recordings, without calling a model again.",
+      "scene": "proof"
+    },
+    {
+      "start": 68.6921768707483,
+      "end": 78.42133786848072,
+      "text": "One hundred eighty nine native and unit tests, and twenty one real Docker tests, verify behavior and resource controls. All results and limitations are public.",
+      "scene": "proof"
+    },
+    {
+      "start": 79.37133786848072,
+      "end": 90.9697052154195,
+      "text": "The model matched the deterministic risk rule in the five evaluated historical cases, and took longer. A same-task comparison also showed no speed advantage over a direct Anvil script.",
+      "scene": "honesty"
+    },
+    {
+      "start": 91.4197052154195,
+      "end": 100.22006802721089,
+      "text": "The proposed value is a reusable, reviewable experiment and replay record. It is not a claim of smarter trading, future prediction, or profit.",
+      "scene": "honesty"
+    },
+    {
+      "start": 101.17006802721087,
+      "end": 109.8311111111111,
+      "text": "The initial audience is small EVM agent teams that already write simulation scripts and need a teammate to reproduce a questionable decision.",
+      "scene": "users"
+    },
+    {
+      "start": 110.2811111111111,
+      "end": 122.61090702947845,
+      "text": "The first validation target is three genuine developer sessions: run their own case, reproduce a colleague's result, and identify what would make this workflow useful. Those sessions have not happened yet.",
+      "scene": "users"
+    },
+    {
+      "start": 123.56090702947844,
+      "end": 135.56562358276642,
+      "text": "The local engine and viewer are MIT licensed. A business hypothesis is paid team collaboration around shared scenarios and reviews, while local execution stays open source.",
+      "scene": "business"
+    },
+    {
+      "start": 136.01562358276644,
+      "end": 145.6402947845805,
+      "text": "Ninety nine dollars per team per month is an interview anchor, not a live offer or validated willingness to pay. There are no verified customer or revenue claims.",
+      "scene": "business"
+    },
+    {
+      "start": 146.5902947845805,
+      "end": 156.57487528344672,
+      "text": "Start with the public example, inspect the assumptions, then bring one decision you need to explain. The site and six repositories provide the code and measured evidence.",
+      "scene": "close"
+    },
+    {
+      "start": 157.0248752834467,
+      "end": 169.35467120181406,
+      "text": "The bounded agent integration still needs independent review. Team details and demand validation remain pending. This presentation uses synthetic narration and discloses Codex assisted development.",
+      "scene": "close"
+    }
+  ],
+  "duration": 171.30467120181405
+}

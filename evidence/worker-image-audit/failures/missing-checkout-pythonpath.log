@@ -1,0 +1,75 @@
+test_benchmark_guard (unittest.loader._FailedTest.test_benchmark_guard) ... ERROR
+test_codex_policy (unittest.loader._FailedTest.test_codex_policy) ... ERROR
+test_direct_benchmark (unittest.loader._FailedTest.test_direct_benchmark) ... ERROR
+test_workspace (unittest.loader._FailedTest.test_workspace) ... ERROR
+
+======================================================================
+ERROR: test_benchmark_guard (unittest.loader._FailedTest.test_benchmark_guard)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_benchmark_guard
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "<workspace>/entrotter/tests/test_benchmark_guard.py", line 10, in <module>
+    import benchmark_agent
+  File "<workspace>/entrotter/scripts/benchmark_agent.py", line 13, in <module>
+    from entrotter_engine.agent import AgentController, ReplayPolicy, RiskPolicy
+ModuleNotFoundError: No module named 'entrotter_engine'
+
+
+======================================================================
+ERROR: test_codex_policy (unittest.loader._FailedTest.test_codex_policy)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_codex_policy
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "<workspace>/entrotter/tests/test_codex_policy.py", line 10, in <module>
+    from codex_policy import bounded_process, parse_events
+  File "<workspace>/entrotter/scripts/codex_policy.py", line 14, in <module>
+    from entrotter_engine.agent import AgentError, decision_schema, digest, validate_decision
+ModuleNotFoundError: No module named 'entrotter_engine'
+
+
+======================================================================
+ERROR: test_direct_benchmark (unittest.loader._FailedTest.test_direct_benchmark)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_direct_benchmark
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "<workspace>/entrotter/tests/test_direct_benchmark.py", line 12, in <module>
+    from benchmark_direct import project
+  File "<workspace>/entrotter/scripts/benchmark_direct.py", line 12, in <module>
+    from entrotter_engine.agent import AgentController, RiskPolicy
+ModuleNotFoundError: No module named 'entrotter_engine'
+
+
+======================================================================
+ERROR: test_workspace (unittest.loader._FailedTest.test_workspace)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_workspace
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "<workspace>/entrotter/tests/test_workspace.py", line 7, in <module>
+    from entrotter_engine.api import EngineServer
+ModuleNotFoundError: No module named 'entrotter_engine'
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (errors=4)

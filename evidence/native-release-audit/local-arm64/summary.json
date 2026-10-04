@@ -1,0 +1,1068 @@
+{
+  "status": "passed",
+  "signed_sbom_packages": 1298,
+  "cargo_packages": 1126,
+  "vulnerability_count": 0,
+  "outside_cargo_inventory": [
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-nightly.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-mpp.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-tempo.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/crate-checks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docker-publish.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-deploy-verify.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-flaky.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/cargo-cooldown.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/docker-publish.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/docs.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "./.github/workflows/test.yml",
+      "version": "UNKNOWN",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "JasonEtco/create-an-issue",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-tempo.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "JasonEtco/create-an-issue",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/crate-checks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "JasonEtco/create-an-issue",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "JasonEtco/create-an-issue",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-deploy-verify.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "JasonEtco/create-an-issue",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-flaky.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "Swatinem/rust-cache",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-tempo.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "Swatinem/rust-cache",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "Swatinem/rust-cache",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/crate-checks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "Swatinem/rust-cache",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "Swatinem/rust-cache",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-deploy-verify.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "Swatinem/rust-cache",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-flaky.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "Swatinem/rust-cache",
+      "version": "v2.9.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/attest",
+      "version": "v4.2.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docker-publish.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/attest",
+      "version": "v4.2.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/cache",
+      "version": "v6.1.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-clickhouse.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-nightly.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/bump-forge-std.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/bump-solar.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/bump-tempo.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/cargo-cooldown.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/changelog.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-mpp.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-tempo.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/crate-checks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docker-publish.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/finalize-release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/stable-version-pr.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/tag-stable-release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-deploy-verify.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-flaky.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/configure-pages",
+      "version": "v6.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/create-github-app-token",
+      "version": "v3.2.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/stable-version-pr.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/create-github-app-token",
+      "version": "v3.2.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/tag-stable-release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/deploy-pages",
+      "version": "v5.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/download-artifact",
+      "version": "v8.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-clickhouse.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/download-artifact",
+      "version": "v8.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-nightly.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/download-artifact",
+      "version": "v8.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/github-script",
+      "version": "v9.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-dispatch.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/github-script",
+      "version": "v9.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/github-script",
+      "version": "v9.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/changelog.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/github-script",
+      "version": "v9.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/stable-version-pr.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/github-script",
+      "version": "v9.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/tag-stable-release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/setup-node",
+      "version": "v7.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-nightly.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/setup-node",
+      "version": "v7.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/setup-python",
+      "version": "v7.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-flaky.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/setup-python",
+      "version": "v7.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/stale",
+      "version": "v11.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/stale-prs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/upload-artifact",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-nightly.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/upload-artifact",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/upload-artifact",
+      "version": "v7.0.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "actions/upload-pages-artifact",
+      "version": "v5.0.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "anchore/sbom-action/download-syft",
+      "version": "v0.24.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "anvil",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "anvil-core",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "anvil-rpc",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "anvil-server",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "cast",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "chisel",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "crate-ci/typos",
+      "version": "v1.50.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "depot/build-push-action",
+      "version": "v1.18.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docker-publish.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "depot/setup-action",
+      "version": "v1.7.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docker-publish.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "docker/login-action",
+      "version": "v4.6.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docker-publish.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "docker/login-action",
+      "version": "v4.6.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/finalize-release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "docker/login-action",
+      "version": "v4.6.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "docker/metadata-action",
+      "version": "v6.2.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docker-publish.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-nightly.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/cargo-cooldown.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-mpp.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-tempo.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/crate-checks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-deploy-verify.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-flaky.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "dtolnay/rust-toolchain",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "forge",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "forge-doc",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "forge-fmt",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "forge-lint",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "forge-script",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "forge-script-sequence",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "forge-sol-macro-gen",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "forge-verify",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-bench",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-cheatcodes",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-cheatcodes-spec",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-cli",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-cli-markdown",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-common",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-common-fmt",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-config",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-debugger",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm-abi",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm-core",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm-coverage",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm-fuzz",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm-hardforks",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm-networks",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm-sancov",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm-symbolic",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-evm-traces",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-linking",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-macros",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-primitives",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-test-utils",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry-tui",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "github/codeql-action/analyze",
+      "version": "v4.37.9",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "github/codeql-action/init",
+      "version": "v4.37.9",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mikepenz/release-changelog-builder-action",
+      "version": "v6.3.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-nightly.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-mpp.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci-tempo.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/crate-checks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-deploy-verify.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-flaky.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "mozilla-actions/sccache-action",
+      "version": "v0.0.11",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "oven-sh/setup-bun",
+      "version": "v2.2.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "peter-evans/create-pull-request",
+      "version": "v8.1.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/bump-forge-std.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "peter-evans/create-pull-request",
+      "version": "v8.1.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/bump-solar.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "peter-evans/create-pull-request",
+      "version": "v8.1.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/bump-tempo.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "peter-evans/create-pull-request",
+      "version": "v8.1.1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/stable-version-pr.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "re-actors/alls-green",
+      "version": "v1.3.0",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "rui314/setup-mold",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks-nightly.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "rui314/setup-mold",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "rui314/setup-mold",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "rui314/setup-mold",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/crate-checks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "rui314/setup-mold",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docs.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "rui314/setup-mold",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "rui314/setup-mold",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-deploy-verify.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "rui314/setup-mold",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-flaky.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "rui314/setup-mold",
+      "version": "v1",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "sigstore/cosign-installer",
+      "version": "v4.1.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/docker-publish.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "sigstore/cosign-installer",
+      "version": "v4.1.2",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/release.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "solar",
+      "version": "1.8.3",
+      "source": "acquired package info from rust cargo manifest: /Cargo.lock",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "taiki-e/install-action",
+      "version": "v2.87.8",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/crate-checks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "taiki-e/install-action",
+      "version": "v2.87.8",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-deploy-verify.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "taiki-e/install-action",
+      "version": "v2.87.8",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test-flaky.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "taiki-e/install-action",
+      "version": "v2.87.8",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/test.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "tempoxyz/gh-actions/.github/workflows/pr-audit.yml",
+      "version": "af809bfc35e4dd023bd52f6cc45e09809612a8cf",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/cyclops-audit.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "tempoxyz/gh-actions/.github/workflows/rust-lint.yml",
+      "version": "5aecd9fd9dca5935851b94f7cb853465e7f9158f",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "tempoxyz/gh-actions/.github/workflows/scan-github-actions.yml",
+      "version": "5aecd9fd9dca5935851b94f7cb853465e7f9158f",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/ci.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "tempoxyz/gh-actions/actions/cargo-cooldown",
+      "version": "0aa93238d85fd085d7901320b670cc6adb7a02f3",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/benchmarks.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "tempoxyz/gh-actions/actions/cargo-cooldown",
+      "version": "0aa93238d85fd085d7901320b670cc6adb7a02f3",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/cargo-cooldown.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "tempoxyz/gh-actions/actions/pr-audit-comment",
+      "version": "af809bfc35e4dd023bd52f6cc45e09809612a8cf",
+      "source": "acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/cyclops-audit.yml",
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    },
+    {
+      "name": "foundry",
+      "version": "v1.8.3",
+      "source": null,
+      "reason": "No Cargo package URL; outside this native Cargo advisory scan"
+    }
+  ],
+  "database_updated_at": "2026-09-19T07:03:12.311489574Z",
+  "database_next_update": "2026-09-20T07:03:12.311489134Z",
+  "policy": "Every detected Cargo advisory fails, including unfixed/low/unknown; no suppression or VEX",
+  "limitations": [
+    "Signed upstream SBOM scans the whole Foundry checkout; not the exact linked Anvil feature/target subset",
+    "Workspace crates, GitHub Actions and all components without Cargo URLs are listed outside advisory coverage",
+    "Compiler, native C libraries, build-system integrity, host/VM/daemon and undiscovered dependencies are not fully audited",
+    "A valid provenance signature establishes upstream identity and claims, not independent review or reproducible compilation"
+  ],
+  "foundry_version": "1.8.3",
+  "foundry_source_commit": "cae51ad458f6abb64852b7709eb784352429825d",
+  "architecture": "arm64",
+  "archive_sha256": "93fc23be26c8a902ca58fe54aa6ca28c880b58af95d052674933161df7928e6d",
+  "anvil_binary_sha256": "61ae6eeff626ffe4c265f3119ac4f534991ac8637008e76fd25d7284a685186f",
+  "signed_sbom_sha256": "ea05ec78d5f0abb54c644ec9bd6ce6ed1200a87fc53b13912d480ebda1203771",
+  "verified_signer": "https://github.com/foundry-rs/foundry/.github/workflows/release.yml@refs/tags/v1.8.3",
+  "verified_issuer": "https://token.actions.githubusercontent.com",
+  "source_digest": "339d83885af59c8fdb815a5693c411d99c502044c441d495a56761792037412a",
+  "image_id": "sha256:e5ba2222140c128f6b94e91d8cfbb90578b2cdf939a38dbf6b3f863fcacd5dc4",
+  "manifest_sha256": "3138c452af4985619cd44db6ec8229b65080c8b9f8577f01000e8a4d631180a8",
+  "auditor_sha256": "f32a97e5c0b7fd3cd611d31f83dc98c5150b0ec6249669ac2ad17d8ca5f4c29d",
+  "shared_tool_helper_sha256": "e84d1c8d37c33a176706b6cad3fe32c5f3b1f8faf96422f694cc088763ea8261",
+  "trivy_version": "0.74.0",
+  "trivy_archive_sha256": "1caada5e0e2091909357c7525d3aa76f4b660b13821bc143b190c7483e31cc11",
+  "cosign_version": "3.1.3",
+  "cosign_binary_sha256": "5cf948c2f4dfe59687bdd0b8523709067383e03982cc543475c8a7dc70e92a76",
+  "database_sha256": "d2011995903d437182133a086780524c5d7d309947cbcce3e546822a06dc54d2",
+  "report_sha256": "aecb1837dae36ae0477cd5c154157c750bf8f9fc6c46455d46c18537cfe00949"
+}

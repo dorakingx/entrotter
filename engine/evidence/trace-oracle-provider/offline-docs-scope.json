@@ -1,0 +1,21 @@
+{
+  "mode": "offline",
+  "version": "Lychee0.24.2",
+  "inputs": [
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "README.md",
+    "SECURITY.md",
+    "STATUS.md",
+    "evidence/local-contract-identity/commands.md",
+    "evidence/trace-funding-admission/README.md",
+    "evidence/trace-mine-deadline/README.md",
+    "evidence/trace-replay/README.md",
+    "tests/data/README.md",
+    "evidence/trace-oracle-provider/README.md"
+  ],
+  "success": true,
+  "external_links_checked": false,
+  "scope": "All existing tracked Markdown/HTML/CSS plus intended new evidence README. Public CI independently requires online HTTP checks and raw input hashes."
+}

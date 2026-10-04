@@ -1,0 +1,10 @@
+{
+  "scanner": "bandit",
+  "version": "1.9.4",
+  "source_sha256": {
+    "src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "src/entrotter_sdk/__init__.py": "8360c764672c3c5e1338f61efd9c2768b799f5041caa202084f4b484381f03c6",
+    "scripts/check_dependency_manifest.py": "d9c90b75f8c26ef0aa3723ab07580f05c7391a78ef12fcf20b99e80ef198deef",
+    "scripts/check_security.py": "58de6896402c89d235a22a9e9bb2895ece68f20e7b9dd91966ea15fefad24c07"
+  }
+}

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/Users/hatanakatomoya/Developer/App/Entrotter/entrotter-workspace/entrotter/scripts/check_security.py", line 104, in <module>
+    main()
+    ~~~~^^
+  File "/Users/hatanakatomoya/Developer/App/Entrotter/entrotter-workspace/entrotter/scripts/check_security.py", line 94, in main
+    raise ValueError(
+        "Production sources changed; refresh the security review with the full scan"
+    )
+ValueError: Production sources changed; refresh the security review with the full scan

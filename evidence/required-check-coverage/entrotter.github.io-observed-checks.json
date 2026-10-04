@@ -1,0 +1,59 @@
+{
+  "total_count": 6,
+  "check_runs": [
+    {
+      "name": "deploy",
+      "head_sha": "61740312f281f7e911e0eb6e9482a3c372cb1fae",
+      "status": "completed",
+      "conclusion": "skipped",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35476090427/job/105985548303"
+    },
+    {
+      "name": "build",
+      "head_sha": "61740312f281f7e911e0eb6e9482a3c372cb1fae",
+      "status": "completed",
+      "conclusion": "skipped",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35476090427/job/105985548065"
+    },
+    {
+      "name": "accessibility",
+      "head_sha": "61740312f281f7e911e0eb6e9482a3c372cb1fae",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35476090427/job/105985472092"
+    },
+    {
+      "name": "check",
+      "head_sha": "61740312f281f7e911e0eb6e9482a3c372cb1fae",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35476090427/job/105985472068"
+    },
+    {
+      "name": "quality",
+      "head_sha": "61740312f281f7e911e0eb6e9482a3c372cb1fae",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35476090427/job/105985471940"
+    },
+    {
+      "name": "docs-links",
+      "head_sha": "61740312f281f7e911e0eb6e9482a3c372cb1fae",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35476090431/job/105985471892"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+TAP version 13
+# Subtest: production JS verifies Python artifact: liquidity-shock
+ok 1 - production JS verifies Python artifact: liquidity-shock
+  ---
+  duration_ms: 4.709375
+  type: 'test'
+  ...
+# Subtest: production JS verifies Python artifact: recovery-trap
+ok 2 - production JS verifies Python artifact: recovery-trap
+  ---
+  duration_ms: 1.382917
+  type: 'test'
+  ...
+# Subtest: production JS verifies Python artifact: depeg-stress
+ok 3 - production JS verifies Python artifact: depeg-stress
+  ---
+  duration_ms: 0.657125
+  type: 'test'
+  ...
+# Subtest: tampered metric fails integrity validation
+ok 4 - tampered metric fails integrity validation
+  ---
+  duration_ms: 0.659958
+  type: 'test'
+  ...
+# Subtest: unknown schema is not accepted
+ok 5 - unknown schema is not accepted
+  ---
+  duration_ms: 2.592
+  type: 'test'
+  ...
+# Subtest: canonical ASCII escaping includes supplementary Unicode
+ok 6 - canonical ASCII escaping includes supplementary Unicode
+  ---
+  duration_ms: 0.158125
+  type: 'test'
+  ...
+# Subtest: finite numerical display validation
+ok 7 - finite numerical display validation
+  ---
+  duration_ms: 0.189333
+  type: 'test'
+  ...
+# Subtest: JS re-canonicalization matches exported content hash
+ok 8 - JS re-canonicalization matches exported content hash
+  ---
+  duration_ms: 1.840834
+  type: 'test'
+  ...
+# Subtest: real archived-state artifact passes hash and receipt view validation
+ok 9 - real archived-state artifact passes hash and receipt view validation
+  ---
+  duration_ms: 2.816542
+  type: 'test'
+  ...
+# Subtest: token units preserve integers beyond Number safe precision
+ok 10 - token units preserve integers beyond Number safe precision
+  ---
+  duration_ms: 0.377042
+  type: 'test'
+  ...
+# Subtest: missing source hash cannot appear as a historical report
+ok 11 - missing source hash cannot appear as a historical report
+  ---
+  duration_ms: 0.215334
+  type: 'test'
+  ...
+# Subtest: mismatched token addresses cannot share a comparison row
+ok 12 - mismatched token addresses cannot share a comparison row
+  ---
+  duration_ms: 0.157791
+  type: 'test'
+  ...
+# Subtest: malformed receipt state and oversized traces fail closed
+ok 13 - malformed receipt state and oversized traces fail closed
+  ---
+  duration_ms: 0.208084
+  type: 'test'
+  ...
+# Subtest: display metrics reject coercible non-decimal strings
+ok 14 - display metrics reject coercible non-decimal strings
+  ---
+  duration_ms: 0.079625
+  type: 'test'
+  ...
+# Subtest: decimal metrics preserve supported signed/exponent values and reject overflow
+ok 15 - decimal metrics preserve supported signed/exponent values and reject overflow
+  ---
+  duration_ms: 0.08975
+  type: 'test'
+  ...
+# Subtest: hash verification rejects non-object or non-finite parsed JSON
+ok 16 - hash verification rejects non-object or non-finite parsed JSON
+  ---
+  duration_ms: 0.188916
+  type: 'test'
+  ...
+# Subtest: local EVM reports accept null/absent source while forks require their pin
+ok 17 - local EVM reports accept null/absent source while forks require their pin
+  ---
+  duration_ms: 0.400958
+  type: 'test'
+  ...
+# Subtest: recorded agent decisions join causal steps to exact candidate outcomes
+ok 18 - recorded agent decisions join causal steps to exact candidate outcomes
+  ---
+  duration_ms: 4.053791
+  type: 'test'
+  ...
+# Subtest: agent recording rejects forged steps, responses, IDs, outcomes and future history
+ok 19 - agent recording rejects forged steps, responses, IDs, outcomes and future history
+  ---
+  duration_ms: 1.496833
+  type: 'test'
+  ...
+# Subtest: agent metadata preserves built-in determinism and known generation cost
+ok 20 - agent metadata preserves built-in determinism and known generation cost
+  ---
+  duration_ms: 0.742375
+  type: 'test'
+  ...
+# Subtest: resealed agent refuses array choice disguised as hold
+not ok 21 - resealed agent refuses array choice disguised as hold
+  ---
+  duration_ms: 1.533
+  type: 'test'
+  location: '<site>/tests/report.test.mjs:246:4'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file://<site>/tests/report.test.mjs:257:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: resealed agent refuses held action claiming successful gas use
+not ok 22 - resealed agent refuses held action claiming successful gas use
+  ---
+  duration_ms: 1.777084
+  type: 'test'
+  location: '<site>/tests/report.test.mjs:246:4'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file://<site>/tests/report.test.mjs:257:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: resealed agent refuses proposal unrelated to scenario
+not ok 23 - resealed agent refuses proposal unrelated to scenario
+  ---
+  duration_ms: 1.62025
+  type: 'test'
+  location: '<site>/tests/report.test.mjs:246:4'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file://<site>/tests/report.test.mjs:257:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: resealed agent refuses receipt contradicting outcome
+not ok 24 - resealed agent refuses receipt contradicting outcome
+  ---
+  duration_ms: 1.318084
+  type: 'test'
+  location: '<site>/tests/report.test.mjs:246:4'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file://<site>/tests/report.test.mjs:257:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 20
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 126.4185

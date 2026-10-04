@@ -1,0 +1,49 @@
+{
+  "status": "passed independent changed-source original-scope prelaunch review",
+  "readiness_sha256": "60afb1daf5f031d5c4f1b52857b275ed0608688b7ec55738bfa871520b9ba81d",
+  "frozen_bindings": 76,
+  "production_sources": 25,
+  "native_tests": 323,
+  "native_seconds": 75.836,
+  "root_source_review_sha256": "8ecec73d3444a9220f7bb8cff8825727927556b09253f800d0be447797e5bdf0",
+  "unchanged_original_bounds": {
+    "cache_observer_artifact_bytes": 16384,
+    "child_cleanup_original_guardian_semantics": true,
+    "child_hard_seconds": 180,
+    "host_cleanup_shared_seconds": 10,
+    "host_seconds": 190,
+    "host_stdout_bytes": 16384,
+    "max_fixed_cache_children": 1,
+    "max_nodes": 2,
+    "max_nodes_scope": "Anvil nodes only; original bound2 unchanged. Exactly one additional fixed owned cache child.",
+    "observation_per_call_seconds": 2,
+    "observation_reads_per_phase": 3,
+    "report_bytes": 8388608,
+    "trace_shared_seconds": 150
+  },
+  "unchanged_runtime_harness_files": [
+    "run.py",
+    "native_runner.py",
+    "evidence.py",
+    "cache_evidence.py",
+    "test_evidence.py",
+    "test_cache_evidence.py",
+    "CA.pem",
+    "plan.json",
+    "worker-request.json",
+    "signed-prefix.json"
+  ],
+  "reused_byte_identical_harness_fault_tests": 16,
+  "signed_inputs": 32,
+  "skip_indices": [
+    12
+  ],
+  "prior001002003004_immutable": true,
+  "allowed_next": "ONE originalscope native005 changed-source actual run. Observe original handle; no restart on poll timeout; no source mutations while live. Preserve all results, finite errors and ownership evidence.",
+  "limits": [
+    "No native CPU/RSS/PID/Docker quota claim.",
+    "No historical success/speed/candidate/protocol/provider-authenticity claim before actual result.",
+    "Software review does not replace human GitHub approval."
+  ],
+  "reviewer_sha256": "0fee162348422f399c7c37d613a5338abe357991d1b246d6f7d71f55a0c4b0a5"
+}

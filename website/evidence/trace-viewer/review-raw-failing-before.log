@@ -1,0 +1,31 @@
+TAP version 13
+# Subtest: 64 KiB calldata envelope fits the engine's larger raw-wire bound
+not ok 1 - 64 KiB calldata envelope fits the engine's larger raw-wire bound
+  ---
+  duration_ms: 2.580292
+  type: 'test'
+  location: '<viewer-repository>/tests/trace.test.mjs:274:1'
+  failureType: 'testCodeFailure'
+  error: 'Invalid transaction-prefix report: hex bytes.'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    fail (file://<viewer-repository>/trace-report.mjs:26:9)
+    bytes (file://<viewer-repository>/trace-report.mjs:63:5)
+    file://<viewer-repository>/trace-report.mjs:334:17
+    Array.map (<anonymous>)
+    traceViewModel (file://<viewer-repository>/trace-report.mjs:321:48)
+    validateTraceReport (file://<viewer-repository>/trace-report.mjs:513:16)
+    TestContext.<anonymous> (file://<viewer-repository>/tests/trace.test.mjs:278:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 90.809375

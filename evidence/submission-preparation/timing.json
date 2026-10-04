@@ -1,0 +1,73 @@
+[
+  {
+    "title": "Reproducible decisions\nbefore production permissions",
+    "eyebrow": "DORAKING \u00b7 SOLO BUILDER \u00b7 JAPAN",
+    "points": [
+      "Entrotter \u00b7 local, open-source agent evaluation",
+      "Compare decisions. Inspect assumptions. Replay evidence."
+    ],
+    "narration": "Entrotter is built by Doraking, a solo developer based in Japan. This presentation uses synthetic narration, not a cloned founder voice. The goal is to make onchain agent decisions reproducible before they receive production permissions.",
+    "audio_seconds": 14.17578231292517,
+    "duration": 14.97578231292517
+  },
+  {
+    "title": "One experiment.\nTwo comparable decisions.",
+    "eyebrow": "THE DEVELOPER WORKFLOW",
+    "points": [
+      "Identical initial EVM state; isolated Anvil branches",
+      "Source pins, receipts, token units and assumptions",
+      "A report another developer can inspect"
+    ],
+    "narration": "Developers often assemble simulation evidence from separate scripts and logs. Entrotter runs baseline and changed actions from identical EVM state in isolated Anvil branches. A versioned report retains source pins, receipts, exact token units, observations and assumptions.",
+    "audio_seconds": 17.449795918367347,
+    "duration": 18.249795918367347
+  },
+  {
+    "title": "Replay the record,\nnot a new model response.",
+    "eyebrow": "MEASURED REPRODUCIBILITY",
+    "points": [
+      "19 complete EVM reports reproduced exactly",
+      "12 agent recordings; no new model call during replay",
+      "Bounded Docker workers; local report viewer"
+    ],
+    "narration": "The bounded candidate reproduced nineteen complete EVM reports, including twelve agent recordings, without another model call. Docker workers apply resource limits. The static viewer imports reports locally in the browser. Archived-state execution is not historical transaction replay or future prediction.",
+    "audio_seconds": 18.64562358276644,
+    "duration": 19.44562358276644
+  },
+  {
+    "title": "Keep the negative result.",
+    "eyebrow": "WHAT THE EVIDENCE ACTUALLY SHOWS",
+    "points": [
+      "Evaluated model matched the risk rule and was slower",
+      "No speed advantage over the same direct Anvil task",
+      "Proposed value: repeatable review and handoff"
+    ],
+    "narration": "In five evaluated historical cases, the model matched the deterministic risk rule and took longer. A same-task comparison showed no speed advantage over direct Anvil. The proposed value is a reusable review and replay workflow, not smarter trading or guaranteed profit.",
+    "audio_seconds": 17.41496598639456,
+    "duration": 18.21496598639456
+  },
+  {
+    "title": "Open-source locally.\nTest the team-workflow hypothesis.",
+    "eyebrow": "AUDIENCE AND BUSINESS",
+    "points": [
+      "Initial audience: small EVM agent teams",
+      "Possible paid collaboration around scenarios and reviews",
+      "No funding, verified customers or revenue claims"
+    ],
+    "narration": "The initial audience is small EVM agent teams. Local execution is MIT licensed. Paid collaboration around shared scenarios and reviews is an unvalidated business hypothesis. No funding has been raised, and no independent user evaluations or customer revenue are claimed.",
+    "audio_seconds": 18.192834467120182,
+    "duration": 18.992834467120183
+  },
+  {
+    "title": "Inspect it. Reproduce it.\nChallenge the assumptions.",
+    "eyebrow": "ENTROTTER.GITHUB.IO",
+    "points": [
+      "Six public repositories and a pinned quick start",
+      "Candidate changes still need independent review",
+      "Substantial Codex assistance is disclosed"
+    ],
+    "narration": "Try the public viewer and pinned quick start. Inspect the assumptions and reproduce one decision you need to explain. Candidate code still awaits independent review. Substantial Codex assistance is disclosed, and known limitations remain part of the evidence.",
+    "audio_seconds": 15.348390022675737,
+    "duration": 16.148390022675738
+  }
+]

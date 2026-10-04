@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:14.176
+Entrotter is built by Doraking, a solo developer based in Japan. This presentation uses synthetic narration, not a cloned founder voice. The goal is to make onchain agent decisions reproducible before they receive production permissions.
+
+00:00:14.976 --> 00:00:32.426
+Developers often assemble simulation evidence from separate scripts and logs. Entrotter runs baseline and changed actions from identical EVM state in isolated Anvil branches. A versioned report retains source pins, receipts, exact token units, observations and assumptions.
+
+00:00:33.226 --> 00:00:51.871
+The bounded candidate reproduced nineteen complete EVM reports, including twelve agent recordings, without another model call. Docker workers apply resource limits. The static viewer imports reports locally in the browser. Archived-state execution is not historical transaction replay or future prediction.
+
+00:00:52.671 --> 00:01:10.086
+In five evaluated historical cases, the model matched the deterministic risk rule and took longer. A same-task comparison showed no speed advantage over direct Anvil. The proposed value is a reusable review and replay workflow, not smarter trading or guaranteed profit.
+
+00:01:10.886 --> 00:01:29.079
+The initial audience is small EVM agent teams. Local execution is MIT licensed. Paid collaboration around shared scenarios and reviews is an unvalidated business hypothesis. No funding has been raised, and no independent user evaluations or customer revenue are claimed.
+
+00:01:29.886 --> 00:01:45.235
+Try the public viewer and pinned quick start. Inspect the assumptions and reproduce one decision you need to explain. Candidate code still awaits independent review. Substantial Codex assistance is disclosed, and known limitations remain part of the evidence.

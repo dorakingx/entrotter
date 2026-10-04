@@ -1,0 +1,132 @@
+{
+  "head": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+  "all8checks": "passed_first_attempt",
+  "independent_root_review": "Raw quality/wheel/source/image/native/docs/log artifacts inspected, separate from required human GitHub review.",
+  "source_policy_hashes": 23,
+  "wheel_modules": 18,
+  "retained_full_findings": 23,
+  "exact_Python_packages": 42,
+  "image_source_inputs": 19,
+  "image_OS_packages": 26,
+  "signed_native_Cargo_packages": 1126,
+  "outside_Cargo": 172,
+  "native_tests": 248,
+  "native_seconds": 36.615,
+  "actual_Docker_tests": 24,
+  "actual_Docker_seconds": 221.94,
+  "unit_matrix_scope": "248 tests each Python3.11-3.14;27real-Anvil skips each; native/isolated jobs have zero skips.",
+  "historical_reports": [
+    {
+      "file": "mainnet-prefix.json",
+      "sha256": "ace94f4fee9c2464b0f2609a0ddeca5943c9ac8fb44218fbaf5b9bb53a2fce9c",
+      "receipt_count": 1,
+      "runtime_seconds": 7.257372,
+      "candidate_statuses": [
+        "skipped"
+      ],
+      "scope": "Complete previous outcomes match except runtime/hash and exactly one accurate changed admission assumption."
+    },
+    {
+      "file": "mainnet-prefix-four.json",
+      "sha256": "08223c26889550c08fe700ceac38b12998bc04f0f63d4c2c8cbafa18e4b63b93",
+      "receipt_count": 4,
+      "runtime_seconds": 24.17299,
+      "candidate_statuses": [
+        "skipped",
+        "executed",
+        "executed",
+        "nonce_conflict"
+      ],
+      "scope": "Complete previous outcomes match except runtime/hash and exactly one accurate changed admission assumption."
+    }
+  ],
+  "docs_file_hashes": 11,
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:36:47Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36900637051/job/110498611705",
+      "name": "docs-links",
+      "startedAt": "2026-10-01T17:36:36Z",
+      "status": "COMPLETED",
+      "workflowName": "Documentation links"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:36:59Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36900637078/job/110498612168",
+      "name": "quality",
+      "startedAt": "2026-10-01T17:36:37Z",
+      "status": "COMPLETED",
+      "workflowName": "Engine quality and Python dependency audit"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:41:48Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36900637015/job/110498611793",
+      "name": "isolated",
+      "startedAt": "2026-10-01T17:36:38Z",
+      "status": "COMPLETED",
+      "workflowName": "Isolated worker enforcement"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:37:24Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36900637136/job/110498612549",
+      "name": "evm",
+      "startedAt": "2026-10-01T17:36:38Z",
+      "status": "COMPLETED",
+      "workflowName": "Local EVM integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:37:13Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36900637013/job/110498611876",
+      "name": "unit (3.11)",
+      "startedAt": "2026-10-01T17:36:37Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:37:15Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36900637013/job/110498612415",
+      "name": "unit (3.12)",
+      "startedAt": "2026-10-01T17:36:38Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:37:38Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36900637013/job/110498612455",
+      "name": "unit (3.13)",
+      "startedAt": "2026-10-01T17:36:37Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:37:16Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36900637013/job/110498612253",
+      "name": "unit (3.14)",
+      "startedAt": "2026-10-01T17:36:38Z",
+      "status": "COMPLETED",
+      "workflowName": "Tests"
+    }
+  ],
+  "limitations": [
+    "Synthetic same-block funding in direct bounded image protocol is separate from default host historical replay.",
+    "Database binary digest recorded by CI, not rehashed locally from exported metadata.",
+    "No full-block/end-state/opcode or archived same-block funding proof.",
+    "No human protected-main approval, deployment/submission implied."
+  ]
+}

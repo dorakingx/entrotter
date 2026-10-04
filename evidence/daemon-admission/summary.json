@@ -1,0 +1,165 @@
+{
+  "schema_version": "0.1.0",
+  "checked_at": "2026-09-19T20:34:03.260871+00:00",
+  "status": "verified_local_and_ci; independent_review_and_merge_pending",
+  "issue": "https://github.com/entrotter/entrotter/issues/24",
+  "prs": {
+    "engine": "https://github.com/entrotter/engine/pull/17",
+    "coordination": "https://github.com/entrotter/entrotter/pull/25"
+  },
+  "commits": {
+    "engine": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "952bfb5aba14b674dd959035a5625fadbd2b07d1",
+    "scenarios": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+    "entrotter.github.io": "ab121348b0ffbec5650f9eadf0a0b11f639d9780"
+  },
+  "before_engine": "dddba4a2c3efdd429e36520e8fc9d163888089e2",
+  "regression": {
+    "before_real_cli_api_failures": 2,
+    "after_unit_native_tests": 135,
+    "after_actual_docker_tests": 15,
+    "race": "two separate processes synchronized after empty preflight; exactly one complete fixture report and one rejected creation",
+    "race_fault_injection": "five-second real-worker entrypoint delay; real Docker and kernel flags remain enabled",
+    "name_visibility": "Docker can reserve a name before ps can observe its container; create races remain generic execution failures rather than safe-retry claims",
+    "independent_idle_expiry_seconds": 181.203,
+    "unstarted_container": "holds capacity until explicit exact-ID removal",
+    "note": "Unit mocks and real Docker suites are separate; counts overlap prior suites, not additional historical evidence",
+    "ci_independent_idle_expiry_seconds": 180.852
+  },
+  "local": {
+    "cli_sdk_api": "passed: local rejection, API429 with one POST, prior export/incumbent preserved, recovery, real Anvil receipts,507,16x503",
+    "coordination_tests": 20,
+    "quality": "Ruff lint/format, mypy, full 15-finding Bandit policy and docs links pass",
+    "frozen_engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+    "frozen_scenarios": "5b718984ac67b8fb49e02f4dab676ae212d2aa58"
+  },
+  "quality_ci": {
+    "engine_commit": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+    "quality_run": 35467337447,
+    "bandit_findings": 15,
+    "full_local_ci_findings_equal": true,
+    "audited_packages": 42,
+    "vulnerabilities": 0,
+    "wheel_source_files": 14,
+    "wheel_source_equality": true,
+    "wheel_sha256": "398be8008751c18ae462e9ca0cb1de83d5cf196c76d63071f4ecbeb7dc356163",
+    "license": "MIT",
+    "runtime_dependencies": []
+  },
+  "engine_ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 35467337557,
+      "headSha": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+      "name": "Isolated worker enforcement",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35467337448,
+      "headSha": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+      "name": "Tests",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35467337437,
+      "headSha": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+      "name": "Local EVM integration",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35467337516,
+      "headSha": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+      "name": "Documentation links",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35467337447,
+      "headSha": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+      "name": "Engine quality and Python dependency audit",
+      "status": "completed"
+    }
+  ],
+  "coordination_ci": {
+    "run": 35467629251,
+    "proof_commit": "eef8a0a9f30bbef4e31ea5e6dc38e5d399ddc084",
+    "links_run": 35467629252,
+    "jobs": [
+      {
+        "name": "bounded-default",
+        "conclusion": "success",
+        "url": "https://github.com/entrotter/entrotter/actions/runs/35467629251/job/105962766794"
+      },
+      {
+        "name": "host-bounds",
+        "conclusion": "success",
+        "url": "https://github.com/entrotter/entrotter/actions/runs/35467629251/job/105962766918"
+      },
+      {
+        "name": "integration",
+        "conclusion": "success",
+        "url": "https://github.com/entrotter/entrotter/actions/runs/35467629251/job/105962766957"
+      }
+    ],
+    "downloaded_commits_checker_source_artifacts_match": true,
+    "artifact_id": 10591806311,
+    "artifact_size_bytes": 4391,
+    "github_reported_archive_digest": "sha256:e4275828e170dd5e2930a504fc2d4f113db87e27cc4116fd481d55ec026f09b2",
+    "fresh_public_reproduction_seconds": 7.638369017999992,
+    "fresh_public_reproduction_scope": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included."
+  },
+  "checker_sha256": "abe285958f0f6501f2d8cae2b162208da82905d2745321babfefdec255bd65e2",
+  "scope": [
+    "one cooperating default worker per configured Docker daemon",
+    "unique owner-label queries and exact immutable-ID deletion",
+    "preflight429; ambiguous create/start failures422; no automatic POST retry"
+  ],
+  "limitations": [
+    "Independent review/merge required; public main and live Pages unchanged",
+    "Explicit native and older clients, independent daemons and host caller/daemon overhead are outside this bound",
+    "Pre-entrypoint abandonment and daemon failure may need exact-ID operator recovery",
+    "Export retention, abrupt-host-death temporary files and image/build-cache/VM disk quotas remain open",
+    "Bridge networking for fork reads is not an egress allowlist; arbitrary user code remains disabled"
+  ],
+  "evidence_normalization": "Local workspace/home prefixes replaced; trailing whitespace normalized. CI native log retains only test/result lines; full original logs remain on GitHub. Initial failed test assumptions/configuration are retained and are not counted as passing evidence.",
+  "files": {
+    "ci/clean-reproduction.json": "41fe1f73d5473172dfa7440a81521e930cdda848e05b6aa839e5879ab7bf0c6a",
+    "ci/image.json": "d553065db09967247b2322a16c5aa4f17b76ec459aed4a4d73dcae2bb7f06d45",
+    "ci/integration.json": "6f9e66d3c39b036ab018b4478d60a6be35bba0496e4962164621ebd8cb65a9b9",
+    "failures/before-default-cli-api.log": "8462f369d4fdbf850ce4dde2aad42fc8fa4fafde38597cf16fd1690283bdc30c",
+    "failures/before-image.json": "b8d602eefae8c4289b08e42d3b069ae08da12ad2c9560348a91e2d6e68fd53cf",
+    "failures/daemon-name-visibility-diagnostic.log": "f563b8c962cc32589b28f086eb83a348911014fcbd7cd0da3d607768bdfa18ce",
+    "failures/initial-docker-test-argument-placement.log": "af39746518b0212f4cad76157673cacf25fed96c3070c0dffcf3be7aff55b1a6",
+    "failures/missing-pythonpath.log": "c75d7e6258e67d4607720a8e4e137e7bb6b2940a3f06ccb4a1df678221aba7da",
+    "failures/race-status-assumption.log": "ed335e84b6102c1f590906f80dd3c2535c0762b12daf9a22f7a483a7771a1145",
+    "failures/sdk-diagnostic-expectation.log": "027d3b2a2c6781f5334476a19a3a7fe72d32fa2a7994d8b4e790adeaee3d564b",
+    "failures/security-source-drift.log": "6b8b36132eb7f00c665f6262183f6df5d783aff36eabdeae30b408b82e67ac12",
+    "failures/wrong-quality-interpreter.log": "4f81f7a627f5f6f69eface90aae30847205360081c69244649d204f274586012",
+    "local/bandit.json": "1a4f07ae94365d370ae53f0dc8fd6fb7e8939872c455f920781b8f730a99126f",
+    "local/coordination-links.json": "e6f233c80d7af910e9a28dcdbac8f24477df697007689c487f35e3ca3aac0d94",
+    "local/coordination-tests.log": "5c00865961ee91080dc785924e00e295681b364b0fb7c1ced653cd3d91d7f2e3",
+    "local/docker-tests.log": "acefee967683c5e6c4d299f2338c99327e7a79b7c8876ca98b2a638d35140839",
+    "local/engine-links.json": "e554a0ed4601ffdb836e73c5adcc0d12cc159fab48b0120445300ee1c8a89ee8",
+    "local/image.json": "2164d12fac75876656c352b31f7908f99a1e7cd109a8e9a94bb9abe4001a6d6d",
+    "local/integration.json": "4a7fb1904c8275dafd73698e4af00c33273aaa5845c0aa3b545b4d421255685f",
+    "local/native-tests.log": "e8a79954be02103104aecc1461aae786e63817c0c163e539eb74fab3267930de",
+    "local/quality.log": "eba1922496018ae6d7f82db3964fc0eee235b63efa5c5ead41b20ed673125ad5",
+    "local/system.json": "46b1410c28898d5ec200bedce66fb760512b8865b73e8cdc4cc4108bbc25589c",
+    "quality-ci/bandit.json": "19374bbdb0d54aa288766ec41858482913d6dad710548e5d94c03027f4debe53",
+    "quality-ci/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "quality-ci/dependency-scope.json": "523c22b99543db0f4d3f92a40e38ee0dd88d784eb57c88e176f2155edc5fbc56",
+    "quality-ci/docker-ci-extracted.log": "b92c45a0d285b127894a45ebbc39b6dd4151eee81904ba406f8d09624e283a5a",
+    "quality-ci/native-ci-extracted.log": "05070c0c7882656f27f46d1bcbc45e3258059af0eede6e1fd9194ca802e7b34b",
+    "quality-ci/verification.json": "eeaaba0c8503886c585634ec9ae02b0c0d84f90fe462bfbecfbe9312946064a0"
+  },
+  "cleanup": {
+    "owned_workers_remaining": 0,
+    "dedicated_vm_stopped": true,
+    "default_profile_still_stopped": true,
+    "docker_context_unchanged": "colima"
+  }
+}

@@ -1,0 +1,4 @@
+scripts/check_export_budget.py:35: error: Argument 1 to "Path" has incompatible type "str | None"; expected "str | PathLike[str]"  [arg-type]
+scripts/check_export_budget.py:140: error: Item "None" of "IO[bytes] | None" has no attribute "write"  [union-attr]
+scripts/check_export_budget.py:141: error: Item "None" of "IO[bytes] | None" has no attribute "flush"  [union-attr]
+Found 3 errors in 1 file (checked 2 source files)

@@ -1,0 +1,18 @@
+All checks passed!
+17 files already formatted
+Success: no issues found in 17 source files
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/scripts/check_security.py", line 106, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/.worktrees/engine-security/scripts/check_security.py", line 77, in main
+    report = json.loads(process.stdout)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py", line 344, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py", line 362, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

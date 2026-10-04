@@ -1,0 +1,9 @@
+All checks passed!
+13 files already formatted
+Success: no issues found in 9 source files
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[json]	INFO	JSON output written to file: .quality/bandit.json
+Full security scan: 9 files, no findings or skipped rules

@@ -1,0 +1,53 @@
+{
+  "reviewed_at_utc": "2026-10-01T14:32:29.064038+00:00",
+  "base": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+  "head": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+  "branch": "fix/trace-mine-deadline",
+  "review_scope": "Current uncommitted trace.py mining timeout change and three new test_trace.py regressions; unchanged RPC.call, AnvilSession and guardian lifetime/cleanup inspected as dependencies.",
+  "sources_sha256": {
+    "src/entrotter_engine/trace.py": "eb3605f002e23b75899067e04f3df53159186f1bb8234e384a3abbdc4bcee7cc",
+    "tests/test_trace.py": "8d91e97f35213a22256b5b9d6642ee71967dd5d13f35e37ec58bc2078895d92b"
+  },
+  "actionable_findings": [],
+  "conclusions": [
+    "Only the owned local evm_mine call receives min(150, deadline-monotonic); it receives no fresh 150-second budget.",
+    "The transport timeout is restored in finally on success, RPC failure and any propagating BaseException; failure evaluating remaining budget occurs before assignment.",
+    "The change leaves read-only upstream and ordinary local method admission unchanged. Each replay owns its separate transport; no shared RPC object or global timeout is modified.",
+    "AnvilSession lifetime still derives from the same primitive deadline; its separate guardian expires or responds to owner pipe closure and owned context exit. This patch does not extend the guardian lifetime.",
+    "Follow-up block/receipt calls retain the normal read timeout, and remaining-budget checks still govern receipt iteration and candidate branch launch."
+  ],
+  "focused_check": {
+    "command": "PYTHONPATH=src:tests python3 -m unittest test_trace.TraceMineDeadlineTests -v",
+    "exit_code": 0,
+    "tests": 3,
+    "reported_seconds": 0.002,
+    "cases": [
+      "slow mine gets 30-second remaining budget and restores 10-second reads",
+      "near deadline mine gets only 2.5 seconds",
+      "RPC failure restores timeout and exits owned context"
+    ],
+    "kind": "Mocked transport/context regression; no Anvil, Docker, archive or model call"
+  },
+  "prior_observation_inspected": {
+    "path": ".quality/trace-replay/mainnet-prefix-four-observation.json",
+    "new_probe_in_this_review": false,
+    "owned_local_mine_failure_seconds": 10.003215,
+    "source_inputs": 4,
+    "raw_transactions_queued": 4,
+    "owned_port_cleanup": {
+      "port": 60056,
+      "closed": true
+    },
+    "scope": "Existing root-produced native observation; reviewer did not repeat the archive execution or independently re-probe the port."
+  },
+  "limits": [
+    "No actual slow archive-backed successful mining execution, real signal cancellation or real elapsed deadline probe was run by this reviewer; root-owned actual native execution and full suite remain separate evidence.",
+    "urllib socket timeout is an operation timeout, not itself whole-process cancellation. Existing node guardian and bounded-worker controls remain necessary; native Python owner whole-process safety is not claimed.",
+    "Node termination and context cleanup may require their existing cleanup grace periods; this review does not claim that every native caller returns at precisely 150 seconds.",
+    "The three tests use fixed monotonic time and validate timeout plumbing/context cleanup, not a real wall-clock mine duration.",
+    "Unchanged parent-state pool funding and full-block/opcode/end-state replay limits remain open.",
+    "Independent source review is not protected-main GitHub approval."
+  ],
+  "production_edits_by_reviewer": false,
+  "external_calls_by_reviewer": false
+}

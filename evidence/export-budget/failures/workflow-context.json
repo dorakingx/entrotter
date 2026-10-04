@@ -1,0 +1,9 @@
+{
+  "id": 35472300216,
+  "head_sha": "0d9e2fa0d0e62483084996fc0b615f92866af0f8",
+  "conclusion": "failure",
+  "html_url": "https://github.com/entrotter/entrotter/actions/runs/35472300216",
+  "created_at": "2026-09-19T22:05:14Z",
+  "diagnosis": "runner context is unavailable in jobs.<job_id>.env; move shared state initialization into a runner step through GITHUB_ENV",
+  "reference": "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability"
+}

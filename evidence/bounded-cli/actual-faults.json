@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "literal_paths_preserved": true,
+  "cwd_package_spoof_not_imported": true,
+  "faults": [
+    {
+      "kind": "sigterm",
+      "elapsed_seconds": 0.11873293100006777,
+      "kernel_limits": {
+        "cpu.max": "100000 100000",
+        "memory.max": "268435456",
+        "memory.swap.max": "0",
+        "pids.max": "64"
+      },
+      "runtime_max": "3min",
+      "owner_returncode": -15,
+      "duplicate_rejected_incumbent_preserved": true,
+      "recovery_passed": true,
+      "destination_preserved": true,
+      "stdout": "",
+      "stderr": "Bounded CLI rejected: Original CLI caller exited; cancelling job\n"
+    },
+    {
+      "kind": "sigkill",
+      "elapsed_seconds": 0.1129303739999159,
+      "kernel_limits": {
+        "cpu.max": "100000 100000",
+        "memory.max": "268435456",
+        "memory.swap.max": "0",
+        "pids.max": "64"
+      },
+      "runtime_max": "3min",
+      "owner_returncode": -9,
+      "duplicate_rejected_incumbent_preserved": false,
+      "recovery_passed": true,
+      "destination_preserved": true,
+      "stdout": "",
+      "stderr": "Bounded CLI rejected: Original CLI caller exited; cancelling job\n"
+    },
+    {
+      "kind": "runtime",
+      "elapsed_seconds": 180.16984516899993,
+      "kernel_limits": {
+        "cpu.max": "100000 100000",
+        "memory.max": "268435456",
+        "memory.swap.max": "0",
+        "pids.max": "64"
+      },
+      "runtime_max": "3min",
+      "owner_returncode": 1,
+      "duplicate_rejected_incumbent_preserved": false,
+      "recovery_passed": true,
+      "destination_preserved": true,
+      "stdout": "",
+      "stderr": "Bounded CLI rejected: CLI job cancelled by signal 15\n"
+    }
+  ],
+  "owned_workers_after_run": 0,
+  "probe_scope": "Faults use a deliberately stalled local HTTP server; normal fixture and real local Anvil equality are separate evidence."
+}

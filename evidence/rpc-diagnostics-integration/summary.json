@@ -1,0 +1,58 @@
+{
+  "status": "prepared_component_promotion_pending_combined_review_and_CI",
+  "selected_engine": "65c28330bdc694535da0074b2e3d68ab433806d8",
+  "previous_selected_engine": "99fd3a60a754f129c78d1324f2a01787a6538917",
+  "other_component_pins": {
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+  },
+  "engine_required_CI_checks": 8,
+  "engine_fresh_independent_CI_review": "passed",
+  "previous_coordinator_head": "158fbc03fb3ca1ad8dfc3524cde958c97dd282ae",
+  "previous_coordinator_selected_engine": "99fd3a60a754f129c78d1324f2a01787a6538917",
+  "previous_coordinator_required_checks": 5,
+  "previous_coordinator_fresh_independent_review": "passed",
+  "diagnostic003": {
+    "paired_replay": "failed",
+    "complete_baseline_receipts_equal": 32,
+    "candidate_result": null,
+    "observed_operation": "evm_mine",
+    "transport_category": "timeout",
+    "underlying_archive_or_miner_cause": "unknown",
+    "same_original32_skip12_and150_second_trace_budget": true,
+    "captured_source_and_baseline_bytes_identical002": true,
+    "owned_guardians_absent_and_ports_closed": 2,
+    "native_only_no_Docker_resource_proof": true
+  },
+  "public_raw_sha256": {
+    "native-003/baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "native-003/captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "native-003/host-owned-cleanup.json": "9e3d4c49093baaba354f03cf4685a5003df9616e1483c48fd461179d7beef9f2",
+    "native-003/host-result.json": "ca8fde11f6168e464cd9fba61594df7daf36996b9da2c6f36c3cfadf95c7f74e",
+    "native-003/observations.json": "38ee45f2051debfb36fcd5fa13cc60ff3697aacd7456e25ae633b83d66d18e4d",
+    "native-003/owned-nodes.json": "63402430595536f7e65d012587ac2dd64e5b745ca3f14f93ea9787441348aba9",
+    "native-003/result.json": "54f60737b39a86cb42390d23562ef33ca54eea52e9469af24bf912c313cdbec0",
+    "native-003/terminal-record.json": "df5e42bed4bf8beba59a402dde368e62ef7f7473612adf56cc07279219aab80d",
+    "native-003/root-review.json": "9ea63c1b5b16822420c4c62f5df238725d54fd1bdca6ee8dacdc08be9ccdfbb4",
+    "native-003/prelaunch-root-review.json": "d6e1dd612eeffd03129bf69209bf17025645cae786de2de209545aa6b76c52d3",
+    "previous-coordination-CI.json": "1d82524b070d8e80ff98e3ea4b3f7eeb166a5f7d5252f486ef4014f2da612f4f",
+    "engine-CI.json": "dcca1a6100b947065326690e615974dd9a1e475b3f3983aeb168d1a03712fbe6",
+    "trace-reader.json": "1b4861e3ef298f9c7ec1d77744f4358f8c259a1373ad68600c276567fba55605",
+    "trace-funding-reader.json": "201fed54a80aea9f7bfd66a69d0b3012767281a43a5948491f36321b3ff34b25",
+    "trace-oracle-reader.json": "09839b9b870afe1399539b2dde2a4c0a6160cf8218ba999c2154656f2a418fe9",
+    "local-types.json": "85fe4406de10a224d2ad7e741d3494302066fde99c285c9b483eec6f0b4b4230",
+    "local-reader-execution.json": "d8311eb4fbceaea7bd6fdbad9be657e946c4c11be0702dc666efe82402851e8b"
+  },
+  "retention": "All copied JSON bytes unchanged. Full frozen72-input research harness/readiness/CA metadata remain local; public raw bundle cannot reconstruct every local binding. Prior001/002 public bundle and historical reviews remain unchanged.",
+  "limits": [
+    "Detailed RPC codes cross native/trusted Python only; default worker/HTTP fixed envelopes unchanged.",
+    "Engine component CI does not prove new combined composition or deployed Pages.",
+    "Transport timeout does not identify provider/miner cause or classify previous001/002 retrospectively.",
+    "No complete candidate, dependent consumer, provider/root/state authenticity, full-block/end-state/opcode equivalence or profit claim.",
+    "Required GitHub approval and protected main integration remain pending."
+  ],
+  "local_types": "21 production sources;3 unchanged explicitly frozen diagnostics; exact65c/SDKee/CLI22 clean dependencies",
+  "local_reader_steps": "all3 exact workflow readers pass; only output paths changed; complete prior outcomes unchanged apart from selected engine pin. Original attempt executed no product code because python was absent from PATH; retained and fixed explicitly."
+}

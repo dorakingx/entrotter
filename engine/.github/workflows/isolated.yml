@@ -1,0 +1,143 @@
+name: Isolated worker enforcement
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  isolated:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: src
+      ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - uses: foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09 # v1
+        with:
+          version: v1.8.3
+      - name: Build local worker from digest-verified inputs
+        run: |
+          python scripts/build_worker.py
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          image = json.loads(Path('worker-image.json').read_text())['image_id']
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+              output.write('ENTROTTER_WORKER_IMAGE=' + image + '\n')
+          PY
+      - name: Verify real kernel enforcement, API and lifetime cleanup
+        run: python -m unittest discover -s tests_isolated -v
+      - name: Replay pinned mainnet transaction through the default bounded worker
+        id: mainnet_one
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+        run: |
+          python -m entrotter_engine trace-run tests/data/canonical-mainnet-prefix.json -o .quality/trace-replay/mainnet-prefix.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from entrotter_engine.trace import verify_trace
+          report = json.loads(Path('.quality/trace-replay/mainnet-prefix.json').read_text())
+          if not verify_trace(report) or not report['baseline_verified']:
+              raise RuntimeError('Pinned mainnet receipt replay did not verify; no fixture substitution')
+          receipt = report['baseline']['outcomes'][0]['receipt']
+          if receipt['gasUsed'] != '0x32d10' or len(receipt['logs']) != 8:
+              raise RuntimeError('Pinned transaction execution differs from original receipt')
+          print(json.dumps({'artifact_id': report['artifact_id'], 'runtime_seconds': report['runtime_seconds'], 'gas_used': 208144, 'log_count': 8}))
+          PY
+      - name: Verify mainnet prefix divergence and nonce conflict within the shared deadline
+        id: mainnet_four
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+        run: |
+          python -m entrotter_engine trace-run tests/data/canonical-mainnet-prefix-four.json -o .quality/trace-replay/mainnet-prefix-four.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from entrotter_engine.trace import verify_trace
+          report = json.loads(Path('.quality/trace-replay/mainnet-prefix-four.json').read_text())
+          if not verify_trace(report) or not report['baseline_verified']:
+              raise RuntimeError('Four original receipts did not match; no fixture substitution')
+          original = report['baseline']['outcomes']
+          if [int(o['receipt']['gasUsed'], 16) for o in original] != [208144, 234720, 175305, 178980]:
+              raise RuntimeError('Four-transaction gas differs from pinned native evidence')
+          if [len(o['receipt']['logs']) for o in original] != [8, 10, 6, 8]:
+              raise RuntimeError('Four-transaction logs differ from pinned native evidence')
+          candidate = report['candidate']['outcomes']
+          if [o['status'] for o in candidate] != ['skipped', 'executed', 'executed', 'nonce_conflict']:
+              raise RuntimeError('Omission/nonce conflict differs from pinned evidence')
+          for outcome, gas in zip(candidate[1:3], [245136, 185721]):
+              if int(outcome['receipt']['gasUsed'], 16) != gas or outcome['differing_fields'] != ['gasUsed', 'cumulativeGasUsed', 'transactionIndex', 'logs']:
+                  raise RuntimeError('State-dependent gas/log divergence differs from pinned evidence')
+          if candidate[3]['expected_nonce'] != 5522 or candidate[3]['original_nonce'] != 5523:
+              raise RuntimeError('Original signed nonce was changed or conflict concealed')
+          print(json.dumps({'artifact_id': report['artifact_id'], 'runtime_seconds': report['runtime_seconds'], 'verified_original_receipts': 4, 'nonce_conflicts': 1}))
+          PY
+      - name: Read fixed owned Aave/WETH prices through the actual default worker
+        id: mainnet_observed
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+        run: |
+          python -m entrotter_engine trace-observe tests/data/canonical-mainnet-prefix.json -o .quality/trace-replay/observed-mainnet-prefix.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from entrotter_engine.consumer_observations import load_observed_trace
+          result = load_observed_trace('.quality/trace-replay/observed-mainnet-prefix.json')
+          plan = json.loads(Path('tests/data/canonical-mainnet-prefix.json').read_text())
+          report = result['trace_report']
+          if report['plan'] != plan or not report['baseline_verified']:
+              raise RuntimeError('Observed worker did not replay the exact pinned plan')
+          if not result['classification']['complete_price_views'] or len(result['observations']) != 4:
+              raise RuntimeError('Fixed historical price views remain unproven; no substitute')
+          receipt = report['baseline']['outcomes'][0]['receipt']
+          if receipt['gasUsed'] != '0x32d10' or len(receipt['logs']) != 8:
+              raise RuntimeError('Observed worker changed the pinned original receipt')
+          print(json.dumps({'artifact_id': result['artifact_id'], 'trace_artifact_id': result['trace_artifact_id'], 'runtime_seconds': report['runtime_seconds'], 'classification': result['classification']}))
+          PY
+      - name: Compare an actual historical Aave debt account through the default worker
+        id: mainnet_position
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+        run: |
+          python -m entrotter_engine trace-position tests/data/aave-account-prefix.json -o .quality/trace-replay/aave-position.json
+          python tests_isolated/check_position_result.py .quality/trace-replay/aave-position.json
+      - name: Compare supplied Aave supply and variable borrow actions with a risk decision
+        id: mainnet_aave_actions
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+        run: python scripts/aave_borrow.py --output .quality/trace-replay/aave-borrow-actions.json
+      - name: Record privacy-safe bounded diagnostics after a historical replay failure
+        if: ${{ failure() && (steps.mainnet_one.outcome == 'failure' || steps.mainnet_four.outcome == 'failure') }}
+        env:
+          ENTROTTER_RPC_URL: https://eth.drpc.org
+          TRACE_DIAGNOSTIC_PLAN: ${{ steps.mainnet_one.outcome == 'failure' && 'tests/data/canonical-mainnet-prefix.json' || 'tests/data/canonical-mainnet-prefix-four.json' }}
+        run: python tests_isolated/diagnose_trace_worker.py "$TRACE_DIAGNOSTIC_PLAN" --output .quality/trace-replay/failure-diagnostic.json
+      - name: Verify no test workers remain
+        if: always()
+        run: |
+          workers=$(docker ps --all --filter label=org.entrotter.worker=true --format '{{.ID}}')
+          test -z "$workers"
+      - name: Verify base signature and audit every detected worker package
+        run: python scripts/check_image_security.py --manifest worker-image.json --output .quality/image-security
+      - name: Verify native release provenance and signed Cargo inventory
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/check_native_security.py --manifest worker-image.json --output .quality/native-security
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: worker-image-security
+          path: |
+            .quality/image-security/
+            .quality/native-security/
+            .quality/build-output-docker.json
+            .quality/trace-replay/
+            worker-image.json
+          include-hidden-files: true
+          if-no-files-found: error

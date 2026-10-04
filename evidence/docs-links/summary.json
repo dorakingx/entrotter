@@ -1,0 +1,107 @@
+{
+  "status": "implemented_and_verified_pending_independent_review",
+  "checked_at": "2026-09-19T18:35:51.148212+00:00",
+  "shared_action_commit": "ea74aec66c5234edb935e4b12c14ec686dc73f80",
+  "checker": "lychee 0.24.2",
+  "archive_sha256": {
+    "darwin-aarch64": "c9d3740ea2d891854d37116c9fba840f37b6e7c89d330e7db84ac333631c4977",
+    "linux-x86_64-gnu": "1f4e0ef7f6554a6ed33dd7ac144fb2e1bbed98598e7af973042fc5cd43951c9a"
+  },
+  "actual_checker_regression_tests": 6,
+  "records": [
+    {
+      "repository": "engine",
+      "source_head": "4cfd5c73466f958d55e6e887cf38fccf62f8f096",
+      "ci_merge_commit": "359c4a1a6c2369d4049617001d35833fbe38f31d",
+      "ci_run": 35461595018,
+      "ci_url": "https://github.com/entrotter/engine/actions/runs/35461595018",
+      "ci_conclusion": "success",
+      "ci_tested_inputs_match_local": true,
+      "pr": "https://github.com/entrotter/engine/pull/14",
+      "files": 5,
+      "link_occurrences": 5,
+      "successful": 5,
+      "excluded": 0
+    },
+    {
+      "repository": "sdk-python",
+      "source_head": "a1352e34632543940b25ebddbe51a13cb7b8dcbf",
+      "ci_merge_commit": "57ea760c1bdb7cd9e58b740d8934d9f3f7e8ade0",
+      "ci_run": 35461599580,
+      "ci_url": "https://github.com/entrotter/sdk-python/actions/runs/35461599580",
+      "ci_conclusion": "success",
+      "ci_tested_inputs_match_local": true,
+      "pr": "https://github.com/entrotter/sdk-python/pull/5",
+      "files": 5,
+      "link_occurrences": 5,
+      "successful": 5,
+      "excluded": 0
+    },
+    {
+      "repository": "cli",
+      "source_head": "f875168505ca5f3ebfb342ab1e3607584e36176b",
+      "ci_merge_commit": "2d1607568991b589882f7f8d75625253ad5dc2ba",
+      "ci_run": 35461603031,
+      "ci_url": "https://github.com/entrotter/cli/actions/runs/35461603031",
+      "ci_conclusion": "success",
+      "ci_tested_inputs_match_local": true,
+      "pr": "https://github.com/entrotter/cli/pull/6",
+      "files": 5,
+      "link_occurrences": 6,
+      "successful": 5,
+      "excluded": 1
+    },
+    {
+      "repository": "scenarios",
+      "source_head": "64d9c1908a1c157ad6c410a988fcef04178067dc",
+      "ci_merge_commit": "706a5ea138e08bc4723b43b3abe57030a29b8a53",
+      "ci_run": 35461607470,
+      "ci_url": "https://github.com/entrotter/scenarios/actions/runs/35461607470",
+      "ci_conclusion": "success",
+      "ci_tested_inputs_match_local": true,
+      "pr": "https://github.com/entrotter/scenarios/pull/7",
+      "files": 6,
+      "link_occurrences": 11,
+      "successful": 11,
+      "excluded": 0
+    },
+    {
+      "repository": "entrotter.github.io",
+      "source_head": "692bb467bda71078f37bbeb1658f42f3f7212f7f",
+      "ci_merge_commit": "2330262e89098351042b3b415b6123c8ec8b7343",
+      "ci_run": 35461611144,
+      "ci_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/35461611144",
+      "ci_conclusion": "success",
+      "ci_tested_inputs_match_local": true,
+      "pr": "https://github.com/entrotter/entrotter.github.io/pull/9",
+      "files": 8,
+      "link_occurrences": 29,
+      "successful": 29,
+      "excluded": 0
+    },
+    {
+      "repository": "entrotter",
+      "source_head": "ea74aec66c5234edb935e4b12c14ec686dc73f80",
+      "ci_merge_commit": "83fa656c70a10e07f3d1ad06695d2a90ef81a43b",
+      "ci_run": 35461540009,
+      "ci_url": "https://github.com/entrotter/entrotter/actions/runs/35461540009",
+      "ci_conclusion": "success",
+      "ci_tested_inputs_match_local": true,
+      "pr": "https://github.com/entrotter/entrotter/pull/16",
+      "files": 26,
+      "link_occurrences": 47,
+      "successful": 47,
+      "excluded": 0
+    }
+  ],
+  "total_successful_link_occurrences": 102,
+  "total_excluded_link_occurrences": 1,
+  "limitations": [
+    "Occurrences are not distinct destinations across repositories.",
+    "Private/loopback endpoints and code examples are outside public HTTP validation.",
+    "Static links do not prove dynamic JavaScript behavior or accessibility.",
+    "PRs remain unmerged and main required-check lists have not been changed.",
+    "Existing host-bounds integration failed once in run 35461539934 at CLI busy-response assertion; retained separately and unresolved."
+  ],
+  "initial_scan_observation": "Engine/SDK had zero extracted links; CLI had only an excluded loopback URL. README navigation was added; new runner rejects zero successful links."
+}

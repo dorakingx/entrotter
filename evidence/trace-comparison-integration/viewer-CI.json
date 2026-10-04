@@ -1,0 +1,98 @@
+{
+  "status": "passed_independent_full_artifact_review",
+  "head": "b1cfb001ad642d4b7423ea914045abb56166c903",
+  "publication_blobs": 56,
+  "quality_source_hashes": 22,
+  "js_sources": 15,
+  "type_inputs": 16,
+  "retained_unsuppressed_security_findings": 99,
+  "node_tests": 66,
+  "locked_Python_packages": 42,
+  "reported_advisories": 0,
+  "Linux_browser_groups": 36,
+  "raw_axe_scans": 28,
+  "reported_axe_violations": 0,
+  "docs_hashes": 12,
+  "successful_links": 51,
+  "merge_tree_matches_head": true,
+  "run_bindings": [
+    {
+      "run": 37001413805,
+      "attempt": 1,
+      "artifacts": [
+        {
+          "name": "website-quality-reports",
+          "id": 11224126792
+        },
+        {
+          "name": "accessibility-evidence",
+          "id": 11223492837
+        }
+      ]
+    },
+    {
+      "run": 37001413398,
+      "attempt": 1,
+      "artifacts": [
+        {
+          "name": "docs-links",
+          "id": 11223203113
+        }
+      ]
+    }
+  ],
+  "artifact_hashes": {
+    "author-ci-verification.json": "cde259fcb79d9c733894906e10000e942ccac8f7063940f8e04f584a9371eefa",
+    "browser/accessibility.json": "dcbfdc517c71363d1ed1e29d7eea3411ab89c0cc740633029d782d92504d0ed6",
+    "browser/axe-1280-agent-local-codex.json": "fa1a4b8f3ab49557508ab75f4cb953b9d44de66385d93a6b41c6ab02ee590711",
+    "browser/axe-1280-console.json": "1495b29df1bdd9e14ec28318d77b45da1f279261d52155f9b6e5fec96e6721de",
+    "browser/axe-1280-depeg-stress.json": "cf3cc296a091cfda414443be9a5360e5f2dc4ac6cf33862bbda752220d295fbf",
+    "browser/axe-1280-ethereum-uniswap-slippage.json": "aaf907f83956720d463c25559b079a5f1730cdb53ef40132499299b9771d06ef",
+    "browser/axe-1280-liquidity-shock.json": "56f7961440e451a2f9d6a42f8742a82ad85c4030f7efe69f2ad2a9c2f9ad8eea",
+    "browser/axe-1280-recovery-trap.json": "66f3765b01638d2469bd059e5aabe83ea1aa6484172793f51c85fed89a9f090c",
+    "browser/axe-320-agent-local-codex.json": "aec3a5f9f796639adc31eb105b1ce66047ed7b93bf1c19b08e8fc5accf8fe50b",
+    "browser/axe-320-console.json": "4f3befd45e670adf1f3a101bf9874efcb76d2c8a588c56d16f770661a725c38d",
+    "browser/axe-320-depeg-stress.json": "90d76a36a8a5092807fc7bb1371fd940950c1539a51d8038a1d6a98f3b4cab19",
+    "browser/axe-320-ethereum-uniswap-slippage.json": "709a3064d0b784ea13d2ee91b6f487263545291358f7ea89ca880eab1fd0f65d",
+    "browser/axe-320-liquidity-shock.json": "e50b442c4b88bf421805e98032a3c99483ff8e52d8636f693762da8a1652ec7e",
+    "browser/axe-320-recovery-trap.json": "b9cf2d283c8bad4619c3c3e75b0d77494f459b21a3ef7636b91e48e8824ea229",
+    "browser/axe-390-agent-local-codex.json": "f9de9214f6717b5f9ced4e819907defcd507c99603d864925cc1b051bb9ba268",
+    "browser/axe-390-console.json": "3361534e642d267283a25ac97227758bc838117caf269c48ca0e978071240839",
+    "browser/axe-390-depeg-stress.json": "722073d545d4acd49b450e69012da434ea692a533de744e0efd1ab5eba162237",
+    "browser/axe-390-ethereum-uniswap-slippage.json": "345233ad2e00f21e9e61a379a30d42dbbca47a6099bc5644df726efcebecd376",
+    "browser/axe-390-liquidity-shock.json": "ee111e38e1122fd21e8f1fac527d74215dfb23e6bbdadf58f15936cecd51cc2a",
+    "browser/axe-390-recovery-trap.json": "bff61b4bed2530507b334df3aa0b028690d3f1f08564746c871db7929f8538f8",
+    "browser/axe-404.json": "5dcc3934c761ef4d6d5d6fcc81971846ade3648a0ceaa8cf79ca283167ae8453",
+    "browser/axe-console-import.json": "554e70767c42777d9efe0f995308ddf6257fd0cd1bdeb876ee758fb71e661304",
+    "browser/axe-error.json": "0e7246ccf9fccd5451f1642e7ce451999baf9f38e9d2445f3eeb7037a5a3185b",
+    "browser/axe-original32-1280.json": "2865ddce9df2fd646d7b3ee01547b9fd77040aaaaff0f09dbda0632864568550",
+    "browser/axe-original32-320.json": "9c94a0c8af9b207c0ea0cb33af1f9b8c960418d80087a1e28c7b32a412813c59",
+    "browser/axe-original32-390.json": "da0860073d9d413b12646805e7c4d6864807b5346e5bdf0cbb77d49678994982",
+    "browser/axe-signed-prefix-1280.json": "e9413d269127f1b36451ad71b4fcc5ae3380bdc665a56f1b9ee4c8909aaa068b",
+    "browser/axe-signed-prefix-320.json": "dbe39435fee9130a51ff9a0a59a968ba255bda1e40cd12850667d4ba992c30b2",
+    "browser/axe-signed-prefix-390.json": "7575503e53e79a2aa0d0bfab8a13ee64f590c4ce1323c2ff211ef7635dd37c89",
+    "browser/axe-signed-prefix-unverified.json": "0e318b260e77c38e63d6184a1cbec31422ffa95b6c98e63523d02adceb35e91f",
+    "browser/npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+    "docs/report.json": "0d6ace363e3f58dec91e9e892ac7f8a61c0c9d93700483b4a8a102f09cfe3adc",
+    "docs-artifacts.json": "fd5c7404dd876c50b9a40a0a50f6f9ffdcf79e42129be3d4f4cff7d33d290e94",
+    "docs-run.json": "cdeddfe03b2ebcb244a8034bba5139577586e1d26676d1aadd06e1fa876e7ee1",
+    "pr-body-updated.json": "d1abec38f2da21654d781efb9d5b6d7d05f48b917f0f80085bbf009612985fa9",
+    "published-input-verification.json": "b4812c03197d485213d29a980ee23e66524f63eaec42f7ab739c36fbee5f5484",
+    "quality/lint.json": "48b06d90459aa8e1f4b18c52c5a8182d7b192a493ece157b3921ebf924cb8447",
+    "quality/npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+    "quality/python-dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "quality/python-security.json": "a95d8cab8f6c77fa1641d464ea4bd79dd6b9a77b325e75294f272677a737a421",
+    "quality/scope.json": "a27d69885db9ba4ff171d9cd47406ed528e7538c0cd54f87a548faea0345f266",
+    "quality/security.json": "1e237ed4bf7dcc7cab42b147315d47a0344cc95fbab8a45c1b6901bb2210a567",
+    "quality/source-sha256.json": "4af84b38df7dcdee6b8df2808660b3bb48c66aa1e2e2086d060795cb25d7fe94",
+    "site-artifacts.json": "a1537941855f552403e63428c9a61740919b81a0d8bfda85a754c7b83f3ab7db",
+    "site-run.json": "37ab2efe3bd63c799734f641aaf807adb91fcc1d9948384525a3a7ea4e680b2d"
+  },
+  "reviewer_sha256": "fff35d4f3d8f9abbc7202e4ff9f64110dc2c237ac64c3c144f7e11bd4f8c8b95",
+  "limits": [
+    "No repeated test/browser/EVM/model execution; independently inspected fresh CI raw outputs.",
+    "Automated Chromium/axe evidence retains contrast incomplete results; not manual accessibility certification.",
+    "Original32 receipt differences establish no consumer/strategy/profit/full-block/provider authenticity result.",
+    "PR build/deploy skipped as designed; independent human main approval and live Pages remain separate."
+  ]
+}

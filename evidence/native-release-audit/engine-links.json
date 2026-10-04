@@ -1,0 +1,166 @@
+{
+  "checked_at": "2026-09-19T21:23:07.255967+00:00",
+  "source_commit": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+  "worktree_dirty": true,
+  "checker": "lychee 0.24.2",
+  "checker_sha256": "af111b5890746a863e60b4929720ab383337843ed15b701515871aa6e8817c2b",
+  "files": {
+    ".github/PULL_REQUEST_TEMPLATE.md": "f8840c1975bc5aabfdedbd13d69de905fc19b7c9ad4c9b965f48e2b4c20b405d",
+    "AGENTS.md": "d1d8e6c41d67cbcd2ee82f7dcbb50568189acfcf92508b60731eed8de480e303",
+    "CONTRIBUTING.md": "93b12d0e124c7c07dcc389404a02732272c2b22dd7967c97b9e10b82658243b1",
+    "README.md": "79e1e446d751d6a203016a0de5426c0c6099ad8cda57cb5563f27acb2350781e",
+    "SECURITY.md": "7d2bb90061ad538a812fc853fdf322215f9d3f9ba1519f7bb0ffa77b195d8fd3"
+  },
+  "lychee_exit_code": 0,
+  "passed": true,
+  "path_redaction": "Local checkout prefix replaced with /workspace/repository",
+  "report": {
+    "total": 8,
+    "unique": 8,
+    "successful": 8,
+    "unknown": 0,
+    "unsupported": 0,
+    "timeouts": 0,
+    "redirects": 0,
+    "remaps": 0,
+    "excludes": 0,
+    "errors": 0,
+    "cached": 0,
+    "success_map": {
+      "README.md": [
+        {
+          "url": "https://github.com/aquasecurity/trivy/blob/v0.74.0/docs/guide/coverage/language/rust.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 358,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 710037667
+          }
+        },
+        {
+          "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/.github/workflows/release.yml",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 389,
+            "column": 1
+          },
+          "duration": {
+            "secs": 1,
+            "nanos": 283516166
+          }
+        },
+        {
+          "url": "https://images.chainguard.dev/directory/image/python/provenance",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 357,
+            "column": 22
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 206325750
+          }
+        },
+        {
+          "url": "file:///workspace/repository/CONTRIBUTING.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 108
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 23667
+          }
+        },
+        {
+          "url": "file:///workspace/repository/SECURITY.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 142
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 5083
+          }
+        },
+        {
+          "url": "file:///workspace/repository/LICENSE",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 168
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 4875
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 912889583
+          }
+        }
+      ],
+      "CONTRIBUTING.md": [
+        {
+          "url": "file:///workspace/repository/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 5,
+            "column": 28
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 1648959
+          }
+        }
+      ]
+    },
+    "error_map": {},
+    "timeout_map": {},
+    "suggestion_map": {},
+    "redirect_map": {},
+    "excluded_map": {},
+    "duration": {
+      "secs": 1,
+      "nanos": 492088708
+    },
+    "detailed_stats": true
+  }
+}

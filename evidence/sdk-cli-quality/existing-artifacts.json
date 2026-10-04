@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "artifacts": [
+    {
+      "path": "entrotter/evidence/historical-uniswap.json",
+      "artifact_id": "6c358340e3b1227fccb4398802d30fefe27877aeacbacf8bd313c9c65c13a453",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-20000000-model.json",
+      "artifact_id": "0646fa5235c1e651d853283bca84f440c179982dc8107ba296150d7b117d2801",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-20000000-risk.json",
+      "artifact_id": "e43c616a90fcb22a7a9a4e9ddd18db953b20e1de7f06307e0349839a2dba229c",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-21000000-non-agent.json",
+      "artifact_id": "b968fb9b6e9cb8e9ad638c3db1ae699bda6a76cf4707d73f2bfe0a72d88ef7dc",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-19000000-non-agent.json",
+      "artifact_id": "61a14ab2a3b813273e93b14908e7e147654440b349efcb4441714f7a523796d5",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-21000000-risk.json",
+      "artifact_id": "64f96197e622ccc39e04189044b7edded4fdb71d259bc68df92473b9968ffb6d",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-21000000-model.json",
+      "artifact_id": "d7aeab72783f5ae5474b5d356769ec93a77c9bbc85be34ae84df0dbf7402ea93",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-18000000-non-agent.json",
+      "artifact_id": "0498c9baf2d44a36861a4dd59c07a6721992fafb1fb346a0c9a0011d5e4607d5",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-20000000-non-agent.json",
+      "artifact_id": "29ac524a9d2eb383da95f1a13e59bce4d4308ae3dbaccbd8c2c207e096bb9063",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-17000000-non-agent.json",
+      "artifact_id": "11e1ff93362c392d5500232cd71e82685e26e8362a39e4215c72276c9bc15e36",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-18000000-model.json",
+      "artifact_id": "f8804e55a7cdb75c1a08849fd2e975a9ca9426f3d62f6261987ad9c6a2f09d0a",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-17000000-model.json",
+      "artifact_id": "26d85a53b90d57b7b7e127ccfa32b751efc0175f411c28cf7cea1038cd3cf66e",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-19000000-risk.json",
+      "artifact_id": "5a607b9aff978b08156f3eddc802376d373cd8c8a3dc4b51e8076dbdd97018f5",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-17000000-risk.json",
+      "artifact_id": "47c8a7835cf8928273e61d2919f449b8e1d33310fe8f4f8800a0efd782c99581",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-19000000-model.json",
+      "artifact_id": "d96c919d7ddc4dabde5126914bc40fe8e44736e6bd7be37ed84b3dc6400699c9",
+      "mode": "evm-fork"
+    },
+    {
+      "path": "entrotter/evidence/causal-v1/causal-uniswap-18000000-risk.json",
+      "artifact_id": "d3d5c385c1ec74a71f91d302a92575eff3a9b04366aff0a3be8fed61ed1f4bc6",
+      "mode": "evm-fork"
+    }
+  ],
+  "note": "Parsing and content-integrity verification only; no new archive/model execution."
+}

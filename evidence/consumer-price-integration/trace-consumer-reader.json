@@ -1,0 +1,596 @@
+{
+  "status": "passed",
+  "execution": "Offline native006 report and separate owned view records; no new EVM/archive/model/browser call",
+  "pins": {
+    "engine": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "report_sha256": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79",
+  "artifact_id": "aa04f523daf1e4f586adb171630d9ffa7736ba2ecf1f5ebffa500d12260561a8",
+  "consumer_observations_sha256": "b9e979c9f363559c5ab79131b602b7b7538da84f2c19928c089219b00dcc831d",
+  "producer_observations_sha256": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+  "request_sha256": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522",
+  "helper_sha256": "b2279b48b2c51522675bbb991532ec9505089ddf614134d9aa5ff5ddf3bb2fea",
+  "decoder_helper_sha256": "8846ff9a465e83c6c42e7684992cb0fa4e86764603077a25d90e3e4a9d87e2b4",
+  "viewer_module_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+  "classification_module_sha256": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+  "baseline_verified": true,
+  "input_count": 32,
+  "block_transaction_count": 181,
+  "through_index": 31,
+  "skip_indices": [
+    12
+  ],
+  "omitted_gas": 336752,
+  "baseline_receipts_equal_originals": true,
+  "candidate_receipts_equal_originals_except_exact_omission_shifts": true,
+  "consumer_raw_ABI_matches_decoded": true,
+  "producer_raw_ABI_matches_decoded": true,
+  "initial_owned_heads_equal_pinned_parent": true,
+  "post_headers_equal_pinned_number_timestamp": true,
+  "consumer_prices": {
+    "baseline_after": 256292441874,
+    "baseline_before": 257082415000,
+    "candidate_after": 257082415000,
+    "candidate_before": 257082415000
+  },
+  "stable_returned_code_identities": {
+    "oracle_code": [
+      3405,
+      "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+    ],
+    "proxy_code": [
+      9571,
+      "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+    ]
+  },
+  "consumer_classification": {
+    "owned_read_only_price_observation_complete": true,
+    "unproven_reasons": [],
+    "phase_count": 4,
+    "base_currency_unit_expected": 100000000,
+    "scope": "Owned-node read-only price observations only. No signed consumer transaction, deployed-code/provider authentication, loan/liquidation/trade, benefit/profit, full-block/opcode/state-root proof or broader G1 completion."
+  },
+  "consumer_records": [
+    {
+      "branch": "baseline",
+      "code": {
+        "oracle_code": {
+          "bytes": 3405,
+          "nonempty": true,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "proxy_code": {
+          "bytes": 9571,
+          "nonempty": true,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        }
+      },
+      "decoded": {
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": 100000000,
+        "price": 257082415000,
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419"
+      },
+      "errors": [],
+      "phase": "before",
+      "raw": {
+        "base_currency": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "base_unit": "0x0000000000000000000000000000000000000000000000000000000005f5e100",
+        "price": "0x0000000000000000000000000000000000000000000000000000003bdb4e5798",
+        "source": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419"
+      }
+    },
+    {
+      "branch": "baseline",
+      "code": {
+        "oracle_code": {
+          "bytes": 3405,
+          "nonempty": true,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "proxy_code": {
+          "bytes": 9571,
+          "nonempty": true,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        }
+      },
+      "decoded": {
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": 100000000,
+        "price": 256292441874,
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419"
+      },
+      "errors": [],
+      "phase": "after",
+      "raw": {
+        "base_currency": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "base_unit": "0x0000000000000000000000000000000000000000000000000000000005f5e100",
+        "price": "0x0000000000000000000000000000000000000000000000000000003bac384f12",
+        "source": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419"
+      }
+    },
+    {
+      "branch": "candidate",
+      "code": {
+        "oracle_code": {
+          "bytes": 3405,
+          "nonempty": true,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "proxy_code": {
+          "bytes": 9571,
+          "nonempty": true,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        }
+      },
+      "decoded": {
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": 100000000,
+        "price": 257082415000,
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419"
+      },
+      "errors": [],
+      "phase": "before",
+      "raw": {
+        "base_currency": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "base_unit": "0x0000000000000000000000000000000000000000000000000000000005f5e100",
+        "price": "0x0000000000000000000000000000000000000000000000000000003bdb4e5798",
+        "source": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419"
+      }
+    },
+    {
+      "branch": "candidate",
+      "code": {
+        "oracle_code": {
+          "bytes": 3405,
+          "nonempty": true,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "proxy_code": {
+          "bytes": 9571,
+          "nonempty": true,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        }
+      },
+      "decoded": {
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": 100000000,
+        "price": 257082415000,
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419"
+      },
+      "errors": [],
+      "phase": "after",
+      "raw": {
+        "base_currency": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "base_unit": "0x0000000000000000000000000000000000000000000000000000000005f5e100",
+        "price": "0x0000000000000000000000000000000000000000000000000000003bdb4e5798",
+        "source": "0x0000000000000000000000005f4ec3df9cbd43714fe2740f5e3616155c5b8419"
+      }
+    }
+  ],
+  "viewer": {
+    "status": "passed",
+    "artifact_id": "aa04f523daf1e4f586adb171630d9ffa7736ba2ecf1f5ebffa500d12260561a8",
+    "node": "v22.23.1",
+    "counts": {
+      "identical": 12,
+      "omitted": 1,
+      "structural": 19,
+      "execution": 0,
+      "unavailable": 0
+    },
+    "classifications": [
+      {
+        "index": 0,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 1,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 2,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 3,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 4,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 5,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 6,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 7,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 8,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 9,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 10,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 11,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 12,
+        "status": "skipped",
+        "differing_fields": [],
+        "kind": "omitted",
+        "label": "Omitted \u00b7 no receipt",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 13,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 14,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 15,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 16,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 17,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 18,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 19,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 20,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 21,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 22,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 23,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 24,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 25,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 26,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 27,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 28,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 29,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 30,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 31,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      }
+    ]
+  },
+  "limits": [
+    "Parsing recorded bytes does not constitute a fresh archive execution or prove provider/deployed-code authenticity.",
+    "Read-only price dependence is separate from signed consumer transactions, strategies, profit and full G1.",
+    "Node parsing is not rendered browser/Pages verification; standard trace report remains unchanged."
+  ]
+}

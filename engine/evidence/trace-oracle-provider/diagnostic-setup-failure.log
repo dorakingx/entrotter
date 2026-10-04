@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/repository/.quality/oracle-prefix/probe.py", line 201, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/workspace/repository/.quality/oracle-prefix/probe.py", line 134, in main
+    raw = signed(None,keys[0],0,initcode(oracle_runtime,bytes.fromhex('600a600055')))
+  File "/workspace/repository/.quality/oracle-prefix/probe.py", line 129, in signed
+    return cast(*args,'--legacy','--chain','1','--nonce',str(nonce),
+                '--gas-limit','300000','--gas-price','1000000000',
+                '--private-key',key,'--rpc-url',rpc.url)
+  File "/workspace/repository/.quality/oracle-prefix/probe.py", line 28, in cast
+    raise RuntimeError('Disposable signing helper failed; sensitive diagnostics withheld')
+RuntimeError: Disposable signing helper failed; sensitive diagnostics withheld

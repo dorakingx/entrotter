@@ -1,0 +1,130 @@
+{
+  "status": "passed_no_actionable_preparation_findings",
+  "reviewer": "review_cli_agent",
+  "base": "9b49fe2e53afb6a7bb35548034e222f0bdac624c",
+  "selected_engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+  "reviewed_source_sha256": {
+    ".github/workflows/ci.yml": "152758bd8d82bc41aaa6220c47fd3d72c6a3b422d3acfabf0b39270d0978ba5e",
+    ".github/workflows/quality.yml": "2b11bd8294024cb55db9842a70f77ac9c49ad6968cc69790efa4a76c17d19b4a",
+    "bounded-worker-pins.json": "bb8973d91c506d1ac16baabd44c008fc9ff013443726d8eef1dbd5e31073dd73",
+    "quality-inputs.json": "951e6bc49e9b2bb1e1b3e6c76104d376432f21a7a86072315be42e8e610e9960"
+  },
+  "other_pending_doc_paths_outside_review": [
+    "docs/QUICK_START.md",
+    "submission/README.md"
+  ],
+  "reviewer_corrections": [
+    "Initial global diff-size assertion stopped because root concurrently prepared two later documentation paths; scoped to the four requested source files and explicitly deferred those docs. No source/test/case failure or rerun."
+  ],
+  "evidence_sha256": {
+    ".github/workflows/quality.yml": "2b11bd8294024cb55db9842a70f77ac9c49ad6968cc69790efa4a76c17d19b4a",
+    "bounded-worker-pins.json": "bb8973d91c506d1ac16baabd44c008fc9ff013443726d8eef1dbd5e31073dd73",
+    "quality-inputs.json": "951e6bc49e9b2bb1e1b3e6c76104d376432f21a7a86072315be42e8e610e9960",
+    ".github/workflows/ci.yml": "152758bd8d82bc41aaa6220c47fd3d72c6a3b422d3acfabf0b39270d0978ba5e",
+    ".quality/observed-wrapper-integration/local-readers.json": "04c2fea692d44698807d4ea126762da34a647668f3aa8d0a3b5c218d9b67ea9a",
+    ".quality/observed-wrapper-integration/steps.json": "26f575b8ffbff7592d1d99329a923b544990dc25896814362ade6ec903a12a06",
+    ".quality/observed-wrapper-integration/step-1.sh": "f2dc8d5edb44ea12d37cab8b8d3cbfcdaf374d2c2e32d33bb792ebb69a92636a",
+    ".quality/observed-wrapper-integration/step-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".quality/observed-wrapper-integration/step-2.sh": "09fed780bae31612d9e22e6ef4c89b84be6726c0cc1a23c877888a07c76d119c",
+    ".quality/observed-wrapper-integration/step-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".quality/observed-wrapper-integration/step-3.sh": "47cc1b92fef09890744a071f9f5fc6ad9fa32f6b223301eaf697943bed2adb2a",
+    ".quality/observed-wrapper-integration/step-3.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".quality/observed-wrapper-integration/step-4.sh": "adaf874f5dc073337e7577cac42a5af5c06f428334ac17d418b04b25db43eb49",
+    ".quality/observed-wrapper-integration/step-4.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".quality/observed-wrapper-integration/step-5.sh": "345ed9ecf904b91505a6abcf061d9a9c75fd6a760de33eb821ae3d670e8e9b62",
+    ".quality/observed-wrapper-integration/step-5.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".quality/observed-wrapper-integration/step-6.sh": "edc5595a5512b4aaf158098fa8e291af1333245f4868812245341a96ab870710",
+    ".quality/observed-wrapper-integration/step-6.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-observed-reader.json": "e2d97d170d5e42862390b8b64acc40abd42c092ef35caae7f1041e917a1998f6",
+    ".quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-comparison-reader.json": "a71fca38d4163d74f8e42d7d8b59561c3de895c37629ff286c2a79e5530fd975",
+    ".quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-consumer-reader.json": "287c01e1eaa110c5fec2fd34c0339b89d44c0bb83ac2f3da3b25ae96bdd351af",
+    ".quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-reader.json": "f3bcbb911623cefb22e7438b156a7b6ef3e8fc92977dca815326fab6fd147a11",
+    ".quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/observed-transaction-replay.json": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+    ".quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-funding-reader.json": "989d860b35716b5aadce528fc16c8b0090ac1ecd12ffe8e4bd1979a66aaafe7e",
+    ".quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-oracle-reader.json": "f957e95cca7ae45b39cd1d9aef6f48c37995b2b52963b62c80340e7272b786ee",
+    ".quality/consumer-price-integration/ci-workspace-9b49/coordination-integration-evidence/trace-reader.json": "be4ac67e41eda4f5b98fd7ff280c12bbd38f85757834bf5cfbf7f888b2f9dcd7",
+    ".quality/consumer-price-integration/ci-workspace-9b49/coordination-integration-evidence/trace-comparison-reader.json": "ca27b5cd205ebd32f1553d8c4511098ee50b465b97afc4a7bcec89ada0327a73",
+    ".quality/consumer-price-integration/ci-workspace-9b49/coordination-integration-evidence/trace-consumer-reader.json": "4fc577ebfd46a823e024803e966ddce25783d14ba7a979d8e65d896d36fad491",
+    ".quality/consumer-price-integration/ci-workspace-9b49/coordination-integration-evidence/trace-funding-reader.json": "37b6ed89470aaa4f530bf911f9f1648dbdc1a24a77759ab870ce16d50abc67fd",
+    ".quality/consumer-price-integration/ci-workspace-9b49/coordination-integration-evidence/trace-oracle-reader.json": "71c7bdd688e0e9d8e999412831c3e98746cc60ed1fd7f80599f200a1dee4b061",
+    ".quality/observed-wrapper-integration/local-types.json": "e8787fbff389a2afe9291863a5bc99100885bc35adeaa2809c719e49f9468cbf",
+    ".quality/observed-wrapper-integration/local-types.log": "e8787fbff389a2afe9291863a5bc99100885bc35adeaa2809c719e49f9468cbf",
+    ".github/actions/docs-links/check.py": "34f7173772099c0ce8fc01fe39693c6f88c25bba27b07444d7cbf74263d8beac",
+    "scripts/benchmark_agent.py": "14fa2bdeb9adfa47e76eead751b789d9c2eb5564f36cb0c35e27d9bd90a49aa1",
+    "scripts/benchmark_direct.py": "a69212c2f66e657a0217f49e593a0a059922454a8f00044ac290885f33660957",
+    "scripts/bounded_cli.py": "df96abd74fb22e3d9b16f60d8b1e93f3cc39129a8cb11a63b61cdfbcaf4cd1c2",
+    "scripts/browser_check.py": "cb624bebc251e4a96c6b302a609550538af7cb32cb30aa1553f5f25b998f7b9c",
+    "scripts/check_agent.py": "e9cbeb134a7137b200937157887e154140d3f0064c90f153cb066425af98ae09",
+    "scripts/check_default_wheels.py": "91f9836bc2315ca7232d735164efb75db29b28fbea769d02fca5e7083f415ed9",
+    "scripts/check_dependencies.py": "4b6aa95413b509f10bb876ec1d753353025c72abe2a7c861a8bc3384884a1228",
+    "scripts/check_export_budget.py": "50accb3dba9bbfdccd28d9e34b45e51e9a38709a62374de83b8d35212110412e",
+    "scripts/check_historical.py": "2be74ef9775ed78a8c9e019f1a07f785ff3d9cf6892d87f4aaf2082f997b62c6",
+    "scripts/check_host_envelope.py": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb",
+    "scripts/check_host_limits.py": "7bc0fa1055c7d332edbfa7f14928ef29dbe183fc5f7d9b2b7ff56edc35a3174c",
+    "scripts/check_security.py": "59c663e1612f57f14d241195baf6a70a06ca2b1610d7d62cb14dd6f0d06719bb",
+    "scripts/check_types.py": "ea69dc5a5b8404907d0b13df4b7f690a7959b0e39ef394d7986eb9c13176c8d6",
+    "scripts/codex_policy.py": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76",
+    "scripts/direct_anvil_case.py": "0defb1ea03cc71e6985ee6a459cea7a6e0a7ce49ec96fc9663a447e6ef36427f",
+    "scripts/export_reports.py": "8971b8e439fd1f60641afb9fb7260a6d52cde2e076256ee38e228d4e393288f3",
+    "scripts/publish.py": "e54c579a177ab5877e5cb9e8d7626a0c0f6fbf1e3f72067495cbf8b58597cfe8",
+    "scripts/quality_scope.py": "f39cbd50586f57a73973e28e1c901148ebb9cb779c7ceda845d86289d102fb11",
+    "scripts/reproduce_clean.py": "5fdc895972f8235126eff7f4d3f73d0076b2021c9c32ba5785faadc07e4f1d3e",
+    "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333",
+    ".quality/observed-wrapper-integration/workspace/.quality/observed-reader-export-state/ledger.json": "8154bb364bb55a774d4382d0508667fb8e18f73b168123f7fe00d9e8e220a73b",
+    ".quality/observed-wrapper-integration/independent-preparation-review.py": "2930d19c3128ec4aa59d583f8994fc2b65ffa2e797b4d8ce9402818c204585a4"
+  },
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "old_five_script_bodies_and_complete_JSON_equal_except_engine_pin": true,
+  "old_raw_output_sha256": {
+    "trace-reader.json": "be4ac67e41eda4f5b98fd7ff280c12bbd38f85757834bf5cfbf7f888b2f9dcd7",
+    "trace-comparison-reader.json": "ca27b5cd205ebd32f1553d8c4511098ee50b465b97afc4a7bcec89ada0327a73",
+    "trace-consumer-reader.json": "4fc577ebfd46a823e024803e966ddce25783d14ba7a979d8e65d896d36fad491",
+    "trace-funding-reader.json": "37b6ed89470aaa4f530bf911f9f1648dbdc1a24a77759ab870ce16d50abc67fd",
+    "trace-oracle-reader.json": "71c7bdd688e0e9d8e999412831c3e98746cc60ed1fd7f80599f200a1dee4b061"
+  },
+  "new_reader": {
+    "wrapper_sha256": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "export_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+    "typed_complete_receipt_matches": 32,
+    "candidate_executed": 31,
+    "skip_indices": [
+      12
+    ],
+    "viewer_counts": {
+      "identical": 12,
+      "omitted": 1,
+      "structural": 19,
+      "execution": 0,
+      "unavailable": 0
+    },
+    "four_raw_price_views": true,
+    "normal_quota_export_ledger_bound": true,
+    "node": "v22.23.1"
+  },
+  "types": {
+    "sources": 21,
+    "retained_frozen_diagnostics": 3,
+    "source_hashes_match": true
+  },
+  "inspection": [
+    "Only four source selectors change, one occurrence each bd to40. Entire parsed CI remains identical after removing one new mandatory run step and restoring the bounded-engine selector; all frozen jobs/actions, guards and five old run bodies retained.",
+    "All six exact workflow script bytes equal retained step shell files; author six return codes0/logs retained, full output hashes match. Clean selected engine/SDK/viewer/CLI/scenarios Git heads checked read-only.",
+    "New trusted fixed step imports strict engine wrapper loader, uses normal bounded report writer, actual SDK and actual Node validators. Sealed fixed digest prevents malformed/resealed data substitution; typed full receipt equality and viewer classifications preserve every row/difference.",
+    "Independent raw output comparison confirms32 original baseline receipts and31candidate/skip12/19structural-only, four prices/head/code records. No live EVM/provider/model/browser execution claimed; SDK/viewer inspect only nested trace.",
+    "Types retain21 current source hashes and same three explicit frozen diagnostics; dependency policy changes only one worker-engine pin.",
+    "No product/source edits, case/test/scanner/network/browser/CI reruns during this review."
+  ],
+  "findings": [],
+  "limits": [
+    "Local retained offline results are not fresh combined CI, Docker32, rendered browser/Pages or provider authentication proof.",
+    "Price difference remains a read-only view; no signed consumer strategy, benefit/profit or full-block/root/opcode proof.",
+    "Independent software source review is distinct from mandatory human protected-main approval.",
+    "Public docs/evidence package and immutable execution snapshot require separate later review."
+  ]
+}

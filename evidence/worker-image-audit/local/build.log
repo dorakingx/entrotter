@@ -1,0 +1,37 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 397B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 50.42MB 0.3s done
+#5 DONE 0.3s
+
+#6 [2/4] COPY anvil /usr/local/bin/anvil
+#6 CACHED
+
+#7 [3/4] COPY entrotter_engine /app/entrotter_engine
+#7 CACHED
+
+#8 [4/4] WORKDIR /app
+#8 CACHED
+
+#9 exporting to image
+#9 exporting layers done
+#9 writing image sha256:e5ba2222140c128f6b94e91d8cfbb90578b2cdf939a38dbf6b3f863fcacd5dc4 done
+#9 naming to docker.io/library/entrotter-worker:339d83885af59c8f done
+#9 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/default/default/ylxd8v8raxk6wcdkpqz90495z
+{"image_id": "sha256:e5ba2222140c128f6b94e91d8cfbb90578b2cdf939a38dbf6b3f863fcacd5dc4", "manifest": "/tmp/entrotter-image-audit-candidate.json", "published": false}

@@ -1,0 +1,57 @@
+{
+  "scope": "One independently reviewed instrumented native diagnostic; no default Docker/CPU/RSS/PID or completeG1 proof.",
+  "actual_session": 88074,
+  "terminal_exec_exit": 0,
+  "replay_status": "failed",
+  "primary_category": "execution_error",
+  "primary_code": "trace_rpc_failed",
+  "primary_stage": "candidate_replay",
+  "observed_failed_operation": {
+    "category": "rpc_error",
+    "code": "other_error",
+    "method": "evm_mine",
+    "stage": "candidate_replay"
+  },
+  "cause_limit": "Owned-local evm_mine returned RPCError. Cannot infer underlying transport/provider/internal execution cause or the original001 cause; no arbitrary exception message/params captured.",
+  "host_return_not_replay_success": true,
+  "host_seconds": 152.233804,
+  "child_seconds": 152.080491,
+  "baseline_raw_receipts_exactly_equal_32original_projections": true,
+  "source32_signed_binding_verified": true,
+  "source_snapshot_sha256": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+  "baseline_snapshot_sha256": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+  "transaction12_baseline_gas_used": 336752,
+  "candidate_return_and_final_protocol_absent": true,
+  "observations_final_equals_result": true,
+  "omission_outcome_consumer_or_authenticity_verified": false,
+  "secondary_errors": [],
+  "cleanup_checks": [
+    {
+      "branch": "baseline",
+      "guardian_pid": 42037,
+      "guardian_pid_exists": false,
+      "port": 64944,
+      "port_closed_independent_final_check": true
+    },
+    {
+      "branch": "candidate",
+      "guardian_pid": 42440,
+      "guardian_pid_exists": false,
+      "port": 65152,
+      "port_closed_independent_final_check": true
+    }
+  ],
+  "remaining_anvil_processes": [],
+  "source_unchanged": true,
+  "native001_raw_and_readiness_unchanged": true,
+  "readiness_sha256": "d636e4311eabefe9509f1f096cea01898ddf995ca5cc0dfcff042992199e1d08",
+  "run_sha256": {
+    "baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "host-owned-cleanup.json": "fb98c9c66a4a4decbd2f5b8d21703f3e9fde6f2b450c0a87c6c5aa828db844a1",
+    "host-result.json": "a33c47fef1e8d7f887947138b39266ebe96b7f5395e53c3231ce2f32a9e94cd1",
+    "observations.json": "38ee45f2051debfb36fcd5fa13cc60ff3697aacd7456e25ae633b83d66d18e4d",
+    "owned-nodes.json": "2fae5ef1267991da34aa617ec47cbdd16780d361bd759e2fa9c8a6a37d2058ae",
+    "result.json": "ed902f2792512fcb767b05674bcb2ae2ca83845e92687fc3cb81aaadff03a77f"
+  }
+}

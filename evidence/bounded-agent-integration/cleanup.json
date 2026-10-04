@@ -1,0 +1,22 @@
+{
+  "profiles": [
+    {
+      "name": "default",
+      "status": "Stopped",
+      "arch": "aarch64",
+      "cpus": 4,
+      "memory": 8589934592,
+      "disk": 42949672960
+    },
+    {
+      "name": "entrotter",
+      "status": "Stopped",
+      "arch": "aarch64",
+      "cpus": 2,
+      "memory": 2147483648,
+      "disk": 10737418240
+    }
+  ],
+  "docker_context": "colima",
+  "containers_before_vm_stop": ""
+}

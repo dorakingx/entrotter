@@ -1,0 +1,11 @@
+Engine 88c6cd0 / local EVM / bounded Docker worker
+run_agent(scenario, decision_steps=[0, 1])
+Risk choices: execute, hold
+Baseline: success, reverted
+Candidate: success, noop
+
+Replaying recorded model decisions against fresh observations...
+Complete JSON equality: true
+Artifact: 1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b
+Agent model calls: 0 | archive requests: 0
+Actual local execution time: 3.411 seconds

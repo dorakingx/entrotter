@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-02T05:11:42.330232+00:00",
+  "sources": {
+    "event": "https://colosseum.com/worldsfair",
+    "faq": "https://colosseum.com/hackathon",
+    "rules": "https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf"
+  },
+  "observation": "Official rules section5 ends the contest October12,2026 at23:59Pacific; administrator may change schedule. Eventpage still statesOctober12.",
+  "deadline_utc": "2026-10-13T06:59:00+00:00",
+  "deadline_jst": "2026-10-13T15:59:00+09:00",
+  "time_zone_conversion": "Python zoneinfo America/Los_Angeles toUTC/Asia/Tokyo; October12 offset-07:00",
+  "source_scope": "Primary-source web text retrieved in this run; not a downloaded-PDF digest or legal assessment. No authenticated portal or server acceptance check in this recheck.",
+  "active_goal_policy": "October2 goal actually active, no duplicate goal/session. Continue authorized improvement untildeadline evenafter readiness/CI/PR/submission; preserve immutable submitted versions. Formal existing-entry submission has standing conditional authorization; required facts/terms/review cannot be bypassed.",
+  "unresolved": [
+    "Independent GitHub approval/protected integration/current candidate publication",
+    "Required school answer and city verification",
+    "Hosted video URLs/upload-time Terms",
+    "Portal opening/formal submission/serverreceipt"
+  ]
+}

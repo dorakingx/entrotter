@@ -1,0 +1,6 @@
+scripts/direct_anvil_case.py:200: error: "Collection[Any]" has no attribute "append"  [attr-defined]
+scripts/codex_policy.py:44: error: Argument 1 to "register" of "_BaseSelectorImpl" has incompatible type "IO[bytes] | None"; expected "int | HasFileno"  [arg-type]
+scripts/codex_policy.py:50: error: Item "int" of "int | HasFileno" has no attribute "fileno"  [union-attr]
+scripts/codex_policy.py:72: error: Item "None" of "IO[bytes] | None" has no attribute "close"  [union-attr]
+scripts/check_agent.py:44: error: Argument 1 to "append" of "list" has incompatible type "tuple[str, CodexPolicy]"; expected "tuple[str, RiskPolicy]"  [arg-type]
+Found 5 errors in 3 files (checked 7 source files)

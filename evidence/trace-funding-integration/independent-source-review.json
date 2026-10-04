@@ -1,0 +1,23 @@
+{
+  "status": "pass_no_actionable_findings",
+  "scope": "Read-only independent four-file coordination source review while engine isolated CI progresses. No tests, Docker, archive/model or rendered-browser reruns.",
+  "files_sha256": {
+    ".github/workflows/ci.yml": "2d0e6b4447185a6a9928681f826ac9f75079777da9b42dc5a1b0fb47b2c9650f",
+    ".github/workflows/quality.yml": "6ffe00f15247861b07f67df30b2d665673dd82b7dc18d2d2a2d9def9a9e5e3be",
+    "bounded-worker-pins.json": "08cb55f25d78b20141c7decb920660d8b202915703cf1f2ab8b0b6bf3da6d79b",
+    "quality-inputs.json": "981dae244e2d557bbb7c1d066b9abc5da49c0bf1c8011e25de411e96e55915e3"
+  },
+  "findings": [],
+  "observations": [
+    "All worker source/manifest/type-policy pins agree on935558a; SDKee/siteb7/CLI22/scenarios8785 and frozen agentbb8 remain unchanged.",
+    "Offline frozen synthetic report hash matches committed engine artifactfbfe; SDK typed statuses/gas/cumulative/no-receipt and actual viewer module validation remain offline.",
+    "Node22.23.1 and setup-node action immutable ref align supported browser codec. Fixed module URI/file operands and literal JS source are used, no report-selected program/network.",
+    "Viewer artifact_id compares typed SDK result; output accurately distinguishes native synthetic source, no EVM/model call and no rendered-browser/default-worker proof.",
+    "Existing source-bound image build/host-default execution and cleanup steps remain; component success and source review do not replace combined exact-head CI.",
+    "Reused local type summary binds21sources/expected dependency SHAs; three frozen diagnostics remain intentionally retained."
+  ],
+  "limits": [
+    "Engine isolated artifact verification still pending; no component promotion authorized by this review alone.",
+    "Human GitHub approval remains separate."
+  ]
+}

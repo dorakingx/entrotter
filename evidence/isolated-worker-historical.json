@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "full_artifact_equals_public_reference": true,
+  "artifact_id": "6c358340e3b1227fccb4398802d30fefe27877aeacbacf8bd313c9c65c13a453",
+  "wall_seconds": 10.05463604198303,
+  "worker_image": "sha256:08aa3eaf8067639f53366961e36dee2e04888ce7a3be7559c7348d885da60e38",
+  "scope": "One archived Ethereum supplied-action case; no agent or trace replay"
+}

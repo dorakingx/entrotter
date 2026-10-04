@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "run": 35470277261,
+  "head": "6410c37663d37685a30effccd87844e1740b8637",
+  "actual_docker_tests": 16,
+  "cargo_inventory": 1126,
+  "cargo_findings": 0,
+  "outside_cargo_inventory": 172,
+  "image_OS_packages": 26,
+  "image_OS_findings": 0,
+  "current_policy_reevaluation": "passed",
+  "local_ci_signed_inventory_claims_auditor_hashes_equal": true,
+  "actual_ci_manifest_archive_and_anvil_digest_equal_signed_provenance": true,
+  "database_sha256": "d2011995903d437182133a086780524c5d7d309947cbcce3e546822a06dc54d2",
+  "database_updated_at": "2026-09-19T07:03:12.311489574Z"
+}

@@ -1,0 +1,29 @@
+{
+  "engine_head": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
+  "synthetic_merge": "c56a4c4343ee655079be8c0a9631d5b70ebbdee2",
+  "full_tree": "e009786a4c3b98466689e334620934f7d8c3af29",
+  "synthetic_merge_tree_matches_head": true,
+  "docs_action_immutable_coordinator_pin": "ea74aec66c5234edb935e4b12c14ec686dc73f80",
+  "action_files": {
+    ".github/actions/docs-links/action.yml": {
+      "actual_pinned_sha256": "52a2993f14f80058b545ea2e8349216a56b95cc46408c566a2c15d434d2e5e67",
+      "current_coordinator_sha256": "52a2993f14f80058b545ea2e8349216a56b95cc46408c566a2c15d434d2e5e67",
+      "comparison": "byte identical"
+    },
+    ".github/actions/docs-links/check.py": {
+      "actual_pinned_sha256": "db2d482028eb899436434a35dd997ed9e39aa6e3cf2e6de8f0fc980b32500d4d",
+      "current_coordinator_sha256": "34f7173772099c0ce8fc01fe39693c6f88c25bba27b07444d7cbf74263d8beac",
+      "comparison": "Python AST identical; later coordinator formatting differs"
+    },
+    ".github/actions/docs-links/test_check.py": {
+      "actual_pinned_sha256": "82b048af59f7a413da012aa81af4d33ce72e79a16415ff76099551a8b8b4b3de",
+      "current_coordinator_sha256": "82b048af59f7a413da012aa81af4d33ce72e79a16415ff76099551a8b8b4b3de",
+      "comparison": "byte identical"
+    }
+  },
+  "first_reviewer_assumption": "Initially expected pinned action bytes to match current coordinator; stopped on formatting-only check.py. Verified exact pinned hashes and identical AST instead, without product change.",
+  "availability_scope": "13 GitHub HTML targets only; same pinned checker settings, local macOS binary, no substitute for full Linux CI",
+  "availability_sha256": "4863266e3bb20252104039af4d9653e0fcc1403bb63b8ab6c0a1a1255e65f933",
+  "first_two_failed_reports_preserved": true,
+  "only_failed_docs_rerun_attempt": 3
+}

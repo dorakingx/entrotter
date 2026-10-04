@@ -1,0 +1,92 @@
+{
+  "head": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+  "status": "passed",
+  "required_checks": 8,
+  "production_sources": 26,
+  "retained_findings": 25,
+  "wheel_modules": 21,
+  "wheel_sha256": "cbe0a878bfc548392997eade492a287f6ba4a7f86a616f571a6091a23c8c7f99",
+  "python_identities": 42,
+  "docs_files": 22,
+  "docs_links": 255,
+  "synthetic_merge_tree_equal": true,
+  "native_tests": 356,
+  "native_seconds": 85.084,
+  "unit_tests_each": 356,
+  "unit_Anvil_skips_each": 40,
+  "isolated_tests": 25,
+  "isolated_seconds": 215.092,
+  "worker_image_id": "sha256:b024380eaec7ead4c9ddfb7c003f7aec07c0bb8b097f2d744bbd42e164bdaf23",
+  "worker_inputs": 22,
+  "base_image": "cgr.dev/chainguard/python@sha256:89281daac77a3d91ef298d70ce3b7a6ccb2ebf268c084fa9a9bda1c92e71c64d",
+  "OS_packages": 31,
+  "signed_Cargo_packages": 1126,
+  "outside_Cargo_inventory": 172,
+  "reported_vulnerabilities": 0,
+  "default_worker_replays": [
+    {
+      "name": "mainnet-prefix.json",
+      "sha256": "649cbfbdf796eaaa28c5a11a140552492106c1d1d33581e5f2002ad408525d00",
+      "runtime_seconds": 8.453828,
+      "baseline_original_receipts_equal": 1,
+      "candidate_statuses": [
+        "skipped"
+      ]
+    },
+    {
+      "name": "mainnet-prefix-four.json",
+      "sha256": "845bb428e4b28e41f2f44bdbd9eda5b2dab28d8a63f802ff6a029130b8fee0e3",
+      "runtime_seconds": 13.806004,
+      "baseline_original_receipts_equal": 4,
+      "candidate_statuses": [
+        "skipped",
+        "executed",
+        "executed",
+        "nonce_conflict"
+      ]
+    }
+  ],
+  "limits": [
+    "Database binary digest is recorded in CI but binary not exported for local rehash.",
+    "Signed Foundry whole-checkout Cargo inventory is not exact linked feature inventory; 172 non-Cargo entries remain outside coverage.",
+    "CI signature verification logs and attestation claims reviewed, no new local signature or image execution.",
+    "Default Docker1/four tests do not prove original32 supported CLI.",
+    "Software review does not grant protected-main human approval."
+  ],
+  "artifacts_sha256": {
+    "ci-quality-40/engine-quality-reports/aave-consumer-controls.log": "3e3610185b456185106b23945b2f014e0c557a99ad6ed4c506c14d34f6afdcec",
+    "ci-quality-40/engine-quality-reports/bandit.json": "f6c3b2cc71047d1eef640dc216bcecb93b431c6fdebd870000a76798ba3a6d4a",
+    "ci-quality-40/engine-quality-reports/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "ci-quality-40/engine-quality-reports/dependency-scope.json": "523c22b99543db0f4d3f92a40e38ee0dd88d784eb57c88e176f2155edc5fbc56",
+    "ci-quality-40/engine-quality-reports/wheels/entrotter_engine-0.1.0-py3-none-any.whl": "cbe0a878bfc548392997eade492a287f6ba4a7f86a616f571a6091a23c8c7f99",
+    "ci-docs-40/docs-links/report.json": "e2c3b679f5db570fc75b18f927372b4afa3f4ea523cda34fc937de93bf5508ab",
+    "ci-isolated-40/worker-image-security/.quality/build-output-docker.json": "0047c89e086cb97f21863a97d3addf84887d33e66b573795a049b0e4786f57b6",
+    "ci-isolated-40/worker-image-security/.quality/image-security/database.json": "8d18169a30783ce27d384d2be68c0d59563b3f835a4d7d22530bdc96e43d49f7",
+    "ci-isolated-40/worker-image-security/.quality/image-security/packages.json": "f122d9294d680dcbde5424068f669abbc3358bf5fd1ec422d24e436d6329f529",
+    "ci-isolated-40/worker-image-security/.quality/image-security/scanner.log": "5a0bdcb8bb49c91913fe0fc105c7d213c8796306a651b278efad0e4f77890711",
+    "ci-isolated-40/worker-image-security/.quality/image-security/signature.json": "b492dc515421f94076c35dc2e5d739c764f9f5d66eddf7b3866e6e9ca4a95dbd",
+    "ci-isolated-40/worker-image-security/.quality/image-security/signature.log": "6d9c64498e2e5a42a6a11c47aabcf5d6c8fc338e35cdcf5ef365231c2a2ba13d",
+    "ci-isolated-40/worker-image-security/.quality/image-security/summary.json": "5507a082da33b3074cb0323343934e902b0e75cab6387d03d7790d9a5b295475",
+    "ci-isolated-40/worker-image-security/.quality/native-security/attestations.json": "fd10b9d5e283fb6bfa070960fb005339a7ff4a66eb34834ebf09924d9437ce9d",
+    "ci-isolated-40/worker-image-security/.quality/native-security/database.json": "8d18169a30783ce27d384d2be68c0d59563b3f835a4d7d22530bdc96e43d49f7",
+    "ci-isolated-40/worker-image-security/.quality/native-security/packages.json": "d471f1fde8b00f95a504d48cdd82a390e53ac9a68c9bbead5ae1a184c867a904",
+    "ci-isolated-40/worker-image-security/.quality/native-security/provenance-bundle.json": "e493c74342af32d79e1ae7bf923be7738a2e7bfb569005f259d3f5be6a7076fb",
+    "ci-isolated-40/worker-image-security/.quality/native-security/provenance-verification.log": "80a53f76c7ed6969dade3b6ee47cdb753162db7c00be625448999d08bae77ed8",
+    "ci-isolated-40/worker-image-security/.quality/native-security/sbom-bundle.json": "348e077f65c1c94b63bb54ffb6c51c78f3d5d8fbc60d2af57f9b61867585f823",
+    "ci-isolated-40/worker-image-security/.quality/native-security/sbom-verification.log": "80a53f76c7ed6969dade3b6ee47cdb753162db7c00be625448999d08bae77ed8",
+    "ci-isolated-40/worker-image-security/.quality/native-security/scanner.log": "dd7c51c547d227dfb9a0bd9746ebec02bb8a8c0e7b5c942bf00dfb8e0cc13a4b",
+    "ci-isolated-40/worker-image-security/.quality/native-security/signed-inventory.json": "8fb1fd40f45ff7eb97f40a6f020586e1e486ba701ae891e6ee6f63fff9ea6c7b",
+    "ci-isolated-40/worker-image-security/.quality/native-security/summary.json": "acc41c851d33cfbd96aa3cd1890dac0610c30290f580db30c694a8b081eeaa4e",
+    "ci-isolated-40/worker-image-security/.quality/trace-replay/mainnet-prefix-four.json": "845bb428e4b28e41f2f44bdbd9eda5b2dab28d8a63f802ff6a029130b8fee0e3",
+    "ci-isolated-40/worker-image-security/.quality/trace-replay/mainnet-prefix.json": "649cbfbdf796eaaa28c5a11a140552492106c1d1d33581e5f2002ad408525d00",
+    "ci-isolated-40/worker-image-security/worker-image.json": "20afcbfe71cab1b8214cc12bb4c5b6ee74897a87ecb58405242f4c35aa40f12d"
+  },
+  "logs_sha256": {
+    "quality": "7f2172ae60b8d21282c46925b5b0d2b715b828d323e043807d988ab2cbf6f55a",
+    "docs": "f410d8ff80d6f0db3c412d40a3d43ea38934963b56b7e688dafd8f6abf829ee6",
+    "isolated": "7b5a1e49a124e280ecb33584190ea5bbd9feecb616b7daa8aa6602b9d4c80e0b",
+    "evm": "fbdb140fcecd58cf3411005b9d218949ef2124aa575202aee48bc6563176682c",
+    "units": "a349efdb9405e8639cb18fa447f7222c46c325542563e492d25f086811e2dc5d"
+  },
+  "reviewer_sha256": "113452f0c8ab4ffa4fc7d4d9450f5bfb7a3a229b66a04278d3d121a6500038f7"
+}

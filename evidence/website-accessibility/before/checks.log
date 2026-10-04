@@ -1,0 +1,95 @@
+{
+  "status": "failed",
+  "browser": "153.0.8010.12",
+  "checks": [
+    {
+      "name": "Keyboard skip link moves focus into main and skips navigation",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\n'' !== 'main'\n"
+    },
+    {
+      "name": "Keyboard sample selection, native local-file chooser, live status and inert import",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\nnull !== 'true'\n"
+    },
+    {
+      "name": "1280px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "1280px recovery-trap: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "1280px depeg-stress: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "1280px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "false == true"
+    },
+    {
+      "name": "390px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "390px recovery-trap: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "390px depeg-stress: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "390px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "false == true"
+    },
+    {
+      "name": "320px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "320px recovery-trap: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "320px depeg-stress: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "320px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "Tampered import clears data, reports an accessible error and recovers",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+    },
+    {
+      "name": "Forced colors, reduced motion and keyboard focus remain usable",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "404 page at 320px: keyboard home link, no overflow and axe",
+      "status": "passed"
+    },
+    {
+      "name": "No JavaScript exceptions, uploads or unexpected third-party requests",
+      "status": "passed"
+    }
+  ],
+  "scans": 1
+}

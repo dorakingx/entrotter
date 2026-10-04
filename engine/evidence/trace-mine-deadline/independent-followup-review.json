@@ -1,0 +1,45 @@
+{
+  "reviewed_at_utc": "2026-10-01T14:38:30.825281+00:00",
+  "base": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+  "scope": "Follow-up read-only review of current four-prefix workflow/plan/docs/provenance evidence; unchanged prior source review reused.",
+  "actionable_findings": [],
+  "files_sha256": {
+    ".github/workflows/isolated.yml": "3737762a270f26132e4c1ec249cf8eb0749908c91683087e163b89495552f7db",
+    "README.md": "f85e2a3ba517e7be931afafa434b40ca71076aafa7e2d54e7434f78536f8eabd",
+    "security-reviewed.json": "023e8ba37ee22817627b65c4dcf96fc038fb1944d39b30cbf4cf331e223ec256",
+    "tests/data/canonical-mainnet-prefix-four.json": "17bd757a74c11340a763fe75e2c7490062c66c24c0e8b7f646d87a3841c5d17b",
+    "evidence/trace-mine-deadline/README.md": "5ca51ba5866386224fa6c21495e9311f0ee09fb8648270d1addf528ef89e2eec",
+    "evidence/trace-mine-deadline/independent-review.json": "72242820bd8769b68a55001290f61c0bcd371a8574f42e1b9aa71140f932de14",
+    "evidence/trace-mine-deadline/native-prefix-four.json": "857c7a29aa5a2ea8af185b0b449727923b8902d36f786c3592e7b79e84a50943",
+    "evidence/trace-mine-deadline/plan.json": "17bd757a74c11340a763fe75e2c7490062c66c24c0e8b7f646d87a3841c5d17b",
+    "evidence/trace-mine-deadline/prior-timeout-observation.json": "1d463a18dc98aa31fd9435b293563a1fbb9c5d1f9b5a13492465debceb83c3df",
+    "evidence/trace-mine-deadline/summary.json": "85edd4e43934b3862ef7f842aada353fbc17387513ac9081d2dd31d190e50740"
+  },
+  "validated_without_execution": [
+    "All four evidence summary SHA256 values match actual evidence bytes.",
+    "Published independent-review.json is byte-identical to the preserved ignored original, and its two reviewed source hashes still match current trace.py/test_trace.py.",
+    "verify_trace accepts the native report; report artifact ID/runtime match the declared summary.",
+    "Report plan, published plan.json and mandatory CI input plan are equal, pinning Ethereum block19000000/hash and through_index3/skip0.",
+    "There are four source inputs and four baseline/candidate outcomes; all baseline receipt projections equal embedded original receipts, with exact declared gas/log counts.",
+    "Candidate outcomes are skipped/executed/executed/nonce_conflict; exact gas/difference fields and expected5522/original5523 match the summary and CI assertions.",
+    "The new workflow invokes trace-run without --native using the source-built configured worker, with no fixture fallback; it retains all previous enforcement/replay/security gates and always-run worker cleanup/artifact retention.",
+    "README/evidence accurately distinguish actual native success from bounded CI pending, maintain parent-state funding/full-block/state/SDK/viewer limits and do not turn this technical case into model evidence.",
+    "security-reviewed diff refreshes only the reviewed trace.py digest; finding records remain unchanged."
+  ],
+  "execution_this_followup": {
+    "archive_calls": 0,
+    "model_calls": 0,
+    "Anvil_or_Docker_startup": false,
+    "tests_rerun": 0,
+    "offline_check": "Read files, hash comparisons, native-report verify_trace/integrity and equality checks only; git diff --check passed.",
+    "source_edits": false
+  },
+  "limits": [
+    "Native successful runtime46.982404s and244tests31.741s are root-produced observations, not newly executed by this reviewer.",
+    "Embedded original projections and integrity are internally consistent; this follow-up did not independently fetch the canonical upstream receipts or re-probe process/port cleanup.",
+    "Actual default-worker four-prefix outcome remains a required future CI gate; source/workflow review is not actual Docker verification.",
+    "CI currently checks receipt-derived verification and selected explicit expected divergence fields; this review does not claim full canonical block/root/opcode/state equivalence.",
+    "Independent source review is not protected-main GitHub approval."
+  ],
+  "original_review_preserved_sha256": "72242820bd8769b68a55001290f61c0bcd371a8574f42e1b9aa71140f932de14"
+}

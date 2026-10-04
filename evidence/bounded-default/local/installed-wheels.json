@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "wheels": {
+    "engine": {
+      "wheel_sha256": "d07193b7dfe9bcecb4634886468719da8941cbd058065d066820e0857315acfd",
+      "python_files_match_source": 14,
+      "license": "MIT",
+      "requires_dist": []
+    },
+    "sdk": {
+      "wheel_sha256": "f3456c6001c1784afdf986de88a132bc8b8d2b0ee56a1ea3e8cff7f2cd006780",
+      "python_files_match_source": 2,
+      "license": "MIT",
+      "requires_dist": []
+    },
+    "cli": {
+      "wheel_sha256": "ebbdbd88a4a3c30157c596962218b3b57b14214b8e0df1e90e0665a82fa9a036",
+      "python_files_match_source": 3,
+      "license": "MIT",
+      "requires_dist": [
+        "entrotter-sdk==0.1.0"
+      ]
+    }
+  },
+  "fresh_venv": true,
+  "registry_access": false,
+  "installation": "--no-index --no-deps; execution uses Python -I and confirms module paths inside venv",
+  "default_local_cli_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "full_public_report_equality": true,
+  "missing_worker_preserves_existing_export": true,
+  "check_script_sha256": "46860dec1cdcc881a95e5a2f1fcbbc9a331e2dbd705db61d8ecc6f350454ecc3"
+}

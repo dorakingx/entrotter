@@ -1,0 +1,183 @@
+{
+  "trace_version": "0.1.0",
+  "execution_kind": "canonical_transaction_prefix_replay",
+  "plan": {
+    "skip_indices": [
+      0
+    ],
+    "source": {
+      "block_hash": "0x2b29f9ad176fb05bfa4edcb6c32d5959780f7a37f4e6377cb37d62dcbc49276c",
+      "block_number": 3,
+      "chain_id": 1
+    },
+    "through_index": 1,
+    "trace_version": "0.1.0"
+  },
+  "source": {
+    "parent": {
+      "chain_id": 1,
+      "block_number": 2,
+      "block_hash": "0xc56d628645256b75406c52fcb5acd854c8e89d6e174448591d182355b81c2df9"
+    },
+    "header": {
+      "timestamp": 1700000123,
+      "gas_limit": 1000000,
+      "base_fee": 1000000000,
+      "coinbase": "0x4242424242424242424242424242424242424242",
+      "prevrandao": "0x1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "inputs": [
+      {
+        "index": 0,
+        "hash": "0xc63a13e148f0d17fb25ce417f9cc298ba3ccd19ffa229d7c19a5718b911cad80",
+        "sender": "0x9646f607073de9b9c9c78f5d23566ecedd4d5d35",
+        "nonce": 2,
+        "raw": "0xf88402843b9aca00830493e09481ca2332a3d29dfc6288feeba6c3a4c825ed77a080a0000000000000000000000000000000000000000000000000000000000000001426a0bfb7f8ef210c3a9fe8c1204fdfd502eb628b00f4cbd204acf89402b2d9688601a06a05ad25bc8f54d40186781d1f1e5cc7bde32b64d79efb1ae1c68fa4a1cd5985",
+        "original_receipt": {
+          "type": "0x0",
+          "status": "0x1",
+          "gasUsed": "0x6637",
+          "cumulativeGasUsed": "0x6637",
+          "effectiveGasPrice": "0x3b9aca00",
+          "transactionIndex": "0x0",
+          "transactionHash": "0xc63a13e148f0d17fb25ce417f9cc298ba3ccd19ffa229d7c19a5718b911cad80",
+          "from": "0x9646f607073de9b9c9c78f5d23566ecedd4d5d35",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "to": "0x81ca2332a3d29dfc6288feeba6c3a4c825ed77a0",
+          "contractAddress": null,
+          "logs": []
+        }
+      },
+      {
+        "index": 1,
+        "hash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+        "sender": "0xc93d633b807fe105e1d4809a3c0f4a8ad100fc1f",
+        "nonce": 0,
+        "raw": "0xf86480843b9aca00830493e094827831ecdf9f2c18bab129bc54d543f896af78f8808025a0b57041743ac3773c39f6f3f7b818b3fc66cdc9b2a887751580f42f7117d0ac37a01c0564371267e7f570164c970f60907090a086cee6b02280c769ddb80e2a5bd3",
+        "original_receipt": {
+          "type": "0x0",
+          "status": "0x1",
+          "gasUsed": "0x6746",
+          "cumulativeGasUsed": "0xcd7d",
+          "effectiveGasPrice": "0x3b9aca00",
+          "transactionIndex": "0x1",
+          "transactionHash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+          "from": "0xc93d633b807fe105e1d4809a3c0f4a8ad100fc1f",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000100000000800000000000000000000000000000000000",
+          "to": "0x827831ecdf9f2c18bab129bc54d543f896af78f8",
+          "contractAddress": null,
+          "logs": [
+            {
+              "address": "0x827831ecdf9f2c18bab129bc54d543f896af78f8",
+              "topics": [],
+              "data": "0x0000000000000000000000000000000000000000000000000000000000000014"
+            }
+          ]
+        }
+      }
+    ],
+    "block_transaction_count": 2
+  },
+  "baseline": {
+    "anvil_version": "anvil/v1.8.3",
+    "outcomes": [
+      {
+        "index": 0,
+        "hash": "0xc63a13e148f0d17fb25ce417f9cc298ba3ccd19ffa229d7c19a5718b911cad80",
+        "status": "executed",
+        "receipt": {
+          "type": "0x0",
+          "status": "0x1",
+          "gasUsed": "0x6637",
+          "cumulativeGasUsed": "0x6637",
+          "effectiveGasPrice": "0x3b9aca00",
+          "transactionIndex": "0x0",
+          "transactionHash": "0xc63a13e148f0d17fb25ce417f9cc298ba3ccd19ffa229d7c19a5718b911cad80",
+          "from": "0x9646f607073de9b9c9c78f5d23566ecedd4d5d35",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "to": "0x81ca2332a3d29dfc6288feeba6c3a4c825ed77a0",
+          "contractAddress": null,
+          "logs": []
+        },
+        "differing_fields": []
+      },
+      {
+        "index": 1,
+        "hash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+        "status": "executed",
+        "receipt": {
+          "type": "0x0",
+          "status": "0x1",
+          "gasUsed": "0x6746",
+          "cumulativeGasUsed": "0xcd7d",
+          "effectiveGasPrice": "0x3b9aca00",
+          "transactionIndex": "0x1",
+          "transactionHash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+          "from": "0xc93d633b807fe105e1d4809a3c0f4a8ad100fc1f",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000100000000800000000000000000000000000000000000",
+          "to": "0x827831ecdf9f2c18bab129bc54d543f896af78f8",
+          "contractAddress": null,
+          "logs": [
+            {
+              "address": "0x827831ecdf9f2c18bab129bc54d543f896af78f8",
+              "topics": [],
+              "data": "0x0000000000000000000000000000000000000000000000000000000000000014"
+            }
+          ]
+        },
+        "differing_fields": []
+      }
+    ],
+    "matches_original_receipts": true
+  },
+  "candidate": {
+    "anvil_version": "anvil/v1.8.3",
+    "outcomes": [
+      {
+        "index": 0,
+        "hash": "0xc63a13e148f0d17fb25ce417f9cc298ba3ccd19ffa229d7c19a5718b911cad80",
+        "status": "skipped"
+      },
+      {
+        "index": 1,
+        "hash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+        "status": "executed",
+        "receipt": {
+          "type": "0x0",
+          "status": "0x0",
+          "gasUsed": "0x64d0",
+          "cumulativeGasUsed": "0x64d0",
+          "effectiveGasPrice": "0x3b9aca00",
+          "transactionIndex": "0x0",
+          "transactionHash": "0x891170e3c13d01a5d1ebd6987b2eb73fd9e2301d3450418cd7181599dd8608b4",
+          "from": "0xc93d633b807fe105e1d4809a3c0f4a8ad100fc1f",
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "to": "0x827831ecdf9f2c18bab129bc54d543f896af78f8",
+          "contractAddress": null,
+          "logs": []
+        },
+        "differing_fields": [
+          "status",
+          "gasUsed",
+          "cumulativeGasUsed",
+          "transactionIndex",
+          "logsBloom",
+          "logs"
+        ]
+      }
+    ],
+    "matches_original_receipts": false
+  },
+  "baseline_verified": true,
+  "runtime_seconds": 0.266217,
+  "assumptions": [
+    "Original signed legacy/type-1/type-2 transaction prefix only, Ethereum mainnet Shanghai rules, FIFO order; no new signatures or artificial funding.",
+    "Both branches fork the pinned parent with original timestamp, coinbase, gas limit, base fee and prevrandao. Original transactions supply any in-prefix oracle updates; external responses and later transactions are not invented.",
+    "Skipping original transactions preserves every remaining signature/nonce. Nonce conflicts and rejected/unmined transactions are reported, never repaired.",
+    "Owned trace nodes defer parent-state pool balance/fee/gas admission checks to ordered EVM/block execution, allowing earlier in-block funding. Accepted inputs can still remain unmined; no balance/nonce repair or sequential different-block mining is substituted.",
+    "Exact projected receipts include status, gas/cumulative gas, effective price, identities, ordered log bytes and bloom. Divergence is reported; an unmatched baseline is not verified historical replay.",
+    "Block hashes/roots, withdrawals/end-block state, opcode traces, full-block replay and an alternate market are outside this transaction-prefix result.",
+    "The primitive owns bounded-lifetime Anvil. Whole-process CPU/RSS isolation is supplied only by the default Docker worker; explicit native execution opts out. No upstream writes or arbitrary agent code."
+  ],
+  "artifact_id": "86d15edce5b5a1a4b64c8dcc086e6913704e98033bd785934036467de85a4049"
+}

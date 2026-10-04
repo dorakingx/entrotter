@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "wall_seconds": 24.352,
+  "coordination_snapshot": "03f878613b56240002c83422f3540757b2848634",
+  "host": "Darwin arm64",
+  "python": "Python 3.14.7",
+  "dependency_pins": {
+    "engine": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+    "scenarios": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+    "entrotter.github.io": "8671ab2ee481a894784afe2a2cc216fb6931b02c"
+  },
+  "scope": "All four guide shell blocks extracted verbatim and executed in a fresh temporary workspace. Six public checkouts; fresh venv without pip; network Foundry download; worker build/doctor; synthetic offline fixture and real local Anvil. Docker running with potentially warm base/build caches; installation/VM startup excluded. No model or archive RPC calls.",
+  "files_sha256": {
+    "local-evm.json": "69eb613f67963c6b7684657db92cd744c256f3ffafeaad7041919633bab965c1",
+    "report.json": "d1419b7c2c694326cf892062f4362663044f1cfaeea3500f996987445ef21943",
+    "commands.sh": "ac11c4c4b6a30a253470d28010493aff050ab40baba7d1695a732399c9f6dc29",
+    "walkthrough.log": "985ad654c245b4d7e21d0dfd51c03e74e02c66c70649f1ca1ae645504bced6bc",
+    "worker-image.json": "552c2cb7ad4cd6546577b464b9d52cacedeaeba79e4296bcae36861721d4ed6d"
+  },
+  "commands_extracted_verbatim_from": "docs/QUICK_START.md",
+  "executed_guide_sha256": "c5eae01bd8758b5254c5b2fc2a4f8f53ae58f0a46941d0f4ff34a07066c9bb75",
+  "fixture_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "local_evm_artifact_id": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7",
+  "fixture_complete_public_report_match": true,
+  "published_guide_sha256": "5fa2287110d2d720a3f727f468b100bc61a85efe1cd624e8b2a48ca316e06cbe",
+  "published_shell_blocks_match_executed_commands": true,
+  "cleanup": {
+    "owned_worker_containers_after_run": 0,
+    "dedicated_colima_profile": "Stopped",
+    "already_running_default_profile": "left_running"
+  },
+  "environment_limit": "Lima warned that the legacy symlink host share was not mounted. The walkthrough needs no guest source share. This run does not revalidate the separate host-service mount topology or read-only-share evidence.",
+  "current_head_ci": {
+    "engine_commit": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+    "engine_all_8_checks": "passed",
+    "engine_isolated_run": "https://github.com/entrotter/engine/actions/runs/36826447529",
+    "coordination_commit": "03f878613b56240002c83422f3540757b2848634",
+    "coordination_all_5_checks": "passed",
+    "integration_run": "https://github.com/entrotter/entrotter/actions/runs/36826890295",
+    "all_18_image_inputs_match_current_worktree": true,
+    "integration_checker_matches_current_source": true,
+    "worker_source_digest": "fba06f6dd633858f91dd89d4f48a51c8447696f32e9eb3820302d09bcb379f42",
+    "integration_fixture_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+    "integration_local_artifact_id": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7",
+    "clean_reproduction": {
+      "clean-fixture.json": {
+        "status": "passed",
+        "wall_seconds_including_clone_and_venv": 5.486567392000005,
+        "artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+        "prerequisites": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included."
+      },
+      "clean-agent.json": {
+        "status": "passed",
+        "wall_seconds_including_clone_and_venv": 5.894181576999998,
+        "artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b",
+        "prerequisites": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included."
+      }
+    },
+    "downloaded_artifact_sha256": {
+      "integration.json": "7345aa13681bc50c86a3952a09635c1f2f8c8fa0d7fb3e4f28fbcb94b74252a3",
+      "image.json": "8a4477e531727bebffd7c1f6557d26df9151bd695ef57333d28ca2a2d5ea3f30",
+      "clean-fixture.json": "b58150a5546e14c952929ee471547c874da47e950fef7095872dba246cdbbc53",
+      "clean-agent.json": "906a2d331d5cd85c7c600b46d2a384bf5f90c2294e0a0f57fa88fd0044cd05ae",
+      "export-contract.json": "265be44f83902a6864a4bd61cbb91d6ab200089e8f369f52840f4bf597b34bc9",
+      "optimized-export-contract.json": "5ef4a4d94e4f2ceafcdd735ccb4d24465492e0908168f873a716fec0e49eb06e"
+    }
+  },
+  "finished_at": "2026-10-01T07:09:00.084721+00:00"
+}

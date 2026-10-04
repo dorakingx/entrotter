@@ -1,0 +1,14 @@
+test_original_plan_and_receipt_result_validate_offline (test_trace_contracts.TraceContractTests.test_original_plan_and_receipt_result_validate_offline) ... ok
+test_plan_rejects_unknown_versions_sources_and_executable_fields (test_trace_contracts.TraceContractTests.test_plan_rejects_unknown_versions_sources_and_executable_fields) ... ok
+test_projected_receipts_reject_malformed_quantities_addresses_and_logs (test_trace_contracts.TraceContractTests.test_projected_receipts_reject_malformed_quantities_addresses_and_logs) ... ok
+test_schema_does_not_recompute_receipt_equivalence_or_hashes (test_trace_contracts.TraceContractTests.test_schema_does_not_recompute_receipt_equivalence_or_hashes) ... ok
+test_separate_family_preserves_v01_contract_boundaries (test_trace_contracts.TraceContractTests.test_separate_family_preserves_v01_contract_boundaries) ... ok
+test_sorted_and_prefix_dependent_skip_rules_remain_engine_semantics (test_trace_contracts.TraceContractTests.test_sorted_and_prefix_dependent_skip_rules_remain_engine_semantics) ... ok
+test_source_header_prefix_and_assumption_bounds (test_trace_contracts.TraceContractTests.test_source_header_prefix_and_assumption_bounds) ... ok
+test_terminal_outcomes_require_their_status_specific_fields (test_trace_contracts.TraceContractTests.test_terminal_outcomes_require_their_status_specific_fields) ... ok
+test_verified_flags_cannot_contradict_branch_outcome_shape (test_trace_contracts.TraceContractTests.test_verified_flags_cannot_contradict_branch_outcome_shape) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.989s
+
+OK

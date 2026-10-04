@@ -1,0 +1,446 @@
+{
+  "status": "passed",
+  "execution": "offline original32 report inspection; no new EVM/archive/model call",
+  "pins": {
+    "engine": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "report_sha256": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+  "artifact_id": "30da1a0aad1be09f26d2f4f06dfaa567d9cedfe8bec8e8a69dbed18bb11ef7b0",
+  "viewer_module_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+  "classification_module_sha256": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+  "baseline_verified": true,
+  "input_count": 32,
+  "block_transaction_count": 181,
+  "through_index": 31,
+  "skip_indices": [
+    12
+  ],
+  "omitted_gas": 336752,
+  "baseline_receipts_equal_originals": true,
+  "candidate_receipts_equal_originals_except_exact_omission_shifts": true,
+  "viewer": {
+    "status": "passed",
+    "artifact_id": "30da1a0aad1be09f26d2f4f06dfaa567d9cedfe8bec8e8a69dbed18bb11ef7b0",
+    "node": "v22.23.1",
+    "counts": {
+      "identical": 12,
+      "omitted": 1,
+      "structural": 19,
+      "execution": 0,
+      "unavailable": 0
+    },
+    "classifications": [
+      {
+        "index": 0,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 1,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 2,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 3,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 4,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 5,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 6,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 7,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 8,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 9,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 10,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 11,
+        "status": "executed",
+        "differing_fields": [],
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 12,
+        "status": "skipped",
+        "differing_fields": [],
+        "kind": "omitted",
+        "label": "Omitted \u00b7 no receipt",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 13,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 14,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 15,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 16,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 17,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 18,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 19,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 20,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 21,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 22,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 23,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 24,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 25,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 26,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 27,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 28,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 29,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 30,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 31,
+        "status": "executed",
+        "differing_fields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      }
+    ]
+  },
+  "limits": [
+    "Display classification preserves original differences; receipt identity is not contract-state or economic identity.",
+    "Recorded native producer prefix is not dependent-consumer/profit/full-block/provider-authenticity proof.",
+    "Browser behavior and actual native execution retain their separately pinned evidence."
+  ]
+}

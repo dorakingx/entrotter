@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "whole_report_byte_equal": true,
+  "bytes_each": 59506,
+  "sha256_each": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+  "artifact_id": "728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00",
+  "replay_command_returncode": 0,
+  "final_offline_checker_returncode": 0,
+  "runtime_note": "Recorded replay was executed before input-admission and scientific-check refinements; execution API and worker bytes are unchanged. Current script checked both preserved outputs offline; current CI separately executes it."
+}

@@ -1,0 +1,7 @@
+test_distinct_pinned_reads_enter_real_provider_concurrently (test_parent_cache.ParentCacheTests.test_distinct_pinned_reads_enter_real_provider_concurrently) ... ok
+test_same_key_waiter_admitted_during_read_and_coalesces_raw_result (test_parent_cache.ParentCacheTests.test_same_key_waiter_admitted_during_read_and_coalesces_raw_result) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.029s
+
+OK

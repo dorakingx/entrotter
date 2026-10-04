@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "tested_commits": {
+    "engine": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
+  },
+  "checker_sha256": "50accb3dba9bbfdccd28d9e34b45e51e9a38709a62374de83b8d35212110412e",
+  "shared_module_sha256": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+  "byte_identical_engine_and_cli_protocol": true,
+  "artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "actual_cli_cross_directory_limit": 128,
+  "both_inspection_commands_agree": true,
+  "identical_full_budget_export_succeeds": true,
+  "deletion_then_other_cli_recovery": true,
+  "prior_untracked_destination_preserved_on_rejection": true,
+  "mixed_package_process_race": "exactly one six-byte export admitted under ten-byte test budget",
+  "wall_seconds": 1.6983246419999958,
+  "limitations": [
+    "Synthetic explicit-native fixture for filesystem behavior; no historical/model claim",
+    "Default Docker/Anvil/API behavior is a separate integration gate",
+    "Trusted cooperating clients on one private state root; operator moves, older clients and filesystem/VM metadata are outside bound"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "status": "passed_independent_preparation_review",
+  "base": "404e8dbe9489668d8f803212e9b42dfd18e754c1",
+  "pins": {
+    "engine": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "files_sha256": {
+    "evidence/trace-comparison-integration/summary.json": "791127cfb8f41a996cc983cec42c8dd7cc789a108b64f3cb5f9929f87e1ee9a3",
+    "evidence/trace-comparison-integration/trace-comparison-reader.json": "e9a601e55a49b1ff41a9a5c6df1ac1688bf47b77ff5024b1e647aace7289e1aa",
+    "evidence/trace-comparison-integration/trace-reader.json": "8b383cb562c8fe2db69721b0980f9270efdeeec08cd6d7aae28f830455184a8d",
+    "evidence/trace-comparison-integration/local-execution.json": "e533ac8d2a2cf376de6e4adb881d4f13d1b937fc0a287eff2ba5c1ade803711e",
+    "evidence/trace-comparison-integration/README.md": "ac203894b428dc031248edd8721e53b3e43137df14327d8c16129e1a3b45e8ab",
+    "evidence/trace-comparison-integration/viewer-publication.json": "b4812c03197d485213d29a980ee23e66524f63eaec42f7ab739c36fbee5f5484",
+    "evidence/trace-comparison-integration/trace-funding-reader.json": "69722250ccec27e7d5e2e2724dc1279928826c23b3b518c333b5b0d796d6875c",
+    "evidence/trace-comparison-integration/viewer-CI.json": "6c3b538cb41d6785ed12b3602da0797873cd75904707151cc25d3dbcc1a3557e",
+    "evidence/trace-comparison-integration/trace-oracle-reader.json": "5f72d5139769e5d41675310ad33d052cac89d6dcfdeeea91751ec512be1d7a01",
+    "bounded-worker-pins.json": "037c8dfcbb37cd03c84d8df37e02424e7deba69e3efb0f4688d8cd0cc8f75d83",
+    ".github/workflows/ci.yml": "2e505d5045b9cb2ed4c10bc8e140bf659abc5d5c9ab3ca9f937d3aa207b926c7"
+  },
+  "raw_copy_sha256": {
+    "viewer-CI.json": "6c3b538cb41d6785ed12b3602da0797873cd75904707151cc25d3dbcc1a3557e",
+    "viewer-publication.json": "b4812c03197d485213d29a980ee23e66524f63eaec42f7ab739c36fbee5f5484",
+    "local-execution.json": "e533ac8d2a2cf376de6e4adb881d4f13d1b937fc0a287eff2ba5c1ade803711e",
+    "trace-reader.json": "8b383cb562c8fe2db69721b0980f9270efdeeec08cd6d7aae28f830455184a8d",
+    "trace-comparison-reader.json": "e9a601e55a49b1ff41a9a5c6df1ac1688bf47b77ff5024b1e647aace7289e1aa",
+    "trace-funding-reader.json": "69722250ccec27e7d5e2e2724dc1279928826c23b3b518c333b5b0d796d6875c",
+    "trace-oracle-reader.json": "5f72d5139769e5d41675310ad33d052cac89d6dcfdeeea91751ec512be1d7a01"
+  },
+  "workflow_extraction": [
+    {
+      "name": "Verify offline reader and viewer retain the actual signed-prefix evidence",
+      "yaml_script_sha256": "f2dc8d5edb44ea12d37cab8b8d3cbfcdaf374d2c2e32d33bb792ebb69a92636a",
+      "local_script_sha256": "fa523b0ca2625bd1b5ad6bab73bf699e049778310c1d491e73eb955a0bb2c87d",
+      "only_transform": "Output path prefix; no assertion/executable modification"
+    },
+    {
+      "name": "Inspect the original 32-receipt case and display classification with SDK and viewer",
+      "yaml_script_sha256": "09fed780bae31612d9e22e6ef4c89b84be6726c0cc1a23c877888a07c76d119c",
+      "local_script_sha256": "cfb577bf2400d6d77d61159e33a0c8a1f3f0369bf1bd96a91e2636d095778bc2",
+      "only_transform": "Output path prefix; no assertion/executable modification"
+    },
+    {
+      "name": "Inspect the synthetic same-block funding report with SDK and viewer",
+      "yaml_script_sha256": "adaf874f5dc073337e7577cac42a5af5c06f428334ac17d418b04b25db43eb49",
+      "local_script_sha256": "2cd2a98aa2dab686672db9c603004040690a851c6b607a45798fbf6c3ea88539",
+      "only_transform": "Output path prefix; no assertion/executable modification"
+    },
+    {
+      "name": "Inspect oracle omission and unverified storage reports with SDK and viewer",
+      "yaml_script_sha256": "345ed9ecf904b91505a6abcf061d9a9c75fd6a760de33eb821ae3d670e8e9b62",
+      "local_script_sha256": "22fed455e975aceb9c5440fb1691e66ac7d275853566ccc7a217b08412bacf52",
+      "only_transform": "Output path prefix; no assertion/executable modification"
+    }
+  ],
+  "local_runner_sha256": "0b51f730358d27b5eb9e4e7ea345bbe331c2b19a8b47a9e8a06c5e08ba38b5e3",
+  "original32_sha256": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+  "independent_stdlib_raw_counts": {
+    "identical": 12,
+    "omitted": 1,
+    "structural": 19,
+    "execution": 0,
+    "unavailable": 0
+  },
+  "checks": [
+    "Exactly2viewer selectors replacedb7\u2192b1cf; removing only added80-line readerstep restores priorworkflow modulo onepin",
+    "All7 rawcopies byte-identical to root/author/local originals and summary hashes",
+    "All3 complete previous public reader results identical except viewerpin",
+    "All4 localscripts exact YAMLrun bodies with only output path prefix changed; recorded returncodes0 and current source hashes",
+    "New mandatory step uses exact immutable8MiB-bounded SDK/Node validator, full original/baseline/candidate receipt comparison and actual classifier; timeout30s/fixed code/reports, no new RPC/chain call",
+    "Independent stdlib raw32 comparison preserves32 baseline originals and candidate1skip/12exact/19only index-1/cumulative-336752; all32 classification rows tie to source",
+    "Other dependency/frozen/native/host selectors, existing mandatory jobs/controls/protocol/schema/quality source remain unchanged",
+    "Public bound files contain no personal home/loopback/provider secrets; limits distinguish historicalproducer/currentoffline/componentCI/combinedpending/humanapproval"
+  ],
+  "actionable_findings": [],
+  "reviewer_harness_notes": [
+    "Initial relativePath dot-parent targeted sibling under currentrepo instead of workspace; corrected resolvedcwd.",
+    "Skipped rawwire outcome omitsreceipt key while typedSDK representsNone; corrected initialraw-key expectation without source/state/test changes."
+  ],
+  "limits": [
+    "Read-only source/hash/raw review; no repeated tests/SDK/Node execution/browser/chain/model calls",
+    "Reuses same downloaded exacthead componentCI artifact proof independently inspected by root; not another scan/test",
+    "New combinedCI, protected-main humanapproval and Pages remain pending; no consumer/state/profit/full-block/providerauth assertion"
+  ]
+}

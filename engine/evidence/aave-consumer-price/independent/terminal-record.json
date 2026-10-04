@@ -1,0 +1,23 @@
+{
+  "terminal_exit_code": 0,
+  "authoritative_original_session": 16331,
+  "readiness_sha256": "063e00eec63f879198b971b60e18fc48dc10e9f3d0bdafc9af388bdfc75f610c",
+  "actual_host_log_sha256": "37de52758b7f6023d9a777497c42e5cf96f494225c7653e39beb67b9fba404ce",
+  "actual_host_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "run_sha256": {
+    "baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "candidate-branch.json": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0",
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "consumer-observations.json": "b9e979c9f363559c5ab79131b602b7b7538da84f2c19928c089219b00dcc831d",
+    "host-cache-cleanup.json": "50651e6ef8a37d6c00bc10631b1431506920387ae8db0594ba32e6a5ac33b23a",
+    "host-owned-cleanup.json": "e470ce072e43d7531ed555701cd3366866137d908817dfd544eaf2e5c6cdc365",
+    "host-result.json": "471b870b5b738287d87a3f8bf850a280ff3e4a7fe0c7aa036a58a297190b6dd5",
+    "observations.json": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+    "owned-cache.json": "6eee953bbb5875c6128bb6d46fef0f51bf21c6faa1cbf9583a5baa7d795a3377",
+    "owned-nodes.json": "e60b616d12b7ad16e48e788c59735596cba4a7963db8abae883620f6114010b5",
+    "protocol-response.json": "dbfec7da07a0e0b533207faf4ca150d540d5ed4f41af0fe69fb853ce7979d6df",
+    "report.json": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79",
+    "result.json": "f04eff69975018b165fc7464d3204697ac3ff7183f8c5d0238578ecdcafa0df4"
+  },
+  "scope": "One actual owned native006 trial; earlier host-import setup stopped before output/child. No live observation restart."
+}

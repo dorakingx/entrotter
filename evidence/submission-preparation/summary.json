@@ -1,0 +1,56 @@
+{
+  "observed_at": "2026-09-20",
+  "project_url": "https://colosseum.com/arena/projects/entrotter",
+  "submission_url": "https://colosseum.com/arena/projects/14185/submission",
+  "project_id": 14185,
+  "state": "draft_created_and_product_details_saved_not_submitted",
+  "owner_decisions": {
+    "sole_member": "Doraking",
+    "eligibility": "owner_confirmed",
+    "videos": "existing_demo_and_pitch_approved",
+    "user_evaluations": "deferred_by_owner_not_a_current_submission_gate",
+    "prior_work": "owner_reports_no_development_before_2026-09-14_and_initial_code_and_mascot_AI_generated_for_this_event",
+    "submission_authorization": "conditional_on_confirmed_post_submission_editability"
+  },
+  "observed_form_requirements": {
+    "submission_opens": "2026-10-06T11:00:00Z",
+    "submission_deadline": "2026-10-13T06:59:00Z",
+    "pitch_max_seconds": 120,
+    "demo_max_seconds": 180,
+    "video_hosts": [
+      "YouTube",
+      "Loom",
+      "Vimeo"
+    ],
+    "draft_editable": true,
+    "post_submission_editability": "not_verified"
+  },
+  "remaining": [
+    "Final submission is not open yet",
+    "Required current-school-status Yes/No left unanswered in accordance with requested non-disclosure",
+    "Logo upload rejected by browser file-chooser transport with Not allowed; not uploaded",
+    "Both video URLs require a supported host; not uploaded",
+    "Independent GitHub reviews/main integration and newer Pages deployment remain pending"
+  ],
+  "short_pitch": {
+    "duration_seconds": 106.0675,
+    "bytes": 2538643,
+    "sha256": "ead11ff1533e0c227a409f1a11a046f3ed34f1c04f0cd4c3b9ce39806ebbb487",
+    "complete_decode": "passed",
+    "format": "H.264 1280x720 25fps / AAC 48kHz",
+    "construction": "Six original presentation cards, newly synthesized narration, embedded captions; not a live product demo or founder voice recording. Existing separate demo remains unchanged.",
+    "voice_model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a"
+  },
+  "privacy": "Personal contact and education/work answers are saved only in the private submission fields, not in this evidence.",
+  "files_sha256": {
+    "production-build.py.gz": "1caca6f6fb84c2f6554e7a0ba235f09fac3261aad736b3e5551733db1efcd0db",
+    "scenes.json": "06a2e5b17079c7019a6defa018e4126cf47d37fda0f048a894119b32dc99a77e",
+    "timing.json": "f24f68cce8b3e53d5101dffd081059610fb16ed87f67514707e0ef8b49a2daa6",
+    "verification.json": "9b65af2c1d915688dd091e1bcb16d0976cc6a37610a7b648862a4b473b0cf688"
+  },
+  "outputs": {
+    "entrotter-pitch-short.mp4": "ead11ff1533e0c227a409f1a11a046f3ed34f1c04f0cd4c3b9ce39806ebbb487",
+    "entrotter-pitch-short.vtt": "128b62fffaebcc316a5909886c0160b5446b790d3fbb868ef35bd22e568acd5f"
+  },
+  "scope": "Preparation based on the authenticated UI and explicit owner statements; no final entry, outreach, new model-policy evaluation or hosting publication."
+}

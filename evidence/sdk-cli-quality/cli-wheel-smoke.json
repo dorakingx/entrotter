@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "wheel_sha256": {
+    "entrotter_cli-0.1.0-py3-none-any.whl": "0c9ad413a3a5e2e37d59e725b55f025a232be162e2a9f3d779eb3aaaac49f212",
+    "entrotter_sdk-0.1.0-py3-none-any.whl": "00e351379a6e0bae296fe8502c6c217a92979e234eda4989661d78b95a3e7993"
+  },
+  "python": "3.13.0",
+  "no_index": true,
+  "no_deps": true,
+  "isolated_python": true,
+  "engine_installed": false,
+  "source_files_match": 3,
+  "license": "MIT",
+  "commands": [
+    {
+      "command": "doctor",
+      "stdout": "{\n  \"python\": \"3.13.0\",\n  \"anvil_installed\": true,\n  \"archive_rpc_configured\": false,\n  \"api_token_configured\": false\n}\n"
+    },
+    {
+      "command": "verify",
+      "stdout": "SHA-256 verified: e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6. Integrity is not proof of model correctness.\n"
+    },
+    {
+      "command": "inspect",
+      "stdout": "{\n  \"mode\": \"fixture\",\n  \"scenario\": \"liquidity-shock\",\n  \"baseline\": {\n    \"initial_equity\": \"10000\",\n    \"final_equity\": \"5800\",\n    \"return_pct\": \"-42.00\",\n    \"max_drawdown_pct\": \"52.4271844660194174757281553398058252427184466019417475728155\",\n    \"fees\": \"0\",\n    \"trades\": 0\n  },\n  \"candidate\": {\n    \"initial_equity\": \"10000\",\n    \"final_equity\": \"8557.051600\",\n    \"return_pct\": \"-14.42948400\",\n    \"max_drawdown_pct\": \"16.9218291262135922330097087378640776699029126213592233009709\",\n    \"fees\": \"25.748400\",\n    \"trades\": 1\n  },\n  \"comparison\": {\n    \"final_equity_delta\": \"2757.051600\"\n  },\n  \"assumptions\": [\n    \"Synthetic exogenous price path; not a historical replay.\",\n    \"Both policies observe identical prices with no future lookahead.\",\n    \"Immediate fills with fixed fees/slippage; no gas, MEV, market impact or liquidity model.\",\n    \"No real money, chain transaction or LLM is used.\"\n  ]\n}\n"
+    }
+  ]
+}

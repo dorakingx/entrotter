@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "steps": 4,
+  "producer_requested_bytes": 16777216,
+  "stdout_bytes": 0,
+  "stderr_bytes": 1048644,
+  "notice_count": 1,
+  "scope": "Actual local BuildKit; RUN network disabled; owned probe image removed in finally"
+}

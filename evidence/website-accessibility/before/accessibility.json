@@ -1,0 +1,124 @@
+{
+  "checked_at": "2026-09-19T19:23:37.288Z",
+  "node": "v20.2.0",
+  "platform": "darwin",
+  "runner_sha256": "5166d4339df0b0d25b618ca0d402828757a9f311d4452a644dcd14766e976565",
+  "status": "failed",
+  "browser": "153.0.8010.12",
+  "axe": "4.13.0",
+  "playwright": "1.63.0",
+  "source_sha256": {
+    "index.html": "6ddcbddd33455f78e796ca642b011216418fdf9b377b3ee8c353088f2a12c4c9",
+    "app.js": "8f857fa3157756b3fd27fa9219ea127c9c86431427eafe0b4a3620fdab666078",
+    "style.css": "e8349e22754d572401fa4d7e162a747fc1f0f8d304862b1c2477dfb1cee9d9c3",
+    "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+    "package.json": "fd13446c0538ec6f42bb81596148378d03dbf52bd3ceaedd15f14b8aef99fa5e",
+    "package-lock.json": null
+  },
+  "checks": [
+    {
+      "name": "Keyboard skip link moves focus into main and skips navigation",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\n'' !== 'main'\n"
+    },
+    {
+      "name": "Keyboard sample selection, native local-file chooser, live status and inert import",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\nnull !== 'true'\n"
+    },
+    {
+      "name": "1280px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "1280px recovery-trap: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "1280px depeg-stress: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "1280px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "false == true"
+    },
+    {
+      "name": "390px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "390px recovery-trap: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "390px depeg-stress: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "locator.focus: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Equity values by observation', { exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "390px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "false == true"
+    },
+    {
+      "name": "320px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "320px recovery-trap: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "320px depeg-stress: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "320px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "Tampered import clears data, reports an accessible error and recovers",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+    },
+    {
+      "name": "Forced colors, reduced motion and keyboard focus remain usable",
+      "status": "failed",
+      "error": "{\"width\":320,\"scroll\":339}"
+    },
+    {
+      "name": "404 page at 320px: keyboard home link, no overflow and axe",
+      "status": "passed"
+    },
+    {
+      "name": "No JavaScript exceptions, uploads or unexpected third-party requests",
+      "status": "passed"
+    }
+  ],
+  "scans": [
+    {
+      "name": "404",
+      "violations": [],
+      "incomplete": [],
+      "supplemental": []
+    }
+  ],
+  "request_count": 100,
+  "errors": [],
+  "limitations": [
+    "Automated Chromium and accessibility-tree/keyboard evidence; no claim of manual screen-reader certification or complete WCAG conformance.",
+    "320 CSS-pixel viewport checks reflow; it is not a hardware/browser zoom measurement.",
+    "Axe incomplete contrast items remain explicit; supplemental checks apply only to opaque solid CSS colors.",
+    "Local fixture/archived report display; no new chain/model execution."
+  ]
+}

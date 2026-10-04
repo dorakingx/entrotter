@@ -1,0 +1,63 @@
+1
+00:00:01,030 --> 00:00:10,817
+This is Entrotter, a local test bench for onchain agent decisions. The recording uses the actual report viewer and the bounded engine review branch.
+
+2
+00:00:11,267 --> 00:00:19,162
+The narration is synthetic. The browser interactions and process outputs are real; no wallet or production signing key is used.
+
+3
+00:00:20,112 --> 00:00:29,122
+Choose the Ethereum and Uniswap example. Both branches start at the same pinned historical state, with explicitly artificial funding.
+
+4
+00:00:29,572 --> 00:00:39,730
+The baseline swap succeeds. The changed minimum output makes the candidate transaction revert. Native and token balance changes are exact units, not a claim of profit.
+
+5
+00:00:40,680 --> 00:00:50,421
+The source section records Ethereum block nineteen million and its hash. The receipts show which supplied actions succeeded or reverted, and their gas use.
+
+6
+00:00:50,871 --> 00:01:00,693
+These are actions re-executed against archived state. The experiment does not reconstruct later market behavior, transaction ordering, or future prices.
+
+7
+00:01:01,643 --> 00:01:12,707
+Now the recording console starts real Python calls to the configured Docker worker. First, the built-in risk policy evaluates a local transfer and a reverting proposal.
+
+8
+00:01:13,157 --> 00:01:23,537
+Then it replays the previously recorded model decisions against fresh observations. The complete result must match the original artifact, or the command fails.
+
+9
+00:01:24,487 --> 00:01:34,947
+The risk policy executes the transfer and holds the reverting proposal. The recorded model replay produces the original content identifier, with complete JSON equality.
+
+10
+00:01:35,397 --> 00:01:48,563
+No model is called during this replay. The worker uses one CPU, five hundred twelve mebibytes of memory, and an independent lifetime limit. Native custom providers are a separate, unsandboxed path.
+
+11
+00:01:49,513 --> 00:01:57,791
+Open the result that the command just generated. The viewer shows the baseline revert and the candidate hold from that exact local experiment.
+
+12
+00:01:58,241 --> 00:02:10,768
+The source JSON preserves the recorded observations, typed choices, provider metadata and assumptions. A content hash detects changed content; it does not establish that a model is correct.
+
+13
+00:02:11,718 --> 00:02:19,346
+Here is the same report with a deliberately incorrect content hash. The viewer rejects it and clears the previous result.
+
+14
+00:02:19,796 --> 00:02:29,142
+Loading the original generated report recovers normally. Local imports stay in this browser; the recording checks that no upload or third-party request occurs.
+
+15
+00:02:30,092 --> 00:02:40,343
+The broader check reproduced nineteen existing reports, including twelve agent records. The evaluated model matched the risk rule; no model advantage is claimed.
+
+16
+00:02:40,793 --> 00:02:52,218
+Use the public code and evidence to reproduce a case of your own. This integration is an open review branch, not a claim of a merged release or a finished competition submission.

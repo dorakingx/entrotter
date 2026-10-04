@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "files": {
+    ".github/ISSUE_TEMPLATE/bug_report.yml": "c8f4db8d9f238c7686a79dc8662072b046ccea39cee4366585567d56cea2c501",
+    ".github/ISSUE_TEMPLATE/feature_request.yml": "4a5025def6cd8a5e9ab3f77c89c49ee38a9f88b43a599e4b276e9db772430411",
+    ".github/actions/docs-links/action.yml": "52a2993f14f80058b545ea2e8349216a56b95cc46408c566a2c15d434d2e5e67",
+    ".github/dependabot.yml": "eada67e1b7f73d16a4c240ede6193c4852a2b0887e678a23dc7a3462810502e7",
+    ".github/workflows/ci.yml": "152758bd8d82bc41aaa6220c47fd3d72c6a3b422d3acfabf0b39270d0978ba5e",
+    ".github/workflows/docs-links.yml": "324f81999cfa3424a205bff86bc38ce03a9f9539f21bb2969e9a26413d657734",
+    ".github/workflows/quality.yml": "2b11bd8294024cb55db9842a70f77ac9c49ad6968cc69790efa4a76c17d19b4a"
+  },
+  "scope": "PyYAML syntax only; GitHub validates workflow semantics."
+}

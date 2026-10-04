@@ -1,0 +1,86 @@
+{
+  "agent_version": "0.1.0",
+  "exchanges": [
+    {
+      "request": {
+        "agent_version": "0.1.0",
+        "choices": {
+          "execute": "Execute exactly this allowlisted proposal on the owned local node",
+          "hold": "Mine this slot without a transaction"
+        },
+        "limits": {
+          "max_response_bytes": 4096,
+          "remaining_requested_gas": 2000000
+        },
+        "observation": {
+          "actor": "0x1000000000000000000000000000000000000001",
+          "completed_actions": [
+            {
+              "gas_used": "45038",
+              "status": "success",
+              "step": 0
+            },
+            {
+              "gas_used": "46052",
+              "status": "success",
+              "step": 1
+            },
+            {
+              "gas_used": "202319",
+              "status": "success",
+              "step": 2
+            }
+          ],
+          "local_block_hash": "0xa0418ae7d1279117971d78e39c787464458efc33677271c4e2c1c4654c432e7f",
+          "local_block_number": 18999895,
+          "local_chain_id": 31337,
+          "native_balance_wei": "9994751245023605365",
+          "step": 3,
+          "timestamp": 1705172171,
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "balance_raw": "0",
+              "decimals": 18,
+              "symbol": "WETH"
+            },
+            {
+              "address": "0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8",
+              "balance_raw": "10000000000000000000",
+              "decimals": 18,
+              "symbol": "AWETH"
+            },
+            {
+              "address": "0xea51d7853eefb32b6ee06b1c12e6dcca88be0ffe",
+              "balance_raw": "0",
+              "decimals": 18,
+              "symbol": "VWETH"
+            }
+          ]
+        },
+        "preflight": {
+          "return_data": null,
+          "status": "rejected"
+        },
+        "proposed_action": {
+          "data": "0xa415bcad000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000000000000000000000000000007ce66c50e2840000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000001",
+          "gas": 500000,
+          "to": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2"
+        },
+        "request_id": "92d6b4445795e0060bce7bb193bcaba8cc85a76c1065191724bf545f940e6c46"
+      },
+      "response": {
+        "choice": "hold",
+        "reason": "Current-state preflight or requested gas exceeds the policy",
+        "request_id": "92d6b4445795e0060bce7bb193bcaba8cc85a76c1065191724bf545f940e6c46"
+      }
+    }
+  ],
+  "provider": {
+    "cost_usd": "0",
+    "deterministic": true,
+    "model": "preflight-risk-v1",
+    "provider": "builtin",
+    "seed": null
+  }
+}

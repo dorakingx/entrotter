@@ -1,0 +1,17 @@
+{
+  "scanner": "bandit",
+  "version": "1.9.4",
+  "source_sha256": {
+    "src/entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+    "src/entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "src/entrotter_cli/result_text.py": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47",
+    "src/entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+    "src/entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+    "src/entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "src/entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+    "src/entrotter_cli/main.py": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc",
+    "src/entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+    "scripts/check_dependency_manifest.py": "fd9eaa329e7a27ee8b21ca3b7ecdb2ca2afb022bea1ebcecff2d5faaac52fcaf",
+    "scripts/check_security.py": "58de6896402c89d235a22a9e9bb2895ece68f20e7b9dd91966ea15fefad24c07"
+  }
+}

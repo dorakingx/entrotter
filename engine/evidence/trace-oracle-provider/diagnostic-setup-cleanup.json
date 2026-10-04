@@ -1,0 +1,11 @@
+{
+  "source_commit": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+  "proof_kind": "synthetic signed oracle update and dependent consumer; not historical market/profit evidence",
+  "faults": [],
+  "node_cleanup": [
+    {
+      "guardian_returncode": 0,
+      "port_closed": true
+    }
+  ]
+}

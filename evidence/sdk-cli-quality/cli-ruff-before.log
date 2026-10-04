@@ -1,0 +1,55 @@
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_cli/main.py:19:31
+   |
+17 |     sub.add_parser("doctor", help="Report local prerequisites, without disclosing credentials")
+18 |     r = sub.add_parser("run", help="Run a scenario locally or against a local engine API")
+19 |     r.add_argument("scenario"); r.add_argument("-o", "--output", default="report.json")
+   |                               ^
+20 |     r.add_argument("--local", action="store_true", help="Import the separately installed engine; no API server needed")
+21 |     r.add_argument("--api", default="http://127.0.0.1:8787")
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_cli/main.py:22:100
+   |
+20 |     r.add_argument("--local", action="store_true", help="Import the separately installed engine; no API server needed")
+21 |     r.add_argument("--api", default="http://127.0.0.1:8787")
+22 |     v = sub.add_parser("verify", help="Check the SHA-256 artifact hash (not economic correctness)"); v.add_argument("report")
+   |                                                                                                    ^
+23 |     v = sub.add_parser("inspect", help="Summarize a verified result"); v.add_argument("report")
+24 |     return p
+   |
+
+E702 Multiple statements on one line (semicolon)
+  --> src/entrotter_cli/main.py:23:70
+   |
+21 |     r.add_argument("--api", default="http://127.0.0.1:8787")
+22 |     v = sub.add_parser("verify", help="Check the SHA-256 artifact hash (not economic correctness)"); v.add_argument("report")
+23 |     v = sub.add_parser("inspect", help="Summarize a verified result"); v.add_argument("report")
+   |                                                                      ^
+24 |     return p
+   |
+
+E701 Multiple statements on one line (colon)
+  --> src/entrotter_cli/main.py:30:25
+   |
+28 |     with open(path, "rb") as f:
+29 |         data = f.read(limit+1)
+30 |     if len(data) > limit: raise ValueError("Input file exceeds size limit")
+   |                         ^
+31 |     return json.loads(data)
+   |
+
+F401 `entrotter_sdk.verify` imported but unused; consider using `importlib.util.find_spec` to test for availability
+  --> src/entrotter_cli/main.py:61:54
+   |
+59 |                               "api_token_configured": bool(os.getenv("ENTROTTER_API_TOKEN"))}, indent=2))
+60 |             return 0
+61 |         from entrotter_sdk import Client, RunResult, verify
+   |                                                      ^^^^^^
+62 |         if args.command == "run":
+63 |             scenario = read_json(args.scenario, 262144)
+   |
+help: Remove unused import: `entrotter_sdk.verify`
+
+Found 5 errors.

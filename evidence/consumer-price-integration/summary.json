@@ -1,0 +1,93 @@
+{
+  "status": "local_checks_pass_component_review_pass_combined_CI_pending",
+  "parent_commit": "bb9cadabf673b8e0b6e16603208b2b9ea4e0e88e",
+  "pins": {
+    "engine": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "engine_production_sources_unchanged": 25,
+  "selector_scope": "Exactly four selected engine198\u2192bd references; all frozen native/agent/host versions and other components unchanged.",
+  "mandatory_offline_readers": 5,
+  "prior_four_readers": "Whole outcomes unchanged except engine pin.",
+  "native006_report_sha256": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79",
+  "native006_scope": "Historical Ethereum block18999892 original32-of181 signed prefix, skip12, shared150s; successful native paired producer/owned read-only consumer views. Recorded inspection is not a fresh archive run.",
+  "price_readings": {
+    "baseline_after": 256292441874,
+    "baseline_before": 257082415000,
+    "candidate_after": 257082415000,
+    "candidate_before": 257082415000
+  },
+  "same_initial_heads_and_getters": true,
+  "full_projected_baseline_receipts_equal_originals": 32,
+  "candidate_executed": 31,
+  "comparison_counts": {
+    "identical": 12,
+    "omitted": 1,
+    "structural": 19,
+    "execution": 0,
+    "unavailable": 0
+  },
+  "local_type_sources": 21,
+  "explicit_frozen_type_diagnostics": 3,
+  "public_copies": {
+    "local-execution.json": {
+      "source_sha256": "eadf29063e645fe9a7919667939993c1f1491b7cf5827657a51ae9bb8479d2d2",
+      "published_sha256": "eadf29063e645fe9a7919667939993c1f1491b7cf5827657a51ae9bb8479d2d2",
+      "copy_scope": "Exact bytes"
+    },
+    "local-types.json": {
+      "source_sha256": "da6f9da796364b8569cbeac0bfef24bfa59d5767ebede82c606df96bb0022e4a",
+      "published_sha256": "da6f9da796364b8569cbeac0bfef24bfa59d5767ebede82c606df96bb0022e4a",
+      "copy_scope": "Exact bytes"
+    },
+    "engine-CI.json": {
+      "source_sha256": "80b9d3e7be11fb8a8f5dc2ff39a08e19440071cf094eb011613ad4859aff10c5",
+      "published_sha256": "80b9d3e7be11fb8a8f5dc2ff39a08e19440071cf094eb011613ad4859aff10c5",
+      "copy_scope": "Exact bytes"
+    },
+    "engine-publication.json": {
+      "source_sha256": "be3b1d1babed0a62c4a51bc6d12da034974bcbbd2cedcec9ead5d5e86cd6ccdf",
+      "published_sha256": "be3b1d1babed0a62c4a51bc6d12da034974bcbbd2cedcec9ead5d5e86cd6ccdf",
+      "copy_scope": "Exact bytes"
+    },
+    "trace-comparison-reader.json": {
+      "source_sha256": "ca27b5cd205ebd32f1553d8c4511098ee50b465b97afc4a7bcec89ada0327a73",
+      "published_sha256": "ca27b5cd205ebd32f1553d8c4511098ee50b465b97afc4a7bcec89ada0327a73",
+      "copy_scope": "Exact bytes"
+    },
+    "trace-consumer-reader.json": {
+      "source_sha256": "4fc577ebfd46a823e024803e966ddce25783d14ba7a979d8e65d896d36fad491",
+      "published_sha256": "4fc577ebfd46a823e024803e966ddce25783d14ba7a979d8e65d896d36fad491",
+      "copy_scope": "Exact bytes"
+    },
+    "trace-reader.json": {
+      "source_sha256": "be4ac67e41eda4f5b98fd7ff280c12bbd38f85757834bf5cfbf7f888b2f9dcd7",
+      "published_sha256": "be4ac67e41eda4f5b98fd7ff280c12bbd38f85757834bf5cfbf7f888b2f9dcd7",
+      "copy_scope": "Exact bytes"
+    },
+    "trace-funding-reader.json": {
+      "source_sha256": "37b6ed89470aaa4f530bf911f9f1648dbdc1a24a77759ab870ce16d50abc67fd",
+      "published_sha256": "37b6ed89470aaa4f530bf911f9f1648dbdc1a24a77759ab870ce16d50abc67fd",
+      "copy_scope": "Exact bytes"
+    },
+    "trace-oracle-reader.json": {
+      "source_sha256": "71c7bdd688e0e9d8e999412831c3e98746cc60ed1fd7f80599f200a1dee4b061",
+      "published_sha256": "71c7bdd688e0e9d8e999412831c3e98746cc60ed1fd7f80599f200a1dee4b061",
+      "copy_scope": "Exact bytes"
+    }
+  },
+  "limits": [
+    "Parsing recorded bytes does not constitute a fresh archive execution or prove provider/deployed-code authenticity.",
+    "Read-only price dependence is separate from signed consumer transactions, strategies, profit and full G1.",
+    "Node parsing is not rendered browser/Pages verification; standard trace report remains unchanged.",
+    "Combined CI and protected-main human approval remain pending; no current candidate Pages or submission claim.",
+    "Seven aggregate cache errors have unknown cause; no speed or timeout-causality claim.",
+    "Standard public trace-run has no consumer observation option at this selected head; supported CLI implementation remains separate local work."
+  ],
+  "independent_preparation_review_sha256": "4a3a397c45b6b5ed7520a473d9df58633aba42aeb762f1e90a5eb4e5af2cc892",
+  "preparation_review_scope": "Seventeen frozen input files; sole P3 historical/current CI scope finding corrected and rebound. Exact review copy and summary reference added afterward; no runtime/selector/reader changes.",
+  "execution_snapshot": "2f6a56e533935c93f4688c13feeeaa0e771c427a"
+}

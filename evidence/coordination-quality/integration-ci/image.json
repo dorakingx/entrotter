@@ -1,0 +1,28 @@
+{
+  "image_id": "sha256:587b7c8019d87e8c06cbc8d994c4d2ca767039c2023fae7cc6b047188e1208f6",
+  "source_digest": "38c3fa5949250c90214d3daf82c386bd7c73082bbeacaf4478e0d9f0a6592d93",
+  "source_files": {
+    "__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "__main__.py": "1310849fd72ef7f9072a31db68da443b5901c007fdfb9161440753f27ab0ef97",
+    "_guardian.py": "3758412adb3e8761a3c82eac89cbf5a72bac7d0dad5c492a6825b4bb2a5f9ddf",
+    "_isolated_worker.py": "eb8062f0b477793f8d489f376d04b8cf445a3b00decb3c58ae13bbf983698e7a",
+    "api.py": "cab74cd6a4e62230e5d6ce5c386a341e290fb1658ba8fc75892d02f859ebae3c",
+    "artifact.py": "a76cfe6d83e28f2f15ef7fb4f9b06dc5c5d51db0c89c7fa9c9e627161527787c",
+    "defi.py": "f4f5e6e50ad3745426c7d0fbc08b5fa42c79fd4daa225667821814f95acb7fde",
+    "evm.py": "7f8fdde9bc96f0bdcdbba7f04b4ff5175808943c547e47d97662abee2392b443",
+    "export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "fixture.py": "1f771e23c8b8311bf1f5e9cc56bf30f7b369f8f617513d99024876688e809647",
+    "isolated.py": "5a1079194380ea0e84433a506be88636aa464aa7a3d1131bdf954520e5065800",
+    "models.py": "1383a7d508e22210217af4515c664c82a861f8a23dcef9dd9ec8f831966ae9b7",
+    "rpc.py": "f19af9a2af2f924c65595f609e7d320d75109e0b5f09c5ae032c0bbff43b7d46",
+    "runner.py": "a890c229194685551fe52904954527147002f9b1a3715588e0e646570feadce8",
+    "store.py": "25a6b9fe252cd0c8eef00ce5c3eb869d3a54044b00e9a67653a5c00b41749b3b",
+    "Dockerfile": "b2e8192261465bd1ba454345ed1c43917cbb05fffc9ad4f5cc526eb5eea912cc"
+  },
+  "foundry_version": "1.8.3",
+  "foundry_archive_sha256": "7ca48e6ca3cac1bce1403ca67e5bc1dc3bc1fd818199c9957c7165079c228568",
+  "anvil_binary_sha256": "674a06c97a01350cd00241762bbfb01ebcafce9b6e8cbd6c8758ecea6ef4b968",
+  "architecture": "amd64",
+  "published": false,
+  "base_image": "cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20"
+}

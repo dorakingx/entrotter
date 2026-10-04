@@ -1,0 +1,224 @@
+{
+  "diagnostic_version": "0.1.0",
+  "request_id": "0b7d65d46b39d67024a4f43492bcb0af35d6e2f395ee9b450b85c9f5b8b55fde",
+  "worker": {
+    "diagnostic_version": "0.1.0",
+    "request_id": "0b7d65d46b39d67024a4f43492bcb0af35d6e2f395ee9b450b85c9f5b8b55fde",
+    "status": "completed",
+    "last": {
+      "phase": "complete",
+      "branch": "candidate",
+      "method": "none",
+      "transport": "none"
+    },
+    "checkpoints": [
+      {
+        "phase": "source_fetch",
+        "branch": "none",
+        "method": "none",
+        "transport": "none"
+      },
+      {
+        "phase": "source_fetch",
+        "branch": "none",
+        "method": "eth_chainId",
+        "transport": "upstream"
+      },
+      {
+        "phase": "source_fetch",
+        "branch": "none",
+        "method": "eth_getBlockByNumber",
+        "transport": "upstream"
+      },
+      {
+        "phase": "source_fetch",
+        "branch": "none",
+        "method": "eth_getTransactionReceipt",
+        "transport": "upstream"
+      },
+      {
+        "phase": "fork_startup",
+        "branch": "baseline",
+        "method": "none",
+        "transport": "none"
+      },
+      {
+        "phase": "fork_startup",
+        "branch": "baseline",
+        "method": "web3_clientVersion",
+        "transport": "owned"
+      },
+      {
+        "phase": "fork_startup",
+        "branch": "baseline",
+        "method": "eth_chainId",
+        "transport": "owned"
+      },
+      {
+        "phase": "fork_parent_check",
+        "branch": "baseline",
+        "method": "eth_getBlockByNumber",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "baseline",
+        "method": "evm_setNextBlockTimestamp",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "baseline",
+        "method": "evm_setBlockGasLimit",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "baseline",
+        "method": "anvil_setCoinbase",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "baseline",
+        "method": "anvil_setNextBlockBaseFeePerGas",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "baseline",
+        "method": "anvil_setNextBlockPrevRandao",
+        "transport": "owned"
+      },
+      {
+        "phase": "parent_account",
+        "branch": "baseline",
+        "method": "eth_getTransactionCount",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "baseline",
+        "method": "eth_sendRawTransaction",
+        "transport": "owned"
+      },
+      {
+        "phase": "parent_account",
+        "branch": "baseline",
+        "method": "eth_getTransactionCount",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "baseline",
+        "method": "eth_sendRawTransaction",
+        "transport": "owned"
+      },
+      {
+        "phase": "parent_account",
+        "branch": "baseline",
+        "method": "eth_getTransactionCount",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "baseline",
+        "method": "eth_sendRawTransaction",
+        "transport": "owned"
+      },
+      {
+        "phase": "mining",
+        "branch": "baseline",
+        "method": "evm_mine",
+        "transport": "owned"
+      },
+      {
+        "phase": "mined_header",
+        "branch": "baseline",
+        "method": "eth_getBlockByNumber",
+        "transport": "owned"
+      },
+      {
+        "phase": "receipt",
+        "branch": "baseline",
+        "method": "eth_getTransactionReceipt",
+        "transport": "owned"
+      },
+      {
+        "phase": "fork_startup",
+        "branch": "candidate",
+        "method": "none",
+        "transport": "none"
+      },
+      {
+        "phase": "fork_startup",
+        "branch": "candidate",
+        "method": "web3_clientVersion",
+        "transport": "owned"
+      },
+      {
+        "phase": "fork_startup",
+        "branch": "candidate",
+        "method": "eth_chainId",
+        "transport": "owned"
+      },
+      {
+        "phase": "fork_parent_check",
+        "branch": "candidate",
+        "method": "eth_getBlockByNumber",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "candidate",
+        "method": "evm_setNextBlockTimestamp",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "candidate",
+        "method": "evm_setBlockGasLimit",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "candidate",
+        "method": "anvil_setCoinbase",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "candidate",
+        "method": "anvil_setNextBlockBaseFeePerGas",
+        "transport": "owned"
+      },
+      {
+        "phase": "header_or_queue",
+        "branch": "candidate",
+        "method": "anvil_setNextBlockPrevRandao",
+        "transport": "owned"
+      },
+      {
+        "phase": "parent_account",
+        "branch": "candidate",
+        "method": "eth_getTransactionCount",
+        "transport": "owned"
+      }
+    ],
+    "dropped_checkpoints": 7,
+    "error": null,
+    "baseline_verified": true,
+    "protocol_verified": true,
+    "candidate_statuses": [
+      "skipped",
+      "executed",
+      "executed",
+      "nonce_conflict"
+    ],
+    "authoritative_default_gate": false
+  },
+  "host_error": null,
+  "cleanup_error": null,
+  "docker_exit_code": 0,
+  "cleanup_verified": true
+}

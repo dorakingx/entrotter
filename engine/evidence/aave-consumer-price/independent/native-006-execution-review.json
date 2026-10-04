@@ -1,0 +1,85 @@
+{
+  "status": "passed independent original32 paired native replay and producer/consumer read-only price observation review",
+  "paired_prefix_replay_pass": true,
+  "readiness_sha256": "063e00eec63f879198b971b60e18fc48dc10e9f3d0bdafc9af388bdfc75f610c",
+  "terminal_sha256": "2b53751123e43e4d303f35e56ab7755c62722afb4b12dcc89f9cb3343a3c2da7",
+  "frozen_bindings": 100,
+  "signature_inputs": 32,
+  "original_block_transactions": 181,
+  "through_index": 31,
+  "skip_indices": [
+    12
+  ],
+  "all32_complete_projected_baseline_receipts_equal_source_and_prior003": true,
+  "candidate_executed": 31,
+  "candidate_skipped": 1,
+  "candidate_remaining_gas_status_logs_bloom_identity_unchanged": true,
+  "candidate_position_cumulative_gas_adjusted_exactly": true,
+  "consumer_owned_view_prices_raw": {
+    "baseline_before": 257082415000,
+    "baseline_after": 256292441874,
+    "candidate_before": 257082415000,
+    "candidate_after": 257082415000
+  },
+  "consumer_stable_code_identities": {
+    "oracle_code": [
+      3405,
+      "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+    ],
+    "proxy_code": [
+      9571,
+      "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+    ]
+  },
+  "consumer_source_currency_unit_verified": true,
+  "owned_read_only_consumer_price_observations_pass": true,
+  "producer_feed_answers_raw": {
+    "initial_both": 257082415000,
+    "baseline_after": 256292441874,
+    "candidate_after": 257082415000
+  },
+  "producer_round_increment_baseline_only": true,
+  "identical_owned_initial_head_and_getters": true,
+  "report_artifact_id": "aa04f523daf1e4f586adb171630d9ffa7736ba2ecf1f5ebffa500d12260561a8",
+  "report_sha256": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79",
+  "report_seconds": 132.703057,
+  "native_seconds": 132.738311,
+  "host_seconds": 132.865456,
+  "cache_aggregate": {
+    "bytes": 2647997,
+    "entries": 964,
+    "errors": 7,
+    "hits": 903,
+    "refused_handlers": 0,
+    "requests": 1879,
+    "uncached": 6,
+    "upstream": 970
+  },
+  "owned_Anvil_closed": 2,
+  "owned_cache_closed": 1,
+  "fresh_owned_PID_group_port_checks_pass": true,
+  "prior001005_raw_bindings_immutable": 284,
+  "raw_sha256": {
+    "baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "candidate-branch.json": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0",
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "consumer-observations.json": "b9e979c9f363559c5ab79131b602b7b7538da84f2c19928c089219b00dcc831d",
+    "host-cache-cleanup.json": "50651e6ef8a37d6c00bc10631b1431506920387ae8db0594ba32e6a5ac33b23a",
+    "host-owned-cleanup.json": "e470ce072e43d7531ed555701cd3366866137d908817dfd544eaf2e5c6cdc365",
+    "host-result.json": "471b870b5b738287d87a3f8bf850a280ff3e4a7fe0c7aa036a58a297190b6dd5",
+    "observations.json": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+    "owned-cache.json": "6eee953bbb5875c6128bb6d46fef0f51bf21c6faa1cbf9583a5baa7d795a3377",
+    "owned-nodes.json": "e60b616d12b7ad16e48e788c59735596cba4a7963db8abae883620f6114010b5",
+    "protocol-response.json": "dbfec7da07a0e0b533207faf4ca150d540d5ed4f41af0fe69fb853ce7979d6df",
+    "report.json": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79",
+    "result.json": "f04eff69975018b165fc7464d3204697ac3ff7183f8c5d0238578ecdcafa0df4"
+  },
+  "limits": [
+    "Prefix32 of181 is not full-block replay, state-root equality or opcode equivalence.",
+    "Provider state and code are not authenticated; owned getters show producer update omission and read-only Aave price dependence.",
+    "Remaining31 gas/status/logs unchanged; read-only consumer price views do not establish signed consumer action, strategy benefit, profit or broader market behavior.",
+    "Native005/006 success and retained001\u2013004 failures do not prove speed or timeout causality.",
+    "Native lacks defaultDockerCPU/RSS/PID quotas; publication/mandatoryCI/protectedmain/humanapproval remain separate gates."
+  ],
+  "reviewer_sha256": "c9fc326a68211650c8ce4d33c2171b6eb0e0039c116bef206eaebc1346f378ca"
+}

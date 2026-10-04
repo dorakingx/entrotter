@@ -1,0 +1,34 @@
+{
+  "native-local/signed-inventory.json.gz": {
+    "original_bytes": 3634491,
+    "original_sha256": "ea05ec78d5f0abb54c644ec9bd6ce6ed1200a87fc53b13912d480ebda1203771"
+  },
+  "native-local/sbom-bundle.json.gz": {
+    "original_bytes": 4855723,
+    "original_sha256": "d2fc36b08a3bb9a28ef20be43a2add570e9ee686d70d0904296e36c141afbd6f"
+  },
+  "native-local/attestations.json.gz": {
+    "original_bytes": 4877707,
+    "original_sha256": "087d35ae850a26281c8584c72a1b293fefa15fba2380945406d77c9a9c0f87f6"
+  },
+  "native-local/packages.json.gz": {
+    "original_bytes": 549199,
+    "original_sha256": "2ed6119caecf337f0f695fba9e25bb8ac47e2a892e12ee5351c5567a52f01c5d"
+  },
+  "native-ci/signed-inventory.json.gz": {
+    "original_bytes": 3542905,
+    "original_sha256": "8fb1fd40f45ff7eb97f40a6f020586e1e486ba701ae891e6ee6f63fff9ea6c7b"
+  },
+  "native-ci/sbom-bundle.json.gz": {
+    "original_bytes": 4733415,
+    "original_sha256": "348e077f65c1c94b63bb54ffb6c51c78f3d5d8fbc60d2af57f9b61867585f823"
+  },
+  "native-ci/attestations.json.gz": {
+    "original_bytes": 4755354,
+    "original_sha256": "f346f3b7fce0fe1606c54ecdc8dc735888636b544d550bbc0f52d2be7aa68b89"
+  },
+  "native-ci/packages.json.gz": {
+    "original_bytes": 549211,
+    "original_sha256": "8b1ca9a236b26ca31bdfdf9ec9b3f93dca4ce9947efa21e31c24c1dcb5091016"
+  }
+}

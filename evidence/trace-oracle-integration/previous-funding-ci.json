@@ -1,0 +1,249 @@
+{
+  "head": "8029d3a77d94cdd6b27c2abe294de0bc4e83d4c2",
+  "execution_snapshot": "a253da8695fb2521702056dca286ed16b0aba44f",
+  "all_five_checks": "passed",
+  "production_source_count": 21,
+  "source_hashes_match": true,
+  "type_dependency_commits": {
+    "agent-engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+    "worker-engine": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+    "sdk": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2"
+  },
+  "frozen_diagnostics": 3,
+  "retained_bandit_findings": 78,
+  "audited_Python_packages": 50,
+  "reported_advisories": 0,
+  "image_inputs_match": 19,
+  "image_source_digest": "cdd54a02f43bc6d3549ffc84d80600f03eb27f10bdd122a09f829dd8b6ba4ebc",
+  "dependency_pins": {
+    "engine": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+  },
+  "integration": {
+    "status": "passed",
+    "kind": "integration verification, not a performance benchmark",
+    "tested_commits": {
+      "engine": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+      "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+      "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2"
+    },
+    "checker_sha256": "7bc0fa1055c7d332edbfa7f14928ef29dbe183fc5f7d9b2b7ff56edc35a3174c",
+    "default_worker": {
+      "image_id": "sha256:77101819e48693ffaff3eabbd7c9c8fa6e2aadf765fdcd6c94acb19efed7a42b",
+      "image_source_digest": "cdd54a02f43bc6d3549ffc84d80600f03eb27f10bdd122a09f829dd8b6ba4ebc",
+      "manifest_sha256": "7e51ec38fea7d3d45f97a05b714b23c4b46fa56461d54dd16690f5c8c012cc36",
+      "actual_source_matches_image_manifest_and_label": true,
+      "cgroup_version": "2",
+      "artifact_ids": {
+        "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+        "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+      },
+      "local_cli_without_mode_opt_in": true,
+      "missing_worker_fails_without_export_replacement": true,
+      "explicit_native_fixture_matches": true,
+      "daemon_shared_admission": {
+        "standalone_local_cli_rejected": true,
+        "cli_sdk_api_429": true,
+        "api_posts": 1,
+        "existing_export_and_incumbent_preserved": true,
+        "successful_run_after_release": true,
+        "scope": "one container worker per configured daemon; no native/host-process/storage bound"
+      }
+    },
+    "wall_seconds": 6.2451204360000006,
+    "artifact_ids": {
+      "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+      "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+    },
+    "verified": [
+      "actual CLI/SDK/API fixture and Anvil runs",
+      "SDK get and saved-file full equality",
+      "real EVM success and revert receipts",
+      "full-store idempotent repeat",
+      "CLI reports 507 without retrying POST or replacing export",
+      "eight idle sockets cause SDK/CLI 503 without executing work",
+      "health recovers after idle sockets close"
+    ],
+    "fault_parameters": {
+      "store_file_limit": 2,
+      "connection_limit": 8,
+      "busy_cli_attempts": 16
+    },
+    "archive_or_model_calls": false,
+    "limitations": [
+      "Lowered file-count quota for integration; production thresholds tested separately",
+      "Uses the tested API constructor default; worker manifest enables additional default-path proof. Kernel enforcement is a separate CI job",
+      "Shared export retention is verified separately by check_export_budget.py on compatible revisions; host processes, explicit native execution and image/VM storage remain operator-controlled"
+    ]
+  },
+  "normal_and_optimized_export_contract": "passed; complete outcomes/source/checker/protocol match",
+  "clean": [
+    {
+      "file": "clean-fixture.json",
+      "seconds": 7.477364944000001,
+      "artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+      "scope": "five code/data/site repos; coordination checkout already present",
+      "prerequisites": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included."
+    },
+    {
+      "file": "clean-agent.json",
+      "seconds": 8.196628747000005,
+      "artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b",
+      "scope": "five code/data/site repos; coordination checkout already present",
+      "prerequisites": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included."
+    }
+  ],
+  "GitHub_reviews": [],
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:51:51Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36902439207/job/110504619443",
+      "name": "quality",
+      "startedAt": "2026-10-01T17:51:13Z",
+      "status": "COMPLETED",
+      "workflowName": "Coordination quality and dependency audit"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:51:56Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36902439191/job/110504619780",
+      "name": "docs-links",
+      "startedAt": "2026-10-01T17:51:13Z",
+      "status": "COMPLETED",
+      "workflowName": "Documentation links"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:51:46Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36902439139/job/110504621957",
+      "name": "integration",
+      "startedAt": "2026-10-01T17:51:13Z",
+      "status": "COMPLETED",
+      "workflowName": "Workspace integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:51:31Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36902439139/job/110504622122",
+      "name": "host-bounds",
+      "startedAt": "2026-10-01T17:51:13Z",
+      "status": "COMPLETED",
+      "workflowName": "Workspace integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T17:52:18Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36902439139/job/110504621760",
+      "name": "bounded-default",
+      "startedAt": "2026-10-01T17:51:13Z",
+      "status": "COMPLETED",
+      "workflowName": "Workspace integration"
+    }
+  ],
+  "artifact_sha256": {
+    "ci-docs-current/docs-links/report.json": "2d042b510e9a9b73664e3e781ed0491adc706b6c7b21753f5fab2a9702d8dc2b",
+    "ci-quality-current/coordination-quality-reports/bandit.json": "683b6b1088ed79ca7f21a813c4a1c0007af20b4af81712904a4512bb77df52dd",
+    "ci-quality-current/coordination-quality-reports/dependencies.json": "2adefbd033b0ff442eb63d4326f657700336bd90cab85315380f179a8f332675",
+    "ci-quality-current/coordination-quality-reports/dependency-scope.json": "0f61d0eb9d99206ed7ee210594c2c18564bceb3c867793d73cabfbac8d2454e7",
+    "ci-quality-current/coordination-quality-reports/types/summary.json": "5706de04b3de240a731d048a2cdb2467a0433a48e217591b47bec882f96c0bab",
+    "ci-workspace-current/coordination-integration-evidence/clean-agent.json": "30e2e39dfa5cd0ca59fdae12d56a1e1f11aca02af515e8fad117267719c55f7c",
+    "ci-workspace-current/coordination-integration-evidence/clean-fixture.json": "99566faca8c4dd26c60172b2c3cd76f1dcdb9fb6b3c3ee464054e6663c5e8d18",
+    "ci-workspace-current/coordination-integration-evidence/export-contract.json": "27aa1c567e602db75791db56764f769cb02c9221e8f3e123bb095eeacdc755c7",
+    "ci-workspace-current/coordination-integration-evidence/image.json": "7e51ec38fea7d3d45f97a05b714b23c4b46fa56461d54dd16690f5c8c012cc36",
+    "ci-workspace-current/coordination-integration-evidence/integration.json": "75aed9639b7c8bcd07fce1c94a7916bfc5b1500c4c4b7649b18e89536af87b09",
+    "ci-workspace-current/coordination-integration-evidence/optimized-export-contract.json": "34fabce606f46ce8e30d4b2d4776f93972a4ff9c9898cc5c437b24459d15b889",
+    "ci-workspace-current/coordination-integration-evidence/trace-funding-reader.json": "9c52b8a8f8d4f72f0aaa7557bb906faa2d9346d24e40ce86bf4c058cc4cb20d6",
+    "ci-workspace-current/coordination-integration-evidence/trace-reader.json": "a8439186b1c893a9f008439bf77b67b290283dd69413838a1bb0e0b18d36999e"
+  },
+  "new_offline_trace_reader": {
+    "status": "passed",
+    "execution": "offline original-report inspection; no new chain/model call",
+    "pins": {
+      "engine": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+      "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+      "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+      "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+      "entrotter.github.io": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+    },
+    "artifact_id": "cf1b51833babf17c1b39c5d37af0ff7945da43422e2efc3453d36e72b2d0810f",
+    "report_sha256": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+    "identical_report_files": [
+      "entrotter/evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json",
+      "sdk-python/tests/data/canonical-mainnet-prefix-four.result.json",
+      "entrotter.github.io/reports/trace-mainnet-prefix-four.json"
+    ],
+    "baseline_verified": true,
+    "candidate_statuses": [
+      "skipped",
+      "executed",
+      "executed",
+      "nonce_conflict"
+    ],
+    "candidate_gas": [
+      null,
+      245136,
+      185721,
+      null
+    ],
+    "nonce_conflict": {
+      "original": 5523,
+      "expected": 5522
+    },
+    "limits": [
+      "Checksum/internal consistency is not authenticity/EVM truth.",
+      "Browser behavior is tested by the separate exact-head viewer CI."
+    ]
+  },
+  "new_offline_funding_reader": {
+    "status": "passed",
+    "execution": "offline synthetic report inspection; no new EVM/model call",
+    "pins": {
+      "engine": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+      "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+      "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+      "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+      "entrotter.github.io": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+    },
+    "report_sha256": "fbfed29e8e25c069ba74a5b405f828543213a88a8dc913e15e2dc9b89806e28f",
+    "artifact_id": "a0c72b846faf16b9a87ebf8447e80106ad4600f3cf131114641cf20f3241fe06",
+    "viewer_module_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+    "baseline_gas": [
+      21000,
+      21000
+    ],
+    "baseline_cumulative_gas": [
+      21000,
+      42000
+    ],
+    "candidate_statuses": [
+      "skipped",
+      "not_mined"
+    ],
+    "candidate_receipts": [
+      null,
+      null
+    ],
+    "viewer": {
+      "status": "passed",
+      "artifact_id": "a0c72b846faf16b9a87ebf8447e80106ad4600f3cf131114641cf20f3241fe06",
+      "node": "v22.23.1"
+    },
+    "limits": [
+      "Native synthetic source; not archived funding or host default-worker execution proof.",
+      "Viewer codec inspection is separate from rendered browser verification.",
+      "Checksum/internal consistency is not authenticity/EVM truth."
+    ]
+  },
+  "document_hashes_match": 55,
+  "limits": "Component mainnet trace proof is separate. Combined jobs make no new archive/model call. Source software review is not required GitHub approval."
+}

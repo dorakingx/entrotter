@@ -1,0 +1,83 @@
+{
+  "status": "local_pass",
+  "base": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+  "source_sha256": {
+    "src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "src/entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+    "src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2",
+    "scripts/check_dependency_manifest.py": "d9c90b75f8c26ef0aa3723ab07580f05c7391a78ef12fcf20b99e80ef198deef",
+    "scripts/check_security.py": "58de6896402c89d235a22a9e9bb2895ece68f20e7b9dd91966ea15fefad24c07"
+  },
+  "original_sample": {
+    "engine_commit": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "engine_path": "evidence/aave-account-impact/position.json",
+    "sdk_path": "tests/data/aave-account-position13.json",
+    "sha256": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "byte_identical": true,
+    "new_chain_execution": false
+  },
+  "units": {
+    "tests": 55,
+    "seconds": 5.399,
+    "skips": 0,
+    "new_position_groups": 10,
+    "full_log_sha256": "ac6b30c088d0808dd2969f3971ee3e8b770e760966f63130e54930ecefd8393c"
+  },
+  "checks": {
+    "ruff_lint": {
+      "status": "pass",
+      "sources": 7
+    },
+    "mypy": {
+      "status": "pass",
+      "sources": 7
+    },
+    "bandit": {
+      "version": "1.9.4",
+      "full_sources": 7,
+      "findings": 0,
+      "ignored_nosec": true,
+      "skipped_rules": 0
+    },
+    "dependency_scope": {
+      "runtime": [],
+      "build": [
+        "setuptools==84.0.0"
+      ],
+      "optional_runtime": {},
+      "audited_locked_packages": 42
+    },
+    "new_local_advisory_query": false,
+    "wheel": {
+      "sha256": "b13878facfda9106858deac67bae1976175fb0ff030483a02ba396f783e27797",
+      "module_count": 5,
+      "record_entries": 11,
+      "isolated_install_smoke": true
+    },
+    "ruff_format": {
+      "status": "pass",
+      "sources": 7
+    },
+    "docs": {
+      "passed": true,
+      "tracked_files": 9,
+      "total": 35,
+      "successful": 35,
+      "errors": 0,
+      "timeouts": 0,
+      "exclusions": 0,
+      "report_sha256": "62e438c82f6b5b800438a7d661868d6d916cd8c8c8b2752a54c1c6173a1a7cab",
+      "scope": "Final staged tracked documents; local worktree intentionally dirty before reviewed commit."
+    }
+  },
+  "limits": [
+    "Recorded default13 artifact consumed offline; no new chain/model/network execution by reader.",
+    "Mutated controls are synthetic diagnostic tests.",
+    "Consistency and three seals do not authenticate EVM/provider/source/proxy implementation or signatures.",
+    "No signed strategy, loan/liquidation, profit or sole-WETH causal claim.",
+    "Local prior eb9921f advisory evidence reused for unchanged 42 lock identities; new current CI queries anew.",
+    "New current-head CI, CLI/viewer/coordinator pin integration, independent human main approval and Pages remain separate."
+  ]
+}

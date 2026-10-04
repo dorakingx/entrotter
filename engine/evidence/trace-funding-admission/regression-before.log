@@ -1,0 +1,25 @@
+test_only_trace_profile_defers_pool_admission (test_trace_funding.TraceAdmissionProfileTests.test_only_trace_profile_defers_pool_admission) ... FAIL
+test_original_signed_funding_and_omission_same_block (test_trace_funding.TraceFundingIntegrationTests.test_original_signed_funding_and_omission_same_block) ... FAIL
+
+======================================================================
+FAIL: test_only_trace_profile_defers_pool_admission (test_trace_funding.TraceAdmissionProfileTests.test_only_trace_profile_defers_pool_admission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_funding.py", line 43, in test_only_trace_profile_defers_pool_admission
+    self.assertEqual('--disable-pool-balance-checks' in command, trace)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True
+
+======================================================================
+FAIL: test_original_signed_funding_and_omission_same_block (test_trace_funding.TraceFundingIntegrationTests.test_original_signed_funding_and_omission_same_block)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_funding.py", line 101, in test_original_signed_funding_and_omission_same_block
+    self.assertTrue(report['baseline_verified'])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.538s
+
+FAILED (failures=2)

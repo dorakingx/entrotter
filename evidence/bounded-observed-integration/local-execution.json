@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "pins": {
+    "engine": "c2eb54dc97509e7318216c01f98adade1da5bc6e",
+    "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+    "cli": "1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "steps": [
+    {
+      "name": "Verify offline reader and viewer retain the actual signed-prefix evidence",
+      "script": "step-1.sh",
+      "script_sha256": "f2dc8d5edb44ea12d37cab8b8d3cbfcdaf374d2c2e32d33bb792ebb69a92636a",
+      "returncode": 0,
+      "log": "step-1.log"
+    },
+    {
+      "name": "Inspect the original 32-receipt case and display classification with SDK and viewer",
+      "script": "step-2.sh",
+      "script_sha256": "09fed780bae31612d9e22e6ef4c89b84be6726c0cc1a23c877888a07c76d119c",
+      "returncode": 0,
+      "log": "step-2.log"
+    },
+    {
+      "name": "Inspect the historical Aave consumer price records with SDK and viewer",
+      "script": "step-3.sh",
+      "script_sha256": "47cc1b92fef09890744a071f9f5fc6ad9fa32f6b223301eaf697943bed2adb2a",
+      "returncode": 0,
+      "log": "step-3.log"
+    },
+    {
+      "name": "Inspect the synthetic same-block funding report with SDK and viewer",
+      "script": "step-4.sh",
+      "script_sha256": "adaf874f5dc073337e7577cac42a5af5c06f428334ac17d418b04b25db43eb49",
+      "returncode": 0,
+      "log": "step-4.log"
+    },
+    {
+      "name": "Inspect oracle omission and unverified storage reports with SDK and viewer",
+      "script": "step-5.sh",
+      "script_sha256": "345ed9ecf904b91505a6abcf061d9a9c75fd6a760de33eb821ae3d670e8e9b62",
+      "returncode": 0,
+      "log": "step-5.log"
+    },
+    {
+      "name": "Inspect the supported observation wrapper with engine, SDK, CLI and viewer",
+      "script": "step-6.sh",
+      "script_sha256": "647a610411796594076e353539c1a65d327782f2398a627274da9217302e3535",
+      "returncode": 0,
+      "log": "step-6.log"
+    },
+    {
+      "name": "Inspect the actual bounded historical price wrapper across engine, SDK, CLI and viewer",
+      "script": "step-7.sh",
+      "script_sha256": "5b9dc7265adfe5575b75e42512399d278015c1c0598eec8f3f01b9f3213b6636",
+      "returncode": 0,
+      "log": "step-7-first.log"
+    }
+  ],
+  "first_six_exact_bodies_and_complete_outputs_unchanged_except_engine_pin": true,
+  "execution": "Seven offline recorded-byte inspections with pinned engine/SDK/CLI/Node22 viewer; no new chain/model/browser execution. Seventh parses the independently executed defaultDocker32 result, compares every baseline/candidate outcome and four raw/typed records with original native result.",
+  "prepared_workflow_sha256": "58b01e3ecddb486679bab6c185cf63bc8632f81b889f617d0b46592751139f1e",
+  "output_sha256": {
+    "bounded-observed-transaction-replay.json": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+    "observed-transaction-replay.json": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+    "trace-bounded-observed-reader.json": "ca16be7c5a2b5d2c4163c61db5f7f796f6b6f790e61454e18a26ac7320c2b8f2",
+    "trace-comparison-reader.json": "184aa0843458b7041c061d02d9b26e04e592decb23dcd571c04ae96b577032c0",
+    "trace-consumer-reader.json": "e29004a3b2b3402942e6dc4b5932bad08bab64bc7913da8991cff310d32c8587",
+    "trace-funding-reader.json": "df00c2d8f98b4388e634d0927d5713e65056b8dc6427cefbc11f95dc40c05fcd",
+    "trace-observed-reader.json": "4d84b1fa704598f96f64ed036521c7e83fdafa344452d507e1ee254e36b07223",
+    "trace-oracle-reader.json": "7a156523e8d968ae2ce1524637393c4937ffced15febaca4456c36bce45b37aa",
+    "trace-reader.json": "2282c5535303203a32caf5118d46ccfd54b812720f30a801fcdef5a850f607a6"
+  }
+}

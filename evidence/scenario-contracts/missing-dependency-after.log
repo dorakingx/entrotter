@@ -1,0 +1,75 @@
+test_benchmark_cases (unittest.loader._FailedTest.test_benchmark_cases) ... ERROR
+test_offline_contracts (unittest.loader._FailedTest.test_offline_contracts) ... ERROR
+test_recording_schema (unittest.loader._FailedTest.test_recording_schema) ... ERROR
+test_scenarios (unittest.loader._FailedTest.test_scenarios) ... ERROR
+
+======================================================================
+ERROR: test_benchmark_cases (unittest.loader._FailedTest.test_benchmark_cases)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_benchmark_cases
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "<workspace>/.worktrees/scenarios-links/tests/test_benchmark_cases.py", line 8, in <module>
+    from contract_validation import validator
+  File "<workspace>/.worktrees/scenarios-links/contract_validation.py", line 8, in <module>
+    from jsonschema import Draft202012Validator
+ModuleNotFoundError: No module named 'jsonschema'
+
+
+======================================================================
+ERROR: test_offline_contracts (unittest.loader._FailedTest.test_offline_contracts)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_offline_contracts
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "<workspace>/.worktrees/scenarios-links/tests/test_offline_contracts.py", line 14, in <module>
+    from jsonschema.exceptions import SchemaError, ValidationError
+ModuleNotFoundError: No module named 'jsonschema'
+
+
+======================================================================
+ERROR: test_recording_schema (unittest.loader._FailedTest.test_recording_schema)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_recording_schema
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "<workspace>/.worktrees/scenarios-links/tests/test_recording_schema.py", line 6, in <module>
+    from contract_validation import validator as contract_validator
+  File "<workspace>/.worktrees/scenarios-links/contract_validation.py", line 8, in <module>
+    from jsonschema import Draft202012Validator
+ModuleNotFoundError: No module named 'jsonschema'
+
+
+======================================================================
+ERROR: test_scenarios (unittest.loader._FailedTest.test_scenarios)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_scenarios
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "<workspace>/.worktrees/scenarios-links/tests/test_scenarios.py", line 5, in <module>
+    from contract_validation import validator
+  File "<workspace>/.worktrees/scenarios-links/contract_validation.py", line 8, in <module>
+    from jsonschema import Draft202012Validator
+ModuleNotFoundError: No module named 'jsonschema'
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+FAILED (errors=4)

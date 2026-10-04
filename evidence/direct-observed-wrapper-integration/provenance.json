@@ -1,0 +1,75 @@
+{
+  "copies": [
+    {
+      "source": "entrotter/.quality/direct-observed-wrapper-integration/local-readers.json",
+      "public": "local-execution.json",
+      "original_sha256": "aabbdcf68bf039e12ce6a6c5fca6dd76c70aa12a260cf5619791d4b9b663374b",
+      "public_sha256": "aabbdcf68bf039e12ce6a6c5fca6dd76c70aa12a260cf5619791d4b9b663374b",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/direct-observed-wrapper-integration/local-types.log",
+      "public": "local-types.json",
+      "original_sha256": "e8787fbff389a2afe9291863a5bc99100885bc35adeaa2809c719e49f9468cbf",
+      "public_sha256": "e8787fbff389a2afe9291863a5bc99100885bc35adeaa2809c719e49f9468cbf",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/direct-observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-comparison-reader.json",
+      "public": "trace-comparison-reader.json",
+      "original_sha256": "754daa78ee1142f66c6466ba481da634d3c827c1c089e30655daba09f468235e",
+      "public_sha256": "754daa78ee1142f66c6466ba481da634d3c827c1c089e30655daba09f468235e",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/direct-observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-consumer-reader.json",
+      "public": "trace-consumer-reader.json",
+      "original_sha256": "b63dff716f51ff838f21110bbf65cbe395002284ed7d834525e736e815a2d47d",
+      "public_sha256": "b63dff716f51ff838f21110bbf65cbe395002284ed7d834525e736e815a2d47d",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/direct-observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-funding-reader.json",
+      "public": "trace-funding-reader.json",
+      "original_sha256": "843daa80b62abfce26764b6adb6345dfd5ed9ee08981e8f0900231399be273d3",
+      "public_sha256": "843daa80b62abfce26764b6adb6345dfd5ed9ee08981e8f0900231399be273d3",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/direct-observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-observed-reader.json",
+      "public": "trace-observed-reader.json",
+      "original_sha256": "47ad1d58814a211e835b5943bf826ee3072016e1abb81c7a88ce3c8241e62cb8",
+      "public_sha256": "47ad1d58814a211e835b5943bf826ee3072016e1abb81c7a88ce3c8241e62cb8",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/direct-observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-oracle-reader.json",
+      "public": "trace-oracle-reader.json",
+      "original_sha256": "96097a4dd56e0b3545e1585258aaf7f8afa20563c4ef9e36579d8017b18b5aee",
+      "public_sha256": "96097a4dd56e0b3545e1585258aaf7f8afa20563c4ef9e36579d8017b18b5aee",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter.github.io/.quality/observed-price-viewer/ci-a19/independent-ci-review.json",
+      "public": "viewer-ci-independent.json",
+      "original_sha256": "20ad24e37a23f3740348ad6636977397576af7b5f5e4ba787f9d5712fa1366ca",
+      "public_sha256": "20ad24e37a23f3740348ad6636977397576af7b5f5e4ba787f9d5712fa1366ca",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/direct-observed-wrapper-integration/workflow-parse.json",
+      "public": "workflow-parse.json",
+      "original_sha256": "9d04fbc246212af4490b6f70becd3ef0fea4da9eb06e0b65330ecce718908552",
+      "public_sha256": "9d04fbc246212af4490b6f70becd3ef0fea4da9eb06e0b65330ecce718908552",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/direct-observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-reader.json",
+      "public": "trace-reader.json",
+      "original_sha256": "066215d3e8f567935b0a8cea0f8d8b714cbd59753a46dd1959fccde75d205c55",
+      "public_sha256": "066215d3e8f567935b0a8cea0f8d8b714cbd59753a46dd1959fccde75d205c55",
+      "normalization": "byte identical"
+    }
+  ],
+  "limits": "Raw original CI artifacts retained privately; only actual workspace path prefix normalized. No record fabricated or rerun."
+}

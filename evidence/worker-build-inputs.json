@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-09-20T01:16:13.734034+00:00",
+  "engine_commit": "2c843842dc57387150e3bb080c720bc94ce18bc5",
+  "engine_pr": "https://github.com/entrotter/engine/pull/22",
+  "engine_evidence_url": "https://github.com/entrotter/engine/blob/2c843842dc57387150e3bb080c720bc94ce18bc5/evidence/worker-build-inputs/summary.json",
+  "engine_evidence_sha256": "78c7fc5f779bbe4797fbbaa3842adee50dfcd82c966f3e52070bd814b179886e",
+  "engine_ci": [
+    {
+      "link": "https://github.com/entrotter/engine/actions/runs/35480730282/job/105997926950",
+      "name": "evm",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/entrotter/engine/actions/runs/35480730265/job/105997926977",
+      "name": "docs-links",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/entrotter/engine/actions/runs/35480730294/job/105997926965",
+      "name": "quality",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/entrotter/engine/actions/runs/35480730300/job/105997927058",
+      "name": "isolated",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/entrotter/engine/actions/runs/35480730284/job/105997927102",
+      "name": "unit (3.11)",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/entrotter/engine/actions/runs/35480730284/job/105997926925",
+      "name": "unit (3.12)",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/entrotter/engine/actions/runs/35480730284/job/105997927057",
+      "name": "unit (3.13)",
+      "state": "SUCCESS"
+    },
+    {
+      "link": "https://github.com/entrotter/engine/actions/runs/35480730284/job/105997927039",
+      "name": "unit (3.14)",
+      "state": "SUCCESS"
+    }
+  ],
+  "worker_runtime_and_container_sources_unchanged": true,
+  "local_tests": 196,
+  "local_archive_bytes": 121395735,
+  "local_fixture_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "local_vm_profiles_stopped": true,
+  "frozen_dependency_pins_unchanged": true,
+  "coordination_ci": "Final head results recorded in the integration PR description; not yet claimed passed here",
+  "independent_review": "pending",
+  "remaining_limits": [
+    "caller-process quotas",
+    "image/build-cache/VM storage",
+    "hard whole-build deadline",
+    "SIGKILL staging leftovers"
+  ],
+  "integration_initial_failure": {
+    "run": "https://github.com/entrotter/entrotter/actions/runs/35481009720",
+    "reason": "quality.yml still checked out previous worker-engine pin; strict type-source validation rejected the mismatch",
+    "resolution": "Align quality workflow checkout with quality-inputs.json and bounded-worker-pins.json; retain strict source validation"
+  }
+}

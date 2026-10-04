@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<installed-app>/check_bounded_cli.py", line 240, in <module>
+    main()
+  File "<installed-app>/check_bounded_cli.py", line 211, in main
+    raise RuntimeError("Literal arguments failed: " + literal.stderr.decode())
+RuntimeError: Literal arguments failed: Traceback (most recent call last):
+  File "<frozen runpy>", line 189, in _run_module_as_main
+  File "<frozen runpy>", line 148, in _get_module_details
+  File "<frozen runpy>", line 112, in _get_module_details
+  File "<probe-temp>/cwd %h $HOME ' space/entrotter_cli/__init__.py", line 1, in <module>
+    raise RuntimeError('Untrusted cwd package was imported')
+RuntimeError: Untrusted cwd package was imported
+
+time="2026-10-01T17:11:59+09:00" level=fatal msg="exit status 1"

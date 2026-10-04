@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-10-01T08:24:52.274957+00:00",
+  "status": "passed_current_source_pending_independent_review",
+  "base_coordination_commit": "f1421ff0d67ce76d047f2a51334972ec65966d33",
+  "source_sha256": {
+    "scripts/bounded_cli.py": "df96abd74fb22e3d9b16f60d8b1e93f3cc39129a8cb11a63b61cdfbcaf4cd1c2",
+    "scripts/check_host_envelope.py": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb",
+    "tests/test_bounded_cli.py": "38ebdb95bd943542543944784e0bacc8143dcbd24220299071c10a6302fe3a1b",
+    "tests_host/check_bounded_cli.py": "e35b5de7a54300464fcf26a9ff3fc8012ee96d46328bc82629d38e07d95a0d50",
+    "docs/BOUNDED_CLI.md": "4023b3fb1735ec8895f74b4758cef154c07eb3d4598cb1d6e6d65983f6624b50",
+    "security-reviewed.json": "7898255550fde0fd2499e583bce9c734365d2d27b3a2a45d28fc79f8a6ef696e"
+  },
+  "component_commits": {
+    "engine": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+    "sdk": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
+  },
+  "environment": {
+    "platform": "Dedicated Linux arm64 Colima guest",
+    "python": "3.12.3",
+    "systemd": "255",
+    "vm_topology_evidence": "evidence/host-service-oct01/summary.json"
+  },
+  "actual_enforcement": {
+    "command": "python3 \"$HOME/.local/share/entrotter/check_bounded_cli.py\"",
+    "proof": "actual-faults.json",
+    "test_driver_sha256": "e35b5de7a54300464fcf26a9ff3fc8012ee96d46328bc82629d38e07d95a0d50",
+    "full_runtime_seconds": 180.16984516899993,
+    "owner_sigterm_seconds": 0.11873293100006777,
+    "owner_sigkill_seconds": 0.1129303739999159,
+    "literal_paths_preserved": true,
+    "cwd_spoof_not_imported": true,
+    "actual_kernel_limit_readback": true,
+    "duplicate_rejected_incumbent_preserved": true,
+    "destination_preservation_and_doctor_recovery": true,
+    "owned_workers_after": 0,
+    "scope": "Faults deliberately stall/trickle a local HTTP server. These are not successful engine/archive/model jobs."
+  },
+  "normal_runs": {
+    "proof": "normal-runs.json",
+    "commands": [
+      "python3 \"$HOME/.local/share/entrotter/bounded_cli.py\" doctor",
+      "python3 \"$HOME/.local/share/entrotter/bounded_cli.py\" run fixture.json --local -o bounded-fixture.json",
+      "python3 \"$HOME/.local/share/entrotter/bounded_cli.py\" run local.json --local -o bounded-local-final.json",
+      "python3 \"$HOME/.local/share/entrotter/bounded_cli.py\" run fixture.json --api http://127.0.0.1:8787 -o bounded-api-final.json"
+    ],
+    "equality_scope": "Complete parsed reports, not only artifact IDs",
+    "references": [
+      "evidence/quick-start-oct01/report.json",
+      "evidence/quick-start-oct01/local-evm.json"
+    ]
+  },
+  "regression": {
+    "before_controller_sha256": "bee497d377605c1264f795bf82ef6c1f1b3860eb736a898a7ea0199c2cd0f6c6",
+    "only_change": "Add -P to the fixed Python CLI child invocation",
+    "failed_before": "cwd-spoof-before.log",
+    "passed_after": "actual-faults.json",
+    "initial_transient_unit_setup_failure": "EnvironmentFile=%h/... was rejected as non-absolute; fixed to a quoted concrete private absolute path before successful runs."
+  },
+  "guide_check": {
+    "commands": "Both Bash blocks extracted from docs/BOUNDED_CLI.md; only the documented coordination checkout placeholder replaced",
+    "result": "Existing clean SDK/CLI pins and exact helper bytes accepted; doctor and complete fixture equality passed",
+    "scope": "Existing-install branches verified; no claim of a fresh clone or cold setup in this guide check"
+  },
+  "quality": {
+    "lint": "All production files passed Ruff",
+    "format": "20 files passed; frozen provider hash retained",
+    "type_scope": "21 production sources; only the same 3 frozen-provider diagnostics retained",
+    "security_scope": "Full unsuppressed Bandit 1.9.4 scan: 78 retained findings (75 unchanged plus 3 explicit launcher reviews), no skips/errors",
+    "controller_tests": 4,
+    "host_guard_tests": 2,
+    "quality_policy_tests": 6,
+    "unit_commands": [
+      "python -m unittest discover -s tests -p 'test_bounded_cli.py' -v",
+      "python -m unittest discover -s tests -p 'test_host_envelope.py' -v",
+      "python -m unittest discover -s tests -p 'test_quality*.py' -v"
+    ],
+    "ci_scope": "New controller regressions included in quality CI; actual user-systemd test is separate dedicated-VM evidence",
+    "security_review": "Author review only; independent approval is still required"
+  },
+  "cleanup": {
+    "api_active_state": "inactive",
+    "api_main_pid": 0,
+    "cli_active_state": "inactive",
+    "cli_main_pid": 0,
+    "owned_workers": 0,
+    "dedicated_vm_stop": "Stopped, confirmed by colima list --json",
+    "default_vm": "Pre-existing default VM still Running, left untouched"
+  },
+  "new_model_calls": 0,
+  "new_archive_calls": 0,
+  "limitations": [
+    "Optional installed trusted CLI helper, not arbitrary-code or hosted multi-tenant isolation",
+    "Tiny dispatcher outside leaf cgroup; supported deployment uses separate measured VM aggregate bounds",
+    "Other users, ordinary native callers and operator source/image modifications outside this claim",
+    "Independent API jobs may continue after client cancellation under separate service/worker limits",
+    "Docker daemon/build work outside CLI cgroup; host hypervisor/cache/log/backup storage outside guest capacity proof",
+    "Forced death can leave worker until existing timer/removal or charged staging files",
+    "No hard archive egress firewall, uninterruptible-kernel-fault proof or new independent security approval",
+    "All overall release gates remain partial; no final submission or main merge claimed"
+  ]
+}

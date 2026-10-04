@@ -1,0 +1,21 @@
+test_api_rejects_occupied_daemon_without_storing_report (test_admission.DaemonAdmissionTests.test_api_rejects_occupied_daemon_without_storing_report) ... ok
+test_cli_rejects_occupied_daemon_without_replacing_export (test_admission.DaemonAdmissionTests.test_cli_rejects_occupied_daemon_without_replacing_export) ... ok
+test_host_timeout_releases_owned_slot_for_next_run (test_admission.DaemonAdmissionTests.test_host_timeout_releases_owned_slot_for_next_run) ... ok
+test_two_processes_race_after_both_observe_empty_slot (test_admission.DaemonAdmissionTests.test_two_processes_race_after_both_observe_empty_slot) ... ok
+test_unstarted_container_keeps_slot_until_explicit_owned_removal (test_admission.DaemonAdmissionTests.test_unstarted_container_keeps_slot_until_explicit_owned_removal) ... ok
+test_cli_and_api_roundtrip (test_worker.IsolatedAPITests.test_cli_and_api_roundtrip) ... ok
+test_cpu_quota_throttles_parallel_work (test_worker.IsolatedWorkerTests.test_cpu_quota_throttles_parallel_work) ... ok
+test_kernel_controls_mounts_and_privileges (test_worker.IsolatedWorkerTests.test_kernel_controls_mounts_and_privileges) ... ok
+test_memory_limit_actually_oom_kills_overallocation (test_worker.IsolatedWorkerTests.test_memory_limit_actually_oom_kills_overallocation) ... ok
+test_pid_limit_actually_rejects_more_processes (test_worker.IsolatedWorkerTests.test_pid_limit_actually_rejects_more_processes) ... ok
+test_real_fixture_and_anvil_results_match_native (test_worker.IsolatedWorkerTests.test_real_fixture_and_anvil_results_match_native) ... ok
+test_tmpfs_space_and_noexec_are_enforced (test_worker.IsolatedWorkerTests.test_tmpfs_space_and_noexec_are_enforced) ... ok
+test_detached_idle_worker_expires_without_host_cooperation (test_worker.WorkerLifetimeTests.test_detached_idle_worker_expires_without_host_cooperation) ... Independent idle deadline observed after 181.203 seconds
+ok
+test_lost_client_is_bounded_by_independent_worker_timer (test_worker.WorkerLifetimeTests.test_lost_client_is_bounded_by_independent_worker_timer) ... ok
+test_sigterm_ends_idle_worker_and_removes_container (test_worker.WorkerLifetimeTests.test_sigterm_ends_idle_worker_and_removes_container) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 209.946s
+
+OK

@@ -1,0 +1,194 @@
+{
+  "status": "passed_no_remaining_actionable_findings",
+  "reviewer": "independent root; separate from engine author and required human GitHub review",
+  "base": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+  "source_sha256": {
+    "README.md": "0a45b4f8f0b2ade4bb80b33b5326942bae637859be3e564a641d47a4bb106346",
+    "SECURITY.md": "078f53689b3fefee06af7f8b15818b5fca0efb975d3c5eca77060be4f4472167",
+    "STATUS.md": "d2b92991861a93aad9598616ad7d977876ec56d36cc910f638b24abc8fc6ad82",
+    "security-reviewed.json": "35cb7ddbd2150ac37a12192fb25223f33921da3d75cb956f19a2849c301d2ed2",
+    "src/entrotter_engine/trace.py": "709061f02814c918dc1cf04753d1e8df153517fa0e6cf7f5fc18d973f29b25b6",
+    "tests/test_trace_oracle.py": "74be232dcc9927a22dd7326dbd7e94c4350ec18a20bf6de0900803842a215b0d",
+    "tests_isolated/test_trace.py": "6a35a695ae68f2d30823166f5952e21ec318ee67a4bf6ca75502196dd08c7df6",
+    "tests/data/canonical-local-oracle-inputs.json": "4439e4a3848476b6eb64a6a634fbe608a0efb1fc2be08629f8e4d4ff361c5067"
+  },
+  "public_artifacts": [
+    {
+      "path": "evidence/trace-oracle-provider/README.md",
+      "sha256": "e7a8fb9ba04c18a266e4e24809dc297cf8cfc49f158936b8e1475490ee8692e1"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/bandit.json",
+      "sha256": "7701ba8c0f7ffd0627d67db14752b2aa8bcdba860b925859605ee29799a8c658"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/dependencies.json",
+      "sha256": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/dependencies.log",
+      "sha256": "15950a68a7ed99c59779717acefdceb3f69cfd31bde67d2c954f2a3cea4d7955"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/dependency-scope.log",
+      "sha256": "27179731f19ca8ffdf626ce4b657f3c8c8511e24218e2b01b8586e7536e34e94"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/diagnostic-setup-cleanup.json",
+      "sha256": "e23fdef81b7eb6396a4a6549e9f4e202a4bb631ce065c03088641e5d641205f5"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/diagnostic-setup-failure.log",
+      "sha256": "26f805b3d7e8ff7a13f248a5394af0f1457586c7e97cf58bbbc393d91f02155a"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/evidence-handling.json",
+      "sha256": "ff4ffd5c4ea2f89e8be16d17cf81236e171e74c29b97bdb07aa7eca586f21c04"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/focused.log",
+      "sha256": "6773acdf4dae83435996bc2a196e94f31ddcce9c8c01a08d6082db5b1c004e60"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/native-missing-storage.json",
+      "sha256": "2d1449f0807329e6f70799c0ff02ec69d2c8e1050c15425fd3f13aad034c034b"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/native-oracle-prefix.json",
+      "sha256": "b97f34c9396f76eb352f870c0235422b77fa3aaaa58c25a97262c2995f2bd1ae"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/native-provider-control.json",
+      "sha256": "66c1d555ad0068e128c8e5cdc0619f71824c4401177b0c3f1b84a77be4572b5d"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/native-suite-import-failure.log",
+      "sha256": "78ffd6ed8d92db76fda6757dcf028375c71f63e73a615b2c0320eab168b3232a"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/native-suite-summary.json",
+      "sha256": "fbd0778ded8bb505fa6ec3c3d7a27602171f1607920d72f16c2b304b1b18a9ad"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/native-suite.log",
+      "sha256": "41054e445955cbffb7f30d56911deba85b4101b00550785dfcde14bf902bcb26"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/offline-docs-scope.json",
+      "sha256": "e19b2598da7b48e052475e82783e8724e8dd5b6de8c71bad7f88e284a388c675"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/offline-docs.log",
+      "sha256": "c3c34c2508bc43c5d4c3feb3562ab2ec34bcc25d27e577179c0143fc24e9b4d9"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/prior-followup-probe.log",
+      "sha256": "232a958ae68a2d42474572396fe69b49b1e1da1913bf6e154405b3807c2582e0"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/prior-initial-observations.json",
+      "sha256": "cf47258aaf547d61a8b77380e47ae2c29c8084d25fae6c720ee6b8b3abd14297"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/prior-initial-oracle-report.json",
+      "sha256": "7001a5cb0b443aa76145308f925288e3b1be826c8363378ab5c53713684f9e5c"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/prior-initial-probe.log",
+      "sha256": "a5b2a1fd2d0f119765697db814a237e48fee273b2a1d725c6b27a137dae128e1"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/prior-investigation.json",
+      "sha256": "abce222dd8518b6cdf8adb58606b7d6416c3aa368441dd6667479532a69853df"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/public-copy-provenance.json",
+      "sha256": "1e8146aa5c208cd5a850590a695247a4430c0a29b2350903f4965398c4e4a9ed"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/root-direction-review.json",
+      "sha256": "053ce4503c818b82348bb396798a288e1d4c5b6870524fefabc9214a6de11cb1"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/security-before-refresh.log",
+      "sha256": "fe15536c4abccc4a73d31fb57087cd65529db7bc57705fc2e93e7b9502ce3615"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/security-refresh.json",
+      "sha256": "e93c3440406c68cc4521caf560acbc3afa0bf1e5cb64eac8db6b06e2b84cc069"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/security.log",
+      "sha256": "129673275c671edc5d77ea7bc2b98a61d2535cafc41a25dc5fe2234a0e27a507"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/static-checks.json",
+      "sha256": "6b599bae446cd99a2999bbf52e3ee310e2e84f8681fea2a13350b85cb927dc07"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/summary.json",
+      "sha256": "a8c9852bad518bf624f13f4b82e7c6d4fc49383dcddeffdb800ace8d2d32fc9a"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/wheel-provenance.json",
+      "sha256": "caef0dd31efcfbfd72ed23bef199905a0d4d08cf1eeac9771f649b728dbd1e26"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/wheel.log",
+      "sha256": "93aca58237de4fdd8501f88f61bb5e8b43d17a660d5365461af446ad4bd7c0c9"
+    }
+  ],
+  "verified": {
+    "public_copy_original_and_redaction_bindings": 24,
+    "retained_security_findings": 23,
+    "production_and_script_hashes": 23,
+    "wheel_modules": 18,
+    "locked_audited_packages": 42,
+    "native_tests": 252,
+    "owned_nodes_closed": 9,
+    "proxies_closed": 5
+  },
+  "reports": [
+    {
+      "path": "evidence/trace-oracle-provider/native-oracle-prefix.json",
+      "sha256": "b97f34c9396f76eb352f870c0235422b77fa3aaaa58c25a97262c2995f2bd1ae",
+      "artifact_id": "b8c5b8d1e162bbcb304693cb09f986c46d7bfc42d19e334741d6374f66e6d10d",
+      "baseline_verified": true,
+      "sdk": "passed",
+      "viewer": "passed",
+      "node": "v22.23.1"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/native-provider-control.json",
+      "sha256": "66c1d555ad0068e128c8e5cdc0619f71824c4401177b0c3f1b84a77be4572b5d",
+      "artifact_id": "a3a298730e3df6acc9941fd074a4f271d93a1d3c4334c1e448eaa4fb675dd652",
+      "baseline_verified": true,
+      "sdk": "passed",
+      "viewer": "passed",
+      "node": "v22.23.1"
+    },
+    {
+      "path": "evidence/trace-oracle-provider/native-missing-storage.json",
+      "sha256": "2d1449f0807329e6f70799c0ff02ec69d2c8e1050c15425fd3f13aad034c034b",
+      "artifact_id": "95c846086b441d0b307548ad6a4db7fda2d3c443431786a5ed7241f7462ce2ed",
+      "baseline_verified": false,
+      "sdk": "passed",
+      "viewer": "passed",
+      "node": "v22.23.1"
+    }
+  ],
+  "reader_pins": {
+    "sdk": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "site": "b7c20ce2c080427fe0742a1afcb5dbc49277de70",
+    "viewer_module_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9"
+  },
+  "scope": [
+    "Read actual source/test/protocol/documentation diffs; only production addition is accurate explanatory assumption; no runtime execution, admission, security, or v0.1 weakening.",
+    "Reviewed frozen signed CREATE/update/consumer setup; normal provider control plus actual denial counters distinguish causal error from inferred report diagnosis.",
+    "All inspected public copies match originals and declared path redactions; no owner paths/private source URLs/key material observed.",
+    "Fresh native-run-002 proof is separately saved. Two original nine-node investigation raw files unavailable after disclosed overwrite; no claim of current rehash of those lost originals. Immutable contemporaneous review/aggregate and original six-node raw survive.",
+    "252 run used earlier test hash e9fd8baa. Final74be changes only cleanup metadata to None without RPC; normal nine-node case unchanged. Exact final-head CI remains required.",
+    "SDK and actual viewer codec compatibility is offline only; no rendered browser, new EVM, archived oracle, external oracle truth, complete state attestation, full-block/root/opcode proof inferred.",
+    "Image protocol test is source-reviewed but not locally run. All8 exact-head CI, protected human approval, candidate deployment and G1-G5 completion remain open."
+  ]
+}

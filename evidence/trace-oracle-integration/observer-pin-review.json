@@ -1,0 +1,77 @@
+{
+  "review_scope": "Independent read-only selector review only; no source edits, tests, external calls, commit/push or GitHub approval. Earlier de65 structural workflow review reused unchanged.",
+  "base": "27c39fe8c973765469b9fdeb7ef215c37abb4fb1",
+  "component": "99fd3a60a754f129c78d1324f2a01787a6538917",
+  "findings": [],
+  "source_sha256": {
+    ".github/workflows/ci.yml": "a4dccf178e72f5c61c69e4b628b6caa20435f3f3e9b5b4944e66e8f61df8fbfe",
+    ".github/workflows/quality.yml": "6b110c62b80fb6f99f3257d12bf42c4a4390220d31019007d10014343b185e63",
+    "bounded-worker-pins.json": "5b532d27124db98248bbae49dbc96de76df76124435961a1e57c2156fe1a31b7",
+    "quality-inputs.json": "248f42a7153768beb5b6796cb4606ba30914dca740e051c621e1816c4979532b"
+  },
+  "files": {
+    ".github/workflows/ci.yml": {
+      "base_sha256": "86eff356577a1d201f51f9f8ba35850bf87f520f2f5c8a2fa9a6caf53b30af3d",
+      "current_sha256": "a4dccf178e72f5c61c69e4b628b6caa20435f3f3e9b5b4944e66e8f61df8fbfe",
+      "old_selector_occurrences": 1,
+      "new_selector_occurrences": 1,
+      "whole_file_exact_replacement": true,
+      "diff_lines": {
+        "added": 1,
+        "removed": 1
+      }
+    },
+    ".github/workflows/quality.yml": {
+      "base_sha256": "d24726b8967f5d2bed057435e4a2128a617b40a12d850ae4a889c70bae5d9f66",
+      "current_sha256": "6b110c62b80fb6f99f3257d12bf42c4a4390220d31019007d10014343b185e63",
+      "old_selector_occurrences": 1,
+      "new_selector_occurrences": 1,
+      "whole_file_exact_replacement": true,
+      "diff_lines": {
+        "added": 1,
+        "removed": 1
+      }
+    },
+    "bounded-worker-pins.json": {
+      "base_sha256": "7e9bfd91e97afff3a1ddcd0273939552717488a1b554916d9d52b331c920551b",
+      "current_sha256": "5b532d27124db98248bbae49dbc96de76df76124435961a1e57c2156fe1a31b7",
+      "old_selector_occurrences": 1,
+      "new_selector_occurrences": 1,
+      "whole_file_exact_replacement": true,
+      "diff_lines": {
+        "added": 1,
+        "removed": 1
+      }
+    },
+    "quality-inputs.json": {
+      "base_sha256": "1760b09a7641881dbaad78de74e93e70627b4a83628f6a8ce9c890654f01eb08",
+      "current_sha256": "248f42a7153768beb5b6796cb4606ba30914dca740e051c621e1816c4979532b",
+      "old_selector_occurrences": 1,
+      "new_selector_occurrences": 1,
+      "whole_file_exact_replacement": true,
+      "diff_lines": {
+        "added": 1,
+        "removed": 1
+      }
+    }
+  },
+  "invariants": {
+    "exactly_one_e849_to_99fd_selector_replacement_per_file": true,
+    "bounded_ci_engine_equals_quality_worker_equals_manifest_equals_type_policy": true,
+    "other_dependency_selectors_unchanged": true,
+    "agent_engine_sdk_cli_scenario_site_frozen_inputs_model_holdout_unchanged": true,
+    "mandatory_commands_quality_policy_resource_cleanup_and_admission_unchanged": true,
+    "no_component_main_merge_deployment_submission_or_human_approval_claim": true
+  },
+  "component_root_proof": {
+    "path": ".quality/oracle-integration/root-engine-ci-verification.json",
+    "sha256": "eeba3c890e4a2edd2a1a1d9ec221fad6ad03e1de2724c667612488c44ff0773c",
+    "all8_exact_head_passed": true,
+    "read_only_context_reused_not_rerun": true
+  },
+  "coverage_limits": [
+    "Prepared coordinator documentation/evidence diffs excluded from this focused pin review; final immutable snapshot/docs follow-up pending.",
+    "No fresh combined coordinator CI or deployment verified; current public composition remains prior8029/935.",
+    "Original historical failure cause remains unknown; observer diagnostic did not execute in successful component CI."
+  ]
+}

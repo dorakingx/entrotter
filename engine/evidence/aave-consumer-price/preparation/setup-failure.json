@@ -1,0 +1,6 @@
+{
+  "step": "optional_keccak_dependency_inspection",
+  "exception_type": "ModuleNotFoundError",
+  "missing_module": "eth_hash",
+  "effects": "Read-only dependency inspection; no archive/node/source mutation. Use existing pinned Foundry cast instead; no installation."
+}

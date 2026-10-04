@@ -1,1 +1,21 @@
-/goal Build Entrotter to a grand-prize-quality Colosseum submission by completing the acceptance gates in entrotter/CODEX_GOAL.md. Read AGENTS.md, entrotter/README.md, entrotter/STATUS.md and entrotter/evidence first. Verify the actual workspace, create the six public MIT repositories in the existing entrotter organization from entrotter/repositories.json, and deploy only the OSS documentation/report site to https://entrotter.github.io/ through GitHub Pages with no custom domain. The preparation environment did not publish repositories or start a Codex session. Execute entrotter/scripts/verify.py, fix the unverified Anvil integration, implement and validate one useful real historical-state DeFi scenario, causal agent actions, complete traces and honest benchmark evidence. Continue inspect/implement/test/review/fix/document/commit cycles instead of stopping after scaffolding or a synthetic demo. Work on independent tasks when credentials or human input block one gate. Record exact blockers and resume checkpoints in entrotter/STATUS.md. Never fabricate historical results, demand, deployments or a guaranteed prize; never use live keys, broadcast transactions, expose private repositories, purchase services or submit the entry without explicit approval. Do not declare the goal complete until the documented engineering gates have actual evidence and remaining human-dependent deliverables are honestly identified.
+Resume the existing accepted Entrotter migration and improvement goal. Read
+AGENTS.md, CODEX_GOAL.md, MIGRATION_STATUS.md and relevant STATUS.md evidence.
+Use the single public MIT dorakingx/entrotter monorepo with engine/, sdk-python/,
+cli/, scenarios/ and website/. Preserve current candidates, original histories,
+unfinished work, evidence and media. Never restart from old main or the ZIP.
+
+The latest owner request selects the new Vercel static project at
+https://entrotter.vercel.app/. Keep the backend local and other sites unchanged.
+Formal coordinator transfer preserves its repository ID/Issues/PRs; component
+PR metadata must be preserved with provenance, never presented as automatic
+transfer or approval. Old Org deletion requires the full backup/restore,
+ownership/history/work, review/test/publication/dependency and final-delta audit.
+Never delete unrelated, private or unverified assets or bypass authentication.
+
+Implement, test, independently review, fix and integrate through required CI and
+independent main approval. Do not weaken guards, expose secrets or incur costs.
+The existing submission is conditionally authorized only after quality, owner
+facts, materials and the official open portal are verified. Confirm acceptance,
+avoid duplicates and preserve immutable versions. Continue valuable improvement
+until the verified official deadline; migration/CI/submission do not end the goal.
+Discord is excluded. Keep failures and exact resume steps, and respect owner stops.

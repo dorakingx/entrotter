@@ -1,0 +1,46 @@
+Cloning into '<guest-home>/.local/share/entrotter/engine'...
+HEAD is now at d5b3003 Cap complete worker image preparation with owned process watchdog
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 360B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context:
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 50.45MB 0.1s done
+#5 DONE 0.2s
+
+#4 [1/4] FROM cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+#4 CACHED
+
+#6 [2/4] COPY anvil /usr/local/bin/anvil
+#6 DONE 0.3s
+
+#7 [3/4] COPY entrotter_engine /app/entrotter_engine
+#7 DONE 0.0s
+
+#8 [4/4] WORKDIR /app
+#8 DONE 0.0s
+
+#9 exporting to image
+#9 exporting layers 0.1s done
+#9 writing image sha256:64a94ba205d604f03f0d1b4ddf5afd1c933010313a13553fd9afc58fc19c0a68 done
+#9 naming to docker.io/library/entrotter-worker:fba06f6dd633858f done
+#9 DONE 0.1s
+{"image_id": "sha256:64a94ba205d604f03f0d1b4ddf5afd1c933010313a13553fd9afc58fc19c0a68", "manifest": "<guest-home>/.local/share/entrotter/worker-image.json", "published": false}
+RuntimeMaxUSec=1h
+ControlGroup=/user.slice/user-501.slice/user@501.service/app.slice/entrotter-engine.service
+MemoryMax=268435456
+TasksMax=64
+ActiveState=active

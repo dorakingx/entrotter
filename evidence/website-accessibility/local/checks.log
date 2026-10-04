@@ -1,0 +1,83 @@
+
+> entrotter-oss-website@0.1.0 test:accessibility
+> node scripts/check_accessibility.mjs
+
+{
+  "status": "passed",
+  "browser": "153.0.8010.12",
+  "checks": [
+    {
+      "name": "Keyboard skip link moves focus into main and skips navigation",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard sample selection, native local-file chooser, live status and inert import",
+      "status": "passed"
+    },
+    {
+      "name": "1280px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px recovery-trap: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px depeg-stress: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "1280px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px recovery-trap: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px depeg-stress: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "390px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px liquidity-shock: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px recovery-trap: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px depeg-stress: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "320px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+      "status": "passed"
+    },
+    {
+      "name": "Tampered import clears data, reports an accessible error and recovers",
+      "status": "passed"
+    },
+    {
+      "name": "Forced colors, reduced motion and keyboard focus remain usable",
+      "status": "passed"
+    },
+    {
+      "name": "404 page at 320px: keyboard home link, no overflow and axe",
+      "status": "passed"
+    },
+    {
+      "name": "No JavaScript exceptions, uploads or unexpected third-party requests",
+      "status": "passed"
+    }
+  ],
+  "scans": 14
+}

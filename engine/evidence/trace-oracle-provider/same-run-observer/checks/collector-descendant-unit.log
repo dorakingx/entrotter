@@ -1,0 +1,6 @@
+test_collector_deadline_kills_descendant_retaining_stdout (test_trace_observer.CollectorTests.test_collector_deadline_kills_descendant_retaining_stdout) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.113s
+
+OK

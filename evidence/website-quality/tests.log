@@ -1,0 +1,33 @@
+
+> entrotter-oss-website@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ security policy retains explicitly reviewed findings (0.708084ms)
+✔ source drift, new/missing findings and absent rationale fail review (1.286083ms)
+✔ empty source scope fails review (0.092458ms)
+✔ parser and suppressed diagnostics cannot be accepted as a clean scan (0.1945ms)
+✔ production JS verifies Python artifact: liquidity-shock (3.553708ms)
+✔ production JS verifies Python artifact: recovery-trap (0.66175ms)
+✔ production JS verifies Python artifact: depeg-stress (0.557791ms)
+✔ tampered metric fails integrity validation (0.672459ms)
+✔ unknown schema is not accepted (0.158417ms)
+✔ canonical ASCII escaping includes supplementary Unicode (0.102208ms)
+✔ finite numerical display validation (0.179292ms)
+✔ JS re-canonicalization matches exported content hash (0.464083ms)
+✔ real archived-state artifact passes hash and receipt view validation (2.066625ms)
+✔ token units preserve integers beyond Number safe precision (0.164625ms)
+✔ missing source hash cannot appear as a historical report (0.16675ms)
+✔ mismatched token addresses cannot share a comparison row (0.164292ms)
+✔ malformed receipt state and oversized traces fail closed (0.202583ms)
+✔ display metrics reject coercible non-decimal strings (0.078291ms)
+✔ decimal metrics preserve supported signed/exponent values and reject overflow (0.088083ms)
+✔ hash verification rejects non-object or non-finite parsed JSON (0.115792ms)
+✔ local EVM reports accept null/absent source while forks require their pin (0.262958ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 55.013667

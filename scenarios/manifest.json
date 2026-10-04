@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "fixtures": [
+    "fixtures/liquidity-shock.json",
+    "fixtures/recovery-trap.json",
+    "fixtures/depeg-stress.json"
+  ],
+  "evm_local": [
+    "evm/local-branch-revert.json"
+  ],
+  "historical_templates": [
+    "evm/ethereum-state-fork.json"
+  ],
+  "historical_validation": "Uniswap scenario executed twice at block 19000000 with Foundry v1.8.3; evidence in entrotter/entrotter",
+  "historical_scenarios": [
+    "evm/ethereum-uniswap-slippage.json"
+  ]
+}

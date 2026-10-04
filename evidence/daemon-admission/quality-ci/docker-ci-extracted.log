@@ -1,0 +1,18 @@
+2026-09-19T20:25:49.0327404Z test_api_rejects_occupied_daemon_without_storing_report (test_admission.DaemonAdmissionTests.test_api_rejects_occupied_daemon_without_storing_report) ... ok
+2026-09-19T20:25:50.0281585Z test_cli_rejects_occupied_daemon_without_replacing_export (test_admission.DaemonAdmissionTests.test_cli_rejects_occupied_daemon_without_replacing_export) ... ok
+2026-09-19T20:25:52.9326275Z test_host_timeout_releases_owned_slot_for_next_run (test_admission.DaemonAdmissionTests.test_host_timeout_releases_owned_slot_for_next_run) ... ok
+2026-09-19T20:25:59.9247647Z test_two_processes_race_after_both_observe_empty_slot (test_admission.DaemonAdmissionTests.test_two_processes_race_after_both_observe_empty_slot) ... ok
+2026-09-19T20:26:00.7751983Z test_unstarted_container_keeps_slot_until_explicit_owned_removal (test_admission.DaemonAdmissionTests.test_unstarted_container_keeps_slot_until_explicit_owned_removal) ... ok
+2026-09-19T20:26:04.0594681Z test_cli_and_api_roundtrip (test_worker.IsolatedAPITests.test_cli_and_api_roundtrip) ... ok
+2026-09-19T20:26:06.4399857Z test_cpu_quota_throttles_parallel_work (test_worker.IsolatedWorkerTests.test_cpu_quota_throttles_parallel_work) ... ok
+2026-09-19T20:26:06.7048217Z test_kernel_controls_mounts_and_privileges (test_worker.IsolatedWorkerTests.test_kernel_controls_mounts_and_privileges) ... ok
+2026-09-19T20:26:06.9470630Z test_memory_limit_actually_oom_kills_overallocation (test_worker.IsolatedWorkerTests.test_memory_limit_actually_oom_kills_overallocation) ... ok
+2026-09-19T20:26:07.2000666Z test_pid_limit_actually_rejects_more_processes (test_worker.IsolatedWorkerTests.test_pid_limit_actually_rejects_more_processes) ... ok
+2026-09-19T20:26:09.0889750Z test_real_fixture_and_anvil_results_match_native (test_worker.IsolatedWorkerTests.test_real_fixture_and_anvil_results_match_native) ... ok
+2026-09-19T20:26:09.7993503Z test_tmpfs_space_and_noexec_are_enforced (test_worker.IsolatedWorkerTests.test_tmpfs_space_and_noexec_are_enforced) ... ok
+2026-09-19T20:29:10.6514033Z Independent idle deadline observed after 180.852 seconds
+2026-09-19T20:29:11.2438263Z test_detached_idle_worker_expires_without_host_cooperation (test_worker.WorkerLifetimeTests.test_detached_idle_worker_expires_without_host_cooperation) ... ok
+2026-09-19T20:29:12.4391703Z test_lost_client_is_bounded_by_independent_worker_timer (test_worker.WorkerLifetimeTests.test_lost_client_is_bounded_by_independent_worker_timer) ... ok
+2026-09-19T20:29:13.6580727Z test_sigterm_ends_idle_worker_and_removes_container (test_worker.WorkerLifetimeTests.test_sigterm_ends_idle_worker_and_removes_container) ... ok
+2026-09-19T20:29:13.6584927Z Ran 15 tests in 206.006s
+2026-09-19T20:29:13.6585775Z OK

@@ -1,0 +1,630 @@
+{
+  "status": "passed_no_actionable_current_CI_findings",
+  "reviewer": "review_cli_agent",
+  "head": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+  "findings": [],
+  "current_original_runs": {
+    "units": {
+      "id": 37114587175,
+      "attempt": 1,
+      "url": "https://github.com/entrotter/sdk-python/actions/runs/37114587175"
+    },
+    "quality": {
+      "id": 37114587186,
+      "attempt": 1,
+      "url": "https://github.com/entrotter/sdk-python/actions/runs/37114587186"
+    },
+    "docs": {
+      "id": 37114587231,
+      "attempt": 1,
+      "url": "https://github.com/entrotter/sdk-python/actions/runs/37114587231"
+    }
+  },
+  "all5_mandatory_checks_success_first_attempt": true,
+  "published_changed_blobs": {
+    ".github/workflows/quality.yml": {
+      "sha256": "cde8444f1132acb2f53697889dc816430a2a86c33365c0010a582949da77df7d",
+      "git_blob_id": "10102edda0f2b303dee3e1d180b158e9dcc45a61"
+    },
+    "README.md": {
+      "sha256": "bb4e1b20590b904a0c6b83f27e716d27acf2c5de38221422c38b55945b904056",
+      "git_blob_id": "b57bef66ca3da2c535abece0220c75b9ab9df4a6"
+    },
+    "SECURITY.md": {
+      "sha256": "bba69047e7eb20b960ebb6974edbb70a5d4cb8a7e141ef43444d06d69966a852",
+      "git_blob_id": "a276158861b2fadc94b6f90bb26697c6f4dc21ca"
+    },
+    "STATUS.md": {
+      "sha256": "b6ee3363080eebde8f253374fa5e339c6c8c9eed39f79404a968fe098c21f4ac",
+      "git_blob_id": "a13efcec020a2bce11cee19a87f2c3fa640092fc"
+    },
+    "evidence/position-reader/README.md": {
+      "sha256": "dc1272ee9f99abb071c5925564e27ff0e3947179e3d303d83dc76577e1cf6610",
+      "git_blob_id": "837b6d83cf769a4d7eb5122976009af838a55e91"
+    },
+    "evidence/position-reader/bandit.json": {
+      "sha256": "e8a4233f0519e925e5869f82702a3d4fd96a83461d5f08186b1bfded5c66f197",
+      "git_blob_id": "a6ff05b3e95210467e36f72e08cdcb7ff11a925e"
+    },
+    "evidence/position-reader/security-scope.json": {
+      "sha256": "a2f4f5720d8b2e56af4799563462e689b176240fdd76e5717bc7016e09efb8a2",
+      "git_blob_id": "0bb242d6898cd12831efb429fb3aae480896d64c"
+    },
+    "evidence/position-reader/summary.json": {
+      "sha256": "d896a50d4e426d6719bc6d33fd5efb7d368a60174e0b49713e02a2d979f43178",
+      "git_blob_id": "e7e4b6c2d6e7226efa6b3009eb67a80396ee2353"
+    },
+    "evidence/position-reader/units.log": {
+      "sha256": "ac6b30c088d0808dd2969f3971ee3e8b770e760966f63130e54930ecefd8393c",
+      "git_blob_id": "7252be3e1e061b92848a66e2be8d63701178c80c"
+    },
+    "evidence/position-reader/wheel-isolation.json": {
+      "sha256": "14ff2950e7d3cbbaccf84057e76b0e8693ce40780ad044bab9cbba36b5a3aef7",
+      "git_blob_id": "624b1f903f589ef90b05ce524e8cfcd88be48756"
+    },
+    "src/entrotter_sdk/__init__.py": {
+      "sha256": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+      "git_blob_id": "e62281828d758522574f0e9423ea8f6c629ddcca"
+    },
+    "src/entrotter_sdk/position.py": {
+      "sha256": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2",
+      "git_blob_id": "13e29e0deb58916583c171beff6fabad9aa767b4"
+    },
+    "tests/data/aave-account-position13.json": {
+      "sha256": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+      "git_blob_id": "4a05809de2793c8673f073155e371dc4431ab16a"
+    },
+    "tests/test_position.py": {
+      "sha256": "9b4dc08c3cb33672e6c01cfb2457f6c34a4bdaf1b9314693d232686262824809",
+      "git_blob_id": "e6d73f896c72c75b4da62bed03a807147e221a15"
+    }
+  },
+  "source_sha256": {
+    "src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "src/entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+    "src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2",
+    "scripts/check_dependency_manifest.py": "d9c90b75f8c26ef0aa3723ab07580f05c7391a78ef12fcf20b99e80ef198deef",
+    "scripts/check_security.py": "58de6896402c89d235a22a9e9bb2895ece68f20e7b9dd91966ea15fefad24c07"
+  },
+  "Bandit": {
+    "sources": 7,
+    "findings_errors_skips_nosec": 0
+  },
+  "Python_lock_identities": [
+    {
+      "name": "bandit",
+      "version": "1.9.4",
+      "count": 1
+    },
+    {
+      "name": "boolean-py",
+      "version": "5.0",
+      "count": 1
+    },
+    {
+      "name": "build",
+      "version": "1.6.1",
+      "count": 1
+    },
+    {
+      "name": "cachecontrol",
+      "version": "0.14.4",
+      "count": 1
+    },
+    {
+      "name": "certifi",
+      "version": "2026.7.22",
+      "count": 1
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.1",
+      "count": 1
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "count": 1
+    },
+    {
+      "name": "cyclonedx-python-lib",
+      "version": "11.12.0",
+      "count": 1
+    },
+    {
+      "name": "defusedxml",
+      "version": "0.7.1",
+      "count": 1
+    },
+    {
+      "name": "filelock",
+      "version": "4.0.1",
+      "count": 1
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "count": 1
+    },
+    {
+      "name": "license-expression",
+      "version": "30.4.4",
+      "count": 1
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "count": 1
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "count": 1
+    },
+    {
+      "name": "msgpack",
+      "version": "1.2.2",
+      "count": 1
+    },
+    {
+      "name": "mypy",
+      "version": "1.18.2",
+      "count": 1
+    },
+    {
+      "name": "mypy-extensions",
+      "version": "1.1.0",
+      "count": 1
+    },
+    {
+      "name": "packageurl-python",
+      "version": "0.17.6",
+      "count": 1
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "count": 1
+    },
+    {
+      "name": "pathspec",
+      "version": "1.1.1",
+      "count": 1
+    },
+    {
+      "name": "pip",
+      "version": "26.2.1",
+      "count": 1
+    },
+    {
+      "name": "pip-api",
+      "version": "0.0.35",
+      "count": 1
+    },
+    {
+      "name": "pip-audit",
+      "version": "2.10.1",
+      "count": 1
+    },
+    {
+      "name": "pip-requirements-parser",
+      "version": "32.0.1",
+      "count": 1
+    },
+    {
+      "name": "pip-tools",
+      "version": "7.6.1",
+      "count": 1
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.11.11",
+      "count": 1
+    },
+    {
+      "name": "py-serializable",
+      "version": "2.1.0",
+      "count": 1
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0",
+      "count": 1
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.2",
+      "count": 1
+    },
+    {
+      "name": "pyproject-hooks",
+      "version": "1.3.3",
+      "count": 1
+    },
+    {
+      "name": "pyyaml",
+      "version": "6.0.3",
+      "count": 1
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "count": 1
+    },
+    {
+      "name": "rich",
+      "version": "15.0.0",
+      "count": 1
+    },
+    {
+      "name": "ruff",
+      "version": "0.15.16",
+      "count": 1
+    },
+    {
+      "name": "setuptools",
+      "version": "84.0.0",
+      "count": 1
+    },
+    {
+      "name": "sortedcontainers",
+      "version": "2.4.0",
+      "count": 1
+    },
+    {
+      "name": "stevedore",
+      "version": "5.9.1",
+      "count": 1
+    },
+    {
+      "name": "tomli",
+      "version": "2.4.1",
+      "count": 1
+    },
+    {
+      "name": "tomli-w",
+      "version": "1.2.0",
+      "count": 1
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "count": 1
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "count": 1
+    },
+    {
+      "name": "wheel",
+      "version": "0.48.0",
+      "count": 1
+    }
+  ],
+  "reported_advisories": 0,
+  "runtime_dependencies": [],
+  "unit_results": [
+    {
+      "python": "3.11",
+      "tests": 55,
+      "seconds": 3.579,
+      "skips": 0
+    },
+    {
+      "python": "3.12",
+      "tests": 55,
+      "seconds": 3.835,
+      "skips": 0
+    },
+    {
+      "python": "3.13",
+      "tests": 55,
+      "seconds": 3.703,
+      "skips": 0
+    }
+  ],
+  "wheel": {
+    "sha256": "2fb0620bcd2d821ab22e9c7636ece62f0ab473e3d2c2e03a5a123c85b45640c2",
+    "modules": 5,
+    "full_RECORD_entries": 11,
+    "all_module_bytes_README_and_typed_marker_exact": true,
+    "installed_old_and_new_readers": "fresh isolated successful actual -I smoke commands/job; filesystem not exported"
+  },
+  "docs": {
+    "files": 9,
+    "links": 35,
+    "unique": 33,
+    "merge": "81752ecab6e49d6ce4f01df1d8516799ff5a8552",
+    "tree": "a14ef3296827d01102ce32d6894e925725dde76d",
+    "entire_tree_equals_head": true,
+    "errors_timeouts_exclusions": 0
+  },
+  "artifact_metadata": {
+    "quality": [
+      {
+        "id": 11270933420,
+        "node_id": "MDg6QXJ0aWZhY3QxMTI3MDkzMzQyMA==",
+        "name": "sdk-python-quality-reports",
+        "size_in_bytes": 25756,
+        "url": "https://api.github.com/repos/entrotter/sdk-python/actions/artifacts/11270933420",
+        "archive_download_url": "https://api.github.com/repos/entrotter/sdk-python/actions/artifacts/11270933420/zip",
+        "expired": false,
+        "digest": "sha256:b8345f9217495a244e1da3af78cc96a094e0ac82f115de03fe3518c92910a59b",
+        "created_at": "2026-10-03T09:54:24Z",
+        "updated_at": "2026-10-03T09:54:24Z",
+        "expires_at": "2027-01-01T09:53:55Z",
+        "workflow_run": {
+          "id": 37114587186,
+          "repository_id": 1377314778,
+          "head_repository_id": 1377314778,
+          "head_branch": "feat/trace-report-reader",
+          "head_sha": "ba4af512784119f23b6dea63fd24c7f5d1fdde44"
+        }
+      }
+    ],
+    "docs": [
+      {
+        "id": 11271217872,
+        "node_id": "MDg6QXJ0aWZhY3QxMTI3MTIxNzg3Mg==",
+        "name": "docs-links",
+        "size_in_bytes": 2164,
+        "url": "https://api.github.com/repos/entrotter/sdk-python/actions/artifacts/11271217872",
+        "archive_download_url": "https://api.github.com/repos/entrotter/sdk-python/actions/artifacts/11271217872/zip",
+        "expired": false,
+        "digest": "sha256:aad06d878ae46304fa111235ec59aded342a1d8c401267004bf246b75442c5a0",
+        "created_at": "2026-10-03T09:54:06Z",
+        "updated_at": "2026-10-03T09:54:06Z",
+        "expires_at": "2027-01-01T09:53:55Z",
+        "workflow_run": {
+          "id": 37114587231,
+          "repository_id": 1377314778,
+          "head_repository_id": 1377314778,
+          "head_branch": "feat/trace-report-reader",
+          "head_sha": "ba4af512784119f23b6dea63fd24c7f5d1fdde44"
+        }
+      }
+    ]
+  },
+  "actual13_sample": {
+    "sha256": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "baseline_original_receipts": 13,
+    "candidate_executed": 12,
+    "skip": [
+      12
+    ],
+    "manual_six_integer_differences": {
+      "available_borrows_base": 81628966124,
+      "health_factor_wad": 3852169807877337,
+      "liquidation_threshold_bps": 0,
+      "ltv_bps": 0,
+      "total_collateral_base": 126525897974,
+      "total_debt_base": 20224381745
+    },
+    "position_artifact_id": "5c67c4bcf4fc4de614153fc86c0c3814c188b4551212ce55ec9f533fa3e2ad4f",
+    "price_artifact_id": "678309d700aa919ac87501a60278053777c062f1b597922ca6da910b125086f5",
+    "trace_artifact_id": "52044d0f2292fad47d150e0f1cfc46d3346667705d3f43ef25641bc35f5a9737"
+  },
+  "prior_independent_source_API_review": "ef9570fd83d8fb652669dae31fb9d608bed8b797be312bb2bc4363acff509d58",
+  "assertions": [
+    "exact current head",
+    "independent local final source/wheel/API proof ef957",
+    "complete remote blob map equals current published Git tree",
+    ".github/workflows/quality.yml exact current Git bytes",
+    ".github/workflows/quality.yml remote/index/prior-reviewed identity",
+    "README.md exact current Git bytes",
+    "README.md remote/index/prior-reviewed identity",
+    "SECURITY.md exact current Git bytes",
+    "SECURITY.md remote/index/prior-reviewed identity",
+    "STATUS.md exact current Git bytes",
+    "STATUS.md remote/index/prior-reviewed identity",
+    "evidence/position-reader/README.md exact current Git bytes",
+    "evidence/position-reader/README.md remote/index/prior-reviewed identity",
+    "evidence/position-reader/bandit.json exact current Git bytes",
+    "evidence/position-reader/bandit.json remote/index/prior-reviewed identity",
+    "evidence/position-reader/security-scope.json exact current Git bytes",
+    "evidence/position-reader/security-scope.json remote/index/prior-reviewed identity",
+    "evidence/position-reader/summary.json exact current Git bytes",
+    "evidence/position-reader/summary.json remote/index/prior-reviewed identity",
+    "evidence/position-reader/units.log exact current Git bytes",
+    "evidence/position-reader/units.log remote/index/prior-reviewed identity",
+    "evidence/position-reader/wheel-isolation.json exact current Git bytes",
+    "evidence/position-reader/wheel-isolation.json remote/index/prior-reviewed identity",
+    "src/entrotter_sdk/__init__.py exact current Git bytes",
+    "src/entrotter_sdk/__init__.py remote/index/prior-reviewed identity",
+    "src/entrotter_sdk/position.py exact current Git bytes",
+    "src/entrotter_sdk/position.py remote/index/prior-reviewed identity",
+    "tests/data/aave-account-position13.json exact current Git bytes",
+    "tests/data/aave-account-position13.json remote/index/prior-reviewed identity",
+    "tests/test_position.py exact current Git bytes",
+    "tests/test_position.py remote/index/prior-reviewed identity",
+    "exact14 published material changes",
+    "author publication identifies exact head",
+    "units original first-attempt full run",
+    "unit (3.12) full steps terminal success",
+    "unit (3.13) full steps terminal success",
+    "unit (3.11) full steps terminal success",
+    "units all original artifact count",
+    "quality original first-attempt full run",
+    "quality full steps terminal success",
+    "quality all original artifact count",
+    "quality artifact exact head/run",
+    "docs original first-attempt full run",
+    "docs-links full steps terminal success",
+    "docs all original artifact count",
+    "docs artifact exact head/run",
+    "all5 mandatory jobs",
+    "PR7 exact open unmerged zero human reviews",
+    "all5 exact current mandatory contexts success",
+    "each check binds exact original job URL",
+    "main strict/admin/one human required contexts intact",
+    "src/entrotter_sdk/trace.py exact current Git bytes",
+    "src/entrotter_sdk/client.py exact current Git bytes",
+    "src/entrotter_sdk/observed.py exact current Git bytes",
+    "src/entrotter_sdk/__init__.py exact current Git bytes",
+    "src/entrotter_sdk/position.py exact current Git bytes",
+    "scripts/check_dependency_manifest.py exact current Git bytes",
+    "scripts/check_security.py exact current Git bytes",
+    "all7 production/script current full-source hashes",
+    "full7 Bandit0 no suppressions/errors/skips",
+    "requirements-quality.txt exact current Git bytes",
+    "42 full exact raw advisory identities/zero reported findings",
+    "empty runtime exact build/optional scope",
+    "tests/test_position.py exact current Git bytes",
+    "ten reviewed added position groups",
+    "Python3.11 full55/0skip raw terminal result",
+    "Python3.11 complete method lines including10position groups",
+    "Python3.12 full55/0skip raw terminal result",
+    "Python3.12 complete method lines including10position groups",
+    "Python3.13 full55/0skip raw terminal result",
+    "Python3.13 complete method lines including10position groups",
+    "full current lint/format/types/security logged",
+    "actual5-module current CI wheel",
+    "src/entrotter_sdk/__init__.py exact current Git bytes",
+    "entrotter_sdk/__init__.py full wheel/source bytes",
+    "src/entrotter_sdk/client.py exact current Git bytes",
+    "entrotter_sdk/client.py full wheel/source bytes",
+    "src/entrotter_sdk/observed.py exact current Git bytes",
+    "entrotter_sdk/observed.py full wheel/source bytes",
+    "src/entrotter_sdk/position.py exact current Git bytes",
+    "entrotter_sdk/position.py full wheel/source bytes",
+    "src/entrotter_sdk/trace.py exact current Git bytes",
+    "entrotter_sdk/trace.py full wheel/source bytes",
+    "src/entrotter_sdk/py.typed exact current Git bytes",
+    "typed marker exact",
+    "README.md exact current Git bytes",
+    "full UTF8 README metadata/no runtime dependencies",
+    "all11 RECORD entries cover full ZIP",
+    "entrotter_sdk/__init__.py exact ZIP RECORD hash/size",
+    "entrotter_sdk/client.py exact ZIP RECORD hash/size",
+    "entrotter_sdk/observed.py exact ZIP RECORD hash/size",
+    "entrotter_sdk/position.py exact ZIP RECORD hash/size",
+    "entrotter_sdk/py.typed exact ZIP RECORD hash/size",
+    "entrotter_sdk/trace.py exact ZIP RECORD hash/size",
+    "entrotter_sdk-0.1.0.dist-info/licenses/LICENSE exact ZIP RECORD hash/size",
+    "entrotter_sdk-0.1.0.dist-info/METADATA exact ZIP RECORD hash/size",
+    "entrotter_sdk-0.1.0.dist-info/WHEEL exact ZIP RECORD hash/size",
+    "entrotter_sdk-0.1.0.dist-info/top_level.txt exact ZIP RECORD hash/size",
+    "RECORD self field empty",
+    "successful fresh isolated install/module ownership/typed marker/default Client smoke",
+    "old installed price/trace smokes preserved",
+    "new installed strict position/raw integer/complete/13receipts smoke executed",
+    "tests/data/observed-price32.json exact current Git bytes",
+    "tests/data/observed-price32.json declared SHA",
+    "tests/data/observed-controls.json exact current Git bytes",
+    "tests/data/observed-controls.json declared SHA",
+    "tests/data/aave-account-position13.json exact current Git bytes",
+    "tests/data/aave-account-position13.json declared SHA",
+    "tests/data/aave-account-position13.json exact current Git bytes",
+    "actual13 nested content hash 5c67c4bcf4fc4de614153fc86c0c3814c188b4551212ce55ec9f533fa3e2ad4f",
+    "actual13 nested content hash 678309d700aa919ac87501a60278053777c062f1b597922ca6da910b125086f5",
+    "actual13 nested content hash 52044d0f2292fad47d150e0f1cfc46d3346667705d3f43ef25641bc35f5a9737",
+    "all13 full original baseline receipts preserved",
+    "actual12 unchanged receipts/only omission12",
+    "complete raw account/head/phase/error binding",
+    "complete raw account/head/phase/error binding",
+    "complete raw account/head/phase/error binding",
+    "complete raw account/head/phase/error binding",
+    "manual six uint256/classification difference binding",
+    ".github/workflows/ci.yml exact current Git bytes",
+    ".github/workflows/docs-links.yml exact current Git bytes",
+    ".github/workflows/quality.yml exact current Git bytes",
+    "pyproject.toml exact current Git bytes",
+    "whole synthetic merge tree equals head/all parents exact",
+    "full original logs checkout same synthetic merge",
+    "all9docs35links/no errors/exclusions",
+    "pinned Linux checker raw identity",
+    "exhaustive tracked Markdown coverage",
+    ".github/PULL_REQUEST_TEMPLATE.md exact current Git bytes",
+    ".github/PULL_REQUEST_TEMPLATE.md declared SHA",
+    "AGENTS.md exact current Git bytes",
+    "AGENTS.md declared SHA",
+    "CONTRIBUTING.md exact current Git bytes",
+    "CONTRIBUTING.md declared SHA",
+    "README.md exact current Git bytes",
+    "README.md declared SHA",
+    "SECURITY.md exact current Git bytes",
+    "SECURITY.md declared SHA",
+    "STATUS.md exact current Git bytes",
+    "STATUS.md declared SHA",
+    "evidence/observed-reader/README.md exact current Git bytes",
+    "evidence/observed-reader/README.md declared SHA",
+    "evidence/position-reader/README.md exact current Git bytes",
+    "evidence/position-reader/README.md declared SHA",
+    "evidence/trace-reader/README.md exact current Git bytes",
+    "evidence/trace-reader/README.md declared SHA",
+    "complete raw35 link success records"
+  ],
+  "input_sha256": {
+    ".quality/position-reader/independent-staged.json": "ef9570fd83d8fb652669dae31fb9d608bed8b797be312bb2bc4363acff509d58",
+    ".quality/position-reader/ci-ba4/remote-tree.json": "9638b9631af962cb997c4350eab23ac5ca764d582f839eb7b1683408cdf2576a",
+    ".github/workflows/quality.yml": "cde8444f1132acb2f53697889dc816430a2a86c33365c0010a582949da77df7d",
+    "README.md": "bb4e1b20590b904a0c6b83f27e716d27acf2c5de38221422c38b55945b904056",
+    "SECURITY.md": "bba69047e7eb20b960ebb6974edbb70a5d4cb8a7e141ef43444d06d69966a852",
+    "STATUS.md": "b6ee3363080eebde8f253374fa5e339c6c8c9eed39f79404a968fe098c21f4ac",
+    "evidence/position-reader/README.md": "dc1272ee9f99abb071c5925564e27ff0e3947179e3d303d83dc76577e1cf6610",
+    "evidence/position-reader/bandit.json": "e8a4233f0519e925e5869f82702a3d4fd96a83461d5f08186b1bfded5c66f197",
+    "evidence/position-reader/security-scope.json": "a2f4f5720d8b2e56af4799563462e689b176240fdd76e5717bc7016e09efb8a2",
+    "evidence/position-reader/summary.json": "d896a50d4e426d6719bc6d33fd5efb7d368a60174e0b49713e02a2d979f43178",
+    "evidence/position-reader/units.log": "ac6b30c088d0808dd2969f3971ee3e8b770e760966f63130e54930ecefd8393c",
+    "evidence/position-reader/wheel-isolation.json": "14ff2950e7d3cbbaccf84057e76b0e8693ce40780ad044bab9cbba36b5a3aef7",
+    "src/entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+    "src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2",
+    "tests/data/aave-account-position13.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "tests/test_position.py": "9b4dc08c3cb33672e6c01cfb2457f6c34a4bdaf1b9314693d232686262824809",
+    ".quality/position-reader/publication.json": "f84b69c6bc33bdc77725d703e2eb473bdfc2aa190eac409e450f07987e437c0e",
+    ".quality/position-reader/ci-ba4/units-run.json": "042c331e36f0a6440d8b87bda915b1e9afad5fe519b4b1ca5a5f55a2c5d3e76d",
+    ".quality/position-reader/ci-ba4/units.log": "7afc6dadf3fdda8d1bb918f857446ef182eee74d36e3c42cd3272d495f79a440",
+    ".quality/position-reader/ci-ba4/units-artifacts.json": "244563f989470892c537c9a4622920af0d228ee4528f7d00c64a06d6cd95856c",
+    ".quality/position-reader/ci-ba4/quality-run.json": "0aa4cd5cdabd8dfcb1cc0ffe94e5873db0d0471415ea07523749c288da576032",
+    ".quality/position-reader/ci-ba4/quality.log": "3882170ea6e7f06756ffb0151edbc4351a94a558cad918410b4e2456c8dc4a58",
+    ".quality/position-reader/ci-ba4/quality-artifacts.json": "11dea38053ce38e5351da2e81b4429fcba393bb9da5a182b6b68eea8673d57a1",
+    ".quality/position-reader/ci-ba4/docs-run.json": "836608223383df7c05781a13bff30e2ec663e9960adb2996ea32bfb3497a71e3",
+    ".quality/position-reader/ci-ba4/docs.log": "d4b12326d7e2a15bb3fdf9725335dbff7cf3d996a1f4aa2cd04307e3bc177bfb",
+    ".quality/position-reader/ci-ba4/docs-artifacts.json": "b70b686a9390f8887610d85c666134c44f06ab71fb7314af93e78b5a9f288c33",
+    ".quality/position-reader/ci-ba4/checks.json": "5b6a28b3748bc3378a1585e64656e0b94121484a325293e7b9682b63891ec47c",
+    ".quality/position-reader/ci-ba4/pull.json": "1423dc75afee05f296257cdb4e51b1c6f66409c15c54483787b664b7f7fbdce8",
+    ".quality/position-reader/ci-ba4/main-protection.json": "078f23ef8b342fe54f1d066b52c8df3d37f944caa33aed3755f9d309a5f257be",
+    ".quality/position-reader/ci-ba4/quality/sdk-python-quality-reports/security-scope.json": "1031f56f4d451a3e13e9bfac735dd3d09e538b7cf3e22565c4687dce20780173",
+    "src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "scripts/check_dependency_manifest.py": "d9c90b75f8c26ef0aa3723ab07580f05c7391a78ef12fcf20b99e80ef198deef",
+    "scripts/check_security.py": "58de6896402c89d235a22a9e9bb2895ece68f20e7b9dd91966ea15fefad24c07",
+    ".quality/position-reader/ci-ba4/quality/sdk-python-quality-reports/bandit.json": "85684eb1de20eca51ee23b5f9ca190ec00b6398eda2fa1b8f216a8ca626ca280",
+    "requirements-quality.txt": "845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722",
+    ".quality/position-reader/ci-ba4/quality/sdk-python-quality-reports/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    ".quality/position-reader/ci-ba4/quality/sdk-python-quality-reports/dependency-scope.json": "523c22b99543db0f4d3f92a40e38ee0dd88d784eb57c88e176f2155edc5fbc56",
+    ".quality/position-reader/ci-ba4/quality/sdk-python-quality-reports/wheels/entrotter_sdk-0.1.0-py3-none-any.whl": "2fb0620bcd2d821ab22e9c7636ece62f0ab473e3d2c2e03a5a123c85b45640c2",
+    "src/entrotter_sdk/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/data/observed-price32.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "tests/data/observed-controls.json": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
+    ".github/workflows/ci.yml": "a099ba2166c54a5df3d397c16699e7f955f89798b1f0b637c130604b57703f86",
+    ".github/workflows/docs-links.yml": "72842da81db99136b6bd471a063ede24f224966ebf071c0896a0f8ec12865ebc",
+    "pyproject.toml": "ca9e739f2625cf5169387473257e8b3aa68806ddf2bd2149280d54bd6f63ca02",
+    ".quality/position-reader/ci-ba4/docs/docs-links/report.json": "2d39bc59247b11303d56b0be71f80528e75345f6a8121e0deb61b2738014d8c1",
+    ".quality/position-reader/ci-ba4/merge.json": "6e9edb360cf12b57b80acc3ec0cc0779462c64e130a59f631ad917e6baf04418",
+    ".github/PULL_REQUEST_TEMPLATE.md": "f8840c1975bc5aabfdedbd13d69de905fc19b7c9ad4c9b965f48e2b4c20b405d",
+    "AGENTS.md": "d1d8e6c41d67cbcd2ee82f7dcbb50568189acfcf92508b60731eed8de480e303",
+    "CONTRIBUTING.md": "4359449b1f9afb165261206df8cca58fad102c8f064e242b2b5589bcd820df15",
+    "evidence/observed-reader/README.md": "24c4e234da44430ad177948a1c89c4725156f911002d15ac4e1b641c77457595",
+    "evidence/trace-reader/README.md": "26901e1847856906461dacca05f6bd0fd93c9a8ac3722019869d3a90b91f4db6",
+    ".quality/position-reader/ci-ba4/download.py": "bd00d4cfee2ab1be00364232ce3056200bea819499182f48b29c59b5c731fcd6",
+    ".quality/position-reader/ci-ba4/fetch.log": "b792c65c70afa05ad13d11ddd73bd64965c3377fd5eb489bb42e375b0e819471",
+    ".quality/position-reader/ci-ba4/independent-ci-review-initial.py": "68415b26543fded9fb73679bd8efc9cc203f630d0cb00e39519060c0585a4685",
+    ".quality/position-reader/ci-ba4/independent-ci-review.py": "69e5d3ddb5d273968885106b8da572c8628b00345cd4a63a987aed6813a9e1c5"
+  },
+  "script_sha256": "69e5d3ddb5d273968885106b8da572c8628b00345cd4a63a987aed6813a9e1c5",
+  "reviewer_corrections": [
+    "Initial verifier assumed the tree endpoint returned a tree SHA in its top-level sha when queried by commit. This retained response echoes the commit SHA; final verification compares its exhaustive untruncated blob map to git ls-tree, and separately binds the REST synthetic merge commit tree to HEAD tree. Initial script/log retained; no product failure or rerun."
+  ],
+  "limits": [
+    "Original current GitHub metadata/logs/artifacts fetched once; independent offline full byte/ABI/Git/ZIP inspection only. No tests/scanners/codecs/container/archive/model/CI reruns or source changes.",
+    "Installed no-engine compatibility is supported by fresh empty venv with SDK-only no-index/no-deps installation, closed imports and successful actual isolated old/new smoke commands. Installed filesystem and no-engine find_spec assertion are not separately exported. Wheel bytes/README/typed marker/all RECORD independently inspected.",
+    "All42 detected raw advisory identities and exact lock entries checked at current job time; audit service correctness and tool/database crypto were not independently re-executed. Extracted files fully hash-bound; original artifact ZIP archive bytes not separately retained, GitHub digest metadata preserved.",
+    "Recorded original13 Docker wrapper and original32/six synthetic price controls are reused inputs. SDK CI performs no new replay/provider/EVM, signed consumer action, financial benefit, sole-price causal or full-block authenticity proof.",
+    "PR7 remains OPEN/unmerged with zero human reviews; strict/admin/one-human protected-main approval preserved. Software review does not satisfy human approval or pending CLI/viewer/coordinator/Pages adoption."
+  ]
+}

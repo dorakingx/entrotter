@@ -1,0 +1,280 @@
+{
+  "schema_version": "0.1.0",
+  "checked_at": "2026-09-19T22:08:52.816266+00:00",
+  "status": "verified_local_and_linux_ci; independent_review_and_merge_pending",
+  "issue": "https://github.com/entrotter/entrotter/issues/30",
+  "engine_pr": "https://github.com/entrotter/engine/pull/20",
+  "cli_pr": "https://github.com/entrotter/cli/pull/9",
+  "commits": {
+    "engine": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+    "scenarios": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+    "entrotter.github.io": "ab121348b0ffbec5650f9eadf0a0b11f639d9780"
+  },
+  "shared_module_sha256": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+  "limits": {
+    "logical_bytes": 134217728,
+    "tracked_files_including_pending": 128,
+    "single_report_bytes": 8388608,
+    "bookkeeping_json_bytes": 262144
+  },
+  "tests": {
+    "engine_native_unit": 164,
+    "cli": 30,
+    "real_docker": 16,
+    "new_export_tests_per_package": 15,
+    "overlap": "Do not add to frozen workspace counts"
+  },
+  "quality": {
+    "engine": {
+      "status": "passed",
+      "run": 35471835371,
+      "scanned_production_files": 20,
+      "source_hashes_match": true,
+      "bandit_findings": 24,
+      "all_findings_equal_local": true,
+      "audited_packages": 42,
+      "known_findings": 0,
+      "wheel_python_files": 15,
+      "wheel_source_equal": true,
+      "shared_helper_equal": true,
+      "wheel_sha256": "5869fe8f8d220393f18276d28858535eb6f42d73e4ec94f92e1bcf2bc8353380",
+      "license": "MIT",
+      "runtime_dependencies": []
+    },
+    "cli": {
+      "status": "passed",
+      "run": 35471836965,
+      "scanned_production_files": 6,
+      "source_hashes_match": true,
+      "bandit_findings": 0,
+      "all_findings_equal_local": true,
+      "audited_packages": 42,
+      "known_findings": 0,
+      "wheel_python_files": 4,
+      "wheel_source_equal": true,
+      "shared_helper_equal": true,
+      "wheel_sha256": "5a9b2078407d1dae32bf6f8d6a9ef04eeb9e8ba6d1656ce500e2690b4846c1d4",
+      "license": "MIT",
+      "runtime_dependencies": [
+        "entrotter-sdk==0.1.0"
+      ]
+    }
+  },
+  "audit_summaries": {
+    "image-local": {
+      "status": "passed",
+      "image_id": "sha256:30d7ca23cd0d7886303a06fa00128e88b8f37c5c84b62d8a463beea7d1cfaaf9",
+      "source_digest": "38c3fa5949250c90214d3daf82c386bd7c73082bbeacaf4478e0d9f0a6592d93",
+      "vulnerability_count": 0,
+      "database_updated_at": "2026-09-19T07:03:12.311489574Z",
+      "auditor_sha256": "e84d1c8d37c33a176706b6cad3fe32c5f3b1f8faf96422f694cc088763ea8261"
+    },
+    "native-local": {
+      "status": "passed",
+      "image_id": "sha256:30d7ca23cd0d7886303a06fa00128e88b8f37c5c84b62d8a463beea7d1cfaaf9",
+      "source_digest": "38c3fa5949250c90214d3daf82c386bd7c73082bbeacaf4478e0d9f0a6592d93",
+      "vulnerability_count": 0,
+      "database_updated_at": "2026-09-19T07:03:12.311489574Z",
+      "auditor_sha256": "f32a97e5c0b7fd3cd611d31f83dc98c5150b0ec6249669ac2ad17d8ca5f4c29d"
+    },
+    "image-ci": {
+      "status": "passed",
+      "image_id": "sha256:24d654bc31649f80b7730c7780aa45863836356db2ec9a87f74a394969e669d5",
+      "source_digest": "38c3fa5949250c90214d3daf82c386bd7c73082bbeacaf4478e0d9f0a6592d93",
+      "vulnerability_count": 0,
+      "database_updated_at": "2026-09-19T07:03:12.311489574Z",
+      "auditor_sha256": "e84d1c8d37c33a176706b6cad3fe32c5f3b1f8faf96422f694cc088763ea8261"
+    },
+    "native-ci": {
+      "status": "passed",
+      "image_id": "sha256:24d654bc31649f80b7730c7780aa45863836356db2ec9a87f74a394969e669d5",
+      "source_digest": "38c3fa5949250c90214d3daf82c386bd7c73082bbeacaf4478e0d9f0a6592d93",
+      "vulnerability_count": 0,
+      "database_updated_at": "2026-09-19T07:03:12.311489574Z",
+      "auditor_sha256": "f32a97e5c0b7fd3cd611d31f83dc98c5150b0ec6249669ac2ad17d8ca5f4c29d"
+    }
+  },
+  "contract": {
+    "status": "passed",
+    "tested_commits": {
+      "engine": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+      "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
+    },
+    "checker_sha256": "d1f68efa081f40ad4754b9918fd61b022ca4851189b9ba48cdb06c36cd0f14ba",
+    "shared_module_sha256": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "byte_identical_engine_and_cli_protocol": true,
+    "artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+    "actual_cli_cross_directory_limit": 128,
+    "both_inspection_commands_agree": true,
+    "identical_full_budget_export_succeeds": true,
+    "deletion_then_other_cli_recovery": true,
+    "prior_untracked_destination_preserved_on_rejection": true,
+    "mixed_package_process_race": "exactly one six-byte export admitted under ten-byte test budget",
+    "wall_seconds": 0.6865569590008818,
+    "limitations": [
+      "Synthetic explicit-native fixture for filesystem behavior; no historical/model claim",
+      "Default Docker/Anvil/API behavior is a separate integration gate",
+      "Trusted cooperating clients on one private state root; operator moves, older clients and filesystem/VM metadata are outside bound"
+    ]
+  },
+  "default_integration": {
+    "status": "passed",
+    "kind": "integration verification, not a performance benchmark",
+    "tested_commits": {
+      "engine": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+      "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
+    },
+    "checker_sha256": "504e0b0b738366002b6238bf1cc96acb8c200f8464efb1529d3751b9a8ebda0e",
+    "default_worker": {
+      "image_id": "sha256:30d7ca23cd0d7886303a06fa00128e88b8f37c5c84b62d8a463beea7d1cfaaf9",
+      "image_source_digest": "38c3fa5949250c90214d3daf82c386bd7c73082bbeacaf4478e0d9f0a6592d93",
+      "manifest_sha256": "ffb7189b32d26656be89f575b3e31c5918350027b9c6abafeadc0ad7fe17fbb5",
+      "actual_source_matches_image_manifest_and_label": true,
+      "cgroup_version": "2",
+      "artifact_ids": {
+        "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+        "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+      },
+      "local_cli_without_mode_opt_in": true,
+      "missing_worker_fails_without_export_replacement": true,
+      "explicit_native_fixture_matches": true,
+      "daemon_shared_admission": {
+        "standalone_local_cli_rejected": true,
+        "cli_sdk_api_429": true,
+        "api_posts": 1,
+        "existing_export_and_incumbent_preserved": true,
+        "successful_run_after_release": true,
+        "scope": "one container worker per configured daemon; no native/host-process/storage bound"
+      }
+    },
+    "wall_seconds": 4.944263125013094,
+    "artifact_ids": {
+      "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+      "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+    },
+    "verified": [
+      "actual CLI/SDK/API fixture and Anvil runs",
+      "SDK get and saved-file full equality",
+      "real EVM success and revert receipts",
+      "full-store idempotent repeat",
+      "CLI reports 507 without retrying POST or replacing export",
+      "eight idle sockets cause SDK/CLI 503 without executing work",
+      "health recovers after idle sockets close"
+    ],
+    "fault_parameters": {
+      "store_file_limit": 2,
+      "connection_limit": 8,
+      "busy_cli_attempts": 16
+    },
+    "archive_or_model_calls": false,
+    "limitations": [
+      "Lowered file-count quota for integration; production thresholds tested separately",
+      "Uses the tested API constructor default; worker manifest enables additional default-path proof. Kernel enforcement is a separate CI job",
+      "Shared export retention is verified separately by check_export_budget.py on compatible revisions; host processes, explicit native execution and image/VM storage remain operator-controlled"
+    ]
+  },
+  "frozen_inputs_changed": false,
+  "limitations": [
+    "Cooperating matching clients on one private ledger, not a global filesystem quota",
+    "Pre-existing untracked files, manual moves/renames, old clients and distinct roots excluded",
+    "Crash leftovers remain charged until safely resolved by operator; no automatic report deletion",
+    "Host caller overhead, image/VM storage, independent review and submission gates remain open",
+    "Signed Foundry whole-checkout inventory is not the exact linked Anvil dependency subset"
+  ],
+  "coordination_tests": 20,
+  "files": {
+    "cli-ci.json": "404488752f415910407589d3ba081e37d7b3ad9bfe7b70e62f12c9552756108e",
+    "cli-links.json": "b8fa1e97f7585d543c6bb53e406ea4f1963335bf5b6b4d46be32f757a11e42bc",
+    "cli-tests.log": "15cd4836b1a2f6e62445e296be7b92de528daabd05b229b3fb31080615ac0ada",
+    "compressed-inputs.json": "381081575b6f4ad2cc7fdfc26283eb26ccbbe52585c437a0a43719abd4f90b34",
+    "coordination-ci.json": "77535ef26e36e61d9eccaa92599e7556822e023978ec6bc69a6dad9dc8002628",
+    "coordination-links.json": "b8cfd01a33d5fec0644d43db40636c5abb3059c148309ead354c83ad941a6670",
+    "coordination-tests.log": "bb3936e1e958abbb6b42fe0b716f15093e4c3b675b72f4c54c4e2b8c0a8d84d2",
+    "docker-ci.log": "10348b7a69310b0a69bfa37f4121ae4959433d0cc17913e0dcb7621a1f66c5dd",
+    "docker-tests.log": "ad4d84d19b3cb36632c08459b50d95b64a13f83b59c13b70210996ca1f20faf4",
+    "engine-ci.json": "309e3782a6e248a7390988a098fd9b3841707de43f1443130bebcac4338aac94",
+    "engine-links.json": "b3af18cab1a8d173b2d4a81d09cc6d5cbebe1072362b5e7681f96fcd9f6826fa",
+    "engine-tests.log": "4ee6d40a949b38047caf7703fa717bd47deb2101747ecc03d9b62b38295197a5",
+    "export-contract.json": "715821b7ef28a4a24f319ae4d3dc3376fcc05f20f47dd8cb6bbcc76cfb0e98e4",
+    "failures/README.md": "8cc71c1d634fc3211bcf4d52876ade50b3383b0506ab8c1e01c6f2e7e22e8181",
+    "failures/before.log": "cf26113bd2934903ef17854227497f0f2c583c0202f34c7bc8dcf83c7862620e",
+    "failures/before.py": "f4332306dcebef1d43bc6ff83b9b9c571b743574c41d7540483093c07dfa1fe4",
+    "failures/boolean-version.log": "892e0ea8b8406c2c44ebc89e698ea1afe579fab132edbc7ae4db365e7d5dcec8",
+    "failures/moved-rename-hook.log": "8146fb0e3f94953f3122f33abbc4d86007ca9a65f2e58edccc5dcc6c780c9d1e",
+    "failures/workflow-context.json": "a8be8fee79f64c484d599327f70ed80c015e5801e66abc7df7f361e427d08b23",
+    "image-ci/database.json": "92de68cd3f0a2654590783e05c2ad07df537a400b7876a491254f22c526abdf6",
+    "image-ci/image.json": "2171513e128531c31994961c089dbe8f725e8b456af51f8165a490f4bd72f04d",
+    "image-ci/packages.json": "7040d4c286221498914c2b08ee570fcf2142cd7bf80b28295c4dc33d03204779",
+    "image-ci/scanner.log": "0cd7d4a2872acd2e72dedb07ed32acdc01b9a4878d5ae317ceae979172ff3822",
+    "image-ci/signature.json": "83706a2af7405c619b77381947eb2d57d224abd8378547cf46f4387f8daf8f94",
+    "image-ci/signature.log": "4bfe2b5ee29716434b11f0d0b110fd7a30f98c8fe0c2a1805773b152a825d0e4",
+    "image-ci/summary.json": "ef5e6711a384ba279b0ad994fa5d8addf82e75b293f25f3c815090a688445036",
+    "image-local/database.json": "3cda2fd9a741e54ce3e01bb3c675a152bbf763be0c0c729a219c8d66aa5bf24a",
+    "image-local/packages.json": "18e5f0fa6237cbae923fa6287d63145e9dd764e7232fb0cf30bacd5d23e203a5",
+    "image-local/scanner.log": "9a0dfe30521c7b11cf1433195719efce3959a08f50d9a0de1d097d49bef5764f",
+    "image-local/signature.json": "fbe3fd1cd02b833c9d47b6898ed38083d8665800756a4c0aa5794a1b801a53e1",
+    "image-local/signature.log": "4bfe2b5ee29716434b11f0d0b110fd7a30f98c8fe0c2a1805773b152a825d0e4",
+    "image-local/summary.json": "af8e08daf0ba79209c2e7780e70c10a773afdea2ba9b8c191fff9db2062db9bc",
+    "image.json": "ffb7189b32d26656be89f575b3e31c5918350027b9c6abafeadc0ad7fe17fbb5",
+    "integration-ci/clean-reproduction.json": "8fad9dddd4e48f2c639b4bcde0a11e00dd98d6e46ab0f5aafe8d533ff2988228",
+    "integration-ci/export-contract.json": "5b0cdd08e915cd24e3754c4ec807ad2fb93d7f2f25943ef6d04b8ff1e81e3eeb",
+    "integration-ci/image.json": "ca65b97a983475511ecf7affa12d69a6d68a2873b6206cb8e86bd3ce3baaa656",
+    "integration-ci/integration.json": "4ec1ae36a26530546ea9ded7f537f78632b5715c2bde566490f220f48208fa39",
+    "integration-ci/verification.json": "bafed858204b0aa7da06abbc6c32ebdbe44426cc0a5eb8be1012349be4a69a9d",
+    "integration.json": "6964ace7e66c59264d3be1c4c4a8e327a87149f77a3f1105b89ea63ad7f2c1a3",
+    "native-ci/attestations.json.gz": "dccf6ab433687dcd134b2801e454f131254b83a37e10146197352634817eb1ce",
+    "native-ci/database.json": "92de68cd3f0a2654590783e05c2ad07df537a400b7876a491254f22c526abdf6",
+    "native-ci/packages.json.gz": "cf0826177ff80d5cfdb410ac504fd1e72d7a87024faae49f4130c54d1859dcca",
+    "native-ci/provenance-bundle.json": "e493c74342af32d79e1ae7bf923be7738a2e7bfb569005f259d3f5be6a7076fb",
+    "native-ci/provenance-verification.log": "80a53f76c7ed6969dade3b6ee47cdb753162db7c00be625448999d08bae77ed8",
+    "native-ci/sbom-bundle.json.gz": "66f4491ff7f482a14b407aa05cc3036603e0408ce64bba37d7d3b5b40bb71b06",
+    "native-ci/sbom-verification.log": "80a53f76c7ed6969dade3b6ee47cdb753162db7c00be625448999d08bae77ed8",
+    "native-ci/scanner.log": "9523be909a89348d6b4aef59edcb1bf6fcf4493adefa4786813345cbcc82fc8e",
+    "native-ci/signed-inventory.json.gz": "f5866094c3258e954ee3e74b2f1145e9e3dd8c4dbe984a415f603d2c3d1a58a5",
+    "native-ci/summary.json": "606598685e811838af1c9f2c72332cc95f7cbfe357d40a4b743bed54d7d742bc",
+    "native-local/attestations.json.gz": "b4d1387b806cb8e0c802fd15e5e5704a3ac780cdea6c1f26918b6d484933f490",
+    "native-local/database.json": "3cda2fd9a741e54ce3e01bb3c675a152bbf763be0c0c729a219c8d66aa5bf24a",
+    "native-local/packages.json.gz": "0dbc1e9680d8b69deaf6c5a6bc7a2f85fd0db51ad38dc71c6c805c3f963719c4",
+    "native-local/provenance-bundle.json": "1202c60c2d2e982d57ea0114a75c7e48811a01da236e89c0d3099a30657946da",
+    "native-local/provenance-verification.log": "80a53f76c7ed6969dade3b6ee47cdb753162db7c00be625448999d08bae77ed8",
+    "native-local/sbom-bundle.json.gz": "e6960d10beacc505954b6e6edda757ffa5162a7eb1fe29597b5f3135ae5b1feb",
+    "native-local/sbom-verification.log": "80a53f76c7ed6969dade3b6ee47cdb753162db7c00be625448999d08bae77ed8",
+    "native-local/scanner.log": "932cb5f3318955ca99634dedabd2a3ea57ac1d4a0e45ae63d80b1ac0d785d874",
+    "native-local/signed-inventory.json.gz": "29118b4e20ff8c121cdab62eed87366a03badde143fb95a637932b55b461e08c",
+    "native-local/summary.json": "85046f3d8fb5b12539c696cc0bbb2abb07de11ecbc1e03d93bd56ce992e529ec",
+    "quality-cli/bandit.json": "5d88f42f7b8bdd0658ad7af8407ea5790eb6a128a5e2d7734f42c52cd364842d",
+    "quality-cli/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "quality-cli/dependency-scope.json": "1ec5f7945bddee6507eb22f70dbf4909d2cd406236d2913bd983435768594c48",
+    "quality-cli/security-scope.json": "937acb7a335b27ecc473e3d894ad43e31ed3e9f65d884f9822d56def03ac58b9",
+    "quality-cli/verification.json": "6aa8421b25741a326578257ce5dbcefd69ffb309edc20cdf329d69d6fce5c855",
+    "quality-engine/bandit.json": "8d341f9bedb10ebcb1a29807a66037e98f5a6aca574d1dcfb6df950bc1c59838",
+    "quality-engine/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "quality-engine/dependency-scope.json": "523c22b99543db0f4d3f92a40e38ee0dd88d784eb57c88e176f2155edc5fbc56",
+    "quality-engine/verification.json": "a106d7529f731953736259a9e7d204163413e27d7e349b19ed7a2d9ad61aff4b"
+  },
+  "coordination_pr": "https://github.com/entrotter/entrotter/pull/31",
+  "cleanup": {
+    "VM_started_for_this_slice": true,
+    "dedicated_profile": "Stopped",
+    "original_default_profile": "Stopped",
+    "docker_context": "colima",
+    "owned_workers_before_stop": [],
+    "frozen_engine_clean": true,
+    "frozen_scenarios_clean": true
+  },
+  "integration_ci": {
+    "status": "passed",
+    "proof_commit": "77a754eec02d020291134ad80d7d69470e89c632",
+    "integration_run": 35472379661,
+    "links_run": 35472379628,
+    "all_three_jobs_passed": true,
+    "source_checker_shared_protocol_and_pins_match": true,
+    "full_fixture_and_evm_artifact_ids_match": true,
+    "image_source_files_and_native_binary_match": true,
+    "clean_reproduction_seconds": 6.277971051999998,
+    "scope": "Running configured local Docker/cgroup-v2 daemon; image/base/build caches may be warm. Docker installation/VM startup excluded; source clone, venv, image build and execution included."
+  }
+}

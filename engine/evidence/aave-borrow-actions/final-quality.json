@@ -1,0 +1,57 @@
+{
+  "scope": "Derived command/status summary. Only the local interpreter path is replaced; original full raw output is retained privately.",
+  "original_sha256": "fa8caf922bd76fa3fa58558fad820d38ee7605e2f18ac9d9dc7febdbf5bfeb36",
+  "checks": [
+    {
+      "name": "lint",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.09485916700214148
+    },
+    {
+      "name": "format",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "scripts"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.0600529161747545
+    },
+    {
+      "name": "types",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.7751276670023799
+    },
+    {
+      "name": "security-source-change",
+      "command": [
+        "<locked-quality-venv>/bin/python",
+        "scripts/check_security.py",
+        "--output",
+        ".quality/aave-actions/quality-final-fixed/bandit.json"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 0.8338458749931306
+    }
+  ],
+  "security_gate_note": "The full scan returned the expected changed-source error. All original finding fingerprints were checked unchanged; exact source hashes were refreshed and reverified. Current CI runs the final security gate."
+}

@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-09-20T00:33:32.867807+00:00",
+  "files_verified": 48,
+  "exact_generated_report": true,
+  "author_review": "checked scope, scripts, timelines, full decode and representative frames; not independent approval",
+  "links": {
+    "files": 47,
+    "occurrences": 149,
+    "passed": 149,
+    "errors": 0
+  },
+  "frozen_checkout_status": "engine, scenarios, website and bounded engine worktree clean",
+  "packaging_note": "Initial evidence-copy helper expected a directory from the docs checker; its output is a JSON file. Corrected before publication and all hashes reverified."
+}

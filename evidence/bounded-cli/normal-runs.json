@@ -1,0 +1,11 @@
+{
+  "controller_sha256": "df96abd74fb22e3d9b16f60d8b1e93f3cc39129a8cb11a63b61cdfbcaf4cd1c2",
+  "checker_sha256": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb",
+  "status": "passed",
+  "complete_fixture_equality": true,
+  "complete_local_anvil_equality": true,
+  "complete_cli_sdk_api_fixture_equality": true,
+  "fixture_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "local_anvil_artifact_id": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7",
+  "api_stopped_in_finally": true
+}

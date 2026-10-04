@@ -1,0 +1,50 @@
+{
+  "total_count": 5,
+  "check_runs": [
+    {
+      "name": "unit (3.11)",
+      "head_sha": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/sdk-python/actions/runs/35462695017/job/105949281228"
+    },
+    {
+      "name": "unit (3.12)",
+      "head_sha": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/sdk-python/actions/runs/35462695017/job/105949281188"
+    },
+    {
+      "name": "unit (3.13)",
+      "head_sha": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/sdk-python/actions/runs/35462695017/job/105949281136"
+    },
+    {
+      "name": "docs-links",
+      "head_sha": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/sdk-python/actions/runs/35462695005/job/105949280471"
+    },
+    {
+      "name": "quality",
+      "head_sha": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "status": "completed",
+      "conclusion": "success",
+      "app_id": 15368,
+      "app_slug": "github-actions",
+      "details_url": "https://github.com/entrotter/sdk-python/actions/runs/35462694962/job/105949280279"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "no_actionable_findings",
+  "scope": "Read-only source review of four uncommitted coordination pin/workflow files plus existing offline/type reports; no full checks/chain/browser/model reruns.",
+  "files_sha256": {
+    ".github/workflows/ci.yml": "4f22efe0f601f2e526be9656dde37433af5b5b1ec629988043a400726dc37c7e",
+    ".github/workflows/quality.yml": "435bbc82482b0e2a933916543fe658b02a89a48c0f461c31475b8f8ae83b62f9",
+    "bounded-worker-pins.json": "498045d1d1f3daaaf23f73784ea9e54c128e95d1a1d3eb1966f0454f68d66771",
+    "quality-inputs.json": "93b6924b53a873176048e4a21de57d12e18e4ff33776c011e43475571462ab92"
+  },
+  "observations": [
+    "Current bounded SDKee/sitefd checkouts match manifest; quality SDKee matches type dependency manifest and existing full type summary.",
+    "All21 type source hashes match current source, with three frozen diagnostics retained; historical original integration pins remain separate.",
+    "Three original four-prefix fixtures share exact known1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2 hash.",
+    "Offline smoke uses pinned SDK source via existing PYTHONPATH; checks source receipt gas/log/status and actual candidate gas/nonce; output included in existing bounded artifact directory.",
+    "No new trace HTTP/archive/model/EVM call from added offline step; later existing bounded execution/cleanup unchanged.",
+    "Browser behavior delegated explicitly to separate viewer exact-head CI; source consistency is not authenticity/EVM proof."
+  ],
+  "remaining_actionable": 0,
+  "limits": [
+    "Viewer browser CI currently requires retry after Chromium-install setup timeout; coordination not ready to push until final viewer check passes.",
+    "Existing check_types and offline smoke results reused; this review does not rerun integration or satisfy required GitHub human approval."
+  ]
+}

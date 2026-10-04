@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "mode": "bounded default archived-state supplied-action execution",
+  "runs": [
+    {
+      "wall_seconds": 9.52783116698265,
+      "artifact_id": "6c358340e3b1227fccb4398802d30fefe27877aeacbacf8bd313c9c65c13a453",
+      "full_reference_equality": true
+    },
+    {
+      "wall_seconds": 9.149769209005171,
+      "artifact_id": "6c358340e3b1227fccb4398802d30fefe27877aeacbacf8bd313c9c65c13a453",
+      "full_reference_equality": true
+    }
+  ],
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "image_id": "sha256:e5ba2222140c128f6b94e91d8cfbb90578b2cdf939a38dbf6b3f863fcacd5dc4",
+  "scenario_sha256": "9bba384c7a56f973b26e4b9cfef058e6dd841d7ddd737cbeeed75f9478c64c33",
+  "reference_sha256": "2d32bb9c7dccb3db5ebaaa11b7a65a4ab02bf2228c93933ec57b411480c341df",
+  "checker_sha256": "baf2e41fec18bcb66db5f3babc1df436ced9fed2a45db93c91f15b68549b87f8",
+  "limitations": [
+    "Same previously explored 19M case; no new model evaluation or holdout",
+    "Includes public archive latency; not a performance comparison",
+    "No historical trace replay or portfolio profit claim"
+  ]
+}

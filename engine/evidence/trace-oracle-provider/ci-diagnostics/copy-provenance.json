@@ -1,0 +1,71 @@
+{
+  "scope": "Retained observations only; no CI rerun, source fetch or Docker execution. Both failed jobs exported only two image/build artifact files, not completed image/native advisory evidence.",
+  "copies": {
+    "isolated-attempt1.log": {
+      "ignored_original": ".quality/oracle-prefix/ci-bounded-failure.log",
+      "original_sha256": "b5b07939ccc3f4b697a5940c3f685e7d2758fbc4cdeb49909f50e3f227954a37",
+      "public_sha256": "b5b07939ccc3f4b697a5940c3f685e7d2758fbc4cdeb49909f50e3f227954a37",
+      "absolute_repository_path_redactions": 0
+    },
+    "isolated-attempt2.log": {
+      "ignored_original": ".quality/oracle-prefix/ci-bounded-attempt2-failure.log",
+      "original_sha256": "707146fe40206ed73ae5a64a3863203a899d1c39f3ed2ccfdbe300714742343a",
+      "public_sha256": "707146fe40206ed73ae5a64a3863203a899d1c39f3ed2ccfdbe300714742343a",
+      "absolute_repository_path_redactions": 0
+    },
+    "attempt1-summary.json": {
+      "ignored_original": ".quality/oracle-prefix/ci-first-attempt-summary.json",
+      "original_sha256": "c3bc570811789b9caafef5273e37032e93995ba609a86d328844eeab041642ae",
+      "public_sha256": "c3bc570811789b9caafef5273e37032e93995ba609a86d328844eeab041642ae",
+      "absolute_repository_path_redactions": 0
+    },
+    "attempt2-summary.json": {
+      "ignored_original": ".quality/oracle-prefix/ci-attempt2-failure-summary.json",
+      "original_sha256": "536c2d7e8772d7bfe4e33a150ed310818208854fa1990f6199e8fdfff4f59610",
+      "public_sha256": "536c2d7e8772d7bfe4e33a150ed310818208854fa1990f6199e8fdfff4f59610",
+      "absolute_repository_path_redactions": 0
+    },
+    "local-default-CA-refusal.json": {
+      "ignored_original": ".quality/oracle-prefix/ci-readonly-transport.json",
+      "original_sha256": "eb1c07c25086cf12b4432c41553a804dc17bce03962503c55ebf47b2219f2f5a",
+      "public_sha256": "eb1c07c25086cf12b4432c41553a804dc17bce03962503c55ebf47b2219f2f5a",
+      "absolute_repository_path_redactions": 0
+    },
+    "readonly-source-diagnosis.json": {
+      "ignored_original": ".quality/oracle-prefix/ci-readonly-with-locked-CA.json",
+      "original_sha256": "cbbbf38af2c69bce549e48f09cf76c170e389d2907702bd3a493f140b47bb6a8",
+      "public_sha256": "cbbbf38af2c69bce549e48f09cf76c170e389d2907702bd3a493f140b47bb6a8",
+      "absolute_repository_path_redactions": 0
+    },
+    "helper-regression-before.log": {
+      "ignored_original": ".quality/oracle-prefix/diagnostic-before-review-fixes.log",
+      "original_sha256": "34b73b430a3490fe23fb95194f4c5cfeed2018de4c6973cc3549baf8646940d0",
+      "public_sha256": "be64ba924405d7bc032ed048f32969201de60a4078f1b117b0c70582d3e04228",
+      "absolute_repository_path_redactions": 5
+    },
+    "helper-regression-after.log": {
+      "ignored_original": ".quality/oracle-prefix/diagnostic-focused-final.log",
+      "original_sha256": "5cfa0ba9c0d8ccd5a4c1f67733573309e5bb3b139eefff3df5503fbf0b18d430",
+      "public_sha256": "5cfa0ba9c0d8ccd5a4c1f67733573309e5bb3b139eefff3df5503fbf0b18d430",
+      "absolute_repository_path_redactions": 0
+    },
+    "helper-entrypoint-regression.log": {
+      "ignored_original": ".quality/oracle-prefix/diagnostic-focused-entrypoint.log",
+      "original_sha256": "1dcd0dfe3c8fb5553de4301e36dd9f2f92cc9ec895125cb32ddc10b237086e2c",
+      "public_sha256": "1dcd0dfe3c8fb5553de4301e36dd9f2f92cc9ec895125cb32ddc10b237086e2c",
+      "absolute_repository_path_redactions": 0
+    },
+    "attempt1-worker-image.json": {
+      "ignored_original": ".quality/oracle-prefix/ci-bounded-attempt1/worker-image-security/worker-image.json",
+      "original_sha256": "e135fc6c6bc90cbd2d069708128997690246314a26bb1c317c208f178a9cbd36",
+      "public_sha256": "e135fc6c6bc90cbd2d069708128997690246314a26bb1c317c208f178a9cbd36",
+      "absolute_repository_path_redactions": 0
+    },
+    "attempt2-worker-image.json": {
+      "ignored_original": ".quality/oracle-prefix/ci-bounded-attempt2/worker-image.json",
+      "original_sha256": "3ccfcff6fd2f9b99eb928ac1efe9cc537756d20d4598ea2d379c54c3216436ba",
+      "public_sha256": "3ccfcff6fd2f9b99eb928ac1efe9cc537756d20d4598ea2d379c54c3216436ba",
+      "absolute_repository_path_redactions": 0
+    }
+  }
+}

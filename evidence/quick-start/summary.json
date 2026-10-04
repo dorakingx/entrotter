@@ -1,0 +1,50 @@
+{
+  "exit_code": 0,
+  "wall_seconds": 25.57,
+  "status": "passed",
+  "executed_at": "2026-09-20T02:15:58.894978+00:00",
+  "host": "Darwin arm64",
+  "python": "3.13.0",
+  "coordination_snapshot": "98f11012934e92fadbbf0ae1ab8552c19d069ce7",
+  "dependency_pins": {
+    "engine": "2c843842dc57387150e3bb080c720bc94ce18bc5",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+    "scenarios": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+    "entrotter.github.io": "61740312f281f7e911e0eb6e9482a3c372cb1fae"
+  },
+  "commands": "commands.sh",
+  "commands_extracted_verbatim_from": "docs/QUICK_START.md",
+  "fixture_complete_public_report_match": true,
+  "fixture_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "local_evm_artifact_id": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7",
+  "scope": "All four shell blocks in a new temporary workspace; six public checkouts, fresh venv without pip, real network Foundry download, worker build, doctor, offline fixture and real local Anvil execution/verification. Docker was already running; base image/build caches were warm. Docker installation and VM startup excluded. Not a cold machine benchmark.",
+  "preconfigured_environment": [
+    "ENTROTTER_DOCKER_SOCKET (dedicated local Unix socket)",
+    "SSL_CERT_FILE=/etc/ssl/cert.pem"
+  ],
+  "new_model_calls": 0,
+  "archive_rpc_calls": 0,
+  "remaining": "Independent review/main integration, host and submission limitations remain. No new user evaluation or deployed website change.",
+  "files_sha256": {
+    "commands.sh": "e488699714e468f8d79edae44c045b893ec42d7e617487a6942592da6b5525e8",
+    "local-evm.json": "69eb613f67963c6b7684657db92cd744c256f3ffafeaad7041919633bab965c1",
+    "report.json": "d1419b7c2c694326cf892062f4362663044f1cfaeea3500f996987445ef21943",
+    "walkthrough.log": "f317e77c49a46737fac9b960f6c4b62607b076d952bd4f785ccc122f44a4440f",
+    "worker-image.json": "552c2cb7ad4cd6546577b464b9d52cacedeaeba79e4296bcae36861721d4ed6d"
+  },
+  "guide_sha256": "aefaf8101cb21cfa829d9d85316a844ddc4775e97b6ae5908adcdc38d24dc1d0",
+  "cleanup": {
+    "owned_worker_containers_after_run": 0,
+    "dedicated_colima_profile": "Stopped",
+    "default_colima_profile": "Stopped"
+  },
+  "local_checks": {
+    "documentation_links": {
+      "passed": true,
+      "total": 187,
+      "errors": 0
+    },
+    "bare_unittest_discovery": "Four import errors without pinned sibling PYTHONPATH; eight policy tests passed. CONTRIBUTING now directs developers to the job-specific CI setup instead of suggesting a bare unittest invocation."
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "type": "directory",
+    "oid": "3ab18b7914596a65da3f062f30d73391558888b9",
+    "size": 0,
+    "path": "en/en_US/ljspeech/high/samples"
+  },
+  {
+    "type": "file",
+    "oid": "ddd2c7524cadf38f78a9b268ad957079e9815383",
+    "size": 513,
+    "path": "en/en_US/ljspeech/high/MODEL_CARD"
+  },
+  {
+    "type": "file",
+    "oid": "ddf9a9d0840772ff0777b2ac5eb72f195ab163a4",
+    "size": 114199011,
+    "lfs": {
+      "oid": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+      "size": 114199011,
+      "pointerSize": 134
+    },
+    "xetHash": "0b12f6ab8fde467630c970ce3810608619422133a0e796e9b4ae2fdd1b54eb2c",
+    "path": "en/en_US/ljspeech/high/en_US-ljspeech-high.onnx"
+  },
+  {
+    "type": "file",
+    "oid": "e4c9cbdf41a9c5fadd5eb7633513435342184918",
+    "size": 4970,
+    "path": "en/en_US/ljspeech/high/en_US-ljspeech-high.onnx.json"
+  }
+]

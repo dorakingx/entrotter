@@ -1,0 +1,95 @@
+WEBVTT
+
+NOTE Draft authored captions. Pronunciation review pending.
+
+1
+00:00:01.000 --> 00:00:05.949
+Before allowing an onchain agent to act, compare what its decision changes.
+
+2
+00:00:06.487 --> 00:00:10.079
+This is the actual Entrotter viewer, with synthetic narration.
+
+3
+00:00:11.131 --> 00:00:16.628
+This saved recording tests supplied collateral and borrow actions on Ethereum.
+
+4
+00:00:17.187 --> 00:00:21.686
+Today we inspect that recording. We do not execute a new historical run.
+
+5
+00:00:22.724 --> 00:00:29.519
+Both isolated branches start with the same artificial twenty Ether and local account impersonation.
+
+6
+00:00:30.102 --> 00:00:34.362
+The supplied setup wraps, approves, and supplies ten wrapped Ether.
+
+7
+00:00:35.431 --> 00:00:38.583
+A nine wrapped Ether borrow reverts in the baseline.
+
+8
+00:00:39.143 --> 00:00:44.411
+The candidate uses a built in current state preflight policy and holds that proposal.
+
+9
+00:00:44.990 --> 00:00:49.999
+This case uses a deterministic policy, not a new language model call.
+
+10
+00:00:51.038 --> 00:00:55.209
+A later one wrapped Ether borrow succeeds in both branches.
+
+11
+00:00:55.728 --> 00:01:00.357
+That smaller action was supplied in advance. The policy did not generate it.
+
+12
+00:01:01.403 --> 00:01:06.481
+Compare every recorded native and token balance without losing decimal precision.
+
+13
+00:01:07.008 --> 00:01:13.423
+The held revert changes gas use, but gas prices also differ. These differences are not profit.
+
+14
+00:01:14.501 --> 00:01:18.901
+Download the exact source recording, then open the pinned command recipe.
+
+15
+00:01:19.459 --> 00:01:24.467
+The setup selects immutable public command line and Python reader versions.
+
+16
+00:01:25.482 --> 00:01:28.994
+Use the keyboard to copy the inspection command for this sample.
+
+17
+00:01:29.560 --> 00:01:35.366
+Only the fixed public command is copied. Local report metadata never enters shell text.
+
+18
+00:01:36.426 --> 00:01:41.793
+Here is actual command output from the downloaded recording, using those pinned sources.
+
+19
+00:01:42.342 --> 00:01:47.880
+The command verifies the content hash and preserves the same exact units and recorded decision.
+
+20
+00:01:48.946 --> 00:01:55.232
+Integrity does not establish provider authenticity, a correct policy, or future market behavior.
+
+21
+00:01:55.792 --> 00:02:02.556
+This is supplied action execution on archived state, not replay of original signed transactions.
+
+22
+00:02:03.595 --> 00:02:08.893
+Use Entrotter to keep the inputs, receipts, assumptions, and decisions together for review.
+
+23
+00:02:09.445 --> 00:02:16.419
+The current code is on development branches. Main integration, public deployment, and submission remain separate.

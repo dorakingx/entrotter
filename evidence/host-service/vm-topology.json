@@ -1,0 +1,76 @@
+{
+  "cpu_count": 2,
+  "memory_total_bytes": 2054631424,
+  "swap_total_bytes": 0,
+  "root_block_device_bytes": 10737418240,
+  "writable_paths": [
+    {
+      "path": "/",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    },
+    {
+      "path": "/tmp",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    },
+    {
+      "path": "/var/lib/docker",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    },
+    {
+      "path": "<guest-home>/.local/share/entrotter",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    },
+    {
+      "path": "<guest-home>/.local/share/entrotter/reports",
+      "mount": {
+        "target": "/",
+        "source": "/dev/vda1",
+        "fstype": "ext4",
+        "options": "rw,relatime,discard,errors=remount-ro,commit=30"
+      }
+    }
+  ],
+  "host_share_probes": [
+    {
+      "target_name": "colima",
+      "mount_readonly": true,
+      "write_errno": 30
+    },
+    {
+      "target_name": ".sandbox-share",
+      "mount_readonly": true,
+      "write_errno": 30
+    }
+  ],
+  "api_health_after_fault_probes": {
+    "status": "ok",
+    "version": "0.1.0",
+    "scope": "local-development"
+  },
+  "owned_worker_containers": 0,
+  "transient_proof_units": 0,
+  "disk_exhaustion_tested": false,
+  "disk_proof_scope": "Guest block-device capacity and mount topology, not filling the live root filesystem",
+  "systemd": "systemd 255 (255.4-1ubuntu8.4)",
+  "python": "Python 3.12.3"
+}

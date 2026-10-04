@@ -1,0 +1,11 @@
+Valid scenario wire shape: fixtures/depeg-stress.json
+Valid scenario wire shape: fixtures/liquidity-shock.json
+Valid scenario wire shape: fixtures/recovery-trap.json
+Valid scenario wire shape: evm/ethereum-state-fork.json
+Valid scenario wire shape: evm/ethereum-uniswap-slippage.json
+Valid scenario wire shape: evm/local-branch-revert.json
+Valid scenario wire shape: benchmarks/causal-v1/cases/17000000.json
+Valid scenario wire shape: benchmarks/causal-v1/cases/18000000.json
+Valid scenario wire shape: benchmarks/causal-v1/cases/19000000.json
+Valid scenario wire shape: benchmarks/causal-v1/cases/20000000.json
+Valid scenario wire shape: benchmarks/causal-v1/cases/21000000.json

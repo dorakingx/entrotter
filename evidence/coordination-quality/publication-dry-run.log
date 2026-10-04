@@ -1,0 +1,8 @@
+PLAN public entrotter/entrotter <- <workspace>/entrotter
+PLAN public entrotter/engine <- <workspace>/engine
+PLAN public entrotter/sdk-python <- <workspace>/sdk-python
+PLAN public entrotter/cli <- <workspace>/cli
+PLAN public entrotter/scenarios <- <workspace>/scenarios
+PLAN public entrotter/entrotter.github.io <- <workspace>/entrotter.github.io
+PLAN GitHub Pages via Actions; NO custom domain; NO paid infrastructure.
+Dry run only. Nothing was created, pushed or deployed. Review this script before --apply.

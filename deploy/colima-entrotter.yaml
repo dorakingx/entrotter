@@ -1,0 +1,18 @@
+# Reference profile tested with Colima 0.8.1 on Apple Silicon.
+# Replace the mount path with an existing, empty, dedicated host directory.
+# Never leave mounts empty: that version otherwise shares the home directory.
+cpu: 2
+memory: 2
+disk: 10
+arch: aarch64
+vmType: vz
+runtime: docker
+mountType: sshfs
+autoActivate: false
+forwardAgent: false
+mounts:
+  - location: /absolute/path/to/empty-readonly-directory
+    writable: false
+network:
+  address: false
+  hostAddresses: false

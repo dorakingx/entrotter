@@ -1,0 +1,5 @@
+2026-09-19T21:59:28Z	INFO	Loaded	file_path="/tmp/entrotter-native-audit-vbbh_9s8/config.yaml"
+2026-09-19T21:59:28Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-09-19T21:59:28Z	INFO	Detected SBOM format	format="spdx-json"
+2026-09-19T21:59:28Z	INFO	Number of language-specific files	num=1
+2026-09-19T21:59:28Z	INFO	[cargo] Detecting vulnerabilities...

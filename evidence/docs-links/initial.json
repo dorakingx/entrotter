@@ -1,0 +1,188 @@
+{
+  "engine": {
+    "exit": 0,
+    "files": 5,
+    "report": {
+      "total": 0,
+      "unique": 0,
+      "successful": 0,
+      "unknown": 0,
+      "unsupported": 0,
+      "timeouts": 0,
+      "redirects": 0,
+      "remaps": 0,
+      "excludes": 0,
+      "errors": 0,
+      "cached": 0,
+      "success_map": {},
+      "error_map": {},
+      "timeout_map": {},
+      "suggestion_map": {},
+      "redirect_map": {},
+      "excluded_map": {},
+      "duration": {
+        "secs": 0,
+        "nanos": 3456416
+      },
+      "detailed_stats": false
+    }
+  },
+  "sdk-python": {
+    "exit": 0,
+    "files": 5,
+    "report": {
+      "total": 0,
+      "unique": 0,
+      "successful": 0,
+      "unknown": 0,
+      "unsupported": 0,
+      "timeouts": 0,
+      "redirects": 0,
+      "remaps": 0,
+      "excludes": 0,
+      "errors": 0,
+      "cached": 0,
+      "success_map": {},
+      "error_map": {},
+      "timeout_map": {},
+      "suggestion_map": {},
+      "redirect_map": {},
+      "excluded_map": {},
+      "duration": {
+        "secs": 0,
+        "nanos": 1662083
+      },
+      "detailed_stats": false
+    }
+  },
+  "cli": {
+    "exit": 0,
+    "files": 5,
+    "report": {
+      "total": 1,
+      "unique": 1,
+      "successful": 0,
+      "unknown": 0,
+      "unsupported": 0,
+      "timeouts": 0,
+      "redirects": 0,
+      "remaps": 0,
+      "excludes": 1,
+      "errors": 0,
+      "cached": 0,
+      "success_map": {},
+      "error_map": {},
+      "timeout_map": {},
+      "suggestion_map": {},
+      "redirect_map": {},
+      "excluded_map": {
+        "README.md": [
+          {
+            "url": "http://127.0.0.1:8787/",
+            "status": {
+              "text": "Excluded",
+              "details": "This is due to your 'exclude' values"
+            },
+            "span": {
+              "line": 23,
+              "column": 24
+            },
+            "duration": {
+              "secs": 0,
+              "nanos": 791
+            }
+          }
+        ]
+      },
+      "duration": {
+        "secs": 0,
+        "nanos": 1673625
+      },
+      "detailed_stats": false
+    }
+  },
+  "scenarios": {
+    "exit": 0,
+    "files": 6,
+    "report": {
+      "total": 6,
+      "unique": 4,
+      "successful": 6,
+      "unknown": 0,
+      "unsupported": 0,
+      "timeouts": 0,
+      "redirects": 0,
+      "remaps": 0,
+      "excludes": 0,
+      "errors": 0,
+      "cached": 0,
+      "success_map": {},
+      "error_map": {},
+      "timeout_map": {},
+      "suggestion_map": {},
+      "redirect_map": {},
+      "excluded_map": {},
+      "duration": {
+        "secs": 1,
+        "nanos": 39124292
+      },
+      "detailed_stats": false
+    }
+  },
+  "entrotter.github.io": {
+    "exit": 0,
+    "files": 8,
+    "report": {
+      "total": 24,
+      "unique": 20,
+      "successful": 24,
+      "unknown": 0,
+      "unsupported": 0,
+      "timeouts": 0,
+      "redirects": 0,
+      "remaps": 0,
+      "excludes": 0,
+      "errors": 0,
+      "cached": 1,
+      "success_map": {},
+      "error_map": {},
+      "timeout_map": {},
+      "suggestion_map": {},
+      "redirect_map": {},
+      "excluded_map": {},
+      "duration": {
+        "secs": 2,
+        "nanos": 766613750
+      },
+      "detailed_stats": false
+    }
+  },
+  "entrotter": {
+    "exit": 0,
+    "files": 25,
+    "report": {
+      "total": 34,
+      "unique": 28,
+      "successful": 34,
+      "unknown": 0,
+      "unsupported": 0,
+      "timeouts": 0,
+      "redirects": 1,
+      "remaps": 0,
+      "excludes": 0,
+      "errors": 0,
+      "cached": 2,
+      "success_map": {},
+      "error_map": {},
+      "timeout_map": {},
+      "suggestion_map": {},
+      "redirect_map": {},
+      "excluded_map": {},
+      "duration": {
+        "secs": 4,
+        "nanos": 819142125
+      },
+      "detailed_stats": false
+    }
+  }
+}

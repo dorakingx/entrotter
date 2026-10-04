@@ -1,0 +1,71 @@
+{
+  "status": "verified_candidate_pending_current_head_CI_and_independent_review",
+  "seconds": 26.042875374900177,
+  "all_six_public_checkouts_clean": true,
+  "pins": {
+    "entrotter": "924f60ee90364218a700bf7416496ab86132b339",
+    "engine": "c1671938edde03c59deef64dbb81d7c41a33406b",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "87cfe4078dfaaaa3eebcbff65bcedc8d60013cc8",
+    "scenarios": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+    "entrotter.github.io": "8671ab2ee481a894784afe2a2cc216fb6931b02c"
+  },
+  "executed_guide_sha256": "3651e1b90e9cabb5602370bd907f49568697711a3bebcd6b63672601d6bd19f0",
+  "commands_sha256": "2024aabfcca3370f3a3fb0ccd9676593dcd682a78de88cf5c4b0203e605baeb8",
+  "complete_report_equality": true,
+  "artifact_ids": {
+    "report.json": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+    "local-evm.json": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7",
+    "risk-agent.json": "bae842845d882b3007fbb497c4d6abbbc86bb935b7e0cb1d504cecf6dad57e52",
+    "risk-replayed.json": "bae842845d882b3007fbb497c4d6abbbc86bb935b7e0cb1d504cecf6dad57e52",
+    "model-replayed.json": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b"
+  },
+  "scope": "All five Bash blocks verbatim; fresh pipless venv/public sources/network Foundry download/build/doctor and fixture/local/risk/risk-replay/model-replay. Running Docker and potentially warm caches; VM install/startup excluded.",
+  "new_model_calls": 0,
+  "new_archive_rpc_calls": 0,
+  "checked_at": "2026-10-01T11:01:16.580878+00:00",
+  "coordination_execution_snapshot": "924f60ee90364218a700bf7416496ab86132b339",
+  "automated_clean_agent_seconds": 19.266086167190224,
+  "automated_clean_entrypoint": "standalone CLI replay",
+  "quality": {
+    "production_sources": 21,
+    "retained_findings": 78,
+    "frozen_type_diagnostics": 3,
+    "independent_review": "pending"
+  },
+  "reference_report_bytes_unchanged": true,
+  "report_references": [
+    "evidence/quick-start-oct01/report.json",
+    "evidence/quick-start-oct01/local-evm.json",
+    "evidence/agent-local-risk.json",
+    "evidence/agent-local-codex.json"
+  ],
+  "guide_setup_failure": "First guide used general candidate-only scenario while the recorded risk sample contains two baseline actions; full comparison failed. Fixed by extracting the exact original embedded scenario. References/policies remain unchanged.",
+  "old_pin_failure": "New CLI replay command fails with exit2 under the prior a63a390 CLI pin; the new public pins pass.",
+  "source_assembly": "Production coordination tooling/pins at execution snapshot924f60e; later commits contain guide/evidence only. Current main and recording/site versions remain distinct.",
+  "independent_review": "engine27/CLI10/coordination and prerequisites pending; no review/main bypass or publication/submission",
+  "prerequisites": "Running dedicated ARM64 local Linux Docker daemon; potentially warm base/build caches. Docker installation/VM startup excluded.",
+  "published_guide_sha256": "fb19bff41decc9ed134b551d4c0529a1ade9ac095fb5be37500e7e9aec5a1a5c",
+  "published_shell_blocks_match_executed_commands": true,
+  "artifact_sha256": {
+    "clean-agent.json": "309505892ecdbec9fc9fab998d451c1fb1ad46623f96ee16b1a745cab2a1cda3",
+    "failing-before.log": "d759a8525d8fec39bce2fbc2bb321906cfe704f916611330a5ce0179d05908bb",
+    "policy-tests.log": "2f0bdd40587c1ba0e8ab1c1d868a7d5deea9f2ce3f2a71f1d27b5b4c1fcd011e",
+    "commands.sh": "2024aabfcca3370f3a3fb0ccd9676593dcd682a78de88cf5c4b0203e605baeb8",
+    "walkthrough.log": "4ee9899771c1bb50bd4e70c0893110919b9085b1667b3400f87765bc3d48b1c8",
+    "worker-image.json": "525912385195aa4de1b86c0a93594200cf29f7bfbc6fbfe2540c5c922573c09c",
+    "walkthrough-first-failure.log": "6dcf9585f11594559eb497f4ee024d36e85539e52a184c0475548462aa3cda94"
+  },
+  "cleanup": {
+    "owned_workers": 0,
+    "dedicated_VM": "Stopped; actual Colima readback",
+    "default_VM": "Running; existing user VM untouched"
+  },
+  "doc_links": {
+    "total": 224,
+    "successful": 224,
+    "errors": 0,
+    "timeouts": 0,
+    "excludes": 0
+  }
+}

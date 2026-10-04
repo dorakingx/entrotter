@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1.0",
+  "id": "depeg-stress",
+  "title": "Synthetic depeg stress",
+  "mode": "fixture",
+  "provenance": {
+    "kind": "synthetic",
+    "description": "An illustrative depeg shape. It is not the historical USDC depeg."
+  },
+  "market": {
+    "prices": [
+      "1",
+      "1",
+      "0.99",
+      "0.98",
+      "0.94",
+      "0.88",
+      "0.84",
+      "0.90",
+      "0.96"
+    ],
+    "initial_cash": "0",
+    "initial_units": "100",
+    "fee_bps": 30,
+    "slippage_bps": 20,
+    "symbol": "TEST"
+  },
+  "baseline": {
+    "type": "hold"
+  },
+  "candidate": {
+    "type": "circuit_breaker",
+    "drawdown_trigger": "0.04"
+  }
+}

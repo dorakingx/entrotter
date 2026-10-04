@@ -1,0 +1,76 @@
+{
+  "kind": "pitch",
+  "browser": "153.0.8010.12",
+  "duration": 171.30467120181405,
+  "capture_wall_seconds": 171.316628458,
+  "events": [
+    {
+      "scene": "promise",
+      "elapsed": 1.061458958
+    },
+    {
+      "scene": "problem",
+      "elapsed": 15.998784665999999
+    },
+    {
+      "scene": "workflow",
+      "elapsed": 33.904633416
+    },
+    {
+      "scene": "proof",
+      "elapsed": 56.985750208000006
+    },
+    {
+      "scene": "honesty",
+      "elapsed": 79.387767666
+    },
+    {
+      "scene": "users",
+      "elapsed": 101.24786004100001
+    },
+    {
+      "scene": "business",
+      "elapsed": 123.600272708
+    },
+    {
+      "scene": "close",
+      "elapsed": 146.651792208
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:64258/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64258/site/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64258/site/assets/mascot.webp",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64258/site/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64258/site/style.css?v=16be105da69b",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64258/site/app.js?v=645675eab6c3",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64258/site/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64258/site/reports/liquidity-shock.json",
+      "method": "GET"
+    }
+  ],
+  "errors": [],
+  "real_execution_complete": false
+}

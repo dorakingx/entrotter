@@ -1,0 +1,16 @@
+{
+  "result": "passed_independent_full_native_evidence_review",
+  "native_proof_sha256": "387b33f37fe32b9868ff6f9b47a9862ea773ade400ac61db678656e3be64cbbd",
+  "raw_log_sha256": "585ed2a6a1589e984e7807fab461be7bb0a800e1a16841913dc9091acd67f3ce",
+  "source_bindings": 28,
+  "tests": 294,
+  "seconds": 45.076,
+  "skipped": 0,
+  "anvil_binary_sha256": "2ae79126940817dc8393bbb680faa6880226ea3424593828435b7128f4c07147",
+  "fresh_remaining_anvil_processes": [],
+  "scope": "Full existing native suite with fixedFoundry1.8.3; synthetic/loopback fixtures, no new historical archive replay orDocker startup.",
+  "limits": [
+    "No new archive/native003/default Docker or remoteCI pass.",
+    "Initial source review readiness keeps its historical pending-full-suite state; this is additive evidence."
+  ]
+}

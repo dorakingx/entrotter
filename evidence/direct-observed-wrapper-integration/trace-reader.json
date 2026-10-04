@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "execution": "offline original-report inspection; no new chain/model call",
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "artifact_id": "cf1b51833babf17c1b39c5d37af0ff7945da43422e2efc3453d36e72b2d0810f",
+  "report_sha256": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+  "identical_report_files": [
+    "entrotter/evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json",
+    "sdk-python/tests/data/canonical-mainnet-prefix-four.result.json",
+    "entrotter.github.io/reports/trace-mainnet-prefix-four.json"
+  ],
+  "baseline_verified": true,
+  "candidate_statuses": [
+    "skipped",
+    "executed",
+    "executed",
+    "nonce_conflict"
+  ],
+  "candidate_gas": [
+    null,
+    245136,
+    185721,
+    null
+  ],
+  "nonce_conflict": {
+    "original": 5523,
+    "expected": 5522
+  },
+  "limits": [
+    "Checksum/internal consistency is not authenticity/EVM truth.",
+    "Browser behavior is tested by the separate exact-head viewer CI."
+  ]
+}

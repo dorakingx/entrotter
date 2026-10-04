@@ -1,0 +1,278 @@
+{
+  "status": "viable_native_direction_proven_not_implemented",
+  "engine_head": "8176597af994dddb7a3dc6721db623580ebc9601",
+  "foundry_version": "1.8.3",
+  "foundry_commit": "cae51ad458f6abb64852b7709eb784352429825d",
+  "recommended_approach": "Enable --disable-pool-balance-checks only on owned trace-profile Anvil. Preserve raw signed FIFO order and existing fixed header; defer parent-state admission to actual ordered block execution. Keep EVM validity, memory/input/prefix/Docker/guardian/total-deadline controls unchanged.",
+  "important_caveat": "Name understates flag breadth: gas/fee pool checks also deferred. Real execution negative controls show invalid inputs admitted but not mined; no success claim from admission alone.",
+  "primary_source": [
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/config.rs#L1266-L1269",
+      "fact": "Builder controls backend disable_pool_balance_checks only; default false at653."
+    },
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/api.rs#L2982-L2985",
+      "fact": "Raw signed submission recovers PendingTransaction and invokes parent-state pool validation."
+    },
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/mem/mod.rs#L9034-L9142",
+      "fact": "Flag skips pool balance AND gas/fee checks; this is broader than balance-only admission."
+    },
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/mem/mod.rs#L5475-L5491",
+      "fact": "Mining executes ordered transactions against candidate database with block executor; flag does not set EVM disable_balance_check/disable_block_gas_limit/basefee/nonce flags."
+    },
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/executor.rs#L625-L660",
+      "fact": "Cumulative block gas and transaction caps remain checked; execution errors classify invalid inputs."
+    },
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/executor.rs#L415-L421",
+      "fact": "Actual execution invokes evm.transact; invalid REVM transactions fail instead of fabricating receipts."
+    },
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/executor.rs#L331-L339",
+      "fact": "Block executor independently rejects transaction gas above remaining block gas."
+    },
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/mem/mod.rs#L6880-L6910",
+      "fact": "Reorg rollback resets header environment/time and clears next prevrandao, so reorg is not header-preserving drop-in."
+    },
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/mem/mod.rs#L7680-L7810",
+      "fact": "eth_callBundle signed cache execution succeeds for funding case, but returns MEV bundle summaries without full receipt logs and lacks prevrandao parameter."
+    }
+  ],
+  "commands": [
+    "PATH=<verified-foundry-v1.8.3>:$PATH PYTHONPATH=src python3 .quality/funding-admission/probe.py",
+    "PATH=<verified-foundry-v1.8.3>:$PATH PYTHONPATH=src python3 .quality/funding-admission/state-probe.py"
+  ],
+  "fixture": "Disposable synthetic memory-only signatures. Startup parent allocation A=1ETH B=0. A\u2192B value10^16 then B\u2192C value10^15; legacy nonce0 gas21000 price10^9, chain1 Shanghai, single block. No post-start state repairs, impersonation, unsigned transactions, sequential different-block mining, upstream writes or Docker.",
+  "observations": [
+    {
+      "case": "default_funded",
+      "admitted": [
+        true,
+        false
+      ],
+      "receipts": [
+        {
+          "status": "0x1",
+          "gasUsed": "0x5208",
+          "cumulativeGasUsed": "0x5208",
+          "transactionIndex": "0x0",
+          "blockNumber": "0x1",
+          "transactionHash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176"
+        },
+        null
+      ],
+      "header_exact": true,
+      "signed_bundle_total_gas": 42000,
+      "gas_used": 21000
+    },
+    {
+      "case": "deferred_funded",
+      "admitted": [
+        true,
+        true
+      ],
+      "receipts": [
+        {
+          "status": "0x1",
+          "gasUsed": "0x5208",
+          "cumulativeGasUsed": "0x5208",
+          "transactionIndex": "0x0",
+          "blockNumber": "0x1",
+          "transactionHash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176"
+        },
+        {
+          "status": "0x1",
+          "gasUsed": "0x5208",
+          "cumulativeGasUsed": "0xa410",
+          "transactionIndex": "0x1",
+          "blockNumber": "0x1",
+          "transactionHash": "0x134ac4f08fd634a9be153ecd6aed444f54583a19ed80422730dcb2e759cd3861"
+        }
+      ],
+      "header_exact": true,
+      "signed_bundle_total_gas": null,
+      "gas_used": 42000
+    },
+    {
+      "case": "deferred_omit_fund",
+      "admitted": [
+        true
+      ],
+      "receipts": [
+        null
+      ],
+      "header_exact": true,
+      "signed_bundle_total_gas": null,
+      "gas_used": 0
+    },
+    {
+      "case": "deferred_reversed",
+      "admitted": [
+        true,
+        true
+      ],
+      "receipts": [
+        null,
+        {
+          "status": "0x1",
+          "gasUsed": "0x5208",
+          "cumulativeGasUsed": "0x5208",
+          "transactionIndex": "0x0",
+          "blockNumber": "0x1",
+          "transactionHash": "0xfb2a8438e024e2ac8fbdf684489e71bd14d2c88ed44a32dd2fdea53795f12176"
+        }
+      ],
+      "header_exact": true,
+      "signed_bundle_total_gas": null,
+      "gas_used": 21000
+    },
+    {
+      "case": "deferred_gas_below_intrinsic",
+      "admitted": [
+        true
+      ],
+      "receipts": [
+        null
+      ],
+      "header_exact": true,
+      "signed_bundle_total_gas": null,
+      "gas_used": 0
+    },
+    {
+      "case": "deferred_gas_above_block",
+      "admitted": [
+        true
+      ],
+      "receipts": [
+        null
+      ],
+      "header_exact": true,
+      "signed_bundle_total_gas": null,
+      "gas_used": 0
+    },
+    {
+      "case": "deferred_fee_below_basefee",
+      "admitted": [
+        true
+      ],
+      "receipts": [
+        null
+      ],
+      "header_exact": true,
+      "signed_bundle_total_gas": null,
+      "gas_used": 0
+    },
+    {
+      "case": "deferred_nonce_gap",
+      "admitted": [
+        true
+      ],
+      "receipts": [
+        null
+      ],
+      "header_exact": true,
+      "signed_bundle_total_gas": null,
+      "gas_used": 0
+    }
+  ],
+  "state_followups": [
+    {
+      "case": "deferred_funded",
+      "final_balances_wei": [
+        989979000000000000,
+        8979000000000000,
+        1000000000000000
+      ],
+      "balance_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "sender_nonces": [
+        1,
+        1
+      ]
+    },
+    {
+      "case": "deferred_omit_fund",
+      "final_balances_wei": [
+        1000000000000000000,
+        0,
+        0
+      ],
+      "balance_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "sender_nonces": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "deferred_nonce_gap",
+      "final_balances_wei": [
+        1000000000000000000,
+        0,
+        0
+      ],
+      "balance_order": [
+        "A",
+        "B",
+        "C"
+      ],
+      "sender_nonces": [
+        0,
+        0
+      ]
+    }
+  ],
+  "cleanup": {
+    "sessions": 11,
+    "all_guardian_returncode_zero": true,
+    "all_owned_ports_closed": true,
+    "owned_ports": [
+      63764,
+      63785,
+      63805,
+      63823,
+      63843,
+      63861,
+      63879,
+      63897,
+      63925,
+      63948,
+      63968
+    ]
+  },
+  "remaining_validation": [
+    "Synthetic transfers establish native mechanism only, not historical/archive or bounded Docker success.",
+    "Production integration/regressions/default-worker controls need root reviewed source direction and full required checks before claims advance.",
+    "Preserve honest rejected/not_mined/nonce_conflict statuses and original receipt verification; accepted does not mean executed.",
+    "No fullblock/state-root/opcode/withdrawal or broader oracle/missing-state truth inferred."
+  ],
+  "production_edits": false,
+  "private_keys_or_raw_signed_wire_retained": false,
+  "file_sha256": {
+    "anvil-api-v1.8.3.rs": "6f677c936f62db2501d0f4cc8e29724bb0a92a143f7f3b792f0e8b2553a8e858",
+    "anvil-backend-v1.8.3.rs": "1e4a29ecef33d4e61a0ab09a451131b78132ebf6573a867ca089f76d5d36fd75",
+    "anvil-config-pinned.rs": "f6c7e22b00442ddc514994cab4dca67f95e7705f4f906264a4e3963d389f071d",
+    "anvil-executor-pinned.rs": "80c1a5ff67307944d91d6dac7d8d5535fe4f0623cad8573d93e71742b9682479",
+    "anvil-types-v1.8.3.rs": "ba287cab462e9dff7872d368e3a3bbc1b13d9dd108798f8acf0242cbd31b6316",
+    "anvil-validate-v1.8.3.rs": "84e79dade8298f6e9244b534f55f345b21482479337589fc10d3d71724536e3a",
+    "probe-results.json": "fbba89828caa4aa0724e39b634c2b5d05fd0a92bf1548c31c3c0109878c284c1",
+    "probe.py": "5d3dbc56fccc3ad70b74269336609d5c93fdeb73b035af3f81e5ee797a10d998",
+    "state-probe.py": "94fa6c1385577051f79ebbee1183bf8be024d355b99e79c4e33fce80bed9a7bb",
+    "state-results.json": "b55f4346a6a507d5b8619189596afa8b617985fdcd014d9f2d5df3d138bc8153"
+  },
+  "identical_default_and_deferred_signed_hashes": [
+    true,
+    true
+  ]
+}

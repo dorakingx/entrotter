@@ -1,0 +1,165 @@
+{
+  "baseline_cli": "a10c28df460cd7ae9a00f04180417440da7d5f88",
+  "sdk_commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+  "local_tests": {
+    "focused_groups": 8,
+    "full_units": 100,
+    "skips": 0,
+    "original_missing_option_regression": "8 groups FAILED with15 assertions before implementation; log retained. Initial shell wrapper ended0 because tail was last, not test success."
+  },
+  "quality": {
+    "ruff_inputs": 14,
+    "mypy_sources": 10,
+    "Bandit_sources": 10,
+    "findings": 0,
+    "errors": 0,
+    "skipped_rules": 0,
+    "dependencies": "No declarations/locks or SDK changes; prior42-identity audit reused locally, current mandatory CI separately queries it."
+  },
+  "source_sha256": {
+    "src/entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+    "src/entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "src/entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+    "src/entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+    "src/entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "src/entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+    "src/entrotter_cli/main.py": "26e00193e5a935785109552460463c63a30be997478849f03118ed2ffd4bd0a5",
+    "src/entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+    "scripts/check_dependency_manifest.py": "fd9eaa329e7a27ee8b21ca3b7ecdb2ca2afb022bea1ebcecff2d5faaac52fcaf",
+    "scripts/check_security.py": "58de6896402c89d235a22a9e9bb2895ece68f20e7b9dd91966ea15fefad24c07"
+  },
+  "original_source_controls": {
+    "tests/data/observed-price32.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "tests/data/observed-controls.json": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
+    "tests/data/aave-account-position13.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978"
+  },
+  "actual_text_golden": {
+    "bytes": 1382,
+    "sha256": "ff4bf4ee19426cb142443e0996da5323f3d7dc9b1f5c827e11fc354b7c458433",
+    "price_comparison_USD": {
+      "baseline": "2562.92441874",
+      "candidate": "2570.82415",
+      "difference": "+7.89973126"
+    }
+  },
+  "original_whole_JSON": {
+    "inspect_sha256": "b4a6a14d3fb4acaae8eaf2fba783641e9094d85a2dbba5b293c3d912e381c532",
+    "verify_sha256": "7be2cf3ff1da0820eea9d8e2f544df7f6bb54d398da23ac57939bcbbc1d46291"
+  },
+  "installed": {
+    "status": "pass",
+    "wheel_proof": {
+      "entrotter_cli": {
+        "sha256": "34c9acdea86ffd2091a55ed9348ee48abbb0a4e7c7377d903351c315097793b8",
+        "runtime_modules": 8,
+        "all_RECORD_entries_verified": true,
+        "README_metadata_exact": true
+      },
+      "entrotter_sdk": {
+        "sha256": "a849767ca4cacaf10697c25a0cb17d86f96acdac566904df4baafe90c3713ff3",
+        "runtime_modules": 5,
+        "all_RECORD_entries_verified": true,
+        "README_metadata_exact": true
+      }
+    },
+    "module_source_sha256": {
+      "entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+      "entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+      "entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+      "entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+      "entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+      "entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+      "entrotter_cli/main.py": "26e00193e5a935785109552460463c63a30be997478849f03118ed2ffd4bd0a5",
+      "entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+      "entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+      "entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+      "entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+      "entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+      "entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+    },
+    "installed_modules_match_source_and_wheel": true,
+    "fresh_no_index_no_deps_environment": true,
+    "engine_absent": true,
+    "PYTHONPATH_removed_and_isolated_Python": true,
+    "commands": [
+      {
+        "label": "module-origin",
+        "returncode": 0,
+        "stdout_sha256": "57df048c4d9e6df9c849fc74be2375c7de6af354ac4e9be7aa531f58c2ca0666",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "doctor",
+        "returncode": 0,
+        "stdout_sha256": "dfbab9e577706a30b98ddac335a20a5b04c7ba8244c6be7bbbe47bfe1e363bb0",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "price-text",
+        "returncode": 0,
+        "stdout_sha256": "ff4bf4ee19426cb142443e0996da5323f3d7dc9b1f5c827e11fc354b7c458433",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "price-default-json",
+        "returncode": 0,
+        "stdout_sha256": "b4a6a14d3fb4acaae8eaf2fba783641e9094d85a2dbba5b293c3d912e381c532",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "price-verify-json",
+        "returncode": 0,
+        "stdout_sha256": "7be2cf3ff1da0820eea9d8e2f544df7f6bb54d398da23ac57939bcbbc1d46291",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "account-text",
+        "returncode": 0,
+        "stdout_sha256": "c49bd8cb6178fcf0a90518d32da6b5a3135f7a63457b38eacc74a58085266619",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "label": "installed-controls",
+        "returncode": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "ef75a6d268b5fa47d984bae3125d5faead915e8034aecc81d70d97e85f631541"
+      }
+    ],
+    "raw_log_sha256": {
+      "price-verify-json.stdout": "7be2cf3ff1da0820eea9d8e2f544df7f6bb54d398da23ac57939bcbbc1d46291",
+      "price-text.stdout": "ff4bf4ee19426cb142443e0996da5323f3d7dc9b1f5c827e11fc354b7c458433",
+      "installed-controls.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "module-source.stderr": "7dfa8656daa07779cc5ecee9a8183353d8a0089004b34db27a1d0c9fb48ab4ca",
+      "doctor.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "price-text.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed-controls.stderr": "ef75a6d268b5fa47d984bae3125d5faead915e8034aecc81d70d97e85f631541",
+      "doctor.stdout": "dfbab9e577706a30b98ddac335a20a5b04c7ba8244c6be7bbbe47bfe1e363bb0",
+      "module-source.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "price-verify-json.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "price-default-json.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "account-text.stdout": "c49bd8cb6178fcf0a90518d32da6b5a3135f7a63457b38eacc74a58085266619",
+      "pip-check.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "module-origin.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "create-venv.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "install.stdout": "69e5906a67c06e95ca2dcd63980b140e2ba6d718093857ff377bfbe8f1b58baf",
+      "install.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "account-text.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "module-origin.stdout": "57df048c4d9e6df9c849fc74be2375c7de6af354ac4e9be7aa531f58c2ca0666",
+      "create-venv.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pip-check.stdout": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "price-default-json.stdout": "b4a6a14d3fb4acaae8eaf2fba783641e9094d85a2dbba5b293c3d912e381c532"
+    },
+    "initial_verifier_failure": {
+      "wrapper_terminal": 1,
+      "scope": "Importing executable __main__ invoked argparse; corrected verifier inspects installed module origins/bytes without executing entry modules. Original empty stdout and finite argparse stderr retained; no production edit/reinstall/source test rerun.",
+      "first_script_sha256": "f0d7a87cadc2a4fc71b62fcb6b1894b8dd440f1bacd05873ef0d19662fac956c"
+    },
+    "environment_creation_install_pip_check": "Succeeded in first attempt before module verifier failed; reused same fresh environment without reinstall."
+  },
+  "raw_source_logs": {
+    "regression.log": "f72db55cc9b4f83e51fb1b72bce461e699cb51972eeb61ba20195da0034ca6a1",
+    "focused.log": "a756be008391c68e7ba8ae5bdfadf75a0e2e49d102a7d84006714f1ae191061d",
+    "unit.log": "b644425c5c51c8271a068698c61457671d772822aee694417e56919766043f18"
+  },
+  "scope": "Offline recorded/synthetic presentation only. Exact source-built installed environment; no new local EVM/model/browser/RPC/performance/media/user evaluation. No main merge, latest Pages deployment, registry or formal submission claim."
+}

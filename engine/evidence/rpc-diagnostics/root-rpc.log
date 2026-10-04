@@ -1,0 +1,20 @@
+test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) ... ok
+test_actual_native_cli_explains_rpc_kind_without_private_provider_values (test_rpc_diagnostics.NativeTraceDiagnosticTests.test_actual_native_cli_explains_rpc_kind_without_private_provider_values) ... ok
+test_default_worker_failure_envelope_stays_exact (test_rpc_diagnostics.NativeTraceDiagnosticTests.test_default_worker_failure_envelope_stays_exact) ... ok
+test_native_boundary_ignores_forged_properties_and_raw_slot_values (test_rpc_diagnostics.NativeTraceDiagnosticTests.test_native_boundary_ignores_forged_properties_and_raw_slot_values) ... ok
+test_error_message_and_data_are_never_echoed (test_rpc_diagnostics.RPCDiagnosticTests.test_error_message_and_data_are_never_echoed) ... ok
+test_non_object_error_does_not_echo_untrusted_text (test_rpc_diagnostics.RPCDiagnosticTests.test_non_object_error_does_not_echo_untrusted_text) ... ok
+test_untrusted_code_cannot_enter_diagnostics (test_rpc_diagnostics.RPCDiagnosticTests.test_untrusted_code_cannot_enter_diagnostics) ... ok
+test_arbitrary_method_and_constructor_codes_cannot_enter_diagnostics (test_rpc_diagnostics.SafeRPCFailureTests.test_arbitrary_method_and_constructor_codes_cannot_enter_diagnostics) ... ok
+test_hostile_exception_formatters_and_reason_access_are_never_required (test_rpc_diagnostics.SafeRPCFailureTests.test_hostile_exception_formatters_and_reason_access_are_never_required) ... ok
+test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) ... ok
+test_http_protocol_and_incomplete_read_bytes_are_not_exposed_or_retained (test_rpc_diagnostics.SafeRPCFailureTests.test_http_protocol_and_incomplete_read_bytes_are_not_exposed_or_retained) ... ok
+test_ordinary_upstream_and_local_still_deny_raw_broadcast (test_rpc_diagnostics.SafeRPCFailureTests.test_ordinary_upstream_and_local_still_deny_raw_broadcast) ... ok
+test_owned_trace_method_diagnostics_allow_fixed_mine_only (test_rpc_diagnostics.SafeRPCFailureTests.test_owned_trace_method_diagnostics_allow_fixed_mine_only) ... ok
+test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) ... ok
+test_timeout_types_do_not_require_error_messages (test_rpc_diagnostics.SafeRPCFailureTests.test_timeout_types_do_not_require_error_messages) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.151s
+
+OK

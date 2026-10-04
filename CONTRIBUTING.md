@@ -1,8 +1,14 @@
 # Contributing to entrotter
 
 All code, issues, documentation, and reviews are in English. Small, focused
-pull requests are welcome. You do not need cloud accounts or paid API keys
-for the offline tests. See README.md for this repository's test command.
+pull requests are welcome. Choose a scoped task from the
+[first-contribution directory](docs/FIRST_CONTRIBUTION.md). You do not need cloud
+accounts or paid API keys for the offline tests. The
+[integration workflow](.github/workflows/ci.yml) specifies the monorepo source, environment and commands.
+Migration CI adaptation is tracked in MIGRATION_STATUS.md. Some tests deliberately exercise
+frozen native versions, so a bare unittest run or the candidate workspace alone
+is not equivalent to every CI job. The [quick start](docs/QUICK_START.md) covers
+the candidate's Docker prerequisites and full local report reproduction.
 
 1. Fork this public repository and branch from `main`.
 2. Check existing issues; describe substantial API changes before implementing.
@@ -10,9 +16,9 @@ for the offline tests. See README.md for this repository's test command.
 4. Document assumptions, provenance, compatibility, and any skipped checks.
 5. Open a PR with the included template. One concern per PR; no unrelated rewrites.
 
-Cross-repository changes: open a tracking issue in `entrotter/entrotter`,
-link dependent PRs, and keep compatibility with the existing v0.1 JSON wire
-contract. Changes to schemas belong in `entrotter/scenarios`. Breaking changes
+Cross-component changes: open a tracking issue in `dorakingx/entrotter`,
+link focused dependent PRs, and keep compatibility with the existing v0.1 JSON
+wire contract. Changes to schemas belong in `scenarios/`. Breaking changes
 need a version bump and migration note. Never add a runtime Git dependency.
 
 Fork PRs run unprivileged tests only. Never use `pull_request_target` to run
@@ -23,3 +29,10 @@ historical validation results that have not actually run.
 Contributors retain copyright and license contributions under the MIT License.
 Be respectful; challenge ideas, not people. Maintainers can remove abusive
 content. Publish only material you have permission to share.
+
+Documentation links are checked on every pull request with checksum-pinned
+Lychee 0.24.2. The job checks tracked Markdown, HTML and CSS, including hidden
+PR templates, relative files and page fragments. Its artifact lists every
+result and exclusion. Code examples are not fetched; private/loopback endpoints
+are excluded. HTTP errors and timeouts fail the check, including rate limits;
+retry after diagnosing the cause instead of accepting an error status.

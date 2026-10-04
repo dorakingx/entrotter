@@ -1,0 +1,121 @@
+{
+  "checked_at": "2026-09-19T18:34:06.870892+00:00",
+  "source_commit": "57ea760c1bdb7cd9e58b740d8934d9f3f7e8ade0",
+  "worktree_dirty": false,
+  "checker": "lychee 0.24.2",
+  "checker_sha256": "87e6e75195df5753f08c53b5c0a13694b8328edd8df009914ae9e29b5000162d",
+  "files": {
+    ".github/PULL_REQUEST_TEMPLATE.md": "f8840c1975bc5aabfdedbd13d69de905fc19b7c9ad4c9b965f48e2b4c20b405d",
+    "AGENTS.md": "d1d8e6c41d67cbcd2ee82f7dcbb50568189acfcf92508b60731eed8de480e303",
+    "CONTRIBUTING.md": "4359449b1f9afb165261206df8cca58fad102c8f064e242b2b5589bcd820df15",
+    "README.md": "c5974432f8516fa137570b6b3150f2634fe279cd52758b0099cd64da4f778ad4",
+    "SECURITY.md": "06f4d07eae20821a11549334d9f6733aa84ce18847bc8ec59459ac93b2b49514"
+  },
+  "lychee_exit_code": 0,
+  "passed": true,
+  "path_redaction": "Local checkout prefix replaced with /workspace/repository",
+  "report": {
+    "total": 5,
+    "unique": 5,
+    "successful": 5,
+    "unknown": 0,
+    "unsupported": 0,
+    "timeouts": 0,
+    "redirects": 0,
+    "remaps": 0,
+    "excludes": 0,
+    "errors": 0,
+    "cached": 0,
+    "success_map": {
+      "README.md": [
+        {
+          "url": "file:///workspace/repository/LICENSE",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 168
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 5348
+          }
+        },
+        {
+          "url": "file:///workspace/repository/SECURITY.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 142
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 5208
+          }
+        },
+        {
+          "url": "file:///workspace/repository/CONTRIBUTING.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 108
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 9003
+          }
+        },
+        {
+          "url": "https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 3,
+            "column": 1
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 610572282
+          }
+        }
+      ],
+      "CONTRIBUTING.md": [
+        {
+          "url": "file:///workspace/repository/README.md",
+          "status": {
+            "text": "200 OK",
+            "code": 200
+          },
+          "span": {
+            "line": 5,
+            "column": 28
+          },
+          "duration": {
+            "secs": 0,
+            "nanos": 328144
+          }
+        }
+      ]
+    },
+    "error_map": {},
+    "timeout_map": {},
+    "suggestion_map": {},
+    "redirect_map": {},
+    "excluded_map": {},
+    "duration": {
+      "secs": 0,
+      "nanos": 611341279
+    },
+    "detailed_stats": true
+  }
+}

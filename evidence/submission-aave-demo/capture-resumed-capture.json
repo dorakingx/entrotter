@@ -1,0 +1,293 @@
+{
+  "status": "PASS actual capture",
+  "browser": "153.0.8010.12",
+  "pins": {
+    "viewer": "ad697dc5c7c9506ed8ec54386da727b0ef2f0b81",
+    "cli": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sdk": "ba4af512784119f23b6dea63fd24c7f5d1fdde44"
+  },
+  "timeline_duration": 138.4655328798186,
+  "offset_seconds": 74.47083900226757,
+  "capture_wall_seconds": 64.407558708,
+  "events": [
+    {
+      "scene": "download",
+      "started": 74.47341471026756,
+      "ready": 76.20229966826757
+    },
+    {
+      "scene": "download-detail",
+      "ready": 79.54878675226757
+    },
+    {
+      "scene": "copy",
+      "started": 85.48943483526756,
+      "ready": 85.75316483526757
+    },
+    {
+      "scene": "cli",
+      "started": 96.42491954326756,
+      "ready": 96.43903421026756
+    },
+    {
+      "scene": "cli-detail",
+      "ready": 102.32600237726757
+    },
+    {
+      "scene": "limit",
+      "started": 108.93066162726757,
+      "ready": 109.35305079326757
+    },
+    {
+      "scene": "end",
+      "started": 123.60886658526758,
+      "ready": 123.61590129326757
+    }
+  ],
+  "shots": [
+    "download",
+    "download-detail",
+    "copy",
+    "cli",
+    "cli-detail",
+    "limit",
+    "end"
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:59894/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/mascot.webp",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/style.css?v=eb30a5dd5297",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/app.js?v=7c3b1992938e",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/comparison.mjs?v=e0dac48fe543",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/trace-viewer.mjs?v=e87805dcef59",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/mascot.webp",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/reports/liquidity-shock.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/report-validation.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/trace-report.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/trace-comparison.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/observed-trace.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/position-report.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/examples/action-comparison.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/reports/aave-borrow-actions.json",
+      "method": "GET"
+    }
+  ],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:59894/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/mascot.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/icon.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/style.css?v=eb30a5dd5297",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/icon.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/mascot.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/app.js?v=7c3b1992938e",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/comparison.mjs?v=e0dac48fe543",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/trace-viewer.mjs?v=e87805dcef59",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/reports/liquidity-shock.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/report-validation.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/trace-comparison.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/observed-trace.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/trace-report.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/position-report.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/assets/examples/action-comparison.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59894/site/reports/aave-borrow-actions.json",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "observed": {
+    "balance_rows": [
+      "Native ETH · Initial20200",
+      "Native ETH · Final9.9888275591703197129.9912499816031695+0.002422422432849788",
+      "Native ETH · Change-10.011172440829680288-10.0087500183968305+0.002422422432849788",
+      "Gas cost (ETH)0.0111724408296802880.0087500183968305-0.002422422432849788",
+      "Gas used723131560326-162805",
+      "Reverted transactions10-1",
+      "Rejected transactions000",
+      "WETH · Initial000",
+      "WETH · Final110",
+      "WETH · Change+1+10",
+      "AWETH · Initial000",
+      "AWETH · Final10.00000009445455846210.0000000944545584620",
+      "AWETH · Change+10.000000094454558462+10.0000000944545584620",
+      "VWETH · Initial000",
+      "VWETH · Final110",
+      "VWETH · Change+1+10"
+    ],
+    "action_rows": [
+      "Baseline0success450389999026541994134046",
+      "Baseline1success460529998149476289352358",
+      "Baseline2success2023199994751245023605365",
+      "Baseline3reverted1628059992333837521840195",
+      "Baseline4success2669179988827559170319712",
+      "Candidate0success450389999026541994134046",
+      "Candidate1success460529998149476289352358",
+      "Candidate2success2023199994751245023605365",
+      "Candidate3noop09994751245023605365",
+      "Candidate4success2669179991249981603169500"
+    ],
+    "agent_row": "3\trejected\t500000 / 2000000\thold\tCurrent-state preflight or requested gas exceeds the policy\tnoop\t0",
+    "provenance": "Provider: builtin\nOriginal model/policy: preflight-risk-v1\nModel identity scope: Unavailable\nPrompt version: Unavailable\nGeneration: Deterministic\nSeed: Unavailable\nOriginal generation cost (USD): 0\nCost note: Unavailable",
+    "download": {
+      "filename": "aave-borrow-actions.json",
+      "bytes": 59506,
+      "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622"
+    },
+    "setup_copy": {
+      "payload": "git clone https://github.com/entrotter/cli.git entrotter-cli\ngit -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889\ngit clone https://github.com/entrotter/sdk-python.git entrotter-sdk\ngit -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "readback": "git clone https://github.com/entrotter/cli.git entrotter-cli\ngit -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889\ngit clone https://github.com/entrotter/sdk-python.git entrotter-sdk\ngit -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "activation": "native keyboard Enter",
+      "scope": "Actual clipboard only; setup clone commands not executed this turn"
+    },
+    "command_copy": {
+      "payload": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./aave-borrow-actions.json --format text",
+      "readback": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./aave-borrow-actions.json --format text",
+      "activation": "native keyboard Enter",
+      "focus": true
+    },
+    "cli": {
+      "code": 0,
+      "elapsed_seconds": 0.18509300000000076,
+      "executable": "<workspace>/.tools/quality-venv/bin/python",
+      "argv": [
+        "<workspace>/entrotter/.quality/aave-demo/inspect-offline.py"
+      ],
+      "cwd": "<workspace>/entrotter/.quality/aave-demo/cli-work",
+      "PYTHONPATH": "entrotter-cli/src:entrotter-sdk/src",
+      "stdout_bytes": 3013,
+      "stdout_sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+      "stderr_bytes": 0,
+      "network_guard": {
+        "blocked_events": [],
+        "scope": "Python audit hook rejects outbound DNS/connect and child processes; no engine execution"
+      },
+      "scope": "Actual pinned CLI main with fixed argv, offline guard, aliases to selected existing sources; prior clean clone setup not rerun"
+    }
+  },
+  "served_sha256": {
+    "/": "0bfc38dac537312b2d971d8252729fb56d40cb828651041c81f90f947497c3a6",
+    "/site/assets/mascot.webp": "6b56ae1a3b6b2d123f71f0008b345073cd622ed821cf25ce2edf9f5428ac0f76",
+    "/site/assets/icon.png": "1e8ef40b9371697d1c2e76900daaf25081a6beff56178eebe680d25ef279e051",
+    "/site/": "5cbe2be7e02662ef7d5b7e892792fcaf16a24e750ea9f26b2251e1efa7958563",
+    "/site/style.css": "eb30a5dd529732cc220cf31fa589e5aa9198339d7471c425e5c1e6036ccf286c",
+    "/site/comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
+    "/site/app.js": "7c3b1992938e5c7d1a60635519412b1988b9f058d1e7275991501d82adeaefca",
+    "/site/trace-viewer.mjs": "e87805dcef59dce8905671c73802c42448abee827c4d12bd0abfd7adb1bda06a",
+    "/site/reports/liquidity-shock.json": "626d696c4ecd3399d5fb398509380750e515ef342032f952266a7948fa641a0d",
+    "/site/report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
+    "/site/trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+    "/site/observed-trace.mjs": "980ff5172f61b82413e9898955f7a60ee23ba10a6374e6b259a91034624fe9ee",
+    "/site/trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+    "/site/position-report.mjs": "38f31262e2248ae6af2d07bf7ee02de3d24316eaaac164e3dc2ae597e00c8f7f",
+    "/site/assets/examples/action-comparison.json": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67",
+    "/site/reports/aave-borrow-actions.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622"
+  },
+  "scope": "Continuous real viewer at pinned source; actual native copy/download and read-only CLI. Previously recorded archived-state actions; no new EVM/RPC/model run; clean capture has no burned captions."
+}

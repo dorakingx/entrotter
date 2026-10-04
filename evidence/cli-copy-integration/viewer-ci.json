@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "head": "ad697dc5c7c9506ed8ec54386da727b0ef2f0b81",
+  "tree": "e1a2a8f0dd925da7e309879117addf13b426fa9d",
+  "merge": "a94b3c47e0d5f65b589abe6c6f038c421a6e2228",
+  "mandatory_checks": {
+    "check": "success",
+    "quality": "success",
+    "accessibility": "success",
+    "docs-links": "success"
+  },
+  "runs": [
+    37178126964,
+    37178126969
+  ],
+  "browser": {
+    "groups": 51,
+    "raw_axe": 64,
+    "js_errors": 0,
+    "runner_sha256": "4b55d6a0f159fd5014407105998eb322994a11bdf4e9c236accfa06fb8219240",
+    "node": "v22.23.3",
+    "platform": "linux",
+    "chromium": "153.0.8010.12"
+  },
+  "quality": {
+    "js": 19,
+    "typed": 20,
+    "full_findings": 152,
+    "node_dependencies": 109,
+    "python_dependencies": 42,
+    "reported_advisories": 0
+  },
+  "docs": {
+    "files": 22,
+    "links": 126,
+    "unique": 109,
+    "errors": 0,
+    "timeouts": 0,
+    "excludes": 0
+  },
+  "current_CI_proof_sha256": "e84d4df4bcd69cdcc71ebeb9d37fec667cc3113f6a670ace924aff767fdd0c53",
+  "current_CI_helper_sha256": "6f27f993a931517385c8562eecba1f8996908953bc16d650eb572cff21bf3936",
+  "whole_original_ZIP_members": 120,
+  "CI_review_role": "Parent current-CI interpretation and complete byte/source binding, reusing independent corrective stage/source review; not a second independent semantic audit of inherited corpus.",
+  "source_review": {
+    "corrective_stage_sha256": "63acef6c467217af6662d24dcadcf64403655135922670b77f4062041f3fafb5",
+    "corrective_helper_sha256": "636c766cabd95712dc4ffe7e67de34826980ad0f783171d60b8b458ff976d2f2",
+    "corrective_stage_files": 6,
+    "original_production_stage_sha256": "570285c5538cfa788071c100ec9c0265f451a04cff53744f9cf9c34e95c08327",
+    "original_stage_qualification": "Original source/stage/native behavior reviewed, but initial local lint error was missed; never treated as initial lint success. Current corrective independent proof explicitly closes that finding.",
+    "native_keyboard_samples": 6,
+    "local_browser_groups": 51,
+    "local_raw_axe": 64,
+    "local_full_ESLint_files": 19,
+    "local_ESLint_messages": 0,
+    "full_findings": 152,
+    "all_prior_reasons_preserved": true
+  },
+  "publication": {
+    "actual_GitHub_tree_nodes": 274,
+    "original_feature_blobs": 14,
+    "corrective_blobs": 6,
+    "actual_commit_and_blob_bytes_verified": true
+  },
+  "retained_original_failure": {
+    "head": "88a9bb2910d772f7b330fa717004796db676ee88",
+    "CI_run": 37177656833,
+    "job": 111363561247,
+    "reason": "no-undef holdCliCopy in development runner; local lint also reported it, masked by later command and missed by initial review. Same-global globalThis reference fixes without relaxing rules.",
+    "original_quality_ZIP_sha256": "4c9b04ee43c4e88f73a790e43324358d301832aaaba1a9459e656991cdf779ef",
+    "original_CI_browser": "51 groups/64 raw axe pass",
+    "original_docs": "22 files/126 links/109 unique pass",
+    "original_quality_type_security_dependency_audit": "not executed after lint failure; no success claimed"
+  },
+  "limits": [
+    "Started fixed-public native clipboard payload cannot be cancelled after report change; serialized writes and stale feedback clearing only.",
+    "Only test runner reference/security source binding and explicit evidence correction change after the production feature; original six CLI inspection recipes/pins/results unchanged.",
+    "Current CI runs136 Node tests twice/12site; local original136/12 results are reused because those source files are unchanged by corrective runner.",
+    "All raw axe color-contrast incompletes remain explicit; finite supplemental checks and Chromium results do not certify assistive technology or reliability rates.",
+    "Original native chooser/scroll timeout causes remain unknown. Protected human-main approval, merge, live Pages and formal submission remain separate. No new EVM/model/RPC/performance result."
+  ]
+}

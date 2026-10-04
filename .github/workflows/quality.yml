@@ -1,0 +1,69 @@
+name: Coordination quality and dependency audit
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Materialize exact type regression variants from local history
+        run: |
+          mkdir -p .quality/type-history
+          git worktree add --detach .quality/type-history/agent-engine bb8b3e8d32c7cbd49629d337758f30bfdf805045
+          git worktree add --detach .quality/type-history/worker-engine 88c6cd0d00f466ed7e870bd57c118aa50984f8b1
+          git worktree add --detach .quality/type-history/sdk-python ba4af512784119f23b6dea63fd24c7f5d1fdde44
+          git worktree add --detach .quality/type-history/cli 696511c5cb46482c96cf6f609c83877fcf16e922
+      - name: Install complete hash-verified developer tool lock
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-quality.txt
+          .venv/bin/python -m pip check
+      - name: Parse every workflow and action YAML file
+        run: |
+          .venv/bin/python - <<'PYAML'
+          from pathlib import Path
+          import yaml
+          paths = sorted(Path('.github').rglob('*.yml'))
+          if not paths:
+              raise ValueError('No workflow configuration found')
+          for path in paths:
+              yaml.safe_load(path.read_text())
+          print('Parsed', len(paths), 'YAML files; GitHub validates workflow semantics separately')
+          PYAML
+      - name: Lint and format production tooling
+        run: |
+          .venv/bin/python -m ruff check scripts .github/actions/docs-links/check.py
+          .venv/bin/python -m ruff format --check scripts .github/actions/docs-links/check.py
+      - name: Check types against both exact execution variants
+        run: .venv/bin/python scripts/check_types.py --agent-engine .quality/type-history/agent-engine --worker-engine .quality/type-history/worker-engine --sdk .quality/type-history/sdk-python --cli .quality/type-history/cli
+      - name: Retain full unsuppressed source-bound security findings
+        run: .venv/bin/python scripts/check_security.py
+      - name: Verify dependency coverage and audit all locked packages
+        run: |
+          .venv/bin/python scripts/check_dependencies.py
+          .venv/bin/python -m pip_audit --strict --require-hashes --disable-pip -r requirements-quality.txt --progress-spinner off -f json -o .quality/dependencies.json
+      - name: Prove optimized verification and policy failures are rejected
+        run: |
+          .venv/bin/python -m unittest discover -s tests -p 'test_quality*.py' -v
+          .venv/bin/python -m unittest discover -s tests -p 'test_host_envelope.py' -v
+          .venv/bin/python -m unittest discover -s tests -p 'test_bounded_cli.py' -v
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: coordination-quality-reports
+          path: |
+            .quality/
+            !.quality/type-history/
+          include-hidden-files: true
+          if-no-files-found: error

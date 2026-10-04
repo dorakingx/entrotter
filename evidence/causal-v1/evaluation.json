@@ -1,0 +1,582 @@
+{
+  "started_at": "2026-09-19T16:29:20.565262+00:00",
+  "split": "evaluation",
+  "manifest_sha256": "f147489fcde8de04be6a9de459fe011018488bd75e66a84de55f6a8a35ed030e",
+  "manifest": {
+    "version": "causal-v1",
+    "prepared_at": "2026-09-19T16:26:42.255540+00:00",
+    "status": "frozen-before-new-protocol-state-execution",
+    "cases": [
+      {
+        "id": "causal-uniswap-17000000",
+        "path": "cases/17000000.json",
+        "sha256": "872aee0c3fca50e4ba4a4eb7d5cd6b34e4c6df85fe8c53655f329d691133339b",
+        "split": "evaluation",
+        "source": {
+          "chain_id": 1,
+          "block_number": 17000000,
+          "block_hash": "0x96cfa0fb5e50b0a3f6cc76f3299cfbf48f17e8b41798d1394474e67ec8a97e9f",
+          "timestamp": 1680911891
+        },
+        "minimum_out_raw": "1500000000",
+        "decision_steps": [
+          2
+        ]
+      },
+      {
+        "id": "causal-uniswap-18000000",
+        "path": "cases/18000000.json",
+        "sha256": "5b82f881e4163fa667a9729a7d40e60917222d6925a9fc32d317aab68d2103f3",
+        "split": "evaluation",
+        "source": {
+          "chain_id": 1,
+          "block_number": 18000000,
+          "block_hash": "0x95b198e154acbfc64109dfd22d8224fe927fd8dfdedfae01587674482ba4baf3",
+          "timestamp": 1693066895
+        },
+        "minimum_out_raw": "2000000000",
+        "decision_steps": [
+          2
+        ]
+      },
+      {
+        "id": "causal-uniswap-19000000",
+        "path": "cases/19000000.json",
+        "sha256": "2059263c6e3eb9dfd8ef3549ef82f1e070225dcb5430c6301349da51d4a4d02f",
+        "split": "development",
+        "source": {
+          "chain_id": 1,
+          "block_number": 19000000,
+          "block_hash": "0xcf384012b91b081230cdf17a3f7dd370d8e67056058af6b272b3d54aa2714fac",
+          "timestamp": 1705173443
+        },
+        "minimum_out_raw": "1000000000000",
+        "decision_steps": [
+          2
+        ]
+      },
+      {
+        "id": "causal-uniswap-20000000",
+        "path": "cases/20000000.json",
+        "sha256": "749b12bb349dd2ebdeac9f234d0c0553056a3f0ee8b78f7f8db42beeee8953d6",
+        "split": "holdout",
+        "source": {
+          "chain_id": 1,
+          "block_number": 20000000,
+          "block_hash": "0xd24fd73f794058a3807db926d8898c6481e902b7edb91ce0d479d6760f276183",
+          "timestamp": 1717281407
+        },
+        "minimum_out_raw": "3000000000",
+        "decision_steps": [
+          2
+        ]
+      },
+      {
+        "id": "causal-uniswap-21000000",
+        "path": "cases/21000000.json",
+        "sha256": "600f4a1e6b935ed3c82ab0f3d2c25839d06c0523d006a7348567e456a10bce8b",
+        "split": "holdout",
+        "source": {
+          "chain_id": 1,
+          "block_number": 21000000,
+          "block_hash": "0xf5e1d15a3e380006bd271e73c8eeed75fafc3ae6942b16f63c21361079bba709",
+          "timestamp": 1729345547
+        },
+        "minimum_out_raw": "3000000000",
+        "decision_steps": [
+          2
+        ]
+      }
+    ],
+    "policy": {
+      "engine_commit": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+      "coordination_commit": "057c3423eaec12e80b7e575944d27c60a3375fbd",
+      "codex_adapter_sha256": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76",
+      "codex_cli_version": "0.145.0",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "low",
+      "prompt_version": "evm-proposal-gate-v1",
+      "prompt_sha256": "1bdd4e81178e6d9cd4691bd48d0b08dbf9c4df31c6395229670f87c658580c37",
+      "seed": null,
+      "max_requested_gas": 500000,
+      "timeout_seconds_per_decision": 50
+    },
+    "comparison": {
+      "non_agent": "execute all supplied proposals",
+      "risk": "execute iff current preflight succeeds and requested gas fits",
+      "model": "same objective, model chooses execute or hold over identical causal request",
+      "setup": "wrap 1 ETH and approve exactly 1 WETH; shared and excluded from decision budget",
+      "valuation": "none; retain exact native/WETH/USDC units and gas; drawdown is undefined"
+    },
+    "holdout_boundary": [
+      "Only source headers were queried during split preparation. No protocol state calls, preflights or swaps were run at blocks 20000000 or 21000000 in this implementation before this freeze.",
+      "Block 19000000 was explored during development; never count it as untouched.",
+      "Historical market knowledge and model training data may include these periods. Holdout means unused by this implementation, not unseen by the model or a blind market forecast.",
+      "Thresholds and model prompt must not change after observing holdout results. A change requires a new named benchmark and new unused cases."
+    ],
+    "failure_policy": "Archive, model or replay failures are recorded as failures; no replacement scenarios or hidden fallback policies."
+  },
+  "status": "passed",
+  "cases": [
+    {
+      "id": "causal-uniswap-17000000",
+      "split": "evaluation",
+      "source": {
+        "chain_id": 1,
+        "block_number": 17000000,
+        "block_hash": "0x96cfa0fb5e50b0a3f6cc76f3299cfbf48f17e8b41798d1394474e67ec8a97e9f",
+        "timestamp": 1680911891
+      },
+      "policies": [
+        {
+          "name": "non-agent",
+          "status": "passed",
+          "artifact_id": "11e1ff93362c392d5500232cd71e82685e26e8362a39e4215c72276c9bc15e36",
+          "wall_seconds": 9.78894554200815,
+          "replay_seconds": null,
+          "exact_replay": false,
+          "child_cpu_seconds": 0.178027,
+          "child_peak_rss_so_far": 35422208,
+          "child_peak_rss_unit": "bytes",
+          "metrics": {
+            "initial_balance_wei": "10000000000000000000",
+            "final_balance_wei": "8996230392898848420",
+            "balance_delta_wei": "-1003769607101151580",
+            "gas_used": "216505",
+            "gas_cost_wei": "3769607101151580",
+            "reverted_transactions": 0,
+            "rejected_transactions": 0
+          },
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "symbol": "WETH",
+              "decimals": 18,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "0",
+              "balance_delta_raw": "0"
+            },
+            {
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "symbol": "USDC",
+              "decimals": 6,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "1860850781",
+              "balance_delta_raw": "1860850781"
+            }
+          ],
+          "actions": [
+            "success",
+            "success",
+            "success"
+          ],
+          "choices": []
+        },
+        {
+          "name": "risk",
+          "status": "passed",
+          "artifact_id": "47c8a7835cf8928273e61d2919f449b8e1d33310fe8f4f8800a0efd782c99581",
+          "wall_seconds": 9.110614208009792,
+          "replay_seconds": 9.480744583997875,
+          "exact_replay": true,
+          "child_cpu_seconds": 0.17698399999999997,
+          "child_peak_rss_so_far": 35422208,
+          "child_peak_rss_unit": "bytes",
+          "metrics": {
+            "initial_balance_wei": "10000000000000000000",
+            "final_balance_wei": "8996230392898848420",
+            "balance_delta_wei": "-1003769607101151580",
+            "gas_used": "216505",
+            "gas_cost_wei": "3769607101151580",
+            "reverted_transactions": 0,
+            "rejected_transactions": 0
+          },
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "symbol": "WETH",
+              "decimals": 18,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "0",
+              "balance_delta_raw": "0"
+            },
+            {
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "symbol": "USDC",
+              "decimals": 6,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "1860850781",
+              "balance_delta_raw": "1860850781"
+            }
+          ],
+          "actions": [
+            "success",
+            "success",
+            "success"
+          ],
+          "choices": [
+            "execute"
+          ]
+        },
+        {
+          "name": "model",
+          "status": "passed",
+          "artifact_id": "26d85a53b90d57b7b7e127ccfa32b751efc0175f411c28cf7cea1038cd3cf66e",
+          "wall_seconds": 13.805604916997254,
+          "replay_seconds": 8.895235707983375,
+          "exact_replay": true,
+          "child_cpu_seconds": 1.4687339999999998,
+          "child_peak_rss_so_far": 107610112,
+          "child_peak_rss_unit": "bytes",
+          "metrics": {
+            "initial_balance_wei": "10000000000000000000",
+            "final_balance_wei": "8996230392898848420",
+            "balance_delta_wei": "-1003769607101151580",
+            "gas_used": "216505",
+            "gas_cost_wei": "3769607101151580",
+            "reverted_transactions": 0,
+            "rejected_transactions": 0
+          },
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "symbol": "WETH",
+              "decimals": 18,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "0",
+              "balance_delta_raw": "0"
+            },
+            {
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "symbol": "USDC",
+              "decimals": 6,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "1860850781",
+              "balance_delta_raw": "1860850781"
+            }
+          ],
+          "actions": [
+            "success",
+            "success",
+            "success"
+          ],
+          "choices": [
+            "execute"
+          ]
+        }
+      ],
+      "opened_at": "2026-09-19T16:29:20.565803+00:00",
+      "status": "passed"
+    },
+    {
+      "id": "causal-uniswap-18000000",
+      "split": "evaluation",
+      "source": {
+        "chain_id": 1,
+        "block_number": 18000000,
+        "block_hash": "0x95b198e154acbfc64109dfd22d8224fe927fd8dfdedfae01587674482ba4baf3",
+        "timestamp": 1693066895
+      },
+      "policies": [
+        {
+          "name": "non-agent",
+          "status": "passed",
+          "artifact_id": "0498c9baf2d44a36861a4dd59c07a6721992fafb1fb346a0c9a0011d5e4607d5",
+          "wall_seconds": 10.084899958019378,
+          "replay_seconds": null,
+          "exact_replay": false,
+          "child_cpu_seconds": 0.19238500000000014,
+          "child_peak_rss_so_far": 107610112,
+          "child_peak_rss_unit": "bytes",
+          "metrics": {
+            "initial_balance_wei": "10000000000000000000",
+            "final_balance_wei": "8995474372876235886",
+            "balance_delta_wei": "-1004525627123764114",
+            "gas_used": "234844",
+            "gas_cost_wei": "4525627123764114",
+            "reverted_transactions": 1,
+            "rejected_transactions": 0
+          },
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "symbol": "WETH",
+              "decimals": 18,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "1000000000000000000",
+              "balance_delta_raw": "1000000000000000000"
+            },
+            {
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "symbol": "USDC",
+              "decimals": 6,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "0",
+              "balance_delta_raw": "0"
+            }
+          ],
+          "actions": [
+            "success",
+            "success",
+            "reverted"
+          ],
+          "choices": []
+        },
+        {
+          "name": "risk",
+          "status": "passed",
+          "artifact_id": "d3d5c385c1ec74a71f91d302a92575eff3a9b04366aff0a3be8fed61ed1f4bc6",
+          "wall_seconds": 10.12544562498806,
+          "replay_seconds": 10.723155540996231,
+          "exact_replay": true,
+          "child_cpu_seconds": 0.18834399999999996,
+          "child_peak_rss_so_far": 107610112,
+          "child_peak_rss_unit": "bytes",
+          "metrics": {
+            "initial_balance_wei": "10000000000000000000",
+            "final_balance_wei": "8998035729299929278",
+            "balance_delta_wei": "-1001964270700070722",
+            "gas_used": "91090",
+            "gas_cost_wei": "1964270700070722",
+            "reverted_transactions": 0,
+            "rejected_transactions": 0
+          },
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "symbol": "WETH",
+              "decimals": 18,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "1000000000000000000",
+              "balance_delta_raw": "1000000000000000000"
+            },
+            {
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "symbol": "USDC",
+              "decimals": 6,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "0",
+              "balance_delta_raw": "0"
+            }
+          ],
+          "actions": [
+            "success",
+            "success",
+            "noop"
+          ],
+          "choices": [
+            "hold"
+          ]
+        },
+        {
+          "name": "model",
+          "status": "passed",
+          "artifact_id": "f8804e55a7cdb75c1a08849fd2e975a9ca9426f3d62f6261987ad9c6a2f09d0a",
+          "wall_seconds": 13.661722457996802,
+          "replay_seconds": 9.712965749989962,
+          "exact_replay": true,
+          "child_cpu_seconds": 1.316966999999999,
+          "child_peak_rss_so_far": 107610112,
+          "child_peak_rss_unit": "bytes",
+          "metrics": {
+            "initial_balance_wei": "10000000000000000000",
+            "final_balance_wei": "8998035729299929278",
+            "balance_delta_wei": "-1001964270700070722",
+            "gas_used": "91090",
+            "gas_cost_wei": "1964270700070722",
+            "reverted_transactions": 0,
+            "rejected_transactions": 0
+          },
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "symbol": "WETH",
+              "decimals": 18,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "1000000000000000000",
+              "balance_delta_raw": "1000000000000000000"
+            },
+            {
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "symbol": "USDC",
+              "decimals": 6,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "0",
+              "balance_delta_raw": "0"
+            }
+          ],
+          "actions": [
+            "success",
+            "success",
+            "noop"
+          ],
+          "choices": [
+            "hold"
+          ]
+        }
+      ],
+      "opened_at": "2026-09-19T16:30:11.654237+00:00",
+      "status": "passed"
+    },
+    {
+      "id": "causal-uniswap-19000000",
+      "split": "development",
+      "source": {
+        "chain_id": 1,
+        "block_number": 19000000,
+        "block_hash": "0xcf384012b91b081230cdf17a3f7dd370d8e67056058af6b272b3d54aa2714fac",
+        "timestamp": 1705173443
+      },
+      "policies": [
+        {
+          "name": "non-agent",
+          "status": "passed",
+          "artifact_id": "61a14ab2a3b813273e93b14908e7e147654440b349efcb4441714f7a523796d5",
+          "wall_seconds": 8.628284000005806,
+          "replay_seconds": null,
+          "exact_replay": false,
+          "child_cpu_seconds": 0.17801899999999948,
+          "child_peak_rss_so_far": 107610112,
+          "child_peak_rss_unit": "bytes",
+          "metrics": {
+            "initial_balance_wei": "10000000000000000000",
+            "final_balance_wei": "8996207316955768519",
+            "balance_delta_wei": "-1003792683044231481",
+            "gas_used": "222793",
+            "gas_cost_wei": "3792683044231481",
+            "reverted_transactions": 1,
+            "rejected_transactions": 0
+          },
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "symbol": "WETH",
+              "decimals": 18,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "1000000000000000000",
+              "balance_delta_raw": "1000000000000000000"
+            },
+            {
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "symbol": "USDC",
+              "decimals": 6,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "0",
+              "balance_delta_raw": "0"
+            }
+          ],
+          "actions": [
+            "success",
+            "success",
+            "reverted"
+          ],
+          "choices": []
+        },
+        {
+          "name": "risk",
+          "status": "passed",
+          "artifact_id": "5a607b9aff978b08156f3eddc802376d373cd8c8a3dc4b51e8076dbdd97018f5",
+          "wall_seconds": 8.533211582980584,
+          "replay_seconds": 9.439546875015367,
+          "exact_replay": true,
+          "child_cpu_seconds": 0.17823699999999998,
+          "child_peak_rss_so_far": 107610112,
+          "child_peak_rss_unit": "bytes",
+          "metrics": {
+            "initial_balance_wei": "10000000000000000000",
+            "final_balance_wei": "8998273180304412328",
+            "balance_delta_wei": "-1001726819695587672",
+            "gas_used": "91090",
+            "gas_cost_wei": "1726819695587672",
+            "reverted_transactions": 0,
+            "rejected_transactions": 0
+          },
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "symbol": "WETH",
+              "decimals": 18,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "1000000000000000000",
+              "balance_delta_raw": "1000000000000000000"
+            },
+            {
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "symbol": "USDC",
+              "decimals": 6,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "0",
+              "balance_delta_raw": "0"
+            }
+          ],
+          "actions": [
+            "success",
+            "success",
+            "noop"
+          ],
+          "choices": [
+            "hold"
+          ]
+        },
+        {
+          "name": "model",
+          "status": "passed",
+          "artifact_id": "d96c919d7ddc4dabde5126914bc40fe8e44736e6bd7be37ed84b3dc6400699c9",
+          "wall_seconds": 12.548947332979878,
+          "replay_seconds": 9.353269708022708,
+          "exact_replay": true,
+          "child_cpu_seconds": 1.4992159999999999,
+          "child_peak_rss_so_far": 107610112,
+          "child_peak_rss_unit": "bytes",
+          "metrics": {
+            "initial_balance_wei": "10000000000000000000",
+            "final_balance_wei": "8998273180304412328",
+            "balance_delta_wei": "-1001726819695587672",
+            "gas_used": "91090",
+            "gas_cost_wei": "1726819695587672",
+            "reverted_transactions": 0,
+            "rejected_transactions": 0
+          },
+          "tokens": [
+            {
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "symbol": "WETH",
+              "decimals": 18,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "1000000000000000000",
+              "balance_delta_raw": "1000000000000000000"
+            },
+            {
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "symbol": "USDC",
+              "decimals": 6,
+              "initial_balance_raw": "0",
+              "final_balance_raw": "0",
+              "balance_delta_raw": "0"
+            }
+          ],
+          "actions": [
+            "success",
+            "success",
+            "noop"
+          ],
+          "choices": [
+            "hold"
+          ]
+        }
+      ],
+      "opened_at": "2026-09-19T16:31:05.969442+00:00",
+      "status": "passed"
+    }
+  ],
+  "mode": "archived-state supplied-action evaluation",
+  "limitations": [
+    "One protocol, five hand-selected source states; no statistical confidence claim",
+    "Implementation holdout is not unseen model training data",
+    "No future price path or valuation; profit/drawdown undefined",
+    "Anvil version pinned; no explicit hardfork override for fork runs, not canonical trace replay",
+    "Run order is fixed; wall time includes provider/cache/network variability",
+    "Resource measurements cover checker children, peak RSS is not aggregate or a hard limit"
+  ],
+  "completed_at": "2026-09-19T16:31:54.479247+00:00"
+}

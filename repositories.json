@@ -1,31 +1,38 @@
 {
-  "organization": "entrotter",
+  "owner": "dorakingx",
+  "name": "entrotter",
   "visibility": "public",
   "license": "MIT",
-  "repositories": [
+  "components": [
     {
-      "name": "entrotter",
-      "description": "Project coordination, reproducible workspace tooling, roadmap and Codex goal"
+      "name": "coordination",
+      "path": ".",
+      "description": "Project coordination, roadmap and reproducibility"
     },
     {
       "name": "engine",
-      "description": "Local-first simulation engine, bounded development API and isolated Anvil adapter"
+      "path": "engine",
+      "description": "Local execution and isolated Anvil adapter"
     },
     {
       "name": "sdk-python",
-      "description": "Typed Python client and artifact integrity verification"
+      "path": "sdk-python",
+      "description": "Typed Python client and integrity checks"
     },
     {
       "name": "cli",
-      "description": "Command-line entry point for researchers and agent developers"
+      "path": "cli",
+      "description": "Research command-line tools"
     },
     {
       "name": "scenarios",
-      "description": "Versioned scenario schemas, synthetic stress tests and EVM examples"
+      "path": "scenarios",
+      "description": "Versioned source contracts and examples"
     },
     {
-      "name": "entrotter.github.io",
-      "description": "Static OSS documentation and read-only report explorer for GitHub Pages"
+      "name": "website",
+      "path": "website",
+      "description": "Read-only static OSS report viewer on Vercel"
     }
   ]
 }

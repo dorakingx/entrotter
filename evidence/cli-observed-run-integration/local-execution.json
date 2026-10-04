@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "pins": {
+    "engine": "c2eb54dc97509e7318216c01f98adade1da5bc6e",
+    "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+    "cli": "d437ad14828cf63f19091656b68e4b9a2b842ad4",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "steps": [
+    {
+      "name": "Verify offline reader and viewer retain the actual signed-prefix evidence",
+      "script_sha256": "f2dc8d5edb44ea12d37cab8b8d3cbfcdaf374d2c2e32d33bb792ebb69a92636a",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the original 32-receipt case and display classification with SDK and viewer",
+      "script_sha256": "09fed780bae31612d9e22e6ef4c89b84be6726c0cc1a23c877888a07c76d119c",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the historical Aave consumer price records with SDK and viewer",
+      "script_sha256": "47cc1b92fef09890744a071f9f5fc6ad9fa32f6b223301eaf697943bed2adb2a",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the synthetic same-block funding report with SDK and viewer",
+      "script_sha256": "adaf874f5dc073337e7577cac42a5af5c06f428334ac17d418b04b25db43eb49",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect oracle omission and unverified storage reports with SDK and viewer",
+      "script_sha256": "345ed9ecf904b91505a6abcf061d9a9c75fd6a760de33eb821ae3d670e8e9b62",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the supported observation wrapper with engine, SDK, CLI and viewer",
+      "script_sha256": "647a610411796594076e353539c1a65d327782f2398a627274da9217302e3535",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the actual bounded historical price wrapper across engine, SDK, CLI and viewer",
+      "script_sha256": "5b9dc7265adfe5575b75e42512399d278015c1c0598eec8f3f01b9f3213b6636",
+      "returncode": 0
+    }
+  ],
+  "all_seven_exact_bodies": true,
+  "all_full_outcome_facts_unchanged_except_selected_CLI_pin_and_exact_CLI_module_source_hash": true,
+  "source_metadata_changes": {
+    "trace-bounded-observed-reader.json": {
+      "source_metadata_old": "bbd8c3db666fc5cf3b4d4f2bf7f8dd99a72b0f0efd60066fbc711364a7de8214",
+      "source_metadata_new": "6f0a68f7179ee1e1571d0bba9bf6e45dc94a9cc4c5ba9e4dd6bf9b4d2f4d7678"
+    },
+    "trace-observed-reader.json": {
+      "source_metadata_old": "bbd8c3db666fc5cf3b4d4f2bf7f8dd99a72b0f0efd60066fbc711364a7de8214",
+      "source_metadata_new": "6f0a68f7179ee1e1571d0bba9bf6e45dc94a9cc4c5ba9e4dd6bf9b4d2f4d7678"
+    }
+  },
+  "output_sha256": {
+    "bounded-observed-transaction-replay.json": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+    "observed-transaction-replay.json": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+    "trace-bounded-observed-reader.json": "ea318a49bfd6240feff9b8bfbe5bf7392c4e1a3aa535e1c16ca490d4c8b0e0eb",
+    "trace-comparison-reader.json": "b75a4bbbfd172d0f16a6289d57e7c91b8818c135f8f2b1ce17da4c2ac7e9a095",
+    "trace-consumer-reader.json": "5c1bc4fc177f5e00d876ab9b3c9dec235e03ea43be9369cc83d642666205d2da",
+    "trace-funding-reader.json": "75353376a601aa33df848399268de8bb73d29e6592cbe1169ee66fb52d0f5057",
+    "trace-observed-reader.json": "d3a954bf9d730b1e1d2b97607366f2dcea23c8f8806f7be9f3b3d61c9ad212d4",
+    "trace-oracle-reader.json": "4816ad1fa73501bf3296191969392c64b907035311dfe7b7beb4f855e707f55b",
+    "trace-reader.json": "9fe1efa0d7b2fa202eedeeb2e9a246ca658905077997f810eea3436123177d40"
+  },
+  "review_setup_correction": "All7 executable readers passed first execution; provisional comparison wrongly allowed only pin change although sixth/seventh readers explicitly bind changed CLI main source hash. Corrected offline fact comparison against exact old/new Git source hashes, without rerunning readers or altering facts. Raw failed comparison retained in readers.log.",
+  "scope": "Offline parsing at proposed CLI source, no new chain/model/browser/performance run or tracked root selection promotion."
+}

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/.worktrees/engine-security/scripts/build_worker.py", line 119, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/.worktrees/engine-security/scripts/build_worker.py", line 47, in main
+    shutil.copyfile(args.archive, archive)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ~~~~^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../../.tools/foundry-v1.8.3-linux-arm64/foundry_v1.8.3_linux_arm64.tar.gz'

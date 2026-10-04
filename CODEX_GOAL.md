@@ -1,4 +1,53 @@
+# Current owner policy — October 4, 2026 migration and Vercel
+
+The active accepted goal is migration to the single public MIT monorepo
+`dorakingx/entrotter`, using formal transfer of the existing coordinator when
+backup and ownership checks pass. This policy supersedes the older six-repository,
+Organization-retention and Pages-only instructions below. The latest direct
+owner request selects the new Vercel project `entrotter` at
+https://entrotter.vercel.app/ instead of GitHub Pages. Other sites stay untouched.
+
+Preserve current candidate PRs, all source histories/refs, unfinished work,
+original media and frozen evidence. Do not rebuild from old main or the ZIP.
+Follow MIGRATION_STATUS.md and migration-manifest.json. New runtime workflows
+must work from one clone without old Org source, release or registry dependencies.
+The old Org may be deleted only after the full asset, restoration, ownership,
+history, review, test, publication, dependency and final-delta audit passes.
+An extra unrelated repository must receive the owner's disposition first.
+
+Keep independent main approval and required checks. Owner authentication,
+terms and unknown personal facts remain separate. The existing competition
+entry has conditional submission authorization when the official portal and
+all gates permit it. No duplicate submission, unsupported claim or paid action.
+The improvement goal continues until the official deadline, currently October
+13, 2026 15:59 JST. Discord is excluded.
+
+## Retained product acceptance requirements and historical policy
+
 # Entrotter: persistent implementation goal
+
+## Current owner policy — October 2, 2026
+
+The active October 2 goal supersedes earlier initialization and submission
+approval wording. Continue improving the demonstrated product until the official
+deadline, currently **October 13, 2026 at 15:59 JST / 06:59 UTC**. Recheck the
+[official rules](https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf)
+at execution time; section 5 was checked again on October 2 and states October 12
+at 23:59 Pacific. CI success, completed checklists, prepared PRs, readiness or
+formal submission are checkpoints, not reasons to finish the improvement goal.
+
+Resume the latest tested candidates and existing evidence, recordings and videos.
+PR47's f1421ff remains an ancestor of the evolving PR55 candidate. Preserve its
+work rather than returning to old main or the initial ZIP. Use current STATUS.md
+and dependency pins, and verify remote heads before integration. Do not create a duplicate goal or session.
+
+Once quality, required owner facts and submission materials are verified and the
+portal is open, formal submission of the existing entry is already authorized
+without another blanket approval. Confirm the server acceptance and exact code
+and video versions. Continue authorized improvements afterward until the deadline;
+do not alter an immutable submitted version. Authentication, terms, mandatory CI
+and independent approval remain required. Unknown personal facts cannot be guessed.
+Discord is excluded. Respect explicit owner stop or pause instructions.
 
 ## Mission
 
@@ -18,39 +67,39 @@ decisions yourself and record them.
 
 ## Binding constraints
 
-- Organization: `entrotter`. Use an existing organization, verify the authenticated
-  user's rights, and never publish under another account as a silent fallback.
-- Six functional repositories from repositories.json. All NEW repositories public,
-  all original code MIT licensed. Do not expose a pre-existing private repository.
-- Publish only OSS docs and a read-only example report viewer to GitHub Pages at
-  `https://entrotter.github.io/`. No custom domain, CNAME, DNS change, Vercel or
-  paid hosting. The backend runs locally for this milestone.
+- Repository: `dorakingx/entrotter`, transferred from the existing coordinator.
+  Verify the owner, repository ID and access before publication.
+- Functional folders from repositories.json in one public MIT monorepo.
+  Preserve original author notices and exclude private or unrelated assets.
+- Publish OSS docs and the read-only viewer to the new Vercel project at
+  `https://entrotter.vercel.app/`. No custom domain, DNS/billing changes or
+  paid add-ons are authorized. The backend runs locally.
 - Read AGENTS.md, README.md, STATUS.md, evidence/, ROADMAP.md and backlog/ first.
   Inspect existing files and remote history before changing anything.
-- Keep interfaces versioned, repositories independently testable, and PRs focused.
+- Keep interfaces versioned, components independently testable, and PRs focused.
   Use English code/UI/docs. Preserve the supplied purple Entrotter mascot asset.
-- Do not publish packages to npm/PyPI, buy services, submit a competition entry,
-  announce partnerships, message users, or broadcast live transactions without
-  explicit additional approval. The repository/Pages publication is authorized.
+- Do not publish packages to npm/PyPI, buy services, announce partnerships,
+  message users or broadcast live transactions without explicit authorization.
+  Repository/Vercel publication and conditional formal submission of the existing
+  entry are already authorized under the current owner policy above.
 - Never put real keys, RPC secrets, auth tokens or private user data in public Git.
   Do not disable secret scanning, tests, validation or branch protection to pass.
 
-## First actions
+## Resume actions
 
-1. Inspect GitHub auth and `entrotter` membership using the authenticated GitHub CLI.
-   The archive was prepared in an environment with read-only GitHub tools, no
-   GitHub CLI credentials, no Anvil and no network package access. Nothing was
-   remotely created or deployed there. Do not inherit a false "already live" claim.
-2. Run scripts/verify.py and inspect evidence. Install a verified Foundry release
-   (currently workflow-pinned v1.8.3) and execute the previously skipped integration
-   test. Fix adapter errors before using its results in the website or pitch.
-3. Review scripts/publish.py in dry-run mode. Create missing public repos and push
-   first commits; refuse collisions instead of overwriting someone else's work.
-   Enable Pages with GitHub Actions, run the workflow, wait for success, and fetch
-   the deployed site. Record exact repository URLs, commit SHAs, run URL and HTTP
-   status. A committed workflow is not proof of deployment.
-4. Create scoped issues from backlog/ and good-first-issue opportunities. Pin
-   cross-repository CI dependencies to reviewed immutable commits once available.
+1. Confirm the existing goal is active and inspect current candidate heads,
+   relevant diffs and unresolved requirements in STATUS.md and release-gates.json.
+   Reuse unchanged evidence; distinguish historical results from fresh execution.
+2. Resume the current monorepo migration and preserve all source work. Do not
+   repeat old Org/sibling/Pages bootstrap or replace current work with the ZIP.
+   Verify asset backup, ownership and required permissions before transfer/deletion.
+3. Choose a concrete developer-value improvement, implement it, run relevant
+   real tests, independently review and fix it, then integrate through required
+   CI and independent approval. Verify publication rather than inferring it from
+   a pushed branch or workflow file.
+4. Record exact sources, environment, command, observed results and limitations.
+   Preserve frozen model/holdout inputs; avoid extra CI or status-only commits
+   merely to restate successful checks. Continue the next valuable improvement.
 
 ## Acceptance gates (all need evidence; do not check off intentions)
 
@@ -99,20 +148,20 @@ decisions yourself and record them.
 - CI checks tests, lint/type checks, schemas, contract tests, dependency/security
   findings, broken docs links and a CLI-to-SDK-to-engine smoke test. Real EVM CI
   is distinct from offline tests. No empty green jobs or silently skipped gates.
-- Each repo has README, MIT LICENSE, CONTRIBUTING, SECURITY, tests, PR/issue
+- The repository and components retain README, MIT LICENSE, CONTRIBUTING, SECURITY, tests, PR/issue
   templates and scoped good-first-issues. Enable private vulnerability reporting
   where available. Protect main with reviewed PRs when supported; never pretend
   protection is enabled if the API or plan denies it.
 
 ### G4. Public OSS site
 
-- Pages deployment succeeds at the default github.io address, no CNAME.
+- The new Vercel production deployment succeeds at entrotter.vercel.app; no custom domain.
 - The site is fast, responsive, keyboard accessible and English; dark/purple visual
   identity with restrained artwork, no visual clutter or fabricated adoption badges.
 - Visitors can understand the problem, reproduce an example, inspect real report
   assumptions and find the right contributing repository quickly.
 - Static report import stays in the browser. Do not upload private reports,
-  wallet data, credentials or analytics. Do not turn Pages into commercial SaaS.
+  wallet data, credentials or analytics. Keep the public site limited to OSS documentation and read-only inspection.
 - Verify mobile/desktop rendering and artifact parsing, unsafe input handling,
   links and no unexpected third-party network requests.
 
@@ -121,13 +170,18 @@ decisions yourself and record them.
 - Re-check https://colosseum.com/hackathon and the joined event for current rules,
   exact deadline/time zone, eligibility and required files. Do not rely on chat
   history for changing rules. Disclose prior development and AI assistance honestly.
-- Prepare a 2-3 minute pitch and at-most-3-minute product demo. A draft/script is
+- Prepare a pitch no longer than 2 minutes and an at-most-3-minute product demo
+  (the authenticated 2026-09-20 submission form is stricter than the public FAQ). A draft/script is
   not a recorded video. Clearly distinguish recorded and pending deliverables.
 - Show why an agent developer would use Entrotter instead of a few Anvil scripts
   or an existing simulator. Benchmark the same task and conditions, not slogans.
-- Create a concise pricing/market hypothesis and interview script. At least three
-  genuine target-user evaluations are the validation target; do not invent them.
-  Outreach and final submission require owner approval and may be HUMAN_BLOCKED.
+- Create a concise pricing/market hypothesis and interview script. Three
+  genuine target-user evaluations remain a future validation target; the owner
+  deferred them on 2026-09-20, so they are not a current submission gate. Do not
+  invent completed evaluations.
+  Outreach requires explicit owner authorization. Formal submission has standing
+  conditional authorization under the current owner policy; missing facts, terms,
+  review or a closed portal may still prevent it.
 - Prepare a submission index linking exact code, demo, reports, reproducibility
   instructions, measured evidence, genuine feedback and known limitations.
 
@@ -157,5 +211,9 @@ execution. Respect the user's stop/pause requests and preserve work safely.
 All engineering gates have actual passing evidence, Pages is verified live,
 all repos are public and usable by outside contributors, the real-chain demo
 works, and submission materials distinguish verified results from hypotheses.
-If demand validation or owner-reviewed submission remains blocked, report that
-precisely; do not substitute fake completion or guarantee winning.
+These conditions define a demonstrated quality checkpoint, not termination of
+the October 2 improvement goal. Before the official deadline, continue the most
+valuable authorized improvement even after readiness or formal submission. At
+the deadline, audit and report the actual state and remaining limits; do not
+label unverified requirements complete or guarantee winning. Report blockers
+precisely, preserve results and next commands, and continue independent work.

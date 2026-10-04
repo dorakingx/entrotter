@@ -1,0 +1,21 @@
+{
+  "status": "primary_historical_reference_not_state_authentication",
+  "commit": "575eac6d595d5d15ba5e6ca9192a2f2a5c719022",
+  "commit_date": "2024-01-04T10:26:01Z",
+  "source_SHA256": "01dd6396dbd409259f59d9c400b7139086ba2362ada44778ea8a625ca30ce421",
+  "source_url": "https://github.com/aave-dao/aave-address-book/blob/575eac6d595d5d15ba5e6ca9192a2f2a5c719022/src/AaveV3Ethereum.sol",
+  "selected_lines": [
+    {
+      "line": 21,
+      "text": "IAaveOracle internal constant ORACLE = IAaveOracle(0x54586bE62E3c3580375aE3723C145253060Ca0C2);"
+    },
+    {
+      "line": 118,
+      "text": "address internal constant WETH_UNDERLYING = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;"
+    },
+    {
+      "line": 132,
+      "text": "address internal constant WETH_ORACLE = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;"
+    }
+  ]
+}

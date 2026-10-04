@@ -15,6 +15,6 @@ test_valid_hash (test_sdk.SDKTests.test_valid_hash) ... ok
 test_zero_timeout (test_sdk.SDKTests.test_zero_timeout) ... ok
 
 ----------------------------------------------------------------------
-Ran 15 tests in 0.007s
+Ran 15 tests in 0.008s
 
 OK

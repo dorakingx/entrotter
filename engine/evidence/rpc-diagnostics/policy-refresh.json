@@ -1,0 +1,16 @@
+{
+  "changes": {
+    "src/entrotter_engine/rpc.py": {
+      "before": "fba46bb3b4f532c9bc42748f85663c9a2ca22e66aafcc238746759d5259f253e",
+      "after": "3e3f9c593d3a26a483c4f8f1e220bd32f959b4e87def846868b7491e70312a52"
+    },
+    "src/entrotter_engine/trace.py": {
+      "before": "709061f02814c918dc1cf04753d1e8df153517fa0e6cf7f5fc18d973f29b25b6",
+      "after": "f506544be89d909f25a41221bade3ba9ce1fae8e3c527b70cc0a77443e2f13d3"
+    }
+  },
+  "original_findings_and_rationales_unchanged": true,
+  "retained_findings": 23,
+  "final_raw_full_scan_sha256": "09e0883a633dd9e994a64c6b50b5e396e9aa641486eb79b253f73dd8f8756589",
+  "intermediate_records_are_historical_not_current_source": true
+}

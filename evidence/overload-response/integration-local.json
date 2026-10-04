@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "kind": "integration verification, not a performance benchmark",
+  "tested_commits": {
+    "engine": "80e8ce2386812daa8f6150048f84ab316624cc0d",
+    "sdk-python": "a1352e34632543940b25ebddbe51a13cb7b8dcbf",
+    "cli": "f875168505ca5f3ebfb342ab1e3607584e36176b"
+  },
+  "checker_sha256": "cd77c12fc67b185ea3961cb6e5299a0a349ad4dbd7485a392f513b2cc373439b",
+  "wall_seconds": 3.205421208986081,
+  "artifact_ids": {
+    "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+    "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+  },
+  "verified": [
+    "actual CLI/SDK/API fixture and Anvil runs",
+    "SDK get and saved-file full equality",
+    "real EVM success and revert receipts",
+    "full-store idempotent repeat",
+    "CLI reports 507 without retrying POST or replacing export",
+    "eight idle sockets cause SDK/CLI 503 without executing work",
+    "health recovers after idle sockets close"
+  ],
+  "fault_parameters": {
+    "store_file_limit": 2,
+    "connection_limit": 8,
+    "busy_cli_attempts": 16
+  },
+  "archive_or_model_calls": false,
+  "limitations": [
+    "Lowered file-count quota for integration; production thresholds tested separately",
+    "Native local EVM execution; Docker enforcement is a separate CI job",
+    "Aggregate CLI exports/concurrency and image/VM storage remain operator-controlled"
+  ]
+}

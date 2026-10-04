@@ -1,0 +1,329 @@
+{
+  "status": "PASS_current_product_scope",
+  "baseline": "3fd98b69be2bc02bf9a2cf5fd3cca2328bdc133a",
+  "sources": {
+    "app.js": "2886c9ad98ade30fdcfeb686fc6d49cc3429d8661dba56196443584f42d84ce1",
+    "index.html": "22eb27d1deef9b795e77c4d9f99d4e8b141450fb0e6f00696665778732a3a14f",
+    "scripts/check_accessibility.mjs": "5a9f5052e03a827ed68092c45898dfde016fd369bf71cac51fed20fb5568042a",
+    "tests/report.test.mjs": "10129739187ade862f41867344c684012baa9ea2ecc744f42db478708c4039be",
+    "security-reviewed.json": "0acd1d18450913a70d412ecf9ef31c9a5c6406afcd5730c59ca020f83f9749a3",
+    "evidence/cli-copy/view.json": "05c833d94048368b079961a4bac670f0ec68f5bc9527a405c4f286dcfde9efce"
+  },
+  "local_checks": {
+    "Node_tests": 138,
+    "Python_tests": 12,
+    "lint_files": 20,
+    "lint_messages": 0,
+    "typed_inputs": 21,
+    "security_findings": 159,
+    "inherited_rationale_strings": 156,
+    "new_finite_test_path_reasons": 3
+  },
+  "browser": {
+    "checks": [
+      {
+        "name": "CLI recipes: native keyboard copying of all six public examples",
+        "status": "passed"
+      },
+      {
+        "name": "CLI copying: denied API, serialization, stale feedback and private clearing",
+        "status": "passed"
+      },
+      {
+        "name": "Local CLI recipes: native keyboard copies, fixed paths and private metadata",
+        "status": "passed"
+      },
+      {
+        "name": "Bundled report links: direct entry, navigation and local-file privacy",
+        "status": "passed"
+      },
+      {
+        "name": "Invalid report links: bounded allowlist and unchanged default entry",
+        "status": "passed"
+      },
+      {
+        "name": "Aave units: local imports, resealed false units, unavailable records and recovery",
+        "status": "passed"
+      },
+      {
+        "name": "1280px console: recorded cards, command and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px console: recorded cards, command and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px console: recorded cards, command and axe",
+        "status": "passed"
+      },
+      {
+        "name": "Console imports stay local, reject invalid evidence and recover",
+        "status": "passed"
+      },
+      {
+        "name": "A slow recorded load cannot replace a newer rejected import",
+        "status": "passed"
+      },
+      {
+        "name": "Keyboard skip link moves focus into main and skips navigation",
+        "status": "passed"
+      },
+      {
+        "name": "Keyboard sample selection, native local-file chooser, live status and inert import",
+        "status": "passed"
+      },
+      {
+        "name": "Local report source survives stale samples and restores the same example",
+        "status": "passed"
+      },
+      {
+        "name": "Recorded agent imports preserve reasons, reject resealed mismatches, clear and recover",
+        "status": "passed"
+      },
+      {
+        "name": "1280px liquidity-shock: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px recovery-trap: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px depeg-stress: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px agent-local-codex: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px aave-borrow-actions: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px liquidity-shock: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px recovery-trap: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px depeg-stress: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px agent-local-codex: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px aave-borrow-actions: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px liquidity-shock: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px recovery-trap: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px depeg-stress: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px agent-local-codex: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px aave-borrow-actions: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "Tampered import clears data, reports an accessible error and recovers",
+        "status": "passed"
+      },
+      {
+        "name": "Correctly hashed non-decimal metrics fail, clear data and recover without uploads",
+        "status": "passed"
+      },
+      {
+        "name": "Forced colors, reduced motion and keyboard focus remain usable",
+        "status": "passed"
+      },
+      {
+        "name": "404 page at 320px: keyboard home link, no overflow and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px signed prefix: exact evidence, keyboard, reflow and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px signed prefix: exact evidence, keyboard, reflow and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px signed prefix: exact evidence, keyboard, reflow and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px original32 local import: omission, structural shifts and exact fields",
+        "status": "passed"
+      },
+      {
+        "name": "390px original32 local import: omission, structural shifts and exact fields",
+        "status": "passed"
+      },
+      {
+        "name": "320px original32 local import: omission, structural shifts and exact fields",
+        "status": "passed"
+      },
+      {
+        "name": "Observed prices: exact values, unproven views, rejection and clearing 1280px",
+        "status": "passed"
+      },
+      {
+        "name": "Observed prices: exact values, unproven views, rejection and clearing 390px",
+        "status": "passed"
+      },
+      {
+        "name": "Observed prices: exact values, unproven views, rejection and clearing 320px",
+        "status": "passed"
+      },
+      {
+        "name": "Account impact: exact units, missing views, sentinel, recovery and keyboard 1280px",
+        "status": "passed"
+      },
+      {
+        "name": "Account impact: exact units, missing views, sentinel, recovery and keyboard 390px",
+        "status": "passed"
+      },
+      {
+        "name": "Account impact: exact units, missing views, sentinel, recovery and keyboard 320px",
+        "status": "passed"
+      },
+      {
+        "name": "Signed prefix: resealed contradictions, oversized import and honest unverified recovery",
+        "status": "passed"
+      },
+      {
+        "name": "Signed prefix: delayed sample cannot replace a newer local import",
+        "status": "passed"
+      },
+      {
+        "name": "No JavaScript exceptions, uploads or unexpected third-party requests",
+        "status": "passed"
+      }
+    ],
+    "raw_axe_scans": 66,
+    "violations": 0,
+    "incomplete_items": 65,
+    "JavaScript_errors": 0,
+    "runner_executed_sha256": "021884d363d058a80b4989ebdb09941cd7c49b565edcbb59223a86510199852e",
+    "current_runner_sha256": "5a9f5052e03a827ed68092c45898dfde016fd369bf71cac51fed20fb5568042a",
+    "scope": "Current production app/index bytes; local runner precedes one assertion-only null fallback required by TypeScript. Exact old runner and initial failed assertions/type diagnostic are retained. No fresh local third browser rerun; current mandatory component CI checks the final runner separately. Native keyboard file chooser and Clipboard writes/readbacks in320/1440 imported fixture/Aave metadata controls; no additional import requests."
+  },
+  "copied_CLI_commands": {
+    "status": "PASS",
+    "actual_clipboard_readbacks": [
+      {
+        "name": "liquidity-shock",
+        "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+        "returncode": 0,
+        "report_sha256": "5733d8053db7a728a49c1e5b88494ef660e4809b53be5a3fa18f571d26f909e1",
+        "only_metadata_control_changed": true,
+        "stdout_bytes": 992,
+        "stdout_sha256": "e3beead56f1738fe0dadb2c8eb4ab48d1c06092c619104891206607cd31d0f4e",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "whole_output_equal_except_explicit_metadata": true
+      },
+      {
+        "name": "aave-borrow-actions",
+        "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+        "returncode": 0,
+        "report_sha256": "8568b1e59121db841fa66a35c09924869c3e90624abe0494b195a75f5e4a4526",
+        "only_metadata_control_changed": true,
+        "stdout_bytes": 3013,
+        "stdout_sha256": "4e0276f0eda65281294fe9858be435350120c589f7f7faf3a0186ba1b501a732",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "whole_output_equal_except_explicit_metadata": true
+      }
+    ],
+    "source_file_bindings": {
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/result_text.py": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/main.py": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+    },
+    "public_setup_bytes_unchanged": true,
+    "scope": "Literal native Clipboard-read command run against the corresponding resealed private filename/title controls. Fixed local-report.json path; only title/artifact metadata change, complete CLI output matches original except these explicit display fields. Reuses byte-reverified pinned public clones and empty Python venv; not new clone/performance/EVM/RPC/model execution or loaded-module tracing."
+  },
+  "original_Aave_view_golden": {
+    "status": "passed",
+    "rows": 16,
+    "report_sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "app_sha256": "2886c9ad98ade30fdcfeb686fc6d49cc3429d8661dba56196443584f42d84ce1",
+    "all_prior_fields_identical_except_app_hash": true
+  },
+  "private_whole_artifacts_sha256": {
+    "node.stdout": "626beccee6e25f6b64093579251cebefacafbb850812cb80e3c6538540e070d5",
+    "node.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "site.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "site.stderr": "3dcfb9fc66f79ff607f275906b3e6a0df242d9f62b0ad93c12f239b2f57a7f3a",
+    "lint-current.json": "98c1e875ad5994d0394f64f061436bf15682842fc9ef9af943d82941fd28b97b",
+    "types-current.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types-current.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "security-current.stdout": "31a15a347e582e281096b1278ec86b6ce711219d3c43ea69c28905ff9f27df9f",
+    "security-current.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "security-initial.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "security-initial.stderr": "5800554187c927cfda1089e7b85c4ccf42c28540746b85bf68f988b6561162d2",
+    "types-final.stdout": "6ba152d46d6de636cadebd9d1c2201f0aef720567a618988ee8aa9892fba9684",
+    "types-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "browser-initial.stdout": "6b33b958789b1cb61c8ed0d389f1e8d40a5da0527209a8b01750d9addeb2d992",
+    "browser-initial.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "browser/accessibility.json": "a7e8e9eb49bd7ebc3fe415cee9a0388bd8ffe67e152604fcafe4807f0715f973",
+    "browser/local-cli-readbacks.json": "234d391d0590f14fc9ed9b64ad5f93083a91cef49f2f56706f5e46ae125f2bcb",
+    "browser-runner-before-null-guard.mjs": "021884d363d058a80b4989ebdb09941cd7c49b565edcbb59223a86510199852e",
+    "cli-results.json": "0b7e74794baa451654410e80e22d2a3711f013f7d356f2259704730e021d4a15",
+    "view-reader.stdout": "aecddbc32e1e200ec67e21e3b5f2e3ad8ed971028954aa08ddd857b776f2ab67",
+    "view-reader.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "liquidity-shock.stdout": "e3beead56f1738fe0dadb2c8eb4ab48d1c06092c619104891206607cd31d0f4e",
+    "liquidity-shock.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "aave-borrow-actions.stdout": "4e0276f0eda65281294fe9858be435350120c589f7f7faf3a0186ba1b501a732",
+    "aave-borrow-actions.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "limits": [
+    "Two initial local browser checks read innerText from collapsed details; corrected by expanding before visible checks or using textContent for hidden-content privacy assertions. Initial52/64 output preserved, not final passing proof.",
+    "Final product browser52/66 passed before a one-expression nullable assertion correction; final lint/types/source-bound security pass after correction.",
+    "Initial security source-drift rejection retained. All156 inherited rationale strings relocate by unchanged source lines; three new finite test paths individually reviewed, no rule/config/lock weakening.",
+    "Synthetic controls alter only scenario title and artifact digest, not original report facts; complete CLI output is exact except these metadata display fields.",
+    "Runtime clone bytes are reverified from prior actual public-clone walkthrough; no new clone speed claim, model/RPC/EVM execution, provider authentication or financial return.",
+    "Raw axe incomplete/manual checks remain; zero violations is not full accessibility certification.",
+    "Human protected-main approval, live Pages and submission profile/audio/hosting remain separate."
+  ]
+}

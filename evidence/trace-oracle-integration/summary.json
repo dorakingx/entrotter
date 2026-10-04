@@ -1,0 +1,55 @@
+{
+  "status": "immutable_source_offline_types_reviewed_component_all8_pass_combined_CI_pending",
+  "execution_snapshot": "e46b392a4047bd680e5c03feb6bdc1a05a02269b",
+  "pins": {
+    "engine": "99fd3a60a754f129c78d1324f2a01787a6538917",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+  },
+  "component_PR": "https://github.com/entrotter/engine/pull/32",
+  "component_head": "99fd3a60a754f129c78d1324f2a01787a6538917",
+  "component_checks": "All8exact99fd firstattemptSUCCESS:282native0skips48.391s, four282unit matrices31realAnvilskips each,25Docker217.324s; normal default1/4 original receipts and complete prior935outcomes equal except runtime/hash/exact added missing-state assumption. Image/native advisory and cleanup pass; conditional observer diagnostic skipped. Prior failures/cause unknown retained.",
+  "component_linux_native_tests": 282,
+  "component_linux_native_seconds": 48.391,
+  "offline_result_sha256": "b6670443641f10879dd3a827805140f76fed5c7196e7f7826ec92078fd7838c8",
+  "independent_source_review_sha256": "8b300c9f4d5506a839a1a494098b585a6675713933d1a3e7f956f17c7ba6e034",
+  "type_production_sources": 21,
+  "frozen_type_diagnostics": 3,
+  "previous_combined_proof": "previous-funding-ci.json",
+  "new_root_EVM_or_model_execution": false,
+  "limits": [
+    "Synthetic signed oracle regression is distinct from archived oracle/provider authenticity/fullblock/endstate/opcode proof.",
+    "Component all8 independently proven at99fd; combinedall5 and protected human approval remain separate before release/publication.",
+    "Human protected-main approval, candidate Pages deployment and competition submission remain separate."
+  ],
+  "engine_evidence_handling": "Two original followup raw files unavailable; current independent fresh native proof not substituted under oldhashes.",
+  "execution_snapshot_state": "Reviewed immutable sourcee46 selects99fd; local source and documentation preparation not yet pushed. Full component proof verified; combined five checks pending.",
+  "prior_e849_native": {
+    "local_tests": 252,
+    "local_seconds": 37.568,
+    "Linux_tests": 252,
+    "Linux_seconds": 38.944,
+    "scope": "Earlier e849 source; retained independently reviewed native synthetic proof."
+  },
+  "diagnostic_focused_tests": 15,
+  "current_pin_review": "observer-pin-review.json",
+  "current_partial_root_CI_proof": "diagnostic-ci-partial.json",
+  "historical_failed_report": "diagnostic-mainnet-prefix-four.json",
+  "later_diagnostic": "diagnostic-followup.json",
+  "source_snapshot_review_scope": "Original de65 reviews unchanged e849/27 structural step; final8b300c9 proves exact four selector e849-to99fd replacements, all other dependency/frozen/model/holdout bytes unchanged.21types retain same3diagnostics and exact3offline workflow bodies pass.",
+  "prior_aac_diagnostic_CI": {
+    "component_head": "aac525c8279005a3a8468fe3928e691c3ce80148",
+    "component_checks": "7success/isolatedFAIL first attempt:25Docker217.511s; actual1 and all4baseline receipts exact. Four-candidate row2 not_mined/no receipt; exact expected status assertion fails. Later four-plan diagnostic completes normally; original cause unknown, later image/native audits skipped. No blind retry.",
+    "component_linux_native_tests": 267,
+    "component_linux_native_seconds": 41.207,
+    "current_partial_root_CI_proof": "diagnostic-ci-partial.json",
+    "historical_failed_report": "diagnostic-mainnet-prefix-four.json",
+    "later_diagnostic": "diagnostic-followup.json"
+  },
+  "prior_local_execution_snapshot": "27c39fe8c973765469b9fdeb7ef215c37abb4fb1",
+  "prior_structural_review_sha256": "de65d14ae4c2804cf95fa163c657eb75ab4ff56182eb5570503df219242d0eb5",
+  "component_full_root_CI_proof": "root-engine-full-CI.json",
+  "component_full_root_CI_proof_sha256": "eeba3c890e4a2edd2a1a1d9ec221fad6ad03e1de2724c667612488c44ff0773c"
+}

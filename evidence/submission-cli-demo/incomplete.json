@@ -1,0 +1,59 @@
+{
+  "artifact_id": "d0d468b61350d7bb5df14b7b9083c831eca5761f2823b3c9d926c24d83221e58",
+  "profile": "aave-v3-ethereum-account",
+  "account": "0x16aa9154557f1394089db90d3cbe212d9a7f33bb",
+  "plan": {
+    "account": "0x16aa9154557f1394089db90d3cbe212d9a7f33bb",
+    "position_version": "0.1.0",
+    "trace": {
+      "skip_indices": [
+        12
+      ],
+      "source": {
+        "block_hash": "0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6",
+        "block_number": 18999892,
+        "chain_id": 1
+      },
+      "through_index": 12,
+      "trace_version": "0.1.0"
+    }
+  },
+  "integrity_verified": true,
+  "trace": {
+    "artifact_id": "52044d0f2292fad47d150e0f1cfc46d3346667705d3f43ef25641bc35f5a9737",
+    "baseline_receipts_verified": true,
+    "transaction_count": 13
+  },
+  "prices": {
+    "artifact_id": "678309d700aa919ac87501a60278053777c062f1b597922ca6da910b125086f5",
+    "classification": {
+      "complete_price_views": true,
+      "baseline_receipts_verified": true,
+      "unproven_reasons": [],
+      "baseline_price": 256292441874,
+      "candidate_price": 257082415000,
+      "price_difference": 789973126
+    }
+  },
+  "classification": {
+    "complete_account_views": false,
+    "unproven_reasons": [
+      "incomplete_account_views"
+    ],
+    "baseline": null,
+    "candidate": null,
+    "differences": {
+      "total_collateral_base": null,
+      "total_debt_base": null,
+      "available_borrows_base": null,
+      "liquidation_threshold_bps": null,
+      "ltv_bps": null,
+      "health_factor_wad": null
+    },
+    "baseline_health_status": "unproven",
+    "candidate_health_status": "unproven",
+    "base_unit": null,
+    "health_factor_unit": 1000000000000000000
+  },
+  "scope": "Owned-node read-only Aave account views. Differences compare the submitted transaction-prefix branches; they do not isolate price as the sole cause. No signed consumer action, loan/liquidation execution, profit, provider or proxy-implementation authentication, full-block/state-root proof. All-account base-currency values, not token balances; WAD health factor, basis-point thresholds. Native execution has no whole-process sandbox."
+}

@@ -1,0 +1,112 @@
+{
+  "finding_and_fix": [
+    {
+      "file": "release-gates.json",
+      "finding": "Prior b1cf promotion called current/combined pending after bb9 passed",
+      "priority": 3,
+      "resolution": "Historical2-selector and subsequent bb9 pass now explicit; current bd pending separate"
+    }
+  ],
+  "parent_commit": "bb9cadabf673b8e0b6e16603208b2b9ea4e0e88e",
+  "public_copy_bindings": {
+    "engine-CI.json": {
+      "byte_identical": true,
+      "original_sha256": "80b9d3e7be11fb8a8f5dc2ff39a08e19440071cf094eb011613ad4859aff10c5",
+      "public_sha256": "80b9d3e7be11fb8a8f5dc2ff39a08e19440071cf094eb011613ad4859aff10c5"
+    },
+    "engine-publication.json": {
+      "byte_identical": true,
+      "original_sha256": "be3b1d1babed0a62c4a51bc6d12da034974bcbbd2cedcec9ead5d5e86cd6ccdf",
+      "public_sha256": "be3b1d1babed0a62c4a51bc6d12da034974bcbbd2cedcec9ead5d5e86cd6ccdf"
+    },
+    "local-execution.json": {
+      "byte_identical": true,
+      "original_sha256": "eadf29063e645fe9a7919667939993c1f1491b7cf5827657a51ae9bb8479d2d2",
+      "public_sha256": "eadf29063e645fe9a7919667939993c1f1491b7cf5827657a51ae9bb8479d2d2"
+    },
+    "local-types.json": {
+      "byte_identical": true,
+      "original_sha256": "da6f9da796364b8569cbeac0bfef24bfa59d5767ebede82c606df96bb0022e4a",
+      "public_sha256": "da6f9da796364b8569cbeac0bfef24bfa59d5767ebede82c606df96bb0022e4a"
+    },
+    "trace-comparison-reader.json": {
+      "byte_identical": true,
+      "original_sha256": "ca27b5cd205ebd32f1553d8c4511098ee50b465b97afc4a7bcec89ada0327a73",
+      "public_sha256": "ca27b5cd205ebd32f1553d8c4511098ee50b465b97afc4a7bcec89ada0327a73"
+    },
+    "trace-consumer-reader.json": {
+      "byte_identical": true,
+      "original_sha256": "4fc577ebfd46a823e024803e966ddce25783d14ba7a979d8e65d896d36fad491",
+      "public_sha256": "4fc577ebfd46a823e024803e966ddce25783d14ba7a979d8e65d896d36fad491"
+    },
+    "trace-funding-reader.json": {
+      "byte_identical": true,
+      "original_sha256": "37b6ed89470aaa4f530bf911f9f1648dbdc1a24a77759ab870ce16d50abc67fd",
+      "public_sha256": "37b6ed89470aaa4f530bf911f9f1648dbdc1a24a77759ab870ce16d50abc67fd"
+    },
+    "trace-oracle-reader.json": {
+      "byte_identical": true,
+      "original_sha256": "71c7bdd688e0e9d8e999412831c3e98746cc60ed1fd7f80599f200a1dee4b061",
+      "public_sha256": "71c7bdd688e0e9d8e999412831c3e98746cc60ed1fd7f80599f200a1dee4b061"
+    },
+    "trace-reader.json": {
+      "byte_identical": true,
+      "original_sha256": "be4ac67e41eda4f5b98fd7ff280c12bbd38f85757834bf5cfbf7f888b2f9dcd7",
+      "public_sha256": "be4ac67e41eda4f5b98fd7ff280c12bbd38f85757834bf5cfbf7f888b2f9dcd7"
+    }
+  },
+  "results": {
+    "comparison_counts": {
+      "execution": 0,
+      "identical": 12,
+      "omitted": 1,
+      "structural": 19,
+      "unavailable": 0
+    },
+    "component_checks": 8,
+    "local_reader_cases": 5,
+    "price_readings": {
+      "baseline_after": 256292441874,
+      "baseline_before": 257082415000,
+      "candidate_after": 257082415000,
+      "candidate_before": 257082415000
+    },
+    "retained_frozen_type_diagnostics": 3,
+    "type_sources": 21
+  },
+  "reviewed_inputs_sha256": {
+    ".github/workflows/ci.yml": "be3e83b3435445ca261dd53332f4f90909d5979accc958a385f0b760569f4c8b",
+    ".github/workflows/quality.yml": "87ec8d42641df323d689c07bdcac6a1d7b900acadf2d4f55a84c64cb12d18e26",
+    "STATUS.md": "0af0c678166b22a97e1e4afa4f3ae20fe5659bf5dee2d9785885511f56846d67",
+    "bounded-worker-pins.json": "52ebedf9adff60cb1c86ebc188d0e87782089b73b5ac1c7c6f9c25e826d620b1",
+    "evidence/consumer-price-integration/README.md": "c4ca196cf5a6ece33ef27888248742dc2a95b6bc6f23a66c22c725674555db54",
+    "evidence/consumer-price-integration/engine-CI.json": "80b9d3e7be11fb8a8f5dc2ff39a08e19440071cf094eb011613ad4859aff10c5",
+    "evidence/consumer-price-integration/engine-publication.json": "be3b1d1babed0a62c4a51bc6d12da034974bcbbd2cedcec9ead5d5e86cd6ccdf",
+    "evidence/consumer-price-integration/local-execution.json": "eadf29063e645fe9a7919667939993c1f1491b7cf5827657a51ae9bb8479d2d2",
+    "evidence/consumer-price-integration/local-types.json": "da6f9da796364b8569cbeac0bfef24bfa59d5767ebede82c606df96bb0022e4a",
+    "evidence/consumer-price-integration/summary.json": "0dd7006cd32ae599b6521e77b95ae1b53d87dde04c14dc0c07be6be136721ed9",
+    "evidence/consumer-price-integration/trace-comparison-reader.json": "ca27b5cd205ebd32f1553d8c4511098ee50b465b97afc4a7bcec89ada0327a73",
+    "evidence/consumer-price-integration/trace-consumer-reader.json": "4fc577ebfd46a823e024803e966ddce25783d14ba7a979d8e65d896d36fad491",
+    "evidence/consumer-price-integration/trace-funding-reader.json": "37b6ed89470aaa4f530bf911f9f1648dbdc1a24a77759ab870ce16d50abc67fd",
+    "evidence/consumer-price-integration/trace-oracle-reader.json": "71c7bdd688e0e9d8e999412831c3e98746cc60ed1fd7f80599f200a1dee4b061",
+    "evidence/consumer-price-integration/trace-reader.json": "be4ac67e41eda4f5b98fd7ff280c12bbd38f85757834bf5cfbf7f888b2f9dcd7",
+    "quality-inputs.json": "c2f17a76de1a5c2ba59365cb59032374bb3d986b7530155d5022453a0d354a05",
+    "release-gates.json": "967d6128540e90db566245088644e9bf847db0f91bbbd9506eb1aa5568c52abd"
+  },
+  "reviewer_setup_gap": "Initial exact private reader script equality assertion stopped before output: expected workflow output path differs from private result path. Verified sole output-path substitution, no assertion/runtime differences.",
+  "scope_limits": [
+    "No tests/chain/model/browser/download/CI reruns",
+    "Recorded ABI/code/receipt bytes bound, no provider/deployed-code authentication",
+    "Native consumer views separate from normal trace CLI at bd, signed actions, strategy, profit/full G1",
+    "Current coordinator combined CI/main human approval/Pages remain separate"
+  ],
+  "selected_engine": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+  "source_invariants": [
+    "Exactly one 198-to-bd selector replacement in each of four files",
+    "Only new fixed offline reader added; all old jobs/actions/commands unchanged",
+    "Five recorded scripts return zero; prior four full results equal except engine pin",
+    "Inline new reader AST parses; private final execution has identical body except explicit output destination",
+    "Frozen variants/locks/security policies unchanged"
+  ],
+  "status": "PASS_NO_REMAINING_ACTIONABLE_FINDINGS"
+}

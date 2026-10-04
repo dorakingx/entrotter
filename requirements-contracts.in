@@ -1,0 +1,3 @@
+jsonschema==4.23.0
+# referencing needs this on Python <3.13; compile on 3.13 must retain CI coverage.
+typing-extensions==4.16.0

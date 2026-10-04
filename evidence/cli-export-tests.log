@@ -1,0 +1,14 @@
+test_doctor (test_cli.CLITests.test_doctor) ... ok
+test_doctor_no_secrets (test_cli.CLITests.test_doctor_no_secrets) ... ok
+test_error_no_traceback (test_cli.CLITests.test_error_no_traceback) ... ok
+test_local_option (test_cli.CLITests.test_local_option) ... ok
+test_read_json (test_cli.CLITests.test_read_json) ... ok
+test_size_limit (test_cli.CLITests.test_size_limit) ... ok
+test_failed_replace_preserves_destination_and_removes_temp (test_export.ExportTests.test_failed_replace_preserves_destination_and_removes_temp) ... ok
+test_oversized_export_preserves_previous_destination (test_export.ExportTests.test_oversized_export_preserves_previous_destination) ... ok
+test_successful_export_is_complete_and_verified (test_export.ExportTests.test_successful_export_is_complete_and_verified) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.153s
+
+OK

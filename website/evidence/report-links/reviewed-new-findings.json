@@ -1,0 +1,50 @@
+{
+  "baseline_commit": "37c43d0cf8be61dfd33253bc2d3401429ca9cd9b",
+  "old_count": 148,
+  "current_count": 149,
+  "inherited_exact_reasons": 147,
+  "removed_contexts": [
+    {
+      "finding": {
+        "file": "tests/report.test.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 22,
+        "column": 3,
+        "endLine": 22,
+        "endColumn": 62
+      },
+      "reason": "The unit test reads the fixed sibling app.js production source using import.meta.url and runs it in a deliberately minimal VM. No untrusted report chooses code or the source filename."
+    }
+  ],
+  "new_individual_reviews": [
+    {
+      "finding": {
+        "file": "scripts/check_accessibility.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 321,
+        "column": 34,
+        "endLine": 323,
+        "endColumn": 12
+      },
+      "reason": "readFile reads only the fixed reports/aave-borrow-actions.json path under the repository root. This public recording supplies the browser local-import privacy and stale-response regression; report or query input cannot select a filesystem path, write or execute code."
+    },
+    {
+      "finding": {
+        "file": "tests/report.test.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 23,
+        "column": 24,
+        "endLine": 26,
+        "endColumn": 2
+      },
+      "reason": "readFileSync reads only the literal ../app.js URL relative to this test module. The repository-owned production source is executed in inert offline VM contexts to verify startup selection; neither report contents nor query values select executable files."
+    }
+  ],
+  "scope": "Full finding fingerprints including columns and unchanged contiguous spans preserve inherited reasons. One app.js test reader moved to a constant; two fixed public-source reads reviewed. No diagnostics suppressed. Author review, separate from independent approval."
+}

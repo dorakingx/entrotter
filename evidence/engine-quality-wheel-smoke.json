@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "wheel": "entrotter_engine-0.1.0-py3-none-any.whl",
+  "wheel_sha256": "c01dc8b1ad900ec5588f706e2667bd1ea2dbbf9a56c6c9cbd8cb6dae789937c3",
+  "artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "fresh_venv": true,
+  "isolated_python_mode": true,
+  "install_flags": [
+    "--no-deps",
+    "--no-index"
+  ],
+  "imported_from_installed_wheel": true,
+  "wall_seconds": 3.8017923750157934,
+  "published": false,
+  "verification_note": "Initial import-path assertion compared lexical macOS /var and /private/var aliases; corrected to resolved filesystem containment and reran in a fresh venv."
+}

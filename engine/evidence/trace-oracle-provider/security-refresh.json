@@ -1,0 +1,12 @@
+{
+  "changed_source_sha256": {
+    "src/entrotter_engine/trace.py": [
+      "e65d6dfba7368c407d2d8fea357211d34fe90b2869b789a1da3e1baa06217226",
+      "709061f02814c918dc1cf04753d1e8df153517fa0e6cf7f5fc18d973f29b25b6"
+    ]
+  },
+  "findings_unchanged": 23,
+  "scanner_errors": 0,
+  "skipped_tests": 0,
+  "reason": "One explanatory report assumption added; no runtime or finding code changed."
+}

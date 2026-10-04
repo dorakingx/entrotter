@@ -1,0 +1,19 @@
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	﻿2026-09-19T18:32:59.0176981Z ##[group]Run PYTHONPATH=engine/src:sdk-python/src:cli/src python entrotter/scripts/check_host_limits.py --output entrotter/evidence/host-limits-ci.json
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0179074Z [36;1mPYTHONPATH=engine/src:sdk-python/src:cli/src python entrotter/scripts/check_host_limits.py --output entrotter/evidence/host-limits-ci.json[0m
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0240550Z shell: /usr/bin/bash -e {0}
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0240957Z env:
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0241370Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0242086Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0242797Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0243447Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0244087Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0244732Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:32:59.0245269Z ##[endgroup]
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:33:00.5996856Z Traceback (most recent call last):
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:33:00.6005190Z   File "/home/runner/work/entrotter/entrotter/entrotter/scripts/check_host_limits.py", line 165, in <module>
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:33:00.6005842Z     main()
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:33:00.6006368Z   File "/home/runner/work/entrotter/entrotter/entrotter/scripts/check_host_limits.py", line 129, in main
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:33:00.6007223Z     assert busy.returncode == 1 and 'HTTP 503' in busy.stderr
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:33:00.6007620Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:33:00.6007927Z AssertionError
+host-bounds	Verify CLI-SDK-API success, quota errors and connection recovery	2026-09-19T18:33:00.6153016Z ##[error]Process completed with exit code 1.

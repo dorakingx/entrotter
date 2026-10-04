@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "pins": {
+    "engine": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "steps": [
+    {
+      "name": "Verify offline reader and viewer retain the actual signed-prefix evidence",
+      "script_sha256": "2d745fdbc129baf982c51b847827892cca2fe17a121339c31ab30778af937a6e",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the original 32-receipt case and display classification with SDK and viewer",
+      "script_sha256": "447b2d5a18db7ae79cdb9a91e47f713bdebef1efc0f14487ada724a10409d06e",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the historical Aave consumer price records with SDK and viewer",
+      "script_sha256": "45c075bc74fa2a752e71708afde87a3074ec9a519b58bdc7261f981022427ca3",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the synthetic same-block funding report with SDK and viewer",
+      "script_sha256": "1d28f39b6c5249b54706484f0786784cc63afa51126c8d99e0e95e6aba1bc4fe",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect oracle omission and unverified storage reports with SDK and viewer",
+      "script_sha256": "3824759b1f1dc39ca93bf8a976a0ffc88a93017ab0d7896b38d393410ad7b114",
+      "returncode": 0
+    }
+  ],
+  "prior_four_readers": "Complete previous outcomes unchanged except selected engine pin.",
+  "new_consumer_reader": "Actual SDK and Node22 viewer, strict raw ABI/getter/head checks and recorded classification used; native00632 receipts,4 phases and32 classifications retained.",
+  "execution": "Offline frozen reports only; no new EVM/archive/model/browser call.",
+  "script_sha256": "613b35c7101742ef87bb829e63bdfb5d1d607f1f9717f40b55a297ab65fe421b",
+  "new_reader_final_execution": "After whitespace/decoder-source binding improvement, only changed step rerun with identical environment; passed.",
+  "setup_gap": "Direct manual bash attempt outside the prepared environment returned127 because python command was missing, before product code. Prepared environment execution passed."
+}

@@ -1,0 +1,11 @@
+{
+  "method": "Installed pinned Foundry1.8.3 cast sig, Ethereum Keccak selector; no installation or network.",
+  "cast_sha256": "acc3c4c2b52f5c4b417cc77bd4873e13102ca34b48789304b98e6752c966b725",
+  "selectors": {
+    "getSourceOfAsset(address)": "0x92bf2be0",
+    "getAssetPrice(address)": "0xb3596f07",
+    "BASE_CURRENCY()": "0xe19f4700",
+    "BASE_CURRENCY_UNIT()": "0x8c89b64f"
+  },
+  "ABI": "One fixed32-byte return; address leading12bytes zero. Asset calldata fixed WETH word. Current primary references do not attest historical deployment."
+}

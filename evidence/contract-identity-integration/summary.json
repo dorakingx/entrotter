@@ -1,0 +1,135 @@
+{
+  "status": "engine_source_tested_selected_combined_current_head_CI_pending",
+  "previous_coordination_head": "328f4c16af3c78404736433e4058cb6f43dc1791",
+  "previous_execution_snapshot": "b8a23f819ff4e682eb2bbdf89b6e7c55cf3ec025",
+  "engine_fix": {
+    "engine_head": "6e13f342a20dece8c4d0983dc9813260508fb7fb",
+    "production_sources": 22,
+    "scanner_covers_all_sources": true,
+    "wheel_modules_match": 17,
+    "retained_security_findings": 23,
+    "audited_Python_packages": 42,
+    "reported_advisories": 0,
+    "all8_checks": "passed",
+    "native_CI_tests": 214,
+    "native_CI_seconds": 31.108,
+    "actual_Docker_tests": 22,
+    "actual_Docker_seconds": 213.988,
+    "image_input_hashes_match": 18,
+    "image_source_digest": "4c19c549f7c21230e6f3499618b1535683fd567ae237c82618c0d6e7b3c8ef7c",
+    "image_OS_packages": 26,
+    "signed_native_Cargo_packages": 1126,
+    "signed_inventory_outside_Cargo": 172,
+    "image_and_native_report_hashes_match": true,
+    "auditor_hashes_match": true,
+    "GitHub_reviews": [],
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:49:33Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36857766542/job/110354261604",
+        "name": "docs-links",
+        "startedAt": "2026-10-01T11:49:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Documentation links"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:49:49Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36857766623/job/110354262576",
+        "name": "quality",
+        "startedAt": "2026-10-01T11:49:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Engine quality and Python dependency audit"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:53:41Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36857766547/job/110354261839",
+        "name": "isolated",
+        "startedAt": "2026-10-01T11:49:24Z",
+        "status": "COMPLETED",
+        "workflowName": "Isolated worker enforcement"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:50:08Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36857766908/job/110354262588",
+        "name": "evm",
+        "startedAt": "2026-10-01T11:49:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Local EVM integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:49:58Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36857766614/job/110354263055",
+        "name": "unit (3.11)",
+        "startedAt": "2026-10-01T11:49:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:49:55Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36857766614/job/110354262888",
+        "name": "unit (3.12)",
+        "startedAt": "2026-10-01T11:49:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:50:32Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36857766614/job/110354263352",
+        "name": "unit (3.13)",
+        "startedAt": "2026-10-01T11:50:01Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T11:49:59Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36857766614/job/110354263243",
+        "name": "unit (3.14)",
+        "startedAt": "2026-10-01T11:49:26Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      }
+    ]
+  },
+  "engine_PR": "https://github.com/entrotter/engine/pull/28",
+  "review_and_failure_evidence": "https://github.com/entrotter/engine/tree/6e13f342a20dece8c4d0983dc9813260508fb7fb/evidence/local-contract-identity",
+  "defect": "Canonical-equal local_contracts address aliases produced different real Anvil results by JSON insertion order; duplicate normalized addresses now refuse before native/default/agent execution. Single mixed-case addresses remain valid.",
+  "independent_source_review": "Separate Codex reviewer reproduced actual success/21000 gas versus revert/21006 gas, verified four guardian exits/closed ports, and confirmed the fix with focused tests. This is not an approving GitHub review.",
+  "CLI_head": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+  "unchanged": "SDK/schema/site pins, v0.1 fields, frozen provider/native/bench/consumed holdout/report/media sources; zero new model/archive calls.",
+  "prior_combined_proof": {
+    "head": "328f4c16af3c78404736433e4058cb6f43dc1791",
+    "all_five_checks": "passed",
+    "clean": [
+      {
+        "file": "clean-fixture.json",
+        "seconds": 6.308411815000028,
+        "artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6"
+      },
+      {
+        "file": "clean-agent.json",
+        "seconds": 6.830061540999992,
+        "artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b"
+      }
+    ],
+    "scope": "Actual prior enginec167/CLI22 clean CI; do not transfer timings to the new engine6e sources or all-five-guide walkthrough."
+  },
+  "remaining": "Current composition CI/source-image binding, independent GitHub approval/protected main integration, publication and submission facts/media gates.",
+  "coordination_execution_snapshot": "adf4fc8f65f1e7641f371624ffe01e73da83332e",
+  "published_guide_sha256": "36c2aa2831dab74a8c27f00cf2b147a0f8232df0441e4e3de25e5c634f021ff5"
+}

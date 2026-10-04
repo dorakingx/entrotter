@@ -1,0 +1,11 @@
+test_css_resource (__main__.LinkChecks.test_css_resource) ... ok
+test_hidden_template_is_checked (__main__.LinkChecks.test_hidden_template_is_checked) ... ok
+test_html_root_relative_query_and_fragment (__main__.LinkChecks.test_html_root_relative_query_and_fragment) ... ok
+test_http_success_fragment_and_404 (__main__.LinkChecks.test_http_success_fragment_and_404) ... ok
+test_markdown_local_file_and_fragment (__main__.LinkChecks.test_markdown_local_file_and_fragment) ... ok
+test_repository_inventory_and_empty_scan_rejection (__main__.LinkChecks.test_repository_inventory_and_empty_scan_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.577s
+
+OK

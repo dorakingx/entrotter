@@ -1,0 +1,50 @@
+{
+  "local-arm64/signed-inventory.json.gz": {
+    "uncompressed_sha256": "ea05ec78d5f0abb54c644ec9bd6ce6ed1200a87fc53b13912d480ebda1203771",
+    "uncompressed_bytes": 3634491
+  },
+  "local-arm64/sbom-bundle.json.gz": {
+    "uncompressed_sha256": "d2fc36b08a3bb9a28ef20be43a2add570e9ee686d70d0904296e36c141afbd6f",
+    "uncompressed_bytes": 4855723
+  },
+  "local-arm64/attestations.json.gz": {
+    "uncompressed_sha256": "56176b7ff030f624477317c41db8e15bf8904e6216d7329f2cf601ab078d151f",
+    "uncompressed_bytes": 4877715
+  },
+  "local-arm64/packages.json.gz": {
+    "uncompressed_sha256": "aecb1837dae36ae0477cd5c154157c750bf8f9fc6c46455d46c18537cfe00949",
+    "uncompressed_bytes": 549198
+  },
+  "local-amd64/signed-inventory.json.gz": {
+    "uncompressed_sha256": "8fb1fd40f45ff7eb97f40a6f020586e1e486ba701ae891e6ee6f63fff9ea6c7b",
+    "uncompressed_bytes": 3542905
+  },
+  "local-amd64/sbom-bundle.json.gz": {
+    "uncompressed_sha256": "348e077f65c1c94b63bb54ffb6c51c78f3d5d8fbc60d2af57f9b61867585f823",
+    "uncompressed_bytes": 4733415
+  },
+  "local-amd64/attestations.json.gz": {
+    "uncompressed_sha256": "3b559113eab8595f3e0cb7158f22db4b388151f840a598e404b182318ef45e1e",
+    "uncompressed_bytes": 4755360
+  },
+  "local-amd64/packages.json.gz": {
+    "uncompressed_sha256": "339e90ed3c7414bfcd442af189c7c4ff5ac4f272dea5bbb32082fd272f50fd8d",
+    "uncompressed_bytes": 549198
+  },
+  "native-ci/signed-inventory.json.gz": {
+    "uncompressed_sha256": "8fb1fd40f45ff7eb97f40a6f020586e1e486ba701ae891e6ee6f63fff9ea6c7b",
+    "uncompressed_bytes": 3542905
+  },
+  "native-ci/sbom-bundle.json.gz": {
+    "uncompressed_sha256": "348e077f65c1c94b63bb54ffb6c51c78f3d5d8fbc60d2af57f9b61867585f823",
+    "uncompressed_bytes": 4733415
+  },
+  "native-ci/attestations.json.gz": {
+    "uncompressed_sha256": "a26ca2c8fd0f6bdd45bf7520cee820a2981423ee87839892cf3774bb84288ef0",
+    "uncompressed_bytes": 4755368
+  },
+  "native-ci/packages.json.gz": {
+    "uncompressed_sha256": "d288945469dbb05d0d4e9d84dd298b8c2d629e6b552afcddf35c72482155c9af",
+    "uncompressed_bytes": 549211
+  }
+}

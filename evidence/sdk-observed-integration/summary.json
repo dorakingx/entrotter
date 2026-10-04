@@ -1,0 +1,54 @@
+{
+  "status": "prepared proposed composition; combined current-head CI pending",
+  "coordinator_base": "d90f4a91f31ce59056e08ba294ad62989e02a320",
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "SDK_selectors_changed": 4,
+  "frozen_host_SDK_ee_and_other_job_model_holdout_inputs_preserved": true,
+  "local_workflow_reader_steps": 6,
+  "first_five_bodies_complete_outputs_unchanged_except_SDK_pin": true,
+  "sixth_new_SDK_inspection": "Full wrapper and nested report, typed classification and every four-phase price, signed round field, address, unit, head, code identity and error record compared with engine40 and viewera19.",
+  "source_wrapper_sha256": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+  "nested_trace_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+  "local_type_sources": 21,
+  "retained_frozen_diagnostics": 3,
+  "SDK_original_component_CI": {
+    "required_checks": 5,
+    "runs": [
+      37052557032,
+      37052557013,
+      37052557015
+    ],
+    "Python_unit_tests_each": 45,
+    "source_files": 6,
+    "locked_identities": 42,
+    "reported_advisories": 0,
+    "docs_files": 8,
+    "docs_links": 26,
+    "independent_raw_review_original_sha256": "3852b7acb5185af14886e672d2fa3fc7a5c721ad56d1414d3bc12c6c81cb72f1"
+  },
+  "prior_coordinator_d90f": {
+    "all5_CI": "SUCCESS originalfirstattempt/full independent1032raw review",
+    "runs": [
+      37049503304,
+      37049503150,
+      37049503339
+    ],
+    "independent_review_sha256": "b80f5995958eb643a3b3c8033487e7c736b0f2b72e2322b9ee6320f26dffd7c6",
+    "clean_fixture_seconds": 8.205260221000003,
+    "recorded_agent_seconds": 8.875338663999997,
+    "scope": "Historical configured runningDocker/cgroup-v2; caches may be warm, installation/VM startup excluded; reproduction measurement not speed comparison."
+  },
+  "limitations": [
+    "Offline recorded bytes; no new EVM/archive/model/browser execution.",
+    "Internal consistency/read-only dependence do not authenticate provider/code, signed strategy/profit/full-block/root/opcode/defaultDocker32.",
+    "New combined current-head CI and independent human protected-main/Pages gates remain separate.",
+    "CI installed filesystem not separately exported; wheel bytes and actual import logs retained; ZIP/tool/DB cryptographic gaps disclosed.",
+    "Formal submission and videos unchanged/not claimed."
+  ]
+}

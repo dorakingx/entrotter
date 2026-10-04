@@ -14,3 +14,15 @@ artifacts/
 node_modules/
 playwright-report/
 test-results/
+
+.quality/
+.mypy_cache/
+.ruff_cache/
+_deps/
+
+/output/
+
+# Local tool links may be symlinks rather than directories.
+node_modules
+# Fresh local evidence can contain operator paths; CI uploads its safe outputs.
+/evidence/monorepo-verification/

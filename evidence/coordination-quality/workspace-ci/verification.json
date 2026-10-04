@@ -1,0 +1,59 @@
+{
+  "executed_at": "2026-09-19T22:34:44.400768+00:00",
+  "python": "3.12.14",
+  "anvil_installed": true,
+  "anvil_version": "anvil Version: 1.8.3\nCommit SHA: cae51ad458f6abb64852b7709eb784352429825d\nBuild Timestamp: 2026-09-15T10:46:16.519267388Z (1789469176)\nBuild Profile: dist",
+  "archive_rpc_configured": false,
+  "historical_execution": "not_performed_by_this_script",
+  "checks": [
+    {
+      "repository": "engine",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "log": "engine-tests.log",
+      "contains_skipped_tests": false
+    },
+    {
+      "repository": "sdk-python",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "log": "sdk-python-tests.log",
+      "contains_skipped_tests": false
+    },
+    {
+      "repository": "cli",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "log": "cli-tests.log",
+      "contains_skipped_tests": false
+    },
+    {
+      "repository": "scenarios",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "log": "scenarios-tests.log",
+      "contains_skipped_tests": false
+    },
+    {
+      "repository": "entrotter.github.io",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "log": "entrotter.github.io-tests.log",
+      "contains_skipped_tests": false
+    },
+    {
+      "repository": "entrotter",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "log": "entrotter-tests.log",
+      "contains_skipped_tests": false
+    },
+    {
+      "repository": "entrotter.github.io",
+      "command": "node --test tests/report.test.mjs",
+      "exit_code": 0,
+      "log": "website-javascript-tests.log",
+      "contains_skipped_tests": false
+    }
+  ]
+}

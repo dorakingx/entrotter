@@ -1,0 +1,96 @@
+{
+  "actual_host_log_sha256": "f72c82becefb56e51b017adb222bbd99e261c0ba01093e07e9f5302e87cab46e",
+  "actual_session": 95049,
+  "baseline_branch_present": false,
+  "cache_observation_errors": [],
+  "candidate_branch_present": false,
+  "captured32_byte_identical_to003": true,
+  "cause_scope": "Observed baseline evm_mine timeout only. Aggregate errors are not classified provider causes; zero cache hits and no candidate branch do not prove performance improvement or the cause of prior001002003 timeouts. No repairs, retuning, narrowing or retry.",
+  "final_protocol_present": false,
+  "fresh_cleanup_checks": [
+    {
+      "fresh_group_absent": true,
+      "fresh_pid_absent": true,
+      "fresh_port_closed": true,
+      "kind": "Anvil",
+      "pid": 35884,
+      "port": 59541
+    },
+    {
+      "fresh_group_absent": true,
+      "fresh_pid_absent": true,
+      "fresh_port_closed": true,
+      "kind": "fixed_cache",
+      "pid": 35874,
+      "port": 59540
+    }
+  ],
+  "frozen_request_and_signed32_bound": true,
+  "host_cleanup_errors": [],
+  "host_exit_not_replay_success": true,
+  "host_seconds": 150.462171,
+  "native_cleanup_errors": [],
+  "native_seconds": 150.15749,
+  "observations_file_equals_result": true,
+  "observed_failed_operation": {
+    "category": "rpc_error",
+    "code": "other_error",
+    "method": "evm_mine",
+    "rpc_diagnostics": {
+      "code": "timeout",
+      "method": "evm_mine"
+    },
+    "rpc_method_matches_observed": true,
+    "stage": "baseline_replay"
+  },
+  "parent_cache": [
+    {
+      "closed": true,
+      "group_absent": true,
+      "pgid": 35874,
+      "pid": 35874,
+      "port": 59540,
+      "port_closed": true,
+      "returncode": 0,
+      "stats": {
+        "bytes": 2091435,
+        "entries": 735,
+        "errors": 21,
+        "hits": 0,
+        "refused_handlers": 0,
+        "requests": 742,
+        "uncached": 3,
+        "upstream": 739
+      },
+      "stdin_closed": true,
+      "stdout_closed": true
+    }
+  ],
+  "primary_code": "trace_rpc_failed",
+  "primary_stage": "baseline_replay",
+  "prior001002003_unchanged": true,
+  "readiness_sha256": "efab24f9b0fc18be7a69ccf358c2a9d2be94930e5c890e04bac756bea50db9c1",
+  "remaining_anvil_processes": [],
+  "replay_status": "failed",
+  "report_present": false,
+  "run_sha256": {
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "host-cache-cleanup.json": "59aa16e387c3b6d048aa19e7a8bffc3ef4d6654c713955765c182cac61060919",
+    "host-owned-cleanup.json": "3104eba7ca745682fb3636987b11f6d4696f79675f5e7360ef007a5f9aa52003",
+    "host-result.json": "79a5e6553355050638b5815b57990a8acb8b27e358170ae7cba03bd523800945",
+    "observations.json": "e132fcb37bdb4902cd5b1dbcf08a7a8466b6265a7fcd34a35b7b6587f1117ddb",
+    "owned-cache.json": "c69e79da0e6189fea2accbe5236090f50dbb156ac8f9c03fa1a85a63836e3dcb",
+    "owned-nodes.json": "fa661e4dc69d00e6566a2efe4d24f2bab738aa941a77bc6502b32c57c674a4f1",
+    "result.json": "128778effc3d3afcb34e1d0cc9beb3c6786f1e7b0280d26643f3d2c62a5f22bf"
+  },
+  "scope": "Single actual instrumented native cache-candidate replay, not a success/defaultDocker/CPU/RSS/PID/historical speed or timeout-cause proof.",
+  "setup_only_failure": {
+    "archive_or_node_calls": 0,
+    "before_main": true,
+    "category": "missing_PYTHONPATH_engine_import",
+    "log_sha256": "49a8349505fd5334ca72524caaac66db782ce61fa1c951d9c2bce90c903a59d6",
+    "scope": "Initial launcher omitted PYTHONPATH=src; import failed before main/outputdir/provider/node activity. Distinct corrected actual invocation only once."
+  },
+  "source_bindings_unchanged": true,
+  "terminal_exec_exit": 0
+}

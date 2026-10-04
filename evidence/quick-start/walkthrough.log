@@ -1,0 +1,84 @@
+engine 2c843842dc57387150e3bb080c720bc94ce18bc5
+sdk-python b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+cli a63a39000e03d151e80b5a9c47dd4df449281b93
+scenarios 3a78ecca24334ae87119a5a0b64c84ba6dd71de1
+entrotter.github.io 61740312f281f7e911e0eb6e9482a3c372cb1fae
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 397B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 50.45MB 0.3s done
+#5 DONE 0.3s
+
+#6 [2/4] COPY anvil /usr/local/bin/anvil
+#6 CACHED
+
+#7 [3/4] COPY entrotter_engine /app/entrotter_engine
+#7 CACHED
+
+#8 [4/4] WORKDIR /app
+#8 CACHED
+
+#9 exporting to image
+#9 exporting layers done
+#9 writing image sha256:626ca28986b4ca5da93df1438a705f1757bb35afcd42f77b539bab7d66d7a485 done
+#9 naming to docker.io/library/entrotter-worker:fba06f6dd633858f done
+#9 DONE 0.0s
+
+View build details: [local Docker build dashboard]
+{"image_id": "sha256:626ca28986b4ca5da93df1438a705f1757bb35afcd42f77b539bab7d66d7a485", "manifest": "worker-image.json", "published": false}
+{
+  "python": "3.13.0",
+  "anvil_installed": true,
+  "docker_installed": true,
+  "worker_image_configured": true,
+  "archive_rpc_configured": false,
+  "api_token_configured": false
+}
+fixture | e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6 | report.json
+SHA-256 verified: e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6. Integrity is not proof of model correctness.
+{
+  "mode": "fixture",
+  "scenario": "liquidity-shock",
+  "baseline": {
+    "fees": "0",
+    "final_equity": "5800",
+    "initial_equity": "10000",
+    "max_drawdown_pct": "52.4271844660194174757281553398058252427184466019417475728155",
+    "return_pct": "-42.00",
+    "trades": 0
+  },
+  "candidate": {
+    "fees": "25.748400",
+    "final_equity": "8557.051600",
+    "initial_equity": "10000",
+    "max_drawdown_pct": "16.9218291262135922330097087378640776699029126213592233009709",
+    "return_pct": "-14.42948400",
+    "trades": 1
+  },
+  "comparison": {
+    "final_equity_delta": "2757.051600"
+  },
+  "assumptions": [
+    "Synthetic exogenous price path; not a historical replay.",
+    "Both policies observe identical prices with no future lookahead.",
+    "Immediate fills with fixed fees/slippage; no gas, MEV, market impact or liquidity model.",
+    "No real money, chain transaction or LLM is used."
+  ]
+}
+Complete report matches the pinned public fixture
+evm-local | 864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7 | local-evm.json
+SHA-256 verified: 864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7. Integrity is not proof of model correctness.

@@ -1,0 +1,9 @@
+{
+  "status": "prelaunch_host_import_setup_failure",
+  "exit_code": 1,
+  "error": "ModuleNotFoundError entrotter_engine",
+  "stage": "host import before main/output creation/child launch",
+  "run001_exists": false,
+  "fix": "PYTHONPATH=src in invoking host environment; no source/input/deadline changes",
+  "next_stdout": "native006-host-stdout-002.log"
+}

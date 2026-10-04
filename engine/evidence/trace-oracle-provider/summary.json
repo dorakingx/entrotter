@@ -1,0 +1,117 @@
+{
+  "base": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+  "branch": "test/trace-oracle-provider-state",
+  "status": "native_quality_and_independent_source_review_pass_exact_head_CI_pending",
+  "candidate_commit": "Enclosing reviewed publication commit; exact-headCI pending.",
+  "behavior_change": "One explanatory report assumption only. Existing signed replay, pool/EVM validation, fork/signature/header binding, lifetime/memory/RPC and v0.1 behavior unchanged. New actual regression coverage; no fabricated failing-before product defect.",
+  "oracle_native": {
+    "artifact_id": "b8c5b8d1e162bbcb304693cb09f986c46d7bfc42d19e334741d6374f66e6d10d",
+    "runtime_seconds": 0.286282,
+    "baseline_verified": true,
+    "baseline_gas": [
+      26167,
+      26438
+    ],
+    "baseline_cumulative_gas": [
+      26167,
+      52605
+    ],
+    "baseline_projection_differences": [
+      [],
+      []
+    ],
+    "baseline_consumer_log_word": 20,
+    "candidate_status": [
+      "skipped",
+      "executed"
+    ],
+    "candidate_consumer_receipt_status": "0x0",
+    "candidate_consumer_gas": 25808,
+    "candidate_consumer_logs": 0,
+    "original_consumer_signature_hash_preserved": true,
+    "source_parent_value": 10,
+    "source_latest_value": 20,
+    "source_post_run_nonces": [
+      3,
+      1
+    ]
+  },
+  "native_suite": {
+    "tests_run": 252,
+    "seconds": 37.568,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "oracle_nodes_closed": 9,
+    "proxy_threads_and_ports_closed": 5,
+    "log": "native-suite.log",
+    "summary": "native-suite-summary.json"
+  },
+  "focused": {
+    "tests": 4,
+    "seconds": 3.908,
+    "success": true,
+    "log": "focused.log"
+  },
+  "initial_failure": {
+    "kind": "New test import used models instead of evm for ExecutionError. Corrected test import, focused4thenfresh252pass. No production change for this failure.",
+    "tests_run": 249,
+    "seconds": 33.578,
+    "errors": 1,
+    "log": "native-suite-import-failure.log"
+  },
+  "provider_state": {
+    "normal_control": "same provider proxy verifies original receipts",
+    "missing_parent": "ExecutionError before replay node creation",
+    "missing_code_and_balance": "ExecutionError No fixture substitution, no report",
+    "missing_storage": "Public native entrypoint returns integrity-valid baseline not_mined/not_mined, candidate skipped/not_mined, baseline_verified=false, no receipts. Actual fault request counters/normal control retained.",
+    "interpretation": "Receipt absence alone cannot identify cause, state proof or oracle response. Deliberate fault is known only from test controls; report makes no fabricated cause claim."
+  },
+  "quality": {
+    "production_sources_and_scripts": 23,
+    "ruff_check": true,
+    "ruff_format": true,
+    "mypy": true,
+    "bandit_retained_findings": 23,
+    "bandit_errors": 0,
+    "bandit_skipped": 0,
+    "source_review_change": "trace.py digest only; full findings/rationales unchanged",
+    "python_locked_packages": 42,
+    "python_advisories": 0,
+    "wheel_modules_equal": 18,
+    "wheel_sha256": "f5192e886858a08ef485754b1fe9901e9bad13cba2b7d26a266c83e3b3ceefcb"
+  },
+  "image_protocol": "One new no-network direct bounded-image/protocol oracle regression added, not locally run; requires exact-headCI. Host default dispatch/lifecycle and historical gates remain separate unchanged checks.",
+  "historical_sources": "No fresh archive/model/holdout/media/market operation. Published935/PR31 historical1/4 reports and coordinator8029 remain prior exact evidence; new proof synthetic only. SDKee/siteb7 offline support retained, no rendering/EVM claim for this candidate.",
+  "evidence_history": "Original investigation/rootdirection hashes retained. Prior9node followup full raw JSON/report unavailable after disclosed ignored generator overwrite; original initial6node/setupraw and aggregate logs/review survive. New current native proof independently reproducible under distinct native-run-002; never substituted for old bytes/hash.",
+  "remaining": [
+    "All8 exact-headCI and actual image/historical/native provenance artifacts; independent source/evidence review passed.",
+    "All8 exact-headCI and actual image/historical/native provenance artifacts.",
+    "Human protected-main approval, deployment and G1-G5 completion remain separate.",
+    "Full-block/end-state/opcode/external oracle truth and provider state attestation are not established."
+  ],
+  "frozen_fixture": {
+    "path": "tests/data/canonical-local-oracle-inputs.json",
+    "sha256": "4439e4a3848476b6eb64a6a634fbe608a0efb1fc2be08629f8e4d4ff361c5067",
+    "material": "Two actual public signed CREATE inputs plus original signed update and consumer. Source genesis allocation only; no retained keys or replay repairs."
+  },
+  "source_sha256": {
+    "src/entrotter_engine/trace.py": "709061f02814c918dc1cf04753d1e8df153517fa0e6cf7f5fc18d973f29b25b6",
+    "tests/test_trace_oracle.py": "74be232dcc9927a22dd7326dbd7e94c4350ec18a20bf6de0900803842a215b0d",
+    "tests_isolated/test_trace.py": "6a35a695ae68f2d30823166f5952e21ec318ee67a4bf6ca75502196dd08c7df6",
+    "security-reviewed.json": "35cb7ddbd2150ac37a12192fb25223f33921da3d75cb956f19a2849c301d2ed2"
+  },
+  "validation_source_sha256": {
+    "src/entrotter_engine/trace.py": "709061f02814c918dc1cf04753d1e8df153517fa0e6cf7f5fc18d973f29b25b6",
+    "tests/test_trace_oracle.py": "e9fd8baa9d6fbafc84662502a3a2389c4b5e898f36c308804a81d15b1d2f80e0",
+    "tests_isolated/test_trace.py": "6a35a695ae68f2d30823166f5952e21ec318ee67a4bf6ca75502196dd08c7df6",
+    "security-reviewed.json": "35cb7ddbd2150ac37a12192fb25223f33921da3d75cb956f19a2849c301d2ed2"
+  },
+  "native_post_run_metadata_adjustment": "After252pass, cleanup metadata records port_closed=None for a node lacking RPC rather than claim an unchecked closure. Normal nine-node case has RPC and remains identical. Assertions/execution unchanged; parent requested reuse instead of outcome-neutral full rerun. Executed and final test hashes retained separately.",
+  "independent_review": {
+    "file": "independent-review.json",
+    "sha256": "56a0de0ee5b0bcaa15d816dc3003afffb7d812e4587257929203db3634b7db1f",
+    "result": "No remaining actionable findings. Original source/readiness and public-copy hashes preserved at review time; later prose/summary changes only record this status.",
+    "scope": "Root source/privacy/evidence review, fullauthorartifactchecks and fresh3report offlineSDKee/siteb7 validation. No new EVM/browser/defaultworker execution or GitHubapproval."
+  }
+}

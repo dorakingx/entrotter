@@ -1,0 +1,431 @@
+{
+  "schema_version": "0.1.0",
+  "recorded_at": "2026-09-20T00:31:17.181366+00:00",
+  "status": "recorded_review_cuts_owner_and_independent_review_pending",
+  "source_commits": {
+    "entrotter": "67b7d19105495e314c308cd7e2e01ef254f37ca1",
+    ".worktrees/engine-agent-worker": "abb4662ce960e08b2aa3a2c8a1c10719339edccc",
+    "engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+    "scenarios": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+    "entrotter.github.io": "61740312f281f7e911e0eb6e9482a3c372cb1fae"
+  },
+  "outputs": [
+    {
+      "path": "submission/media/demo-probe.json",
+      "bytes": 3711,
+      "sha256": "2425d357813d65ac2b581b07c489ca3a7ae5f76aa3ccf76d69d86f61d3be508a"
+    },
+    {
+      "path": "submission/media/entrotter-demo.mp4",
+      "bytes": 8066632,
+      "sha256": "ad25458ca7bcd3898b5c95880685b7f48a87f3c126ea0924674cbb26db481131"
+    },
+    {
+      "path": "submission/media/entrotter-demo.srt",
+      "bytes": 3074,
+      "sha256": "b3e3c54dc945041719cdf7bbc8a7dc5d1f09e6eb49d70ab753f4458f5d59c728"
+    },
+    {
+      "path": "submission/media/entrotter-demo.vtt",
+      "bytes": 3043,
+      "sha256": "c11e8f31dcdc126166e7706c7dfd3fc079894e721d1bada292686f6c3d0d9a2c"
+    },
+    {
+      "path": "submission/media/entrotter-pitch.mp4",
+      "bytes": 7324837,
+      "sha256": "e41b98fa5ea68ef96250b186095c9537144b61f4b765062a4fafec6c2d1476d0"
+    },
+    {
+      "path": "submission/media/entrotter-pitch.srt",
+      "bytes": 3098,
+      "sha256": "ef8c27ac2a0f64f19edf08c752617d6ef9f04bc17bd25f2977b02c05425acd51"
+    },
+    {
+      "path": "submission/media/entrotter-pitch.vtt",
+      "bytes": 3067,
+      "sha256": "8b74d2dd22a5628abab03275132d807760d34734099a3f74db224643ce306d12"
+    },
+    {
+      "path": "submission/media/pitch-probe.json",
+      "bytes": 3714,
+      "sha256": "362ef323034810aafa80c3789e98e1c47a7ccd5f747039e214eb3a90d6258eb9"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "evidence/submission-media/pitch-capture.json",
+      "bytes": 1540,
+      "sha256": "1240e2fcb4526d6d0516947bd0a719e72bb644e145e4301019e5e323167e3b7b"
+    },
+    {
+      "path": "evidence/submission-media/demo-capture.json",
+      "bytes": 1650,
+      "sha256": "48cda7136a242ea4c3b4805175da5b0131fc450983882dc1c24f06a615c42ee7"
+    },
+    {
+      "path": "evidence/submission-media/actual-execution.log",
+      "bytes": 396,
+      "sha256": "5bcbadba683230363a386fbb5f701dc7999f6b16340fd6d6eeb4c4f26414f154"
+    },
+    {
+      "path": "evidence/submission-media/preview-layout.json",
+      "bytes": 1299,
+      "sha256": "4dd9c9518ee537456c18b1789f326a7128fbd948803bab2054b25195fabb106d"
+    },
+    {
+      "path": "evidence/submission-media/agent-replay.json",
+      "bytes": 15333,
+      "sha256": "6998b9d58b9286af42efc873a3c2d736016dd9ef1822a369c512d8688f37b1ea"
+    },
+    {
+      "path": "evidence/submission-media/invalid-hash.json",
+      "bytes": 15333,
+      "sha256": "4bf7d344ecf37006e93d9ebbd737ab24f40ca051a6cd2329e8996c33bf515ce7"
+    },
+    {
+      "path": "evidence/submission-media/execution.json",
+      "bytes": 262,
+      "sha256": "cea35a776fb1fb83fcde1fa37022510e526eb26990b69d9ad3894c01a0021bc7"
+    },
+    {
+      "path": "evidence/submission-media/pitch-final-frame.png",
+      "bytes": 230207,
+      "sha256": "b23582b1264eb0562be17d23dd0a5c71f2649fb30f2206147fe12d0ddf60ba2e"
+    },
+    {
+      "path": "evidence/submission-media/demo-final-frame.png",
+      "bytes": 303823,
+      "sha256": "3983570c53ca3d81f3382c20caaddb52ea2eaf6d94216b6d72cf992c41911b1e"
+    },
+    {
+      "path": "evidence/submission-media/media-checks.json",
+      "bytes": 365,
+      "sha256": "538879c84a2559a6a1516327328d9836c70ec73fb99bf48d7593479ba5bec80d"
+    },
+    {
+      "path": "evidence/submission-media/requirements-all.txt",
+      "bytes": 137,
+      "sha256": "72be67727fd764ab1ae8cd29dc4df33df5321cfb59a3ce4334333aa53ace46e0"
+    },
+    {
+      "path": "evidence/submission-media/audit-all.json",
+      "bytes": 481,
+      "sha256": "c011eec010c85e18b5e97d683cebaa19fcaa0811916a6161a54756d543e83f04"
+    },
+    {
+      "path": "evidence/submission-media/MODEL_CARD",
+      "bytes": 513,
+      "sha256": "289f7421072d689a3d91f6c632f486af46f9b8b04417536104a4ea667b8a394b"
+    },
+    {
+      "path": "evidence/submission-media/voice-files.json",
+      "bytes": 873,
+      "sha256": "dbc92ee6c858bb1cd5e1540540b9f254d56e02e9f83db8b002e852c89393bff9"
+    },
+    {
+      "path": "evidence/submission-media/voice-repository.json.gz",
+      "bytes": 14612,
+      "sha256": "32fbeb5ae8832283d86bcc22cff80471180a1142b87651c50132bcfd722575a8",
+      "original_bytes": 271365,
+      "original_sha256": "2a3c1518af8b23ae3d9263624f92250b14a393ab3f92aa8cfffdfb0e8b95454e"
+    },
+    {
+      "path": "evidence/submission-media/encode-results.json",
+      "bytes": 8773,
+      "sha256": "676412aa7589547b1cda25a8437650de49ecf857bbd00a6175916fd5e3cebe4c"
+    },
+    {
+      "path": "evidence/submission-media/pitch-audio-analysis.log.gz",
+      "bytes": 17960,
+      "sha256": "d52435ab0ae59cf1a7d04a1fa4ee6ce954f43984dac6b7292ba48f3cf526d655",
+      "original_bytes": 270638,
+      "original_sha256": "3e3589d9376565998a8bf185d07a82a9963c4a4a1bad357dfb746cc78f186939"
+    },
+    {
+      "path": "evidence/submission-media/demo-audio-analysis.log.gz",
+      "bytes": 18438,
+      "sha256": "db4a7402cfc02451cc6097235633bd3b419b338c8435c864b8b9804716fdbb2d",
+      "original_bytes": 275189,
+      "original_sha256": "81d0462833d7378b60e0fa2983d5b14f7499b5a5bd65b2dae15894ccd8251832"
+    },
+    {
+      "path": "evidence/submission-media/pitch-encode.log.gz",
+      "bytes": 2297,
+      "sha256": "5fdc76d6c1fde177a401ba33924d5223d5e34c630ae2cc5f671f3ddae3c22600",
+      "original_bytes": 5666,
+      "original_sha256": "d0b7dddf48d1b3fffd7e0d3ef5980d1b5013ffd044de7cff7b2379d5adbc2f1d"
+    },
+    {
+      "path": "evidence/submission-media/demo-encode.log.gz",
+      "bytes": 2348,
+      "sha256": "07610b418ba8f0bd9396aff50f78fd6c8dc86f69a446dd042130de4c18f7f29d",
+      "original_bytes": 5898,
+      "original_sha256": "a39ef007e2e6ccfb2ec03e57ea3372ee06a96dae3f964f5148e63be35fc3f53e"
+    },
+    {
+      "path": "evidence/submission-media/pitch-decode.log.gz",
+      "bytes": 20,
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/submission-media/demo-decode.log.gz",
+      "bytes": 20,
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/submission-media/narration.log.gz",
+      "bytes": 67,
+      "sha256": "0587e365b608ef35db3665d8f8fec297ee414c0cdee75a087ff4546e6963e9cf",
+      "original_bytes": 63,
+      "original_sha256": "9adbfcae675eb0977849c58dc8ddd349c8e823905215304b5e26d78dbd91f8e0"
+    },
+    {
+      "path": "evidence/submission-media/production-check_media.py.gz",
+      "bytes": 621,
+      "sha256": "e1a38072c2aca88128f0cc4cd9fe0922781d842dceb1424817f59f5118625c49",
+      "original_bytes": 1360,
+      "original_sha256": "9f55836b504fc29b27ead1e59db0eae46741a935b5991212b1f504b6d5cd61d5"
+    },
+    {
+      "path": "evidence/submission-media/production-encode.py.gz",
+      "bytes": 1182,
+      "sha256": "d3022fb16266adfc962a0889d3d251d48507fb844995dd5f65e65fc194020b5c",
+      "original_bytes": 2619,
+      "original_sha256": "74eafc86d5663c4903cfcfb9474aad43c284ab6a34bd76b5ad8baace8116ee9b"
+    },
+    {
+      "path": "evidence/submission-media/production-live_run.py.gz",
+      "bytes": 848,
+      "sha256": "2faafc30d63848e8c69d88c32f04f17fd16048e7f72271af96ad9517ff04e6a9",
+      "original_bytes": 1983,
+      "original_sha256": "e1a8d72940363a0e3e81a49735907814617655e9025a9beba3d80e4faff5b57b"
+    },
+    {
+      "path": "evidence/submission-media/production-narrate.py.gz",
+      "bytes": 959,
+      "sha256": "c06eb5c770b5d5c8da6b03c2a0ada19b976fa49c940de3d290166eea41848989",
+      "original_bytes": 2204,
+      "original_sha256": "1d2674dc080918b233c1a379f4066c0e41dc94be04edacff108cf6da7a365759"
+    },
+    {
+      "path": "evidence/submission-media/production-preview.mjs.gz",
+      "bytes": 742,
+      "sha256": "f931be3d6dd1a770c538173207c09862efb42231e9a64987e1b77528fe52052c",
+      "original_bytes": 1539,
+      "original_sha256": "d284c5ec6c2c450136a26ade7bf2e4a6002e917c003cc1f9b17042c04363fa1a"
+    },
+    {
+      "path": "evidence/submission-media/production-record.mjs.gz",
+      "bytes": 3160,
+      "sha256": "77e82419c223ec53e63a7933d090b3934a6546ea79ce77e5ff093c6765a269ce",
+      "original_bytes": 8270,
+      "original_sha256": "de6686179e69e57942a45859500e1223020e8661d88c4b975f299cc0f333cda2"
+    },
+    {
+      "path": "evidence/submission-media/production-scenes.json.gz",
+      "bytes": 3550,
+      "sha256": "224b7337edec60b39e58eb625bee86a0c2f8a29616277fabb20f78ccd6393581",
+      "original_bytes": 8430,
+      "original_sha256": "d12dd756e08f927630afca4638a86a61fce62cd54bb9d7f5fa02456d1a222211"
+    },
+    {
+      "path": "evidence/submission-media/production-studio.html.gz",
+      "bytes": 2043,
+      "sha256": "0bb5367e18f259e7c69907db9e19d5de4cca0e8a04f09b0bef3307fa80878fad",
+      "original_bytes": 4680,
+      "original_sha256": "180b273ada171e7d813c4e88fd21e705d17b799278901f719b22698dd2c31cb7"
+    },
+    {
+      "path": "evidence/submission-media/pitch-timeline.json",
+      "bytes": 11250,
+      "sha256": "08ac5c35080380d0a8b8c3bb4f9fb5acead92e8932c6cf3317345b2232c6c430"
+    },
+    {
+      "path": "evidence/submission-media/demo-timeline.json",
+      "bytes": 8643,
+      "sha256": "299c7e439b997aea541819c28a14b66a267f1cee8fa4e186d8ded43888bd7cba"
+    },
+    {
+      "path": "evidence/submission-media/demo-run_result.png",
+      "bytes": 111323,
+      "sha256": "20416bbe928b2e0771fcf70913dec2ccbde8890eccd58091aade59a947a2a2d5"
+    },
+    {
+      "path": "evidence/submission-media/demo-record-json.png",
+      "bytes": 147736,
+      "sha256": "c80f44a8f965fda1f01e0b1cf860f769d50873d0894aeb04f16fce288564c5f9"
+    },
+    {
+      "path": "evidence/submission-media/demo-recovered.png",
+      "bytes": 122183,
+      "sha256": "b1a07e738ba8118f789113e8556bd93dd14acdb2f87f67fe41ef1b3969d71228"
+    },
+    {
+      "path": "evidence/submission-media/demo-source.png",
+      "bytes": 113254,
+      "sha256": "faa27fe60030cd11f45cab368d2adb4f6199c363e909bef30d264e928a685ac2"
+    },
+    {
+      "path": "evidence/submission-media/preview-promise.png",
+      "bytes": 275814,
+      "sha256": "4cd8de74492b695baf0eecb7e5e8c02016e619c1e6f3299f35650968675c6312"
+    },
+    {
+      "path": "evidence/submission-media/worker-image.json",
+      "bytes": 2144,
+      "sha256": "552c2cb7ad4cd6546577b464b9d52cacedeaeba79e4296bcae36861721d4ed6d"
+    },
+    {
+      "path": "evidence/submission-media/local-docs-links.json.gz",
+      "bytes": 6901,
+      "sha256": "1c96f1146974abbfb6a36a6a5e8ceb90a7c7f78e87a5567a6ae17b868b4c7e0f",
+      "original_bytes": 60116,
+      "original_sha256": "fce2e332e176fe0be4c71e18b2698c33b81ca556e21e7a0304007d254f927680"
+    },
+    {
+      "path": "evidence/submission-media/review.json",
+      "bytes": 599,
+      "sha256": "8731baf92580043962dab69a31c3e8bc0877af9c33cc171b57cfe898558b4ec7"
+    },
+    {
+      "path": "evidence/submission-media/ci-quality.json.gz",
+      "bytes": 821,
+      "sha256": "e1c64f568b6a52eb91240e28e3441a22db88fb6cdb4677122e4d0a321b4ef825",
+      "original_bytes": 5103,
+      "original_sha256": "3df75e799182f338f946bcca7bc8a1efffae7926a9e4bc664bb74d5121a4d157"
+    },
+    {
+      "path": "evidence/submission-media/ci-links.json.gz",
+      "bytes": 383,
+      "sha256": "31fa9cba74c5384bcc5d8fb11ef750e34d36b59f96c8490f0fb4ffce097a0558",
+      "original_bytes": 1298,
+      "original_sha256": "768fde757d7af93a2676dc9fa6cd8d30b6ccd7b77e0225da5d0546c7dd7ad205"
+    },
+    {
+      "path": "evidence/submission-media/ci-integration.json.gz",
+      "bytes": 1281,
+      "sha256": "a882d42d7a49deb3bdc26938464a38c77ee0b5b2a4da21fad9f514c2f7364058",
+      "original_bytes": 12500,
+      "original_sha256": "bdaee63b5807b2f9045ec74b4b4f20382690368034a7ec512cb83101d1e5a121"
+    },
+    {
+      "path": "evidence/submission-media/pr-checks.json.gz",
+      "bytes": 466,
+      "sha256": "1d9c853c0e0b77d71d0c30b66e379a0af724e01a8d3fa852606873c75b82f6f5",
+      "original_bytes": 1666,
+      "original_sha256": "b78c8899f77251cac92c4e3d8538aaa7ad6ddaffb5e1e81e852411c09af777c9"
+    },
+    {
+      "path": "evidence/submission-media/public-readback.json.gz",
+      "bytes": 440,
+      "sha256": "06fbf6955b208d0b05d468409af73acb01eed8c96a64591654a76793a2eb46eb",
+      "original_bytes": 1267,
+      "original_sha256": "e6d20e9280238205b0c0bc414e7581e544890b452bb139a0aecd048e864d3418"
+    }
+  ],
+  "local_only_inputs": [
+    {
+      "local_workspace_path": "entrotter/output/playwright/submission/pitch-capture.webm",
+      "bytes": 11661840,
+      "sha256": "bc20da5e586eeca7fafa5e5fcfd0e51d90647b2422db31baf575a1fecc9e8a14",
+      "committed": false
+    },
+    {
+      "local_workspace_path": "entrotter/output/playwright/submission/demo-capture.webm",
+      "bytes": 12801740,
+      "sha256": "8cde33353329f575fa211c8769b4eccf1a8bd95f0d18c038792f249a670c4ab1",
+      "committed": false
+    },
+    {
+      "local_workspace_path": ".tools/entrotter-media/audio/pitch.wav",
+      "bytes": 7554564,
+      "sha256": "3e95760b4b8206470bf572b68dbef993a52f813528adb21d8b1559a99d374f26",
+      "committed": false
+    },
+    {
+      "local_workspace_path": ".tools/entrotter-media/audio/demo.wav",
+      "bytes": 7679492,
+      "sha256": "dce332b177052b1d965615268f4a9abe4a64170035e0860189f930a3bac69e9e",
+      "committed": false
+    },
+    {
+      "local_workspace_path": ".tools/entrotter-media/en_US-ljspeech-high.onnx",
+      "bytes": 114199011,
+      "sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+      "committed": false
+    },
+    {
+      "local_workspace_path": ".tools/entrotter-media/en_US-ljspeech-high.onnx.json",
+      "bytes": 4970,
+      "sha256": "7e1f4634af596d83cca997fb7a931ba80b70f8a316a2655ee69c55365e0ace14",
+      "committed": false
+    }
+  ],
+  "facts": {
+    "pitch_seconds": 171.440375,
+    "demo_seconds": 174.24,
+    "continuous_capture": true,
+    "narration": "local synthetic Piper 1.8.0 / en_US-ljspeech-high",
+    "human_listening_review": "pending",
+    "browser": "Chromium 153.0.8010.12",
+    "video": "H.264 1600x900 25 fps yuv420p",
+    "audio": "AAC mono 48000 Hz",
+    "full_decode": "both zero exit and empty error output",
+    "loudness_lufs": {
+      "pitch": -16.8,
+      "demo": -16.7
+    },
+    "true_peak_dbfs": {
+      "pitch": -1.1,
+      "demo": -1.2
+    },
+    "real_engine_calls": 2,
+    "new_agent_model_calls": 0,
+    "new_historical_calls": 0,
+    "exact_local_replay": true,
+    "completed_target_user_evaluations": 0,
+    "entry_submitted": false,
+    "outreach_sent": false,
+    "review_independence": "author checks only"
+  },
+  "registration_check": {
+    "method": "read-only browser navigation from public event Register link",
+    "observed_url": "https://colosseum.com/signup?entry=worldsfair",
+    "observed": "Create your account; Step 1 of 2 Account / Step 2 Registration",
+    "joined_state": "unverified; no authenticated session available in inspected browser",
+    "form_fields_entered": false,
+    "terms_accepted": false
+  },
+  "cleanup": {
+    "docker_ps_all_before_stop": "empty",
+    "colima_profiles_after": "default Stopped; entrotter Stopped",
+    "docker_context": "colima (unchanged)",
+    "preview_server": "owned PID 80320 terminated",
+    "preview_browser": "entrotter-media closed",
+    "registration_tab": "closed"
+  },
+  "limitations": [
+    "Recordings use proposed engine/viewer review branches, not a merged/deployed release.",
+    "Historical report inspected in UI was previously executed; the live command uses artificial local-EVM funding.",
+    "Recording console is a production aid displaying real process output, not shipped product UI.",
+    "Audio timing uses measured continuous capture overhead; no independent human listening review.",
+    "Media environment dependency versions were audited strictly, but it is not a fully hash-locked installer or product runtime.",
+    "Recorded harness used ENTROTTER_EXPORT_STATE, which the engine does not recognize; actual export used its normal shared default ledger, not an isolated ledger. No ledger was reset.",
+    "Original archive dates, team, eligibility, funding and artwork rights require owner confirmation.",
+    "Final VTT/SRT files normalize trailing blank lines only; cue text/timing exactly matches the archived encoder output."
+  ],
+  "ci": {
+    "tested_commit": "75ab1b6f1a3423e7221bde73d9db6c4b16848105",
+    "integration_run": 35479125753,
+    "quality_run": 35479125787,
+    "docs_links_run": 35479125785,
+    "required_jobs_passed": 5,
+    "public_outputs_readback": "all eight files equal exact hashes; 15411176 bytes",
+    "pr": "https://github.com/entrotter/entrotter/pull/40",
+    "independent_review": "pending"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "status": "tested_engine_deadline_fix_selected_current_composition_CI_pending_at_commit",
+  "previous_coordination_head": "0690adf280d0e140dd7518fda2087bd80ae6578a",
+  "previous_execution_snapshot": "cda73fe04e3e525bfcf253afcea06e63029e7af0",
+  "prior_combined_proof": "PR55 five successful exact0690adf jobs;21sources/78findings/50packages/19worker inputs and complete CLI/API/export/clean reports verified;fixture6.827s/model7.350s belong to engine0d, not the new candidate",
+  "engine_pr": "https://github.com/entrotter/engine/pull/30",
+  "engine": {
+    "head": "8176597af994dddb7a3dc6721db623580ebc9601",
+    "quality_run": 36878173721,
+    "evm_run": 36878173859,
+    "source_files": 23,
+    "full_findings": 23,
+    "skipped_security_rules": 0,
+    "wheel_modules_byte_equal": 18,
+    "audited_python_packages": 42,
+    "python_advisories": 0,
+    "linux_native_tests": 244,
+    "linux_native_seconds": 33.59,
+    "runtime_boundaries": "Actual synthetic signed fixture in no-network worker and actual default-host bounded mainnet prefix; not whole-block/root/opcode replay or universal host/VM safety.",
+    "image_input_hashes_match": 19,
+    "image_OS_packages": 26,
+    "signed_native_Cargo_packages": 1126,
+    "signed_inventory_outside_Cargo": 172,
+    "image_native_report_manifest_auditor_hashes": "all matched",
+    "database_metadata_matches": true,
+    "database_binary_digest_scope": "Image/native summaries record the same digest; database binary is not exported for local rehash.",
+    "source_hashes_match": 23,
+    "all_required_checks": "All8passed first attempt",
+    "checks": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T14:40:37Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36878173958/job/110422871731",
+        "name": "docs-links",
+        "startedAt": "2026-10-01T14:40:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Documentation links"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T14:40:50Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36878173721/job/110422869755",
+        "name": "quality",
+        "startedAt": "2026-10-01T14:40:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Engine quality and Python dependency audit"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T14:45:06Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36878173559/job/110422870532",
+        "name": "isolated",
+        "startedAt": "2026-10-01T14:40:28Z",
+        "status": "COMPLETED",
+        "workflowName": "Isolated worker enforcement"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T14:41:10Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36878173859/job/110422871834",
+        "name": "evm",
+        "startedAt": "2026-10-01T14:40:27Z",
+        "status": "COMPLETED",
+        "workflowName": "Local EVM integration"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T14:40:58Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36878173861/job/110422871239",
+        "name": "unit (3.11)",
+        "startedAt": "2026-10-01T14:40:26Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T14:41:07Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36878173861/job/110422871097",
+        "name": "unit (3.12)",
+        "startedAt": "2026-10-01T14:40:27Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T14:40:58Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36878173861/job/110422871222",
+        "name": "unit (3.13)",
+        "startedAt": "2026-10-01T14:40:25Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-01T14:40:58Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/entrotter/engine/actions/runs/36878173861/job/110422870964",
+        "name": "unit (3.14)",
+        "startedAt": "2026-10-01T14:40:26Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      }
+    ],
+    "GitHub_reviews": [],
+    "isolated_run": 36878173559,
+    "actual_Docker_tests": 23,
+    "actual_Docker_seconds": 213.407,
+    "image_source_digest": "443e4087a816c84e630e0c90a4a2561f88534b174696daf5a09ff9110dbb2dbd",
+    "default_worker_historical_report": {
+      "artifact_id": "791432dc11c62822c752f2c54d2aee0a884e7ef26c4b3acb3b9eeebf4de64699",
+      "sha256": "cb7e6fe4593b9cb9fe3ce805b4c398c65622bc45a1eb0d40f3b12ccbed018989",
+      "runtime_seconds": 7.07912,
+      "baseline_verified": true,
+      "gas_used": 208144,
+      "log_count": 8,
+      "complete_native_result_matches_except_runtime_hash": true
+    },
+    "default_worker_four_prefix": {
+      "artifact_id": "cf1b51833babf17c1b39c5d37af0ff7945da43422e2efc3453d36e72b2d0810f",
+      "sha256": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+      "runtime_seconds": 14.539113,
+      "baseline_verified": true,
+      "verified_original_receipts": 4,
+      "complete_native_result_matches_except_runtime_hash": true,
+      "candidate_statuses": [
+        "skipped",
+        "executed",
+        "executed",
+        "nonce_conflict"
+      ],
+      "actual_gas_log_nonce_divergence": true
+    }
+  },
+  "bounded_worker_pins": {
+    "engine": "8176597af994dddb7a3dc6721db623580ebc9601",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "49914a2ca7358a9e45befc9b458f7f3ac52c6142"
+  },
+  "component_evidence": "https://github.com/entrotter/engine/tree/8176597af994dddb7a3dc6721db623580ebc9601/evidence/trace-mine-deadline",
+  "scope": "Actual signed mainnet four-prefix receipt/state-dependent gas/log/nonce case; no new model or evaluation holdout claim. Native46.982404s and bounded14.539113s use different environments and are not a comparative speed benchmark.",
+  "independent_review": "Source fix and added evidence/workflow inspected independently; no actionable finding. Not protected-main GitHub approval.",
+  "same_block_funding": "Parent-state pool admission remains a known limitation; no state/funding/nonce repair",
+  "original_model_evaluation_holdout_media": "Unchanged, separately pinned",
+  "local_VM": "No local Docker/VM startup; real bounded proof from LinuxCI",
+  "full_goal": "Active; protected review/publication, broader replay coverage, trace SDK/viewer and owner-required submission gates remain open."
+}

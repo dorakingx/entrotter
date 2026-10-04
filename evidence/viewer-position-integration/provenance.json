@@ -1,0 +1,64 @@
+{
+  "base": "670e71780ee865ba7308e2270b3264f1f69a7125",
+  "pins": {
+    "engine": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "696511c5cb46482c96cf6f609c83877fcf16e922",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "4c6e27ed6db398d51d1c0d68ef429f869a61b4c3"
+  },
+  "workflow_sha256": "530403087eafb568d628cf964137f71f2846cd1c174f331af2435e24bad29904",
+  "copies_sha256": {
+    "account-viewer-reader.json": "12c6893f0c425b2949b853d69e82e2c0af3ce23f7dc4a674cb16b8d1ee59ab42",
+    "local-execution.json": "da5f8c2b1de4e02e127d16b5ef285597ed4d4890344b039082daa64f37f1ac06",
+    "viewer-ci-independent.json": "665b429d41ae276303d374135d0a227339c1be50d12a2f96ef5a4e12d714fa69",
+    "workflow-and-reuse.json": "923b554c06f8b94f1fc59b83ce60ad22ab916f3588bcd98cc355240b59f31232"
+  },
+  "prior_full_outputs": {
+    "account-position-reader.json": {
+      "prior_sha256": "da9940983f07c4b7b273986e9e0ecc5d06d81883ab854a0df85b1698863e5bb4",
+      "current_sha256": "ae2525160df1305a8da601dc05a683b37b12778d439e61f89760816930d4b8ac"
+    },
+    "bounded-observed-transaction-replay.json": {
+      "prior_sha256": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+      "current_sha256": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4"
+    },
+    "observed-transaction-replay.json": {
+      "prior_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+      "current_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f"
+    },
+    "trace-bounded-observed-reader.json": {
+      "prior_sha256": "f2d2fbe65093597a8d69266315296fe94132cbcb591163d9ee06256339fe414c",
+      "current_sha256": "0d973254dfa3a7507732cfc62b3ffdb15d9e101cec83fa1afb3f373fbc22dd00"
+    },
+    "trace-comparison-reader.json": {
+      "prior_sha256": "9aaa0db65ce3d16338a4058a3fce4904f26ecaa74be0ea9417902143d2f0c880",
+      "current_sha256": "c406d3979c00a72611ab44a651f6c9671d12125cd376a99dfba6d6cdc691c1be"
+    },
+    "trace-consumer-reader.json": {
+      "prior_sha256": "04a27034870c15b1d8b0c662426a1517fbf1ab6c1416bf735fbb4c8bcfbc5d63",
+      "current_sha256": "64cd8113f4d64c664512e7b513fd289acbc8d7bfe9512236f3f3f8520b6eef64"
+    },
+    "trace-funding-reader.json": {
+      "prior_sha256": "ffeb515e6cfc7012a75ebca2ad8a66f7e13d32db19323b4d4b8c4e574d5f3e9c",
+      "current_sha256": "062faf50a956c2e3e92100010ffb36a54d1510e701e3c9b3733ebfdfb65b884c"
+    },
+    "trace-observed-reader.json": {
+      "prior_sha256": "8ab82281a7f4f1738e2b54fd2dd6248fe08e036b9f19f63b292e3641befc459e",
+      "current_sha256": "ed5c4f1a4e8277aeeb7b5fc36644b5da235f7517e531c40c99aaa550b77e22c3"
+    },
+    "trace-oracle-reader.json": {
+      "prior_sha256": "3f543bba2b79ac10f44678000cd3e9c78254cff22bbf94d7daa63c48e0e41b58",
+      "current_sha256": "69120e827f02c87eceaee84bc12ce1675cf289e02025147ca0ab37e13ee6e616"
+    },
+    "trace-reader.json": {
+      "prior_sha256": "d03cb0dd8fb049505fed80828a36cc50f406a86b4023c04800e7543a0d8c4d04",
+      "current_sha256": "ff85a9c641a26ee2045909b833be1c7eb6e77608053bb60af74b31e9c36e4150"
+    }
+  },
+  "private_original_runs": {
+    "first": "readers.log/step1..8 originalsPASS, new9firstfailed",
+    "final": "readers-final.log; only9 rerun; previous8 outputs/bodyhashesreused"
+  },
+  "scope": "Nine offline record readers. Original13 bytes and nine synthetic controls; no fresh EVM/RPC/model/browser run. Exact component Linux browser CI reviewed separately."
+}

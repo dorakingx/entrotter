@@ -1,0 +1,18 @@
+{
+  "code": 0,
+  "elapsed_seconds": 0.18509300000000076,
+  "executable": "<workspace>/.tools/quality-venv/bin/python",
+  "argv": [
+    "<workspace>/entrotter/.quality/aave-demo/inspect-offline.py"
+  ],
+  "cwd": "<workspace>/entrotter/.quality/aave-demo/cli-work",
+  "PYTHONPATH": "entrotter-cli/src:entrotter-sdk/src",
+  "stdout_bytes": 3013,
+  "stdout_sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+  "stderr_bytes": 0,
+  "network_guard": {
+    "blocked_events": [],
+    "scope": "Python audit hook rejects outbound DNS/connect and child processes; no engine execution"
+  },
+  "scope": "Actual pinned CLI main with fixed argv, offline guard, aliases to selected existing sources; prior clean clone setup not rerun"
+}

@@ -1,0 +1,145 @@
+evm	Verify real local Anvil without any mainnet keys	﻿2026-09-19T19:45:48.9160547Z ##[group]Run PYTHONPATH=src python -m unittest discover -s tests -v
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9161115Z [36;1mPYTHONPATH=src python -m unittest discover -s tests -v[0m
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9198546Z shell: /usr/bin/bash -e {0}
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9198883Z env:
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9199201Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9199658Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9200081Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9200448Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9200809Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9201201Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:48.9201515Z ##[endgroup]
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:49.4676619Z test_keyboard_cancellation_reaps_process_and_closes_port (test_anvil_lifecycle.AnvilLifecycleTests.test_keyboard_cancellation_reaps_process_and_closes_port) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:49.7320104Z test_missing_receipt_fails_whole_run_and_cleans_up (test_anvil_lifecycle.AnvilLifecycleTests.test_missing_receipt_fails_whole_run_and_cleans_up) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.0061664Z test_rejected_transaction_is_not_a_revert_or_success (test_anvil_lifecycle.AnvilLifecycleTests.test_rejected_transaction_is_not_a_revert_or_success) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.1464603Z test_rpc_fault_reaps_process_and_closes_port (test_anvil_lifecycle.AnvilLifecycleTests.test_rpc_fault_reaps_process_and_closes_port) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4015519Z test_simultaneous_nodes_have_isolated_mutable_state (test_anvil_lifecycle.AnvilLifecycleTests.test_simultaneous_nodes_have_isolated_mutable_state) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4332570Z test_startup_cancellation_reaps_real_subprocess (test_anvil_lifecycle.AnvilLifecycleTests.test_startup_cancellation_reaps_real_subprocess) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4655764Z test_startup_timeout_reaps_real_subprocess (test_anvil_lifecycle.AnvilLifecycleTests.test_startup_timeout_reaps_real_subprocess) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4675765Z test_auth (test_api.APITests.test_auth) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4687819Z test_browser_request_rejected (test_api.APITests.test_browser_request_rejected) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4700832Z test_concurrency_limit (test_api.APITests.test_concurrency_limit) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4707634Z test_content_type (test_api.APITests.test_content_type) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4716795Z test_dns_rebinding_guard (test_api.APITests.test_dns_rebinding_guard) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4726530Z test_health (test_api.APITests.test_health) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4736351Z test_invalid_scenario (test_api.APITests.test_invalid_scenario) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4747004Z test_missing_report (test_api.APITests.test_missing_report) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4755252Z test_path_traversal (test_api.APITests.test_path_traversal) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4763700Z test_payload_limit (test_api.APITests.test_payload_limit) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4783568Z test_report_filename_must_match_content_hash (test_api.APITests.test_report_filename_must_match_content_hash) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:50.4927807Z test_roundtrip (test_api.APITests.test_roundtrip) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:51.6971890Z test_absolute_deadline_closes_idle_socket_and_returns_capacity (test_api_limits.APILimitTests.test_absolute_deadline_closes_idle_socket_and_returns_capacity) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:52.2048286Z test_eight_idle_connections_bound_handlers_and_recover (test_api_limits.APILimitTests.test_eight_idle_connections_bound_handlers_and_recover) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:52.7088987Z test_exclusive_store_lock_returns_503_then_recovers (test_api_limits.APILimitTests.test_exclusive_store_lock_returns_503_then_recovers) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:53.2176624Z test_full_store_returns_507_and_retains_saved_report (test_api_limits.APILimitTests.test_full_store_returns_507_and_retains_saved_report) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:53.8236035Z test_overload_client_that_never_sends_cannot_block_accept_loop (test_api_limits.APILimitTests.test_overload_client_that_never_sends_cannot_block_accept_loop) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:54.3592517Z test_overload_response_survives_post_body_sent_after_headers (test_api_limits.APILimitTests.test_overload_response_survives_post_body_sent_after_headers) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:54.8626837Z test_oversized_stored_file_and_symlink_are_not_served (test_api_limits.APILimitTests.test_oversized_stored_file_and_symlink_are_not_served) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:55.4692963Z test_rejected_trickle_cannot_extend_accept_loop_grace (test_api_limits.APILimitTests.test_rejected_trickle_cannot_extend_accept_loop_grace) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:56.2233392Z test_slow_header_progress_does_not_extend_absolute_deadline (test_api_limits.APILimitTests.test_slow_header_progress_does_not_extend_absolute_deadline) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:56.2266002Z test_disk_failure_preserves_previous_report_and_removes_temp (test_artifact_storage.ArtifactWriteTests.test_disk_failure_preserves_previous_report_and_removes_temp) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:56.3023355Z test_oversized_export_does_not_replace_existing_report (test_artifact_storage.ArtifactWriteTests.test_oversized_export_does_not_replace_existing_report) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:56.3041222Z test_predictable_temp_symlink_is_not_followed (test_artifact_storage.ArtifactWriteTests.test_predictable_temp_symlink_is_not_followed) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:56.8073287Z test_api_default_rejects_missing_worker_without_saving_report (test_default_execution.DefaultExecutionTests.test_api_default_rejects_missing_worker_without_saving_report) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:56.8891086Z test_cli_default_rejects_missing_worker_without_replacing_export (test_default_execution.DefaultExecutionTests.test_cli_default_rejects_missing_worker_without_replacing_export) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:56.9680510Z test_native_requires_explicit_opt_in_and_preserves_fixture_result (test_default_execution.DefaultExecutionTests.test_native_requires_explicit_opt_in_and_preserves_fixture_result) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:56.9692402Z test_public_runner_never_falls_back_when_worker_is_unavailable (test_default_execution.DefaultExecutionTests.test_public_runner_never_falls_back_when_worker_is_unavailable) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.0473520Z test_scenario_fifo_is_rejected_without_waiting_for_a_writer (test_default_execution.DefaultExecutionTests.test_scenario_fifo_is_rejected_without_waiting_for_a_writer) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.0474724Z test_abi_unsigned_bounds (test_defi.DefiBoundaryTests.test_abi_unsigned_bounds) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.0475488Z test_approve_is_exact_amount_and_spender (test_defi.DefiBoundaryTests.test_approve_is_exact_amount_and_spender) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.0476578Z test_fixture_cannot_request_token_rpc_reads (test_defi.DefiBoundaryTests.test_fixture_cannot_request_token_rpc_reads) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.0481947Z test_nonstandard_token_does_not_silently_report_zero (test_defi.DefiBoundaryTests.test_nonstandard_token_does_not_silently_report_zero) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.0578530Z test_swap_encoding_matches_solidity_abi_tool (test_defi.DefiBoundaryTests.test_swap_encoding_matches_solidity_abi_tool) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.0583966Z test_token_metadata_bounds_and_uniqueness (test_defi.DefiBoundaryTests.test_token_metadata_bounds_and_uniqueness) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.3232481Z test_real_storage_and_token_deltas_are_branch_isolated (test_defi.RealTokenTests.test_real_storage_and_token_deltas_are_branch_isolated) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.4536136Z test_wrong_decimal_pin_fails_execution (test_defi.RealTokenTests.test_wrong_decimal_pin_fails_execution) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7192670Z test_native_transfer_and_revert (test_engine.ActualAnvilTests.test_native_transfer_and_revert) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7197595Z test_assumptions_visible (test_engine.FixtureTests.test_assumptions_visible) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7201399Z test_breaker_sells_once (test_engine.FixtureTests.test_breaker_sells_once) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7205225Z test_cost_accounting (test_engine.FixtureTests.test_cost_accounting) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7212189Z test_deterministic (test_engine.FixtureTests.test_deterministic) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7214938Z test_drawdown (test_engine.FixtureTests.test_drawdown) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7217806Z test_flat_has_zero_drawdown (test_engine.FixtureTests.test_flat_has_zero_drawdown) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7221208Z test_hold_value (test_engine.FixtureTests.test_hold_value) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7225028Z test_input_unchanged (test_engine.FixtureTests.test_input_unchanged) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7229561Z test_integrity (test_engine.FixtureTests.test_integrity) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7230203Z test_missing_hash (test_engine.FixtureTests.test_missing_hash) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7237347Z test_no_future_lookahead (test_engine.FixtureTests.test_no_future_lookahead) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7238370Z test_nonfinite_hash (test_engine.FixtureTests.test_nonfinite_hash) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7239236Z test_order_independent_hash (test_engine.FixtureTests.test_order_independent_hash) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7240390Z test_policy_only_receives_observation (test_engine.FixtureTests.test_policy_only_receives_observation) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7242875Z test_recovery_can_lose (test_engine.FixtureTests.test_recovery_can_lose) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7246789Z test_same_policy_same_result (test_engine.FixtureTests.test_same_policy_same_result) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7250928Z test_sell_after_observed_drop (test_engine.FixtureTests.test_sell_after_observed_drop) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7256671Z test_shorter_prefix_same_actions (test_engine.FixtureTests.test_shorter_prefix_same_actions) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7261219Z test_tamper (test_engine.FixtureTests.test_tamper) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7261921Z test_wrong_version (test_engine.FixtureTests.test_wrong_version) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7265470Z test_zero_units_cash_only (test_engine.FixtureTests.test_zero_units_cash_only) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7440974Z test_local_cannot_submit_raw (test_engine.SafetyTests.test_local_cannot_submit_raw) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7441984Z test_local_client_rejects_remote (test_engine.SafetyTests.test_local_client_rejects_remote) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7446189Z test_missing_anvil_not_fake_success (test_engine.SafetyTests.test_missing_anvil_not_fake_success) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7454391Z test_missing_rpc_not_fake_success (test_engine.SafetyTests.test_missing_rpc_not_fake_success) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7661838Z test_no_upstream_transaction_submission (test_engine.SafetyTests.test_no_upstream_transaction_submission) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7662894Z test_no_url_userinfo (test_engine.SafetyTests.test_no_url_userinfo) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7689745Z test_pinned_block_mismatch (test_engine.SafetyTests.test_pinned_block_mismatch) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7701233Z test_resolved_source_excludes_rpc_secret (test_engine.SafetyTests.test_resolved_source_excludes_rpc_secret) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7713151Z test_source_chain_mismatch (test_engine.SafetyTests.test_source_chain_mismatch) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7715890Z test_action_cannot_supply_from (test_engine.ValidationTests.test_action_cannot_supply_from) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7717198Z test_bad_address (test_engine.ValidationTests.test_bad_address) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7719923Z test_bool_not_integer (test_engine.ValidationTests.test_bool_not_integer) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7721455Z test_decimal_wei_rejected (test_engine.ValidationTests.test_decimal_wei_rejected) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7723716Z test_empty_wallet (test_engine.ValidationTests.test_empty_wallet) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7726266Z test_excessive_steps (test_engine.ValidationTests.test_excessive_steps) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7727519Z test_fake_historical_fixture (test_engine.ValidationTests.test_fake_historical_fixture) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7728879Z test_fixture_rejects_evm_fields (test_engine.ValidationTests.test_fixture_rejects_evm_fields) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7730464Z test_float_money_rejected (test_engine.ValidationTests.test_float_money_rejected) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7732149Z test_fork_rejects_code_override (test_engine.ValidationTests.test_fork_rejects_code_override) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7733746Z test_fork_scenario (test_engine.ValidationTests.test_fork_scenario) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7734465Z test_infinity (test_engine.ValidationTests.test_infinity) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7735559Z test_local_scenario (test_engine.ValidationTests.test_local_scenario) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7737097Z test_missing_provenance (test_engine.ValidationTests.test_missing_provenance) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7737940Z test_nan (test_engine.ValidationTests.test_nan) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7738580Z test_negative_money (test_engine.ValidationTests.test_negative_money) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7740143Z test_odd_hex (test_engine.ValidationTests.test_odd_hex) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7741413Z test_oversized_gas (test_engine.ValidationTests.test_oversized_gas) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7742343Z test_precision_limit (test_engine.ValidationTests.test_precision_limit) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7743242Z test_target_allowlist (test_engine.ValidationTests.test_target_allowlist) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7744125Z test_unknown_field (test_engine.ValidationTests.test_unknown_field) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7745089Z test_unknown_policy (test_engine.ValidationTests.test_unknown_policy) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.7746003Z test_zero_price (test_engine.ValidationTests.test_zero_price) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.8004262Z test_cleanup_failure_is_explicit (test_isolated.IsolatedProtocolTests.test_cleanup_failure_is_explicit) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.8019544Z test_image_must_be_immutable_and_network_is_mode_bound (test_isolated.IsolatedProtocolTests.test_image_must_be_immutable_and_network_is_mode_bound) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:57.8035955Z test_input_budget_is_checked_before_launch (test_isolated.IsolatedProtocolTests.test_input_budget_is_checked_before_launch) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:58.0329367Z test_invalid_or_wrong_scenario_response_fails_closed (test_isolated.IsolatedProtocolTests.test_invalid_or_wrong_scenario_response_fails_closed) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:58.0374530Z test_missing_kernel_controls_are_rejected (test_isolated.IsolatedProtocolTests.test_missing_kernel_controls_are_rejected) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:58.1129513Z test_output_budget_stops_reader_and_cleans_up (test_isolated.IsolatedProtocolTests.test_output_budget_stops_reader_and_cleans_up) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:58.3220239Z test_timeout_terminates_client_and_requests_container_removal (test_isolated.IsolatedProtocolTests.test_timeout_terminates_client_and_requests_container_removal) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:58.4002280Z test_valid_response_matches_and_removes_owned_container (test_isolated.IsolatedProtocolTests.test_valid_response_matches_and_removes_owned_container) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:58.4004011Z test_lifetime_cannot_be_unbounded_or_nonfinite (test_process_guardian.GuardianInputTests.test_lifetime_cannot_be_unbounded_or_nonfinite) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:58.5717921Z test_killed_guardian_is_cleaned_by_owner_context (test_process_guardian.GuardianTests.test_killed_guardian_is_cleaned_by_owner_context) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:59.6128717Z test_lifetime_expires_without_owner_cooperation (test_process_guardian.GuardianTests.test_lifetime_expires_without_owner_cooperation) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:45:59.7395194Z test_ordinary_context_reaps_guardian_and_anvil (test_process_guardian.GuardianTests.test_ordinary_context_reaps_guardian_and_anvil) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.1891380Z test_sigterm_and_sigkill_owner_close_the_owned_node (test_process_guardian.GuardianTests.test_sigterm_and_sigkill_owner_close_the_owned_node) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.1897090Z test_build_and_runtime_dependencies_must_be_in_lock (test_quality_gates.QualityPolicyTests.test_build_and_runtime_dependencies_must_be_in_lock) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.1898495Z test_empty_partial_or_failed_scans_fail (test_quality_gates.QualityPolicyTests.test_empty_partial_or_failed_scans_fail) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.1900234Z test_locked_extras_are_counted_as_audited_packages (test_quality_gates.QualityPolicyTests.test_locked_extras_are_counted_as_audited_packages) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.1901051Z test_missing_review_reason_fails (test_quality_gates.QualityPolicyTests.test_missing_review_reason_fails) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.1902525Z test_new_or_disappeared_findings_fail (test_quality_gates.QualityPolicyTests.test_new_or_disappeared_findings_fail) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.1905771Z test_only_exact_reviewed_findings_pass (test_quality_gates.QualityPolicyTests.test_only_exact_reviewed_findings_pass) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.1907427Z test_optional_runtime_dependencies_are_not_missed (test_quality_gates.QualityPolicyTests.test_optional_runtime_dependencies_are_not_missed) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.2086673Z test_error_message_and_data_are_never_echoed (test_rpc_diagnostics.RPCDiagnosticTests.test_error_message_and_data_are_never_echoed) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.2260539Z test_non_object_error_does_not_echo_untrusted_text (test_rpc_diagnostics.RPCDiagnosticTests.test_non_object_error_does_not_echo_untrusted_text) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.2827976Z test_untrusted_code_cannot_enter_diagnostics (test_rpc_diagnostics.RPCDiagnosticTests.test_untrusted_code_cannot_enter_diagnostics) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.2853195Z test_count_budget_and_full_store_idempotence (test_store.StoreTests.test_count_budget_and_full_store_idempotence) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.2858730Z test_default_128_mib_budget_counts_existing_and_crash_files (test_store.StoreTests.test_default_128_mib_budget_counts_existing_and_crash_files) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.2899461Z test_default_file_budget_counts_unrelated_files (test_store.StoreTests.test_default_file_budget_counts_unrelated_files) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.2917869Z test_exact_byte_budget_and_no_temporary_overrun (test_store.StoreTests.test_exact_byte_budget_and_no_temporary_overrun) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.2945574Z test_failed_atomic_replace_leaves_no_partial_artifact (test_store.StoreTests.test_failed_atomic_replace_leaves_no_partial_artifact) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.3671436Z test_oversized_report_and_read_are_rejected (test_store.StoreTests.test_oversized_report_and_read_are_rejected) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.3679278Z test_symlink_fifo_and_hash_mismatch_are_rejected (test_store.StoreTests.test_symlink_fifo_and_hash_mismatch_are_rejected) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.5869442Z test_two_real_processes_cannot_overrun_one_file_budget (test_store.StoreTests.test_two_real_processes_cannot_overrun_one_file_budget) ... ok
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.5870104Z
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.5870349Z ----------------------------------------------------------------------
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.5871010Z Ran 129 tests in 11.263s
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.5871187Z
+evm	Verify real local Anvil without any mainnet keys	2026-09-19T19:46:00.5871291Z OK

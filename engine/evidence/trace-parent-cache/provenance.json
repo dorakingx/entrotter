@@ -1,0 +1,469 @@
+{
+  "copies": [
+    {
+      "byte_identical": true,
+      "original_sha256": "69dbbd363c00c7e8433e52da955aedbb91a31f096d74518d2ee391fd7ae193e5",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/readiness.json",
+      "public_file": "author/readiness.json",
+      "public_sha256": "69dbbd363c00c7e8433e52da955aedbb91a31f096d74518d2ee391fd7ae193e5",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "ff49d2de10960459545901a6b8ad14c720fae9b73c9cc0719b837283ade6c409",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/final-readiness.json",
+      "public_file": "author/final-readiness.json",
+      "public_sha256": "ff49d2de10960459545901a6b8ad14c720fae9b73c9cc0719b837283ade6c409",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "bb2acbf9c500d9ab70f2da80f799b057de9f4adbeacf24c6ccf1e139af30383d",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/full-proof.json",
+      "public_file": "author/full-proof.json",
+      "public_sha256": "bb2acbf9c500d9ab70f2da80f799b057de9f4adbeacf24c6ccf1e139af30383d",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "906fa0cb911e26d819f4c0aa59ec97c49de6b697d53f2adb17c72ebcf5cdf948",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/packaging.json",
+      "public_file": "author/packaging.json",
+      "public_sha256": "906fa0cb911e26d819f4c0aa59ec97c49de6b697d53f2adb17c72ebcf5cdf948",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/lint.log",
+      "public_file": "author/lint.log",
+      "public_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "7715b02781372f8741fb309aee97a6483e689c9039f0d78081dd910f70b0256e",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/format.log",
+      "public_file": "author/format.log",
+      "public_sha256": "7715b02781372f8741fb309aee97a6483e689c9039f0d78081dd910f70b0256e",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "521e53066a363ec69a3862127d20de642114463485e6923ba593c38250537f8d",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/types.log",
+      "public_file": "author/types.log",
+      "public_sha256": "521e53066a363ec69a3862127d20de642114463485e6923ba593c38250537f8d",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "8eeed1128ac8456daa6ad765b6d87d7f0379c8157ada9036bdf49204d4d238ea",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/security.log",
+      "public_file": "author/security.log",
+      "public_sha256": "8eeed1128ac8456daa6ad765b6d87d7f0379c8157ada9036bdf49204d4d238ea",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "6b7d28042713103fa370406377163bf97263657dea9aae06981a118efa459a4b",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/bandit.json",
+      "public_file": "author/bandit.json",
+      "public_sha256": "6b7d28042713103fa370406377163bf97263657dea9aae06981a118efa459a4b",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "adcb44a9745b37b89f4210001845bd291e8f991ce28948dcef3f8cffdfda85f8",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/bandit-before-refresh.json",
+      "public_file": "author/bandit-before-refresh.json",
+      "public_sha256": "adcb44a9745b37b89f4210001845bd291e8f991ce28948dcef3f8cffdfda85f8",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": false,
+      "original_sha256": "dfd6742d36a194196e6e45e00b1827cb1f57e6c4f71eb74eb0f0ce49c5e68cab",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/security-before-refresh.log",
+      "public_file": "author/security-before-refresh.log",
+      "public_sha256": "fe15536c4abccc4a73d31fb57087cd65529db7bc57705fc2e93e7b9502ce3615",
+      "redaction": "local workspace/temporary environment path only; no result or assertion altered"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "4b38b50e73853982e4fae9dbf3a227fe1666533920628b5f1e537cde0d0e0952",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/policy-refresh.json",
+      "public_file": "author/policy-refresh.json",
+      "public_sha256": "4b38b50e73853982e4fae9dbf3a227fe1666533920628b5f1e537cde0d0e0952",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "0872d50401230befc41fe7159ed9e99042b74b81025c8531b8a98a7312003ced",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/native.log",
+      "public_file": "author/native.log",
+      "public_sha256": "0872d50401230befc41fe7159ed9e99042b74b81025c8531b8a98a7312003ced",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": false,
+      "original_sha256": "e97e1b4011220bf5333709c7a68b2ce50e408aeb4851e7dc52048492309af193",
+      "private_source": ".quality/trace-parent-cache/concurrency-final-001/wheel.log",
+      "public_file": "author/wheel.log",
+      "public_sha256": "62dcdaa6140511f107964f0add825343b890a6872c786294a7f751491cfa9e12",
+      "redaction": "local workspace/temporary environment path only; no result or assertion altered"
+    },
+    {
+      "byte_identical": false,
+      "original_sha256": "2d37696d14fb0f98fa8b1c7e666e6d0132653bb630edb57ef5d44b37e7cfce48",
+      "private_source": ".quality/trace-parent-cache/concurrency-001/regression-before.log",
+      "public_file": "author/concurrency/regression-before.log",
+      "public_sha256": "f9961c5aa958236931c5ceb05f1b9dd0128964d76d49b9808227d41318e2fa42",
+      "redaction": "local workspace/temporary environment path only; no result or assertion altered"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "afe58f06d868d845a6a853f7a4e7cba266ef904534be0bd8aacd4b7f20e7736a",
+      "private_source": ".quality/trace-parent-cache/concurrency-001/regression-after.log",
+      "public_file": "author/concurrency/regression-after.log",
+      "public_sha256": "afe58f06d868d845a6a853f7a4e7cba266ef904534be0bd8aacd4b7f20e7736a",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": false,
+      "original_sha256": "b626503263b031581ce5fe9f707f1f3b48ac54625f4f404fa0ffde4ff08f5b10",
+      "private_source": ".quality/trace-parent-cache/concurrency-001/loopback-final.log",
+      "public_file": "author/concurrency/loopback-final.log",
+      "public_sha256": "edf9737ea3a925f4c2e70dfac8021d9116fd19bcb22c388e8cde624af420938f",
+      "redaction": "local workspace/temporary environment path only; no result or assertion altered"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "f0df5805a0917a2f2e94455b0e327588e97a5557d5bf318612a16facb4df515b",
+      "private_source": ".quality/trace-parent-cache/concurrency-001/corrected-header-and-cancellation.log",
+      "public_file": "author/concurrency/corrected-header-and-cancellation.log",
+      "public_sha256": "f0df5805a0917a2f2e94455b0e327588e97a5557d5bf318612a16facb4df515b",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "015ac9203eeefa9f5a3a102237b634998c34958a0b1cc8c8b5a977477faaac70",
+      "private_source": ".quality/trace-parent-cache/concurrency-001/before-proof.json",
+      "public_file": "author/concurrency/before-proof.json",
+      "public_sha256": "015ac9203eeefa9f5a3a102237b634998c34958a0b1cc8c8b5a977477faaac70",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": false,
+      "original_sha256": "5b3bfcea4103d6523a020893dd0b48a0cf371642f6d45bb0c652ece5324deec4",
+      "private_source": ".quality/trace-parent-cache/final-001/native.log",
+      "public_file": "prior-failures/final-001-native.log",
+      "public_sha256": "2f27c4e567d3bd852a34f97c1008858e6cc60aee913d7dcda97666f6709d8c87",
+      "redaction": "local workspace/temporary environment path only; no result or assertion altered"
+    },
+    {
+      "byte_identical": false,
+      "original_sha256": "bfeb6e67fd13467a41d3ca67b4ed91f79a4468c22ea24ab4fe86a64a44ea883e",
+      "private_source": ".quality/trace-parent-cache/final-002/native.log",
+      "public_file": "prior-failures/final-002-native.log",
+      "public_sha256": "51b7e1243a8a3efde77b55be824355c6f0d130d18f46842465355c468589fe23",
+      "redaction": "local workspace/temporary environment path only; no result or assertion altered"
+    },
+    {
+      "byte_identical": false,
+      "original_sha256": "31c32981ec32d8d97bf00c1c6598cb2278c0b82821c1e859ae537e9102e88ddf",
+      "private_source": ".quality/trace-parent-cache/final-003/native.log",
+      "public_file": "prior-failures/final-003-native.log",
+      "public_sha256": "967cf5725659f1c301a8aa8a3609d1b884c763c02cdb6dd381e65f4f23bb6018",
+      "redaction": "local workspace/temporary environment path only; no result or assertion altered"
+    },
+    {
+      "byte_identical": false,
+      "original_sha256": "20c6a564f5338349ffa520c298aa6a4909dca3eafdb9657a139ecab822ac5926",
+      "private_source": ".quality/trace-parent-cache/final-004/native.log",
+      "public_file": "prior-failures/final-004-native.log",
+      "public_sha256": "d1fd04ddeac9e914f868a798c56b99d3bca3b60a59ee278d2f40cc7e418edc95",
+      "redaction": "local workspace/temporary environment path only; no result or assertion altered"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "c70a806f7b00a19ceaf0a70f47a01eea14688cecf546e7d8944762b8ec710aef",
+      "private_source": ".quality/trace-parent-cache/final-005/full-proof.json",
+      "public_file": "prior-failures/serialized314-full-proof.json",
+      "public_sha256": "c70a806f7b00a19ceaf0a70f47a01eea14688cecf546e7d8944762b8ec710aef",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "d4d4d4914e1874583d6f7abfa44f096db7566058c4beca1b3579045a398bd64d",
+      "private_source": ".quality/archived-oracle/native-005/run.log",
+      "public_file": "native-005/run.log",
+      "public_sha256": "d4d4d4914e1874583d6f7abfa44f096db7566058c4beca1b3579045a398bd64d",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "aeca46f8a43725583064c88839a23ffff5c89226a28d6e5590bcbf4a7efbb1aa",
+      "private_source": ".quality/archived-oracle/native-005/terminal-record.json",
+      "public_file": "native-005/terminal-record.json",
+      "public_sha256": "aeca46f8a43725583064c88839a23ffff5c89226a28d6e5590bcbf4a7efbb1aa",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": false,
+      "original_sha256": "60afb1daf5f031d5c4f1b52857b275ed0608688b7ec55738bfa871520b9ba81d",
+      "private_source": ".quality/archived-oracle/native-005/readiness.json",
+      "public_file": "native-005/readiness.json",
+      "public_sha256": "3b8c502d756f9456f25704aaa191abeaa738d688203759f1b8d08350e61f1de7",
+      "redaction": "local workspace/temporary environment path only; no result or assertion altered"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "2e5e8dee72e27c327ffd77e259962e7d96f1ea972a2f98118b508cda64c3bc94",
+      "private_source": ".quality/archived-oracle/native-005/plan.json",
+      "public_file": "native-005/plan.json",
+      "public_sha256": "2e5e8dee72e27c327ffd77e259962e7d96f1ea972a2f98118b508cda64c3bc94",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522",
+      "private_source": ".quality/archived-oracle/native-005/worker-request.json",
+      "public_file": "native-005/worker-request.json",
+      "public_sha256": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "b8b77af431561395d802109c3bd71a7eeb07e1088b4d5a7b12c39a8cea0a182f",
+      "private_source": ".quality/archived-oracle/native-005/signed-prefix.json",
+      "public_file": "native-005/signed-prefix.json",
+      "public_sha256": "b8b77af431561395d802109c3bd71a7eeb07e1088b4d5a7b12c39a8cea0a182f",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+      "private_source": ".quality/archived-oracle/native-005/run-001/baseline-branch.json",
+      "public_file": "native-005/baseline-branch.json",
+      "public_sha256": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0",
+      "private_source": ".quality/archived-oracle/native-005/run-001/candidate-branch.json",
+      "public_file": "native-005/candidate-branch.json",
+      "public_sha256": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+      "private_source": ".quality/archived-oracle/native-005/run-001/captured-source.json",
+      "public_file": "native-005/captured-source.json",
+      "public_sha256": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "29c935d7c897eb669f7edf10d3b64ba44ddf36906334862ed8237e52d6092f89",
+      "private_source": ".quality/archived-oracle/native-005/run-001/host-cache-cleanup.json",
+      "public_file": "native-005/host-cache-cleanup.json",
+      "public_sha256": "29c935d7c897eb669f7edf10d3b64ba44ddf36906334862ed8237e52d6092f89",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "1c70856500b4beb2a4f17cbfeed5bba43b6ac0b271f3c7e173dab016a0c64152",
+      "private_source": ".quality/archived-oracle/native-005/run-001/host-owned-cleanup.json",
+      "public_file": "native-005/host-owned-cleanup.json",
+      "public_sha256": "1c70856500b4beb2a4f17cbfeed5bba43b6ac0b271f3c7e173dab016a0c64152",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "0fb1619f246ba8bc83c34d009929074e781f3a3e8196c2f453198c0868ec0840",
+      "private_source": ".quality/archived-oracle/native-005/run-001/host-result.json",
+      "public_file": "native-005/host-result.json",
+      "public_sha256": "0fb1619f246ba8bc83c34d009929074e781f3a3e8196c2f453198c0868ec0840",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+      "private_source": ".quality/archived-oracle/native-005/run-001/observations.json",
+      "public_file": "native-005/observations.json",
+      "public_sha256": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "f09a4f651eab1217902cb97560ff6a4a3c473273517d223d5e6ec94222ee043e",
+      "private_source": ".quality/archived-oracle/native-005/run-001/owned-cache.json",
+      "public_file": "native-005/owned-cache.json",
+      "public_sha256": "f09a4f651eab1217902cb97560ff6a4a3c473273517d223d5e6ec94222ee043e",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "a44b809bfd366b04d1c803ee530ad8dcadc1af72da61c9166851eb931fe17f94",
+      "private_source": ".quality/archived-oracle/native-005/run-001/owned-nodes.json",
+      "public_file": "native-005/owned-nodes.json",
+      "public_sha256": "a44b809bfd366b04d1c803ee530ad8dcadc1af72da61c9166851eb931fe17f94",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "85d33cc8fa47f2f0d77616600def3632a15d0b56731050dd9def97f1534924cc",
+      "private_source": ".quality/archived-oracle/native-005/run-001/protocol-response.json",
+      "public_file": "native-005/protocol-response.json",
+      "public_sha256": "85d33cc8fa47f2f0d77616600def3632a15d0b56731050dd9def97f1534924cc",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+      "private_source": ".quality/archived-oracle/native-005/run-001/report.json",
+      "public_file": "native-005/report.json",
+      "public_sha256": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "7138bf252273a58f89b09b99445deb995637aa11712ce8215e37913f6a6b3f36",
+      "private_source": ".quality/archived-oracle/native-005/run-001/result.json",
+      "public_file": "native-005/result.json",
+      "public_sha256": "7138bf252273a58f89b09b99445deb995637aa11712ce8215e37913f6a6b3f36",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "128778effc3d3afcb34e1d0cc9beb3c6786f1e7b0280d26643f3d2c62a5f22bf",
+      "private_source": ".quality/archived-oracle/native-004/run-001/result.json",
+      "public_file": "prior-failures/native-004/result.json",
+      "public_sha256": "128778effc3d3afcb34e1d0cc9beb3c6786f1e7b0280d26643f3d2c62a5f22bf",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "e132fcb37bdb4902cd5b1dbcf08a7a8466b6265a7fcd34a35b7b6587f1117ddb",
+      "private_source": ".quality/archived-oracle/native-004/run-001/observations.json",
+      "public_file": "prior-failures/native-004/observations.json",
+      "public_sha256": "e132fcb37bdb4902cd5b1dbcf08a7a8466b6265a7fcd34a35b7b6587f1117ddb",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "c69e79da0e6189fea2accbe5236090f50dbb156ac8f9c03fa1a85a63836e3dcb",
+      "private_source": ".quality/archived-oracle/native-004/run-001/owned-cache.json",
+      "public_file": "prior-failures/native-004/owned-cache.json",
+      "public_sha256": "c69e79da0e6189fea2accbe5236090f50dbb156ac8f9c03fa1a85a63836e3dcb",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "fa661e4dc69d00e6566a2efe4d24f2bab738aa941a77bc6502b32c57c674a4f1",
+      "private_source": ".quality/archived-oracle/native-004/run-001/owned-nodes.json",
+      "public_file": "prior-failures/native-004/owned-nodes.json",
+      "public_sha256": "fa661e4dc69d00e6566a2efe4d24f2bab738aa941a77bc6502b32c57c674a4f1",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "59aa16e387c3b6d048aa19e7a8bffc3ef4d6654c713955765c182cac61060919",
+      "private_source": ".quality/archived-oracle/native-004/run-001/host-cache-cleanup.json",
+      "public_file": "prior-failures/native-004/host-cache-cleanup.json",
+      "public_sha256": "59aa16e387c3b6d048aa19e7a8bffc3ef4d6654c713955765c182cac61060919",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "3104eba7ca745682fb3636987b11f6d4696f79675f5e7360ef007a5f9aa52003",
+      "private_source": ".quality/archived-oracle/native-004/run-001/host-owned-cleanup.json",
+      "public_file": "prior-failures/native-004/host-owned-cleanup.json",
+      "public_sha256": "3104eba7ca745682fb3636987b11f6d4696f79675f5e7360ef007a5f9aa52003",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "748e6bb82f29e438c8b358531a17436b7a3ecbcb75042a7ac9b920d2c361e20f",
+      "private_source": ".quality/archived-oracle/native-004/terminal-record.json",
+      "public_file": "prior-failures/native-004/terminal-record.json",
+      "public_sha256": "748e6bb82f29e438c8b358531a17436b7a3ecbcb75042a7ac9b920d2c361e20f",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "8ecec73d3444a9220f7bb8cff8825727927556b09253f800d0be447797e5bdf0",
+      "private_source": ".quality/trace-parent-cache-root/concurrency-final-independent-review.json",
+      "public_file": "independent/source-and-native-review.json",
+      "public_sha256": "8ecec73d3444a9220f7bb8cff8825727927556b09253f800d0be447797e5bdf0",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "454b03a0f924535948880701646a6a28eb757ac4165986039bfd48e62684ef43",
+      "private_source": ".quality/trace-parent-cache-root/concurrent-helper-review.json",
+      "public_file": "independent/concurrent-helper-review.json",
+      "public_sha256": "454b03a0f924535948880701646a6a28eb757ac4165986039bfd48e62684ef43",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "f049ce9c221029ed3c7e0562a401d0c2aa8ddd9dc1a1b2080a0140b1f8d1acd9",
+      "private_source": ".quality/trace-parent-cache-root/review-loopback.json",
+      "public_file": "independent/earlier-owner-and-handler-review.json",
+      "public_sha256": "f049ce9c221029ed3c7e0562a401d0c2aa8ddd9dc1a1b2080a0140b1f8d1acd9",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "9f84d763951833daaed80d74dca94b28f3551c05e567a0a16b97cb9e60a2db24",
+      "private_source": ".quality/trace-parent-cache-root/receipt-loopback-review.json",
+      "public_file": "independent/earlier-uncached-receipt-review.json",
+      "public_sha256": "9f84d763951833daaed80d74dca94b28f3551c05e567a0a16b97cb9e60a2db24",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "3adf1313e324fb884ce5e3e7d1e579cdfce674d5c893416db4eacfcbe398aeb3",
+      "private_source": ".quality/archived-oracle/native-004-execution-review.json",
+      "public_file": "independent/native-004-execution-review.json",
+      "public_sha256": "3adf1313e324fb884ce5e3e7d1e579cdfce674d5c893416db4eacfcbe398aeb3",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "99c1d4ba86d788f781a330bcfb9c02b44908c1c296e70e52aa08c5a2b1e80d0c",
+      "private_source": ".quality/archived-oracle/native-005-prelaunch-review.json",
+      "public_file": "independent/native-005-prelaunch-review.json",
+      "public_sha256": "99c1d4ba86d788f781a330bcfb9c02b44908c1c296e70e52aa08c5a2b1e80d0c",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "ae584c3bd96425b846f58cb73ff185cb8851ad0deef1dc18e9c079a25d53c8a0",
+      "private_source": ".quality/archived-oracle/native-005-execution-review.json",
+      "public_file": "independent/native-005-execution-review.json",
+      "public_sha256": "ae584c3bd96425b846f58cb73ff185cb8851ad0deef1dc18e9c079a25d53c8a0",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "5c73974449001bffb9311ce054daf3668384e12ae0156bfb3e26b7968fe4236f",
+      "private_source": ".quality/archived-oracle/native-005-sdk-reader.json",
+      "public_file": "independent/native-005-sdk-reader.json",
+      "public_sha256": "5c73974449001bffb9311ce054daf3668384e12ae0156bfb3e26b7968fe4236f",
+      "redaction": "none"
+    },
+    {
+      "byte_identical": true,
+      "original_sha256": "e7153a49b3a2e163b513ba75d6dd0f85d4c199b48a9b3e8537a48c4297999f90",
+      "private_source": ".quality/archived-oracle/native-005-viewer-reader.json",
+      "public_file": "independent/native-005-viewer-reader.json",
+      "public_sha256": "e7153a49b3a2e163b513ba75d6dd0f85d4c199b48a9b3e8537a48c4297999f90",
+      "redaction": "none"
+    }
+  ],
+  "scope": "Public copies of immutable private records. Each row binds original and public bytes; local paths only are redacted where indicated. Original checksums in reviews/readiness refer to original private bytes, not redacted copies. Prelaunch/outcome records remain time-bound; no result data reserialized."
+}

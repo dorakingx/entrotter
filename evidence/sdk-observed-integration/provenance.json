@@ -1,0 +1,75 @@
+{
+  "copies": [
+    {
+      "source": "entrotter/.quality/sdk-observed-integration/local-readers.json",
+      "public": "local-execution.json",
+      "original_sha256": "bb7db1f2d22cc4a8555f4cc08d9fedce10243dced34fc3baf2e59235d5fa2e6f",
+      "public_sha256": "bb7db1f2d22cc4a8555f4cc08d9fedce10243dced34fc3baf2e59235d5fa2e6f",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/sdk-observed-integration/types.log",
+      "public": "local-types.json",
+      "original_sha256": "9e4685b0c83a7157050006d3ab0d10bd0b67497350e42cf897134368fa7d2b13",
+      "public_sha256": "9e4685b0c83a7157050006d3ab0d10bd0b67497350e42cf897134368fa7d2b13",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/sdk-observed-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-comparison-reader.json",
+      "public": "trace-comparison-reader.json",
+      "original_sha256": "56b64864aa3d2c3ec8184d92c2c157af5ba46a8a815704df846718487d806646",
+      "public_sha256": "56b64864aa3d2c3ec8184d92c2c157af5ba46a8a815704df846718487d806646",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/sdk-observed-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-consumer-reader.json",
+      "public": "trace-consumer-reader.json",
+      "original_sha256": "35a3801be11b7880b87cf088d888ea7ebfbfa5295701017c8079636526993bdf",
+      "public_sha256": "35a3801be11b7880b87cf088d888ea7ebfbfa5295701017c8079636526993bdf",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/sdk-observed-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-funding-reader.json",
+      "public": "trace-funding-reader.json",
+      "original_sha256": "77bd0749930ca712edfd34013dd948d886e9d2c76c2234b5918a669b306170ac",
+      "public_sha256": "77bd0749930ca712edfd34013dd948d886e9d2c76c2234b5918a669b306170ac",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/sdk-observed-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-observed-reader.json",
+      "public": "trace-observed-reader.json",
+      "original_sha256": "e978f572426a9ef047ffc8bb17f3cff3716294325c654b72371ab6726daf548b",
+      "public_sha256": "e978f572426a9ef047ffc8bb17f3cff3716294325c654b72371ab6726daf548b",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/sdk-observed-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-oracle-reader.json",
+      "public": "trace-oracle-reader.json",
+      "original_sha256": "d992b0142dc12c945ef82b3b8d10969acd8cd9848cc47581654805e9d8159104",
+      "public_sha256": "d992b0142dc12c945ef82b3b8d10969acd8cd9848cc47581654805e9d8159104",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/sdk-observed-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-reader.json",
+      "public": "trace-reader.json",
+      "original_sha256": "869c323315000678cecde4a7cd31b5c3001075ab81022e0234ff8dfcf34d25a6",
+      "public_sha256": "869c323315000678cecde4a7cd31b5c3001075ab81022e0234ff8dfcf34d25a6",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "sdk-python/.quality/observed-reader/ci-eb992/independent-ci-review.json",
+      "public": "sdk-ci-independent.json",
+      "original_sha256": "3852b7acb5185af14886e672d2fa3fc7a5c721ad56d1414d3bc12c6c81cb72f1",
+      "public_sha256": "3852b7acb5185af14886e672d2fa3fc7a5c721ad56d1414d3bc12c6c81cb72f1",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/sdk-observed-integration/workflow-parse.json",
+      "public": "workflow-parse.json",
+      "original_sha256": "81bd2e8a9138eddad4ae893775c793418891b9e2ffbc0956271985c44d4bfc27",
+      "public_sha256": "81bd2e8a9138eddad4ae893775c793418891b9e2ffbc0956271985c44d4bfc27",
+      "normalization": "byte identical"
+    }
+  ],
+  "limits": "Original raw artifacts retained privately; only actual workspace prefix normalized."
+}

@@ -1,0 +1,17 @@
+{
+  "returncode": 0,
+  "prior_root": "07389e3a96530cdb2f7980f20c1827997c15e1b4",
+  "workflow_sha256": "cce022d053139d96eb22051ac6f6daded7997eb6ebf80830060066b1dc126963",
+  "helper_sha256": "ad0dcaa3edd8c4d231588b9ec03c05d1347407b58fd09cff2fdff1c7fb66ca39",
+  "stdout_sha256": "1097fe7caa223f4f039ce2a7c2c0c7a39f949341f51584ad76fcb7fc2c770e27",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "other_workflow_content_preserved": true,
+  "pins": {
+    "engine": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "37c43d0cf8be61dfd33253bc2d3401429ca9cd9b"
+  },
+  "scope": "Actual existing Aave CI step, five offline commands against selected immutable checkouts; no fresh EVM/RPC/model/browser/performance run. Unchanged gates remain mandatory coordinator CI."
+}

@@ -1,0 +1,80 @@
+{
+  "kind": "demo",
+  "browser": "153.0.8010.12",
+  "duration": 174.13750566893427,
+  "capture_wall_seconds": 174.2098135,
+  "events": [
+    {
+      "scene": "intro",
+      "elapsed": 1.06291775
+    },
+    {
+      "scene": "historical",
+      "elapsed": 20.135897583000002
+    },
+    {
+      "scene": "source",
+      "elapsed": 40.696047166
+    },
+    {
+      "scene": "run",
+      "elapsed": 61.62788166599999
+    },
+    {
+      "scene": "run_result",
+      "elapsed": 84.533452208
+    },
+    {
+      "scene": "import",
+      "elapsed": 109.546251416
+    },
+    {
+      "scene": "invalid",
+      "elapsed": 131.75679449999998
+    },
+    {
+      "scene": "end",
+      "elapsed": 150.132013208
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:64264/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64264/site/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64264/site/assets/mascot.webp",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64264/site/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64264/site/style.css?v=16be105da69b",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64264/site/app.js?v=645675eab6c3",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64264/site/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64264/site/reports/liquidity-shock.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:64264/site/reports/ethereum-uniswap-slippage.json",
+      "method": "GET"
+    }
+  ],
+  "errors": [],
+  "real_execution_complete": true
+}

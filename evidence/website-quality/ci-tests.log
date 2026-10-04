@@ -1,0 +1,140 @@
+
+> entrotter-oss-website@0.1.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: security policy retains explicitly reviewed findings
+ok 1 - security policy retains explicitly reviewed findings
+  ---
+  duration_ms: 1.40343
+  type: 'test'
+  ...
+# Subtest: source drift, new/missing findings and absent rationale fail review
+ok 2 - source drift, new/missing findings and absent rationale fail review
+  ---
+  duration_ms: 3.103431
+  type: 'test'
+  ...
+# Subtest: empty source scope fails review
+ok 3 - empty source scope fails review
+  ---
+  duration_ms: 0.224627
+  type: 'test'
+  ...
+# Subtest: parser and suppressed diagnostics cannot be accepted as a clean scan
+ok 4 - parser and suppressed diagnostics cannot be accepted as a clean scan
+  ---
+  duration_ms: 0.480914
+  type: 'test'
+  ...
+# Subtest: production JS verifies Python artifact: liquidity-shock
+ok 5 - production JS verifies Python artifact: liquidity-shock
+  ---
+  duration_ms: 10.018059
+  type: 'test'
+  ...
+# Subtest: production JS verifies Python artifact: recovery-trap
+ok 6 - production JS verifies Python artifact: recovery-trap
+  ---
+  duration_ms: 1.770672
+  type: 'test'
+  ...
+# Subtest: production JS verifies Python artifact: depeg-stress
+ok 7 - production JS verifies Python artifact: depeg-stress
+  ---
+  duration_ms: 2.523562
+  type: 'test'
+  ...
+# Subtest: tampered metric fails integrity validation
+ok 8 - tampered metric fails integrity validation
+  ---
+  duration_ms: 1.963161
+  type: 'test'
+  ...
+# Subtest: unknown schema is not accepted
+ok 9 - unknown schema is not accepted
+  ---
+  duration_ms: 0.437734
+  type: 'test'
+  ...
+# Subtest: canonical ASCII escaping includes supplementary Unicode
+ok 10 - canonical ASCII escaping includes supplementary Unicode
+  ---
+  duration_ms: 0.235497
+  type: 'test'
+  ...
+# Subtest: finite numerical display validation
+ok 11 - finite numerical display validation
+  ---
+  duration_ms: 0.348818
+  type: 'test'
+  ...
+# Subtest: JS re-canonicalization matches exported content hash
+ok 12 - JS re-canonicalization matches exported content hash
+  ---
+  duration_ms: 0.945077
+  type: 'test'
+  ...
+# Subtest: real archived-state artifact passes hash and receipt view validation
+ok 13 - real archived-state artifact passes hash and receipt view validation
+  ---
+  duration_ms: 5.756764
+  type: 'test'
+  ...
+# Subtest: token units preserve integers beyond Number safe precision
+ok 14 - token units preserve integers beyond Number safe precision
+  ---
+  duration_ms: 0.61359
+  type: 'test'
+  ...
+# Subtest: missing source hash cannot appear as a historical report
+ok 15 - missing source hash cannot appear as a historical report
+  ---
+  duration_ms: 0.47319
+  type: 'test'
+  ...
+# Subtest: mismatched token addresses cannot share a comparison row
+ok 16 - mismatched token addresses cannot share a comparison row
+  ---
+  duration_ms: 0.385487
+  type: 'test'
+  ...
+# Subtest: malformed receipt state and oversized traces fail closed
+ok 17 - malformed receipt state and oversized traces fail closed
+  ---
+  duration_ms: 0.556836
+  type: 'test'
+  ...
+# Subtest: display metrics reject coercible non-decimal strings
+ok 18 - display metrics reject coercible non-decimal strings
+  ---
+  duration_ms: 0.222714
+  type: 'test'
+  ...
+# Subtest: decimal metrics preserve supported signed/exponent values and reject overflow
+ok 19 - decimal metrics preserve supported signed/exponent values and reject overflow
+  ---
+  duration_ms: 0.245256
+  type: 'test'
+  ...
+# Subtest: hash verification rejects non-object or non-finite parsed JSON
+ok 20 - hash verification rejects non-object or non-finite parsed JSON
+  ---
+  duration_ms: 0.495492
+  type: 'test'
+  ...
+# Subtest: local EVM reports accept null/absent source while forks require their pin
+ok 21 - local EVM reports accept null/absent source while forks require their pin
+  ---
+  duration_ms: 0.706624
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 99.623544

@@ -1,0 +1,82 @@
+{
+  "status": "verified_local_and_linux_ci_pending_independent_review",
+  "checked_at": "2026-09-19T18:59:55.772245+00:00",
+  "source_commits": {
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "aba6a6147b2b4b96facf758f9b95b63d8e6b5952"
+  },
+  "tests": {
+    "sdk": 18,
+    "cli": 13,
+    "note": "Separate suites overlapping previous counts; do not add to frozen workspace totals."
+  },
+  "quality_scope": {
+    "sdk_production_python_files": 4,
+    "cli_production_python_files": 5,
+    "bandit_findings": {
+      "sdk": 0,
+      "cli": 0
+    },
+    "locked_tool_build_packages_each": 42,
+    "known_python_vulnerabilities_reported_each": 0,
+    "ruff": "lint and formatting",
+    "mypy": "normal rules with check_untyped_defs, not fully typed JSON",
+    "cli_optional_engine_stub": "Only v0.1 run(dict)->dict typing boundary; real execution verified separately"
+  },
+  "runtime_dependencies": {
+    "sdk": [],
+    "cli": [
+      "entrotter-sdk==0.1.0"
+    ],
+    "sdk_source_policy": "Exact public Git commit, local wheel build with no registry resolution. Source checked separately; not a registry advisory identity."
+  },
+  "regression": "Correctly hashed list/dict mode caused TypeError before SDK fix; now ClientError. CLI regression asserts no traceback.",
+  "package_checks": "Fresh venv, isolated Python, --no-index --no-deps, MIT metadata, wheel/source equality; SDK typed marker and CLI doctor/verify/inspect without engine package. No packages published.",
+  "existing_artifacts_checked": 16,
+  "existing_artifact_scope": "Content hashes and parser compatibility only; no new archive or model runs.",
+  "real_integration": "CLI-SDK-API fixture and real native Anvil; full reports, quota 507, 16 busy 503s/no retry/no export replacement and recovery.",
+  "sdk_ci": {
+    "quality": 35462694962,
+    "matrix": 35462695017,
+    "links": 35462695005,
+    "downloaded_reports_verified": true,
+    "wheel_source_and_typed_marker_verified": true
+  },
+  "cli_ci": {
+    "quality": 35462885926,
+    "matrix": 35462885929,
+    "links": 35462885911,
+    "quality_status": "success",
+    "downloaded_reports_verified": true,
+    "wheel_source_files_verified": {
+      "cli": 3,
+      "sdk-python": 3
+    }
+  },
+  "prs": [
+    "https://github.com/entrotter/sdk-python/pull/6",
+    "https://github.com/entrotter/cli/pull/7",
+    "https://github.com/entrotter/entrotter/pull/19"
+  ],
+  "limitations": [
+    "Independent review/merge remains required.",
+    "Other repositories and agent branch still need quality gates.",
+    "Native binaries, Python runtime and OS packages are outside pip-audit.",
+    "Whole-process default resource budgets and real user/video/submission gates remain open."
+  ],
+  "evidence_normalization": "Local checkout prefix replaced with /workspace; trailing log whitespace removed. JSON scanner/audit results otherwise retained.",
+  "coordination_ci": {
+    "integration": 35463107914,
+    "links": 35463107909,
+    "source_commit": "26513d1b587787f6a527003fe269cefd4dcc96f3",
+    "conclusion": "success",
+    "source_pins_checker_hash_and_full_report_ids_match_local": true
+  },
+  "ci_wheel_metadata": {
+    "sdk_runtime": [],
+    "cli_runtime": [
+      "entrotter-sdk==0.1.0"
+    ],
+    "license": "MIT"
+  }
+}

@@ -1,0 +1,176 @@
+test_original_plan_and_receipt_result_validate_offline (test_trace_contracts.TraceContractTests.test_original_plan_and_receipt_result_validate_offline) ... ERROR
+test_plan_rejects_unknown_versions_sources_and_executable_fields (test_trace_contracts.TraceContractTests.test_plan_rejects_unknown_versions_sources_and_executable_fields) ... ERROR
+test_projected_receipts_reject_malformed_quantities_addresses_and_logs (test_trace_contracts.TraceContractTests.test_projected_receipts_reject_malformed_quantities_addresses_and_logs) ... ERROR
+test_schema_does_not_recompute_receipt_equivalence_or_hashes (test_trace_contracts.TraceContractTests.test_schema_does_not_recompute_receipt_equivalence_or_hashes) ... ERROR
+test_separate_family_preserves_v01_contract_boundaries (test_trace_contracts.TraceContractTests.test_separate_family_preserves_v01_contract_boundaries) ... ERROR
+test_sorted_and_prefix_dependent_skip_rules_remain_engine_semantics (test_trace_contracts.TraceContractTests.test_sorted_and_prefix_dependent_skip_rules_remain_engine_semantics) ... ERROR
+test_source_header_prefix_and_assumption_bounds (test_trace_contracts.TraceContractTests.test_source_header_prefix_and_assumption_bounds) ... ERROR
+test_terminal_outcomes_require_their_status_specific_fields (test_trace_contracts.TraceContractTests.test_terminal_outcomes_require_their_status_specific_fields) ... ERROR
+test_verified_flags_cannot_contradict_branch_outcome_shape (test_trace_contracts.TraceContractTests.test_verified_flags_cannot_contradict_branch_outcome_shape) ... ERROR
+
+======================================================================
+ERROR: test_original_plan_and_receipt_result_validate_offline (test_trace_contracts.TraceContractTests.test_original_plan_and_receipt_result_validate_offline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 27, in test_original_plan_and_receipt_result_validate_offline
+    validator("trace-plan").validate(example_plan())
+    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "<workspace>/.worktrees/scenarios-links/contract_validation.py", line 19, in validator
+    raise ValueError("Unknown contract kind")
+ValueError: Unknown contract kind
+
+======================================================================
+ERROR: test_plan_rejects_unknown_versions_sources_and_executable_fields (test_trace_contracts.TraceContractTests.test_plan_rejects_unknown_versions_sources_and_executable_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 45, in test_plan_rejects_unknown_versions_sources_and_executable_fields
+    p=example_plan(); modify(p)
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 17, in example_plan
+    return json.loads((ROOT / "traces/ethereum-mainnet-prefix.plan.json").read_text())
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/.worktrees/scenarios-links/traces/ethereum-mainnet-prefix.plan.json'
+
+======================================================================
+ERROR: test_projected_receipts_reject_malformed_quantities_addresses_and_logs (test_trace_contracts.TraceContractTests.test_projected_receipts_reject_malformed_quantities_addresses_and_logs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 78, in test_projected_receipts_reject_malformed_quantities_addresses_and_logs
+    report=example_result(); modify(report["baseline"]["outcomes"][0]["receipt"])
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 21, in example_result
+    return json.loads((ROOT / "tests/data/trace-mainnet-prefix.result.json").read_text())
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/.worktrees/scenarios-links/tests/data/trace-mainnet-prefix.result.json'
+
+======================================================================
+ERROR: test_schema_does_not_recompute_receipt_equivalence_or_hashes (test_trace_contracts.TraceContractTests.test_schema_does_not_recompute_receipt_equivalence_or_hashes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 82, in test_schema_does_not_recompute_receipt_equivalence_or_hashes
+    r=example_result(); r["baseline"]["outcomes"][0]["receipt"]["gasUsed"]="0x1"
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 21, in example_result
+    return json.loads((ROOT / "tests/data/trace-mainnet-prefix.result.json").read_text())
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/.worktrees/scenarios-links/tests/data/trace-mainnet-prefix.result.json'
+
+======================================================================
+ERROR: test_separate_family_preserves_v01_contract_boundaries (test_trace_contracts.TraceContractTests.test_separate_family_preserves_v01_contract_boundaries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 31, in test_separate_family_preserves_v01_contract_boundaries
+    self.assertFalse(validator("scenario").is_valid(example_plan()))
+                                                    ~~~~~~~~~~~~^^
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 17, in example_plan
+    return json.loads((ROOT / "traces/ethereum-mainnet-prefix.plan.json").read_text())
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/.worktrees/scenarios-links/traces/ethereum-mainnet-prefix.plan.json'
+
+======================================================================
+ERROR: test_sorted_and_prefix_dependent_skip_rules_remain_engine_semantics (test_trace_contracts.TraceContractTests.test_sorted_and_prefix_dependent_skip_rules_remain_engine_semantics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 49, in test_sorted_and_prefix_dependent_skip_rules_remain_engine_semantics
+    p=example_plan(); p.update(through_index=0, skip_indices=[1,0])
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 17, in example_plan
+    return json.loads((ROOT / "traces/ethereum-mainnet-prefix.plan.json").read_text())
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/.worktrees/scenarios-links/traces/ethereum-mainnet-prefix.plan.json'
+
+======================================================================
+ERROR: test_source_header_prefix_and_assumption_bounds (test_trace_contracts.TraceContractTests.test_source_header_prefix_and_assumption_bounds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 93, in test_source_header_prefix_and_assumption_bounds
+    r=example_result(); modify(r); self.assertFalse(validator("trace-result").is_valid(r))
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 21, in example_result
+    return json.loads((ROOT / "tests/data/trace-mainnet-prefix.result.json").read_text())
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/.worktrees/scenarios-links/tests/data/trace-mainnet-prefix.result.json'
+
+======================================================================
+ERROR: test_terminal_outcomes_require_their_status_specific_fields (test_trace_contracts.TraceContractTests.test_terminal_outcomes_require_their_status_specific_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 54, in test_terminal_outcomes_require_their_status_specific_fields
+    check=validator("trace-result")
+  File "<workspace>/.worktrees/scenarios-links/contract_validation.py", line 19, in validator
+    raise ValueError("Unknown contract kind")
+ValueError: Unknown contract kind
+
+======================================================================
+ERROR: test_verified_flags_cannot_contradict_branch_outcome_shape (test_trace_contracts.TraceContractTests.test_verified_flags_cannot_contradict_branch_outcome_shape)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 71, in test_verified_flags_cannot_contradict_branch_outcome_shape
+    r=example_result(); modify(r); self.assertFalse(validator("trace-result").is_valid(r))
+  File "<workspace>/.worktrees/scenarios-links/tests/test_trace_contracts.py", line 21, in example_result
+    return json.loads((ROOT / "tests/data/trace-mainnet-prefix.result.json").read_text())
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 632, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<workspace>/.worktrees/scenarios-links/tests/data/trace-mainnet-prefix.result.json'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.020s
+
+FAILED (errors=9)

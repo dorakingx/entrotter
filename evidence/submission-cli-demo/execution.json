@@ -1,0 +1,156 @@
+{
+  "sources": {
+    "coordination": "5bee12dd794200b90a22b70522e943b6c8c879b3",
+    "cli": "24bbb916555ef18528300f995e127d50ff29167e",
+    "sdk": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "engine": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1"
+  },
+  "modules": {
+    "entrotter_cli/__init__.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_cli/__init__.py",
+      "sha256": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6"
+    },
+    "entrotter_cli/__main__.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_cli/__main__.py",
+      "sha256": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7"
+    },
+    "entrotter_cli/export_budget.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_cli/export_budget.py",
+      "sha256": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f"
+    },
+    "entrotter_cli/main.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_cli/main.py",
+      "sha256": "26e00193e5a935785109552460463c63a30be997478849f03118ed2ffd4bd0a5"
+    },
+    "entrotter_cli/observed_run.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_cli/observed_run.py",
+      "sha256": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e"
+    },
+    "entrotter_cli/observed_text.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_cli/observed_text.py",
+      "sha256": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d"
+    },
+    "entrotter_cli/position_run.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_cli/position_run.py",
+      "sha256": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed"
+    },
+    "entrotter_cli/position_text.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_cli/position_text.py",
+      "sha256": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f"
+    },
+    "entrotter_sdk/__init__.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_sdk/__init__.py",
+      "sha256": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568"
+    },
+    "entrotter_sdk/client.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_sdk/client.py",
+      "sha256": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543"
+    },
+    "entrotter_sdk/observed.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_sdk/observed.py",
+      "sha256": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5"
+    },
+    "entrotter_sdk/position.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_sdk/position.py",
+      "sha256": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+    },
+    "entrotter_sdk/trace.py": {
+      "origin": "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/lib/python3.13/site-packages/entrotter_sdk/trace.py",
+      "sha256": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+    }
+  },
+  "commands": [
+    {
+      "label": "price-text",
+      "args": [
+        "observed-inspect",
+        "price32.json",
+        "--format",
+        "text"
+      ],
+      "actual_argv": [
+        "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/bin/python",
+        "-I",
+        "-c",
+        "import sys, runpy\nfrom unittest.mock import patch\nfrom entrotter_sdk import Client\nsys.modules['entrotter_engine']=None\nwith patch('socket.socket',side_effect=AssertionError('No network')), patch.object(Client,'_request',side_effect=AssertionError('No HTTP')), patch('entrotter_cli.main.ExportBudget',side_effect=AssertionError('No execution/export')):\n    sys.argv=['entrotter_cli']+sys.argv[1:]\n    runpy.run_module('entrotter_cli',run_name='__main__')\n",
+        "observed-inspect",
+        "price32.json",
+        "--format",
+        "text"
+      ],
+      "cwd": "<workspace>/projects/entrotter-cli-demo/inputs",
+      "returncode": 0,
+      "stdout_sha256": "ff4bf4ee19426cb142443e0996da5323f3d7dc9b1f5c827e11fc354b7c458433",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timeout_seconds": 15
+    },
+    {
+      "label": "account-text",
+      "args": [
+        "position-inspect",
+        "account13.json",
+        "--format",
+        "text"
+      ],
+      "actual_argv": [
+        "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/bin/python",
+        "-I",
+        "-c",
+        "import sys, runpy\nfrom unittest.mock import patch\nfrom entrotter_sdk import Client\nsys.modules['entrotter_engine']=None\nwith patch('socket.socket',side_effect=AssertionError('No network')), patch.object(Client,'_request',side_effect=AssertionError('No HTTP')), patch('entrotter_cli.main.ExportBudget',side_effect=AssertionError('No execution/export')):\n    sys.argv=['entrotter_cli']+sys.argv[1:]\n    runpy.run_module('entrotter_cli',run_name='__main__')\n",
+        "position-inspect",
+        "account13.json",
+        "--format",
+        "text"
+      ],
+      "cwd": "<workspace>/projects/entrotter-cli-demo/inputs",
+      "returncode": 0,
+      "stdout_sha256": "c49bd8cb6178fcf0a90518d32da6b5a3135f7a63457b38eacc74a58085266619",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timeout_seconds": 15
+    },
+    {
+      "label": "complete",
+      "args": [
+        "position-verify",
+        "account13.json",
+        "--require-complete"
+      ],
+      "actual_argv": [
+        "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/bin/python",
+        "-I",
+        "-c",
+        "import sys, runpy\nfrom unittest.mock import patch\nfrom entrotter_sdk import Client\nsys.modules['entrotter_engine']=None\nwith patch('socket.socket',side_effect=AssertionError('No network')), patch.object(Client,'_request',side_effect=AssertionError('No HTTP')), patch('entrotter_cli.main.ExportBudget',side_effect=AssertionError('No execution/export')):\n    sys.argv=['entrotter_cli']+sys.argv[1:]\n    runpy.run_module('entrotter_cli',run_name='__main__')\n",
+        "position-verify",
+        "account13.json",
+        "--require-complete"
+      ],
+      "cwd": "<workspace>/projects/entrotter-cli-demo/inputs",
+      "returncode": 0,
+      "stdout_sha256": "85121fd50da2ba2290a5c4bbb820efd02dcb3b6848f6718d90959878ecde552f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timeout_seconds": 15
+    },
+    {
+      "label": "incomplete",
+      "args": [
+        "position-verify",
+        "synthetic-missing-account.json",
+        "--require-complete"
+      ],
+      "actual_argv": [
+        "<workspace>/.worktrees/cli-bounded/.quality/observed-text/installed-venv/bin/python",
+        "-I",
+        "-c",
+        "import sys, runpy\nfrom unittest.mock import patch\nfrom entrotter_sdk import Client\nsys.modules['entrotter_engine']=None\nwith patch('socket.socket',side_effect=AssertionError('No network')), patch.object(Client,'_request',side_effect=AssertionError('No HTTP')), patch('entrotter_cli.main.ExportBudget',side_effect=AssertionError('No execution/export')):\n    sys.argv=['entrotter_cli']+sys.argv[1:]\n    runpy.run_module('entrotter_cli',run_name='__main__')\n",
+        "position-verify",
+        "synthetic-missing-account.json",
+        "--require-complete"
+      ],
+      "cwd": "<workspace>/projects/entrotter-cli-demo/inputs",
+      "returncode": 3,
+      "stdout_sha256": "24132b47847a1e329a3d548eacea6b1b11b67b9e43d3210b51080da258b8748f",
+      "stderr_sha256": "047a303e1c03b66ff5f5e094be7ea8a90765fc76398a2fcd5468452a366e00aa",
+      "timeout_seconds": 15
+    }
+  ]
+}

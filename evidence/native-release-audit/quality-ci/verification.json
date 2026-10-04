@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "run": 35470277255,
+  "engine": "6410c37663d37685a30effccd87844e1740b8637",
+  "full_bandit_findings_equal": true,
+  "bandit_findings": 24,
+  "audited_python_dependencies": 42,
+  "reported_vulnerabilities": 0,
+  "wheel_python_files": 14,
+  "all_wheel_source_matches": true,
+  "wheel_sha256": "e4779c599f6ecc1b42418a89fa8cd972ab4b1c81d5b1567bf7e720e87febed52",
+  "license": "MIT",
+  "runtime_dependencies": []
+}

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "run": 35471836965,
+  "scanned_production_files": 6,
+  "source_hashes_match": true,
+  "bandit_findings": 0,
+  "all_findings_equal_local": true,
+  "audited_packages": 42,
+  "known_findings": 0,
+  "wheel_python_files": 4,
+  "wheel_source_equal": true,
+  "shared_helper_equal": true,
+  "wheel_sha256": "5a9b2078407d1dae32bf6f8d6a9ef04eeb9e8ba6d1656ce500e2690b4846c1d4",
+  "license": "MIT",
+  "runtime_dependencies": [
+    "entrotter-sdk==0.1.0"
+  ]
+}

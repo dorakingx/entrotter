@@ -1,0 +1,9 @@
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: entrotter-engine
+  Building wheel for entrotter-engine (pyproject.toml): started
+  Building wheel for entrotter-engine (pyproject.toml): finished with status 'done'
+  Created wheel for entrotter-engine: filename=entrotter_engine-0.1.0-py3-none-any.whl size=69940 sha256=8b3c591c9bb65eb93e6fd4d32416abc21e04fd54ff0baeb1567e855261f3948d
+  Stored in directory: /temporary/local-path
+Successfully built entrotter-engine

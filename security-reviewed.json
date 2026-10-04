@@ -1,0 +1,674 @@
+{
+  "scanner_version": "1.9.4",
+  "review_scope": "Author-reviewed expected tooling findings, retained without suppression; independent PR review required. Frozen historical provider bytes are unchanged.",
+  "findings": [
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B404",
+      "line": 9,
+      "code_sha256": "1284a399fab512f5a2f06e0407e9900f06cd636074c608d7cd87b7b318b31f3b",
+      "reason": "Importing subprocess is necessary for this developer tool. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B603",
+      "line": 52,
+      "code_sha256": "602b92095a78a50b008799f91678474c8d4b2ced3eed804a208dafa867797833",
+      "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B603",
+      "line": 74,
+      "code_sha256": "c0a71307c6f482a78d9e1af525e386051e8ef8211707333aadcb1b78523776dc",
+      "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B607",
+      "line": 77,
+      "code_sha256": "e4a4f8fde062c1f74507e64bab29652a8f9faf13510822e5bfd24b341b27a86a",
+      "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B603",
+      "line": 77,
+      "code_sha256": "e4a4f8fde062c1f74507e64bab29652a8f9faf13510822e5bfd24b341b27a86a",
+      "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B607",
+      "line": 118,
+      "code_sha256": "9e83fec6d58196ddbf07fa8881f0dfaa8034f0c94822ea69fd2ef883681e1967",
+      "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B603",
+      "line": 118,
+      "code_sha256": "9e83fec6d58196ddbf07fa8881f0dfaa8034f0c94822ea69fd2ef883681e1967",
+      "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B607",
+      "line": 122,
+      "code_sha256": "a585216d57fa39f49aa1e62a253f9e4f7f18cc009599421ba260b20ff3435178",
+      "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": ".github/actions/docs-links/check.py",
+      "test_id": "B603",
+      "line": 122,
+      "code_sha256": "a585216d57fa39f49aa1e62a253f9e4f7f18cc009599421ba260b20ff3435178",
+      "reason": "Execution uses a structured argv list with shell=False. Use trusted checksum-pinned Lychee and read-only git discovery; explicit argument boundaries, bounded runtime and stripped scanner/token environment are enforced and regression-tested."
+    },
+    {
+      "file": "scripts/benchmark_agent.py",
+      "test_id": "B404",
+      "line": 11,
+      "code_sha256": "2cd6a3148e75f0768e9fad22ec50d59a9e3efdeb8c0568ab2984b92e4f803dec",
+      "reason": "Read-only Git revision/status checks use fixed argv and the installed agent module source directory. They require the original immutable Enginebb8 commit and clean checkout before frozen experiment execution; no report value selects a program. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/benchmark_agent.py",
+      "test_id": "B607",
+      "line": 45,
+      "code_sha256": "71a7bbb8dee5aec1ffa4a9ae6269c2854767fca0256f1cc2cbf7ceab712f2ca1",
+      "reason": "Read-only Git revision/status checks use fixed argv and the installed agent module source directory. They require the original immutable Enginebb8 commit and clean checkout before frozen experiment execution; no report value selects a program. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/benchmark_agent.py",
+      "test_id": "B603",
+      "line": 45,
+      "code_sha256": "71a7bbb8dee5aec1ffa4a9ae6269c2854767fca0256f1cc2cbf7ceab712f2ca1",
+      "reason": "Read-only Git revision/status checks use fixed argv and the installed agent module source directory. They require the original immutable Enginebb8 commit and clean checkout before frozen experiment execution; no report value selects a program. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/benchmark_agent.py",
+      "test_id": "B607",
+      "line": 55,
+      "code_sha256": "c178cbbbfb0702fe57bdc284c9e89f01c91ee72f1111a0cf1af0c9ef1ee1bf72",
+      "reason": "Read-only Git revision/status checks use fixed argv and the installed agent module source directory. They require the original immutable Enginebb8 commit and clean checkout before frozen experiment execution; no report value selects a program. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/benchmark_agent.py",
+      "test_id": "B603",
+      "line": 55,
+      "code_sha256": "c178cbbbfb0702fe57bdc284c9e89f01c91ee72f1111a0cf1af0c9ef1ee1bf72",
+      "reason": "Read-only Git revision/status checks use fixed argv and the installed agent module source directory. They require the original immutable Enginebb8 commit and clean checkout before frozen experiment execution; no report value selects a program. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/benchmark_direct.py",
+      "test_id": "B404",
+      "line": 10,
+      "code_sha256": "7eb25fedb6ee8a2866e72a80b5a63ea39aece0d92a956151a4a787baf120a2c5",
+      "reason": "Trusted developer tooling invokes fixed read-only Git revision/status checks on the installed runner source and Anvil with a literal version flag. The original Enginebb8 commit, clean checkout and Anvil1.8.3 are required before frozen comparison. No shell or report-controlled command is used; the developer controls PATH and installation."
+    },
+    {
+      "file": "scripts/benchmark_direct.py",
+      "test_id": "B607",
+      "line": 66,
+      "code_sha256": "fc272b13fdc282ba10adfc7350040afde83838183a49c9b1dd37dea5408b51e1",
+      "reason": "Trusted developer tooling invokes fixed read-only Git revision/status checks on the installed runner source and Anvil with a literal version flag. The original Enginebb8 commit, clean checkout and Anvil1.8.3 are required before frozen comparison. No shell or report-controlled command is used; the developer controls PATH and installation."
+    },
+    {
+      "file": "scripts/benchmark_direct.py",
+      "test_id": "B603",
+      "line": 66,
+      "code_sha256": "fc272b13fdc282ba10adfc7350040afde83838183a49c9b1dd37dea5408b51e1",
+      "reason": "Trusted developer tooling invokes fixed read-only Git revision/status checks on the installed runner source and Anvil with a literal version flag. The original Enginebb8 commit, clean checkout and Anvil1.8.3 are required before frozen comparison. No shell or report-controlled command is used; the developer controls PATH and installation."
+    },
+    {
+      "file": "scripts/benchmark_direct.py",
+      "test_id": "B607",
+      "line": 80,
+      "code_sha256": "6e101553bf99d833411e56397b9a620e31c4da308347b2080bf2a06fb717f7e2",
+      "reason": "Trusted developer tooling invokes fixed read-only Git revision/status checks on the installed runner source and Anvil with a literal version flag. The original Enginebb8 commit, clean checkout and Anvil1.8.3 are required before frozen comparison. No shell or report-controlled command is used; the developer controls PATH and installation."
+    },
+    {
+      "file": "scripts/benchmark_direct.py",
+      "test_id": "B603",
+      "line": 80,
+      "code_sha256": "6e101553bf99d833411e56397b9a620e31c4da308347b2080bf2a06fb717f7e2",
+      "reason": "Trusted developer tooling invokes fixed read-only Git revision/status checks on the installed runner source and Anvil with a literal version flag. The original Enginebb8 commit, clean checkout and Anvil1.8.3 are required before frozen comparison. No shell or report-controlled command is used; the developer controls PATH and installation."
+    },
+    {
+      "file": "scripts/benchmark_direct.py",
+      "test_id": "B607",
+      "line": 91,
+      "code_sha256": "e38f4587b9cd1007ed56f109f80d575db0d0234f5ed109eaf9f26dba57a5ed0c",
+      "reason": "Trusted developer tooling invokes fixed read-only Git revision/status checks on the installed runner source and Anvil with a literal version flag. The original Enginebb8 commit, clean checkout and Anvil1.8.3 are required before frozen comparison. No shell or report-controlled command is used; the developer controls PATH and installation."
+    },
+    {
+      "file": "scripts/benchmark_direct.py",
+      "test_id": "B603",
+      "line": 91,
+      "code_sha256": "e38f4587b9cd1007ed56f109f80d575db0d0234f5ed109eaf9f26dba57a5ed0c",
+      "reason": "Trusted developer tooling invokes fixed read-only Git revision/status checks on the installed runner source and Anvil with a literal version flag. The original Enginebb8 commit, clean checkout and Anvil1.8.3 are required before frozen comparison. No shell or report-controlled command is used; the developer controls PATH and installation."
+    },
+    {
+      "file": "scripts/bounded_cli.py",
+      "test_id": "B404",
+      "line": 13,
+      "code_sha256": "44c6615dd36c26ed4c0ee77b789cb51f38f1923ddce274afef52c8f64d04d1cc",
+      "reason": "The operator launcher needs subprocess to start a fixed per-user systemd job and the installed trusted CLI. Both calls use structured arguments without a shell. Actual kernel-limit startup guards, pidfd owner-death cancellation, atomic admission and full runtime expiry were tested. This is not an arbitrary-code sandbox."
+    },
+    {
+      "file": "scripts/bounded_cli.py",
+      "test_id": "B603",
+      "line": 78,
+      "code_sha256": "45bf52464f59b5a6b36cea876b6ec57383662009903b051d56d6a2018d592c22",
+      "reason": "Executes only /usr/bin/python3 -P -m entrotter_cli with PYTHONPATH replaced by the fixed installed engine/SDK/CLI sources. Safe-path mode rejects the reproduced cwd package spoof; literal scenario/export arguments never pass through a shell. Actual cgroup limits are verified before execution, pidfd monitors the original owner and finally cancels the owned session. Operator-controlled installed source remains trusted."
+    },
+    {
+      "file": "scripts/bounded_cli.py",
+      "test_id": "B603",
+      "line": 127,
+      "code_sha256": "e5039108311caf6efc516af0ab9f8064d6b0bacf69bf79e338515e467f1695cf",
+      "reason": "Executes only /usr/bin/systemd-run with a fixed per-user unit, concrete private EnvironmentFile, fixed resource/time properties and this installed worker script. Structured arguments and disabled systemd environment expansion preserve literal user paths; no shell or credentials in argv. Real duplicate admission preserves the incumbent, and owner SIGTERM/SIGKILL/full 180-second expiry recover. The tiny dispatcher is outside the leaf cgroup but inside the separately verified dedicated VM."
+    },
+    {
+      "file": "scripts/check_agent.py",
+      "test_id": "B404",
+      "line": 11,
+      "code_sha256": "2cd6a3148e75f0768e9fad22ec50d59a9e3efdeb8c0568ab2984b92e4f803dec",
+      "reason": "Subprocess use is limited to fixed Git revision/status argv for the installed runner module source directory. The checker rejects any changed or non-Enginebb8 source before model creation or execution. No shell or report-controlled command is used; the developer controls trusted PATH and installation."
+    },
+    {
+      "file": "scripts/check_agent.py",
+      "test_id": "B607",
+      "line": 44,
+      "code_sha256": "bd742514e2af417447e47e287dc5d7eae5f7e49db98e892617fdf3377232c395",
+      "reason": "Subprocess use is limited to fixed Git revision/status argv for the installed runner module source directory. The checker rejects any changed or non-Enginebb8 source before model creation or execution. No shell or report-controlled command is used; the developer controls trusted PATH and installation."
+    },
+    {
+      "file": "scripts/check_agent.py",
+      "test_id": "B603",
+      "line": 44,
+      "code_sha256": "bd742514e2af417447e47e287dc5d7eae5f7e49db98e892617fdf3377232c395",
+      "reason": "Subprocess use is limited to fixed Git revision/status argv for the installed runner module source directory. The checker rejects any changed or non-Enginebb8 source before model creation or execution. No shell or report-controlled command is used; the developer controls trusted PATH and installation."
+    },
+    {
+      "file": "scripts/check_agent.py",
+      "test_id": "B607",
+      "line": 47,
+      "code_sha256": "03b9e98c4cba271f228101edef8796362c696180d00095369f31afc3c120d1a8",
+      "reason": "Subprocess use is limited to fixed Git revision/status argv for the installed runner module source directory. The checker rejects any changed or non-Enginebb8 source before model creation or execution. No shell or report-controlled command is used; the developer controls trusted PATH and installation."
+    },
+    {
+      "file": "scripts/check_agent.py",
+      "test_id": "B603",
+      "line": 47,
+      "code_sha256": "03b9e98c4cba271f228101edef8796362c696180d00095369f31afc3c120d1a8",
+      "reason": "Subprocess use is limited to fixed Git revision/status argv for the installed runner module source directory. The checker rejects any changed or non-Enginebb8 source before model creation or execution. No shell or report-controlled command is used; the developer controls trusted PATH and installation."
+    },
+    {
+      "file": "scripts/check_default_wheels.py",
+      "test_id": "B404",
+      "line": 6,
+      "code_sha256": "4b21e93565121ef8cc1dc3e54fc6382c6ced915289e252f47e647f535c45c175",
+      "reason": "Importing subprocess is necessary for this developer tool. Build a fresh temporary venv, install only explicit local wheels with no index/dependencies, and execute trusted verified packages. This operator verifier never receives scenario-selected executables."
+    },
+    {
+      "file": "scripts/check_default_wheels.py",
+      "test_id": "B603",
+      "line": 63,
+      "code_sha256": "d64249d8bd7e5792f076c29ddca9163d650a417cfae7e5c56ba2c2c405de3e74",
+      "reason": "Execution uses a structured argv list with shell=False. Build a fresh temporary venv, install only explicit local wheels with no index/dependencies, and execute trusted verified packages. This operator verifier never receives scenario-selected executables."
+    },
+    {
+      "file": "scripts/check_default_wheels.py",
+      "test_id": "B603",
+      "line": 67,
+      "code_sha256": "6744dc7e32acccf6bfc87f58295fa72f48c8c0dba4b51775cd99a21ebead420b",
+      "reason": "Execution uses a structured argv list with shell=False. Build a fresh temporary venv, install only explicit local wheels with no index/dependencies, and execute trusted verified packages. This operator verifier never receives scenario-selected executables."
+    },
+    {
+      "file": "scripts/check_default_wheels.py",
+      "test_id": "B603",
+      "line": 86,
+      "code_sha256": "6f55a57120151dad5c696cf1e362c041632904467eb1d354e8df524ad7ce98d4",
+      "reason": "Execution uses a structured argv list with shell=False. Build a fresh temporary venv, install only explicit local wheels with no index/dependencies, and execute trusted verified packages. This operator verifier never receives scenario-selected executables."
+    },
+    {
+      "file": "scripts/check_default_wheels.py",
+      "test_id": "B603",
+      "line": 104,
+      "code_sha256": "f5ac106720dd1de0cf31c34bbbd5a984156c404c7e78e9095e72bfb8630c09f7",
+      "reason": "Execution uses a structured argv list with shell=False. Build a fresh temporary venv, install only explicit local wheels with no index/dependencies, and execute trusted verified packages. This operator verifier never receives scenario-selected executables."
+    },
+    {
+      "file": "scripts/check_default_wheels.py",
+      "test_id": "B603",
+      "line": 110,
+      "code_sha256": "6f836cb54c917095f14f39c5553c8f5df20bba717ef32253d028eb081d6a8ea5",
+      "reason": "Execution uses a structured argv list with shell=False. Build a fresh temporary venv, install only explicit local wheels with no index/dependencies, and execute trusted verified packages. This operator verifier never receives scenario-selected executables."
+    },
+    {
+      "file": "scripts/check_export_budget.py",
+      "test_id": "B404",
+      "line": 13,
+      "code_sha256": "24bcab9f2150a0b92b0a4c7feb6e1310ce58e8e714699ac5be61d19137e8619b",
+      "reason": "Importing subprocess is necessary for this developer tool. Run the current interpreter and fixed package entrypoints or a fixed race fixture against owned temporary paths; child processes are timed and reaped. No shell or model/network call is involved."
+    },
+    {
+      "file": "scripts/check_export_budget.py",
+      "test_id": "B603",
+      "line": 48,
+      "code_sha256": "fbab3cd4e54b30f0507f4d1286d9d1b6fbd27564c79d1243732eede2b8c3b8c2",
+      "reason": "Execution uses a structured argv list with shell=False. Run the current interpreter and fixed package entrypoints or a fixed race fixture against owned temporary paths; child processes are timed and reaped. No shell or model/network call is involved."
+    },
+    {
+      "file": "scripts/check_export_budget.py",
+      "test_id": "B603",
+      "line": 123,
+      "code_sha256": "f67e9d6558f4599ef19afa46b26d101ccceae355e729a4ce7a3a6ab318fe88e4",
+      "reason": "Execution uses a structured argv list with shell=False. Run the current interpreter and fixed package entrypoints or a fixed race fixture against owned temporary paths; child processes are timed and reaped. No shell or model/network call is involved."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B404",
+      "line": 15,
+      "code_sha256": "4b4e769368f5c81e278e5bcba83a85508db6a0a3641fc7b9ed2f13b4511801d5",
+      "reason": "Importing subprocess is necessary for this developer tool. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B607",
+      "line": 54,
+      "code_sha256": "dfc566d115d09e63c7ce9c7a7245a66f0a825cc4344a9cf9bb402746223c52ad",
+      "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 54,
+      "code_sha256": "dfc566d115d09e63c7ce9c7a7245a66f0a825cc4344a9cf9bb402746223c52ad",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B607",
+      "line": 57,
+      "code_sha256": "c945b4a656d61086714df69419666cac43fc3c3ca6df98b9e97406894589125f",
+      "reason": "The developer/CI PATH is an explicit trusted prerequisite, not a scenario-controlled input. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 57,
+      "code_sha256": "c945b4a656d61086714df69419666cac43fc3c3ca6df98b9e97406894589125f",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 88,
+      "code_sha256": "16e227c6a4471ae536d3521f3d9c31b5e7f1366fc021e554708213f9bea367e4",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 115,
+      "code_sha256": "f748b5f7ad867d259d4ac443e994b38d4a972691da36e83edd2534894e013543",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 126,
+      "code_sha256": "2fe162192f2108f0c1b6c0a61f52b9bb9aa8d55bb1137aff7a0095bc3c591df1",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 134,
+      "code_sha256": "bc21dcea43f294d56d62887428d9787014e7d808c5cb2901b2c67c050a6db89b",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 199,
+      "code_sha256": "3f8d782d5a4d5261b682aa4ff980e9d1e3f3d87eca4006fe25cfefffd6a4a6da",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 250,
+      "code_sha256": "5303ca75da07e9bd406a8399bf71f5aeb2bc06ee28ae5de921ddc2ce22f8d271",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 254,
+      "code_sha256": "51a931931aebdc50a10c71d221ff38ea96a5ad5652e0f6283fcf88ea4d20c26f",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 291,
+      "code_sha256": "5469415bb84802d37c2abd2101be0f65b0de224a87b682de4939425a0ddc3356",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_host_limits.py",
+      "test_id": "B603",
+      "line": 307,
+      "code_sha256": "2557b60a3b69081a3b834b5adb7b5407077d6ca8238d5c8cdfc05f63683d139e",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted local interpreter, git and configured Docker argument lists verify controlled fixture/Anvil/API behavior. Timeouts, owner-ID cleanup and actual integration tests cover this developer tool."
+    },
+    {
+      "file": "scripts/check_security.py",
+      "test_id": "B404",
+      "line": 13,
+      "code_sha256": "24bcab9f2150a0b92b0a4c7feb6e1310ce58e8e714699ac5be61d19137e8619b",
+      "reason": "Importing subprocess is necessary for this developer tool. Invoke the current interpreter and pinned Bandit with every rule and no nosec suppression; complete report and exact reviewed source/finding hashes gate acceptance."
+    },
+    {
+      "file": "scripts/check_security.py",
+      "test_id": "B603",
+      "line": 58,
+      "code_sha256": "08c74190678c93edb047be0da64ea4e1c05e08bf7a1dbb780a70164027c8a409",
+      "reason": "Execution uses a structured argv list with shell=False. Invoke the current interpreter and pinned Bandit with every rule and no nosec suppression; complete report and exact reviewed source/finding hashes gate acceptance."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B404",
+      "line": 15,
+      "code_sha256": "1a930e395fb9e49eef81f7992c1e507bc51b82a45b22605503e362a301e71723",
+      "reason": "Fixed read-only Git metadata/status argv inspect declared clean immutable historical worktrees and the three fixed current monorepo src directories. Component names are source literals; report metadata cannot choose a program, flag or checkout. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B607",
+      "line": 66,
+      "code_sha256": "a4fc04c6dea91dc429d2e061b106b06dda6b9c116e1623c27a6dcbbdb97b8c51",
+      "reason": "Fixed read-only Git metadata/status argv inspect declared clean immutable historical worktrees and the three fixed current monorepo src directories. Component names are source literals; report metadata cannot choose a program, flag or checkout. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B603",
+      "line": 66,
+      "code_sha256": "a4fc04c6dea91dc429d2e061b106b06dda6b9c116e1623c27a6dcbbdb97b8c51",
+      "reason": "Fixed read-only Git metadata/status argv inspect declared clean immutable historical worktrees and the three fixed current monorepo src directories. Component names are source literals; report metadata cannot choose a program, flag or checkout. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B607",
+      "line": 69,
+      "code_sha256": "bf75f6f5c39e685c5d8cd1189ca6701118e3a13e8e7961bea9e831b3403e54f6",
+      "reason": "Fixed read-only Git metadata/status argv inspect declared clean immutable historical worktrees and the three fixed current monorepo src directories. Component names are source literals; report metadata cannot choose a program, flag or checkout. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B603",
+      "line": 69,
+      "code_sha256": "bf75f6f5c39e685c5d8cd1189ca6701118e3a13e8e7961bea9e831b3403e54f6",
+      "reason": "Fixed read-only Git metadata/status argv inspect declared clean immutable historical worktrees and the three fixed current monorepo src directories. Component names are source literals; report metadata cannot choose a program, flag or checkout. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B607",
+      "line": 90,
+      "code_sha256": "7e608bd9256b6356e09383d3643e9bd821be27c2f5132e7f279df82a23956350",
+      "reason": "Fixed read-only Git metadata/status argv inspect declared clean immutable historical worktrees and the three fixed current monorepo src directories. Component names are source literals; report metadata cannot choose a program, flag or checkout. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B603",
+      "line": 90,
+      "code_sha256": "7e608bd9256b6356e09383d3643e9bd821be27c2f5132e7f279df82a23956350",
+      "reason": "Fixed read-only Git metadata/status argv inspect declared clean immutable historical worktrees and the three fixed current monorepo src directories. Component names are source literals; report metadata cannot choose a program, flag or checkout. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B607",
+      "line": 97,
+      "code_sha256": "08b722abe9912730da4d005c83c30934a1d464ba4f8adaabf1311137cdcf34d5",
+      "reason": "Fixed read-only Git metadata/status argv inspect declared clean immutable historical worktrees and the three fixed current monorepo src directories. Component names are source literals; report metadata cannot choose a program, flag or checkout. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B603",
+      "line": 97,
+      "code_sha256": "08b722abe9912730da4d005c83c30934a1d464ba4f8adaabf1311137cdcf34d5",
+      "reason": "Fixed read-only Git metadata/status argv inspect declared clean immutable historical worktrees and the three fixed current monorepo src directories. Component names are source literals; report metadata cannot choose a program, flag or checkout. Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/check_types.py",
+      "test_id": "B603",
+      "line": 127,
+      "code_sha256": "78df45f6060701c6406f3c11130a0193b838b4e18f5826f114055a3fce6093f2",
+      "reason": "The installed trusted Python interpreter runs mypy with a literal module/config/options and source filenames discovered from the fixed production tooling scope. Imports resolve only from declared clean immutable historical variants or clean current monorepo runtime source. No shell or report metadata selects executable code; full diagnostics are retained and compared exactly."
+    },
+    {
+      "file": "scripts/codex_policy.py",
+      "test_id": "B404",
+      "line": 10,
+      "code_sha256": "e47efb2bba0f6cb78058afc14d55e1ae18109677e0ba808fd137ebdc7c0a5a81",
+      "reason": "Importing subprocess is necessary for this developer tool. Opt-in authenticated local Codex argv; scenarios cannot select commands. Minimal environment, output/time caps and process-group cleanup are exercised by provider tests. This frozen adapter is not a general sandbox."
+    },
+    {
+      "file": "scripts/codex_policy.py",
+      "test_id": "B603",
+      "line": 38,
+      "code_sha256": "f5f2822153e3bbde9b3817d79549513f6640b414f723e99335593c6f140e5d99",
+      "reason": "Execution uses a structured argv list with shell=False. Opt-in authenticated local Codex argv; scenarios cannot select commands. Minimal environment, output/time caps and process-group cleanup are exercised by provider tests. This frozen adapter is not a general sandbox."
+    },
+    {
+      "file": "scripts/direct_anvil_case.py",
+      "test_id": "B404",
+      "line": 16,
+      "code_sha256": "5a9bd477d37a90b18af3a0abbc22954776c912d50a39d9e4dfc28c3d8ef16e3d",
+      "reason": "Importing subprocess is necessary for this developer tool. Trusted installed Anvil executable with fixed startup options and operator archive URL, never a shell. Upstream transport is read-only; local transactions use an owned loopback node and cleanup is enforced."
+    },
+    {
+      "file": "scripts/direct_anvil_case.py",
+      "test_id": "B603",
+      "line": 129,
+      "code_sha256": "792777d2ed1e6486e84c2f0e19bc256bbdb5616793990033a5db5112cd74abcf",
+      "reason": "Execution uses a structured argv list with shell=False. Trusted installed Anvil executable with fixed startup options and operator archive URL, never a shell. Upstream transport is read-only; local transactions use an owned loopback node and cleanup is enforced."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B404",
+      "line": 8,
+      "code_sha256": "f0c0846c76ff8412757e99cd139386f726c267d62f122048935c951ed4a1d498",
+      "reason": "Trusted developer tooling uses fixed argv for local Git HEAD/tree/clean checks, one local current-HEAD clone into its own temporary directory, the installed Python venv, fixed source-bound worker builder and CLI run/replay/verify/inspect commands. It never fetches old Org code, uses a shell or accepts an executable from reports; operator archive paths remain ordinary argv. Developer PATH and committed source are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B607",
+      "line": 64,
+      "code_sha256": "95fc3418ef038f84bf3b674bb9edc66661e488e653ad5d7bacd56d1c5c5c954a",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 64,
+      "code_sha256": "95fc3418ef038f84bf3b674bb9edc66661e488e653ad5d7bacd56d1c5c5c954a",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B607",
+      "line": 67,
+      "code_sha256": "ba4521d5c001a3760d965fa0707c747bf721f2df1a5a8442361a04583b1deec5",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 67,
+      "code_sha256": "ba4521d5c001a3760d965fa0707c747bf721f2df1a5a8442361a04583b1deec5",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B607",
+      "line": 72,
+      "code_sha256": "0383fd25aaf945edbff15eb3d6a02bff9acf50456170cdfba57d78f889265a95",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 72,
+      "code_sha256": "0383fd25aaf945edbff15eb3d6a02bff9acf50456170cdfba57d78f889265a95",
+      "reason": "Fixed read-only Git HEAD/tree/clean argv inspect the current trusted monorepo before measurement. Public mode strips inherited GIT_* settings and disables system/global Git configuration. No report field or user-supplied remote selects a command; Git comes from the trusted developer PATH."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 116,
+      "code_sha256": "a6ccbfb8ee3025e55a8b20d1d2e514d62063c9a1f36e1ec53715544656563c20",
+      "reason": "Trusted developer tooling performs one fixed personal-public HTTPS clone, fetches only a validated40-hex current revision, and detaches that checkout. Explicit argv disables inherited credential/config/header/cookie settings and hooks. No shell, arbitrary remote, report-selected executable, local-source fallback or Org mutation is used; developer Git/PATH and selected source are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B607",
+      "line": 118,
+      "code_sha256": "c502e8fa289fdc01025d4c8b578cbf32132ce13d41885b28fbd767fd5da19891",
+      "reason": "Trusted developer tooling performs one fixed personal-public HTTPS clone, fetches only a validated40-hex current revision, and detaches that checkout. Explicit argv disables inherited credential/config/header/cookie settings and hooks. No shell, arbitrary remote, report-selected executable, local-source fallback or Org mutation is used; developer Git/PATH and selected source are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 118,
+      "code_sha256": "c502e8fa289fdc01025d4c8b578cbf32132ce13d41885b28fbd767fd5da19891",
+      "reason": "Trusted developer tooling performs one fixed personal-public HTTPS clone, fetches only a validated40-hex current revision, and detaches that checkout. Explicit argv disables inherited credential/config/header/cookie settings and hooks. No shell, arbitrary remote, report-selected executable, local-source fallback or Org mutation is used; developer Git/PATH and selected source are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B607",
+      "line": 129,
+      "code_sha256": "8519ff780cdd0f23b8519b494f7fef668a9696a2dedf212fd9678abb787c7965",
+      "reason": "Fixed Git argv verify the fresh checkout origin/revision or create the existing isolated local-copy mode. Paths belong to its own TemporaryDirectory and current trusted source. Public metadata reads use the stripped child Git configuration; no report chooses a command, remote or shell. Developer Git/PATH are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 129,
+      "code_sha256": "8519ff780cdd0f23b8519b494f7fef668a9696a2dedf212fd9678abb787c7965",
+      "reason": "Fixed Git argv verify the fresh checkout origin/revision or create the existing isolated local-copy mode. Paths belong to its own TemporaryDirectory and current trusted source. Public metadata reads use the stripped child Git configuration; no report chooses a command, remote or shell. Developer Git/PATH are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B607",
+      "line": 143,
+      "code_sha256": "15ec2de2e757e3e04df77fa82c36879aad70f81893a2156698337687f7db6b4f",
+      "reason": "Fixed Git argv verify the fresh checkout origin/revision or create the existing isolated local-copy mode. Paths belong to its own TemporaryDirectory and current trusted source. Public metadata reads use the stripped child Git configuration; no report chooses a command, remote or shell. Developer Git/PATH are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 143,
+      "code_sha256": "15ec2de2e757e3e04df77fa82c36879aad70f81893a2156698337687f7db6b4f",
+      "reason": "Fixed Git argv verify the fresh checkout origin/revision or create the existing isolated local-copy mode. Paths belong to its own TemporaryDirectory and current trusted source. Public metadata reads use the stripped child Git configuration; no report chooses a command, remote or shell. Developer Git/PATH are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 152,
+      "code_sha256": "7edecd1f987ca4cd084c58558e0d9b951e22f45d4663132df9782c1a73095b82",
+      "reason": "Fixed argv create a no-pip venv and import the three declared packages using its Python and clone-only PYTHONPATH. The source literal prints package file origins; outside-clone origins and system site packages fail before build/execution. No report selects Python code or an executable; the operator explicitly trusts the selected monorepo source."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 163,
+      "code_sha256": "1df9a2ea21a4431dfc781d7e63ba974a8587bbe2ac59f12e65bfb326b0e65619",
+      "reason": "Fixed argv create a no-pip venv and import the three declared packages using its Python and clone-only PYTHONPATH. The source literal prints package file origins; outside-clone origins and system site packages fail before build/execution. No report selects Python code or an executable; the operator explicitly trusts the selected monorepo source."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 197,
+      "code_sha256": "e73ab27a29a303c0ea32dd1e3288c5ee76a7950807926dcddfbf03265c1de39b",
+      "reason": "Fixed argv invoke the fresh clone worker builder and fixed manifest output. An optional operator archive is an ordinary argv path and the builder still enforces its pinned digest, bounded preparation and Docker default. No shell or report-selected command is used; the selected source and developer environment are trusted."
+    },
+    {
+      "file": "scripts/reproduce_clean.py",
+      "test_id": "B603",
+      "line": 244,
+      "code_sha256": "bdd1bc6cb788dce01b172f15c6e739f42295d1ed90f7b9d89a9dd8df539ced40",
+      "reason": "Commands are fixed CLI run/replay/verify/inspect argv using the fresh clone Python/source and fixed scenario/record filenames. Recordings come from the clone, not local external source. Only the existing source-bound bounded worker executes local scenarios; no report value selects an executable/shell, model generation or upstream broadcast."
+    },
+    {
+      "file": "scripts/verify.py",
+      "test_id": "B404",
+      "line": 10,
+      "code_sha256": "d5c7056d0ec0ad28cdee52bea214a5e4a84aade055de343b0a54ee3065ad5099",
+      "reason": "Trusted developer tooling invokes the installed Python unittest runner, Node on fixed local website test paths and Anvil with a literal version flag. All six components are in the current monorepo. No report metadata selects an executable or shell command; the operator supplies a trusted PATH and local worker environment."
+    },
+    {
+      "file": "scripts/verify.py",
+      "test_id": "B603",
+      "line": 38,
+      "code_sha256": "b09108bb65776b31c0dfbb3cea268dd94dbfebffcea6146816a37ac5700b1cd7",
+      "reason": "Trusted developer tooling invokes the installed Python unittest runner, Node on fixed local website test paths and Anvil with a literal version flag. All six components are in the current monorepo. No report metadata selects an executable or shell command; the operator supplies a trusted PATH and local worker environment."
+    },
+    {
+      "file": "scripts/verify.py",
+      "test_id": "B607",
+      "line": 55,
+      "code_sha256": "88c255e4ad843fdf1ebea5878066c798fe86e676aa1876a6767a153f391421d8",
+      "reason": "Trusted developer tooling invokes the installed Python unittest runner, Node on fixed local website test paths and Anvil with a literal version flag. All six components are in the current monorepo. No report metadata selects an executable or shell command; the operator supplies a trusted PATH and local worker environment."
+    },
+    {
+      "file": "scripts/verify.py",
+      "test_id": "B603",
+      "line": 55,
+      "code_sha256": "88c255e4ad843fdf1ebea5878066c798fe86e676aa1876a6767a153f391421d8",
+      "reason": "Trusted developer tooling invokes the installed Python unittest runner, Node on fixed local website test paths and Anvil with a literal version flag. All six components are in the current monorepo. No report metadata selects an executable or shell command; the operator supplies a trusted PATH and local worker environment."
+    },
+    {
+      "file": "scripts/verify.py",
+      "test_id": "B607",
+      "line": 93,
+      "code_sha256": "f34568bef988a3d152964d2761cfea54b6076b4f0cc22c2c6d3e21ea78e7f521",
+      "reason": "Trusted developer tooling invokes the installed Python unittest runner, Node on fixed local website test paths and Anvil with a literal version flag. All six components are in the current monorepo. No report metadata selects an executable or shell command; the operator supplies a trusted PATH and local worker environment."
+    },
+    {
+      "file": "scripts/verify.py",
+      "test_id": "B603",
+      "line": 93,
+      "code_sha256": "f34568bef988a3d152964d2761cfea54b6076b4f0cc22c2c6d3e21ea78e7f521",
+      "reason": "Trusted developer tooling invokes the installed Python unittest runner, Node on fixed local website test paths and Anvil with a literal version flag. All six components are in the current monorepo. No report metadata selects an executable or shell command; the operator supplies a trusted PATH and local worker environment."
+    }
+  ],
+  "source_sha256": {
+    ".github/actions/docs-links/check.py": "d54426e199e30b80d1bfc5cf9e4d9b40ccf5494de74e0a53145f7fb23f0e6169",
+    "scripts/benchmark_agent.py": "2780c9eb9b7d861e0f31f976534011e9514e9d9a4e0aa4d60590e15acdff3460",
+    "scripts/benchmark_direct.py": "2567dc57563e9c93b2d336316dcfe914bd213139ab33fda8e6bd5c9756c0666d",
+    "scripts/bounded_cli.py": "df96abd74fb22e3d9b16f60d8b1e93f3cc39129a8cb11a63b61cdfbcaf4cd1c2",
+    "scripts/browser_check.py": "d656077a2b9c94f9161970d7ba0ae3bdc0f75a5ba02b5de9629caab6e9982ce2",
+    "scripts/check_agent.py": "425505c8f73fbb6fb8270d77db2df1614fa43a97b1fb831e408ef38bd2ebb24a",
+    "scripts/check_default_wheels.py": "91f9836bc2315ca7232d735164efb75db29b28fbea769d02fca5e7083f415ed9",
+    "scripts/check_dependencies.py": "4b6aa95413b509f10bb876ec1d753353025c72abe2a7c861a8bc3384884a1228",
+    "scripts/check_export_budget.py": "50accb3dba9bbfdccd28d9e34b45e51e9a38709a62374de83b8d35212110412e",
+    "scripts/check_historical.py": "cde4f6bdbbbff900aa39c952d49373b076d55afceab55b658f29df8fa5bd5c1e",
+    "scripts/check_host_envelope.py": "b145d1f83008d3a88bee605720406f37010aba855635bcde9256fb6d61deb9bb",
+    "scripts/check_host_limits.py": "7bc0fa1055c7d332edbfa7f14928ef29dbe183fc5f7d9b2b7ff56edc35a3174c",
+    "scripts/check_security.py": "59c663e1612f57f14d241195baf6a70a06ca2b1610d7d62cb14dd6f0d06719bb",
+    "scripts/check_types.py": "eb5057058e196428d795ab1d4058edeefbd805b38b7942e3152a429093385a84",
+    "scripts/codex_policy.py": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76",
+    "scripts/direct_anvil_case.py": "a3641451f3ce2dae3281c71e00c57b35ecaae6dd1fa1ccf985e5a2b5bb4b98e1",
+    "scripts/export_reports.py": "70a64f668cb602f63d7db73210d78464d9f82d0cdc1f470fb6cf45f56cce8c6e",
+    "scripts/publish.py": "ca71114c3a8e1ad1457e4503164cd5c79e75c649139020d5517f477eb3a24fb3",
+    "scripts/quality_scope.py": "f39cbd50586f57a73973e28e1c901148ebb9cb779c7ceda845d86289d102fb11",
+    "scripts/reproduce_clean.py": "f1ba809050f056e3798dbfb973b25e3a48cb584992408a5afc6bb8a4cd4805b6",
+    "scripts/verification_log.py": "4f882ab4dcaf32863cb080b76bf0b9f35fc993359e1f2054649f1d1f2ddf12b4",
+    "scripts/verify.py": "40b4749e8067a1d0242fd3ecf9c19703f8a22dfd0e31801bbb572faa3498027d"
+  }
+}

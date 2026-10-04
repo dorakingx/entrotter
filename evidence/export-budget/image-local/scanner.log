@@ -1,0 +1,5 @@
+2026-09-20T06:52:12+09:00	INFO	Loaded	file_path="/var/folders/wg/yck688tn1pn8cvxftb4_x19r0000gn/T/entrotter-image-audit-5ve3af8r/config.yaml"
+2026-09-20T06:52:12+09:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-09-20T06:52:13+09:00	INFO	Detected OS	family="wolfi" version="20230201"
+2026-09-20T06:52:13+09:00	INFO	[wolfi] Detecting vulnerabilities...	pkg_num=26
+2026-09-20T06:52:13+09:00	INFO	Number of language-specific files	num=0

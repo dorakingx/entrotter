@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-09-20T00:00:02.659491+00:00",
+  "worker_containers": [],
+  "running_containers": [],
+  "daemon": "dedicated entrotter profile",
+  "stopped_after_verification": true,
+  "default_profile_still_stopped": true
+}

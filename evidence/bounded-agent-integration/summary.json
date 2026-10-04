@@ -1,0 +1,323 @@
+{
+  "status": "local_and_linux_passed_independent_review_pending",
+  "checked_at": "2026-09-20T00:45:35.760658+00:00",
+  "pins": {
+    "engine": "abb4662ce960e08b2aa3a2c8a1c10719339edccc",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+    "scenarios": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+    "entrotter.github.io": "61740312f281f7e911e0eb6e9482a3c372cb1fae"
+  },
+  "source_files_sha256": {
+    "scripts/reproduce_clean.py": "0e1b9f29bd1dad1bfe9f09f8f75aae4be00b2ecc232be9ec276a04203a7a0576",
+    "scripts/check_host_limits.py": "7bc0fa1055c7d332edbfa7f14928ef29dbe183fc5f7d9b2b7ff56edc35a3174c",
+    "scripts/check_export_budget.py": "50accb3dba9bbfdccd28d9e34b45e51e9a38709a62374de83b8d35212110412e",
+    "scripts/codex_policy.py": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76",
+    "bounded-worker-pins.json": "0c840d16b69aeb02e1554d3ab00930c5a27a520450ef1b24837ea248d0a4c926",
+    "dependency-pins.json": "e87d0438278690e170bf920e987087c7f5274f6a10f3474010ea3aec5efd1775",
+    "quality-inputs.json": "3403c233289170f4cd83bf9e89982d669ce304f2824cf9aaafeea6de389022c3",
+    "security-reviewed.json": "46f849de1cc7d32446fee6a20caa4d7dc85b9cd9a4f98390e4e8ea34ebd9b604"
+  },
+  "local_reproduction_seconds": {
+    "clean-agent-local": 20.403068041981896,
+    "clean-fixture-local": 18.588037792011164,
+    "frozen-native-compatibility": 4.420191667013569
+  },
+  "new_agent_model_calls": 0,
+  "new_archive_calls": 0,
+  "quality": {
+    "production_sources": 19,
+    "bandit_retained_findings": 75,
+    "audited_locked_python_packages": 50,
+    "quality_policy_tests": 6
+  },
+  "independent_review": "pending",
+  "limitations": [
+    "Docker/VM setup excluded; build caches may be warm",
+    "No kernel bounds for host caller/image/VM storage added",
+    "No agent HTTP or CLI execution endpoint added; reproduction uses bounded Python API and CLI result verification",
+    "Frozen benchmark pins and original reports remain unchanged",
+    "Protected merges, deployment and human submission gates remain pending"
+  ],
+  "local_cleanup": "both VM profiles stopped; zero owned containers; original Docker context unchanged",
+  "evidence": [
+    {
+      "path": "evidence/bounded-agent-integration/before.log",
+      "bytes": 197,
+      "sha256": "e4e7b5c958fb79448cae6e19adc1ba876cef801e1e10ce3f1c7f34f3146eeca7"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci/clean-agent.json.gz",
+      "bytes": 1882,
+      "sha256": "c53e65884dae9a39bf712db3c180d18381ecd7576d9cf6fe52105051976b6318",
+      "original_sha256": "8989b01140a5c86fe7c6db5cda754fdace99f25ca107c05ab44c543801682719"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci/clean-fixture.json.gz",
+      "bytes": 1858,
+      "sha256": "d64adc1adfe82465e959f0dc315984476bccb557e8cd9f86b6d68f3bd9094606",
+      "original_sha256": "e81768a44b0fc5df2723aa72d35e3126f8c49ecf509cbb53bb9b0a66e27dd30a"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci/export-contract.json.gz",
+      "bytes": 729,
+      "sha256": "f09b6bf2b15cf8250c8dc055368247fdbc986f7425aa9344af6ea95cff91b271",
+      "original_sha256": "2b92b2b2caf6fca148428ded1055ffd05e73d6d8f505f670392ded3c116115fc"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci/image.json.gz",
+      "bytes": 1224,
+      "sha256": "2d8a6175fcf95bc33136a7119ba1b2bb08527e1bfb928f9c23bcdbb3184fea60",
+      "original_sha256": "dbca6b288dc5c8ee975789798d6dbe0f70f08722fe9b689655c6181d00312d6f"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci/integration.json.gz",
+      "bytes": 1361,
+      "sha256": "c8097be7e684b192243d847d5996dd8eff58530cad2713229b3cfd4b9737390a",
+      "original_sha256": "a256bd0289fc952bb84ac5ca76aefbe0c2c80e08ffe0041f4a140e49bf90f81b"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci/optimized-export-contract.json.gz",
+      "bytes": 729,
+      "sha256": "a7a92718e96da3dcbf8f5010cceed56664f1e30cf7d506411d55a0250dd50595",
+      "original_sha256": "6d6da18116ca0d62b66623fbe26bc02a45b7487193ea23a90d8892b5f971981b"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-quality/bandit.json.gz",
+      "bytes": 7112,
+      "sha256": "a6783f5a8270c27b9c19abed1343a29ca45d3e1f728056bf3aee93d18eda1d04",
+      "original_sha256": "7826b1babcff541ac709b0a3505c03120a2a2e904f3c55c9849ac4d75289a3d7"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-quality/dependencies.json.gz",
+      "bytes": 645,
+      "sha256": "7e745b6d7d5e4449273ee5d8892be189208e2402a5dbe8d218ebbe24d0ec7aa6",
+      "original_sha256": "2adefbd033b0ff442eb63d4326f657700336bd90cab85315380f179a8f332675"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-quality/dependency-scope.json.gz",
+      "bytes": 969,
+      "sha256": "c11f5d29bd40bbca52c6a8fc7eef39c8249cecdb21c7fd885684c4accb6cd3fc",
+      "original_sha256": "0f61d0eb9d99206ed7ee210594c2c18564bceb3c867793d73cabfbac8d2454e7"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-quality/types/agent.log.gz",
+      "bytes": 252,
+      "sha256": "9ebb01f3c0bc0b603bb23441ea990d1a6daffb4fb29d86d454ea34e2db389cfc",
+      "original_sha256": "98e7933fd9a877ee34064f316b1577872279da8301f2afaa8d5f662641075e8b"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-quality/types/general.log.gz",
+      "bytes": 64,
+      "sha256": "a0b98a90150e56194b4c97312047cdf687e2f64232558cfdb046df4f65c0b409",
+      "original_sha256": "14fdf673bd175fe32ef42df34666481bb15e465313f7dbef32d0aea2ba76a26e"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-quality/types/summary.json.gz",
+      "bytes": 1622,
+      "sha256": "a5685d128fcd5d9293c522095143ecc53d61e5648dd6f0b1128feda7e779d0f1",
+      "original_sha256": "ea0a8f2b74e516b5f09b2695285138d7aab67e2d1ccc8f3c8423d20331ba1ef6"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-quality/types/worker.log.gz",
+      "bytes": 63,
+      "sha256": "76eacbbf7755358f4be970d3cd86b2d0ffa287f96db2193f42233534159c057d",
+      "original_sha256": "f9b031e5c45aa702cd4fef028d465551cb20a2c4698e0913c7b00766b20ac4d8"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-run-links.json",
+      "bytes": 1298,
+      "sha256": "b7650f867fdf7693f32166896094c7be6e4af11e318f9c9c47f41184f0c00ae9"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-run-quality.json",
+      "bytes": 5103,
+      "sha256": "fe2a67526bb7db45fe2fd5e169de405983a18531a997df8a6190e4b36f44e20c"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/ci-run.json",
+      "bytes": 12713,
+      "sha256": "4202c6a8b38c5dea3e6cf30129656430ccf550c090d20bf6eadb9a7c5aa6932c"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/clean-agent-local.json",
+      "bytes": 3302,
+      "sha256": "17c29d0f2f91ed01804bf65fe24e5f215fd84bcd045a87c867c6790a89dd9608"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/clean-agent-local.log",
+      "bytes": 3302,
+      "sha256": "17c29d0f2f91ed01804bf65fe24e5f215fd84bcd045a87c867c6790a89dd9608"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/clean-fixture-local.json",
+      "bytes": 3253,
+      "sha256": "22ce93ad881971cf64183add7e0d2e220f52f55da0215c0321f059be92e27b08"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/clean-fixture-local.log",
+      "bytes": 3253,
+      "sha256": "22ce93ad881971cf64183add7e0d2e220f52f55da0215c0321f059be92e27b08"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/cleanup.json",
+      "bytes": 412,
+      "sha256": "5239fc0069930f3ec20d4a46e44e0e4e06debcc3fd16b69d7459814bfbe3e6ee"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/containers-after.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/dependencies.json",
+      "bytes": 2903,
+      "sha256": "2adefbd033b0ff442eb63d4326f657700336bd90cab85315380f179a8f332675"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/dependencies.log",
+      "bytes": 2276,
+      "sha256": "0f61d0eb9d99206ed7ee210594c2c18564bceb3c867793d73cabfbac8d2454e7"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/docs-links.json.gz",
+      "bytes": 7079,
+      "sha256": "83ab2d76b6dcb009059ca9039e33d5b91a73292029af31cee27394fe135c0ec8",
+      "original_sha256": "dc80ce02f37410131b41513a1f859b487991997e7ec206b35b76f2c6d220d18f"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/exports-local.json",
+      "bytes": 1182,
+      "sha256": "a678a3f2a5e389ef27c687ab26e534fbbeb33a343b563ec7607f243b3d57d2ab"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/exports-local.log",
+      "bytes": 1182,
+      "sha256": "a678a3f2a5e389ef27c687ab26e534fbbeb33a343b563ec7607f243b3d57d2ab"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/frozen-native-compatibility.json",
+      "bytes": 822,
+      "sha256": "b8f280967bf7e41faada01fc38a24390d5e4054640c3e790d9d5de56180a7f20"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/frozen-native-compatibility.log",
+      "bytes": 822,
+      "sha256": "b8f280967bf7e41faada01fc38a24390d5e4054640c3e790d9d5de56180a7f20"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/integration-local.json",
+      "bytes": 2645,
+      "sha256": "598399552059696508fd785614879363250b267a22e1bb0588345686e9f9a995"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/integration-local.log",
+      "bytes": 2645,
+      "sha256": "598399552059696508fd785614879363250b267a22e1bb0588345686e9f9a995"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/local-image.json",
+      "bytes": 2144,
+      "sha256": "552c2cb7ad4cd6546577b464b9d52cacedeaeba79e4296bcae36861721d4ed6d"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/optimized-exports-local.json",
+      "bytes": 1182,
+      "sha256": "a1c2c3d3acaa397234c8102ff717736cb01651875836b0bd9da644bcc88cda05"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/optimized-exports-local.log",
+      "bytes": 1182,
+      "sha256": "a1c2c3d3acaa397234c8102ff717736cb01651875836b0bd9da644bcc88cda05"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/quality-bandit.json.gz",
+      "bytes": 7112,
+      "sha256": "82413817f5d52b02259bab6c15265dbd8134d2e52ad84309d221730f5314f817",
+      "original_sha256": "d4c08a68071aea7eb5867e652b77f4f3f7eca64fc9c5b6324b2c96277e9d84ed"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/quality-dependency-scope.json.gz",
+      "bytes": 969,
+      "sha256": "c11f5d29bd40bbca52c6a8fc7eef39c8249cecdb21c7fd885684c4accb6cd3fc",
+      "original_sha256": "0f61d0eb9d99206ed7ee210594c2c18564bceb3c867793d73cabfbac8d2454e7"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/quality-tests.log",
+      "bytes": 1098,
+      "sha256": "c6debe251af07a764de43e8d788b55dbe9703c1762723807db80ed6251615e4f"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/quality-types-agent.log.gz",
+      "bytes": 252,
+      "sha256": "9ebb01f3c0bc0b603bb23441ea990d1a6daffb4fb29d86d454ea34e2db389cfc",
+      "original_sha256": "98e7933fd9a877ee34064f316b1577872279da8301f2afaa8d5f662641075e8b"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/quality-types-general.log.gz",
+      "bytes": 64,
+      "sha256": "a0b98a90150e56194b4c97312047cdf687e2f64232558cfdb046df4f65c0b409",
+      "original_sha256": "14fdf673bd175fe32ef42df34666481bb15e465313f7dbef32d0aea2ba76a26e"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/quality-types-summary.json.gz",
+      "bytes": 1622,
+      "sha256": "a5685d128fcd5d9293c522095143ecc53d61e5648dd6f0b1128feda7e779d0f1",
+      "original_sha256": "ea0a8f2b74e516b5f09b2695285138d7aab67e2d1ccc8f3c8423d20331ba1ef6"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/quality-types-worker.log.gz",
+      "bytes": 63,
+      "sha256": "76eacbbf7755358f4be970d3cd86b2d0ffa287f96db2193f42233534159c057d",
+      "original_sha256": "f9b031e5c45aa702cd4fef028d465551cb20a2c4698e0913c7b00766b20ac4d8"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/security-before.log",
+      "bytes": 520,
+      "sha256": "dabe48303475298aae475593d35630c93edd37359c8738baa6f46b4db312ce8f"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/security-final.log",
+      "bytes": 93,
+      "sha256": "3786e68e2c07dc5c1152e2444b2b8d266256c7b4564bf52bb89d4691ddbf8f5b"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/types.log",
+      "bytes": 3709,
+      "sha256": "ea0a8f2b74e516b5f09b2695285138d7aab67e2d1ccc8f3c8423d20331ba1ef6"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/vm-stop.log",
+      "bytes": 1552,
+      "sha256": "fdc6d9d7629d7ad226c23fce778dd7e84f2f1da542dec17bc64049d6b4ece4ec"
+    },
+    {
+      "path": "evidence/bounded-agent-integration/docs-links-final.json.gz",
+      "bytes": 7194,
+      "sha256": "00f8834cfff7ad501b5bbe55e67e64391392d173526f65b9f9d8d6701942e2eb",
+      "original_sha256": "d180cb5d8c4d9a6fa95499c7a89f1fd36c0e0d9211d6885aed2ab52a88a49071"
+    }
+  ],
+  "ci": {
+    "proof_commit": "5dba8e401956e2a71d3260f0d7cd2aaa16186a00",
+    "runs": {
+      "integration": "https://github.com/entrotter/entrotter/actions/runs/35479672160",
+      "quality": "https://github.com/entrotter/entrotter/actions/runs/35479672206",
+      "links": "https://github.com/entrotter/entrotter/actions/runs/35479672162"
+    },
+    "jobs_passed": 5,
+    "fresh_reproduction_seconds": {
+      "agent": 6.672894310000004,
+      "fixture": 6.961605771999999
+    },
+    "image_source_equal_across_architectures": true,
+    "full_artifact_ids_equal": true,
+    "full_quality_source_finding_and_dependency_inventories_equal": true
+  },
+  "final_local_docs_links": {
+    "files": 48,
+    "total": 158,
+    "successful": 158,
+    "errors": 0
+  }
+}

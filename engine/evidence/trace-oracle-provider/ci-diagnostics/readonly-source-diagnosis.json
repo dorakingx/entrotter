@@ -1,0 +1,28 @@
+{
+  "probe": "Read-only exact source capture with Mozilla CA bundle from existing hash-locked certifi; certificate/hostname verification enabled. No replayexecution or upstreamwrite.",
+  "CA_bundle_sha256": "9cc2a774b5198dcff14d9be1e66091f538975d867ce029a96bce15a55dfd730f",
+  "local_CA_reason": "DefaultmacOSqualityPythontruststore refused issuer; this is distinct from genericLinuxworkerfailure.",
+  "status": "pinned_source_capture_pass",
+  "parent": {
+    "chain_id": 1,
+    "block_number": 18999999,
+    "block_hash": "0x759e27a5069535949f0a7247ebc999367dbd77964d77ed004ffc8db3d4940248"
+  },
+  "header": {
+    "timestamp": 1705173443,
+    "gas_limit": 30000000,
+    "base_fee": 20065519804,
+    "coinbase": "0x95222290dd7278aa3ddd389cc1e1d165cc4bafe5",
+    "prevrandao": "0xb45e3fdbc1a41216ad07ac931215c5d6df190217efade280d1825c4a667ad203"
+  },
+  "inputs": [
+    {
+      "index": 0,
+      "hash": "0xc9ab90a1796613b0fbccb33827de583901d4c0775e89c0f25d604b7c3a71771e",
+      "gas_used": 208144,
+      "log_count": 8
+    }
+  ],
+  "capture_sha256": "c68f6ce6529ad4ee5d631ff0a68e35791fd7393e5f514d2d8b45115d2917e438",
+  "elapsed_seconds": 0.985656
+}

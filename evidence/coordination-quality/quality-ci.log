@@ -1,0 +1,1186 @@
+quality	Set up job	﻿2026-09-19T22:34:24.9237431Z Current runner version: '2.337.0'
+quality	Set up job	2026-09-19T22:34:24.9265725Z ##[group]Runner Image Provisioner
+quality	Set up job	2026-09-19T22:34:24.9266679Z Hosted Compute Agent
+quality	Set up job	2026-09-19T22:34:24.9267463Z Version: 20260828.587
+quality	Set up job	2026-09-19T22:34:24.9268127Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+quality	Set up job	2026-09-19T22:34:24.9268971Z Build Date: 2026-08-28T16:44:25Z
+quality	Set up job	2026-09-19T22:34:24.9269923Z Worker ID: {ba74969d-9dd5-4b77-98be-b57f3fb6f895}
+quality	Set up job	2026-09-19T22:34:24.9270700Z Azure Region: eastus
+quality	Set up job	2026-09-19T22:34:24.9271375Z ##[endgroup]
+quality	Set up job	2026-09-19T22:34:24.9272962Z ##[group]Operating System
+quality	Set up job	2026-09-19T22:34:24.9273646Z Ubuntu
+quality	Set up job	2026-09-19T22:34:24.9274312Z 24.04.5
+quality	Set up job	2026-09-19T22:34:24.9274906Z LTS
+quality	Set up job	2026-09-19T22:34:24.9275540Z ##[endgroup]
+quality	Set up job	2026-09-19T22:34:24.9276110Z ##[group]Runner Image
+quality	Set up job	2026-09-19T22:34:24.9276739Z Image: ubuntu-24.04
+quality	Set up job	2026-09-19T22:34:24.9277442Z Version: 20260907.300.1
+quality	Set up job	2026-09-19T22:34:24.9278552Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+quality	Set up job	2026-09-19T22:34:24.9280692Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+quality	Set up job	2026-09-19T22:34:24.9281697Z ##[endgroup]
+quality	Set up job	2026-09-19T22:34:24.9282969Z ##[group]GITHUB_TOKEN Permissions
+quality	Set up job	2026-09-19T22:34:24.9285185Z Contents: read
+quality	Set up job	2026-09-19T22:34:24.9286015Z Metadata: read
+quality	Set up job	2026-09-19T22:34:24.9286602Z ##[endgroup]
+quality	Set up job	2026-09-19T22:34:24.9289331Z Secret source: Actions
+quality	Set up job	2026-09-19T22:34:24.9290894Z Cache mode: write
+quality	Set up job	2026-09-19T22:34:24.9292381Z Prepare workflow directory
+quality	Set up job	2026-09-19T22:34:25.1570940Z Prepare all required actions
+quality	Set up job	2026-09-19T22:34:25.1620790Z Getting action download info
+quality	Set up job	2026-09-19T22:34:25.3202081Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+quality	Set up job	2026-09-19T22:34:25.4227913Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+quality	Set up job	2026-09-19T22:34:25.5027341Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+quality	Set up job	2026-09-19T22:34:26.2498325Z Complete job name: quality
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:26.9050022Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9060215Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9061315Z with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9061780Z   path: entrotter
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9062270Z   persist-credentials: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9062829Z   repository: entrotter/entrotter
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9066646Z   token: ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9067120Z   ssh-strict: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9067585Z   ssh-user: git
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9068039Z   clean: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9068512Z   sparse-checkout-cone-mode: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9069090Z   fetch-depth: 1
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9069895Z   fetch-tags: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9070388Z   show-progress: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9070935Z   lfs: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9071376Z   submodules: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9071873Z   set-safe-directory: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9072415Z   allow-unsafe-pr-checkout: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:26.9073370Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0309959Z Syncing repository: entrotter/entrotter
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0312255Z ##[group]Getting Git version info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0313143Z Working directory is '/home/runner/work/entrotter/entrotter/entrotter'
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0314492Z [command]/usr/bin/git version
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0369013Z git version 2.55.0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0392633Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0410106Z Temporarily overriding HOME='/home/runner/work/_temp/e5eddcde-3624-4537-b60e-048a07760287' before making global git config changes
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0412666Z Adding repository directory to the temporary git global config as a safe directory
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0417027Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/entrotter
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0483600Z ##[group]Initializing the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0490520Z [command]/usr/bin/git init /home/runner/work/entrotter/entrotter/entrotter
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0668707Z hint: Using 'master' as the name for the initial branch. This default branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0673815Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0675679Z hint: to use in all of your new repositories, which will suppress this warning,
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0677097Z hint: call:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0677897Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0678856Z hint: 	git config --global init.defaultBranch <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0680284Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0681318Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0682901Z hint: 'development'. The just-created branch can be renamed via this command:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0684330Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0685234Z hint: 	git branch -m <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0686191Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0687428Z hint: Disable this message with "git config set advice.defaultBranchName false"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0689755Z Initialized empty Git repository in /home/runner/work/entrotter/entrotter/entrotter/.git/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0692926Z [command]/usr/bin/git remote add origin https://github.com/entrotter/entrotter
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0748085Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0749826Z ##[group]Disabling automatic garbage collection
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0752848Z [command]/usr/bin/git config --local gc.auto 0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0795074Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0796530Z ##[group]Setting up auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0804291Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.0857912Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.1245629Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.1285226Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.1521093Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.1561386Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.1801580Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.1843770Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.1854057Z ##[group]Fetching the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:27.1855684Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +459e4d8be28ca14e021bd769b64860c4af1e13e8:refs/remotes/pull/33/merge
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.1757613Z From https://github.com/entrotter/entrotter
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.1761505Z  * [new ref]         459e4d8be28ca14e021bd769b64860c4af1e13e8 -> pull/33/merge
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.1768248Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.1771009Z ##[group]Determining the checkout info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.1773902Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.1776297Z [command]/usr/bin/git sparse-checkout disable
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.1838364Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.1871743Z ##[group]Checking out the ref
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.1875215Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/33/merge
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2552635Z Note: switching to 'refs/remotes/pull/33/merge'.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2553653Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2554388Z You are in 'detached HEAD' state. You can look around, make experimental
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2556561Z changes and commit them, and you can discard any commits you make in this
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2558291Z state without impacting any branches by switching back to a branch.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2559626Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2560385Z If you want to create a new branch to retain commits you create, you may
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2561937Z do so (now or later) by using -c with the switch command. Example:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2562837Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2563215Z   git switch -c <new-branch-name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2564079Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2564734Z Or undo this operation with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2565457Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2565875Z   git switch -
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2566494Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2567380Z Turn off this advice by setting config variable advice.detachedHead to false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2568662Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2570611Z HEAD is now at 459e4d8 Merge f05eae7faa6561623802ad751dfa892044dd9176 into 6368eef29dd7beb694da9174f46d1518b38d52d5
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2575209Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2614389Z [command]/usr/bin/git log -1 --format=%H
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2643195Z 459e4d8be28ca14e021bd769b64860c4af1e13e8
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2653537Z ##[group]Removing auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2657252Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2693057Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2919178Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2948044Z http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2956515Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.2993682Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.3219266Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.3256476Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.3486940Z ##[endgroup]
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-09-19T22:34:28.5191178Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.5196957Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.5198495Z with:
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.5199265Z   python-version: 3.12
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.5200335Z   check-latest: false
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.5209234Z   token: ***
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.5210481Z   update-environment: true
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.5211489Z   allow-prereleases: false
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.5212447Z   freethreaded: false
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.5213309Z ##[endgroup]
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.6570740Z ##[group]Installed versions
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.6666755Z (node:2337) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.6670965Z (Use `node --trace-deprecation ...` to show where the warning was created)
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.6674009Z Successfully set up CPython (3.12.14)
+quality	Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:28.6677248Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:28.9082417Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9086818Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9087839Z with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9088559Z   repository: entrotter/engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9089554Z   ref: bb8b3e8d32c7cbd49629d337758f30bfdf805045
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9090406Z   path: agent-engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9091134Z   persist-credentials: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9094583Z   token: ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9095285Z   ssh-strict: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9096016Z   ssh-user: git
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9096691Z   clean: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9097316Z   sparse-checkout-cone-mode: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9097890Z   fetch-depth: 1
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9098381Z   fetch-tags: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9098932Z   show-progress: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9099598Z   lfs: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9100090Z   submodules: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9100603Z   set-safe-directory: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9101167Z   allow-unsafe-pr-checkout: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9101715Z env:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9102274Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9103127Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9103945Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9104686Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9105425Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9106171Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9106828Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:28.9995057Z Syncing repository: entrotter/engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0004165Z ##[group]Getting Git version info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0005580Z Working directory is '/home/runner/work/entrotter/entrotter/agent-engine'
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0042210Z [command]/usr/bin/git version
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0086131Z git version 2.55.0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0109306Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0124955Z Temporarily overriding HOME='/home/runner/work/_temp/27caebe3-2979-4cab-a190-fea05a04bb87' before making global git config changes
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0127133Z Adding repository directory to the temporary git global config as a safe directory
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0131183Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/agent-engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0166880Z ##[group]Initializing the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0171598Z [command]/usr/bin/git init /home/runner/work/entrotter/entrotter/agent-engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0215371Z hint: Using 'master' as the name for the initial branch. This default branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0217258Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0219131Z hint: to use in all of your new repositories, which will suppress this warning,
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0220849Z hint: call:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0221854Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0223072Z hint: 	git config --global init.defaultBranch <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0224640Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0225968Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0228031Z hint: 'development'. The just-created branch can be renamed via this command:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0229656Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0230754Z hint: 	git branch -m <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0231902Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0233336Z hint: Disable this message with "git config set advice.defaultBranchName false"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0236019Z Initialized empty Git repository in /home/runner/work/entrotter/entrotter/agent-engine/.git/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0240111Z [command]/usr/bin/git remote add origin https://github.com/entrotter/engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0266120Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0267682Z ##[group]Disabling automatic garbage collection
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0269996Z [command]/usr/bin/git config --local gc.auto 0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0303378Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0304949Z ##[group]Setting up auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0313153Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0344568Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0614617Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0662195Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0933315Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.0977175Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.1231432Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.1273839Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.1275437Z ##[group]Fetching the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.1285113Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin bb8b3e8d32c7cbd49629d337758f30bfdf805045
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4157317Z From https://github.com/entrotter/engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4158423Z  * branch            bb8b3e8d32c7cbd49629d337758f30bfdf805045 -> FETCH_HEAD
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4172827Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4173655Z ##[group]Determining the checkout info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4174457Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4175110Z [command]/usr/bin/git sparse-checkout disable
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4230193Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4263884Z ##[group]Checking out the ref
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4268223Z [command]/usr/bin/git checkout --progress --force bb8b3e8d32c7cbd49629d337758f30bfdf805045
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4333757Z Note: switching to 'bb8b3e8d32c7cbd49629d337758f30bfdf805045'.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4334629Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4335303Z You are in 'detached HEAD' state. You can look around, make experimental
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4336498Z changes and commit them, and you can discard any commits you make in this
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4337626Z state without impacting any branches by switching back to a branch.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4338345Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4338896Z If you want to create a new branch to retain commits you create, you may
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4340294Z do so (now or later) by using -c with the switch command. Example:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4340980Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4341428Z   git switch -c <new-branch-name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4341986Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4342339Z Or undo this operation with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4342827Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4343150Z   git switch -
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4343638Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4344210Z Turn off this advice by setting config variable advice.detachedHead to false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4345029Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4345743Z HEAD is now at bb8b3e8 feat: constrain causal EVM decisions and verify recorded replay
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4348246Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4388178Z [command]/usr/bin/git log -1 --format=%H
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4418287Z bb8b3e8d32c7cbd49629d337758f30bfdf805045
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4430986Z ##[group]Removing auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4435025Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4472489Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4730829Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4758786Z http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4766431Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.4805004Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.5059982Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.5099149Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.5357018Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:29.6486618Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6488099Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6488460Z with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6488691Z   repository: entrotter/engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6488965Z   ref: 0d3857839b2187541e573bec2e58042ad5bf0b45
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6489257Z   path: worker-engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6489646Z   persist-credentials: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6492137Z   token: ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6492349Z   ssh-strict: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6492562Z   ssh-user: git
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6492760Z   clean: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6492976Z   sparse-checkout-cone-mode: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6493244Z   fetch-depth: 1
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6493446Z   fetch-tags: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6493709Z   show-progress: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6493919Z   lfs: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6494107Z   submodules: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6494322Z   set-safe-directory: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6494572Z   allow-unsafe-pr-checkout: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6494818Z env:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6495072Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6495516Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6495967Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6496364Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6496749Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6497141Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.6497471Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7374447Z Syncing repository: entrotter/engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7376519Z ##[group]Getting Git version info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7377272Z Working directory is '/home/runner/work/entrotter/entrotter/worker-engine'
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7420975Z [command]/usr/bin/git version
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7465458Z git version 2.55.0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7487320Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7502625Z Temporarily overriding HOME='/home/runner/work/_temp/886aa83e-a029-47d1-8ae8-ac9eca2f5e73' before making global git config changes
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7504006Z Adding repository directory to the temporary git global config as a safe directory
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7508376Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/worker-engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7546304Z ##[group]Initializing the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7551846Z [command]/usr/bin/git init /home/runner/work/entrotter/entrotter/worker-engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7597941Z hint: Using 'master' as the name for the initial branch. This default branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7599157Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7600538Z hint: to use in all of your new repositories, which will suppress this warning,
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7601382Z hint: call:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7601837Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7602389Z hint: 	git config --global init.defaultBranch <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7603045Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7603686Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7604699Z hint: 'development'. The just-created branch can be renamed via this command:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7605810Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7606276Z hint: 	git branch -m <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7606798Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7607488Z hint: Disable this message with "git config set advice.defaultBranchName false"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7608708Z Initialized empty Git repository in /home/runner/work/entrotter/entrotter/worker-engine/.git/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7611760Z [command]/usr/bin/git remote add origin https://github.com/entrotter/engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7646122Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7646845Z ##[group]Disabling automatic garbage collection
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7651169Z [command]/usr/bin/git config --local gc.auto 0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7685762Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7686454Z ##[group]Setting up auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7694226Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.7732437Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.8024181Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.8054173Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.8330123Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.8376046Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.8641120Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.8687851Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.8688588Z ##[group]Fetching the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:29.8699702Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 0d3857839b2187541e573bec2e58042ad5bf0b45
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3355883Z From https://github.com/entrotter/engine
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3357006Z  * branch            0d3857839b2187541e573bec2e58042ad5bf0b45 -> FETCH_HEAD
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3361104Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3362003Z ##[group]Determining the checkout info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3363940Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3371504Z [command]/usr/bin/git sparse-checkout disable
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3428187Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3463683Z ##[group]Checking out the ref
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3468484Z [command]/usr/bin/git checkout --progress --force 0d3857839b2187541e573bec2e58042ad5bf0b45
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3561849Z Note: switching to '0d3857839b2187541e573bec2e58042ad5bf0b45'.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3562630Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3563243Z You are in 'detached HEAD' state. You can look around, make experimental
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3564417Z changes and commit them, and you can discard any commits you make in this
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3565647Z state without impacting any branches by switching back to a branch.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3566511Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3567106Z If you want to create a new branch to retain commits you create, you may
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3568287Z do so (now or later) by using -c with the switch command. Example:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3569088Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3569807Z   git switch -c <new-branch-name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3570485Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3570888Z Or undo this operation with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3571464Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3571808Z   git switch -
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3572246Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3572847Z Turn off this advice by setting config variable advice.detachedHead to false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3573647Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3574371Z HEAD is now at 0d38578 Share durable export retention budget across cooperating CLI writers
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3577032Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3617199Z [command]/usr/bin/git log -1 --format=%H
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3647976Z 0d3857839b2187541e573bec2e58042ad5bf0b45
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3661381Z ##[group]Removing auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3666724Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3707848Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3967790Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.3996558Z http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.4005159Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.4042986Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.4301063Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.4343037Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.4573902Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:30.5611022Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5612429Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5612778Z with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5612992Z   repository: entrotter/sdk-python
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5613280Z   ref: b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5613589Z   path: sdk-python
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5613813Z   persist-credentials: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5616299Z   token: ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5616505Z   ssh-strict: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5616711Z   ssh-user: git
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5616902Z   clean: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5617114Z   sparse-checkout-cone-mode: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5617367Z   fetch-depth: 1
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5617563Z   fetch-tags: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5617802Z   show-progress: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5618013Z   lfs: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5618205Z   submodules: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5618427Z   set-safe-directory: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5618674Z   allow-unsafe-pr-checkout: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5618918Z env:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5619172Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5619773Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5620211Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5620606Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5620987Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5621370Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.5621695Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6505843Z Syncing repository: entrotter/sdk-python
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6523617Z ##[group]Getting Git version info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6524459Z Working directory is '/home/runner/work/entrotter/entrotter/sdk-python'
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6572025Z [command]/usr/bin/git version
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6616910Z git version 2.55.0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6637289Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6652453Z Temporarily overriding HOME='/home/runner/work/_temp/ba4de9b0-43ac-4fef-bd73-5220b19bb8aa' before making global git config changes
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6653866Z Adding repository directory to the temporary git global config as a safe directory
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6658727Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/sdk-python
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6694733Z ##[group]Initializing the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6699591Z [command]/usr/bin/git init /home/runner/work/entrotter/entrotter/sdk-python
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6747693Z hint: Using 'master' as the name for the initial branch. This default branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6749994Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6750916Z hint: to use in all of your new repositories, which will suppress this warning,
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6759869Z hint: call:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6760182Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6760890Z hint: 	git config --global init.defaultBranch <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6761475Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6761976Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6762883Z hint: 'development'. The just-created branch can be renamed via this command:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6763588Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6763931Z hint: 	git branch -m <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6764357Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6764901Z hint: Disable this message with "git config set advice.defaultBranchName false"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6765962Z Initialized empty Git repository in /home/runner/work/entrotter/entrotter/sdk-python/.git/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6767672Z [command]/usr/bin/git remote add origin https://github.com/entrotter/sdk-python
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6797938Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6798623Z ##[group]Disabling automatic garbage collection
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6803274Z [command]/usr/bin/git config --local gc.auto 0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6835514Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6836104Z ##[group]Setting up auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6844395Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.6881677Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.7149807Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.7194233Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.7477510Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.7522888Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.7767103Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.7813034Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.7813896Z ##[group]Fetching the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.7825083Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.9866331Z From https://github.com/entrotter/sdk-python
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.9866954Z  * branch            b0c2ba3bba411e548af44101ae06e879bd7b5dc0 -> FETCH_HEAD
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.9872455Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.9873130Z ##[group]Determining the checkout info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.9875370Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.9883319Z [command]/usr/bin/git sparse-checkout disable
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.9933844Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.9985802Z ##[group]Checking out the ref
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:30.9990058Z [command]/usr/bin/git checkout --progress --force b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0046653Z Note: switching to 'b0c2ba3bba411e548af44101ae06e879bd7b5dc0'.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0047394Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0048052Z You are in 'detached HEAD' state. You can look around, make experimental
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0049166Z changes and commit them, and you can discard any commits you make in this
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0050942Z state without impacting any branches by switching back to a branch.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0051698Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0052197Z If you want to create a new branch to retain commits you create, you may
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0053209Z do so (now or later) by using -c with the switch command. Example:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0053882Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0054239Z   git switch -c <new-branch-name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0054741Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0055071Z Or undo this operation with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0055556Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0055868Z   git switch -
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0056236Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0056791Z Turn off this advice by setting config variable advice.detachedHead to false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0057556Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0058204Z HEAD is now at b0c2ba3 ci: add typed SDK quality and audited build gates
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0061431Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0099799Z [command]/usr/bin/git log -1 --format=%H
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0128057Z b0c2ba3bba411e548af44101ae06e879bd7b5dc0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0139274Z ##[group]Removing auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0143009Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0178921Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0436178Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0464888Z http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0473759Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0511625Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0765682Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.0800963Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.1026853Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:31.2063676Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2065101Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2065459Z with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2065661Z   repository: entrotter/cli
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2065931Z   ref: a63a39000e03d151e80b5a9c47dd4df449281b93
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2066210Z   path: cli
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2066416Z   persist-credentials: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2068834Z   token: ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2069061Z   ssh-strict: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2069269Z   ssh-user: git
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2069651Z   clean: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2069870Z   sparse-checkout-cone-mode: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2070130Z   fetch-depth: 1
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2070335Z   fetch-tags: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2070581Z   show-progress: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2070791Z   lfs: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2070982Z   submodules: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2071197Z   set-safe-directory: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2071447Z   allow-unsafe-pr-checkout: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2071693Z env:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2071942Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2072389Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2072814Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2073197Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2073576Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2074152Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2074475Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2922832Z Syncing repository: entrotter/cli
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2926322Z ##[group]Getting Git version info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2927316Z Working directory is '/home/runner/work/entrotter/entrotter/cli'
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.2958625Z [command]/usr/bin/git version
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3003007Z git version 2.55.0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3024877Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3039703Z Temporarily overriding HOME='/home/runner/work/_temp/44a6d6fc-f459-40dc-aebd-fb0ebdd75f57' before making global git config changes
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3041144Z Adding repository directory to the temporary git global config as a safe directory
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3047030Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/cli
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3083856Z ##[group]Initializing the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3088769Z [command]/usr/bin/git init /home/runner/work/entrotter/entrotter/cli
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3131961Z hint: Using 'master' as the name for the initial branch. This default branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3134409Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3135671Z hint: to use in all of your new repositories, which will suppress this warning,
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3136711Z hint: call:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3137238Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3137872Z hint: 	git config --global init.defaultBranch <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3138735Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3140465Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3141637Z hint: 'development'. The just-created branch can be renamed via this command:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3142561Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3143115Z hint: 	git branch -m <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3143724Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3144485Z hint: Disable this message with "git config set advice.defaultBranchName false"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3146636Z Initialized empty Git repository in /home/runner/work/entrotter/entrotter/cli/.git/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3148864Z [command]/usr/bin/git remote add origin https://github.com/entrotter/cli
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3185947Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3186652Z ##[group]Disabling automatic garbage collection
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3191831Z [command]/usr/bin/git config --local gc.auto 0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3226683Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3227478Z ##[group]Setting up auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3234098Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3271460Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3532718Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3581714Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3862806Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.3905347Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.4155498Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.4197603Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.4198358Z ##[group]Fetching the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.4208718Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin a63a39000e03d151e80b5a9c47dd4df449281b93
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.7849854Z From https://github.com/entrotter/cli
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.7850598Z  * branch            a63a39000e03d151e80b5a9c47dd4df449281b93 -> FETCH_HEAD
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.7864468Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.7865224Z ##[group]Determining the checkout info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.7865960Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.7866418Z [command]/usr/bin/git sparse-checkout disable
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.7917868Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.7950321Z ##[group]Checking out the ref
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.7956022Z [command]/usr/bin/git checkout --progress --force a63a39000e03d151e80b5a9c47dd4df449281b93
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8020149Z Note: switching to 'a63a39000e03d151e80b5a9c47dd4df449281b93'.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8020906Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8021556Z You are in 'detached HEAD' state. You can look around, make experimental
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8022619Z changes and commit them, and you can discard any commits you make in this
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8023435Z state without impacting any branches by switching back to a branch.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8023960Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8024331Z If you want to create a new branch to retain commits you create, you may
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8025158Z do so (now or later) by using -c with the switch command. Example:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8025615Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8025776Z   git switch -c <new-branch-name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8025960Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8026090Z Or undo this operation with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8026260Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8026355Z   git switch -
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8026480Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8026708Z Turn off this advice by setting config variable advice.detachedHead to false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8027047Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8027282Z HEAD is now at a63a390 Enforce shared export retention and expose quota inspection
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8028467Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8070609Z [command]/usr/bin/git log -1 --format=%H
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8097336Z a63a39000e03d151e80b5a9c47dd4df449281b93
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8108031Z ##[group]Removing auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8112514Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8145492Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8378300Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8406433Z http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8416489Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8453750Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8687442Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8724378Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.8956132Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:31.9972857Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9974265Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9974630Z with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9974843Z   repository: entrotter/scenarios
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9975131Z   ref: 5b718984ac67b8fb49e02f4dab676ae212d2aa58
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9975425Z   path: scenarios
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9975644Z   persist-credentials: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9978044Z   token: ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9978252Z   ssh-strict: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9978461Z   ssh-user: git
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9978659Z   clean: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9979075Z   sparse-checkout-cone-mode: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9979333Z   fetch-depth: 1
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9979718Z   fetch-tags: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9979980Z   show-progress: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9980207Z   lfs: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9980401Z   submodules: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9980617Z   set-safe-directory: true
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9980872Z   allow-unsafe-pr-checkout: false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9981120Z env:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9981374Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9981820Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9982265Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9982653Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9983036Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9983423Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:31.9983748Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0820563Z Syncing repository: entrotter/scenarios
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0825664Z ##[group]Getting Git version info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0826577Z Working directory is '/home/runner/work/entrotter/entrotter/scenarios'
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0871863Z [command]/usr/bin/git version
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0917589Z git version 2.55.0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0939612Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0954272Z Temporarily overriding HOME='/home/runner/work/_temp/3e24e6bf-5e70-4a41-8a01-f0bf9e1edb7c' before making global git config changes
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0955699Z Adding repository directory to the temporary git global config as a safe directory
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0961594Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/scenarios
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.0999049Z ##[group]Initializing the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1004300Z [command]/usr/bin/git init /home/runner/work/entrotter/entrotter/scenarios
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1050654Z hint: Using 'master' as the name for the initial branch. This default branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1051998Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1052916Z hint: to use in all of your new repositories, which will suppress this warning,
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1053583Z hint: call:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1053889Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1054291Z hint: 	git config --global init.defaultBranch <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1054803Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1055281Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1056179Z hint: 'development'. The just-created branch can be renamed via this command:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1056857Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1057172Z hint: 	git branch -m <name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1057548Z hint:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1058075Z hint: Disable this message with "git config set advice.defaultBranchName false"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1059071Z Initialized empty Git repository in /home/runner/work/entrotter/entrotter/scenarios/.git/
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1070433Z [command]/usr/bin/git remote add origin https://github.com/entrotter/scenarios
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1120590Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1123897Z ##[group]Disabling automatic garbage collection
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1124684Z [command]/usr/bin/git config --local gc.auto 0
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1153138Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1154023Z ##[group]Setting up auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1162387Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1203262Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1472111Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1516010Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1820352Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.1876756Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.2138794Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.2187895Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.2188636Z ##[group]Fetching the repository
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.2199602Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 5b718984ac67b8fb49e02f4dab676ae212d2aa58
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4220855Z From https://github.com/entrotter/scenarios
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4221727Z  * branch            5b718984ac67b8fb49e02f4dab676ae212d2aa58 -> FETCH_HEAD
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4231357Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4232012Z ##[group]Determining the checkout info
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4232813Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4235279Z [command]/usr/bin/git sparse-checkout disable
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4286747Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4318003Z ##[group]Checking out the ref
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4322291Z [command]/usr/bin/git checkout --progress --force 5b718984ac67b8fb49e02f4dab676ae212d2aa58
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4381871Z Note: switching to '5b718984ac67b8fb49e02f4dab676ae212d2aa58'.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4382373Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4382854Z You are in 'detached HEAD' state. You can look around, make experimental
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4383791Z changes and commit them, and you can discard any commits you make in this
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4384644Z state without impacting any branches by switching back to a branch.
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4385143Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4385471Z If you want to create a new branch to retain commits you create, you may
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4386273Z do so (now or later) by using -c with the switch command. Example:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4386724Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4386845Z   git switch -c <new-branch-name>
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4387039Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4387151Z Or undo this operation with:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4387317Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4387409Z   git switch -
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4387537Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4387752Z Turn off this advice by setting config variable advice.detachedHead to false
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4388081Z
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4388308Z HEAD is now at 5b71898 docs: link the preregistered archived-state agent cases
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4390134Z ##[endgroup]
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4429914Z [command]/usr/bin/git log -1 --format=%H
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4457028Z 5b718984ac67b8fb49e02f4dab676ae212d2aa58
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4467532Z ##[group]Removing auth
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4472010Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4504576Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4734305Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4760677Z http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4770039Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.4808251Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.5043353Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.5080175Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:32.5310362Z ##[endgroup]
+quality	Install complete hash-verified developer tool lock	﻿2026-09-19T22:34:32.5626189Z ##[group]Run python -m venv .venv
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5626806Z [36;1mpython -m venv .venv[0m
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5627457Z [36;1m.venv/bin/python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-quality.txt[0m
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5628124Z [36;1m.venv/bin/python -m pip check[0m
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5673883Z shell: /usr/bin/bash -e {0}
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5674162Z env:
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5674436Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5674897Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5675349Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5675741Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5676160Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5676563Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:32.5676892Z ##[endgroup]
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:35.9113829Z Collecting attrs==26.1.0 (from -r requirements-quality.txt (line 7))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:35.9471412Z   Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:35.9725812Z Collecting bandit==1.9.4 (from -r requirements-quality.txt (line 13))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:35.9767313Z   Downloading bandit-1.9.4-py3-none-any.whl (134 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:35.9964204Z Collecting boolean-py==5.0 (from -r requirements-quality.txt (line 17))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.0003922Z   Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.0180552Z Collecting build==1.6.1 (from -r requirements-quality.txt (line 21))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.0217638Z   Downloading build-1.6.1-py3-none-any.whl (31 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.0362140Z Collecting cachecontrol==0.14.4 (from -r requirements-quality.txt (line 27))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.0398861Z   Downloading cachecontrol-0.14.4-py3-none-any.whl (22 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.0705166Z Collecting certifi==2026.7.22 (from -r requirements-quality.txt (line 33))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.0743099Z   Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.1939975Z Collecting charset-normalizer==3.5.1 (from -r requirements-quality.txt (line 37))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.1980771Z   Downloading charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (248 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.2212524Z Collecting click==8.5.0 (from -r requirements-quality.txt (line 211))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.2257721Z   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.2534039Z Collecting cyclonedx-python-lib==11.12.0 (from -r requirements-quality.txt (line 215))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.2576362Z   Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl (529 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.2653593Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 529.5/529.5 kB 64.0 MB/s eta 0:00:00
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.2771147Z Collecting defusedxml==0.7.1 (from -r requirements-quality.txt (line 219))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.2814605Z   Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.3037447Z Collecting filelock==4.0.1 (from -r requirements-quality.txt (line 223))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.3090068Z   Downloading filelock-4.0.1-py3-none-any.whl (106 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.4366590Z Collecting greenlet==3.5.6 (from -r requirements-quality.txt (line 227))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.4417223Z   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.4488996Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 621.4/621.4 kB 78.5 MB/s eta 0:00:00
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.4638393Z Collecting idna==3.20 (from -r requirements-quality.txt (line 308))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.4678771Z   Downloading idna-3.20-py3-none-any.whl (69 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.4892166Z Collecting jsonschema==4.23.0 (from -r requirements-quality.txt (line 312))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.4930323Z   Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.5103919Z Collecting jsonschema-specifications==2025.9.1 (from -r requirements-quality.txt (line 316))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.5145477Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.5291584Z Collecting license-expression==30.4.4 (from -r requirements-quality.txt (line 320))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.5330332Z   Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.5512782Z Collecting markdown-it-py==4.2.0 (from -r requirements-quality.txt (line 324))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.5551562Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.5705539Z Collecting mdurl==0.1.2 (from -r requirements-quality.txt (line 328))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.5744412Z   Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.6386339Z Collecting msgpack==1.2.2 (from -r requirements-quality.txt (line 332))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.6430824Z   Downloading msgpack-1.2.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (420 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.7376605Z Collecting mypy==1.18.2 (from -r requirements-quality.txt (line 422))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.7476217Z   Downloading mypy-1.18.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (13.3 MB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.8262229Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.3/13.3 MB 172.6 MB/s eta 0:00:00
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.8532797Z Collecting mypy-extensions==1.1.0 (from -r requirements-quality.txt (line 462))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.8572891Z   Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.8748920Z Collecting packageurl-python==0.17.6 (from -r requirements-quality.txt (line 466))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.8786978Z   Downloading packageurl_python-0.17.6-py3-none-any.whl (36 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.8991824Z Collecting packaging==26.3 (from -r requirements-quality.txt (line 470))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.9028755Z   Downloading packaging-26.3-py3-none-any.whl (129 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.9163101Z Collecting pathspec==1.1.1 (from -r requirements-quality.txt (line 478))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.9201717Z   Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.9353152Z Collecting pip-api==0.0.35 (from -r requirements-quality.txt (line 482))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.9396251Z   Downloading pip_api-0.0.35-py3-none-any.whl (123 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.9581759Z Collecting pip-audit==2.10.1 (from -r requirements-quality.txt (line 486))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.9620080Z   Downloading pip_audit-2.10.1-py3-none-any.whl (62 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.9768435Z Collecting pip-requirements-parser==32.0.1 (from -r requirements-quality.txt (line 490))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:36.9813323Z   Downloading pip_requirements_parser-32.0.1-py3-none-any.whl (35 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.0057310Z Collecting pip-tools==7.6.1 (from -r requirements-quality.txt (line 494))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.0101660Z   Downloading pip_tools-7.6.1-py3-none-any.whl (74 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.0323889Z Collecting platformdirs==4.11.11 (from -r requirements-quality.txt (line 498))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.0364605Z   Downloading platformdirs-4.11.11-py3-none-any.whl (24 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.0850380Z Collecting playwright==1.63.0 (from -r requirements-quality.txt (line 502))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.0894973Z   Downloading playwright-1.63.0-py3-none-manylinux1_x86_64.whl (48.2 MB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.3048685Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.2/48.2 MB 225.8 MB/s eta 0:00:00
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.3547602Z Collecting py-serializable==2.1.0 (from -r requirements-quality.txt (line 512))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.3587363Z   Downloading py_serializable-2.1.0-py3-none-any.whl (23 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.3738322Z Collecting pyee==13.0.1 (from -r requirements-quality.txt (line 516))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.3781919Z   Downloading pyee-13.0.1-py3-none-any.whl (15 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.3997802Z Collecting pygments==2.21.0 (from -r requirements-quality.txt (line 520))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.4040312Z   Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.4114718Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 204.5 MB/s eta 0:00:00
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.4344585Z Collecting pyparsing==3.3.2 (from -r requirements-quality.txt (line 524))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.4385885Z   Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.4508659Z Collecting pyproject-hooks==1.3.3 (from -r requirements-quality.txt (line 528))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.4553976Z   Downloading pyproject_hooks-1.3.3-py3-none-any.whl (10 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.4857603Z Collecting pyyaml==6.0.3 (from -r requirements-quality.txt (line 534))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.4898595Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.4993951Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 78.6 MB/s eta 0:00:00
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.5200697Z Collecting referencing==0.37.0 (from -r requirements-quality.txt (line 611))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.5239716Z   Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.5464344Z Collecting requests==2.34.2 (from -r requirements-quality.txt (line 617))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.5505208Z   Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.5824586Z Collecting rich==15.0.0 (from -r requirements-quality.txt (line 623))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.5865336Z   Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.8330158Z Collecting rpds-py==2026.6.3 (from -r requirements-quality.txt (line 629))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:37.8385784Z   Downloading rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (366 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.1284175Z Collecting ruff==0.15.16 (from -r requirements-quality.txt (line 749))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.1333278Z   Downloading ruff-0.15.16-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.4 MB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.2747654Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.4/11.4 MB 84.4 MB/s eta 0:00:00
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.2982191Z Collecting sortedcontainers==2.4.0 (from -r requirements-quality.txt (line 769))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.3025727Z   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.3226489Z Collecting stevedore==5.9.1 (from -r requirements-quality.txt (line 773))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.3269059Z   Downloading stevedore-5.9.1-py3-none-any.whl (54 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.3497589Z Collecting tomli==2.4.1 (from -r requirements-quality.txt (line 777))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.3542644Z   Downloading tomli-2.4.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (253 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.3677839Z Collecting tomli-w==1.2.0 (from -r requirements-quality.txt (line 826))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.3729942Z   Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.3894965Z Collecting typing-extensions==4.16.0 (from -r requirements-quality.txt (line 830))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.3937995Z   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.4157069Z Collecting urllib3==2.8.0 (from -r requirements-quality.txt (line 836))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.4198368Z   Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.4414650Z Collecting wheel==0.48.0 (from -r requirements-quality.txt (line 840))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.4455528Z   Downloading wheel-0.48.0-py3-none-any.whl (33 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.4851385Z Collecting pip==26.2.1 (from -r requirements-quality.txt (line 846))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.4894367Z   Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.4986319Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 257.2 MB/s eta 0:00:00
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.5768185Z Collecting setuptools==84.0.0 (from -r requirements-quality.txt (line 853))
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.5829072Z   Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.5894317Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 147.8 MB/s eta 0:00:00
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:38.8676184Z Installing collected packages: sortedcontainers, boolean-py, urllib3, typing-extensions, tomli-w, tomli, stevedore, setuptools, ruff, rpds-py, pyyaml, pyproject-hooks, pyparsing, pygments, platformdirs, pip, pathspec, packaging, packageurl-python, mypy-extensions, msgpack, mdurl, license-expression, idna, greenlet, filelock, defusedxml, click, charset-normalizer, certifi, attrs, wheel, requests, referencing, pyee, py-serializable, pip-requirements-parser, pip-api, mypy, markdown-it-py, build, rich, playwright, pip-tools, jsonschema-specifications, cyclonedx-python-lib, cachecontrol, jsonschema, bandit, pip-audit
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:40.5734791Z   Attempting uninstall: pip
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:40.5761887Z     Found existing installation: pip 25.0.1
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:40.6140530Z     Uninstalling pip-25.0.1:
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:40.6200286Z       Successfully uninstalled pip-25.0.1
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:45.1987293Z Successfully installed attrs-26.1.0 bandit-1.9.4 boolean-py-5.0 build-1.6.1 cachecontrol-0.14.4 certifi-2026.7.22 charset-normalizer-3.5.1 click-8.5.0 cyclonedx-python-lib-11.12.0 defusedxml-0.7.1 filelock-4.0.1 greenlet-3.5.6 idna-3.20 jsonschema-4.23.0 jsonschema-specifications-2025.9.1 license-expression-30.4.4 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.2 mypy-1.18.2 mypy-extensions-1.1.0 packageurl-python-0.17.6 packaging-26.3 pathspec-1.1.1 pip-26.2.1 pip-api-0.0.35 pip-audit-2.10.1 pip-requirements-parser-32.0.1 pip-tools-7.6.1 platformdirs-4.11.11 playwright-1.63.0 py-serializable-2.1.0 pyee-13.0.1 pygments-2.21.0 pyparsing-3.3.2 pyproject-hooks-1.3.3 pyyaml-6.0.3 referencing-0.37.0 requests-2.34.2 rich-15.0.0 rpds-py-2026.6.3 ruff-0.15.16 setuptools-84.0.0 sortedcontainers-2.4.0 stevedore-5.9.1 tomli-2.4.1 tomli-w-1.2.0 typing-extensions-4.16.0 urllib3-2.8.0 wheel-0.48.0
+quality	Install complete hash-verified developer tool lock	2026-09-19T22:34:45.6622405Z No broken requirements found.
+quality	Parse every workflow and action YAML file	﻿2026-09-19T22:34:45.7123960Z ##[group]Run .venv/bin/python - <<'PYAML'
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7124367Z [36;1m.venv/bin/python - <<'PYAML'[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7124664Z [36;1mfrom pathlib import Path[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7124934Z [36;1mimport yaml[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7125206Z [36;1mpaths = sorted(Path('.github').rglob('*.yml'))[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7125537Z [36;1mif not paths:[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7125842Z [36;1m    raise ValueError('No workflow configuration found')[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7126208Z [36;1mfor path in paths:[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7126473Z [36;1m    yaml.safe_load(path.read_text())[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7126938Z [36;1mprint('Parsed', len(paths), 'YAML files; GitHub validates workflow semantics separately')[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7127378Z [36;1mPYAML[0m
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7164897Z shell: /usr/bin/bash -e {0}
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7165151Z env:
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7165420Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7165881Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7166376Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7166777Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7167171Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7167560Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7167904Z ##[endgroup]
+quality	Parse every workflow and action YAML file	2026-09-19T22:34:45.7824330Z Parsed 7 YAML files; GitHub validates workflow semantics separately
+quality	Lint and format production tooling	﻿2026-09-19T22:34:45.8067922Z ##[group]Run .venv/bin/python -m ruff check scripts .github/actions/docs-links/check.py
+quality	Lint and format production tooling	2026-09-19T22:34:45.8068603Z [36;1m.venv/bin/python -m ruff check scripts .github/actions/docs-links/check.py[0m
+quality	Lint and format production tooling	2026-09-19T22:34:45.8069197Z [36;1m.venv/bin/python -m ruff format --check scripts .github/actions/docs-links/check.py[0m
+quality	Lint and format production tooling	2026-09-19T22:34:45.8106579Z shell: /usr/bin/bash -e {0}
+quality	Lint and format production tooling	2026-09-19T22:34:45.8106838Z env:
+quality	Lint and format production tooling	2026-09-19T22:34:45.8107109Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Lint and format production tooling	2026-09-19T22:34:45.8107565Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Lint and format production tooling	2026-09-19T22:34:45.8108018Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Lint and format production tooling	2026-09-19T22:34:45.8108417Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Lint and format production tooling	2026-09-19T22:34:45.8108832Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Lint and format production tooling	2026-09-19T22:34:45.8109237Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Lint and format production tooling	2026-09-19T22:34:45.8109928Z ##[endgroup]
+quality	Lint and format production tooling	2026-09-19T22:34:45.8482157Z All checks passed!
+quality	Lint and format production tooling	2026-09-19T22:34:45.8809171Z 18 files already formatted
+quality	Check types against both exact execution variants	﻿2026-09-19T22:34:45.9084790Z ##[group]Run .venv/bin/python scripts/check_types.py --agent-engine ../agent-engine --worker-engine ../worker-engine --sdk ../sdk-python --cli ../cli
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9086209Z [36;1m.venv/bin/python scripts/check_types.py --agent-engine ../agent-engine --worker-engine ../worker-engine --sdk ../sdk-python --cli ../cli[0m
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9123341Z shell: /usr/bin/bash -e {0}
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9123603Z env:
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9123882Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9124329Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9124761Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9125145Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9125558Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9125957Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Check types against both exact execution variants	2026-09-19T22:34:45.9126288Z ##[endgroup]
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1791513Z {
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1792074Z   "status": "passed_with_explicit_frozen_diagnostics",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1792605Z   "mypy_version": "1.18.2",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1792982Z   "sources_sha256": {
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1793736Z     ".github/actions/docs-links/check.py": "34f7173772099c0ce8fc01fe39693c6f88c25bba27b07444d7cbf74263d8beac",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1794941Z     "scripts/benchmark_agent.py": "14fa2bdeb9adfa47e76eead751b789d9c2eb5564f36cb0c35e27d9bd90a49aa1",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1796047Z     "scripts/benchmark_direct.py": "a69212c2f66e657a0217f49e593a0a059922454a8f00044ac290885f33660957",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1797172Z     "scripts/browser_check.py": "cb624bebc251e4a96c6b302a609550538af7cb32cb30aa1553f5f25b998f7b9c",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1798307Z     "scripts/check_agent.py": "e9cbeb134a7137b200937157887e154140d3f0064c90f153cb066425af98ae09",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1799620Z     "scripts/check_default_wheels.py": "91f9836bc2315ca7232d735164efb75db29b28fbea769d02fca5e7083f415ed9",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1800776Z     "scripts/check_dependencies.py": "4b6aa95413b509f10bb876ec1d753353025c72abe2a7c861a8bc3384884a1228",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1801898Z     "scripts/check_export_budget.py": "50accb3dba9bbfdccd28d9e34b45e51e9a38709a62374de83b8d35212110412e",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1803002Z     "scripts/check_historical.py": "2be74ef9775ed78a8c9e019f1a07f785ff3d9cf6892d87f4aaf2082f997b62c6",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1804093Z     "scripts/check_host_limits.py": "7bc0fa1055c7d332edbfa7f14928ef29dbe183fc5f7d9b2b7ff56edc35a3174c",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1805154Z     "scripts/check_security.py": "59c663e1612f57f14d241195baf6a70a06ca2b1610d7d62cb14dd6f0d06719bb",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1806189Z     "scripts/check_types.py": "ea69dc5a5b8404907d0b13df4b7f690a7959b0e39ef394d7986eb9c13176c8d6",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1807208Z     "scripts/codex_policy.py": "1f3f17e674ab5e4a2b5fa733425b27f7a892d7c012fd855b89616b8758815b76",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1808288Z     "scripts/direct_anvil_case.py": "0defb1ea03cc71e6985ee6a459cea7a6e0a7ce49ec96fc9663a447e6ef36427f",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1809378Z     "scripts/export_reports.py": "8971b8e439fd1f60641afb9fb7260a6d52cde2e076256ee38e228d4e393288f3",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1810587Z     "scripts/publish.py": "e54c579a177ab5877e5cb9e8d7626a0c0f6fbf1e3f72067495cbf8b58597cfe8",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1811615Z     "scripts/quality_scope.py": "f39cbd50586f57a73973e28e1c901148ebb9cb779c7ceda845d86289d102fb11",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1812803Z     "scripts/reproduce_clean.py": "e2203976e89d6e917da495e4caded90d095dc5d918b2b31e71bfb42b245c663e",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1813909Z     "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333"
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1814640Z   },
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1814958Z   "dependency_commits": {
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1815477Z     "agent-engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1816467Z     "worker-engine": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1817134Z     "sdk": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1818004Z     "cli": "a63a39000e03d151e80b5a9c47dd4df449281b93"
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1818498Z   },
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1818807Z   "groups": [
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1819132Z     {
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1819841Z       "group": "agent",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1820242Z       "files": [
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1820643Z         "scripts/benchmark_agent.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1821127Z         "scripts/benchmark_direct.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1821609Z         "scripts/check_agent.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1822066Z         "scripts/check_historical.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1822553Z         "scripts/codex_policy.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1823026Z         "scripts/direct_anvil_case.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1823509Z         "scripts/export_reports.py"
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1823923Z       ],
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1824225Z       "exit_code": 1,
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1824553Z       "reviewed_diagnostics": 3
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1824903Z     },
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1825160Z     {
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1825428Z       "group": "worker",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1825806Z       "files": [
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1826162Z         "scripts/check_host_limits.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1826654Z         "scripts/check_export_budget.py"
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1827083Z       ],
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1827380Z       "exit_code": 0,
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1827733Z       "reviewed_diagnostics": 0
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1828120Z     },
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1828415Z     {
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1828736Z       "group": "general",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1829118Z       "files": [
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1829683Z         ".github/actions/docs-links/check.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1830216Z         "scripts/browser_check.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1830695Z         "scripts/check_default_wheels.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1831214Z         "scripts/check_dependencies.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1831715Z         "scripts/check_security.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1832266Z         "scripts/check_types.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1832721Z         "scripts/publish.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1833170Z         "scripts/quality_scope.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1833649Z         "scripts/reproduce_clean.py",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1834121Z         "scripts/verify.py"
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1834507Z       ],
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1834829Z       "exit_code": 0,
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1835213Z       "reviewed_diagnostics": 0
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1835620Z     }
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1835917Z   ],
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1836213Z   "limitations": [
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1836832Z     "Normal mypy with unannotated bodies, not strict typing or runtime JSON validation",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1837947Z     "Imported external packages provide types; their implementation is checked in owning repositories",
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1839174Z     "Three frozen-provider pipe/selector diagnostics are retained; independent review required"
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1840189Z   ]
+quality	Check types against both exact execution variants	2026-09-19T22:34:50.1840485Z }
+quality	Retain full unsuppressed source-bound security findings	﻿2026-09-19T22:34:50.2111005Z ##[group]Run .venv/bin/python scripts/check_security.py
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2111473Z [36;1m.venv/bin/python scripts/check_security.py[0m
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2147485Z shell: /usr/bin/bash -e {0}
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2147741Z env:
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2148018Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2148468Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2148909Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2149300Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2149830Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2150219Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.2150545Z ##[endgroup]
+quality	Retain full unsuppressed source-bound security findings	2026-09-19T22:34:50.7764320Z Full Bandit scan completed: 75 explicitly reviewed findings retained in .quality/bandit.json
+quality	Verify dependency coverage and audit all locked packages	﻿2026-09-19T22:34:50.8088032Z ##[group]Run .venv/bin/python scripts/check_dependencies.py
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8088516Z [36;1m.venv/bin/python scripts/check_dependencies.py[0m
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8089294Z [36;1m.venv/bin/python -m pip_audit --strict --require-hashes --disable-pip -r requirements-quality.txt --progress-spinner off -f json -o .quality/dependencies.json[0m
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8131922Z shell: /usr/bin/bash -e {0}
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8132190Z env:
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8132472Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8132938Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8133403Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8133797Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8134202Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8134597Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.8134941Z ##[endgroup]
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9074562Z {
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9083858Z   "status": "passed",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9084264Z   "declared_tools": [
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9084604Z     "ruff",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9084900Z     "mypy",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9085189Z     "bandit",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9085496Z     "pip-audit",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9085832Z     "pip-tools",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9086147Z     "setuptools",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9086468Z     "pip",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9086758Z     "build",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9087058Z     "playwright",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9087376Z     "jsonschema",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9087682Z     "pyyaml"
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9087991Z   ],
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9088307Z   "audited_locked_packages": 50,
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9088729Z   "installed_versions": {
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9089101Z     "attrs": "26.1.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9089750Z     "bandit": "1.9.4",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9090147Z     "boolean-py": "5.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9090542Z     "build": "1.6.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9090913Z     "cachecontrol": "0.14.4",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9091361Z     "certifi": "2026.7.22",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9091768Z     "charset-normalizer": "3.5.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9092203Z     "click": "8.5.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9092606Z     "cyclonedx-python-lib": "11.12.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9093062Z     "defusedxml": "0.7.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9093456Z     "filelock": "4.0.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9093836Z     "greenlet": "3.5.6",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9094204Z     "idna": "3.20",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9094559Z     "jsonschema": "4.23.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9094998Z     "jsonschema-specifications": "2025.9.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9095506Z     "license-expression": "30.4.4",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9095969Z     "markdown-it-py": "4.2.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9096391Z     "mdurl": "0.1.2",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9096767Z     "msgpack": "1.2.2",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9097141Z     "mypy": "1.18.2",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9097523Z     "mypy-extensions": "1.1.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9097973Z     "packageurl-python": "0.17.6",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9098425Z     "packaging": "26.3",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9098808Z     "pathspec": "1.1.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9099185Z     "pip-api": "0.0.35",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9099795Z     "pip-audit": "2.10.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9100225Z     "pip-requirements-parser": "32.0.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9100707Z     "pip-tools": "7.6.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9101110Z     "platformdirs": "4.11.11",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9101515Z     "playwright": "1.63.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9101872Z     "py-serializable": "2.1.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9102229Z     "pyee": "13.0.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9102540Z     "pygments": "2.21.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9102909Z     "pyparsing": "3.3.2",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9103314Z     "pyproject-hooks": "1.3.3",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9103725Z     "pyyaml": "6.0.3",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9104128Z     "referencing": "0.37.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9104520Z     "requests": "2.34.2",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9104876Z     "rich": "15.0.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9105217Z     "rpds-py": "2026.6.3",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9105938Z     "ruff": "0.15.16",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9106601Z     "sortedcontainers": "2.4.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9107044Z     "stevedore": "5.9.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9107430Z     "tomli": "2.4.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9107795Z     "tomli-w": "1.2.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9108201Z     "typing-extensions": "4.16.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9108648Z     "urllib3": "2.8.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9109018Z     "wheel": "0.48.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9109588Z     "pip": "26.2.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9109981Z     "setuptools": "84.0.0"
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9110364Z   },
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9111028Z   "requirements_sha256": "158b8b715a74754dc53f43ec14829e39caa2d3e9fc10b9dc7f6e2ffe57ca6253",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9111869Z   "contract_test_versions": {
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9112289Z     "attrs": "26.1.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9112669Z     "jsonschema": "4.23.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9113123Z     "jsonschema-specifications": "2025.9.1",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9113617Z     "referencing": "0.37.0",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9114018Z     "rpds-py": "2026.6.3",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9114418Z     "typing-extensions": "4.16.0"
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9114828Z   },
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9115490Z   "contract_lock_sha256": "eacfe2b88d635c5f5dead09a39d0f239310006c88f9b451b8b680173e54e44b2",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9116689Z   "local_runtime": "Local engine/SDK/CLI source pins are checked separately; no registry fallback",
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9117524Z   "limitations": [
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9118197Z     "Python package advisory scope only; browser/Node/native/host binaries are separate gates"
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9118954Z   ]
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:50.9119245Z }
+quality	Verify dependency coverage and audit all locked packages	2026-09-19T22:34:51.8737024Z No known vulnerabilities found
+quality	Prove optimized verification and policy failures are rejected	﻿2026-09-19T22:34:51.9422121Z ##[group]Run .venv/bin/python -m unittest discover -s tests -p 'test_quality*.py' -v
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9423071Z [36;1m.venv/bin/python -m unittest discover -s tests -p 'test_quality*.py' -v[0m
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9462977Z shell: /usr/bin/bash -e {0}
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9463245Z env:
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9463524Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9464003Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9464448Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9464854Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9465257Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9465670Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:51.9465996Z ##[endgroup]
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9560415Z test_optimized_interpreter_rejects_wrong_wheel_before_install (test_quality_guards.VerificationGuards.test_optimized_interpreter_rejects_wrong_wheel_before_install) ... ok
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9566922Z test_dependency_gate_rejects_missing_unpinned_or_unhashed_tools (test_quality_policy.QualityPolicyTests.test_dependency_gate_rejects_missing_unpinned_or_unhashed_tools) ... ok
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9570541Z test_frozen_provider_keeps_its_historical_hash (test_quality_policy.QualityPolicyTests.test_frozen_provider_keeps_its_historical_hash) ... ok
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9584999Z test_scope_includes_new_scripts_and_hidden_production_actions (test_quality_policy.QualityPolicyTests.test_scope_includes_new_scripts_and_hidden_production_actions) ... ok
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9587670Z test_security_gate_retains_findings_and_rejects_drift_or_skips (test_quality_policy.QualityPolicyTests.test_security_gate_retains_findings_and_rejects_drift_or_skips) ... ok
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9592014Z test_type_gate_rejects_new_missing_or_crashed_diagnostics (test_quality_policy.QualityPolicyTests.test_type_gate_rejects_new_missing_or_crashed_diagnostics) ... ok
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9592899Z
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9593062Z ----------------------------------------------------------------------
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9593422Z Ran 6 tests in 0.895s
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9593570Z
+quality	Prove optimized verification and policy failures are rejected	2026-09-19T22:34:52.9593647Z OK
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	﻿2026-09-19T22:34:53.0067804Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0069692Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0070237Z with:
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0070457Z   name: coordination-quality-reports
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0070736Z   path: entrotter/.quality/
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0070989Z   include-hidden-files: true
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0071232Z   if-no-files-found: error
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0071472Z   compression-level: 6
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0071692Z   overwrite: false
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0071885Z env:
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0072145Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0072587Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0073052Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0073442Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0073834Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0074228Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.0074556Z ##[endgroup]
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.1746735Z (node:3416) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.1748088Z (Use `node --trace-deprecation ...` to show where the warning was created)
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.1921837Z With the provided path, there will be 7 files uploaded
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.1922746Z Artifact name is valid!
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.1923175Z Root directory input is valid!
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.3822609Z Beginning upload of artifact content to blob storage
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.4139548Z (node:3416) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.4369543Z Uploaded bytes 11772
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.4512146Z Finished uploading artifact content to blob storage!
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.4513825Z SHA256 digest of uploaded artifact zip is d36316349e351d986896626878121f31f012c425a15ea0e7071c96b7c88075cc
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.4515305Z Finalizing artifact upload
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.6577979Z Artifact coordination-quality-reports.zip successfully finalized. Artifact ID 10594201503
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.6580015Z Artifact coordination-quality-reports has been successfully uploaded! Final size is 11772 bytes. Artifact ID is 10594201503
+quality	Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02	2026-09-19T22:34:53.6586822Z Artifact download URL: https://github.com/entrotter/entrotter/actions/runs/35473711997/artifacts/10594201503
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:53.7573453Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.7574782Z Post job cleanup.
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.8444913Z [command]/usr/bin/git version
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.8491709Z git version 2.55.0
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.8538987Z Temporarily overriding HOME='/home/runner/work/_temp/7237fcf1-15cf-4508-a0fb-a0c607aa4db5' before making global git config changes
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.8540460Z Adding repository directory to the temporary git global config as a safe directory
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.8544738Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/scenarios
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.8587634Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.8623967Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.8896572Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.8975661Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.9262212Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:53.9305620Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:54.0672502Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.0673846Z Post job cleanup.
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.1546553Z [command]/usr/bin/git version
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.1593158Z git version 2.55.0
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.1636382Z Temporarily overriding HOME='/home/runner/work/_temp/2973973d-7162-4934-8ec6-d02aee3d808f' before making global git config changes
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.1637902Z Adding repository directory to the temporary git global config as a safe directory
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.1641550Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/cli
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.1684561Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.1730260Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.1987531Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.2028683Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.2300476Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.2339870Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:54.3714798Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.3716100Z Post job cleanup.
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.4572930Z [command]/usr/bin/git version
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.4616410Z git version 2.55.0
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.4662355Z Temporarily overriding HOME='/home/runner/work/_temp/d6ff4642-2be8-4d77-bdc5-2518d60751d0' before making global git config changes
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.4663795Z Adding repository directory to the temporary git global config as a safe directory
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.4668833Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/sdk-python
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.4711635Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.4758620Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.5013186Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.5049268Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.5325384Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.5376251Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:54.6552518Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.6553810Z Post job cleanup.
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.7673049Z [command]/usr/bin/git version
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.7719111Z git version 2.55.0
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.7764773Z Temporarily overriding HOME='/home/runner/work/_temp/de602358-3923-459a-ae20-055d68454ba2' before making global git config changes
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.7766509Z Adding repository directory to the temporary git global config as a safe directory
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.7771719Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/worker-engine
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.7816699Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.7858258Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.8120771Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.8162190Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.8442341Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.8487527Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:54.9765894Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:54.9767177Z Post job cleanup.
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.0760976Z [command]/usr/bin/git version
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.0806866Z git version 2.55.0
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.0870134Z Temporarily overriding HOME='/home/runner/work/_temp/cb6721f5-4ff7-450e-b8fb-82e78b352ab4' before making global git config changes
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.0871738Z Adding repository directory to the temporary git global config as a safe directory
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.0873034Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/agent-engine
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.0944640Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.1011129Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.1411316Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.1451300Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.1792702Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.1841512Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	﻿2026-09-19T22:34:55.2826518Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:55.2827800Z Post job cleanup.
+quality	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:55.4028571Z (node:3906) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+quality	Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065	2026-09-19T22:34:55.4030169Z (Use `node --trace-deprecation ...` to show where the warning was created)
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-09-19T22:34:55.5269895Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.5271231Z Post job cleanup.
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6139741Z [command]/usr/bin/git version
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6187654Z git version 2.55.0
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6230630Z Temporarily overriding HOME='/home/runner/work/_temp/cf18bfdf-d754-4a08-baff-96e9f5008eff' before making global git config changes
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6232365Z Adding repository directory to the temporary git global config as a safe directory
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6237318Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/entrotter/entrotter/entrotter
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6281089Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6327710Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6594135Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6634677Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6898685Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+quality	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-09-19T22:34:55.6939079Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+quality	Complete job	﻿2026-09-19T22:34:55.7343277Z Cleaning up orphan processes
+quality	Complete job	2026-09-19T22:34:55.7623230Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

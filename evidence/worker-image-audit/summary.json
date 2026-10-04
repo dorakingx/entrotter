@@ -1,0 +1,293 @@
+{
+  "schema_version": "0.1.0",
+  "checked_at": "2026-09-19T21:10:21.106929+00:00",
+  "status": "verified_local_and_linux_ci; independent_review_and_merge_pending",
+  "issue": "https://github.com/entrotter/entrotter/issues/26",
+  "engine_pr": "https://github.com/entrotter/engine/pull/18",
+  "commits": {
+    "engine": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+    "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+    "cli": "952bfb5aba14b674dd959035a5625fadbd2b07d1",
+    "scenarios": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+    "entrotter.github.io": "ab121348b0ffbec5650f9eadf0a0b11f639d9780"
+  },
+  "before_engine": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+  "before": {
+    "OS_packages": 87,
+    "OS_findings": 151,
+    "unique_OS_ids": 65,
+    "pip_findings": 6,
+    "compiled_python_coverage": false
+  },
+  "alternative": {
+    "base": "Google distroless Python3.13 Debian13 nonroot",
+    "packages": 38,
+    "findings": 130,
+    "selected": false
+  },
+  "local": {
+    "native_unit_tests": 142,
+    "actual_docker_tests": 16,
+    "coordination_tests": 20,
+    "image_audit": {
+      "status": "passed",
+      "image_id": "sha256:e5ba2222140c128f6b94e91d8cfbb90578b2cdf939a38dbf6b3f863fcacd5dc4",
+      "inventories": [
+        {
+          "type": "wolfi",
+          "class": "os-pkgs",
+          "packages": 26,
+          "findings": 0
+        }
+      ],
+      "vulnerability_count": 0,
+      "database_updated_at": "2026-09-19T07:03:12.311489574Z",
+      "database_next_update": "2026-09-20T07:03:12.311489134Z",
+      "policy": "Every detected vulnerability, including unfixed and unknown severity, fails; no suppression files or VEX",
+      "limitations": [
+        "Only detected OS/language packages are covered, not proof of absence of vulnerabilities",
+        "Native Anvil dependencies without embedded inventory remain outside this scan",
+        "Docker daemon, host kernel/VM and arbitrary user code are not audited"
+      ],
+      "source_digest": "339d83885af59c8fdb815a5693c411d99c502044c441d495a56761792037412a",
+      "auditor_sha256": "e84d1c8d37c33a176706b6cad3fe32c5f3b1f8faf96422f694cc088763ea8261",
+      "trivy_version": "0.74.0",
+      "trivy_archive_sha256": "1caada5e0e2091909357c7525d3aa76f4b660b13821bc143b190c7483e31cc11",
+      "cosign_version": "3.1.3",
+      "cosign_binary_sha256": "5cf948c2f4dfe59687bdd0b8523709067383e03982cc543475c8a7dc70e92a76",
+      "base_image": "cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20",
+      "verified_base_signer": "https://github.com/chainguard-images/images/.github/workflows/release.yaml@refs/heads/main",
+      "verified_base_issuer": "https://token.actions.githubusercontent.com",
+      "database_sha256": "d2011995903d437182133a086780524c5d7d309947cbcce3e546822a06dc54d2",
+      "report_sha256": "544d1a10a797e8e6939a400dc318cdc44f9f7cd104660cbb72efdfd5f1e2bb4c"
+    },
+    "historical": {
+      "status": "passed",
+      "mode": "bounded default archived-state supplied-action execution",
+      "runs": [
+        {
+          "wall_seconds": 9.52783116698265,
+          "artifact_id": "6c358340e3b1227fccb4398802d30fefe27877aeacbacf8bd313c9c65c13a453",
+          "full_reference_equality": true
+        },
+        {
+          "wall_seconds": 9.149769209005171,
+          "artifact_id": "6c358340e3b1227fccb4398802d30fefe27877aeacbacf8bd313c9c65c13a453",
+          "full_reference_equality": true
+        }
+      ],
+      "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+      "image_id": "sha256:e5ba2222140c128f6b94e91d8cfbb90578b2cdf939a38dbf6b3f863fcacd5dc4",
+      "scenario_sha256": "9bba384c7a56f973b26e4b9cfef058e6dd841d7ddd737cbeeed75f9478c64c33",
+      "reference_sha256": "2d32bb9c7dccb3db5ebaaa11b7a65a4ab02bf2228c93933ec57b411480c341df",
+      "checker_sha256": "baf2e41fec18bcb66db5f3babc1df436ced9fed2a45db93c91f15b68549b87f8",
+      "limitations": [
+        "Same previously explored 19M case; no new model evaluation or holdout",
+        "Includes public archive latency; not a performance comparison",
+        "No historical trace replay or portfolio profit claim"
+      ]
+    },
+    "integration": {
+      "status": "passed",
+      "kind": "integration verification, not a performance benchmark",
+      "tested_commits": {
+        "engine": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+        "sdk-python": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+        "cli": "952bfb5aba14b674dd959035a5625fadbd2b07d1"
+      },
+      "checker_sha256": "abe285958f0f6501f2d8cae2b162208da82905d2745321babfefdec255bd65e2",
+      "default_worker": {
+        "image_id": "sha256:e5ba2222140c128f6b94e91d8cfbb90578b2cdf939a38dbf6b3f863fcacd5dc4",
+        "image_source_digest": "339d83885af59c8fdb815a5693c411d99c502044c441d495a56761792037412a",
+        "manifest_sha256": "3138c452af4985619cd44db6ec8229b65080c8b9f8577f01000e8a4d631180a8",
+        "actual_source_matches_image_manifest_and_label": true,
+        "cgroup_version": "2",
+        "artifact_ids": {
+          "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+          "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+        },
+        "local_cli_without_mode_opt_in": true,
+        "missing_worker_fails_without_export_replacement": true,
+        "explicit_native_fixture_matches": true,
+        "daemon_shared_admission": {
+          "standalone_local_cli_rejected": true,
+          "cli_sdk_api_429": true,
+          "api_posts": 1,
+          "existing_export_and_incumbent_preserved": true,
+          "successful_run_after_release": true,
+          "scope": "one container worker per configured daemon; no native/host-process/storage bound"
+        }
+      },
+      "wall_seconds": 9.849535749992356,
+      "artifact_ids": {
+        "fixture": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+        "local": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7"
+      },
+      "verified": [
+        "actual CLI/SDK/API fixture and Anvil runs",
+        "SDK get and saved-file full equality",
+        "real EVM success and revert receipts",
+        "full-store idempotent repeat",
+        "CLI reports 507 without retrying POST or replacing export",
+        "eight idle sockets cause SDK/CLI 503 without executing work",
+        "health recovers after idle sockets close"
+      ],
+      "fault_parameters": {
+        "store_file_limit": 2,
+        "connection_limit": 8,
+        "busy_cli_attempts": 16
+      },
+      "archive_or_model_calls": false,
+      "limitations": [
+        "Lowered file-count quota for integration; production thresholds tested separately",
+        "Uses the tested API constructor default; worker manifest enables additional default-path proof. Kernel enforcement is a separate CI job",
+        "Independent export retention, host processes, explicit native execution and image/VM storage remain operator-controlled"
+      ]
+    }
+  },
+  "quality_ci": {
+    "status": "passed",
+    "engine": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+    "run": 35469285597,
+    "bandit_findings": 20,
+    "full_local_ci_findings_equal": true,
+    "audited_packages": 42,
+    "vulnerabilities": 0,
+    "wheel_source_files": 14,
+    "wheel_source_equality": true,
+    "wheel_sha256": "a1fdc6201988797a805dfb3f2a979aa95d9a73c785dadfd18e97e3f1741d5593",
+    "license": "MIT",
+    "runtime_dependencies": []
+  },
+  "limitations": [
+    "No native Anvil Rust dependency inventory, host kernel/VM/daemon audit or proof of absence of vulnerabilities",
+    "No aggregate host caller/export/image/VM disk budgets",
+    "No new model evaluation or untouched holdout; explored historical reference only",
+    "Independent review/merge and overall goal remain pending"
+  ],
+  "files": {
+    "alternative/packages.json": "d65c9020944b372dcff150e4cc55819161201d2809de6f88da503303a5a19adf",
+    "alternative/signature.json": "32503fa9d23baa2d285acfd04b6e0364ad0785697076d88690173dc654428a2a",
+    "before/packages.json": "81e6777a92ac3e8de38b679f360f5e8da4d0f86da771aa835b776151dbb937ae",
+    "ci/clean-reproduction.json": "c5eb84981ad64271e162c367b160e7b90b0ef1ed2c1d35e21b4abc5f5b50a253",
+    "ci/image.json": "46f4d23c9ed0313d46f61aada45882fe81a09e6162378854b4b1bd9a11d8ac60",
+    "ci/integration.json": "4de83bf641ed506fec03980e7cd7bc98be66c6cb6581cd57c5d183af87d7c85c",
+    "ci/verification.json": "2df36bd0f2282049a21cd7e8d38352906ab341b1eec43332591a02b800761d54",
+    "engine-ci.json": "2b5004aedd2f53d45f7a8a7a259e0a7a64bfd9675a828cb9fd513474ea46a2fc",
+    "failures/README.md": "e236a3aedbb5cc2a6276b557788617cceda930d8fefe43ef8056a984d3974afe",
+    "failures/missing-checkout-pythonpath.log": "d4103870ef3ca3cdd310d7f92b738bb1bae7330960b98eca496b17b6d98ffe9f",
+    "failures/python314-default-start-method.log": "6d8f0f313a2b4e96fa218725944bbe47eb3b120367455725fcaf807482985d0a",
+    "image-ci/database.json": "cecc4e1e2eb2a6bc0e8d491323ea9d68e6ff067838a86a2cd1e7055753889f8a",
+    "image-ci/docker-tests.log": "334ce5013497781522cabe3ec1fc3f1bc66e111b8c3d6ab3da6cc2caf04d79fa",
+    "image-ci/image.json": "44a60765e96b5e51e67b29b20974441f86c3778315ae3cc5620ff73edbd47d49",
+    "image-ci/packages.json": "d4c569eac07cfce140d5de432909dfac93678cf339ed50cb8776be492ff375e5",
+    "image-ci/scanner.log": "2444f61bb86aa7e80f8e02f0a8ba829d9512098ee5c905c4afa27364dce274bc",
+    "image-ci/signature.json": "fbe3fd1cd02b833c9d47b6898ed38083d8665800756a4c0aa5794a1b801a53e1",
+    "image-ci/signature.log": "4bfe2b5ee29716434b11f0d0b110fd7a30f98c8fe0c2a1805773b152a825d0e4",
+    "image-ci/summary.json": "97ef7cc9083fea317f3548a451b8f327c0d9db7fc0e7123b99d46758fb836d77",
+    "image-ci/verification.json": "537738bc19493d6307a4e7831f6f6d32913c927395ad4deb98e75bc062296992",
+    "local/bandit.json": "a76ea17046be0807d91aad89813a4af5acb10ddf1c545011845629e8c8abed43",
+    "local/build.log": "ea1d52b0dbfa6bb6130f91c92b780f9e49337bd4a1e816c26f9b5a94c346cc69",
+    "local/check_history.py": "baf2e41fec18bcb66db5f3babc1df436ced9fed2a45db93c91f15b68549b87f8",
+    "local/clean-reproduction.json": "ee5d528823eaf560dcfeb362cbc5f4d590a46236cdb6e3e932fc6a742d8be22b",
+    "local/coordination-links.json": "24341e690660e6bf9fe45fc2ddc006b328ecf46eb849c3752d6703fa532eb295",
+    "local/coordination-tests.log": "da183810b94d5e485deb301a556992ab8f81c0ba0ee7c8dae2e67c523d3890d9",
+    "local/database.json": "3cda2fd9a741e54ce3e01bb3c675a152bbf763be0c0c729a219c8d66aa5bf24a",
+    "local/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "local/docker-tests.log": "d83ca979f75555d9b62ccd2f191d7b98f25a00aae86086a5cc9412996ec72e48",
+    "local/engine-links.json": "40a2d9de944b4ccb6b65e216da7a22ae2684bc258962b4374ee91dbfe6181597",
+    "local/historical.json": "6a605a18fd441fa2edf050e1f623664104ff13e1105eb9f04b310acd21d9bc34",
+    "local/image.json": "3138c452af4985619cd44db6ec8229b65080c8b9f8577f01000e8a4d631180a8",
+    "local/integration.json": "71d4a04299de5393bed6b777aee35ae7b1294706e7dbbc04f9185a27d5187acf",
+    "local/native-tests.log": "0793bb87a2076c52dbf5ea8bd0e7e49524ad97f4f81cac8e442a7a2ed7692bf7",
+    "local/packages.json": "544d1a10a797e8e6939a400dc318cdc44f9f7cd104660cbb72efdfd5f1e2bb4c",
+    "local/scanner.log": "794165fe04f509da9a01dcfbdce727b161319cf8a435829486d4adb9ef58799b",
+    "local/signature.json": "fbe3fd1cd02b833c9d47b6898ed38083d8665800756a4c0aa5794a1b801a53e1",
+    "local/signature.log": "4bfe2b5ee29716434b11f0d0b110fd7a30f98c8fe0c2a1805773b152a825d0e4",
+    "local/summary.json": "500d7a683e0ced7211ffd4ca84558bf12c07fc3bbd8d7baa39a37d225f984f9c",
+    "quality-ci/bandit.json": "e8f613d9686065cbdbb6734b00726769076b65816947fc0dc08c9dbb87da6260",
+    "quality-ci/dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "quality-ci/dependency-scope.json": "523c22b99543db0f4d3f92a40e38ee0dd88d784eb57c88e176f2155edc5fbc56",
+    "quality-ci/verification.json": "083db722d7e837f4e22c3ff6e3017f3940c28c6412277b0cfa516b040680ddc1"
+  },
+  "coordination_pr": "https://github.com/entrotter/entrotter/pull/27",
+  "image_ci": {
+    "status": "passed",
+    "run": 35469285580,
+    "engine": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+    "actual_docker_tests": 16,
+    "inventories": [
+      {
+        "type": "wolfi",
+        "class": "os-pkgs",
+        "packages": 26,
+        "findings": 0
+      }
+    ],
+    "source_and_auditor_hashes_match_local": true,
+    "downloaded_report_hash_verified": true,
+    "policy_reevaluation": "passed with current unexpired database metadata",
+    "base_signer_and_digest_match_local": true,
+    "image_architecture": "amd64",
+    "same_application_source_as_arm64": true,
+    "native_binary_inventory_complete": false
+  },
+  "integration_ci": {
+    "status": "passed",
+    "proof_commit": "b6bd48bb17cd950e5a12a7d766276291b33a35da",
+    "integration_run": 35469413504,
+    "links_run": 35469413528,
+    "source_manifest_and_checker_match": true,
+    "full_fixture_and_evm_artifact_ids_match": true,
+    "shared_admission_checks_match": true,
+    "linux_clean_reproduction_seconds": 5.017141688999999,
+    "local_clean_reproduction_seconds": 20.671856333006872,
+    "note": "Docker already running; build caches warm. Native binary/image IDs differ by architecture; no cold-machine timing claim."
+  },
+  "cleanup": {
+    "owned_workers_before_stop": 0,
+    "dedicated_profile": "Stopped",
+    "original_default_profile": "Stopped",
+    "docker_context": "colima",
+    "frozen_engine": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+    "frozen_scenarios": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+    "both_frozen_worktrees_clean": true
+  },
+  "engine_ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 35469285570,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Tests",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35469285581,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Documentation links",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35469285597,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Engine quality and Python dependency audit",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35469285577,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Local EVM integration",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 35469285580,
+      "headSha": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "name": "Isolated worker enforcement",
+      "status": "completed"
+    }
+  ]
+}

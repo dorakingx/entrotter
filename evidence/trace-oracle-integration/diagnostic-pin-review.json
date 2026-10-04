@@ -1,0 +1,20 @@
+{
+  "review": "independent source-only pin consistency review; separate from protected-main human approval",
+  "base": "27c39fe8c973765469b9fdeb7ef215c37abb4fb1",
+  "candidate_engine": "aac525c8279005a3a8468fe3928e691c3ce80148",
+  "files_sha256": {
+    ".github/workflows/ci.yml": "bb85e39b239d31e6cd658fed11c6f3ffca6f2009884ee147e5e28b6b43ca237a",
+    ".github/workflows/quality.yml": "ccfd8fbb8ddfe99a997c979c29b4eab465fa9cf5543b3b23aefb912bb8fc5549",
+    "bounded-worker-pins.json": "d6080446099cea0ae2ca4e7e7b6c8a4ca2e6177a4b713160cd7d51532025052b",
+    "quality-inputs.json": "2f8760c0313501009eece5ffd16367c826420fffcf0d59c4c01906ef4cf2ac42"
+  },
+  "observations": [
+    "Exactly one identical engine pin substitution in each workflow/manifest/type input file; all other bytes equal previously reviewed27c39 snapshot.",
+    "Agentbb8/SDKee/CLI22/schema8785/siteb7/frozen finding rules and oracle reader workflow remain unchanged."
+  ],
+  "remaining_actionable_findings": [],
+  "limits": [
+    "Component isolated gate and all8/raw artifact verification remain pending; no publication/promotion claimed.",
+    "No tests, browser, model or archive rerun."
+  ]
+}

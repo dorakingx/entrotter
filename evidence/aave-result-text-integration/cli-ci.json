@@ -1,0 +1,92 @@
+{
+  "head": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+  "tree": "5bf0eff41641ed8556c8683cedb5ff49f56be71b",
+  "checks": {
+    "quality": "SUCCESS",
+    "docs-links": "SUCCESS",
+    "unit (3.11)": "SUCCESS",
+    "unit (3.12)": "SUCCESS",
+    "unit (3.13)": "SUCCESS",
+    "agent": "SUCCESS"
+  },
+  "runs": {
+    "tests": {
+      "id": 37161789405,
+      "url": "https://github.com/entrotter/cli/actions/runs/37161789405",
+      "attempt": 1,
+      "conclusion": "success"
+    },
+    "quality": {
+      "id": 37161789421,
+      "url": "https://github.com/entrotter/cli/actions/runs/37161789421",
+      "attempt": 1,
+      "conclusion": "success"
+    },
+    "docs": {
+      "id": 37161789433,
+      "url": "https://github.com/entrotter/cli/actions/runs/37161789433",
+      "attempt": 1,
+      "conclusion": "success"
+    }
+  },
+  "unit_count_each": 107,
+  "unit_skips": 0,
+  "installed_groups": [
+    9,
+    8,
+    7
+  ],
+  "runtime_modules": 14,
+  "locked_python_dependencies": 42,
+  "reported_advisories": 0,
+  "docs": {
+    "files": 14,
+    "links": 68,
+    "successful": 67,
+    "exclusions": 1,
+    "errors": 0,
+    "timeouts": 0,
+    "merge": "cc26b4b702f3fa688aef146989fab1a87025b6a4",
+    "whole_tree_equal": true
+  },
+  "general_text": {
+    "sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+    "bytes": 3013,
+    "installed_groups": 7,
+    "defaultJSON_fullcompatibility_asserted_in_current_installed_test": true,
+    "receipt_authentication_not_claimed": true
+  },
+  "independent_raw_review_sha256": "f8431a228ae61bf4884dc103d61854463dda6e5d8549e2b64a3d382e758c50c2",
+  "parent_rehash": {
+    "status": "pass",
+    "proof_sha256": "f8431a228ae61bf4884dc103d61854463dda6e5d8549e2b64a3d382e758c50c2",
+    "helper_sha256": "5da92bb1420f38faeba69d837f6c48d7ce25c89ba679c0203b6206a70c7e88a6",
+    "head": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "tree": "5bf0eff41641ed8556c8683cedb5ff49f56be71b",
+    "merge": "cc26b4b702f3fa688aef146989fab1a87025b6a4",
+    "counts": {
+      "raw_artifact_sha256": 48,
+      "consulted_input_sha256": 16,
+      "reused_input_sha256": 9,
+      "immutable_git_source_sha256": 131,
+      "zip_members": 111,
+      "wheel_members": 26,
+      "published_blobs": 15
+    },
+    "all_six_original_attempt1": true,
+    "parent_public_tree_sha256": "3d45f55a3749d42f3e316d0e479a21b6226cdebaf9b6c99295e3438924f0a1e9",
+    "corrections": [
+      "Original Git trees API was commit-addressed; response sha is commit, not actual tree. Parent follows git commit tree SHA and compares complete entry lists. First parent assertion used wrong git-commit JSON envelope; original failure retained in tool output."
+    ],
+    "scope": "All declared raw, consulted, reused, immutable Git, whole ZIP/wheel and published source bindings rehashed; independent semantic review retained, no producer reruns."
+  },
+  "limits": [
+    "Original169b metadata/full logs/log ZIPs/artifact ZIPs fetched once; all6 contexts success attempt1. Read-only Git/JSON/ZIP/pure offline SDK parsing only; no tests/scanners/Docker/archive/model/CI replay.",
+    "Current success after test-only evidence retention change does not establish original c04d failure cause or prove a runtime fix. Prior failed raw/output absence/cause unknown remain immutable and SHA-bound. No assumption of provider, runner, timeout or cache causal explanation.",
+    "Actual launch imported modules and whole image source hash inventories/base/archive/binary metadata verified. CLI workflow does not export OS/Cargo/SBOM or kernel quota/seccomp attestations. Matching reviewed Engine88/c2eb audits are separate source-bound context, not additional current CLI audit scans. Tool/database cryptography not rerun; all original outer log/artifact ZIPs retained; API artifact ZIP SHA256 digests and every extracted member verified.",
+    "Installed filesystem not separately exported; complete built wheel RECORD/README/module bytes and actual no-engine installed-I commands verified. Temporary frozen-agent exports are represented by unchanged source full assertions plus actual four passing tests.",
+    "Current account run is original13-of181 prefix through12/skip12 at18999892, distinct from prior original32 evidence or native proof. Account differences include all prefix/state effects; no signed consumer action, sole-WETH-price cause, token balance benefit/profit, oracle/provider authentication, full block/state-root/opcode, new browser or live Pages claim. Measured runtime is replay scope only, not a speed claim.",
+    "Software review is independent of protected-main one-human approval, merges, registry publication, live Pages and formal entry; PR10 remains open/unmerged."
+  ],
+  "scope": "Current CLI CI; Engine original EVM execution and frozen OS/Cargo/kernel audit evidence remain distinct. No new local EVM, model or browser run."
+}

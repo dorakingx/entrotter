@@ -1,0 +1,42 @@
+{
+  "checks": 59,
+  "failures": [
+    {
+      "iteration": 25,
+      "code": 1,
+      "stderr": "Error: Engine is unavailable or returned invalid JSON\n",
+      "stdout": "",
+      "active": 8
+    },
+    {
+      "iteration": 27,
+      "code": 1,
+      "stderr": "Error: Engine is unavailable or returned invalid JSON\n",
+      "stdout": "",
+      "active": 8
+    },
+    {
+      "iteration": 29,
+      "code": 1,
+      "stderr": "Error: Engine is unavailable or returned invalid JSON\n",
+      "stdout": "",
+      "active": 8
+    },
+    {
+      "iteration": 43,
+      "code": 1,
+      "stderr": "Error: Engine is unavailable or returned invalid JSON\n",
+      "stdout": "",
+      "active": 8
+    },
+    {
+      "iteration": 52,
+      "code": 1,
+      "stderr": "Error: Engine is unavailable or returned invalid JSON\n",
+      "stdout": "",
+      "active": 8
+    }
+  ],
+  "seconds": 7.091073542018421,
+  "platform": "darwin"
+}

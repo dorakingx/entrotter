@@ -1,0 +1,1661 @@
+{
+  "status": "PASS",
+  "head": "4c6e27ed6db398d51d1c0d68ef429f869a61b4c3",
+  "findings": [],
+  "original_runs": {
+    "pages": {
+      "id": 37121743862,
+      "attempt": 1,
+      "url": "https://github.com/entrotter/entrotter.github.io/actions/runs/37121743862"
+    },
+    "docs": {
+      "id": 37121743882,
+      "attempt": 1,
+      "url": "https://github.com/entrotter/entrotter.github.io/actions/runs/37121743882"
+    }
+  },
+  "mandatory_checks": [
+    "accessibility",
+    "check",
+    "docs-links",
+    "quality"
+  ],
+  "source_config_files": 26,
+  "JS_sources": 19,
+  "typed_inputs": 20,
+  "security_findings": 137,
+  "preserved_prior_rationales": 122,
+  "new_reviewed_contexts": 15,
+  "Node_tests": 126,
+  "Python_tests": 12,
+  "npm_lock_packages": 109,
+  "npm_lock_identities": {
+    "node_modules/@cacheable/memory": {
+      "version": "2.2.0",
+      "integrity": "sha512-CTLKqLItRCEixEAewD3/j9DB3/o96gpTPD4eJ1v+DGOlxZRZncRQkGYqqnAGCscYd6RNeXfGeiuCphsPtqyIfQ=="
+    },
+    "node_modules/@cacheable/utils": {
+      "version": "2.5.0",
+      "integrity": "sha512-buipgOVDkkPXNR5+xBpDw7Zk2n1EvU7qBJCNUcL7rhQ//kfpOXPAvQ511Os0vpLYJ1pZnvudNytkQt2hst3wqA=="
+    },
+    "node_modules/@eslint-community/eslint-utils": {
+      "version": "4.10.1",
+      "integrity": "sha512-cuadcxVFE8sDK6iWJbs8Sn0av2Nrh2QSGQhVlBW9AaAHqHwjWsZHT8LJ4hFGPh7ASBV2deFdM7H/DPjulmh8rg=="
+    },
+    "node_modules/@eslint-community/eslint-utils/node_modules/eslint-visitor-keys": {
+      "version": "3.4.3",
+      "integrity": "sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag=="
+    },
+    "node_modules/@eslint-community/regexpp": {
+      "version": "4.12.2",
+      "integrity": "sha512-EriSTlt5OC9/7SXkRSCAhfSxxoSUgBm33OH+IkwbdpgoqsSsUg7y3uh+IICI/Qg4BBWr3U2i39RpmycbxMq4ew=="
+    },
+    "node_modules/@eslint/config-array": {
+      "version": "0.23.5",
+      "integrity": "sha512-Y3kKLvC1dvTOT+oGlqNQ1XLqK6D1HU2YXPc52NmAlJZbMMWDzGYXMiPRJ8TYD39muD/OTjlZmNJ4ib7dvSrMBA=="
+    },
+    "node_modules/@eslint/config-helpers": {
+      "version": "0.7.0",
+      "integrity": "sha512-DObd/KKUsU+FaFv4PLxSRenpXfQWmPXXP3pPZ6/K1PCrMu2vQpMDMuQe/BqYeoLcz8ro0bVDF1RxOJgfVEdhUw=="
+    },
+    "node_modules/@eslint/core": {
+      "version": "1.2.1",
+      "integrity": "sha512-MwcE1P+AZ4C6DWlpin/OmOA54mmIZ/+xZuJiQd4SyB29oAJjN30UW9wkKNptW2ctp4cEsvhlLY/CsQ1uoHDloQ=="
+    },
+    "node_modules/@eslint/js": {
+      "version": "10.0.1",
+      "integrity": "sha512-zeR9k5pd4gxjZ0abRoIaxdc7I3nDktoXZk2qOv9gCNWx3mVwEn32VRhyLaRsDiJjTs0xq/T8mfPtyuXu7GWBcA=="
+    },
+    "node_modules/@eslint/object-schema": {
+      "version": "3.0.5",
+      "integrity": "sha512-vqTaUEgxzm+YDSdElad6PiRoX4t8VGDjCtt05zn4nU810UIx/uNEV7/lZJ6KwFThKZOzOxzXy48da+No7HZaMw=="
+    },
+    "node_modules/@eslint/plugin-kit": {
+      "version": "0.7.3",
+      "integrity": "sha512-IkO+/KEUvwbVpiURZg+P7zF74z5Jxe0UgJxVni+RtoHQ6IZieXaO02kmadomap/q+l6bc/jdPGGqTjhuZnuz1Q=="
+    },
+    "node_modules/@humanfs/core": {
+      "version": "0.19.2",
+      "integrity": "sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA=="
+    },
+    "node_modules/@humanfs/node": {
+      "version": "0.16.8",
+      "integrity": "sha512-gE1eQNZ3R++kTzFUpdGlpmy8kDZD/MLyHqDwqjkVQI0JMdI1D51sy1H958PNXYkM2rAac7e5/CnIKZrHtPh3BQ=="
+    },
+    "node_modules/@humanfs/types": {
+      "version": "0.15.0",
+      "integrity": "sha512-ZZ1w0aoQkwuUuC7Yf+7sdeaNfqQiiLcSRbfI08oAxqLtpXQr9AIVX7Ay7HLDuiLYAaFPu8oBYNq/QIi9URHJ3Q=="
+    },
+    "node_modules/@humanwhocodes/module-importer": {
+      "version": "1.0.1",
+      "integrity": "sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA=="
+    },
+    "node_modules/@humanwhocodes/retry": {
+      "version": "0.4.3",
+      "integrity": "sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ=="
+    },
+    "node_modules/@keyv/bigmap": {
+      "version": "1.3.1",
+      "integrity": "sha512-WbzE9sdmQtKy8vrNPa9BRnwZh5UF4s1KTmSK0KUVLo3eff5BlQNNWDnFOouNpKfPKDnms9xynJjsMYjMaT/aFQ=="
+    },
+    "node_modules/@keyv/serialize": {
+      "version": "1.1.1",
+      "integrity": "sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA=="
+    },
+    "node_modules/@types/esrecurse": {
+      "version": "4.3.1",
+      "integrity": "sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw=="
+    },
+    "node_modules/@types/estree": {
+      "version": "1.0.9",
+      "integrity": "sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg=="
+    },
+    "node_modules/@types/json-schema": {
+      "version": "7.0.15",
+      "integrity": "sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA=="
+    },
+    "node_modules/@types/node": {
+      "version": "22.20.4",
+      "integrity": "sha512-zJRE40jpHtKqE/C4fgHrAKQLJuSpzEnP9ff9Y7YtoR3Wd2pwqzlekDeEuUQXjRd+QCYnVnNwuJYmhdk9XV8gvA=="
+    },
+    "node_modules/@typescript/typescript-aix-ppc64": {
+      "version": "7.0.2",
+      "integrity": "sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ=="
+    },
+    "node_modules/@typescript/typescript-darwin-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-gowzar9MwS/aRWp6f3a4KUqzRjAZjOsmGNCM6LcTgXum+dBfgsBVMN+AgvOCCbguXyick6LJhpBszxMebJ8syA=="
+    },
+    "node_modules/@typescript/typescript-darwin-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-SZ9xZInqApNlNGc9s0W1VSsktYSOe9cFqNOIqmN1Gs8SmkjKZYFt017G4VwPxASInODuAdbTW7sXiFUf893RgA=="
+    },
+    "node_modules/@typescript/typescript-freebsd-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-W5NH4y/J0plIIS5b2xvTEkU7JFxyqdMAOgf+Ilhl0vHQXKO5dZoxd+C/jEtq56c4F3wk71RB4BMRQ2XdI+bwYQ=="
+    },
+    "node_modules/@typescript/typescript-freebsd-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-UMGDx5sTpzNw3WiPebH7l90IWfJggEd+egHt/q6p7/Cm3zqoV7VxkGXt+3DxPIw8CcmvAB0j3sVVfbhX+M4Tpw=="
+    },
+    "node_modules/@typescript/typescript-linux-arm": {
+      "version": "7.0.2",
+      "integrity": "sha512-gffT3xPz9sR7j/YJExkyPntrI0P2EP9XbOyWzth2/Gs0RstK+90RBcO0ncXoXy/beYll1SXw846Nf2zdnEz0QQ=="
+    },
+    "node_modules/@typescript/typescript-linux-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-Qh4eU4/y3yDjnfjjyPYihMj5/ODIlmt+Bzu17OI+fiSRDW57QmU5SiN63exPRNJPKUzcc1INa1NXdrJ+MqHjUQ=="
+    },
+    "node_modules/@typescript/typescript-linux-loong64": {
+      "version": "7.0.2",
+      "integrity": "sha512-uEHck9i8hoAzXPiYRib1O7miOnz23SxIeVl6F4LXox+qov1K35jHcEW6VHKvZI+pyvl7fZEP4MCU5LYvIq1GuQ=="
+    },
+    "node_modules/@typescript/typescript-linux-mips64el": {
+      "version": "7.0.2",
+      "integrity": "sha512-R4KvAMnE43W5Qeqb0Ly56O3mWMWIAgsMyz36DCaycd5nbg/9kzm0liw3JocfRqyJY0KPmzFjbswozXyW0DnIYA=="
+    },
+    "node_modules/@typescript/typescript-linux-ppc64": {
+      "version": "7.0.2",
+      "integrity": "sha512-DORx5b3sd/4S7eayxm4FQv+A7CrkUIGRaHiwI8oiHTAI1fAPWhF4J0vAlkC8biAlHSVVwxMQ3tjZ2/DVbnQiiA=="
+    },
+    "node_modules/@typescript/typescript-linux-riscv64": {
+      "version": "7.0.2",
+      "integrity": "sha512-wf0jqEDOjrPRnKwYRyyJDRo11KMbvMFrU+q4zqKyChODBzvlkbhNQfKvLxQCcwTpdDaXSHZTVuh0JoCrKCUMHQ=="
+    },
+    "node_modules/@typescript/typescript-linux-s390x": {
+      "version": "7.0.2",
+      "integrity": "sha512-IkwJc3L7yhytWd/ewjyxNDfOmswCm9GWMJT/ue/dU4aZNbwZeYAetq42VyLmsmSjvoX7z74X6ZaYCtzAr0EuGw=="
+    },
+    "node_modules/@typescript/typescript-linux-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-EYdf2cNg7rgCWJnxCdJ+F3V39O8ihb37eHAu1LK8oAFizgTQbPOK7zHHXbPt8rX24COqODXeI3sIf0fCXG7H/A=="
+    },
+    "node_modules/@typescript/typescript-netbsd-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-+polYF4MF04aPpO5FTkHran9yUQDSXqy5GiSDKpsll5jy3l3+g9QLhpf39T+ePtefhXLOGrLl0QIjkQP6VnelA=="
+    },
+    "node_modules/@typescript/typescript-netbsd-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-8YIT0EHM/3dq10ZOVF/A7pc/YSMtbcecct4rWtexrnSCHOPcpC2KTLXfTCR6vDpnSiY12heNb1GiN/wu+T/FyA=="
+    },
+    "node_modules/@typescript/typescript-openbsd-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-APT8+ClYnuYm1u9+kgGXoMj2VzWzcymwh2gNSQVySHfkRDGOTVkoWLjCmOQSaO+PoqQ57B0flRp9SA+7GnnkzQ=="
+    },
+    "node_modules/@typescript/typescript-openbsd-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-yX7s+Q0Dln0Dt9tEzZsAjXXR/+ytBM7AlglaqyeMPxQszJ1JhlJdZ6jLA+IzldHtflX81em7lDao1xXu+aRRkg=="
+    },
+    "node_modules/@typescript/typescript-sunos-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-dLJDGaLZ1D4HPQn62u1n8mBDkJREwMsAkCdkwd4Ieqw+x3TUyTsqY0YiBCtE6H6OzzgGk3iuZ3vFWRS+E8/d1g=="
+    },
+    "node_modules/@typescript/typescript-win32-arm64": {
+      "version": "7.0.2",
+      "integrity": "sha512-Gyl1Vy6OsWesLzmq+EP0Fb7b4Nid5232AvcA2SFcdYreldpNtYFFofPjnt62y9hQy7VTaZp65ICJjuAQRaVcIQ=="
+    },
+    "node_modules/@typescript/typescript-win32-x64": {
+      "version": "7.0.2",
+      "integrity": "sha512-0BQ3HkAHHlKLSp1qRvf3SUhGpGsDuhB/jgFw75guyqbxJqEaS0Cw/VFO8i2nHglJUzQCRtMMR/IBAKE3ETMC4g=="
+    },
+    "node_modules/acorn": {
+      "version": "8.18.0",
+      "integrity": "sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ=="
+    },
+    "node_modules/acorn-jsx": {
+      "version": "5.3.2",
+      "integrity": "sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ=="
+    },
+    "node_modules/ajv": {
+      "version": "6.15.0",
+      "integrity": "sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw=="
+    },
+    "node_modules/axe-core": {
+      "version": "4.13.0",
+      "integrity": "sha512-UzGt8zg7Ny8djbYMhxl2zuEevVa7r2gJjYY5Lwr1xM7+XU2nd6CkIWFTVcCIbAP63vSz71NaVyyuSk9lHKcy0A=="
+    },
+    "node_modules/balanced-match": {
+      "version": "4.0.4",
+      "integrity": "sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA=="
+    },
+    "node_modules/brace-expansion": {
+      "version": "5.0.12",
+      "integrity": "sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ=="
+    },
+    "node_modules/cacheable": {
+      "version": "2.5.0",
+      "integrity": "sha512-60cyAOytib/OzBw1JNSoSV/boK1AtHryDIjvVBk7XbN4ugfkM3+Sry7fEjNgPMGgOjuaZPAp8ruZ0Cxafwyq9g=="
+    },
+    "node_modules/cross-spawn": {
+      "version": "7.0.6",
+      "integrity": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA=="
+    },
+    "node_modules/debug": {
+      "version": "4.4.3",
+      "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA=="
+    },
+    "node_modules/deep-is": {
+      "version": "0.1.4",
+      "integrity": "sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ=="
+    },
+    "node_modules/escape-string-regexp": {
+      "version": "4.0.0",
+      "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA=="
+    },
+    "node_modules/eslint": {
+      "version": "10.11.0",
+      "integrity": "sha512-P7a6UEEqb9G95MYAtqkmsTbVXIYyzIfl6NGOIJk162PaahFxFyeGcrlXYFSiagECg4sEm8IseJdZBKR3rx6MsQ=="
+    },
+    "node_modules/eslint-plugin-security": {
+      "version": "4.0.1",
+      "integrity": "sha512-/lZCkOxPOWaf1jXAqgICrS8St3BMBccIPvhOSUYuV6VCr1o5nFVG998FnTLt6w2Nxb8Uo0nM8fzmnhp+GY/aEg=="
+    },
+    "node_modules/eslint-scope": {
+      "version": "9.1.2",
+      "integrity": "sha512-xS90H51cKw0jltxmvmHy2Iai1LIqrfbw57b79w/J7MfvDfkIkFZ+kj6zC3BjtUwh150HsSSdxXZcsuv72miDFQ=="
+    },
+    "node_modules/eslint-visitor-keys": {
+      "version": "5.0.1",
+      "integrity": "sha512-tD40eHxA35h0PEIZNeIjkHoDR4YjjJp34biM0mDvplBe//mB+IHCqHDGV7pxF+7MklTvighcCPPZC7ynWyjdTA=="
+    },
+    "node_modules/espree": {
+      "version": "11.2.0",
+      "integrity": "sha512-7p3DrVEIopW1B1avAGLuCSh1jubc01H2JHc8B4qqGblmg5gI9yumBgACjWo4JlIc04ufug4xJ3SQI8HkS/Rgzw=="
+    },
+    "node_modules/esquery": {
+      "version": "1.7.0",
+      "integrity": "sha512-Ap6G0WQwcU/LHsvLwON1fAQX9Zp0A2Y6Y/cJBl9r/JbW90Zyg4/zbG6zzKa2OTALELarYHmKu0GhpM5EO+7T0g=="
+    },
+    "node_modules/esrecurse": {
+      "version": "4.3.0",
+      "integrity": "sha512-KmfKL3b6G+RXvP8N1vr3Tq1kL/oCFgn2NYXEtqP8/L3pKapUA4G8cFVaoF3SU323CD4XypR/ffioHmkti6/Tag=="
+    },
+    "node_modules/estraverse": {
+      "version": "5.3.0",
+      "integrity": "sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA=="
+    },
+    "node_modules/esutils": {
+      "version": "2.0.3",
+      "integrity": "sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g=="
+    },
+    "node_modules/fast-deep-equal": {
+      "version": "3.1.3",
+      "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
+    },
+    "node_modules/fast-json-stable-stringify": {
+      "version": "2.1.0",
+      "integrity": "sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw=="
+    },
+    "node_modules/fast-levenshtein": {
+      "version": "2.0.6",
+      "integrity": "sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw=="
+    },
+    "node_modules/file-entry-cache": {
+      "version": "11.1.5",
+      "integrity": "sha512-+PFTHITI08JIGhnNpGNI8T8inUpgZfk3GNEqfT9R2zZV2iFXg3CvqzSl/uEhs7TSGujYRELEANyDvS8Fj7+S7Q=="
+    },
+    "node_modules/find-up": {
+      "version": "5.0.0",
+      "integrity": "sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng=="
+    },
+    "node_modules/flat-cache": {
+      "version": "6.1.23",
+      "integrity": "sha512-f++BY9pTk+983xK1FLzlLpmM0i0z+jHmx3QESGkURMXujQZz1k5wzwX6hjnQ8goaD0B+sYnDK1yZ6MTyZfUaqA=="
+    },
+    "node_modules/flatted": {
+      "version": "3.4.4",
+      "integrity": "sha512-5+ybhBZANEJxaH3X5evAFatUxLfEHSr7n6kYJ+1Qd0mUqr4eu9gIf6GDbWHf8RJijHrjjO8G+la14SlL2SeS1Q=="
+    },
+    "node_modules/glob-parent": {
+      "version": "6.0.2",
+      "integrity": "sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A=="
+    },
+    "node_modules/globals": {
+      "version": "17.4.0",
+      "integrity": "sha512-hjrNztw/VajQwOLsMNT1cbJiH2muO3OROCHnbehc8eY5JyD2gqz4AcMHPqgaOR59DjgUjYAYLeH699g/eWi2jw=="
+    },
+    "node_modules/hashery": {
+      "version": "1.5.1",
+      "integrity": "sha512-iZyKG96/JwPz1N55vj2Ie2vXbhu440zfUfJvSwEqEbeLluk7NnapfGqa7LH0mOsnDxTF85Mx8/dyR6HfqcbmbQ=="
+    },
+    "node_modules/hookified": {
+      "version": "1.15.1",
+      "integrity": "sha512-MvG/clsADq1GPM2KGo2nyfaWVyn9naPiXrqIe4jYjXNZQt238kWyOGrsyc/DmRAQ+Re6yeo6yX/yoNCG5KAEVg=="
+    },
+    "node_modules/ignore": {
+      "version": "5.3.2",
+      "integrity": "sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g=="
+    },
+    "node_modules/imurmurhash": {
+      "version": "0.1.4",
+      "integrity": "sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA=="
+    },
+    "node_modules/is-extglob": {
+      "version": "2.1.1",
+      "integrity": "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ=="
+    },
+    "node_modules/is-glob": {
+      "version": "4.0.3",
+      "integrity": "sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg=="
+    },
+    "node_modules/isexe": {
+      "version": "2.0.0",
+      "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
+    },
+    "node_modules/json-schema-traverse": {
+      "version": "0.4.1",
+      "integrity": "sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg=="
+    },
+    "node_modules/json-stable-stringify-without-jsonify": {
+      "version": "1.0.1",
+      "integrity": "sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw=="
+    },
+    "node_modules/keyv": {
+      "version": "5.6.0",
+      "integrity": "sha512-CYDD3SOtsHtyXeEORYRx2qBtpDJFjRTGXUtmNEMGyzYOKj1TE3tycdlho7kA1Ufx9OYWZzg52QFBGALTirzDSw=="
+    },
+    "node_modules/levn": {
+      "version": "0.4.1",
+      "integrity": "sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ=="
+    },
+    "node_modules/locate-path": {
+      "version": "6.0.0",
+      "integrity": "sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw=="
+    },
+    "node_modules/minimatch": {
+      "version": "10.2.6",
+      "integrity": "sha512-vpLQEs+VLCr1nU0BXS07maYoFwlDAH0gngQuuttxIwutDFEMHq2blX+8vpgxDdK3J1PwjCJiep77OitTZ4Ll1A=="
+    },
+    "node_modules/ms": {
+      "version": "2.1.3",
+      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="
+    },
+    "node_modules/natural-compare": {
+      "version": "1.4.0",
+      "integrity": "sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw=="
+    },
+    "node_modules/optionator": {
+      "version": "0.9.4",
+      "integrity": "sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g=="
+    },
+    "node_modules/p-limit": {
+      "version": "3.1.0",
+      "integrity": "sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ=="
+    },
+    "node_modules/p-locate": {
+      "version": "5.0.0",
+      "integrity": "sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw=="
+    },
+    "node_modules/path-exists": {
+      "version": "4.0.0",
+      "integrity": "sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w=="
+    },
+    "node_modules/path-key": {
+      "version": "3.1.1",
+      "integrity": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="
+    },
+    "node_modules/playwright": {
+      "version": "1.63.0",
+      "integrity": "sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg=="
+    },
+    "node_modules/playwright-core": {
+      "version": "1.63.0",
+      "integrity": "sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg=="
+    },
+    "node_modules/prelude-ls": {
+      "version": "1.2.1",
+      "integrity": "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="
+    },
+    "node_modules/prettier": {
+      "version": "3.9.8",
+      "integrity": "sha512-WRFq3Wn3WId7LLROfMLdH7xaFr2jR62wU8nLO6rQUOLOxNZUviyJQs1M0iIhLexSFy+L+w0ch66wtoO2jRjG0A=="
+    },
+    "node_modules/punycode": {
+      "version": "2.3.1",
+      "integrity": "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg=="
+    },
+    "node_modules/qified": {
+      "version": "0.10.1",
+      "integrity": "sha512-+Owyggi9IxT1ePKGafcI87ubSmxol6smwJ+RAHDQlx9+9cPwFWDiKFFCPuWhr9ignlGpZ9vDQLw67N4dcTVFEA=="
+    },
+    "node_modules/qified/node_modules/hookified": {
+      "version": "2.2.0",
+      "integrity": "sha512-p/LgFzRN5FeoD3DLS6bkUapeye6E4SI6yJs6KetENd18S+FBthqYq2amJUWpt5z0EQwwHemidjY5OqJGEKm5uA=="
+    },
+    "node_modules/regexp-tree": {
+      "version": "0.1.27",
+      "integrity": "sha512-iETxpjK6YoRWJG5o6hXLwvjYAoW+FEZn9os0PD/b6AP6xQwsa/Y7lCVgIixBbUPMfhu+i2LtdeAqVTgGlQarfA=="
+    },
+    "node_modules/safe-regex": {
+      "version": "2.1.1",
+      "integrity": "sha512-rx+x8AMzKb5Q5lQ95Zoi6ZbJqwCLkqi3XuJXp5P3rT8OEc6sZCJG5AE5dU3lsgRr/F4Bs31jSlVN+j5KrsGu9A=="
+    },
+    "node_modules/shebang-command": {
+      "version": "2.0.0",
+      "integrity": "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA=="
+    },
+    "node_modules/shebang-regex": {
+      "version": "3.0.0",
+      "integrity": "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A=="
+    },
+    "node_modules/type-check": {
+      "version": "0.4.0",
+      "integrity": "sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew=="
+    },
+    "node_modules/typescript": {
+      "version": "7.0.2",
+      "integrity": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA=="
+    },
+    "node_modules/undici-types": {
+      "version": "6.21.0",
+      "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
+    },
+    "node_modules/uri-js": {
+      "version": "4.4.1",
+      "integrity": "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="
+    },
+    "node_modules/which": {
+      "version": "2.0.2",
+      "integrity": "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA=="
+    },
+    "node_modules/word-wrap": {
+      "version": "1.2.5",
+      "integrity": "sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA=="
+    },
+    "node_modules/yocto-queue": {
+      "version": "0.1.0",
+      "integrity": "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
+    }
+  },
+  "Python_lock_packages": 42,
+  "Python_lock_identities": {
+    "bandit": "1.9.4",
+    "boolean-py": "5.0",
+    "build": "1.6.1",
+    "cachecontrol": "0.14.4",
+    "certifi": "2026.7.22",
+    "charset-normalizer": "3.5.1",
+    "click": "8.5.0",
+    "cyclonedx-python-lib": "11.12.0",
+    "defusedxml": "0.7.1",
+    "filelock": "4.0.1",
+    "idna": "3.20",
+    "license-expression": "30.4.4",
+    "markdown-it-py": "4.2.0",
+    "mdurl": "0.1.2",
+    "msgpack": "1.2.2",
+    "mypy": "1.18.2",
+    "mypy-extensions": "1.1.0",
+    "packageurl-python": "0.17.6",
+    "packaging": "26.3",
+    "pathspec": "1.1.1",
+    "pip-api": "0.0.35",
+    "pip-audit": "2.10.1",
+    "pip-requirements-parser": "32.0.1",
+    "pip-tools": "7.6.1",
+    "platformdirs": "4.11.11",
+    "py-serializable": "2.1.0",
+    "pygments": "2.21.0",
+    "pyparsing": "3.3.2",
+    "pyproject-hooks": "1.3.3",
+    "pyyaml": "6.0.3",
+    "requests": "2.34.2",
+    "rich": "15.0.0",
+    "ruff": "0.15.16",
+    "sortedcontainers": "2.4.0",
+    "stevedore": "5.9.1",
+    "tomli": "2.4.1",
+    "tomli-w": "1.2.0",
+    "typing-extensions": "4.16.0",
+    "urllib3": "2.8.0",
+    "wheel": "0.48.0",
+    "pip": "26.2.1",
+    "setuptools": "84.0.0"
+  },
+  "browser": {
+    "platform": "linux",
+    "node": "v22.23.3",
+    "browser": "153.0.8010.12",
+    "checks": 42,
+    "raw_axe": 49,
+    "violations": 0,
+    "runtime_sources": 21,
+    "runner_sha256": "bb9b6ab452e60c48a296bd1995389279edcfd987a9ed79669d3d2680008aa300",
+    "request_count": 626,
+    "incomplete": "color-contrast remains explicit; opaque supplemental checks only",
+    "visuals": "Reviewer inspected actual Linux CI1280/320 account pixels: account wrapped, six exact desktop metrics/health visible; intentional horizontal table scrolling at320."
+  },
+  "docs": {
+    "files": 14,
+    "links": 75,
+    "unique": 65,
+    "merge_commit": "80ca150a746495d5cb18872de438e2e71b121e0c",
+    "full_tree": "4f1703e24dfc035a9722cc6caa07e28b20ccbaf5"
+  },
+  "published_changed_blobs": 34,
+  "published": {
+    ".github/workflows/pages.yml": {
+      "sha256": "d4597cd81cd2366ee52561a7b2660da77967ff36c33f831214a9b1b195c35850",
+      "git_blob": "2982ee5415890add8a445e23e9555d5294fb5e77"
+    },
+    "README.md": {
+      "sha256": "12034edfb4cbb2b7f97b4de62ec3e092de8332ea841dfc96377aac7a0ec65d9f",
+      "git_blob": "082eeea2970e7e1d580e3f2dcfebca95a685817f"
+    },
+    "SECURITY.md": {
+      "sha256": "0f347c7a3925e56ef8d96547b45678281493b8df64ffa2d31c09a61fdbc42dc5",
+      "git_blob": "3e930bd8ce3a91b306c69c51102d6f1c1e082da8"
+    },
+    "STATUS.md": {
+      "sha256": "10ef70299f1d1faa6cb88386b192dc5e8cf180caeb5af703c39eb26734dc7cef",
+      "git_blob": "0f1a8277015c10fb052be5f77ecd0e2638f55e8e"
+    },
+    "evidence/position-viewer/README.md": {
+      "sha256": "1b904dfb6019453fb10ef4724b04d8f0975187d3248a28d0550f55e761d17e68",
+      "git_blob": "ee86ded24bdd1872f367db6265daf7f0037956fb"
+    },
+    "evidence/position-viewer/author/format.log": {
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "git_blob": "4aa0d16e7a0ff5c16269bf45771cebe89cc2e81d"
+    },
+    "evidence/position-viewer/author/lint.json": {
+      "sha256": "3dd2dad92e2dfcb8c405d81342a01c43f46cff0b0399902737f7645ba3245baf",
+      "git_blob": "561d9607e36dda4e6b6ff9360e0e311de8499890"
+    },
+    "evidence/position-viewer/author/node-unit.log": {
+      "sha256": "f58f35bb1bd5fb545e438f7ec78a6e4e891dfb7289ad6e59013c4b7a7c4b867d",
+      "git_blob": "6792d0f516ad57e5756a1c58fd6e9aa09c09402a"
+    },
+    "evidence/position-viewer/author/npm-audit.json": {
+      "sha256": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+      "git_blob": "73c95f598757c2585874a344df8cd0b11c51ea4c"
+    },
+    "evidence/position-viewer/author/python-dependencies.json": {
+      "sha256": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+      "git_blob": "420090971730fd414bc282c71c4ea9d07fd35ee1"
+    },
+    "evidence/position-viewer/author/python-security.json": {
+      "sha256": "12f0cabcc7fb8eaacaf5b02ff40898e6e972055f337eb4eebf3edcd68c671d28",
+      "git_blob": "604a7e1270cb2f652354fb8adc1db6a6ccdd2928"
+    },
+    "evidence/position-viewer/author/python-types.log": {
+      "sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+      "git_blob": "8539cd2ed98cd05e81db9dc93832e897c1d2a470"
+    },
+    "evidence/position-viewer/author/python-unit.log": {
+      "sha256": "36878bced54319163487722445bb8ffc4cf7acfb056c147bda3e06081b31d70d",
+      "git_blob": "1d3f89752befa4e14d2879573840e5aa7a5cbae5"
+    },
+    "evidence/position-viewer/author/security-full.json": {
+      "sha256": "7bb5136c7ae264cec8008e01abe90183690d27d587d0b9b5134d929d034f4b06",
+      "git_blob": "8d773e7ace3249a2ddfd212bbaae5fdd3b23dd50"
+    },
+    "evidence/position-viewer/author/security-mapping.json": {
+      "sha256": "1795d4b2fad1b1a62e9591ddaf046741c567b71af44849fc300995ae8b54ec84",
+      "git_blob": "27f9b8ebdd0a355e845f633eb9975ecb64b34466"
+    },
+    "evidence/position-viewer/author/security-policy.log": {
+      "sha256": "9fa6873c97651873f86a07c1405c4ec302600f0f865f5f607e48394d5ab34528",
+      "git_blob": "8f8ae4ec5b377572b631df2cae07c8040e9e752e"
+    },
+    "evidence/position-viewer/author/source-sha256.json": {
+      "sha256": "f5356baa1c561422fc3810c62617b7b56471588bb6653cd8ec897e915a03f12e",
+      "git_blob": "145b90729316a384ebe4a1f970b1166043e18b48"
+    },
+    "evidence/position-viewer/author/types.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "evidence/position-viewer/browser/1280-account-impact.png": {
+      "sha256": "4e73910f3d092ea475fa8d54ffba074b14af356ea87b310401917fc1c09097b5",
+      "git_blob": "58e94676ff274add9cca840718b0d20d776cc783"
+    },
+    "evidence/position-viewer/browser/320-account-impact.png": {
+      "sha256": "3d2740d33e98422b79a2c55b521d17ace1370aafbbbfc692c72bc2f407884d38",
+      "git_blob": "4b1826f8eaec3780fda6cecbb4c94e6caa0c264c"
+    },
+    "evidence/position-viewer/browser/accessibility.json.gz": {
+      "sha256": "9a87d350d44f0032804c24996e6502ff639adc987a18970f4b229035a8954a62",
+      "git_blob": "cf7938372405d90857986b3b84ddda9be5b28b5a"
+    },
+    "evidence/position-viewer/browser/axe-raw.zip": {
+      "sha256": "b3f29c8606c329a27a7e3ac559235f6fc193354b2024daade4b053ccd1c86e70",
+      "git_blob": "acbe8b671937efa2210f25c727861295d8e014ef"
+    },
+    "evidence/position-viewer/provenance.json": {
+      "sha256": "74ff8f90f351c23dba6485e1fcde75ea974dcf7ce3e444470593a43c3bb873c4",
+      "git_blob": "016fcf178e8881f3c1a059e334dbc9c4d139380b"
+    },
+    "evidence/position-viewer/summary.json": {
+      "sha256": "2d85ae8e7c8e9a8ad6fb32b6d1e2857058ff3e347cc17a483a1945c201566306",
+      "git_blob": "b298436f13772d2d42813ca299648a576b75d64b"
+    },
+    "index.html": {
+      "sha256": "7842ec6f55960466087bf71920c05d35c87eea57a2b165aee228fd6a9a0a45d7",
+      "git_blob": "6c3e05a7f3c3d40d8c89e7e308ff983baf6d6e9e"
+    },
+    "position-report.mjs": {
+      "sha256": "38f31262e2248ae6af2d07bf7ee02de3d24316eaaac164e3dc2ae597e00c8f7f",
+      "git_blob": "9d879d27bc66157a1f90ded5bae0d5cc1438b4be"
+    },
+    "reports/aave-account-impact13.json": {
+      "sha256": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+      "git_blob": "4a05809de2793c8673f073155e371dc4431ab16a"
+    },
+    "scripts/check_accessibility.mjs": {
+      "sha256": "bb9b6ab452e60c48a296bd1995389279edcfd987a9ed79669d3d2680008aa300",
+      "git_blob": "72f5a1c2a3c9c04e760f6365292eea97a9fdb8cd"
+    },
+    "security-reviewed.json": {
+      "sha256": "0e4b99fd01e913039a295c3795a4d498c1f24232a6b94bb3ac2aa991e5185d09",
+      "git_blob": "259d1ac36d64cd6cbbbf600b56204c987bc20ca6"
+    },
+    "style.css": {
+      "sha256": "abd759c97109238ac62cf3614dada5fe6c915b049bc74982ccf6ccaf2fff82e3",
+      "git_blob": "2e59897da3db3f11158113783eeec548ed0bf213"
+    },
+    "tests/data/position-controls.json": {
+      "sha256": "033383cc85af549cf4f9e1bda7d506e342af2a1f385a6afe88025e9dcd2deb9f",
+      "git_blob": "2050d8293c384c9c66c0a3ab52bf610dcb051e83"
+    },
+    "tests/position.test.mjs": {
+      "sha256": "9052e49f4b26525acdf3333ee7a0ee4e77e3734a615f29744bbc893936610207",
+      "git_blob": "98c73fa8d150fa48292660a6523b483829a1078b"
+    },
+    "tests/test_site.py": {
+      "sha256": "c40f26b927b04eb6ef0a659fa8bbd8dd0b85e7a2491ae53736da3a07257340f3",
+      "git_blob": "f88b3a2d6d4d366cb148b5989248b0e35d049743"
+    },
+    "trace-viewer.mjs": {
+      "sha256": "bffcde1611f85b4edbcd1ed1e937bc42939113362bda803414760518a7140bbd",
+      "git_blob": "26f4398529ef2261b085f8bde7bab499f428db0f"
+    }
+  },
+  "data_inspection": {
+    "actual13": {
+      "complete": true,
+      "reasons": [],
+      "differences": {
+        "total_collateral_base": 126525897974,
+        "total_debt_base": 20224381745,
+        "available_borrows_base": 81628966124,
+        "liquidation_threshold_bps": 0,
+        "ltv_bps": 0,
+        "health_factor_wad": 3852169807877337
+      }
+    },
+    "missing_account": {
+      "complete": false,
+      "reasons": [
+        "incomplete_account_views"
+      ],
+      "differences": {
+        "total_collateral_base": null,
+        "total_debt_base": null,
+        "available_borrows_base": null,
+        "liquidation_threshold_bps": null,
+        "ltv_bps": null,
+        "health_factor_wad": null
+      }
+    },
+    "wrong_provider": {
+      "complete": false,
+      "reasons": [
+        "pool_oracle_binding_unproven"
+      ],
+      "differences": {
+        "total_collateral_base": null,
+        "total_debt_base": null,
+        "available_borrows_base": null,
+        "liquidation_threshold_bps": null,
+        "ltv_bps": null,
+        "health_factor_wad": null
+      }
+    },
+    "empty_pool_code": {
+      "complete": false,
+      "reasons": [
+        "pool_code_identity_changed",
+        "pool_code_unavailable"
+      ],
+      "differences": {
+        "total_collateral_base": null,
+        "total_debt_base": null,
+        "available_borrows_base": null,
+        "liquidation_threshold_bps": null,
+        "ltv_bps": null,
+        "health_factor_wad": null
+      }
+    },
+    "changed_pool_code": {
+      "complete": false,
+      "reasons": [
+        "pool_code_identity_changed"
+      ],
+      "differences": {
+        "total_collateral_base": null,
+        "total_debt_base": null,
+        "available_borrows_base": null,
+        "liquidation_threshold_bps": null,
+        "ltv_bps": null,
+        "health_factor_wad": null
+      }
+    },
+    "initial_difference": {
+      "complete": false,
+      "reasons": [
+        "initial_account_views_differ"
+      ],
+      "differences": {
+        "total_collateral_base": null,
+        "total_debt_base": null,
+        "available_borrows_base": null,
+        "liquidation_threshold_bps": null,
+        "ltv_bps": null,
+        "health_factor_wad": null
+      }
+    },
+    "large_integer": {
+      "complete": true,
+      "reasons": [],
+      "differences": {
+        "total_collateral_base": 1,
+        "total_debt_base": 1,
+        "available_borrows_base": 10,
+        "liquidation_threshold_bps": 0,
+        "ltv_bps": 0,
+        "health_factor_wad": 1
+      }
+    },
+    "no_debt": {
+      "complete": true,
+      "reasons": [],
+      "differences": {
+        "total_collateral_base": 1,
+        "total_debt_base": 0,
+        "available_borrows_base": 1,
+        "liquidation_threshold_bps": 0,
+        "ltv_bps": 0,
+        "health_factor_wad": null
+      }
+    },
+    "debt_transition": {
+      "complete": true,
+      "reasons": [],
+      "differences": {
+        "total_collateral_base": 1,
+        "total_debt_base": 1,
+        "available_borrows_base": 1,
+        "liquidation_threshold_bps": 0,
+        "ltv_bps": 0,
+        "health_factor_wad": null
+      }
+    },
+    "health_boundary": {
+      "complete": true,
+      "reasons": [],
+      "differences": {
+        "total_collateral_base": 1,
+        "total_debt_base": 0,
+        "available_borrows_base": 1,
+        "liquidation_threshold_bps": 0,
+        "ltv_bps": 0,
+        "health_factor_wad": 1
+      }
+    }
+  },
+  "reviewer_corrections": [
+    "Initial local final34 review corrected raw schema expectations; preserved original review779 proof separately. Current review uses original exact current artifact structures and no producer rerun. Initial final-metadata serialization reused b after static arithmetic assigned it baseline data; corrected to retained browser_record, no product/audit assertion failed."
+  ],
+  "checks_performed": [
+    "local current head",
+    "pages original run first attempt success",
+    "pages complete step statuses",
+    "website-quality-reports exact artifact metadata",
+    "accessibility-evidence exact artifact metadata",
+    "docs original run first attempt success",
+    "docs complete step statuses",
+    "docs-links exact artifact metadata",
+    "PR exact open/unmerged",
+    "four exact mandatory checks success",
+    "Pages build/deploy skipped",
+    "main strict/admin/one human approval intact",
+    "remote published head proof",
+    "complete remote Git tree",
+    "exact independent34 staged source review",
+    "all34 published reviewed blob maps",
+    ".github/workflows/pages.yml checksum",
+    ".github/workflows/pages.yml exact published Git blob",
+    ".github/workflows/pages.yml actual remote Git blob match",
+    "README.md checksum",
+    "README.md exact published Git blob",
+    "README.md actual remote Git blob match",
+    "SECURITY.md checksum",
+    "SECURITY.md exact published Git blob",
+    "SECURITY.md actual remote Git blob match",
+    "STATUS.md checksum",
+    "STATUS.md exact published Git blob",
+    "STATUS.md actual remote Git blob match",
+    "evidence/position-viewer/README.md checksum",
+    "evidence/position-viewer/README.md exact published Git blob",
+    "evidence/position-viewer/README.md actual remote Git blob match",
+    "evidence/position-viewer/author/format.log checksum",
+    "evidence/position-viewer/author/format.log exact published Git blob",
+    "evidence/position-viewer/author/format.log actual remote Git blob match",
+    "evidence/position-viewer/author/lint.json checksum",
+    "evidence/position-viewer/author/lint.json exact published Git blob",
+    "evidence/position-viewer/author/lint.json actual remote Git blob match",
+    "evidence/position-viewer/author/node-unit.log checksum",
+    "evidence/position-viewer/author/node-unit.log exact published Git blob",
+    "evidence/position-viewer/author/node-unit.log actual remote Git blob match",
+    "evidence/position-viewer/author/npm-audit.json checksum",
+    "evidence/position-viewer/author/npm-audit.json exact published Git blob",
+    "evidence/position-viewer/author/npm-audit.json actual remote Git blob match",
+    "evidence/position-viewer/author/python-dependencies.json checksum",
+    "evidence/position-viewer/author/python-dependencies.json exact published Git blob",
+    "evidence/position-viewer/author/python-dependencies.json actual remote Git blob match",
+    "evidence/position-viewer/author/python-security.json checksum",
+    "evidence/position-viewer/author/python-security.json exact published Git blob",
+    "evidence/position-viewer/author/python-security.json actual remote Git blob match",
+    "evidence/position-viewer/author/python-types.log checksum",
+    "evidence/position-viewer/author/python-types.log exact published Git blob",
+    "evidence/position-viewer/author/python-types.log actual remote Git blob match",
+    "evidence/position-viewer/author/python-unit.log checksum",
+    "evidence/position-viewer/author/python-unit.log exact published Git blob",
+    "evidence/position-viewer/author/python-unit.log actual remote Git blob match",
+    "evidence/position-viewer/author/security-full.json checksum",
+    "evidence/position-viewer/author/security-full.json exact published Git blob",
+    "evidence/position-viewer/author/security-full.json actual remote Git blob match",
+    "evidence/position-viewer/author/security-mapping.json checksum",
+    "evidence/position-viewer/author/security-mapping.json exact published Git blob",
+    "evidence/position-viewer/author/security-mapping.json actual remote Git blob match",
+    "evidence/position-viewer/author/security-policy.log checksum",
+    "evidence/position-viewer/author/security-policy.log exact published Git blob",
+    "evidence/position-viewer/author/security-policy.log actual remote Git blob match",
+    "evidence/position-viewer/author/source-sha256.json checksum",
+    "evidence/position-viewer/author/source-sha256.json exact published Git blob",
+    "evidence/position-viewer/author/source-sha256.json actual remote Git blob match",
+    "evidence/position-viewer/author/types.log checksum",
+    "evidence/position-viewer/author/types.log exact published Git blob",
+    "evidence/position-viewer/author/types.log actual remote Git blob match",
+    "evidence/position-viewer/browser/1280-account-impact.png checksum",
+    "evidence/position-viewer/browser/1280-account-impact.png exact published Git blob",
+    "evidence/position-viewer/browser/1280-account-impact.png actual remote Git blob match",
+    "evidence/position-viewer/browser/320-account-impact.png checksum",
+    "evidence/position-viewer/browser/320-account-impact.png exact published Git blob",
+    "evidence/position-viewer/browser/320-account-impact.png actual remote Git blob match",
+    "evidence/position-viewer/browser/accessibility.json.gz checksum",
+    "evidence/position-viewer/browser/accessibility.json.gz exact published Git blob",
+    "evidence/position-viewer/browser/accessibility.json.gz actual remote Git blob match",
+    "evidence/position-viewer/browser/axe-raw.zip checksum",
+    "evidence/position-viewer/browser/axe-raw.zip exact published Git blob",
+    "evidence/position-viewer/browser/axe-raw.zip actual remote Git blob match",
+    "evidence/position-viewer/provenance.json checksum",
+    "evidence/position-viewer/provenance.json exact published Git blob",
+    "evidence/position-viewer/provenance.json actual remote Git blob match",
+    "evidence/position-viewer/summary.json checksum",
+    "evidence/position-viewer/summary.json exact published Git blob",
+    "evidence/position-viewer/summary.json actual remote Git blob match",
+    "index.html checksum",
+    "index.html exact published Git blob",
+    "index.html actual remote Git blob match",
+    "position-report.mjs checksum",
+    "position-report.mjs exact published Git blob",
+    "position-report.mjs actual remote Git blob match",
+    "reports/aave-account-impact13.json checksum",
+    "reports/aave-account-impact13.json exact published Git blob",
+    "reports/aave-account-impact13.json actual remote Git blob match",
+    "scripts/check_accessibility.mjs checksum",
+    "scripts/check_accessibility.mjs exact published Git blob",
+    "scripts/check_accessibility.mjs actual remote Git blob match",
+    "security-reviewed.json checksum",
+    "security-reviewed.json exact published Git blob",
+    "security-reviewed.json actual remote Git blob match",
+    "style.css checksum",
+    "style.css exact published Git blob",
+    "style.css actual remote Git blob match",
+    "tests/data/position-controls.json checksum",
+    "tests/data/position-controls.json exact published Git blob",
+    "tests/data/position-controls.json actual remote Git blob match",
+    "tests/position.test.mjs checksum",
+    "tests/position.test.mjs exact published Git blob",
+    "tests/position.test.mjs actual remote Git blob match",
+    "tests/test_site.py checksum",
+    "tests/test_site.py exact published Git blob",
+    "tests/test_site.py actual remote Git blob match",
+    "trace-viewer.mjs checksum",
+    "trace-viewer.mjs exact published Git blob",
+    "trace-viewer.mjs actual remote Git blob match",
+    ".quality/position-viewer/parent-staged-manifest.json retained independent staged input",
+    ".github/workflows/pages.yml retained independent staged input",
+    "README.md retained independent staged input",
+    "SECURITY.md retained independent staged input",
+    "STATUS.md retained independent staged input",
+    "evidence/position-viewer/README.md retained independent staged input",
+    "evidence/position-viewer/author/format.log retained independent staged input",
+    "evidence/position-viewer/author/lint.json retained independent staged input",
+    "evidence/position-viewer/author/node-unit.log retained independent staged input",
+    "evidence/position-viewer/author/npm-audit.json retained independent staged input",
+    "evidence/position-viewer/author/python-dependencies.json retained independent staged input",
+    "evidence/position-viewer/author/python-security.json retained independent staged input",
+    "evidence/position-viewer/author/python-types.log retained independent staged input",
+    "evidence/position-viewer/author/python-unit.log retained independent staged input",
+    "evidence/position-viewer/author/security-full.json retained independent staged input",
+    "evidence/position-viewer/author/security-mapping.json retained independent staged input",
+    "evidence/position-viewer/author/security-policy.log retained independent staged input",
+    "evidence/position-viewer/author/source-sha256.json retained independent staged input",
+    "evidence/position-viewer/author/types.log retained independent staged input",
+    "evidence/position-viewer/browser/1280-account-impact.png retained independent staged input",
+    "evidence/position-viewer/browser/320-account-impact.png retained independent staged input",
+    "evidence/position-viewer/browser/accessibility.json.gz retained independent staged input",
+    "evidence/position-viewer/browser/axe-raw.zip retained independent staged input",
+    "evidence/position-viewer/provenance.json retained independent staged input",
+    "evidence/position-viewer/summary.json retained independent staged input",
+    "index.html retained independent staged input",
+    "position-report.mjs retained independent staged input",
+    "reports/aave-account-impact13.json retained independent staged input",
+    "scripts/check_accessibility.mjs retained independent staged input",
+    "security-reviewed.json retained independent staged input",
+    "style.css retained independent staged input",
+    "tests/data/position-controls.json retained independent staged input",
+    "tests/position.test.mjs retained independent staged input",
+    "tests/test_site.py retained independent staged input",
+    "trace-viewer.mjs retained independent staged input",
+    "404.html retained independent staged input",
+    "AGENTS.md retained independent staged input",
+    "CONTRIBUTING.md retained independent staged input",
+    "app.js retained independent staged input",
+    "assets/examples/action-comparison.json retained independent staged input",
+    "comparison.mjs retained independent staged input",
+    "eslint.config.mjs retained independent staged input",
+    "eslint.security.config.mjs retained independent staged input",
+    "observed-trace.mjs retained independent staged input",
+    "package-lock.json retained independent staged input",
+    "package.json retained independent staged input",
+    "pyproject.toml retained independent staged input",
+    "report-validation.mjs retained independent staged input",
+    "reports/agent-local-codex.json retained independent staged input",
+    "reports/trace-mainnet-prefix-four.json retained independent staged input",
+    "reports/trace-observed-price32.json retained independent staged input",
+    "requirements-quality.in retained independent staged input",
+    "requirements-quality.txt retained independent staged input",
+    "scripts/check_quality.mjs retained independent staged input",
+    "scripts/quality_policy.mjs retained independent staged input",
+    "tests/comparison.test.mjs retained independent staged input",
+    "tests/data/observed-controls.json retained independent staged input",
+    "tests/data/trace-oracle-prefix-32.json retained independent staged input",
+    "tests/observed.test.mjs retained independent staged input",
+    "tests/quality.test.mjs retained independent staged input",
+    "tests/report.test.mjs retained independent staged input",
+    "tests/trace.test.mjs retained independent staged input",
+    "trace-comparison.mjs retained independent staged input",
+    "trace-report.mjs retained independent staged input",
+    "tsconfig.json retained independent staged input",
+    "types/browser-tools.d.ts retained independent staged input",
+    ".quality/position-unit-release.log retained independent staged input",
+    ".quality/position-python-release.log retained independent staged input",
+    ".quality/position-format-release.log retained independent staged input",
+    ".quality/position-types-release.log retained independent staged input",
+    ".quality/position-python-types-release.log retained independent staged input",
+    ".quality/position-python-security-release.json retained independent staged input",
+    ".quality/security.json retained independent staged input",
+    ".quality/source-sha256.json retained independent staged input",
+    ".quality/position-security-mapping.json retained independent staged input",
+    ".quality/position-security-corrected-policy.log retained independent staged input",
+    ".quality/position-npm-audit.json retained independent staged input",
+    ".quality/position-python-dependencies.json retained independent staged input",
+    ".quality/position-lint-release.json retained independent staged input",
+    ".quality/position-browser-recheck/accessibility.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-1280-agent-local-codex.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-1280-console.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-1280-depeg-stress.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-1280-ethereum-uniswap-slippage.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-1280-liquidity-shock.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-1280-recovery-trap.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-320-agent-local-codex.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-320-console.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-320-depeg-stress.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-320-ethereum-uniswap-slippage.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-320-liquidity-shock.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-320-recovery-trap.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-390-agent-local-codex.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-390-console.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-390-depeg-stress.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-390-ethereum-uniswap-slippage.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-390-liquidity-shock.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-390-recovery-trap.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-404.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-health_boundary-1280.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-health_boundary-320.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-health_boundary-390.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-impact-1280.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-impact-320.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-impact-390.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-large_integer-1280.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-large_integer-320.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-large_integer-390.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-missing_account-1280.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-missing_account-320.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-missing_account-390.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-no_debt-1280.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-no_debt-320.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-account-no_debt-390.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-console-import.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-error.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-observed-price-1280.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-observed-price-320.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-observed-price-390.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-observed-unproven-1280.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-observed-unproven-320.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-observed-unproven-390.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-original32-1280.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-original32-320.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-original32-390.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-signed-prefix-1280.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-signed-prefix-320.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-signed-prefix-390.json retained independent staged input",
+    ".quality/position-browser-recheck/axe-signed-prefix-unverified.json retained independent staged input",
+    ".quality/position-browser-recheck/1280-account-impact.png retained independent staged input",
+    ".quality/position-browser-recheck/320-account-impact.png retained independent staged input",
+    ".quality/position-viewer/independent-corrected-source-review.py retained independent staged input",
+    ".quality/position-docs-links.json retained independent staged input",
+    ".github/PULL_REQUEST_TEMPLATE.md retained independent staged input",
+    "evidence/agent-decisions/commands.md retained independent staged input",
+    "evidence/observed-prices/README.md retained independent staged input",
+    "evidence/trace-differences/README.md retained independent staged input",
+    "evidence/trace-viewer/commands.md retained independent staged input",
+    ".quality/position-browser-release.log retained independent staged input",
+    ".quality/position-browser-recheck.log retained independent staged input",
+    ".quality/position-docs-links.log retained independent staged input",
+    ".quality/position-viewer/independent-source-review.json retained independent staged input",
+    ".quality/position-viewer/independent-corrected-source-review.json retained independent staged input",
+    "exact old122 rationale/context mapping retained",
+    "full19JS/20types/14rules scope",
+    "all26 policy/source/config bindings",
+    "app.js checksum",
+    "app.js exact published Git blob",
+    "comparison.mjs checksum",
+    "comparison.mjs exact published Git blob",
+    "eslint.config.mjs checksum",
+    "eslint.config.mjs exact published Git blob",
+    "eslint.security.config.mjs checksum",
+    "eslint.security.config.mjs exact published Git blob",
+    "observed-trace.mjs checksum",
+    "observed-trace.mjs exact published Git blob",
+    "package-lock.json checksum",
+    "package-lock.json exact published Git blob",
+    "package.json checksum",
+    "package.json exact published Git blob",
+    "position-report.mjs checksum",
+    "position-report.mjs exact published Git blob",
+    "pyproject.toml checksum",
+    "pyproject.toml exact published Git blob",
+    "report-validation.mjs checksum",
+    "report-validation.mjs exact published Git blob",
+    "requirements-quality.in checksum",
+    "requirements-quality.in exact published Git blob",
+    "requirements-quality.txt checksum",
+    "requirements-quality.txt exact published Git blob",
+    "scripts/check_accessibility.mjs checksum",
+    "scripts/check_accessibility.mjs exact published Git blob",
+    "scripts/check_quality.mjs checksum",
+    "scripts/check_quality.mjs exact published Git blob",
+    "scripts/quality_policy.mjs checksum",
+    "scripts/quality_policy.mjs exact published Git blob",
+    "tests/comparison.test.mjs checksum",
+    "tests/comparison.test.mjs exact published Git blob",
+    "tests/observed.test.mjs checksum",
+    "tests/observed.test.mjs exact published Git blob",
+    "tests/position.test.mjs checksum",
+    "tests/position.test.mjs exact published Git blob",
+    "tests/quality.test.mjs checksum",
+    "tests/quality.test.mjs exact published Git blob",
+    "tests/report.test.mjs checksum",
+    "tests/report.test.mjs exact published Git blob",
+    "tests/trace.test.mjs checksum",
+    "tests/trace.test.mjs exact published Git blob",
+    "trace-comparison.mjs checksum",
+    "trace-comparison.mjs exact published Git blob",
+    "trace-report.mjs checksum",
+    "trace-report.mjs exact published Git blob",
+    "trace-viewer.mjs checksum",
+    "trace-viewer.mjs exact published Git blob",
+    "tsconfig.json checksum",
+    "tsconfig.json exact published Git blob",
+    "types/browser-tools.d.ts checksum",
+    "types/browser-tools.d.ts exact published Git blob",
+    "all19 raw ESLint security reports",
+    "app.js no hidden/error findings",
+    "comparison.mjs no hidden/error findings",
+    "eslint.config.mjs no hidden/error findings",
+    "eslint.security.config.mjs no hidden/error findings",
+    "observed-trace.mjs no hidden/error findings",
+    "position-report.mjs no hidden/error findings",
+    "report-validation.mjs no hidden/error findings",
+    "scripts/check_accessibility.mjs no hidden/error findings",
+    "scripts/check_quality.mjs no hidden/error findings",
+    "scripts/quality_policy.mjs no hidden/error findings",
+    "tests/comparison.test.mjs no hidden/error findings",
+    "tests/observed.test.mjs no hidden/error findings",
+    "tests/position.test.mjs no hidden/error findings",
+    "tests/quality.test.mjs no hidden/error findings",
+    "tests/report.test.mjs no hidden/error findings",
+    "tests/trace.test.mjs no hidden/error findings",
+    "trace-comparison.mjs no hidden/error findings",
+    "trace-report.mjs no hidden/error findings",
+    "trace-viewer.mjs no hidden/error findings",
+    "all137 exact raw fingerprints and source-bound rationales",
+    "reuse independent exact122 rationale preservation and15 new contexts",
+    "full19 lint clean",
+    "quality126 actual Node tests zero failures/skips",
+    "actual12 Python tests",
+    "both check and quality126 Node results",
+    "all109 exact npm lock package identities/integrities",
+    "pages/website-quality-reports/npm-audit.json full109 audit zero reported advisories",
+    "pages/accessibility-evidence/npm-audit.json full109 audit zero reported advisories",
+    "all42 exact Python lock identities zero reported advisories",
+    "tests/test_site.py checksum",
+    "tests/test_site.py exact published Git blob",
+    "requirements-quality.txt checksum",
+    "requirements-quality.txt exact published Git blob",
+    "all tracked Python source selected",
+    "full Python Bandit zero findings/skips/suppressions",
+    "actualLinux42 browser groups pass",
+    "scripts/check_accessibility.mjs checksum",
+    "scripts/check_accessibility.mjs exact published Git blob",
+    "index.html checksum",
+    "index.html exact published Git blob",
+    "app.js checksum",
+    "app.js exact published Git blob",
+    "comparison.mjs checksum",
+    "comparison.mjs exact published Git blob",
+    "report-validation.mjs checksum",
+    "report-validation.mjs exact published Git blob",
+    "trace-report.mjs checksum",
+    "trace-report.mjs exact published Git blob",
+    "trace-comparison.mjs checksum",
+    "trace-comparison.mjs exact published Git blob",
+    "trace-viewer.mjs checksum",
+    "trace-viewer.mjs exact published Git blob",
+    "observed-trace.mjs checksum",
+    "observed-trace.mjs exact published Git blob",
+    "position-report.mjs checksum",
+    "position-report.mjs exact published Git blob",
+    "reports/aave-account-impact13.json checksum",
+    "reports/aave-account-impact13.json exact published Git blob",
+    "tests/data/position-controls.json checksum",
+    "tests/data/position-controls.json exact published Git blob",
+    "reports/trace-observed-price32.json checksum",
+    "reports/trace-observed-price32.json exact published Git blob",
+    "tests/data/observed-controls.json checksum",
+    "tests/data/observed-controls.json exact published Git blob",
+    "reports/trace-mainnet-prefix-four.json checksum",
+    "reports/trace-mainnet-prefix-four.json exact published Git blob",
+    "tests/data/trace-oracle-prefix-32.json checksum",
+    "tests/data/trace-oracle-prefix-32.json exact published Git blob",
+    "assets/examples/action-comparison.json checksum",
+    "assets/examples/action-comparison.json exact published Git blob",
+    "reports/agent-local-codex.json checksum",
+    "reports/agent-local-codex.json exact published Git blob",
+    "style.css checksum",
+    "style.css exact published Git blob",
+    "404.html checksum",
+    "404.html exact published Git blob",
+    "package.json checksum",
+    "package.json exact published Git blob",
+    "package-lock.json checksum",
+    "package-lock.json exact published Git blob",
+    "browser21 source/locked tool versions",
+    "all49 raw axe outputs present",
+    "1280-console exact raw axe/summary zero violations",
+    "1280-console scoped opaque contrast evidence",
+    "390-console exact raw axe/summary zero violations",
+    "390-console scoped opaque contrast evidence",
+    "320-console exact raw axe/summary zero violations",
+    "320-console scoped opaque contrast evidence",
+    "console-import exact raw axe/summary zero violations",
+    "console-import scoped opaque contrast evidence",
+    "1280-liquidity-shock exact raw axe/summary zero violations",
+    "1280-liquidity-shock scoped opaque contrast evidence",
+    "1280-recovery-trap exact raw axe/summary zero violations",
+    "1280-recovery-trap scoped opaque contrast evidence",
+    "1280-depeg-stress exact raw axe/summary zero violations",
+    "1280-depeg-stress scoped opaque contrast evidence",
+    "1280-ethereum-uniswap-slippage exact raw axe/summary zero violations",
+    "1280-ethereum-uniswap-slippage scoped opaque contrast evidence",
+    "1280-agent-local-codex exact raw axe/summary zero violations",
+    "1280-agent-local-codex scoped opaque contrast evidence",
+    "390-liquidity-shock exact raw axe/summary zero violations",
+    "390-liquidity-shock scoped opaque contrast evidence",
+    "390-recovery-trap exact raw axe/summary zero violations",
+    "390-recovery-trap scoped opaque contrast evidence",
+    "390-depeg-stress exact raw axe/summary zero violations",
+    "390-depeg-stress scoped opaque contrast evidence",
+    "390-ethereum-uniswap-slippage exact raw axe/summary zero violations",
+    "390-ethereum-uniswap-slippage scoped opaque contrast evidence",
+    "390-agent-local-codex exact raw axe/summary zero violations",
+    "390-agent-local-codex scoped opaque contrast evidence",
+    "320-liquidity-shock exact raw axe/summary zero violations",
+    "320-liquidity-shock scoped opaque contrast evidence",
+    "320-recovery-trap exact raw axe/summary zero violations",
+    "320-recovery-trap scoped opaque contrast evidence",
+    "320-depeg-stress exact raw axe/summary zero violations",
+    "320-depeg-stress scoped opaque contrast evidence",
+    "320-ethereum-uniswap-slippage exact raw axe/summary zero violations",
+    "320-ethereum-uniswap-slippage scoped opaque contrast evidence",
+    "320-agent-local-codex exact raw axe/summary zero violations",
+    "320-agent-local-codex scoped opaque contrast evidence",
+    "error exact raw axe/summary zero violations",
+    "error scoped opaque contrast evidence",
+    "404 exact raw axe/summary zero violations",
+    "404 scoped opaque contrast evidence",
+    "signed-prefix-1280 exact raw axe/summary zero violations",
+    "signed-prefix-1280 scoped opaque contrast evidence",
+    "signed-prefix-390 exact raw axe/summary zero violations",
+    "signed-prefix-390 scoped opaque contrast evidence",
+    "signed-prefix-320 exact raw axe/summary zero violations",
+    "signed-prefix-320 scoped opaque contrast evidence",
+    "original32-1280 exact raw axe/summary zero violations",
+    "original32-1280 scoped opaque contrast evidence",
+    "original32-390 exact raw axe/summary zero violations",
+    "original32-390 scoped opaque contrast evidence",
+    "original32-320 exact raw axe/summary zero violations",
+    "original32-320 scoped opaque contrast evidence",
+    "observed-price-1280 exact raw axe/summary zero violations",
+    "observed-price-1280 scoped opaque contrast evidence",
+    "observed-unproven-1280 exact raw axe/summary zero violations",
+    "observed-unproven-1280 scoped opaque contrast evidence",
+    "observed-price-390 exact raw axe/summary zero violations",
+    "observed-price-390 scoped opaque contrast evidence",
+    "observed-unproven-390 exact raw axe/summary zero violations",
+    "observed-unproven-390 scoped opaque contrast evidence",
+    "observed-price-320 exact raw axe/summary zero violations",
+    "observed-price-320 scoped opaque contrast evidence",
+    "observed-unproven-320 exact raw axe/summary zero violations",
+    "observed-unproven-320 scoped opaque contrast evidence",
+    "account-impact-1280 exact raw axe/summary zero violations",
+    "account-impact-1280 scoped opaque contrast evidence",
+    "account-missing_account-1280 exact raw axe/summary zero violations",
+    "account-missing_account-1280 scoped opaque contrast evidence",
+    "account-large_integer-1280 exact raw axe/summary zero violations",
+    "account-large_integer-1280 scoped opaque contrast evidence",
+    "account-no_debt-1280 exact raw axe/summary zero violations",
+    "account-no_debt-1280 scoped opaque contrast evidence",
+    "account-health_boundary-1280 exact raw axe/summary zero violations",
+    "account-health_boundary-1280 scoped opaque contrast evidence",
+    "account-impact-390 exact raw axe/summary zero violations",
+    "account-impact-390 scoped opaque contrast evidence",
+    "account-missing_account-390 exact raw axe/summary zero violations",
+    "account-missing_account-390 scoped opaque contrast evidence",
+    "account-large_integer-390 exact raw axe/summary zero violations",
+    "account-large_integer-390 scoped opaque contrast evidence",
+    "account-no_debt-390 exact raw axe/summary zero violations",
+    "account-no_debt-390 scoped opaque contrast evidence",
+    "account-health_boundary-390 exact raw axe/summary zero violations",
+    "account-health_boundary-390 scoped opaque contrast evidence",
+    "account-impact-320 exact raw axe/summary zero violations",
+    "account-impact-320 scoped opaque contrast evidence",
+    "account-missing_account-320 exact raw axe/summary zero violations",
+    "account-missing_account-320 scoped opaque contrast evidence",
+    "account-large_integer-320 exact raw axe/summary zero violations",
+    "account-large_integer-320 scoped opaque contrast evidence",
+    "account-no_debt-320 exact raw axe/summary zero violations",
+    "account-no_debt-320 scoped opaque contrast evidence",
+    "account-health_boundary-320 exact raw axe/summary zero violations",
+    "account-health_boundary-320 scoped opaque contrast evidence",
+    "signed-prefix-unverified exact raw axe/summary zero violations",
+    "signed-prefix-unverified scoped opaque contrast evidence",
+    "browser no exception/upload/third-party request group",
+    "1280 exact/incomplete/rejection/clear group",
+    "390 exact/incomplete/rejection/clear group",
+    "320 exact/incomplete/rejection/clear group",
+    "nine fixed standalone SDK-contract synthetic controls",
+    "1280 actual account exact units/raw/sentinel/recovery/keyboard group",
+    "390 actual account exact units/raw/sentinel/recovery/keyboard group",
+    "320 actual account exact units/raw/sentinel/recovery/keyboard group",
+    "every raw axe output belongs to declared scans",
+    "actual13 verified original complete baseline/candidate records",
+    "baseline0 full receipt exact",
+    "candidate0 exact outcome",
+    "baseline1 full receipt exact",
+    "candidate1 exact outcome",
+    "baseline2 full receipt exact",
+    "candidate2 exact outcome",
+    "baseline3 full receipt exact",
+    "candidate3 exact outcome",
+    "baseline4 full receipt exact",
+    "candidate4 exact outcome",
+    "baseline5 full receipt exact",
+    "candidate5 exact outcome",
+    "baseline6 full receipt exact",
+    "candidate6 exact outcome",
+    "baseline7 full receipt exact",
+    "candidate7 exact outcome",
+    "baseline8 full receipt exact",
+    "candidate8 exact outcome",
+    "baseline9 full receipt exact",
+    "candidate9 exact outcome",
+    "baseline10 full receipt exact",
+    "candidate10 exact outcome",
+    "baseline11 full receipt exact",
+    "candidate11 exact outcome",
+    "baseline12 full receipt exact",
+    "candidate12 exact outcome",
+    "whole synthetic merge tree equals exact head",
+    "all14docs/75links no errors/exclusions",
+    "pinnedLinux checker identity",
+    ".github/PULL_REQUEST_TEMPLATE.md checksum",
+    ".github/PULL_REQUEST_TEMPLATE.md exact published Git blob",
+    "404.html checksum",
+    "404.html exact published Git blob",
+    "AGENTS.md checksum",
+    "AGENTS.md exact published Git blob",
+    "CONTRIBUTING.md checksum",
+    "CONTRIBUTING.md exact published Git blob",
+    "README.md checksum",
+    "README.md exact published Git blob",
+    "SECURITY.md checksum",
+    "SECURITY.md exact published Git blob",
+    "STATUS.md checksum",
+    "STATUS.md exact published Git blob",
+    "evidence/agent-decisions/commands.md checksum",
+    "evidence/agent-decisions/commands.md exact published Git blob",
+    "evidence/observed-prices/README.md checksum",
+    "evidence/observed-prices/README.md exact published Git blob",
+    "evidence/position-viewer/README.md checksum",
+    "evidence/position-viewer/README.md exact published Git blob",
+    "evidence/trace-differences/README.md checksum",
+    "evidence/trace-differences/README.md exact published Git blob",
+    "evidence/trace-viewer/commands.md checksum",
+    "evidence/trace-viewer/commands.md exact published Git blob",
+    "index.html checksum",
+    "index.html exact published Git blob",
+    "style.css checksum",
+    "style.css exact published Git blob",
+    "all tracked Markdown plus HTML/styles checked",
+    ".github/workflows/docs-links.yml checksum",
+    ".github/workflows/docs-links.yml exact published Git blob",
+    "exact pinned docs composite action executed",
+    "actual published entire tree equals local head and whole merge tree",
+    ".worktrees/engine-consumer-observations:88c6cd0d00f466ed7e870bd57c118aa50984f8b1:evidence/aave-account-impact/position.json immutable referenced contract",
+    "sdk-python:ba4af512784119f23b6dea63fd24c7f5d1fdde44:tests/data/aave-account-position13.json immutable referenced contract",
+    ".worktrees/engine-consumer-observations:88c6cd0d00f466ed7e870bd57c118aa50984f8b1:src/entrotter_engine/position_observations.py immutable referenced contract",
+    "sdk-python:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/position.py immutable referenced contract",
+    "final external rehash all local inputs"
+  ],
+  "input_sha256": {
+    ".quality/position-viewer/ci-4c6e/pages-run.json": "812ebeddf1a75cfcaa73e9d76cf0997ad7a0757d93e84034694365ce0ff23c9f",
+    ".quality/position-viewer/ci-4c6e/pages-artifacts.json": "f83ca5ac1922b67a07bab1fd331f6e86d485feaa9f13cb02abf19e5576576260",
+    ".quality/position-viewer/ci-4c6e/pages.log": "b4bc84b37360d5aab0e5fc67240b8fd1d7468f6653f4feeb4e31637028592b32",
+    ".quality/position-viewer/ci-4c6e/docs-run.json": "d09f3a298b9eb7f5c3c6164c1ff3d4fc97d056aa02740176c69a6c856a6f6f78",
+    ".quality/position-viewer/ci-4c6e/docs-artifacts.json": "a193cd6ecb65fc8f10e0f91dd8a10c4a59dd09649e8adc83e01e5ae02f784dfd",
+    ".quality/position-viewer/ci-4c6e/docs.log": "72d35463206acfdfa8bcd61cfabc22d2d02ef9e153e9b738022d474ffc858607",
+    ".quality/position-viewer/ci-4c6e/checks.json": "fc6c1b6d7495e19b604dddc76719e4c7d91ca986b3aba15e06b5dadb3101cdca",
+    ".quality/position-viewer/ci-4c6e/main-protection.json": "5d86fed4b1664da51dfad382447793d5ea1f923aee5ea646565e1aacb5491c7c",
+    ".quality/position-viewer/remote-publication-proof.json": "e9484277e23559d7006629038fe6a5ebe2ee46c25f87d90ed9d1874594d722dd",
+    ".quality/position-viewer/ci-4c6e/head-tree.json": "f95a5ef3259c1936e0e201c1ed2c585d19e4cb11454db4420d458801566598b9",
+    ".quality/position-viewer/independent-staged-review.json": "779476034f743f07734fec13f6faa0f1b3a248c9da4b4838a502cb01f0c255b9",
+    ".github/workflows/pages.yml": "d4597cd81cd2366ee52561a7b2660da77967ff36c33f831214a9b1b195c35850",
+    "README.md": "12034edfb4cbb2b7f97b4de62ec3e092de8332ea841dfc96377aac7a0ec65d9f",
+    "SECURITY.md": "0f347c7a3925e56ef8d96547b45678281493b8df64ffa2d31c09a61fdbc42dc5",
+    "STATUS.md": "10ef70299f1d1faa6cb88386b192dc5e8cf180caeb5af703c39eb26734dc7cef",
+    "evidence/position-viewer/README.md": "1b904dfb6019453fb10ef4724b04d8f0975187d3248a28d0550f55e761d17e68",
+    "evidence/position-viewer/author/format.log": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+    "evidence/position-viewer/author/lint.json": "3dd2dad92e2dfcb8c405d81342a01c43f46cff0b0399902737f7645ba3245baf",
+    "evidence/position-viewer/author/node-unit.log": "f58f35bb1bd5fb545e438f7ec78a6e4e891dfb7289ad6e59013c4b7a7c4b867d",
+    "evidence/position-viewer/author/npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+    "evidence/position-viewer/author/python-dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    "evidence/position-viewer/author/python-security.json": "12f0cabcc7fb8eaacaf5b02ff40898e6e972055f337eb4eebf3edcd68c671d28",
+    "evidence/position-viewer/author/python-types.log": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+    "evidence/position-viewer/author/python-unit.log": "36878bced54319163487722445bb8ffc4cf7acfb056c147bda3e06081b31d70d",
+    "evidence/position-viewer/author/security-full.json": "7bb5136c7ae264cec8008e01abe90183690d27d587d0b9b5134d929d034f4b06",
+    "evidence/position-viewer/author/security-mapping.json": "1795d4b2fad1b1a62e9591ddaf046741c567b71af44849fc300995ae8b54ec84",
+    "evidence/position-viewer/author/security-policy.log": "9fa6873c97651873f86a07c1405c4ec302600f0f865f5f607e48394d5ab34528",
+    "evidence/position-viewer/author/source-sha256.json": "f5356baa1c561422fc3810c62617b7b56471588bb6653cd8ec897e915a03f12e",
+    "evidence/position-viewer/author/types.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/position-viewer/browser/1280-account-impact.png": "4e73910f3d092ea475fa8d54ffba074b14af356ea87b310401917fc1c09097b5",
+    "evidence/position-viewer/browser/320-account-impact.png": "3d2740d33e98422b79a2c55b521d17ace1370aafbbbfc692c72bc2f407884d38",
+    "evidence/position-viewer/browser/accessibility.json.gz": "9a87d350d44f0032804c24996e6502ff639adc987a18970f4b229035a8954a62",
+    "evidence/position-viewer/browser/axe-raw.zip": "b3f29c8606c329a27a7e3ac559235f6fc193354b2024daade4b053ccd1c86e70",
+    "evidence/position-viewer/provenance.json": "74ff8f90f351c23dba6485e1fcde75ea974dcf7ce3e444470593a43c3bb873c4",
+    "evidence/position-viewer/summary.json": "2d85ae8e7c8e9a8ad6fb32b6d1e2857058ff3e347cc17a483a1945c201566306",
+    "index.html": "7842ec6f55960466087bf71920c05d35c87eea57a2b165aee228fd6a9a0a45d7",
+    "position-report.mjs": "38f31262e2248ae6af2d07bf7ee02de3d24316eaaac164e3dc2ae597e00c8f7f",
+    "reports/aave-account-impact13.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "scripts/check_accessibility.mjs": "bb9b6ab452e60c48a296bd1995389279edcfd987a9ed79669d3d2680008aa300",
+    "security-reviewed.json": "0e4b99fd01e913039a295c3795a4d498c1f24232a6b94bb3ac2aa991e5185d09",
+    "style.css": "abd759c97109238ac62cf3614dada5fe6c915b049bc74982ccf6ccaf2fff82e3",
+    "tests/data/position-controls.json": "033383cc85af549cf4f9e1bda7d506e342af2a1f385a6afe88025e9dcd2deb9f",
+    "tests/position.test.mjs": "9052e49f4b26525acdf3333ee7a0ee4e77e3734a615f29744bbc893936610207",
+    "tests/test_site.py": "c40f26b927b04eb6ef0a659fa8bbd8dd0b85e7a2491ae53736da3a07257340f3",
+    "trace-viewer.mjs": "bffcde1611f85b4edbcd1ed1e937bc42939113362bda803414760518a7140bbd",
+    ".quality/position-viewer/parent-staged-manifest.json": "2dbee4ba4aaf0619ecd5e8d5ff730ce0e077c1d2da1086c35b18e51fb57124df",
+    "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+    "AGENTS.md": "d1d8e6c41d67cbcd2ee82f7dcbb50568189acfcf92508b60731eed8de480e303",
+    "CONTRIBUTING.md": "3f4f1bb0b0c9b21635b8ba3cde4a7d34dfaad55e4c2b5ac6cd69ee905cd0e581",
+    "app.js": "36786b0c3db6a8016101648a5b86ccb3253ac8ce20867cdc01cfe48b88e8325a",
+    "assets/examples/action-comparison.json": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67",
+    "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
+    "eslint.config.mjs": "7acf03efd74c5422b646cb4635fd1321222832ad7a92527c77a8f94e8274234a",
+    "eslint.security.config.mjs": "fb2ab88ae816262fd1cef89709826491797957b8ee04835fae10bc6ab83ca7f2",
+    "observed-trace.mjs": "980ff5172f61b82413e9898955f7a60ee23ba10a6374e6b259a91034624fe9ee",
+    "package-lock.json": "199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342",
+    "package.json": "d4ae0a0b1a412c70cf38bace34efd9fd459736f0e8c4d13ded0c53cab43e772d",
+    "pyproject.toml": "1fa3f76b9d84bb385aa4a7557416c172a54572c6d380c1ca1d64ddae31457f38",
+    "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
+    "reports/agent-local-codex.json": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+    "reports/trace-mainnet-prefix-four.json": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+    "reports/trace-observed-price32.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "requirements-quality.in": "eccd79884fb38364cc396e59e22eb5a78f48bbf92e2c0b47825dcff473692185",
+    "requirements-quality.txt": "845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722",
+    "scripts/check_quality.mjs": "51d72e7ccb7e9716acfc50e39bdf692a2512532e6da91491358da1437f4794d8",
+    "scripts/quality_policy.mjs": "e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89",
+    "tests/comparison.test.mjs": "35a035d9e806548d20224070fa707e8866783c639e860ccc3afece23376b6327",
+    "tests/data/observed-controls.json": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
+    "tests/data/trace-oracle-prefix-32.json": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+    "tests/observed.test.mjs": "b0b1391ce47970cdbedd3fbde881b91b5ec76f2d59ba070222edfe975eb7b95b",
+    "tests/quality.test.mjs": "71150f603988dcb2429b56de76e3535b0268fbf180b12ecbe998c23c235e52c1",
+    "tests/report.test.mjs": "7669919663e3486783dc39b97d7e5f892b5a4955ef7696d084f244db502ceffd",
+    "tests/trace.test.mjs": "f68f5e426f9cc470728c43ac58a04a49804839a7f5e647ce95ee244d60d62d21",
+    "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+    "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+    "tsconfig.json": "b11349591a0d0c9933d0ee3ff60b0b874df53834e8f2e3c6c45b788aa35cb661",
+    "types/browser-tools.d.ts": "0a5352e697b9e2a51651016ac789287acb71d48fdc04027d80a4050b604f579e",
+    ".quality/position-unit-release.log": "f58f35bb1bd5fb545e438f7ec78a6e4e891dfb7289ad6e59013c4b7a7c4b867d",
+    ".quality/position-python-release.log": "36878bced54319163487722445bb8ffc4cf7acfb056c147bda3e06081b31d70d",
+    ".quality/position-format-release.log": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+    ".quality/position-types-release.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".quality/position-python-types-release.log": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+    ".quality/position-python-security-release.json": "12f0cabcc7fb8eaacaf5b02ff40898e6e972055f337eb4eebf3edcd68c671d28",
+    ".quality/security.json": "7bb5136c7ae264cec8008e01abe90183690d27d587d0b9b5134d929d034f4b06",
+    ".quality/source-sha256.json": "f5356baa1c561422fc3810c62617b7b56471588bb6653cd8ec897e915a03f12e",
+    ".quality/position-security-mapping.json": "1795d4b2fad1b1a62e9591ddaf046741c567b71af44849fc300995ae8b54ec84",
+    ".quality/position-security-corrected-policy.log": "9fa6873c97651873f86a07c1405c4ec302600f0f865f5f607e48394d5ab34528",
+    ".quality/position-npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+    ".quality/position-python-dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    ".quality/position-lint-release.json": "2d7ff30f2794be55363f0b42ef230d4b4d4bd36d826b2ce5f95e5c6594195e74",
+    ".quality/position-browser-recheck/accessibility.json": "7273a5bc105fadce4057a8a7a4351fe31632cbc2974e03808913c93ffc6378cc",
+    ".quality/position-browser-recheck/axe-1280-agent-local-codex.json": "ea1e9e94996cc316f47ff02f24ad181e4abd50bc8b0ca157d0d4455efa40745f",
+    ".quality/position-browser-recheck/axe-1280-console.json": "764d649123ceeb41afab54f158aeaf98b5bd155c34527b21e3546031a3c5f607",
+    ".quality/position-browser-recheck/axe-1280-depeg-stress.json": "defcf84a3cc83d3379f8b5196444ba74fd7372649ba17e3e3c3c8634d10b8c37",
+    ".quality/position-browser-recheck/axe-1280-ethereum-uniswap-slippage.json": "9cdb19aa7f6ba1539abbd69d98adcbc9f69843251b89e03c848f1d911df95ecc",
+    ".quality/position-browser-recheck/axe-1280-liquidity-shock.json": "a01dbfc9fe759fe00929f675eaa65c001a43ee2ce3ab5942193957017e3b878c",
+    ".quality/position-browser-recheck/axe-1280-recovery-trap.json": "43107053bf02c9aadcbec8572942ddb6f196f28f1f81921e9b3faabc6cbdceaa",
+    ".quality/position-browser-recheck/axe-320-agent-local-codex.json": "84bdef1930ebaf5609ac6a99184f030a678f585e1d283259763e11df078533b7",
+    ".quality/position-browser-recheck/axe-320-console.json": "769c6d26f7219661f57d972d98cb4df55126469d5a3a8c3916cd319e4d0474f4",
+    ".quality/position-browser-recheck/axe-320-depeg-stress.json": "fe64059e36a70945779becd691ff7c244a79abc6f01fe8a8fba9e26f94334631",
+    ".quality/position-browser-recheck/axe-320-ethereum-uniswap-slippage.json": "637107d8a312c3b6da30d40b1a3a988c24d017d9b9c761c5fc02764c6e597e5d",
+    ".quality/position-browser-recheck/axe-320-liquidity-shock.json": "dafb2d07d01dbb36ea304533c592105af184093bf6cfb52e695ffcd53abca6d5",
+    ".quality/position-browser-recheck/axe-320-recovery-trap.json": "d168607507377fcd1071e276038cb61b88e3e076f4daa86e94277897f79398fe",
+    ".quality/position-browser-recheck/axe-390-agent-local-codex.json": "73a8cdf81ca50fbb39834d32374b2d47a221c99de8f44218255b41c87e35e2c4",
+    ".quality/position-browser-recheck/axe-390-console.json": "9097a49dfca2d4fc6da24db634c94927e31e6a163b8a8d296430dd88b092c417",
+    ".quality/position-browser-recheck/axe-390-depeg-stress.json": "12702e48e019fa15652aac72eaf0914939bad66be1431d91ec35f4b93986288e",
+    ".quality/position-browser-recheck/axe-390-ethereum-uniswap-slippage.json": "f18aed909876f7141cb443633e877cc21f646f639cf83f7d6c6cc35762341168",
+    ".quality/position-browser-recheck/axe-390-liquidity-shock.json": "9a46bb8ff1b4e0e601db9596feb78eaa113ec8dd346d778dfcdeb780f5f7e78d",
+    ".quality/position-browser-recheck/axe-390-recovery-trap.json": "f3753bc62dbaf208e05990cf727af2584dc35c6b43c28b51c62b166431139244",
+    ".quality/position-browser-recheck/axe-404.json": "aa61d2008e14ec0d0249befa1c0ffafc2a75a1172e51a763c224f9761fb9f379",
+    ".quality/position-browser-recheck/axe-account-health_boundary-1280.json": "67d9aa60f5d0bec1ab4c381a7385e685f625b611b83180df9e26c21deeded744",
+    ".quality/position-browser-recheck/axe-account-health_boundary-320.json": "cc05b64df036387ff00bd4c85223590916d98d9ebe865efd3917d6375cf5ad7d",
+    ".quality/position-browser-recheck/axe-account-health_boundary-390.json": "0840cedd13cdbf39a76ff8e779658fb6fc0893e016d50bdee7606fedb2b4d3b2",
+    ".quality/position-browser-recheck/axe-account-impact-1280.json": "d18a4d0efca9ff750e629586b61943aff2ad0a16045a599f0c69dfb235d15068",
+    ".quality/position-browser-recheck/axe-account-impact-320.json": "3e3f4560c18ec5b1430217ff283798b8eaa84daefa3b810d1aa132d5c34ece7e",
+    ".quality/position-browser-recheck/axe-account-impact-390.json": "63f7f3ff83064c5b0550b3483816f498dd731d232a8a4f70b0a22404db137436",
+    ".quality/position-browser-recheck/axe-account-large_integer-1280.json": "f77bfc4bc404017cece691304553b95414cdf76486e46dfb0bd01fc2820de379",
+    ".quality/position-browser-recheck/axe-account-large_integer-320.json": "09eac5be4d47130de52d95927fbd266d6557065d43ac4fea7c3b18b1582cc0a0",
+    ".quality/position-browser-recheck/axe-account-large_integer-390.json": "6fc9a164cb9d18850ccf6ebaa558d9160db9773a1724de32dd50fb3d5605deb1",
+    ".quality/position-browser-recheck/axe-account-missing_account-1280.json": "a6ae68dd96b418926400dc77b0269653b835ec73961590a2b86ca33605779652",
+    ".quality/position-browser-recheck/axe-account-missing_account-320.json": "e63f688b4722d0c8276d9aa796555c33e3940f26836a93f75e0c9a59ac108369",
+    ".quality/position-browser-recheck/axe-account-missing_account-390.json": "217ead9d10f11d8ead314f26038a51c33fead5b7b6ec29a85f1d9f5f5cc00b35",
+    ".quality/position-browser-recheck/axe-account-no_debt-1280.json": "c093f919109b6966180f6f1ced3a918ca905d690b2b89f3c14a71d1dcf67035a",
+    ".quality/position-browser-recheck/axe-account-no_debt-320.json": "239264379b68d49aa79c30bc7435cb0c1e5698ea92933a902153ef331481be28",
+    ".quality/position-browser-recheck/axe-account-no_debt-390.json": "077f3a413e5c43755c661f777a48f5c81d3d9d5bd285b833f05ff10fd77bc184",
+    ".quality/position-browser-recheck/axe-console-import.json": "c4986a77de1bdc469ff76b169b9a474444afbeecab189969243a213fee6f7abc",
+    ".quality/position-browser-recheck/axe-error.json": "f6a9ab40d0886c7e581d5c3b627a6cca44ed695a3e7b9186e7fa5aa5bb8ccc0e",
+    ".quality/position-browser-recheck/axe-observed-price-1280.json": "3cfab1593f30626d2763427b399c989772e9d01921cd99e6b539384d35192488",
+    ".quality/position-browser-recheck/axe-observed-price-320.json": "ab4df3c924d34a27a7d67a1420e8831f55182b06da28dd9448c21aec27e13480",
+    ".quality/position-browser-recheck/axe-observed-price-390.json": "76724c84f4ebde5d9a7c6debd97c10c58e15f6bd7e0c1a3ed85bf30224112e61",
+    ".quality/position-browser-recheck/axe-observed-unproven-1280.json": "6c7a76e9f9fb53a1fce1f6ae7766f6140b854be5aeace5c2eabdc70b2ffebd26",
+    ".quality/position-browser-recheck/axe-observed-unproven-320.json": "43a1bd823a2261f26a5f1ebd48718b0c963f13b6ddd9c552a4ac11446d4a2375",
+    ".quality/position-browser-recheck/axe-observed-unproven-390.json": "6f9a5d88ae60d0a5f69c65d5e6df60be8aeea80c6602f96c6cd229aafb80a50a",
+    ".quality/position-browser-recheck/axe-original32-1280.json": "d2007dfe60d24db21deefb20556f4a91be3a52503e04015ca899677de82bccca",
+    ".quality/position-browser-recheck/axe-original32-320.json": "4011561715264f0602d53d41f083b452ab0e0b1b661e18db15cfc82fc15e766a",
+    ".quality/position-browser-recheck/axe-original32-390.json": "902e401b3f811148a12f525ac4adc2dc80eafc06136e4c2575e1c904d794230d",
+    ".quality/position-browser-recheck/axe-signed-prefix-1280.json": "556b4d8d9bb6b96c4f7c178db1741a5c989e18f05eec100ed6d685843278ed81",
+    ".quality/position-browser-recheck/axe-signed-prefix-320.json": "404e515ee11bfbe94653890de4cf5b62d6ac984db84e47340af2a0fca605257d",
+    ".quality/position-browser-recheck/axe-signed-prefix-390.json": "2abd63dc332a9ea7610f8119f66736a2a6901a4e51f5574b82f394ea3bb61eee",
+    ".quality/position-browser-recheck/axe-signed-prefix-unverified.json": "994312c89258ecbd8af67dafe0c6b083a5447321e1fc40d38dec2c0b30c1bfba",
+    ".quality/position-browser-recheck/1280-account-impact.png": "4e73910f3d092ea475fa8d54ffba074b14af356ea87b310401917fc1c09097b5",
+    ".quality/position-browser-recheck/320-account-impact.png": "3d2740d33e98422b79a2c55b521d17ace1370aafbbbfc692c72bc2f407884d38",
+    ".quality/position-viewer/independent-corrected-source-review.py": "fa8d1704dc01cc5af0fc9ae18d6ea5a4496b4eb19af77c3f5d282592b8044770",
+    ".quality/position-docs-links.json": "87f1b490a563080b239df9b9161ce7c3875f4054abd1f4d01d6724b63bba7a64",
+    ".github/PULL_REQUEST_TEMPLATE.md": "f8840c1975bc5aabfdedbd13d69de905fc19b7c9ad4c9b965f48e2b4c20b405d",
+    "evidence/agent-decisions/commands.md": "4a33c46c26a240b50d36bdff5d72df075ff3b6b7464585aec494b044a0f2148e",
+    "evidence/observed-prices/README.md": "fd601ef1c108e1d91cf7c83e9ce1bcd9ba78d6c1d808008c84658bf2fd04fd52",
+    "evidence/trace-differences/README.md": "97605ea3ad88f37142e6455d4f50b538c6c057d0c58a88c77d168a93a8fc7a99",
+    "evidence/trace-viewer/commands.md": "7eb9590a6e1b7b23d49eadce5efcbfa2687c09143e0e00f18bd7acb1d2c63b23",
+    ".quality/position-browser-release.log": "13004883075c5a207dcbc2565465826359af7ee129fac1de33f886f4b81a4823",
+    ".quality/position-browser-recheck.log": "ea1e40345818a580aa8fcc371ff779d0af0e97205378686b5bda09b2fde85cec",
+    ".quality/position-docs-links.log": "d2736101b4028c07b88eec4b81d03c45554adae871633d8f050c275f4954bdc1",
+    ".quality/position-viewer/independent-source-review.json": "8a9593f1736ce53c8067f8b2c25210d906a536855b1ec997457abf9213000993",
+    ".quality/position-viewer/independent-corrected-source-review.json": "e33aac0898adac63cf5c4f4137e911441bcda0d55eef4800f69860bdebfee1fb",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/scope.json": "368c5a423df1f4610ac6f9154c13a21b35e881b439457779a7df29afec1a8d3e",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/source-sha256.json": "f5356baa1c561422fc3810c62617b7b56471588bb6653cd8ec897e915a03f12e",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/security.json": "7bb5136c7ae264cec8008e01abe90183690d27d587d0b9b5134d929d034f4b06",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/lint.json": "280aada3b790a4226743d31e1cb626696d372f64a7489aef7d8db87ff93b89d8",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/types.log": "10886242e507423a2e416506fd816a6941e14ccaa78ba061209021fdcb79277c",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/python-types.log": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/tests.log": "b5d7af0fa8495f6f2b367b7b8624ee82014555dbc59ef19c6b176fa69de7b90d",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/npm-audit.json": "a1e72e3946382350619bcc55948ae7c50e73cc7f5c165cef8657d739eb397dc3",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/python-dependencies.json": "d38e5abe49c1c04eec653478382ae28562b91c03738bcabdf560e1c7bf09ca39",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/python-source-sha256.txt": "09b3d6f39ba475fc1b794f1b61b511a59fb5983b765c49e1705ce92deae3152a",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/python-files.bin": "0c7605d69193b0c6dbda57f845fe6a088efeab0857ed59c4bb9c5afc85468b36",
+    ".quality/position-viewer/ci-4c6e/pages/website-quality-reports/python-security.json": "9181b3213d136aeea085ff63a2bffc2e5145320e3b7cdf9071a81a1cfa702671",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/accessibility.json": "fd3213aeffd3acd6341c87413e5c1b05cbab4e3e9a75ba2e9b9664a6010343d8",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-1280-console.json": "dceb54645d1372fa7172228627205b1ce7cfe52d7c65639dadeb211602e6d812",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-390-console.json": "c2bf7024f3526d679c99d16413077d74b07f2249f6bbb3972437628fd40e6872",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-320-console.json": "5665f82e47af3693cd062858202395d223ae5b284f87b8cf1a1b9e173ac0ad27",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-console-import.json": "ed69cce7245ce71ca12b029b612f6299366b8d9f525bcb342a66e4dbda110dbe",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-1280-liquidity-shock.json": "0360819b54b7ba3e348f1db1aa22f9f2703f4f8b1c02dc844c6be14a63edaf76",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-1280-recovery-trap.json": "ff73bae48e28f0117f0d9e077f7d44eafc078533820e339a202f26e61ca24bc3",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-1280-depeg-stress.json": "4d8f5b01562f209770b2d61a6db1aa618fc71b5177621fcdbae57ff2fd767a16",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-1280-ethereum-uniswap-slippage.json": "6d2bfbdee1d3c307937de19f851e9bc51843a4f24e0da70b794966f1120aadf5",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-1280-agent-local-codex.json": "1ca20a84ceb5cc852c1a7991870591537195940a377afca60d04d873c92fa684",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-390-liquidity-shock.json": "64cdd7b7f2b9928637a09f57a0f6b1f84cc901c982d9da0cf15a97220ca5c997",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-390-recovery-trap.json": "aea052257499ec104693a79fd19861a31ecbeb3b782314fadfc9cb0689628c71",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-390-depeg-stress.json": "142ec5a24e7a24a2c9d8b8462a545462adff3869f85908e43107b8da19da950f",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-390-ethereum-uniswap-slippage.json": "bc536dde0dae2dd28e1a446c6abd1c2e823555f14b88332837702c2c909b90f3",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-390-agent-local-codex.json": "000cd8f1f266fde91a143f45389bcc71ef90972b6e7d995e97dfe53dff53b316",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-320-liquidity-shock.json": "cdaaaa133c0cc1edebd7634ff5bd1ec4c79d848694fdfba3caa33487ad93003a",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-320-recovery-trap.json": "81cd4159225c87b833a29a93468903dcbf0da1180aa7b3cb281de28482dd20a6",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-320-depeg-stress.json": "0867e72218818be567e74b0617c301ea7287c9327160233e9a0b9bc044b0857a",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-320-ethereum-uniswap-slippage.json": "7e12b7922b6fb74bb6d046c570d421857c0c4d30ec5f0af5449494bb81006a01",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-320-agent-local-codex.json": "406172ab7dee4be17b480272f3ea703c276f8913ef2f6a2a5220ec1764aab34f",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-error.json": "fb626a2e6ddd631291e6e715aa52e29d94a99e0ef6b4f96c11d80e918876e8c0",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-404.json": "4c564860aca3a2bae6cbab7bb19d91623ff76c28497575b074ec5ff73003a89a",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-signed-prefix-1280.json": "b1a103aa726063694db57abbf3634cd82b85165615f5a149e169612adf52427a",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-signed-prefix-390.json": "2b8ff2ffc5d9ed3648a9e91d4f1cd06ebfb2d28989186f086d3c6045ea5e3d2b",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-signed-prefix-320.json": "afa049b02bfb6a2943c3aa045871797309b734f1c7745c4aaa6487ba33bc1d72",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-original32-1280.json": "a1dd08788e544b9f5ef2a7555385caf4b46fba8c279c341447e1563d57d53ec6",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-original32-390.json": "d7b4e1540f8b6b08cced20acd4ca13bf58632e7151e11cc72415299cae763f12",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-original32-320.json": "388bb8b979af5636d2275aa16dbb48030ec84c9f726106553b358fa02a41e9fc",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-observed-price-1280.json": "63a4993939c6a1ffc18699d0917cf890bcb7e32a03de7b511f978a7812d035ea",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-observed-unproven-1280.json": "b0ac2a9b1fd4d58935c6792f98082ae8933cdb715d6728979e60b9776e22bbeb",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-observed-price-390.json": "907528ff04049549635b9d793bb21a5f63de39e4e6aac486441507ceff0cf9ec",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-observed-unproven-390.json": "7e562a105d3927eacc86845225e7d025694461397c1b4189c9c220096e9ae34e",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-observed-price-320.json": "891e334fa68fba132184b6beecb2b9827a5ac4155e7ce5266f6df1d714b4be81",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-observed-unproven-320.json": "c86e1154c6bb6f2399b688e87d83b8d123670e2a2285c84b8084ff2d480a17a3",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-impact-1280.json": "2d67d321bcd6ac5563c29cf92bfc0895f5e950e531a17ccf257ed1509dc0c640",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-missing_account-1280.json": "9ee6e8d05ea707f86035657df093de042669dbdd5bb071eb7a50b6e46da4c2e4",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-large_integer-1280.json": "a3c5aed5a36da448be51c71f7074cc611ef6788715c90f67dad4190dc7879a00",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-no_debt-1280.json": "7538e891ab4645de076915944ccb95e87b2e356c69ed632053db067bad17d9b3",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-health_boundary-1280.json": "2a1d3170afaba1c5c95e16554bb4e137bfc4a99543642c3819dc15ccbce2fa71",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-impact-390.json": "f7f4d290892192636a5746db847818fde264963582f01351c88c892a3bd75474",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-missing_account-390.json": "5d599ea7a015d8bc99e5f31e6e300ae1a07f8a5ccc6c5352bed79435fa4be6b6",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-large_integer-390.json": "54cb7025ea43872ae3366f21ea73801495fc1209e41393d42a1db4d50e9cb9bb",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-no_debt-390.json": "bae3dca474a3a396911cfdeec427c91e652576eab2ec07b838310efaf84ed269",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-health_boundary-390.json": "2206d9870e5df3fd2de01e29433bc0b42a7c25ca2a982dc015d56f055dd44ff3",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-impact-320.json": "d34b2e41e616ca958935f62f7d2e53dddd5479e05accb3c52e2b164dc889895f",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-missing_account-320.json": "0225d9da8be689b8003184a7f7cd5d99cfc20b199632ae6b8ef676ba087d4801",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-large_integer-320.json": "cfdb5731574472be7bf8944e7efd61daaa97c8ff55dd9e7e7749c924343f1a8e",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-no_debt-320.json": "af4ad1d1673514c105d52d8fc5a77fd23afb9b6f461e0ebfcd63f6ab3619a44c",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-account-health_boundary-320.json": "20e03bb910989530fca0ec5c8f3d9f58fdb02d2c52882f4572a887d7a1a370e1",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/axe-signed-prefix-unverified.json": "d3cf9236879e1655358246b647faa69cd82b9d61fc0340f9634b407f409179e5",
+    ".quality/position-viewer/ci-4c6e/docs/docs-links/report.json": "cd6b4bc088b18297b7efc0ba7c5d41fafd7fd02218a2802e0b3c978f090e2215",
+    ".quality/position-viewer/ci-4c6e/merge-commit.json": "c43a8ac2c95fc27188e7a20c839d48578e0b76cd7aa96c54a92703420009660b",
+    ".github/workflows/docs-links.yml": "72842da81db99136b6bd471a063ede24f224966ebf071c0896a0f8ec12865ebc",
+    ".quality/position-viewer/ci-4c6e/docs-initial.json": "d09f3a298b9eb7f5c3c6164c1ff3d4fc97d056aa02740176c69a6c856a6f6f78",
+    ".quality/position-viewer/ci-4c6e/download.log": "bdebb2e3799360e78338a5a74440a7c5941e8887e6357f327d3391c65d240bea",
+    ".quality/position-viewer/ci-4c6e/download.py": "447fffb41911a63da5008de761e6d7586867dee672beb4cefbbbebd2b9e672c8",
+    ".quality/position-viewer/ci-4c6e/head-commit.json": "ce856d05f5bb18a676d1138c18c42344e44bf231db46b52d7cc0bb7930b72791",
+    ".quality/position-viewer/ci-4c6e/independent-ci-review-initial.py": "54cda54ca76e4627e54cbd37c36942d90ad95cc6a9081f8dbb298798b1d3fb3e",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-account-impact.png": "3a72fc42e1759e036e7015b722c149f08359026f120052caf6b9e7b614a0040d",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-agent-evidence.png": "36c3d68481267449ee703c1ebee4a4ca25156e1d2a9fffd56fbf3c23982dc47a",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-console.png": "fd20ae96ad6dbb79e8c7c15df738bdc2fb7be11be03f1c58a345a78c0d063132",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-ethereum-uniswap-slippage-viewport.png": "3d73f75f2fa70696b2bc398cc31475b6f469f22cd04965f99bb3c98716fd2b11",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-ethereum-uniswap-slippage.png": "95935e0c47f3ff477195b11e7cc06e4dc45e83b512029a01ef0842378df9633b",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-liquidity-shock-viewport.png": "4825463b9201e9816ef4e491970800e3c217db8cbc96d0c702c3ad19da7c9ee7",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-liquidity-shock.png": "49910317824384bf9db3992015534729ee45888148758684635935e099e64fe0",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-observed-price.png": "a42d418b308a97cc3c99794cdde23b469a7be2107fa7e77e51d62f2094217948",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-original32-shift.png": "9bd58d0c48f74e1133c9fe83cc988cda140954be60a6b9c75313e6d3748c62bc",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-original32-summary.png": "c3c56d81224622a1b36c810a0cbd5809ffd2ff954ff9725147dcde781a48a4ce",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/1280-signed-prefix.png": "d129c077069e010fb2890e48ecb2cee3106986ca0f918c58e617f3686e627f93",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/320-account-impact.png": "b311d970e8565a356dad81aed521e0d2a21a03252a52c6e33d8c91edb80ce765",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/320-agent-evidence.png": "65e1087bcbb88d5e00d7ea604e2056da2eac188469f932934abd74a93bfda12f",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/320-console.png": "0d697bffe2e5d83c203721c5310f3ab27915c7b0e5d504fac880e207a3ba496d",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/320-ethereum-uniswap-slippage-viewport.png": "190b91bba64672d6e1158580a94bda2e5448afee7d3168935c8f658a6bc18046",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/320-ethereum-uniswap-slippage.png": "3dc9f553212f09c24baf0f332b43be369106ad3649efb22ecd18f2a8e77a11f9",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/320-observed-price.png": "d8dfc67565cc86d2c46bc00fabaaed2be48dd286a27228e2de66819e49d56731",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/320-original32-shift.png": "7424ad4744ccade2e413fad30d5cf7096fb5fb6431509f7f760f723f7ff73b9d",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/320-original32-summary.png": "4306783a601de5c5fa5a4601251ddc65f848ca84a195e8357c8f01cdb65f5300",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/320-signed-prefix.png": "5c985d9628ba15e8f18ff699c226fb936efe1c690123c5f111ed9ff6c8d0069d",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/390-account-impact.png": "97241ab7c380cc934ed860f180918fd6dea1e7c41fb2454731de75f5eb739a8d",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/390-agent-evidence.png": "535b3e6acbae3d00cb451daeda6fdbe215cd66d9ffc334c8bba605b07bd71be9",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/390-console.png": "3ff6eb41609616a93a02830006c190a2840f55b08d5ba43ec3fd9281a62ecd8c",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/390-ethereum-uniswap-slippage-viewport.png": "18d54f3df4e3277c872362bab9fb8eb4c1cf308e59ead3691117e6ed3a2552c6",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/390-ethereum-uniswap-slippage.png": "9bba5ec951677f10cc2bbb91a372d520bdbe149f311f91074b4dbe7eb07493fb",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/390-observed-price.png": "28b46dba2914bfa91bd6f0255014bc9feae9fe431c637b1ff961a1a871e5100a",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/390-original32-shift.png": "ea9a381405ee47e9eff9b9cc18e27ccb221a3376a0e9da7105eeadeb5495f473",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/390-original32-summary.png": "23040ba5ec89ad09e8b65736a506f4c4d3ded1415c874b3f29c7e5a84954c410",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/390-signed-prefix.png": "368dab5296e82a381fcc98d513e9a874f8dd70accc42024d1c86216e4e10920d",
+    ".quality/position-viewer/ci-4c6e/pages/accessibility-evidence/forced-colors.png": "dd57af53a0cfe06234a00d371a800cae5780d01b21277b09f692fdd23651396d",
+    ".quality/position-viewer/ci-4c6e/pages-initial.json": "812ebeddf1a75cfcaa73e9d76cf0997ad7a0757d93e84034694365ce0ff23c9f",
+    ".quality/position-viewer/ci-4c6e/review-initial.log": "b1ed3d80fd9987e61d5ecc789d7e24e980af64b9db82a181c71f548e601db0ea"
+  },
+  "immutable_git_sha256": {
+    ".worktrees/engine-consumer-observations:88c6cd0d00f466ed7e870bd57c118aa50984f8b1:evidence/aave-account-impact/position.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "sdk-python:ba4af512784119f23b6dea63fd24c7f5d1fdde44:tests/data/aave-account-position13.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    ".worktrees/engine-consumer-observations:88c6cd0d00f466ed7e870bd57c118aa50984f8b1:src/entrotter_engine/position_observations.py": "0f4608b8a86fdbda3436beb4e109be7f5ebdc156208ecd55de7c4a851cdad7ee",
+    "sdk-python:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+  },
+  "review_script_sha256": "4c025d845154a8ac5a64e24e04cde6035d74ae1ac59b6cec860b5828224f7ae1",
+  "limits": [
+    "Offline independent original complete artifact/source audit; no tests/scanners/browser/EVM/archive/model/CI reruns.",
+    "Current original Linux42/49 results distinct from local macOS and prior same-source nativechooser timeout unknown cause. Passing currentCI does not retrospectively identify that cause.",
+    "Three seals and record inspections do not authenticate archive providers/proxies/state/signatures, prove full block/root or signed consumer strategy/profit/sole-price causality.",
+    "Npm109 exact lock identities/integrities and Python42 raw advisory identities reviewed; database/service correctness and downloaded tool/DB binary signatures not independently re-executed.",
+    "Artifact API digest metadata retained; gh-extracted original files individually SHA-bound. Original download ZIP archive bytes not separately retained/rehashed.",
+    "No manual screen-reader certification/full WCAG/physical zoom claim; raw axe incomplete contrast retained.",
+    "PR remains open/unmerged; protected main strict/admin/one human approval preserved, Pages build/deploy skipped. Software review does not satisfy human approval or live Pages verification."
+  ]
+}

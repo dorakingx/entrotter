@@ -1,0 +1,125 @@
+{
+  "schema_version": "1",
+  "repository": "entrotter/engine",
+  "reviewed_branch": "feat/canonical-transaction-replay",
+  "source_state": "Uncommitted source diffs reviewed; this record does not assert a committed or deployed revision.",
+  "review_scope": [
+    "trace.py source capture, signed wire reconstruction and receipt projection",
+    "AnvilSession trace profile and OwnedTraceRPC method restrictions",
+    "Native plan snapshot and bounded CLI selection",
+    "Exact worker envelope, request digest and returned plan binding",
+    "tests/test_trace.py, tests/test_trace_worker_protocol.py, tests_isolated/test_trace.py",
+    "isolated.yml default bounded mainnet replay gate"
+  ],
+  "mutation_finding": {
+    "before_fix": {
+      "command": "PYTHONPATH=src python3 - [focused unittest.mock probe of run_trace_native; RPC, capture_source and replay_branch replaced, no network]",
+      "trigger": "Start with valid skip_indices=[]; simulate caller-owned plan mutation to [-1] during capture_source.",
+      "observed": {
+        "branches_received_skip_indices": [
+          [],
+          [
+            -1
+          ]
+        ],
+        "result_plan_still_valid": false,
+        "recorded_plan_is_callers_object": true
+      },
+      "evidence_kind": "Mocked mutation regression; not chain execution."
+    },
+    "fix_review": "run_trace_native copies canonical finite JSON before validating and using the plan.",
+    "after_fix_test": "test_trace.TraceValidationTests.test_caller_mutation_cannot_change_admitted_plan",
+    "after_fix_result": "Passed in the focused eight-test review run; retained original plan and detached caller identity."
+  },
+  "actual_pool_probe": {
+    "command": "PATH=<verified-foundry-v1.8.3-directory>:$PATH PYTHONPATH=src python3 - [inline owned-Anvil probe using AnvilSession(trace=True), local fixture setup and cast mktx with synthetic signer material omitted]",
+    "environment": "Actual owned disposable local Anvil v1.8.3; Ethereum chain ID 1, Shanghai/FIFO trace profile. No upstream RPC or Docker was used.",
+    "fixture_setup": "Local test setup funded signer A with 10^18 wei using ordinary local fixture RPC. Signer B started without balance. Test signing material and signed wire bytes are deliberately omitted.",
+    "transactions": [
+      {
+        "name": "A funds B",
+        "sender": "Synthetic signer A",
+        "recipient": "Synthetic signer B",
+        "nonce": 0,
+        "value_wei": "10000000000000000",
+        "gas": 21000,
+        "gas_price_wei": "1000000000",
+        "type": "legacy"
+      },
+      {
+        "name": "B spends received funds",
+        "sender": "Synthetic signer B",
+        "recipient": "0x3333333333333333333333333333333333333333",
+        "nonce": 0,
+        "value_wei": "1000000000000000",
+        "gas": 21000,
+        "gas_price_wei": "1000000000",
+        "type": "legacy"
+      }
+    ],
+    "observed": {
+      "same_block_funded_sender_admission": "rejected",
+      "funding_transaction_mined": true,
+      "identical_spend_accepted_after_funding_mined": true
+    },
+    "conclusion": "Parent-state pool admission rejects this in-block funding dependency. The current implementation reports rejection and an unverified baseline; this probe does not establish successful same-block replay of that dependency.",
+    "positive_packing_probe": {
+      "block_gas_limit": 51000,
+      "sender_nonces": [
+        0,
+        1
+      ],
+      "requested_gas": [
+        51000,
+        30000
+      ],
+      "actual_gas_used": [
+        21000,
+        21000
+      ],
+      "transactions_mined": [
+        true,
+        true
+      ],
+      "transaction_indices": [
+        0,
+        1
+      ],
+      "conclusion": "No gas-packing or FIFO nonce-order defect observed for this case."
+    },
+    "cleanup": {
+      "funding_session_guardian_returncode": 0,
+      "funding_session_owned_rpc_port_closed": true,
+      "packing_session_guardian_returncode": 0,
+      "packing_session_owned_rpc_port_closed": true,
+      "note": "Actual port numbers were not retained in the original probe output."
+    },
+    "probe_tool_wall_time_seconds": 0.411251,
+    "wall_time_scope": "Entire local review probe; not a product benchmark or historical replay measurement."
+  },
+  "focused_review_checks": {
+    "command": "PYTHONPATH=src:tests python3 -m unittest test_trace.TraceValidationTests.test_caller_mutation_cannot_change_admitted_plan test_trace.TraceValidationTests.test_default_trace_has_no_native_fallback test_trace.TraceValidationTests.test_normal_and_upstream_transports_still_refuse_raw test_trace_worker_protocol.TraceWorkerProtocolTests.test_exact_envelope_and_full_input_hash test_trace_worker_protocol.TraceWorkerProtocolTests.test_invalid_envelopes_cannot_launch_nodes test_trace_worker_protocol.TraceWorkerProtocolTests.test_cli_bounded_default_and_explicit_native test_trace_worker_protocol.TraceHostProtocolTests.test_wrong_extra_corrupt_and_resealed_foreign_plan test_trace_worker_protocol.TraceHostProtocolTests.test_timeout_and_output_limit_clean_owned_worker -v",
+    "tests_passed": 8,
+    "unittest_elapsed_seconds": 1.141,
+    "result": "OK",
+    "classification": "Mock/local protocol and cleanup checks; not Docker kernel enforcement or archive execution.",
+    "additional_denial_probe": "Ordinary/upstream RPC rejected raw sends; OwnedTraceRPC rejected balance/code/impersonation/unsigned-send overrides and nonlocal URLs before any network call."
+  },
+  "remaining_scope_limits": [
+    "Same-block funding dependencies can be rejected by parent-state pool admission. Sequential mining or balance/nonce repairs would change the experiment and are not substituted.",
+    "verify_trace checks integrity/format binding; it does not independently recompute receipt comparisons or authenticate the provider/image.",
+    "Full-block replay, roots/end-state equality, opcode traces, withdrawals and an alternate economy remain outside the stated prefix receipt scope.",
+    "The independent reviewer did not execute the new Docker mainnet CI gate or rerun the full suite.",
+    "This software review is not the required independent human GitHub approval."
+  ],
+  "review_conclusion": "Snapshot defect resolved. No additional actionable source defect confirmed in the reviewed current diff; pool dependency coverage limitation retained explicitly.",
+  "reviewer_actions": {
+    "production_edits": false,
+    "github_votes": false,
+    "external_messages": false,
+    "archive_calls": 0,
+    "model_calls": 0,
+    "docker_startup": false,
+    "new_probes_while_saving_this_record": false
+  }
+}

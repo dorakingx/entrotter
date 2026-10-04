@@ -1,0 +1,166 @@
+{
+  "artifact_id": "864d5bdb75215bc1ebac27ab54c12b16eae74adc62130da5544aa512c877eee7",
+  "assumptions": [
+    "Paired isolated Anvil instances start from the same source state.",
+    "Actor native balance is overridden equally and account impersonation is local only.",
+    "This re-executes supplied actions, not subsequent historical blocks or market responses.",
+    "Each slot mines one block at a fixed 12-second interval. Transaction order is supplied.",
+    "Native and tracked token changes are exact units, not profit or portfolio valuation. Unlisted assets are not tracked.",
+    "No LLM agent, MEV, mempool, external price or bridge model is provided."
+  ],
+  "baseline": {
+    "metrics": {
+      "balance_delta_wei": "0",
+      "final_balance_wei": "10000000000000000000",
+      "gas_cost_wei": "0",
+      "gas_used": "0",
+      "initial_balance_wei": "10000000000000000000",
+      "rejected_transactions": 0,
+      "reverted_transactions": 0
+    },
+    "start_block": 0,
+    "start_timestamp": 1700000000,
+    "tokens": [],
+    "tool_version": "anvil/v1.8.3",
+    "trace": [
+      {
+        "action": null,
+        "actor_balance_wei": "10000000000000000000",
+        "gas_used": "0",
+        "status": "noop",
+        "step": 0
+      },
+      {
+        "action": null,
+        "actor_balance_wei": "10000000000000000000",
+        "gas_used": "0",
+        "status": "noop",
+        "step": 1
+      }
+    ]
+  },
+  "candidate": {
+    "metrics": {
+      "balance_delta_wei": "-1000081389926050000",
+      "final_balance_wei": "8999918610073950000",
+      "gas_cost_wei": "81389926050000",
+      "gas_used": "42006",
+      "initial_balance_wei": "10000000000000000000",
+      "rejected_transactions": 0,
+      "reverted_transactions": 1
+    },
+    "start_block": 0,
+    "start_timestamp": 1700000000,
+    "tokens": [],
+    "tool_version": "anvil/v1.8.3",
+    "trace": [
+      {
+        "action": {
+          "gas": 21000,
+          "to": "0x2000000000000000000000000000000000000002",
+          "value_wei": "1000000000000000000"
+        },
+        "actor_balance_wei": "8999958000000000000",
+        "gas_cost_wei": "42000000000000",
+        "gas_used": "21000",
+        "receipt": {
+          "blockHash": "0x92553261f25ccaf18014ec3baa6dfa24308d804ab173cd2f23c0277742ab8521",
+          "blockNumber": "0x1",
+          "blockTimestamp": 1700000012,
+          "contractAddress": null,
+          "cumulativeGasUsed": "0x5208",
+          "effectiveGasPrice": "0x77359400",
+          "from": "0x1000000000000000000000000000000000000001",
+          "gasUsed": "0x5208",
+          "logs": [],
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "status": "0x1",
+          "to": "0x2000000000000000000000000000000000000002",
+          "transactionHash": "0x3caaacdccc5d9b18b3db5535d9ac623bcb3910bda0f2abab9a957768f102b9e4",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "status": "success",
+        "step": 0,
+        "transaction_hash": "0x3caaacdccc5d9b18b3db5535d9ac623bcb3910bda0f2abab9a957768f102b9e4"
+      },
+      {
+        "action": {
+          "data": "0x",
+          "gas": 50000,
+          "to": "0x3000000000000000000000000000000000000003",
+          "value_wei": "0"
+        },
+        "actor_balance_wei": "8999918610073950000",
+        "gas_cost_wei": "39389926050000",
+        "gas_used": "21006",
+        "receipt": {
+          "blockHash": "0x8598beefd5ee012e4ed0ed5cb6a78e67bc07bbc7d55af5bfadd73dd90a3f250c",
+          "blockNumber": "0x2",
+          "blockTimestamp": 1700000024,
+          "contractAddress": null,
+          "cumulativeGasUsed": "0x520e",
+          "effectiveGasPrice": "0x6fc4e658",
+          "from": "0x1000000000000000000000000000000000000001",
+          "gasUsed": "0x520e",
+          "logs": [],
+          "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "status": "0x0",
+          "to": "0x3000000000000000000000000000000000000003",
+          "transactionHash": "0x62897360880a76bd98fb87d2fefce65f7a61b815d2e9cef841d88e498261ff36",
+          "transactionIndex": "0x0",
+          "type": "0x2"
+        },
+        "status": "reverted",
+        "step": 1,
+        "transaction_hash": "0x62897360880a76bd98fb87d2fefce65f7a61b815d2e9cef841d88e498261ff36"
+      }
+    ]
+  },
+  "comparison": {
+    "final_balance_delta_wei": "-1000081389926050000"
+  },
+  "engine_version": "0.1.0",
+  "local_chain_id": 31337,
+  "mode": "evm-local",
+  "scenario": {
+    "actor": "0x1000000000000000000000000000000000000001",
+    "actor_balance_wei": "10000000000000000000",
+    "allowed_targets": [
+      "0x2000000000000000000000000000000000000002",
+      "0x3000000000000000000000000000000000000003"
+    ],
+    "id": "local-branch-revert",
+    "local_contracts": {
+      "0x3000000000000000000000000000000000000003": "0x60006000fd"
+    },
+    "mode": "evm-local",
+    "provenance": {
+      "description": "Synthetic local chain. No real wallet, protocol, token or market data.",
+      "kind": "local-evm"
+    },
+    "schema_version": "0.1.0",
+    "steps": [
+      {
+        "baseline": null,
+        "candidate": {
+          "gas": 21000,
+          "to": "0x2000000000000000000000000000000000000002",
+          "value_wei": "1000000000000000000"
+        }
+      },
+      {
+        "baseline": null,
+        "candidate": {
+          "data": "0x",
+          "gas": 50000,
+          "to": "0x3000000000000000000000000000000000000003",
+          "value_wei": "0"
+        }
+      }
+    ],
+    "title": "Isolated local EVM transfers and a revert"
+  },
+  "schema_version": "0.1.0",
+  "source": null
+}

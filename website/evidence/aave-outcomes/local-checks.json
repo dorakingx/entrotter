@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "node": "v22.23.1",
+  "python": "3.13 local quality venv",
+  "unit_tests": 131,
+  "unit_skips": 0,
+  "site_tests": 12,
+  "checks": [
+    {
+      "name": "units",
+      "returncode": 0,
+      "stdout_sha256": "807682ba61871217b897b5350f515b227d817959a76a05d5d5e9885cb88d6086",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "site",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "db859b0fc2ab9ccc20da960d3c83948794900f945d16d1bf07c317556ac33711",
+      "raw_output_prefix": "site-final"
+    },
+    {
+      "name": "lint",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "format",
+      "returncode": 0,
+      "stdout_sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "types",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "security",
+      "returncode": 0,
+      "stdout_sha256": "e221faf017991ba3a616cac571b55a42ee1d9bfb47a341c4fc74e2a2d4ba192a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "security": {
+    "js_inputs": 19,
+    "type_inputs": 20,
+    "retained_findings": 148,
+    "new_individual_reviews": 11,
+    "suppressions": 0,
+    "inherited_exact_reasons": 137,
+    "removed_contexts": 2
+  },
+  "scope": "Final app/tests/runner source checks; site check repeated after subsequent HTML scroll hint. Original failed before-feature/fixture/cwd/source-bound-gate outputs retained privately; current CI is a separate fresh execution. Security gate rerun after independent-review correction of inherited reason mapping; unchanged runtime/unit/browser evidence reused."
+}

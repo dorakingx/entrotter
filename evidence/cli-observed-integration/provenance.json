@@ -1,0 +1,72 @@
+{
+  "copies": [
+    {
+      "source": "entrotter/.quality/cli-observed-integration/local-readers.json",
+      "public": "local-execution.json",
+      "original_sha256": "58d0a98d5176c821619e8ee856063fa716ea4457455cbbd51d82fffb1d6b3156",
+      "public_sha256": "58d0a98d5176c821619e8ee856063fa716ea4457455cbbd51d82fffb1d6b3156",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/cli-observed-integration/types.log",
+      "public": "local-types.json",
+      "original_sha256": "ebe61322b865bc3bd84679c93e77b44fd3b37c3ef2bfb049465d471527991a46",
+      "public_sha256": "ebe61322b865bc3bd84679c93e77b44fd3b37c3ef2bfb049465d471527991a46",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/cli-observed-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-observed-reader.json",
+      "public": "trace-observed-reader.json",
+      "original_sha256": "27218526aa4effd81afaee14b36faa7300af7c026fc07659bd6121a663847221",
+      "public_sha256": "27218526aa4effd81afaee14b36faa7300af7c026fc07659bd6121a663847221",
+      "normalization": "byte identical"
+    },
+    {
+      "source": ".worktrees/cli-bounded/.quality/observed-cli/ci-1ee3/independent-ci-review.json",
+      "public": "cli-ci-independent.json",
+      "original_sha256": "dd6ca1460954c63a763a10837a4008bb6b51fd31f4af58bdb5399e3f31d7bb48",
+      "public_sha256": "dd6ca1460954c63a763a10837a4008bb6b51fd31f4af58bdb5399e3f31d7bb48",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/cli-observed-integration/workflow-parse.json",
+      "public": "workflow-parse.json",
+      "original_sha256": "4fffe9cd6111b01bb4fa8ed51e5fc3cbd36b001378acf04eebe338c4e4793364",
+      "public_sha256": "4fffe9cd6111b01bb4fa8ed51e5fc3cbd36b001378acf04eebe338c4e4793364",
+      "normalization": "byte identical"
+    }
+  ],
+  "reused_first_five_full_reader_outputs": {
+    "trace-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-reader.json",
+      "prior_public_sha256": "869c323315000678cecde4a7cd31b5c3001075ab81022e0234ff8dfcf34d25a6",
+      "current_local_sha256": "0d9af23ec196af648399d757920f8045be2026e35f9a7caaead81f120e50fa56",
+      "change": "Only pins.cli from22b514c to1ee3d3a; all other complete result fields unchanged"
+    },
+    "trace-comparison-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-comparison-reader.json",
+      "prior_public_sha256": "56b64864aa3d2c3ec8184d92c2c157af5ba46a8a815704df846718487d806646",
+      "current_local_sha256": "630c1c71cf9b816bcf1496f44f521167b325a1f3e5b47422faa9dee47b084d16",
+      "change": "Only pins.cli from22b514c to1ee3d3a; all other complete result fields unchanged"
+    },
+    "trace-consumer-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-consumer-reader.json",
+      "prior_public_sha256": "35a3801be11b7880b87cf088d888ea7ebfbfa5295701017c8079636526993bdf",
+      "current_local_sha256": "1f783cc5bc2f73b947b777db76f60133fdd13e0c7ed5e1d977bb425a3e313496",
+      "change": "Only pins.cli from22b514c to1ee3d3a; all other complete result fields unchanged"
+    },
+    "trace-funding-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-funding-reader.json",
+      "prior_public_sha256": "77bd0749930ca712edfd34013dd948d886e9d2c76c2234b5918a669b306170ac",
+      "current_local_sha256": "dbb6286fa13e8b9b422f6bc981dee495d2bd211bfefe0a22ace3e79e29a8b899",
+      "change": "Only pins.cli from22b514c to1ee3d3a; all other complete result fields unchanged"
+    },
+    "trace-oracle-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-oracle-reader.json",
+      "prior_public_sha256": "d992b0142dc12c945ef82b3b8d10969acd8cd9848cc47581654805e9d8159104",
+      "current_local_sha256": "c2797bd0a9e25d2d00fb0633b43e08ec00178f5236d2489ede00dbefe9ae800d",
+      "change": "Only pins.cli from22b514c to1ee3d3a; all other complete result fields unchanged"
+    }
+  },
+  "limits": "Original raw/local full outcomes retained privately; all current hashes recorded; reused outputs are historical SDK composition with explicitly changed CLIpin, not relabelled new files."
+}
