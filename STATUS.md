@@ -367,3 +367,25 @@ reasons remain exact plus one reviewed diagnostic-write finding. Actual blockedk
 recovery, wrongfocus and failedcapture controls preserve the original failure.
 Currenthead CI and protectedhuman main/Pages remain separate; no cause, reliability
 rate or new EVM/model/performance claim. Goalactive and Discordexcluded.
+
+
+## October 4 — copy fixed CLI recipes without manual selection
+
+Verified bundled examples provide setup/inspection copy controls using only the
+fixed current recipe cache. Native clipboard contents are never read by production,
+commands are not executed, and private files/metadata/codebox edits cannot select
+copied text. One pending write is serialized; report changes clear feedback and
+show a current waiting/manual-copy hint until it settles. Native writes cannot be
+cancelled; no old success/error may claim a newer recipe or restore a local panel.
+
+[Actual source-bound evidence](evidence/cli-copy/README.md) records136 Node/12 site,
+51 Chromium groups/64 complete rawaxe with0 violations/JSexceptions, actual native
+keyboard write/readback for both fields/all6 samples at390px, focus/Tab continuation,
+and finite denied/missing/pending/local/late-error controls at320px.19JS/20typed
+checks retain151 exact source-span reasons plus1 fixed public fixture-read review,
+152 full findings; no suppressions or locks change. The new regression fails against
+immutable05a lacking copy and passes current production. Existing49 browser
+assertions, historical failures/reports, recipe/pins, videos and CLI outputs remain.
+Current Aave production view retains all prior fields except appSHA. Current CI,
+independent review/publication and protected human-main/Pages remain separate.
+No new EVM/model/RPC/performance or reliability-rate claim; goalactive, Discordexcluded.

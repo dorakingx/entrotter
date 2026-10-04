@@ -50,3 +50,10 @@ commands are rendered as textContent and never executed by the website. No local
 filename, report metadata or query/origin string is interpolated. Loading, local
 imports and errors clear both setup and inspection text, with the current
 sample-generation guard preventing stale restoration.
+
+CLI recipe copy controls write only the current verified bundled recipe cache to
+the native Clipboard API after activation; they never read the clipboard or take
+text from imported reports, URLs or mutable codeboxes. One write is pending at a
+time. Report changes invalidate feedback and disable hidden controls, but cannot
+cancel an already requested write of public text. No command is executed; missing
+or denied APIs keep manual selection available.

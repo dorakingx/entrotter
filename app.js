@@ -63,6 +63,45 @@ function reportExampleUrl(name, href) {
   }
 }
 let generation = 0;
+/** @type {ReturnType<typeof reportCliRecipe>} */
+let cliRecipe = null;
+let cliCopySequence = 0;
+let cliCopyInFlight = false;
+/** @param {boolean} disabled */
+function disableCliCopy(disabled) {
+  for (const id of ["cli-copy-setup", "cli-copy-command"]) {
+    if (disabled) $(id).setAttribute("disabled", "");
+    else $(id).removeAttribute("disabled");
+  }
+}
+/** @param {"setup" | "command"} kind */
+async function copyCliRecipe(kind) {
+  if (cliCopyInFlight || !cliRecipe || !["setup", "command"].includes(kind))
+    return;
+  const text = kind === "setup" ? cliRecipe.setup : cliRecipe.command;
+  const seq = generation;
+  const copy = ++cliCopySequence;
+  const current = () => seq === generation && copy === cliCopySequence;
+  cliCopyInFlight = true;
+  disableCliCopy(true);
+  $("cli-copy-status").textContent = "Copying…";
+  try {
+    if (typeof navigator === "undefined" || !navigator.clipboard?.writeText)
+      throw new Error("Clipboard unavailable.");
+    await navigator.clipboard.writeText(text);
+    if (current())
+      $("cli-copy-status").textContent =
+        kind === "setup" ? "CLI setup copied." : "Inspection command copied.";
+  } catch {
+    if (current())
+      $("cli-copy-status").textContent =
+        "Copy unavailable. Select the commands above and copy them manually.";
+  } finally {
+    cliCopyInFlight = false;
+    if (!current() && cliRecipe) $("cli-copy-status").textContent = "";
+    disableCliCopy(!cliRecipe);
+  }
+}
 // The backend canonicalizes JSON with sorted keys and ensure_ascii=True.
 /** @param {unknown} value @returns {string} */
 function canonical(value) {
@@ -613,6 +652,10 @@ function clearReport(message) {
   $("cli-recipe").hidden = true;
   $("cli-setup").textContent = "";
   $("cli-command").textContent = "";
+  cliRecipe = null;
+  cliCopySequence++;
+  disableCliCopy(true);
+  $("cli-copy-status").textContent = "";
   $("evm-details").hidden = true;
   $("evm-traces").replaceChildren();
   $("source-pin").textContent = "";
@@ -797,9 +840,14 @@ async function loadSample() {
       $("download").setAttribute("download", name + ".json");
       const recipe = reportCliRecipe(name);
       if (recipe) {
+        cliRecipe = recipe;
         $("cli-setup").textContent = recipe.setup;
         $("cli-command").textContent = recipe.command;
         $("cli-recipe").hidden = false;
+        disableCliCopy(cliCopyInFlight);
+        if (cliCopyInFlight)
+          $("cli-copy-status").textContent =
+            "Waiting for the previous copy request. You can still select and copy these commands manually.";
       }
       const href = reportExampleUrl(
         name,
@@ -818,6 +866,8 @@ async function loadSample() {
   }
 }
 $("scenario").addEventListener("change", loadSample);
+$("cli-copy-setup").addEventListener("click", () => copyCliRecipe("setup"));
+$("cli-copy-command").addEventListener("click", () => copyCliRecipe("command"));
 $("import").addEventListener("change", async (event) => {
   if (!(event.target instanceof HTMLInputElement)) return;
   const file = event.target.files?.[0];

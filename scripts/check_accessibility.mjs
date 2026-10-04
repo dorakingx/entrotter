@@ -370,6 +370,233 @@ function canonical(x) {
 try {
   browser = await chromium.launch();
   await check(
+    "CLI recipes: native keyboard copying of all six public examples",
+    () =>
+      withPage(390, async (page) => {
+        await page
+          .context()
+          .grantPermissions(["clipboard-read", "clipboard-write"], { origin });
+        await page.locator("#cli-recipe > summary").focus();
+        await page.keyboard.press("Enter");
+        for (const name of [
+          "liquidity-shock",
+          "recovery-trap",
+          "depeg-stress",
+          "ethereum-uniswap-slippage",
+          "agent-local-codex",
+          "aave-borrow-actions",
+        ]) {
+          await page.selectOption("#scenario", name);
+          const command = `PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./${name}.json --format text`;
+          await page.waitForFunction(
+            (text) =>
+              document.querySelector("#cli-command")?.textContent === text,
+            command,
+          );
+          await page.locator("#cli-copy-setup").focus();
+          await visibleFocus(page);
+          await page.keyboard.press("Enter");
+          await page.waitForFunction(
+            () =>
+              document.querySelector("#cli-copy-status")?.textContent ===
+              "CLI setup copied.",
+          );
+          const setup = await page.locator("#cli-setup").innerText();
+          assert.equal(
+            await page.evaluate(() => navigator.clipboard.readText()),
+            setup,
+          );
+          await focusIs(page, "cli-copy-setup");
+          await page.keyboard.press("Tab");
+          await focusIs(page, "cli-command");
+          await page.locator("#cli-copy-command").focus();
+          await visibleFocus(page);
+          await page.keyboard.press("Enter");
+          await page.waitForFunction(
+            () =>
+              document.querySelector("#cli-copy-status")?.textContent ===
+              "Inspection command copied.",
+          );
+          assert.equal(
+            await page.evaluate(() => navigator.clipboard.readText()),
+            command,
+          );
+          await focusIs(page, "cli-copy-command");
+          assert.equal(
+            await page.locator("#cli-copy-command").isDisabled(),
+            false,
+          );
+        }
+        await noOverflow(page);
+        await scan(page, "390-cli-native-copy");
+      }),
+  );
+  await check(
+    "CLI copying: denied API, serialization, stale feedback and private clearing",
+    () =>
+      withPage(320, async (page) => {
+        await page.locator("#cli-recipe > summary").focus();
+        await page.keyboard.press("Enter");
+        await page.evaluate(() =>
+          Object.defineProperty(navigator, "clipboard", {
+            configurable: true,
+            value: {
+              writeText: async () => {
+                throw new Error("Private diagnostic must not appear");
+              },
+            },
+          }),
+        );
+        await page.locator("#cli-copy-command").focus();
+        await page.keyboard.press("Enter");
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#cli-copy-status")
+            ?.textContent?.startsWith("Copy unavailable."),
+        );
+        assert.doesNotMatch(
+          await page.locator("#cli-copy-status").innerText(),
+          /Private diagnostic/,
+        );
+        assert.equal(
+          await page.locator("#cli-copy-command").isDisabled(),
+          false,
+        );
+        await page.evaluate(() =>
+          Object.defineProperty(navigator, "clipboard", {
+            configurable: true,
+            value: undefined,
+          }),
+        );
+        await page.locator("#cli-copy-setup").click();
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#cli-copy-status")
+            ?.textContent?.includes("copy them manually"),
+        );
+        /** @type {(() => void) | undefined} */
+        let complete;
+        /** @type {(() => void) | undefined} */
+        let fail;
+        let pending = new Promise((resolve) => {
+          complete = () => resolve(undefined);
+        });
+        /** @type {string[]} */
+        const copies = [];
+        await page.exposeFunction(
+          "holdCliCopy",
+          /** @param {string} text */ (text) => {
+            copies.push(text);
+            return pending;
+          },
+        );
+        await page.evaluate(() =>
+          Object.defineProperty(navigator, "clipboard", {
+            configurable: true,
+            value: {
+              writeText: async (/** @type {string} */ text) => {
+                try {
+                  await holdCliCopy(text);
+                } finally {
+                  document
+                    .getElementById("cli-copy-status")
+                    ?.setAttribute("data-copy-settled", "true");
+                }
+              },
+            },
+          }),
+        );
+        await page.locator("#cli-copy-command").click();
+        await page.waitForFunction(
+          () =>
+            document.querySelector("#cli-copy-status")?.textContent ===
+            "Copying…",
+        );
+        assert.equal(await page.locator("#cli-copy-setup").isDisabled(), true);
+        await page.selectOption("#scenario", "recovery-trap");
+        const recovery =
+          "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./recovery-trap.json --format text";
+        await page.waitForFunction(
+          (text) =>
+            document.querySelector("#cli-command")?.textContent === text,
+          recovery,
+        );
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#cli-copy-status")
+            ?.textContent?.startsWith("Waiting for the previous copy request."),
+        );
+        assert.equal(
+          await page.locator("#cli-copy-command").isDisabled(),
+          true,
+        );
+        await page
+          .locator("#cli-copy-command")
+          .evaluate((node) => /** @type {HTMLButtonElement} */ (node).click());
+        assert.equal(copies.length, 1, "Pending writes must not overlap");
+        if (!complete) throw new Error("Missing pending-copy control");
+        complete();
+        await page.waitForFunction(() => {
+          const button = document.getElementById("cli-copy-command");
+          return button instanceof HTMLButtonElement && !button.disabled;
+        });
+        assert.equal(await page.locator("#cli-copy-status").textContent(), "");
+        pending = new Promise((_, reject) => {
+          fail = () => reject(new Error("Late clipboard rejection"));
+        });
+        await page
+          .locator("#cli-copy-status")
+          .evaluate((node) => node.removeAttribute("data-copy-settled"));
+        await page.locator("#cli-copy-command").click();
+        await page.waitForFunction(
+          () =>
+            document.querySelector("#cli-copy-status")?.textContent ===
+            "Copying…",
+        );
+        await page.locator("#import").setInputFiles({
+          name: "private-wallet-report.json",
+          mimeType: "application/json",
+          buffer: await readFile(resolve(root, "reports/liquidity-shock.json")),
+        });
+        await page.waitForFunction(
+          () =>
+            /** @type {HTMLSelectElement | null} */ (
+              document.querySelector("#scenario")
+            )?.value === "local-report",
+        );
+        if (!fail) throw new Error("Missing rejection control");
+        fail();
+        await page.waitForFunction(
+          () =>
+            document
+              .querySelector("#cli-copy-status")
+              ?.getAttribute("data-copy-settled") === "true",
+        );
+        assert.equal(await page.locator("#cli-copy-status").textContent(), "");
+        assert.equal(
+          await page
+            .locator("#cli-recipe")
+            .evaluate((node) => /** @type {HTMLElement} */ (node).hidden),
+          true,
+        );
+        assert.equal(
+          await page.locator("#cli-copy-command").isDisabled(),
+          true,
+        );
+        assert.equal(await page.locator("#cli-setup").textContent(), "");
+        assert.equal(await page.locator("#cli-command").textContent(), "");
+        await page
+          .locator("#cli-copy-command")
+          .evaluate((node) => /** @type {HTMLButtonElement} */ (node).click());
+        assert.deepEqual(copies, [
+          "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./liquidity-shock.json --format text",
+          recovery,
+        ]);
+        await noOverflow(page);
+        await scan(page, "320-cli-copy-faults");
+      }),
+  );
+  await check(
     "Bundled report links: direct entry, navigation and local-file privacy",
     () =>
       withPage(

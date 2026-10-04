@@ -1,0 +1,118 @@
+{
+  "report_sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+  "report_bytes": 59506,
+  "artifact_id": "728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00",
+  "app_sha256": "7c3b1992938e5c7d1a60635519412b1988b9f058d1e7275991501d82adeaefca",
+  "balanceRows": [
+    [
+      "Native ETH · Initial",
+      "20",
+      "20",
+      "0"
+    ],
+    [
+      "Native ETH · Final",
+      "9.988827559170319712",
+      "9.9912499816031695",
+      "+0.002422422432849788"
+    ],
+    [
+      "Native ETH · Change",
+      "-10.011172440829680288",
+      "-10.0087500183968305",
+      "+0.002422422432849788"
+    ],
+    [
+      "Gas cost (ETH)",
+      "0.011172440829680288",
+      "0.0087500183968305",
+      "-0.002422422432849788"
+    ],
+    [
+      "Gas used",
+      "723131",
+      "560326",
+      "-162805"
+    ],
+    [
+      "Reverted transactions",
+      "1",
+      "0",
+      "-1"
+    ],
+    [
+      "Rejected transactions",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "WETH · Initial",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "WETH · Final",
+      "1",
+      "1",
+      "0"
+    ],
+    [
+      "WETH · Change",
+      "+1",
+      "+1",
+      "0"
+    ],
+    [
+      "AWETH · Initial",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "AWETH · Final",
+      "10.000000094454558462",
+      "10.000000094454558462",
+      "0"
+    ],
+    [
+      "AWETH · Change",
+      "+10.000000094454558462",
+      "+10.000000094454558462",
+      "0"
+    ],
+    [
+      "VWETH · Initial",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "VWETH · Final",
+      "1",
+      "1",
+      "0"
+    ],
+    [
+      "VWETH · Change",
+      "+1",
+      "+1",
+      "0"
+    ]
+  ],
+  "tokenIdentities": "WETH · 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2 · 18 decimals\nAWETH · 0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8 · 18 decimals\nVWETH · 0xea51d7853eefb32b6ee06b1c12e6dcca88be0ffe · 18 decimals",
+  "source": "Chain 1 · Block 18999892\n0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6",
+  "recorded_agent_rows": [
+    [
+      "3",
+      "rejected",
+      "500000 / 2000000",
+      "hold",
+      "Current-state preflight or requested gas exceeds the policy",
+      "noop",
+      "0"
+    ]
+  ],
+  "scope": "Offline production view-model output from original recorded Engine report, not fresh EVM/browser/model execution or execution authentication."
+}

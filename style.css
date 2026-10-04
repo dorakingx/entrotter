@@ -59,3 +59,5 @@ body { background: var(--bg); }
 .account-impact-summary dd { margin: 8px 0 0; font-size: 24px; font-weight: 650; line-height: 1.4; overflow-wrap: anywhere; }
 @media (max-width: 680px) { .account-impact-summary { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 680px) { #trace-account-comparison th[scope="row"] { width: 8rem; max-width: 8rem; min-width: 6rem; white-space: normal; } }
+
+#cli-recipe button { max-width: 100%; white-space: normal; }

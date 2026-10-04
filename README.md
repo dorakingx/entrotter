@@ -400,3 +400,7 @@ These checks establish internal consistency, not provider/execution authenticity
 or valuation. Existing report families, wire contracts and videos are preserved.
 See [local validation](evidence/aave-outcomes/README.md); main/Pages publication
 and independent approval remain separate from this proposed branch.
+
+Verified bundled CLI recipes also have [native copy controls](evidence/cli-copy/README.md).
+They copy only fixed public setup/inspection text, with explicit manual fallback,
+serialized pending writes and generation-safe feedback after report changes.

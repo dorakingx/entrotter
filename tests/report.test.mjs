@@ -32,6 +32,78 @@ const sample = () =>
       "utf8",
     ),
   );
+test("CLI copying uses only verified recipes and keeps pending feedback isolated", async () => {
+  const elements = new Map();
+  const writes = [];
+  const element = (id) => {
+    if (!elements.has(id))
+      elements.set(id, {
+        value: "not-an-allowed-sample",
+        textContent: "",
+        disabled: false,
+        hidden: false,
+        addEventListener() {},
+        setAttribute(name) {
+          if (name === "disabled") this.disabled = true;
+        },
+        removeAttribute(name) {
+          if (name === "disabled") this.disabled = false;
+        },
+        replaceChildren() {},
+      });
+    return elements.get(id);
+  };
+  let finish;
+  const pending = new Promise((resolve) => {
+    finish = resolve;
+  });
+  const copyContext = vm.createContext({
+    document: { getElementById: element },
+    navigator: {
+      clipboard: {
+        writeText: (text) => {
+          writes.push(text);
+          return pending;
+        },
+      },
+    },
+  });
+  vm.runInContext(productionCode, copyContext);
+  await copyContext.copyCliRecipe("command");
+  assert.deepEqual(writes, []);
+  vm.runInContext(
+    'cliRecipe = reportCliRecipe("aave-borrow-actions")',
+    copyContext,
+  );
+  element("cli-setup").textContent = "private injected DOM text";
+  const task = copyContext.copyCliRecipe("setup");
+  assert.equal(
+    writes[0],
+    copyContext.reportCliRecipe("aave-borrow-actions").setup,
+  );
+  assert.equal(element("cli-copy-setup").disabled, true);
+  copyContext.clearReport("Loading");
+  vm.runInContext('cliRecipe = reportCliRecipe("recovery-trap")', copyContext);
+  await copyContext.copyCliRecipe("command");
+  assert.equal(writes.length, 1, "Pending clipboard writes must not overlap");
+  finish();
+  await task;
+  assert.equal(element("cli-copy-status").textContent, "");
+  assert.equal(element("cli-copy-command").disabled, false);
+  copyContext.navigator.clipboard.writeText = async () => {
+    throw new Error("Private browser error");
+  };
+  await copyContext.copyCliRecipe("command");
+  assert.match(element("cli-copy-status").textContent, /^Copy unavailable\./);
+  assert.doesNotMatch(element("cli-copy-status").textContent, /Private/);
+  copyContext.navigator.clipboard = undefined;
+  await copyContext.copyCliRecipe("setup");
+  assert.match(element("cli-copy-status").textContent, /copy them manually/);
+  copyContext.clearReport("Local report");
+  await copyContext.copyCliRecipe("command");
+  assert.equal(writes.length, 1);
+  assert.equal(element("cli-copy-command").disabled, true);
+});
 test("CLI inspection recipe uses pinned sources and only public sample names", () => {
   for (const name of [
     "liquidity-shock",
