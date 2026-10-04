@@ -422,6 +422,21 @@
       "planned_current_ci_offline_readers": 12,
       "combined_current_ci": "Pending for this new composition; prior5193 full5 original checks historical.",
       "scope": "Recorded inspection and synthetic presentation controls. Overlaps earlier tests; no addition to frozen workspace totals. No new local EVM/model/browser/performance/media/main/Pages/submission execution."
+    },
+    "separate_example_evaluation": {
+      "viewer": "035f2ebf0d36e0f9bbedca1e87598fc6c03eef22",
+      "local_site_tests": 12,
+      "targeted_browser_views": 6,
+      "widths": [
+        1440,
+        320
+      ],
+      "scoped_axe_violations": 0,
+      "scoped_axe_incomplete": 3,
+      "all_five_offline_command_objects_unchanged": true,
+      "immutable_source_byte_hashes_unchanged": 22,
+      "current_coordinator_CI": "Pending exact-root mandatory CI; record outcomes in existing PR55 without a status-only commit.",
+      "scope": "HTML wording plus viewer-pin composition; targeted current browser evidence and historical Aave recording distinct. No new EVM/model/RPC/performance, main merge, Pages or formal submission claim."
     }
   },
   "evidence": [
@@ -526,7 +541,8 @@
     "evidence/setup-pin-integration/README.md",
     "evidence/observed-text-integration/README.md",
     "evidence/observed-text-integration/local-reader.json",
-    "evidence/observed-text-integration/cli-observed-text.json"
+    "evidence/observed-text-integration/cli-observed-text.json",
+    "evidence/agent-scope-integration/README.md"
   ],
   "community": "Discord abandoned by owner; excluded from work and submission requirements"
 }

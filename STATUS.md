@@ -2343,3 +2343,26 @@ human listening. No new EVM/RPC/model/paid calls or execution/provider authentic
 is claimed. The inherited local-model comparison paragraph is not Aave model
 evidence. Supported hosting, independent-human main approval/Pages and submission
 facts remain pending; goalactive through officialOctober13 15:59JST, Discordexcluded.
+
+
+## October 4 — separate example evaluation joins the selected viewer
+
+The candidate selects viewer035f2eb with unchanged Enginef53/SDKba4/CLI169. The
+agent panel labels its native-transfer model comparison as a separate example,
+preventing a selected Aave/imported report from inheriting that evidence claim.
+Twelve site tests and six actual1440px/320px views pass with full paragraph
+visibility, zero scoped axe violations/JavaScript errors and three explicit
+contrast incompletes. Programmatic link focus is not native keyboard traversal.
+The corrected browser helper preserves CSP and records earlier injection/scroll
+failures. [Composition evidence](evidence/agent-scope-integration/README.md)
+separates current component CI and source/publication review from local tests.
+
+The existing five-command offline reader passes at the new pin: all previous
+whole output objects and22 immutable source byte hashes remain exact, including
+the original59506-byte Aave/3013-byte text and16 four-column rows. Only one
+manifest/workflow viewer pin changes; app/golden/locks/other pins/media stay.
+The Aave review video still captures ad697dc, not this wording correction.
+Current coordinator CI and protected human-main approval/Pages remain separate.
+No fresh EVM/RPC/model/performance execution is claimed. Submission profile,
+audio/caption and hosting gates remain pending; goalactive through official
+October13 15:59JST, Discordexcluded.

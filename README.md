@@ -107,14 +107,18 @@ all sixteen browser rows beside the original Engine/SDK/CLI outputs. The current
 viewer component has passed its own mandatory CI; combined integration, protected
 human main approval and live Pages remain separate.
 
-The [CLI copy composition](evidence/cli-copy-integration/README.md) selects
-viewerad697dc. Verified bundled recordings provide fixed download filenames and
+The current candidate selects viewer035f2eb and retains the
+[CLI copy controls](evidence/cli-copy-integration/README.md). Verified bundled
+recordings provide fixed download filenames and
 pinned CLI/SDK setup with selected read-only inspection commands. All six recipes
 have actual clean-checkout results; commands never include local report metadata.
 Keyboard-activated copy controls use only the fixed public recipe; denied APIs
 provide manual copying and pending writes are serialized. Shared example links
 and exact outcomes remain intact. The existing five-command
 reader retains all original outputs and uses the current source-bound view golden.
+The [separate evaluation composition](evidence/agent-scope-integration/README.md)
+labels the native-transfer model comparison as evidence for that example only;
+it does not evaluate every Aave or imported recording shown in the panel.
 
 Terminal users can also inspect the same account record with
 `position-inspect --format text`: all six exact account fields and differences,
