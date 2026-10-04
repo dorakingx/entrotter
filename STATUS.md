@@ -351,3 +351,19 @@ wrong-golden-path helper failures remain retained. Original report/view fields
 retain versions except current appSHA; no new EVM/model/advisory/performance run.
 Current CI, independent review/publication and protected human-main/Pages remain
 separate. Goal active; Discord excluded and user evaluations deferred.
+
+
+## October 4 — retain native keyboard-scroll failure state
+
+Recipe candidate2f83987 was published exactly; originalCI unit/quality/docs passed
+but Linux browser48/49 groups failed320px liquidity-shock positiveArrowRight
+scrolling, with61 complete rawaxe scans. Original failure remains cause-unproven.
+A bounded independent two-case realChromium probe passed320/390px and did not
+reproduce it. The [diagnostic addition](evidence/cli-inspection/keyboard-scroll/README.md)
+asserts actualfocus/overflow and retains nativekey/5000ms/positive-movement checks,
+with bounded failure-only layout/focus/scroll JSON and primary-error preservation.
+Production/report/lock/workflow bytes are unchanged;150 earlier finding spans/
+reasons remain exact plus one reviewed diagnostic-write finding. Actual blockedkey,
+recovery, wrongfocus and failedcapture controls preserve the original failure.
+Currenthead CI and protectedhuman main/Pages remain separate; no cause, reliability
+rate or new EVM/model/performance claim. Goalactive and Discordexcluded.

@@ -200,6 +200,60 @@ async function visibleFocus(page) {
     "Focused control has no visible outline",
   );
 }
+/** @param {import("playwright").Page} page @param {string} id */
+async function keyboardScrollRight(page, id) {
+  const state = () =>
+    page.evaluate((id) => {
+      const node = document.getElementById(id);
+      const rect = node?.getBoundingClientRect();
+      return {
+        activeId: document.activeElement?.id ?? null,
+        documentFocused: document.hasFocus(),
+        connected: node?.isConnected ?? false,
+        clientWidth: node?.clientWidth ?? 0,
+        scrollWidth: node?.scrollWidth ?? 0,
+        scrollLeft: node?.scrollLeft ?? 0,
+        width: rect?.width ?? 0,
+        height: rect?.height ?? 0,
+        overflowX: node ? getComputedStyle(node).overflowX : null,
+      };
+    }, id);
+  /** @type {Awaited<ReturnType<typeof state>> | undefined} */
+  let before;
+  let arrowCompleted = false;
+  try {
+    before = await state();
+    assert.equal(before.activeId, id);
+    assert.ok(
+      before.scrollWidth > before.clientWidth,
+      "No horizontal scroll range",
+    );
+    await page.keyboard.press("ArrowRight");
+    arrowCompleted = true;
+    await page.waitForFunction(
+      (id) => (document.getElementById(id)?.scrollLeft ?? 0) > 0,
+      id,
+    );
+  } catch (error) {
+    try {
+      await writeFile(
+        resolve(output, `scroll-${id}-${page.viewportSize()?.width}.json`),
+        JSON.stringify(
+          { id, arrowCompleted, before, after: await state() },
+          null,
+          2,
+        ) + "\n",
+      );
+    } catch (diagnosticError) {
+      throw new AggregateError(
+        [error, diagnosticError],
+        "Keyboard scroll failed; diagnostic capture also failed",
+        { cause: diagnosticError },
+      );
+    }
+    throw error;
+  }
+}
 /** @param {import("playwright").Page} page @param {string} name */
 async function scan(page, name) {
   // Diagnostic injection through DevTools only. The website ships no axe script,
@@ -1067,11 +1121,7 @@ try {
             await page.locator("#cli-setup").focus();
             await visibleFocus(page);
             if (width < 700) {
-              await page.keyboard.press("ArrowRight");
-              await page.waitForFunction(
-                () =>
-                  (document.querySelector("#cli-setup")?.scrollLeft ?? 0) > 0,
-              );
+              await keyboardScrollRight(page, "cli-setup");
             }
             await noOverflow(page);
             if (report.agent) {
