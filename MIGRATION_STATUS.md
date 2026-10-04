@@ -40,13 +40,14 @@ Formal Transfer retained coordinator repository ID1377315140, all existing Git
 refs and Issue/PR IDs. The new owner is dorakingx, visibility public, license MIT.
 All425 candidate/archive/work refs were read back exactly; protected main5401d56
 is unchanged. Required checks and one independent approval remain enforced.
-The migration is reviewed in [draft PR56](https://github.com/dorakingx/entrotter/pull/56).
+The migration is reviewed in [PR56](https://github.com/dorakingx/entrotter/pull/56).
 
 Initial remote CI passed the bounded-default clean-clone and recorded replay
 checks, alongside component suites, quality and host bounds. This follow-up
 fixes the missing integration output directory, moved Issue URLs, two preserved
 fragments and website root-relative link scanning. Strict link checks remain
-active with a real two-root regression. Follow-up remote CI remains pending.
+active with a real two-root regression. Follow-up4003250 passed all14 remote workflows/29 checks. PR56 is ready
+for independent GitHub review; protected main remains unchanged.
 Current local Chromium52 checks/66 scans and zero-known-vulnerability dependency
 audits passed. Local fresh-clone reproduction hit Mac disk exhaustion; it is
 not reported as a success. No new model call was made.
@@ -88,3 +89,13 @@ required facts/materials/quality gates are verified.
 
 Private inventories, auth/session data, producer logs and owner contacts are
 retained outside public Git. No credentials are exported or committed.
+
+## Source metadata and discussion preservation
+
+The [source history archive](docs/SOURCE_HISTORY.md) maps all130 original items
+(29 issues/101 PRs) to source IDs, component paths and exact archival PR heads.
+It distinguishes native coordinator Transfer from source-only component metadata
+and carries no inherited approval. All536 captured private inventory files
+were separately restored with exact bytes and JSON readability; full source
+discussions remain owner-controlled and excluded from public exports. Final
+delete-time deltas, main approval and extra-asset disposition remain open.

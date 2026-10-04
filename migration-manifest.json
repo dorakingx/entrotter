@@ -2656,8 +2656,19 @@
   },
   "metadata_migration": {
     "coordinator_issues_and_PRs": "PASS_original_IDs_preserved_by_formal_Transfer",
-    "component_issues_PR_reviews": "authenticated private export preserved; provenance and unfinished-work mapping pending",
-    "stars": "not merged or fabricated"
+    "component_issues_PR_reviews": "source ID/state/ref mappings complete; exact discussion exports privately retained/restored; no inherited approval",
+    "stars": "not merged or fabricated",
+    "source_history_archive": {
+      "path": "docs/source-history.json",
+      "records": 130,
+      "issues": 29,
+      "pull_requests": 101,
+      "discussion_exports": "exact private source exports; restoration proof retained outside public Git",
+      "root_native_IDs": "preserved by formal Transfer",
+      "component_IDs": "provenance records; no synthetic GitHub entity migration",
+      "component_PR_heads": "all exact preserved archive refs",
+      "inherited_monorepo_approvals": false
+    }
   },
   "extra_assets": [
     {

@@ -19,7 +19,8 @@ and archive-RPC validation is a separate gate: do not infer it from offline test
 See `STATUS.md` and `evidence/` for exactly what has and has not run.
 
 The source is being migrated to the single public MIT repository
-`dorakingx/entrotter`; formal transfer and the migration PR are pending.
+`dorakingx/entrotter`; formal Transfer is complete and main integration awaits
+independent approval in PR56.
 The independently reviewed static viewer is live at https://entrotter.vercel.app/.
 Packages remain unpublished and the backend runs locally. See
 [MIGRATION_STATUS.md](MIGRATION_STATUS.md) for exact completed and pending gates.
@@ -48,7 +49,7 @@ macOS or Linux. The CLI already includes the original Aave recording, so this
 path needs no Docker, package installation, wallet or API key. Setup downloads
 public source; verification and inspection afterward run locally.
 
-After formal transfer and publication of the migration branch, clone it once.
+Clone the published migration branch once.
 Until independent main integration, use the explicit migration branch rather
 than assuming main already contains the new layout. From an empty directory:
 
@@ -61,7 +62,8 @@ PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli inspect cli/tests/dat
 
 For a local checkout of this migration candidate, start at `cd entrotter` and
 run the two Python commands. Historical source identities are recorded in
-[migration-manifest.json](migration-manifest.json); fresh one-clone validation
+[migration-manifest.json](migration-manifest.json) and
+[source Issue/PR provenance](docs/SOURCE_HISTORY.md); fresh one-clone validation
 is a separate migration gate.
 
 The text shows exact native/token balance changes, gas, failed transactions and
