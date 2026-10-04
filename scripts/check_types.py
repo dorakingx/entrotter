@@ -83,6 +83,37 @@ def main():
         "worker": (workers, [paths["worker-engine"], paths["sdk"], paths["cli"]]),
         "general": (general, []),
     }
+    # Keep the historical regression variants and also check the code actually
+    # shipped together in this monorepo. Dirty/untracked runtime source fails.
+    current_components = ["engine", "sdk-python", "cli"]
+    current_paths = [str(ROOT / name / "src") for name in current_components]
+    if subprocess.check_output(
+        ["git", "-C", str(ROOT), "status", "--porcelain", "--", *current_paths],
+        text=True,
+        timeout=10,
+    ).strip():
+        raise ValueError("Current monorepo runtime source must be clean for types")
+    current_trees = {
+        name: subprocess.check_output(
+            ["git", "-C", str(ROOT), "rev-parse", f"HEAD:{name}/src"],
+            text=True,
+            timeout=10,
+        ).strip()
+        for name in current_components
+    }
+    legacy_agents = {
+        "scripts/benchmark_agent.py",
+        "scripts/benchmark_direct.py",
+        "scripts/check_agent.py",
+    }
+    groups["agent_current"] = (
+        [name for name in agents if name not in legacy_agents],
+        [ROOT / "engine/src"],
+    )
+    groups["worker_current"] = (
+        workers,
+        [ROOT / name / "src" for name in current_components],
+    )
     output = ROOT / ".quality/types"
     output.mkdir(parents=True, exist_ok=True)
     results = []
@@ -112,7 +143,9 @@ def main():
         )
         full = process.stdout + process.stderr
         (output / (name + ".log")).write_text(full)
-        expected = policy["frozen_type_findings"] if name == "agent" else []
+        expected = (
+            policy["frozen_type_findings"] if name in {"agent", "agent_current"} else []
+        )
         count = evaluate(full, process.returncode, expected)
         results.append(
             {
@@ -127,6 +160,12 @@ def main():
         "mypy_version": version("mypy"),
         "sources_sha256": sources,
         "dependency_commits": dependencies,
+        "current_component_src_trees": current_trees,
+        "legacy_native_tools": {
+            "files": sorted(legacy_agents),
+            "required_engine_commit": policy["dependency_commits"]["agent-engine"],
+            "coverage": "agent group; execution requires original clean Engine source",
+        },
         "groups": results,
         "limitations": [
             "Normal mypy with unannotated bodies, not strict typing or runtime JSON validation",

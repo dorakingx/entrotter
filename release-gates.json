@@ -2,7 +2,7 @@
   "schema_version": "0.1.0",
   "updated_at": "2026-10-04",
   "overall": "in_progress",
-  "repository_publication": "six_public_repositories_verified",
+  "repository_publication": "historical_six_public_repos_monorepo_transfer_pending",
   "pages_publication": "historical_live_viewer_verified_latest_candidate_unmerged",
   "codex_goal_registration": "active",
   "gates": [
@@ -547,5 +547,20 @@
     "evidence/recorded-quick-start/README.md",
     "evidence/local-cli-integration/README.md"
   ],
-  "community": "Discord abandoned by owner; excluded from work and submission requirements"
+  "community": "Discord abandoned by owner; excluded from work and submission requirements",
+  "hosting_publication": {
+    "provider": "Vercel",
+    "url": "https://entrotter.vercel.app/",
+    "initial_reviewed_source": "dacd13415cf3babcff69f6f64ccad1382b273ba8",
+    "public_http_and_browser": "passed",
+    "monorepo_deployment": "pending"
+  },
+  "migration": {
+    "history_integration": "local_unsquashed_source_tree_matches",
+    "backup": "initial_Git_workspace_release_CI_independent_restore_PASS_final_asset_delta_audit_pending",
+    "one_clone_tests": "local_uncommitted_source_764_tests_no_skips_PASS_fresh_committed_clone_pending",
+    "independent_source_review": "scoped_history_source_and_policy_PASS_remote_CI_and_main_approval_pending",
+    "formal_transfer": "pending",
+    "Org_deletion": "prohibited_until_full_audit"
+  }
 }

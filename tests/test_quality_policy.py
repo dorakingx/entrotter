@@ -115,7 +115,7 @@ class QualityPolicyTests(unittest.TestCase):
 
         policy = json.loads((ROOT / "quality-inputs.json").read_text())
         manifest = json.loads(
-            (ROOT.parent / "scenarios/benchmarks/causal-v1/manifest.json").read_text()
+            (ROOT / "scenarios/benchmarks/causal-v1/manifest.json").read_text()
         )
         actual = hashlib.sha256(
             (ROOT / "scripts/codex_policy.py").read_bytes()

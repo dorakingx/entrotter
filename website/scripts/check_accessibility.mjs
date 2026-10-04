@@ -387,7 +387,7 @@ try {
           "aave-borrow-actions",
         ]) {
           await page.selectOption("#scenario", name);
-          const command = `PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./${name}.json --format text`;
+          const command = `PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./${name}.json --format text`;
           await page.waitForFunction(
             (text) =>
               document.querySelector("#cli-command")?.textContent === text,
@@ -515,7 +515,7 @@ try {
         assert.equal(await page.locator("#cli-copy-setup").isDisabled(), true);
         await page.selectOption("#scenario", "recovery-trap");
         const recovery =
-          "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./recovery-trap.json --format text";
+          "PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./recovery-trap.json --format text";
         await page.waitForFunction(
           (text) =>
             document.querySelector("#cli-command")?.textContent === text,
@@ -600,7 +600,7 @@ try {
           false,
         );
         const localCommand =
-          "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text";
+          "PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./local-report.json --format text";
         assert.equal(
           await page.locator("#cli-command").textContent(),
           localCommand,
@@ -617,7 +617,7 @@ try {
             "Inspection command copied.",
         );
         assert.deepEqual(copies, [
-          "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./liquidity-shock.json --format text",
+          "PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./liquidity-shock.json --format text",
           recovery,
           localCommand,
         ]);
@@ -719,7 +719,7 @@ try {
           );
           assert.equal(
             command,
-            "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+            "PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./local-report.json --format text",
           );
           readbacks.push({
             name,
@@ -783,7 +783,7 @@ try {
             );
             assert.equal(
               await page.locator("#cli-command").textContent(),
-              "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+              "PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./local-report.json --format text",
             );
             assert.match(
               (await page.locator("#cli-file-help").textContent()) ?? "",
@@ -1498,7 +1498,7 @@ try {
               (id) => document.querySelector("#hash")?.textContent === id,
               report.artifact_id,
             );
-            const command = `PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./${sample}.json --format text`;
+            const command = `PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./${sample}.json --format text`;
             await page.waitForFunction(
               (command) =>
                 document.querySelector("#cli-command")?.textContent === command,
@@ -1517,11 +1517,11 @@ try {
             );
             assert.match(
               await page.locator("#cli-setup").innerText(),
-              /checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889/,
+              /checkout --detach 23f2bf0c53ff3c9a50348d038d78eeaaf927f059/,
             );
             assert.match(
               await page.locator("#cli-setup").innerText(),
-              /checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44/,
+              /git clone https:\/\/github\.com\/dorakingx\/entrotter\.git entrotter/,
             );
             await page.locator("#cli-setup").focus();
             await visibleFocus(page);

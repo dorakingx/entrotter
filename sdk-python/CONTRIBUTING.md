@@ -10,9 +10,9 @@ for the offline tests. See [README.md](README.md) for this repository's test com
 4. Document assumptions, provenance, compatibility, and any skipped checks.
 5. Open a PR with the included template. One concern per PR; no unrelated rewrites.
 
-Cross-repository changes: open a tracking issue in `entrotter/entrotter`,
-link dependent PRs, and keep compatibility with the existing v0.1 JSON wire
-contract. Changes to schemas belong in `entrotter/scenarios`. Breaking changes
+Cross-component changes: open a tracking issue and a focused PR in
+`dorakingx/entrotter`, keeping compatibility with the existing v0.1 JSON wire
+contract. Changes to schemas belong in `scenarios/`. Breaking changes
 need a version bump and migration note. Never add a runtime Git dependency.
 
 Fork PRs run unprivileged tests only. Never use `pull_request_target` to run

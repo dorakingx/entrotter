@@ -10,8 +10,10 @@ import shutil
 import subprocess
 import sys
 
+from verification_log import unittest_has_skips
+
 ROOT = Path(__file__).resolve().parents[1]
-WORKSPACE = ROOT.parent
+WORKSPACE = ROOT
 p = argparse.ArgumentParser()
 p.add_argument("--require-anvil", action="store_true")
 args = p.parse_args()
@@ -21,23 +23,23 @@ env = dict(os.environ)
 env["PYTHONPATH"] = os.pathsep.join(
     str(WORKSPACE / r / "src") for r in ["engine", "sdk-python", "cli"]
 )
-EVIDENCE = ROOT / "evidence"
-EVIDENCE.mkdir(exist_ok=True)
+EVIDENCE = ROOT / "evidence" / "monorepo-verification"
+EVIDENCE.mkdir(parents=True, exist_ok=True)
 checks = []
 for repo in [
     "engine",
     "sdk-python",
     "cli",
     "scenarios",
-    "entrotter.github.io",
-    "entrotter",
+    "website",
+    ".",
 ]:
     command = [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"]
     result = subprocess.run(
         command, cwd=WORKSPACE / repo, env=env, text=True, capture_output=True
     )
     log = result.stdout + result.stderr
-    (EVIDENCE / f"{repo}-tests.log").write_text(log)
+    (EVIDENCE / f"{'coordination' if repo == '.' else repo}-tests.log").write_text(log)
     print(repo, "PASS" if result.returncode == 0 else "FAIL")
     print("\n".join(log.strip().splitlines()[-4:]))
     checks.append(
@@ -45,14 +47,21 @@ for repo in [
             "repository": repo,
             "command": "python -m unittest discover -s tests -v",
             "exit_code": result.returncode,
-            "log": f"{repo}-tests.log",
-            "contains_skipped_tests": bool("skipped" in log),
+            "log": f"{'coordination' if repo == '.' else repo}-tests.log",
+            "contains_skipped_tests": unittest_has_skips(log),
         }
     )
 if shutil.which("node"):
     result = subprocess.run(
-        ["node", "--test", "tests/report.test.mjs"],
-        cwd=WORKSPACE / "entrotter.github.io",
+        [
+            "node",
+            "--test",
+            *[
+                str(p.relative_to(WORKSPACE / "website"))
+                for p in sorted((WORKSPACE / "website/tests").glob("*.test.mjs"))
+            ],
+        ],
+        cwd=WORKSPACE / "website",
         text=True,
         capture_output=True,
     )
@@ -61,8 +70,8 @@ if shutil.which("node"):
     print("website JavaScript", "PASS" if result.returncode == 0 else "FAIL")
     checks.append(
         {
-            "repository": "entrotter.github.io",
-            "command": "node --test tests/report.test.mjs",
+            "repository": "website",
+            "command": "node --test tests/*.test.mjs",
             "exit_code": result.returncode,
             "log": "website-javascript-tests.log",
             "contains_skipped_tests": False,
@@ -71,8 +80,8 @@ if shutil.which("node"):
 else:
     checks.append(
         {
-            "repository": "entrotter.github.io",
-            "command": "node --test tests/report.test.mjs",
+            "repository": "website",
+            "command": "node --test tests/*.test.mjs",
             "exit_code": None,
             "status": "not_run_node_unavailable",
         }

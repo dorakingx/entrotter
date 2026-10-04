@@ -1,6 +1,6 @@
 # Entrotter Scenarios
 
-[Workspace setup](https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
+[Workspace setup](../README.md#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
 
 Open, versioned inputs and schemas for reproducible agent stress tests. MIT.
 The easiest place to contribute is a new scenario and its evidence.
@@ -22,7 +22,7 @@ constraints such as target allowlists, positive prices, integer wei, limits and
 mode-specific fields. Neither schema validity nor a content hash proves the
 economic model correct.
 
-To validate (Python 3.11+, a sibling engine checkout and development dependencies):
+To validate (Python 3.11+, a local ../engine component and development dependencies):
 
 ```bash
 python3 -m venv .venv

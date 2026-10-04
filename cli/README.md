@@ -1,11 +1,11 @@
 # Entrotter CLI
 
-[Workspace setup](https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
+[Workspace setup](../README.md#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
 
 A small Python 3.11+ interface for scenario execution and result inspection.
 
-Install the sibling `sdk-python` source before this package. Neither is
-published to PyPI. From a workspace with both repositories:
+The `sdk-python` source is included in this monorepo. Neither package is
+published to PyPI. From the monorepo root:
 
 ```bash
 export PYTHONPATH="$PWD/cli/src:$PWD/sdk-python/src:$PWD/engine/src"
@@ -22,7 +22,7 @@ From this repository, run unit tests with:
 PYTHONPATH=src:../sdk-python/src python3 -m unittest discover -s tests -v
 ```
 
-`--local` additionally requires the matching separately installed engine with
+`--local` additionally requires the matching local monorepo engine with
 `run_native` and the bounded default runner. Configure its local Docker worker
 image/socket before execution; normal local runs do not fall back if Docker is
 unavailable. Follow that engine checkout's worker setup instructions. Without it,

@@ -1,3 +1,21 @@
+# Current migration checkpoint — October 4, 2026
+
+The active candidate is the single public MIT monorepo dorakingx/entrotter, with
+engine/, sdk-python/, cli/, scenarios/ and website/. Its formal transfer and
+public branch/CI/main integration are pending. The new Vercel initial reviewed
+static site is live at https://entrotter.vercel.app/. This foundation is on the local review branch; it is not the deployed site. See MIGRATION_STATUS.md.
+
+All659 initial inventoried CI archives were backed up and independently
+reconstructed exactly, with CRC checks; final remote delta remains pending. Independent history
+preservation review passed for the six selected repositories. Fresh scoped tests
+passed (Engine390, SDK55, CLI107, scenarios23, root39, website Python12/JS138),
+including skip/native-model guard regressions. Final aggregate, source quality
+and scoped independent source/policy reviews passed. Fresh committed-clone
+demo, current browser/audits, remote CI and independent main approval remain pending. Tokyo disposition and the old Org deletion audit
+remain open. Historical evidence below retains its original source/version scope.
+
+## Historical coordination checkpoints
+
 # Verified implementation status
 
 Updated 2026-10-04 JST. **Goal active; not submission-ready.** Implementation
@@ -2431,3 +2449,31 @@ remain; no fresh EVM/RPC/model/performance execution is claimed. Demo captures
 ad697dc. Required coordinator CI, protected independent human-main approval,
 Pages and owner profile/audio/hosting remain separate; goalactive through
 October13 15:59JST, Discordexcluded.
+
+
+## October 4 — monorepo migration preparation and new Vercel publication
+
+The accepted owner goal now targets public MIT dorakingx/entrotter; the later
+direct hosting request selects https://entrotter.vercel.app/. The new Vercel
+project is READY and its 29 public files match reviewed viewer dacd134 exactly.
+Unauthenticated HTTPS, MIME types, Aave display, sample switching and CLI recipes
+were checked. The eight unfinished local-save changes are excluded. Existing
+main approvals and PRs remain separate; automatic monorepo Git deployment is
+pending. No new RPC/model/transaction result is claimed.
+
+The permanent private backup has restored seven Git repositories, full workspace
+file/symlink bytes, four release attachments and the approved Aave review MP4.
+Authenticated inventory scopes were refreshed. Full CI archive preservation is
+still running; the backup is on the same physical disk. The extra tokyo2026
+project's disposition remains with the owner. No Org deletion is authorized by
+these partial checks.
+
+Local unsquashed integration preserves the current coordinator bdb2059 and
+selected Enginef53/SDKba4/CLI169/Scenarios8785/Viewer dacd source commits. Initial
+component trees match exactly; 423 archival refs and a separate unfinished-work
+branch are preserved. Root paths, bootstrap, static staging, manifests and agent
+instructions are being adapted. Full monorepo tests, source review, CI, formal
+transfer, old Org dependency removal and final-delta/deletion audits remain.
+The first local workspace test exposed missing Docker socket/image configuration;
+its failures are retained and no native/unbounded fallback is used to pass them.
+See MIGRATION_STATUS.md and migration-manifest.json for the concrete scope.

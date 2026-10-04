@@ -1,3 +1,29 @@
+# Current owner policy — October 4, 2026 migration and Vercel
+
+The active accepted goal is migration to the single public MIT monorepo
+`dorakingx/entrotter`, using formal transfer of the existing coordinator when
+backup and ownership checks pass. This policy supersedes the older six-repository,
+Organization-retention and Pages-only instructions below. The latest direct
+owner request selects the new Vercel project `entrotter` at
+https://entrotter.vercel.app/ instead of GitHub Pages. Other sites stay untouched.
+
+Preserve current candidate PRs, all source histories/refs, unfinished work,
+original media and frozen evidence. Do not rebuild from old main or the ZIP.
+Follow MIGRATION_STATUS.md and migration-manifest.json. New runtime workflows
+must work from one clone without old Org source, release or registry dependencies.
+The old Org may be deleted only after the full asset, restoration, ownership,
+history, review, test, publication, dependency and final-delta audit passes.
+An extra unrelated repository must receive the owner's disposition first.
+
+Keep independent main approval and required checks. Owner authentication,
+terms and unknown personal facts remain separate. The existing competition
+entry has conditional submission authorization when the official portal and
+all gates permit it. No duplicate submission, unsupported claim or paid action.
+The improvement goal continues until the official deadline, currently October
+13, 2026 15:59 JST. Discord is excluded.
+
+## Retained product acceptance requirements and historical policy
+
 # Entrotter: persistent implementation goal
 
 ## Current owner policy — October 2, 2026
@@ -41,20 +67,20 @@ decisions yourself and record them.
 
 ## Binding constraints
 
-- Organization: `entrotter`. Use an existing organization, verify the authenticated
-  user's rights, and never publish under another account as a silent fallback.
-- Six functional repositories from repositories.json. All NEW repositories public,
-  all original code MIT licensed. Do not expose a pre-existing private repository.
-- Publish only OSS docs and a read-only example report viewer to GitHub Pages at
-  `https://entrotter.github.io/`. No custom domain, CNAME, DNS change, Vercel or
-  paid hosting. The backend runs locally for this milestone.
+- Repository: `dorakingx/entrotter`, transferred from the existing coordinator.
+  Verify the owner, repository ID and access before publication.
+- Functional folders from repositories.json in one public MIT monorepo.
+  Preserve original author notices and exclude private or unrelated assets.
+- Publish OSS docs and the read-only viewer to the new Vercel project at
+  `https://entrotter.vercel.app/`. No custom domain, DNS/billing changes or
+  paid add-ons are authorized. The backend runs locally.
 - Read AGENTS.md, README.md, STATUS.md, evidence/, ROADMAP.md and backlog/ first.
   Inspect existing files and remote history before changing anything.
-- Keep interfaces versioned, repositories independently testable, and PRs focused.
+- Keep interfaces versioned, components independently testable, and PRs focused.
   Use English code/UI/docs. Preserve the supplied purple Entrotter mascot asset.
 - Do not publish packages to npm/PyPI, buy services, announce partnerships,
   message users or broadcast live transactions without explicit authorization.
-  Repository/Pages publication and conditional formal submission of the existing
+  Repository/Vercel publication and conditional formal submission of the existing
   entry are already authorized under the current owner policy above.
 - Never put real keys, RPC secrets, auth tokens or private user data in public Git.
   Do not disable secret scanning, tests, validation or branch protection to pass.
@@ -64,9 +90,9 @@ decisions yourself and record them.
 1. Confirm the existing goal is active and inspect current candidate heads,
    relevant diffs and unresolved requirements in STATUS.md and release-gates.json.
    Reuse unchanged evidence; distinguish historical results from fresh execution.
-2. Keep the existing six public repositories and compatibility paths. Do not
-   repeat Git initialization, repository/Pages bootstrap or replace current work
-   with the original archive. Inspect permissions when an action needs them.
+2. Resume the current monorepo migration and preserve all source work. Do not
+   repeat old Org/sibling/Pages bootstrap or replace current work with the ZIP.
+   Verify asset backup, ownership and required permissions before transfer/deletion.
 3. Choose a concrete developer-value improvement, implement it, run relevant
    real tests, independently review and fix it, then integrate through required
    CI and independent approval. Verify publication rather than inferring it from
@@ -122,20 +148,20 @@ decisions yourself and record them.
 - CI checks tests, lint/type checks, schemas, contract tests, dependency/security
   findings, broken docs links and a CLI-to-SDK-to-engine smoke test. Real EVM CI
   is distinct from offline tests. No empty green jobs or silently skipped gates.
-- Each repo has README, MIT LICENSE, CONTRIBUTING, SECURITY, tests, PR/issue
+- The repository and components retain README, MIT LICENSE, CONTRIBUTING, SECURITY, tests, PR/issue
   templates and scoped good-first-issues. Enable private vulnerability reporting
   where available. Protect main with reviewed PRs when supported; never pretend
   protection is enabled if the API or plan denies it.
 
 ### G4. Public OSS site
 
-- Pages deployment succeeds at the default github.io address, no CNAME.
+- The new Vercel production deployment succeeds at entrotter.vercel.app; no custom domain.
 - The site is fast, responsive, keyboard accessible and English; dark/purple visual
   identity with restrained artwork, no visual clutter or fabricated adoption badges.
 - Visitors can understand the problem, reproduce an example, inspect real report
   assumptions and find the right contributing repository quickly.
 - Static report import stays in the browser. Do not upload private reports,
-  wallet data, credentials or analytics. Do not turn Pages into commercial SaaS.
+  wallet data, credentials or analytics. Keep the public site limited to OSS documentation and read-only inspection.
 - Verify mobile/desktop rendering and artifact parsing, unsafe input handling,
   links and no unexpected third-party network requests.
 

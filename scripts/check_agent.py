@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import platform
 import resource
+import subprocess
 import time
 
 from entrotter_engine.agent import (
@@ -17,6 +18,7 @@ from entrotter_engine.agent import (
     DecisionProvider,
 )
 from entrotter_engine.artifact import verify, write_report
+from entrotter_engine import runner as runner_module
 from entrotter_engine.runner import run, run_agent
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,6 +40,22 @@ def main():
     args = parser.parse_args()
     if args.generate_model and args.replay:
         parser.error("Choose model generation or offline replay")
+    source = Path(runner_module.__file__).resolve().parents[2]
+    commit = subprocess.check_output(
+        ["git", "-C", str(source), "rev-parse", "HEAD"], text=True, timeout=10
+    ).strip()
+    dirty = subprocess.check_output(
+        ["git", "-C", str(source), "status", "--porcelain"], text=True, timeout=10
+    ).strip()
+    if commit != "bb8b3e8d32c7cbd49629d337758f30bfdf805045" or dirty:
+        raise ValueError(
+            "Native model checker requires the original clean Enginebb8 source"
+        )
+    output = ROOT / "evidence/monorepo-verification/agent-controls"
+    if output.exists():
+        raise ValueError(
+            "Use a new evidence location; never overwrite model experiments"
+        )
     if args.replay:
         report = json.loads(args.replay.read_text())
         if not verify(report):
@@ -54,9 +72,8 @@ def main():
             json.dumps({"replay_exact": True, "artifact_id": replayed["artifact_id"]})
         )
         return
-    scenario = json.loads(
-        (ROOT.parent / "scenarios/evm/local-branch-revert.json").read_text()
-    )
+    output.mkdir(parents=True)
+    scenario = json.loads((ROOT / "scenarios/evm/local-branch-revert.json").read_text())
     scenario["steps"] = [
         {"baseline": deepcopy(s["candidate"]), "candidate": s["candidate"]}
         for s in scenario["steps"]
@@ -78,7 +95,7 @@ def main():
             "artifact_id": baseline["artifact_id"],
         }
     )
-    write_report(baseline, ROOT / "evidence/agent-local-prescribed.json")
+    write_report(baseline, output / "agent-local-prescribed.json")
     for name, provider in providers:
         started = time.perf_counter()
         report = run_agent(scenario, AgentController(provider, steps))
@@ -94,7 +111,7 @@ def main():
         ):
             raise ValueError("Agent comparison or exact replay failed")
         replay_elapsed = time.perf_counter() - replay_start
-        write_report(report, ROOT / f"evidence/agent-local-{name}.json")
+        write_report(report, output / f"agent-local-{name}.json")
         results.append(
             {
                 "policy": name,
@@ -131,7 +148,7 @@ def main():
         if args.generate_model
         else "agent-risk-verification.json"
     )
-    (ROOT / "evidence" / target).write_text(json.dumps(result, indent=2) + "\n")
+    (output / target).write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 
 

@@ -1,0 +1,71 @@
+name: scenarios · Scenario contracts
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  scenarios-validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: scenarios
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Materialize preserved engine history locally
+        working-directory: .
+        run: |
+          mkdir -p scenarios/_deps
+          git worktree add --detach scenarios/_deps/engine '6a3e03341eccd44fcd04a990db21cc5509e0c84d'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Install hash-locked schema dependencies
+        run: |
+          python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-dev.txt
+          python -m pip check
+      - run: PYTHONPATH=_deps/engine/src python -m unittest discover -s tests -v
+      - name: Materialize preserved entrotter history locally
+        working-directory: .
+        run: |
+          mkdir -p scenarios/_deps
+          git worktree add --detach scenarios/_deps/evidence 'fcf27d69c20fff3eb31534434579aa62795cc786'
+      - name: Validate all 19 existing result envelopes, including 12 agent recordings
+        run: |
+          python -m contract_validation --kind result _deps/evidence/evidence/causal-v1/causal-uniswap-*.json _deps/evidence/evidence/agent-local-*.json _deps/evidence/evidence/historical-uniswap.json
+  scenarios-compatibility:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: scenarios
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        include:
+          - python: '3.11'
+            engine: bb8b3e8d32c7cbd49629d337758f30bfdf805045
+          - python: '3.13'
+            engine: 0d3857839b2187541e573bec2e58042ad5bf0b45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Materialize preserved engine history locally
+        working-directory: .
+        run: |
+          mkdir -p scenarios/_deps
+          git worktree add --detach scenarios/_deps/engine '${{ matrix.engine }}'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install hash-locked schema dependencies
+        run: |
+          python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-dev.txt
+          python -m pip check
+      - run: PYTHONPATH=_deps/engine/src python -m unittest discover -s tests -v

@@ -1,6 +1,6 @@
 # Entrotter
 
-[Workspace setup](https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [First contributions](docs/FIRST_CONTRIBUTION.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
+[Workspace setup](#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [First contributions](docs/FIRST_CONTRIBUTION.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
 
 **A time machine for onchain agents.**
 
@@ -18,29 +18,26 @@ an Anvil adapter for paired local or archived-state EVM execution. Genuine Anvil
 and archive-RPC validation is a separate gate: do not infer it from offline tests.
 See `STATUS.md` and `evidence/` for exactly what has and has not run.
 
-All six repositories are public at the links below. The documentation site is
-live at https://entrotter.github.io/. Packages remain unpublished and the engine
-runs locally. See STATUS.md for current verification and open acceptance gates.
+The source is being migrated to the single public MIT repository
+`dorakingx/entrotter`; formal transfer and the migration PR are pending.
+The independently reviewed static viewer is live at https://entrotter.vercel.app/.
+Packages remain unpublished and the backend runs locally. See
+[MIGRATION_STATUS.md](MIGRATION_STATUS.md) for exact completed and pending gates.
 
-The candidate CLI's [development setup](https://github.com/entrotter/cli/blob/169b759aff9280ce44fb0d15569c7ae0a4a40889/README.md)
-now selects the quality SDK directly from its manifest. The
-[setup composition evidence](evidence/setup-pin-integration/README.md) records the
-executed recipe and separates this documentation fix from runtime verification.
+## Components
 
-## Repositories
+| Folder | Owns |
+| --- | --- |
+| Project root | Roadmap, goal, integration tooling and submission evidence |
+| [engine/](engine/README.md) | Validation, local experiments, Anvil and API |
+| [sdk-python/](sdk-python/README.md) | HTTP client, typed results and integrity checks |
+| [cli/](cli/README.md) | Commands and developer diagnostics |
+| [scenarios/](scenarios/README.md) | Schemas, fixtures and source provenance |
+| [website/](website/README.md) | Static OSS documentation and read-only inspection |
 
-| Repository | Owns | Does not own |
-| --- | --- | --- |
-| [entrotter/entrotter](https://github.com/entrotter/entrotter) | Roadmap, workspace, goal and submission evidence | Runtime business logic |
-| [entrotter/engine](https://github.com/entrotter/engine) | Validation, experiments, Anvil, local API | Frontend or SDK |
-| [entrotter/sdk-python](https://github.com/entrotter/sdk-python) | HTTP client, typed results, hash checks | Engine internals |
-| [entrotter/cli](https://github.com/entrotter/cli) | CLI and user-facing diagnostics | Protocol simulation |
-| [entrotter/scenarios](https://github.com/entrotter/scenarios) | Schemas, fixtures and scenario provenance | Service execution |
-| [entrotter/entrotter.github.io](https://github.com/entrotter/entrotter.github.io) | Documentation and report viewer | Wallet keys, accounts or backend compute |
-
-Keep the six checkouts as sibling directories. Schema and API version 0.1.0
-is the contract between them. Do not split further until there is an independent
-contribution boundary that justifies another repository.
+One clone contains all components. The v0.1 JSON/API contract, component licenses
+and author notices are preserved. Choose a small component-scoped contribution;
+there is no sibling-checkout or additional Entrotter repository requirement.
 
 <a id="quick-start-without-dependencies-or-an-api-key"></a>
 
@@ -51,20 +48,21 @@ macOS or Linux. The CLI already includes the original Aave recording, so this
 path needs no Docker, package installation, wallet or API key. Setup downloads
 public source; verification and inspection afterward run locally.
 
-Paste the following block in a shell from a directory where
-`entrotter-inspection` does not exist. It creates an isolated folder and stops
-at the first failure; it does not change your existing Entrotter checkouts.
+After formal transfer and publication of the migration branch, clone it once.
+Until independent main integration, use the explicit migration branch rather
+than assuming main already contains the new layout. From an empty directory:
 
 ```bash
-mkdir entrotter-inspection &&
-cd entrotter-inspection &&
-git clone https://github.com/entrotter/cli.git entrotter-cli &&
-git -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889 &&
-git clone https://github.com/entrotter/sdk-python.git entrotter-sdk &&
-git -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44 &&
-PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli verify entrotter-cli/tests/data/aave-borrow-result.json &&
-PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect entrotter-cli/tests/data/aave-borrow-result.json --format text
+git clone --branch migration/monorepo https://github.com/dorakingx/entrotter.git entrotter &&
+cd entrotter &&
+PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli verify cli/tests/data/aave-borrow-result.json &&
+PYTHONPATH=cli/src:sdk-python/src python3 -m entrotter_cli inspect cli/tests/data/aave-borrow-result.json --format text
 ```
+
+For a local checkout of this migration candidate, start at `cd entrotter` and
+run the two Python commands. Historical source identities are recorded in
+[migration-manifest.json](migration-manifest.json); fresh one-clone validation
+is a separate migration gate.
 
 The text shows exact native/token balance changes, gas, failed transactions and
 assumptions. In this recording, the supplied baseline 9 WETH borrow reverts while
@@ -73,201 +71,37 @@ in both branches. This reads an existing report. It does not run new chain
 transactions or prove model advantage, execution authenticity or financial return.
 Hash verification checks content integrity. The pinned sources are reviewed
 candidates awaiting independent human-main approval, not published packages.
-Read the [recording and limits](https://github.com/entrotter/engine/tree/f53a66a303e67ca4fbb4322a06b36b036f4db599/evidence/aave-borrow-actions)
+Read the [recording and limits](engine/evidence/aave-borrow-actions/README.md)
 and [executed walkthrough evidence](evidence/recorded-quick-start/README.md).
 
 ## Run a new simulation
 
-Follow the [pinned quick start](docs/QUICK_START.md) to fetch compatible public
-source revisions, build the Docker worker and produce a verified offline report.
-You need Python 3.11+, Git and a running local Linux Docker daemon with cgroup v2.
-Setup downloads public build inputs; running the fixture afterward needs no
-network, wallet or paid API key. There are no third-party Python runtime packages.
+Follow the [single-clone guide](docs/QUICK_START.md) for local source setup,
+bounded Docker configuration and simulation. All components are in this clone;
+no old Org checkout or registry Entrotter package is required. Docker absence or
+an invalid source-bound image fails execution without a native fallback.
 
-The guide selects tested candidate commits that still await independent review
-and integration. Cloning all repositories at `main` currently selects an older
-native runtime; it does not reproduce the candidate's bounded default.
+For offline inspection, the CLI needs only `cli/src:sdk-python/src`. For
+execution and the local API, include `engine/src` and configure the worker first.
+The optional archive RPC credential stays in the operator's private environment.
+No command broadcasts a transaction to an upstream chain.
 
-For normal editable package installation, run `bash entrotter/scripts/bootstrap.sh`.
-Do not install these names from a public package registry: they are not published.
-The bootstrap installs the sibling source checkouts with `--no-deps` to avoid
-accidentally resolving an unrelated package with the same name. Run it only after
-the pinned checkout steps; it does not select candidate revisions, install Docker
-or build/configure the worker. Build-time package tooling may require network access.
+## Static website and publication
 
-The proposed [signed-prefix reader integration](evidence/trace-reader-integration/README.md)
-adds typed offline SDK inspection and a separate local browser view of original
-transactions, receipt differences and nonce conflicts. Its exact component and
-combined CI evidence is distinct from the older deployed site. Follow the
-[optional replay instructions](docs/QUICK_START.md#optional-original-transaction-prefix-replay)
-for the recorded four-transaction case and archive requirements.
+The new static project is [entrotter.vercel.app](https://entrotter.vercel.app/).
+The initial reviewed site is published; this migration branch has not yet been
+transferred, independently integrated or published. See [MIGRATION_STATUS.md](MIGRATION_STATUS.md).
 
-The [same-block funding composition](evidence/trace-funding-integration/README.md)
-adds a trace-only admission fix and cross-repository inspection of the synthetic
-original-signature baseline and adverse funding omission. Historical and bounded
-execution, combined CI and protected publication remain distinct evidence gates.
-
-The proposed [bounded historical price composition](evidence/bounded-observed-integration/README.md)
-lets the fixed Aave/WETH observation command use the default Docker worker.
-[Replay and inspect the result](docs/QUICK_START.md#replay-historical-prices-through-the-bounded-worker)
-with the SDK, CLI or local viewer. The recorded32-input run verified every original
-baseline receipt and four complete price views; missing state and worker deadlines
-remain explicit. Read-only price dependence does not establish a signed consumer
-strategy or profit. Candidate integration and protected publication remain separate.
-
-The proposed [Aave account composition](evidence/account-impact-integration/README.md)
-adds exact collateral, debt, borrowing-capacity and health-factor inspection beside
-the recorded price and receipt evidence. Its [offline commands and replay guide](docs/QUICK_START.md#compare-historical-aave-account-impact)
-use the same bounded worker and disclose unproven views. This is read-only account
-state comparison; signed strategy execution and financial return remain unproven.
-The [account viewer composition](evidence/viewer-position-integration/README.md)
-adds exact SDK-to-browser inspection of the same sealed records, including explicit
-synthetic missing/large-integer/no-debt/boundary controls. The next
-[account summary composition](evidence/account-summary-integration/README.md)
-selects the independently verified mobile summary: exact borrowing-capacity and
-health-factor changes before the full table, with positive/negative/zero and
-unavailable/no-debt behavior. Original report facts and all nine reader bodies
-remain unchanged. The current viewer also identifies local v0.1 imports explicitly,
-clears previous results while loading, and lets the same example be selected after
-a rejected file. [Source-label verification](https://github.com/entrotter/entrotter.github.io/blob/422d98a7cf753bfc9be9b86553cd76f3a549f70c/evidence/report-source/README.md) preserves the actual regression and full browser evidence.
-
-The [Aave outcome composition](evidence/aave-viewer-integration/README.md) selects
-the exact browser balance table and original supply/borrow recording. Native and
-ERC-20 initial/final/change/differences retain all digits; missing observations
-stay Unavailable and units bind to scenario identities. One offline reader checks
-all sixteen browser rows beside the original Engine/SDK/CLI outputs. The current
-viewer component has passed its own mandatory CI; combined integration, protected
-human main approval and live Pages remain separate.
-
-The current candidate selects viewerdacd134 and retains the
-[CLI copy controls](evidence/cli-copy-integration/README.md). Verified bundled
-recordings provide fixed download filenames and
-pinned CLI/SDK setup with selected read-only inspection commands. All six recipes
-have actual clean-checkout results; commands never include local report metadata.
-Validated local imports also expose a fixed `./local-report.json` recipe. Save a
-local copy under that name in an empty working directory and keep the original
-unchanged. [Local import evidence](evidence/local-cli-integration/README.md) binds
-actual native clipboard reads and both executed inspection commands.
-Keyboard-activated copy controls use only fixed recipes; denied APIs
-provide manual copying and pending writes are serialized. Shared example links
-and exact outcomes remain intact. The existing five-command
-reader retains all original outputs and uses the current source-bound view golden.
-The [separate evaluation composition](evidence/agent-scope-integration/README.md)
-labels the native-transfer model comparison as evidence for that example only;
-it does not evaluate every Aave or imported recording shown in the panel.
-The [setup failure correction](evidence/setup-chain-integration/README.md) stops
-copyable setup commands at the first Git failure and refreshes the application
-cache token. Actual fresh public clones reproduce all six original CLI outputs.
-
-Terminal users can also inspect the same account record with
-`position-inspect --format text`: all six exact account fields and differences,
-health status, source IDs and unproven reasons appear without manual unit scaling.
-The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/169b759aff9280ce44fb0d15569c7ae0a4a40889/evidence/position-text/README.md)
-separates current offline controls and installed-package proof from the original
-historical execution. Protected integration and live publication remain separate.
-
-Price inspection also accepts `observed-inspect --format text`: exact USD
-baseline/candidate/difference, four recorded phases and unproven reasons can be
-read without converting raw integer units. [Price text composition](evidence/observed-text-integration/README.md)
-compares the entire output with the original32-record sample; default JSON is
-unchanged and a quoted phase value alone does not establish completeness.
-
-Scripts can use `position-verify --require-complete` or
-`observed-verify --require-complete` to require both complete recorded views and
-matching baseline receipts. An unproven comparison returns3 with the same JSON
-and reasons on stderr; ordinary verification retains its prior exit behavior.
-Negative differences and valid no-debt states can pass: completeness does not
-prove profit or authenticate a provider. [CLI exit-contract evidence](https://github.com/entrotter/cli/blob/169b759aff9280ce44fb0d15569c7ae0a4a40889/evidence/require-complete/README.md)
-records the offline and installed-package checks.
-
-## Local API and SDK
-
-The candidate also compares [supplied Aave collateral and borrowing actions](docs/QUICK_START.md#compare-supplied-aave-borrowing-actions).
-Both branches wrap and supply 10 WETH; the baseline's proposed 9 WETH borrow
-reverts, while the built-in current-state risk policy holds that candidate step.
-Both then execute the supplied 1 WETH borrow. Exact token/debt units, receipts,
-gas and the recorded decision remain inspectable offline. This is local action
-execution against pinned archived state, with artificial funding and local
-impersonation. It does not establish an original signed strategy or profit.
-[Composition evidence](evidence/aave-action-integration/README.md) distinguishes
-the actual Engine runs from standalone CLI/SDK inspection and current integration.
-The candidate also supports `inspect --format text` for exact native/ERC-20
-initial/final/change and gas/revert differences. The
-[text composition](evidence/aave-result-text-integration/README.md) preserves
-all decimal units, distinguishes missing records from zero and retains unchanged
-default JSON; it does not infer valuation or authenticate execution.
-
-After completing the quick start, keep its environment variables in both terminals.
-For additional Linux API-process limits, use the optional
-[bounded host service](docs/BOUNDED_HOST_SERVICE.md).
-
-```bash
-# Keep this port local. Optionally set ENTROTTER_API_TOKEN on both client and server.
-python3 -m entrotter_engine serve --port 8787 --output artifacts
-# In another terminal with the same PYTHONPATH:
-python3 -m entrotter_cli run scenarios/fixtures/recovery-trap.json -o report.json
-```
-
-```python
-import json
-from entrotter_sdk import Client
-scenario = json.load(open("scenarios/fixtures/liquidity-shock.json"))
-result = Client().run(scenario)
-print(result.artifact_id, result.report["comparison"])
-```
-
-## Three distinct execution modes
-
-- `fixture`: deterministic synthetic price-path model. Runs entirely offline.
-  Includes causally evaluated hold/circuit-breaker policies, fees, slippage,
-  returns and maximum drawdown. Not historical market evidence.
-- `evm-local`: real transactions in two private Anvil processes. Uses fake local
-  funding, explicit transaction slots, target allowlists and receipt collection.
-  The quick-start worker includes pinned Foundry. No host Foundry installation,
-  mainnet RPC or wallet key is needed for this mode.
-- `evm-fork`: clones an explicit historical block via the operator-supplied
-  `ENTROTTER_RPC_URL`, checks its source chain/hash and runs supplied actions on
-  local Anvil. Requires archive state. Does not replay later canonical blocks,
-  future prices, MEV, counterparties or agent responses.
-
-```bash
-python3 -m entrotter_cli run scenarios/evm/local-branch-revert.json --local -o local-evm.json
-# Set ENTROTTER_RPC_URL privately before running the next command.
-python3 -m entrotter_cli run scenarios/evm/ethereum-state-fork.json --local -o historical-fork.json
-```
-
-EVM native/token balance changes are not PnL. Explicitly listed ERC-20 tokens
-are tracked with verified decimals and exact raw-unit deltas. Every report contains its scenario, overrides, trace, assumptions and
-SHA-256 digest. The digest detects content changes; it does not prove a simulator
-or its economic assumptions are correct.
-
-## Publish the OSS repositories and documentation
-
-Inspect `scripts/publish.py`, then use an authenticated GitHub CLI account with
-permission to create public repositories in the existing `entrotter` organization.
-No custom domain is configured and no CNAME file is included.
-
-```bash
-python3 entrotter/scripts/publish.py          # dry run only
-python3 entrotter/scripts/publish.py --apply  # creates public repos, pushes, enables Pages
-```
-
-The intended Pages address is `https://entrotter.github.io/`. The script prints
-actual results; verify the Actions run and HTTP response before calling it live.
-It refuses to replace a non-empty existing remote from a fresh local folder,
-never changes a private repository to public, and never force-pushes.
-
-Pages only serves the OSS project docs and public, synthetic example reports.
-It does not run the engine, receive private report uploads, connect wallets,
-process payments, or provide a commercial SaaS. No hosting spend is necessary
-for the local software. Paid hosted compute is a later, separately approved task.
+From this repository root, `python3 scripts/publish.py` stages the explicit
+public allowlist into `website/_site`. [Hosting instructions](docs/HOSTING.md)
+explain the new Vercel configuration. The retired Org/Pages bootstrap command
+fails closed. Backend execution stays local.
 
 ## Work toward the competition goal
 
-Read `CODEX_GOAL.md`, `ROADMAP.md`, `STATUS.md` and `backlog/`. The goal is an
-excellent, independently reproducible submission, not a claim that winning
-can be guaranteed. Store measured evidence, real feedback and remaining risks.
-Do not stop after building a landing page. Do not mark blockers as completed.
+Follow [CODEX_GOAL.md](CODEX_GOAL.md), the current [status](STATUS.md) and
+[release gates](release-gates.json). Historical evidence below remains unchanged;
+migration, tests, deployment and submission are checkpoints rather than goal completion.
 
 ## Actual archived-state evidence
 
@@ -279,7 +113,7 @@ see `evidence/historical-verification.json` for timings and resource scope.
 ```bash
 # Public endpoint used during verification; archive availability can change.
 export ENTROTTER_RPC_URL=https://eth.drpc.org
-PYTHONPATH=engine/src python3 entrotter/scripts/check_historical.py
+PYTHONPATH=engine/src python3 scripts/check_historical.py
 ```
 
 Foundry v1.8.3 is required. On macOS, if Python lacks a certificate bundle, set
@@ -288,6 +122,9 @@ This is supplied-action execution on archived state, not historical trace replay
 a reconstructed alternative market, or an integrated-agent benchmark.
 
 ## Recorded model decisions
+
+These development records retain their original source and measurement scope.
+Use the current single-clone guide for bounded execution and Vercel hosting.
 
 The proposed [recorded-agent viewer](https://github.com/entrotter/entrotter.github.io/pull/14)
 lets contributors open the v0.1 report explorer and select **Local EVM · recorded

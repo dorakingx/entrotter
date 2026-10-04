@@ -12,6 +12,7 @@ import time
 
 from entrotter_engine.agent import AgentController, RiskPolicy
 from entrotter_engine.artifact import verify
+from entrotter_engine import runner as runner_module
 from entrotter_engine.runner import run_agent
 from direct_anvil_case import CASE_SHA256, load_case, run_direct
 
@@ -63,14 +64,28 @@ def main():
         raise ValueError("Do not overwrite previous benchmark evidence")
     scenario = load_case()
     engine_commit = subprocess.check_output(
-        ["git", "-C", str(ROOT.parent / "engine"), "rev-parse", "HEAD"], text=True
+        [
+            "git",
+            "-C",
+            str(Path(runner_module.__file__).resolve().parents[2]),
+            "rev-parse",
+            "HEAD",
+        ],
+        text=True,
     ).strip()
     if engine_commit != "bb8b3e8d32c7cbd49629d337758f30bfdf805045":
         raise ValueError(
             "Use the same frozen engine commit as the historical agent benchmark"
         )
     if subprocess.check_output(
-        ["git", "-C", str(ROOT.parent / "engine"), "status", "--porcelain"], text=True
+        [
+            "git",
+            "-C",
+            str(Path(runner_module.__file__).resolve().parents[2]),
+            "status",
+            "--porcelain",
+        ],
+        text=True,
     ).strip():
         raise ValueError("Engine checkout must be clean")
     anvil_version = subprocess.check_output(["anvil", "--version"], text=True).strip()

@@ -1,26 +1,21 @@
-Resume the existing active Entrotter goal; do not create a duplicate goal or session.
-Follow the October 2 owner policy in entrotter/CODEX_GOAL.md. Read applicable
-AGENTS.md and current STATUS.md, relevant diffs and unresolved evidence. Reuse the
-latest PR47/PR55 and component candidates, real EVM/agent records and videos;
-verify current remote heads. The six public MIT repositories and GitHub Pages
-already exist. Do not repeat initialization or rebuild from old main/the ZIP.
+Resume the existing accepted Entrotter migration and improvement goal. Read
+AGENTS.md, CODEX_GOAL.md, MIGRATION_STATUS.md and relevant STATUS.md evidence.
+Use the single public MIT dorakingx/entrotter monorepo with engine/, sdk-python/,
+cli/, scenarios/ and website/. Preserve current candidates, original histories,
+unfinished work, evidence and media. Never restart from old main or the ZIP.
 
-Continue concrete developer-value improvements through implementation, real tests,
-independent review, fixes, protected integration, public verification and evidence.
-Keep the backend local and publish the OSS documentation/report viewer only to
-https://entrotter.github.io/ without a custom domain. Recheck the official deadline
-at execution time; currently October 13, 2026 at 15:59 JST. Passing CI, checklists,
-PRs, readiness or formal submission do not end the improvement goal before then.
+The latest owner request selects the new Vercel static project at
+https://entrotter.vercel.app/. Keep the backend local and other sites unchanged.
+Formal coordinator transfer preserves its repository ID/Issues/PRs; component
+PR metadata must be preserved with provenance, never presented as automatic
+transfer or approval. Old Org deletion requires the full backup/restore,
+ownership/history/work, review/test/publication/dependency and final-delta audit.
+Never delete unrelated, private or unverified assets or bypass authentication.
 
-The owner has conditionally authorized formal submission of the existing entry
-once quality, required owner facts and materials are verified and the portal is
-open, without another blanket approval. Confirm server acceptance and exact code
-and video versions; do not alter an immutable submission. Authentication, terms,
-required CI and independent approval remain necessary. Never fabricate results,
-demand, private facts, deployments or a guaranteed prize; never expose secrets,
-broadcast upstream transactions, incur unapproved costs or bypass protections.
-
-Work on other actionable improvements when one gate is blocked. Preserve actual
-failed evidence, commands and resume checkpoints; do not replace failures with
-narrower passing claims. Follow explicit owner stop/pause instructions. Discord
-is excluded. The full objective remains active until its completion audit passes.
+Implement, test, independently review, fix and integrate through required CI and
+independent main approval. Do not weaken guards, expose secrets or incur costs.
+The existing submission is conditionally authorized only after quality, owner
+facts, materials and the official open portal are verified. Confirm acceptance,
+avoid duplicates and preserve immutable versions. Continue valuable improvement
+until the verified official deadline; migration/CI/submission do not end the goal.
+Discord is excluded. Keep failures and exact resume steps, and respect owner stops.

@@ -28,12 +28,10 @@ function reportCliRecipe(name) {
     return null;
   return {
     setup:
-      "git clone https://github.com/entrotter/cli.git entrotter-cli &&\n" +
-      "git -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889 &&\n" +
-      "git clone https://github.com/entrotter/sdk-python.git entrotter-sdk &&\n" +
-      "git -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "git clone https://github.com/dorakingx/entrotter.git entrotter &&\n" +
+      "git -C entrotter checkout --detach 23f2bf0c53ff3c9a50348d038d78eeaaf927f059",
     command:
-      "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./" +
+      "PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./" +
       name +
       ".json --format text",
   };

@@ -1,0 +1,155 @@
+name: website · Website checks and static staging
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: website-checks-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  website-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - run: npm test
+  website-accessibility:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+      - name: Audit all installed development dependencies
+        run: |
+          mkdir -p output/playwright
+          npm audit --json > output/playwright/npm-audit.json
+      - name: Use the official HTTPS Ubuntu archive for browser dependencies
+        run: |
+          sudo python3 - <<'PYAPT'
+          from pathlib import Path
+          paths = [Path('/etc/apt/sources.list')]
+          for suffix in ('*.list', '*.sources'):
+              paths.extend(Path('/etc/apt/sources.list.d').glob(suffix))
+          for path in paths:
+              if not path.is_file():
+                  continue
+              original = path.read_text()
+              updated = original.replace(
+                  'http://azure.archive.ubuntu.com/ubuntu',
+                  'https://archive.ubuntu.com/ubuntu',
+              ).replace(
+                  'https://azure.archive.ubuntu.com/ubuntu',
+                  'https://archive.ubuntu.com/ubuntu',
+              )
+              if updated != original:
+                  path.write_text(updated)
+          PYAPT
+      - run: npx --no-install playwright install --with-deps chromium
+      - run: npm run test:accessibility
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: accessibility-evidence
+          path: website/output/playwright/
+          if-no-files-found: error
+  website-quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Install integrity-locked Node and hash-locked Python development tools
+        run: |
+          npm ci --ignore-scripts
+          python -m venv .venv
+          .venv/bin/python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-quality.txt
+          .venv/bin/python -m pip check
+      - name: Check all JavaScript and declared browser tool types
+        run: |
+          set -euo pipefail
+          mkdir -p .quality
+          npm run lint -- --format json --output-file .quality/lint.json
+          npm run format:check
+          npm run typecheck | tee .quality/types.log
+          npm run security
+          npm test | tee .quality/tests.log
+      - name: Check every tracked Python source including tests
+        run: |
+          set -euo pipefail
+          git ls-files -z '*.py' > .quality/python-files.bin
+          mapfile -d '' sources < .quality/python-files.bin
+          test "${#sources[@]}" -gt 0
+          sha256sum "${sources[@]}" requirements-quality.txt > .quality/python-source-sha256.txt
+          .venv/bin/python -m ruff check "${sources[@]}"
+          .venv/bin/python -m ruff format --check "${sources[@]}"
+          .venv/bin/python -m mypy "${sources[@]}" | tee .quality/python-types.log
+          .venv/bin/python -m bandit --ignore-nosec -f json -o .quality/python-security.json "${sources[@]}"
+      - name: Audit all Node lock entries and every locked Python package
+        run: |
+          npm audit --json > .quality/npm-audit.json
+          .venv/bin/python -m pip_audit --strict --require-hashes --disable-pip -r requirements-quality.txt --progress-spinner off -f json -o .quality/python-dependencies.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: website-quality-reports
+          path: website/.quality/
+          include-hidden-files: true
+          if-no-files-found: error
+  website-stage:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    needs: [website-check, website-accessibility, website-quality]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Stage the explicit static allowlist
+        working-directory: .
+        run: python scripts/publish.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: website-public-static
+          path: website/_site/
+          include-hidden-files: true
+          if-no-files-found: error

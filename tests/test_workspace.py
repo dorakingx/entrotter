@@ -11,12 +11,12 @@ from entrotter_cli.main import main
 from contextlib import redirect_stdout
 import io
 
-W=Path(__file__).resolve().parents[2]
+W=Path(__file__).resolve().parents[1]
 class WorkspaceTests(unittest.TestCase):
     def test_all_exported_reports_reproduce_exactly(self):
         for p in (W/'scenarios/fixtures').glob('*.json'):
             with self.subTest(scenario=p.name):
-                expected=json.loads((W/'entrotter.github.io/reports'/p.name).read_text())
+                expected=json.loads((W/'website/reports'/p.name).read_text())
                 self.assertEqual(run(json.loads(p.read_text())),expected)
     def test_cli_local_verify_inspect(self):
         with tempfile.TemporaryDirectory() as d,redirect_stdout(io.StringIO()):
@@ -35,16 +35,17 @@ class WorkspaceTests(unittest.TestCase):
                 self.assertEqual(client.get(result.artifact_id).report,result.report)
             finally:s.shutdown();s.server_close();t.join()
     def test_public_manifest_boundaries(self):
-        manifest=json.loads((W/'entrotter/repositories.json').read_text())
-        self.assertEqual(manifest['organization'],'entrotter')
+        manifest=json.loads((W/'repositories.json').read_text())
+        self.assertEqual(manifest['owner'],'dorakingx')
+        self.assertEqual(manifest['name'],'entrotter')
         self.assertEqual(manifest['visibility'],'public')
-        self.assertEqual(len(manifest['repositories']),6)
-        for repo in manifest['repositories']:
+        self.assertEqual(len(manifest['components']),6)
+        for repo in manifest['components']:
             for name in ['LICENSE','README.md','AGENTS.md','CONTRIBUTING.md','SECURITY.md']:
-                self.assertTrue((W/repo['name']/name).is_file())
+                self.assertTrue((W/repo['path']/name).is_file())
     def test_copied_fixture_contract(self):
         self.assertEqual((W/'engine/tests/data/fixture.json').read_bytes(),(W/'scenarios/fixtures/liquidity-shock.json').read_bytes())
     def test_no_cname(self):
-        self.assertEqual(list((W/'entrotter.github.io').rglob('CNAME')),[])
+        self.assertEqual(list((W/'website').rglob('CNAME')),[])
 
 if __name__=='__main__':unittest.main()

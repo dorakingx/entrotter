@@ -36,10 +36,8 @@ vm.runInContext(
 test("copied setup stops at each failed Git operation and preserves its status", () => {
   const setup = context.reportCliRecipe("aave-borrow-actions").setup;
   const expected = [
-    "clone https://github.com/entrotter/cli.git entrotter-cli",
-    "-C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889",
-    "clone https://github.com/entrotter/sdk-python.git entrotter-sdk",
-    "-C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "clone https://github.com/dorakingx/entrotter.git entrotter",
+    "-C entrotter checkout --detach 23f2bf0c53ff3c9a50348d038d78eeaaf927f059",
   ];
   for (const name of [
     "liquidity-shock",
@@ -63,7 +61,7 @@ test("copied setup stops at each failed Git operation and preserves its status",
         'if [ "$step" -eq "$FAIL_AT" ]; then exit "$((40 + step))"; fi\nexit 0\n',
       { mode: 0o700 },
     );
-    for (const failure of [1, 2, 3, 4, 0]) {
+    for (const failure of [1, 2, 0]) {
       const log = join(directory, `steps-${failure}.txt`);
       const result = spawnSync("sh", ["-c", setup], {
         cwd: directory,

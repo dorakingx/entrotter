@@ -11,10 +11,14 @@ from entrotter_engine.artifact import verify
 from entrotter_engine.runner import run
 
 ROOT = Path(__file__).resolve().parents[1]
-scenario_path = ROOT.parent / "scenarios/evm/ethereum-uniswap-slippage.json"
+scenario_path = ROOT / "scenarios/evm/ethereum-uniswap-slippage.json"
 scenario = json.loads(scenario_path.read_text())
-evidence = ROOT / "evidence"
-evidence.mkdir(exist_ok=True)
+evidence = ROOT / "evidence/monorepo-verification/archived-state"
+if evidence.exists():
+    raise ValueError(
+        "Use a new evidence directory; do not overwrite an archived-state run"
+    )
+evidence.mkdir(parents=True)
 reports, durations = [], []
 for attempt in range(2):
     start = time.perf_counter()
@@ -68,7 +72,7 @@ usage = resource.getrusage(resource.RUSAGE_CHILDREN)
 result = {
     "status": "passed",
     "mode": "archived-state supplied-action execution",
-    "scenario": str(scenario_path.relative_to(ROOT.parent)),
+    "scenario": str(scenario_path.relative_to(ROOT)),
     "source": reports[0]["source"],
     "artifact_id": reports[0]["artifact_id"],
     "runs": 2,

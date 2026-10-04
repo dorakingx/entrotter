@@ -1,6 +1,6 @@
 {
   "sources": {
-    "app.js": "2886c9ad98ade30fdcfeb686fc6d49cc3429d8661dba56196443584f42d84ce1",
+    "app.js": "09b0403f8546cc1238aab8c9b6b71919b3bace670113ccb2c47caf0270f66251",
     "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
     "eslint.config.mjs": "7acf03efd74c5422b646cb4635fd1321222832ad7a92527c77a8f94e8274234a",
     "eslint.security.config.mjs": "fb2ab88ae816262fd1cef89709826491797957b8ee04835fae10bc6ab83ca7f2",
@@ -12,15 +12,15 @@
     "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
     "requirements-quality.in": "eccd79884fb38364cc396e59e22eb5a78f48bbf92e2c0b47825dcff473692185",
     "requirements-quality.txt": "845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722",
-    "scripts/check_accessibility.mjs": "5a9f5052e03a827ed68092c45898dfde016fd369bf71cac51fed20fb5568042a",
+    "scripts/check_accessibility.mjs": "a80c5211bae61f18d38315c88df7d635b4d0bbfdd6e3938774131899e30a70a1",
     "scripts/check_quality.mjs": "51d72e7ccb7e9716acfc50e39bdf692a2512532e6da91491358da1437f4794d8",
     "scripts/quality_policy.mjs": "e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89",
     "tests/comparison.test.mjs": "35a035d9e806548d20224070fa707e8866783c639e860ccc3afece23376b6327",
     "tests/observed.test.mjs": "b0b1391ce47970cdbedd3fbde881b91b5ec76f2d59ba070222edfe975eb7b95b",
     "tests/position.test.mjs": "9052e49f4b26525acdf3333ee7a0ee4e77e3734a615f29744bbc893936610207",
     "tests/quality.test.mjs": "71150f603988dcb2429b56de76e3535b0268fbf180b12ecbe998c23c235e52c1",
-    "tests/report.test.mjs": "10129739187ade862f41867344c684012baa9ea2ecc744f42db478708c4039be",
-    "tests/setup.test.mjs": "19a2d6ef896faf73bc76f7a17ac819f5f9076ab4471d14e751faf86521b415dc",
+    "tests/report.test.mjs": "5f3677372d821b835002e2d2008f7d79b31386bdaa3a605e3432de2cfdb7d14b",
+    "tests/setup.test.mjs": "7e42cce71f1a0b04cc31f853c9de43931cc2be735f732569b474cdfb6c9d5753",
     "tests/trace.test.mjs": "f68f5e426f9cc470728c43ac58a04a49804839a7f5e647ce95ee244d60d62d21",
     "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
     "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
@@ -35,9 +35,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 135,
+        "line": 133,
         "column": 52,
-        "endLine": 135,
+        "endLine": 133,
         "endColumn": 68
       },
       "reason": "Canonicalization reads only own keys enumerated by Object.keys from parsed JSON. It writes no properties and produces a hash string; no key selects code or a prototype mutation."
@@ -48,9 +48,9 @@
         "ruleId": "security/detect-unsafe-regex",
         "severity": 1,
         "message": "Unsafe Regular Expression",
-        "line": 180,
+        "line": 178,
         "column": 6,
-        "endLine": 180,
+        "endLine": 178,
         "endColumn": 62
       },
       "reason": "The metric is checked as a string of at most 100 characters before this decimal grammar runs. Integer, fraction and exponent parts have distinct separators; rejected malformed values are bounded. This is not an unbounded regex service."
@@ -61,9 +61,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 333,
+        "line": 331,
         "column": 7,
-        "endLine": 333,
+        "endLine": 331,
         "endColumn": 23
       },
       "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
@@ -74,9 +74,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 334,
+        "line": 332,
         "column": 7,
-        "endLine": 334,
+        "endLine": 332,
         "endColumn": 23
       },
       "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
@@ -87,9 +87,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 364,
+        "line": 362,
         "column": 9,
-        "endLine": 364,
+        "endLine": 362,
         "endColumn": 46
       },
       "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
@@ -100,9 +100,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 365,
+        "line": 363,
         "column": 9,
-        "endLine": 365,
+        "endLine": 363,
         "endColumn": 46
       },
       "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
@@ -113,9 +113,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 422,
+        "line": 420,
         "column": 18,
-        "endLine": 422,
+        "endLine": 420,
         "endColumn": 25
       },
       "reason": "The metric name comes from the same fixed four-item list. The candidate value immediately passes rawInteger and remains inert text; no object mutation or code execution."
@@ -126,9 +126,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 423,
+        "line": 421,
         "column": 18,
-        "endLine": 423,
+        "endLine": 421,
         "endColumn": 25
       },
       "reason": "The metric name comes from the same fixed four-item list. The candidate value immediately passes rawInteger and remains inert text; no object mutation or code execution."
@@ -139,9 +139,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Variable Assigned to Object Injection Sink",
-        "line": 534,
+        "line": 532,
         "column": 21,
-        "endLine": 534,
+        "endLine": 532,
         "endColumn": 32
       },
       "reason": "The observation step is checked as an integer in increasing order within the validated 1-32 element candidate trace before this read. The returned object is display data; the index never selects code, a setter or a property write."
@@ -152,9 +152,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 543,
+        "line": 541,
         "column": 26,
-        "endLine": 543,
+        "endLine": 541,
         "endColumn": 46
       },
       "reason": "Scenario steps must be an array with the same bounded length as the validated candidate trace. This previously range-checked integer reads the matching scenario action for inert canonical equality; no property is written or executed."
@@ -165,9 +165,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 789,
+        "line": 787,
         "column": 16,
-        "endLine": 789,
+        "endLine": 787,
         "endColumn": 21
       },
       "reason": "Both fixture traces have equal checked lengths and their equities have already passed finite. The index comes from the baseline map; conversion is for an inert exact-text table cell."
@@ -178,9 +178,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 808,
+        "line": 806,
         "column": 35,
-        "endLine": 808,
+        "endLine": 806,
         "endColumn": 42
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -191,9 +191,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 808,
+        "line": 806,
         "column": 50,
-        "endLine": 808,
+        "endLine": 806,
         "endColumn": 57
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -204,9 +204,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 809,
+        "line": 807,
         "column": 35,
-        "endLine": 809,
+        "endLine": 807,
         "endColumn": 42
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -217,9 +217,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 809,
+        "line": 807,
         "column": 50,
-        "endLine": 809,
+        "endLine": 807,
         "endColumn": 57
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -1413,9 +1413,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found mkdirSync from package \"node:fs\" with non literal argument at index 0",
-        "line": 56,
+        "line": 54,
         "column": 5,
-        "endLine": 56,
+        "endLine": 54,
         "endColumn": 19
       },
       "reason": "This bin directory is a fixed child of the newly created private mkdtemp directory. No report content or user filename enters the path; cleanup removes only that private test directory."
@@ -1426,9 +1426,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found writeFileSync from package \"node:fs\" with non literal argument at index 0",
-        "line": 59,
+        "line": 57,
         "column": 5,
-        "endLine": 65,
+        "endLine": 63,
         "endColumn": 6
       },
       "reason": "The Git stand-in is written at a fixed child path in the private temporary directory with mode0700. Its fixed script records four allowed argv forms and bounded failure statuses; it performs no clone or network call."
@@ -1439,9 +1439,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
-        "line": 84,
+        "line": 82,
         "column": 9,
-        "endLine": 84,
+        "endLine": 82,
         "endColumn": 34
       },
       "reason": "The log path is a fixed numbered child of the private temporary directory for five finite cases. The test reads its bounded Git-call trace and then removes the directory; no imported report chooses the path."

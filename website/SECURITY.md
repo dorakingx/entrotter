@@ -44,8 +44,8 @@ and error states remove both the href and visibility. A stale sample response
 cannot restore a link after a newer selection/import. Links identify bundled
 examples, not authenticity, execution, trading performance or valuation.
 
-CLI inspection recipes accept only the same six fixed public sample names. CLI
-and SDK repository URLs, checkout hashes and directory names are literals;
+CLI inspection recipes accept only the same six fixed public sample names. The monorepo
+URL, immutable checkout hash and component directory names are literals;
 commands are rendered as textContent and never executed by the website. No local
 filename, report metadata or query/origin string is interpolated. Loading, local
 imports and errors clear both setup and inspection text, with the current

@@ -1,0 +1,2683 @@
+{
+  "schema_version": "0.1.0",
+  "destination": {
+    "owner": "dorakingx",
+    "repository": "entrotter",
+    "visibility": "public",
+    "license": "MIT",
+    "formal_transfer": "pending",
+    "expected_coordinator_repository_id": 1377315140
+  },
+  "root_source": {
+    "repository": "entrotter/entrotter",
+    "id": 1377315140,
+    "commit": "bdb2059d43eb47fb092fdf7882b029c3c7100e8c",
+    "path": "."
+  },
+  "components": [
+    {
+      "source_repository": "engine",
+      "source_commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+      "source_tree": "c8083b88f6920e533e23352c27e613db309ee90f",
+      "path": "engine",
+      "integration_commit": "044410f165192ae463a2d65bed75b7f76c44816d",
+      "exact_source_tree": true,
+      "source_is_ancestor": true,
+      "source_repository_id": 1377314675,
+      "backup_bundle_sha256": "bcae5c1e872386c509b85da9ed19a8711a96365cf6ea9e1966115d49e3a9555b",
+      "initial_integration_exact_source_tree": true
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "source_tree": "a14ef3296827d01102ce32d6894e925725dde76d",
+      "path": "sdk-python",
+      "integration_commit": "3c96a465473fa2df687d239b14539a2a25eb8537",
+      "exact_source_tree": true,
+      "source_is_ancestor": true,
+      "source_repository_id": 1377314778,
+      "backup_bundle_sha256": "4ff767e2977c7b70b069ad9a5543fd62b04e6836d3b59a8814bf22bfe423d41e",
+      "initial_integration_exact_source_tree": true
+    },
+    {
+      "source_repository": "cli",
+      "source_commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "source_tree": "5bf0eff41641ed8556c8683cedb5ff49f56be71b",
+      "path": "cli",
+      "integration_commit": "6caf3c73ff052708db0cd89c8189919685930a1b",
+      "exact_source_tree": true,
+      "source_is_ancestor": true,
+      "source_repository_id": 1377314873,
+      "backup_bundle_sha256": "8874f5b55f39888b891ca9a866e5a69d291c6b9d7f802b789469765ed65e5ce4",
+      "initial_integration_exact_source_tree": true
+    },
+    {
+      "source_repository": "scenarios",
+      "source_commit": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+      "source_tree": "d4407b86167b473c0e56dfddafdd4c9f1d3ccb41",
+      "path": "scenarios",
+      "integration_commit": "6b2eb85d3c80b5ed49a6815e4de934cd861115eb",
+      "exact_source_tree": true,
+      "source_is_ancestor": true,
+      "source_repository_id": 1377314975,
+      "backup_bundle_sha256": "15d4698538777775de873e79dbac8641adebbc9efbd21e87a4e8baae9e49e4f2",
+      "initial_integration_exact_source_tree": true
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_commit": "dacd13415cf3babcff69f6f64ccad1382b273ba8",
+      "source_tree": "8d2d7c7d07c1b9b75832d7f1d712f036e0e9b8c6",
+      "path": "website",
+      "integration_commit": "23f2bf0c53ff3c9a50348d038d78eeaaf927f059",
+      "exact_source_tree": true,
+      "source_is_ancestor": true,
+      "source_repository_id": 1377315058,
+      "backup_bundle_sha256": "c2cdd2a9c8d9a048168df2e7666cd38a86e02eaf60cd52c466e21b3a5e17bdac",
+      "initial_integration_exact_source_tree": true
+    }
+  ],
+  "archival_refs": [
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/bench/direct-anvil-comparison",
+      "oid": "9644c469af88c163072a4beaf6209ef9b2fa4de0",
+      "destination_ref": "refs/heads/archive/entrotter/bench/direct-anvil-comparison"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/chore/required-check-coverage",
+      "oid": "4dffcae5133144c2ca2cdab398663ee5c51b5338",
+      "destination_ref": "refs/heads/archive/entrotter/chore/required-check-coverage"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/ci/bounded-agent-integration",
+      "oid": "b011a5efea19c5edbaa55d12c41e2ec101990ba2",
+      "destination_ref": "refs/heads/archive/entrotter/ci/bounded-agent-integration"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/ci/bounded-build-inputs",
+      "oid": "e960d08e37acb11b36779fc5b83a818a9eea97e5",
+      "destination_ref": "refs/heads/archive/entrotter/ci/bounded-build-inputs"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/ci/coordination-quality",
+      "oid": "fcf27d69c20fff3eb31534434579aa62795cc786",
+      "destination_ref": "refs/heads/archive/entrotter/ci/coordination-quality"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/ci/docs-link-checks",
+      "oid": "8fc5916861b6148f058c55f933b7fea099838470",
+      "destination_ref": "refs/heads/archive/entrotter/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/bounded-agent-evidence",
+      "oid": "67b7d19105495e314c308cd7e2e01ef254f37ca1",
+      "destination_ref": "refs/heads/archive/entrotter/docs/bounded-agent-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/engine-quality-evidence",
+      "oid": "e4b748621f72f049580f6047f682c99fb83eeb01",
+      "destination_ref": "refs/heads/archive/entrotter/docs/engine-quality-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/first-contribution-paths",
+      "oid": "bd5fd64ccf38ff8de65fd3ed8e9c46ff8617fa07",
+      "destination_ref": "refs/heads/archive/entrotter/docs/first-contribution-paths"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/protection-checkpoint",
+      "oid": "bfe04fdd6d7eef40a7819b9831be3c7731bd33dc",
+      "destination_ref": "refs/heads/archive/entrotter/docs/protection-checkpoint"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/readiness-evidence",
+      "oid": "2ce45446ec89fb386c1113c4087dadf233bfc9a2",
+      "destination_ref": "refs/heads/archive/entrotter/docs/readiness-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/reproducible-quick-start",
+      "oid": "f1421ff0d67ce76d047f2a51334972ec65966d33",
+      "destination_ref": "refs/heads/archive/entrotter/docs/reproducible-quick-start"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/scenario-contract-evidence",
+      "oid": "be9d1218fe515833c332223e4d3fdecdf583d527",
+      "destination_ref": "refs/heads/archive/entrotter/docs/scenario-contract-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/sdk-cli-quality-evidence",
+      "oid": "cd4e632341870dee3a035e2012e99880bfa3cd50",
+      "destination_ref": "refs/heads/archive/entrotter/docs/sdk-cli-quality-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/submission-videos",
+      "oid": "bb72c9e4330c426a358fc0c018c54219ecb3dcc2",
+      "destination_ref": "refs/heads/archive/entrotter/docs/submission-videos"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/tokyo-continuity",
+      "oid": "a233668a8e2af34e0d35e882fba8a91c065bc5a5",
+      "destination_ref": "refs/heads/archive/entrotter/docs/tokyo-continuity"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/website-accessibility-evidence",
+      "oid": "579ca7056dff28f80ed461ab52b1109d641011b2",
+      "destination_ref": "refs/heads/archive/entrotter/docs/website-accessibility-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/website-quality-evidence",
+      "oid": "062cce134ad1e55396587992823654705a669849",
+      "destination_ref": "refs/heads/archive/entrotter/docs/website-quality-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/docs/worker-security-evidence",
+      "oid": "4531b8a366041cad87f4165f91b4881f0196ad5f",
+      "destination_ref": "refs/heads/archive/entrotter/docs/worker-security-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/feat/bounded-host-service",
+      "oid": "98f11012934e92fadbbf0ae1ab8552c19d069ce7",
+      "destination_ref": "refs/heads/archive/entrotter/feat/bounded-host-service"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/feat/bounded-linux-cli",
+      "oid": "6a3040239f5f63d83a03a29852a8b15a0d618d00",
+      "destination_ref": "refs/heads/archive/entrotter/feat/bounded-linux-cli"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/feat/historical-agent-benchmark",
+      "oid": "841ac6bfd619d892f7330a7985500ceba6c15eed",
+      "destination_ref": "refs/heads/archive/entrotter/feat/historical-agent-benchmark"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/feat/recorded-codex-policy",
+      "oid": "057c3423eaec12e80b7e575944d27c60a3375fbd",
+      "destination_ref": "refs/heads/archive/entrotter/feat/recorded-codex-policy"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/feat/selective-social",
+      "oid": "533fa0989ac4f6da2dc12eafa457f085a14817d5",
+      "destination_ref": "refs/heads/archive/entrotter/feat/selective-social"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/integration/latest-agent-cli",
+      "oid": "bdb2059d43eb47fb092fdf7882b029c3c7100e8c",
+      "destination_ref": "refs/heads/archive/entrotter/integration/latest-agent-cli"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/integration/latest-tested-candidate",
+      "oid": "99a7f4fe1cbface530ca63c31a9402fd264891ca",
+      "destination_ref": "refs/heads/archive/entrotter/integration/latest-tested-candidate"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/main",
+      "oid": "5401d56fdda7a33633e650439c2b33346a5ba835",
+      "destination_ref": "refs/heads/archive/entrotter/main"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/test/bounded-default-execution",
+      "oid": "bbdf25b0b0c899b01ef79c9f37a827b2444a28cc",
+      "destination_ref": "refs/heads/archive/entrotter/test/bounded-default-execution"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/test/daemon-worker-admission",
+      "oid": "e1a9d8f2f4bc6bb1c6172bccea212ff8fb1bc8e3",
+      "destination_ref": "refs/heads/archive/entrotter/test/daemon-worker-admission"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/test/host-resource-bounds",
+      "oid": "045d2802e25f1a1438bfdd20a53a3da8ea8c07ce",
+      "destination_ref": "refs/heads/archive/entrotter/test/host-resource-bounds"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/test/native-release-audit",
+      "oid": "8f4c7f83a7f74459c43f6151417464eeecf78594",
+      "destination_ref": "refs/heads/archive/entrotter/test/native-release-audit"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/test/overload-response-regression",
+      "oid": "91cb37cede3a0f339d64e762f98716504bc45a83",
+      "destination_ref": "refs/heads/archive/entrotter/test/overload-response-regression"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/test/shared-export-budget",
+      "oid": "6368eef29dd7beb694da9174f46d1518b38d52d5",
+      "destination_ref": "refs/heads/archive/entrotter/test/shared-export-budget"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/heads/test/worker-image-audit",
+      "oid": "7ece0432ddf0dca29e3e6a7c0362cdda9b36e992",
+      "destination_ref": "refs/heads/archive/entrotter/test/worker-image-audit"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/bench/direct-anvil-comparison",
+      "oid": "9644c469af88c163072a4beaf6209ef9b2fa4de0",
+      "destination_ref": "refs/heads/archive/entrotter/remote/bench/direct-anvil-comparison"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/chore/required-check-coverage",
+      "oid": "4dffcae5133144c2ca2cdab398663ee5c51b5338",
+      "destination_ref": "refs/heads/archive/entrotter/remote/chore/required-check-coverage"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/ci/bounded-agent-integration",
+      "oid": "b011a5efea19c5edbaa55d12c41e2ec101990ba2",
+      "destination_ref": "refs/heads/archive/entrotter/remote/ci/bounded-agent-integration"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/ci/bounded-build-inputs",
+      "oid": "e960d08e37acb11b36779fc5b83a818a9eea97e5",
+      "destination_ref": "refs/heads/archive/entrotter/remote/ci/bounded-build-inputs"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/ci/coordination-quality",
+      "oid": "fcf27d69c20fff3eb31534434579aa62795cc786",
+      "destination_ref": "refs/heads/archive/entrotter/remote/ci/coordination-quality"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/ci/docs-link-checks",
+      "oid": "8fc5916861b6148f058c55f933b7fea099838470",
+      "destination_ref": "refs/heads/archive/entrotter/remote/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/checkout-7",
+      "oid": "1ed48b90bb3fa461fe869697724afd022ded17df",
+      "destination_ref": "refs/heads/archive/entrotter/remote/dependabot/github_actions/actions/checkout-7"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/setup-node-7",
+      "oid": "09d9c5f22408e7a3973439f2c93e5de57bbad5c1",
+      "destination_ref": "refs/heads/archive/entrotter/remote/dependabot/github_actions/actions/setup-node-7"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/setup-python-7",
+      "oid": "d8829fa69019e8eeae19e91b50dfb82c2f1bbb98",
+      "destination_ref": "refs/heads/archive/entrotter/remote/dependabot/github_actions/actions/setup-python-7"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/upload-artifact-7",
+      "oid": "47ea06a1243f07c1d3534ba2956949d84ec2d465",
+      "destination_ref": "refs/heads/archive/entrotter/remote/dependabot/github_actions/actions/upload-artifact-7"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/bounded-agent-evidence",
+      "oid": "67b7d19105495e314c308cd7e2e01ef254f37ca1",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/bounded-agent-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/engine-quality-evidence",
+      "oid": "e4b748621f72f049580f6047f682c99fb83eeb01",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/engine-quality-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/first-contribution-paths",
+      "oid": "bd5fd64ccf38ff8de65fd3ed8e9c46ff8617fa07",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/first-contribution-paths"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/readiness-evidence",
+      "oid": "2ce45446ec89fb386c1113c4087dadf233bfc9a2",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/readiness-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/reproducible-quick-start",
+      "oid": "f1421ff0d67ce76d047f2a51334972ec65966d33",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/reproducible-quick-start"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/scenario-contract-evidence",
+      "oid": "be9d1218fe515833c332223e4d3fdecdf583d527",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/scenario-contract-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/sdk-cli-quality-evidence",
+      "oid": "cd4e632341870dee3a035e2012e99880bfa3cd50",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/sdk-cli-quality-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/submission-videos",
+      "oid": "bb72c9e4330c426a358fc0c018c54219ecb3dcc2",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/submission-videos"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/tokyo-continuity",
+      "oid": "a233668a8e2af34e0d35e882fba8a91c065bc5a5",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/tokyo-continuity"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/website-accessibility-evidence",
+      "oid": "579ca7056dff28f80ed461ab52b1109d641011b2",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/website-accessibility-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/website-quality-evidence",
+      "oid": "062cce134ad1e55396587992823654705a669849",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/website-quality-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/docs/worker-security-evidence",
+      "oid": "4531b8a366041cad87f4165f91b4881f0196ad5f",
+      "destination_ref": "refs/heads/archive/entrotter/remote/docs/worker-security-evidence"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/feat/bounded-host-service",
+      "oid": "98f11012934e92fadbbf0ae1ab8552c19d069ce7",
+      "destination_ref": "refs/heads/archive/entrotter/remote/feat/bounded-host-service"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/feat/bounded-linux-cli",
+      "oid": "6a3040239f5f63d83a03a29852a8b15a0d618d00",
+      "destination_ref": "refs/heads/archive/entrotter/remote/feat/bounded-linux-cli"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/feat/historical-agent-benchmark",
+      "oid": "841ac6bfd619d892f7330a7985500ceba6c15eed",
+      "destination_ref": "refs/heads/archive/entrotter/remote/feat/historical-agent-benchmark"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/feat/recorded-codex-policy",
+      "oid": "057c3423eaec12e80b7e575944d27c60a3375fbd",
+      "destination_ref": "refs/heads/archive/entrotter/remote/feat/recorded-codex-policy"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/feat/selective-social",
+      "oid": "533fa0989ac4f6da2dc12eafa457f085a14817d5",
+      "destination_ref": "refs/heads/archive/entrotter/remote/feat/selective-social"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/integration/latest-agent-cli",
+      "oid": "bdb2059d43eb47fb092fdf7882b029c3c7100e8c",
+      "destination_ref": "refs/heads/archive/entrotter/remote/integration/latest-agent-cli"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/integration/latest-tested-candidate",
+      "oid": "99a7f4fe1cbface530ca63c31a9402fd264891ca",
+      "destination_ref": "refs/heads/archive/entrotter/remote/integration/latest-tested-candidate"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/main",
+      "oid": "5401d56fdda7a33633e650439c2b33346a5ba835",
+      "destination_ref": "refs/heads/archive/entrotter/remote/main"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/test/bounded-default-execution",
+      "oid": "bbdf25b0b0c899b01ef79c9f37a827b2444a28cc",
+      "destination_ref": "refs/heads/archive/entrotter/remote/test/bounded-default-execution"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/test/daemon-worker-admission",
+      "oid": "e1a9d8f2f4bc6bb1c6172bccea212ff8fb1bc8e3",
+      "destination_ref": "refs/heads/archive/entrotter/remote/test/daemon-worker-admission"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/test/host-resource-bounds",
+      "oid": "045d2802e25f1a1438bfdd20a53a3da8ea8c07ce",
+      "destination_ref": "refs/heads/archive/entrotter/remote/test/host-resource-bounds"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/test/native-release-audit",
+      "oid": "8f4c7f83a7f74459c43f6151417464eeecf78594",
+      "destination_ref": "refs/heads/archive/entrotter/remote/test/native-release-audit"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/test/overload-response-regression",
+      "oid": "91cb37cede3a0f339d64e762f98716504bc45a83",
+      "destination_ref": "refs/heads/archive/entrotter/remote/test/overload-response-regression"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/test/shared-export-budget",
+      "oid": "6368eef29dd7beb694da9174f46d1518b38d52d5",
+      "destination_ref": "refs/heads/archive/entrotter/remote/test/shared-export-budget"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/heads/test/worker-image-audit",
+      "oid": "7ece0432ddf0dca29e3e6a7c0362cdda9b36e992",
+      "destination_ref": "refs/heads/archive/entrotter/remote/test/worker-image-audit"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/10/head",
+      "oid": "9644c469af88c163072a4beaf6209ef9b2fa4de0",
+      "destination_ref": "refs/heads/archive/entrotter/pull/10/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/10/merge",
+      "oid": "376220e4e21f671095587f50c944e7368cdfd50d",
+      "destination_ref": "refs/heads/archive/entrotter/pull/10/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/11/head",
+      "oid": "4531b8a366041cad87f4165f91b4881f0196ad5f",
+      "destination_ref": "refs/heads/archive/entrotter/pull/11/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/11/merge",
+      "oid": "68c48f63674a3b99e1aac29c0747cadf30d713a6",
+      "destination_ref": "refs/heads/archive/entrotter/pull/11/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/13/head",
+      "oid": "045d2802e25f1a1438bfdd20a53a3da8ea8c07ce",
+      "destination_ref": "refs/heads/archive/entrotter/pull/13/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/13/merge",
+      "oid": "01efd8a22e02fb1d6bb8d9a240c41f50a2b7565f",
+      "destination_ref": "refs/heads/archive/entrotter/pull/13/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/14/head",
+      "oid": "e4b748621f72f049580f6047f682c99fb83eeb01",
+      "destination_ref": "refs/heads/archive/entrotter/pull/14/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/14/merge",
+      "oid": "15dce91457a9e1364d620e2897cb09f4a8c7cb8c",
+      "destination_ref": "refs/heads/archive/entrotter/pull/14/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/16/head",
+      "oid": "8fc5916861b6148f058c55f933b7fea099838470",
+      "destination_ref": "refs/heads/archive/entrotter/pull/16/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/16/merge",
+      "oid": "bc8b2faed421af8ef6de3763930a0fb8f66917d4",
+      "destination_ref": "refs/heads/archive/entrotter/pull/16/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/17/head",
+      "oid": "91cb37cede3a0f339d64e762f98716504bc45a83",
+      "destination_ref": "refs/heads/archive/entrotter/pull/17/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/17/merge",
+      "oid": "660a23d7c8303403025756dd91092e5883bc523f",
+      "destination_ref": "refs/heads/archive/entrotter/pull/17/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/19/head",
+      "oid": "cd4e632341870dee3a035e2012e99880bfa3cd50",
+      "destination_ref": "refs/heads/archive/entrotter/pull/19/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/19/merge",
+      "oid": "b93396e9a8a7bd720a46e8897bc041fb0179a698",
+      "destination_ref": "refs/heads/archive/entrotter/pull/19/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/2/head",
+      "oid": "d8829fa69019e8eeae19e91b50dfb82c2f1bbb98",
+      "destination_ref": "refs/heads/archive/entrotter/pull/2/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/2/merge",
+      "oid": "006e75196c578eed1c73d6aa330d9d2b8a6afaff",
+      "destination_ref": "refs/heads/archive/entrotter/pull/2/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/21/head",
+      "oid": "579ca7056dff28f80ed461ab52b1109d641011b2",
+      "destination_ref": "refs/heads/archive/entrotter/pull/21/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/21/merge",
+      "oid": "9f5972d396b5dcf083d7ab1dc9296adba0666488",
+      "destination_ref": "refs/heads/archive/entrotter/pull/21/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/23/head",
+      "oid": "bbdf25b0b0c899b01ef79c9f37a827b2444a28cc",
+      "destination_ref": "refs/heads/archive/entrotter/pull/23/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/23/merge",
+      "oid": "7f8e647058f4b1db0e3c1d4bafe153781ee31013",
+      "destination_ref": "refs/heads/archive/entrotter/pull/23/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/25/head",
+      "oid": "e1a9d8f2f4bc6bb1c6172bccea212ff8fb1bc8e3",
+      "destination_ref": "refs/heads/archive/entrotter/pull/25/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/25/merge",
+      "oid": "50ebffd182162174b0a787519d24589191c0b017",
+      "destination_ref": "refs/heads/archive/entrotter/pull/25/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/27/head",
+      "oid": "7ece0432ddf0dca29e3e6a7c0362cdda9b36e992",
+      "destination_ref": "refs/heads/archive/entrotter/pull/27/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/27/merge",
+      "oid": "6b1593f6478d42f6b37bfd27249103b041e2735f",
+      "destination_ref": "refs/heads/archive/entrotter/pull/27/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/29/head",
+      "oid": "8f4c7f83a7f74459c43f6151417464eeecf78594",
+      "destination_ref": "refs/heads/archive/entrotter/pull/29/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/29/merge",
+      "oid": "c28c7bb9e88ced4be7d9a3f0fe6b544259dd79c3",
+      "destination_ref": "refs/heads/archive/entrotter/pull/29/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/3/head",
+      "oid": "47ea06a1243f07c1d3534ba2956949d84ec2d465",
+      "destination_ref": "refs/heads/archive/entrotter/pull/3/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/3/merge",
+      "oid": "18a0b9cf302e1ce63868cbd437b7c58d7c65a9c3",
+      "destination_ref": "refs/heads/archive/entrotter/pull/3/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/31/head",
+      "oid": "6368eef29dd7beb694da9174f46d1518b38d52d5",
+      "destination_ref": "refs/heads/archive/entrotter/pull/31/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/31/merge",
+      "oid": "a8a3affa127cb87410bbba205ca7b6d5152742a0",
+      "destination_ref": "refs/heads/archive/entrotter/pull/31/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/33/head",
+      "oid": "fcf27d69c20fff3eb31534434579aa62795cc786",
+      "destination_ref": "refs/heads/archive/entrotter/pull/33/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/33/merge",
+      "oid": "fc806c0ccefc31985c4632c3f7117cec02e492f9",
+      "destination_ref": "refs/heads/archive/entrotter/pull/33/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/35/head",
+      "oid": "be9d1218fe515833c332223e4d3fdecdf583d527",
+      "destination_ref": "refs/heads/archive/entrotter/pull/35/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/35/merge",
+      "oid": "ca61546f603e8959a045f49019c4f95cf2d66eb6",
+      "destination_ref": "refs/heads/archive/entrotter/pull/35/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/37/head",
+      "oid": "062cce134ad1e55396587992823654705a669849",
+      "destination_ref": "refs/heads/archive/entrotter/pull/37/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/37/merge",
+      "oid": "17336325d86ef62989e335ee9d9341c66b05640f",
+      "destination_ref": "refs/heads/archive/entrotter/pull/37/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/39/head",
+      "oid": "67b7d19105495e314c308cd7e2e01ef254f37ca1",
+      "destination_ref": "refs/heads/archive/entrotter/pull/39/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/39/merge",
+      "oid": "4839b9518992091681f367da66971426a8d709ab",
+      "destination_ref": "refs/heads/archive/entrotter/pull/39/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/4/head",
+      "oid": "1ed48b90bb3fa461fe869697724afd022ded17df",
+      "destination_ref": "refs/heads/archive/entrotter/pull/4/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/4/merge",
+      "oid": "24bdf83217be265083a6a2cb68c80f720f5c3c37",
+      "destination_ref": "refs/heads/archive/entrotter/pull/4/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/40/head",
+      "oid": "bb72c9e4330c426a358fc0c018c54219ecb3dcc2",
+      "destination_ref": "refs/heads/archive/entrotter/pull/40/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/40/merge",
+      "oid": "e4749c72aa9ae67adaefb7997265ddc8b9990383",
+      "destination_ref": "refs/heads/archive/entrotter/pull/40/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/41/head",
+      "oid": "b011a5efea19c5edbaa55d12c41e2ec101990ba2",
+      "destination_ref": "refs/heads/archive/entrotter/pull/41/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/41/merge",
+      "oid": "2640232605f9ca494bf4719d7c44819044bcc20b",
+      "destination_ref": "refs/heads/archive/entrotter/pull/41/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/42/head",
+      "oid": "4dffcae5133144c2ca2cdab398663ee5c51b5338",
+      "destination_ref": "refs/heads/archive/entrotter/pull/42/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/42/merge",
+      "oid": "0f4f8ece46de4c1650aad2400e0497f1f92ffa61",
+      "destination_ref": "refs/heads/archive/entrotter/pull/42/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/43/head",
+      "oid": "e960d08e37acb11b36779fc5b83a818a9eea97e5",
+      "destination_ref": "refs/heads/archive/entrotter/pull/43/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/43/merge",
+      "oid": "c603826571a54b98cf327fca92b0ff6d1d74a11f",
+      "destination_ref": "refs/heads/archive/entrotter/pull/43/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/45/head",
+      "oid": "bd5fd64ccf38ff8de65fd3ed8e9c46ff8617fa07",
+      "destination_ref": "refs/heads/archive/entrotter/pull/45/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/45/merge",
+      "oid": "ca3117f991b410bcb9fe8af6fc84110f1974289c",
+      "destination_ref": "refs/heads/archive/entrotter/pull/45/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/46/head",
+      "oid": "98f11012934e92fadbbf0ae1ab8552c19d069ce7",
+      "destination_ref": "refs/heads/archive/entrotter/pull/46/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/46/merge",
+      "oid": "11601c1fc152bffa49bb601ad595115535a02a5a",
+      "destination_ref": "refs/heads/archive/entrotter/pull/46/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/47/head",
+      "oid": "f1421ff0d67ce76d047f2a51334972ec65966d33",
+      "destination_ref": "refs/heads/archive/entrotter/pull/47/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/47/merge",
+      "oid": "febec9298ffd922924f5efd7da3d272d3cf0e0a5",
+      "destination_ref": "refs/heads/archive/entrotter/pull/47/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/49/head",
+      "oid": "a233668a8e2af34e0d35e882fba8a91c065bc5a5",
+      "destination_ref": "refs/heads/archive/entrotter/pull/49/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/49/merge",
+      "oid": "1fcfe78bf519e51f06bc8e7a15dc26da60e6499a",
+      "destination_ref": "refs/heads/archive/entrotter/pull/49/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/5/head",
+      "oid": "09d9c5f22408e7a3973439f2c93e5de57bbad5c1",
+      "destination_ref": "refs/heads/archive/entrotter/pull/5/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/5/merge",
+      "oid": "8764e42b8330a6ad35d68a3adef92848de728e10",
+      "destination_ref": "refs/heads/archive/entrotter/pull/5/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/51/head",
+      "oid": "533fa0989ac4f6da2dc12eafa457f085a14817d5",
+      "destination_ref": "refs/heads/archive/entrotter/pull/51/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/51/merge",
+      "oid": "7192f25c929d19dae20bc7d69c9830f06005a671",
+      "destination_ref": "refs/heads/archive/entrotter/pull/51/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/53/head",
+      "oid": "6a3040239f5f63d83a03a29852a8b15a0d618d00",
+      "destination_ref": "refs/heads/archive/entrotter/pull/53/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/53/merge",
+      "oid": "edf386c0feec650af258c787a49583601e93c180",
+      "destination_ref": "refs/heads/archive/entrotter/pull/53/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/54/head",
+      "oid": "99a7f4fe1cbface530ca63c31a9402fd264891ca",
+      "destination_ref": "refs/heads/archive/entrotter/pull/54/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/54/merge",
+      "oid": "691bf1b81f4c089694f32a51f960ef812bdf3445",
+      "destination_ref": "refs/heads/archive/entrotter/pull/54/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/55/head",
+      "oid": "bdb2059d43eb47fb092fdf7882b029c3c7100e8c",
+      "destination_ref": "refs/heads/archive/entrotter/pull/55/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/55/merge",
+      "oid": "8269d00cc2c9cdfea369d0f0205c81382a980075",
+      "destination_ref": "refs/heads/archive/entrotter/pull/55/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/6/head",
+      "oid": "2ce45446ec89fb386c1113c4087dadf233bfc9a2",
+      "destination_ref": "refs/heads/archive/entrotter/pull/6/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/8/head",
+      "oid": "057c3423eaec12e80b7e575944d27c60a3375fbd",
+      "destination_ref": "refs/heads/archive/entrotter/pull/8/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/8/merge",
+      "oid": "94da8c9f2eb9ef361fe35ffec027cfecfe225322",
+      "destination_ref": "refs/heads/archive/entrotter/pull/8/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/9/head",
+      "oid": "841ac6bfd619d892f7330a7985500ceba6c15eed",
+      "destination_ref": "refs/heads/archive/entrotter/pull/9/head"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/remote/pull/9/merge",
+      "oid": "91cf15dd4264bc73c3b246a92c58bb43c5c7b77d",
+      "destination_ref": "refs/heads/archive/entrotter/pull/9/merge"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/worktree/0",
+      "oid": "533fa0989ac4f6da2dc12eafa457f085a14817d5",
+      "destination_ref": "refs/heads/archive/entrotter/worktree/0"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/worktree/1",
+      "oid": "a233668a8e2af34e0d35e882fba8a91c065bc5a5",
+      "destination_ref": "refs/heads/archive/entrotter/worktree/1"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/worktree/2",
+      "oid": "bdb2059d43eb47fb092fdf7882b029c3c7100e8c",
+      "destination_ref": "refs/heads/archive/entrotter/worktree/2"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/tags/tokyo-continuity-demo",
+      "oid": "dfd6e0a484522351d6a2c4914dfefa5ff756634d",
+      "destination_ref": "refs/tags/archive/entrotter/tokyo-continuity-demo"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/ci/docs-link-checks",
+      "oid": "4cfd5c73466f958d55e6e887cf38fccf62f8f096",
+      "destination_ref": "refs/heads/archive/engine/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/ci/engine-quality-gates",
+      "oid": "ba0adfb233b685f99f35cbbe33331fee83360504",
+      "destination_ref": "refs/heads/archive/engine/ci/engine-quality-gates"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/ci/native-release-audit",
+      "oid": "6410c37663d37685a30effccd87844e1740b8637",
+      "destination_ref": "refs/heads/archive/engine/ci/native-release-audit"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/ci/worker-image-audit",
+      "oid": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "destination_ref": "refs/heads/archive/engine/ci/worker-image-audit"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/anvil-process-guardian",
+      "oid": "7f08a2ba1c6fa79e0298593fefa2f61810e03fad",
+      "destination_ref": "refs/heads/archive/engine/feat/anvil-process-guardian"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/bounded-agent-replay",
+      "oid": "abb4662ce960e08b2aa3a2c8a1c10719339edccc",
+      "destination_ref": "refs/heads/archive/engine/feat/bounded-agent-replay"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/bounded-default-execution",
+      "oid": "dddba4a2c3efdd429e36520e8fc9d163888089e2",
+      "destination_ref": "refs/heads/archive/engine/feat/bounded-default-execution"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/canonical-transaction-replay",
+      "oid": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+      "destination_ref": "refs/heads/archive/engine/feat/canonical-transaction-replay"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/causal-agent-record-replay",
+      "oid": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+      "destination_ref": "refs/heads/archive/engine/feat/causal-agent-record-replay"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/erc20-uniswap-adapter",
+      "oid": "d3ab689705d22ee6682b9efec6ae09d4d763dad7",
+      "destination_ref": "refs/heads/archive/engine/feat/erc20-uniswap-adapter"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/isolated-worker",
+      "oid": "05448c3335440f19e619d1b71b449f4f0fb470d6",
+      "destination_ref": "refs/heads/archive/engine/feat/isolated-worker"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/owned-consumer-observations",
+      "oid": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+      "destination_ref": "refs/heads/archive/engine/feat/owned-consumer-observations"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/safe-rpc-diagnostics",
+      "oid": "65c28330bdc694535da0074b2e3d68ab433806d8",
+      "destination_ref": "refs/heads/archive/engine/feat/safe-rpc-diagnostics"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/shared-export-budget",
+      "oid": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+      "destination_ref": "refs/heads/archive/engine/feat/shared-export-budget"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/tokyo-continuity",
+      "oid": "42204e0c8091143e08f9f6525cbfebde741fb74a",
+      "destination_ref": "refs/heads/archive/engine/feat/tokyo-continuity"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/feat/trace-parent-read-cache",
+      "oid": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+      "destination_ref": "refs/heads/archive/engine/feat/trace-parent-read-cache"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/api-storage-connection-bounds",
+      "oid": "5e2663661cb26b17247ed34b2f31297095ba65e6",
+      "destination_ref": "refs/heads/archive/engine/fix/api-storage-connection-bounds"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/bounded-build-output",
+      "oid": "fa3738078079ffa8f8350a26dca60b560d8aa32f",
+      "destination_ref": "refs/heads/archive/engine/fix/bounded-build-output"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/bounded-docker-metadata",
+      "oid": "c1671938edde03c59deef64dbb81d7c41a33406b",
+      "destination_ref": "refs/heads/archive/engine/fix/bounded-docker-metadata"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/bounded-worker-archive",
+      "oid": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+      "destination_ref": "refs/heads/archive/engine/fix/bounded-worker-archive"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/daemon-worker-admission",
+      "oid": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+      "destination_ref": "refs/heads/archive/engine/fix/daemon-worker-admission"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/local-contract-identity",
+      "oid": "6e13f342a20dece8c4d0983dc9813260508fb7fb",
+      "destination_ref": "refs/heads/archive/engine/fix/local-contract-identity"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/overload-response-drain",
+      "oid": "80e8ce2386812daa8f6150048f84ab316624cc0d",
+      "destination_ref": "refs/heads/archive/engine/fix/overload-response-drain"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/rpc-error-redaction",
+      "oid": "ca9d5a7420150bacbd3e3d19b44c478f5e32b770",
+      "destination_ref": "refs/heads/archive/engine/fix/rpc-error-redaction"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/trace-funding-admission",
+      "oid": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+      "destination_ref": "refs/heads/archive/engine/fix/trace-funding-admission"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/fix/trace-mine-deadline",
+      "oid": "8176597af994dddb7a3dc6721db623580ebc9601",
+      "destination_ref": "refs/heads/archive/engine/fix/trace-mine-deadline"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/main",
+      "oid": "6a3e03341eccd44fcd04a990db21cc5509e0c84d",
+      "destination_ref": "refs/heads/archive/engine/main"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/test/real-anvil-lifecycle",
+      "oid": "34b066a905313e57e615de62494b3bcd102d3e14",
+      "destination_ref": "refs/heads/archive/engine/test/real-anvil-lifecycle"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/heads/test/trace-oracle-provider-state",
+      "oid": "99fd3a60a754f129c78d1324f2a01787a6538917",
+      "destination_ref": "refs/heads/archive/engine/test/trace-oracle-provider-state"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/ci/docs-link-checks",
+      "oid": "4cfd5c73466f958d55e6e887cf38fccf62f8f096",
+      "destination_ref": "refs/heads/archive/engine/remote/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/ci/engine-quality-gates",
+      "oid": "ba0adfb233b685f99f35cbbe33331fee83360504",
+      "destination_ref": "refs/heads/archive/engine/remote/ci/engine-quality-gates"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/ci/native-release-audit",
+      "oid": "6410c37663d37685a30effccd87844e1740b8637",
+      "destination_ref": "refs/heads/archive/engine/remote/ci/native-release-audit"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/ci/worker-image-audit",
+      "oid": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "destination_ref": "refs/heads/archive/engine/remote/ci/worker-image-audit"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/checkout-7",
+      "oid": "0e0801973efcbdd263bd1a1ca4199e2c75861cfc",
+      "destination_ref": "refs/heads/archive/engine/remote/dependabot/github_actions/actions/checkout-7"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/setup-python-7",
+      "oid": "e82f78c71504b50062ced68ea95ca06a7379cc2c",
+      "destination_ref": "refs/heads/archive/engine/remote/dependabot/github_actions/actions/setup-python-7"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/anvil-process-guardian",
+      "oid": "7f08a2ba1c6fa79e0298593fefa2f61810e03fad",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/anvil-process-guardian"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/bounded-agent-replay",
+      "oid": "abb4662ce960e08b2aa3a2c8a1c10719339edccc",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/bounded-agent-replay"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/bounded-default-execution",
+      "oid": "dddba4a2c3efdd429e36520e8fc9d163888089e2",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/bounded-default-execution"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/canonical-transaction-replay",
+      "oid": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/canonical-transaction-replay"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/causal-agent-record-replay",
+      "oid": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/causal-agent-record-replay"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/erc20-uniswap-adapter",
+      "oid": "d3ab689705d22ee6682b9efec6ae09d4d763dad7",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/erc20-uniswap-adapter"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/isolated-worker",
+      "oid": "05448c3335440f19e619d1b71b449f4f0fb470d6",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/isolated-worker"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/owned-consumer-observations",
+      "oid": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/owned-consumer-observations"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/safe-rpc-diagnostics",
+      "oid": "65c28330bdc694535da0074b2e3d68ab433806d8",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/safe-rpc-diagnostics"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/shared-export-budget",
+      "oid": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/shared-export-budget"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/tokyo-continuity",
+      "oid": "42204e0c8091143e08f9f6525cbfebde741fb74a",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/tokyo-continuity"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/feat/trace-parent-read-cache",
+      "oid": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+      "destination_ref": "refs/heads/archive/engine/remote/feat/trace-parent-read-cache"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/api-storage-connection-bounds",
+      "oid": "5e2663661cb26b17247ed34b2f31297095ba65e6",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/api-storage-connection-bounds"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/bounded-build-output",
+      "oid": "fa3738078079ffa8f8350a26dca60b560d8aa32f",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/bounded-build-output"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/bounded-docker-metadata",
+      "oid": "c1671938edde03c59deef64dbb81d7c41a33406b",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/bounded-docker-metadata"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/bounded-worker-archive",
+      "oid": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/bounded-worker-archive"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/daemon-worker-admission",
+      "oid": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/daemon-worker-admission"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/local-contract-identity",
+      "oid": "6e13f342a20dece8c4d0983dc9813260508fb7fb",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/local-contract-identity"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/overload-response-drain",
+      "oid": "80e8ce2386812daa8f6150048f84ab316624cc0d",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/overload-response-drain"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/rpc-error-redaction",
+      "oid": "ca9d5a7420150bacbd3e3d19b44c478f5e32b770",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/rpc-error-redaction"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/trace-funding-admission",
+      "oid": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/trace-funding-admission"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/fix/trace-mine-deadline",
+      "oid": "8176597af994dddb7a3dc6721db623580ebc9601",
+      "destination_ref": "refs/heads/archive/engine/remote/fix/trace-mine-deadline"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/main",
+      "oid": "6a3e03341eccd44fcd04a990db21cc5509e0c84d",
+      "destination_ref": "refs/heads/archive/engine/remote/main"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/test/real-anvil-lifecycle",
+      "oid": "34b066a905313e57e615de62494b3bcd102d3e14",
+      "destination_ref": "refs/heads/archive/engine/remote/test/real-anvil-lifecycle"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/heads/test/trace-oracle-provider-state",
+      "oid": "99fd3a60a754f129c78d1324f2a01787a6538917",
+      "destination_ref": "refs/heads/archive/engine/remote/test/trace-oracle-provider-state"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/10/head",
+      "oid": "7f08a2ba1c6fa79e0298593fefa2f61810e03fad",
+      "destination_ref": "refs/heads/archive/engine/pull/10/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/10/merge",
+      "oid": "8185738da6c257fe8dd273802b564b33d7047f75",
+      "destination_ref": "refs/heads/archive/engine/pull/10/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/11/head",
+      "oid": "05448c3335440f19e619d1b71b449f4f0fb470d6",
+      "destination_ref": "refs/heads/archive/engine/pull/11/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/11/merge",
+      "oid": "f3e237f835b4d74d56dafa5bf3fc700e3cbac2e8",
+      "destination_ref": "refs/heads/archive/engine/pull/11/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/12/head",
+      "oid": "5e2663661cb26b17247ed34b2f31297095ba65e6",
+      "destination_ref": "refs/heads/archive/engine/pull/12/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/12/merge",
+      "oid": "ddadf63c2c40dc46e47c4896c12cb80cb55a9058",
+      "destination_ref": "refs/heads/archive/engine/pull/12/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/13/head",
+      "oid": "ba0adfb233b685f99f35cbbe33331fee83360504",
+      "destination_ref": "refs/heads/archive/engine/pull/13/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/13/merge",
+      "oid": "e07631c4650dc07833b8bccecd4cb4560b53976c",
+      "destination_ref": "refs/heads/archive/engine/pull/13/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/14/head",
+      "oid": "4cfd5c73466f958d55e6e887cf38fccf62f8f096",
+      "destination_ref": "refs/heads/archive/engine/pull/14/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/14/merge",
+      "oid": "359c4a1a6c2369d4049617001d35833fbe38f31d",
+      "destination_ref": "refs/heads/archive/engine/pull/14/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/15/head",
+      "oid": "80e8ce2386812daa8f6150048f84ab316624cc0d",
+      "destination_ref": "refs/heads/archive/engine/pull/15/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/15/merge",
+      "oid": "bafe645ac591fe87f13f2359b86ce1281404e41c",
+      "destination_ref": "refs/heads/archive/engine/pull/15/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/16/head",
+      "oid": "dddba4a2c3efdd429e36520e8fc9d163888089e2",
+      "destination_ref": "refs/heads/archive/engine/pull/16/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/16/merge",
+      "oid": "df3ab8a16fe90ca8e0d601b4f9a6837e00f67796",
+      "destination_ref": "refs/heads/archive/engine/pull/16/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/17/head",
+      "oid": "0718b20e47a2b69dcd6ac2ac7112f189131f9ec6",
+      "destination_ref": "refs/heads/archive/engine/pull/17/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/17/merge",
+      "oid": "376a7838c7d4f426e782b62981ff058e8a363174",
+      "destination_ref": "refs/heads/archive/engine/pull/17/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/18/head",
+      "oid": "a9741942d9a4a87de62f9b9b90fb6cbe7d092648",
+      "destination_ref": "refs/heads/archive/engine/pull/18/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/18/merge",
+      "oid": "5ec928569370b0c8509b0f83f92bcd811f42403c",
+      "destination_ref": "refs/heads/archive/engine/pull/18/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/19/head",
+      "oid": "6410c37663d37685a30effccd87844e1740b8637",
+      "destination_ref": "refs/heads/archive/engine/pull/19/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/19/merge",
+      "oid": "9e2565dea6b8c9b7ee86c95e96ec08413d7a3606",
+      "destination_ref": "refs/heads/archive/engine/pull/19/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/20/head",
+      "oid": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+      "destination_ref": "refs/heads/archive/engine/pull/20/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/20/merge",
+      "oid": "52d916e4b695bbc0d4dc1d9b0e387fd5fd841e1c",
+      "destination_ref": "refs/heads/archive/engine/pull/20/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/21/head",
+      "oid": "abb4662ce960e08b2aa3a2c8a1c10719339edccc",
+      "destination_ref": "refs/heads/archive/engine/pull/21/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/21/merge",
+      "oid": "ce970fd33e995803c369efaebbc255d6e1ad1072",
+      "destination_ref": "refs/heads/archive/engine/pull/21/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/22/head",
+      "oid": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+      "destination_ref": "refs/heads/archive/engine/pull/22/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/22/merge",
+      "oid": "2005030fcb82fe6177727bc8764092b71c06bce5",
+      "destination_ref": "refs/heads/archive/engine/pull/22/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/24/head",
+      "oid": "ddf63eec226ef97dd6bee706887bf0930b077128",
+      "destination_ref": "refs/heads/archive/engine/pull/24/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/24/merge",
+      "oid": "df88ab93ce85e96c866dcfb09dfd5e4798eeea32",
+      "destination_ref": "refs/heads/archive/engine/pull/24/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/25/head",
+      "oid": "42204e0c8091143e08f9f6525cbfebde741fb74a",
+      "destination_ref": "refs/heads/archive/engine/pull/25/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/25/merge",
+      "oid": "b2d61d943755853a32b769de664f361a88ed4afc",
+      "destination_ref": "refs/heads/archive/engine/pull/25/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/26/head",
+      "oid": "fa3738078079ffa8f8350a26dca60b560d8aa32f",
+      "destination_ref": "refs/heads/archive/engine/pull/26/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/26/merge",
+      "oid": "77d88152f8e1d07bacc2c9463bcf986f9233107a",
+      "destination_ref": "refs/heads/archive/engine/pull/26/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/27/head",
+      "oid": "c1671938edde03c59deef64dbb81d7c41a33406b",
+      "destination_ref": "refs/heads/archive/engine/pull/27/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/27/merge",
+      "oid": "7a246db163ab084c23481ddaa8fbd31bbfe9e7c2",
+      "destination_ref": "refs/heads/archive/engine/pull/27/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/28/head",
+      "oid": "6e13f342a20dece8c4d0983dc9813260508fb7fb",
+      "destination_ref": "refs/heads/archive/engine/pull/28/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/28/merge",
+      "oid": "6ee1ef5e77d8b18861d11d231b709e2d6cc14732",
+      "destination_ref": "refs/heads/archive/engine/pull/28/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/29/head",
+      "oid": "0d4faf7d4feda817499ea19e8797a0e03504fbad",
+      "destination_ref": "refs/heads/archive/engine/pull/29/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/29/merge",
+      "oid": "fd04730462baed1f4396ff0e41b783f03cc5dd69",
+      "destination_ref": "refs/heads/archive/engine/pull/29/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/30/head",
+      "oid": "8176597af994dddb7a3dc6721db623580ebc9601",
+      "destination_ref": "refs/heads/archive/engine/pull/30/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/30/merge",
+      "oid": "a34ffc0a995c9186db82030f42f7d1f8387b9a9d",
+      "destination_ref": "refs/heads/archive/engine/pull/30/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/31/head",
+      "oid": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+      "destination_ref": "refs/heads/archive/engine/pull/31/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/31/merge",
+      "oid": "21da26e3a4a02292caa7b0d61f91cc47042246d4",
+      "destination_ref": "refs/heads/archive/engine/pull/31/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/32/head",
+      "oid": "99fd3a60a754f129c78d1324f2a01787a6538917",
+      "destination_ref": "refs/heads/archive/engine/pull/32/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/32/merge",
+      "oid": "bb7723991d7d90d84805081a622c5bc9e8502f67",
+      "destination_ref": "refs/heads/archive/engine/pull/32/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/33/head",
+      "oid": "65c28330bdc694535da0074b2e3d68ab433806d8",
+      "destination_ref": "refs/heads/archive/engine/pull/33/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/33/merge",
+      "oid": "84ac069ce0864eff42022a197ae264eaee0b9c61",
+      "destination_ref": "refs/heads/archive/engine/pull/33/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/34/head",
+      "oid": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+      "destination_ref": "refs/heads/archive/engine/pull/34/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/34/merge",
+      "oid": "7a83591a91e2a42d8ee3866451c8dee4b795cac7",
+      "destination_ref": "refs/heads/archive/engine/pull/34/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/35/head",
+      "oid": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+      "destination_ref": "refs/heads/archive/engine/pull/35/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/35/merge",
+      "oid": "cc281645be2f8d93225ce2e013e75c55c7da4270",
+      "destination_ref": "refs/heads/archive/engine/pull/35/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/4/head",
+      "oid": "e82f78c71504b50062ced68ea95ca06a7379cc2c",
+      "destination_ref": "refs/heads/archive/engine/pull/4/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/4/merge",
+      "oid": "fd8db5a074a4d0ea774067bda30bb5c43c2fa4b6",
+      "destination_ref": "refs/heads/archive/engine/pull/4/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/5/head",
+      "oid": "0e0801973efcbdd263bd1a1ca4199e2c75861cfc",
+      "destination_ref": "refs/heads/archive/engine/pull/5/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/5/merge",
+      "oid": "58866b5571cdf731de186267aa6808f3e0ee5d7c",
+      "destination_ref": "refs/heads/archive/engine/pull/5/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/6/head",
+      "oid": "34b066a905313e57e615de62494b3bcd102d3e14",
+      "destination_ref": "refs/heads/archive/engine/pull/6/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/7/head",
+      "oid": "d3ab689705d22ee6682b9efec6ae09d4d763dad7",
+      "destination_ref": "refs/heads/archive/engine/pull/7/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/8/head",
+      "oid": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+      "destination_ref": "refs/heads/archive/engine/pull/8/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/8/merge",
+      "oid": "50e0ef3361565988fb97e999b4522151503cd23e",
+      "destination_ref": "refs/heads/archive/engine/pull/8/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/9/head",
+      "oid": "ca9d5a7420150bacbd3e3d19b44c478f5e32b770",
+      "destination_ref": "refs/heads/archive/engine/pull/9/head"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/remote/pull/9/merge",
+      "oid": "eab35cd4c0d9c9b6dd028ba884ce974a810927bb",
+      "destination_ref": "refs/heads/archive/engine/pull/9/merge"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/worktree/0",
+      "oid": "0d3857839b2187541e573bec2e58042ad5bf0b45",
+      "destination_ref": "refs/heads/archive/engine/worktree/0"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/worktree/1",
+      "oid": "42204e0c8091143e08f9f6525cbfebde741fb74a",
+      "destination_ref": "refs/heads/archive/engine/worktree/1"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/worktree/2",
+      "oid": "bb8b3e8d32c7cbd49629d337758f30bfdf805045",
+      "destination_ref": "refs/heads/archive/engine/worktree/2"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/worktree/3",
+      "oid": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+      "destination_ref": "refs/heads/archive/engine/worktree/3"
+    },
+    {
+      "source_repository": "engine",
+      "source_ref": "refs/migration/worktree/4",
+      "oid": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+      "destination_ref": "refs/heads/archive/engine/worktree/4"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/heads/ci/docs-link-checks",
+      "oid": "a1352e34632543940b25ebddbe51a13cb7b8dcbf",
+      "destination_ref": "refs/heads/archive/sdk-python/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/heads/ci/python-quality-gates",
+      "oid": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "destination_ref": "refs/heads/archive/sdk-python/ci/python-quality-gates"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/heads/feat/trace-report-reader",
+      "oid": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "destination_ref": "refs/heads/archive/sdk-python/feat/trace-report-reader"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/heads/main",
+      "oid": "f65f45de26c2658e2269a02a5dbe7c90c74b1cba",
+      "destination_ref": "refs/heads/archive/sdk-python/main"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/heads/ci/docs-link-checks",
+      "oid": "a1352e34632543940b25ebddbe51a13cb7b8dcbf",
+      "destination_ref": "refs/heads/archive/sdk-python/remote/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/heads/ci/python-quality-gates",
+      "oid": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "destination_ref": "refs/heads/archive/sdk-python/remote/ci/python-quality-gates"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/checkout-7",
+      "oid": "bc33c56f24ffd28d3eab31262329cd7a5b42ace6",
+      "destination_ref": "refs/heads/archive/sdk-python/remote/dependabot/github_actions/actions/checkout-7"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/setup-python-7",
+      "oid": "bdb93c0cb280463f5ae924d89a30b880cdf4ab20",
+      "destination_ref": "refs/heads/archive/sdk-python/remote/dependabot/github_actions/actions/setup-python-7"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/heads/feat/trace-report-reader",
+      "oid": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "destination_ref": "refs/heads/archive/sdk-python/remote/feat/trace-report-reader"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/heads/main",
+      "oid": "f65f45de26c2658e2269a02a5dbe7c90c74b1cba",
+      "destination_ref": "refs/heads/archive/sdk-python/remote/main"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/2/head",
+      "oid": "bdb93c0cb280463f5ae924d89a30b880cdf4ab20",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/2/head"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/2/merge",
+      "oid": "a8703b4879d1ef6d23d2c2a065306bf4c79bf845",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/2/merge"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/3/head",
+      "oid": "bc33c56f24ffd28d3eab31262329cd7a5b42ace6",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/3/head"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/3/merge",
+      "oid": "15b4847fd09aedde65815612a44f7f1d3da15799",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/3/merge"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/4/head",
+      "oid": "a8c846642e0e02a463d80587ec4b1486902d9b64",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/4/head"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/4/merge",
+      "oid": "6289891adb666a5b218cb5a8036bd684defb171d",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/4/merge"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/5/head",
+      "oid": "a1352e34632543940b25ebddbe51a13cb7b8dcbf",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/5/head"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/5/merge",
+      "oid": "57ea760c1bdb7cd9e58b740d8934d9f3f7e8ade0",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/5/merge"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/6/head",
+      "oid": "b0c2ba3bba411e548af44101ae06e879bd7b5dc0",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/6/head"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/6/merge",
+      "oid": "ad2c2df749c3c04737662081f0616b374c9928c6",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/6/merge"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/7/head",
+      "oid": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/7/head"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/remote/pull/7/merge",
+      "oid": "81752ecab6e49d6ce4f01df1d8516799ff5a8552",
+      "destination_ref": "refs/heads/archive/sdk-python/pull/7/merge"
+    },
+    {
+      "source_repository": "sdk-python",
+      "source_ref": "refs/migration/worktree/0",
+      "oid": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "destination_ref": "refs/heads/archive/sdk-python/worktree/0"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/heads/ci/docs-link-checks",
+      "oid": "f875168505ca5f3ebfb342ab1e3607584e36176b",
+      "destination_ref": "refs/heads/archive/cli/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/heads/ci/python-quality-gates",
+      "oid": "aba6a6147b2b4b96facf758f9b95b63d8e6b5952",
+      "destination_ref": "refs/heads/archive/cli/ci/python-quality-gates"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/heads/feat/agent-cli-replay",
+      "oid": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "destination_ref": "refs/heads/archive/cli/feat/agent-cli-replay"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/heads/feat/bounded-local-execution",
+      "oid": "952bfb5aba14b674dd959035a5625fadbd2b07d1",
+      "destination_ref": "refs/heads/archive/cli/feat/bounded-local-execution"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/heads/feat/shared-export-budget",
+      "oid": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "destination_ref": "refs/heads/archive/cli/feat/shared-export-budget"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/heads/fix/bounded-report-export",
+      "oid": "d842c56bd9cf2c0845f5666b4ea0b02d2be34489",
+      "destination_ref": "refs/heads/archive/cli/fix/bounded-report-export"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/heads/main",
+      "oid": "b6a7f4d96cec08f4779968b9f63bab3f9b405fe8",
+      "destination_ref": "refs/heads/archive/cli/main"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/heads/ci/docs-link-checks",
+      "oid": "f875168505ca5f3ebfb342ab1e3607584e36176b",
+      "destination_ref": "refs/heads/archive/cli/remote/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/heads/ci/python-quality-gates",
+      "oid": "aba6a6147b2b4b96facf758f9b95b63d8e6b5952",
+      "destination_ref": "refs/heads/archive/cli/remote/ci/python-quality-gates"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/checkout-7",
+      "oid": "d2c33513a444e9cd4dc268a52c472638008956e6",
+      "destination_ref": "refs/heads/archive/cli/remote/dependabot/github_actions/actions/checkout-7"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/setup-python-7",
+      "oid": "1d0aa05890adf1ed2d030bd221e60430242299b7",
+      "destination_ref": "refs/heads/archive/cli/remote/dependabot/github_actions/actions/setup-python-7"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/heads/feat/agent-cli-replay",
+      "oid": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "destination_ref": "refs/heads/archive/cli/remote/feat/agent-cli-replay"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/heads/feat/bounded-local-execution",
+      "oid": "952bfb5aba14b674dd959035a5625fadbd2b07d1",
+      "destination_ref": "refs/heads/archive/cli/remote/feat/bounded-local-execution"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/heads/feat/shared-export-budget",
+      "oid": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "destination_ref": "refs/heads/archive/cli/remote/feat/shared-export-budget"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/heads/fix/bounded-report-export",
+      "oid": "d842c56bd9cf2c0845f5666b4ea0b02d2be34489",
+      "destination_ref": "refs/heads/archive/cli/remote/fix/bounded-report-export"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/heads/main",
+      "oid": "b6a7f4d96cec08f4779968b9f63bab3f9b405fe8",
+      "destination_ref": "refs/heads/archive/cli/remote/main"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/10/head",
+      "oid": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "destination_ref": "refs/heads/archive/cli/pull/10/head"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/10/merge",
+      "oid": "cc26b4b702f3fa688aef146989fab1a87025b6a4",
+      "destination_ref": "refs/heads/archive/cli/pull/10/merge"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/2/head",
+      "oid": "1d0aa05890adf1ed2d030bd221e60430242299b7",
+      "destination_ref": "refs/heads/archive/cli/pull/2/head"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/2/merge",
+      "oid": "6105c9b68081c483669498b692d46fb84f518e6f",
+      "destination_ref": "refs/heads/archive/cli/pull/2/merge"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/3/head",
+      "oid": "d2c33513a444e9cd4dc268a52c472638008956e6",
+      "destination_ref": "refs/heads/archive/cli/pull/3/head"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/3/merge",
+      "oid": "2e7bfa03fe35634849463bc8cdf857881d67ef3a",
+      "destination_ref": "refs/heads/archive/cli/pull/3/merge"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/4/head",
+      "oid": "a04fbd6771e863ef75e1bdc2e0324c87eccf453f",
+      "destination_ref": "refs/heads/archive/cli/pull/4/head"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/4/merge",
+      "oid": "8258a78373fa0d55d25fa93f994f47ca080932b2",
+      "destination_ref": "refs/heads/archive/cli/pull/4/merge"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/5/head",
+      "oid": "d842c56bd9cf2c0845f5666b4ea0b02d2be34489",
+      "destination_ref": "refs/heads/archive/cli/pull/5/head"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/5/merge",
+      "oid": "d0fbcd7d7f739f1aaa08296aa4072ab2543f0d33",
+      "destination_ref": "refs/heads/archive/cli/pull/5/merge"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/6/head",
+      "oid": "f875168505ca5f3ebfb342ab1e3607584e36176b",
+      "destination_ref": "refs/heads/archive/cli/pull/6/head"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/6/merge",
+      "oid": "2d1607568991b589882f7f8d75625253ad5dc2ba",
+      "destination_ref": "refs/heads/archive/cli/pull/6/merge"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/7/head",
+      "oid": "aba6a6147b2b4b96facf758f9b95b63d8e6b5952",
+      "destination_ref": "refs/heads/archive/cli/pull/7/head"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/7/merge",
+      "oid": "53a4a95769040c66c949f71129a554288b8f3483",
+      "destination_ref": "refs/heads/archive/cli/pull/7/merge"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/8/head",
+      "oid": "952bfb5aba14b674dd959035a5625fadbd2b07d1",
+      "destination_ref": "refs/heads/archive/cli/pull/8/head"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/8/merge",
+      "oid": "c80ceb990fe11ffddb42acf6846ce9516ea76cef",
+      "destination_ref": "refs/heads/archive/cli/pull/8/merge"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/9/head",
+      "oid": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "destination_ref": "refs/heads/archive/cli/pull/9/head"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/remote/pull/9/merge",
+      "oid": "efe75b588f20a34b1c1c4c0e79d343f4a288e213",
+      "destination_ref": "refs/heads/archive/cli/pull/9/merge"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/worktree/0",
+      "oid": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "destination_ref": "refs/heads/archive/cli/worktree/0"
+    },
+    {
+      "source_repository": "cli",
+      "source_ref": "refs/migration/worktree/1",
+      "oid": "aba6a6147b2b4b96facf758f9b95b63d8e6b5952",
+      "destination_ref": "refs/heads/archive/cli/worktree/1"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/heads/ci/docs-link-checks",
+      "oid": "64d9c1908a1c157ad6c410a988fcef04178067dc",
+      "destination_ref": "refs/heads/archive/scenarios/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/heads/feat/agent-recording-schema",
+      "oid": "828cfe37f2a2d6d7f2db868a0856a28c080b7a94",
+      "destination_ref": "refs/heads/archive/scenarios/feat/agent-recording-schema"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/heads/feat/canonical-trace-contracts",
+      "oid": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+      "destination_ref": "refs/heads/archive/scenarios/feat/canonical-trace-contracts"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/heads/feat/historical-agent-cases",
+      "oid": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+      "destination_ref": "refs/heads/archive/scenarios/feat/historical-agent-cases"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/heads/feat/tracked-token-contract",
+      "oid": "43d5155f2ec2834da10d9590a052c367c8957f94",
+      "destination_ref": "refs/heads/archive/scenarios/feat/tracked-token-contract"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/heads/fix/offline-schema-contracts",
+      "oid": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "destination_ref": "refs/heads/archive/scenarios/fix/offline-schema-contracts"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/heads/main",
+      "oid": "b8bf6f025a872dbc6854965c08f3dba587c86d28",
+      "destination_ref": "refs/heads/archive/scenarios/main"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/heads/ci/docs-link-checks",
+      "oid": "64d9c1908a1c157ad6c410a988fcef04178067dc",
+      "destination_ref": "refs/heads/archive/scenarios/remote/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/checkout-7",
+      "oid": "e9eb86a912ec3beabdbe79304b704aae054ffb66",
+      "destination_ref": "refs/heads/archive/scenarios/remote/dependabot/github_actions/actions/checkout-7"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/setup-python-7",
+      "oid": "87dacd5d1cc9ff8b4ec75c1f091fbdf0fe4c5c6a",
+      "destination_ref": "refs/heads/archive/scenarios/remote/dependabot/github_actions/actions/setup-python-7"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/heads/feat/agent-recording-schema",
+      "oid": "828cfe37f2a2d6d7f2db868a0856a28c080b7a94",
+      "destination_ref": "refs/heads/archive/scenarios/remote/feat/agent-recording-schema"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/heads/feat/canonical-trace-contracts",
+      "oid": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+      "destination_ref": "refs/heads/archive/scenarios/remote/feat/canonical-trace-contracts"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/heads/feat/historical-agent-cases",
+      "oid": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+      "destination_ref": "refs/heads/archive/scenarios/remote/feat/historical-agent-cases"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/heads/feat/tracked-token-contract",
+      "oid": "43d5155f2ec2834da10d9590a052c367c8957f94",
+      "destination_ref": "refs/heads/archive/scenarios/remote/feat/tracked-token-contract"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/heads/fix/offline-schema-contracts",
+      "oid": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "destination_ref": "refs/heads/archive/scenarios/remote/fix/offline-schema-contracts"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/heads/main",
+      "oid": "b8bf6f025a872dbc6854965c08f3dba587c86d28",
+      "destination_ref": "refs/heads/archive/scenarios/remote/main"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/10/head",
+      "oid": "6142c41e91aecf942ca2208b48f0f4e1f36b8fd8",
+      "destination_ref": "refs/heads/archive/scenarios/pull/10/head"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/10/merge",
+      "oid": "2702687ad54b81c506b538eab6eb47e0b15dd3ba",
+      "destination_ref": "refs/heads/archive/scenarios/pull/10/merge"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/11/head",
+      "oid": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+      "destination_ref": "refs/heads/archive/scenarios/pull/11/head"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/11/merge",
+      "oid": "90d34d2433c55110ac762a5d8878997ed2103c87",
+      "destination_ref": "refs/heads/archive/scenarios/pull/11/merge"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/2/head",
+      "oid": "87dacd5d1cc9ff8b4ec75c1f091fbdf0fe4c5c6a",
+      "destination_ref": "refs/heads/archive/scenarios/pull/2/head"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/2/merge",
+      "oid": "ad63cc55178406714107eb0d1ec07ab86aa2fabe",
+      "destination_ref": "refs/heads/archive/scenarios/pull/2/merge"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/3/head",
+      "oid": "e9eb86a912ec3beabdbe79304b704aae054ffb66",
+      "destination_ref": "refs/heads/archive/scenarios/pull/3/head"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/3/merge",
+      "oid": "4ac00c6d1cb4776297f5499e376c6e6a215bd483",
+      "destination_ref": "refs/heads/archive/scenarios/pull/3/merge"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/4/head",
+      "oid": "43d5155f2ec2834da10d9590a052c367c8957f94",
+      "destination_ref": "refs/heads/archive/scenarios/pull/4/head"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/5/head",
+      "oid": "828cfe37f2a2d6d7f2db868a0856a28c080b7a94",
+      "destination_ref": "refs/heads/archive/scenarios/pull/5/head"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/5/merge",
+      "oid": "9553f855be48dcb015d07e95dd8544ac420dc4dc",
+      "destination_ref": "refs/heads/archive/scenarios/pull/5/merge"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/6/head",
+      "oid": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+      "destination_ref": "refs/heads/archive/scenarios/pull/6/head"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/6/merge",
+      "oid": "214713fffe95935436ad06a503fa185109d5031b",
+      "destination_ref": "refs/heads/archive/scenarios/pull/6/merge"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/7/head",
+      "oid": "64d9c1908a1c157ad6c410a988fcef04178067dc",
+      "destination_ref": "refs/heads/archive/scenarios/pull/7/head"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/7/merge",
+      "oid": "706a5ea138e08bc4723b43b3abe57030a29b8a53",
+      "destination_ref": "refs/heads/archive/scenarios/pull/7/merge"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/8/head",
+      "oid": "3a78ecca24334ae87119a5a0b64c84ba6dd71de1",
+      "destination_ref": "refs/heads/archive/scenarios/pull/8/head"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/remote/pull/8/merge",
+      "oid": "21c5d2205d527087ef3fcb7d981bf1ab8bd33a86",
+      "destination_ref": "refs/heads/archive/scenarios/pull/8/merge"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/worktree/0",
+      "oid": "5b718984ac67b8fb49e02f4dab676ae212d2aa58",
+      "destination_ref": "refs/heads/archive/scenarios/worktree/0"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/worktree/1",
+      "oid": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+      "destination_ref": "refs/heads/archive/scenarios/worktree/1"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/ci/docs-link-checks",
+      "oid": "692bb467bda71078f37bbeb1658f42f3f7212f7f",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/ci/website-quality",
+      "oid": "8671ab2ee481a894784afe2a2cc216fb6931b02c",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/ci/website-quality"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/feat/agent-decision-evidence",
+      "oid": "49914a2ca7358a9e45befc9b458f7f3ac52c6142",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/feat/agent-decision-evidence"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/feat/token-schema",
+      "oid": "13fc98d79c8a7aee1cc014ff1527a9dbe730dad2",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/feat/token-schema"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/feat/tokyo-continuity",
+      "oid": "771670917494a4ae0d05a9cced240141e4bdf792",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/feat/tokyo-continuity"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/feat/trace-execution-differences",
+      "oid": "dacd13415cf3babcff69f6f64ccad1382b273ba8",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/feat/trace-execution-differences"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/feat/trace-report-viewer",
+      "oid": "b7c20ce2c080427fe0742a1afcb5dbc49277de70",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/feat/trace-report-viewer"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/fix/native-balance-summary",
+      "oid": "b53a03e4cb60e049a2eb85c9a0d94232c53ddef8",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/fix/native-balance-summary"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/fix/report-accessibility",
+      "oid": "d7785e201a4de50b72623a1e7522762738abab54",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/fix/report-accessibility"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/heads/main",
+      "oid": "ab121348b0ffbec5650f9eadf0a0b11f639d9780",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/main"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/ci/docs-link-checks",
+      "oid": "692bb467bda71078f37bbeb1658f42f3f7212f7f",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/ci/docs-link-checks"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/ci/website-quality",
+      "oid": "8671ab2ee481a894784afe2a2cc216fb6931b02c",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/ci/website-quality"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/checkout-7",
+      "oid": "e9815b71f7335307c02199e2be27d6dd0d536901",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/dependabot/github_actions/actions/checkout-7"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/configure-pages-6",
+      "oid": "b8b97fad97752ae43f397f5da95c379f630bcdb3",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/dependabot/github_actions/actions/configure-pages-6"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/deploy-pages-5",
+      "oid": "7bc953c1c31f1774062c38ee0a848ce7a69ca7e5",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/dependabot/github_actions/actions/deploy-pages-5"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/setup-node-7",
+      "oid": "50a19ae68655372537e4f0d4777affcc52864b26",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/dependabot/github_actions/actions/setup-node-7"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/dependabot/github_actions/actions/setup-python-7",
+      "oid": "820cc78236436f2987788ad9640ee132cef562a7",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/dependabot/github_actions/actions/setup-python-7"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/feat/agent-decision-evidence",
+      "oid": "49914a2ca7358a9e45befc9b458f7f3ac52c6142",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/feat/agent-decision-evidence"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/feat/token-schema",
+      "oid": "13fc98d79c8a7aee1cc014ff1527a9dbe730dad2",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/feat/token-schema"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/feat/tokyo-continuity",
+      "oid": "771670917494a4ae0d05a9cced240141e4bdf792",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/feat/tokyo-continuity"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/feat/trace-execution-differences",
+      "oid": "dacd13415cf3babcff69f6f64ccad1382b273ba8",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/feat/trace-execution-differences"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/feat/trace-report-viewer",
+      "oid": "b7c20ce2c080427fe0742a1afcb5dbc49277de70",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/feat/trace-report-viewer"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/fix/native-balance-summary",
+      "oid": "b53a03e4cb60e049a2eb85c9a0d94232c53ddef8",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/fix/native-balance-summary"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/fix/report-accessibility",
+      "oid": "d7785e201a4de50b72623a1e7522762738abab54",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/fix/report-accessibility"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/heads/main",
+      "oid": "d44af5d01f692e177af055338202695e5930c95f",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/remote/main"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/10/head",
+      "oid": "d7785e201a4de50b72623a1e7522762738abab54",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/10/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/10/merge",
+      "oid": "2bfc99850d355d22815a78e6e4250138491c8986",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/10/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/11/head",
+      "oid": "8671ab2ee481a894784afe2a2cc216fb6931b02c",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/11/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/11/merge",
+      "oid": "264d99e96ae0097885587c464875e93d4ac9d3c5",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/11/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/13/head",
+      "oid": "771670917494a4ae0d05a9cced240141e4bdf792",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/13/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/14/head",
+      "oid": "49914a2ca7358a9e45befc9b458f7f3ac52c6142",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/14/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/14/merge",
+      "oid": "423c1514385c0b0f78a504d4e45687e2f94e0853",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/14/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/15/head",
+      "oid": "b7c20ce2c080427fe0742a1afcb5dbc49277de70",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/15/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/15/merge",
+      "oid": "9d0682c9517073d196bd0e1c6b8cec248523cd10",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/15/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/16/head",
+      "oid": "dacd13415cf3babcff69f6f64ccad1382b273ba8",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/16/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/16/merge",
+      "oid": "c15166211ec6d6792406647bd3b10c5735e6c612",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/16/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/2/head",
+      "oid": "50a19ae68655372537e4f0d4777affcc52864b26",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/2/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/2/merge",
+      "oid": "e462e5476868357f96ee4cdbe6313b226f18a078",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/2/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/3/head",
+      "oid": "7bc953c1c31f1774062c38ee0a848ce7a69ca7e5",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/3/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/3/merge",
+      "oid": "4121369a35359e5349de1a59e41dcce6c3bf1dea",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/3/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/4/head",
+      "oid": "820cc78236436f2987788ad9640ee132cef562a7",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/4/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/4/merge",
+      "oid": "e885ca0616475f664ee17d8afd792a9cf8716b45",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/4/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/5/head",
+      "oid": "b8b97fad97752ae43f397f5da95c379f630bcdb3",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/5/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/5/merge",
+      "oid": "43d9cadb365ca28fabd0412b699e52907dd7affb",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/5/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/6/head",
+      "oid": "e9815b71f7335307c02199e2be27d6dd0d536901",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/6/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/6/merge",
+      "oid": "77c6c4484aa5e4e49f26d32a3117bfd0d3021bb9",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/6/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/7/head",
+      "oid": "13fc98d79c8a7aee1cc014ff1527a9dbe730dad2",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/7/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/8/head",
+      "oid": "b53a03e4cb60e049a2eb85c9a0d94232c53ddef8",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/8/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/9/head",
+      "oid": "692bb467bda71078f37bbeb1658f42f3f7212f7f",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/9/head"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/remote/pull/9/merge",
+      "oid": "5e16df1863e57d227bef249fd9cb90a05db65896",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/pull/9/merge"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/worktree/0",
+      "oid": "771670917494a4ae0d05a9cced240141e4bdf792",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/worktree/0"
+    },
+    {
+      "source_repository": "entrotter.github.io",
+      "source_ref": "refs/migration/worktree/1",
+      "oid": "dacd13415cf3babcff69f6f64ccad1382b273ba8",
+      "destination_ref": "refs/heads/archive/entrotter.github.io/worktree/1"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/source/entrotter/remotes/origin/dependabot/github_actions/actions/checkout-7",
+      "oid": "250fe46747bb15b85fb64824b4ca5c42b5ae95ce",
+      "destination_ref": "refs/tags/archive/entrotter/preserved/1ee16feacc37e75bf7aa"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/source/entrotter/remotes/origin/dependabot/github_actions/actions/setup-node-7",
+      "oid": "119edd5fdc0140d07417d8316e328710cd833636",
+      "destination_ref": "refs/tags/archive/entrotter/preserved/087e980acd991322faec"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/source/entrotter/remotes/origin/dependabot/github_actions/actions/setup-python-7",
+      "oid": "d97ff8936c07f1f8568883fcb68646c9973b819f",
+      "destination_ref": "refs/tags/archive/entrotter/preserved/10ed5e535b2e8b808be0"
+    },
+    {
+      "source_repository": "entrotter",
+      "source_ref": "refs/migration/source/entrotter/remotes/origin/dependabot/github_actions/actions/upload-artifact-7",
+      "oid": "9c7c90de3012bbd0be63d7afb565242820c9651a",
+      "destination_ref": "refs/tags/archive/entrotter/preserved/85bca25aa61915eb0e72"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/source/scenarios/remotes/origin/dependabot/github_actions/actions/checkout-7",
+      "oid": "37c0a2f8c12757ed429f13352a1a93ee3900fdba",
+      "destination_ref": "refs/tags/archive/scenarios/preserved/681fce36d67b4c14c3f3"
+    },
+    {
+      "source_repository": "scenarios",
+      "source_ref": "refs/migration/source/scenarios/remotes/origin/dependabot/github_actions/actions/setup-python-7",
+      "oid": "f6039b15c80bd89d68f0b463ae9561a4f51f4c01",
+      "destination_ref": "refs/tags/archive/scenarios/preserved/a160efd11b127ba5fc23"
+    }
+  ],
+  "unfinished_work": {
+    "branch": "migration/local-cli-save",
+    "commit": "79340eae730d4bbdca1bd88597ffda1362953c8a",
+    "source_patch_sha256": "53e456f73be3bb22e0b9a9be304a2477dfefa6c712c79df21b68d2d562d6c30d",
+    "files": [
+      "website/README.md",
+      "website/SECURITY.md",
+      "website/app.js",
+      "website/evidence/cli-copy/view.json",
+      "website/index.html",
+      "website/scripts/check_accessibility.mjs",
+      "website/security-reviewed.json",
+      "website/tests/report.test.mjs"
+    ],
+    "source_working_tree_bytes_exact": true,
+    "status": "preserved unfinished work; independent review and integration pending"
+  },
+  "private_backup": {
+    "workspace_manifest_sha256": "f11372d2bb5a9397d4509a73f922b749b0307e818f919bbcc0a1c734b7ee8072",
+    "files": 125701,
+    "logical_bytes": 12424955111,
+    "storage": "owner-controlled permanent directory outside the old Org; private location retained separately",
+    "same_physical_disk": true,
+    "all_CI_archive_backup": "PASS_initial_659_independent_exact_zip_reconstruction_and_CRC",
+    "full_asset_and_deletion_audit": "pending",
+    "CI_archives": 659,
+    "CI_original_zip_bytes": 1582420349,
+    "CI_restore_proof_sha256": "2de9890b2f68b8a5427a4875f44cd13503d881d5114e7d9c19efcdc2371a4b65"
+  },
+  "hosting": {
+    "provider": "Vercel",
+    "url": "https://entrotter.vercel.app/",
+    "project": "entrotter",
+    "initial_source_commit": "dacd13415cf3babcff69f6f64ccad1382b273ba8",
+    "backend": "local",
+    "monorepo_Git_integration": "pending"
+  },
+  "metadata_migration": {
+    "coordinator_issues_and_PRs": "formal transfer pending; preserve original IDs",
+    "component_issues_PR_reviews": "authenticated private export preserved; provenance and unfinished-work mapping pending",
+    "stars": "not merged or fabricated"
+  },
+  "extra_assets": [
+    {
+      "repository": "entrotter/tokyo2026",
+      "repository_id": 1389327581,
+      "backup": "Git and release attachments restored",
+      "disposition": "awaiting owner response; not merged into public project"
+    }
+  ],
+  "frozen_evidence_policy": "Original reports, benchmarks, source Git objects and media stay unchanged; old repo/ref/SHA/path maps through component history and folder prefixes. New path adaptations are separate source changes.",
+  "local_foundation_validation": {
+    "status": "passed_scoped_checks_and_independent_reviews",
+    "python_tests": 626,
+    "javascript_tests": 138,
+    "actual_skips": 0,
+    "source_security_findings": {
+      "coordination": 88,
+      "website": 159
+    },
+    "fresh_committed_clone": "pending",
+    "remote_CI": "pending",
+    "main_approval": "pending"
+  }
+}

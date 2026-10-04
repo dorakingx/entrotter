@@ -1,6 +1,6 @@
 # Entrotter Python SDK
 
-[Workspace setup](https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
+[Workspace setup](../README.md#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
 
 A Python 3.11+ standard-library client for the Entrotter local API. MIT licensed.
 No API credential or chain access is needed for the unit tests.

@@ -4,8 +4,8 @@ All code, issues, documentation, and reviews are in English. Small, focused
 pull requests are welcome. Choose a scoped task from the
 [first-contribution directory](docs/FIRST_CONTRIBUTION.md). You do not need cloud
 accounts or paid API keys for the offline tests. The
-[integration workflow](.github/workflows/ci.yml) specifies each test job's pinned
-sibling checkouts, environment and commands. Some tests deliberately exercise
+[integration workflow](.github/workflows/ci.yml) specifies the monorepo source, environment and commands.
+Migration CI adaptation is tracked in MIGRATION_STATUS.md. Some tests deliberately exercise
 frozen native versions, so a bare unittest run or the candidate workspace alone
 is not equivalent to every CI job. The [quick start](docs/QUICK_START.md) covers
 the candidate's Docker prerequisites and full local report reproduction.
@@ -16,9 +16,9 @@ the candidate's Docker prerequisites and full local report reproduction.
 4. Document assumptions, provenance, compatibility, and any skipped checks.
 5. Open a PR with the included template. One concern per PR; no unrelated rewrites.
 
-Cross-repository changes: open a tracking issue in `entrotter/entrotter`,
-link dependent PRs, and keep compatibility with the existing v0.1 JSON wire
-contract. Changes to schemas belong in `entrotter/scenarios`. Breaking changes
+Cross-component changes: open a tracking issue in `dorakingx/entrotter`,
+link focused dependent PRs, and keep compatibility with the existing v0.1 JSON
+wire contract. Changes to schemas belong in `scenarios/`. Breaking changes
 need a version bump and migration note. Never add a runtime Git dependency.
 
 Fork PRs run unprivileged tests only. Never use `pull_request_target` to run

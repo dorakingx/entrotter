@@ -8,37 +8,15 @@ permissions:
   contents: read
 jobs:
   integration:
+    env:
+      PYTHONPATH: engine/src:sdk-python/src:cli/src
+      ENTROTTER_DOCKER_SOCKET: /var/run/docker.sock
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          repository: entrotter/entrotter
-          path: entrotter
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/engine
-          ref: bb8b3e8d32c7cbd49629d337758f30bfdf805045
-          path: engine
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/sdk-python
-          ref: f65f45de26c2658e2269a02a5dbe7c90c74b1cba
-          path: sdk-python
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/cli
-          ref: b6a7f4d96cec08f4779968b9f63bab3f9b405fe8
-          path: cli
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/scenarios
-          ref: 5b718984ac67b8fb49e02f4dab676ae212d2aa58
-          path: scenarios
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/entrotter.github.io
-          ref: ab121348b0ffbec5650f9eadf0a0b11f639d9780
-          path: entrotter.github.io
+          fetch-depth: 0
+          persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
@@ -49,47 +27,47 @@ jobs:
         with:
           node-version: '22'
       - run: |
-          python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r entrotter/requirements-contracts.txt
-      - run: python entrotter/scripts/verify.py --require-anvil
+          python -m pip install --require-hashes --only-binary=:all: --index-url https://pypi.org/simple -r requirements-contracts.txt
+      - name: Build the source-bound current worker
+        run: |
+          python engine/scripts/build_worker.py --output .quality/integration-image.json
+          python - <<'PYIMAGE'
+          import json, os
+          with open(os.environ['GITHUB_ENV'], 'a') as stream:
+              stream.write('ENTROTTER_WORKER_IMAGE=' + json.load(open('.quality/integration-image.json'))['image_id'] + '\n')
+          PYIMAGE
+      - run: python scripts/verify.py --require-anvil
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: verification-evidence
-          path: entrotter/evidence/
+          path: evidence/monorepo-verification/
   host-bounds:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          path: entrotter
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/engine
-          ref: 80e8ce2386812daa8f6150048f84ab316624cc0d
-          path: engine
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/sdk-python
-          ref: ee5523ded16488af32d1f64040f1996cd002f8f3
-          path: sdk-python
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/cli
-          ref: aba6a6147b2b4b96facf758f9b95b63d8e6b5952
-          path: cli
+          fetch-depth: 0
+          persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
       - uses: foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09
         with:
           version: v1.8.3
+      - name: Materialize historical host regression variants from local history
+        run: |
+          mkdir -p .quality/host-history
+          git worktree add --detach .quality/host-history/engine 80e8ce2386812daa8f6150048f84ab316624cc0d
+          git worktree add --detach .quality/host-history/sdk-python ee5523ded16488af32d1f64040f1996cd002f8f3
+          git worktree add --detach .quality/host-history/cli aba6a6147b2b4b96facf758f9b95b63d8e6b5952
       - name: Verify CLI-SDK-API success, quota errors and connection recovery
-        run: PYTHONPATH=engine/src:sdk-python/src:cli/src python entrotter/scripts/check_host_limits.py --output entrotter/evidence/host-limits-ci.json
+        run: PYTHONPATH=.quality/host-history/engine/src:.quality/host-history/sdk-python/src:.quality/host-history/cli/src python scripts/check_host_limits.py --output evidence/monorepo-verification/host-limits-ci.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: host-limits-evidence
-          path: entrotter/evidence/host-limits-ci.json
+          path: evidence/monorepo-verification/host-limits-ci.json
           if-no-files-found: error
   bounded-default:
     runs-on: ubuntu-latest
@@ -100,27 +78,8 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          path: entrotter
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/engine
-          ref: f53a66a303e67ca4fbb4322a06b36b036f4db599
-          path: engine
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/sdk-python
-          ref: ba4af512784119f23b6dea63fd24c7f5d1fdde44
-          path: sdk-python
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/cli
-          ref: 169b759aff9280ce44fb0d15569c7ae0a4a40889
-          path: cli
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: entrotter/entrotter.github.io
-          ref: dacd13415cf3babcff69f6f64ccad1382b273ba8
-          path: entrotter.github.io
+          fetch-depth: 0
+          persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
@@ -131,9 +90,9 @@ jobs:
           from pathlib import Path
           from entrotter_sdk import load_trace
           files = [
-              Path('entrotter/evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json'),
+              Path('evidence/canonical-mine-integration/bounded-mainnet-prefix-four.json'),
               Path('sdk-python/tests/data/canonical-mainnet-prefix-four.result.json'),
-              Path('entrotter.github.io/reports/trace-mainnet-prefix-four.json'),
+              Path('website/reports/trace-mainnet-prefix-four.json'),
           ]
           digest = '1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2'
           assert all(hashlib.sha256(p.read_bytes()).hexdigest() == digest for p in files)
@@ -146,11 +105,11 @@ jobs:
           assert rows[1].candidate.receipt.gas_used == 245136
           assert rows[2].candidate.receipt.gas_used == 185721
           assert rows[3].candidate.expected_nonce == 5522 and rows[3].candidate.original_nonce == 5523
-          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-reader.json')
+          out = Path('evidence/monorepo-verification/integration-ci/trace-reader.json')
           out.parent.mkdir(parents=True, exist_ok=True)
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'offline original-report inspection; no new chain/model call',
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'artifact_id': report.artifact_id, 'report_sha256': digest,
               'identical_report_files': [str(p) for p in files],
               'baseline_verified': report.baseline_verified,
@@ -172,7 +131,7 @@ jobs:
           from pathlib import Path
           from entrotter_sdk import load_trace
           source = Path('engine/evidence/trace-parent-cache/native-005/report.json')
-          fixture = Path('entrotter.github.io/tests/data/trace-oracle-prefix-32.json')
+          fixture = Path('website/tests/data/trace-oracle-prefix-32.json')
           digest = '72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120'
           assert source.read_bytes() == fixture.read_bytes()
           assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
@@ -198,8 +157,8 @@ jobs:
               )
               assert row.candidate.receipt == expected
               assert row.candidate.differing_fields == (() if i < 12 else ('cumulativeGasUsed', 'transactionIndex'))
-          module = Path('entrotter.github.io/trace-report.mjs')
-          classification = Path('entrotter.github.io/trace-comparison.mjs')
+          module = Path('website/trace-report.mjs')
+          classification = Path('website/trace-comparison.mjs')
           program = """
           import fs from 'node:fs';
           import assert from 'node:assert/strict';
@@ -226,11 +185,11 @@ jobs:
                                      check=True, capture_output=True, text=True, timeout=30)
           viewer = json.loads(completed.stdout)
           assert viewer['artifact_id'] == report.artifact_id
-          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-comparison-reader.json')
+          out = Path('evidence/monorepo-verification/integration-ci/trace-comparison-reader.json')
           out.parent.mkdir(parents=True, exist_ok=True)
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'offline original32 report inspection; no new EVM/archive/model call',
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'report_sha256': digest, 'artifact_id': report.artifact_id,
               'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
               'classification_module_sha256': hashlib.sha256(classification.read_bytes()).hexdigest(),
@@ -276,8 +235,8 @@ jobs:
               )
               assert row.candidate.receipt == expected
               assert row.candidate.differing_fields == (() if i < 12 else ('cumulativeGasUsed', 'transactionIndex'))
-          module = Path('entrotter.github.io/trace-report.mjs')
-          classification = Path('entrotter.github.io/trace-comparison.mjs')
+          module = Path('website/trace-report.mjs')
+          classification = Path('website/trace-comparison.mjs')
           program = """
           import fs from 'node:fs';
           import assert from 'node:assert/strict';
@@ -364,11 +323,11 @@ jobs:
           checker.rows = consumer['rows']
           observed = checker.classify(producer, report.baseline_verified)
           assert observed['owned_read_only_price_observation_complete'] is True and observed['unproven_reasons'] == []
-          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-consumer-reader.json')
+          out = Path('evidence/monorepo-verification/integration-ci/trace-consumer-reader.json')
           out.parent.mkdir(parents=True, exist_ok=True)
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'Offline native006 report and separate owned view records; no new EVM/archive/model/browser call',
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'report_sha256': digest, 'artifact_id': report.artifact_id,
               'consumer_observations_sha256': hashlib.sha256(consumer_source.read_bytes()).hexdigest(),
               'producer_observations_sha256': hashlib.sha256(producer_source.read_bytes()).hexdigest(),
@@ -405,7 +364,7 @@ jobs:
           assert [r.baseline.receipt.cumulative_gas_used for r in report.transactions] == [21000, 42000]
           assert [r.candidate.status for r in report.transactions] == ['skipped', 'not_mined']
           assert all(r.candidate.receipt is None for r in report.transactions)
-          module = Path('entrotter.github.io/trace-report.mjs')
+          module = Path('website/trace-report.mjs')
           program = """
           import fs from 'node:fs';
           import assert from 'node:assert/strict';
@@ -423,11 +382,11 @@ jobs:
                                      check=True, capture_output=True, text=True, timeout=30)
           viewer = json.loads(completed.stdout)
           assert viewer['artifact_id'] == report.artifact_id
-          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-funding-reader.json')
+          out = Path('evidence/monorepo-verification/integration-ci/trace-funding-reader.json')
           out.parent.mkdir(parents=True, exist_ok=True)
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'offline synthetic report inspection; no new EVM/model call',
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'report_sha256': digest, 'artifact_id': report.artifact_id,
               'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(),
               'baseline_gas': [21000, 21000], 'baseline_cumulative_gas': [21000, 42000],
@@ -449,7 +408,7 @@ jobs:
               'native-provider-control.json': '66c1d555ad0068e128c8e5cdc0619f71824c4401177b0c3f1b84a77be4572b5d',
               'native-missing-storage.json': '2d1449f0807329e6f70799c0ff02ec69d2c8e1050c15425fd3f13aad034c034b',
           }
-          module = Path('entrotter.github.io/trace-report.mjs')
+          module = Path('website/trace-report.mjs')
           program = """
           import fs from 'node:fs';
           import assert from 'node:assert/strict';
@@ -498,11 +457,11 @@ jobs:
                               'artifact_id': report.artifact_id, 'baseline_verified': report.baseline_verified,
                               'baseline_statuses': [r.baseline.status for r in report.transactions],
                               'candidate_statuses': [r.candidate.status for r in report.transactions], 'viewer': viewer})
-          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-oracle-reader.json')
+          out = Path('evidence/monorepo-verification/integration-ci/trace-oracle-reader.json')
           out.parent.mkdir(parents=True, exist_ok=True)
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'offline synthetic oracle/provider-fault reports; no new EVM/model call',
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'viewer_module_sha256': hashlib.sha256(module.read_bytes()).hexdigest(), 'reports': results,
               'limits': ['Known storage-fault cause comes from separate test controls, not receipt absence.',
                          'Synthetic native source is not archived oracle or host default-worker proof.',
@@ -523,7 +482,7 @@ jobs:
           digest = '7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d'
           assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
           observed = load_observed_trace(source)
-          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-observed-reader.json')
+          out = Path('evidence/monorepo-verification/integration-ci/trace-observed-reader.json')
           out.parent.mkdir(parents=True, exist_ok=True)
           os.environ['ENTROTTER_EXPORT_STATE_DIR'] = str(Path(os.environ.get('RUNNER_TEMP', '.quality')) / 'observed-reader-export-state')
           exported = out.with_name('observed-transaction-replay.json')
@@ -599,10 +558,10 @@ jobs:
           assert cli_inspected['observations'] == json.loads(json.dumps(sdk_phases))
           cli_module = Path('cli/src/entrotter_cli/main.py')
           sdk_module = Path('sdk-python/src/entrotter_sdk/observed.py')
-          module = Path('entrotter.github.io/trace-report.mjs')
-          comparison = Path('entrotter.github.io/trace-comparison.mjs')
-          observer_module = Path('entrotter.github.io/observed-trace.mjs')
-          viewer_record = Path('entrotter.github.io/reports/trace-observed-price32.json')
+          module = Path('website/trace-report.mjs')
+          comparison = Path('website/trace-comparison.mjs')
+          observer_module = Path('website/observed-trace.mjs')
+          viewer_record = Path('website/reports/trace-observed-price32.json')
           assert viewer_record.read_bytes() == source.read_bytes()
           program = """
           import fs from 'node:fs';
@@ -665,7 +624,7 @@ jobs:
           } for price, row in zip(prices, observed['observations'])]
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'offline supported sealed wrapper to normal quota-bound report export, SDK and actual Node viewer; no fresh archive/EVM/model/browser call',
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'wrapper_sha256': digest, 'wrapper_artifact_id': observed['artifact_id'],
               'trace_artifact_id': report.artifact_id, 'export_sha256': export_digest,
               'baseline_receipts_equal_originals': 32, 'candidate_executed': 31, 'skip_indices': [12],
@@ -698,7 +657,7 @@ jobs:
           digest = '724c3786efa78f666725022955c4df53b1c22458241f8ae994e5875d690da0d1'
           assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
           observed = load_observed_trace(source)
-          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/trace-bounded-observed-reader.json')
+          out = Path('evidence/monorepo-verification/integration-ci/trace-bounded-observed-reader.json')
           out.parent.mkdir(parents=True, exist_ok=True)
           os.environ['ENTROTTER_EXPORT_STATE_DIR'] = str(Path(os.environ.get('RUNNER_TEMP', '.quality')) / 'bounded-observed-reader-export-state')
           exported = out.with_name('bounded-observed-transaction-replay.json')
@@ -774,10 +733,10 @@ jobs:
           assert cli_inspected['observations'] == json.loads(json.dumps(sdk_phases))
           cli_module = Path('cli/src/entrotter_cli/main.py')
           sdk_module = Path('sdk-python/src/entrotter_sdk/observed.py')
-          module = Path('entrotter.github.io/trace-report.mjs')
-          comparison = Path('entrotter.github.io/trace-comparison.mjs')
-          observer_module = Path('entrotter.github.io/observed-trace.mjs')
-          viewer_record = Path('entrotter.github.io/reports/trace-observed-price32.json')
+          module = Path('website/trace-report.mjs')
+          comparison = Path('website/trace-comparison.mjs')
+          observer_module = Path('website/observed-trace.mjs')
+          viewer_record = Path('website/reports/trace-observed-price32.json')
           native = load_observed_trace(viewer_record)
           for key in ('observations', 'classification', 'profile', 'scope'):
               assert observed[key] == native[key]
@@ -846,7 +805,7 @@ jobs:
           } for price, row in zip(prices, observed['observations'])]
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'offline supported sealed wrapper to normal quota-bound report export, SDK and actual Node viewer; no fresh archive/EVM/model/browser call',
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'wrapper_sha256': digest, 'wrapper_artifact_id': observed['artifact_id'],
               'trace_artifact_id': report.artifact_id, 'export_sha256': export_digest,
               'baseline_receipts_equal_originals': 32, 'candidate_executed': 31, 'skip_indices': [12],
@@ -938,12 +897,12 @@ jobs:
           assert {k: v for k, v in inspected.items() if k not in ('observations', 'price_observations')} == verified
           assert inspected['observations'] == phases
           assert inspected['price_observations'] == json.loads(json.dumps([asdict(row) for row in position.prices.observations]))
-          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/account-position-reader.json')
+          out = Path('evidence/monorepo-verification/integration-ci/account-position-reader.json')
           out.parent.mkdir(parents=True, exist_ok=True)
           modules = ('engine/src/entrotter_engine/position_observations.py', 'sdk-python/src/entrotter_sdk/position.py', 'cli/src/entrotter_cli/main.py')
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'Offline full Engine/SDK/CLI consistency inspection; no new chain/model/browser execution.',
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'wrapper_sha256': digest, 'artifact_id': position.artifact_id,
               'price_artifact_id': position.prices.artifact_id, 'trace_artifact_id': position.trace.artifact_id,
               'baseline_receipts_equal_originals': 13, 'candidate_executed': 12, 'skip_indices': [12],
@@ -967,8 +926,8 @@ jobs:
           from entrotter_sdk import PositionResult, load_position
 
           source = Path('engine/evidence/aave-account-impact/position.json')
-          viewer_source = Path('entrotter.github.io/reports/aave-account-impact13.json')
-          controls_path = Path('entrotter.github.io/tests/data/position-controls.json')
+          viewer_source = Path('website/reports/aave-account-impact13.json')
+          controls_path = Path('website/tests/data/position-controls.json')
           digest = 'cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978'
           assert hashlib.sha256(source.read_bytes()).hexdigest() == digest
           assert source.read_bytes() == viewer_source.read_bytes()
@@ -998,8 +957,8 @@ jobs:
                   return [quantities(item) for item in value]
               return value
 
-          module = Path('entrotter.github.io/position-report.mjs').resolve()
-          observer = Path('entrotter.github.io/observed-trace.mjs').resolve()
+          module = Path('website/position-report.mjs').resolve()
+          observer = Path('website/observed-trace.mjs').resolve()
           program = r'''
           import fs from 'node:fs';
           import assert from 'node:assert/strict';
@@ -1037,7 +996,7 @@ jobs:
           completed = subprocess.run(['node', '--input-type=module', '-e', program, module.as_uri(), observer.as_uri()],
                                      input=payload, check=True, capture_output=True, text=True, timeout=30)
           assert completed.stderr == ''
-          raw_out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/account-viewer-node-output.json')
+          raw_out = Path('evidence/monorepo-verification/integration-ci/account-viewer-node-output.json')
           raw_out.parent.mkdir(parents=True, exist_ok=True)
           raw_out.write_text(completed.stdout)
           viewer = json.loads(completed.stdout)
@@ -1071,20 +1030,20 @@ jobs:
           actual = viewer['results'][0]
           assert actual['capacity_difference'] == '816.28966124'
           assert actual['health_difference'] == '0.003852169807877337'
-          out = Path('entrotter/evidence/bounded-agent-integration/integration-ci/account-viewer-reader.json')
+          out = Path('evidence/monorepo-verification/integration-ci/account-viewer-reader.json')
           out.parent.mkdir(parents=True, exist_ok=True)
           # Full trace is already retained by the original eighth reader/owning sample;
           # compare every byte-semantic field above and bind its unchanged artifact here.
           results = [{key: value for key, value in row.items() if key != 'trace_report'} for row in viewer['results']]
           out.write_text(json.dumps({
               'status': 'passed', 'execution': 'Offline full SDK/Node account-plan, classification, four-phase and nested trace consistency; no new RPC/EVM/model/browser execution.',
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'wrapper_sha256': digest, 'controls_sha256': hashlib.sha256(controls_path.read_bytes()).hexdigest(),
               'node': viewer['node'], 'results': results,
               'baseline_receipts_equal_originals': 13, 'candidate_executed': 12, 'skip_indices': [12],
               'module_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in [
-                  Path('entrotter.github.io/position-report.mjs'), Path('entrotter.github.io/observed-trace.mjs'),
-                  Path('entrotter.github.io/trace-report.mjs'), Path('sdk-python/src/entrotter_sdk/position.py')]},
+                  Path('website/position-report.mjs'), Path('website/observed-trace.mjs'),
+                  Path('website/trace-report.mjs'), Path('sdk-python/src/entrotter_sdk/position.py')]},
               'limits': ['Nine synthetic controls reuse unchanged nested price/trace evidence; they are not new chain or user data.',
                          'Three recomputable seals/internal consistency do not authenticate providers/proxies/EVM state or profit.',
                          'Node codec coupling is separate from the viewer\'s actual Linux browser CI and live Pages.',
@@ -1102,7 +1061,7 @@ jobs:
           process = subprocess.run(command, capture_output=True, text=True, timeout=30)
           expected = Path('cli/tests/data/aave-account-position13.txt')
           result = {
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'command': command[1:], 'returncode': process.returncode,
               'stdout': process.stdout, 'stderr': process.stderr,
               'expected_sha256': hashlib.sha256(expected.read_bytes()).hexdigest(),
@@ -1111,7 +1070,7 @@ jobs:
                   Path('sdk-python/src/entrotter_sdk/position.py')]},
               'scope': 'Offline presentation of the unchanged recorded13 result; no fresh EVM, model or timing claim.',
           }
-          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/cli-position-text.json')
+          output = Path('evidence/monorepo-verification/integration-ci/cli-position-text.json')
           output.write_text(json.dumps(result, indent=2) + '\n')
           assert process.returncode == 0, result
           assert process.stderr == '', result
@@ -1133,13 +1092,13 @@ jobs:
               'cli/tests/data/aave-account-position13.json', 'cli/tests/data/observed-price32.json',
               'cli/tests/data/observed-controls.json']]
           result = {
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'command': command[1:], 'returncode': process.returncode,
               'stdout': process.stdout, 'stderr': process.stderr,
               'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
               'scope': 'Offline CLI process exit contracts with selected SDK; synthetic controls are not fresh EVM evidence.',
           }
-          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/cli-require-complete.json')
+          output = Path('evidence/monorepo-verification/integration-ci/cli-require-complete.json')
           output.write_text(json.dumps(result, indent=2) + '\n')
           assert process.returncode == 0, result
           assert 'Ran 9 tests' in process.stderr and process.stderr.endswith('\nOK\n'), result
@@ -1158,13 +1117,13 @@ jobs:
                      Path('cli/src/entrotter_cli/observed_text.py'), Path('cli/src/entrotter_cli/position_text.py'),
                      Path('sdk-python/src/entrotter_sdk/observed.py'), Path('sdk-python/src/entrotter_sdk/trace.py')]
           result = {
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'command': command[1:], 'returncode': process.returncode,
               'stdout': process.stdout, 'stderr': process.stderr,
               'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
               'scope': 'Offline exact presentation of original native32 recorded views; no fresh EVM/model/timing claim.',
           }
-          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/cli-observed-text.json')
+          output = Path('evidence/monorepo-verification/integration-ci/cli-observed-text.json')
           output.parent.mkdir(parents=True, exist_ok=True)
           output.write_text(json.dumps(result, indent=2) + '\n')
           assert process.returncode == 0, result
@@ -1179,7 +1138,7 @@ jobs:
           import hashlib, json, os, subprocess, sys
           from pathlib import Path
           source = Path('engine/evidence/aave-borrow-actions/report.json')
-          output = Path('entrotter/evidence/bounded-agent-integration/integration-ci/aave-actions-viewer.json')
+          output = Path('evidence/monorepo-verification/integration-ci/aave-actions-viewer.json')
           guard = "import socket; socket.socket.connect=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted network')); "
           engine_guard = guard + "import runpy,sys; sys.argv=['engine/scripts/aave_borrow.py','--check',sys.argv[1]]; runpy.run_path(sys.argv[0],run_name='__main__')"
           cli_guard = guard + "import runpy,sys; sys.modules['entrotter_engine']=None; from entrotter_sdk import Client; Client._request=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted API')); import entrotter_cli.main as c; c.ExportBudget=lambda *a, **k: (_ for _ in ()).throw(AssertionError('Offline reader attempted export')); sys.argv=['entrotter_cli',*sys.argv[1:]]; runpy.run_module('entrotter_cli',run_name='__main__')"
@@ -1192,7 +1151,7 @@ jobs:
             crypto: webcrypto, TextEncoder,
             fetch: () => { throw new Error('Offline viewer attempted network'); },
           });
-          vm.runInContext(readFileSync('entrotter.github.io/app.js', 'utf8'), context, {timeout: 2000});
+          vm.runInContext(readFileSync('website/app.js', 'utf8'), context, {timeout: 2000});
           const report = JSON.parse(readFileSync(process.argv[1], 'utf8'));
           await context.checkHash(report);
           const view = context.evmViewModel(report), agent = await context.agentViewModel(report);
@@ -1217,13 +1176,13 @@ jobs:
                      Path('engine/tests/data/aave-borrow-actions.json'),
                      Path('cli/tests/data/aave-borrow-result.json'),
                      Path('cli/tests/data/aave-borrow-result.txt'),
-                     Path('entrotter.github.io/app.js'),
-                     Path('entrotter.github.io/reports/aave-borrow-actions.json'),
-                     Path('entrotter.github.io/evidence/cli-copy/view.json'),
+                     Path('website/app.js'),
+                     Path('website/reports/aave-borrow-actions.json'),
+                     Path('website/evidence/cli-copy/view.json'),
                      *sorted(Path('cli/src/entrotter_cli').glob('*.py')),
                      *sorted(Path('sdk-python/src/entrotter_sdk').glob('*.py'))]
           result = {
-              'pins': json.loads(Path('entrotter/bounded-worker-pins.json').read_text()),
+              'pins': json.loads(Path('bounded-worker-pins.json').read_text()),
               'commands': results,
               'source_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
               'scope': 'Offline check and standalone CLI/SDK/production browser view-model inspection of the recorded real Aave action result; no fresh EVM, RPC, model or export.',
@@ -1234,42 +1193,52 @@ jobs:
           assert len(source.read_bytes()) == 59506, result
           assert result['source_sha256'][str(source)] == 'e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622', result
           assert Path('cli/tests/data/aave-borrow-result.json').read_bytes() == source.read_bytes(), result
-          evidence = Path('entrotter/evidence/aave-action-integration')
+          evidence = Path('evidence/aave-action-integration')
           for item in results[:4]:
-              folder = Path('entrotter/evidence/aave-result-text-integration') if item['name'] == 'inspect-text' else evidence
+              folder = Path('evidence/aave-result-text-integration') if item['name'] == 'inspect-text' else evidence
               assert item['stdout'].encode() == (folder / (item['name'] + '.stdout')).read_bytes(), item
           assert results[3]['stdout'].encode() == Path('cli/tests/data/aave-borrow-result.txt').read_bytes(), result
-          assert Path('entrotter.github.io/reports/aave-borrow-actions.json').read_bytes() == source.read_bytes(), result
-          expected = json.loads(Path('entrotter.github.io/evidence/cli-copy/view.json').read_text())
+          assert Path('website/reports/aave-borrow-actions.json').read_bytes() == source.read_bytes(), result
+          expected = json.loads(Path('website/evidence/cli-copy/view.json').read_text())
           observed = json.loads(results[4]['stdout'])
           assert observed == {key: expected[key] for key in observed}, result
           assert set(observed) == {'artifact_id', 'balanceRows', 'tokenIdentities', 'source', 'recorded_agent_rows'}, result
           assert len(observed['balanceRows']) == 16 and all(len(row) == 4 for row in observed['balanceRows']), result
-          assert expected['app_sha256'] == result['source_sha256']['entrotter.github.io/app.js'], result
+          historical_app = subprocess.check_output([
+              'git', 'show', 'dacd13415cf3babcff69f6f64ccad1382b273ba8:app.js'])
+          assert expected['app_sha256'] == hashlib.sha256(historical_app).hexdigest(), result
+          # Frozen browser evidence stays bound to its original app. Current
+          # migration app runs here and in the current viewer/recipe tests.
+          result['historical_view_binding'] = {
+              'commit': 'dacd13415cf3babcff69f6f64ccad1382b273ba8',
+              'app_sha256': expected['app_sha256'],
+              'is_current_app_evidence': False,
+          }
           assert expected['report_sha256'] == result['source_sha256'][str(source)], result
+          output.write_text(json.dumps(result, indent=2) + '\n')
           print('Recorded supply, reverted borrow, causal hold and successful smaller borrow agree across Engine and standalone CLI/SDK with exact native/ERC20 text and all16 browser initial/final/change/difference rows')
           PYAAVE
       - name: Build source-bound local image
         run: |
-          mkdir -p entrotter/evidence/bounded-agent-integration/integration-ci
-          python engine/scripts/build_worker.py --output entrotter/evidence/bounded-agent-integration/integration-ci/image.json
+          mkdir -p evidence/bounded-agent-integration/integration-ci
+          python engine/scripts/build_worker.py --output evidence/monorepo-verification/integration-ci/image.json
           python - <<'PY'
           import json, os
-          image = json.load(open('entrotter/evidence/bounded-agent-integration/integration-ci/image.json'))['image_id']
+          image = json.load(open('evidence/monorepo-verification/integration-ci/image.json'))['image_id']
           with open(os.environ['GITHUB_ENV'], 'a') as output:
               output.write('ENTROTTER_WORKER_IMAGE=' + image + '\n')
               output.write('ENTROTTER_EXPORT_STATE_DIR=' + os.path.join(os.environ['RUNNER_TEMP'], 'entrotter-export-state') + '\n')
           PY
       - name: Verify shared daemon admission, default CLI-SDK-API, preservation and quotas
-        run: python entrotter/scripts/check_host_limits.py --worker-manifest entrotter/evidence/bounded-agent-integration/integration-ci/image.json --output entrotter/evidence/bounded-agent-integration/integration-ci/integration.json
+        run: python scripts/check_host_limits.py --worker-manifest evidence/monorepo-verification/integration-ci/image.json --output evidence/monorepo-verification/integration-ci/integration.json
       - name: Verify shared export accounting across real CLI processes
-        run: python entrotter/scripts/check_export_budget.py --output entrotter/evidence/bounded-agent-integration/integration-ci/export-contract.json
+        run: python scripts/check_export_budget.py --output evidence/monorepo-verification/integration-ci/export-contract.json
       - name: Verify export failures still reject under Python optimization
-        run: python -O entrotter/scripts/check_export_budget.py --output entrotter/evidence/bounded-agent-integration/integration-ci/optimized-export-contract.json
+        run: python -O scripts/check_export_budget.py --output evidence/monorepo-verification/integration-ci/optimized-export-contract.json
       - name: Measure a clean public checkout with the bounded default
-        run: python entrotter/scripts/reproduce_clean.py --bounded --output entrotter/evidence/bounded-agent-integration/integration-ci/clean-fixture.json
+        run: python scripts/reproduce_clean.py --bounded --output evidence/monorepo-verification/integration-ci/clean-fixture.json
       - name: Measure clean public bounded agent replay and standalone CLI verification
-        run: python entrotter/scripts/reproduce_clean.py --bounded-agent --output entrotter/evidence/bounded-agent-integration/integration-ci/clean-agent.json
+        run: python scripts/reproduce_clean.py --bounded-agent --output evidence/monorepo-verification/integration-ci/clean-agent.json
       - name: Verify no owned worker remains
         if: always()
         run: |
@@ -1280,5 +1249,5 @@ jobs:
         with:
           name: coordination-integration-evidence
           path: |
-            entrotter/evidence/bounded-agent-integration/integration-ci/
+            evidence/monorepo-verification/integration-ci/
           if-no-files-found: error

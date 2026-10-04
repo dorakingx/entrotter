@@ -116,15 +116,15 @@ test("CLI inspection recipe uses pinned sources and fixed report filenames", () 
     const recipe = context.reportCliRecipe(name);
     assert.match(
       recipe.setup,
-      /checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889/,
+      /checkout --detach 23f2bf0c53ff3c9a50348d038d78eeaaf927f059/,
     );
     assert.match(
       recipe.setup,
-      /checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44/,
+      /git clone https:\/\/github\.com\/dorakingx\/entrotter\.git entrotter/,
     );
     assert.equal(
       recipe.command,
-      `PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./${name}.json --format text`,
+      `PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./${name}.json --format text`,
     );
   }
   for (const name of [
@@ -176,7 +176,7 @@ test("local CLI guidance copies a fixed path and clears before another report", 
   element("cli-command").textContent = "private injected filename";
   await local.copyCliRecipe("command");
   assert.deepEqual(writes, [
-    "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+    "PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./local-report.json --format text",
   ]);
   assert.equal(local.reportFromQuery("?report=local-report"), null);
   local.clearReport("Loading");

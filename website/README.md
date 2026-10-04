@@ -1,8 +1,8 @@
 # Entrotter documentation and report explorer
 
-[Workspace setup](https://github.com/entrotter/entrotter#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
+[Workspace setup](../README.md#quick-start-without-dependencies-or-an-api-key) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [MIT license](LICENSE)
 
-A zero-build static OSS website for GitHub Pages. HTML, CSS and plain JavaScript.
+A zero-build static OSS website hosted on Vercel. HTML, CSS and plain JavaScript.
 No framework, npm install, third-party script, tracking, wallet connection or
 public backend is required. User-provided report files stay in the browser.
 
@@ -52,18 +52,20 @@ See [inspection validation](evidence/cli-inspection/README.md) and
 
 ## Deployment
 
-Repository name: `entrotter/entrotter.github.io` (public).
-Intended address: https://entrotter.github.io/ . No custom domain or CNAME.
-Configure Settings > Pages > Source as GitHub Actions, or use the parent
-workspace's reviewed `scripts/publish.py --apply`. Push to main triggers
-`.github/workflows/pages.yml`. A workflow file alone is not proof of a live site.
+The new production project is [entrotter.vercel.app](https://entrotter.vercel.app/).
+Its initial deployment contains reviewed website commit dacd134, before this
+migration. Publication of this migration candidate requires separate review,
+mandatory CI and independent main approval; its Git integration is pending.
 
-The deploy artifact contains only index.html, 404.html, style.css, app.js, comparison.mjs, report-validation.mjs, trace-report.mjs, trace-comparison.mjs, trace-viewer.mjs, observed-trace.mjs, position-report.mjs, public
-assets, schemas and public example reports. It never uploads the repository root,
-private logs or a local .env. Pull requests run checks; only main deploys.
+From the monorepo root, `python3 scripts/publish.py` stages only the explicit
+29-file `public-files.json` allowlist into `website/_site`. Root `vercel.json`
+uses that staging command and output directory. It includes public assets,
+schemas and original reports, never repository metadata, private logs or .env.
+The retired `--apply` command fails without creating repositories or Pages.
+See [hosting and verification](../docs/HOSTING.md).
 
-This site is for OSS documentation and public example inspection, not payment
-processing or a commercial SaaS. The local engine is a separate executable.
+This is OSS documentation and read-only inspection. The backend remains local.
+No custom domain, billing change or hosted transaction service is configured.
 
 ## Assets and tests
 

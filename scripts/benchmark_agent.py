@@ -11,6 +11,7 @@ import resource
 import subprocess
 import time
 
+from entrotter_engine import agent as agent_module
 from entrotter_engine.agent import AgentController, ReplayPolicy, RiskPolicy
 from entrotter_engine.artifact import verify, write_report
 from entrotter_engine.runner import run, run_agent
@@ -18,13 +19,13 @@ from codex_policy import CodexPolicy, PROMPT, PROMPT_VERSION
 from entrotter_engine.agent import digest
 
 ROOT = Path(__file__).resolve().parents[1]
-CASES = ROOT.parent / "scenarios/benchmarks/causal-v1"
+CASES = ROOT / "scenarios/benchmarks/causal-v1"
 FROZEN_MANIFEST_SHA256 = (
     "f147489fcde8de04be6a9de459fe011018488bd75e66a84de55f6a8a35ed030e"
 )
 
 
-def frozen_cases(split):
+def frozen_cases(split, *, verify_engine=True):
     raw = (CASES / "manifest.json").read_bytes()
     if hashlib.sha256(raw).hexdigest() != FROZEN_MANIFEST_SHA256:
         raise ValueError("Frozen manifest changed; use a newly named benchmark")
@@ -40,14 +41,29 @@ def frozen_cases(split):
         or PROMPT_VERSION != policy["prompt_version"]
     ):
         raise ValueError("Prompt differs from the pre-execution freeze")
-    engine = subprocess.check_output(
-        ["git", "-C", str(ROOT.parent / "engine"), "rev-parse", "HEAD"], text=True
-    ).strip()
-    dirty = subprocess.check_output(
-        ["git", "-C", str(ROOT.parent / "engine"), "status", "--porcelain"], text=True
-    ).strip()
-    if engine != policy["engine_commit"] or dirty:
-        raise ValueError("Engine must be clean at the frozen source commit")
+    if verify_engine:
+        engine = subprocess.check_output(
+            [
+                "git",
+                "-C",
+                str(Path(agent_module.__file__).resolve().parents[2]),
+                "rev-parse",
+                "HEAD",
+            ],
+            text=True,
+        ).strip()
+        dirty = subprocess.check_output(
+            [
+                "git",
+                "-C",
+                str(Path(agent_module.__file__).resolve().parents[2]),
+                "status",
+                "--porcelain",
+            ],
+            text=True,
+        ).strip()
+        if engine != policy["engine_commit"] or dirty:
+            raise ValueError("Engine must be clean at the frozen source commit")
     selected = []
     for case in manifest["cases"]:
         path = (CASES / case["path"]).resolve()

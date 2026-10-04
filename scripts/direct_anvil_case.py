@@ -21,7 +21,7 @@ from urllib.parse import urlsplit
 from urllib.request import Request, build_opener, ProxyHandler, HTTPRedirectHandler
 
 CASE = (
-    Path(__file__).resolve().parents[2]
+    Path(__file__).resolve().parents[1]
     / "scenarios/benchmarks/causal-v1/cases/19000000.json"
 )
 CASE_SHA256 = "2059263c6e3eb9dfd8ef3549ef82f1e070225dcb5430c6301349da51d4a4d02f"
