@@ -73,7 +73,7 @@ function showCliRecipe(name) {
   cliRecipe = recipe;
   $("cli-file-help").textContent =
     name === "local-report"
-      ? "In an empty working directory, save a local copy of your imported file as local-report.json. Keep the original file unchanged."
+      ? "Use Save CLI input to save a local copy as local-report.json in an empty working directory. Keep the original file unchanged."
       : "Download Source JSON above into an empty working directory.";
   $("cli-setup").textContent = recipe.setup;
   $("cli-command").textContent = recipe.command;
@@ -82,6 +82,40 @@ function showCliRecipe(name) {
   if (cliCopyInFlight)
     $("cli-copy-status").textContent =
       "Waiting for the previous copy request. You can still select and copy these commands manually.";
+}
+/** @type {File | null} */
+let localCliFile = null;
+/** @type {string | null} */
+let localCliUrl = null;
+function clearLocalCliInput() {
+  if (localCliUrl) URL.revokeObjectURL(localCliUrl);
+  localCliUrl = null;
+  localCliFile = null;
+  $("cli-save-input").hidden = true;
+  $("cli-save-input").setAttribute("disabled", "");
+  $("cli-save-status").textContent = "";
+}
+function saveLocalCliInput() {
+  if (!localCliFile) return;
+  let link;
+  try {
+    // One URL per verified File; preserve its bytes instead of serializing JSON.
+    if (!localCliUrl) localCliUrl = URL.createObjectURL(localCliFile);
+    link = document.createElement("a");
+    link.href = localCliUrl;
+    link.download = "local-report.json";
+    document.body.appendChild(link);
+    link.click();
+    $("cli-save-status").textContent =
+      "Download requested as local-report.json. Save it beside entrotter-cli and entrotter-sdk. Your original file is unchanged.";
+  } catch {
+    if (localCliUrl) URL.revokeObjectURL(localCliUrl);
+    localCliUrl = null;
+    $("cli-save-status").textContent =
+      "Download unavailable. Save a local copy of your imported file as local-report.json and keep the original unchanged.";
+  } finally {
+    link?.remove();
+  }
 }
 let generation = 0;
 /** @type {ReturnType<typeof reportCliRecipe>} */
@@ -657,6 +691,7 @@ function selectSource(value) {
 }
 /** @param {string} message */
 function clearReport(message) {
+  clearLocalCliInput();
   $("report-status").textContent = message;
   ["baseline-value", "candidate-value", "delta-value", "hash"].forEach(
     (id) => ($(id).textContent = "—"),
@@ -880,6 +915,7 @@ async function loadSample() {
 $("scenario").addEventListener("change", loadSample);
 $("cli-copy-setup").addEventListener("click", () => copyCliRecipe("setup"));
 $("cli-copy-command").addEventListener("click", () => copyCliRecipe("command"));
+$("cli-save-input").addEventListener("click", saveLocalCliInput);
 $("import").addEventListener("change", async (event) => {
   if (!(event.target instanceof HTMLInputElement)) return;
   const file = event.target.files?.[0];
@@ -890,11 +926,13 @@ $("import").addEventListener("change", async (event) => {
     if (file.size > 4 * 1024 * 1024)
       throw new Error("Local report limit is 4 MiB.");
     await render(JSON.parse(await file.text()), seq);
-    // No blob links or network upload are needed for an already-local file.
     if (seq === generation) {
       selectSource("local-report");
       $("download").hidden = true;
       showCliRecipe("local-report");
+      localCliFile = file;
+      $("cli-save-input").hidden = false;
+      $("cli-save-input").removeAttribute("disabled");
     }
   } catch (error) {
     if (seq === generation)

@@ -647,7 +647,9 @@ try {
           report.artifact_id = createHash("sha256")
             .update(canonical(report))
             .digest("hex");
-          const bytes = Buffer.from(JSON.stringify(report));
+          const bytes = Buffer.from(
+            " \n" + JSON.stringify(report, null, 2) + "\n ",
+          );
           await writeFile(
             resolve(output, "local-cli-" + name + ".json"),
             bytes,
@@ -713,6 +715,44 @@ try {
               /PRIVATE_CLIPBOARD_MARKER|private-wallet|never-execute/,
             );
           }
+          const httpCount = requests.filter((url) =>
+            /^https?:/.test(url),
+          ).length;
+          await page.locator("#cli-save-input").focus();
+          await visibleFocus(page);
+          const downloadReady = page.waitForEvent("download");
+          await page.keyboard.press("Enter");
+          const download = await downloadReady;
+          assert.equal(download.suggestedFilename(), "local-report.json");
+          assert.ok(
+            download.url().startsWith("blob:"),
+            "Download is browser-local",
+          );
+          const savedPath = resolve(
+            output,
+            "local-cli-saved-" + name + ".json",
+          );
+          await download.saveAs(savedPath);
+          assert.equal(await download.failure(), null);
+          const saved = await readFile(savedPath);
+          assert.deepEqual(
+            saved,
+            bytes,
+            "Preserve the entire original File, including whitespace",
+          );
+          assert.equal(
+            requests.filter((url) => /^https?:/.test(url)).length,
+            httpCount,
+            "Saving the local CLI input must not upload or fetch report data",
+          );
+          assert.match(
+            await page.locator("#cli-save-status").innerText(),
+            /Download requested as local-report\.json/,
+          );
+          assert.doesNotMatch(
+            await page.locator("#cli-save-status").innerText(),
+            /PRIVATE_CLIPBOARD_MARKER|private-wallet/,
+          );
           const setup = await page.locator("#cli-setup").innerText();
           const command = await page.evaluate(() =>
             navigator.clipboard.readText(),
@@ -727,6 +767,11 @@ try {
             setup,
             command,
             report_sha256: createHash("sha256").update(bytes).digest("hex"),
+            saved_sha256: createHash("sha256").update(saved).digest("hex"),
+            saved_bytes: saved.length,
+            suggested_filename: download.suggestedFilename(),
+            original_bytes_preserved: true,
+            no_new_HTTP_request_on_save: true,
           });
           await noOverflow(page);
           await scan(page, width + "-local-cli");
@@ -764,6 +809,20 @@ try {
             assert.equal(await page.locator("#cli-setup").textContent(), "");
             assert.equal(await page.locator("#cli-command").textContent(), "");
             assert.equal(
+              await page
+                .locator("#cli-save-input")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              true,
+            );
+            assert.equal(
+              await page.locator("#cli-save-input").isDisabled(),
+              true,
+            );
+            assert.equal(
+              await page.locator("#cli-save-status").textContent(),
+              "",
+            );
+            assert.equal(
               await page.locator("#example-link").getAttribute("href"),
               null,
             );
@@ -775,6 +834,16 @@ try {
             );
           };
           const localReady = async () => {
+            assert.equal(
+              await page
+                .locator("#cli-save-input")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              false,
+            );
+            assert.equal(
+              await page.locator("#cli-save-input").isDisabled(),
+              false,
+            );
             assert.equal(
               await page
                 .locator("#cli-recipe")

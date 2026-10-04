@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash, webcrypto } from "node:crypto";
 import vm from "node:vm";
+import { File } from "node:buffer";
 
 // No browser/network needed: exercise the exact production hash/number functions.
 const context = vm.createContext({
@@ -185,6 +186,136 @@ test("local CLI guidance copies a fixed path and clears before another report", 
   assert.equal(element("cli-command").textContent, "");
   await local.copyCliRecipe("command");
   assert.equal(writes.length, 1);
+});
+function localSaveHarness() {
+  const elements = new Map(),
+    created = [],
+    revoked = [],
+    clicks = [];
+  let removed = 0;
+  const element = (id) => {
+    if (!elements.has(id))
+      elements.set(id, {
+        value: "not-an-allowed-sample",
+        hidden: true,
+        disabled: true,
+        textContent: "",
+        addEventListener() {},
+        setAttribute() {},
+        removeAttribute() {},
+        replaceChildren() {},
+      });
+    return elements.get(id);
+  };
+  const url = {
+    createObjectURL(file) {
+      created.push(file);
+      return "blob:local-test";
+    },
+    revokeObjectURL(value) {
+      revoked.push(value);
+    },
+  };
+  const document = {
+    getElementById: element,
+    body: { appendChild() {} },
+    createElement(tag) {
+      assert.equal(tag, "a");
+      return {
+        href: "",
+        download: "",
+        click() {
+          clicks.push({ href: this.href, download: this.download });
+        },
+        remove() {
+          removed++;
+        },
+      };
+    },
+  };
+  const context = vm.createContext({ document, URL: url });
+  vm.runInContext(productionCode, context);
+  return {
+    context,
+    element,
+    url,
+    created,
+    revoked,
+    clicks,
+    removed: () => removed,
+  };
+}
+test("local CLI save uses the original File and a bounded fixed-name URL", async () => {
+  const h = localSaveHarness();
+  h.context.saveLocalCliInput();
+  assert.equal(h.created.length, 0);
+  const raw = '  {\n  "private": "<tag> $(never-execute)"\n}\n';
+  const file = new File([raw], "private-wallet-$(never-execute).json");
+  h.context.file = file;
+  vm.runInContext("localCliFile = file", h.context);
+  h.element("cli-command").textContent = "private injected DOM";
+  h.context.saveLocalCliInput();
+  h.context.saveLocalCliInput();
+  assert.equal(
+    h.created.length,
+    1,
+    "Repeated clicks reuse one current File URL",
+  );
+  assert.equal(h.created[0], file, "Do not reserialize the imported JSON");
+  assert.equal(await h.created[0].text(), raw);
+  assert.deepEqual(h.clicks, [
+    { href: "blob:local-test", download: "local-report.json" },
+    { href: "blob:local-test", download: "local-report.json" },
+  ]);
+  assert.equal(h.removed(), 2);
+  assert.doesNotMatch(
+    h.element("cli-save-status").textContent,
+    /private|never-execute/,
+  );
+  h.context.clearReport("Loading");
+  assert.deepEqual(h.revoked, ["blob:local-test"]);
+  assert.equal(h.element("cli-save-input").hidden, true);
+  assert.equal(h.element("cli-save-input").disabled, true);
+  assert.equal(h.element("cli-save-status").textContent, "");
+  h.context.saveLocalCliInput();
+  h.context.clearReport("Invalid");
+  assert.equal(h.created.length, 1);
+  assert.equal(h.clicks.length, 2);
+  assert.equal(h.revoked.length, 1);
+});
+test("local CLI save failures keep manual copying and do not reveal browser errors", () => {
+  const h = localSaveHarness();
+  h.context.file = new File(["{}"], "private.json");
+  vm.runInContext("localCliFile = file", h.context);
+  h.url.createObjectURL = () => {
+    throw new Error("private browser error");
+  };
+  h.context.saveLocalCliInput();
+  assert.match(
+    h.element("cli-save-status").textContent,
+    /Save a local copy.*local-report\.json/,
+  );
+  assert.doesNotMatch(
+    h.element("cli-save-status").textContent,
+    /private browser error/,
+  );
+  assert.equal(h.clicks.length, 0);
+  h.url.createObjectURL = (file) => {
+    h.created.push(file);
+    return "blob:retry";
+  };
+  h.context.document.createElement = () => ({
+    click() {
+      throw new Error("private click error");
+    },
+    remove() {},
+  });
+  h.context.saveLocalCliInput();
+  assert.deepEqual(h.revoked, ["blob:retry"]);
+  assert.doesNotMatch(
+    h.element("cli-save-status").textContent,
+    /private click error/,
+  );
 });
 for (const name of ["liquidity-shock", "recovery-trap", "depeg-stress"]) {
   test(`production JS verifies Python artifact: ${name}`, async () => {

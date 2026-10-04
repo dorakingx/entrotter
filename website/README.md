@@ -41,12 +41,15 @@ of a public sample stays local. This shares the bundled example, not imported da
 
 After a bundled example or local report verifies, **Inspect this report in the CLI**
 shows fixed CLI/SDK checkout commands and a read-only inspection command.
-For a bundled example, download Source JSON; for a local import, save a local
-copy as `local-report.json` in an empty working directory and keep the original
-unchanged. The recipe needs Git, Python 3.11+ and a POSIX shell. It reads the
+For a bundled example, download Source JSON. For a local import, **Save CLI input**
+requests a browser download of the original file as `local-report.json`. Save that
+copy in an empty working directory and keep the original unchanged. Whitespace
+and file bytes are preserved; the browser chooses the final save location. The recipe needs Git, Python 3.11+ and a POSIX shell. It reads the
 local recording without running an engine, model or RPC call. Loading and errors
 hide and clear the recipe. Imported filenames and report metadata never become
-shell text; no upload, blob download or private-report link is created.
+shell text. Local saving makes no upload or HTTP request and creates no public
+report link. Loading and invalid reports hide and disable the save button; a
+denied download API leaves manual copying available.
 See [inspection validation](evidence/cli-inspection/README.md) and
 [local CLI validation](evidence/local-cli/README.md).
 
