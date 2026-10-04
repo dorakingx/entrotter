@@ -39,12 +39,16 @@ selected bundled example, dropping unrelated query parameters and fragments.
 Loading, rejected files and local reports have no example link; even a local copy
 of a public sample stays local. This shares the bundled example, not imported data.
 
-After a bundled example verifies, **Inspect this example in the CLI** shows
-fixed CLI/SDK checkout commands and an inspection command for its Source JSON.
-The recipe needs Git, Python 3.11+ and a POSIX shell. It reads the downloaded
-recording without running an engine, model or RPC call. Local imports, loading
-and errors hide and clear the recipe; imported data never becomes shell text.
-See [inspection validation](evidence/cli-inspection/README.md).
+After a bundled example or local report verifies, **Inspect this report in the CLI**
+shows fixed CLI/SDK checkout commands and a read-only inspection command.
+For a bundled example, download Source JSON; for a local import, save a local
+copy as `local-report.json` in an empty working directory and keep the original
+unchanged. The recipe needs Git, Python 3.11+ and a POSIX shell. It reads the
+local recording without running an engine, model or RPC call. Loading and errors
+hide and clear the recipe. Imported filenames and report metadata never become
+shell text; no upload, blob download or private-report link is created.
+See [inspection validation](evidence/cli-inspection/README.md) and
+[local CLI validation](evidence/local-cli/README.md).
 
 ## Deployment
 

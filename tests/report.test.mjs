@@ -104,7 +104,7 @@ test("CLI copying uses only verified recipes and keeps pending feedback isolated
   assert.equal(writes.length, 1);
   assert.equal(element("cli-copy-command").disabled, true);
 });
-test("CLI inspection recipe uses pinned sources and only public sample names", () => {
+test("CLI inspection recipe uses pinned sources and fixed report filenames", () => {
   for (const name of [
     "liquidity-shock",
     "recovery-trap",
@@ -130,12 +130,61 @@ test("CLI inspection recipe uses pinned sources and only public sample names", (
   for (const name of [
     null,
     {},
-    "local-report",
+    "private-wallet-report",
     "../private",
     "aave-borrow-actions; echo x",
     "https://example.com/x",
   ])
     assert.equal(context.reportCliRecipe(name), null);
+});
+test("local CLI guidance copies a fixed path and clears before another report", async () => {
+  const elements = new Map();
+  const writes = [];
+  const element = (id) => {
+    if (!elements.has(id))
+      elements.set(id, {
+        value: "not-an-allowed-sample",
+        textContent: "",
+        hidden: true,
+        disabled: true,
+        addEventListener() {},
+        setAttribute() {},
+        removeAttribute() {},
+        replaceChildren() {},
+      });
+    return elements.get(id);
+  };
+  const local = vm.createContext({
+    URLSearchParams,
+    document: { getElementById: element },
+    navigator: {
+      clipboard: {
+        writeText: async (text) => {
+          writes.push(text);
+        },
+      },
+    },
+  });
+  vm.runInContext(productionCode, local);
+  local.showCliRecipe("local-report");
+  assert.equal(element("cli-recipe").hidden, false);
+  assert.match(
+    element("cli-file-help").textContent,
+    /copy.*local-report\.json/,
+  );
+  assert.match(element("cli-file-help").textContent, /original file unchanged/);
+  element("cli-command").textContent = "private injected filename";
+  await local.copyCliRecipe("command");
+  assert.deepEqual(writes, [
+    "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+  ]);
+  assert.equal(local.reportFromQuery("?report=local-report"), null);
+  local.clearReport("Loading");
+  assert.equal(element("cli-recipe").hidden, true);
+  assert.equal(element("cli-file-help").textContent, "");
+  assert.equal(element("cli-command").textContent, "");
+  await local.copyCliRecipe("command");
+  assert.equal(writes.length, 1);
 });
 for (const name of ["liquidity-shock", "recovery-trap", "depeg-stress"]) {
   test(`production JS verifies Python artifact: ${name}`, async () => {

@@ -564,6 +564,22 @@ try {
               document.querySelector("#scenario")
             )?.value === "local-report",
         );
+        assert.equal(
+          await page.locator("#cli-copy-command").isDisabled(),
+          true,
+        );
+        assert.match(
+          await page.locator("#cli-file-help").innerText(),
+          /local-report\.json/,
+        );
+        await page
+          .locator("#cli-copy-command")
+          .evaluate((node) => /** @type {HTMLButtonElement} */ (node).click());
+        assert.equal(
+          copies.length,
+          2,
+          "An imported report must not overlap a pending write",
+        );
         if (!fail) throw new Error("Missing rejection control");
         fail();
         await page.waitForFunction(
@@ -577,24 +593,154 @@ try {
           await page
             .locator("#cli-recipe")
             .evaluate((node) => /** @type {HTMLElement} */ (node).hidden),
-          true,
+          false,
         );
         assert.equal(
           await page.locator("#cli-copy-command").isDisabled(),
-          true,
+          false,
         );
-        assert.equal(await page.locator("#cli-setup").textContent(), "");
-        assert.equal(await page.locator("#cli-command").textContent(), "");
-        await page
-          .locator("#cli-copy-command")
-          .evaluate((node) => /** @type {HTMLButtonElement} */ (node).click());
+        const localCommand =
+          "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text";
+        assert.equal(
+          await page.locator("#cli-command").textContent(),
+          localCommand,
+        );
+        assert.doesNotMatch(
+          await page.locator("#cli-file-help").innerText(),
+          /private-wallet/,
+        );
+        pending = Promise.resolve();
+        await page.locator("#cli-copy-command").click();
+        await page.waitForFunction(
+          () =>
+            document.querySelector("#cli-copy-status")?.textContent ===
+            "Inspection command copied.",
+        );
         assert.deepEqual(copies, [
           "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./liquidity-shock.json --format text",
           recovery,
+          localCommand,
         ]);
         await noOverflow(page);
         await scan(page, "320-cli-copy-faults");
       }),
+  );
+  await check(
+    "Local CLI recipes: native keyboard copies, fixed paths and private metadata",
+    async () => {
+      const readbacks = [];
+      for (const [width, name] of [
+        [320, "liquidity-shock"],
+        [1440, "aave-borrow-actions"],
+      ]) {
+        await withPage(Number(width), async (page) => {
+          await page
+            .context()
+            .grantPermissions(["clipboard-read", "clipboard-write"], {
+              origin,
+            });
+          const report = JSON.parse(
+            await readFile(resolve(root, "reports/" + name + ".json"), "utf8"),
+          );
+          report.scenario.title = "PRIVATE_CLIPBOARD_MARKER $(never-execute)";
+          delete report.artifact_id;
+          report.artifact_id = createHash("sha256")
+            .update(canonical(report))
+            .digest("hex");
+          const bytes = Buffer.from(JSON.stringify(report));
+          await writeFile(
+            resolve(output, "local-cli-" + name + ".json"),
+            bytes,
+          );
+          const count = requests.length;
+          await page.locator("#import").focus();
+          const chooser = await keyboardFileChooser(page, "import");
+          await chooser.setFiles({
+            name: "private-wallet-$(never-execute).json",
+            mimeType: "application/json",
+            buffer: bytes,
+          });
+          await page.waitForFunction(
+            () =>
+              /** @type {HTMLSelectElement | null} */ (
+                document.querySelector("#scenario")
+              )?.value === "local-report",
+          );
+          await page.locator("#cli-recipe > summary").focus();
+          await page.keyboard.press("Enter");
+          assert.equal(
+            requests.length,
+            count,
+            "Import must not fetch or upload private content",
+          );
+          assert.match(
+            await page.locator("#cli-file-help").innerText(),
+            /save a local copy.*local-report\.json/,
+          );
+          assert.doesNotMatch(
+            await page.locator("#cli-file-help").innerText(),
+            /PRIVATE_CLIPBOARD_MARKER|private-wallet/,
+          );
+          assert.equal(
+            await page.locator("#example-link").getAttribute("href"),
+            null,
+          );
+          assert.equal(
+            await page
+              .locator("#download")
+              .evaluate((node) => node instanceof HTMLElement && node.hidden),
+            true,
+          );
+          for (const [id, status, sourceId] of [
+            ["cli-copy-setup", "CLI setup copied.", "cli-setup"],
+            ["cli-copy-command", "Inspection command copied.", "cli-command"],
+          ]) {
+            await page.locator("#" + id).focus();
+            await visibleFocus(page);
+            await page.keyboard.press("Enter");
+            await page.waitForFunction(
+              (text) =>
+                document.querySelector("#cli-copy-status")?.textContent ===
+                text,
+              status,
+            );
+            assert.equal(
+              await page.evaluate(() => navigator.clipboard.readText()),
+              await page.locator("#" + sourceId).innerText(),
+            );
+            assert.doesNotMatch(
+              await page.evaluate(() => navigator.clipboard.readText()),
+              /PRIVATE_CLIPBOARD_MARKER|private-wallet|never-execute/,
+            );
+          }
+          const setup = await page.locator("#cli-setup").innerText();
+          const command = await page.evaluate(() =>
+            navigator.clipboard.readText(),
+          );
+          assert.equal(
+            command,
+            "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+          );
+          readbacks.push({
+            name,
+            width,
+            setup,
+            command,
+            report_sha256: createHash("sha256").update(bytes).digest("hex"),
+          });
+          await noOverflow(page);
+          await scan(page, width + "-local-cli");
+          await page.screenshot({
+            path: resolve(output, width + "-local-cli.png"),
+            fullPage: true,
+          });
+        });
+      }
+      await writeFile(
+        resolve(output, "local-cli-readbacks.json"),
+        JSON.stringify(readbacks, null, 2) + "\n",
+      );
+    },
   );
   await check(
     "Bundled report links: direct entry, navigation and local-file privacy",
@@ -624,6 +770,38 @@ try {
             assert.equal(
               await page
                 .locator("#example-link")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              true,
+            );
+          };
+          const localReady = async () => {
+            assert.equal(
+              await page
+                .locator("#cli-recipe")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              false,
+            );
+            assert.equal(
+              await page.locator("#cli-command").textContent(),
+              "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+            );
+            assert.match(
+              (await page.locator("#cli-file-help").textContent()) ?? "",
+              /local copy.*local-report\.json/,
+            );
+            assert.equal(
+              await page.locator("#example-link").getAttribute("href"),
+              null,
+            );
+            assert.equal(
+              await page
+                .locator("#example-link")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              true,
+            );
+            assert.equal(
+              await page
+                .locator("#download")
                 .evaluate((node) => node instanceof HTMLElement && node.hidden),
               true,
             );
@@ -679,7 +857,7 @@ try {
               select.value === "local-report"
             );
           });
-          await cleared();
+          await localReady();
           assert.equal(requests.length, requestCount);
           await page.locator("#import").setInputFiles({
             name: "invalid.json",
@@ -731,7 +909,7 @@ try {
             });
             release();
             await delayed;
-            await cleared();
+            await localReady();
             assert.equal(
               await page.locator("#scenario").inputValue(),
               "local-report",

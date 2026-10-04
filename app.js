@@ -21,7 +21,11 @@ const allowedSamples = new Set([
 ]);
 /** @param {unknown} name */
 function reportCliRecipe(name) {
-  if (typeof name !== "string" || !allowedSamples.has(name)) return null;
+  if (
+    typeof name !== "string" ||
+    (!allowedSamples.has(name) && name !== "local-report")
+  )
+    return null;
   return {
     setup:
       "git clone https://github.com/entrotter/cli.git entrotter-cli &&\n" +
@@ -61,6 +65,23 @@ function reportExampleUrl(name, href) {
   } catch {
     return null;
   }
+}
+/** @param {string} name */
+function showCliRecipe(name) {
+  const recipe = reportCliRecipe(name);
+  if (!recipe) return;
+  cliRecipe = recipe;
+  $("cli-file-help").textContent =
+    name === "local-report"
+      ? "In an empty working directory, save a local copy of your imported file as local-report.json. Keep the original file unchanged."
+      : "Download Source JSON above into an empty working directory.";
+  $("cli-setup").textContent = recipe.setup;
+  $("cli-command").textContent = recipe.command;
+  $("cli-recipe").hidden = false;
+  disableCliCopy(cliCopyInFlight);
+  if (cliCopyInFlight)
+    $("cli-copy-status").textContent =
+      "Waiting for the previous copy request. You can still select and copy these commands manually.";
 }
 let generation = 0;
 /** @type {ReturnType<typeof reportCliRecipe>} */
@@ -650,6 +671,7 @@ function clearReport(message) {
   $("example-link").hidden = true;
   $("example-link").removeAttribute("href");
   $("cli-recipe").hidden = true;
+  $("cli-file-help").textContent = "";
   $("cli-setup").textContent = "";
   $("cli-command").textContent = "";
   cliRecipe = null;
@@ -838,17 +860,7 @@ async function loadSample() {
       selectSource(name);
       $("download").setAttribute("href", "reports/" + name + ".json");
       $("download").setAttribute("download", name + ".json");
-      const recipe = reportCliRecipe(name);
-      if (recipe) {
-        cliRecipe = recipe;
-        $("cli-setup").textContent = recipe.setup;
-        $("cli-command").textContent = recipe.command;
-        $("cli-recipe").hidden = false;
-        disableCliCopy(cliCopyInFlight);
-        if (cliCopyInFlight)
-          $("cli-copy-status").textContent =
-            "Waiting for the previous copy request. You can still select and copy these commands manually.";
-      }
+      showCliRecipe(name);
       const href = reportExampleUrl(
         name,
         typeof location === "undefined" ? "" : location.href,
@@ -882,6 +894,7 @@ $("import").addEventListener("change", async (event) => {
     if (seq === generation) {
       selectSource("local-report");
       $("download").hidden = true;
+      showCliRecipe("local-report");
     }
   } catch (error) {
     if (seq === generation)
