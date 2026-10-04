@@ -9,7 +9,7 @@
   <title>Entrotter · A time machine for onchain agents</title>
   <link rel="icon" href="assets/icon.png" type="image/png">
   <link rel="stylesheet" href="style.css?v=2e72483077e4">
-  <script src="app.js?v=9a885c7c91d0" defer></script>
+  <script src="app.js?v=7b475dec4def" defer></script>
   <script type="module" src="comparison.mjs?v=e0dac48fe543"></script>
   <script type="module" src="trace-viewer.mjs?v=e87805dcef59"></script>
 </head>
@@ -52,7 +52,7 @@
 </section>
 <section class="section shell" id="reports" tabindex="-1">
   <div class="section-head wide"><p class="eyebrow">THE EXPERIMENT ARCHIVE</p><h2>Explore earlier experiments.</h2><p>Inspect synthetic stress tests or a real Uniswap experiment at pinned Ethereum state. The fork executes supplied decisions; it does not replay history, predict prices or establish profit.</p></div>
-  <details class="archive"><summary>Open the v0.1 report explorer <span>Synthetic stress tests &amp; paired EVM reports</span></summary><div class="report-panel">
+  <details id="report-explorer" class="archive"><summary>Open the v0.1 report explorer <span>Synthetic stress tests &amp; paired EVM reports</span></summary><div class="report-panel">
     <div class="report-toolbar"><label for="scenario">Report source<select id="scenario"><option value="liquidity-shock">Liquidity shock</option><option value="recovery-trap">Recovery trap</option><option value="depeg-stress">Depeg stress</option><option value="ethereum-uniswap-slippage">Ethereum · Uniswap output floor</option><option value="agent-local-codex">Local EVM · recorded model decisions</option><option value="aave-borrow-actions">Ethereum · recorded Aave supply and borrow</option><option value="local-report" disabled hidden>Local report · choose an example to switch</option><option value="loading" disabled hidden>Loading report…</option><option value="no-report" disabled hidden>No verified report · choose an example</option></select></label><label class="file-button" for="import">Open local report<input id="import" type="file" accept="application/json,.json"></label></div>
     <p id="report-status" class="report-status" role="status" aria-live="polite" aria-atomic="true">Loading a recorded offline result…</p>
     <div class="metrics"><div><span id="baseline-label">Hold baseline</span><strong id="baseline-value">—</strong><small id="baseline-unit">Final model equity</small></div><div><span id="candidate-label">Circuit-breaker policy</span><strong id="candidate-value">—</strong><small id="candidate-unit">Final model equity</small></div><div><span>Candidate − baseline</span><strong id="delta-value">—</strong><small id="delta-unit">Model quote units, not USD</small></div></div>
@@ -62,7 +62,7 @@
     <section id="agent-details" hidden aria-labelledby="agent-heading"><h3 id="agent-heading">Recorded agent decisions</h3><p>Read each decision beside its candidate outcome. Preflight checks current state; it is not a forecast. These are recorded choices, with no new model call. A content hash and matching rows do not prove the policy is correct or that an imported recording is authentic.</p><pre id="agent-provenance" tabindex="0" role="region" aria-label="Original agent generation provenance"></pre><p class="small">On narrow screens, scroll the table horizontally to read reasons and outcomes. Keyboard users can focus the table and use the arrow keys.</p><div class="table-wrap" role="region" aria-labelledby="agent-caption" tabindex="0"><table><caption id="agent-caption">Decision-time evidence and candidate receipts (gas in exact units)</caption><thead><tr><th scope="col">Step</th><th scope="col">Preflight</th><th scope="col">Requested / remaining gas</th><th scope="col">Choice</th><th scope="col">Recorded reason</th><th scope="col">Outcome</th><th scope="col">Gas used</th></tr></thead><tbody id="agent-rows"></tbody></table></div><p>The local model example made the same choices as the deterministic preflight rule. It demonstrates auditability, with no measured model advantage. <a href="https://github.com/entrotter/entrotter/blob/b724983a6c24fbe20473111565c8639714cb1bb0/docs/AGENT_EVALUATION.md">Read the original evaluation and limits</a>.</p></section>
     <details open><summary>Assumptions and limits</summary><ul id="assumptions"></ul></details>
     <details><summary>Full result JSON</summary><pre id="raw-report" tabindex="0" role="region" aria-label="Full result JSON"></pre></details>
-    <div class="artifact"><span>SHA-256</span><code id="hash">—</code><a id="download" href="reports/liquidity-shock.json" download>Source JSON ↗</a></div>
+    <div class="artifact"><span>SHA-256</span><code id="hash">—</code><a id="download" href="reports/liquidity-shock.json" download>Source JSON ↗</a><a id="example-link" hidden>Link to this example ↗</a></div>
     <p class="privacy">Local files stay in your browser. No uploads, accounts, analytics, wallet connection or transactions. A valid hash verifies integrity, not model correctness.</p>
   </div></details>
 </section>

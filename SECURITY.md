@@ -34,3 +34,12 @@ initial/final/change and native comparison arithmetic. Missing records remain
 unavailable. Exact BigInt formatting avoids Number rounding. These are internal
 consistency checks on a recomputable report, not execution/provider authentication,
 full EVM receipt validation or valuation. Imported strings remain textContent.
+
+Example links accept one exact name from the fixed six-sample allowlist, with a
+2048-character query bound. Query values never become arbitrary paths or remote
+fetch targets. Generated links retain the current HTTP(S) origin/path, remove
+credentials and unrelated query/fragment state, and include only a public sample
+name and explorer anchor. Local imports are never serialized into links; loading
+and error states remove both the href and visibility. A stale sample response
+cannot restore a link after a newer selection/import. Links identify bundled
+examples, not authenticity, execution, trading performance or valuation.

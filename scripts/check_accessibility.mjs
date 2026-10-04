@@ -260,6 +260,198 @@ function canonical(x) {
 try {
   browser = await chromium.launch();
   await check(
+    "Bundled report links: direct entry, navigation and local-file privacy",
+    () =>
+      withPage(
+        390,
+        async (page) => {
+          const ready = () =>
+            page.waitForFunction(() =>
+              document
+                .querySelector("#report-status")
+                ?.textContent?.includes("Integrity verified locally"),
+            );
+          const cleared = async () => {
+            assert.equal(
+              await page.locator("#example-link").getAttribute("href"),
+              null,
+            );
+            assert.equal(
+              await page
+                .locator("#example-link")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              true,
+            );
+          };
+          await ready();
+          assert.equal(
+            await page.locator("#scenario").inputValue(),
+            "aave-borrow-actions",
+          );
+          assert.equal(
+            await page
+              .locator("#report-explorer")
+              .evaluate((node) => node.hasAttribute("open")),
+            true,
+          );
+          assert.equal(await page.locator("#balance-rows tr").count(), 16);
+          const expected =
+            origin + "/?report=aave-borrow-actions#report-explorer";
+          assert.equal(
+            await page.locator("#example-link").getAttribute("href"),
+            expected,
+          );
+          await page.locator("#example-link").focus();
+          await focusIs(page, "example-link");
+          await visibleFocus(page);
+          await page.keyboard.press("Enter");
+          await page.waitForURL(expected);
+          await ready();
+          assert.equal(
+            await page.locator("#scenario").inputValue(),
+            "aave-borrow-actions",
+          );
+          await noOverflow(page);
+          await scan(page, "390-direct-aave-link");
+          await page.screenshot({
+            path: resolve(output, "390-direct-aave-link.png"),
+            fullPage: true,
+          });
+
+          const original = await readFile(
+            resolve(root, "reports/aave-borrow-actions.json"),
+          );
+          const requestCount = requests.length;
+          await page.locator("#import").setInputFiles({
+            name: "local.json",
+            mimeType: "application/json",
+            buffer: original,
+          });
+          await page.waitForFunction(() => {
+            const select = document.querySelector("#scenario");
+            return (
+              select instanceof HTMLSelectElement &&
+              select.value === "local-report"
+            );
+          });
+          await cleared();
+          assert.equal(requests.length, requestCount);
+          await page.locator("#import").setInputFiles({
+            name: "invalid.json",
+            mimeType: "application/json",
+            buffer: Buffer.from("{"),
+          });
+          await page.waitForFunction(() => {
+            const select = document.querySelector("#scenario");
+            return (
+              select instanceof HTMLSelectElement &&
+              select.value === "no-report"
+            );
+          });
+          await cleared();
+
+          let release;
+          const gate = new Promise((resolve) => {
+            release = resolve;
+          });
+          let entered;
+          const intercepted = new Promise((resolve) => {
+            entered = resolve;
+          });
+          await page.route("**/reports/recovery-trap.json", async (route) => {
+            entered();
+            await gate;
+            await route.continue();
+          });
+          // Drain the real production Promise, including asynchronous integrity
+          // checks, before asserting that an older response cannot restore a link.
+          // Normal selector navigation remains exercised below and elsewhere.
+          const delayed = page.evaluate(
+            "document.getElementById('scenario').value = 'recovery-trap'; loadSample()",
+          );
+          try {
+            await intercepted;
+            await cleared();
+            await page.locator("#import").setInputFiles({
+              name: "local.json",
+              mimeType: "application/json",
+              buffer: original,
+            });
+            await page.waitForFunction(() => {
+              const select = document.querySelector("#scenario");
+              return (
+                select instanceof HTMLSelectElement &&
+                select.value === "local-report"
+              );
+            });
+            release();
+            await delayed;
+            await cleared();
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              "local-report",
+            );
+          } finally {
+            release();
+            await delayed;
+            await page.unroute("**/reports/recovery-trap.json");
+          }
+          await page.selectOption("#scenario", "recovery-trap");
+          await ready();
+          const recovery = origin + "/?report=recovery-trap#report-explorer";
+          assert.equal(
+            await page.locator("#example-link").getAttribute("href"),
+            recovery,
+          );
+          await page.locator("#example-link").click();
+          await page.waitForURL(recovery);
+          await ready();
+          assert.equal(
+            await page.locator("#scenario").inputValue(),
+            "recovery-trap",
+          );
+        },
+        "/?unused=not-a-secret&report=aave-borrow-actions#unused-fragment",
+      ),
+  );
+  await check(
+    "Invalid report links: bounded allowlist and unchanged default entry",
+    async () => {
+      for (const query of [
+        "local-report",
+        "aave-borrow-actions&report=aave-borrow-actions",
+        "..%2Foutside",
+        "https%3A%2F%2Fexample.invalid%2Fprivate.json",
+      ])
+        await withPage(
+          320,
+          async (page) => {
+            await page.waitForFunction(() =>
+              document
+                .querySelector("#report-status")
+                ?.textContent?.includes("Integrity verified locally"),
+            );
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              "liquidity-shock",
+            );
+            assert.equal(
+              await page
+                .locator("#report-explorer")
+                .evaluate((node) => node.hasAttribute("open")),
+              false,
+            );
+            assert.equal(
+              await page.locator("#example-link").getAttribute("href"),
+              origin + "/?report=liquidity-shock#report-explorer",
+            );
+            await noOverflow(page);
+          },
+          "/?report=" + query,
+        );
+    },
+  );
+  await check(
     "Aave units: local imports, resealed false units, unavailable records and recovery",
     () =>
       withPage(390, async (page) => {

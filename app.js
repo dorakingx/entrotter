@@ -19,6 +19,34 @@ const allowedSamples = new Set([
   "agent-local-codex",
   "aave-borrow-actions",
 ]);
+/** @param {unknown} search */
+function reportFromQuery(search) {
+  if (typeof search !== "string" || !search || search.length > 2048)
+    return null;
+  const names = new URLSearchParams(search).getAll("report");
+  return names.length === 1 && allowedSamples.has(names[0]) ? names[0] : null;
+}
+/** @param {unknown} name @param {unknown} href */
+function reportExampleUrl(name, href) {
+  if (
+    typeof name !== "string" ||
+    !allowedSamples.has(name) ||
+    typeof href !== "string"
+  )
+    return null;
+  try {
+    const url = new URL(href);
+    if (!["http:", "https:"].includes(url.protocol)) return null;
+    url.username = "";
+    url.password = "";
+    url.search = "";
+    url.hash = "report-explorer";
+    url.searchParams.set("report", name);
+    return url.href;
+  } catch {
+    return null;
+  }
+}
 let generation = 0;
 // The backend canonicalizes JSON with sorted keys and ensure_ascii=True.
 /** @param {unknown} value @returns {string} */
@@ -565,6 +593,8 @@ function clearReport(message) {
   $("assumptions").replaceChildren();
   $("raw-report").textContent = "";
   $("download").hidden = true;
+  $("example-link").hidden = true;
+  $("example-link").removeAttribute("href");
   $("evm-details").hidden = true;
   $("evm-traces").replaceChildren();
   $("source-pin").textContent = "";
@@ -746,6 +776,14 @@ async function loadSample() {
     if (seq === generation) {
       selectSource(name);
       $("download").setAttribute("href", "reports/" + name + ".json");
+      const href = reportExampleUrl(
+        name,
+        typeof location === "undefined" ? "" : location.href,
+      );
+      if (href) {
+        $("example-link").setAttribute("href", href);
+        $("example-link").hidden = false;
+      }
     }
   } catch (error) {
     if (seq === generation)
@@ -775,4 +813,18 @@ $("import").addEventListener("change", async (event) => {
       setError(error instanceof Error ? error.message : "Invalid report file.");
   }
 });
-loadSample();
+function initializeReportSource() {
+  const name = reportFromQuery(
+    typeof location === "undefined" ? "" : location.search,
+  );
+  if (name) {
+    selectSource(name);
+    const explorer = $("report-explorer");
+    if (!(explorer instanceof HTMLDetailsElement))
+      throw new Error("Missing report explorer.");
+    explorer.open = true;
+    explorer.scrollIntoView({ block: "start" });
+  }
+  return loadSample();
+}
+initializeReportSource();

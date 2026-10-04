@@ -31,6 +31,14 @@ clears the previous result; a rejected file leaves **No verified report**. Choos
 any example, including the previously selected one, to return to recorded data.
 A cancelled file chooser preserves the current report.
 
+Open a bundled example directly with `?report=aave-borrow-actions#report-explorer`
+(or any value offered by the source selector). A valid single `report` parameter
+opens the explorer and loads that example. Unknown or repeated values use the
+normal default. After verification, **Link to this example** gives a URL for the
+selected bundled example, dropping unrelated query parameters and fragments.
+Loading, rejected files and local reports have no example link; even a local copy
+of a public sample stays local. This shares the bundled example, not imported data.
+
 ## Deployment
 
 Repository name: `entrotter/entrotter.github.io` (public).

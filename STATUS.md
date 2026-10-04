@@ -302,3 +302,15 @@ sample is unchanged; loading it makes no EVM/model/upstream call. Current-head
 mandatory CI, independent staged review, protected-human main approval and live
 Pages publication remain separate. The deadline goal remains active; Discord is
 excluded and user evaluations stay deferred.
+
+## October 4 — direct bundled report links
+
+The reviewed candidate opens a selected v0.1 example from one allowlisted
+`report` query parameter, exposes a clean example URL after verification, and
+removes href/visibility during loading, local imports and errors. Stale loads
+cannot restore a link. [Evidence](evidence/report-links/README.md) records
+134 Node/12 site tests,49 Chromium groups/62 raw axe scans, exact historical
+Aave view preservation and149 retained author-reviewed findings. Independent
+review strengthened the stale-response check to await production completion.
+Earlier failures remain recorded. Current mandatory CI/publication and human
+main approval are separate; no fresh EVM/model/deployment claim. Goalactive.

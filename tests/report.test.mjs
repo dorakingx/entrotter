@@ -14,14 +14,17 @@ const context = vm.createContext({
   },
   crypto: webcrypto,
   TextEncoder,
+  URL,
+  URLSearchParams,
   fetch: () => {
     throw new Error("Unit tests must not contact the network");
   },
 });
-vm.runInContext(
-  readFileSync(new URL("../app.js", import.meta.url), "utf8"),
-  context,
+const productionCode = readFileSync(
+  new URL("../app.js", import.meta.url),
+  "utf8",
 );
+vm.runInContext(productionCode, context);
 const sample = () =>
   JSON.parse(
     readFileSync(
@@ -442,4 +445,133 @@ test("duplicate symbols keep distinct addresses in each balance row", () => {
     )[1],
     "10.000000094454558462",
   );
+});
+
+test("recorded report queries accept only one allowlisted example", () => {
+  for (const name of [
+    "liquidity-shock",
+    "recovery-trap",
+    "depeg-stress",
+    "ethereum-uniswap-slippage",
+    "agent-local-codex",
+    "aave-borrow-actions",
+  ])
+    assert.equal(context.reportFromQuery("?report=" + name), name);
+  assert.equal(
+    context.reportFromQuery(
+      "?token=irrelevant&report=ethereum%2Duniswap-slippage",
+    ),
+    "ethereum-uniswap-slippage",
+  );
+  for (const query of [
+    undefined,
+    null,
+    3,
+    "",
+    "?report=",
+    "?report=local-report",
+    "?report=loading",
+    "?report=no-report",
+    "?report=../private",
+    "?report=https://example.invalid/data",
+    "?report=AAVE-BORROW-ACTIONS",
+    "?report=aave-borrow-actions&report=liquidity-shock",
+    "?report=aave-borrow-actions&report=aave-borrow-actions",
+    "?report=%FF",
+    "?" + "x".repeat(2048),
+  ])
+    assert.equal(context.reportFromQuery(query), null);
+});
+
+test("example links discard unrelated query, fragment and URL credentials", () => {
+  assert.equal(
+    context.reportExampleUrl(
+      "aave-borrow-actions",
+      "https://name:password@entrotter.github.io/sub/index.html?token=not-a-secret&report=local-report#private-file",
+    ),
+    "https://entrotter.github.io/sub/index.html?report=aave-borrow-actions#report-explorer",
+  );
+  assert.equal(
+    context.reportExampleUrl("liquidity-shock", "http://127.0.0.1:8000/"),
+    "http://127.0.0.1:8000/?report=liquidity-shock#report-explorer",
+  );
+  for (const name of [
+    "local-report",
+    "../private",
+    "no-report",
+    "loading",
+    "unknown",
+  ])
+    assert.equal(
+      context.reportExampleUrl(name, "https://entrotter.github.io/"),
+      null,
+    );
+  for (const url of [
+    "",
+    "bad url",
+    "file:///private/report.json",
+    ["javascript", "alert(1)"].join(":"),
+    "data:text/html,private",
+  ])
+    assert.equal(context.reportExampleUrl("aave-borrow-actions", url), null);
+});
+
+test("actual startup opens a direct example and rejects ambiguous query selection", () => {
+  for (const [query, wanted, opens] of [
+    ["?report=aave-borrow-actions", "aave-borrow-actions", true],
+    ["?report=local-report", "liquidity-shock", false],
+    [
+      "?report=aave-borrow-actions&report=liquidity-shock",
+      "liquidity-shock",
+      false,
+    ],
+    ["", "liquidity-shock", false],
+  ]) {
+    const requests = [];
+    class Element {
+      value = "liquidity-shock";
+      hidden = false;
+      textContent = "";
+      classList = { add() {}, remove() {} };
+      addEventListener() {}
+      setAttribute() {}
+      removeAttribute() {}
+      replaceChildren() {}
+    }
+    class Details extends Element {
+      open = false;
+      scrolls = 0;
+      scrollIntoView() {
+        this.scrolls++;
+      }
+    }
+    const selector = new Element(),
+      explorer = new Details(),
+      other = new Element();
+    const startup = vm.createContext({
+      document: {
+        getElementById: (id) =>
+          id === "scenario"
+            ? selector
+            : id === "report-explorer"
+              ? explorer
+              : other,
+      },
+      HTMLSelectElement: Element,
+      HTMLDetailsElement: Details,
+      crypto: webcrypto,
+      TextEncoder,
+      URL,
+      URLSearchParams,
+      location: { search: query, href: "https://entrotter.github.io/" + query },
+      fetch: (path) => {
+        requests.push(path);
+        return new Promise(() => {});
+      },
+    });
+    vm.runInContext(productionCode, startup, { timeout: 2000 });
+    assert.deepEqual(requests, ["reports/" + wanted + ".json"]);
+    assert.equal(explorer.open, opens);
+    assert.equal(explorer.scrolls, Number(opens));
+  }
 });
