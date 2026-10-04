@@ -4,8 +4,8 @@ This guide uses tested candidate commits awaiting independent human approval and
 integration. It is not a released package or evidence that the newer website is
 deployed. The fixture is a synthetic scenario, not historical market replay.
 
-The candidate [Aave action and text composition](../evidence/aave-result-text-integration/README.md)
-selects enginef53a66a, SDKba4af51, CLI169b759 and viewer422d98a. It adds supplied
+The candidate [Aave browser-outcome composition](../evidence/aave-viewer-integration/README.md)
+selects enginef53a66a, SDKba4af51, CLI169b759 and viewer37c43d0. It adds supplied
 collateral and variable-rate borrowing to the existing bounded replay and exact
 recorded price/account inspection. The action result can be checked and inspected
 offline; reproducing its archived-state execution needs Docker and an archive
@@ -79,7 +79,7 @@ experiment is separate from the original signed-prefix price/account cases below
 In an existing six-sibling checkout, select the reviewed viewer source:
 
 ```bash
-git -C entrotter.github.io fetch --depth=1 origin 422d98a7cf753bfc9be9b86553cd76f3a549f70c
+git -C entrotter.github.io fetch --depth=1 origin 37c43d0cf8be61dfd33253bc2d3401429ca9cd9b
 git -C entrotter.github.io checkout --detach FETCH_HEAD
 python3 -m http.server 8880 --bind 127.0.0.1 --directory entrotter.github.io
 ```

@@ -71,16 +71,16 @@ consumer strategy or the full block's state.
 
 | Component | Exact source | Candidate PR |
 | --- | --- | --- |
-| Last independently audited coordinator snapshot before the text composition (CLI24 selected) | [452c068](https://github.com/entrotter/entrotter/tree/452c0689e3c7fedcb24a35e409328cd525ba89ff) | [#55](https://github.com/entrotter/entrotter/pull/55) |
+| Last independently audited coordinator snapshot before browser-outcome composition (CLI169/viewer422 selected) | [07389e3](https://github.com/entrotter/entrotter/tree/07389e3a96530cdb2f7980f20c1827997c15e1b4) | [#55](https://github.com/entrotter/entrotter/pull/55) |
 | Bounded agent engine, Aave supply/variable borrow and historical price/account observations | [f53a66a](https://github.com/entrotter/engine/tree/f53a66a303e67ca4fbb4322a06b36b036f4db599) | [#35](https://github.com/entrotter/engine/pull/35) |
 | Python SDK with offline typed signed-prefix and price/account observation inspection | [ba4af51](https://github.com/entrotter/sdk-python/tree/ba4af512784119f23b6dea63fd24c7f5d1fdde44) | [#7](https://github.com/entrotter/sdk-python/pull/7) |
 | CLI with bounded replay, exact native/token/account/price text and completeness exits | [169b759](https://github.com/entrotter/cli/tree/169b759aff9280ce44fb0d15569c7ae0a4a40889) | [#10](https://github.com/entrotter/cli/pull/10) |
 | Scenario/result and separate trace contracts | [8785bb0](https://github.com/entrotter/scenarios/tree/8785bb090c13390b783fe8c42f01b26f1d5e7c24) | [#11](https://github.com/entrotter/scenarios/pull/11) |
-| Console, local source selection, recorded agent and Aave account inspection | [422d98a](https://github.com/entrotter/entrotter.github.io/tree/422d98a7cf753bfc9be9b86553cd76f3a549f70c) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
+| Console, local source selection and exact native/token/Aave account inspection | [37c43d0](https://github.com/entrotter/entrotter.github.io/tree/37c43d0cf8be61dfd33253bc2d3401429ca9cd9b) | [#16](https://github.com/entrotter/entrotter.github.io/pull/16) |
 
-All five mandatory coordinator checks at452c068 passed: four on originalattempt1
-and docs-links on unchanged attempt2 after two inherited Piper links returned
-HTTP429. Original failed artifacts remain retained. All six CLI169b checks pass
+All five mandatory coordinator checks at07389e3 passed on originalattempt1.
+Earlier452c068 documentation HTTP429 failures and unchanged attempt2 remain
+historical evidence, not the current coordinator run. All six CLI169b checks pass
 on originalattempt1. Both have independent raw-artifact/source review and parent
 rehash; the new selected combination requires its own coordinator CI.
 The [price text composition](../evidence/observed-text-integration/README.md)

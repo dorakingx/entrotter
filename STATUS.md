@@ -2228,3 +2228,33 @@ content, frozen pins/locks, old evidence and media remain unchanged. No new loca
 EVM, model, browser or performance run. Current coordinator CI and independent
 review/publication are separate gates; protected-main/Pages and submission remain
 pending. Goalactive through officialOctober13 15:59JST; Discordexcluded.
+
+
+## October 4 — select exact Aave outcomes in the browser
+
+The candidate selects viewer37c43d0 with Enginef53/SDKba4/CLI169. The v0.1 source
+selector offers the original59506-byte action result; exact native/ERC-20
+initial/final/change/differences, identity/decimal bindings and arithmetic controls
+preserve digits and distinguish Unavailable from zero. The display and content
+seals establish selected internal consistency, not provider/execution authenticity
+or valuation/profit. Original report families, contracts and videos retain versions.
+
+All4 current viewer mandatory checks pass on originalattempt1:131 Node tests,
+12 Python site tests,47 Chromium groups/61 rawaxe zero violations/JSerrors,
+19JS/20typed/148 reviewed findings,109Node/42Python locked identities with zero
+reported advisories and17docs/103links/90unique with zero errors/timeouts/excludes.
+Independent original-CI proof SHA7fee1b9a and parent rehash bind all14 public blobs,
+actual merge/public tree, full original ZIP entries and source identities. Strict
+protected-human main approval and Pages remain separate; PR16 is open/unmerged.
+
+[Aave browser composition](evidence/aave-viewer-integration/README.md) adds one
+production Node view-model command to the existing four-command offline reader.
+The initial missing async await failed the required-field assertion; original
+outputs remain retained and the corrected actual step passes. Every earlier
+whole output is unchanged; all16 four-column rows/source/identities/recorded hold
+match the selected browser golden and all22 inputs match immutable selected Git.
+Other workflow bodies, frozen pins/locks/quality variants, old evidence and media
+are unchanged. No new local EVM/RPC/model/browser/performance execution is claimed.
+Current coordinator CI and independent stage review remain separate. Goalactive
+through officialOctober13 15:59JST, Discordexcluded; submission facts/audio/hosting
+and protected independent-human review remain pending.

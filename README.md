@@ -99,6 +99,14 @@ remain unchanged. The current viewer also identifies local v0.1 imports explicit
 clears previous results while loading, and lets the same example be selected after
 a rejected file. [Source-label verification](https://github.com/entrotter/entrotter.github.io/blob/422d98a7cf753bfc9be9b86553cd76f3a549f70c/evidence/report-source/README.md) preserves the actual regression and full browser evidence.
 
+The [Aave outcome composition](evidence/aave-viewer-integration/README.md) selects
+the exact browser balance table and original supply/borrow recording. Native and
+ERC-20 initial/final/change/differences retain all digits; missing observations
+stay Unavailable and units bind to scenario identities. One offline reader checks
+all sixteen browser rows beside the original Engine/SDK/CLI outputs. The current
+viewer component has passed its own mandatory CI; combined integration, protected
+human main approval and live Pages remain separate.
+
 Terminal users can also inspect the same account record with
 `position-inspect --format text`: all six exact account fields and differences,
 health status, source IDs and unproven reasons appear without manual unit scaling.
