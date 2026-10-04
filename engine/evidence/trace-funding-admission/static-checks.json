@@ -1,0 +1,11 @@
+{
+  "lint": "All checks passed!",
+  "format": "23files already formatted",
+  "mypy": "Success: no issues found in23sourcefiles",
+  "commands": [
+    "python -m ruff check src scripts",
+    "python -m ruff format --check src scripts",
+    "python -m mypy src scripts"
+  ],
+  "reused_once_after_source_fix": true
+}

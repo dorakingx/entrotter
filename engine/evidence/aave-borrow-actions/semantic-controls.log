@@ -1,0 +1,10 @@
+test_input_admission_rejects_fifo_symlink_size_and_duplicate_fields (test_aave_borrow_example.AaveBorrowExampleTests.test_input_admission_rejects_fifo_symlink_size_and_duplicate_fields) ... ok
+test_rebound_future_observation_and_wrong_provider_fail (test_aave_borrow_example.AaveBorrowExampleTests.test_rebound_future_observation_and_wrong_provider_fail) ... ok
+test_recorded_real_result_is_checked_offline (test_aave_borrow_example.AaveBorrowExampleTests.test_recorded_real_result_is_checked_offline) ... ok
+test_resealed_borrow_event_amount_mode_and_beneficiary_fail (test_aave_borrow_example.AaveBorrowExampleTests.test_resealed_borrow_event_amount_mode_and_beneficiary_fail) ... ok
+test_resealed_gas_tokens_and_submission_claims_fail (test_aave_borrow_example.AaveBorrowExampleTests.test_resealed_gas_tokens_and_submission_claims_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.026s
+
+OK

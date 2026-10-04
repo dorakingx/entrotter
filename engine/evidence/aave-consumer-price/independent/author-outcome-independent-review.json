@@ -1,0 +1,138 @@
+{
+  "bindings_verified": {
+    "current": 100,
+    "prior001_to005": 284,
+    "production_Git198_and_frozen": 25
+  },
+  "cache_stats": {
+    "bytes": 2647997,
+    "entries": 964,
+    "errors": 7,
+    "hits": 903,
+    "refused_handlers": 0,
+    "requests": 1879,
+    "uncached": 6,
+    "upstream": 970
+  },
+  "candidate_receipt_comparison": {
+    "execution_changes": 0,
+    "omitted": 1,
+    "receipt_matches_original": 12,
+    "structural_only": 19
+  },
+  "closure_metadata_and_fresh_read_only_probes": [
+    {
+      "group_absent": true,
+      "owner": "baseline_guardian",
+      "pid": 12450,
+      "pid_absent": true,
+      "port": 57193,
+      "port_closed": true,
+      "probe": "Fresh read-only signal0/group0/loopback connection after authoritative terminal; no termination signals."
+    },
+    {
+      "group_absent": true,
+      "owner": "candidate_guardian",
+      "pid": 13001,
+      "pid_absent": true,
+      "port": 59312,
+      "port_closed": true,
+      "probe": "Fresh read-only signal0/group0/loopback connection after authoritative terminal; no termination signals."
+    },
+    {
+      "group_absent": true,
+      "owner": "fixed_cache",
+      "pid": 12449,
+      "pid_absent": true,
+      "port": 57192,
+      "port_closed": true,
+      "probe": "Fresh read-only signal0/group0/loopback connection after authoritative terminal; no termination signals."
+    }
+  ],
+  "head": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
+  "original_signed_prefix": {
+    "block": 18999892,
+    "captured_source_exact003_and005": true,
+    "count": 32,
+    "full_baseline_receipts_exact_original003_and005": true,
+    "full_candidate_outcomes_exact005": true,
+    "of_block_transaction_count": 181,
+    "skip_indices": [
+      12
+    ],
+    "through_index": 31
+  },
+  "owned_view_observations": {
+    "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+    "all_raw_ABI_words_decoded_independently": true,
+    "base_currency": "0x0000000000000000000000000000000000000000",
+    "code_observed_sha256_and_bytes": {
+      "oracle_code": {
+        "bytes": 3405,
+        "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+      },
+      "proxy_code": {
+        "bytes": 9571,
+        "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+      }
+    },
+    "errors": [],
+    "phase_count": 4,
+    "price_raw_integer_by_phase": {
+      "baseline_after": 256292441874,
+      "baseline_before": 257082415000,
+      "candidate_after": 257082415000,
+      "candidate_before": 257082415000
+    },
+    "same_initial_heads_and_full_producer_getter_bytes": true,
+    "source_proxy": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+    "stable_recorded_code_identities_all4": true,
+    "unit": 100000000
+  },
+  "raw_artifacts_sha256": {
+    "baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "candidate-branch.json": "8ac742ec01c44fd4f2626807acfe89e94e6e851a6572f90358f1a2e8609321b0",
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "consumer-observations.json": "b9e979c9f363559c5ab79131b602b7b7538da84f2c19928c089219b00dcc831d",
+    "host-cache-cleanup.json": "50651e6ef8a37d6c00bc10631b1431506920387ae8db0594ba32e6a5ac33b23a",
+    "host-owned-cleanup.json": "e470ce072e43d7531ed555701cd3366866137d908817dfd544eaf2e5c6cdc365",
+    "host-result.json": "471b870b5b738287d87a3f8bf850a280ff3e4a7fe0c7aa036a58a297190b6dd5",
+    "observations.json": "87c9f0d430ab5db09cd1bb3f92b910b6cd4f90955bd3f7d5c45204caa306a25b",
+    "owned-cache.json": "6eee953bbb5875c6128bb6d46fef0f51bf21c6faa1cbf9583a5baa7d795a3377",
+    "owned-nodes.json": "e60b616d12b7ad16e48e788c59735596cba4a7963db8abae883620f6114010b5",
+    "protocol-response.json": "dbfec7da07a0e0b533207faf4ca150d540d5ed4f41af0fe69fb853ce7979d6df",
+    "report.json": "2e4cc3966185ed92f40b3507a397269ad44d098a65b8bf2dcb57b331f33a2d79",
+    "result.json": "f04eff69975018b165fc7464d3204697ac3ff7183f8c5d0238578ecdcafa0df4"
+  },
+  "readiness_sha256": "063e00eec63f879198b971b60e18fc48dc10e9f3d0bdafc9af388bdfc75f610c",
+  "receipt_gas_totals": {
+    "baseline": 6403065,
+    "candidate": 6066313,
+    "difference_exact_omitted_gas": 336752,
+    "meaning": "Resource accounting only, not benefit/profit."
+  },
+  "report_artifact_id": "aa04f523daf1e4f586adb171630d9ffa7736ba2ecf1f5ebffa500d12260561a8",
+  "request_sha256": "c9df77e46ca56d8b0e9a72e38fab1fd4013d84abe1e082619641850bf7feb522",
+  "reviewed_at_UTC": "2026-10-02T12:45:32.469179+00:00",
+  "reviewer_setup_gap": {
+    "effect": "Both reviewer attempts stopped before any closure probes/output record; corrected verifier expectation to exact production constant, no product/runtime/test/chain changes.",
+    "initial_assertion": "Two reviewer-only assertions mistakenly expected wire worker_version0.1.0 string then integer1. Actual unchanged worker_protocol.py WORKER_VERSION is exact string1, independently inspected before correction."
+  },
+  "runtime_seconds": {
+    "host": 132.865456,
+    "native_child": 132.738311,
+    "report": 132.703057
+  },
+  "scope_limits": [
+    "Instrumented native trial; no defaultDocker/CI/Pages/rendered-browser claim or RSS/CPU/PID quota proof.",
+    "Only32 of181 transactions; no fullblock/opcode/finalstate-root proof or remaining transaction consumer discovery.",
+    "Aave getAssetPrice views respond to observed source state; no signed dependent transaction/loan/liquidation/trade/profit or full G1 completion.",
+    "Raw bytecode deliberately not persisted: independent review verifies frozen hashing implementation and stable recorded SHA/length, not authenticated raw code/provider.",
+    "Cache7aggregateerrors have unknown causes; no retrospective timeout explanation or performance-causality claim.",
+    "Root setup-only PYTHONPATH import failure preceded main/child/output; prior001\u2013004 failures remain immutable.",
+    "Fresh local read-only OS/port probes only; no new archive/EVM/model/test/browser run, approvals/merges/publication/source mutation."
+  ],
+  "source_sha256": "ac4476eedb4432652abbd159ea66c1308346b3b3071f7e1cbefa8c2908f565c7",
+  "status": "PASS_NO_ACTIONABLE_FINDINGS_WITHIN_REVIEWED_SCOPE",
+  "verifier_sha256": "cc1aeed3e31cf5c76499f56f4a89bfff57445390472101702e4f87486d6a783d"
+}

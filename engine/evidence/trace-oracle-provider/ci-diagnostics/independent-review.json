@@ -1,0 +1,28 @@
+{
+  "reviewer": "root independent source/evidence review; distinct from required GitHub human approval",
+  "base": "e84980edd3945d405bf118790b8166c95bd75c7b",
+  "source_sha256": {
+    ".github/workflows/isolated.yml": "6e64ba15e26eb7917fdc9be764d9639d102211ea614bae8ba5549bc47828cee5",
+    "tests_isolated/diagnose_trace_worker.py": "fc9e1cfaecec7b417a51a30e605fcaaacfa843e7231c0dbf64ed9bcaf737fa1b",
+    "tests/test_trace_diagnostic.py": "c70b119f8ac3f480c71ef0deb1bf14ea91bac9de8d4783e89c41c3cd0896de24"
+  },
+  "readiness_sha256": "1d934a9ffd0e6bfb253830f7ccf12d6a6f71a07fda6dc3b2ea561916f54fde88",
+  "evidence_hashes_verified": 14,
+  "raw_redaction_bindings_verified": 11,
+  "production_source_bytes_unchanged": 23,
+  "actionable_findings_remaining": [],
+  "reviewed_corrections": [
+    "Owner cleanup attempted despite client kill/wait failure",
+    "Output descriptor closure attempted despite wait failure",
+    "Finite TLS/HTTP classification does not require optional numeric codes",
+    "Real embedded entrypoint imports and invalid-input failure JSON exercised"
+  ],
+  "scope": [
+    "Manual helper/workflow/tests/evidence source/privacy/shared-slot/quotas/budget/lifetime review",
+    "15 focused author tests inspected; root independently executed 3 embedded invalid-input cases",
+    "No root Docker/network/kernel or new-head CI success inferred",
+    "Mandatory historical default failure remains failed even after diagnostic completion",
+    "Production scanner/type coverage still23 sources and excludes this test helper; reviewed independently",
+    "All8 CI completion, upstream failure cause, archived oracle/funding/full-block/authenticity and human approval remain unproven"
+  ]
+}

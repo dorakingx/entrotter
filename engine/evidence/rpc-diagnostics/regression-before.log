@@ -1,0 +1,249 @@
+test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) ... 
+  test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) (mode='timeout') ... ERROR
+  test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) (mode='http_error') ... ERROR
+  test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) (mode='invalid_response') ... ERROR
+  test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) (mode='rejected') ... ERROR
+test_error_message_and_data_are_never_echoed (test_rpc_diagnostics.RPCDiagnosticTests.test_error_message_and_data_are_never_echoed) ... /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py:2236: ResourceWarning: unclosed <socket.socket [closed] fd=4, family=2, type=1, proto=6>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_non_object_error_does_not_echo_untrusted_text (test_rpc_diagnostics.RPCDiagnosticTests.test_non_object_error_does_not_echo_untrusted_text) ... ok
+test_untrusted_code_cannot_enter_diagnostics (test_rpc_diagnostics.RPCDiagnosticTests.test_untrusted_code_cannot_enter_diagnostics) ... ok
+test_arbitrary_method_and_constructor_codes_cannot_enter_diagnostics (test_rpc_diagnostics.SafeRPCFailureTests.test_arbitrary_method_and_constructor_codes_cannot_enter_diagnostics) ... ERROR
+test_hostile_exception_formatters_and_reason_access_are_never_required (test_rpc_diagnostics.SafeRPCFailureTests.test_hostile_exception_formatters_and_reason_access_are_never_required) ... ERROR
+test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) ... 
+  test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='http_error') ... ERROR
+  test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='connection_error') ... ERROR
+  test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='connection_error') ... ERROR
+  test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='tls_error') ... ERROR
+  test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='transport_error') ... ERROR
+  test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='transport_error') ... ERROR
+test_ordinary_upstream_and_local_still_deny_raw_broadcast (test_rpc_diagnostics.SafeRPCFailureTests.test_ordinary_upstream_and_local_still_deny_raw_broadcast) ... ERROR
+test_owned_trace_method_diagnostics_allow_fixed_mine_only (test_rpc_diagnostics.SafeRPCFailureTests.test_owned_trace_method_diagnostics_allow_fixed_mine_only) ... ERROR
+test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) ... 
+  test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='invalid_response') ... ERROR
+  test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='invalid_response') ... ERROR
+  test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='invalid_response') ... ERROR
+  test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='response_too_large') ... ERROR
+  test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='rejected') ... ERROR
+test_timeout_types_do_not_require_error_messages (test_rpc_diagnostics.SafeRPCFailureTests.test_timeout_types_do_not_require_error_messages) ... 
+  test_timeout_types_do_not_require_error_messages (test_rpc_diagnostics.SafeRPCFailureTests.test_timeout_types_do_not_require_error_messages) (type='TimeoutError') ... ERROR
+  test_timeout_types_do_not_require_error_messages (test_rpc_diagnostics.SafeRPCFailureTests.test_timeout_types_do_not_require_error_messages) (type='URLError') ... ERROR
+
+======================================================================
+ERROR: test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) (mode='timeout')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 178, in test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports
+    self.assertEqual(caught.exception.code, mode)
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'code'
+
+======================================================================
+ERROR: test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) (mode='http_error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 178, in test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports
+    self.assertEqual(caught.exception.code, mode)
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'code'
+
+======================================================================
+ERROR: test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) (mode='invalid_response')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 178, in test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports
+    self.assertEqual(caught.exception.code, mode)
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'code'
+
+======================================================================
+ERROR: test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports (test_rpc_diagnostics.LoopbackRPCFailureTests.test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports) (mode='rejected')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 178, in test_actual_http_timeout_and_error_responses_have_safe_codes_and_closed_ports
+    self.assertEqual(caught.exception.code, mode)
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCRejected' object has no attribute 'code'
+
+======================================================================
+ERROR: test_arbitrary_method_and_constructor_codes_cannot_enter_diagnostics (test_rpc_diagnostics.SafeRPCFailureTests.test_arbitrary_method_and_constructor_codes_cannot_enter_diagnostics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 109, in test_arbitrary_method_and_constructor_codes_cannot_enter_diagnostics
+    error = RPCError('compatible RuntimeError args', code='PRIVATE_CODE', method='PRIVATE_METHOD')
+TypeError: RPCError() takes no keyword arguments
+
+======================================================================
+ERROR: test_hostile_exception_formatters_and_reason_access_are_never_required (test_rpc_diagnostics.SafeRPCFailureTests.test_hostile_exception_formatters_and_reason_access_are_never_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 88, in test_hostile_exception_formatters_and_reason_access_are_never_required
+    self.assertEqual(self.failure(HostileReason('PRIVATE')).code, 'transport_error')
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 49, in failure
+    self.assertNotIn('PRIVATE', json.dumps(caught.exception.diagnostics))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+======================================================================
+ERROR: test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='http_error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 69, in test_http_connection_and_tls_classification_without_private_fields
+    self.assertEqual(self.failure(error).code, expected)
+                     ~~~~~~~~~~~~^^^^^^^
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 49, in failure
+    self.assertNotIn('PRIVATE', json.dumps(caught.exception.diagnostics))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+======================================================================
+ERROR: test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='connection_error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 69, in test_http_connection_and_tls_classification_without_private_fields
+    self.assertEqual(self.failure(error).code, expected)
+                     ~~~~~~~~~~~~^^^^^^^
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 49, in failure
+    self.assertNotIn('PRIVATE', json.dumps(caught.exception.diagnostics))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+======================================================================
+ERROR: test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='connection_error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 69, in test_http_connection_and_tls_classification_without_private_fields
+    self.assertEqual(self.failure(error).code, expected)
+                     ~~~~~~~~~~~~^^^^^^^
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 49, in failure
+    self.assertNotIn('PRIVATE', json.dumps(caught.exception.diagnostics))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+======================================================================
+ERROR: test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='tls_error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 69, in test_http_connection_and_tls_classification_without_private_fields
+    self.assertEqual(self.failure(error).code, expected)
+                     ~~~~~~~~~~~~^^^^^^^
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 49, in failure
+    self.assertNotIn('PRIVATE', json.dumps(caught.exception.diagnostics))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+======================================================================
+ERROR: test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='transport_error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 69, in test_http_connection_and_tls_classification_without_private_fields
+    self.assertEqual(self.failure(error).code, expected)
+                     ~~~~~~~~~~~~^^^^^^^
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 49, in failure
+    self.assertNotIn('PRIVATE', json.dumps(caught.exception.diagnostics))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+======================================================================
+ERROR: test_http_connection_and_tls_classification_without_private_fields (test_rpc_diagnostics.SafeRPCFailureTests.test_http_connection_and_tls_classification_without_private_fields) (code='transport_error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 69, in test_http_connection_and_tls_classification_without_private_fields
+    self.assertEqual(self.failure(error).code, expected)
+                     ~~~~~~~~~~~~^^^^^^^
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 49, in failure
+    self.assertNotIn('PRIVATE', json.dumps(caught.exception.diagnostics))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+======================================================================
+ERROR: test_ordinary_upstream_and_local_still_deny_raw_broadcast (test_rpc_diagnostics.SafeRPCFailureTests.test_ordinary_upstream_and_local_still_deny_raw_broadcast)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 128, in test_ordinary_upstream_and_local_still_deny_raw_broadcast
+    self.assertEqual(caught.exception.code, 'invalid_request')
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'code'
+
+======================================================================
+ERROR: test_owned_trace_method_diagnostics_allow_fixed_mine_only (test_rpc_diagnostics.SafeRPCFailureTests.test_owned_trace_method_diagnostics_allow_fixed_mine_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 136, in test_owned_trace_method_diagnostics_allow_fixed_mine_only
+    self.assertEqual(caught.exception.diagnostics, {'code': 'timeout', 'method': 'evm_mine'})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+======================================================================
+ERROR: test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='invalid_response')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 104, in test_response_failures_and_rejection_are_distinct
+    self.assertEqual(caught.exception.code, code)
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'code'
+
+======================================================================
+ERROR: test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='invalid_response')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 104, in test_response_failures_and_rejection_are_distinct
+    self.assertEqual(caught.exception.code, code)
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'code'
+
+======================================================================
+ERROR: test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='invalid_response')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 104, in test_response_failures_and_rejection_are_distinct
+    self.assertEqual(caught.exception.code, code)
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'code'
+
+======================================================================
+ERROR: test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='response_too_large')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 104, in test_response_failures_and_rejection_are_distinct
+    self.assertEqual(caught.exception.code, code)
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'code'
+
+======================================================================
+ERROR: test_response_failures_and_rejection_are_distinct (test_rpc_diagnostics.SafeRPCFailureTests.test_response_failures_and_rejection_are_distinct) (code='rejected')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 104, in test_response_failures_and_rejection_are_distinct
+    self.assertEqual(caught.exception.code, code)
+                     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCRejected' object has no attribute 'code'
+
+======================================================================
+ERROR: test_timeout_types_do_not_require_error_messages (test_rpc_diagnostics.SafeRPCFailureTests.test_timeout_types_do_not_require_error_messages) (type='TimeoutError')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 55, in test_timeout_types_do_not_require_error_messages
+    failure = self.failure(error)
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 49, in failure
+    self.assertNotIn('PRIVATE', json.dumps(caught.exception.diagnostics))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+======================================================================
+ERROR: test_timeout_types_do_not_require_error_messages (test_rpc_diagnostics.SafeRPCFailureTests.test_timeout_types_do_not_require_error_messages) (type='URLError')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 55, in test_timeout_types_do_not_require_error_messages
+    failure = self.failure(error)
+  File "/workspace/repository/tests/test_rpc_diagnostics.py", line 49, in failure
+    self.assertNotIn('PRIVATE', json.dumps(caught.exception.diagnostics))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RPCError' object has no attribute 'diagnostics'
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.162s
+
+FAILED (errors=21)

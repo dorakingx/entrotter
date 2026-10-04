@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1.0",
+  "id": "local-branch-revert",
+  "title": "Isolated local EVM transfers and a revert",
+  "mode": "evm-local",
+  "provenance": {
+    "kind": "local-evm",
+    "description": "Synthetic local chain. No real wallet, protocol, token or market data."
+  },
+  "actor": "0x1000000000000000000000000000000000000001",
+  "actor_balance_wei": "10000000000000000000",
+  "allowed_targets": [
+    "0xabababababababababababababababababababab"
+  ],
+  "local_contracts": {
+    "0xabababababababababababababababababababab": "0x60006000fd",
+    "0xABABABABABABABABABABABABABABABABABABABAB": "0x00"
+  },
+  "steps": [
+    {
+      "baseline": null,
+      "candidate": {
+        "to": "0xabababababababababababababababababababab",
+        "value_wei": "0",
+        "gas": 50000
+      }
+    }
+  ]
+}

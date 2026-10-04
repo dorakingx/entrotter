@@ -1,0 +1,1 @@
+{"cases": ["observed_control", "observed_missing_storage"], "nodes": 7, "reader_threads": 8, "proxies": 2, "source_closed": true}

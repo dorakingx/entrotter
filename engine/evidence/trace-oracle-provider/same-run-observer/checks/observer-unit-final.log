@@ -1,0 +1,19 @@
+test_cleanup_failure_is_secondary_and_descriptor_still_closes (test_trace_observer.CollectorTests.test_cleanup_failure_is_secondary_and_descriptor_still_closes) ... ok
+test_real_bound_guardian_row_is_collected_without_normal_report_mutation (test_trace_observer.CollectorTests.test_real_bound_guardian_row_is_collected_without_normal_report_mutation) ... ok
+test_unsafe_and_unbound_output_is_discarded_with_secondary_error_only (test_trace_observer.CollectorTests.test_unsafe_and_unbound_output_is_discarded_with_secondary_error_only) ... ok
+test_outer_envelope_rejects_unbound_reordered_or_extra_observer_rows (test_trace_observer.EmbeddedProtocolTests.test_outer_envelope_rejects_unbound_reordered_or_extra_observer_rows) ... ok
+test_secondary_collector_error_preserves_primary_trace_failure (test_trace_observer.EmbeddedProtocolTests.test_secondary_collector_error_preserves_primary_trace_failure) ... ok
+test_both_streams_bind_events_to_original_index_without_private_text (test_trace_observer.GuardianObserverTests.test_both_streams_bind_events_to_original_index_without_private_text) ... ok
+test_descendant_held_pipe_closes_readers_but_marks_incomplete (test_trace_observer.GuardianObserverTests.test_descendant_held_pipe_closes_readers_but_marks_incomplete) ... ok
+test_flood_cap_and_overlong_lines_explicitly_mark_incomplete (test_trace_observer.GuardianObserverTests.test_flood_cap_and_overlong_lines_explicitly_mark_incomplete) ... ok
+test_original_lifetime_kills_term_ignoring_child (test_trace_observer.GuardianObserverTests.test_original_lifetime_kills_term_ignoring_child) ... ok
+test_owner_eof_stops_original_guardian (test_trace_observer.GuardianObserverTests.test_owner_eof_stops_original_guardian) ... ok
+test_reader_exception_is_finite_and_descriptor_closes (test_trace_observer.GuardianObserverTests.test_reader_exception_is_finite_and_descriptor_closes) ... ok
+test_real_embedded_guardian_exit_seven_remains_readable (test_trace_observer.GuardianObserverTests.test_real_embedded_guardian_exit_seven_remains_readable) ... ok
+test_row_rejects_resealed_unsafe_unbound_and_contradictory_data (test_trace_observer.GuardianObserverTests.test_row_rejects_resealed_unsafe_unbound_and_contradictory_data) ... ok
+test_second_reader_start_failure_cleans_owned_node_and_descriptors (test_trace_observer.GuardianObserverTests.test_second_reader_start_failure_cleans_owned_node_and_descriptors) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 3.643s
+
+OK

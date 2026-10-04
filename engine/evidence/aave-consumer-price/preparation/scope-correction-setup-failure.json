@@ -1,0 +1,6 @@
+{
+  "step": "scope_only_metadata_binding",
+  "exception_type": "ValueError",
+  "cause": "Relative metadata paths passed to relative_to absolute root; corrected to resolved paths.",
+  "effects": "Scope text/source-docstring copied and edited; initialc3 readiness unchanged until corrected binding. No tests/services/archive/process launch or behavior changes."
+}

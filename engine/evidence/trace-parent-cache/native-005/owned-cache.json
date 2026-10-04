@@ -1,0 +1,1 @@
+[{"closed":true,"group_absent":true,"pgid":55054,"pid":55054,"port":65460,"port_closed":true,"returncode":0,"stats":{"bytes":2640492,"entries":960,"errors":6,"hits":899,"refused_handlers":0,"requests":1871,"uncached":6,"upstream":966},"stdin_closed":true,"stdout_closed":true}]

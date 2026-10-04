@@ -1,0 +1,19 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 308B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM cgr.dev/chainguard/python@sha256:011e73b4e30e0fe9407a42b82a920b4fa13ebc0bf029a48b714f950df254ca20
+#4 CACHED
+
+#5 [2/2] RUN ["python3", "-c", "import time; print("ENTROTTER_DEADLINE_74f1fd56f1cc4eb0a876fe3919eb44a7", flush=True); time.sleep(60)"]
+#5 0.152 ENTROTTER_DEADLINE_74f1fd56f1cc4eb0a876fe3919eb44a7
+{"deadline_seconds": 10, "elapsed_seconds": 10.013, "daemon_probe_processes_remaining": [], "scope": "Actual isolated BuildKit RUN sleeping for 60 seconds; local Docker client lifetime/session termination"}

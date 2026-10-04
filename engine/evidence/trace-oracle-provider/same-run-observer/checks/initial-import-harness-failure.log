@@ -1,0 +1,248 @@
+test_cleanup_failure_is_secondary_and_descriptor_still_closes (test_trace_observer.CollectorTests.test_cleanup_failure_is_secondary_and_descriptor_still_closes) ... ok
+test_real_bound_guardian_row_is_collected_without_normal_report_mutation (test_trace_observer.CollectorTests.test_real_bound_guardian_row_is_collected_without_normal_report_mutation) ... ERROR
+test_unsafe_and_unbound_output_is_discarded_with_secondary_error_only (test_trace_observer.CollectorTests.test_unsafe_and_unbound_output_is_discarded_with_secondary_error_only) ... ok
+test_both_streams_bind_events_to_original_index_without_private_text (test_trace_observer.GuardianObserverTests.test_both_streams_bind_events_to_original_index_without_private_text) ... ERROR
+test_descendant_held_pipe_closes_readers_but_marks_incomplete (test_trace_observer.GuardianObserverTests.test_descendant_held_pipe_closes_readers_but_marks_incomplete) ... ERROR
+test_flood_cap_and_overlong_lines_explicitly_mark_incomplete (test_trace_observer.GuardianObserverTests.test_flood_cap_and_overlong_lines_explicitly_mark_incomplete) ... ERROR
+test_original_lifetime_kills_term_ignoring_child (test_trace_observer.GuardianObserverTests.test_original_lifetime_kills_term_ignoring_child) ... ERROR
+test_owner_eof_stops_original_guardian (test_trace_observer.GuardianObserverTests.test_owner_eof_stops_original_guardian) ... ERROR
+test_reader_exception_is_finite_and_descriptor_closes (test_trace_observer.GuardianObserverTests.test_reader_exception_is_finite_and_descriptor_closes) ... ok
+test_real_embedded_guardian_exit_seven_remains_readable (test_trace_observer.GuardianObserverTests.test_real_embedded_guardian_exit_seven_remains_readable) ... ERROR
+test_row_rejects_resealed_unsafe_unbound_and_contradictory_data (test_trace_observer.GuardianObserverTests.test_row_rejects_resealed_unsafe_unbound_and_contradictory_data) ... ERROR
+test_second_reader_start_failure_cleans_owned_node_and_descriptors (test_trace_observer.GuardianObserverTests.test_second_reader_start_failure_cleans_owned_node_and_descriptors) ... ERROR
+
+======================================================================
+ERROR: test_real_bound_guardian_row_is_collected_without_normal_report_mutation (test_trace_observer.CollectorTests.test_real_bound_guardian_row_is_collected_without_normal_report_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_observer.py", line 127, in test_real_bound_guardian_row_is_collected_without_normal_report_mutation
+    program=diagnostic.guardian_program()
+  File "/workspace/repository/tests_isolated/diagnose_trace_worker.py", line 255, in guardian_program
+    return imports+constants+inspect.getsource(Parser)+'\n'+inspect.getsource(guardian_main)+'\nsys.exit(guardian_main())\n'
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1256, in getsource
+    lines, lnum = getsourcelines(object)
+                  ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1238, in getsourcelines
+    lines, lnum = findsource(object)
+                  ~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1060, in findsource
+    file = getsourcefile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 963, in getsourcefile
+    filename = getfile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 932, in getfile
+    raise TypeError('{!r} is a built-in class'.format(object))
+TypeError: <class 'observer_diagnostic.Parser'> is a built-in class
+
+======================================================================
+ERROR: test_both_streams_bind_events_to_original_index_without_private_text (test_trace_observer.GuardianObserverTests.test_both_streams_bind_events_to_original_index_without_private_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_observer.py", line 58, in test_both_streams_bind_events_to_original_index_without_private_text
+    row,rc,_=self.guardian(code)
+             ~~~~~~~~~~~~~^^^^^^
+  File "/workspace/repository/tests/test_trace_observer.py", line 25, in guardian
+    program=diagnostic.guardian_program()
+  File "/workspace/repository/tests_isolated/diagnose_trace_worker.py", line 255, in guardian_program
+    return imports+constants+inspect.getsource(Parser)+'\n'+inspect.getsource(guardian_main)+'\nsys.exit(guardian_main())\n'
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1256, in getsource
+    lines, lnum = getsourcelines(object)
+                  ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1238, in getsourcelines
+    lines, lnum = findsource(object)
+                  ~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1060, in findsource
+    file = getsourcefile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 963, in getsourcefile
+    filename = getfile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 932, in getfile
+    raise TypeError('{!r} is a built-in class'.format(object))
+TypeError: <class 'observer_diagnostic.Parser'> is a built-in class
+
+======================================================================
+ERROR: test_descendant_held_pipe_closes_readers_but_marks_incomplete (test_trace_observer.GuardianObserverTests.test_descendant_held_pipe_closes_readers_but_marks_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_observer.py", line 80, in test_descendant_held_pipe_closes_readers_but_marks_incomplete
+    row,rc,elapsed=self.guardian('import os,time;pid=os.fork();\nif pid==0:time.sleep(30)\n')
+                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/repository/tests/test_trace_observer.py", line 25, in guardian
+    program=diagnostic.guardian_program()
+  File "/workspace/repository/tests_isolated/diagnose_trace_worker.py", line 255, in guardian_program
+    return imports+constants+inspect.getsource(Parser)+'\n'+inspect.getsource(guardian_main)+'\nsys.exit(guardian_main())\n'
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1256, in getsource
+    lines, lnum = getsourcelines(object)
+                  ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1238, in getsourcelines
+    lines, lnum = findsource(object)
+                  ~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1060, in findsource
+    file = getsourcefile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 963, in getsourcefile
+    filename = getfile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 932, in getfile
+    raise TypeError('{!r} is a built-in class'.format(object))
+TypeError: <class 'observer_diagnostic.Parser'> is a built-in class
+
+======================================================================
+ERROR: test_flood_cap_and_overlong_lines_explicitly_mark_incomplete (test_trace_observer.GuardianObserverTests.test_flood_cap_and_overlong_lines_explicitly_mark_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_observer.py", line 63, in test_flood_cap_and_overlong_lines_explicitly_mark_incomplete
+    row,rc,_=self.guardian("import os;os.write(1,b'x'*10000+b'\\n');os.write(2,b'y'*1000000)")
+             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/repository/tests/test_trace_observer.py", line 25, in guardian
+    program=diagnostic.guardian_program()
+  File "/workspace/repository/tests_isolated/diagnose_trace_worker.py", line 255, in guardian_program
+    return imports+constants+inspect.getsource(Parser)+'\n'+inspect.getsource(guardian_main)+'\nsys.exit(guardian_main())\n'
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1256, in getsource
+    lines, lnum = getsourcelines(object)
+                  ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1238, in getsourcelines
+    lines, lnum = findsource(object)
+                  ~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1060, in findsource
+    file = getsourcefile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 963, in getsourcefile
+    filename = getfile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 932, in getfile
+    raise TypeError('{!r} is a built-in class'.format(object))
+TypeError: <class 'observer_diagnostic.Parser'> is a built-in class
+
+======================================================================
+ERROR: test_original_lifetime_kills_term_ignoring_child (test_trace_observer.GuardianObserverTests.test_original_lifetime_kills_term_ignoring_child)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_observer.py", line 69, in test_original_lifetime_kills_term_ignoring_child
+    row,rc,elapsed=self.guardian('import signal,time;signal.signal(signal.SIGTERM,signal.SIG_IGN);time.sleep(30)',lifetime=.3)
+                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/repository/tests/test_trace_observer.py", line 25, in guardian
+    program=diagnostic.guardian_program()
+  File "/workspace/repository/tests_isolated/diagnose_trace_worker.py", line 255, in guardian_program
+    return imports+constants+inspect.getsource(Parser)+'\n'+inspect.getsource(guardian_main)+'\nsys.exit(guardian_main())\n'
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1256, in getsource
+    lines, lnum = getsourcelines(object)
+                  ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1238, in getsourcelines
+    lines, lnum = findsource(object)
+                  ~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1060, in findsource
+    file = getsourcefile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 963, in getsourcefile
+    filename = getfile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 932, in getfile
+    raise TypeError('{!r} is a built-in class'.format(object))
+TypeError: <class 'observer_diagnostic.Parser'> is a built-in class
+
+======================================================================
+ERROR: test_owner_eof_stops_original_guardian (test_trace_observer.GuardianObserverTests.test_owner_eof_stops_original_guardian)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_observer.py", line 74, in test_owner_eof_stops_original_guardian
+    row,rc,elapsed=self.guardian('import time;time.sleep(30)',close_owner=True)
+                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/repository/tests/test_trace_observer.py", line 25, in guardian
+    program=diagnostic.guardian_program()
+  File "/workspace/repository/tests_isolated/diagnose_trace_worker.py", line 255, in guardian_program
+    return imports+constants+inspect.getsource(Parser)+'\n'+inspect.getsource(guardian_main)+'\nsys.exit(guardian_main())\n'
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1256, in getsource
+    lines, lnum = getsourcelines(object)
+                  ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1238, in getsourcelines
+    lines, lnum = findsource(object)
+                  ~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1060, in findsource
+    file = getsourcefile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 963, in getsourcefile
+    filename = getfile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 932, in getfile
+    raise TypeError('{!r} is a built-in class'.format(object))
+TypeError: <class 'observer_diagnostic.Parser'> is a built-in class
+
+======================================================================
+ERROR: test_real_embedded_guardian_exit_seven_remains_readable (test_trace_observer.GuardianObserverTests.test_real_embedded_guardian_exit_seven_remains_readable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_observer.py", line 50, in test_real_embedded_guardian_exit_seven_remains_readable
+    row,rc,_=self.guardian('import sys;sys.exit(7)')
+             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/repository/tests/test_trace_observer.py", line 25, in guardian
+    program=diagnostic.guardian_program()
+  File "/workspace/repository/tests_isolated/diagnose_trace_worker.py", line 255, in guardian_program
+    return imports+constants+inspect.getsource(Parser)+'\n'+inspect.getsource(guardian_main)+'\nsys.exit(guardian_main())\n'
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1256, in getsource
+    lines, lnum = getsourcelines(object)
+                  ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1238, in getsourcelines
+    lines, lnum = findsource(object)
+                  ~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1060, in findsource
+    file = getsourcefile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 963, in getsourcefile
+    filename = getfile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 932, in getfile
+    raise TypeError('{!r} is a built-in class'.format(object))
+TypeError: <class 'observer_diagnostic.Parser'> is a built-in class
+
+======================================================================
+ERROR: test_row_rejects_resealed_unsafe_unbound_and_contradictory_data (test_trace_observer.GuardianObserverTests.test_row_rejects_resealed_unsafe_unbound_and_contradictory_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_observer.py", line 103, in test_row_rejects_resealed_unsafe_unbound_and_contradictory_data
+    row,_,_=self.guardian('pass')
+            ~~~~~~~~~~~~~^^^^^^^^
+  File "/workspace/repository/tests/test_trace_observer.py", line 25, in guardian
+    program=diagnostic.guardian_program()
+  File "/workspace/repository/tests_isolated/diagnose_trace_worker.py", line 255, in guardian_program
+    return imports+constants+inspect.getsource(Parser)+'\n'+inspect.getsource(guardian_main)+'\nsys.exit(guardian_main())\n'
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1256, in getsource
+    lines, lnum = getsourcelines(object)
+                  ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1238, in getsourcelines
+    lines, lnum = findsource(object)
+                  ~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1060, in findsource
+    file = getsourcefile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 963, in getsourcefile
+    filename = getfile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 932, in getfile
+    raise TypeError('{!r} is a built-in class'.format(object))
+TypeError: <class 'observer_diagnostic.Parser'> is a built-in class
+
+======================================================================
+ERROR: test_second_reader_start_failure_cleans_owned_node_and_descriptors (test_trace_observer.GuardianObserverTests.test_second_reader_start_failure_cleans_owned_node_and_descriptors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/repository/tests/test_trace_observer.py", line 89, in test_second_reader_start_failure_cleans_owned_node_and_descriptors
+    row,rc,elapsed=self.guardian('import time;time.sleep(30)',thread_failure=True)
+                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/repository/tests/test_trace_observer.py", line 25, in guardian
+    program=diagnostic.guardian_program()
+  File "/workspace/repository/tests_isolated/diagnose_trace_worker.py", line 255, in guardian_program
+    return imports+constants+inspect.getsource(Parser)+'\n'+inspect.getsource(guardian_main)+'\nsys.exit(guardian_main())\n'
+                             ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1256, in getsource
+    lines, lnum = getsourcelines(object)
+                  ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1238, in getsourcelines
+    lines, lnum = findsource(object)
+                  ~~~~~~~~~~^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 1060, in findsource
+    file = getsourcefile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 963, in getsourcefile
+    filename = getfile(object)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py", line 932, in getfile
+    raise TypeError('{!r} is a built-in class'.format(object))
+TypeError: <class 'observer_diagnostic.Parser'> is a built-in class
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.098s
+
+FAILED (errors=9)

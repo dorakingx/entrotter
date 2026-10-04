@@ -1,0 +1,39 @@
+{
+  "canonical_scenarios_equal": true,
+  "canonical_scenario_sha256": "9dd42423c21d750bf6696d82ad4b4bc9d612b6ab90219b7707d0f501a7804d8b",
+  "forward_candidate_status": "success",
+  "reverse_candidate_status": "reverted",
+  "forward_gas_used": "21000",
+  "reverse_gas_used": "21006",
+  "anvil": "anvil/v1.8.3",
+  "execution": "explicit native, actual local Anvil",
+  "owned_node_cleanup": [
+    {
+      "guardian_pid": 88379,
+      "guardian_returncode": 0,
+      "owned_rpc_port": 55670,
+      "port_closed": true
+    },
+    {
+      "guardian_pid": 88383,
+      "guardian_returncode": 0,
+      "owned_rpc_port": 55686,
+      "port_closed": true
+    },
+    {
+      "guardian_pid": 88385,
+      "guardian_returncode": 0,
+      "owned_rpc_port": 55704,
+      "port_closed": true
+    },
+    {
+      "guardian_pid": 88387,
+      "guardian_returncode": 0,
+      "owned_rpc_port": 55720,
+      "port_closed": true
+    }
+  ],
+  "docker_started": false,
+  "archive_calls": 0,
+  "model_calls": 0
+}

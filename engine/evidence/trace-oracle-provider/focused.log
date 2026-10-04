@@ -1,0 +1,35 @@
+test_missing_mining_storage_is_unverified_not_mined (test_trace_oracle.TraceOracleProviderIntegrationTests.test_missing_mining_storage_is_unverified_not_mined) ... ok
+test_missing_parent_code_and_balance_refuse_without_fixture (test_trace_oracle.TraceOracleProviderIntegrationTests.test_missing_parent_code_and_balance_refuse_without_fixture) ... ----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54718)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 761, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py", line 424, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/workspace/repository/tests/test_trace_oracle.py", line 69, in do_POST
+    self.end_headers(); self.wfile.write(body)
+                        ~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py", line 840, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+ok
+test_original_signed_oracle_update_and_adverse_omission (test_trace_oracle.TraceOracleProviderIntegrationTests.test_original_signed_oracle_update_and_adverse_omission) ... ok
+test_read_only_provider_control_matches_original (test_trace_oracle.TraceOracleProviderIntegrationTests.test_read_only_provider_control_matches_original) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 3.908s
+
+OK

@@ -1,0 +1,16 @@
+{
+  "failures": [
+    {
+      "scope": "producer before any EVM call",
+      "reason": "Image source binding initially looked for Dockerfile at root instead of container/Dockerfile",
+      "saved_private_stderr_sha256": "3dd709bfb114c30bb252f2d6750c8daf997f763e0f04d3ab4d6162a428a708ac"
+    },
+    {
+      "scope": "new example type check",
+      "reason": "Mypy required explicit None narrowing after held slot; fixed without changing the supplied actions or runner",
+      "saved_private_stdout_sha256": "1ed2f7579ed7144c605d7fe71fe0603b83bc397849dc782d061aae7f7f1581f1"
+    }
+  ],
+  "prior_build_setup": "Two pre-EVM build attempts lacked PYTHONPATH; no worker execution occurred. Original logs are retained privately.",
+  "independent_review": "Bounded regular-file admission and observation-head binding findings were fixed and tested. Staged review found an incorrect MIT label on an upstream AGPL interface excerpt; the excerpt was removed and replaced with authored ABI reference notes, retaining the actual upstream license in source metadata."
+}

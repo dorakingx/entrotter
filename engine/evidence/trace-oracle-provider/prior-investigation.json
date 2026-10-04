@@ -1,0 +1,282 @@
+{
+  "status": "investigation_complete_direction_review_pending",
+  "engine_head": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+  "tracked_source_edits": false,
+  "branch": "fix/trace-funding-admission",
+  "foundry_version": "1.8.3",
+  "foundry_commit": "cae51ad458f6abb64852b7709eb784352429825d",
+  "commands": [
+    {
+      "command": "PATH=<workspace>/.tools/foundry-v1.8.3:$PATH PYTHONPATH=src <locked-quality-python> .quality/oracle-prefix/probe.py",
+      "result": "initial option-order failure: source guardian exited0/port closed; ignored script corrected only; initial oracle plus branch faults succeeded; final fault-control plus public-entrypoint followup succeeded",
+      "handles": [
+        22268,
+        50787
+      ],
+      "handles_terminal": true
+    }
+  ],
+  "coverage_gap": {
+    "oracle": "Existing signed transfer/revert/log tests and historical receipts lack a dedicated original signed oracle-update/dependent-consumer causal check.",
+    "state_failure": "test_trace.py:168 tests wrong chain ID and missing gasUsed, not parent/storage provider failure; pin and unavailable prefix tests are separate identity/input refusal."
+  },
+  "synthetic_setup": {
+    "signing": "Two random private keys in memory, cleared after signing; keys and signing argv/stderr never recorded.",
+    "source_setup": "One owned Shanghai chain1 source; startupallocations1ETH per sender; actual signed CREATE deployments in blocks1 and2. Oracle slot0 initialized10 in CREATE initcode; consumer embeds actual deployed oracle address. Targetblock3 original signed A nonce2 writes20, B nonce0 calls consumer; same block FIFO.",
+    "replay": "Unchanged public run_trace_native forks both branches from exact block2/hash; no replay code/balance/nonce replacement, impersonation, replacement signature or different-block replay.",
+    "code_semantics": "Oracle empty calldata returns slot0; nonempty calldata writes calldata word. Consumer STATICCALLs oracle, demands20, emits LOG0 word20; otherwise reverts. Synthetic minimal handcrafted EVM bytecode, not actual market/oracle service."
+  },
+  "observed_oracle": {
+    "parent_value": 10,
+    "source_post_target_value": 20,
+    "baseline_verified": true,
+    "baseline_status": [
+      "executed",
+      "executed"
+    ],
+    "original_and_baseline_receipt_status": [
+      "0x1",
+      "0x1"
+    ],
+    "baseline_gas": [
+      26167,
+      26438
+    ],
+    "baseline_cumulative_gas": [
+      26167,
+      52605
+    ],
+    "baseline_logs": [
+      0,
+      1
+    ],
+    "baseline_projection_differences": [
+      [],
+      []
+    ],
+    "baseline_consumer_log_word": 20,
+    "candidate_status": [
+      "skipped",
+      "executed"
+    ],
+    "candidate_consumer_receipt_status": "0x0",
+    "candidate_consumer_gas": 25808,
+    "candidate_consumer_logs": 0,
+    "candidate_diff_fields": [
+      "status",
+      "gasUsed",
+      "cumulativeGasUsed",
+      "transactionIndex",
+      "logsBloom",
+      "logs"
+    ],
+    "same_consumer_signed_hash": true,
+    "runtime_seconds": 0.267668,
+    "claim": "Actual synthetic signed same-block causal receipt effect; no token-flow-profit or historical market truth claim."
+  },
+  "missing_provider_state": [
+    {
+      "fault": "none",
+      "entrypoint": "run_trace_native",
+      "exception": null,
+      "message": null,
+      "integrity_valid": true,
+      "baseline_verified": true,
+      "baseline_status": [
+        "executed",
+        "executed"
+      ],
+      "candidate_status": [
+        "skipped",
+        "executed"
+      ],
+      "targeted_denials": {
+        "anvil_nodeInfo": 4,
+        "eth_getAccountInfo": 2
+      },
+      "elapsed_seconds": 0.3061,
+      "proxy_thread_closed": true
+    },
+    {
+      "fault": "parent_missing",
+      "entrypoint": "run_trace_native",
+      "exception": "ExecutionError",
+      "message": "Trace parent block is unavailable or mismatched",
+      "integrity_valid": null,
+      "baseline_verified": null,
+      "baseline_status": [],
+      "candidate_status": [],
+      "targeted_denials": {
+        "eth_getBlockByNumber": 1
+      },
+      "elapsed_seconds": 0.006653,
+      "proxy_thread_closed": true
+    },
+    {
+      "fault": "eth_getStorageAt",
+      "entrypoint": "run_trace_native",
+      "exception": null,
+      "message": null,
+      "integrity_valid": true,
+      "baseline_verified": false,
+      "baseline_status": [
+        "not_mined",
+        "not_mined"
+      ],
+      "candidate_status": [
+        "skipped",
+        "not_mined"
+      ],
+      "targeted_denials": {
+        "anvil_nodeInfo": 4,
+        "eth_getAccountInfo": 2,
+        "eth_getStorageAt": 3
+      },
+      "elapsed_seconds": 0.311544,
+      "proxy_thread_closed": true
+    },
+    {
+      "fault": "eth_getCode",
+      "entrypoint": "run_trace_native",
+      "exception": "ExecutionError",
+      "message": "Canonical trace RPC failed; original inputs/state may be unavailable. No fixture substitution.",
+      "integrity_valid": null,
+      "baseline_verified": null,
+      "baseline_status": [],
+      "candidate_status": [],
+      "targeted_denials": {
+        "anvil_nodeInfo": 2,
+        "eth_getCode": 1,
+        "eth_getAccountInfo": 1
+      },
+      "elapsed_seconds": 0.151325,
+      "proxy_thread_closed": true
+    },
+    {
+      "fault": "eth_getBalance",
+      "entrypoint": "run_trace_native",
+      "exception": "ExecutionError",
+      "message": "Canonical trace RPC failed; original inputs/state may be unavailable. No fixture substitution.",
+      "integrity_valid": null,
+      "baseline_verified": null,
+      "baseline_status": [],
+      "candidate_status": [],
+      "targeted_denials": {
+        "anvil_nodeInfo": 2,
+        "eth_getBalance": 1,
+        "eth_getAccountInfo": 1
+      },
+      "elapsed_seconds": 0.14249,
+      "proxy_thread_closed": true
+    }
+  ],
+  "fault_control": "The same proxy normally forwarded read-only local source RPC and verified baseline. Unsupported optional Anvil nodeInfo/accountInfo methods denied in all arms; eth_gasPrice forwarded. No external/upstream write or response substitution. Parent returns null; account/code/storage targeted faults return explicit JSON-RPC errors.",
+  "primary_explanation": [
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/executor.rs#L610-L617",
+      "fact": "Database account error skips transaction."
+    },
+    {
+      "url": "https://github.com/foundry-rs/foundry/blob/cae51ad458f6abb64852b7709eb784352429825d/crates/anvil/src/eth/backend/executor.rs#L717-L726",
+      "fact": "Execution database errors may skip transaction without an evm_mine JSON-RPC error. Unchanged engine consequently reports no receipt as not_mined, with unmatched baseline."
+    }
+  ],
+  "recommended_direction": {
+    "production_change": "No reproduced correctness defect or fabricated verified baseline. Retain honest unverified reports and strict errors; do not invent archive state or read error logs as truth.",
+    "focused_additions": "New native oracle dependency regression and same read-only local fault-proxy controls for missing parent/code/balance/storage. Add corresponding bounded direct-image protocol oracle proof as separate scope; existing default host historical gates stay intact. Add explicit assumptions/docs: mining-time archive/storage errors can appear as unverified not_mined; reason cannot be inferred solely from receipt absence.",
+    "required_root_review": "No tracked implementation, branch change, commit or public evidence until direction/privacy review."
+  },
+  "cleanup": {
+    "setup_failure": [
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    ],
+    "initial": [
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    ],
+    "followup": [
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      },
+      {
+        "guardian_returncode": 0,
+        "port_closed": true
+      }
+    ],
+    "all_16_owned_guardians_exit0_ports_closed": true,
+    "all_5_followup_proxy_threads_closed": true
+  },
+  "limits": [
+    "Native owned primitive only; no local Docker/VM/default worker dispatch execution in this investigation.",
+    "Synthetic deployment/startup state, not historical provider storage attestation or whole-block/end-state/opcode truth.",
+    "No real external oracle callbacks, future updates, market outcome, profit or model advantage.",
+    "Provider returning syntactically valid incorrect state may evade refusal; exact receipt matching is narrower than a parent state proof.",
+    "Storage-failure outcome reason is not distinguishable from other valid not_mined causes from report alone.",
+    "Existing public/historical artifacts untouched; initial/followup private probe source and failed setup retained.",
+    "Raw ignored logs include local absolute path; privacy review/redaction required before publication."
+  ],
+  "sha256": {
+    ".quality/oracle-prefix/probe.py": "8e6505f51d254a5968055bb4d9464b0e929296cd2f4804bce7f0c390a67bd694",
+    ".quality/oracle-prefix/observations.json": "fe4dbb8ea9e44f24ce60dbf5be449eb65447816600beced07a576b32daf34173",
+    ".quality/oracle-prefix/oracle-report.json": "89ab037b66d0852f75089212c87a8e4850b07e4eebc600f97e3a808bf4a46795",
+    ".quality/oracle-prefix/initial-probe.py": "0f267c090a52ea471283122ac80f34541752808c8bb4c91f5a6eaa4011e033e4",
+    ".quality/oracle-prefix/initial-observations.json": "cf47258aaf547d61a8b77380e47ae2c29c8084d25fae6c720ee6b8b3abd14297",
+    ".quality/oracle-prefix/initial-oracle-report.json": "7001a5cb0b443aa76145308f925288e3b1be826c8363378ab5c53713684f9e5c",
+    "src/entrotter_engine/trace.py": "e65d6dfba7368c407d2d8fea357211d34fe90b2869b789a1da3e1baa06217226",
+    "src/entrotter_engine/evm.py": "1ec41f147a517c4372bdf72fb5763bde1adc3075e462786ba656ff87c26dba55"
+  }
+}

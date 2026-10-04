@@ -1,0 +1,15 @@
+test_oversized_valid_daemon_info_is_refused_before_json_acceptance (test_isolated.DockerMetadataTests.test_oversized_valid_daemon_info_is_refused_before_json_acceptance) ... FAIL
+
+======================================================================
+FAIL: test_oversized_valid_daemon_info_is_refused_before_json_acceptance (test_isolated.DockerMetadataTests.test_oversized_valid_daemon_info_is_refused_before_json_acceptance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<engine-checkout>/tests/test_isolated.py", line 179, in test_oversized_valid_daemon_info_is_refused_before_json_acceptance
+    with self.assertRaises(ExecutionError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+AssertionError: ExecutionError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.030s
+
+FAILED (failures=1)

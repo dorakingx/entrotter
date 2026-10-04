@@ -1,0 +1,10 @@
+{
+  "changed": {
+    "src/entrotter_engine/_parent_cache.py": {
+      "old": "46f8b3769db4e5d165359100c7a2ab7e1498a7c6d4c7bcc43ab1069adc93bb64",
+      "new": "95ce590fe177c947926e5c068c8db2b01749129dc36b16d8e43b74587e500075"
+    }
+  },
+  "all25_fingerprints_and_rationales_unchanged": true,
+  "raw_scan_sha256": "adcb44a9745b37b89f4210001845bd291e8f991ce28948dcef3f8cffdfda85f8"
+}

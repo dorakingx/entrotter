@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "platform": "Linux arm64 dedicated VM",
+  "base_engine_commit": "d5b30035b4a2a1c292db24f6caf81ed419a2684e",
+  "controller_sha256": "6f930024a7da99b545fbe8b5e005f9aa961ef38defdc0777f0184662b10880a2",
+  "actual_docker_build": {
+    "stdout_bytes": 0,
+    "stderr_bytes": 1048644,
+    "notice_count": 1,
+    "producer_requested_bytes": 16777216,
+    "steps": 4,
+    "probe_image_removed": true,
+    "scope": "Four real local BuildKit RUN steps from a verified local worker image, RUN network disabled."
+  },
+  "normal_build": {
+    "stdout_is_final_json_only": true,
+    "stderr_bytes": 974,
+    "source_digest": "fba06f6dd633858f91dd89d4f48a51c8447696f32e9eb3820302d09bcb379f42",
+    "source_inputs_unchanged": true,
+    "image_id": "sha256:64a94ba205d604f03f0d1b4ddf5afd1c933010313a13553fd9afc58fc19c0a68",
+    "image_retained_locally": true
+  },
+  "fixture_artifact_id": "e6a12db320dd37e8d37341fe202836d9442a7e428f89381223c9ab29faa479a6",
+  "complete_fixture_equality": true,
+  "owned_workers_remaining": 0,
+  "new_model_calls": 0,
+  "new_archive_rpc_calls": 0
+}

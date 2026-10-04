@@ -1,0 +1,60 @@
+{
+  "actual_image_or_default_worker_proof": false,
+  "base": "65c28330bdc694535da0074b2e3d68ab433806d8",
+  "full_unsuppressed_findings": 25,
+  "image_source_inputs": 21,
+  "native005": {
+    "baseline_after_raw_answer": 256292441874,
+    "baseline_raw_answer": 257082415000,
+    "baseline_receipts_equal": 32,
+    "baseline_verified": true,
+    "block_transactions": 181,
+    "candidate_executed": 31,
+    "candidate_raw_answer": 257082415000,
+    "candidate_skipped": 1,
+    "execution_review_sha256": "ae584c3bd96425b846f58cb73ff185cb8851ad0deef1dc18e9c079a25d53c8a0",
+    "getter_errors": 0,
+    "host_seconds": 125.460378,
+    "native_seconds": 125.358258,
+    "omitted_gas": 336752,
+    "original_inputs": 32,
+    "owned_Anvil": 2,
+    "owned_cache_children": 1,
+    "owned_closure_verified": true,
+    "remaining_gas_status_logs_unchanged": true,
+    "report_seconds": 125.330162,
+    "report_sha256": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+    "scope": "Instrumented native projected-prefix receipts and producer omission only. No dependent consumer/profit/fullblock/root/opcode/provider-authenticity/speed/cause claim; no defaultDockerCPU/RSS/PID quotas.",
+    "skip_indices": [
+      12
+    ],
+    "source_block": 18999892,
+    "through_index": 31
+  },
+  "native_seconds": 75.836,
+  "native_skips": 0,
+  "native_tests": 323,
+  "no_new_model_holdout_media": true,
+  "offline_readers": {
+    "SDK": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "scope": "Published typed SDK and actual viewer parser only, no fresh browser/Pages check.",
+    "viewer": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+  },
+  "pending": [
+    "draftPR/publication",
+    "all8 exact-head CI and full artifacts",
+    "protected-main human GitHub approval"
+  ],
+  "production_sources": 25,
+  "provenance_sha256": "bc5c47f54f8a937842dae823b015b4f6560d4c257c5d06cd10751c1efedb2538",
+  "public_package_review_scope": "Immutable61-file pre-addendum review. This exact review copy and summary/README review-status mention are an additive publication addendum; original58copy provenance and pre-review records unchanged.",
+  "public_package_review_sha256": "e63de37fb74d96ea89af201ca57d33cfcda470a6c8c39f10ff7b1a96e70d84ae",
+  "retained_failures": {
+    "archived_native_001_through_004": "Immutable originals bound by prelaunch evidence;004 failed initialgetter+baseline withno baseline/candidate/report;001 baseline receipt absent;002003 baselinepass/candidatefail. No retrospective cause claim.",
+    "erroneous_header_fixture": "23-case run retained separately from corrected2 controls and final323pass",
+    "full_suites": 4
+  },
+  "source_review_sha256": "8ecec73d3444a9220f7bb8cff8825727927556b09253f800d0be447797e5bdf0",
+  "status": "independent_source_native_public_package_reviews_passed_exact_head_CI_pending",
+  "wheel_modules": 20
+}

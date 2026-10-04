@@ -1,0 +1,7 @@
+{
+  "api_git_blob_sha1": "ef306e737f93a6ae9a4e54fb2ed3684aee35b64f",
+  "full_source_sha256": "d708ba2c3cf29fe81083b7b8127ef61b7d750dc017399ebaa2951d6f61a93dda",
+  "reference": "https://api.github.com/repos/aave/aave-v3-core/git/blobs/ef306e737f93a6ae9a4e54fb2ed3684aee35b64f",
+  "upstream_source_license": "AGPL-3.0",
+  "scope": "Reference identity for authored ABI field notes; upstream Solidity interface code is not distributed here."
+}

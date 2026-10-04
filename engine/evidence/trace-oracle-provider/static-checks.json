@@ -1,0 +1,11 @@
+{
+  "ruff_check": "All checks passed!",
+  "ruff_format": "23 files already formatted",
+  "mypy": "Success: no issues found in 23 source files",
+  "commands": [
+    "python -m ruff check src scripts",
+    "python -m ruff format --check src scripts",
+    "python -m mypy src scripts"
+  ],
+  "python": "locked workspace quality interpreter"
+}

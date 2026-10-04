@@ -1,0 +1,14 @@
+{
+  "producer_sha256": "6a04e616e2b9ed463ac2de8602a2cbabafe736f8a454678a740de04dd8bc3ec3",
+  "scenario_sha256": "f39d9367f9731d90af66a84e4eaf4eac04e57bfbc834d30fbd27e28d6ff4079b",
+  "decision_steps": [
+    3
+  ],
+  "api": "entrotter_engine.runner.run_agent",
+  "provider": "existing CI keyless public Ethereum archive endpoint",
+  "overrides": "20 ETH native balance; local impersonation; no token/code override",
+  "status": "returned",
+  "artifact_id": "728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00",
+  "elapsed_seconds": 20.41917970799841,
+  "remaining_worker_slot": null
+}
