@@ -139,12 +139,16 @@ all sixteen browser rows beside the original Engine/SDK/CLI outputs. The current
 viewer component has passed its own mandatory CI; combined integration, protected
 human main approval and live Pages remain separate.
 
-The current candidate selects viewer3fd98b6 and retains the
+The current candidate selects viewerdacd134 and retains the
 [CLI copy controls](evidence/cli-copy-integration/README.md). Verified bundled
 recordings provide fixed download filenames and
 pinned CLI/SDK setup with selected read-only inspection commands. All six recipes
 have actual clean-checkout results; commands never include local report metadata.
-Keyboard-activated copy controls use only the fixed public recipe; denied APIs
+Validated local imports also expose a fixed `./local-report.json` recipe. Save a
+local copy under that name in an empty working directory and keep the original
+unchanged. [Local import evidence](evidence/local-cli-integration/README.md) binds
+actual native clipboard reads and both executed inspection commands.
+Keyboard-activated copy controls use only fixed recipes; denied APIs
 provide manual copying and pending writes are serialized. Shared example links
 and exact outcomes remain intact. The existing five-command
 reader retains all original outputs and uses the current source-bound view golden.

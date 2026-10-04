@@ -2406,3 +2406,28 @@ from mandatory currentCI, independent review and protected human-main/Pages.
 Source pins, workflows, frozen inputs and media stay unchanged. Submission
 profile/audio/hosting requirements remain pending; goalactive through official
 October13 15:59JST, Discordexcluded.
+
+
+## October 4 — local imports expose a fixed CLI inspection recipe
+
+The candidate selects viewerdacd134 with unchanged Enginef53/SDKba4/CLI169.
+Validated local imports now expose pinned setup and fixed `./local-report.json`
+inspection. The UI asks for a local copy in an empty working directory and
+preserves the original. Imported filename/title/metadata never enter commands;
+local import remains browser-only with no public example link or upload.
+Clearing, async generation protection, serialized copy and manual fallback remain.
+[Composition evidence](evidence/local-cli-integration/README.md) separates actual
+138 Node/12 site/20lint/21types/159security,52 local browser groups/66 raw axe
+scans (65 incompletes), two actual copied CLI executions and final-runner Linux CI.
+The local browser used the runner before one assertion null fallback; initial
+closed-details assertions and type failure are retained. All156 inherited
+security reasons are unchanged; three finite browser paths are reviewed.
+
+The actual existing five-command reader retains every prior whole command
+object. All22 selected immutable inputs verify:20 hashes unchanged, current
+app.js and source-bound view golden changed. Reversing one selected viewer pin
+restores whole156 workflow/manifest. Other pins, frozen inputs, locks and media
+remain; no fresh EVM/RPC/model/performance execution is claimed. Demo captures
+ad697dc. Required coordinator CI, protected independent human-main approval,
+Pages and owner profile/audio/hosting remain separate; goalactive through
+October13 15:59JST, Discordexcluded.
