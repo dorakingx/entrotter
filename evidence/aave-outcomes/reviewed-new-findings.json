@@ -1,0 +1,190 @@
+{
+  "old_findings": 139,
+  "current_findings": 148,
+  "inherited_exact_reasons": 137,
+  "removed_contexts": [
+    {
+      "finding": {
+        "file": "app.js",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 209,
+        "column": 22,
+        "endLine": 209,
+        "endColumn": 27
+      },
+      "reason": "The baseline token array is checked as an array with at most eight entries, and i is the bounded loop index. record validates each selected value before metadata or balance access."
+    },
+    {
+      "finding": {
+        "file": "app.js",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 210,
+        "column": 18,
+        "endLine": 210,
+        "endColumn": 23
+      },
+      "reason": "The candidate token array is checked for matching length and the same eight-entry maximum. The loop index comes from the baseline length, and record validates the selected candidate."
+    }
+  ],
+  "new_individual_reviews": [
+    {
+      "finding": {
+        "file": "app.js",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 230,
+        "column": 7,
+        "endLine": 230,
+        "endColumn": 23
+      },
+      "source_context": "      \"Native ETH \u00b7 \" + label,\n      native[0][index],\n      native[1][index],\n      18,\n      index === 2,\n    );\n  for (const [key, label, decimals] of [",
+      "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
+    },
+    {
+      "finding": {
+        "file": "app.js",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Function Call Object Injection Sink",
+        "line": 231,
+        "column": 7,
+        "endLine": 231,
+        "endColumn": 23
+      },
+      "source_context": "      native[0][index],\n      native[1][index],\n      18,\n      index === 2,\n    );\n  for (const [key, label, decimals] of [\n    [\"gas_cost_wei\", \"Gas cost (ETH)\", 18],",
+      "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
+    },
+    {
+      "finding": {
+        "file": "app.js",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 261,
+        "column": 9,
+        "endLine": 261,
+        "endColumn": 46
+      },
+      "source_context": "        assetLabel + \" \u00b7 \" + label,\n        states[0].get(token.address)?.[index],\n        states[1].get(token.address)?.[index],\n        token.decimals,\n        index === 2,\n      );\n  }",
+      "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
+    },
+    {
+      "finding": {
+        "file": "app.js",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 262,
+        "column": 9,
+        "endLine": 262,
+        "endColumn": 46
+      },
+      "source_context": "        states[0].get(token.address)?.[index],\n        states[1].get(token.address)?.[index],\n        token.decimals,\n        index === 2,\n      );\n  }\n  return {",
+      "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
+    },
+    {
+      "finding": {
+        "file": "scripts/check_accessibility.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 267,
+        "column": 17,
+        "endLine": 270,
+        "endColumn": 12
+      },
+      "source_context": "        const original = JSON.parse(\n          await readFile(\n            resolve(root, \"reports/aave-borrow-actions.json\"),\n            \"utf8\",\n          ),\n        );\n        const upload = async (report) => {\n          const { artifact_id, ...body } = report;\n          report.artifact_id = createHash(\"sha256\")\n            .update(canonical(body))",
+      "reason": "readFile reads only the fixed reports/aave-borrow-actions.json path resolved from the repository root. The browser test clones that public recording for local import rejection/recovery checks; no report-controlled path, executable loading or write occurs."
+    },
+    {
+      "finding": {
+        "file": "scripts/check_accessibility.mjs",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 294,
+        "column": 11,
+        "endLine": 294,
+        "endColumn": 24
+      },
+      "source_context": "        for (const branch of [\"baseline\", \"candidate\"])\n          wrong[branch].tokens[0].decimals = 6;\n        await upload(wrong);\n        assert.equal(await page.locator(\"#scenario\").inputValue(), \"no-report\");\n        assert.equal(await page.locator(\"#balance-rows tr\").count(), 0);\n        assert.equal(await page.locator(\"#candidate-value\").innerText(), \"\u2014\");\n        const missing = structuredClone(original);",
+      "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
+    },
+    {
+      "finding": {
+        "file": "tests/report.test.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 294,
+        "column": 5,
+        "endLine": 297,
+        "endColumn": 6
+      },
+      "source_context": "  JSON.parse(\n    readFileSync(\n      new URL(\"../reports/aave-borrow-actions.json\", import.meta.url),\n      \"utf8\",\n    ),\n  );\nconst balanceRow = (view, label) =>\n  Array.from(view.balanceRows.find((row) => row[0] === label));\ntest(\"Aave action balances preserve original exact units and all differences\", async () => {\n  const r = aaveActions();",
+      "reason": "readFileSync reads only ../reports/aave-borrow-actions.json via a literal URL relative to import.meta.url. This is the public Aave fixture used by offline exact-balance and invalid-report tests; no imported filename, code loading or filesystem mutation occurs."
+    },
+    {
+      "finding": {
+        "file": "tests/report.test.mjs",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 364,
+        "column": 50,
+        "endLine": 364,
+        "endColumn": 54
+      },
+      "source_context": "    (r) => {\n      for (const b of [\"baseline\", \"candidate\"]) r[b].tokens[0].decimals = 6;\n    },\n    (r) => {\n      for (const b of [\"baseline\", \"candidate\"])\n        r[b].tokens[0].symbol = \"WRONG\";\n    },",
+      "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
+    },
+    {
+      "finding": {
+        "file": "tests/report.test.mjs",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 368,
+        "column": 9,
+        "endLine": 368,
+        "endColumn": 13
+      },
+      "source_context": "      for (const b of [\"baseline\", \"candidate\"])\n        r[b].tokens[0].symbol = \"WRONG\";\n    },\n    (r) => {\n      r.baseline.tokens[0].balance_delta_raw = \"2\";\n    },\n    (r) => {",
+      "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
+    },
+    {
+      "finding": {
+        "file": "tests/report.test.mjs",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 409,
+        "column": 15,
+        "endLine": 409,
+        "endColumn": 24
+      },
+      "source_context": "  for (const branch of [\"baseline\", \"candidate\"]) {\n    const t = r[branch].tokens[0];\n    t.decimals = 36;\n    t.initial_balance_raw = max;\n    t.final_balance_raw = (BigInt(max) - 1n).toString();\n    t.balance_delta_raw = \"-1\";\n  }",
+      "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
+    },
+    {
+      "finding": {
+        "file": "tests/report.test.mjs",
+        "ruleId": "security/detect-object-injection",
+        "severity": 1,
+        "message": "Generic Object Injection Sink",
+        "line": 429,
+        "column": 5,
+        "endLine": 429,
+        "endColumn": 14
+      },
+      "source_context": "  for (const branch of [\"baseline\", \"candidate\"])\n    r[branch].tokens[1].symbol = \"WETH\";\n  const v = context.evmViewModel(r);\n  assert.equal(\n    balanceRow(\n      v,\n      \"WETH (0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) \u00b7 Final\",",
+      "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
+    }
+  ],
+  "scope": "Full current findings retained without suppression. Full finding fingerprints including columns and unchanged contiguous source spans preserve all 137 inherited reasons exactly. Two positional token-index contexts were removed; eleven new contexts reviewed individually. The earlier erroneous first-line reason mapping is retained privately. This author review is separate from independent approval."
+}

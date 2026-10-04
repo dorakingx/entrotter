@@ -27,3 +27,10 @@ Three recomputable seals bind account/price/trace records and selected internal
 relationships; they do not authenticate providers, proxies, signatures or EVM
 state. Account changes include all prefix effects and are not financial advice,
 profit, signed borrowing/liquidation execution or sole-price causality.
+
+General EVM balance display binds token address/symbol/decimals to scenario
+metadata, rejects duplicate identities and validates canonical uint256-bounded
+initial/final/change and native comparison arithmetic. Missing records remain
+unavailable. Exact BigInt formatting avoids Number rounding. These are internal
+consistency checks on a recomputable report, not execution/provider authentication,
+full EVM receipt validation or valuation. Imported strings remain textContent.

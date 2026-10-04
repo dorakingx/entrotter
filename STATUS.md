@@ -276,3 +276,29 @@ Independent staged review, exact-head mandatory CI, protected human main approva
 and live Pages verification remain separate. No fresh EVM/model/upstream/user
 execution or performance claim; existing videos keep their original source pins.
 Goal remains active through the official deadline, Discord excluded.
+
+## October 4 — exact Aave action balances in the browser
+
+The review branch adds the original Enginef53 Aave action result to the report
+source selector and an exact native/ERC-20 initial/final/change/difference table.
+Native summary values retain every decimal. Scenario address/symbol/decimal
+bindings, canonical uint256-bounded integers, duplicate identities and raw
+accounting are checked before display. Missing records remain Unavailable; symbols
+shared by different addresses retain distinct address labels. No valuation or
+execution/provider authentication is inferred. Original report families, wire
+contracts, dependencies, deployment allowlist and videos keep their versions.
+
+The expected missing-table/unit-validation controls failed before implementation.
+Five new regression groups cover the exact original Aave amounts, missing/zero,
+twelve resealed contradictory units/arithmetic/type/range cases, uint256 maximum/
+36-decimal one-unit changes and duplicate symbols. Full131 Node tests and12 Python
+site checks pass with zero skips; lint/format/checkJs and the full148-finding
+source-bound security gate pass. All137 inherited reasons are preserved exactly;2 obsolete token-index contexts
+were removed and11 new findings have individual author reasons. None are suppressed. Independent approval remains a separate gate.
+
+[Validation packet](evidence/aave-outcomes/README.md) separates current offline
+browser/unit checks from the original Engine execution. The original59506-byte
+sample is unchanged; loading it makes no EVM/model/upstream call. Current-head
+mandatory CI, independent staged review, protected-human main approval and live
+Pages publication remain separate. The deadline goal remains active; Discord is
+excluded and user evaluations stay deferred.

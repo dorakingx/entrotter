@@ -288,3 +288,158 @@ for (const [name, mutate] of contradictoryAgents)
     await context.checkHash(r);
     await assert.rejects(context.agentViewModel(r), /agent|Agent/);
   });
+
+const aaveActions = () =>
+  JSON.parse(
+    readFileSync(
+      new URL("../reports/aave-borrow-actions.json", import.meta.url),
+      "utf8",
+    ),
+  );
+const balanceRow = (view, label) =>
+  Array.from(view.balanceRows.find((row) => row[0] === label));
+test("Aave action balances preserve original exact units and all differences", async () => {
+  const r = aaveActions();
+  await context.checkHash(r);
+  await context.agentViewModel(r);
+  const v = context.evmViewModel(r);
+  assert.deepEqual(balanceRow(v, "Native ETH · Final"), [
+    "Native ETH · Final",
+    "9.988827559170319712",
+    "9.9912499816031695",
+    "+0.002422422432849788",
+  ]);
+  assert.deepEqual(balanceRow(v, "WETH · Initial"), [
+    "WETH · Initial",
+    "0",
+    "0",
+    "0",
+  ]);
+  assert.deepEqual(balanceRow(v, "AWETH · Final"), [
+    "AWETH · Final",
+    "10.000000094454558462",
+    "10.000000094454558462",
+    "0",
+  ]);
+  assert.deepEqual(balanceRow(v, "VWETH · Change"), [
+    "VWETH · Change",
+    "+1",
+    "+1",
+    "0",
+  ]);
+  assert.deepEqual(balanceRow(v, "Gas used"), [
+    "Gas used",
+    "723131",
+    "560326",
+    "-162805",
+  ]);
+  assert.match(v.tokenIdentities, /0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/);
+});
+test("missing tracked token observations are unavailable rather than zero", () => {
+  const r = aaveActions();
+  r.candidate.tokens = [];
+  assert.deepEqual(balanceRow(context.evmViewModel(r), "WETH · Final"), [
+    "WETH · Final",
+    "1",
+    "Unavailable",
+    "Unavailable",
+  ]);
+  delete r.baseline.tokens;
+  assert.deepEqual(balanceRow(context.evmViewModel(r), "WETH · Initial"), [
+    "WETH · Initial",
+    "Unavailable",
+    "Unavailable",
+    "Unavailable",
+  ]);
+});
+test("resealed contradictory scenario units and accounting fail display validation", async () => {
+  const mutations = [
+    (r) => {
+      r.scenario.tracked_tokens = null;
+    },
+    (r) => {
+      r.scenario.tracked_tokens[0].decimals = true;
+    },
+    (r) => {
+      for (const b of ["baseline", "candidate"]) r[b].tokens[0].decimals = 6;
+    },
+    (r) => {
+      for (const b of ["baseline", "candidate"])
+        r[b].tokens[0].symbol = "WRONG";
+    },
+    (r) => {
+      r.baseline.tokens[0].balance_delta_raw = "2";
+    },
+    (r) => {
+      r.baseline.metrics.balance_delta_wei = "-1";
+    },
+    (r) => {
+      r.comparison.final_balance_delta_wei = "1";
+    },
+    (r) => {
+      r.candidate.tokens.push(r.candidate.tokens[0]);
+    },
+    (r) => {
+      r.scenario.tracked_tokens.push(r.scenario.tracked_tokens[0]);
+    },
+    (r) => {
+      r.candidate.tokens[0].initial_balance_raw = "-1";
+    },
+    (r) => {
+      r.candidate.tokens[0].final_balance_raw = (2n ** 256n).toString();
+    },
+    (r) => {
+      r.candidate.tokens[0].balance_delta_raw = "-0";
+    },
+  ];
+  for (const mutate of mutations) {
+    const r = aaveActions();
+    mutate(r);
+    const { artifact_id, ...body } = r;
+    r.artifact_id = await context.hashValue(body);
+    await context.checkHash(r);
+    assert.throws(() => context.evmViewModel(r), /Invalid|Mismatched/);
+  }
+});
+test("36-decimal changes and uint256 values never pass through Number", () => {
+  const r = aaveActions();
+  const max = (2n ** 256n - 1n).toString();
+  r.scenario.tracked_tokens[0].decimals = 36;
+  for (const branch of ["baseline", "candidate"]) {
+    const t = r[branch].tokens[0];
+    t.decimals = 36;
+    t.initial_balance_raw = max;
+    t.final_balance_raw = (BigInt(max) - 1n).toString();
+    t.balance_delta_raw = "-1";
+  }
+  assert.equal(
+    balanceRow(context.evmViewModel(r), "WETH · Change")[1],
+    "-0.000000000000000000000000000000000001",
+  );
+  r.candidate.tokens[0].address = r.candidate.tokens[0].address
+    .toUpperCase()
+    .replace("0X", "0x");
+  assert.equal(balanceRow(context.evmViewModel(r), "WETH · Change")[3], "0");
+});
+
+test("duplicate symbols keep distinct addresses in each balance row", () => {
+  const r = aaveActions();
+  r.scenario.tracked_tokens[1].symbol = "WETH";
+  for (const branch of ["baseline", "candidate"])
+    r[branch].tokens[1].symbol = "WETH";
+  const v = context.evmViewModel(r);
+  assert.equal(
+    balanceRow(
+      v,
+      "WETH (0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) · Final",
+    )[1],
+    "1",
+  );
+  assert.equal(
+    balanceRow(
+      v,
+      "WETH (0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8) · Final",
+    )[1],
+    "10.000000094454558462",
+  );
+});

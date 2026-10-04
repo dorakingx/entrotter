@@ -17,6 +17,7 @@ const allowedSamples = new Set([
   "depeg-stress",
   "ethereum-uniswap-slippage",
   "agent-local-codex",
+  "aave-borrow-actions",
 ]);
 let generation = 0;
 // The backend canonicalizes JSON with sorted keys and ensure_ascii=True.
@@ -114,6 +115,166 @@ function tokenUnits(input, decimals) {
       : digits)
   );
 }
+/** @param {unknown} value @param {boolean} [signed] */
+function balanceInteger(value, signed = false) {
+  if (
+    typeof value !== "string" ||
+    !/^-?(0|[1-9][0-9]{0,77})$/.test(value) ||
+    value === "-0"
+  )
+    throw new Error("Invalid balance integer.");
+  const integer = BigInt(value),
+    max = 2n ** 256n - 1n;
+  if ((!signed && integer < 0n) || integer > max || integer < -max)
+    throw new Error("Invalid balance range.");
+  return integer;
+}
+/** @param {bigint} value @param {number} decimals @param {boolean} [signed] */
+function balanceUnits(value, decimals, signed = false) {
+  let text = tokenUnits(String(value), decimals);
+  if (text.includes(".")) text = text.replace(/0+$/, "").replace(/\.$/, "");
+  return signed && value > 0n ? "+" + text : text;
+}
+/** @param {unknown} input */
+function balanceMetadata(input) {
+  const token = record(input);
+  if (
+    typeof token.address !== "string" ||
+    !/^0x[0-9a-fA-F]{40}$/.test(token.address) ||
+    typeof token.symbol !== "string" ||
+    !/^[A-Z0-9_-]{1,12}$/.test(token.symbol) ||
+    typeof token.decimals !== "number" ||
+    !Number.isInteger(token.decimals) ||
+    token.decimals < 0 ||
+    token.decimals > 36
+  )
+    throw new Error("Invalid token metadata.");
+  return {
+    address: token.address.toLowerCase(),
+    symbol: token.symbol,
+    decimals: token.decimals,
+  };
+}
+/** @param {Record<string, unknown>} report */
+function exactBalanceView(report) {
+  const declared = record(report.scenario).tracked_tokens;
+  const supplied = declared === undefined ? [] : declared;
+  if (!Array.isArray(supplied) || supplied.length > 8)
+    throw new Error("Invalid tracked tokens.");
+  const metadata = supplied.map(balanceMetadata);
+  const pinned = new Map(metadata.map((token) => [token.address, token]));
+  if (pinned.size !== metadata.length)
+    throw new Error("Invalid duplicate token identity.");
+  /** @type {Map<string, bigint[]>[]} */
+  const states = [];
+  for (const branch of [report.baseline, report.candidate]) {
+    const tokens = record(branch).tokens ?? [];
+    if (!Array.isArray(tokens) || tokens.length > 8)
+      throw new Error("Invalid token observations.");
+    const state = new Map();
+    for (const input of tokens) {
+      const token = record(input),
+        unit = balanceMetadata(token),
+        expected = pinned.get(unit.address);
+      if (
+        !expected ||
+        state.has(unit.address) ||
+        unit.symbol !== expected.symbol ||
+        unit.decimals !== expected.decimals
+      )
+        throw new Error("Mismatched token metadata.");
+      const initial = balanceInteger(token.initial_balance_raw),
+        final = balanceInteger(token.final_balance_raw),
+        change = balanceInteger(token.balance_delta_raw, true);
+      if (final - initial !== change)
+        throw new Error("Invalid token balance accounting.");
+      state.set(unit.address, [initial, final, change]);
+    }
+    states.push(state);
+  }
+  const metrics = [
+    record(record(report.baseline).metrics),
+    record(record(report.candidate).metrics),
+  ];
+  const native = metrics.map((m) => [
+    balanceInteger(m.initial_balance_wei),
+    balanceInteger(m.final_balance_wei),
+    balanceInteger(m.balance_delta_wei, true),
+  ]);
+  if (
+    native.some((values) => values[1] - values[0] !== values[2]) ||
+    balanceInteger(record(report.comparison).final_balance_delta_wei, true) !==
+      native[1][1] - native[0][1]
+  )
+    throw new Error("Invalid native balance accounting.");
+  /** @type {string[][]} */
+  const rows = [];
+  /** @param {string} label @param {bigint|undefined} baseline @param {bigint|undefined} candidate @param {number} decimals @param {boolean} [signed] */
+  function row(label, baseline, candidate, decimals, signed = false) {
+    rows.push([
+      label,
+      baseline === undefined
+        ? "Unavailable"
+        : balanceUnits(baseline, decimals, signed),
+      candidate === undefined
+        ? "Unavailable"
+        : balanceUnits(candidate, decimals, signed),
+      baseline === undefined || candidate === undefined
+        ? "Unavailable"
+        : balanceUnits(candidate - baseline, decimals, true),
+    ]);
+  }
+  for (const [index, label] of ["Initial", "Final", "Change"].entries())
+    row(
+      "Native ETH · " + label,
+      native[0][index],
+      native[1][index],
+      18,
+      index === 2,
+    );
+  for (const [key, label, decimals] of [
+    ["gas_cost_wei", "Gas cost (ETH)", 18],
+    ["gas_used", "Gas used", 0],
+    ["reverted_transactions", "Reverted transactions", 0],
+    ["rejected_transactions", "Rejected transactions", 0],
+  ]) {
+    const values = metrics.map((m) =>
+      m[String(key)] === undefined
+        ? undefined
+        : balanceInteger(
+            typeof m[String(key)] === "number" &&
+              Number.isSafeInteger(m[String(key)])
+              ? String(m[String(key)])
+              : m[String(key)],
+          ),
+    );
+    row(String(label), values[0], values[1], Number(decimals));
+  }
+  for (const token of metadata) {
+    const assetLabel =
+      metadata.filter((other) => other.symbol === token.symbol).length > 1
+        ? `${token.symbol} (${token.address})`
+        : token.symbol;
+    for (const [index, label] of ["Initial", "Final", "Change"].entries())
+      row(
+        assetLabel + " · " + label,
+        states[0].get(token.address)?.[index],
+        states[1].get(token.address)?.[index],
+        token.decimals,
+        index === 2,
+      );
+  }
+  return {
+    balanceRows: rows,
+    tokenIdentities: metadata
+      .map(
+        (token) =>
+          `${token.symbol} · ${token.address} · ${token.decimals} decimals`,
+      )
+      .join("\n"),
+    native,
+  };
+}
 /** @param {unknown} input */
 function evmViewModel(input) {
   const report = record(input);
@@ -195,44 +356,17 @@ function evmViewModel(input) {
       ]);
     }
   }
-  const bt = baseline.tokens ?? [],
-    ct = candidate.tokens ?? [];
-  if (
-    !Array.isArray(bt) ||
-    !Array.isArray(ct) ||
-    bt.length !== ct.length ||
-    bt.length > 8
-  )
-    throw new Error("Invalid token observations.");
-  const seen = new Set();
-  for (let i = 0; i < bt.length; i++) {
-    const b = record(bt[i]),
-      c = record(ct[i]);
-    if (
-      typeof b.address !== "string" ||
-      typeof c.address !== "string" ||
-      !/^0x[0-9a-fA-F]{40}$/.test(b.address) ||
-      b.address.toLowerCase() !== c.address.toLowerCase() ||
-      seen.has(b.address.toLowerCase()) ||
-      b.decimals !== c.decimals ||
-      typeof b.symbol !== "string" ||
-      !/^[A-Z0-9_-]{1,12}$/.test(b.symbol) ||
-      b.symbol !== c.symbol
-    )
-      throw new Error("Mismatched token metadata.");
-    seen.add(b.address.toLowerCase());
+  const balances = exactBalanceView(report);
+  for (const row of balances.balanceRows.filter(
+    (row) => row[0].endsWith(" · Final") && !row[0].startsWith("Native"),
+  ))
     rows.push([
-      b.symbol + " final token units",
-      tokenUnits(b.final_balance_raw, b.decimals),
-      tokenUnits(c.final_balance_raw, c.decimals),
+      row[0].replace(" · Final", " final token units"),
+      row[1],
+      row[2],
     ]);
-    rows.push([
-      b.symbol + " change in raw units",
-      rawInteger(b.balance_delta_raw),
-      rawInteger(c.balance_delta_raw),
-    ]);
-  }
   return {
+    ...balances,
     rows,
     traces,
     source: source
@@ -434,6 +568,8 @@ function clearReport(message) {
   $("evm-details").hidden = true;
   $("evm-traces").replaceChildren();
   $("source-pin").textContent = "";
+  $("balance-rows").replaceChildren();
+  $("token-identities").textContent = "";
   $("fixture-chart").hidden = true;
   $("equity-rows").replaceChildren();
   $("chart-description").textContent = "";
@@ -476,22 +612,23 @@ async function render(input, seq) {
     ? "Changed actions"
     : "Circuit-breaker policy";
   $("baseline-unit").textContent = $("candidate-unit").textContent = evm
-    ? "Approximate native balance (ETH)"
+    ? "Exact native balance (ETH)"
     : "Final model equity";
   $("delta-unit").textContent = evm
-    ? "Approximate ETH; not profit"
+    ? "Exact ETH; not profit"
     : "Model quote units, not USD";
   if (evm) {
     const view = evmViewModel(report);
-    $("baseline-value").textContent = Number(
-      tokenUnits(bm.final_balance_wei, 18),
-    ).toFixed(6);
-    $("candidate-value").textContent = Number(
-      tokenUnits(cm.final_balance_wei, 18),
-    ).toFixed(6);
-    $("delta-value").textContent = Number(
-      tokenUnits(comparison.final_balance_delta_wei, 18),
-    ).toFixed(6);
+    $("baseline-value").textContent = balanceUnits(view.native[0][1], 18);
+    $("candidate-value").textContent = balanceUnits(view.native[1][1], 18);
+    $("delta-value").textContent = balanceUnits(
+      view.native[1][1] - view.native[0][1],
+      18,
+      true,
+    );
+    tableRows("balance-rows", view.balanceRows, true);
+    $("token-identities").textContent =
+      view.tokenIdentities || "No tracked ERC-20 tokens.";
     tableRows("metric-rows", view.rows, true);
     tableRows("evm-traces", view.traces);
     $("equity-rows").replaceChildren();

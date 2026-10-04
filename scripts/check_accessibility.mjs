@@ -259,6 +259,65 @@ function canonical(x) {
 
 try {
   browser = await chromium.launch();
+  await check(
+    "Aave units: local imports, resealed false units, unavailable records and recovery",
+    () =>
+      withPage(390, async (page) => {
+        const original = JSON.parse(
+          await readFile(
+            resolve(root, "reports/aave-borrow-actions.json"),
+            "utf8",
+          ),
+        );
+        const upload = async (report) => {
+          const { artifact_id, ...body } = report;
+          report.artifact_id = createHash("sha256")
+            .update(canonical(body))
+            .digest("hex");
+          const count = requests.length;
+          await page.locator("#import").setInputFiles({
+            name: "aave.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(JSON.stringify(report)),
+          });
+          await page.waitForFunction(() => {
+            const selection = document.querySelector("#scenario");
+            return (
+              selection instanceof HTMLSelectElement &&
+              ["local-report", "no-report"].includes(selection.value)
+            );
+          });
+          assert.equal(requests.length, count);
+        };
+        const wrong = structuredClone(original);
+        for (const branch of ["baseline", "candidate"])
+          wrong[branch].tokens[0].decimals = 6;
+        await upload(wrong);
+        assert.equal(await page.locator("#scenario").inputValue(), "no-report");
+        assert.equal(await page.locator("#balance-rows tr").count(), 0);
+        assert.equal(await page.locator("#candidate-value").innerText(), "—");
+        const missing = structuredClone(original);
+        missing.candidate.tokens = [];
+        await upload(missing);
+        assert.ok(
+          (await page.locator("#balance-rows").innerText()).includes(
+            "Unavailable",
+          ),
+        );
+        await page.selectOption("#scenario", "aave-borrow-actions");
+        await page.waitForFunction(
+          (id) => document.querySelector("#hash")?.textContent === id,
+          original.artifact_id,
+        );
+        assert.equal(await page.locator("#balance-rows tr").count(), 16);
+        await page.selectOption("#scenario", "liquidity-shock");
+        await page.waitForFunction(() => {
+          const chart = document.querySelector("#fixture-chart");
+          return chart instanceof HTMLElement && chart.hidden === false;
+        });
+        assert.equal(await page.locator("#balance-rows tr").count(), 0);
+      }),
+  );
   for (const width of [1280, 390, 320]) {
     await check(`${width}px console: recorded cards, command and axe`, () =>
       withPage(width, async (page) => {
@@ -711,6 +770,7 @@ try {
       "depeg-stress",
       "ethereum-uniswap-slippage",
       "agent-local-codex",
+      "aave-borrow-actions",
     ]) {
       await check(
         `${width}px ${sample}: reflow, exact accessible data and axe`,
@@ -731,9 +791,15 @@ try {
                 report.agent.exchanges.length,
               );
               const text = await page.locator("#agent-provenance").innerText();
-              assert.match(text, /requested alias/);
-              assert.match(text, /Nondeterministic/);
-              assert.match(text, /Original generation cost.*Unavailable/);
+              if (sample === "aave-borrow-actions") {
+                assert.match(text, /preflight-risk-v1/);
+                assert.match(text, /Deterministic/);
+                assert.match(text, /Original generation cost.*0/);
+              } else {
+                assert.match(text, /requested alias/);
+                assert.match(text, /Nondeterministic/);
+                assert.match(text, /Original generation cost.*Unavailable/);
+              }
               for (const exchange of report.agent.exchanges)
                 assert.ok(
                   (await page.locator("#agent-rows").innerText()).includes(
@@ -794,12 +860,14 @@ try {
                 await page.locator("#fixture-chart").isVisible(),
                 false,
               );
-              assert.match(
-                await page.locator("#source-pin").innerText(),
-                report.mode === "evm-fork"
-                  ? /19000000/
-                  : /Local disposable chain/,
-              );
+              const sourceText = await page.locator("#source-pin").innerText();
+              if (report.mode === "evm-fork")
+                assert.ok(
+                  sourceText.includes(
+                    `Block ${report.source.block_number}\n${report.source.block_hash}`,
+                  ),
+                );
+              else assert.match(sourceText, /Local disposable chain/);
               const region = page.getByRole("region", {
                 name: "Supplied actions on isolated local forks",
               });
@@ -809,10 +877,69 @@ try {
                 await page.keyboard.press("ArrowRight");
                 await page.waitForFunction(
                   () =>
-                    (document.querySelector("#evm-details .table-wrap")
-                      ?.scrollLeft ?? 0) > 0,
+                    (document.querySelector(
+                      "#evm-details .table-wrap[aria-labelledby=evm-caption]",
+                    )?.scrollLeft ?? 0) > 0,
                 );
               }
+            }
+            if (sample === "aave-borrow-actions") {
+              assert.equal(
+                await page.locator("#baseline-value").innerText(),
+                "9.988827559170319712",
+              );
+              assert.equal(
+                await page.locator("#candidate-value").innerText(),
+                "9.9912499816031695",
+              );
+              assert.equal(
+                await page.locator("#delta-value").innerText(),
+                "+0.002422422432849788",
+              );
+              const rows = await page
+                .locator("#balance-rows tr")
+                .evaluateAll((rows) =>
+                  rows.map((row) =>
+                    Array.from(
+                      row.querySelectorAll("th,td"),
+                      (cell) => cell.textContent,
+                    ),
+                  ),
+                );
+              assert.deepEqual(
+                rows.find((row) => row[0] === "AWETH · Final"),
+                [
+                  "AWETH · Final",
+                  "10.000000094454558462",
+                  "10.000000094454558462",
+                  "0",
+                ],
+              );
+              assert.deepEqual(
+                rows.find((row) => row[0] === "Gas used"),
+                ["Gas used", "723131", "560326", "-162805"],
+              );
+              assert.deepEqual(
+                rows.find((row) => row[0] === "VWETH · Change"),
+                ["VWETH · Change", "+1", "+1", "0"],
+              );
+              const region = page.getByRole("region", {
+                name: "Recorded balances, gas and differences in exact units",
+              });
+              await region.focus();
+              await visibleFocus(page);
+              if (width === 320) {
+                await page.keyboard.press("ArrowRight");
+                await page.waitForFunction(
+                  () =>
+                    (document.querySelector(
+                      ".table-wrap[aria-labelledby=balance-caption]",
+                    )?.scrollLeft ?? 0) > 0,
+                );
+              }
+              await page.locator("#evm-details").screenshot({
+                path: resolve(output, `${width}-aave-balances.png`),
+              });
             }
             assert.ok(
               (await page.locator('#metric-rows th[scope="row"]').count()) > 0,
@@ -829,6 +956,7 @@ try {
             await scan(page, `${width}-${sample}`);
             if (
               sample === "ethereum-uniswap-slippage" ||
+              sample === "aave-borrow-actions" ||
               (sample === "liquidity-shock" && width === 1280)
             ) {
               await page.screenshot({
@@ -1900,6 +2028,7 @@ try {
     "tests/data/trace-oracle-prefix-32.json",
     "assets/examples/action-comparison.json",
     "reports/agent-local-codex.json",
+    "reports/aave-borrow-actions.json",
     "style.css",
     "404.html",
     "package.json",
