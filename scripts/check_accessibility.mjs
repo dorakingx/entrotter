@@ -6,6 +6,10 @@ import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { resolve, extname } from "node:path";
 import { createRequire } from "node:module";
 import { chromium } from "playwright";
+import {
+  parseObservationJSON,
+  observationCanonical,
+} from "../observed-trace.mjs";
 
 const require = createRequire(import.meta.url);
 const runnerHash = createHash("sha256")
@@ -32,7 +36,7 @@ const server = createServer(async (request, response) => {
     const pathname = new URL(request.url || "/", "http://127.0.0.1").pathname;
     const name = pathname === "/" ? "index.html" : pathname.slice(1);
     if (
-      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|trace-report\.mjs|trace-viewer\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
+      !/^(index\.html|404\.html|style\.css|app\.js|comparison\.mjs|report-validation\.mjs|trace-report\.mjs|trace-comparison\.mjs|trace-viewer\.mjs|observed-trace\.mjs|position-report\.mjs|(?:assets|reports|schemas)\/(?:examples\/)?[a-zA-Z0-9_.-]+)$/.test(
         name,
       )
     ) {
@@ -72,7 +76,17 @@ async function check(name, work) {
     checks.push({
       name,
       status: "failed",
-      error: error instanceof Error ? error.stack : String(error),
+      error: [
+        error,
+        ...(error instanceof AggregateError ? error.errors.slice(0, 2) : []),
+      ]
+        .map((entry) =>
+          (entry instanceof Error
+            ? (entry.stack ?? entry.message)
+            : String(entry)
+          ).slice(0, 4096),
+        )
+        .join("\n\n"),
     });
   }
 }
@@ -83,6 +97,9 @@ async function pageAt(width = 1280, path = "/") {
     reducedMotion: "reduce",
   });
   page.setDefaultTimeout(5000);
+  // Keep native chooser interception armed before navigation. The event waiter
+  // still has to receive the actual keyboard-opened input within 5000ms.
+  page.on("filechooser", () => {});
   page.on("pageerror", (error) => errors.push(String(error)));
   page.on("request", (request) =>
     requests.push({ url: request.url(), method: request.method() }),
@@ -126,6 +143,49 @@ async function noOverflow(page) {
 async function focusIs(page, id) {
   assert.equal(await page.evaluate(() => document.activeElement?.id), id);
 }
+/** @param {import("playwright").Page} page @param {string} id */
+async function keyboardFileChooser(page, id) {
+  await focusIs(page, id);
+  let enterCompleted = false;
+  const chooser = page.waitForEvent("filechooser");
+  try {
+    const [opened] = await Promise.all([
+      chooser,
+      page.keyboard.press("Enter").then(() => {
+        enterCompleted = true;
+      }),
+    ]);
+    assert.equal(await opened.element().getAttribute("id"), id);
+    return opened;
+  } catch (error) {
+    try {
+      const state = await page.evaluate((id) => {
+        const input = document.getElementById(id);
+        return {
+          activeId: document.activeElement?.id ?? null,
+          documentFocused: document.hasFocus(),
+          connected: input?.isConnected ?? false,
+          type: input instanceof HTMLInputElement ? input.type : null,
+          disabled: input instanceof HTMLInputElement ? input.disabled : null,
+          hidden: input instanceof HTMLElement ? input.hidden : null,
+          visibility: input ? getComputedStyle(input).visibility : null,
+          display: input ? getComputedStyle(input).display : null,
+        };
+      }, id);
+      await writeFile(
+        resolve(output, `chooser-${id}-${page.viewportSize()?.width}.json`),
+        JSON.stringify({ id, enterCompleted, state }, null, 2) + "\n",
+      );
+    } catch (diagnosticError) {
+      throw new AggregateError(
+        [error, diagnosticError],
+        "File chooser failed; diagnostic capture also failed",
+        { cause: diagnosticError },
+      );
+    }
+    throw error;
+  }
+}
 /** @param {import("playwright").Page} page */
 async function visibleFocus(page) {
   assert.ok(
@@ -139,6 +199,60 @@ async function visibleFocus(page) {
     }),
     "Focused control has no visible outline",
   );
+}
+/** @param {import("playwright").Page} page @param {string} id */
+async function keyboardScrollRight(page, id) {
+  const state = () =>
+    page.evaluate((id) => {
+      const node = document.getElementById(id);
+      const rect = node?.getBoundingClientRect();
+      return {
+        activeId: document.activeElement?.id ?? null,
+        documentFocused: document.hasFocus(),
+        connected: node?.isConnected ?? false,
+        clientWidth: node?.clientWidth ?? 0,
+        scrollWidth: node?.scrollWidth ?? 0,
+        scrollLeft: node?.scrollLeft ?? 0,
+        width: rect?.width ?? 0,
+        height: rect?.height ?? 0,
+        overflowX: node ? getComputedStyle(node).overflowX : null,
+      };
+    }, id);
+  /** @type {Awaited<ReturnType<typeof state>> | undefined} */
+  let before;
+  let arrowCompleted = false;
+  try {
+    before = await state();
+    assert.equal(before.activeId, id);
+    assert.ok(
+      before.scrollWidth > before.clientWidth,
+      "No horizontal scroll range",
+    );
+    await page.keyboard.press("ArrowRight");
+    arrowCompleted = true;
+    await page.waitForFunction(
+      (id) => (document.getElementById(id)?.scrollLeft ?? 0) > 0,
+      id,
+    );
+  } catch (error) {
+    try {
+      await writeFile(
+        resolve(output, `scroll-${id}-${page.viewportSize()?.width}.json`),
+        JSON.stringify(
+          { id, arrowCompleted, before, after: await state() },
+          null,
+          2,
+        ) + "\n",
+      );
+    } catch (diagnosticError) {
+      throw new AggregateError(
+        [error, diagnosticError],
+        "Keyboard scroll failed; diagnostic capture also failed",
+        { cause: diagnosticError },
+      );
+    }
+    throw error;
+  }
 }
 /** @param {import("playwright").Page} page @param {string} name */
 async function scan(page, name) {
@@ -255,6 +369,670 @@ function canonical(x) {
 
 try {
   browser = await chromium.launch();
+  await check(
+    "CLI recipes: native keyboard copying of all six public examples",
+    () =>
+      withPage(390, async (page) => {
+        await page
+          .context()
+          .grantPermissions(["clipboard-read", "clipboard-write"], { origin });
+        await page.locator("#cli-recipe > summary").focus();
+        await page.keyboard.press("Enter");
+        for (const name of [
+          "liquidity-shock",
+          "recovery-trap",
+          "depeg-stress",
+          "ethereum-uniswap-slippage",
+          "agent-local-codex",
+          "aave-borrow-actions",
+        ]) {
+          await page.selectOption("#scenario", name);
+          const command = `PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./${name}.json --format text`;
+          await page.waitForFunction(
+            (text) =>
+              document.querySelector("#cli-command")?.textContent === text,
+            command,
+          );
+          await page.locator("#cli-copy-setup").focus();
+          await visibleFocus(page);
+          await page.keyboard.press("Enter");
+          await page.waitForFunction(
+            () =>
+              document.querySelector("#cli-copy-status")?.textContent ===
+              "CLI setup copied.",
+          );
+          const setup = await page.locator("#cli-setup").innerText();
+          assert.equal(
+            await page.evaluate(() => navigator.clipboard.readText()),
+            setup,
+          );
+          await focusIs(page, "cli-copy-setup");
+          await page.keyboard.press("Tab");
+          await focusIs(page, "cli-command");
+          await page.locator("#cli-copy-command").focus();
+          await visibleFocus(page);
+          await page.keyboard.press("Enter");
+          await page.waitForFunction(
+            () =>
+              document.querySelector("#cli-copy-status")?.textContent ===
+              "Inspection command copied.",
+          );
+          assert.equal(
+            await page.evaluate(() => navigator.clipboard.readText()),
+            command,
+          );
+          await focusIs(page, "cli-copy-command");
+          assert.equal(
+            await page.locator("#cli-copy-command").isDisabled(),
+            false,
+          );
+        }
+        await noOverflow(page);
+        await scan(page, "390-cli-native-copy");
+      }),
+  );
+  await check(
+    "CLI copying: denied API, serialization, stale feedback and private clearing",
+    () =>
+      withPage(320, async (page) => {
+        await page.locator("#cli-recipe > summary").focus();
+        await page.keyboard.press("Enter");
+        await page.evaluate(() =>
+          Object.defineProperty(navigator, "clipboard", {
+            configurable: true,
+            value: {
+              writeText: async () => {
+                throw new Error("Private diagnostic must not appear");
+              },
+            },
+          }),
+        );
+        await page.locator("#cli-copy-command").focus();
+        await page.keyboard.press("Enter");
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#cli-copy-status")
+            ?.textContent?.startsWith("Copy unavailable."),
+        );
+        assert.doesNotMatch(
+          await page.locator("#cli-copy-status").innerText(),
+          /Private diagnostic/,
+        );
+        assert.equal(
+          await page.locator("#cli-copy-command").isDisabled(),
+          false,
+        );
+        await page.evaluate(() =>
+          Object.defineProperty(navigator, "clipboard", {
+            configurable: true,
+            value: undefined,
+          }),
+        );
+        await page.locator("#cli-copy-setup").click();
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#cli-copy-status")
+            ?.textContent?.includes("copy them manually"),
+        );
+        /** @type {(() => void) | undefined} */
+        let complete;
+        /** @type {(() => void) | undefined} */
+        let fail;
+        let pending = new Promise((resolve) => {
+          complete = () => resolve(undefined);
+        });
+        /** @type {string[]} */
+        const copies = [];
+        await page.exposeFunction(
+          "holdCliCopy",
+          /** @param {string} text */ (text) => {
+            copies.push(text);
+            return pending;
+          },
+        );
+        await page.evaluate(() =>
+          Object.defineProperty(navigator, "clipboard", {
+            configurable: true,
+            value: {
+              writeText: async (/** @type {string} */ text) => {
+                try {
+                  await globalThis.holdCliCopy(text);
+                } finally {
+                  document
+                    .getElementById("cli-copy-status")
+                    ?.setAttribute("data-copy-settled", "true");
+                }
+              },
+            },
+          }),
+        );
+        await page.locator("#cli-copy-command").click();
+        await page.waitForFunction(
+          () =>
+            document.querySelector("#cli-copy-status")?.textContent ===
+            "Copying…",
+        );
+        assert.equal(await page.locator("#cli-copy-setup").isDisabled(), true);
+        await page.selectOption("#scenario", "recovery-trap");
+        const recovery =
+          "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./recovery-trap.json --format text";
+        await page.waitForFunction(
+          (text) =>
+            document.querySelector("#cli-command")?.textContent === text,
+          recovery,
+        );
+        await page.waitForFunction(() =>
+          document
+            .querySelector("#cli-copy-status")
+            ?.textContent?.startsWith("Waiting for the previous copy request."),
+        );
+        assert.equal(
+          await page.locator("#cli-copy-command").isDisabled(),
+          true,
+        );
+        await page
+          .locator("#cli-copy-command")
+          .evaluate((node) => /** @type {HTMLButtonElement} */ (node).click());
+        assert.equal(copies.length, 1, "Pending writes must not overlap");
+        if (!complete) throw new Error("Missing pending-copy control");
+        complete();
+        await page.waitForFunction(() => {
+          const button = document.getElementById("cli-copy-command");
+          return button instanceof HTMLButtonElement && !button.disabled;
+        });
+        assert.equal(await page.locator("#cli-copy-status").textContent(), "");
+        pending = new Promise((_, reject) => {
+          fail = () => reject(new Error("Late clipboard rejection"));
+        });
+        await page
+          .locator("#cli-copy-status")
+          .evaluate((node) => node.removeAttribute("data-copy-settled"));
+        await page.locator("#cli-copy-command").click();
+        await page.waitForFunction(
+          () =>
+            document.querySelector("#cli-copy-status")?.textContent ===
+            "Copying…",
+        );
+        await page.locator("#import").setInputFiles({
+          name: "private-wallet-report.json",
+          mimeType: "application/json",
+          buffer: await readFile(resolve(root, "reports/liquidity-shock.json")),
+        });
+        await page.waitForFunction(
+          () =>
+            /** @type {HTMLSelectElement | null} */ (
+              document.querySelector("#scenario")
+            )?.value === "local-report",
+        );
+        assert.equal(
+          await page.locator("#cli-copy-command").isDisabled(),
+          true,
+        );
+        assert.match(
+          await page.locator("#cli-file-help").innerText(),
+          /local-report\.json/,
+        );
+        await page
+          .locator("#cli-copy-command")
+          .evaluate((node) => /** @type {HTMLButtonElement} */ (node).click());
+        assert.equal(
+          copies.length,
+          2,
+          "An imported report must not overlap a pending write",
+        );
+        if (!fail) throw new Error("Missing rejection control");
+        fail();
+        await page.waitForFunction(
+          () =>
+            document
+              .querySelector("#cli-copy-status")
+              ?.getAttribute("data-copy-settled") === "true",
+        );
+        assert.equal(await page.locator("#cli-copy-status").textContent(), "");
+        assert.equal(
+          await page
+            .locator("#cli-recipe")
+            .evaluate((node) => /** @type {HTMLElement} */ (node).hidden),
+          false,
+        );
+        assert.equal(
+          await page.locator("#cli-copy-command").isDisabled(),
+          false,
+        );
+        const localCommand =
+          "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text";
+        assert.equal(
+          await page.locator("#cli-command").textContent(),
+          localCommand,
+        );
+        assert.doesNotMatch(
+          await page.locator("#cli-file-help").innerText(),
+          /private-wallet/,
+        );
+        pending = Promise.resolve();
+        await page.locator("#cli-copy-command").click();
+        await page.waitForFunction(
+          () =>
+            document.querySelector("#cli-copy-status")?.textContent ===
+            "Inspection command copied.",
+        );
+        assert.deepEqual(copies, [
+          "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./liquidity-shock.json --format text",
+          recovery,
+          localCommand,
+        ]);
+        await noOverflow(page);
+        await scan(page, "320-cli-copy-faults");
+      }),
+  );
+  await check(
+    "Local CLI recipes: native keyboard copies, fixed paths and private metadata",
+    async () => {
+      const readbacks = [];
+      for (const [width, name] of [
+        [320, "liquidity-shock"],
+        [1440, "aave-borrow-actions"],
+      ]) {
+        await withPage(Number(width), async (page) => {
+          await page
+            .context()
+            .grantPermissions(["clipboard-read", "clipboard-write"], {
+              origin,
+            });
+          const report = JSON.parse(
+            await readFile(resolve(root, "reports/" + name + ".json"), "utf8"),
+          );
+          report.scenario.title = "PRIVATE_CLIPBOARD_MARKER $(never-execute)";
+          delete report.artifact_id;
+          report.artifact_id = createHash("sha256")
+            .update(canonical(report))
+            .digest("hex");
+          const bytes = Buffer.from(JSON.stringify(report));
+          await writeFile(
+            resolve(output, "local-cli-" + name + ".json"),
+            bytes,
+          );
+          const count = requests.length;
+          await page.locator("#import").focus();
+          const chooser = await keyboardFileChooser(page, "import");
+          await chooser.setFiles({
+            name: "private-wallet-$(never-execute).json",
+            mimeType: "application/json",
+            buffer: bytes,
+          });
+          await page.waitForFunction(
+            () =>
+              /** @type {HTMLSelectElement | null} */ (
+                document.querySelector("#scenario")
+              )?.value === "local-report",
+          );
+          await page.locator("#cli-recipe > summary").focus();
+          await page.keyboard.press("Enter");
+          assert.equal(
+            requests.length,
+            count,
+            "Import must not fetch or upload private content",
+          );
+          assert.match(
+            await page.locator("#cli-file-help").innerText(),
+            /save a local copy.*local-report\.json/,
+          );
+          assert.doesNotMatch(
+            await page.locator("#cli-file-help").innerText(),
+            /PRIVATE_CLIPBOARD_MARKER|private-wallet/,
+          );
+          assert.equal(
+            await page.locator("#example-link").getAttribute("href"),
+            null,
+          );
+          assert.equal(
+            await page
+              .locator("#download")
+              .evaluate((node) => node instanceof HTMLElement && node.hidden),
+            true,
+          );
+          for (const [id, status, sourceId] of [
+            ["cli-copy-setup", "CLI setup copied.", "cli-setup"],
+            ["cli-copy-command", "Inspection command copied.", "cli-command"],
+          ]) {
+            await page.locator("#" + id).focus();
+            await visibleFocus(page);
+            await page.keyboard.press("Enter");
+            await page.waitForFunction(
+              (text) =>
+                document.querySelector("#cli-copy-status")?.textContent ===
+                text,
+              status,
+            );
+            assert.equal(
+              await page.evaluate(() => navigator.clipboard.readText()),
+              await page.locator("#" + sourceId).innerText(),
+            );
+            assert.doesNotMatch(
+              await page.evaluate(() => navigator.clipboard.readText()),
+              /PRIVATE_CLIPBOARD_MARKER|private-wallet|never-execute/,
+            );
+          }
+          const setup = await page.locator("#cli-setup").innerText();
+          const command = await page.evaluate(() =>
+            navigator.clipboard.readText(),
+          );
+          assert.equal(
+            command,
+            "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+          );
+          readbacks.push({
+            name,
+            width,
+            setup,
+            command,
+            report_sha256: createHash("sha256").update(bytes).digest("hex"),
+          });
+          await noOverflow(page);
+          await scan(page, width + "-local-cli");
+          await page.screenshot({
+            path: resolve(output, width + "-local-cli.png"),
+            fullPage: true,
+          });
+        });
+      }
+      await writeFile(
+        resolve(output, "local-cli-readbacks.json"),
+        JSON.stringify(readbacks, null, 2) + "\n",
+      );
+    },
+  );
+  await check(
+    "Bundled report links: direct entry, navigation and local-file privacy",
+    () =>
+      withPage(
+        390,
+        async (page) => {
+          const ready = () =>
+            page.waitForFunction(() =>
+              document
+                .querySelector("#report-status")
+                ?.textContent?.includes("Integrity verified locally"),
+            );
+          const cleared = async () => {
+            assert.equal(
+              await page
+                .locator("#cli-recipe")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              true,
+            );
+            assert.equal(await page.locator("#cli-setup").textContent(), "");
+            assert.equal(await page.locator("#cli-command").textContent(), "");
+            assert.equal(
+              await page.locator("#example-link").getAttribute("href"),
+              null,
+            );
+            assert.equal(
+              await page
+                .locator("#example-link")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              true,
+            );
+          };
+          const localReady = async () => {
+            assert.equal(
+              await page
+                .locator("#cli-recipe")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              false,
+            );
+            assert.equal(
+              await page.locator("#cli-command").textContent(),
+              "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+            );
+            assert.match(
+              (await page.locator("#cli-file-help").textContent()) ?? "",
+              /local copy.*local-report\.json/,
+            );
+            assert.equal(
+              await page.locator("#example-link").getAttribute("href"),
+              null,
+            );
+            assert.equal(
+              await page
+                .locator("#example-link")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              true,
+            );
+            assert.equal(
+              await page
+                .locator("#download")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              true,
+            );
+          };
+          await ready();
+          assert.equal(
+            await page.locator("#scenario").inputValue(),
+            "aave-borrow-actions",
+          );
+          assert.equal(
+            await page
+              .locator("#report-explorer")
+              .evaluate((node) => node.hasAttribute("open")),
+            true,
+          );
+          assert.equal(await page.locator("#balance-rows tr").count(), 16);
+          const expected =
+            origin + "/?report=aave-borrow-actions#report-explorer";
+          assert.equal(
+            await page.locator("#example-link").getAttribute("href"),
+            expected,
+          );
+          await page.locator("#example-link").focus();
+          await focusIs(page, "example-link");
+          await visibleFocus(page);
+          await page.keyboard.press("Enter");
+          await page.waitForURL(expected);
+          await ready();
+          assert.equal(
+            await page.locator("#scenario").inputValue(),
+            "aave-borrow-actions",
+          );
+          await noOverflow(page);
+          await scan(page, "390-direct-aave-link");
+          await page.screenshot({
+            path: resolve(output, "390-direct-aave-link.png"),
+            fullPage: true,
+          });
+
+          const original = await readFile(
+            resolve(root, "reports/aave-borrow-actions.json"),
+          );
+          const requestCount = requests.length;
+          await page.locator("#import").setInputFiles({
+            name: "local.json",
+            mimeType: "application/json",
+            buffer: original,
+          });
+          await page.waitForFunction(() => {
+            const select = document.querySelector("#scenario");
+            return (
+              select instanceof HTMLSelectElement &&
+              select.value === "local-report"
+            );
+          });
+          await localReady();
+          assert.equal(requests.length, requestCount);
+          await page.locator("#import").setInputFiles({
+            name: "invalid.json",
+            mimeType: "application/json",
+            buffer: Buffer.from("{"),
+          });
+          await page.waitForFunction(() => {
+            const select = document.querySelector("#scenario");
+            return (
+              select instanceof HTMLSelectElement &&
+              select.value === "no-report"
+            );
+          });
+          await cleared();
+
+          let release;
+          const gate = new Promise((resolve) => {
+            release = resolve;
+          });
+          let entered;
+          const intercepted = new Promise((resolve) => {
+            entered = resolve;
+          });
+          await page.route("**/reports/recovery-trap.json", async (route) => {
+            entered();
+            await gate;
+            await route.continue();
+          });
+          // Drain the real production Promise, including asynchronous integrity
+          // checks, before asserting that an older response cannot restore a link.
+          // Normal selector navigation remains exercised below and elsewhere.
+          const delayed = page.evaluate(
+            "document.getElementById('scenario').value = 'recovery-trap'; loadSample()",
+          );
+          try {
+            await intercepted;
+            await cleared();
+            await page.locator("#import").setInputFiles({
+              name: "local.json",
+              mimeType: "application/json",
+              buffer: original,
+            });
+            await page.waitForFunction(() => {
+              const select = document.querySelector("#scenario");
+              return (
+                select instanceof HTMLSelectElement &&
+                select.value === "local-report"
+              );
+            });
+            release();
+            await delayed;
+            await localReady();
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              "local-report",
+            );
+          } finally {
+            release();
+            await delayed;
+            await page.unroute("**/reports/recovery-trap.json");
+          }
+          await page.selectOption("#scenario", "recovery-trap");
+          await ready();
+          const recovery = origin + "/?report=recovery-trap#report-explorer";
+          assert.equal(
+            await page.locator("#example-link").getAttribute("href"),
+            recovery,
+          );
+          await page.locator("#example-link").click();
+          await page.waitForURL(recovery);
+          await ready();
+          assert.equal(
+            await page.locator("#scenario").inputValue(),
+            "recovery-trap",
+          );
+        },
+        "/?unused=not-a-secret&report=aave-borrow-actions#unused-fragment",
+      ),
+  );
+  await check(
+    "Invalid report links: bounded allowlist and unchanged default entry",
+    async () => {
+      for (const query of [
+        "local-report",
+        "aave-borrow-actions&report=aave-borrow-actions",
+        "..%2Foutside",
+        "https%3A%2F%2Fexample.invalid%2Fprivate.json",
+      ])
+        await withPage(
+          320,
+          async (page) => {
+            await page.waitForFunction(() =>
+              document
+                .querySelector("#report-status")
+                ?.textContent?.includes("Integrity verified locally"),
+            );
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              "liquidity-shock",
+            );
+            assert.equal(
+              await page
+                .locator("#report-explorer")
+                .evaluate((node) => node.hasAttribute("open")),
+              false,
+            );
+            assert.equal(
+              await page.locator("#example-link").getAttribute("href"),
+              origin + "/?report=liquidity-shock#report-explorer",
+            );
+            await noOverflow(page);
+          },
+          "/?report=" + query,
+        );
+    },
+  );
+  await check(
+    "Aave units: local imports, resealed false units, unavailable records and recovery",
+    () =>
+      withPage(390, async (page) => {
+        const original = JSON.parse(
+          await readFile(
+            resolve(root, "reports/aave-borrow-actions.json"),
+            "utf8",
+          ),
+        );
+        const upload = async (report) => {
+          const { artifact_id, ...body } = report;
+          report.artifact_id = createHash("sha256")
+            .update(canonical(body))
+            .digest("hex");
+          const count = requests.length;
+          await page.locator("#import").setInputFiles({
+            name: "aave.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(JSON.stringify(report)),
+          });
+          await page.waitForFunction(() => {
+            const selection = document.querySelector("#scenario");
+            return (
+              selection instanceof HTMLSelectElement &&
+              ["local-report", "no-report"].includes(selection.value)
+            );
+          });
+          assert.equal(requests.length, count);
+        };
+        const wrong = structuredClone(original);
+        for (const branch of ["baseline", "candidate"])
+          wrong[branch].tokens[0].decimals = 6;
+        await upload(wrong);
+        assert.equal(await page.locator("#scenario").inputValue(), "no-report");
+        assert.equal(await page.locator("#balance-rows tr").count(), 0);
+        assert.equal(await page.locator("#candidate-value").innerText(), "—");
+        const missing = structuredClone(original);
+        missing.candidate.tokens = [];
+        await upload(missing);
+        assert.ok(
+          (await page.locator("#balance-rows").innerText()).includes(
+            "Unavailable",
+          ),
+        );
+        await page.selectOption("#scenario", "aave-borrow-actions");
+        await page.waitForFunction(
+          (id) => document.querySelector("#hash")?.textContent === id,
+          original.artifact_id,
+        );
+        assert.equal(await page.locator("#balance-rows tr").count(), 16);
+        await page.selectOption("#scenario", "liquidity-shock");
+        await page.waitForFunction(() => {
+          const chart = document.querySelector("#fixture-chart");
+          return chart instanceof HTMLElement && chart.hidden === false;
+        });
+        assert.equal(await page.locator("#balance-rows tr").count(), 0);
+      }),
+  );
   for (const width of [1280, 390, 320]) {
     await check(`${width}px console: recorded cards, command and axe`, () =>
       withPage(width, async (page) => {
@@ -449,8 +1227,7 @@ try {
           null,
         );
         await focusIs(page, "import");
-        const chooser = page.waitForEvent("filechooser");
-        await page.keyboard.press("Enter");
+        const chooser = await keyboardFileChooser(page, "import");
         const report = JSON.parse(
           await readFile(resolve(root, "reports/liquidity-shock.json"), "utf8"),
         );
@@ -472,9 +1249,128 @@ try {
             .querySelector("#report-status")
             ?.textContent?.includes("<img"),
         );
+        assert.equal(
+          await page.locator("#scenario").inputValue(),
+          "local-report",
+        );
         assert.equal(await page.locator("#report-status img").count(), 0);
         assert.equal(requests.length, count);
         assert.equal(await page.locator("#download").isVisible(), false);
+      }),
+  );
+  await check(
+    "Local report source survives stale samples and restores the same example",
+    () =>
+      withPage(390, async (page) => {
+        for (const outcome of ["valid", "invalid", "stale-error"]) {
+          let release;
+          let started;
+          const held = new Promise((resolve) => {
+            release = resolve;
+          });
+          const intercepted = new Promise((resolve) => {
+            started = resolve;
+          });
+          await page.route("**/reports/recovery-trap.json", async (route) => {
+            started();
+            await held;
+            await route.fulfill({
+              status: outcome === "stale-error" ? 500 : 200,
+              contentType: "application/json",
+              body: await readFile(
+                resolve(root, "reports/recovery-trap.json"),
+                "utf8",
+              ),
+            });
+          });
+          try {
+            // Capture the actual handler promise so stale completion is observed,
+            // rather than inferred from a delay or unrelated digest scheduling.
+            await page.evaluate(() => {
+              const selection = document.querySelector("#scenario");
+              if (!(selection instanceof HTMLSelectElement))
+                throw new Error("Missing selector");
+              selection.value = "recovery-trap";
+              Object.defineProperty(window, "sampleLoadCompletion", {
+                value: Reflect.get(window, "loadSample")(),
+                configurable: true,
+              });
+            });
+            await intercepted;
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              "loading",
+            );
+            assert.equal(
+              await page.locator("#metric-table").isVisible(),
+              false,
+            );
+            assert.equal(await page.locator("#raw-report").textContent(), "");
+            const count = requests.length;
+            await page.locator("#import").setInputFiles({
+              name: "local-report.json",
+              mimeType: "application/json",
+              buffer:
+                outcome === "invalid"
+                  ? Buffer.from("{")
+                  : await readFile(
+                      resolve(root, "reports/liquidity-shock.json"),
+                    ),
+            });
+            const expected =
+              outcome === "invalid" ? "no-report" : "local-report";
+            await page.waitForFunction((value) => {
+              const node = document.querySelector("#scenario");
+              return node instanceof HTMLSelectElement && node.value === value;
+            }, expected);
+            assert.equal(requests.length, count);
+            const response = page.waitForResponse(
+              "**/reports/recovery-trap.json",
+            );
+            release();
+            await (await response).finished();
+            await page.evaluate(() =>
+              Reflect.get(window, "sampleLoadCompletion"),
+            );
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              expected,
+            );
+            assert.equal(await page.locator("#download").isVisible(), false);
+            assert.equal(
+              await page.locator("#metric-table").isVisible(),
+              outcome !== "invalid",
+            );
+            await noOverflow(page);
+            if (outcome === "valid")
+              await page.locator("#reports").screenshot({
+                path: resolve(output, "local-report-source-390.png"),
+              });
+            await page.locator("#import").setInputFiles([]);
+            assert.equal(
+              await page.locator("#scenario").inputValue(),
+              expected,
+            );
+          } finally {
+            release();
+            await page.unroute("**/reports/recovery-trap.json");
+          }
+          await page.selectOption("#scenario", "liquidity-shock");
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#report-status")
+              ?.textContent?.includes("Integrity verified locally"),
+          );
+          assert.equal(
+            await page.locator("#scenario").inputValue(),
+            "liquidity-shock",
+          );
+          assert.equal(
+            await page.locator("#download").getAttribute("href"),
+            "reports/liquidity-shock.json",
+          );
+          assert.equal(await page.locator("#download").isVisible(), true);
+        }
       }),
   );
   await check(
@@ -588,6 +1484,7 @@ try {
       "depeg-stress",
       "ethereum-uniswap-slippage",
       "agent-local-codex",
+      "aave-borrow-actions",
     ]) {
       await check(
         `${width}px ${sample}: reflow, exact accessible data and axe`,
@@ -601,6 +1498,36 @@ try {
               (id) => document.querySelector("#hash")?.textContent === id,
               report.artifact_id,
             );
+            const command = `PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./${sample}.json --format text`;
+            await page.waitForFunction(
+              (command) =>
+                document.querySelector("#cli-command")?.textContent === command,
+              command,
+            );
+            assert.equal(
+              await page.locator("#download").getAttribute("download"),
+              `${sample}.json`,
+            );
+            await page.locator("#cli-recipe > summary").focus();
+            await visibleFocus(page);
+            await page.keyboard.press("Enter");
+            assert.equal(
+              await page.locator("#cli-recipe").getAttribute("open"),
+              "",
+            );
+            assert.match(
+              await page.locator("#cli-setup").innerText(),
+              /checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889/,
+            );
+            assert.match(
+              await page.locator("#cli-setup").innerText(),
+              /checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44/,
+            );
+            await page.locator("#cli-setup").focus();
+            await visibleFocus(page);
+            if (width < 700) {
+              await keyboardScrollRight(page, "cli-setup");
+            }
             await noOverflow(page);
             if (report.agent) {
               assert.equal(
@@ -608,9 +1535,15 @@ try {
                 report.agent.exchanges.length,
               );
               const text = await page.locator("#agent-provenance").innerText();
-              assert.match(text, /requested alias/);
-              assert.match(text, /Nondeterministic/);
-              assert.match(text, /Original generation cost.*Unavailable/);
+              if (sample === "aave-borrow-actions") {
+                assert.match(text, /preflight-risk-v1/);
+                assert.match(text, /Deterministic/);
+                assert.match(text, /Original generation cost.*0/);
+              } else {
+                assert.match(text, /requested alias/);
+                assert.match(text, /Nondeterministic/);
+                assert.match(text, /Original generation cost.*Unavailable/);
+              }
               for (const exchange of report.agent.exchanges)
                 assert.ok(
                   (await page.locator("#agent-rows").innerText()).includes(
@@ -671,12 +1604,14 @@ try {
                 await page.locator("#fixture-chart").isVisible(),
                 false,
               );
-              assert.match(
-                await page.locator("#source-pin").innerText(),
-                report.mode === "evm-fork"
-                  ? /19000000/
-                  : /Local disposable chain/,
-              );
+              const sourceText = await page.locator("#source-pin").innerText();
+              if (report.mode === "evm-fork")
+                assert.ok(
+                  sourceText.includes(
+                    `Block ${report.source.block_number}\n${report.source.block_hash}`,
+                  ),
+                );
+              else assert.match(sourceText, /Local disposable chain/);
               const region = page.getByRole("region", {
                 name: "Supplied actions on isolated local forks",
               });
@@ -686,10 +1621,69 @@ try {
                 await page.keyboard.press("ArrowRight");
                 await page.waitForFunction(
                   () =>
-                    (document.querySelector("#evm-details .table-wrap")
-                      ?.scrollLeft ?? 0) > 0,
+                    (document.querySelector(
+                      "#evm-details .table-wrap[aria-labelledby=evm-caption]",
+                    )?.scrollLeft ?? 0) > 0,
                 );
               }
+            }
+            if (sample === "aave-borrow-actions") {
+              assert.equal(
+                await page.locator("#baseline-value").innerText(),
+                "9.988827559170319712",
+              );
+              assert.equal(
+                await page.locator("#candidate-value").innerText(),
+                "9.9912499816031695",
+              );
+              assert.equal(
+                await page.locator("#delta-value").innerText(),
+                "+0.002422422432849788",
+              );
+              const rows = await page
+                .locator("#balance-rows tr")
+                .evaluateAll((rows) =>
+                  rows.map((row) =>
+                    Array.from(
+                      row.querySelectorAll("th,td"),
+                      (cell) => cell.textContent,
+                    ),
+                  ),
+                );
+              assert.deepEqual(
+                rows.find((row) => row[0] === "AWETH · Final"),
+                [
+                  "AWETH · Final",
+                  "10.000000094454558462",
+                  "10.000000094454558462",
+                  "0",
+                ],
+              );
+              assert.deepEqual(
+                rows.find((row) => row[0] === "Gas used"),
+                ["Gas used", "723131", "560326", "-162805"],
+              );
+              assert.deepEqual(
+                rows.find((row) => row[0] === "VWETH · Change"),
+                ["VWETH · Change", "+1", "+1", "0"],
+              );
+              const region = page.getByRole("region", {
+                name: "Recorded balances, gas and differences in exact units",
+              });
+              await region.focus();
+              await visibleFocus(page);
+              if (width === 320) {
+                await page.keyboard.press("ArrowRight");
+                await page.waitForFunction(
+                  () =>
+                    (document.querySelector(
+                      ".table-wrap[aria-labelledby=balance-caption]",
+                    )?.scrollLeft ?? 0) > 0,
+                );
+              }
+              await page.locator("#evm-details").screenshot({
+                path: resolve(output, `${width}-aave-balances.png`),
+              });
             }
             assert.ok(
               (await page.locator('#metric-rows th[scope="row"]').count()) > 0,
@@ -706,6 +1700,7 @@ try {
             await scan(page, `${width}-${sample}`);
             if (
               sample === "ethereum-uniswap-slippage" ||
+              sample === "aave-borrow-actions" ||
               (sample === "liquidity-shock" && width === 1280)
             ) {
               await page.screenshot({
@@ -741,6 +1736,7 @@ try {
             .querySelector("#report-status")
             ?.textContent?.includes("mismatch"),
         );
+        assert.equal(await page.locator("#scenario").inputValue(), "no-report");
         assert.equal(await page.locator("#candidate-value").innerText(), "—");
         assert.equal(await page.locator("#equity-rows tr").count(), 0);
         assert.equal(await page.locator("#fixture-chart").isVisible(), false);
@@ -750,6 +1746,10 @@ try {
           document
             .querySelector("#report-status")
             ?.textContent?.includes("Synthetic recovery trap"),
+        );
+        assert.equal(
+          await page.locator("#scenario").inputValue(),
+          "recovery-trap",
         );
         assert.equal(await page.locator("#metric-table").isVisible(), true);
         assert.equal(await page.locator("#fixture-chart").isVisible(), true);
@@ -872,6 +1872,10 @@ try {
               .querySelector("#trace-status")
               ?.textContent?.includes("matches all original"),
           );
+          assert.equal(
+            await page.locator("#trace-case").innerText(),
+            "Loaded prefix: 4 original transactions · through_index 3 · skip_indices [0]",
+          );
           assert.equal(await page.locator("#trace-inputs tr").count(), 4);
           const table = await page.locator("#trace-outcomes").innerText();
           for (const value of [
@@ -937,10 +1941,13 @@ try {
           // as in the existing console chooser check, after leaving the table.
           await page.locator("#trace-sample").focus();
           await page.keyboard.press("Tab");
+          await focusIs(page, "trace-price-sample");
+          await page.keyboard.press("Tab");
+          await focusIs(page, "trace-account-sample");
+          await page.keyboard.press("Tab");
           await focusIs(page, "trace-import");
           await visibleFocus(page);
-          const chooser = page.waitForEvent("filechooser");
-          await page.keyboard.press("Enter");
+          const chooser = await keyboardFileChooser(page, "trace-import");
           await (
             await chooser
           ).setFiles({
@@ -969,6 +1976,572 @@ try {
             (await page.locator("#report-status").innerText()).includes(
               "Integrity verified locally",
             ),
+          );
+        }),
+    );
+  }
+  for (const width of [1280, 390, 320]) {
+    await check(
+      `${width}px original32 local import: omission, structural shifts and exact fields`,
+      () =>
+        withPage(width, async (page) => {
+          await page.locator(".trace-archive > summary").click();
+          const before = requests.length;
+          await page
+            .locator("#trace-import")
+            .setInputFiles(
+              resolve(root, "tests/data/trace-oracle-prefix-32.json"),
+            );
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-comparison-summary")
+              ?.textContent?.includes("19 position / cumulative gas only"),
+          );
+          const summary = await page
+            .locator("#trace-comparison-summary")
+            .innerText();
+          for (const value of [
+            "1 omitted",
+            "0 execution receipt differences",
+            "12 exact original receipt matches",
+            "0 unavailable receipts",
+          ])
+            assert.ok(summary.includes(value), value);
+          assert.equal(requests.length, before);
+          assert.equal(
+            await page.locator("#trace-case").innerText(),
+            "Loaded prefix: 32 original transactions · through_index 31 · skip_indices [12]",
+          );
+          assert.equal(await page.locator("#trace-outcomes tr").count(), 32);
+          const omitted = page.locator("#trace-outcomes tr").nth(12);
+          assert.ok(
+            (await omitted.innerText()).includes("Omitted · no receipt"),
+          );
+          const shifted = page.locator("#trace-outcomes tr").nth(13);
+          assert.ok(
+            (await shifted.innerText()).includes(
+              "Position / cumulative gas only",
+            ),
+          );
+          assert.equal(
+            await shifted.locator("td").last().innerText(),
+            "cumulativeGasUsed, transactionIndex",
+          );
+          await page
+            .locator("#trace-receipts details")
+            .nth(13)
+            .locator("summary")
+            .focus();
+          await page.keyboard.press("Enter");
+          const exact = JSON.parse(
+            await page.locator("#trace-receipts pre").nth(13).innerText(),
+          );
+          assert.equal(exact.original.gasUsed, exact.candidate.gasUsed);
+          assert.deepEqual(exact.original.logs, exact.candidate.logs);
+          assert.notEqual(
+            exact.original.transactionIndex,
+            exact.candidate.transactionIndex,
+          );
+          assert.equal(
+            await page.locator("#trace-download").isVisible(),
+            false,
+          );
+          await page
+            .locator("#trace-outcomes")
+            .locator("..")
+            .locator("..")
+            .focus();
+          await visibleFocus(page);
+          await page.keyboard.press("ArrowRight");
+          if (width < 700)
+            await page.waitForFunction(() => {
+              const wrapper =
+                document.querySelector("#trace-outcomes")?.parentElement
+                  ?.parentElement;
+              return (
+                wrapper !== null &&
+                wrapper !== undefined &&
+                wrapper.scrollLeft > 0
+              );
+            });
+          await noOverflow(page);
+          await scan(page, `original32-${width}`);
+          await page
+            .locator("#trace-comparison-summary")
+            .scrollIntoViewIfNeeded();
+          await page.screenshot({
+            path: resolve(output, `${width}-original32-summary.png`),
+          });
+          await shifted.scrollIntoViewIfNeeded();
+          await page.screenshot({
+            path: resolve(output, `${width}-original32-shift.png`),
+          });
+        }),
+    );
+  }
+  for (const width of [1280, 390, 320]) {
+    await check(
+      `Observed prices: exact values, unproven views, rejection and clearing ${width}px`,
+      () =>
+        withPage(width, async (page) => {
+          await page.locator(".trace-archive > summary").click();
+          await page.locator("#trace-price-sample").focus();
+          await page.keyboard.press("Enter");
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-price-summary")
+              ?.textContent?.includes("7.89973126"),
+          );
+          assert.equal(await page.locator("#trace-price-rows tr").count(), 4);
+          assert.equal(await page.locator("#trace-outcomes tr").count(), 32);
+          assert.ok(
+            (await page.locator("#trace-price-summary").innerText()).includes(
+              "not profit",
+            ),
+          );
+          assert.ok(
+            (await page.locator("#trace-price-rows").innerText()).includes(
+              "256292441874",
+            ),
+          );
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            "reports/trace-observed-price32.json",
+          );
+          await page
+            .locator("#trace-price-rows")
+            .locator("..")
+            .locator("..")
+            .focus();
+          await visibleFocus(page);
+          await noOverflow(page);
+          await scan(page, `observed-price-${width}`);
+          await page.locator("#trace-price-heading").scrollIntoViewIfNeeded();
+          await page.screenshot({
+            path: resolve(output, `${width}-observed-price.png`),
+          });
+          const template = parseObservationJSON(
+            await readFile(
+              resolve(root, "reports/trace-observed-price32.json"),
+              "utf8",
+            ),
+          );
+          const controls = parseObservationJSON(
+            await readFile(
+              resolve(root, "tests/data/observed-controls.json"),
+              "utf8",
+            ),
+          );
+          const importRow = async (row) => {
+            const text = observationCanonical(row);
+            const before = requests.length;
+            await page.locator("#trace-import").setInputFiles({
+              name: "local-price.json",
+              mimeType: "application/json",
+              buffer: Buffer.from(text),
+            });
+            await page.waitForFunction(
+              (id) => document.querySelector("#trace-hash")?.textContent === id,
+              row.artifact_id,
+            );
+            assert.equal(requests.length, before);
+          };
+          const large = controls.find((row) => row.name === "large_integer");
+          const big = {
+            ...template,
+            observations: large.observations,
+            classification: large.classification,
+            artifact_id: large.artifact_id,
+          };
+          await importRow(big);
+          assert.ok(
+            (await page.locator("#trace-price-rows").innerText()).includes(
+              (2n ** 200n).toString(),
+            ),
+          );
+          assert.ok(
+            (await page.locator("#trace-price-summary").innerText()).includes(
+              "USD 0.00000010",
+            ),
+          );
+          assert.equal(
+            await page.locator("#trace-raw").textContent(),
+            observationCanonical(big),
+          );
+          const missing = controls.find(
+            (row) => row.name === "rpc_missing_head",
+          );
+          await importRow({
+            ...template,
+            observations: missing.observations,
+            classification: missing.classification,
+            artifact_id: missing.artifact_id,
+          });
+          assert.ok(
+            (await page.locator("#trace-price-summary").innerText()).startsWith(
+              "UNPROVEN",
+            ),
+          );
+          assert.ok(
+            (await page.locator("#trace-price-rows").innerText()).includes(
+              "head: rpc_error",
+            ),
+          );
+          await scan(page, `observed-unproven-${width}`);
+          const bad = structuredClone(template);
+          bad.classification.price_difference++;
+          const { artifact_id, ...body } = bad;
+          bad.artifact_id = createHash("sha256")
+            .update(observationCanonical(body))
+            .digest("hex");
+          await page.locator("#trace-import").setInputFiles({
+            name: "invalid-price.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(observationCanonical(bad)),
+          });
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-status")
+              ?.classList.contains("error"),
+          );
+          assert.equal(
+            await page.locator("#trace-price-results").isVisible(),
+            false,
+          );
+          for (const id of [
+            "trace-price-summary",
+            "trace-price-rows",
+            "trace-price-identities",
+            "trace-raw",
+            "trace-hash",
+          ])
+            assert.equal(await page.locator(`#${id}`).textContent(), "");
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            null,
+          );
+          await page.locator("#trace-sample").click();
+          await page.waitForFunction(
+            () => document.querySelectorAll("#trace-outcomes tr").length === 4,
+          );
+          assert.equal(
+            await page.locator("#trace-price-results").isVisible(),
+            false,
+          );
+          assert.equal(await page.locator("#trace-price-rows tr").count(), 0);
+        }),
+    );
+  }
+  for (const width of [1280, 390, 320]) {
+    await check(
+      `Account impact: exact units, missing views, sentinel, recovery and keyboard ${width}px`,
+      () =>
+        withPage(width, async (page) => {
+          await page.locator(".trace-archive > summary").click();
+          await page.locator("#trace-price-sample").focus();
+          await page.keyboard.press("Tab");
+          await focusIs(page, "trace-account-sample");
+          await visibleFocus(page);
+          await page.keyboard.press("Enter");
+          await page.waitForFunction(
+            () => document.querySelectorAll("#trace-outcomes tr").length === 13,
+          );
+          assert.equal(
+            await page.locator("#trace-account-results").isVisible(),
+            true,
+          );
+          assert.ok(
+            (await page.locator("#trace-origin").innerText()).includes(
+              "default-Docker13",
+            ),
+          );
+          assert.ok(
+            (
+              await page.locator("#trace-account-comparison").innerText()
+            ).includes("816.28966124"),
+          );
+          assert.ok(
+            (
+              await page.locator("#trace-account-comparison").innerText()
+            ).includes("0.003852169807877337"),
+          );
+          assert.equal(
+            await page.locator("#trace-account-comparison tr").count(),
+            6,
+          );
+          assert.equal(
+            await page.locator("#trace-account-capacity-delta").innerText(),
+            "+816.28966124",
+          );
+          assert.equal(
+            await page.locator("#trace-account-health-delta").innerText(),
+            "+0.003852169807877337",
+          );
+          const summaryTree = await page
+            .locator(".account-impact-summary")
+            .ariaSnapshot();
+          assert.ok(summaryTree.includes("Borrowing capacity change (USD)"));
+          assert.ok(summaryTree.includes("Health factor change"));
+          const summaryBox = await page
+            .locator(".account-impact-summary")
+            .boundingBox();
+          const tableBox = await page
+            .locator("#trace-account-comparison")
+            .boundingBox();
+          assert.ok(
+            summaryBox &&
+              tableBox &&
+              summaryBox.y + summaryBox.height <= tableBox.y,
+          );
+          if (width <= 680) {
+            const capacityBox = await page
+              .locator("#trace-account-capacity-delta")
+              .boundingBox();
+            const healthBox = await page
+              .locator("#trace-account-health-delta")
+              .boundingBox();
+            assert.ok(
+              capacityBox &&
+                healthBox &&
+                capacityBox.y + capacityBox.height < healthBox.y,
+            );
+          }
+          assert.equal(await page.locator("#trace-account-rows tr").count(), 4);
+          assert.equal(await page.locator("#trace-price-rows tr").count(), 4);
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            "reports/aave-account-impact13.json",
+          );
+          await page
+            .locator("#trace-account-comparison")
+            .locator("..")
+            .locator("..")
+            .focus();
+          await visibleFocus(page);
+          await noOverflow(page);
+          await scan(page, `account-impact-${width}`);
+          await page.locator("#trace-account-heading").scrollIntoViewIfNeeded();
+          await page.screenshot({
+            path: resolve(output, `${width}-account-impact.png`),
+          });
+          const template = parseObservationJSON(
+            await readFile(
+              resolve(root, "reports/aave-account-impact13.json"),
+              "utf8",
+            ),
+          );
+          const controls = parseObservationJSON(
+            await readFile(
+              resolve(root, "tests/data/position-controls.json"),
+              "utf8",
+            ),
+          );
+          // Explicit synthetic display controls: reverse both after-values or
+          // make them equal. Provider/price/trace records remain unchanged.
+          for (const name of ["negative_change", "zero_change"]) {
+            const synthetic = structuredClone(template);
+            const before = structuredClone(template.classification.baseline);
+            const after = structuredClone(template.classification.candidate);
+            if (name === "negative_change") {
+              synthetic.observations[1].raw = template.observations[3].raw;
+              synthetic.observations[3].raw = template.observations[1].raw;
+              synthetic.classification.baseline = after;
+              synthetic.classification.candidate = before;
+            } else {
+              synthetic.observations[3].raw = template.observations[1].raw;
+              synthetic.classification.candidate = before;
+            }
+            synthetic.classification.differences = Object.fromEntries(
+              Object.entries(template.classification.differences).map(
+                ([key, value]) => [key, name === "zero_change" ? 0n : -value],
+              ),
+            );
+            const { artifact_id, ...body } = synthetic;
+            synthetic.artifact_id = createHash("sha256")
+              .update(observationCanonical(body))
+              .digest("hex");
+            controls.push({ name, ...synthetic });
+          }
+          const importsStart = requests.length;
+          for (const name of [
+            "missing_account",
+            "large_integer",
+            "no_debt",
+            "debt_transition",
+            "health_boundary",
+            "negative_change",
+            "zero_change",
+          ]) {
+            const control = controls.find((row) => row.name === name);
+            assert.ok(control);
+            const imported = structuredClone(template);
+            Object.assign(imported, {
+              observations: control.observations,
+              classification: control.classification,
+              artifact_id: control.artifact_id,
+            });
+            await page.locator("#trace-import").setInputFiles({
+              name: `${name}.json`,
+              mimeType: "application/json",
+              buffer: Buffer.from(observationCanonical(imported)),
+            });
+            await page.waitForFunction(
+              (id) => document.querySelector("#trace-hash")?.textContent === id,
+              control.artifact_id,
+            );
+            const expectedCapacity =
+              name === "missing_account"
+                ? "Unavailable"
+                : name === "large_integer"
+                  ? "+0.0000001"
+                  : name === "negative_change"
+                    ? "−816.28966124"
+                    : name === "zero_change"
+                      ? "0"
+                      : "+0.00000001";
+            const expectedHealth =
+              name === "missing_account"
+                ? "Unavailable"
+                : name === "no_debt" || name === "debt_transition"
+                  ? "Not defined (no debt)"
+                  : name === "negative_change"
+                    ? "−0.003852169807877337"
+                    : name === "zero_change"
+                      ? "0"
+                      : "+0.000000000000000001";
+            assert.equal(
+              await page.locator("#trace-account-capacity-delta").innerText(),
+              expectedCapacity,
+            );
+            assert.equal(
+              await page.locator("#trace-account-health-delta").innerText(),
+              expectedHealth,
+            );
+            if (name === "missing_account") {
+              assert.ok(
+                (
+                  await page.locator("#trace-account-summary").innerText()
+                ).includes("UNPROVEN"),
+              );
+              assert.ok(
+                (
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("Unavailable"),
+              );
+              assert.ok(
+                !(
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("816.28966124"),
+              );
+            } else if (name === "large_integer") {
+              await page
+                .locator("#trace-account-rows")
+                .locator("..")
+                .locator("..")
+                .locator("..")
+                .evaluate((node) => node.setAttribute("open", ""));
+              assert.ok(
+                (
+                  (await page.locator("#trace-account-rows").textContent()) ??
+                  ""
+                ).includes((2n ** 200n + 1n).toString()),
+              );
+              assert.ok(
+                (
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("0.00000001"),
+              );
+            } else if (name === "no_debt" || name === "debt_transition") {
+              assert.ok(
+                (
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("No debt (uint256 sentinel)"),
+              );
+              assert.ok(
+                (
+                  await page.locator("#trace-account-comparison").innerText()
+                ).includes("Not defined (no debt)"),
+              );
+            } else if (name === "health_boundary") {
+              assert.ok(
+                (
+                  await page.locator("#trace-account-summary").innerText()
+                ).includes("baseline below 1"),
+              );
+            }
+            assert.equal(
+              await page.locator("#trace-download").getAttribute("href"),
+              null,
+            );
+            await noOverflow(page);
+            await scan(page, `account-${name}-${width}`);
+          }
+          const bad = structuredClone(template);
+          bad.classification.differences.available_borrows_base++;
+          const { artifact_id, ...body } = bad;
+          bad.artifact_id = createHash("sha256")
+            .update(observationCanonical(body))
+            .digest("hex");
+          await page.locator("#trace-import").setInputFiles({
+            name: "resealed-account-contradiction.json",
+            mimeType: "application/json",
+            buffer: Buffer.from(observationCanonical(bad)),
+          });
+          await page.waitForFunction(() =>
+            document
+              .querySelector("#trace-status")
+              ?.classList.contains("error"),
+          );
+          assert.equal(
+            await page.locator("#trace-account-results").isVisible(),
+            false,
+          );
+          for (const id of [
+            "trace-account-summary",
+            "trace-account-capacity-delta",
+            "trace-account-health-delta",
+            "trace-account-comparison",
+            "trace-account-rows",
+            "trace-account-identities",
+            "trace-price-rows",
+            "trace-raw",
+            "trace-hash",
+          ])
+            assert.equal(await page.locator(`#${id}`).textContent(), "");
+          assert.equal(
+            await page.locator("#trace-download").getAttribute("href"),
+            null,
+          );
+          assert.equal(
+            requests.length,
+            importsStart,
+            "Local account imports made a request",
+          );
+          await page.locator("#trace-account-sample").click();
+          await page.waitForFunction(
+            () =>
+              document.querySelectorAll("#trace-account-comparison tr")
+                .length === 6,
+          );
+          await page.locator("#trace-sample").click();
+          await page.waitForFunction(
+            () => document.querySelectorAll("#trace-outcomes tr").length === 4,
+          );
+          assert.equal(
+            await page.locator("#trace-account-results").isVisible(),
+            false,
+          );
+          assert.equal(
+            await page.locator("#trace-account-comparison tr").count(),
+            0,
+          );
+          assert.equal(
+            await page.locator("#trace-account-capacity-delta").textContent(),
+            "",
+          );
+          assert.equal(
+            await page.locator("#trace-account-health-delta").textContent(),
+            "",
           );
         }),
     );
@@ -1020,6 +2593,11 @@ try {
           assert.equal(await page.locator("#trace-results").isVisible(), false);
           assert.equal(await page.locator("#trace-outcomes tr").count(), 0);
           assert.equal(await page.locator("#trace-raw").textContent(), "");
+          assert.equal(
+            await page.locator("#trace-comparison-summary").textContent(),
+            "",
+          );
+          assert.equal(await page.locator("#trace-case").textContent(), "");
           assert.equal(
             await page.locator("#trace-download").getAttribute("href"),
             null,
@@ -1181,10 +2759,19 @@ try {
     "comparison.mjs",
     "report-validation.mjs",
     "trace-report.mjs",
+    "trace-comparison.mjs",
     "trace-viewer.mjs",
+    "observed-trace.mjs",
+    "position-report.mjs",
+    "reports/aave-account-impact13.json",
+    "tests/data/position-controls.json",
+    "reports/trace-observed-price32.json",
+    "tests/data/observed-controls.json",
     "reports/trace-mainnet-prefix-four.json",
+    "tests/data/trace-oracle-prefix-32.json",
     "assets/examples/action-comparison.json",
     "reports/agent-local-codex.json",
+    "reports/aave-borrow-actions.json",
     "style.css",
     "404.html",
     "package.json",

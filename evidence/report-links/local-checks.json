@@ -1,0 +1,87 @@
+{
+  "checks": [
+    {
+      "name": "units",
+      "command": "node22 --test tests/*.test.mjs",
+      "returncode": 0,
+      "stdout_sha256": "13068f39211a866e8c78595aa3c8364dc1d5b866431f6d352a0044ed6c7b5afb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "site",
+      "command": "python3.13 -m unittest discover -s tests -v",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e6437316225bdbd3eb47a3cdd198fd19b014af7a62ee09daee48cbae298243b5"
+    },
+    {
+      "name": "lint",
+      "command": "node22 node_modules/eslint/bin/eslint.js . --max-warnings 0",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "format",
+      "command": "node22 node_modules/prettier/bin/prettier.cjs --check **/*.{js,mjs,ts}",
+      "returncode": 0,
+      "stdout_sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "types",
+      "command": "node22 node_modules/typescript/bin/tsc --pretty false",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "security",
+      "command": "node22 scripts/check_quality.mjs",
+      "returncode": 0,
+      "stdout_sha256": "efa34ca14fdd67d2d161070e978e12f0ce8c1e87b8ef0d3e4d1ebb812e200ade",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "browser",
+      "command": "A11Y_OUTPUT=output/playwright/report-links-reviewed node22 scripts/check_accessibility.mjs",
+      "returncode": 0,
+      "stdout_sha256": "eacff5a7ea81633c30197c6d39c3ae5c8c97c6fe7dd240015f23cffd57a48fc7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "offline-view",
+      "command": "node22 .quality/report-links/view-reader.mjs",
+      "returncode": 0,
+      "stdout_sha256": "2edd06774d52b49001afb0d17bb5083ab01efeb03b472ca162a7b7b7f9cd4d95",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_sha256": {
+    "index.html": "d7a4bf69e6d624039e1bc6838e60ebdfe75d9fcef543d804be52d4160f4620a6",
+    "app.js": "7b475dec4def0839690aad5a48d329c24f8c870b36c41b42b20d1bf992e0069e",
+    "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
+    "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
+    "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+    "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+    "trace-viewer.mjs": "e87805dcef59dce8905671c73802c42448abee827c4d12bd0abfd7adb1bda06a",
+    "observed-trace.mjs": "980ff5172f61b82413e9898955f7a60ee23ba10a6374e6b259a91034624fe9ee",
+    "position-report.mjs": "38f31262e2248ae6af2d07bf7ee02de3d24316eaaac164e3dc2ae597e00c8f7f",
+    "reports/aave-account-impact13.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "tests/data/position-controls.json": "033383cc85af549cf4f9e1bda7d506e342af2a1f385a6afe88025e9dcd2deb9f",
+    "reports/trace-observed-price32.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "tests/data/observed-controls.json": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
+    "reports/trace-mainnet-prefix-four.json": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+    "tests/data/trace-oracle-prefix-32.json": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+    "assets/examples/action-comparison.json": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67",
+    "reports/agent-local-codex.json": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+    "reports/aave-borrow-actions.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "style.css": "2e72483077e431e1c8f3091cd1d3449c05bc4e2c2b275590800af279c745fb33",
+    "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+    "package.json": "d4ae0a0b1a412c70cf38bace34efd9fd459736f0e8c4d13ded0c53cab43e772d",
+    "package-lock.json": "199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342"
+  },
+  "scope": "Observed local commands and whole-output hashes. Earlier failing runs retained privately. No fresh EVM/model/provider or dependency-advisory result.",
+  "node_version": "v22.23.1",
+  "normalization": "Public commands use node22/python3.13 labels and repository-relative paths; the private local executable path is omitted. Output hashes retain original bytes."
+}

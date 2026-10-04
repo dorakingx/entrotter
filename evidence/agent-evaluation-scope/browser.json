@@ -1,0 +1,483 @@
+{
+  "status": "PASS actual visible current browser scope and geometry",
+  "browser": "153.0.8010.12",
+  "html_sha256": "31e7bcddb79f95d312d9c889bebae79b7f35283de9af33918ff39eecd4360753",
+  "rows": [
+    {
+      "width": 1440,
+      "source": "aave-borrow-actions",
+      "text": "Separate example evaluation. In the local native-transfer example, model decisions matched its deterministic preflight baseline, with no measured model advantage. That finding concerns that example; it does not evaluate every report shown here.",
+      "link": "https://github.com/entrotter/entrotter/blob/b724983a6c24fbe20473111565c8639714cb1bb0/docs/AGENT_EVALUATION.md",
+      "provider": "Provider: builtin\nOriginal model/policy: preflight-risk-v1\nModel identity scope: Unavailable\nPrompt version: Unavailable\nGeneration: Deterministic\nSeed: Unavailable\nOriginal generation cost (USD): 0\nCost note: Unavailable",
+      "decisions": "3\trejected\t500000 / 2000000\thold\tCurrent-state preflight or requested gas exceeds the policy\tnoop\t0",
+      "geometry": {
+        "width": 1182,
+        "scrollWidth": 1182,
+        "box": {
+          "x": 129,
+          "y": 415.765625,
+          "width": 1182,
+          "height": 51.1875,
+          "top": 415.765625,
+          "right": 1311,
+          "bottom": 466.953125,
+          "left": 129
+        }
+      },
+      "axe_file": "1440-aave-borrow-actions-axe.json",
+      "axe_sha256": "ee84815e3d365f82f86536d2c5fa0ce53f981b16e9e96d4f06b4b8375c92e567",
+      "violations": 0,
+      "screenshot": "1440-aave-borrow-actions.png",
+      "incomplete": 0
+    },
+    {
+      "width": 1440,
+      "source": "agent-local-codex",
+      "text": "Separate example evaluation. In the local native-transfer example, model decisions matched its deterministic preflight baseline, with no measured model advantage. That finding concerns that example; it does not evaluate every report shown here.",
+      "link": "https://github.com/entrotter/entrotter/blob/b724983a6c24fbe20473111565c8639714cb1bb0/docs/AGENT_EVALUATION.md",
+      "provider": "Provider: codex-cli\nOriginal model/policy: gpt-5.6-sol\nModel identity scope: requested alias; immutable served snapshot unavailable\nPrompt version: evm-proposal-gate-v1\nGeneration: Nondeterministic\nSeed: Unavailable\nOriginal generation cost (USD): Unavailable\nCost note: Uses operator authentication; monetary cost unavailable from CLI events, not assumed zero",
+      "decisions": "0\tsuccess\t21000 / 2000000\texecute\tCurrent-state preflight succeeded, and the requested 21,000 gas is within the 2,000,000 remaining gas budget.\tsuccess\t21000\n1\trejected\t50000 / 1979000\thold\tCurrent-state preflight was rejected, so hold to preserve gas.\tnoop\t0",
+      "geometry": {
+        "width": 1182,
+        "scrollWidth": 1182,
+        "box": {
+          "x": 129,
+          "y": 436.578125,
+          "width": 1182,
+          "height": 51.1875,
+          "top": 436.578125,
+          "right": 1311,
+          "bottom": 487.765625,
+          "left": 129
+        }
+      },
+      "axe_file": "1440-agent-local-codex-axe.json",
+      "axe_sha256": "a14dd30f501feb8b83e20fb57d3ee2de4b9f036715cbe0cd32019866bcdef054",
+      "violations": 0,
+      "screenshot": "1440-agent-local-codex.png",
+      "incomplete": 0
+    },
+    {
+      "width": 1440,
+      "source": "local-aave",
+      "text": "Separate example evaluation. In the local native-transfer example, model decisions matched its deterministic preflight baseline, with no measured model advantage. That finding concerns that example; it does not evaluate every report shown here.",
+      "link": "https://github.com/entrotter/entrotter/blob/b724983a6c24fbe20473111565c8639714cb1bb0/docs/AGENT_EVALUATION.md",
+      "provider": "Provider: builtin\nOriginal model/policy: preflight-risk-v1\nModel identity scope: Unavailable\nPrompt version: Unavailable\nGeneration: Deterministic\nSeed: Unavailable\nOriginal generation cost (USD): 0\nCost note: Unavailable",
+      "decisions": "3\trejected\t500000 / 2000000\thold\tCurrent-state preflight or requested gas exceeds the policy\tnoop\t0",
+      "geometry": {
+        "width": 1182,
+        "scrollWidth": 1182,
+        "box": {
+          "x": 129,
+          "y": 436.765625,
+          "width": 1182,
+          "height": 51.1875,
+          "top": 436.765625,
+          "right": 1311,
+          "bottom": 487.953125,
+          "left": 129
+        }
+      },
+      "axe_file": "1440-local-aave-axe.json",
+      "axe_sha256": "3d9964292cd01b1eb7cc2905ff89a23a47df08c1fd3493a727234918c13157a9",
+      "violations": 0,
+      "screenshot": "1440-local-aave.png",
+      "incomplete": 0
+    },
+    {
+      "width": 320,
+      "source": "aave-borrow-actions",
+      "text": "Separate example evaluation. In the local native-transfer example, model decisions matched its deterministic preflight baseline, with no measured model advantage. That finding concerns that example; it does not evaluate every report shown here.",
+      "link": "https://github.com/entrotter/entrotter/blob/b724983a6c24fbe20473111565c8639714cb1bb0/docs/AGENT_EVALUATION.md",
+      "provider": "Provider: builtin\nOriginal model/policy: preflight-risk-v1\nModel identity scope: Unavailable\nPrompt version: Unavailable\nGeneration: Deterministic\nSeed: Unavailable\nOriginal generation cost (USD): 0\nCost note: Unavailable",
+      "decisions": "3\trejected\t500000 / 2000000\thold\tCurrent-state preflight or requested gas exceeds the policy\tnoop\t0",
+      "geometry": {
+        "width": 248,
+        "scrollWidth": 248,
+        "box": {
+          "x": 36,
+          "y": 352.6875,
+          "width": 248,
+          "height": 204.75,
+          "top": 352.6875,
+          "right": 284,
+          "bottom": 557.4375,
+          "left": 36
+        }
+      },
+      "axe_file": "320-aave-borrow-actions-axe.json",
+      "axe_sha256": "5d0e5eb90a4090338a2a16bf2bef7433cdff7686c3df9e777475831c99c27524",
+      "violations": 0,
+      "screenshot": "320-aave-borrow-actions.png",
+      "incomplete": 1
+    },
+    {
+      "width": 320,
+      "source": "agent-local-codex",
+      "text": "Separate example evaluation. In the local native-transfer example, model decisions matched its deterministic preflight baseline, with no measured model advantage. That finding concerns that example; it does not evaluate every report shown here.",
+      "link": "https://github.com/entrotter/entrotter/blob/b724983a6c24fbe20473111565c8639714cb1bb0/docs/AGENT_EVALUATION.md",
+      "provider": "Provider: codex-cli\nOriginal model/policy: gpt-5.6-sol\nModel identity scope: requested alias; immutable served snapshot unavailable\nPrompt version: evm-proposal-gate-v1\nGeneration: Nondeterministic\nSeed: Unavailable\nOriginal generation cost (USD): Unavailable\nCost note: Uses operator authentication; monetary cost unavailable from CLI events, not assumed zero",
+      "decisions": "0\tsuccess\t21000 / 2000000\texecute\tCurrent-state preflight succeeded, and the requested 21,000 gas is within the 2,000,000 remaining gas budget.\tsuccess\t21000\n1\trejected\t50000 / 1979000\thold\tCurrent-state preflight was rejected, so hold to preserve gas.\tnoop\t0",
+      "geometry": {
+        "width": 248,
+        "scrollWidth": 248,
+        "box": {
+          "x": 36,
+          "y": 359.5,
+          "width": 248,
+          "height": 204.75,
+          "top": 359.5,
+          "right": 284,
+          "bottom": 564.25,
+          "left": 36
+        }
+      },
+      "axe_file": "320-agent-local-codex-axe.json",
+      "axe_sha256": "04800641abfbf34b107f1a451770b575db14d8cb8b128dcc053b77a9c5f09f45",
+      "violations": 0,
+      "screenshot": "320-agent-local-codex.png",
+      "incomplete": 1
+    },
+    {
+      "width": 320,
+      "source": "local-aave",
+      "text": "Separate example evaluation. In the local native-transfer example, model decisions matched its deterministic preflight baseline, with no measured model advantage. That finding concerns that example; it does not evaluate every report shown here.",
+      "link": "https://github.com/entrotter/entrotter/blob/b724983a6c24fbe20473111565c8639714cb1bb0/docs/AGENT_EVALUATION.md",
+      "provider": "Provider: builtin\nOriginal model/policy: preflight-risk-v1\nModel identity scope: Unavailable\nPrompt version: Unavailable\nGeneration: Deterministic\nSeed: Unavailable\nOriginal generation cost (USD): 0\nCost note: Unavailable",
+      "decisions": "3\trejected\t500000 / 2000000\thold\tCurrent-state preflight or requested gas exceeds the policy\tnoop\t0",
+      "geometry": {
+        "width": 248,
+        "scrollWidth": 248,
+        "box": {
+          "x": 36,
+          "y": 359.6875,
+          "width": 248,
+          "height": 204.75,
+          "top": 359.6875,
+          "right": 284,
+          "bottom": 564.4375,
+          "left": 36
+        }
+      },
+      "axe_file": "320-local-aave-axe.json",
+      "axe_sha256": "bec673f75d8c4bf0c378ce69e7c9d2a495b19cb2372dcd0dc1ea6e0ee7b7e392",
+      "violations": 0,
+      "screenshot": "320-local-aave.png",
+      "incomplete": 1
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:60361/?report=aave-borrow-actions",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/style.css?v=eb30a5dd5297",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/app.js?v=7c3b1992938e",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/comparison.mjs?v=e0dac48fe543",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-viewer.mjs?v=e87805dcef59",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/mascot.webp",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/reports/aave-borrow-actions.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-report.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-comparison.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/observed-trace.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/position-report.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/report-validation.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/examples/action-comparison.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/reports/agent-local-codex.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/?report=aave-borrow-actions",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/style.css?v=eb30a5dd5297",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/app.js?v=7c3b1992938e",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/comparison.mjs?v=e0dac48fe543",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-viewer.mjs?v=e87805dcef59",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/mascot.webp",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/reports/aave-borrow-actions.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/report-validation.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-report.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-comparison.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/observed-trace.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/position-report.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/examples/action-comparison.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/reports/agent-local-codex.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "method": "GET"
+    }
+  ],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:60361/?report=aave-borrow-actions",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/style.css?v=eb30a5dd5297",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/icon.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/mascot.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/app.js?v=7c3b1992938e",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-viewer.mjs?v=e87805dcef59",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/comparison.mjs?v=e0dac48fe543",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/reports/aave-borrow-actions.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/observed-trace.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-comparison.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/position-report.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-report.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/report-validation.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/examples/action-comparison.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/reports/agent-local-codex.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/?report=aave-borrow-actions",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/style.css?v=eb30a5dd5297",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/mascot.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/icon.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/comparison.mjs?v=e0dac48fe543",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-viewer.mjs?v=e87805dcef59",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/app.js?v=7c3b1992938e",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/reports/aave-borrow-actions.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/report-validation.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-comparison.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/trace-report.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/position-report.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/observed-trace.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/assets/examples/action-comparison.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/reports/agent-local-codex.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:60361/axe.js",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "served_sha256": {
+    "index.html": "31e7bcddb79f95d312d9c889bebae79b7f35283de9af33918ff39eecd4360753",
+    "style.css": "eb30a5dd529732cc220cf31fa589e5aa9198339d7471c425e5c1e6036ccf286c",
+    "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
+    "trace-viewer.mjs": "e87805dcef59dce8905671c73802c42448abee827c4d12bd0abfd7adb1bda06a",
+    "app.js": "7c3b1992938e5c7d1a60635519412b1988b9f058d1e7275991501d82adeaefca",
+    "assets/icon.png": "1e8ef40b9371697d1c2e76900daaf25081a6beff56178eebe680d25ef279e051",
+    "assets/mascot.webp": "6b56ae1a3b6b2d123f71f0008b345073cd622ed821cf25ce2edf9f5428ac0f76",
+    "reports/aave-borrow-actions.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "observed-trace.mjs": "980ff5172f61b82413e9898955f7a60ee23ba10a6374e6b259a91034624fe9ee",
+    "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+    "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+    "position-report.mjs": "38f31262e2248ae6af2d07bf7ee02de3d24316eaaac164e3dc2ae597e00c8f7f",
+    "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
+    "assets/examples/action-comparison.json": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67",
+    "axe.js": "c24f097bd2f451d4f933e8bc7d8d539f8672a2ebcb5cc9f9f3eec8ca9470a0c1",
+    "reports/agent-local-codex.json": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6"
+  },
+  "scope": "Actual desktop/mobile Aave, separately linked local model, and local Aave import. Explicit instant scroll and vertical+horizontal viewport bounds verified. Link receives programmatic focus (not a native Tab test). Paragraph is expressly separate from selected-report provenance; no new model/EVM/provider authenticity or performance advantage.",
+  "raw_report_sha256": "9c2f4568b831d7289478f72319ab48b3dc5cca2cac77e6b93e6c246e9ebec1da",
+  "helper_sha256": "56f11eb5103bf71bc3a321707b6e1ea4c4c67260e2574fcfbf02d7afd3c46788"
+}

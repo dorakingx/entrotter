@@ -17,8 +17,112 @@ const allowedSamples = new Set([
   "depeg-stress",
   "ethereum-uniswap-slippage",
   "agent-local-codex",
+  "aave-borrow-actions",
 ]);
+/** @param {unknown} name */
+function reportCliRecipe(name) {
+  if (
+    typeof name !== "string" ||
+    (!allowedSamples.has(name) && name !== "local-report")
+  )
+    return null;
+  return {
+    setup:
+      "git clone https://github.com/entrotter/cli.git entrotter-cli &&\n" +
+      "git -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889 &&\n" +
+      "git clone https://github.com/entrotter/sdk-python.git entrotter-sdk &&\n" +
+      "git -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    command:
+      "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./" +
+      name +
+      ".json --format text",
+  };
+}
+/** @param {unknown} search */
+function reportFromQuery(search) {
+  if (typeof search !== "string" || !search || search.length > 2048)
+    return null;
+  const names = new URLSearchParams(search).getAll("report");
+  return names.length === 1 && allowedSamples.has(names[0]) ? names[0] : null;
+}
+/** @param {unknown} name @param {unknown} href */
+function reportExampleUrl(name, href) {
+  if (
+    typeof name !== "string" ||
+    !allowedSamples.has(name) ||
+    typeof href !== "string"
+  )
+    return null;
+  try {
+    const url = new URL(href);
+    if (!["http:", "https:"].includes(url.protocol)) return null;
+    url.username = "";
+    url.password = "";
+    url.search = "";
+    url.hash = "report-explorer";
+    url.searchParams.set("report", name);
+    return url.href;
+  } catch {
+    return null;
+  }
+}
+/** @param {string} name */
+function showCliRecipe(name) {
+  const recipe = reportCliRecipe(name);
+  if (!recipe) return;
+  cliRecipe = recipe;
+  $("cli-file-help").textContent =
+    name === "local-report"
+      ? "In an empty working directory, save a local copy of your imported file as local-report.json. Keep the original file unchanged."
+      : "Download Source JSON above into an empty working directory.";
+  $("cli-setup").textContent = recipe.setup;
+  $("cli-command").textContent = recipe.command;
+  $("cli-recipe").hidden = false;
+  disableCliCopy(cliCopyInFlight);
+  if (cliCopyInFlight)
+    $("cli-copy-status").textContent =
+      "Waiting for the previous copy request. You can still select and copy these commands manually.";
+}
 let generation = 0;
+/** @type {ReturnType<typeof reportCliRecipe>} */
+let cliRecipe = null;
+let cliCopySequence = 0;
+let cliCopyInFlight = false;
+/** @param {boolean} disabled */
+function disableCliCopy(disabled) {
+  for (const id of ["cli-copy-setup", "cli-copy-command"]) {
+    if (disabled) $(id).setAttribute("disabled", "");
+    else $(id).removeAttribute("disabled");
+  }
+}
+/** @param {"setup" | "command"} kind */
+async function copyCliRecipe(kind) {
+  if (cliCopyInFlight || !cliRecipe || !["setup", "command"].includes(kind))
+    return;
+  const text = kind === "setup" ? cliRecipe.setup : cliRecipe.command;
+  const seq = generation;
+  const copy = ++cliCopySequence;
+  const current = () => seq === generation && copy === cliCopySequence;
+  cliCopyInFlight = true;
+  disableCliCopy(true);
+  $("cli-copy-status").textContent = "Copying…";
+  try {
+    if (typeof navigator === "undefined" || !navigator.clipboard?.writeText)
+      throw new Error("Clipboard unavailable.");
+    await navigator.clipboard.writeText(text);
+    if (current())
+      $("cli-copy-status").textContent =
+        kind === "setup" ? "CLI setup copied." : "Inspection command copied.";
+  } catch {
+    if (current())
+      $("cli-copy-status").textContent =
+        "Copy unavailable. Select the commands above and copy them manually.";
+  } finally {
+    cliCopyInFlight = false;
+    if (!current() && cliRecipe) $("cli-copy-status").textContent = "";
+    disableCliCopy(!cliRecipe);
+  }
+}
 // The backend canonicalizes JSON with sorted keys and ensure_ascii=True.
 /** @param {unknown} value @returns {string} */
 function canonical(value) {
@@ -114,6 +218,166 @@ function tokenUnits(input, decimals) {
       : digits)
   );
 }
+/** @param {unknown} value @param {boolean} [signed] */
+function balanceInteger(value, signed = false) {
+  if (
+    typeof value !== "string" ||
+    !/^-?(0|[1-9][0-9]{0,77})$/.test(value) ||
+    value === "-0"
+  )
+    throw new Error("Invalid balance integer.");
+  const integer = BigInt(value),
+    max = 2n ** 256n - 1n;
+  if ((!signed && integer < 0n) || integer > max || integer < -max)
+    throw new Error("Invalid balance range.");
+  return integer;
+}
+/** @param {bigint} value @param {number} decimals @param {boolean} [signed] */
+function balanceUnits(value, decimals, signed = false) {
+  let text = tokenUnits(String(value), decimals);
+  if (text.includes(".")) text = text.replace(/0+$/, "").replace(/\.$/, "");
+  return signed && value > 0n ? "+" + text : text;
+}
+/** @param {unknown} input */
+function balanceMetadata(input) {
+  const token = record(input);
+  if (
+    typeof token.address !== "string" ||
+    !/^0x[0-9a-fA-F]{40}$/.test(token.address) ||
+    typeof token.symbol !== "string" ||
+    !/^[A-Z0-9_-]{1,12}$/.test(token.symbol) ||
+    typeof token.decimals !== "number" ||
+    !Number.isInteger(token.decimals) ||
+    token.decimals < 0 ||
+    token.decimals > 36
+  )
+    throw new Error("Invalid token metadata.");
+  return {
+    address: token.address.toLowerCase(),
+    symbol: token.symbol,
+    decimals: token.decimals,
+  };
+}
+/** @param {Record<string, unknown>} report */
+function exactBalanceView(report) {
+  const declared = record(report.scenario).tracked_tokens;
+  const supplied = declared === undefined ? [] : declared;
+  if (!Array.isArray(supplied) || supplied.length > 8)
+    throw new Error("Invalid tracked tokens.");
+  const metadata = supplied.map(balanceMetadata);
+  const pinned = new Map(metadata.map((token) => [token.address, token]));
+  if (pinned.size !== metadata.length)
+    throw new Error("Invalid duplicate token identity.");
+  /** @type {Map<string, bigint[]>[]} */
+  const states = [];
+  for (const branch of [report.baseline, report.candidate]) {
+    const tokens = record(branch).tokens ?? [];
+    if (!Array.isArray(tokens) || tokens.length > 8)
+      throw new Error("Invalid token observations.");
+    const state = new Map();
+    for (const input of tokens) {
+      const token = record(input),
+        unit = balanceMetadata(token),
+        expected = pinned.get(unit.address);
+      if (
+        !expected ||
+        state.has(unit.address) ||
+        unit.symbol !== expected.symbol ||
+        unit.decimals !== expected.decimals
+      )
+        throw new Error("Mismatched token metadata.");
+      const initial = balanceInteger(token.initial_balance_raw),
+        final = balanceInteger(token.final_balance_raw),
+        change = balanceInteger(token.balance_delta_raw, true);
+      if (final - initial !== change)
+        throw new Error("Invalid token balance accounting.");
+      state.set(unit.address, [initial, final, change]);
+    }
+    states.push(state);
+  }
+  const metrics = [
+    record(record(report.baseline).metrics),
+    record(record(report.candidate).metrics),
+  ];
+  const native = metrics.map((m) => [
+    balanceInteger(m.initial_balance_wei),
+    balanceInteger(m.final_balance_wei),
+    balanceInteger(m.balance_delta_wei, true),
+  ]);
+  if (
+    native.some((values) => values[1] - values[0] !== values[2]) ||
+    balanceInteger(record(report.comparison).final_balance_delta_wei, true) !==
+      native[1][1] - native[0][1]
+  )
+    throw new Error("Invalid native balance accounting.");
+  /** @type {string[][]} */
+  const rows = [];
+  /** @param {string} label @param {bigint|undefined} baseline @param {bigint|undefined} candidate @param {number} decimals @param {boolean} [signed] */
+  function row(label, baseline, candidate, decimals, signed = false) {
+    rows.push([
+      label,
+      baseline === undefined
+        ? "Unavailable"
+        : balanceUnits(baseline, decimals, signed),
+      candidate === undefined
+        ? "Unavailable"
+        : balanceUnits(candidate, decimals, signed),
+      baseline === undefined || candidate === undefined
+        ? "Unavailable"
+        : balanceUnits(candidate - baseline, decimals, true),
+    ]);
+  }
+  for (const [index, label] of ["Initial", "Final", "Change"].entries())
+    row(
+      "Native ETH · " + label,
+      native[0][index],
+      native[1][index],
+      18,
+      index === 2,
+    );
+  for (const [key, label, decimals] of [
+    ["gas_cost_wei", "Gas cost (ETH)", 18],
+    ["gas_used", "Gas used", 0],
+    ["reverted_transactions", "Reverted transactions", 0],
+    ["rejected_transactions", "Rejected transactions", 0],
+  ]) {
+    const values = metrics.map((m) =>
+      m[String(key)] === undefined
+        ? undefined
+        : balanceInteger(
+            typeof m[String(key)] === "number" &&
+              Number.isSafeInteger(m[String(key)])
+              ? String(m[String(key)])
+              : m[String(key)],
+          ),
+    );
+    row(String(label), values[0], values[1], Number(decimals));
+  }
+  for (const token of metadata) {
+    const assetLabel =
+      metadata.filter((other) => other.symbol === token.symbol).length > 1
+        ? `${token.symbol} (${token.address})`
+        : token.symbol;
+    for (const [index, label] of ["Initial", "Final", "Change"].entries())
+      row(
+        assetLabel + " · " + label,
+        states[0].get(token.address)?.[index],
+        states[1].get(token.address)?.[index],
+        token.decimals,
+        index === 2,
+      );
+  }
+  return {
+    balanceRows: rows,
+    tokenIdentities: metadata
+      .map(
+        (token) =>
+          `${token.symbol} · ${token.address} · ${token.decimals} decimals`,
+      )
+      .join("\n"),
+    native,
+  };
+}
 /** @param {unknown} input */
 function evmViewModel(input) {
   const report = record(input);
@@ -195,44 +459,17 @@ function evmViewModel(input) {
       ]);
     }
   }
-  const bt = baseline.tokens ?? [],
-    ct = candidate.tokens ?? [];
-  if (
-    !Array.isArray(bt) ||
-    !Array.isArray(ct) ||
-    bt.length !== ct.length ||
-    bt.length > 8
-  )
-    throw new Error("Invalid token observations.");
-  const seen = new Set();
-  for (let i = 0; i < bt.length; i++) {
-    const b = record(bt[i]),
-      c = record(ct[i]);
-    if (
-      typeof b.address !== "string" ||
-      typeof c.address !== "string" ||
-      !/^0x[0-9a-fA-F]{40}$/.test(b.address) ||
-      b.address.toLowerCase() !== c.address.toLowerCase() ||
-      seen.has(b.address.toLowerCase()) ||
-      b.decimals !== c.decimals ||
-      typeof b.symbol !== "string" ||
-      !/^[A-Z0-9_-]{1,12}$/.test(b.symbol) ||
-      b.symbol !== c.symbol
-    )
-      throw new Error("Mismatched token metadata.");
-    seen.add(b.address.toLowerCase());
+  const balances = exactBalanceView(report);
+  for (const row of balances.balanceRows.filter(
+    (row) => row[0].endsWith(" · Final") && !row[0].startsWith("Native"),
+  ))
     rows.push([
-      b.symbol + " final token units",
-      tokenUnits(b.final_balance_raw, b.decimals),
-      tokenUnits(c.final_balance_raw, c.decimals),
+      row[0].replace(" · Final", " final token units"),
+      row[1],
+      row[2],
     ]);
-    rows.push([
-      b.symbol + " change in raw units",
-      rawInteger(b.balance_delta_raw),
-      rawInteger(c.balance_delta_raw),
-    ]);
-  }
   return {
+    ...balances,
     rows,
     traces,
     source: source
@@ -411,10 +648,16 @@ function tableRows(id, rows, rowHeaders = false) {
     $(id).appendChild(tr);
   }
 }
+/** @param {string} value */
+function selectSource(value) {
+  const selection = $("scenario");
+  if (!(selection instanceof HTMLSelectElement))
+    throw new Error("Missing scenario selector.");
+  selection.value = value;
+}
 /** @param {string} message */
-function setError(message) {
+function clearReport(message) {
   $("report-status").textContent = message;
-  $("report-status").classList.add("error");
   ["baseline-value", "candidate-value", "delta-value", "hash"].forEach(
     (id) => ($(id).textContent = "—"),
   );
@@ -425,15 +668,39 @@ function setError(message) {
   $("assumptions").replaceChildren();
   $("raw-report").textContent = "";
   $("download").hidden = true;
+  $("example-link").hidden = true;
+  $("example-link").removeAttribute("href");
+  $("cli-recipe").hidden = true;
+  $("cli-file-help").textContent = "";
+  $("cli-setup").textContent = "";
+  $("cli-command").textContent = "";
+  cliRecipe = null;
+  cliCopySequence++;
+  disableCliCopy(true);
+  $("cli-copy-status").textContent = "";
   $("evm-details").hidden = true;
   $("evm-traces").replaceChildren();
   $("source-pin").textContent = "";
+  $("balance-rows").replaceChildren();
+  $("token-identities").textContent = "";
   $("fixture-chart").hidden = true;
   $("equity-rows").replaceChildren();
   $("chart-description").textContent = "";
   $("agent-details").hidden = true;
   $("agent-rows").replaceChildren();
   $("agent-provenance").textContent = "";
+}
+/** @param {string} message */
+function setError(message) {
+  clearReport(message);
+  $("report-status").classList.add("error");
+  selectSource("no-report");
+}
+/** @param {string} message */
+function startLoading(message) {
+  clearReport(message);
+  $("report-status").classList.remove("error");
+  selectSource("loading");
 }
 /** @param {unknown} input @param {number} seq */
 async function render(input, seq) {
@@ -458,22 +725,23 @@ async function render(input, seq) {
     ? "Changed actions"
     : "Circuit-breaker policy";
   $("baseline-unit").textContent = $("candidate-unit").textContent = evm
-    ? "Approximate native balance (ETH)"
+    ? "Exact native balance (ETH)"
     : "Final model equity";
   $("delta-unit").textContent = evm
-    ? "Approximate ETH; not profit"
+    ? "Exact ETH; not profit"
     : "Model quote units, not USD";
   if (evm) {
     const view = evmViewModel(report);
-    $("baseline-value").textContent = Number(
-      tokenUnits(bm.final_balance_wei, 18),
-    ).toFixed(6);
-    $("candidate-value").textContent = Number(
-      tokenUnits(cm.final_balance_wei, 18),
-    ).toFixed(6);
-    $("delta-value").textContent = Number(
-      tokenUnits(comparison.final_balance_delta_wei, 18),
-    ).toFixed(6);
+    $("baseline-value").textContent = balanceUnits(view.native[0][1], 18);
+    $("candidate-value").textContent = balanceUnits(view.native[1][1], 18);
+    $("delta-value").textContent = balanceUnits(
+      view.native[1][1] - view.native[0][1],
+      18,
+      true,
+    );
+    tableRows("balance-rows", view.balanceRows, true);
+    $("token-identities").textContent =
+      view.tokenIdentities || "No tracked ERC-20 tokens.";
     tableRows("metric-rows", view.rows, true);
     tableRows("evm-traces", view.traces);
     $("equity-rows").replaceChildren();
@@ -574,12 +842,13 @@ async function render(input, seq) {
   $("download").hidden = false;
 }
 async function loadSample() {
-  const seq = ++generation;
   const selection = $("scenario");
   if (!("value" in selection) || typeof selection.value !== "string")
     throw new Error("Missing scenario selector.");
   const name = selection.value;
   if (!allowedSamples.has(name)) return;
+  const seq = ++generation;
+  startLoading("Loading and verifying recorded example…");
   try {
     const response = await fetch("reports/" + name + ".json");
     if (!response.ok)
@@ -587,8 +856,20 @@ async function loadSample() {
     const text = await response.text();
     if (text.length > 4 * 1024 * 1024) throw new Error("Report too large.");
     await render(JSON.parse(text), seq);
-    if (seq === generation)
+    if (seq === generation) {
+      selectSource(name);
       $("download").setAttribute("href", "reports/" + name + ".json");
+      $("download").setAttribute("download", name + ".json");
+      showCliRecipe(name);
+      const href = reportExampleUrl(
+        name,
+        typeof location === "undefined" ? "" : location.href,
+      );
+      if (href) {
+        $("example-link").setAttribute("href", href);
+        $("example-link").hidden = false;
+      }
+    }
   } catch (error) {
     if (seq === generation)
       setError(
@@ -597,20 +878,41 @@ async function loadSample() {
   }
 }
 $("scenario").addEventListener("change", loadSample);
+$("cli-copy-setup").addEventListener("click", () => copyCliRecipe("setup"));
+$("cli-copy-command").addEventListener("click", () => copyCliRecipe("command"));
 $("import").addEventListener("change", async (event) => {
   if (!(event.target instanceof HTMLInputElement)) return;
   const file = event.target.files?.[0];
   if (!file) return;
   const seq = ++generation;
+  startLoading("Reading and verifying local report…");
   try {
     if (file.size > 4 * 1024 * 1024)
       throw new Error("Local report limit is 4 MiB.");
     await render(JSON.parse(await file.text()), seq);
     // No blob links or network upload are needed for an already-local file.
-    if (seq === generation) $("download").hidden = true;
+    if (seq === generation) {
+      selectSource("local-report");
+      $("download").hidden = true;
+      showCliRecipe("local-report");
+    }
   } catch (error) {
     if (seq === generation)
       setError(error instanceof Error ? error.message : "Invalid report file.");
   }
 });
-loadSample();
+function initializeReportSource() {
+  const name = reportFromQuery(
+    typeof location === "undefined" ? "" : location.search,
+  );
+  if (name) {
+    selectSource(name);
+    const explorer = $("report-explorer");
+    if (!(explorer instanceof HTMLDetailsElement))
+      throw new Error("Missing report explorer.");
+    explorer.open = true;
+    explorer.scrollIntoView({ block: "start" });
+  }
+  return loadSample();
+}
+initializeReportSource();

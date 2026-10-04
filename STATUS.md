@@ -142,3 +142,262 @@ zero remaining actionable findings within scope; public proof is retained. Manda
 GitHub approval, exact-head CI and publication remain separate. No archive/model
 call, new chain execution, local Docker/VM startup, deployment, protected merge,
 media/holdout change or competition submission occurred. Discord is excluded.
+
+
+## October 2 — Separate structural and execution receipt differences
+
+Candidate branch feat/trace-execution-differences starts from tested b7c20ce. A
+pure display module groups candidate receipts against the original projected
+receipts: omission, transactionIndex/cumulativeGasUsed only, other execution
+receipt fields, exact match, or unavailable. All exact differing fields and full
+original/baseline/candidate receipts remain visible; baseline verification stays
+separate. Receipt matches establish no contract-state/consumer equivalence or
+profit/benefit. Validators/hash codecs and existing v0.1 app remain byte-identical.
+
+The test-only32 fixture is the exact existing engine198 native005 report (SHA
+72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120):
+12 exact matches,1 omission,19 structural-only differences. No new historical
+replay, model evaluation or consumer validation ran. Source review found old
+recorded-four/skip0 text misleading on local32/skip12 imports. Static text is now
+explicitly sample-only; the current-case caption displays validated count/through/
+skips and clears on malformed imports. Prior frozen browser proof remains retained.
+
+Final66 Node/11 Python tests, full lint/format/checkJs and Python static checks pass.
+Full15-JS/16-type scans retain all97 old rationales and review2 new findings (99
+visible, zero suppressions); one Python source has zero Bandit findings. Unchanged
+109-node/42-Python locks audit with zero advisories. Final local darwin Chromium
+153.0.8010.12/Playwright1.63.0/axe4.13.0 on Node22.23.1 passes36 groups and28 scans
+with zero violations:1280/390/320px import, exact counts/fields, current-case/default
+case/invalid-clear assertions, keyboard expansion/scroll and original safety gates.
+Desktop/320px screenshots were visually inspected. Axe incomplete contrast remains
+explicit; no complete WCAG/manual assistive-tech certification. Imports emit zero
+requests, only same-originGETs occur, and owned pages/browser/server close in finally.
+
+See evidence/trace-differences for source-bound logs, full findings, compressed
+byte-identical raw axe outputs and immutable report provenance. Before-test helper
+import failure and a later preparation anchor mismatch are retained as setup gaps,
+not behavioral failures. Final exact-head CI, independent review, protected-main
+human approval and Pages publication remain separate; no merge/deployment/submission.
+
+
+## October 3 — exact recorded Aave account impact viewer
+
+The proposed account wrapper viewer validates a closed fixed plan, three seals,
+full four-phase account/config/code/head/query records and recomputed exact
+classification. Six after-state metrics/deltas use BigInt without rounding.
+Missing data remains UNPROVEN/null; zero debt shows No debt with no HF delta;
+loaded health statuses are human-readable. Invalid imports clear all account and
+price values, and switches to old families remove the account view. Old codecs,
+v0.1 UI, locks and frozen report bytes remain exact. The deploy allowlist adds
+position-report.mjs, excluding private/evidence files. No new EVM/model/user run.
+
+The bundled original Engine88c6 Docker13 report SHAcd96 is byte-identical, with
+all13 baseline receipts/candidate12+skip12 and complete four account/price views.
+Capacity differs816.28966124 USD; health factor0.003852169807877337. These are
+aggregate prefix-state dependencies, not profit, signed execution, sole-price
+causality, provider/proxy authentication or full-block/root proof. Nine synthetic
+controls are separately sealed/SDKba4 accepted, with unchanged nested evidence.
+
+Local126 Node/12 Python tests and lint/format/checkJs/Python static checks pass.
+Full19JS/20type coverage retains137 visible security findings, no suppressions;
+all122 original reasons preserved exactly plus15 new contexts. Initial metadata
+mapping collisions were independently found and fixed before final review.
+Node109/Python42 dependency audits report0 advisories. Final-source local macOS
+Chromium153/Playwright1.63/axe4.13 passes42 groups/49 scans/0 violations/0JS errors
+at1280/390/320px. Desktop/320 screenshots visually checked; keyboard/local import,
+exact large integers, missing/null/no-debt/boundary, invalid-clear and recovery
+are exercised. Imports issue0 requests; only same-originGETs allowed. Incomplete
+contrast remains recorded; supplemental CSS checks are not axe/full WCAG proof.
+The preceding same-source run timed out in the existing320 native filechooser;
+cause unknown. Unchanged rerun passes all groups; no assertions were relaxed.
+
+See [source-bound account viewer evidence](evidence/position-viewer/README.md).
+Independent staged review and exact-head CI are pending separately from human
+protected-main approval, live Pages and formal submission. Goal remains active
+through the official October13 15:59JST deadline. Discord remains excluded.
+
+
+## October 3 — key account changes before the full table
+
+Viewer4c6e subsequently passed all4 mandatory checks and full independent raw
+review665b429d; the preceding account-viewer section records its preparation-time
+state. This next proposed UI change puts exact borrowing-capacity and health-
+factor differences before the account address and full six-metric table. A
+semantic definition list stacks on mobile and preserves positive/negative/zero,
+missing/null and no-debt semantics using the unchanged exact BigInt formatter.
+All original metric/raw/config/price/receipt views and closed validators remain.
+
+Original immutable4c6e Chromium320 fails the new summary-presence regression.
+Final-source local42 browser groups/58 full axe outputs pass at1280/390/320,
+with0violations/0JSerrors. All prior42 groups/49 scans are retained; nine additional
+scans cover debt transition and explicit synthetic reversed/equal after-values.
+No new chain/model/transaction/user evaluation ran. Final desktop/320 screenshots
+retain all digits; long exact values wrap. Local126 Node/12 Python checks pass.
+Lint19JS/checkJs20/format and Python Ruff/mypy/full Bandit0 pass; Python formatting
+repair preserves AST, successful earlier checks reused. All137 prior individual
+security explanations remain exact (85 unchanged/52 moved whole-expression
+occurrences), with0new findings and no rule/suppression changes. Full final
+scanner/source gate pass. Locks unchanged; local advisory evidence reuses4c6e
+Node109/Python42 zero-advisory proof, new mandatoryCI still queries afresh.
+
+First new negative expectations used ASCII hyphen instead of the existing Unicode
+minus; test-only glyph correction preserves the formatter. A subsequent existing
+keyboard/native-filechooser5000ms timeout retains unknown cause; full unchanged-
+source replay then passes42/58. Original raw failures stay private, no assertions
+or time budgets weakened. Axe incomplete contrast and supplemental calculations
+remain distinct from manual assistive-tech or full WCAG certification. See
+[source-bound summary evidence](evidence/account-summary/README.md). Independent
+final staged review/current-head CI, human main approval, live Pages and formal
+submission remain separate. Goal active through the official deadline; Discord
+excluded.
+
+
+## October 4 — identify local v0.1 report sources
+
+The actual Chromium baseline on 8aa0e58 imports the existing Local EVM agent
+report but leaves liquidity-shock selected. The new source selector shows local
+reports explicitly, clears previous values while loading, shows no verified
+report after rejection, and permits returning to the same example. Latest
+selection/download writes remain generation-guarded; no-file cancellation keeps
+the current report. Validators, report/schema bytes and all locks are unchanged.
+
+Final local 126 Node/12 Python tests, lint/format/checkJs, and the full 19 JS/20
+type-input/139-finding security gate pass. All preceding 137 security reasons
+remain exact; two fixed fixture reads have separate reviewed reasons. Chromium
+43 groups and all 58 raw axe scans pass, with zero violations/JS errors. The new
+390px race control awaits actual stale sample-handler completion, verifies local
+import/request behavior, same-example recovery and reflow. All earlier groups,
+scans, timeouts and assertions remain. The original old-source full run had one
+existing native chooser timeout of unknown cause; original raw output is retained.
+The first updated full run passed; final run followed a stronger completion
+observation and screenshot/reflow assertion. See [source evidence](evidence/report-source/README.md).
+
+Independent staged review, exact-head mandatory CI, protected human main approval
+and live Pages verification remain separate. No fresh EVM/model/upstream/user
+execution or performance claim; existing videos keep their original source pins.
+Goal remains active through the official deadline, Discord excluded.
+
+## October 4 — exact Aave action balances in the browser
+
+The review branch adds the original Enginef53 Aave action result to the report
+source selector and an exact native/ERC-20 initial/final/change/difference table.
+Native summary values retain every decimal. Scenario address/symbol/decimal
+bindings, canonical uint256-bounded integers, duplicate identities and raw
+accounting are checked before display. Missing records remain Unavailable; symbols
+shared by different addresses retain distinct address labels. No valuation or
+execution/provider authentication is inferred. Original report families, wire
+contracts, dependencies, deployment allowlist and videos keep their versions.
+
+The expected missing-table/unit-validation controls failed before implementation.
+Five new regression groups cover the exact original Aave amounts, missing/zero,
+twelve resealed contradictory units/arithmetic/type/range cases, uint256 maximum/
+36-decimal one-unit changes and duplicate symbols. Full131 Node tests and12 Python
+site checks pass with zero skips; lint/format/checkJs and the full148-finding
+source-bound security gate pass. All137 inherited reasons are preserved exactly;2 obsolete token-index contexts
+were removed and11 new findings have individual author reasons. None are suppressed. Independent approval remains a separate gate.
+
+[Validation packet](evidence/aave-outcomes/README.md) separates current offline
+browser/unit checks from the original Engine execution. The original59506-byte
+sample is unchanged; loading it makes no EVM/model/upstream call. Current-head
+mandatory CI, independent staged review, protected-human main approval and live
+Pages publication remain separate. The deadline goal remains active; Discord is
+excluded and user evaluations stay deferred.
+
+## October 4 — direct bundled report links
+
+The reviewed candidate opens a selected v0.1 example from one allowlisted
+`report` query parameter, exposes a clean example URL after verification, and
+removes href/visibility during loading, local imports and errors. Stale loads
+cannot restore a link. [Evidence](evidence/report-links/README.md) records
+134 Node/12 site tests,49 Chromium groups/62 raw axe scans, exact historical
+Aave view preservation and149 retained author-reviewed findings. Independent
+review strengthened the stale-response check to await production completion.
+Earlier failures remain recorded. Current mandatory CI/publication and human
+main approval are separate; no fresh EVM/model/deployment claim. Goalactive.
+
+## October 4 — preserve actionable native chooser failures
+
+The development runner subscribes before navigation, awaits the actual keyboard
+chooser within the unchanged5000ms limit and checks its input ID. Failure artifacts
+record bounded input/focus/Enter state. Independent review found that a diagnostic
+write failure hid the primary exception; bounded aggregate serialization now
+retains both. The actual pre-fix fault assertion fails and four corrected real
+Chromium controls pass, including an EISDIR target through the actual check writer.
+
+[Chooser evidence](evidence/keyboard-chooser/README.md) preserves the initial
+full320px timeout despite correct focused/visible/enabled input and completed
+Enter. The early-subscription candidate passes49 groups/62 raw axe scans with
+zero violations/JavaScript errors. Its exact snapshot formats byte-for-byte to
+current source; this is not original-cause proof or a reliability-rate estimate.
+All149 inherited security reasons retain exact source spans, with one new local
+write rationale. App/report/schema/lock/workflow bytes are unchanged. Current CI,
+independent review/publication and protected human-main/Pages remain separate;
+goal active, Discord excluded.
+
+## October 4 — selected recording to pinned CLI inspection
+
+Verified public examples now offer fixed CLI/SDK checkout and inspect commands
+for the exact Source JSON filename. Local/loading/rejected/stale states clear
+all recipe text. Closed public names and textContent keep imported data out of
+shell commands. The collapsible code boxes retain keyboard focus and horizontal
+scrolling at narrow widths.
+
+[Inspection evidence](evidence/cli-inspection/README.md) records the exact four
+setup/six inspect commands in fresh public clones and an empty Python environment,
+14 immutable runtime sources, and whole3013-byte Aave golden equality.135 Node,
+12 site,49 browser groups/62 raw axe scans pass with zero JSerrors/violations;
+all150 security source spans/reasons are preserved. First mobile wrapping and
+wrong-golden-path helper failures remain retained. Original report/view fields
+retain versions except current appSHA; no new EVM/model/advisory/performance run.
+Current CI, independent review/publication and protected human-main/Pages remain
+separate. Goal active; Discord excluded and user evaluations deferred.
+
+
+## October 4 — retain native keyboard-scroll failure state
+
+Recipe candidate2f83987 was published exactly; originalCI unit/quality/docs passed
+but Linux browser48/49 groups failed320px liquidity-shock positiveArrowRight
+scrolling, with61 complete rawaxe scans. Original failure remains cause-unproven.
+A bounded independent two-case realChromium probe passed320/390px and did not
+reproduce it. The [diagnostic addition](evidence/cli-inspection/keyboard-scroll/README.md)
+asserts actualfocus/overflow and retains nativekey/5000ms/positive-movement checks,
+with bounded failure-only layout/focus/scroll JSON and primary-error preservation.
+Production/report/lock/workflow bytes are unchanged;150 earlier finding spans/
+reasons remain exact plus one reviewed diagnostic-write finding. Actual blockedkey,
+recovery, wrongfocus and failedcapture controls preserve the original failure.
+Currenthead CI and protectedhuman main/Pages remain separate; no cause, reliability
+rate or new EVM/model/performance claim. Goalactive and Discordexcluded.
+
+
+## October 4 — copy fixed CLI recipes without manual selection
+
+Verified bundled examples provide setup/inspection copy controls using only the
+fixed current recipe cache. Native clipboard contents are never read by production,
+commands are not executed, and private files/metadata/codebox edits cannot select
+copied text. One pending write is serialized; report changes clear feedback and
+show a current waiting/manual-copy hint until it settles. Native writes cannot be
+cancelled; no old success/error may claim a newer recipe or restore a local panel.
+
+[Actual source-bound evidence](evidence/cli-copy/README.md) records136 Node/12 site,
+51 Chromium groups/64 complete rawaxe with0 violations/JSexceptions, actual native
+keyboard write/readback for both fields/all6 samples at390px, focus/Tab continuation,
+and finite denied/missing/pending/local/late-error controls at320px.19JS/20typed
+checks retain151 exact source-span reasons plus1 fixed public fixture-read review,
+152 full findings; no suppressions or locks change. The new regression fails against
+immutable05a lacking copy and passes current production. Existing49 browser
+assertions, historical failures/reports, recipe/pins, videos and CLI outputs remain.
+Current Aave production view retains all prior fields except appSHA. Current CI,
+independent review/publication and protected human-main/Pages remain separate.
+No new EVM/model/RPC/performance or reliability-rate claim; goalactive, Discordexcluded.
+
+### October 4 — correct the clipboard test hook's lint reference
+
+Initial88a9bb2 CI quality failed `no-undef holdCliCopy`. Its original local lint
+log already contained the error; a following command masked the failure and the
+initial independent review did not interpret it. Original evidence is retained
+as failure. The runner now refers to the same DevTools-exposed function through
+`globalThis.holdCliCopy`, with production/rules/types/locks unchanged. Full19-file
+ESLint reports zero messages;20 typed inputs and152 exact-reviewed findings pass.
+The current actual Chromium run passes51 groups/64 full raw axe records with zero
+violations/JS errors. Initial CI browser51/64 and docs22/126 also passed; current
+corrective source review, exact stage and required CI remain separate checks.

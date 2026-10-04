@@ -14,14 +14,17 @@ const context = vm.createContext({
   },
   crypto: webcrypto,
   TextEncoder,
+  URL,
+  URLSearchParams,
   fetch: () => {
     throw new Error("Unit tests must not contact the network");
   },
 });
-vm.runInContext(
-  readFileSync(new URL("../app.js", import.meta.url), "utf8"),
-  context,
+const productionCode = readFileSync(
+  new URL("../app.js", import.meta.url),
+  "utf8",
 );
+vm.runInContext(productionCode, context);
 const sample = () =>
   JSON.parse(
     readFileSync(
@@ -29,6 +32,160 @@ const sample = () =>
       "utf8",
     ),
   );
+test("CLI copying uses only verified recipes and keeps pending feedback isolated", async () => {
+  const elements = new Map();
+  const writes = [];
+  const element = (id) => {
+    if (!elements.has(id))
+      elements.set(id, {
+        value: "not-an-allowed-sample",
+        textContent: "",
+        disabled: false,
+        hidden: false,
+        addEventListener() {},
+        setAttribute(name) {
+          if (name === "disabled") this.disabled = true;
+        },
+        removeAttribute(name) {
+          if (name === "disabled") this.disabled = false;
+        },
+        replaceChildren() {},
+      });
+    return elements.get(id);
+  };
+  let finish;
+  const pending = new Promise((resolve) => {
+    finish = resolve;
+  });
+  const copyContext = vm.createContext({
+    document: { getElementById: element },
+    navigator: {
+      clipboard: {
+        writeText: (text) => {
+          writes.push(text);
+          return pending;
+        },
+      },
+    },
+  });
+  vm.runInContext(productionCode, copyContext);
+  await copyContext.copyCliRecipe("command");
+  assert.deepEqual(writes, []);
+  vm.runInContext(
+    'cliRecipe = reportCliRecipe("aave-borrow-actions")',
+    copyContext,
+  );
+  element("cli-setup").textContent = "private injected DOM text";
+  const task = copyContext.copyCliRecipe("setup");
+  assert.equal(
+    writes[0],
+    copyContext.reportCliRecipe("aave-borrow-actions").setup,
+  );
+  assert.equal(element("cli-copy-setup").disabled, true);
+  copyContext.clearReport("Loading");
+  vm.runInContext('cliRecipe = reportCliRecipe("recovery-trap")', copyContext);
+  await copyContext.copyCliRecipe("command");
+  assert.equal(writes.length, 1, "Pending clipboard writes must not overlap");
+  finish();
+  await task;
+  assert.equal(element("cli-copy-status").textContent, "");
+  assert.equal(element("cli-copy-command").disabled, false);
+  copyContext.navigator.clipboard.writeText = async () => {
+    throw new Error("Private browser error");
+  };
+  await copyContext.copyCliRecipe("command");
+  assert.match(element("cli-copy-status").textContent, /^Copy unavailable\./);
+  assert.doesNotMatch(element("cli-copy-status").textContent, /Private/);
+  copyContext.navigator.clipboard = undefined;
+  await copyContext.copyCliRecipe("setup");
+  assert.match(element("cli-copy-status").textContent, /copy them manually/);
+  copyContext.clearReport("Local report");
+  await copyContext.copyCliRecipe("command");
+  assert.equal(writes.length, 1);
+  assert.equal(element("cli-copy-command").disabled, true);
+});
+test("CLI inspection recipe uses pinned sources and fixed report filenames", () => {
+  for (const name of [
+    "liquidity-shock",
+    "recovery-trap",
+    "depeg-stress",
+    "ethereum-uniswap-slippage",
+    "agent-local-codex",
+    "aave-borrow-actions",
+  ]) {
+    const recipe = context.reportCliRecipe(name);
+    assert.match(
+      recipe.setup,
+      /checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889/,
+    );
+    assert.match(
+      recipe.setup,
+      /checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44/,
+    );
+    assert.equal(
+      recipe.command,
+      `PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./${name}.json --format text`,
+    );
+  }
+  for (const name of [
+    null,
+    {},
+    "private-wallet-report",
+    "../private",
+    "aave-borrow-actions; echo x",
+    "https://example.com/x",
+  ])
+    assert.equal(context.reportCliRecipe(name), null);
+});
+test("local CLI guidance copies a fixed path and clears before another report", async () => {
+  const elements = new Map();
+  const writes = [];
+  const element = (id) => {
+    if (!elements.has(id))
+      elements.set(id, {
+        value: "not-an-allowed-sample",
+        textContent: "",
+        hidden: true,
+        disabled: true,
+        addEventListener() {},
+        setAttribute() {},
+        removeAttribute() {},
+        replaceChildren() {},
+      });
+    return elements.get(id);
+  };
+  const local = vm.createContext({
+    URLSearchParams,
+    document: { getElementById: element },
+    navigator: {
+      clipboard: {
+        writeText: async (text) => {
+          writes.push(text);
+        },
+      },
+    },
+  });
+  vm.runInContext(productionCode, local);
+  local.showCliRecipe("local-report");
+  assert.equal(element("cli-recipe").hidden, false);
+  assert.match(
+    element("cli-file-help").textContent,
+    /copy.*local-report\.json/,
+  );
+  assert.match(element("cli-file-help").textContent, /original file unchanged/);
+  element("cli-command").textContent = "private injected filename";
+  await local.copyCliRecipe("command");
+  assert.deepEqual(writes, [
+    "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+  ]);
+  assert.equal(local.reportFromQuery("?report=local-report"), null);
+  local.clearReport("Loading");
+  assert.equal(element("cli-recipe").hidden, true);
+  assert.equal(element("cli-file-help").textContent, "");
+  assert.equal(element("cli-command").textContent, "");
+  await local.copyCliRecipe("command");
+  assert.equal(writes.length, 1);
+});
 for (const name of ["liquidity-shock", "recovery-trap", "depeg-stress"]) {
   test(`production JS verifies Python artifact: ${name}`, async () => {
     await context.checkHash(
@@ -288,3 +445,287 @@ for (const [name, mutate] of contradictoryAgents)
     await context.checkHash(r);
     await assert.rejects(context.agentViewModel(r), /agent|Agent/);
   });
+
+const aaveActions = () =>
+  JSON.parse(
+    readFileSync(
+      new URL("../reports/aave-borrow-actions.json", import.meta.url),
+      "utf8",
+    ),
+  );
+const balanceRow = (view, label) =>
+  Array.from(view.balanceRows.find((row) => row[0] === label));
+test("Aave action balances preserve original exact units and all differences", async () => {
+  const r = aaveActions();
+  await context.checkHash(r);
+  await context.agentViewModel(r);
+  const v = context.evmViewModel(r);
+  assert.deepEqual(balanceRow(v, "Native ETH · Final"), [
+    "Native ETH · Final",
+    "9.988827559170319712",
+    "9.9912499816031695",
+    "+0.002422422432849788",
+  ]);
+  assert.deepEqual(balanceRow(v, "WETH · Initial"), [
+    "WETH · Initial",
+    "0",
+    "0",
+    "0",
+  ]);
+  assert.deepEqual(balanceRow(v, "AWETH · Final"), [
+    "AWETH · Final",
+    "10.000000094454558462",
+    "10.000000094454558462",
+    "0",
+  ]);
+  assert.deepEqual(balanceRow(v, "VWETH · Change"), [
+    "VWETH · Change",
+    "+1",
+    "+1",
+    "0",
+  ]);
+  assert.deepEqual(balanceRow(v, "Gas used"), [
+    "Gas used",
+    "723131",
+    "560326",
+    "-162805",
+  ]);
+  assert.match(v.tokenIdentities, /0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/);
+});
+test("missing tracked token observations are unavailable rather than zero", () => {
+  const r = aaveActions();
+  r.candidate.tokens = [];
+  assert.deepEqual(balanceRow(context.evmViewModel(r), "WETH · Final"), [
+    "WETH · Final",
+    "1",
+    "Unavailable",
+    "Unavailable",
+  ]);
+  delete r.baseline.tokens;
+  assert.deepEqual(balanceRow(context.evmViewModel(r), "WETH · Initial"), [
+    "WETH · Initial",
+    "Unavailable",
+    "Unavailable",
+    "Unavailable",
+  ]);
+});
+test("resealed contradictory scenario units and accounting fail display validation", async () => {
+  const mutations = [
+    (r) => {
+      r.scenario.tracked_tokens = null;
+    },
+    (r) => {
+      r.scenario.tracked_tokens[0].decimals = true;
+    },
+    (r) => {
+      for (const b of ["baseline", "candidate"]) r[b].tokens[0].decimals = 6;
+    },
+    (r) => {
+      for (const b of ["baseline", "candidate"])
+        r[b].tokens[0].symbol = "WRONG";
+    },
+    (r) => {
+      r.baseline.tokens[0].balance_delta_raw = "2";
+    },
+    (r) => {
+      r.baseline.metrics.balance_delta_wei = "-1";
+    },
+    (r) => {
+      r.comparison.final_balance_delta_wei = "1";
+    },
+    (r) => {
+      r.candidate.tokens.push(r.candidate.tokens[0]);
+    },
+    (r) => {
+      r.scenario.tracked_tokens.push(r.scenario.tracked_tokens[0]);
+    },
+    (r) => {
+      r.candidate.tokens[0].initial_balance_raw = "-1";
+    },
+    (r) => {
+      r.candidate.tokens[0].final_balance_raw = (2n ** 256n).toString();
+    },
+    (r) => {
+      r.candidate.tokens[0].balance_delta_raw = "-0";
+    },
+  ];
+  for (const mutate of mutations) {
+    const r = aaveActions();
+    mutate(r);
+    const { artifact_id, ...body } = r;
+    r.artifact_id = await context.hashValue(body);
+    await context.checkHash(r);
+    assert.throws(() => context.evmViewModel(r), /Invalid|Mismatched/);
+  }
+});
+test("36-decimal changes and uint256 values never pass through Number", () => {
+  const r = aaveActions();
+  const max = (2n ** 256n - 1n).toString();
+  r.scenario.tracked_tokens[0].decimals = 36;
+  for (const branch of ["baseline", "candidate"]) {
+    const t = r[branch].tokens[0];
+    t.decimals = 36;
+    t.initial_balance_raw = max;
+    t.final_balance_raw = (BigInt(max) - 1n).toString();
+    t.balance_delta_raw = "-1";
+  }
+  assert.equal(
+    balanceRow(context.evmViewModel(r), "WETH · Change")[1],
+    "-0.000000000000000000000000000000000001",
+  );
+  r.candidate.tokens[0].address = r.candidate.tokens[0].address
+    .toUpperCase()
+    .replace("0X", "0x");
+  assert.equal(balanceRow(context.evmViewModel(r), "WETH · Change")[3], "0");
+});
+
+test("duplicate symbols keep distinct addresses in each balance row", () => {
+  const r = aaveActions();
+  r.scenario.tracked_tokens[1].symbol = "WETH";
+  for (const branch of ["baseline", "candidate"])
+    r[branch].tokens[1].symbol = "WETH";
+  const v = context.evmViewModel(r);
+  assert.equal(
+    balanceRow(
+      v,
+      "WETH (0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) · Final",
+    )[1],
+    "1",
+  );
+  assert.equal(
+    balanceRow(
+      v,
+      "WETH (0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8) · Final",
+    )[1],
+    "10.000000094454558462",
+  );
+});
+
+test("recorded report queries accept only one allowlisted example", () => {
+  for (const name of [
+    "liquidity-shock",
+    "recovery-trap",
+    "depeg-stress",
+    "ethereum-uniswap-slippage",
+    "agent-local-codex",
+    "aave-borrow-actions",
+  ])
+    assert.equal(context.reportFromQuery("?report=" + name), name);
+  assert.equal(
+    context.reportFromQuery(
+      "?token=irrelevant&report=ethereum%2Duniswap-slippage",
+    ),
+    "ethereum-uniswap-slippage",
+  );
+  for (const query of [
+    undefined,
+    null,
+    3,
+    "",
+    "?report=",
+    "?report=local-report",
+    "?report=loading",
+    "?report=no-report",
+    "?report=../private",
+    "?report=https://example.invalid/data",
+    "?report=AAVE-BORROW-ACTIONS",
+    "?report=aave-borrow-actions&report=liquidity-shock",
+    "?report=aave-borrow-actions&report=aave-borrow-actions",
+    "?report=%FF",
+    "?" + "x".repeat(2048),
+  ])
+    assert.equal(context.reportFromQuery(query), null);
+});
+
+test("example links discard unrelated query, fragment and URL credentials", () => {
+  assert.equal(
+    context.reportExampleUrl(
+      "aave-borrow-actions",
+      "https://name:password@entrotter.github.io/sub/index.html?token=not-a-secret&report=local-report#private-file",
+    ),
+    "https://entrotter.github.io/sub/index.html?report=aave-borrow-actions#report-explorer",
+  );
+  assert.equal(
+    context.reportExampleUrl("liquidity-shock", "http://127.0.0.1:8000/"),
+    "http://127.0.0.1:8000/?report=liquidity-shock#report-explorer",
+  );
+  for (const name of [
+    "local-report",
+    "../private",
+    "no-report",
+    "loading",
+    "unknown",
+  ])
+    assert.equal(
+      context.reportExampleUrl(name, "https://entrotter.github.io/"),
+      null,
+    );
+  for (const url of [
+    "",
+    "bad url",
+    "file:///private/report.json",
+    ["javascript", "alert(1)"].join(":"),
+    "data:text/html,private",
+  ])
+    assert.equal(context.reportExampleUrl("aave-borrow-actions", url), null);
+});
+
+test("actual startup opens a direct example and rejects ambiguous query selection", () => {
+  for (const [query, wanted, opens] of [
+    ["?report=aave-borrow-actions", "aave-borrow-actions", true],
+    ["?report=local-report", "liquidity-shock", false],
+    [
+      "?report=aave-borrow-actions&report=liquidity-shock",
+      "liquidity-shock",
+      false,
+    ],
+    ["", "liquidity-shock", false],
+  ]) {
+    const requests = [];
+    class Element {
+      value = "liquidity-shock";
+      hidden = false;
+      textContent = "";
+      classList = { add() {}, remove() {} };
+      addEventListener() {}
+      setAttribute() {}
+      removeAttribute() {}
+      replaceChildren() {}
+    }
+    class Details extends Element {
+      open = false;
+      scrolls = 0;
+      scrollIntoView() {
+        this.scrolls++;
+      }
+    }
+    const selector = new Element(),
+      explorer = new Details(),
+      other = new Element();
+    const startup = vm.createContext({
+      document: {
+        getElementById: (id) =>
+          id === "scenario"
+            ? selector
+            : id === "report-explorer"
+              ? explorer
+              : other,
+      },
+      HTMLSelectElement: Element,
+      HTMLDetailsElement: Details,
+      crypto: webcrypto,
+      TextEncoder,
+      URL,
+      URLSearchParams,
+      location: { search: query, href: "https://entrotter.github.io/" + query },
+      fetch: (path) => {
+        requests.push(path);
+        return new Promise(() => {});
+      },
+    });
+    vm.runInContext(productionCode, startup, { timeout: 2000 });
+    assert.deepEqual(requests, ["reports/" + wanted + ".json"]);
+    assert.equal(explorer.open, opens);
+    assert.equal(explorer.scrolls, Number(opens));
+  }
+});

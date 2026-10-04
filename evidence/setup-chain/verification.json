@@ -1,0 +1,644 @@
+{
+  "status": "PASS",
+  "baseline": "035f2ebf0d36e0f9bbedca1e87598fc6c03eef22",
+  "app_sha256": "1cca470879af43f24f1ec419468360b2fb36d7c62566f4abe6a986b29f1bd6ae",
+  "index_sha256": "792f8c86b7f31c5f8c6839ddc6ce2f5dabf20d77b7870621c9c9f42206e1e88c",
+  "setup": "git clone https://github.com/entrotter/cli.git entrotter-cli &&\ngit -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889 &&\ngit clone https://github.com/entrotter/sdk-python.git entrotter-sdk &&\ngit -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+  "local_checks": {
+    "node_tests": 137,
+    "python_site_tests": 12,
+    "JS_lint_sources": 20,
+    "ESLint_messages": 0,
+    "typed_inputs": 21,
+    "retained_security_findings": 156,
+    "original152findings_reasons_unchanged": true,
+    "new_test_path_findings": 4,
+    "failure_controls": 4,
+    "normal_shell_control": 1
+  },
+  "browser": {
+    "node": "v22.23.1",
+    "platform": "darwin",
+    "browser": "153.0.8010.12",
+    "axe": "4.13.0",
+    "playwright": "1.63.0",
+    "runner_sha256": "4b55d6a0f159fd5014407105998eb322994a11bdf4e9c236accfa06fb8219240",
+    "source_sha256": {
+      "index.html": "792f8c86b7f31c5f8c6839ddc6ce2f5dabf20d77b7870621c9c9f42206e1e88c",
+      "app.js": "1cca470879af43f24f1ec419468360b2fb36d7c62566f4abe6a986b29f1bd6ae",
+      "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
+      "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
+      "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+      "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+      "trace-viewer.mjs": "e87805dcef59dce8905671c73802c42448abee827c4d12bd0abfd7adb1bda06a",
+      "observed-trace.mjs": "980ff5172f61b82413e9898955f7a60ee23ba10a6374e6b259a91034624fe9ee",
+      "position-report.mjs": "38f31262e2248ae6af2d07bf7ee02de3d24316eaaac164e3dc2ae597e00c8f7f",
+      "reports/aave-account-impact13.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+      "tests/data/position-controls.json": "033383cc85af549cf4f9e1bda7d506e342af2a1f385a6afe88025e9dcd2deb9f",
+      "reports/trace-observed-price32.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+      "tests/data/observed-controls.json": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67",
+      "reports/trace-mainnet-prefix-four.json": "1bc41a9375017d601f0a8a027ca59977afedbbb109f5089b5b09eaac3f831db2",
+      "tests/data/trace-oracle-prefix-32.json": "72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120",
+      "assets/examples/action-comparison.json": "ea92887ff54232e60f0440ea6f290de9cb7cd82ed9ba57d72dcc63ca7f045d67",
+      "reports/agent-local-codex.json": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+      "reports/aave-borrow-actions.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+      "style.css": "eb30a5dd529732cc220cf31fa589e5aa9198339d7471c425e5c1e6036ccf286c",
+      "404.html": "989503fbe34687a3a04be5e0b395c05cecceda59d0ea87bb2f7a6cf7c5d1d958",
+      "package.json": "d4ae0a0b1a412c70cf38bace34efd9fd459736f0e8c4d13ded0c53cab43e772d",
+      "package-lock.json": "199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342"
+    },
+    "checks": [
+      {
+        "name": "CLI recipes: native keyboard copying of all six public examples",
+        "status": "passed"
+      },
+      {
+        "name": "CLI copying: denied API, serialization, stale feedback and private clearing",
+        "status": "passed"
+      },
+      {
+        "name": "Bundled report links: direct entry, navigation and local-file privacy",
+        "status": "passed"
+      },
+      {
+        "name": "Invalid report links: bounded allowlist and unchanged default entry",
+        "status": "passed"
+      },
+      {
+        "name": "Aave units: local imports, resealed false units, unavailable records and recovery",
+        "status": "passed"
+      },
+      {
+        "name": "1280px console: recorded cards, command and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px console: recorded cards, command and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px console: recorded cards, command and axe",
+        "status": "passed"
+      },
+      {
+        "name": "Console imports stay local, reject invalid evidence and recover",
+        "status": "passed"
+      },
+      {
+        "name": "A slow recorded load cannot replace a newer rejected import",
+        "status": "passed"
+      },
+      {
+        "name": "Keyboard skip link moves focus into main and skips navigation",
+        "status": "passed"
+      },
+      {
+        "name": "Keyboard sample selection, native local-file chooser, live status and inert import",
+        "status": "passed"
+      },
+      {
+        "name": "Local report source survives stale samples and restores the same example",
+        "status": "passed"
+      },
+      {
+        "name": "Recorded agent imports preserve reasons, reject resealed mismatches, clear and recover",
+        "status": "passed"
+      },
+      {
+        "name": "1280px liquidity-shock: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px recovery-trap: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px depeg-stress: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px agent-local-codex: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px aave-borrow-actions: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px liquidity-shock: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px recovery-trap: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px depeg-stress: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px agent-local-codex: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px aave-borrow-actions: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px liquidity-shock: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px recovery-trap: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px depeg-stress: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px ethereum-uniswap-slippage: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px agent-local-codex: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px aave-borrow-actions: reflow, exact accessible data and axe",
+        "status": "passed"
+      },
+      {
+        "name": "Tampered import clears data, reports an accessible error and recovers",
+        "status": "passed"
+      },
+      {
+        "name": "Correctly hashed non-decimal metrics fail, clear data and recover without uploads",
+        "status": "passed"
+      },
+      {
+        "name": "Forced colors, reduced motion and keyboard focus remain usable",
+        "status": "passed"
+      },
+      {
+        "name": "404 page at 320px: keyboard home link, no overflow and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px signed prefix: exact evidence, keyboard, reflow and axe",
+        "status": "passed"
+      },
+      {
+        "name": "390px signed prefix: exact evidence, keyboard, reflow and axe",
+        "status": "passed"
+      },
+      {
+        "name": "320px signed prefix: exact evidence, keyboard, reflow and axe",
+        "status": "passed"
+      },
+      {
+        "name": "1280px original32 local import: omission, structural shifts and exact fields",
+        "status": "passed"
+      },
+      {
+        "name": "390px original32 local import: omission, structural shifts and exact fields",
+        "status": "passed"
+      },
+      {
+        "name": "320px original32 local import: omission, structural shifts and exact fields",
+        "status": "passed"
+      },
+      {
+        "name": "Observed prices: exact values, unproven views, rejection and clearing 1280px",
+        "status": "passed"
+      },
+      {
+        "name": "Observed prices: exact values, unproven views, rejection and clearing 390px",
+        "status": "passed"
+      },
+      {
+        "name": "Observed prices: exact values, unproven views, rejection and clearing 320px",
+        "status": "passed"
+      },
+      {
+        "name": "Account impact: exact units, missing views, sentinel, recovery and keyboard 1280px",
+        "status": "passed"
+      },
+      {
+        "name": "Account impact: exact units, missing views, sentinel, recovery and keyboard 390px",
+        "status": "passed"
+      },
+      {
+        "name": "Account impact: exact units, missing views, sentinel, recovery and keyboard 320px",
+        "status": "passed"
+      },
+      {
+        "name": "Signed prefix: resealed contradictions, oversized import and honest unverified recovery",
+        "status": "passed"
+      },
+      {
+        "name": "Signed prefix: delayed sample cannot replace a newer local import",
+        "status": "passed"
+      },
+      {
+        "name": "No JavaScript exceptions, uploads or unexpected third-party requests",
+        "status": "passed"
+      }
+    ],
+    "raw_scans": [
+      {
+        "file": "axe-1280-aave-borrow-actions.json",
+        "sha256": "66343c36197d6774743e36d4006e544f437548439d5f57bece10b86ba20bbffa"
+      },
+      {
+        "file": "axe-1280-agent-local-codex.json",
+        "sha256": "68234a6f33cf8434d0e30f6916e560fa51744c12d092f3fd9202c2a0f5330a6a"
+      },
+      {
+        "file": "axe-1280-console.json",
+        "sha256": "e26bd36fcfa93386af96b236c92596b9248d7ca326591918fd8e66eef638fa43"
+      },
+      {
+        "file": "axe-1280-depeg-stress.json",
+        "sha256": "8e3ed63048b98dad6b269fae86e99651e62c46e49faf12bc104c3fb9809502be"
+      },
+      {
+        "file": "axe-1280-ethereum-uniswap-slippage.json",
+        "sha256": "1a53a0fbab1ba5ecf6284303c84b49b8aec71b5150ea8f88bed18b48673a5965"
+      },
+      {
+        "file": "axe-1280-liquidity-shock.json",
+        "sha256": "f587f3edbe8dc6b0d3a10bfdf927960d70d0242a2928027195150567d6e871c0"
+      },
+      {
+        "file": "axe-1280-recovery-trap.json",
+        "sha256": "4413d9316d1416fdc15f922fd67d5c7a8f5805423ef7e655a02a293391ff457f"
+      },
+      {
+        "file": "axe-320-aave-borrow-actions.json",
+        "sha256": "8f740e37ce0d655271a35b4dfdd8d2ce9cd034ebd425c9f11e6421f63006e846"
+      },
+      {
+        "file": "axe-320-agent-local-codex.json",
+        "sha256": "2f4a9892d2eb98ba224d9cd5254db7b2ae627648b57bc8bffad5ef6115de7193"
+      },
+      {
+        "file": "axe-320-cli-copy-faults.json",
+        "sha256": "12b0178fd1e9ca18afe4236a06a508eda01f103d2be39399de79245c76340196"
+      },
+      {
+        "file": "axe-320-console.json",
+        "sha256": "e58af2c3f1b464feed8b9e15b6e8816fdc536150d92ae14b510213f32affae9d"
+      },
+      {
+        "file": "axe-320-depeg-stress.json",
+        "sha256": "4de9bba538cc925d61578679444e657b35f05dcbeffb1b24c6832f6a7263f1c0"
+      },
+      {
+        "file": "axe-320-ethereum-uniswap-slippage.json",
+        "sha256": "6b87907b2775653d00085450b23da71bf1f35d82444872c1af34b3cbd020ecc2"
+      },
+      {
+        "file": "axe-320-liquidity-shock.json",
+        "sha256": "3b918116b36e542c04ccca86887a79060647ffbb8e9f9f74ce804ba817f4b590"
+      },
+      {
+        "file": "axe-320-recovery-trap.json",
+        "sha256": "6752208ad9a3f12afdaf1d3f46c718b84d3b0a41795074fcbc732ce9fa1d3027"
+      },
+      {
+        "file": "axe-390-aave-borrow-actions.json",
+        "sha256": "6987c1dc48146f14edd5c35ab370000cc5845f55c95e632d8e3456fdca5f2d59"
+      },
+      {
+        "file": "axe-390-agent-local-codex.json",
+        "sha256": "2089168cc9c1922fe2d6d7d0d3e3ca67c9b4282995e7e4fb42f7199acf438003"
+      },
+      {
+        "file": "axe-390-cli-native-copy.json",
+        "sha256": "772f1a1d57c0e5fdead55444bcfb658610e185b47bd503ebcc8bb332f2527fbf"
+      },
+      {
+        "file": "axe-390-console.json",
+        "sha256": "36d6486a639c66d0c93909182f1b4759c6166ac488e6ba0f424095d7af187a99"
+      },
+      {
+        "file": "axe-390-depeg-stress.json",
+        "sha256": "fce7fe6479d6949cafaed0d09dfdccf57385b52dacea87ec0b0e040356bbf4ea"
+      },
+      {
+        "file": "axe-390-direct-aave-link.json",
+        "sha256": "7ace4175e65d74d0a5e8b0828ec2b39ae85c96e34cbec3db0f91d7c9dbe5301b"
+      },
+      {
+        "file": "axe-390-ethereum-uniswap-slippage.json",
+        "sha256": "7ed61beab0b9bdba5ae732d2b71a398052bf1075985125d8705af56d5689ac5d"
+      },
+      {
+        "file": "axe-390-liquidity-shock.json",
+        "sha256": "aaa3d2b3299f47c0f397979943d9a19334b2a3e4e57dba72ab11ee3be55e450e"
+      },
+      {
+        "file": "axe-390-recovery-trap.json",
+        "sha256": "b80f4191a166b52fc0f0ed9c118232003616c803ed6a2d874d0f99519528a30c"
+      },
+      {
+        "file": "axe-404.json",
+        "sha256": "d9ee4e630e02ab2f8b9a5bdba8012535153a441e213c84d50e1b6d6672a1aaf7"
+      },
+      {
+        "file": "axe-account-debt_transition-1280.json",
+        "sha256": "4ca4405300a0dc26c0bd1fec205745d10eb6f028d338c670c8f1d4eb5db86047"
+      },
+      {
+        "file": "axe-account-debt_transition-320.json",
+        "sha256": "69300e869f6383c0391af375894303ab9523e94785766978b6dd6ee53bba9ddb"
+      },
+      {
+        "file": "axe-account-debt_transition-390.json",
+        "sha256": "d2a76eb3c8803987af34b4905d61e8c9dc17f69ca6bdf4025c21a094316f6348"
+      },
+      {
+        "file": "axe-account-health_boundary-1280.json",
+        "sha256": "24223966dbeb0cae75c2b0da136f71abcc35d209b4e95835f1973b39ed118a03"
+      },
+      {
+        "file": "axe-account-health_boundary-320.json",
+        "sha256": "47325b2c422d6f956470f0645df46f8eef066ae1fc887820b775aee2ec945f83"
+      },
+      {
+        "file": "axe-account-health_boundary-390.json",
+        "sha256": "87a958fae05fe1b1c5150ad99cb2a69e2345826e2bfda123ea09d6afdbc332b5"
+      },
+      {
+        "file": "axe-account-impact-1280.json",
+        "sha256": "92a86e2a67857194103c7bf04442d916ba4ea5ee0eed778dd372834e370b55cd"
+      },
+      {
+        "file": "axe-account-impact-320.json",
+        "sha256": "5fbc4c6195b483d9d8e906a1ca41f8bf5c229732ddd004a770761853dc53691c"
+      },
+      {
+        "file": "axe-account-impact-390.json",
+        "sha256": "8c2927ebb277d709548b47b3d4b33a0286bc89648d9486383b0a8f7d5af81833"
+      },
+      {
+        "file": "axe-account-large_integer-1280.json",
+        "sha256": "66a51664296473f9c2d7f3f0fef07b54a56dbe8e8d533f946d2f8ae53c34eb6b"
+      },
+      {
+        "file": "axe-account-large_integer-320.json",
+        "sha256": "ee67c9fea7e4504f6d97dc9e10f687aeba1fc84ea1afed2c0c01495f5ccf42b8"
+      },
+      {
+        "file": "axe-account-large_integer-390.json",
+        "sha256": "619bc481b88c33f0711b5960d5f61a4471693804894f390a67ba41bd0af088e8"
+      },
+      {
+        "file": "axe-account-missing_account-1280.json",
+        "sha256": "19c3f18924616c742afe924cf515b4c612020ce21634a7ef4dcd382b5d53cd8b"
+      },
+      {
+        "file": "axe-account-missing_account-320.json",
+        "sha256": "960b19ef8b90adc3cc68a37d773dbdb154f846dabd26f7a76bad168752590643"
+      },
+      {
+        "file": "axe-account-missing_account-390.json",
+        "sha256": "f922f232214ddb1a3a17c1c490d17b3392c646b7442619efe8dd268a2794ec3d"
+      },
+      {
+        "file": "axe-account-negative_change-1280.json",
+        "sha256": "9ac4d021fff086a4118eea28e37905ebccea91bfcb128ac8e3379e7bdab8f28c"
+      },
+      {
+        "file": "axe-account-negative_change-320.json",
+        "sha256": "38c94cfba60773be185e8e836a55413e5ccba2b80994c2b4c9732cc1d12b09dc"
+      },
+      {
+        "file": "axe-account-negative_change-390.json",
+        "sha256": "49f60185fc453044ae8c03ca7b6693f75c0d543eddd8136ef0c8263a00372c63"
+      },
+      {
+        "file": "axe-account-no_debt-1280.json",
+        "sha256": "861c9dbdf35d23c6bb1805f18d11d24252133ba46ef5634a30c8827cbc00cfbf"
+      },
+      {
+        "file": "axe-account-no_debt-320.json",
+        "sha256": "d0f6e5cbc2a7dce5d029b63d0383e043d68432662ef7b8a9ad1d66b0cedd673c"
+      },
+      {
+        "file": "axe-account-no_debt-390.json",
+        "sha256": "5635d4bc30c21425d0a21fb9e245acaebd9a694fbe332e329842ac549e92f5c5"
+      },
+      {
+        "file": "axe-account-zero_change-1280.json",
+        "sha256": "e35eccf1a7eac4994bc06bcc7d46e77389522da31713d3ef4e67175e4482a450"
+      },
+      {
+        "file": "axe-account-zero_change-320.json",
+        "sha256": "4e80402299017d4901fb1ad4a90630a063ab3b9c48592351be514862d4dc2919"
+      },
+      {
+        "file": "axe-account-zero_change-390.json",
+        "sha256": "f83b6fb136f5db160ca3e9b5c89d6dbdac436eb4abb89910d13c2244f630a7cd"
+      },
+      {
+        "file": "axe-console-import.json",
+        "sha256": "a21c29e1b73e1d0b0d5ab4df9b4102d2482c113db7c8791095fa157addd47995"
+      },
+      {
+        "file": "axe-error.json",
+        "sha256": "19881730516d5a6b68c1c5af7dd80c871a61cd254651f6b660fa5af4d8897401"
+      },
+      {
+        "file": "axe-observed-price-1280.json",
+        "sha256": "413b3c49d48fb7948aa4490ca3d011b7be1bcbe3bbaca0b1258985e703994bd8"
+      },
+      {
+        "file": "axe-observed-price-320.json",
+        "sha256": "9f1b130698dbfa5f9a86acd58f300458f43dbb04508d9068c462a61bc5fb0f57"
+      },
+      {
+        "file": "axe-observed-price-390.json",
+        "sha256": "16a1a03b476233457c933065c83509835c75224298c528ea974edf47537c2b7b"
+      },
+      {
+        "file": "axe-observed-unproven-1280.json",
+        "sha256": "84467ff5a74ea7889f30ca8efa8023510e11616b6ab1144f9f122e7e51b6dc98"
+      },
+      {
+        "file": "axe-observed-unproven-320.json",
+        "sha256": "4661dadecd5c9ce2c80ca67bd3d21c84ee7962fa1dfd5c6c610790d1c1907ecc"
+      },
+      {
+        "file": "axe-observed-unproven-390.json",
+        "sha256": "8417b89b69055302538033c3f467b3aeda40bf203aa0db50b54d80177112ab90"
+      },
+      {
+        "file": "axe-original32-1280.json",
+        "sha256": "e234f85b026a8086485126d8e580e02b0543884e20fa21cf137ea0beca4b19f4"
+      },
+      {
+        "file": "axe-original32-320.json",
+        "sha256": "7bc2850d5ffa5d1818f3e34838afc1e0acbe599a2ec061d48f2af3b620abc7c4"
+      },
+      {
+        "file": "axe-original32-390.json",
+        "sha256": "5d0ca93a097efe0c2dea34af609452719f680d00b6be19b8dc41b9bec6c4e2bf"
+      },
+      {
+        "file": "axe-signed-prefix-1280.json",
+        "sha256": "8bbbd49ce5ac33a08691f801ef2f83c1c9336cc098b18f0cbaabf118d2c12af9"
+      },
+      {
+        "file": "axe-signed-prefix-320.json",
+        "sha256": "a4d00692722799e4e72d0550d2f34c5235af2e127cebc8a0443ef02bbf2ef00d"
+      },
+      {
+        "file": "axe-signed-prefix-390.json",
+        "sha256": "d8ec922a543b2eaedb04efaa2aa05e1a0510b1355a209a40d31fc13efd2d362a"
+      },
+      {
+        "file": "axe-signed-prefix-unverified.json",
+        "sha256": "44ed1dcfbb088f3f2e750e33c806d275f330a9ad1105ebf85f98021f4ceb0491"
+      }
+    ],
+    "violations": 0,
+    "JS_errors": 0,
+    "incomplete_items": 63,
+    "whole_summary_sha256": "0d24ea2589985f84cf81c262b79ae81890225f446c0d23a0f3807a0575fa63f4",
+    "limitations": [
+      "Automated Chromium and accessibility-tree/keyboard evidence; no claim of manual screen-reader certification or complete WCAG conformance.",
+      "320 CSS-pixel viewport checks reflow; it is not a hardware/browser zoom measurement.",
+      "Axe incomplete contrast items remain explicit; supplemental checks apply only to opaque solid CSS colors.",
+      "Local fixture/archived report display; no new chain/model execution."
+    ]
+  },
+  "real_setup_and_recipes": {
+    "status": "PASS",
+    "setup": {
+      "returncode": 0,
+      "setup_sha256": "1a70aecf48720e6b516f712bdf9cbfd279cf4ddba61f3012e000f5086e1a90b7",
+      "app_sha256": "1cca470879af43f24f1ec419468360b2fb36d7c62566f4abe6a986b29f1bd6ae",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6e167f38e779ad5dfe3862c9c27b759e68945b4a2dbe166fd94520347092d3f4"
+    },
+    "real_existing_path_failure": {
+      "returncode": 128,
+      "git_operations": 1,
+      "unrelated_file_preserved": true,
+      "SDK_destination_not_created": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "018ad4d51b2ba839cdf26e5e0f391939413032e27ad8128b47b50261e0f070ad"
+    },
+    "commands": [
+      {
+        "name": "liquidity-shock",
+        "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./liquidity-shock.json --format text",
+        "returncode": 0,
+        "report_sha256": "626d696c4ecd3399d5fb398509380750e515ef342032f952266a7948fa641a0d",
+        "stdout_sha256": "930a48ce86e5b7ef7c43bc19a4de91d068ae5b7246b1b386be42ea3c26ae826c",
+        "stdout_bytes": 992,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "recovery-trap",
+        "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./recovery-trap.json --format text",
+        "returncode": 0,
+        "report_sha256": "94c983d6190a0b57ae0876eceb7c66cf1c4d6ff98a9247d72fc17c71c78304bb",
+        "stdout_sha256": "b0465d1f3e966da50eef483d2d5d8c6dcad967a82d3c1199e2423b2fd7846d69",
+        "stdout_bytes": 885,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "depeg-stress",
+        "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./depeg-stress.json --format text",
+        "returncode": 0,
+        "report_sha256": "c866409a0d8b908a81392b411323a1554d13a9a89f50ae9a8081ed1adc45854e",
+        "stdout_sha256": "c50dd18dd6b039afa1795ea36641c8c1a345be5e06106dbb95d3ae53dffda990",
+        "stdout_bytes": 878,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "ethereum-uniswap-slippage",
+        "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./ethereum-uniswap-slippage.json --format text",
+        "returncode": 0,
+        "report_sha256": "2d32bb9c7dccb3db5ebaaa11b7a65a4ab02bf2228c93933ec57b411480c341df",
+        "stdout_sha256": "b4d27aaed73bd6ccae45ff1efc0cabaa051275fc9e91aa56e9c8cc428a7799c0",
+        "stdout_bytes": 2107,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "agent-local-codex",
+        "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./agent-local-codex.json --format text",
+        "returncode": 0,
+        "report_sha256": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+        "stdout_sha256": "2aca499000c87efffc7fc270d514533500310027336d07c2992dbcd094d3f776",
+        "stdout_bytes": 4388,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "aave-borrow-actions",
+        "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./aave-borrow-actions.json --format text",
+        "returncode": 0,
+        "report_sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+        "stdout_sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+        "stdout_bytes": 3013,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "runtime_sources": {
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/result_text.py": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/main.py": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc",
+      "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+      "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+    },
+    "scope": "Exact current fixed setup executes in one real Bash shell. Failure stops after first real Git operation; fresh public clones and empty venv pass all six original read-only inspections. No EVM/model/RPC action or performance comparison."
+  },
+  "all6_prior_whole_stdout_hashes_unchanged": true,
+  "Aave_view_only_app_hash_changes": true,
+  "Aave_exact_rows": 16,
+  "corrections": [
+    "New test fails original four independent commands: actual0 versus expected41.",
+    "Security source gate initially rejects changed app/new test; original152 reasons retained and four new test paths individually reviewed.",
+    "Independent cache-token P2 corrected before final12site/final51browser checks. Earlier browsernewapp/oldtoken remains historical, not cache-fix proof."
+  ],
+  "private_log_sha256": {
+    "before-test.stdout": "23fcb3cd98485380d26305bf0bc119973872ef0e3515152f9fa9286792ab37ba",
+    "before-test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "final-test.stdout": "563e76182d31ac7fd1d38190bc1dc56d95467242e6948c379b59ff9aa684f06c",
+    "final-test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "all-tests.stdout": "c0402bdd5fc314d7422444af91d88f7ef8e714b066cbdc6065d4440d7cf92ce0",
+    "all-tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "site.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "site.stderr": "bbb7fe8be1c784773d280e500d53ce2c24e9725d5695b8a189a87dcd1d4c0908",
+    "lint.json": "98c1e875ad5994d0394f64f061436bf15682842fc9ef9af943d82941fd28b97b",
+    "types.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "security.stdout": "ddd87a949ebcd9f995ca280122e11eea9af7f4cfe69846f91397865fbc1369b3",
+    "security.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "real-failure.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "real-failure.stderr": "018ad4d51b2ba839cdf26e5e0f391939413032e27ad8128b47b50261e0f070ad",
+    "setup.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "setup.stderr": "6e167f38e779ad5dfe3862c9c27b759e68945b4a2dbe166fd94520347092d3f4"
+  },
+  "scope": "Actual current source, finite shell fault controls, real Git existing-path stop and fresh public cloned setup/stdlib venv/six offline inspections; no EVM/RPC/model/provider-authentication, performance or live Pages claim. Mandatory current CI and human main approval remain separate."
+}
