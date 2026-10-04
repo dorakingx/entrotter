@@ -43,3 +43,10 @@ name and explorer anchor. Local imports are never serialized into links; loading
 and error states remove both the href and visibility. A stale sample response
 cannot restore a link after a newer selection/import. Links identify bundled
 examples, not authenticity, execution, trading performance or valuation.
+
+CLI inspection recipes accept only the same six fixed public sample names. CLI
+and SDK repository URLs, checkout hashes and directory names are literals;
+commands are rendered as textContent and never executed by the website. No local
+filename, report metadata or query/origin string is interpolated. Loading, local
+imports and errors clear both setup and inspection text, with the current
+sample-generation guard preventing stale restoration.

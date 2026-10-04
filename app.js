@@ -19,6 +19,21 @@ const allowedSamples = new Set([
   "agent-local-codex",
   "aave-borrow-actions",
 ]);
+/** @param {unknown} name */
+function reportCliRecipe(name) {
+  if (typeof name !== "string" || !allowedSamples.has(name)) return null;
+  return {
+    setup:
+      "git clone https://github.com/entrotter/cli.git entrotter-cli\n" +
+      "git -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889\n" +
+      "git clone https://github.com/entrotter/sdk-python.git entrotter-sdk\n" +
+      "git -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    command:
+      "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./" +
+      name +
+      ".json --format text",
+  };
+}
 /** @param {unknown} search */
 function reportFromQuery(search) {
   if (typeof search !== "string" || !search || search.length > 2048)
@@ -595,6 +610,9 @@ function clearReport(message) {
   $("download").hidden = true;
   $("example-link").hidden = true;
   $("example-link").removeAttribute("href");
+  $("cli-recipe").hidden = true;
+  $("cli-setup").textContent = "";
+  $("cli-command").textContent = "";
   $("evm-details").hidden = true;
   $("evm-traces").replaceChildren();
   $("source-pin").textContent = "";
@@ -776,6 +794,13 @@ async function loadSample() {
     if (seq === generation) {
       selectSource(name);
       $("download").setAttribute("href", "reports/" + name + ".json");
+      $("download").setAttribute("download", name + ".json");
+      const recipe = reportCliRecipe(name);
+      if (recipe) {
+        $("cli-setup").textContent = recipe.setup;
+        $("cli-command").textContent = recipe.command;
+        $("cli-recipe").hidden = false;
+      }
       const href = reportExampleUrl(
         name,
         typeof location === "undefined" ? "" : location.href,

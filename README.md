@@ -39,6 +39,13 @@ selected bundled example, dropping unrelated query parameters and fragments.
 Loading, rejected files and local reports have no example link; even a local copy
 of a public sample stays local. This shares the bundled example, not imported data.
 
+After a bundled example verifies, **Inspect this example in the CLI** shows
+fixed CLI/SDK checkout commands and an inspection command for its Source JSON.
+The recipe needs Git, Python 3.11+ and a POSIX shell. It reads the downloaded
+recording without running an engine, model or RPC call. Local imports, loading
+and errors hide and clear the recipe; imported data never becomes shell text.
+See [inspection validation](evidence/cli-inspection/README.md).
+
 ## Deployment
 
 Repository name: `entrotter/entrotter.github.io` (public).

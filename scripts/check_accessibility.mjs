@@ -329,6 +329,14 @@ try {
             );
           const cleared = async () => {
             assert.equal(
+              await page
+                .locator("#cli-recipe")
+                .evaluate((node) => node instanceof HTMLElement && node.hidden),
+              true,
+            );
+            assert.equal(await page.locator("#cli-setup").textContent(), "");
+            assert.equal(await page.locator("#cli-command").textContent(), "");
+            assert.equal(
               await page.locator("#example-link").getAttribute("href"),
               null,
             );
@@ -1031,6 +1039,40 @@ try {
               (id) => document.querySelector("#hash")?.textContent === id,
               report.artifact_id,
             );
+            const command = `PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./${sample}.json --format text`;
+            await page.waitForFunction(
+              (command) =>
+                document.querySelector("#cli-command")?.textContent === command,
+              command,
+            );
+            assert.equal(
+              await page.locator("#download").getAttribute("download"),
+              `${sample}.json`,
+            );
+            await page.locator("#cli-recipe > summary").focus();
+            await visibleFocus(page);
+            await page.keyboard.press("Enter");
+            assert.equal(
+              await page.locator("#cli-recipe").getAttribute("open"),
+              "",
+            );
+            assert.match(
+              await page.locator("#cli-setup").innerText(),
+              /checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889/,
+            );
+            assert.match(
+              await page.locator("#cli-setup").innerText(),
+              /checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44/,
+            );
+            await page.locator("#cli-setup").focus();
+            await visibleFocus(page);
+            if (width < 700) {
+              await page.keyboard.press("ArrowRight");
+              await page.waitForFunction(
+                () =>
+                  (document.querySelector("#cli-setup")?.scrollLeft ?? 0) > 0,
+              );
+            }
             await noOverflow(page);
             if (report.agent) {
               assert.equal(

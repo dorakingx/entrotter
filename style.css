@@ -44,6 +44,7 @@ body { background: var(--bg); }
 #transaction-replay table { min-width: 60rem; }
 #transaction-replay td { overflow-wrap: anywhere; max-width: 22rem; min-width: 7rem; }
 #transaction-replay .report-toolbar button { max-width: 100%; white-space: normal; }
+#cli-setup, #cli-command { white-space: pre; overflow-wrap: normal; word-break: normal; max-width: 100%; }
 #trace-assumptions { color: var(--muted); font-size: 12px; }
 
 .trace-archive { padding: 20px 24px; border: 1px solid var(--line); border-radius: 12px; background: #14101d; }

@@ -333,3 +333,21 @@ All149 inherited security reasons retain exact source spans, with one new local
 write rationale. App/report/schema/lock/workflow bytes are unchanged. Current CI,
 independent review/publication and protected human-main/Pages remain separate;
 goal active, Discord excluded.
+
+## October 4 — selected recording to pinned CLI inspection
+
+Verified public examples now offer fixed CLI/SDK checkout and inspect commands
+for the exact Source JSON filename. Local/loading/rejected/stale states clear
+all recipe text. Closed public names and textContent keep imported data out of
+shell commands. The collapsible code boxes retain keyboard focus and horizontal
+scrolling at narrow widths.
+
+[Inspection evidence](evidence/cli-inspection/README.md) records the exact four
+setup/six inspect commands in fresh public clones and an empty Python environment,
+14 immutable runtime sources, and whole3013-byte Aave golden equality.135 Node,
+12 site,49 browser groups/62 raw axe scans pass with zero JSerrors/violations;
+all150 security source spans/reasons are preserved. First mobile wrapping and
+wrong-golden-path helper failures remain retained. Original report/view fields
+retain versions except current appSHA; no new EVM/model/advisory/performance run.
+Current CI, independent review/publication and protected human-main/Pages remain
+separate. Goal active; Discord excluded and user evaluations deferred.

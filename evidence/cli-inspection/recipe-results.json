@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "name": "liquidity-shock",
+      "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./liquidity-shock.json --format text",
+      "exit": 0,
+      "report_sha256": "626d696c4ecd3399d5fb398509380750e515ef342032f952266a7948fa641a0d",
+      "stdout_sha256": "930a48ce86e5b7ef7c43bc19a4de91d068ae5b7246b1b386be42ea3c26ae826c",
+      "stdout_bytes": 992,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recovery-trap",
+      "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./recovery-trap.json --format text",
+      "exit": 0,
+      "report_sha256": "94c983d6190a0b57ae0876eceb7c66cf1c4d6ff98a9247d72fc17c71c78304bb",
+      "stdout_sha256": "b0465d1f3e966da50eef483d2d5d8c6dcad967a82d3c1199e2423b2fd7846d69",
+      "stdout_bytes": 885,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "depeg-stress",
+      "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./depeg-stress.json --format text",
+      "exit": 0,
+      "report_sha256": "c866409a0d8b908a81392b411323a1554d13a9a89f50ae9a8081ed1adc45854e",
+      "stdout_sha256": "c50dd18dd6b039afa1795ea36641c8c1a345be5e06106dbb95d3ae53dffda990",
+      "stdout_bytes": 878,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ethereum-uniswap-slippage",
+      "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./ethereum-uniswap-slippage.json --format text",
+      "exit": 0,
+      "report_sha256": "2d32bb9c7dccb3db5ebaaa11b7a65a4ab02bf2228c93933ec57b411480c341df",
+      "stdout_sha256": "b4d27aaed73bd6ccae45ff1efc0cabaa051275fc9e91aa56e9c8cc428a7799c0",
+      "stdout_bytes": 2107,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "agent-local-codex",
+      "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./agent-local-codex.json --format text",
+      "exit": 0,
+      "report_sha256": "802683e5b42c066a08016c87f51679986715add21f661d7d6c4cc7e563e320e6",
+      "stdout_sha256": "2aca499000c87efffc7fc270d514533500310027336d07c2992dbcd094d3f776",
+      "stdout_bytes": 4388,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "aave-borrow-actions",
+      "command": "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./aave-borrow-actions.json --format text",
+      "exit": 0,
+      "report_sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+      "stdout_sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+      "stdout_bytes": 3013,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "runtime_sources": {
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/result_text.py": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/main.py": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+  },
+  "scope": "Exact displayed setup and six inspect commands, fresh public clones and empty Python virtualenv. Read-only recording inspection; no new EVM/model/historical execution. Aave whole text equals original immutable CLI golden.",
+  "setup": [
+    {
+      "command": "git clone https://github.com/entrotter/cli.git entrotter-cli",
+      "exit": 0
+    },
+    {
+      "command": "git -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "exit": 0
+    },
+    {
+      "command": "git clone https://github.com/entrotter/sdk-python.git entrotter-sdk",
+      "exit": 0
+    },
+    {
+      "command": "git -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "exit": 0
+    }
+  ],
+  "setup_output_sha256": {
+    "setup-0.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "setup-0.stderr": "a01e2ff6c406a4fd334c7e6caf0fac8acd6f13ee88cbc4a469194358ae9af4b0",
+    "setup-1.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "setup-1.stderr": "667b143003a0d755812cae8335b900c0f3dff49120e605c1adc006438131656a",
+    "setup-2.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "setup-2.stderr": "06175649405562ec92ab99325e41e74d30ccc845ff6dacd3468d7c8bd8fecf55",
+    "setup-3.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "setup-3.stderr": "b0c178f41e0e0f6d938a3de15f8b344d3191812f369c7c4885b50136760822f2"
+  }
+}

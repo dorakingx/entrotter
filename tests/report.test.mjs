@@ -32,6 +32,39 @@ const sample = () =>
       "utf8",
     ),
   );
+test("CLI inspection recipe uses pinned sources and only public sample names", () => {
+  for (const name of [
+    "liquidity-shock",
+    "recovery-trap",
+    "depeg-stress",
+    "ethereum-uniswap-slippage",
+    "agent-local-codex",
+    "aave-borrow-actions",
+  ]) {
+    const recipe = context.reportCliRecipe(name);
+    assert.match(
+      recipe.setup,
+      /checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889/,
+    );
+    assert.match(
+      recipe.setup,
+      /checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44/,
+    );
+    assert.equal(
+      recipe.command,
+      `PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./${name}.json --format text`,
+    );
+  }
+  for (const name of [
+    null,
+    {},
+    "local-report",
+    "../private",
+    "aave-borrow-actions; echo x",
+    "https://example.com/x",
+  ])
+    assert.equal(context.reportCliRecipe(name), null);
+});
 for (const name of ["liquidity-shock", "recovery-trap", "depeg-stress"]) {
   test(`production JS verifies Python artifact: ${name}`, async () => {
     await context.checkHash(
