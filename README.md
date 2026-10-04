@@ -87,6 +87,14 @@ response racing a newer import. It uses its own unchanged UTF-8 wire format;
 the older v0.1 reports continue to use their ASCII canonicalization.
 Playwright and axe are development tools and are never deployed to Pages.
 
+Native chooser interception is subscribed before navigation. Keyboard imports
+retain the 5000ms event limit and verify the chooser's input ID. Failures save
+bounded focus/input state and Enter completion without report contents or URLs;
+capture failures also retain the primary exception in the final check record.
+See [chooser diagnostics](evidence/keyboard-chooser/README.md) for actual failure,
+recovery and artifact-write controls. The original intermittent cause remains
+unproven; these checks do not measure a reliability rate.
+
 Full axe results, screenshots and a summary with source/tool hashes are written
 to output/playwright/ (ignored by Git). All axe violations fail the job. Unknown
 incomplete rules fail too; incomplete color-contrast results remain in the raw

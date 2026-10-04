@@ -314,3 +314,22 @@ Aave view preservation and149 retained author-reviewed findings. Independent
 review strengthened the stale-response check to await production completion.
 Earlier failures remain recorded. Current mandatory CI/publication and human
 main approval are separate; no fresh EVM/model/deployment claim. Goalactive.
+
+## October 4 — preserve actionable native chooser failures
+
+The development runner subscribes before navigation, awaits the actual keyboard
+chooser within the unchanged5000ms limit and checks its input ID. Failure artifacts
+record bounded input/focus/Enter state. Independent review found that a diagnostic
+write failure hid the primary exception; bounded aggregate serialization now
+retains both. The actual pre-fix fault assertion fails and four corrected real
+Chromium controls pass, including an EISDIR target through the actual check writer.
+
+[Chooser evidence](evidence/keyboard-chooser/README.md) preserves the initial
+full320px timeout despite correct focused/visible/enabled input and completed
+Enter. The early-subscription candidate passes49 groups/62 raw axe scans with
+zero violations/JavaScript errors. Its exact snapshot formats byte-for-byte to
+current source; this is not original-cause proof or a reliability-rate estimate.
+All149 inherited security reasons retain exact source spans, with one new local
+write rationale. App/report/schema/lock/workflow bytes are unchanged. Current CI,
+independent review/publication and protected human-main/Pages remain separate;
+goal active, Discord excluded.

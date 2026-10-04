@@ -76,7 +76,17 @@ async function check(name, work) {
     checks.push({
       name,
       status: "failed",
-      error: error instanceof Error ? error.stack : String(error),
+      error: [
+        error,
+        ...(error instanceof AggregateError ? error.errors.slice(0, 2) : []),
+      ]
+        .map((entry) =>
+          (entry instanceof Error
+            ? (entry.stack ?? entry.message)
+            : String(entry)
+          ).slice(0, 4096),
+        )
+        .join("\n\n"),
     });
   }
 }
@@ -87,6 +97,9 @@ async function pageAt(width = 1280, path = "/") {
     reducedMotion: "reduce",
   });
   page.setDefaultTimeout(5000);
+  // Keep native chooser interception armed before navigation. The event waiter
+  // still has to receive the actual keyboard-opened input within 5000ms.
+  page.on("filechooser", () => {});
   page.on("pageerror", (error) => errors.push(String(error)));
   page.on("request", (request) =>
     requests.push({ url: request.url(), method: request.method() }),
@@ -129,6 +142,49 @@ async function noOverflow(page) {
 /** @param {import("playwright").Page} page @param {string} id */
 async function focusIs(page, id) {
   assert.equal(await page.evaluate(() => document.activeElement?.id), id);
+}
+/** @param {import("playwright").Page} page @param {string} id */
+async function keyboardFileChooser(page, id) {
+  await focusIs(page, id);
+  let enterCompleted = false;
+  const chooser = page.waitForEvent("filechooser");
+  try {
+    const [opened] = await Promise.all([
+      chooser,
+      page.keyboard.press("Enter").then(() => {
+        enterCompleted = true;
+      }),
+    ]);
+    assert.equal(await opened.element().getAttribute("id"), id);
+    return opened;
+  } catch (error) {
+    try {
+      const state = await page.evaluate((id) => {
+        const input = document.getElementById(id);
+        return {
+          activeId: document.activeElement?.id ?? null,
+          documentFocused: document.hasFocus(),
+          connected: input?.isConnected ?? false,
+          type: input instanceof HTMLInputElement ? input.type : null,
+          disabled: input instanceof HTMLInputElement ? input.disabled : null,
+          hidden: input instanceof HTMLElement ? input.hidden : null,
+          visibility: input ? getComputedStyle(input).visibility : null,
+          display: input ? getComputedStyle(input).display : null,
+        };
+      }, id);
+      await writeFile(
+        resolve(output, `chooser-${id}-${page.viewportSize()?.width}.json`),
+        JSON.stringify({ id, enterCompleted, state }, null, 2) + "\n",
+      );
+    } catch (diagnosticError) {
+      throw new AggregateError(
+        [error, diagnosticError],
+        "File chooser failed; diagnostic capture also failed",
+        { cause: diagnosticError },
+      );
+    }
+    throw error;
+  }
 }
 /** @param {import("playwright").Page} page */
 async function visibleFocus(page) {
@@ -704,8 +760,7 @@ try {
           null,
         );
         await focusIs(page, "import");
-        const chooser = page.waitForEvent("filechooser");
-        await page.keyboard.press("Enter");
+        const chooser = await keyboardFileChooser(page, "import");
         const report = JSON.parse(
           await readFile(resolve(root, "reports/liquidity-shock.json"), "utf8"),
         );
@@ -1395,8 +1450,7 @@ try {
           await page.keyboard.press("Tab");
           await focusIs(page, "trace-import");
           await visibleFocus(page);
-          const chooser = page.waitForEvent("filechooser");
-          await page.keyboard.press("Enter");
+          const chooser = await keyboardFileChooser(page, "trace-import");
           await (
             await chooser
           ).setFiles({
