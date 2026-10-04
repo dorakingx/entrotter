@@ -70,7 +70,7 @@ jobs:
           PYAPT
       - run: npx --no-install playwright install --with-deps chromium
       - run: npm run test:accessibility
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: accessibility-evidence
@@ -123,7 +123,7 @@ jobs:
         run: |
           npm audit --json > .quality/npm-audit.json
           .venv/bin/python -m pip_audit --strict --require-hashes --disable-pip -r requirements-quality.txt --progress-spinner off -f json -o .quality/python-dependencies.json
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: website-quality-reports
@@ -147,7 +147,7 @@ jobs:
       - name: Stage the explicit static allowlist
         working-directory: .
         run: python scripts/publish.py
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: website-public-static
           path: website/_site/

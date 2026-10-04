@@ -38,7 +38,7 @@ jobs:
               stream.write('ENTROTTER_WORKER_IMAGE=' + json.load(open('.quality/integration-image.json'))['image_id'] + '\n')
           PYIMAGE
       - run: python scripts/verify.py --require-anvil
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: verification-evidence
@@ -65,7 +65,7 @@ jobs:
           git worktree add --detach .quality/host-history/cli aba6a6147b2b4b96facf758f9b95b63d8e6b5952
       - name: Verify CLI-SDK-API success, quota errors and connection recovery
         run: PYTHONPATH=.quality/host-history/engine/src:.quality/host-history/sdk-python/src:.quality/host-history/cli/src python scripts/check_host_limits.py --output evidence/monorepo-verification/host-limits-ci.json
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: host-limits-evidence
           path: evidence/monorepo-verification/host-limits-ci.json
@@ -1245,7 +1245,7 @@ jobs:
         run: |
           workers=$(docker ps --all --filter label=org.entrotter.worker=true --format '{{.ID}}')
           test -z "$workers"
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: coordination-integration-evidence

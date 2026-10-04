@@ -50,7 +50,7 @@ jobs:
           "$RUNNER_TEMP/sdk-wheel-venv/bin/python" -I -c 'from entrotter_sdk import load_trace; r = load_trace("tests/data/canonical-mainnet-prefix-four.result.json"); assert r.baseline_verified; assert r.transactions[3].candidate.expected_nonce == 5522; assert r.transactions[1].candidate.receipt.gas_used == 245136'
           "$RUNNER_TEMP/sdk-wheel-venv/bin/python" -I -c 'from entrotter_sdk import load_observed_trace; r = load_observed_trace("tests/data/observed-price32.json"); assert r.classification.price_difference == 789973126; assert len(r.trace.transactions) == 32; assert r.observations[1].latest_round_data.answer == 256292441874'
           "$RUNNER_TEMP/sdk-wheel-venv/bin/python" -I -c 'from entrotter_sdk import load_position; r = load_position("tests/data/aave-account-position13.json"); assert r.classification.complete_account_views; assert r.classification.differences.available_borrows_base == 81628966124; assert r.classification.differences.health_factor_wad == 3852169807877337; assert len(r.trace.transactions) == 13; assert r.prices.classification.price_difference == 789973126; assert r.observations[1].values.total_debt_base == 16199140199548'
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: always()
         with:
           name: sdk-python-quality-reports
