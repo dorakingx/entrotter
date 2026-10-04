@@ -16,7 +16,8 @@ playwright-report/
 test-results/
 
 # Local browser audit evidence
-output/playwright/
+/output/
+/_site/
 
 .quality/
 .mypy_cache/

@@ -99,3 +99,16 @@ and carries no inherited approval. All536 captured private inventory files
 were separately restored with exact bytes and JSON readability; full source
 discussions remain owner-controlled and excluded from public exports. Final
 delete-time deltas, main approval and extra-asset disposition remain open.
+
+## Restored local CLI input candidate
+
+The preserved79340eae unfinished change is adapted to the current monorepo on
+`migration/local-cli-input`. Verified local imports can request an exact-byte
+`local-report.json` download beside the monorepo checkout for fixed CLI inspection.
+Current local140 Node/12 site tests,20-source quality,160 full findings and real
+Chromium52 groups/66 scans pass; both saved controlled reports inspect through
+the actual CLI. Generated static files and browser output are excluded from
+editable source scope, and final quality checks pass with the stage present.
+[New evidence](website/evidence/local-cli-input/README.md) is separate from frozen
+reports, original view goldens and media. Independent review, remote CI, main
+approval and production integration remain separate gates for this candidate.

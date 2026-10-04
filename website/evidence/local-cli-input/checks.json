@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-04T12:15:49.120824+00:00",
+  "status": "PASS_LOCAL_CLI_INPUT_SAVE_AND_INSPECTION",
+  "baseline_commit": "737182ec6fe7a087ec93c226fca632e84ce8e27b",
+  "preserved_original_work": "79340eae730d4bbdca1bd88597ffda1362953c8a",
+  "source_sha256": {
+    "app.js": "e1865980060ee4d039ade49e88636ebab2dbdd975aad04aaaa4681d1db1e1f99",
+    "index.html": "6a2a1293a447ae4745812228f1ecf376e7a344e473b033521f00d4185063184f",
+    "scripts/check_accessibility.mjs": "b0fc60810d5fa52329c66cb3b94994afffe189f0f7c75d360dac121920eb60d4",
+    "tests/report.test.mjs": "90615fe92ad382240013481ebd4f47b2a1dc13b9b7a20cd27de2454af532d083",
+    ".gitignore": "d362f0b37338b845d6dfef8e4e1d11278c6d5fc458bf3de3ff55ce6fc9b080d4",
+    "eslint.config.mjs": "5b362f9bb4420c71e00bbc89e451b1efbb24038bea2430f1c679acfc1840dab6",
+    "tsconfig.json": "2457eeede8ef16271b83cc83a981b9a9175935de15e7c84a3bf14ef2a58cec47",
+    "security-reviewed.json": "d94925ddff04d8d418c36bc7e314d1c4a9823bf96b6efadecc834ecf1282280f"
+  },
+  "tests": {
+    "node": 140,
+    "site_python": 12,
+    "negative_against_original_baseline": {
+      "selected_new_tests": 2,
+      "expected_failures": 2
+    }
+  },
+  "quality": {
+    "js_sources": 20,
+    "type_inputs": 21,
+    "security_findings": 160,
+    "original_individual_reasons_preserved": 159,
+    "new_fixed_browser_output_read_reasons": 1,
+    "generated_static_stage_present_during_final_checks": true
+  },
+  "browser": {
+    "node": "v22.23.1",
+    "chromium": "153.0.8010.12",
+    "axe": "4.13.0",
+    "playwright": "1.63.0",
+    "checks": 52,
+    "scans": 66,
+    "violations": 0,
+    "errors": 0,
+    "raw_summary_sha256": "886a0d154aeaaee0d2a2ea928cb7eff7adeaf35e94a0e11309954bf9fdb84f81",
+    "readbacks": [
+      {
+        "name": "liquidity-shock",
+        "width": 320,
+        "setup": "git clone https://github.com/dorakingx/entrotter.git entrotter &&\ngit -C entrotter checkout --detach 23f2bf0c53ff3c9a50348d038d78eeaaf927f059",
+        "command": "PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+        "report_sha256": "69fcf7117c081ee1fe38daf80c47ee91ef21ee3da123e986312a8eb2861447c1",
+        "saved_sha256": "69fcf7117c081ee1fe38daf80c47ee91ef21ee3da123e986312a8eb2861447c1",
+        "saved_bytes": 6039,
+        "suggested_filename": "local-report.json",
+        "original_bytes_preserved": true,
+        "no_new_HTTP_request_on_save": true
+      },
+      {
+        "name": "aave-borrow-actions",
+        "width": 1440,
+        "setup": "git clone https://github.com/dorakingx/entrotter.git entrotter &&\ngit -C entrotter checkout --detach 23f2bf0c53ff3c9a50348d038d78eeaaf927f059",
+        "command": "PYTHONPATH=entrotter/cli/src:entrotter/sdk-python/src python3 -m entrotter_cli inspect ./local-report.json --format text",
+        "report_sha256": "81c6d22ed5dc153a851cebb70bcd8919a52be41e0cac446f17422e7a6a969cca",
+        "saved_sha256": "81c6d22ed5dc153a851cebb70bcd8919a52be41e0cac446f17422e7a6a969cca",
+        "saved_bytes": 59485,
+        "suggested_filename": "local-report.json",
+        "original_bytes_preserved": true,
+        "no_new_HTTP_request_on_save": true
+      }
+    ]
+  },
+  "cli_inspection": {
+    "both_actual_downloads": "exit0",
+    "implementation_matches_pinned_monorepo_source": "23f2bf0c53ff3c9a50348d038d78eeaaf927f059",
+    "no_engine_model_or_RPC_execution": true
+  },
+  "historical_evidence": "All original website/evidence files, report bytes, and media unchanged. New current-source checks are separate.",
+  "limits": [
+    "Automated Chromium and accessibility-tree/keyboard evidence; no claim of manual screen-reader certification or complete WCAG conformance.",
+    "320 CSS-pixel viewport checks reflow; it is not a hardware/browser zoom measurement.",
+    "Axe incomplete contrast items remain explicit; supplemental checks apply only to opaque solid CSS colors.",
+    "Local fixture/archived report display; no new chain/model execution.",
+    "Local Chromium only; browser download acceptance/final destination outside website control.",
+    "Not yet in production; remote CI and independent main approval remain separate."
+  ]
+}

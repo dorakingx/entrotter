@@ -2631,7 +2631,14 @@
       "website/tests/report.test.mjs"
     ],
     "source_working_tree_bytes_exact": true,
-    "status": "preserved unfinished work; independent review and integration pending"
+    "status": "original8 files preserved exactly; local CLI input adapted on migration/local-cli-input; review/CI/main integration pending",
+    "adaptation": {
+      "branch": "migration/local-cli-input",
+      "original_work_commit": "79340eae730d4bbdca1bd88597ffda1362953c8a",
+      "evidence": "website/evidence/local-cli-input/checks.json",
+      "original_evidence_and_policy_not_transplanted": true,
+      "goldens_reports_media_unchanged": true
+    }
   },
   "private_backup": {
     "workspace_manifest_sha256": "f11372d2bb5a9397d4509a73f922b749b0307e818f919bbcc0a1c734b7ee8072",

@@ -1,8 +1,8 @@
 {
   "sources": {
-    "app.js": "09b0403f8546cc1238aab8c9b6b71919b3bace670113ccb2c47caf0270f66251",
+    "app.js": "e1865980060ee4d039ade49e88636ebab2dbdd975aad04aaaa4681d1db1e1f99",
     "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
-    "eslint.config.mjs": "7acf03efd74c5422b646cb4635fd1321222832ad7a92527c77a8f94e8274234a",
+    "eslint.config.mjs": "5b362f9bb4420c71e00bbc89e451b1efbb24038bea2430f1c679acfc1840dab6",
     "eslint.security.config.mjs": "fb2ab88ae816262fd1cef89709826491797957b8ee04835fae10bc6ab83ca7f2",
     "observed-trace.mjs": "980ff5172f61b82413e9898955f7a60ee23ba10a6374e6b259a91034624fe9ee",
     "package-lock.json": "199e29dcafd62edef5bef2483a66dbc200601458ac797f6032ecef688a116342",
@@ -12,20 +12,20 @@
     "report-validation.mjs": "23149c73c022279941b291725c39924bbb69a5ab0a201b7cee224dd23a084ad5",
     "requirements-quality.in": "eccd79884fb38364cc396e59e22eb5a78f48bbf92e2c0b47825dcff473692185",
     "requirements-quality.txt": "845de7f7f24826a43ff5e9eebafa79c6b3ef0aa10e46bfc04e39b77f64cea722",
-    "scripts/check_accessibility.mjs": "a80c5211bae61f18d38315c88df7d635b4d0bbfdd6e3938774131899e30a70a1",
+    "scripts/check_accessibility.mjs": "b0fc60810d5fa52329c66cb3b94994afffe189f0f7c75d360dac121920eb60d4",
     "scripts/check_quality.mjs": "51d72e7ccb7e9716acfc50e39bdf692a2512532e6da91491358da1437f4794d8",
     "scripts/quality_policy.mjs": "e8064979e1846daf16c6d81b5b25ad0b0601432e3d8b18aecd92065131333d89",
     "tests/comparison.test.mjs": "35a035d9e806548d20224070fa707e8866783c639e860ccc3afece23376b6327",
     "tests/observed.test.mjs": "b0b1391ce47970cdbedd3fbde881b91b5ec76f2d59ba070222edfe975eb7b95b",
     "tests/position.test.mjs": "9052e49f4b26525acdf3333ee7a0ee4e77e3734a615f29744bbc893936610207",
     "tests/quality.test.mjs": "71150f603988dcb2429b56de76e3535b0268fbf180b12ecbe998c23c235e52c1",
-    "tests/report.test.mjs": "5f3677372d821b835002e2d2008f7d79b31386bdaa3a605e3432de2cfdb7d14b",
+    "tests/report.test.mjs": "90615fe92ad382240013481ebd4f47b2a1dc13b9b7a20cd27de2454af532d083",
     "tests/setup.test.mjs": "7e42cce71f1a0b04cc31f853c9de43931cc2be735f732569b474cdfb6c9d5753",
     "tests/trace.test.mjs": "f68f5e426f9cc470728c43ac58a04a49804839a7f5e647ce95ee244d60d62d21",
     "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
     "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
     "trace-viewer.mjs": "e87805dcef59dce8905671c73802c42448abee827c4d12bd0abfd7adb1bda06a",
-    "tsconfig.json": "b11349591a0d0c9933d0ee3ff60b0b874df53834e8f2e3c6c45b788aa35cb661",
+    "tsconfig.json": "2457eeede8ef16271b83cc83a981b9a9175935de15e7c84a3bf14ef2a58cec47",
     "types/browser-tools.d.ts": "26b5c16f4583bd57531b4676ee261464bcb6d293e67854e944fab3dfe168efc5"
   },
   "findings": [
@@ -35,9 +35,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 133,
+        "line": 167,
         "column": 52,
-        "endLine": 133,
+        "endLine": 167,
         "endColumn": 68
       },
       "reason": "Canonicalization reads only own keys enumerated by Object.keys from parsed JSON. It writes no properties and produces a hash string; no key selects code or a prototype mutation."
@@ -48,9 +48,9 @@
         "ruleId": "security/detect-unsafe-regex",
         "severity": 1,
         "message": "Unsafe Regular Expression",
-        "line": 178,
+        "line": 212,
         "column": 6,
-        "endLine": 178,
+        "endLine": 212,
         "endColumn": 62
       },
       "reason": "The metric is checked as a string of at most 100 characters before this decimal grammar runs. Integer, fraction and exponent parts have distinct separators; rejected malformed values are bounded. This is not an unbounded regex service."
@@ -61,9 +61,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 331,
+        "line": 365,
         "column": 7,
-        "endLine": 331,
+        "endLine": 365,
         "endColumn": 23
       },
       "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
@@ -74,9 +74,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 332,
+        "line": 366,
         "column": 7,
-        "endLine": 332,
+        "endLine": 366,
         "endColumn": 23
       },
       "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
@@ -87,9 +87,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 362,
+        "line": 396,
         "column": 9,
-        "endLine": 362,
+        "endLine": 396,
         "endColumn": 46
       },
       "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
@@ -100,9 +100,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 363,
+        "line": 397,
         "column": 9,
-        "endLine": 363,
+        "endLine": 397,
         "endColumn": 46
       },
       "reason": "The index comes only from entries() over the fixed Initial/Final/Change array (0,1,2). These are read-only accesses to internal validated bigint tuples; token address lookup uses Map.get, and no input key writes a prototype or selects code."
@@ -113,9 +113,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 420,
+        "line": 454,
         "column": 18,
-        "endLine": 420,
+        "endLine": 454,
         "endColumn": 25
       },
       "reason": "The metric name comes from the same fixed four-item list. The candidate value immediately passes rawInteger and remains inert text; no object mutation or code execution."
@@ -126,9 +126,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 421,
+        "line": 455,
         "column": 18,
-        "endLine": 421,
+        "endLine": 455,
         "endColumn": 25
       },
       "reason": "The metric name comes from the same fixed four-item list. The candidate value immediately passes rawInteger and remains inert text; no object mutation or code execution."
@@ -139,9 +139,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Variable Assigned to Object Injection Sink",
-        "line": 532,
+        "line": 566,
         "column": 21,
-        "endLine": 532,
+        "endLine": 566,
         "endColumn": 32
       },
       "reason": "The observation step is checked as an integer in increasing order within the validated 1-32 element candidate trace before this read. The returned object is display data; the index never selects code, a setter or a property write."
@@ -152,9 +152,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 541,
+        "line": 575,
         "column": 26,
-        "endLine": 541,
+        "endLine": 575,
         "endColumn": 46
       },
       "reason": "Scenario steps must be an array with the same bounded length as the validated candidate trace. This previously range-checked integer reads the matching scenario action for inert canonical equality; no property is written or executed."
@@ -165,9 +165,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 787,
+        "line": 822,
         "column": 16,
-        "endLine": 787,
+        "endLine": 822,
         "endColumn": 21
       },
       "reason": "Both fixture traces have equal checked lengths and their equities have already passed finite. The index comes from the baseline map; conversion is for an inert exact-text table cell."
@@ -178,9 +178,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 806,
+        "line": 841,
         "column": 35,
-        "endLine": 806,
+        "endLine": 841,
         "endColumn": 42
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -191,9 +191,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 806,
+        "line": 841,
         "column": 50,
-        "endLine": 806,
+        "endLine": 841,
         "endColumn": 57
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -204,9 +204,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 807,
+        "line": 842,
         "column": 35,
-        "endLine": 807,
+        "endLine": 842,
         "endColumn": 42
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -217,9 +217,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Function Call Object Injection Sink",
-        "line": 807,
+        "line": 842,
         "column": 50,
-        "endLine": 807,
+        "endLine": 842,
         "endColumn": 57
       },
       "reason": "The candidate metric key comes from the fixed four-row display table. Values go only to String or finite/fmt and then textContent; this read does not write properties or evaluate code."
@@ -789,9 +789,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found writeFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 651,
+        "line": 653,
         "column": 17,
-        "endLine": 654,
+        "endLine": 656,
         "endColumn": 12
       },
       "reason": "The test writes resealed synthetic metadata controls under the configured private browser output directory. The suffix comes only from two fixed case names, never from imported filenames or report fields; original source reports remain untouched."
@@ -801,10 +801,23 @@
         "file": "scripts/check_accessibility.mjs",
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
+        "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
+        "line": 737,
+        "column": 31,
+        "endLine": 737,
+        "endColumn": 50
+      },
+      "reason": "Trusted browser regression reads only its own Playwright download output under the declared local output directory. The basename combines a fixed local-cli-saved prefix with a sample name from the fixed two-case loop and .json suffix. Imported filenames, report values and URLs cannot choose this filesystem path. Exact byte equality verifies the browser-local download; no uploaded report or arbitrary source path is read."
+    },
+    {
+      "finding": {
+        "file": "scripts/check_accessibility.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
         "message": "Found writeFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 739,
+        "line": 784,
         "column": 13,
-        "endLine": 742,
+        "endLine": 787,
         "endColumn": 8
       },
       "reason": "The runner writes one fixed JSON readback artifact under its trusted output directory. It contains finite synthetic cases and fixed CLI commands, not an uploaded user report or secrets; no report metadata enters the output path."
@@ -815,9 +828,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 844,
+        "line": 913,
         "column": 34,
-        "endLine": 846,
+        "endLine": 915,
         "endColumn": 12
       },
       "reason": "readFile reads only the fixed reports/aave-borrow-actions.json path under the repository root. This public recording supplies the browser local-import privacy and stale-response regression; report or query input cannot select a filesystem path, write or execute code."
@@ -828,9 +841,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 982,
+        "line": 1051,
         "column": 17,
-        "endLine": 985,
+        "endLine": 1054,
         "endColumn": 12
       },
       "reason": "readFile reads only the fixed reports/aave-borrow-actions.json path resolved from the repository root. The browser test clones that public recording for local import rejection/recovery checks; no report-controlled path, executable loading or write occurs."
@@ -841,9 +854,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 1009,
+        "line": 1078,
         "column": 11,
-        "endLine": 1009,
+        "endLine": 1078,
         "endColumn": 24
       },
       "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
@@ -854,9 +867,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1070,
+        "line": 1139,
         "column": 17,
-        "endLine": 1073,
+        "endLine": 1142,
         "endColumn": 12
       },
       "reason": "The runner reads the fixed action-comparison example under the operator-selected checkout to generate hostile local-file test inputs. Report content does not select filesystem paths."
@@ -867,9 +880,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1150,
+        "line": 1219,
         "column": 27,
-        "endLine": 1153,
+        "endLine": 1222,
         "endColumn": 16
       },
       "reason": "The race regression serves only the fixed action-comparison example through a Playwright route. Incoming reports cannot select this source path."
@@ -880,9 +893,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1232,
+        "line": 1301,
         "column": 17,
-        "endLine": 1232,
+        "endLine": 1301,
         "endColumn": 80
       },
       "reason": "This reads the fixed liquidity-shock fixture to construct an inert hostile import in memory; neither report content nor HTTP input selects the fixture path."
@@ -893,9 +906,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1280,
+        "line": 1349,
         "column": 27,
-        "endLine": 1283,
+        "endLine": 1352,
         "endColumn": 16
       },
       "reason": "The stale-sample race control reads only the fixed reports/recovery-trap.json fixture below the trusted repository root to fulfill its owned Playwright route. Neither imported local filenames, report fields, nor request parameters select this filesystem path."
@@ -906,9 +919,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1316,
+        "line": 1385,
         "column": 27,
-        "endLine": 1318,
+        "endLine": 1387,
         "endColumn": 22
       },
       "reason": "The local-origin race control reads only the fixed reports/liquidity-shock.json fixture below the trusted repository root and passes its bytes to the owned file input. No untrusted report metadata or selected filename controls the filesystem path; the import makes no upload."
@@ -919,9 +932,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1381,
+        "line": 1450,
         "column": 17,
-        "endLine": 1384,
+        "endLine": 1453,
         "endColumn": 12
       },
       "reason": "This browser regression reads only the fixed tracked reports/agent-local-codex.json under the trusted SITE_DIR developer checkout. An imported report never chooses a filesystem path; the browser receives its bytes as an in-memory local-file test."
@@ -932,9 +945,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1494,
+        "line": 1563,
         "column": 21,
-        "endLine": 1494,
+        "endLine": 1563,
         "endColumn": 78
       },
       "reason": "Sample paths come from a fixed list of four trusted public fixtures beneath the operator-selected checkout root. Incoming report contents cannot select a filename."
@@ -945,9 +958,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 1595,
+        "line": 1664,
         "column": 19,
-        "endLine": 1595,
+        "endLine": 1664,
         "endColumn": 44
       },
       "reason": "This reads a trusted fixture candidate trace at the corresponding baseline iteration index to verify exact accessible table values. No property is written or used to select executable code."
@@ -958,9 +971,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1726,
+        "line": 1795,
         "column": 17,
-        "endLine": 1726,
+        "endLine": 1795,
         "endColumn": 80
       },
       "reason": "This reads the fixed liquidity-shock fixture to construct a tampered local import. Only its in-memory metrics change; report content cannot select filesystem paths."
@@ -971,9 +984,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1765,
+        "line": 1834,
         "column": 19,
-        "endLine": 1768,
+        "endLine": 1837,
         "endColumn": 14
       },
       "reason": "This reads the fixed liquidity-shock fixture to construct correctly hashed malformed metric imports. The path is independent of report content."
@@ -984,9 +997,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 1929,
+        "line": 1998,
         "column": 19,
-        "endLine": 1932,
+        "endLine": 2001,
         "endColumn": 14
       },
       "reason": "The trusted browser harness indexes fixed viewport/report fixtures and explicitly bounded arrays while testing hostile resealed data as inert JSON. File names/routes and loopback origin are developer constants; indexed report values never select shell commands or remote destinations."
@@ -997,9 +1010,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2124,
+        "line": 2193,
         "column": 19,
-        "endLine": 2127,
+        "endLine": 2196,
         "endColumn": 14
       },
       "reason": "The browser regression runner reads the fixed repository-owned supported observed-price32 sample using a literal filename under the trusted configured checkout. Imported JSON never chooses this filesystem path; browser imports are local file payloads and make no request."
@@ -1010,9 +1023,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2130,
+        "line": 2199,
         "column": 19,
-        "endLine": 2133,
+        "endLine": 2202,
         "endColumn": 14
       },
       "reason": "The browser regression runner reads the fixed repository-owned six Python-sealed synthetic control vectors using a literal filename under the trusted configured checkout. Imported JSON never chooses this filesystem path; browser imports are local file payloads and make no request."
@@ -1023,9 +1036,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2328,
+        "line": 2397,
         "column": 19,
-        "endLine": 2331,
+        "endLine": 2400,
         "endColumn": 14
       },
       "reason": "The development runner reads this explicit literal account report or synthetic control path resolved under the developer-chosen repository root. The HTTP report importer never chooses filesystem paths. These test-only reads remain bounded local fixtures; no network upload, executable dispatch or private path is selected by report data."
@@ -1036,9 +1049,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2334,
+        "line": 2403,
         "column": 19,
-        "endLine": 2337,
+        "endLine": 2406,
         "endColumn": 14
       },
       "reason": "The development runner reads this explicit literal account report or synthetic control path resolved under the developer-chosen repository root. The HTTP report importer never chooses filesystem paths. These test-only reads remain bounded local fixtures; no network upload, executable dispatch or private path is selected by report data."
@@ -1049,9 +1062,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2555,
+        "line": 2624,
         "column": 17,
-        "endLine": 2558,
+        "endLine": 2627,
         "endColumn": 12
       },
       "reason": "The trusted browser harness indexes fixed viewport/report fixtures and explicitly bounded arrays while testing hostile resealed data as inert JSON. File names/routes and loopback origin are developer constants; indexed report values never select shell commands or remote destinations."
@@ -1062,9 +1075,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2631,
+        "line": 2700,
         "column": 17,
-        "endLine": 2634,
+        "endLine": 2703,
         "endColumn": 12
       },
       "reason": "The trusted browser harness indexes fixed viewport/report fixtures and explicitly bounded arrays while testing hostile resealed data as inert JSON. File names/routes and loopback origin are developer constants; indexed report values never select shell commands or remote destinations."
@@ -1075,9 +1088,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2637,
+        "line": 2706,
         "column": 17,
-        "endLine": 2640,
+        "endLine": 2709,
         "endColumn": 12
       },
       "reason": "This hashes only the fixed nine-item source inventory beneath trusted operator SITE_DIR. Imported reports cannot select paths; missing files become explicit null evidence."
@@ -1088,9 +1101,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2645,
+        "line": 2714,
         "column": 19,
-        "endLine": 2648,
+        "endLine": 2717,
         "endColumn": 14
       },
       "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
@@ -1101,9 +1114,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2681,
+        "line": 2750,
         "column": 32,
-        "endLine": 2684,
+        "endLine": 2753,
         "endColumn": 10
       },
       "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
@@ -1114,9 +1127,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 2781,
+        "line": 2850,
         "column": 7,
-        "endLine": 2781,
+        "endLine": 2850,
         "endColumn": 19
       },
       "reason": "Missing source bytes assign null only to a key from the fixed inventory. Imported report fields cannot select property names or mutate object prototypes."
@@ -1127,9 +1140,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2782,
+        "line": 2851,
         "column": 23,
-        "endLine": 2782,
+        "endLine": 2851,
         "endColumn": 52
       },
       "reason": "This read resolves a fixed committed Python-sealed compatibility fixture from the repository root or import.meta.url; no imported report path or user input controls the filesystem target."
@@ -1140,9 +1153,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 2785,
+        "line": 2854,
         "column": 7,
-        "endLine": 2785,
+        "endLine": 2854,
         "endColumn": 19
       },
       "reason": "The evidence inventory assigns hashes only to keys from the fixed source file list. No imported report key can select a property or prototype mutation."
@@ -1153,9 +1166,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found writeFile from package \"node:fs/promises\" with non literal argument at index 0",
-        "line": 2812,
+        "line": 2881,
         "column": 9,
-        "endLine": 2815,
+        "endLine": 2884,
         "endColumn": 4
       },
       "reason": "The final evidence report uses the fixed accessibility.json filename under the operator/CI-selected output directory. Imported report contents cannot select its destination."
@@ -1270,9 +1283,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
-        "line": 23,
+        "line": 24,
         "column": 24,
-        "endLine": 26,
+        "endLine": 27,
         "endColumn": 2
       },
       "reason": "readFileSync reads only the literal ../app.js URL relative to this test module. The repository-owned production source is executed in inert offline VM contexts to verify startup selection; neither report contents nor query values select executable files."
@@ -1283,9 +1296,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
-        "line": 30,
+        "line": 31,
         "column": 5,
-        "endLine": 33,
+        "endLine": 34,
         "endColumn": 6
       },
       "reason": "The test reads the fixed archived-state Uniswap public report relative to its own module. This is offline evidence display validation, not archive RPC execution."
@@ -1296,9 +1309,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
-        "line": 193,
+        "line": 324,
         "column": 9,
-        "endLine": 196,
+        "endLine": 327,
         "endColumn": 10
       },
       "reason": "The filename is chosen only by the fixed three-sample test loop, relative to this test module. Imported data does not control the path."
@@ -1309,9 +1322,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
-        "line": 231,
+        "line": 362,
         "column": 5,
-        "endLine": 234,
+        "endLine": 365,
         "endColumn": 6
       },
       "reason": "The test reads the fixed archived-state Uniswap public report relative to its own module. This is offline evidence display validation, not archive RPC execution."
@@ -1322,9 +1335,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
-        "line": 311,
+        "line": 442,
         "column": 5,
-        "endLine": 314,
+        "endLine": 445,
         "endColumn": 6
       },
       "reason": "This unit fixture loader resolves the fixed tracked reports/agent-local-codex.json relative to import.meta.url. There is no user path, directory enumeration or imported-report value in this filesystem operation."
@@ -1335,9 +1348,9 @@
         "ruleId": "security/detect-non-literal-fs-filename",
         "severity": 1,
         "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
-        "line": 451,
+        "line": 582,
         "column": 5,
-        "endLine": 454,
+        "endLine": 585,
         "endColumn": 6
       },
       "reason": "readFileSync reads only ../reports/aave-borrow-actions.json via a literal URL relative to import.meta.url. This is the public Aave fixture used by offline exact-balance and invalid-report tests; no imported filename, code loading or filesystem mutation occurs."
@@ -1348,9 +1361,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 521,
+        "line": 652,
         "column": 50,
-        "endLine": 521,
+        "endLine": 652,
         "endColumn": 54
       },
       "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
@@ -1361,9 +1374,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 525,
+        "line": 656,
         "column": 9,
-        "endLine": 525,
+        "endLine": 656,
         "endColumn": 13
       },
       "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
@@ -1374,9 +1387,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 566,
+        "line": 697,
         "column": 15,
-        "endLine": 566,
+        "endLine": 697,
         "endColumn": 24
       },
       "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
@@ -1387,9 +1400,9 @@
         "ruleId": "security/detect-object-injection",
         "severity": 1,
         "message": "Generic Object Injection Sink",
-        "line": 586,
+        "line": 717,
         "column": 5,
-        "endLine": 586,
+        "endLine": 717,
         "endColumn": 14
       },
       "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."

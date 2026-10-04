@@ -44,16 +44,26 @@ and error states remove both the href and visibility. A stale sample response
 cannot restore a link after a newer selection/import. Links identify bundled
 examples, not authenticity, execution, trading performance or valuation.
 
-CLI inspection recipes accept only the same six fixed public sample names. The monorepo
-URL, immutable checkout hash and component directory names are literals;
-commands are rendered as textContent and never executed by the website. No local
-filename, report metadata or query/origin string is interpolated. Loading, local
-imports and errors clear both setup and inspection text, with the current
-sample-generation guard preventing stale restoration.
+CLI inspection recipes accept the six fixed public sample names and one internal
+local-report marker; the URL query allowlist remains the six public names. The
+monorepo URL, immutable checkout hash and component directories are literals;
+commands are textContent and never executed by the website. No imported
+filename, report metadata or query/origin string is interpolated. Loading and
+errors clear setup/inspection text; valid current-generation local imports
+expose only the fixed `./local-report.json` inspection recipe.
 
-CLI recipe copy controls write only the current verified bundled recipe cache to
-the native Clipboard API after activation; they never read the clipboard or take
-text from imported reports, URLs or mutable codeboxes. One write is pending at a
-time. Report changes invalidate feedback and disable hidden controls, but cannot
-cancel an already requested write of public text. No command is executed; missing
-or denied APIs keep manual selection available.
+CLI copy controls write only the verified fixed recipe cache after activation;
+they never read the clipboard or use mutable codeboxes. One write is pending at
+a time. Report changes invalidate feedback and disable controls but cannot cancel
+an already requested write of fixed text. Missing/denied APIs retain manual copy.
+
+Save CLI input retains only the current verified File (at most4 MiB), without
+reserializing JSON. A user click requests a browser-local download using the
+literal local-report.json filename. No upload or HTTP report fetch is introduced.
+At most one object URL is retained per current File; the temporary anchor is
+removed after activation. Loading/error/new-selection clears the File reference,
+revokes the URL and disables/hides saving. Failed creation/activation revokes any
+URL, hides browser error details and keeps manual saving available. A stale
+async import cannot expose its File. Saving preserves input bytes, not execution
+or provider authenticity; browser download acceptance/final location is outside
+this site's control. No persistent/public private-report URL is rendered.

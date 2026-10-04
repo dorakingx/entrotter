@@ -27,6 +27,7 @@
     "node_modules",
     "output",
     ".quality",
-    ".venv"
+    ".venv",
+    "_site"
   ]
 }
