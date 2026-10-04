@@ -1,6 +1,6 @@
 {
   "sources": {
-    "app.js": "7c3b1992938e5c7d1a60635519412b1988b9f058d1e7275991501d82adeaefca",
+    "app.js": "1cca470879af43f24f1ec419468360b2fb36d7c62566f4abe6a986b29f1bd6ae",
     "comparison.mjs": "e0dac48fe543ce208c21a99f4a029427576e12ad867c4e3c65bdb1d0de7c2fb1",
     "eslint.config.mjs": "7acf03efd74c5422b646cb4635fd1321222832ad7a92527c77a8f94e8274234a",
     "eslint.security.config.mjs": "fb2ab88ae816262fd1cef89709826491797957b8ee04835fae10bc6ab83ca7f2",
@@ -20,6 +20,7 @@
     "tests/position.test.mjs": "9052e49f4b26525acdf3333ee7a0ee4e77e3734a615f29744bbc893936610207",
     "tests/quality.test.mjs": "71150f603988dcb2429b56de76e3535b0268fbf180b12ecbe998c23c235e52c1",
     "tests/report.test.mjs": "35ca456b073817ed275d73daccbe7e35e3755085b00041463eb9953f63deb52b",
+    "tests/setup.test.mjs": "19a2d6ef896faf73bc76f7a17ac819f5f9076ab4471d14e751faf86521b415dc",
     "tests/trace.test.mjs": "f68f5e426f9cc470728c43ac58a04a49804839a7f5e647ce95ee244d60d62d21",
     "trace-comparison.mjs": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
     "trace-report.mjs": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
@@ -1353,6 +1354,58 @@
         "endColumn": 14
       },
       "reason": "The branch key is drawn only from the literal baseline/candidate list. This mutates a local cloned public test fixture to exercise display rejection and exact arithmetic; no imported key, prototype mutation, executable selection or transport is involved."
+    },
+    {
+      "finding": {
+        "file": "tests/setup.test.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 32,
+        "column": 3,
+        "endLine": 32,
+        "endColumn": 62
+      },
+      "reason": "The production app is read from the fixed ../app.js URL relative to this test module, not from user report metadata or a runtime-selected filename. This is trusted source inspection."
+    },
+    {
+      "finding": {
+        "file": "tests/setup.test.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found mkdirSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 56,
+        "column": 5,
+        "endLine": 56,
+        "endColumn": 19
+      },
+      "reason": "This bin directory is a fixed child of the newly created private mkdtemp directory. No report content or user filename enters the path; cleanup removes only that private test directory."
+    },
+    {
+      "finding": {
+        "file": "tests/setup.test.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found writeFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 59,
+        "column": 5,
+        "endLine": 65,
+        "endColumn": 6
+      },
+      "reason": "The Git stand-in is written at a fixed child path in the private temporary directory with mode0700. Its fixed script records four allowed argv forms and bounded failure statuses; it performs no clone or network call."
+    },
+    {
+      "finding": {
+        "file": "tests/setup.test.mjs",
+        "ruleId": "security/detect-non-literal-fs-filename",
+        "severity": 1,
+        "message": "Found readFileSync from package \"node:fs\" with non literal argument at index 0",
+        "line": 84,
+        "column": 9,
+        "endLine": 84,
+        "endColumn": 34
+      },
+      "reason": "The log path is a fixed numbered child of the private temporary directory for five finite cases. The test reads its bounded Git-call trace and then removes the directory; no imported report chooses the path."
     },
     {
       "finding": {

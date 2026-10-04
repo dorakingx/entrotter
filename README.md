@@ -408,3 +408,7 @@ serialized pending writes and generation-safe feedback after report changes.
 Recorded agent panels label the linked local native-transfer evaluation as a
 **separate example**. Its matching model/preflight decisions are not an evaluation
 of every selected or imported report. See [scope validation](evidence/agent-evaluation-scope/README.md).
+
+The [copied setup chain](evidence/setup-chain/README.md) stops at the first failed
+clone or checkout and returns that error; later operations do not run. Fixed
+public recipes and existing local-report privacy remain unchanged.

@@ -24,9 +24,9 @@ function reportCliRecipe(name) {
   if (typeof name !== "string" || !allowedSamples.has(name)) return null;
   return {
     setup:
-      "git clone https://github.com/entrotter/cli.git entrotter-cli\n" +
-      "git -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889\n" +
-      "git clone https://github.com/entrotter/sdk-python.git entrotter-sdk\n" +
+      "git clone https://github.com/entrotter/cli.git entrotter-cli &&\n" +
+      "git -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889 &&\n" +
+      "git clone https://github.com/entrotter/sdk-python.git entrotter-sdk &&\n" +
       "git -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44",
     command:
       "PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect ./" +
