@@ -1,0 +1,34 @@
+{
+  "status": "component_all8_and_full_root_artifact_review_passed_source_offline_type_review_passed_combined_CI_pending",
+  "execution_snapshot": "a253da8695fb2521702056dca286ed16b0aba44f",
+  "pins": {
+    "engine": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+  },
+  "component_PR": "https://github.com/entrotter/engine/pull/31",
+  "component_head": "935558a5b95755c72ca6fb24f076b3a231fa5b64",
+  "component_native_tests": 248,
+  "component_local_native_seconds": 33.137,
+  "component_newhead_CI": "All8 first-attempt checks pass; full root23source/18wheel/19image/42Python/26OS/1126signedCargo/11doc binding verified.",
+  "offline_result_sha256": "9c52b8a8f8d4f72f0aaa7557bb906faa2d9346d24e40ce86bf4c058cc4cb20d6",
+  "independent_source_review_sha256": "3a73d7244d12f980443cafaaf71f26abd3e576efdfaee2e653d7cc8c5376a922",
+  "type_production_sources": 21,
+  "frozen_type_diagnostics": 3,
+  "previous_combined_proof": "previous-reader-ci.json",
+  "new_root_EVM_or_model_execution": false,
+  "limits": [
+    "Component and combined exact-head CI remain separate gates.",
+    "Synthetic funding report is not archive-backed funding or whole-block/end-state proof.",
+    "Independent human protected-main review and candidate publication/submission remain open."
+  ],
+  "component_linux_native_seconds": 36.615,
+  "component_actual_Docker_tests": 24,
+  "component_actual_Docker_seconds": 221.94,
+  "component_historical_four_receipts": "All four original receipt projections match; complete previous outcomes equal except runtime/hash and one accurate changed admission assumption; not archived same-block funding.",
+  "root_component_proof": "root-engine-ci-verification.json",
+  "root_actual_four_report": "bounded-mainnet-prefix-four.json",
+  "funding_proof_synthetic_only": true
+}

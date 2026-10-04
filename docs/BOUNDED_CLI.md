@@ -26,8 +26,8 @@ by the user manager, with no credentials placed in command arguments.
 
 The tested versions are Linux arm64, Python 3.12.3 and systemd 255 in the
 [dedicated VM](BOUNDED_HOST_SERVICE.md). The exact
-[systemd options](https://github.com/systemd/systemd/blob/v255/man/systemd-run.xml)
-and [Python safe-path semantics](https://github.com/python/cpython/blob/v3.12.3/Doc/using/cmdline.rst)
+[systemd options](https://raw.githubusercontent.com/systemd/systemd/v255/man/systemd-run.xml)
+and [Python safe-path semantics](https://raw.githubusercontent.com/python/cpython/v3.12.3/Doc/using/cmdline.rst)
 are documented by their upstream projects. This is an installed trusted-code
 operator tool, not an arbitrary-command or untrusted-agent sandbox.
 

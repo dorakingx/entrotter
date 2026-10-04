@@ -1,0 +1,19 @@
+{
+  "commands": [
+    {
+      "command": "verify",
+      "returncode": 0,
+      "stdout_sha256": "14799479a13047e12fd7daf65cd852bdc8ac80cdaf235ac188d629bd898b2366",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": "inspect",
+      "returncode": 0,
+      "stdout_sha256": "9e45e81fd5d5a111cfeffe51ad95010cc442679e1bdfcec40fdff759b66b6d99",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+  "source_artifact_id": "728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00",
+  "scope": "Actual installed CLI24 and SDKba4 offline inspection of Engine f53 recorded local Aave action result; no fresh EVM or model call."
+}

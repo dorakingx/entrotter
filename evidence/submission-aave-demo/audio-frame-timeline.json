@@ -1,0 +1,280 @@
+{
+  "scenes": [
+    {
+      "id": "intro",
+      "label": "01 / A DECISION YOU CAN EXPLAIN",
+      "narration": [
+        "Before allowing an onchain agent to act, compare what its decision changes.",
+        "This is the actual Entrotter viewer, with synthetic narration."
+      ],
+      "start": 1.0,
+      "end": 11.130657596371883
+    },
+    {
+      "id": "record",
+      "label": "02 / RECORDED AAVE ACTIONS",
+      "narration": [
+        "This saved recording tests supplied collateral and borrow actions on Ethereum.",
+        "Today we inspect that recording. We do not execute a new historical run."
+      ],
+      "start": 11.130657596371883,
+      "end": 22.724172335600908
+    },
+    {
+      "id": "setup",
+      "label": "03 / IDENTICAL INITIAL CONDITIONS",
+      "narration": [
+        "Both isolated branches start with the same artificial twenty Ether and local account impersonation.",
+        "The supplied setup wraps, approves, and supplies ten wrapped Ether."
+      ],
+      "start": 22.724172335600908,
+      "end": 35.42063492063492
+    },
+    {
+      "id": "decision",
+      "label": "04 / ONE PROPOSAL, TWO OUTCOMES",
+      "narration": [
+        "A nine wrapped Ether borrow reverts in the baseline.",
+        "The candidate uses a built in current state preflight policy and holds that proposal.",
+        "This case uses a deterministic policy, not a new language model call."
+      ],
+      "start": 35.42063492063492,
+      "end": 51.02839002267574
+    },
+    {
+      "id": "final",
+      "label": "05 / THE SMALLER BORROW IS SUPPLIED",
+      "narration": [
+        "A later one wrapped Ether borrow succeeds in both branches.",
+        "That smaller action was supplied in advance. The policy did not generate it."
+      ],
+      "start": 51.02839002267574,
+      "end": 61.402857142857144
+    },
+    {
+      "id": "balances",
+      "label": "06 / EXACT UNITS, NO PROFIT CLAIM",
+      "narration": [
+        "Compare every recorded native and token balance without losing decimal precision.",
+        "The held revert changes gas use, but gas prices also differ. These differences are not profit."
+      ],
+      "start": 61.402857142857144,
+      "end": 74.47083900226757
+    },
+    {
+      "id": "download",
+      "label": "07 / THE SAME SOURCE JSON",
+      "narration": [
+        "Download the exact source recording, then open the pinned command recipe.",
+        "The setup selects immutable public command line and Python reader versions."
+      ],
+      "start": 74.47083900226757,
+      "end": 85.47224489795919
+    },
+    {
+      "id": "copy",
+      "label": "08 / COPY THE SELECTED INSPECTION COMMAND",
+      "narration": [
+        "Use the keyboard to copy the inspection command for this sample.",
+        "Only the fixed public command is copied. Local report metadata never enters shell text."
+      ],
+      "start": 85.47224489795919,
+      "end": 96.41560090702947
+    },
+    {
+      "id": "cli",
+      "label": "09 / ACTUAL OFFLINE CLI OUTPUT",
+      "narration": [
+        "Here is actual command output from the downloaded recording, using those pinned sources.",
+        "The command verifies the content hash and preserves the same exact units and recorded decision."
+      ],
+      "start": 96.41560090702947,
+      "end": 108.92630385487529
+    },
+    {
+      "id": "limit",
+      "label": "10 / WHAT THE RECORDING DOES NOT PROVE",
+      "narration": [
+        "Integrity does not establish provider authenticity, a correct policy, or future market behavior.",
+        "This is supplied action execution on archived state, not replay of original signed transactions."
+      ],
+      "start": 108.92630385487529,
+      "end": 123.58485260770975
+    },
+    {
+      "id": "end",
+      "label": "11 / REPRODUCE, INSPECT, REVIEW",
+      "narration": [
+        "Use Entrotter to keep the inputs, receipts, assumptions, and decisions together for review.",
+        "The current code is on development branches. Main integration, public deployment, and submission remain separate."
+      ],
+      "start": 123.58485260770975,
+      "end": 137.4655328798186
+    }
+  ],
+  "captions": [
+    {
+      "start": 1.0,
+      "end": 6.027120181405896,
+      "text": "Before allowing an onchain agent to act, compare what its decision changes.",
+      "scene": "intro",
+      "take": "demo-intro-0.wav"
+    },
+    {
+      "start": 6.477097505668934,
+      "end": 10.180680272108843,
+      "text": "This is the actual Entrotter viewer, with synthetic narration.",
+      "scene": "intro",
+      "take": "demo-intro-1.wav"
+    },
+    {
+      "start": 11.130657596371883,
+      "end": 16.726666666666667,
+      "text": "This saved recording tests supplied collateral and borrow actions on Ethereum.",
+      "scene": "record",
+      "take": "demo-record-0.wav"
+    },
+    {
+      "start": 17.176643990929705,
+      "end": 21.77419501133787,
+      "text": "Today we inspect that recording. We do not execute a new historical run.",
+      "scene": "record",
+      "take": "demo-record-1.wav"
+    },
+    {
+      "start": 22.724172335600908,
+      "end": 29.632108843537416,
+      "text": "Both isolated branches start with the same artificial twenty Ether and local account impersonation.",
+      "scene": "setup",
+      "take": "demo-setup-0.wav"
+    },
+    {
+      "start": 30.082086167800455,
+      "end": 34.47065759637188,
+      "text": "The supplied setup wraps, approves, and supplies ten wrapped Ether.",
+      "scene": "setup",
+      "take": "demo-setup-1.wav"
+    },
+    {
+      "start": 35.42063492063492,
+      "end": 38.68303854875283,
+      "text": "A nine wrapped Ether borrow reverts in the baseline.",
+      "scene": "decision",
+      "take": "demo-decision-0.wav"
+    },
+    {
+      "start": 39.13301587301587,
+      "end": 44.520045351473925,
+      "text": "The candidate uses a built in current state preflight policy and holds that proposal.",
+      "scene": "decision",
+      "take": "demo-decision-1.wav"
+    },
+    {
+      "start": 44.97002267573696,
+      "end": 50.0784126984127,
+      "text": "This case uses a deterministic policy, not a new language model call.",
+      "scene": "decision",
+      "take": "demo-decision-2.wav"
+    },
+    {
+      "start": 51.02839002267574,
+      "end": 55.27764172335601,
+      "text": "A later one wrapped Ether borrow succeeds in both branches.",
+      "scene": "final",
+      "take": "demo-final-0.wav"
+    },
+    {
+      "start": 55.72761904761905,
+      "end": 60.452879818594106,
+      "text": "That smaller action was supplied in advance. The policy did not generate it.",
+      "scene": "final",
+      "take": "demo-final-1.wav"
+    },
+    {
+      "start": 61.402857142857144,
+      "end": 66.55768707482993,
+      "text": "Compare every recorded native and token balance without losing decimal precision.",
+      "scene": "balances",
+      "take": "demo-balances-0.wav"
+    },
+    {
+      "start": 67.00766439909297,
+      "end": 73.52086167800454,
+      "text": "The held revert changes gas use, but gas prices also differ. These differences are not profit.",
+      "scene": "balances",
+      "take": "demo-balances-1.wav"
+    },
+    {
+      "start": 74.47083900226757,
+      "end": 78.99873015873015,
+      "text": "Download the exact source recording, then open the pinned command recipe.",
+      "scene": "download",
+      "take": "demo-download-0.wav"
+    },
+    {
+      "start": 79.4487074829932,
+      "end": 84.52226757369614,
+      "text": "The setup selects immutable public command line and Python reader versions.",
+      "scene": "download",
+      "take": "demo-download-1.wav"
+    },
+    {
+      "start": 85.47224489795919,
+      "end": 89.05972789115646,
+      "text": "Use the keyboard to copy the inspection command for this sample.",
+      "scene": "copy",
+      "take": "demo-copy-0.wav"
+    },
+    {
+      "start": 89.5097052154195,
+      "end": 95.46562358276644,
+      "text": "Only the fixed public command is copied. Local report metadata never enters shell text.",
+      "scene": "copy",
+      "take": "demo-copy-1.wav"
+    },
+    {
+      "start": 96.41560090702947,
+      "end": 101.8722902494331,
+      "text": "Here is actual command output from the downloaded recording, using those pinned sources.",
+      "scene": "cli",
+      "take": "demo-cli-0.wav"
+    },
+    {
+      "start": 102.32226757369615,
+      "end": 107.97632653061224,
+      "text": "The command verifies the content hash and preserves the same exact units and recorded decision.",
+      "scene": "cli",
+      "take": "demo-cli-1.wav"
+    },
+    {
+      "start": 108.92630385487529,
+      "end": 115.31179138321995,
+      "text": "Integrity does not establish provider authenticity, a correct policy, or future market behavior.",
+      "scene": "limit",
+      "take": "demo-limit-0.wav"
+    },
+    {
+      "start": 115.761768707483,
+      "end": 122.63487528344672,
+      "text": "This is supplied action execution on archived state, not replay of original signed transactions.",
+      "scene": "limit",
+      "take": "demo-limit-1.wav"
+    },
+    {
+      "start": 123.58485260770975,
+      "end": 128.99510204081633,
+      "text": "Use Entrotter to keep the inputs, receipts, assumptions, and decisions together for review.",
+      "scene": "end",
+      "take": "demo-end-0.wav"
+    },
+    {
+      "start": 129.44507936507935,
+      "end": 136.51555555555555,
+      "text": "The current code is on development branches. Main integration, public deployment, and submission remain separate.",
+      "scene": "end",
+      "take": "demo-end-1.wav"
+    }
+  ],
+  "duration": 138.4655328798186,
+  "clock": "actual integer PCM frame positions at 22050Hz"
+}

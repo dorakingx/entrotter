@@ -1,0 +1,36 @@
+{
+  "files_sha256": {
+    "bounded-worker-pins.json": "fa89f2666a2e23794975ed6d661693f941d01fd6596d72e1fa4b2606fd281c6f",
+    "quality-inputs.json": "38750a2aaf885a75f592b8c98651fdb2e7f2aae6c4d0042fb6ace0d1842f8f35",
+    ".github/workflows/ci.yml": "61139971e59c8a720e973191308e466873803a54ca830cfacedbdd5bed5b93cc",
+    ".github/workflows/quality.yml": "3ab570eb03a5456db3adce19fbd9e1c17d0482ac43f9afab3f117ba9721cb2e1",
+    "evidence/rpc-diagnostics-integration/README.md": "6722e82c56dbb671316b3d75fb455144f9427b2e46602fd774a0b0d710046f13",
+    "evidence/rpc-diagnostics-integration/engine-CI.json": "dcca1a6100b947065326690e615974dd9a1e475b3f3983aeb168d1a03712fbe6",
+    "evidence/rpc-diagnostics-integration/local-reader-execution.json": "d8311eb4fbceaea7bd6fdbad9be657e946c4c11be0702dc666efe82402851e8b",
+    "evidence/rpc-diagnostics-integration/local-types.json": "85fe4406de10a224d2ad7e741d3494302066fde99c285c9b483eec6f0b4b4230",
+    "evidence/rpc-diagnostics-integration/native-003/baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "evidence/rpc-diagnostics-integration/native-003/captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "evidence/rpc-diagnostics-integration/native-003/host-owned-cleanup.json": "9e3d4c49093baaba354f03cf4685a5003df9616e1483c48fd461179d7beef9f2",
+    "evidence/rpc-diagnostics-integration/native-003/host-result.json": "ca8fde11f6168e464cd9fba61594df7daf36996b9da2c6f36c3cfadf95c7f74e",
+    "evidence/rpc-diagnostics-integration/native-003/observations.json": "38ee45f2051debfb36fcd5fa13cc60ff3697aacd7456e25ae633b83d66d18e4d",
+    "evidence/rpc-diagnostics-integration/native-003/owned-nodes.json": "63402430595536f7e65d012587ac2dd64e5b745ca3f14f93ea9787441348aba9",
+    "evidence/rpc-diagnostics-integration/native-003/prelaunch-root-review.json": "d6e1dd612eeffd03129bf69209bf17025645cae786de2de209545aa6b76c52d3",
+    "evidence/rpc-diagnostics-integration/native-003/result.json": "54f60737b39a86cb42390d23562ef33ca54eea52e9469af24bf912c313cdbec0",
+    "evidence/rpc-diagnostics-integration/native-003/root-review.json": "9ea63c1b5b16822420c4c62f5df238725d54fd1bdca6ee8dacdc08be9ccdfbb4",
+    "evidence/rpc-diagnostics-integration/native-003/terminal-record.json": "df5e42bed4bf8beba59a402dde368e62ef7f7473612adf56cc07279219aab80d",
+    "evidence/rpc-diagnostics-integration/previous-coordination-CI.json": "1d82524b070d8e80ff98e3ea4b3f7eeb166a5f7d5252f486ef4014f2da612f4f",
+    "evidence/rpc-diagnostics-integration/summary.json": "9051f66afec754810692b2b0d9fd0f113dfc099088ad8d24ee0a519d255e71f1",
+    "evidence/rpc-diagnostics-integration/trace-funding-reader.json": "201fed54a80aea9f7bfd66a69d0b3012767281a43a5948491f36321b3ff34b25",
+    "evidence/rpc-diagnostics-integration/trace-oracle-reader.json": "09839b9b870afe1399539b2dde2a4c0a6160cf8218ba999c2154656f2a418fe9",
+    "evidence/rpc-diagnostics-integration/trace-reader.json": "1b4861e3ef298f9c7ec1d77744f4358f8c259a1373ad68600c276567fba55605"
+  },
+  "private_absolute_paths": [],
+  "offline_docs": {
+    "total": 17,
+    "successful": 16,
+    "external_excluded": 1,
+    "errors": 0
+  },
+  "types": "passed21sources/3unchanged frozen diagnostics",
+  "readers": "all3 pass; complete previous outcomes unchanged apart from engine pin"
+}

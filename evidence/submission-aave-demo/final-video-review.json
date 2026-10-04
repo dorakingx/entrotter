@@ -1,0 +1,264 @@
+{
+  "status": "PASS media format and full decode; caption/pronunciation review pending",
+  "output": {
+    "path": "projects/entrotter-aave-demo/deliverables/entrotter-demo-aave-review.mp4",
+    "bytes": 11002134,
+    "sha256": "7bccd03c3d2bd358ce537ee2895ce3abbc727aa83c43a65c8508c14136b8d28d",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.640028",
+          "width": 1600,
+          "height": 900,
+          "coded_width": 1600,
+          "coded_height": 900,
+          "has_b_frames": 2,
+          "sample_aspect_ratio": "1:1",
+          "display_aspect_ratio": "16:9",
+          "pix_fmt": "yuv420p",
+          "level": 40,
+          "color_range": "tv",
+          "color_space": "bt470bg",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "25/1",
+          "avg_frame_rate": "25/1",
+          "time_base": "1/12800",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 1772544,
+          "duration": "138.480000",
+          "bit_rate": "513361",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "3462",
+          "extradata_size": 50,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc63.1.101 libx264"
+          }
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_long_name": "AAC (Advanced Audio Coding)",
+          "profile": "LC",
+          "codec_type": "audio",
+          "codec_tag_string": "mp4a",
+          "codec_tag": "0x6134706d",
+          "mime_codec_string": "mp4a.40.2",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 1,
+          "channel_layout": "mono",
+          "bits_per_sample": 0,
+          "initial_padding": 1024,
+          "id": "0x2",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 6646346,
+          "duration": "138.465542",
+          "bit_rate": "116080",
+          "nb_frames": "6490",
+          "extradata_size": 5,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "SoundHandler"
+          }
+        }
+      ],
+      "format": {
+        "filename": "<workspace>/entrotter/.quality/aave-demo/projects/entrotter-aave-demo/deliverables/entrotter-demo-aave-review.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "138.480000",
+        "size": "11002134",
+        "bit_rate": "635594",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf63.1.101"
+        }
+      }
+    }
+  },
+  "clean_master_sha256": "0bd2d5e5d7bcb1b05eca35ecf7aea10a2fa8ec92bc79b5b7480759da89584b5d",
+  "caption_status": "DRAFT authored captions; 14 normalized ASR matches and9 differences; no human listening approval",
+  "decode": {
+    "returncode": 0,
+    "stderr_bytes": 0
+  },
+  "loudness_returncode": 0,
+  "original_media_preserved": {
+    "submission/media/demo-probe.json": "2425d357813d65ac2b581b07c489ca3a7ae5f76aa3ccf76d69d86f61d3be508a",
+    "submission/media/entrotter-demo-account.mp4": "8bf4541c49aa7482bb495464c9dddd7fc689dad2b0ba1472f9c1dfd1fa7f0a07",
+    "submission/media/entrotter-demo-account.srt": "d710f64c22401a82a86cb3cda819e7d974a1530c99e9343453be05de7cf646b7",
+    "submission/media/entrotter-demo-account.vtt": "55b3d93ab73d51e493bb0aec7d148a5ff9e6d2a3051226f63844a9bc880d7295",
+    "submission/media/entrotter-demo-cli.mp4": "c04d096fd6680dfa0900fedd9b6f0710643555a874c96e06d411adca67b60fa1",
+    "submission/media/entrotter-demo-cli.srt": "d710f64c22401a82a86cb3cda819e7d974a1530c99e9343453be05de7cf646b7",
+    "submission/media/entrotter-demo-cli.vtt": "55b3d93ab73d51e493bb0aec7d148a5ff9e6d2a3051226f63844a9bc880d7295",
+    "submission/media/entrotter-demo.mp4": "ad25458ca7bcd3898b5c95880685b7f48a87f3c126ea0924674cbb26db481131",
+    "submission/media/entrotter-demo.srt": "b3e3c54dc945041719cdf7bbc8a7dc5d1f09e6eb49d70ab753f4458f5d59c728",
+    "submission/media/entrotter-demo.vtt": "c11e8f31dcdc126166e7706c7dfd3fc079894e721d1bada292686f6c3d0d9a2c",
+    "submission/media/entrotter-pitch-short.mp4": "ead11ff1533e0c227a409f1a11a046f3ed34f1c04f0cd4c3b9ce39806ebbb487",
+    "submission/media/entrotter-pitch-short.vtt": "128b62fffaebcc316a5909886c0160b5446b790d3fbb868ef35bd22e568acd5f",
+    "submission/media/entrotter-pitch.mp4": "e41b98fa5ea68ef96250b186095c9537144b61f4b765062a4fafec6c2d1476d0",
+    "submission/media/entrotter-pitch.srt": "ef8c27ac2a0f64f19edf08c752617d6ef9f04bc17bd25f2977b02c05425acd51",
+    "submission/media/entrotter-pitch.vtt": "8b74d2dd22a5628abab03275132d807760d34734099a3f74db224643ce306d12",
+    "submission/media/pitch-probe.json": "362ef323034810aafa80c3789e98e1c47a7ccd5f747039e214eb3a90d6258eb9"
+  },
+  "frames": [
+    {
+      "time": 0.5,
+      "path": "final-frames/00-0.5.png",
+      "sha256": "326f063f74681fac637e852fc78031b25e80d36e6f5f3d2971cf858f367ae811"
+    },
+    {
+      "time": 4,
+      "path": "final-frames/01-4.png",
+      "sha256": "f3ecde270e2322a6563c3f7d3ee64def9b4952962789ecb9bf36f2fa5a8f543b"
+    },
+    {
+      "time": 14,
+      "path": "final-frames/02-14.png",
+      "sha256": "2ce63c87f2e255516642405b0ebd681ebab8977c318d029114035deedc3f5196"
+    },
+    {
+      "time": 25,
+      "path": "final-frames/03-25.png",
+      "sha256": "c88921b2c38a7c4092d69d8b779a0d303d1ded831a73559801b13218cdca3102"
+    },
+    {
+      "time": 37,
+      "path": "final-frames/04-37.png",
+      "sha256": "bb5b6e3e3be5d5f093e841c267bc0cb2717200cff9865ce3a45155e16e5e4548"
+    },
+    {
+      "time": 41,
+      "path": "final-frames/05-41.png",
+      "sha256": "0e36e0a62ecf85db3107f64e6b7a31d28eec727ba4e9ff9da71b792b2b3e08a8"
+    },
+    {
+      "time": 53,
+      "path": "final-frames/06-53.png",
+      "sha256": "9d983519a453161b0782688d7748bfc713685130f7319866288d6599751b7ed7"
+    },
+    {
+      "time": 64,
+      "path": "final-frames/07-64.png",
+      "sha256": "1dc066e5ddea9366a29b1a1c5bcecec3b9ff1df389559ffa9c9ea99a6b292178"
+    },
+    {
+      "time": 68,
+      "path": "final-frames/08-68.png",
+      "sha256": "2d1d9db5caf887461898db766e1bb11589b68e65dd409d3317623ada8fea1c27"
+    },
+    {
+      "time": 75.5,
+      "path": "final-frames/09-75.5.png",
+      "sha256": "11f980b0098caaa7553eb40e09b492a9e4eef6fb979591d4568640d62964d243"
+    },
+    {
+      "time": 82,
+      "path": "final-frames/10-82.png",
+      "sha256": "babfda8999f0459e9e963c716c6e7dc4eeaee2fc2597c0c6c94f47cea21dd535"
+    },
+    {
+      "time": 87,
+      "path": "final-frames/11-87.png",
+      "sha256": "4cf87cb9ebc6ecdd82312e245a87761f40a49a06a50fc0074f3eb83c216c5d05"
+    },
+    {
+      "time": 98,
+      "path": "final-frames/12-98.png",
+      "sha256": "7dd418036bffc313537e8418c560f930d7ca71c97f21d3159b4e14791dd55e54"
+    },
+    {
+      "time": 102,
+      "path": "final-frames/13-102.png",
+      "sha256": "a200c88c3bb66bedc074d1d4dc0c5051eba8064a110e4d3ab951ec7d0a289910"
+    },
+    {
+      "time": 113,
+      "path": "final-frames/14-113.png",
+      "sha256": "a333e473867b51e9141774c4b4862e29d9f0e2aaf9b1323ee9d077e250fbc00d"
+    },
+    {
+      "time": 127,
+      "path": "final-frames/15-127.png",
+      "sha256": "3dfb275cebe4631ca84be16698655e343574e90adca2139f92b23b86325e6b8b"
+    },
+    {
+      "time": 136.8,
+      "path": "final-frames/16-136.8.png",
+      "sha256": "a7228f66f40157abf6fb26340c1d934fb29e88731cbb8d75f39e3382bd72f5e0"
+    },
+    {
+      "time": 138.2,
+      "path": "final-frames/17-138.2.png",
+      "sha256": "ddc295b7f7941a58c16fe4265c2d548a20c89d8e6cd14d998826f621d34533ee"
+    }
+  ],
+  "scope": "New extra review cut, not replacement/owner-approved final submission. Clean master retained. Current viewer and offline CLI; previously recorded archived-state action execution, not new EVM/RPC/model run."
+}

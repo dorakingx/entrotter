@@ -96,16 +96,8 @@
       "excluded": []
     },
     "cli": {
-      "verified_commit": "a63a39000e03d151e80b5a9c47dd4df449281b93",
+      "verified_commit": "87cfe4078dfaaaa3eebcbff65bcedc8d60013cc8",
       "checks": [
-        {
-          "context": "docs-links",
-          "app_id": 15368
-        },
-        {
-          "context": "quality",
-          "app_id": 15368
-        },
         {
           "context": "unit (3.11)",
           "app_id": 15368
@@ -116,6 +108,18 @@
         },
         {
           "context": "unit (3.13)",
+          "app_id": 15368
+        },
+        {
+          "context": "docs-links",
+          "app_id": 15368
+        },
+        {
+          "context": "quality",
+          "app_id": 15368
+        },
+        {
+          "context": "agent",
           "app_id": 15368
         }
       ],

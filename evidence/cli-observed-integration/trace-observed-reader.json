@@ -1,0 +1,862 @@
+{
+  "status": "passed",
+  "execution": "offline supported sealed wrapper to normal quota-bound report export, SDK and actual Node viewer; no fresh archive/EVM/model/browser call",
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+    "cli": "1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "wrapper_sha256": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+  "wrapper_artifact_id": "9084b6952866470fd20c3cbffab310feca5cacba5ba39cfaa9c6ffbb5caf80e9",
+  "trace_artifact_id": "c4050aeb2f7db54bf17354da3756356ae809b8be9fabccacdb26745ae209826f",
+  "export_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+  "baseline_receipts_equal_originals": 32,
+  "candidate_executed": 31,
+  "skip_indices": [
+    12
+  ],
+  "consumer_classification": {
+    "baseline_price": 256292441874,
+    "baseline_receipts_verified": true,
+    "candidate_price": 257082415000,
+    "complete_price_views": true,
+    "price_difference": 789973126,
+    "unproven_reasons": []
+  },
+  "prices": [
+    {
+      "branch": "baseline",
+      "phase": "before",
+      "consumer_price": 257082415000,
+      "producer_answer": 257082415000,
+      "head": {
+        "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+        "number": 18999891,
+        "timestamp": 1705172123
+      },
+      "code_identities": {
+        "oracle_code": {
+          "bytes": 3405,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "source_code": {
+          "bytes": 9571,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        }
+      }
+    },
+    {
+      "branch": "baseline",
+      "phase": "after",
+      "consumer_price": 256292441874,
+      "producer_answer": 256292441874,
+      "head": {
+        "hash": "0xe8e2d184d92dd5b88e0a67321e22c1158ab95ac0e246dc4b721496a81d8c7ef6",
+        "number": 18999892,
+        "timestamp": 1705172135
+      },
+      "code_identities": {
+        "oracle_code": {
+          "bytes": 3405,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "source_code": {
+          "bytes": 9571,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        }
+      }
+    },
+    {
+      "branch": "candidate",
+      "phase": "before",
+      "consumer_price": 257082415000,
+      "producer_answer": 257082415000,
+      "head": {
+        "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+        "number": 18999891,
+        "timestamp": 1705172123
+      },
+      "code_identities": {
+        "oracle_code": {
+          "bytes": 3405,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "source_code": {
+          "bytes": 9571,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        }
+      }
+    },
+    {
+      "branch": "candidate",
+      "phase": "after",
+      "consumer_price": 257082415000,
+      "producer_answer": 257082415000,
+      "head": {
+        "hash": "0x1732adeeead9a5b1c6a8b673b06a611774c1395efbcfb495a00f2cb3a58eab92",
+        "number": 18999892,
+        "timestamp": 1705172135
+      },
+      "code_identities": {
+        "oracle_code": {
+          "bytes": 3405,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "source_code": {
+          "bytes": 9571,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        }
+      }
+    }
+  ],
+  "viewer_module_sha256": "f9217b73e0b4e3be9ce8501e980579df7624bfb5016fea21f700553a15d5fcb9",
+  "comparison_module_sha256": "28df03d42dd2b2c71f38aa1a3d1a1acef388ef8806fa8f6592bc198d74746892",
+  "viewer": {
+    "artifact_id": "c4050aeb2f7db54bf17354da3756356ae809b8be9fabccacdb26745ae209826f",
+    "counts": {
+      "identical": 12,
+      "omitted": 1,
+      "structural": 19,
+      "execution": 0,
+      "unavailable": 0
+    },
+    "classifications": [
+      {
+        "index": 0,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 1,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 2,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 3,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 4,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 5,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 6,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 7,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 8,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 9,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 10,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 11,
+        "status": "executed",
+        "kind": "identical",
+        "label": "Exact original receipt match",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 12,
+        "status": "skipped",
+        "kind": "omitted",
+        "label": "Omitted \u00b7 no receipt",
+        "structuralFields": [],
+        "executionFields": []
+      },
+      {
+        "index": 13,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 14,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 15,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 16,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 17,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 18,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 19,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 20,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 21,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 22,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 23,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 24,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 25,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 26,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 27,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 28,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 29,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 30,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      },
+      {
+        "index": 31,
+        "status": "executed",
+        "kind": "structural",
+        "label": "Position / cumulative gas only",
+        "structuralFields": [
+          "cumulativeGasUsed",
+          "transactionIndex"
+        ],
+        "executionFields": []
+      }
+    ],
+    "node": "v22.23.1"
+  },
+  "observed_viewer_module_sha256": "980ff5172f61b82413e9898955f7a60ee23ba10a6374e6b259a91034624fe9ee",
+  "viewer_observation": {
+    "artifact_id": "9084b6952866470fd20c3cbffab310feca5cacba5ba39cfaa9c6ffbb5caf80e9",
+    "trace_artifact_id": "c4050aeb2f7db54bf17354da3756356ae809b8be9fabccacdb26745ae209826f",
+    "profile": "aave-v3-ethereum-weth-price",
+    "classification": {
+      "complete_price_views": true,
+      "baseline_receipts_verified": true,
+      "unproven_reasons": [],
+      "baseline_price": "256292441874",
+      "candidate_price": "257082415000",
+      "price_difference": "789973126"
+    },
+    "phases": [
+      {
+        "branch": "baseline",
+        "phase": "before",
+        "consumer_price": "257082415000",
+        "producer_answer": "257082415000",
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": "100000000",
+        "head": {
+          "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+          "number": 18999891,
+          "timestamp": 1705172123
+        },
+        "code_identities": {
+          "oracle_code": {
+            "bytes": 3405,
+            "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+          },
+          "source_code": {
+            "bytes": 9571,
+            "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+          }
+        }
+      },
+      {
+        "branch": "baseline",
+        "phase": "after",
+        "consumer_price": "256292441874",
+        "producer_answer": "256292441874",
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": "100000000",
+        "head": {
+          "hash": "0xe8e2d184d92dd5b88e0a67321e22c1158ab95ac0e246dc4b721496a81d8c7ef6",
+          "number": 18999892,
+          "timestamp": 1705172135
+        },
+        "code_identities": {
+          "oracle_code": {
+            "bytes": 3405,
+            "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+          },
+          "source_code": {
+            "bytes": 9571,
+            "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+          }
+        }
+      },
+      {
+        "branch": "candidate",
+        "phase": "before",
+        "consumer_price": "257082415000",
+        "producer_answer": "257082415000",
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": "100000000",
+        "head": {
+          "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+          "number": 18999891,
+          "timestamp": 1705172123
+        },
+        "code_identities": {
+          "oracle_code": {
+            "bytes": 3405,
+            "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+          },
+          "source_code": {
+            "bytes": 9571,
+            "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+          }
+        }
+      },
+      {
+        "branch": "candidate",
+        "phase": "after",
+        "consumer_price": "257082415000",
+        "producer_answer": "257082415000",
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": "100000000",
+        "head": {
+          "hash": "0x1732adeeead9a5b1c6a8b673b06a611774c1395efbcfb495a00f2cb3a58eab92",
+          "number": 18999892,
+          "timestamp": 1705172135
+        },
+        "code_identities": {
+          "oracle_code": {
+            "bytes": 3405,
+            "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+          },
+          "source_code": {
+            "bytes": 9571,
+            "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+          }
+        }
+      }
+    ]
+  },
+  "cli_module_sha256": "bbd8c3db666fc5cf3b4d4f2bf7f8dd99a72b0f0efd60066fbc711364a7de8214",
+  "cli_observation": {
+    "observed-verify": {
+      "artifact_id": "9084b6952866470fd20c3cbffab310feca5cacba5ba39cfaa9c6ffbb5caf80e9",
+      "profile": "aave-v3-ethereum-weth-price",
+      "integrity_verified": true,
+      "trace": {
+        "artifact_id": "c4050aeb2f7db54bf17354da3756356ae809b8be9fabccacdb26745ae209826f",
+        "baseline_receipts_verified": true,
+        "transaction_count": 32
+      },
+      "classification": {
+        "complete_price_views": true,
+        "baseline_receipts_verified": true,
+        "unproven_reasons": [],
+        "baseline_price": 256292441874,
+        "candidate_price": 257082415000,
+        "price_difference": 789973126
+      },
+      "scope": "Recorded wrapper and nested trace checks; not provider authentication. Read-only price dependence is not signed consumer strategy, profit or full-block/root/opcode proof. Missing or unproven differences are null."
+    },
+    "observed-inspect": {
+      "artifact_id": "9084b6952866470fd20c3cbffab310feca5cacba5ba39cfaa9c6ffbb5caf80e9",
+      "profile": "aave-v3-ethereum-weth-price",
+      "integrity_verified": true,
+      "trace": {
+        "artifact_id": "c4050aeb2f7db54bf17354da3756356ae809b8be9fabccacdb26745ae209826f",
+        "baseline_receipts_verified": true,
+        "transaction_count": 32
+      },
+      "classification": {
+        "complete_price_views": true,
+        "baseline_receipts_verified": true,
+        "unproven_reasons": [],
+        "baseline_price": 256292441874,
+        "candidate_price": 257082415000,
+        "price_difference": 789973126
+      },
+      "scope": "Recorded wrapper and nested trace checks; not provider authentication. Read-only price dependence is not signed consumer strategy, profit or full-block/root/opcode proof. Missing or unproven differences are null.",
+      "observations": [
+        {
+          "branch": "baseline",
+          "phase": "before",
+          "head": {
+            "number": 18999891,
+            "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+            "timestamp": 1705172123
+          },
+          "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+          "price": 257082415000,
+          "base_currency": "0x0000000000000000000000000000000000000000",
+          "base_unit": 100000000,
+          "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+          "latest_round_data": {
+            "round_id": 110680464442257320173,
+            "answer": 257082415000,
+            "started_at": 1705170659,
+            "updated_at": 1705170659,
+            "answered_in_round": 110680464442257320173
+          },
+          "oracle_code": {
+            "bytes": 3405,
+            "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+          },
+          "source_code": {
+            "bytes": 9571,
+            "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+          },
+          "errors": []
+        },
+        {
+          "branch": "baseline",
+          "phase": "after",
+          "head": {
+            "number": 18999892,
+            "hash": "0xe8e2d184d92dd5b88e0a67321e22c1158ab95ac0e246dc4b721496a81d8c7ef6",
+            "timestamp": 1705172135
+          },
+          "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+          "price": 256292441874,
+          "base_currency": "0x0000000000000000000000000000000000000000",
+          "base_unit": 100000000,
+          "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+          "latest_round_data": {
+            "round_id": 110680464442257320174,
+            "answer": 256292441874,
+            "started_at": 1705172135,
+            "updated_at": 1705172135,
+            "answered_in_round": 110680464442257320174
+          },
+          "oracle_code": {
+            "bytes": 3405,
+            "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+          },
+          "source_code": {
+            "bytes": 9571,
+            "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+          },
+          "errors": []
+        },
+        {
+          "branch": "candidate",
+          "phase": "before",
+          "head": {
+            "number": 18999891,
+            "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+            "timestamp": 1705172123
+          },
+          "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+          "price": 257082415000,
+          "base_currency": "0x0000000000000000000000000000000000000000",
+          "base_unit": 100000000,
+          "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+          "latest_round_data": {
+            "round_id": 110680464442257320173,
+            "answer": 257082415000,
+            "started_at": 1705170659,
+            "updated_at": 1705170659,
+            "answered_in_round": 110680464442257320173
+          },
+          "oracle_code": {
+            "bytes": 3405,
+            "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+          },
+          "source_code": {
+            "bytes": 9571,
+            "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+          },
+          "errors": []
+        },
+        {
+          "branch": "candidate",
+          "phase": "after",
+          "head": {
+            "number": 18999892,
+            "hash": "0x1732adeeead9a5b1c6a8b673b06a611774c1395efbcfb495a00f2cb3a58eab92",
+            "timestamp": 1705172135
+          },
+          "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+          "price": 257082415000,
+          "base_currency": "0x0000000000000000000000000000000000000000",
+          "base_unit": 100000000,
+          "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+          "latest_round_data": {
+            "round_id": 110680464442257320173,
+            "answer": 257082415000,
+            "started_at": 1705170659,
+            "updated_at": 1705170659,
+            "answered_in_round": 110680464442257320173
+          },
+          "oracle_code": {
+            "bytes": 3405,
+            "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+          },
+          "source_code": {
+            "bytes": 9571,
+            "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+          },
+          "errors": []
+        }
+      ]
+    }
+  },
+  "sdk_observed_module_sha256": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+  "sdk_observation": {
+    "artifact_id": "9084b6952866470fd20c3cbffab310feca5cacba5ba39cfaa9c6ffbb5caf80e9",
+    "profile": "aave-v3-ethereum-weth-price",
+    "classification": {
+      "complete_price_views": true,
+      "baseline_receipts_verified": true,
+      "unproven_reasons": [],
+      "baseline_price": 256292441874,
+      "candidate_price": 257082415000,
+      "price_difference": 789973126
+    },
+    "phases": [
+      {
+        "branch": "baseline",
+        "phase": "before",
+        "head": {
+          "number": 18999891,
+          "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+          "timestamp": 1705172123
+        },
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "price": 257082415000,
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": 100000000,
+        "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+        "latest_round_data": {
+          "round_id": 110680464442257320173,
+          "answer": 257082415000,
+          "started_at": 1705170659,
+          "updated_at": 1705170659,
+          "answered_in_round": 110680464442257320173
+        },
+        "oracle_code": {
+          "bytes": 3405,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "source_code": {
+          "bytes": 9571,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        },
+        "errors": []
+      },
+      {
+        "branch": "baseline",
+        "phase": "after",
+        "head": {
+          "number": 18999892,
+          "hash": "0xe8e2d184d92dd5b88e0a67321e22c1158ab95ac0e246dc4b721496a81d8c7ef6",
+          "timestamp": 1705172135
+        },
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "price": 256292441874,
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": 100000000,
+        "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+        "latest_round_data": {
+          "round_id": 110680464442257320174,
+          "answer": 256292441874,
+          "started_at": 1705172135,
+          "updated_at": 1705172135,
+          "answered_in_round": 110680464442257320174
+        },
+        "oracle_code": {
+          "bytes": 3405,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "source_code": {
+          "bytes": 9571,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        },
+        "errors": []
+      },
+      {
+        "branch": "candidate",
+        "phase": "before",
+        "head": {
+          "number": 18999891,
+          "hash": "0xa818cfc5b0e63724a8c98bdd7df17ee0d0288954ea69ab0326bfdfa85caae3df",
+          "timestamp": 1705172123
+        },
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "price": 257082415000,
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": 100000000,
+        "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+        "latest_round_data": {
+          "round_id": 110680464442257320173,
+          "answer": 257082415000,
+          "started_at": 1705170659,
+          "updated_at": 1705170659,
+          "answered_in_round": 110680464442257320173
+        },
+        "oracle_code": {
+          "bytes": 3405,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "source_code": {
+          "bytes": 9571,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        },
+        "errors": []
+      },
+      {
+        "branch": "candidate",
+        "phase": "after",
+        "head": {
+          "number": 18999892,
+          "hash": "0x1732adeeead9a5b1c6a8b673b06a611774c1395efbcfb495a00f2cb3a58eab92",
+          "timestamp": 1705172135
+        },
+        "source": "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419",
+        "price": 257082415000,
+        "base_currency": "0x0000000000000000000000000000000000000000",
+        "base_unit": 100000000,
+        "aggregator": "0xe62b71cf983019bff55bc83b48601ce8419650cc",
+        "latest_round_data": {
+          "round_id": 110680464442257320173,
+          "answer": 257082415000,
+          "started_at": 1705170659,
+          "updated_at": 1705170659,
+          "answered_in_round": 110680464442257320173
+        },
+        "oracle_code": {
+          "bytes": 3405,
+          "sha256": "dc8079e555204e0b2d7dc8382d6ebd71901f0b43e5940463e22b75b810a37728"
+        },
+        "source_code": {
+          "bytes": 9571,
+          "sha256": "ed698309290de3517c7201fcad9a9dbd4b8cde4a72c9add23129201f299c6f2b"
+        },
+        "errors": []
+      }
+    ]
+  },
+  "limits": [
+    "Strict wrapper validation and offline parsing do not authenticate provider/deployed state.",
+    "Read-only price views are not signed consumer strategy or profit;32-of181 is not full-block/root/opcode proof.",
+    "SDK, CLI and viewer additionally inspect recorded wrapper price views and exact typed records.",
+    "Node codec checks are separate from rendered browser/Pages verification and real Docker execution."
+  ]
+}

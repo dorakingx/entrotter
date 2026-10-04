@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "all_original_jobs_and_seven_reader_bodies_preserved": true,
+  "only_CLI_selector_changed_in_CI": true,
+  "parsed_YAML_files": 7,
+  "workflow_sha256": {
+    ".github/dependabot.yml": "eada67e1b7f73d16a4c240ede6193c4852a2b0887e678a23dc7a3462810502e7",
+    ".github/workflows/quality.yml": "333af379989ac48c435da14485a3b9eaf03d3fdf5ff1b7f111b82f7b8060f94d",
+    ".github/workflows/docs-links.yml": "324f81999cfa3424a205bff86bc38ce03a9f9539f21bb2969e9a26413d657734",
+    ".github/workflows/ci.yml": "53a1843aa4a2aaab7390eb9895d763fc30a3307c35a63e036e44607c0d0584d8",
+    ".github/ISSUE_TEMPLATE/feature_request.yml": "4a5025def6cd8a5e9ab3f77c89c49ee38a9f88b43a599e4b276e9db772430411",
+    ".github/ISSUE_TEMPLATE/bug_report.yml": "c8f4db8d9f238c7686a79dc8662072b046ccea39cee4366585567d56cea2c501",
+    ".github/actions/docs-links/action.yml": "52a2993f14f80058b545ea2e8349216a56b95cc46408c566a2c15d434d2e5e67"
+  }
+}

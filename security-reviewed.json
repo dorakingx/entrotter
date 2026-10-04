@@ -171,6 +171,30 @@
       "reason": "Execution uses a structured argv list with shell=False. Only local git revision and dirty-state checks are invoked here. Historical runs use the separately reviewed owned-Anvil adapter."
     },
     {
+      "file": "scripts/bounded_cli.py",
+      "test_id": "B404",
+      "line": 13,
+      "code_sha256": "44c6615dd36c26ed4c0ee77b789cb51f38f1923ddce274afef52c8f64d04d1cc",
+      "severity": "LOW",
+      "reason": "The operator launcher needs subprocess to start a fixed per-user systemd job and the installed trusted CLI. Both calls use structured arguments without a shell. Actual kernel-limit startup guards, pidfd owner-death cancellation, atomic admission and full runtime expiry were tested. This is not an arbitrary-code sandbox."
+    },
+    {
+      "file": "scripts/bounded_cli.py",
+      "test_id": "B603",
+      "line": 78,
+      "code_sha256": "45bf52464f59b5a6b36cea876b6ec57383662009903b051d56d6a2018d592c22",
+      "severity": "LOW",
+      "reason": "Executes only /usr/bin/python3 -P -m entrotter_cli with PYTHONPATH replaced by the fixed installed engine/SDK/CLI sources. Safe-path mode rejects the reproduced cwd package spoof; literal scenario/export arguments never pass through a shell. Actual cgroup limits are verified before execution, pidfd monitors the original owner and finally cancels the owned session. Operator-controlled installed source remains trusted."
+    },
+    {
+      "file": "scripts/bounded_cli.py",
+      "test_id": "B603",
+      "line": 127,
+      "code_sha256": "e5039108311caf6efc516af0ab9f8064d6b0bacf69bf79e338515e467f1695cf",
+      "severity": "LOW",
+      "reason": "Executes only /usr/bin/systemd-run with a fixed per-user unit, concrete private EnvironmentFile, fixed resource/time properties and this installed worker script. Structured arguments and disabled systemd environment expansion preserve literal user paths; no shell or credentials in argv. Real duplicate admission preserves the incumbent, and owner SIGTERM/SIGKILL/full 180-second expiry recover. The tiny dispatcher is outside the leaf cgroup but inside the separately verified dedicated VM."
+    },
+    {
       "file": "scripts/check_default_wheels.py",
       "test_id": "B404",
       "line": 6,
@@ -549,10 +573,10 @@
     {
       "file": "scripts/reproduce_clean.py",
       "test_id": "B603",
-      "line": 165,
-      "code_sha256": "41da5b24e03dce2a36bb1c29af95da6375687bb166764cf4f5ce6819d0d9a9b6",
+      "line": 158,
+      "code_sha256": "fde72594f8726b9d5b03f7810d18dc748119a742874ad2bc121fcfb2680d8b4b",
       "severity": "LOW",
-      "reason": "Execution uses a structured argv list with shell=False. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted."
+      "reason": "Execution uses a structured argv list with shell=False. Clone exact source pins from the public Entrotter organization, create an owned venv and run fixed local entrypoints. No registry runtime install or scenario-selected command is permitted. The bounded-agent path now uses the fixed standalone CLI replay/verify/inspect commands under the new immutable engine/CLI pins; the full recording is data only, never a provider/code loader or model call. Native historical benchmark paths remain frozen."
     },
     {
       "file": "scripts/verify.py",
@@ -601,30 +625,6 @@
       "code_sha256": "42ea9cda4c6c9a1f4b1733bb99713151a7f5238312ae2ff8f11e10aca1b5c380",
       "severity": "LOW",
       "reason": "Execution uses a structured argv list with shell=False. Execute fixed tests for six sibling repositories plus installed Anvil/node version and unit checks. No scenario JSON can select commands; results retain failures/skips."
-    },
-    {
-      "file": "scripts/bounded_cli.py",
-      "test_id": "B404",
-      "line": 13,
-      "code_sha256": "44c6615dd36c26ed4c0ee77b789cb51f38f1923ddce274afef52c8f64d04d1cc",
-      "severity": "LOW",
-      "reason": "The operator launcher needs subprocess to start a fixed per-user systemd job and the installed trusted CLI. Both calls use structured arguments without a shell. Actual kernel-limit startup guards, pidfd owner-death cancellation, atomic admission and full runtime expiry were tested. This is not an arbitrary-code sandbox."
-    },
-    {
-      "file": "scripts/bounded_cli.py",
-      "test_id": "B603",
-      "line": 78,
-      "code_sha256": "45bf52464f59b5a6b36cea876b6ec57383662009903b051d56d6a2018d592c22",
-      "severity": "LOW",
-      "reason": "Executes only /usr/bin/python3 -P -m entrotter_cli with PYTHONPATH replaced by the fixed installed engine/SDK/CLI sources. Safe-path mode rejects the reproduced cwd package spoof; literal scenario/export arguments never pass through a shell. Actual cgroup limits are verified before execution, pidfd monitors the original owner and finally cancels the owned session. Operator-controlled installed source remains trusted."
-    },
-    {
-      "file": "scripts/bounded_cli.py",
-      "test_id": "B603",
-      "line": 127,
-      "code_sha256": "e5039108311caf6efc516af0ab9f8064d6b0bacf69bf79e338515e467f1695cf",
-      "severity": "LOW",
-      "reason": "Executes only /usr/bin/systemd-run with a fixed per-user unit, concrete private EnvironmentFile, fixed resource/time properties and this installed worker script. Structured arguments and disabled systemd environment expansion preserve literal user paths; no shell or credentials in argv. Real duplicate admission preserves the incumbent, and owner SIGTERM/SIGKILL/full 180-second expiry recover. The tiny dispatcher is outside the leaf cgroup but inside the separately verified dedicated VM."
     }
   ],
   "source_sha256": {
@@ -647,7 +647,7 @@
     "scripts/export_reports.py": "8971b8e439fd1f60641afb9fb7260a6d52cde2e076256ee38e228d4e393288f3",
     "scripts/publish.py": "e54c579a177ab5877e5cb9e8d7626a0c0f6fbf1e3f72067495cbf8b58597cfe8",
     "scripts/quality_scope.py": "f39cbd50586f57a73973e28e1c901148ebb9cb779c7ceda845d86289d102fb11",
-    "scripts/reproduce_clean.py": "0e1b9f29bd1dad1bfe9f09f8f75aae4be00b2ecc232be9ec276a04203a7a0576",
+    "scripts/reproduce_clean.py": "5fdc895972f8235126eff7f4d3f73d0076b2021c9c32ba5785faadc07e4f1d3e",
     "scripts/verify.py": "b99fbd9203a0288505d2aafa82117d659d6e82e29f20d4b80c912c4838785333"
   }
 }

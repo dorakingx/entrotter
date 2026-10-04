@@ -1,0 +1,36 @@
+{
+  "status": "source_pins_pass_one_public_evidence_pointer_finding",
+  "scope": "Final4-file pin/workflow review and published viewer/offline composition metadata; prior source/static/browser checks reused, no test reruns.",
+  "files_sha256": {
+    ".github/workflows/ci.yml": "9a066f8661e5643e4b46d86e2ae73190f792808896e84ed16c34b2dfdea28c97",
+    ".github/workflows/quality.yml": "435bbc82482b0e2a933916543fe658b02a89a48c0f461c31475b8f8ae83b62f9",
+    "bounded-worker-pins.json": "1cbbad724e16be3ebd629fac195f406b4c51f3353caa1f8639e717be44f02aa4",
+    "quality-inputs.json": "93b6924b53a873176048e4a21de57d12e18e4ff33776c011e43475571462ab92",
+    "evidence/trace-reader-integration/viewer-browser-verification.json": "db302c2fe71e11fca75841f9b47ae9d2f5a0e499b0ad0cc69e779fd58936b5b9",
+    "evidence/trace-reader-integration/README.md": "e30bb98bce99ddb5a173cbd504d6be8e4835847491bf06cf30324782fb39dd95",
+    "evidence/trace-reader-integration/summary.json": "545bb52b72d582635aa9dcd9984f335e638a87bf9b5cf0c502c0366995f01007",
+    "evidence/trace-reader-integration/offline-result.json": "b9aea493de81bd918bde22da84c23b73b87f454e909f5566250dda87f72f4b37"
+  },
+  "source_findings": 0,
+  "observations": [
+    "SDKee/siteb7 refs match manifest and newoffline/summarypins; SDK type policy remains correctly bound to unchanged verifiedee.",
+    "Original frozen3reportcopybytes and outcome declarations retain prior known source/hash; no new chain/model scope.",
+    "Raw browser verification declares exactb7/runner892/33groups/25axe/13sources with incomplete contrast and AT limits; older failed attempts remain separate.",
+    "Historical required-checks.json remains byte-identical to HEAD; current protection API review remains separate root evidence.",
+    "Final immutable execution snapshot/guide pin advance and combined CI still pending intentionally."
+  ],
+  "findings": [
+    {
+      "priority": 3,
+      "file": "evidence/trace-reader-integration/viewer-browser-verification.json",
+      "line": 95,
+      "trigger": "Public reader follows quality_docs_verification filename from published browser proof.",
+      "evidence": "Referenced mirror-quality-docs-verification.json does not exist in public evidence directory; it is a private-cache filename copied into public metadata.",
+      "requested_fix": "Publish corresponding root quality/docs verification or point this field to accessible proof/CI references."
+    }
+  ],
+  "limits": [
+    "No new tests/archive/model/Docker/browser runs; required GitHub approval separate.",
+    "Known snapshot/docs/index pending; final hash review required after root commit."
+  ]
+}

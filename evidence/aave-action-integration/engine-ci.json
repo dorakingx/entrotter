@@ -1,0 +1,54 @@
+{
+  "engine_commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+  "engine_tree": "c8083b88f6920e533e23352c27e613db309ee90f",
+  "runs": [
+    {
+      "name": "docs-links",
+      "url": "https://github.com/entrotter/engine/actions/runs/37157081984",
+      "attempt": 1,
+      "conclusion": "success"
+    },
+    {
+      "name": "quality",
+      "url": "https://github.com/entrotter/engine/actions/runs/37157082025",
+      "attempt": 1,
+      "conclusion": "success"
+    },
+    {
+      "name": "unit (3.11/3.12/3.13/3.14)",
+      "url": "https://github.com/entrotter/engine/actions/runs/37157082030",
+      "attempt": 1,
+      "conclusion": "success"
+    },
+    {
+      "name": "evm",
+      "url": "https://github.com/entrotter/engine/actions/runs/37157081988",
+      "attempt": 1,
+      "conclusion": "success"
+    },
+    {
+      "name": "isolated",
+      "url": "https://github.com/entrotter/engine/actions/runs/37157081993",
+      "attempt": 2,
+      "conclusion": "success"
+    }
+  ],
+  "checks": 8,
+  "initial_isolated_failure": {
+    "attempt": 1,
+    "old_account_baseline_step": 9,
+    "status": "not_mined",
+    "new_action_step": "skipped",
+    "cause": "unattested"
+  },
+  "retry_scope": "Only failed isolated job; source, caps and checkers unchanged. The prior diagnostic is not an authoritative gate.",
+  "independent_raw_review_sha256": "8ea85b2a373012f05105537ea1f767bf6d11a86016b28b9d5a782a015f429b90",
+  "parent_verified": {
+    "local_inputs": 37,
+    "immutable_git_inputs": 86,
+    "whole_zip_entries": 50
+  },
+  "report_sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+  "report_bytes": 59506,
+  "scope": "Derived summary of independently reviewed original raw CI. All eight current checks were rechecked on October 4; seven attempt1 successes and isolated attempt2."
+}

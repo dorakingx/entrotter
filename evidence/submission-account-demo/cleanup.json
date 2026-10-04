@@ -1,0 +1,5 @@
+{
+  "owned_worker_containers_remaining": 0,
+  "capture_terminal_exit": 0,
+  "scope": "Final capture workers only; browser/server closed by recorder finally. Existing local Docker VM and unrelated services unchanged."
+}

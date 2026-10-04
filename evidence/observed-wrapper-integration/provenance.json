@@ -1,0 +1,125 @@
+{
+  "normalization": "Only literal actual workspace prefix replaced with $WORKSPACE_ROOT; original and public SHA256 separately retained. No report or assertion modification.",
+  "files": [
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-reader.json",
+      "copy": "trace-reader.json",
+      "original_sha256": "f3bcbb911623cefb22e7438b156a7b6ef3e8fc92977dca815326fab6fd147a11",
+      "copy_sha256": "f3bcbb911623cefb22e7438b156a7b6ef3e8fc92977dca815326fab6fd147a11",
+      "transformation": "byte-identical",
+      "bytes": 1280
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-comparison-reader.json",
+      "copy": "trace-comparison-reader.json",
+      "original_sha256": "a71fca38d4163d74f8e42d7d8b59561c3de895c37629ff286c2a79e5530fd975",
+      "copy_sha256": "a71fca38d4163d74f8e42d7d8b59561c3de895c37629ff286c2a79e5530fd975",
+      "transformation": "byte-identical",
+      "bytes": 12094
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-consumer-reader.json",
+      "copy": "trace-consumer-reader.json",
+      "original_sha256": "287c01e1eaa110c5fec2fd34c0339b89d44c0bb83ac2f3da3b25ae96bdd351af",
+      "copy_sha256": "287c01e1eaa110c5fec2fd34c0339b89d44c0bb83ac2f3da3b25ae96bdd351af",
+      "transformation": "byte-identical",
+      "bytes": 17969
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-funding-reader.json",
+      "copy": "trace-funding-reader.json",
+      "original_sha256": "989d860b35716b5aadce528fc16c8b0090ac1ecd12ffe8e4bd1979a66aaafe7e",
+      "copy_sha256": "989d860b35716b5aadce528fc16c8b0090ac1ecd12ffe8e4bd1979a66aaafe7e",
+      "transformation": "byte-identical",
+      "bytes": 1317
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-oracle-reader.json",
+      "copy": "trace-oracle-reader.json",
+      "original_sha256": "f957e95cca7ae45b39cd1d9aef6f48c37995b2b52963b62c80340e7272b786ee",
+      "copy_sha256": "f957e95cca7ae45b39cd1d9aef6f48c37995b2b52963b62c80340e7272b786ee",
+      "transformation": "byte-identical",
+      "bytes": 2930
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-observed-reader.json",
+      "copy": "trace-observed-reader.json",
+      "original_sha256": "e2d97d170d5e42862390b8b64acc40abd42c092ef35caae7f1041e917a1998f6",
+      "copy_sha256": "e2d97d170d5e42862390b8b64acc40abd42c092ef35caae7f1041e917a1998f6",
+      "transformation": "byte-identical",
+      "bytes": 12765
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/local-readers.json",
+      "copy": "local-execution.json",
+      "original_sha256": "04c2fea692d44698807d4ea126762da34a647668f3aa8d0a3b5c218d9b67ea9a",
+      "copy_sha256": "04c2fea692d44698807d4ea126762da34a647668f3aa8d0a3b5c218d9b67ea9a",
+      "transformation": "byte-identical",
+      "bytes": 3189
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/local-types.json",
+      "copy": "local-types.json",
+      "original_sha256": "e8787fbff389a2afe9291863a5bc99100885bc35adeaa2809c719e49f9468cbf",
+      "copy_sha256": "e8787fbff389a2afe9291863a5bc99100885bc35adeaa2809c719e49f9468cbf",
+      "transformation": "byte-identical",
+      "bytes": 3989
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/independent-preparation-review.json",
+      "copy": "independent-preparation-review.json",
+      "original_sha256": "69d05d348deac85e62acf7960055cfab63218c3620b06993f3c3ddc67deef742",
+      "copy_sha256": "69d05d348deac85e62acf7960055cfab63218c3620b06993f3c3ddc67deef742",
+      "transformation": "byte-identical",
+      "bytes": 11665
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/independent-preparation-review.py",
+      "copy": "independent-preparation-review.py",
+      "original_sha256": "2930d19c3128ec4aa59d583f8994fc2b65ffa2e797b4d8ce9402818c204585a4",
+      "copy_sha256": "2930d19c3128ec4aa59d583f8994fc2b65ffa2e797b4d8ce9402818c204585a4",
+      "transformation": "byte-identical",
+      "bytes": 10007
+    },
+    {
+      "source": "entrotter/.quality/observed-wrapper-integration/workflow-parse.json",
+      "copy": "workflow-parse.json",
+      "original_sha256": "3e3cc01313e5548cc3446505e40bee38070ce3fffcef7dee5f1fbf94495b5617",
+      "copy_sha256": "3e3cc01313e5548cc3446505e40bee38070ce3fffcef7dee5f1fbf94495b5617",
+      "transformation": "byte-identical",
+      "bytes": 868
+    },
+    {
+      "source": ".worktrees/engine-consumer-observations/.quality/supported-historical-001/root-ci-40-review.json",
+      "copy": "engine-ci-root.json",
+      "original_sha256": "f61cc57e18fabd1012466999c58506dd9e2873b338e687250e0ad792ef92da0a",
+      "copy_sha256": "f61cc57e18fabd1012466999c58506dd9e2873b338e687250e0ad792ef92da0a",
+      "transformation": "byte-identical",
+      "bytes": 6424
+    },
+    {
+      "source": ".worktrees/engine-consumer-observations/.quality/supported-historical-001/independent-ci-40-review.json",
+      "copy": "engine-ci-independent.json",
+      "original_sha256": "71c45f45f1e07808a1868b6a87ed5442838f6b8414588e622f7b300ae6371e8d",
+      "copy_sha256": "71c45f45f1e07808a1868b6a87ed5442838f6b8414588e622f7b300ae6371e8d",
+      "transformation": "byte-identical",
+      "bytes": 31781
+    },
+    {
+      "source": ".worktrees/engine-consumer-observations/.quality/supported-historical-001/remote-publication-proof.json",
+      "copy": "engine-publication.json",
+      "original_sha256": "25fe5a70bf1a1a3c4e376b5b23eaa2a05b3bd993c4b8aee9d0c2c287934087b1",
+      "copy_sha256": "25fe5a70bf1a1a3c4e376b5b23eaa2a05b3bd993c4b8aee9d0c2c287934087b1",
+      "transformation": "byte-identical",
+      "bytes": 409
+    },
+    {
+      "source": ".worktrees/engine-consumer-observations/.quality/supported-historical-001/pr-ready-ci40.json",
+      "copy": "engine-pr.json",
+      "original_sha256": "b7234af36fdd34fb61fd17c0be74a25ee962dc41e90035ed1f1a0bc6c92d2cc5",
+      "copy_sha256": "b7234af36fdd34fb61fd17c0be74a25ee962dc41e90035ed1f1a0bc6c92d2cc5",
+      "transformation": "byte-identical",
+      "bytes": 118
+    }
+  ]
+}

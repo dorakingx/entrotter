@@ -1,0 +1,47 @@
+{
+  "head": "280958c483bd1e42c02f12bce6430fb936973076",
+  "tree": "a7f8882ee47db5a1002c56ea5718ecd43633af20",
+  "current_check_execution_scope": {
+    "check": "original attempt1 execution retained in attempt2API (newID, same timestamps/fullsteps)",
+    "quality": "original attempt1 execution/artifact retained in attempt2API (newID, same timestamps/fullsteps)",
+    "accessibility": "genuinely fresh attempt2 success",
+    "docs-links": "original attempt1 success"
+  },
+  "facts": {
+    "published": 13,
+    "sources": 26,
+    "JS": 19,
+    "types": 20,
+    "security": 149,
+    "inherited_exact_reasons": 147,
+    "new_contexts": 2,
+    "removed_contexts": 1,
+    "Node": 134,
+    "Python": 12,
+    "Node_locks": 109,
+    "Python_locks": 42,
+    "browser_groups": 49,
+    "browser_groups_passed": 49,
+    "raw_axe": 62,
+    "docs": 18,
+    "links": 109,
+    "unique": 95,
+    "original_ZIP_entries": 118,
+    "newretry_ZIP_entries": 105,
+    "all_ZIP_entries": 223
+  },
+  "independent_review_sha256": "2a26d3b37c6582c79e3dffc64907b28f875ef0650b1a5fa84f27a3e19c0ada9a",
+  "independent_helper_sha256": "5707e6a34ba7830f6edd531feb06cfa8174aee8f221520ff0414e0e45bf52ce6",
+  "parent_rehash": {
+    "status": "PASS_current_four_checks_rehashed",
+    "proof_sha256": "2a26d3b37c6582c79e3dffc64907b28f875ef0650b1a5fa84f27a3e19c0ada9a",
+    "helper_sha256": "5707e6a34ba7830f6edd531feb06cfa8174aee8f221520ff0414e0e45bf52ce6",
+    "assertions": 664,
+    "local_bindings": 331,
+    "current_git_bindings": 59,
+    "published_blobs": 13,
+    "whole_zip_members": 223,
+    "scope": "Rehash independently interpreted original/actualretry artifacts and actual published source. Original nativechooser failure retained; finalfourchecks success combines originalcheck/quality/docs with freshretrybrowser. No new producer/merge/Pages claim."
+  },
+  "scope": "Current component original+actualretry source/raw inspection reused here; not new coordinator/browser/EVM/model execution, protected-main approval or deployment."
+}

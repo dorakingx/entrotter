@@ -1,0 +1,192 @@
+{
+  "status": "PASS all23 actual encoded caption midpoints visually match rendered draft cards within declared compression thresholds",
+  "rms_threshold": 6,
+  "mean_absolute_threshold": 2,
+  "frames": [
+    {
+      "cue": 0,
+      "seconds": 3.47437641723356,
+      "text": "Before allowing an onchain agent to act, compare what its decision changes.",
+      "mean_absolute_rgb_difference": 0.6514221014492754,
+      "rms_rgb_difference": 1.427885036103573,
+      "decoded_frame_sha256": "81534fc9c89db007442ee3c965aa32c0cadf742230790d1b0c6cd4e54f29b281"
+    },
+    {
+      "cue": 1,
+      "seconds": 8.28299319727891,
+      "text": "This is the actual Entrotter viewer, with synthetic narration.",
+      "mean_absolute_rgb_difference": 0.6007593599033817,
+      "rms_rgb_difference": 1.3279687141635157,
+      "decoded_frame_sha256": "ff5dc9615d9b1b8e58999f19ac2aee47b74c4b3e86e99ed240bd703152b8fca0"
+    },
+    {
+      "cue": 2,
+      "seconds": 13.879410430839004,
+      "text": "This saved recording tests supplied collateral and borrow actions on Ethereum.",
+      "mean_absolute_rgb_difference": 0.6401796497584541,
+      "rms_rgb_difference": 1.3989153191127435,
+      "decoded_frame_sha256": "d879ada167fb5d0facd2f821b660aea7d25370cf2ead2213a018f84a6259fbc7"
+    },
+    {
+      "cue": 3,
+      "seconds": 19.436507936507937,
+      "text": "Today we inspect that recording. We do not execute a new historical run.",
+      "mean_absolute_rgb_difference": 0.6251615338164251,
+      "rms_rgb_difference": 1.3700520327577956,
+      "decoded_frame_sha256": "005a4c55cc550b5233e23e5dfa4eec02bc22527f4aeab9f167261df958e0fa3f"
+    },
+    {
+      "cue": 4,
+      "seconds": 26.121451247165535,
+      "text": "Both isolated branches start with the same artificial twenty Ether and local account impersonation.",
+      "mean_absolute_rgb_difference": 0.6960265700483091,
+      "rms_rgb_difference": 1.5142369851984845,
+      "decoded_frame_sha256": "caba0431560d543bf9215d77b8a7d31ee5c28641b98d6f8800dc8b1ba3b41611"
+    },
+    {
+      "cue": 5,
+      "seconds": 32.23219954648526,
+      "text": "The supplied setup wraps, approves, and supplies ten wrapped Ether.",
+      "mean_absolute_rgb_difference": 0.626453804347826,
+      "rms_rgb_difference": 1.359149416981503,
+      "decoded_frame_sha256": "df9d5177a20e8f6b6c1dde3cfbbf443990a53f33a54f98eb69c1f6c53a598985"
+    },
+    {
+      "cue": 6,
+      "seconds": 37.00702947845805,
+      "text": "A nine wrapped Ether borrow reverts in the baseline.",
+      "mean_absolute_rgb_difference": 0.5838073671497584,
+      "rms_rgb_difference": 1.2798111839903052,
+      "decoded_frame_sha256": "6642b6eacc628ef637b33913ca0b97a9838a13b3f8d8cf208b4dbd4f732f38d9"
+    },
+    {
+      "cue": 7,
+      "seconds": 41.77700680272109,
+      "text": "The candidate uses a built in current state preflight policy and holds that proposal.",
+      "mean_absolute_rgb_difference": 0.624092693236715,
+      "rms_rgb_difference": 1.3145432106465746,
+      "decoded_frame_sha256": "9483399e382ca1f4da9720dd925ceafcf4cc88b37ebb5aff4fc11f681ab9ae18"
+    },
+    {
+      "cue": 8,
+      "seconds": 47.494285714285716,
+      "text": "This case uses a deterministic policy, not a new language model call.",
+      "mean_absolute_rgb_difference": 0.6224713164251208,
+      "rms_rgb_difference": 1.3500609442318139,
+      "decoded_frame_sha256": "f311c7d8df028c356c0ecb5e98e1e8a293dc613b7aa5cb6f6bb9fb529c127256"
+    },
+    {
+      "cue": 9,
+      "seconds": 53.12362811791383,
+      "text": "A later one wrapped Ether borrow succeeds in both branches.",
+      "mean_absolute_rgb_difference": 0.6272101449275362,
+      "rms_rgb_difference": 1.3692909586602109,
+      "decoded_frame_sha256": "898c2f130d460c1c8a5daa26bbfddbc44423d45d8a2fdac1538bbc5f1903097c"
+    },
+    {
+      "cue": 10,
+      "seconds": 58.042358276643995,
+      "text": "That smaller action was supplied in advance. The policy did not generate it.",
+      "mean_absolute_rgb_difference": 0.6408605072463768,
+      "rms_rgb_difference": 1.377777169043032,
+      "decoded_frame_sha256": "d77200591cf89e06d30c5660f39ad7a8b05377a2547f483723424e5c948f078b"
+    },
+    {
+      "cue": 11,
+      "seconds": 63.942086167800454,
+      "text": "Compare every recorded native and token balance without losing decimal precision.",
+      "mean_absolute_rgb_difference": 0.650834842995169,
+      "rms_rgb_difference": 1.4285610010834067,
+      "decoded_frame_sha256": "d078eef189b039667f6f56c880952bdef85ebd6f81c01afc6272aec99b18f1a1"
+    },
+    {
+      "cue": 12,
+      "seconds": 70.21537414965987,
+      "text": "The held revert changes gas use, but gas prices also differ. These differences are not profit.",
+      "mean_absolute_rgb_difference": 0.6218010265700483,
+      "rms_rgb_difference": 1.31226619725716,
+      "decoded_frame_sha256": "e2cbaf65dba885769114076cd988330d6cd78fb6323a1c04d6071c909ac7fa89"
+    },
+    {
+      "cue": 13,
+      "seconds": 76.70077097505668,
+      "text": "Download the exact source recording, then open the pinned command recipe.",
+      "mean_absolute_rgb_difference": 0.643780193236715,
+      "rms_rgb_difference": 1.4156678064306794,
+      "decoded_frame_sha256": "31c9d7d46f69d7a77e19dcd61b93777d28acbcea10e06771db57f2a8007a6adb"
+    },
+    {
+      "cue": 14,
+      "seconds": 81.9629931972789,
+      "text": "The setup selects immutable public command line and Python reader versions.",
+      "mean_absolute_rgb_difference": 0.638534118357488,
+      "rms_rgb_difference": 1.3885873464930392,
+      "decoded_frame_sha256": "6226c3e301e06887e64789d03316d8086300f600da4390f945e839bdc1a3eb39"
+    },
+    {
+      "cue": 15,
+      "seconds": 87.23823129251701,
+      "text": "Use the keyboard to copy the inspection command for this sample.",
+      "mean_absolute_rgb_difference": 0.5959782608695652,
+      "rms_rgb_difference": 1.3092791744016015,
+      "decoded_frame_sha256": "037a177198432ee089e2cf031f11e830d57065f12f825cbe33f45d3dfadb71d2"
+    },
+    {
+      "cue": 16,
+      "seconds": 92.4629931972789,
+      "text": "Only the fixed public command is copied. Local report metadata never enters shell text.",
+      "mean_absolute_rgb_difference": 0.6480314009661836,
+      "rms_rgb_difference": 1.4015023857268554,
+      "decoded_frame_sha256": "8fbc31e17b07cebdc441a7074c7bf9d9f7b710457ea7582a437252d0439cb544"
+    },
+    {
+      "cue": 17,
+      "seconds": 99.10947845804988,
+      "text": "Here is actual command output from the downloaded recording, using those pinned sources.",
+      "mean_absolute_rgb_difference": 0.6561035628019324,
+      "rms_rgb_difference": 1.4223845605757437,
+      "decoded_frame_sha256": "9de8e9e3100e6186f75c2af4ab03f5a5d41d6a43757359833ce22c05a75f7ae5"
+    },
+    {
+      "cue": 18,
+      "seconds": 105.11092970521543,
+      "text": "The command verifies the content hash and preserves the same exact units and recorded decision.",
+      "mean_absolute_rgb_difference": 0.6853834541062802,
+      "rms_rgb_difference": 1.4983717007549189,
+      "decoded_frame_sha256": "018db47f078604edc8b53cde032914ef5ae6b5ccde06b1a07ffda42c8d578102"
+    },
+    {
+      "cue": 19,
+      "seconds": 112.0891156462585,
+      "text": "Integrity does not establish provider authenticity, a correct policy, or future market behavior.",
+      "mean_absolute_rgb_difference": 0.6769565217391305,
+      "rms_rgb_difference": 1.4676431614242484,
+      "decoded_frame_sha256": "7e0c03fc504045d45139ef7792cd5094c149d8b70a932285bc7bbb373b4b9224"
+    },
+    {
+      "cue": 20,
+      "seconds": 119.17401360544218,
+      "text": "This is supplied action execution on archived state, not replay of original signed transactions.",
+      "mean_absolute_rgb_difference": 0.6807050120772947,
+      "rms_rgb_difference": 1.4221892569586847,
+      "decoded_frame_sha256": "235d30d227a02da316f7bb60e698f9df0db2b0ededed82c63a8d504168dc6bd2"
+    },
+    {
+      "cue": 21,
+      "seconds": 126.24380952380952,
+      "text": "Use Entrotter to keep the inputs, receipts, assumptions, and decisions together for review.",
+      "mean_absolute_rgb_difference": 0.653143115942029,
+      "rms_rgb_difference": 1.4234046922342205,
+      "decoded_frame_sha256": "d56928aa56364a6d9c59e08111489cd5ac3cc2e31d36feda589e48382fa625ed"
+    },
+    {
+      "cue": 22,
+      "seconds": 132.93215419501132,
+      "text": "The current code is on development branches. Main integration, public deployment, and submission remain separate.",
+      "mean_absolute_rgb_difference": 0.7234390096618357,
+      "rms_rgb_difference": 1.5633164533559203,
+      "decoded_frame_sha256": "fe86d0277c725467456c128b4cb67ba661d805d057fd123544412d335840488f"
+    }
+  ],
+  "scope": "Encoded word inventory/geometry and timing at actual PCM cue midpoints, not pronunciation or human word approval; captions remain draft"
+}

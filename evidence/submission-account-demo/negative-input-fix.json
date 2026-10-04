@@ -1,0 +1,10 @@
+{
+  "only_changed_byte_range": [
+    20,
+    84
+  ],
+  "original_sha256": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+  "invalid_sha256": "98501c6d56b146f2f4d4d5a4dbbda8609cf0703c30f7e3cfe5ac5e46f35091fb",
+  "all_other_raw_bytes_exact": true,
+  "scope": "Lossless raw-text outer identifier substitution; no parsing/serialization of report numbers."
+}

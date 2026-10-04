@@ -1,5 +1,28 @@
 # Entrotter: persistent implementation goal
 
+## Current owner policy — October 2, 2026
+
+The active October 2 goal supersedes earlier initialization and submission
+approval wording. Continue improving the demonstrated product until the official
+deadline, currently **October 13, 2026 at 15:59 JST / 06:59 UTC**. Recheck the
+[official rules](https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf)
+at execution time; section 5 was checked again on October 2 and states October 12
+at 23:59 Pacific. CI success, completed checklists, prepared PRs, readiness or
+formal submission are checkpoints, not reasons to finish the improvement goal.
+
+Resume the latest tested candidates and existing evidence, recordings and videos.
+PR47's f1421ff remains an ancestor of the evolving PR55 candidate. Preserve its
+work rather than returning to old main or the initial ZIP. Use current STATUS.md
+and dependency pins, and verify remote heads before integration. Do not create a duplicate goal or session.
+
+Once quality, required owner facts and submission materials are verified and the
+portal is open, formal submission of the existing entry is already authorized
+without another blanket approval. Confirm the server acceptance and exact code
+and video versions. Continue authorized improvements afterward until the deadline;
+do not alter an immutable submitted version. Authentication, terms, mandatory CI
+and independent approval remain required. Unknown personal facts cannot be guessed.
+Discord is excluded. Respect explicit owner stop or pause instructions.
+
 ## Mission
 
 Build Entrotter into an independently reproducible, compelling, fully open-source
@@ -29,28 +52,28 @@ decisions yourself and record them.
   Inspect existing files and remote history before changing anything.
 - Keep interfaces versioned, repositories independently testable, and PRs focused.
   Use English code/UI/docs. Preserve the supplied purple Entrotter mascot asset.
-- Do not publish packages to npm/PyPI, buy services, submit a competition entry,
-  announce partnerships, message users, or broadcast live transactions without
-  explicit additional approval. The repository/Pages publication is authorized.
+- Do not publish packages to npm/PyPI, buy services, announce partnerships,
+  message users or broadcast live transactions without explicit authorization.
+  Repository/Pages publication and conditional formal submission of the existing
+  entry are already authorized under the current owner policy above.
 - Never put real keys, RPC secrets, auth tokens or private user data in public Git.
   Do not disable secret scanning, tests, validation or branch protection to pass.
 
-## First actions
+## Resume actions
 
-1. Inspect GitHub auth and `entrotter` membership using the authenticated GitHub CLI.
-   The archive was prepared in an environment with read-only GitHub tools, no
-   GitHub CLI credentials, no Anvil and no network package access. Nothing was
-   remotely created or deployed there. Do not inherit a false "already live" claim.
-2. Run scripts/verify.py and inspect evidence. Install a verified Foundry release
-   (currently workflow-pinned v1.8.3) and execute the previously skipped integration
-   test. Fix adapter errors before using its results in the website or pitch.
-3. Review scripts/publish.py in dry-run mode. Create missing public repos and push
-   first commits; refuse collisions instead of overwriting someone else's work.
-   Enable Pages with GitHub Actions, run the workflow, wait for success, and fetch
-   the deployed site. Record exact repository URLs, commit SHAs, run URL and HTTP
-   status. A committed workflow is not proof of deployment.
-4. Create scoped issues from backlog/ and good-first-issue opportunities. Pin
-   cross-repository CI dependencies to reviewed immutable commits once available.
+1. Confirm the existing goal is active and inspect current candidate heads,
+   relevant diffs and unresolved requirements in STATUS.md and release-gates.json.
+   Reuse unchanged evidence; distinguish historical results from fresh execution.
+2. Keep the existing six public repositories and compatibility paths. Do not
+   repeat Git initialization, repository/Pages bootstrap or replace current work
+   with the original archive. Inspect permissions when an action needs them.
+3. Choose a concrete developer-value improvement, implement it, run relevant
+   real tests, independently review and fix it, then integrate through required
+   CI and independent approval. Verify publication rather than inferring it from
+   a pushed branch or workflow file.
+4. Record exact sources, environment, command, observed results and limitations.
+   Preserve frozen model/holdout inputs; avoid extra CI or status-only commits
+   merely to restate successful checks. Continue the next valuable improvement.
 
 ## Acceptance gates (all need evidence; do not check off intentions)
 
@@ -130,7 +153,9 @@ decisions yourself and record them.
   genuine target-user evaluations remain a future validation target; the owner
   deferred them on 2026-09-20, so they are not a current submission gate. Do not
   invent completed evaluations.
-  Outreach and final submission require owner approval and may be HUMAN_BLOCKED.
+  Outreach requires explicit owner authorization. Formal submission has standing
+  conditional authorization under the current owner policy; missing facts, terms,
+  review or a closed portal may still prevent it.
 - Prepare a submission index linking exact code, demo, reports, reproducibility
   instructions, measured evidence, genuine feedback and known limitations.
 
@@ -160,5 +185,9 @@ execution. Respect the user's stop/pause requests and preserve work safely.
 All engineering gates have actual passing evidence, Pages is verified live,
 all repos are public and usable by outside contributors, the real-chain demo
 works, and submission materials distinguish verified results from hypotheses.
-If owner-required validation or owner-reviewed submission remains blocked, report that
-precisely; do not substitute fake completion or guarantee winning.
+These conditions define a demonstrated quality checkpoint, not termination of
+the October 2 improvement goal. Before the official deadline, continue the most
+valuable authorized improvement even after readiness or formal submission. At
+the deadline, audit and report the actual state and remaining limits; do not
+label unverified requirements complete or guarantee winning. Report blockers
+precisely, preserve results and next commands, and continue independent work.

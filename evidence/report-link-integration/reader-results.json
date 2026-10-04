@@ -1,0 +1,66 @@
+{
+  "pins": {
+    "engine": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "280958c483bd1e42c02f12bce6430fb936973076"
+  },
+  "commands": [
+    {
+      "name": "check",
+      "returncode": 0,
+      "stdout": "{\n  \"artifact_id\": \"728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00\",\n  \"statuses\": {\n    \"baseline\": [\n      \"success\",\n      \"success\",\n      \"success\",\n      \"reverted\",\n      \"success\"\n    ],\n    \"candidate\": [\n      \"success\",\n      \"success\",\n      \"success\",\n      \"noop\",\n      \"success\"\n    ]\n  },\n  \"borrowed_weth_raw_each\": \"1000000000000000000\",\n  \"variable_debt_raw_each\": \"1000000000000000000\",\n  \"gas_used\": {\n    \"baseline\": \"723131\",\n    \"candidate\": \"560326\"\n  },\n  \"native_balance_difference_wei\": \"2422422432849788\",\n  \"valuation\": \"exact local units; not profit or a forecast\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "verify",
+      "returncode": 0,
+      "stdout": "SHA-256 verified: 728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00. Integrity is not proof of model correctness.\n",
+      "stderr": ""
+    },
+    {
+      "name": "inspect",
+      "returncode": 0,
+      "stdout": "{\n  \"mode\": \"evm-fork\",\n  \"scenario\": \"aave-weth-borrow-preflight\",\n  \"baseline\": {\n    \"balance_delta_wei\": \"-10011172440829680288\",\n    \"final_balance_wei\": \"9988827559170319712\",\n    \"gas_cost_wei\": \"11172440829680288\",\n    \"gas_used\": \"723131\",\n    \"initial_balance_wei\": \"20000000000000000000\",\n    \"rejected_transactions\": 0,\n    \"reverted_transactions\": 1\n  },\n  \"candidate\": {\n    \"balance_delta_wei\": \"-10008750018396830500\",\n    \"final_balance_wei\": \"9991249981603169500\",\n    \"gas_cost_wei\": \"8750018396830500\",\n    \"gas_used\": \"560326\",\n    \"initial_balance_wei\": \"20000000000000000000\",\n    \"rejected_transactions\": 0,\n    \"reverted_transactions\": 0\n  },\n  \"comparison\": {\n    \"final_balance_delta_wei\": \"2422422432849788\"\n  },\n  \"assumptions\": [\n    \"Paired isolated Anvil instances start from the same source state.\",\n    \"Actor native balance is overridden equally and account impersonation is local only.\",\n    \"This re-executes supplied actions, not subsequent historical blocks or market responses.\",\n    \"Each slot mines one block at a fixed 12-second interval. Transaction order is supplied.\",\n    \"Native and tracked token changes are exact units, not profit or portfolio valuation. Unlisted assets are not tracked.\",\n    \"No MEV, mempool, external price or bridge model is provided.\",\n    \"Agent sees the current proposal, completed actions and current-state eth_call only; generation may be nondeterministic. Replay requires identical observations.\",\n    \"Preflight uses the current block; the execution block advances 12 seconds. Success is not guaranteed. Shared setup is outside the agent requested-gas budget.\"\n  ],\n  \"agent\": {\n    \"agent_version\": \"0.1.0\",\n    \"provider\": {\n      \"cost_usd\": \"0\",\n      \"deterministic\": true,\n      \"model\": \"preflight-risk-v1\",\n      \"provider\": \"builtin\",\n      \"seed\": null\n    },\n    \"initial_requested_gas_budget\": 2000000,\n    \"decisions\": [\n      {\n        \"choice\": \"hold\",\n        \"reason\": \"Current-state preflight or requested gas exceeds the policy\",\n        \"request_id\": \"92d6b4445795e0060bce7bb193bcaba8cc85a76c1065191724bf545f940e6c46\",\n        \"step\": 3\n      }\n    ],\n    \"scope\": \"Recorded choices; integrity is not proof of policy or economic correctness\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "inspect-text",
+      "returncode": 0,
+      "stdout": "Recorded EVM result (evm-fork)\nScenario: \"aave-weth-borrow-preflight\"\nArtifact: 728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00\nContent hash: verified; execution and provider authenticity unproven\nSource pin (reported): {\"block_hash\": \"0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6\", \"block_number\": 18999892, \"chain_id\": 1}\n\nNative balance (10^18 wei per native unit)\nValue     Baseline                Candidate             Candidate - baseline\nInitial   20                      20                    0\nFinal     9.988827559170319712    9.9912499816031695    +0.002422422432849788\nChange    -10.011172440829680288  -10.0087500183968305  +0.002422422432849788\nGas cost  0.011172440829680288    0.0087500183968305    -0.002422422432849788\n\nValue                  Baseline  Candidate  Candidate - baseline\nGas used               723131    560326     -162805\nReverted transactions  1         0          -1\nRejected transactions  0         0          0\n\nWETH (0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2; 18 decimals)\nValue    Baseline  Candidate  Candidate - baseline\nInitial  0         0          0\nFinal    1         1          0\nChange   +1        +1         0\n\nAWETH (0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8; 18 decimals)\nValue    Baseline                Candidate               Candidate - baseline\nInitial  0                       0                       0\nFinal    10.000000094454558462   10.000000094454558462   0\nChange   +10.000000094454558462  +10.000000094454558462  0\n\nVWETH (0xea51d7853eefb32b6ee06b1c12e6dcca88be0ffe; 18 decimals)\nValue    Baseline  Candidate  Candidate - baseline\nInitial  0         0          0\nFinal    1         1          0\nChange   +1        +1         0\n\nBalance differences do not measure profit; token roles and valuations are not inferred.\n\nRecorded agent: {\"cost_usd\": \"0\", \"deterministic\": true, \"model\": \"preflight-risk-v1\", \"provider\": \"builtin\", \"seed\": null}\nInitial requested gas budget: 2000000\nStep 3: hold | \"Current-state preflight or requested gas exceeds the policy\"\nRecorded choices; integrity is not proof of policy or economic correctness\n\nRecorded assumptions:\n- \"Paired isolated Anvil instances start from the same source state.\"\n- \"Actor native balance is overridden equally and account impersonation is local only.\"\n- \"This re-executes supplied actions, not subsequent historical blocks or market responses.\"\n- \"Each slot mines one block at a fixed 12-second interval. Transaction order is supplied.\"\n- \"Native and tracked token changes are exact units, not profit or portfolio valuation. Unlisted assets are not tracked.\"\n- \"No MEV, mempool, external price or bridge model is provided.\"\n- \"Agent sees the current proposal, completed actions and current-state eth_call only; generation may be nondeterministic. Replay requires identical observations.\"\n- \"Preflight uses the current block; the execution block advances 12 seconds. Success is not guaranteed. Shared setup is outside the agent requested-gas budget.\"\n",
+      "stderr": ""
+    },
+    {
+      "name": "viewer",
+      "returncode": 0,
+      "stdout": "{\"artifact_id\":\"728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00\",\"balanceRows\":[[\"Native ETH \u00b7 Initial\",\"20\",\"20\",\"0\"],[\"Native ETH \u00b7 Final\",\"9.988827559170319712\",\"9.9912499816031695\",\"+0.002422422432849788\"],[\"Native ETH \u00b7 Change\",\"-10.011172440829680288\",\"-10.0087500183968305\",\"+0.002422422432849788\"],[\"Gas cost (ETH)\",\"0.011172440829680288\",\"0.0087500183968305\",\"-0.002422422432849788\"],[\"Gas used\",\"723131\",\"560326\",\"-162805\"],[\"Reverted transactions\",\"1\",\"0\",\"-1\"],[\"Rejected transactions\",\"0\",\"0\",\"0\"],[\"WETH \u00b7 Initial\",\"0\",\"0\",\"0\"],[\"WETH \u00b7 Final\",\"1\",\"1\",\"0\"],[\"WETH \u00b7 Change\",\"+1\",\"+1\",\"0\"],[\"AWETH \u00b7 Initial\",\"0\",\"0\",\"0\"],[\"AWETH \u00b7 Final\",\"10.000000094454558462\",\"10.000000094454558462\",\"0\"],[\"AWETH \u00b7 Change\",\"+10.000000094454558462\",\"+10.000000094454558462\",\"0\"],[\"VWETH \u00b7 Initial\",\"0\",\"0\",\"0\"],[\"VWETH \u00b7 Final\",\"1\",\"1\",\"0\"],[\"VWETH \u00b7 Change\",\"+1\",\"+1\",\"0\"]],\"tokenIdentities\":\"WETH \u00b7 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2 \u00b7 18 decimals\\nAWETH \u00b7 0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8 \u00b7 18 decimals\\nVWETH \u00b7 0xea51d7853eefb32b6ee06b1c12e6dcca88be0ffe \u00b7 18 decimals\",\"source\":\"Chain 1 \u00b7 Block 18999892\\n0xafd6a8c681f5e3b6ae9cba963e4b8dd7e3c9bf76fe45e0c3e145ccb2918b2ba6\",\"recorded_agent_rows\":[[\"3\",\"rejected\",\"500000 / 2000000\",\"hold\",\"Current-state preflight or requested gas exceeds the policy\",\"noop\",\"0\"]]}\n",
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "engine/evidence/aave-borrow-actions/report.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "engine/scripts/aave_borrow.py": "8b3f46308f14d3803ca03c5c7d69a12311b9e01f1f16b72d96151b1046a8394e",
+    "engine/tests/data/aave-borrow-actions.json": "f39d9367f9731d90af66a84e4eaf4eac04e57bfbc834d30fbd27e28d6ff4079b",
+    "cli/tests/data/aave-borrow-result.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "cli/tests/data/aave-borrow-result.txt": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+    "entrotter.github.io/app.js": "7b475dec4def0839690aad5a48d329c24f8c870b36c41b42b20d1bf992e0069e",
+    "entrotter.github.io/reports/aave-borrow-actions.json": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "entrotter.github.io/evidence/report-links/view.json": "3e634eb58588e1a544541aa427844374b581a4b7445d126d0e7757cb869d70ce",
+    "cli/src/entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "cli/src/entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+    "cli/src/entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "cli/src/entrotter_cli/main.py": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc",
+    "cli/src/entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+    "cli/src/entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+    "cli/src/entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+    "cli/src/entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+    "cli/src/entrotter_cli/result_text.py": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47",
+    "sdk-python/src/entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+    "sdk-python/src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "sdk-python/src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "sdk-python/src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2",
+    "sdk-python/src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+  },
+  "scope": "Offline check and standalone CLI/SDK/production browser view-model inspection of the recorded real Aave action result; no fresh EVM, RPC, model or export."
+}

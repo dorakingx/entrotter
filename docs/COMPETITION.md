@@ -1,9 +1,12 @@
-# Competition requirements — public rules rechecked 2026-10-01 JST
+# Competition requirements — public rules rechecked 2026-10-02 JST
 
 The [event page](https://colosseum.com/worldsfair) and
 [official rules, section 5](https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf)
 specify a deadline of **October 12, 2026 at 11:59 p.m. Pacific**, equivalent to
-**October 13 at 06:59 UTC / 15:59 JST**. The rules permit schedule changes.
+**October 13 at 06:59 UTC / 15:59 JST**. Section 5 was checked again on October 2;
+the rules permit schedule changes. The current owner goal requires continued
+authorized product improvement until this deadline, including after readiness or
+formal submission. Do not change an immutable submitted version.
 
 ## Authenticated form
 
@@ -44,10 +47,13 @@ that provenance limit and disclose substantial AI assistance.
 See [the current submission index](../submission/README.md),
 [development and AI disclosure](../submission/DISCLOSURE.md) and
 [preparation evidence](../evidence/submission-preparation/summary.json).
+The [October 2 public recheck](../evidence/submission-preparation/oct02-rules-recheck.json)
+records the date conversion and its scope; it is separate from authenticated
+draft readback or formal server acceptance.
 The original September 20 evidence records the earlier conditional authorization
 and failed logo upload; the current submission index records the superseding
 owner decision and authenticated draft readback. Public rules/FAQ were checked
-again on October 1; recheck the authenticated form and official rules at final
+again on October 2; recheck the authenticated form and official rules at final
 submission because the administrator may change the schedule or requirements.
 Repository/Pages publication is already authorized. Outreach, paid services and
 package publication have no new authorization. No prize outcome is promised.

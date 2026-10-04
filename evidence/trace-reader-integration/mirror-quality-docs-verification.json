@@ -1,0 +1,30 @@
+{
+  "head": "b7c20ce2c080427fe0742a1afcb5dbc49277de70",
+  "quality_reuse": "0c downloaded report; all21source/lock hashes remain identical; new b7 quality job110476545353 also successful",
+  "prior_full_quality_verification": {
+    "head": "0ccef43990a7a31a6fb2b21af70a0c4c1f1465ce",
+    "quality_source_hashes": 21,
+    "js_sources": 14,
+    "type_inputs": 15,
+    "full_rules": 14,
+    "retained_findings": 97,
+    "disabled_or_suppressed_rules": 0,
+    "Node_tests": 63,
+    "Python_sources": 1,
+    "Python_exact_audit_identities": 42,
+    "npm_lock_packages": 109,
+    "advisories": 0,
+    "doc_hashes": 11,
+    "status": "component_quality_docs_verified_final_browser_pending",
+    "limits": [
+      "Not GitHub approval, deployedPages or newEVM/model execution.",
+      "Prior browser evidence does not prove the current 0c head; exact-head Linux browser CI remains incomplete."
+    ]
+  },
+  "all_reused_source_hashes_match": 21,
+  "new_doc_hashes_match": 11,
+  "doc_source_commit": "9d0682c9517073d196bd0e1c6b8cec248523cd10",
+  "doc_check_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/36894075431/job/110476543336",
+  "browser": "Final b7 all4checks pass; see viewer-browser-verification.json for full downloaded raw browser/hash/screenshot review.",
+  "quality_check_url": "https://github.com/entrotter/entrotter.github.io/actions/runs/36894075581/job/110476545353"
+}

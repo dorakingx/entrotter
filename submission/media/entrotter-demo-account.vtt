@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00:01.123 --> 00:00:09.587
+Before giving an onchain agent permissions, inspect what its decision changes. This is the actual Entrotter viewer, with synthetic narration.
+
+00:00:10.537 --> 00:00:21.056
+This console starts the bounded Docker engine on a local EVM. The risk policy sees a transfer, then a reverting proposal. It can execute or hold the supplied action.
+
+00:00:21.506 --> 00:00:31.223
+Next, recorded model decisions run against fresh observations. The command checks complete JSON equality. It makes no new model or archive request.
+
+00:00:32.173 --> 00:00:38.849
+Open the file that this command just generated. The baseline includes a revert, while the candidate holds that proposal.
+
+00:00:39.299 --> 00:00:48.738
+The report retains observations, choices and receipts. A content identifier detects changes; it does not prove that a model made a good decision.
+
+00:00:49.688 --> 00:00:58.430
+Now inspect a previously recorded Ethereum and Aave case. The browser displays evidence; it does not execute a new historical replay.
+
+00:00:58.880 --> 00:01:15.726
+Skipping transaction twelve increases this account’s recorded borrowing capacity by eight hundred sixteen dollars and twenty eight cents, approximately. The card preserves all eight decimals. The health factor increases by about zero point zero zero three eight five.
+
+00:01:16.676 --> 00:01:24.118
+Expand the four account phases. Compare before and after values, with debt, collateral and the recorded pool configuration.
+
+00:01:24.568 --> 00:01:34.947
+These are aggregate effects of the changed prefix. They are not profit, sole price causality, a signed borrowing strategy, or a prediction of later market behavior.
+
+00:01:35.897 --> 00:01:45.708
+Thirteen original transactions form this prefix. All thirteen baseline receipt projections match. The candidate executes twelve and skips transaction twelve.
+
+00:01:46.158 --> 00:01:56.514
+Expand the receipt differences to inspect gas, ordered logs and exact values. This is prefix evidence, not proof of the entire block or state root.
+
+00:01:57.464 --> 00:02:05.347
+Import the same account file with an incorrect content identifier. The viewer rejects it and clears the previous account values.
+
+00:02:05.797 --> 00:02:15.039
+Importing the unchanged file recovers normally. Both files stay in this browser. The recording checks for uploads and unexpected external requests.
+
+00:02:15.989 --> 00:02:26.124
+Use the public code to compare a decision your team needs to explain. The engine, command line, Python reader and browser inspect the same sealed account report.
+
+00:02:26.574 --> 00:02:34.527
+These changes are on reviewed development branches. Main integration, public deployment and the competition submission remain separate.

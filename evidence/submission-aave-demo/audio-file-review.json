@@ -1,0 +1,151 @@
+{
+  "status": "PASS completed audio files only",
+  "producer_status": "terminal134 with recursive_mutex exception; cause unproven; not a successful producer exit",
+  "takes": [
+    {
+      "path": "audio/demo-intro-0.wav",
+      "bytes": 221740,
+      "frames": 110848,
+      "sha256": "9f2eacfd82d9c562b637037051f10c7feb3fe3eb9d9e2ace9c85b82d301e8310"
+    },
+    {
+      "path": "audio/demo-intro-1.wav",
+      "bytes": 163372,
+      "frames": 81664,
+      "sha256": "3dfbfcc602ad0330da02d8adb1fa308d4c2eae589df5dae5358d88c44a623183"
+    },
+    {
+      "path": "audio/demo-record-0.wav",
+      "bytes": 246828,
+      "frames": 123392,
+      "sha256": "39ec400f9b3c3aba96137fa0f559fc3dd7cf0ab4664c2f95a5f8df30020a8b62"
+    },
+    {
+      "path": "audio/demo-record-1.wav",
+      "bytes": 202796,
+      "frames": 101376,
+      "sha256": "0deabd5356026a431b760cbe46cfa4050f7ef618794294c297e7eb158cba77b9"
+    },
+    {
+      "path": "audio/demo-setup-0.wav",
+      "bytes": 304684,
+      "frames": 152320,
+      "sha256": "e827ffe3e0756206d91c82b92c8d71c954bbb5933940288d544943e7ed290f1f"
+    },
+    {
+      "path": "audio/demo-setup-1.wav",
+      "bytes": 193580,
+      "frames": 96768,
+      "sha256": "06ec69584a0bdc65c0be1cd9a96508aedb495f2fa3b1cafa4c29b97a0ef7a042"
+    },
+    {
+      "path": "audio/demo-decision-0.wav",
+      "bytes": 143916,
+      "frames": 71936,
+      "sha256": "6809b7eb2e5d3b02ca982b358163dec6e6318ae9158bbf58ccf276c7a21dbfa4"
+    },
+    {
+      "path": "audio/demo-decision-1.wav",
+      "bytes": 237612,
+      "frames": 118784,
+      "sha256": "59d48e87d3d643373df07a9b8326502597ef9cac724d663ec9a9faff8bd3a736"
+    },
+    {
+      "path": "audio/demo-decision-2.wav",
+      "bytes": 225324,
+      "frames": 112640,
+      "sha256": "3f9f36d19a80e2b941801b9ba45d922916885c1c5dba060b3f46a676add1f586"
+    },
+    {
+      "path": "audio/demo-final-0.wav",
+      "bytes": 187436,
+      "frames": 93696,
+      "sha256": "84b788040d66f189472ab7ea25017ff17384f91149f6581c4bacc27f45c5fc70"
+    },
+    {
+      "path": "audio/demo-final-1.wav",
+      "bytes": 208428,
+      "frames": 104192,
+      "sha256": "af1e8bd8e20e5bb4c7308b812e3cea4f19fee561dc9a51d2e511b2d6428b9970"
+    },
+    {
+      "path": "audio/demo-balances-0.wav",
+      "bytes": 227372,
+      "frames": 113664,
+      "sha256": "769e70764d731afec2b7193af135543bfc64befcc26bd49e6b6dfdfa927a8cf7"
+    },
+    {
+      "path": "audio/demo-balances-1.wav",
+      "bytes": 287276,
+      "frames": 143616,
+      "sha256": "b2098f1bc6d7f2736a61c1f33c8effc4dae16603b7c7ed9733a1856e0ee5988b"
+    },
+    {
+      "path": "audio/demo-download-0.wav",
+      "bytes": 199724,
+      "frames": 99840,
+      "sha256": "dd9bffa9ecfe3870732dccbd7384f53cb60cf635ad3f68d33d9dfce160db39d7"
+    },
+    {
+      "path": "audio/demo-download-1.wav",
+      "bytes": 223788,
+      "frames": 111872,
+      "sha256": "3beffb2e83821d134e807a57265f7fc56faf2d32adf2d4a308fc753d83f806aa"
+    },
+    {
+      "path": "audio/demo-copy-0.wav",
+      "bytes": 158252,
+      "frames": 79104,
+      "sha256": "0305a3f05bcaa9193a6a2ba20d5030c7375de8da63895b0b28f053aa68443bae"
+    },
+    {
+      "path": "audio/demo-copy-1.wav",
+      "bytes": 262700,
+      "frames": 131328,
+      "sha256": "265f5f36dc45fc06656efe400222b95327b26c36583d00890e01bb8d4c7e986b"
+    },
+    {
+      "path": "audio/demo-cli-0.wav",
+      "bytes": 240684,
+      "frames": 120320,
+      "sha256": "9ef21f663cd971794429c47f57b5d6efdcf995898ab5db28ec8b99cabe6f4dcc"
+    },
+    {
+      "path": "audio/demo-cli-1.wav",
+      "bytes": 249388,
+      "frames": 124672,
+      "sha256": "b83bd4bc71fde5bb5db04ba64b25e22127184397b8ea012ec26245e016e4e21e"
+    },
+    {
+      "path": "audio/demo-limit-0.wav",
+      "bytes": 281644,
+      "frames": 140800,
+      "sha256": "c76e58e86d38aa0d91a09e2ee5a86061154c8d6b38ff86cc29214b066f7a6c3c"
+    },
+    {
+      "path": "audio/demo-limit-1.wav",
+      "bytes": 303148,
+      "frames": 151552,
+      "sha256": "ae1f10dc1d7e487582f6b0030fe570f712d81b51cbb59becda381da27b4c27b9"
+    },
+    {
+      "path": "audio/demo-end-0.wav",
+      "bytes": 238636,
+      "frames": 119296,
+      "sha256": "5ec9ef03c7dca1dd2afbae5b16ee62d81c461edd200f3381e5376488a8a77d92"
+    },
+    {
+      "path": "audio/demo-end-1.wav",
+      "bytes": 311852,
+      "frames": 155904,
+      "sha256": "cbe17fcf0da547c726562d8970576251b6abdcd0939e27b26873bc8273162088"
+    }
+  ],
+  "combined": {
+    "bytes": 6106374,
+    "frames": 3053165,
+    "duration": 138.4655328798186,
+    "sha256": "6233a3234429aabdc54e0bb70e47f49b9e3c737beb81cd02c545d6d352d686e1"
+  },
+  "scope": "all 23 PCM payloads exactly reassembled into combined WAV; authored inventory and sample frame timing verified. Audible correctness requires transcription/listening."
+}

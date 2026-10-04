@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "command_source": "README.md quick-start fenced block",
+  "README_sha256": "b882ade255b5818ed16ce2afb6648bbf72f51913c95d88c341b012737a116f55",
+  "block_sha256": "67cf46008dc5f0a2c9b2f0146133bebf98fc43a4249d22eb04ca099c24b48710",
+  "returncode": 0,
+  "observed_wall_seconds": 2.3927342910319567,
+  "stdout_sha256": "2dfd4d83e708ca9a4cc7faa7c45823916d7ed4180ef06b7ce7e8888c3896def0",
+  "stderr_sha256": "5dad4ad613fa46e8dcc6c0d32d96a13640ba7c656a5127349ec220b5fae1312e",
+  "environment": {
+    "version": "3.13.0 (v3.13.0:60403a5409f, Oct  7 2024, 00:37:40) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "installed_distributions": []
+  },
+  "runtime_source_files": {
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/observed_run.py": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/export_budget.py": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/result_text.py": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/observed_text.py": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/position_text.py": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/__init__.py": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/position_run.py": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/main.py": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc",
+    "entrotter-cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:src/entrotter_cli/__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/client.py": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/__init__.py": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568",
+    "entrotter-sdk:ba4af512784119f23b6dea63fd24c7f5d1fdde44:src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+  },
+  "report": {
+    "bytes": 59506,
+    "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622",
+    "source": "cli:169b759aff9280ce44fb0d15569c7ae0a4a40889:tests/data/aave-borrow-result.json"
+  },
+  "outputs": {
+    "verify_bytes": 129,
+    "verify_sha256": "14799479a13047e12fd7daf65cd852bdc8ac80cdaf235ac188d629bd898b2366",
+    "inspect_text_bytes": 3013,
+    "inspect_text_sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+    "whole_verify_and_inspect_suffix_exact": true
+  },
+  "scope": "One literal README walkthrough in a new directory, real public Git clones and a fresh no-pip/no-distribution Python venv. Exact original report and verify/inspect outputs. Local OS Python version recorded; no cross-platform/3.11 execution or performance guarantee. Inspection only, not new EVM/RPC/model execution or provider authenticity.",
+  "helper_sha256": "3a603caf7266f3c8f58d59bc3391893123c1614a014dd640127da702cc0aadcd",
+  "prior_whole_outputs": "../cli-copy-integration/reader-results.json",
+  "prior_whole_outputs_sha256": "2478a9280556bb60290cf3b189a086e148d8cd9f491218fb86fe25911c94f830"
+}

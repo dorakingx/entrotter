@@ -1,9 +1,16 @@
 # Verified implementation status
 
-Updated 2026-09-20 JST. **Goal active; not submission-ready.** Implementation
+Updated 2026-10-04 JST. **Goal active; not submission-ready.** Implementation
 and deployment checkpoints are recorded below. All six repositories exist publicly
 under https://github.com/entrotter. Do not repeat archive bootstrap or overwrite
 remote history. Use the existing six sibling Git checkouts and focused PRs.
+
+Latest prepared selection: Enginef53/PR35, SDKba4/PR7 and CLI169b/PR10 in
+coordinator PR55. Component checks and the four-command offline Aave reader pass;
+current combined CI, independent integration review and protected-main approval
+remain separate gates. The [latest evidence](evidence/aave-result-text-integration/README.md)
+separates exact recorded execution from offline native/ERC-20 text inspection.
+Older milestones retain their original sources, failures and measurements.
 
 ## Verified progress
 
@@ -939,7 +946,7 @@ helper quota; four steps do. These setup failures are distinct from final proof.
 The probe image was removed only after its unique label/full ID matched, with no
 worker left. Dedicated VM stop/default VM preservation are verified. Normal worker
 image/cache stays local; no registry publication, model call or archive-RPC call.
-See https://github.com/entrotter/engine/blob/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json.
+See https://raw.githubusercontent.com/entrotter/engine/fa3738078079ffa8f8350a26dca60b560d8aa32f/evidence/worker-build-output/summary.json.
 
 Current-head CI and independent review are recorded in PR #26. Other Docker JSON
 captures, daemon/BuildKit storage, image/cache/host overhead quotas and abrupt-death
@@ -976,3 +983,1451 @@ website deployment jobs are intentionally skipped before review/merge.
 See evidence/latest-candidate/summary.json. Main still requires one independent
 approval with strict freshness/admin enforcement. No main merge or deployment is
 claimed. The dedicated VM was stopped afterward; the default VM is preserved.
+
+## October 1 — CLI agent execution and complete recorded replay candidate
+
+CLI PR #10 at 87cfe4078dfaaaa3eebcbff65bcedc8d60013cc8 builds on the existing
+export-budget candidate and uses the bounded engine c167193/SDK b0c2ba3 API.
+`agent-run` exposes built-in risk decisions; `replay` derives recorded steps/gas
+and requires complete JSON equality before private quota-protected export.
+`inspect` displays choices/reasons/original provider provenance without an engine.
+No provider/code loader, native fallback, agent HTTP endpoint or v0.1 change is added.
+
+All 40 local units and four actual Docker groups pass; Linux repeats 40 units
+on Python 3.11/3.12/3.13 and four real Docker groups in 3.783 seconds. Complete
+original risk/model reports match; altered state refuses without replacing an
+incumbent and recovers, while unavailable/legacy engine or image fails explicitly.
+All six production files pass unsuppressed quality/security, with zero findings;
+42 tool identities are audited without reported vulnerabilities. Downloaded
+source/wheel/18-worker-input hashes match. Samples stay byte-identical; zero new
+model/archive calls, no holdout tuning or new demand/agent advantage is claimed.
+See https://github.com/entrotter/cli/pull/10 and that branch's evidence/agent-cli/.
+
+The observed GitHub Actions `agent` check is added to CLI main's required checks:
+six are now required there and 33 across the six repositories. Fresh full
+protection readback preserves one independent approval, strict freshness/admin
+enforcement and every unrelated setting. Older partial CLI PRs need the new job
+before protected integration. Independent reviews remain empty; no merge,
+deployment or submission occurred. Dedicated VM is stopped and default VM running
+untouched, with no owned experiment worker left. Existing coordination PR #54
+still selects fa37380/a63a390, explicitly distinct from this new tested candidate.
+These status/gate/required-check records are held locally for the next substantive
+candidate-pin/guide integration, without a status-only PR or additional CI run.
+
+## October 1 — Latest agent CLI candidate composition
+
+Coordination builds on #54/99a7f4f and selects tested engine #27/c167193 and
+CLI #10/87cfe40 with the unchanged SDK/schema/site pins. Current bounded
+integration/type inputs now use these exact sources. The frozen native/provider,
+benchmark/holdout/report inputs are unchanged. Main still requires independent
+review; this is preparation of a reviewable combination, not protected integration.
+
+Bounded-agent clean reproduction now uses the actual standalone CLI replay,
+verify and inspect commands. The old CLI pin fails that real clean-checkout
+regression with missing-command exit 2. Updated public source fetches, new pipless
+venv, network Foundry download, worker build and complete original model replay
+then pass in 19.266 seconds. Docker/VM was running and caches may be warm; setup
+installation/startup excluded. No model/archive call, new evaluation or retuning.
+This source-bound measurement is separate from the later guide walkthrough.
+
+All 21 production files pass type checks against clean c167193/87cfe40 dependencies,
+retaining the same three frozen provider diagnostics. The stale security source
+review fails before refresh; all 78 full findings remain visible, with a changed
+reproduction-loop scope/fingerprint author rationale. Independent review remains
+pending. Source pins, guide/public measurements and current-head CI are recorded
+separately in this candidate evidence and PR.
+
+The corrected guide's five Bash blocks executed verbatim in a fresh temporary
+public workspace in 26.043 seconds. All six checkouts were clean at their exact
+immutable pins; a new pipless venv/network Foundry download/build/doctor and full
+fixture/local-Anvil/risk/risk-replay/model-replay comparisons passed. The first
+guide attempt incorrectly paired a candidate-only general scenario with the
+original two-baseline-action risk report. Its complete equality check failed;
+extracting the exact recorded scenario fixes the input mismatch without changing
+reports, policy or consumed holdouts. Running Docker/potentially warm caches are
+explicit prerequisites; this is not cold machine setup. Source service/CLI guides
+retain separately tested older installation pins, without a new install claim.
+See evidence/latest-agent-cli/summary.json; current-head CI remains separately
+recorded in the PR. Main integration, independent review and submission gates stay open.
+
+## October 1 — Independent agent-inspection review and fix
+
+A separate Codex code reviewer found that a hash-resealed extra response `step`
+could replace the causal observation step displayed by CLI `inspect`. Engine
+execution already rejects that invalid typed response. CLI #10/22b514c now checks
+exact response keys before inspection/replay and gives the observation step final
+precedence. Three failing-before assertions become passing refusals, including
+zero optional-engine calls and preserved incumbent exports. The reviewer then
+confirmed resolution with focused checks; this is not a GitHub approving review.
+
+All 42 local units and Linux units on Python 3.11/3.12/3.13 pass. All four actual
+Docker groups reproduce the original complete risk/model reports in 2.935s with
+no model call. Six current-head checks pass; downloaded six-source security,
+CLI/SDK wheel and all 18 worker-input hashes match, including actual local SDK
+bytes. The full scanner retains zero findings/skips and 42 locked packages have
+no reported Python advisories. Public review/failure/fix evidence is in CLI's
+`evidence/inspection-review/`; coordination selects this exact tested fix and
+needs separate current-head CI. Prior PR55/2e12018 passed all five checks after
+rerunning only its failed Docker-metadata job; its internal cause remains unknown.
+The prior full guide timing belongs to its actual old pins; new clean replay
+measurements are separate.
+
+Independent GitHub approval remains empty; main protections and original reports
+and evaluations stay intact. No model/archive evaluation, protected merge,
+deployment, user outreach or submission occurred. The stopped dedicated VM is
+not restarted for this parse-only local fix; Linux CI supplies fresh Docker proof.
+
+## October 1 — Canonical local-contract identity fix composition
+
+Independent engine source review found that two case spellings of the same
+contract address can carry different code under identical canonical scenario
+bytes. Actual Anvil v1.8.3 changed from success/21,000 gas to revert/21,006 gas
+when only object insertion order changed. Engine #28/6e13f34 rejects duplicate
+normalized addresses before native/default/agent execution and retains one valid
+mixed-case address. The separate reviewer confirmed the fix; this is not a
+GitHub approving review.
+
+All eight engine current-head checks pass: 214 Linux native tests in31.108s,
+22 actual Docker enforcement/lifetime/cleanup tests in213.988s and no test worker
+left. Downloaded artifacts match all22 scanner sources,17 wheel modules and18
+worker inputs. Full security scan retains23 reviewed findings without skips;
+42 Python/26 image OS/1,126 signed native Cargo identities have zero reported
+advisories, with172 non-Cargo signed entries explicitly outside the Cargo scan.
+Base/native provenance and auditor/report/manifest hashes match. Host/kernel/VM
+safety is not inferred from those inventories.
+
+This existing coordination PR #55 now selects engine6e13f34 and CLI22b514c.
+Frozen native/provider/benchmark/holdout/report and media inputs stay unchanged;
+no new model/archive calls or local Docker/VM startup. Prior328f4c1 all-five CI
+and its fixture6.308s/model6.830s measurements belong to enginec167193. The old
+26.043s all-five-block guide run retains its original CLI87cfe40 sources. Neither
+is a measurement of this new composition. Current combined CI must run on the
+final guide commit; its exact artifact/readback links will be recorded in PR55.
+See evidence/contract-identity-integration/summary.json. Mandatory independent
+GitHub approval, protected integration/publication and personal/media/submission
+gates remain open. Discord is discontinued and excluded.
+
+## October 1 — Recorded-agent viewer composition
+
+Viewer #14/49914a2 builds on8671ab2 and makes recorded reasons/choices and their
+candidate outcomes inspectable, preserving original alias/nondeterminism/unknown
+seed/cost and no measured model advantage. The original local model report is
+copied byte-identically; all12 original agent reports retain valid hashes and
+display. No new model/archive run or original-media/schema rewrite occurred.
+
+Independent software review found and resolved3P2 consistency gaps: array-valued
+choices, proposals not bound to scenario actions, and held outcomes claiming
+success/nonzero gas. Four fully resealed regressions fail before the fix and now
+refuse. Re-review confirms resolution; this is not an approving GitHub review.
+All4 current-head site checks pass:47Node/11Python tests,28 realChromium groups,
+21zero-violation axe scans and mobile keyboard scrolling. Downloaded18 source/
+config/lock hashes,55 full security findings,11JS/12type inputs/14rules, Python
+source/lock/42packages and109npm lock entries match, with0 reported advisories.
+Raw incomplete axe/browser/advisory limits remain explicit. Mobile screenshots
+were visually inspected. No import uploads or third-party requests occurred.
+
+Coordination selects site49914a2 with unchanged engine6e/CLI22/SDK/schema pins.
+Combined source pin/guide/index CI is separate from site proof; priorb724983
+fixture5.853s/model5.637s belongs to site867. Frozen native/provider/benchmark/
+consumed holdout/report/media sources stay distinct. See
+evidence/agent-viewer-integration/summary.json. All protected-main approvals,
+manual assistive-tech/full WCAG and live candidate publication/submission gates
+remain open. Discord remains abandoned; no localDocker/VM startup.
+
+## October 1 — Original signed transaction-prefix replay composition
+
+Engine #29/0d4faf7 adds a distinct trace-version result and default bounded CLI,
+preserving the v0.1 action/model-record contracts. It reconstructs original
+legacy/type-1/type-2 signatures, forks the pinned parent twice with Shanghai
+header context, preserves order/nonces and explicitly reports omitted,
+conflicting, rejected, unmined and receipt-diverged outcomes. Independent source
+review found/fixed caller-input mutation; re-review passed. Ordinary/upstream RPC
+still denies raw broadcast; only the owned trace profile permits signed inputs.
+
+All eight exact-head checks pass first attempt: 241 Linux native tests in 33.082s,
+23 actual Docker tests in 215.933s, 23 source/18 wheel/19 image input hashes verified.
+Ethereum block 19,000,000 transaction 0 matches the original receipt's 208,144 gas
+and 8 ordered logs through the default bounded CLI in 4.484323s. Its complete result
+matches the native 9.951108s record except runtime/hash. No upstream write, model
+generation or holdout retuning occurred. Image/native reports, inventories,
+manifests and auditors match; 42 Python/26 OS/1,126 signed Cargo identities have zero
+reported advisories, with 172 non-Cargo entries outside coverage. Database metadata
+matches; the CI-recorded binary database digest cannot be locally rehashed from
+the exported metadata alone. No local Docker/VM startup occurred.
+
+Schemas #11/8785bb0 adds distinct offline trace-plan/result contracts. Independent
+review corrected the example from an early ignored attempt to the exact committed
+engine report. All five head checks pass: 23 tests on three Python/legacy-engine
+compositions, 13 source/schema/lock hashes, six Python files fully scanned, zero
+findings/skips and 48 tool/6 contract package identities without reported advisories.
+All 19 original result shapes remain valid; schemas verify declared shape, not
+signatures, hashes, sorted/cross-field input binding or EVM truth. The actual
+default-worker mainnet report also validates against these new contracts.
+
+This existing coordination PR55 selects engine0d4faf7 and schemas8785bb0, with
+CLI22/SDKb0/site499 unchanged. Frozen native/provider/model/evaluation/consumed
+holdout/report/media sources remain independent. Combined exact-head CI and guide
+reproduction are separate from component proof; prior5c1/2204 timings retain
+their actual old pins. See evidence/canonical-replay-integration/summary.json.
+
+The full goal remains active. At most 32 original Shanghai-prefix transactions
+are currently supported; Anvil parent-state pool admission can reject valid
+same-block funding dependencies and must leave those baselines unverified.
+Full-block/opcode/root/end-withdrawal equivalence, broader oracle/divergence cases
+and trace SDK/viewer integration remain open. Software review is not protected
+GitHub approval. No protected merge, candidate deployment, outreach, media upload
+or formal competition submission occurred. Discord remains excluded.
+
+The initial86f2014 combined run passed four jobs but quality refused: the worker
+type-policy JSON still required6e while its checkout advanced0d. The immutable
+assertion is retained. Updating that policy pin makes the existing local type
+check pass against exact cleanbb8/0d/b0/22 sources with the same three frozen
+diagnostics; no script, diagnostic rule or branch protection was weakened. The
+failure log is preserved; corrected snapshot/head checks remain separate.
+
+## October 1 — Mining deadline and actual four-transaction divergence
+
+The prior coordination0690adf/cda73fe composition passed all five checks. Its
+21 sources/78 full findings/50 audited packages/19 image inputs and complete
+CLI/SDK/API/export/clean reports were independently verified. Fixture6.827s and
+recorded-model7.350s belong to that engine0d composition with Docker already
+running and potentially warm caches; they are not a cold/all-five-guide benchmark.
+PR55 contains the exact job links and artifact readback. The stale type-policy
+failure was corrected with the immutable assertion and three frozen diagnostics
+retained, without changing production checkers or protections.
+
+Engine#30/8176597 fixes an actual failure: all four original signed inputs were
+captured/queued, but owned-local evm_mine exceeded the ordinary ten-second RPC
+cap. Only mining now uses the primitive's remaining shared150-second deadline,
+then restores ordinary reads in finally. The separate node guardian is unchanged.
+The original source fails the new slow-mine regression; the fixed full local
+suite passes244tests31.741s. Independent source and evidence/workflow follow-up
+reviews found no actionable finding; these are not GitHub approving reviews.
+
+All eight new head checks pass first attempt:244Linux native tests33.590s and
+23actualDocker cases213.407s, with no test workers left. Downloaded23source/
+18wheel/19image inputs match,23full findings are retained with no skips. Image/
+native/manifest/auditor/inventory hashes match;42Python/26OS/1,126signedCargo
+identities have zero reported advisories,172nonCargo entries remain outside that
+scope. Database metadata matches; binary database digest is recorded by CI and
+not locally rehashed from exported metadata. Host/VM safety is not inferred.
+
+The actual first four transactions of Ethereum19M match every original receipt
+projection in native46.982404s and default bounded14.539113s; complete results
+match except runtime/hash. These different environments are not a speed comparison.
+Omitting transaction0 changes gas/logs in1/2 and leaves3 at original nonce5523
+versus expected5522. No funding/code/nonce repair, new model call or holdout/media
+change occurred. See evidence/canonical-mine-integration/summary.json and linked
+engine raw reports/observed prior failure/reviews for exact scope and hashes.
+
+This candidate selects engine817 with unchanged CLI22/SDKb0/scenarios8785/site499.
+Worker workflow and type-policy pins are updated together. New combined-head CI
+and guide reproduction remain separate from component proof. Parent-state pool
+funding admission, broader oracle/missing-state cases, full-block/opcode/end-state
+and trace SDK/viewer integration remain open. All protected approvals/candidate
+publication/personal/media/submission gates remain open; no local Docker/VM
+startup, protected merge, media upload or formal submission occurred.
+
+## October 2 — Typed signed-prefix inspection integration in progress
+
+SDK#7/ee5523d adds a separate immutable offline trace reader. All five required
+checks pass:36tests each on Python3.11/3.12/3.13,5production sources fully checked,
+3installed wheel modules/marker verified,42exact locked audit identities and7doc
+hashes match without findings/skips/advisories. Four independent consistency
+findings were fixed and re-reviewed. The v0.1 HTTP client remains unchanged.
+
+Viewer#15/b7c20ce adds distinct browser-only original-prefix inspection. Root review
+resolved six codec/snapshot/bounds findings;63Node/11Python tests,21source hashes,
+97full explained findings,42Python/109npm identities and11doc hashes match.
+All four required checks pass. Downloaded Linux browser evidence passes33groups/
+25raw axe scans with0violations;13source hashes and the runner match. Root inspected
+1280/320px signed-prefix captures;390px, keyboard native chooser, invalid/resealed/
+oversized inputs, delayed-load races, recovery and no-upload/third-party-request
+gates pass. Incomplete contrast remains explicit;244opaque CSS comparisons are
+supplemental, with no manual screen-reader/full WCAG certification claim.
+
+Previous failures remain recorded: fd7 apt setup timed out, then retry exposed a
+1280px native chooser harness failure. Actual Tab navigation fixes that gate;
+0c again timed out during apt setup before the harness. Changing only Azure's
+Ubuntu mirror URI to the official HTTPS archive fixes setup while preserving
+signed apt, suites/components/keyring,10minute limit and every browser gate.
+Root independently reviewed both concrete harness/setup fixes. No product source
+changed in those fixes. The final Linux run passes, separately from prior attempts.
+
+The prepared coordination composition adds the exact offline SDK/site/coordination
+fixture-byte check and typed four-receipt/gas/log/nonce inspection. That workflow
+step and21-source type policy pass locally with the three frozen diagnostics
+retained; independent review of the four-file integration has no actionable
+finding. The guide now gives actual SDK and local-viewer instructions. The immutable
+execution snapshot is968b488, selecting SDKee5523d/siteb7c20ce; guide/index refs
+match those exact pins. Final snapshot/docs re-review passes after fixing a missing public proof pointer;
+combined exact-head CI remains pending, with evidence in final-review.json.
+See evidence/trace-reader-integration/README.md. These are existing original
+reports, not a new chain/model call or timing claim. Combined new-head CI remains
+separate from the previous42eb191 five-check proof.
+
+The full goal stays active: same-block funding admission, broader oracle/missing
+state coverage and full-block/opcode/end-state scope remain open. Required GitHub
+approval, candidate Pages publication, personal facts/terms and submission gates
+remain separate. No localDocker/VM startup, protected merge, new model/holdout
+evaluation, media upload, formal submission or Discord work occurred.
+
+## October 2 — Same-block signed funding candidate preparation
+
+The previous86a/968b reader composition passed all five first-attempt checks.
+Downloaded21-source type inputs/three frozen diagnostics/78full retained findings/
+50audited packages/19image inputs/54doc hashes match. Full API/CLI/admission,
+normal and optimized exports, fixture and recorded-model reproduction pass;
+clean fixture8.763215s and model8.018850s belong to engine817 with Docker already
+running and potentially warm caches. These are not cold/full-guide measurements.
+See evidence/trace-funding-integration/previous-reader-ci.json and existingPR55
+job links. Public evidence in the older reader folder records its earlier prepared
+state; current pass does not backfill those historical records.
+
+EnginePR31/935558a defers parent-state pool balance/fee/gas checks only on owned
+trace nodes. Actual ordered EVM/block validation, signatures, loopback/no-mining,
+memory bound, guardian/deadline and ordinary profiles remain unchanged. Two
+regressions fail before the fix; four focused and248 full native tests pass after
+with0skips. Native synthetic funding produces two matching original signed
+receipts, gas21000/21000 and cumulative21000/42000; omission leaves a dependent
+spend unmined without a receipt. Invalid gas/fee/nonce inputs leave state unchanged.
+No replay balance/nonce/code repairs or sequential different-block workaround.
+Independent source/evidence review passes after redacting public local-installation
+paths; ignored originals and test outcomes remain unchanged. All8 new-head checks pass first attempt:248 Linux native tests36.615s and24
+actual Docker cases221.940s without skips. Root verifies23source/18wheel/19image/
+42Python/26OS/1126signedCargo/11doc bindings, retained full findings and exact
+original historical receipt projections. Current default four-prefix24.17299s
+keeps the complete previous outcomes except runtime/hash and one accurate admission
+assumption. Current SDK offline readback also passes. Database binary digest is
+CI-recorded, not locally rehashed from exported metadata;172nonCargo entries remain
+outside the Cargo audit. Synthetic image/protocol funding is distinct from the
+actual default host historical case. Human GitHub approval remains separate.
+
+The new immutable coordination source snapshot a253da8 selects engine935 with
+unchanged SDKee/CLI22/schema8785/siteb7. Four-file source review has no actionable
+findings;21-source types and the same three frozen diagnostics pass. The exact
+new offline CI step checks the frozen synthetic report with the typed SDK and
+actual viewer codec at Node22.23.1; baseline/adverse statuses, gas/cumulative and
+absent candidate receipts match. Rendered browser and historical funding proof
+are not inferred. See evidence/trace-funding-integration/README.md. The quick-start
+and latest submission index select this snapshot; old report/model/holdout/video
+sources and measurements retain their actual pins. New combined CI is pending.
+
+Archived same-block funding, broader oracle/missing-state cases and full-block/
+roots/end-state/opcode scope remain open. Protected human approvals, candidate
+Pages publication, personal facts/terms and formal submission gates remain open.
+No local Docker/VM startup, upstream writes, new model or holdout run, media upload,
+protected merge, package publication, formal submission or Discord work occurred.
+
+## October 2 — Signed oracle/provider candidate integration prepared
+
+The previous8029/a253 funding composition passed all five checks. Downloaded
+21source/78full retained findings/50audit/19image/55doc bindings and complete
+API/CLI/admission/export/reproduction proof pass. Clean fixture7.477365s and
+recorded model8.196629s retain engine935, running Docker and potentially warm
+caches. The new evidence folder preserves that complete prior proof separately
+from its older author preparation records.
+
+Enginee849/PR32 adds four signed synthetic oracle/provider-fault native regressions
+and one direct image/protocol case. Original update20 plus independent consumer
+receipts match gas26167/26438; omission from parent10 preserves the consumer hash
+but reverts at25808gas without logs. Normal read-only provider control verifies
+receipts. Missing parent/code/balance explicitly fail; missing mining-time storage
+produces an integrity-valid unverified report without receipts. Only one accurate
+report assumption changes; state/signature repairs or inferred error causes are
+not introduced.252localnative and252Linuxnative38.944s pass without skips. Root
+source/evidence review verifies23source/18wheel/42lock and unchanged findings.
+Two prior investigation raw files were overwritten by an ignored generator and
+are unavailable; that loss is disclosed. Current separately saved native proof
+is not presented under their old hashes.
+
+The immutable coordination source snapshot27c39fe selects enginee849 with the
+other dependency/frozen/model/holdout/media pins unchanged. Four source files pass
+independent review;21type inputs retain the same three frozen diagnostics. The
+exact new offline SDK/site step verifies three fixed positive/control/storage
+reports, receipt success/revert/gas/logs and unverified receipt absence. Existing
+original four-prefix/funding reader steps also pass with current pin metadata.
+See evidence/trace-oracle-integration/README.md. Component isolated CI twice failed at
+the historical1 default worker after25Docker tests passed216.086/216.203s; later
+full4/image/native audits did not run. Both full failures are preserved; cause
+remains unknown despite healthy same-source readonly followup. Further blind
+retries stopped; a failure-only bounded diagnostic is being implemented for
+independent review. Combined new-head CI is not started.
+
+Archived oracle/funding, provider authenticity and full-block/root/end-state/opcode
+scope remain open. Protected human approvals, candidate Pages publication, owner
+facts/terms and formal submission remain separate gates. No local Docker/VM
+startup, upstream write, new model/holdout/media run, protected merge, package
+publication, formal submission or Discord work occurred. Overall goal active.
+
+
+## October 2 — Failure-only diagnostic reviewed and real divergence retained
+
+EnginePR32/aac525c adds a reviewed trusted test-only diagnostic; production23
+source/script bytes,18wheel modules,19image inputs and policy remain unchanged.
+Root review fixes owner-cleanup/descriptor-close fault paths and missing-code
+TLS classification. Three regressions fail before fixes;15focused tests pass
+0.729s, including real embedded invalid-input execution. Root separately executes
+three such cases without Docker/network and checks17source/evidence hashes plus
+11original/redacted copies. Published failure records retain raw trailing spaces;
+no evidence-normalization or secret/state substitution occurs.
+
+Seven exact-head checks pass:267Linux native tests41.207s without skips,
+four267-test unit matrices with31real-Anvil skips each,23full reviewed source
+findings/42exact locked packages/18wheel modules and13document hashes. Isolated
+CI36913460373 passes25Docker tests217.511s, mainnet1 original receipt9.143445s
+and all4baseline receipts29.610351s. Candidate transaction2 is not_mined without
+a receipt; the unchanged status assertion fails. Later exact-plan diagnostic
+completes normally, so the original cause remains unknown. Cleanup passes;
+subsequent image/native advisory gates do not run. No blind retry or all8 claim.
+
+Root independently verifies raw bindings and both actual reports through SDKee
+and viewerb7 codec, preserving the failed candidate outcome. Current partial
+proof/reports/followup are in evidence/trace-oracle-integration. Local four-pin
+edits select aac;21types and all3offline reader steps pass, independent pin review
+has no findings. Earlier27source snapshot/docs preparation remains local; no new
+immutable composition, combined CI or publication is claimed. Public8029/a253
+with engine935 remains the latest fully tested composition. A controlled
+same-invocation node-log observer is under investigation; no original provider
+cause is inferred from receipt absence or a successful later repeat.
+
+All full-goal gates remain active, including archived oracle/funding and
+full-block/root/end-state/opcode scope, protected human approval, candidate Pages
+publication, required facts/terms and formal submission. No local Docker/VM,
+upstream write, new model/holdout/media operation, merge, package publication,
+formal submission or Discord work occurred in this step.
+
+
+## October 2 — Integrated observer native proof independently reviewed
+
+The failure-only trusted diagnostic now binds finite owned-node events to its
+actual worker envelope, baseline/candidate branch and unchanged original input
+indices. Normal mandatory commands and23production sources remain byte-identical
+to aac. Frozen source/fixture/binary/protocol evidence and raw original/control/
+missing-storage reports pass independent root inspection; all three also pass
+SDKee and the actual viewerb7 codec. Normal and adverse receipts match unchanged;
+injected missing storage produces bound execution-skip counts2/1 with complete
+EOF/no truncation. Seven nodes, eight readers and two proxy handlers/listeners/
+ports close, and source oracle/nonces remain unchanged. See
+[evidence and limits](evidence/trace-oracle-integration/README.md).
+
+Fourteen focused observer tests, one separately added real collector-descendant
+regression and15existing diagnostic tests pass. The collector regression proves
+its own bounded timeout/descriptor/group cleanup; original trace failure survives
+secondary collection errors. Final15-test source is separately frozen; no claim
+that earlier14tests executed the later file. Packaging and required new-head CI
+are pending. The old historical candidate failure is preserved and its cause is
+unknown; later/synthetic diagnostics do not replace it. Full G1–G5 remain active,
+and no new composition, protected merge, Pages publication or submission occurs.
+Discord remains excluded.
+
+
+## October 2 — Current component all eight verified; composition prepared
+
+Engine99fd/PR32 passes all8first-attempt checks. Root verifies complete raw23
+source/18wheel/19image/42Python/26OS/1126signedCargo/14docs and282native0skip,
+25Docker217.324s, default1/4 receipts and complete prior935report values except
+runtime/hash/exact added assumption. Current candidate4 has expected skipped/
+executed/executed/nonce_conflict statuses. Actual SDKee/siteb7 codec checks the
+current report hashes/statuses. Conditional diagnostic is skipped; prior failed
+reports and unknown cause remain separate. No retry, weakened assertion or claim
+of actual observed Docker/historical helper dispatch. See
+[evidence](evidence/trace-oracle-integration/README.md).
+
+Reviewed sourcee46 selects99fd through four exact selectors only;21type inputs
+retain the same3frozen diagnostics and all3exact offline workflow steps pass.
+Other dependencies, frozen scenarios, recorded model/holdout/media stay unchanged.
+Current source/docs remain local pending consolidated publication and all5combined
+checks. Previous public8029/a253/935 remains the fully tested public composition.
+Human protected-main approval and candidate Pages publication remain separate.
+Full G1–G5 and official submission stay active; Discord excluded.
+
+
+## October 2 — Published affc805 composition: all five first-attempt checks
+
+The current public PR55 compositionaffc805/sourcee46 selects engine99fd,
+SDKee/CLI22/schema8785/viewerb7. All5first-attempt checks pass. Root independently
+verifies21source/78full retained findings/50locked packages/19image/56docs and
+complete API/CLI/shared admission/normal-optimized exports/3offline reader proof.
+Clean fixture7.169045s and recorded model replay7.622255s preserve exact artifacts;
+Docker/cgroup-v2 was running and caches may be warm, installation/VM startup
+excluded. No new model/holdout call or current rendered-browser proof. Separate
+native compatibility jobs keep their frozen variants; current logs and older
+uploaded browser/archive/model evidence are not conflated.
+
+CI36925370461(workspace),36925370527(quality),36925370525(docs) and the exact full
+root proof SHA7d1d2709c971ea780adf24790c88b1cc9e8306fd893020e8078753ef48207b49
+are recorded in existing PR55; local .quality/oracle-integration/ci-verification.json
+and its raw artifacts are the durable full proof. Public pre-CI preparation docs
+are historical snapshots; this local completion checkpoint is held for the next
+substantive change instead of a status-only commit/extra CI. Human GitHub approval
+remains0; strict main protection/one approval/admin enforcement stay enabled.
+Candidate Pages publication, required owner facts/Terms and formal submission
+remain open. Archived oracle/provider authenticity/full-block/root/end-state/
+opcode scope and earlier intermittent failure cause remain unresolved. Full goal
+active; Discord excluded. No protected merge, package publication or submission.
+
+
+## October 2 — Archived oracle baseline preserved; candidate still fails
+
+The active October2 owner policy continues improvement until the official
+October13 15:59JST deadline; official section5 was rechecked during this work.
+Current public candidates remain coordinatoraffc805/engine99fd, with their earlier
+all5/all8 checks scoped to those exact heads. PR47f142 is an ancestor ofaffc805.
+
+A bounded read-only discovery identifies original signed transaction12 updating
+the ETH/USD aggregator in Ethereumblock18999892. Two explicit native diagnostic
+attempts preserve the same first32 inputs, skip12 and150s trace budget. Both
+paired executions fail. Native001 loses in-memory baseline receipts on candidate
+failure; a separately reviewed atomic recording fix addresses that evidence loss.
+Five offline fault/privacy tests pass, without changing production source for
+these diagnostic attempts. Root independently reviews native002's72frozen
+bindings and all32 complete projected baseline receipts against captured originals.
+Initial owned parent/getter values match; baseline answer changes257082415000
+to256292441874. Candidateevm_mine fails; underlying cause and omission outcome
+remain unknown because the original transport discarded the cause. Both attempts'
+owned guardians exit0 and ports close; final OS/port checks confirm cleanup.
+
+See [retained raw evidence and limits](evidence/archived-oracle-diagnostic/README.md).
+No default Docker/archive omission/actual consumer/provider authenticity/full-block
+claim follows. Existing errors remain preserved. A product RPC diagnostic change
+is now being implemented so future failures can expose safe finite causes without
+provider URLs/messages. New source tests/review/publication/required CI remain
+separate from the historical99fd/affc805 checks. Protected integration, Pages,
+owner facts/video Terms and formal submission remain open; Discord excluded.
+
+
+## October 2 — Safe RPC diagnostics selected; archive timeout classified
+
+The previous public158fbc0/engine99fd composition passes all5 first-attempt
+checks and complete independent21-source/78-findings/50-package/19-image/
+57-document/API/CLI/admission/export/3-reader artifact review. Clean fixture
+6.674s and recorded-model6.853s retain original report identities, with Docker
+already running/potentially warm caches and installation/VM startup excluded.
+These measurements belong to the previous composition, not the new selection.
+
+Engine65c2833/PR33 adds finite private-safe RPC transport diagnostics and rejects
+valid-JSON truncated HTTP responses. All8 current-head checks and complete fresh
+artifact review pass:294 Linux native tests0 skips/47.122s, four294-test unit jobs
+with31 explicit Anvil skips each,25 actual Docker tests/214.044s,23 source/security
+findings,18 wheel modules,42 Python/26 OS/1126 signed Cargo packages,19 image inputs
+and15 documentation hashes. Default worker/HTTP envelopes remain unchanged;
+detailed codes cross trusted Python/native CLI only. Historical component records
+remain distinct. The current bounded/quality selection promotes65c through four
+exact selectors; frozen native/agent/host variants and all other pins are unchanged.
+Local21-source type checks retain3 frozen diagnostics, and all3 exact offline
+SDK/viewer reader steps retain complete previous outcomes apart from the engine pin.
+New combined CI and protected-main approval are separate pending gates.
+
+Actual native diagnostic003 retains the same32 signed inputs, skip12 and shared
+150s trace budget. Independent review verifies72 frozen bindings, source and all
+32 full projected baseline receipts byte-identical to002, identical initial owned
+parent/getters and baseline feed update. Candidateevm_mine is classified as an RPC
+transport timeout in this invocation:152.059s child/152.162s host. The underlying
+archive/miner/provider cause remains unknown; no retrospective001/002 cause or
+candidate branch/final protocol result is inferred. Both guardians exit0, ports
+close and final independent OS/port checks pass. Earlier public evidence remains
+unchanged. See [raw evidence and full limitations](evidence/rpc-diagnostics-integration/README.md).
+
+A separate bounded parent-state read cache is under implementation on a local
+engine branch. No cache performance/archive success is established yet. Source
+review, actual synthetic outcome/duplicate-read/cleanup controls and required CI
+precede any new archived paired run. No time budget, signed input, nonce, funding,
+state or header repair substitutes for a successful original-scope run. Main
+approval, candidate Pages, owner facts/video Terms and formal submission remain
+open; the full G1–G5 improvement goal is active and Discord is excluded.
+
+
+## October 2 — Concurrent parent cache: original prefix completes
+
+Engine198139f/PR34 shares bounded pinned-parent reads without serializing distinct
+keys; receipts/errors/volatile reads remain uncached. All8 exact component checks
+and independent full source/wheel/image/security/receipt artifact review pass:
+323 native tests/74.006s/0 skips, four323-unit jobs/33 explicit Anvil skips each,
+25 actual Docker tests/216.854s,25 production sources/findings,20 wheel modules,
+21 image inputs,42 locked Python packages,26 OS packages and1126 signed Cargo
+identities with0 reported advisories.172 native components remain outside Cargo
+advisory coverage; the non-exported database binary is not locally rehashed.
+
+The first two mandatory docs attempts failed on6 then3 existing GitHub HTML
+HTTP503 links. After13 targets recovered with the pinned bounded settings, only
+the failed existing job was rerun. Attempt3 passes143 links/0 errors/timeouts,
+16 exact document hashes and complete merge-tree equality to198139f. Failures
+are retained; no exclusions, assertions, source or required gate were weakened.
+
+Actual native005 retains original32 signed inputs from block18999892, skip12
+and shared150s trace cap. It completes in125.358s with all32 complete projected
+baseline receipts byte-equal to originals and003; candidate executes31 and skips12.
+Initial owned heads/getters match. Baseline producer answer changes257082415000
+to256292441874; candidate keeps the initial answer. Other31 gas/status/logs/bloom/
+identity fields match; later position/cumulative gas shifts exactly by omission.
+Owned2 Anvil nodes and cache PID/groups/ports/pipes close, independently probed.
+Cache1871 requests/966 upstream/899 hits includes6 aggregate errors of unknown
+cause. Prior001–004 failed runs remain immutable. This32-of181 native producer
+case establishes no dependent-consumer/strategy/profit/full-block/root/opcode/
+provider-authenticity/default Docker32 or speed/timeout-causality result.
+
+The current coordinator selection changes exactly4 engine selectors65c→198;
+frozen native/agent/host variants and other components are unchanged. Local21-
+source type checks retain3 explicit frozen diagnostics; all3 offline SDK/Node
+reader steps preserve complete prior outcomes exceptenginepin. Exact b7 Git
+blobs insulate that parser proof from concurrent local viewer development.
+See [component and preparation evidence](evidence/trace-parent-cache-integration/README.md).
+The previousccc/65c composition passes all5 combined checks and its clean replay
+measurements retain their original scope. New combined CI, protected-main human
+approval and candidate Pages publication remain separate. No main merge, new
+video, package publication or formal submission is claimed. Goal active through
+the officialOctober13 15:59JST deadline, recheckedOctober2; Discord excluded.
+
+
+## October 2 — Original receipt comparison enters the pinned composition
+
+Viewerb1cfb00/PR16 classifies candidate differences against original projected
+receipts, retains every exact differing field and distinguishes omitted/unavailable
+receipts. Import captions show actual32/through31/skip12 separately from the
+recorded four-input sample. Independent local source/visual review and fresh Linux
+CI artifacts pass: all4 required first attempt,66 Node/11 Python tests,15 JS/16
+type inputs,99 unsuppressed source-bound findings,109 npm/42 Python identities
+with0 reported advisories,36 browser groups/28 raw axe scans0 violations. Contrast
+incomplete results remain; no manual accessibility certification is claimed.
+All56 committed source/evidence blobs,22 quality hashes,15 browser input hashes,
+12 documents/51 links and the complete synthetic merge tree match the head.
+
+The current execution snapshotbaf58f4 selects viewerb1cf through exactly2 pins,
+retaining engine198, SDKee, CLI22b, schemas878 and every frozen compatibility
+variant. One mandatory integration step inspects the original native00532 report
+through both SDK and the actual Node viewer validator/classifier. Engine/fixture
+bytes matchSHA72b9765731a77c06df1200a2dcf46f74cb7f512758ab35029ae9cef2c6ef2120;
+all32 baseline receipts equal originals. Candidate omits12; the later19 full
+receipts differ only by index-1/cumulativegas-336752. Summary12matches/1omission/
+19structural/0execution differences preserves all32 classification records.
+All4 exact local workflow reader steps pass; other3 complete outcomes match prior
+404e8db except viewer pin. Initial private checkout guards refused old direct
+CLI/schema branches before executing any product code; exact pinned worktrees
+resolved the setup. No EVM/archive/model/browser call was added by this integration.
+
+The404e8db/198 composition's all5 required CI/full raw review and clean fixture
+6.779s/model7.012s timings remain historical, with running Docker/cgroup-v2,
+potentially warm caches and installation/VM startup excluded. Current composition
+CI and protected-main human approval/Pages remain separate. See
+[exact source and reader evidence](evidence/trace-comparison-integration/README.md).
+Original32 native producer proof is not a dependent-consumer/profit/full-block/
+provider-authenticity result. Videos/model/holdout inputs remain unchanged; formal
+submission is not claimed. Goal remains active; official rules section5 rechecked
+October2 11:37:37UTC still endsOctober12 23:59PT/October13 15:59JST. Discord excluded.
+
+
+## October 2 — Recorded Aave consumer price dependence enters integration
+
+Enginebd5527f/PR34 publishes the actual native006 original32-of181 Ethereum
+block18999892/skip12 paired replay and fixed owned Aave/WETH view records. All32
+complete projected baseline receipts equal originals; candidate executes31.
+Aave price matches producer answer in all4 phases: baseline257082415000→
+256292441874, candidate keeps257082415000; base unit100000000. Same initial owned
+heads/getters, nonempty/stable returned oracle/proxy code and closed owned2Anvil+
+cache are independently reviewed. Runtime132.703s retains original shared150s
+cap. Seven cache aggregate errors have unknown cause. Read-only dependence does
+not establish signed consumer action/strategy/profit/full-block/root/opcode/
+provider authenticity/default Docker32 or timeout/speed causality.
+
+The public component's all8 first-attempt checks and complete source/wheel/image/
+dependency/docs review pass:323 native0skips/25Docker/33 research controls,
+25 production sources unchanged from198,20 wheel/21 image inputs,42 Python/
+26OS/1126 signed Cargo identities with0 reported advisories,17 documents/164 links.
+172 native components remain outside Cargo advisory coverage; non-exported
+security database binary is not rehashed. The63 published changed blobs and57
+provenance copies are verified. Publication-time pending CI is superseded by the
+later component review, while both original records remain preserved.
+
+Exactly4 selected engine references now point198→bd; other components and every
+frozen native/agent/host variant are unchanged. A fifth mandatory integration
+step inspects native006 through SDKee and actual Node22.23.1 viewerb1cf. It checks
+all32 receipts/classifications,4 strict raw ABI consumer/producer phases, pinned
+initial head and post number/timestamp, currency/unit/source and returned code
+identities. All5 offline cases pass; complete previous4 outcomes remain unchanged
+exceptenginepin. Local21-source typing retains3 explicit frozen diagnostics.
+These are recorded-byte inspections, no new EVM/archive/model/browser execution.
+See [scope, source bindings and full outputs](evidence/consumer-price-integration/README.md).
+
+The previous bb9cada/engine198/viewerb1cf composition passed all5 first-attempt
+checks and full artifact review; its clean fixture6.276s/model5.564s retains
+running Docker/cgroup-v2 and potentially warm caches, excluding installation/VM
+startup. That verified snapshot is historical. Independent preparation review
+and new bd-composition CI precede publication. Protected
+main human approval and candidate Pages remain separate; standard selected
+trace-run does not yet collect extra consumer views. Supported observation CLI
+work is isolated on a separate engine branch. Videos and model/holdout inputs
+are unchanged; no formal submission or overall G1–G5 completion is claimed.
+Goal remains active through the officialOctober13 15:59JST deadline, freshly
+recheckedOctober2 13:26UTC; Discord excluded.
+
+## October3 — Supported observation wrapper enters the selected composition
+
+Engine40bea57/PR35 is ready for review with all8 original mandatory checks and
+complete root/independent raw-source/artifact review:356native/0skips, four unit
+versions356/40explicit Anvil skips,25real Docker cases,33research controls,
+26production sources/25retained findings/21wheel modules,42Python/31OS/1126signed
+Cargo identities with0 reported advisories,22documents/255links. The actual
+supported CLI separately executes original32-of181/skip12 once, validating all32
+full baseline receipts and four raw Aave/producer price views within original150s.
+Actual replay127.599511s; owned2Anvil+cache groups/ports/pipes close. Its passive
+lifecycle profile and6cache aggregate errors of unknown cause remain disclosed.
+172nonCargo entries and unexported database/tool binaries remain audit limits.
+
+Exactly4 selected engine references now propose bd→40; other components and every
+frozen native/agent/host/model/holdout variant remain unchanged. A sixth mandatory
+integration step uses the strict engine wrapper loader, normal quota-bound report
+export, SDKee and actual Node22 viewer validator/classifier. The exported nested
+report preserves all32 receipts and12identical/1omission/19structural/0execution
+classifications; four raw price/currency/unit values and complete classification
+match the source wrapper. All6 exact workflow run scripts pass in fresh isolated
+local output paths. Complete previous5 outputs remain unchanged exceptenginepin.
+21tool-source typing retains exactly3 byte-frozen provider diagnostics. These
+reader checks are offline recorded-byte inspections, not fresh EVM/archive/model/
+browser execution. Existing SDK/viewer do not validate/display extra price views.
+
+The prior9b49fe2/bd composition's all5 mandatory checks, full raw review and clean
+fixture7.798s/model8.182s are historical, with running Docker/cgroup-v2 and
+potentially warm caches, excluding installation/VM startup. New combined candidate
+CI, protected-main human approval and candidate Pages remain separate. The guide
+retains its earlier frozen Docker walkthrough and adds an explicitly selected
+engine40 offline inspection path. See [source pins, exact reader outcomes and limits](evidence/observed-wrapper-integration/README.md).
+Read-only price dependence is not signed consumer strategy, profit, provider/
+deployed-code authenticity, full-block/root/opcode or defaultDocker32 proof.
+Videos and recorded model inputs remain unchanged; formal submission is not
+claimed. Goal active through October13 15:59JST, official rules section5 rechecked
+this turn; Discord excluded.
+
+
+## October3 — Direct price-wrapper browser candidate
+
+Coordinator213b0bc/PR55 subsequently passed all5 original mandatory checks;
+independent full raw review binds1014 inputs, complete6reader outcomes,21typed
+sources/3frozen diagnostics,78retained findings/50locked Python identities with
+0reported advisories,22engine40 image inputs and62documents/397links. Its clean
+fixture7.635240s/recorded-agent7.390132s retain configured runningDocker/cgroup-v2
+and potentiallywarmcaches; installation/VM startup excluded. Source/merge trees
+match213. These actual combined results supersede its publication-time pending
+CI record; historical9b timings and all frozen variants remain distinct. See
+PR55's exact originalCI links and retained .quality/observed-wrapper-integration/
+ci-213/independent-ci-review.json (SHA5dc73f44033caa1e34eeda3961e2d956908fc7bc09c5c1b855f89093d26e602d).
+
+ViewerPR16 now publishes a19d3b1 with direct sealed observation-wrapper import
+and a recorded Aave/WETH price button. Four consumer/producer phases, exact large
+integers, price difference and UNPROVEN reasons are visible beside all32 receipt
+comparisons; invalid imports/replay switching clear old price rows. Public sample
+is exactengine40 SHA70108483; six deliberately mutated controls were sealed and
+accepted by the engine40 Python validator, not new chain execution. Local94Node/
+11Python/39actualChromium checks at1280/390/320,34axe scans0violations,17JS/18typed/
+24source/config inputs,122retained security findings and13docs/66links pass.
+Final independent review binds127 inputs/all25published blobs (SHA29ecc85fbd78f0532e16f5faedb56014ce90d18ade871b4b9296657eb00205f6).
+It found/fixed rationale correspondence: all99existing reasons preserved and23
+new contexts individually explained. Original browser runner is retained; two
+formatting-only call-chain changes have identical complete Acorn ASTs without
+positions. Exact published runner CI remains a separate check. See public
+viewer evidence/observed-prices and PR16.
+
+Current originala19 CI passed all4 mandatory checks (37047157220;
+docs37047157381). Independent full raw review passes321 offline assertions with
+154 bound files, exact25 published Git blobs,109 npm/42 Python lock identities
+and0 reported advisories; exact final Linux runner39groups/34rawaxe scans and
+13docs/66links pass. Original review SHA20ad24e37a23f3740348ad6636977397576af7b5f5e4ba787f9d5712fa1366ca.
+Protected build/deploy correctly remain skipped on the PR.
+
+The next coordinator candidate promotes exactly2 viewer selectors b1cf→a19 and
+extends the sixth mandatory reader to validate the original wrapper through the
+actual viewer codec. Engine/SDK/CLI/schema and every frozen job/model/holdout
+remain unchanged. All6 exact scripts pass in fresh isolated output: first5 scripts
+and complete outcomes identical except viewerpin; sixth retains old fields and
+compares the complete nested report plus four decoded price/address/unit/head/code
+records and classification with engine40. BigInts are decimal strings in recorded
+outcomes, preserving full precision.21tool-source typing retains3 frozen diagnostics.
+Quick start now loads the recorded sample/direct wrapper through the local viewer;
+optional Python export remains available. See [direct integration evidence](evidence/direct-observed-wrapper-integration/README.md).
+New combined CI, human protected-main approval and live candidate Pages remain
+separate. No new EVM/model evaluation, video change or formal submission is claimed.
+Goal active through October13 15:59JST; official rules section5 rechecked this turn;
+Discord excluded.
+
+
+## October3 — Standalone observed-price SDK candidate
+
+The coordinator d90f4a9 direct-viewer composition subsequently passed all5 original
+mandatory checks (37049503304/37049503150/37049503339), with full independent
+raw review binding1032 files, all6 exact reader outcomes,21typed tools/3frozen
+diagnostics,78findings/50locked identities0reported advisories and22engine40
+image inputs. Docs63/417 pass. Clean fixture8.205260s/recorded-agent8.875339s use
+configured runningDocker/cgroup-v2, potentiallywarmcaches, excluding install/VM
+startup; this is reproduction evidence, not a speed comparison. Raw review SHA
+b80f5995958eb643a3b3c8033487e7c736b0f2b72e2322b9ee6320f26dffd7c6, retained
+.quality/direct-observed-wrapper-integration/ci-d90f; PR55 has originalCI links.
+
+SDKPR7 publishes eb9921f with direct load/verify_observed_trace, frozen typed
+price/feed/head/code/error/classification records and complete nested TraceResult.
+No engine runtime dependency/import, server, RPC, model or fresh chain call is
+needed. Seven offline ABI/coverage/classifier functions preserve engine40 semantics
+with SDK-local canonical/hex adapters.45local tests (9newgroups/22resealed/5RPC
+controls),6source Ruff/mypy/Bandit0 findings,42locked manifest/runtimeempty and
+final isolatedwheel f1117628 pass. Actualsample701 and6engine-sealed synthetic
+goldens b688 retain complete32 baseline receipts/19structural differences and
+exact2**200/None unproven handling. Immutable snapshots preserve raw ABI and
+finite diagnostics. Independent final review124assertions/48bound inputs/all15
+staged blobs passes (SHAd82844aa58fe031aeead6c0cc47209f3ec2e3f999e92bc2a1673888053d9d07b).
+Root verifies all15 published Git blob IDs at exacteb992. README's supported CLI command was corrected to trace-observe --native; final
+wheel metadata rebuilt while all runtime package bytes remained identical. Docs
+8/26 pass. See SDK evidence/observed-reader and PR7.
+
+Original component all5 checks and full raw independent review pass: units
+37052557032/quality37052557013/docs37052557015, allfirstattempt,45/0skip on each
+Python3.11/3.12/3.13. Raw review118assertions/52bound inputs verifies42exact locked
+identities/0reported advisories,6source/wheel/full README+RECORD and wholemerge
+tree==eb992. SHA3852b7acb5185af14886e672d2fa3fc7a5c721ad56d1414d3bc12c6c81cb72f1.
+Installed filesystem was not separately exported; actual isolated import/read
+logs and wheel bytes are retained. Tool/DB/ZIP cryptographic gaps stay explicit.
+
+The proposed coordinator promotes exactly4 selected SDK references ee→eb992,
+preserving frozen hostEE and all other native/agent/model/holdout jobs. Sixth
+actual reader now compares full SDK wrapper/nested snapshot, classification and
+four typed records, including every signed round field, source/aggregator/currency/
+unit, head/code identity and errors, with recorded engine/viewer facts. All6 exact
+local scripts pass; first5 bodies and complete results unchanged except SDKpin.
+21tool-source typing retains3 frozen diagnostics. Quick start directly reads the
+local sample through SDK alone. See [integration source/evidence](evidence/sdk-observed-integration/README.md).
+New combined current-head CI, human main approval, Pages and formal submission
+remain separate. No fresh EVM/model/browser evaluation is claimed. Goal active
+through October13 15:59JST; official section5 rechecked this turn; Discord excluded.
+
+
+## October 3 — terminal observed-price inspection
+
+Coordinator4b037fe publishes the reviewed SDKeb composition; all5 original
+mandatory checks pass firstattempt (37096639467/37096639463/37096639482).
+Full independent raw1044-file review passes, SHA3d13d25613e0b6cee85ea8e305f65b78ccd7a79ded03b4fc708d8aa3cf7632ea.
+All21 publishedblobs,21types/3frozen,78exactfindings/50lockedidentities0reported
+advisories,image22/engine40,six full outcomes and64docs/438links match.
+Configured runningDocker/cgroupv2 cleanfixture9.040621573s/recordedagent8.187395178s
+include sourceclone/venv/image/execution with potentiallywarmcaches, excluding
+installation/VMstartup; reproduction evidence, not a speed comparison.
+
+CLI1ee3d3a/PR10 adds observed-inspect/observed-verify through SDKeb alone.
+Two input-only commands validate both wrappers/nestedtrace before stdout, expose
+exact full4typed records and keep null unproven differences/reasons. Existing
+v0.1/agent AST unchanged; exactly4 SDKselectors advance, frozenc167 engine retained.
+49local/0skip,seven new groups,6source Ruff/mypy/fullBandit0,42lockmanifest pass.
+Lock byte-identical to independently audited SDKeb; local advisory reuse disclosed,
+current CI still queries. Fresh-Iwheel5commands/noengine pass; finalwheel1115a1c3
+contains all4currentmodules/README, with metadata-only prose fix disclosed.
+Nine exact public copies in CLI evidence/observed-cli. Independent170assertions/
+52inputs/all21stageblobs passes (e66fa8dc056021087aef6207c40af2ea084c6e43fccc9dfa3a042e6c2ae6381a).
+All21 publishedremote Gitblobs match. Docs7/13/12success/1existingloopbackexclude pass.
+
+CLI all6 original checks firstattempt pass (37097572628/37097572600/37097572586).
+Full raw independent156checks/22artifactfiles/49immutableGit inputs pass,
+SHAdd6ca1460954c63a763a10837a4008bb6b51fd31f4af58bdb5399e3f31d7bb48.
+49tests/0skip on each Python3.11/3.12/3.13; frozenc167 actualDocker agent4/0skip
+and labeledworker cleanup pass. Image18source inputs/historical base scope,
+6source fullBandit0/42exactlocks0reported advisories, bothactualCIwheels/allRECORD/
+currentREADME/SDKmarker and all5-I smokes bound. InstalledFS/temp exports not
+separately exported; tool/DB/ZIP/oldbase crypto gaps stay explicit. This is not
+new engine40 OS/Cargo or model/chain/browser proof.
+
+Proposed coordinator promotes exactly4 CLIrefs22→1ee, preserving allfrozen native/
+agent/host/model/holdout inputs. Sixth reader executes both actualCLIcommands,
+compares fullJSON classification/traceIDs/count and4phase records against SDK,
+engine and viewer. All6 exact localscripts pass; first5 bodies/fulloutputs unchanged
+exceptCLIpins. Type21/3frozen pass. New package reuses prior5fullreader facts and
+binds their pins-only change/hashes; only new sixth output copied to avoid duplicate
+evidence. Quickstart now offers direct terminal inspection, with optional Python.
+New current-head combined CI, human protected-main approval, Pages and formal
+submission remain separate. Goal remains active until official deadline; no
+new archive/model/browser run, spending, disclosure or Discord work.
+
+
+## October 3 — bounded historical price replay
+
+Enginec2eb54d/PR35 now collects the fixed Aave/WETH price profile through the
+default Docker worker; explicit native remains separate. Fixed data-only plan/
+profile/full request hash and nested-plan result binding preserve existing formats.
+Observation150/worker180 deadlines compose without restart; explicit builtin
+seccomp keeps actual filtering on even under an unconfined daemon default.
+
+All8 original current checks and full134-file independent raw review pass,
+SHA4a9c77cb32540e0f68ae2e14072d49400535bd8e176d90aa388244844a75ffca.
+Runs units37102146980/native37102147035/isolated37102147018/quality37102146988/
+docs37102146979. Native366/0skip, four unit versions366/40Anvilskips each,
+Docker26/0skip,26qualitysources/25retainedfindings/42Python0advisories,
+31scopedOS/1126signedCargo0reportedfindings,21wheelmodules/22imageinputs and
+23docs/277links bound. Required actual observed1 CI preserves the original receipt
+and all4 complete prices256292441874/difference0, runtime7.87843s.
+First4f Linux test-only full-response env-size failures/cancelled matrix jobs are
+retained; full owned-file fixtures repair transport without changing production,
+image, policy, dependencies or workflows. Local macOS native metadata cleanup
+PermissionError cause remains unknown despite focused/full unchanged-source pass.
+
+The separate actual default32 run at the same production source verifies32
+original receipts,1omit/31executed and4complete prices257082415000/256292441874/
+257082415000/257082415000. Trace141.443232s/host142.447272s are within original
+150/180 caps; ownedslot absent after exit. Full outcomes/plan/classification/rawABI
+match native evidence. One executed attempt claimed; no native fallback, fixture,
+provider/state/nonce repair or fresh model call. It is read-only partial-block
+dependence, not signed consumer strategy/profit/full-block/root/provider truth.
+
+Prior coordinator3270117/engine40 passed all5 original combined checks and full
+1050-file independent raw review SHAd8594629c62d253a8c7f0344081b468783669893161b9a15dc83be4b5c1224bc.
+Its fixture7.47777061s/model8.067954531s retain the configured runningDocker/cgroupv2/
+potentiallywarmcache scope, with VM/install excluded; not newc2eb measurements.
+The new proposed composition promotes exactly4 Engine selectors, preserves every
+frozen model/holdout/job and six exact reader bodies, and adds a seventh full
+Engine/SDK/CLI/Node22 reader for the actual Docker32 wrapper. All7 local readers
+pass; first6 complete fact bodies differ only in engine pin. The quick start adds
+matching source/image/replay instructions. See [composition source/evidence](evidence/bounded-observed-integration/README.md).
+New combined current-head CI, independent human protected-main approval, candidate
+Pages and formal submission remain separate. Goal active until the official
+October13 15:59JST deadline (section5 rechecked this turn); Discord excluded.
+
+
+## October 3 — historical price execution through the CLI
+
+CLId437ad1/PR10 adds `trace-observe` through the matching optional default Engine,
+standalone full SDK/admitted-plan validation and shared quota/atomic export.
+All6 original current checks pass firstattempt (tests37107029565/quality37107029556/
+docs37107029542), and full original raw independent review passes with585assertions,
+35stable raw files/77immutable sources, SHAad73c100fc3cb87f199a1321c224a1fb66f7650d9e6235ae976842db332e5ee3.
+59units/0skip each3.11/12/13, full7source Bandit0 and42exact locked identities0
+reported advisories, CLI5/SDK4 wheel modules/UTF8README/everyRECORD and installed
+inspection outputs are bound. Frozen c167 agent4 retains original scope; newc2eb
+actualDocker3 covers complete one-input original208144gas/eightlogs/four complete
+prices256292441874, missingworker1 and admittedSIGTERM130/incumbent/slot cleanup.
+CI launch records exact amd64 image/source22 and importedCLI5/SDK4/Engine21/plan;
+local final840 image is separate. Docs8/21 pass (one existing loopback exclusion).
+Original import/buildenv failures and local image-provenance gaps are retained;
+final explicit-image local3 run closes the latter without relabelling old records.
+
+This proposed coordinator updates four CLI selectors and makes the guide's replay
+command use the CLI. All seven exact offline readers executed once; all9 complete
+fact/export outputs are unchanged except the selected CLI pin and sixth/seventh
+exact CLI main source hashes. The provisional post-run comparison expected a pin-
+only difference; corrected offline against exact old/new source hashes, without
+rerunning readers or altering outcomes. All frozen native/agent/host/model/holdout
+jobs, inputs and policies remain unchanged. See [current composition evidence](evidence/cli-observed-run-integration/README.md).
+New combined current-head CI, human protected-main approval, candidate Pages and
+submission remain separate. Goal remains active through the official deadline;
+Discord excluded. No newCLI32/model/browser/OS-Cargo/kernel/performance claim.
+
+
+## October 3 — exact historical Aave account impact
+
+Engine88c6/PR35 adds the closed read-only Aave account profile over the default
+Docker worker, alongside existing price observations. All8 original current CI
+checks and full raw independent review pass (SHA69351542). SDKba4/PR7 adds the
+standalone exact-integer typed reader with no Engine/network dependency; all5
+checks and full raw review pass (SHAaeaeb9ad). CLI6965/PR10 adds trace-position,
+position-verify/inspect, unchanged quota/atomic exports and owned cancellation;
+all6 original firstattempt current checks and full raw review pass (SHA3324c05a).
+Current75 units on each Python3.11/12/13, actual frozen-agent4, fixed-price3 and
+account3 pass. The final CLI raw proof binds37 artifact files/130 immutable Git
+sources/8 reused inputs and28 published changed paths. The earlier c04d account
+CI baseline-unverified failure and absent preassertion output remain retained
+with unknown cause; current passing CI does not prove its cause or a runtime fix.
+
+Actual default-Docker account evidence replays first13 of181 original inputs at
+block18999892, verifies all13 original receipt projections, and executes12 plus
+skip12. Complete four-phase account/price/config/code/head views support exact
+borrowing-capacity difference81628966124 base units and health-factor difference
+3852169807877337 WAD. Both health factors remain at or above one. Aggregate
+account-state dependence is not sole-WETH causality, profit, a signed borrowing
+strategy, authenticated provider/proxy or full-block/root evidence. Zero-debt
+sentinels/unproven nulls remain explicit. CLI's trace40.615703s and Engine local
+92.565119s are separate environments, not a controlled speed comparison.
+
+The proposed [account composition](evidence/account-impact-integration/README.md)
+promotes exactly twelve Engine/SDK/CLI references together, preserves all frozen
+native/agent/host/model/holdout jobs and seven original full-reader bodies, and
+adds an eighth complete Engine/SDK/CLI account reader plus runnable guide. New
+exact-root combined CI, independent human main approval, viewer account display,
+Pages and formal submission remain separate. No new chain/model/browser run
+or spending/disclosure/Discord work. The improvement goal remains active until
+the official deadline.
+
+
+## October 3 — exact SDK-to-browser account report composition
+
+The candidate selects viewer4c6e/PR16 after all4 original mandatory checks and
+full original independent raw review SHA665b429d. Parent rehashed257 raw/current
+inputs,4 owning immutable contract sources and34 published blobs. Linux42groups/
+49 raw axe outputs,126Node/12Python,137 unsuppressed findings/19JS/20types,
+Node109/Python42 zero reported advisories and14docs/75links are source-bound.
+Prior local320 native-filechooser timeout remains causeunknown; unchanged local
+rerun and fresh Linux CI pass, without weakening assertions. Human main approval
+and live Pages remain separate; component CI is not publication.
+
+The proposed two-reference viewer update and new ninth offline reader make the
+same closed account wrapper readable across Engine/SDK/CLI/Node. Actual13 plus
+nine synthetic controls compare full classified values, all four typed/raw
+account/config/code/head/error records, plan/scope, three seals and entire nested
+trace facts. Original13 baseline receipts and candidate12+skip12 remain exact.
+Big integers, missing/null values, no-debt sentinel, debt transition and HF-one
+boundary are retained; synthetic controls are not chain or genuine user data.
+The local guide adds direct account sample/import inspection beside price32,
+with explicit independent source and execution scopes.
+
+All9 local readers pass. First7 bodies remain byte-identical; old8 changes only
+its now-obsolete viewer-limit sentence and preserves every executable assertion.
+All previous full outcomes match except viewer pin and that scope text. Initial
+new-reader comparison lacked SDK tuple/error JSON normalization; test mapping
+fixed, only9 rerun; successful8 originals reused and outputs compared offline.
+Full Node output is retained before assertions. Production21 scripts/type pins/
+locks/frozen3 diagnostics are unchanged from audited root670e; local type results
+reused, mandatory currentCI still runs full quality. Normalized workflow differs
+only in viewerref/newreader/one scope literal; no original job, policy, timeout,
+model/holdout or host/native input changes. See [composition evidence](evidence/viewer-position-integration/README.md).
+
+Current-root combined CI, independent human approval, Pages and formal submission
+are separate gates. No new EVM/RPC/model/browser/performance run, merge/deployment,
+user evaluation or Discord work occurred. Goal stays active through the official
+October13 15:59JST deadline, section5 freshly rechecked this turn.
+
+
+## October 3 — compose prominent exact account changes
+
+Root2e05 subsequently passed all5 original mandatory checks and full raw review
+SHA6868f253; the preceding section records preparation-time state. Viewer8aa0
+now passes all4 original current checks and full raw independent reviewd54be9be
+(389bound inputs/19immutableGit/17published blobs parentrehashed). Linux42groups/
+58rawaxes/0violations/0JSerrors preserve42old groups/49scans plus9 explicit debt-
+transition/negative/zero scans.126Node/12Python,137old security reasons/19JS/20types,
+109Node/42Python fresh zero-advisory identities and15docs/84links are source-bound.
+Exact borrowing-capacity/HF changes precede the address and full table, with
+semantic mobile stacking, sign/null/no-debt semantics and no rounding. Original
+macOS chooser timeout cause remains unknown; Linux pass does not establish cause.
+
+This composition promotes only two default viewer references and updates the
+local guide. All9 exact offline readers executed once; their bodies are identical
+and all12 full outcomes are unchanged except viewer pin. Production Python21,
+type pins/locks/frozen3 diagnostics and all native/host/agent/model/holdout jobs
+remain exact; prior source-bound local quality is reused, mandatory rootCI runs
+afresh. See [current summary composition](evidence/account-summary-integration/README.md).
+No new chain/model/browser/performance/user execution, main merge, deployment,
+submission or Discord work is claimed. New exact-root combinedCI/raw review, human
+main approval and live Pages remain separate. Approved media retains older pins;
+this newer UI is not yet recorded. Goal active through official deadline, section5
+freshly rechecked; no completion claim.
+
+
+## October 3 — current account-impact product recording
+
+Root 3b9 completed all 5 original mandatory checks on attempt1 and full original
+raw independent review a32868f4. Parent externally rehashed1093 raw files/29 current
+sources/70 docs/19 immutable Git/19 reused/4 helpers/12 published blobs; imported 1045 Git
+evidence remains distinct from8 fresh verification files. PR55 exact body/head
+readback retains currentCI links and historical scopes. No main/Pages merge.
+
+The [additional2:36.80 account-impact demo](evidence/submission-account-demo/README.md)
+records actual viewer 8aa0/Engine 88c6 and two fresh bounded local runs. The recorded-decision replay's full
+JSON equals the existing model recording, with zero agent-model/archive calls.
+Previously recorded account 13 is inspected offline, not rerun historically.
+Both exact cards/all 6 after-state rows and all 13 receipt rows are readable; index 12
+visibly skipped/no receipt. The bad input changes only64 identifier bytes, preserving
+all exact large integers, shows hash mismatch/clear, and recovers with the original.
+18 loopback GET/18status 200/16 served sourcehashes/0 page errors, complete MP4 decode
+0 errors,15 captions within156.80 s and owned worker containers 0 are evidenced. The
+original 10 media files and public voice/configuration remain hash-identical.
+
+Retained earlier authoring failures/limited cuts are described exactly; corrected
+harness opens real accordions, serves the known nested asset and preserves negative
+input precision. No product/frozen model/holdout source changed. New image 23 sources
+bind to currentEngine/pinnedbase; no fresh image advisory scan or speed claim.
+Expanded raw candidate-null text lies below the iframe, distinct from visible
+skipped/no-receipt table proof. Human auditory review/hosting, this media/docs
+commit mandatory CI, protected human main approval/Pages/formal submission remain
+separate. Existing Docker VM/unrelated services were left running. Goal stays active.
+
+
+## October 4 — local-report source viewer composition
+
+Root b67a completed all5 first-attempt mandatory checks and original-raw
+independent review018b0f4f; parent externally rehashed1120 raw/29 source/71doc/57
+immutable/21reused/4helper/34publication inputs. Historical imported1072 evidence
+files remain distinct from8fresh verification files. No new media, main or Pages
+claim is inferred. The demo remains source-bound to viewer8aa0.
+
+Viewer422d98a fixes the actual local import retaining “Liquidity shock”: local
+origin, clear-on-load/error and same-example recovery now pass43groups/58rawaxe,
+126Node/12Python,19JS/20types/139full security rationales and16docs/94links. All4
+original mandatory checks passed. Independent full raw reviewe75a7ccc and parent
+rehash bind187inputs/64currentGit/20reuse/18publication blobs, with no new reported
+Node109/Python42 advisories. The original native chooser timeout cause remains
+unknown; raw incomplete contrast remains distinct from manual WCAG assurance.
+
+The composition selects only two new viewer references and updates the local
+guide. All9 reader bodies are byte-exact and execute once; all12 complete nested
+outputs remain unchanged except the selected viewer pin. Other pins, production
+Python21/locks/frozen3/jobs and original recording bytes are preserved. See
+[composition evidence](evidence/report-source-integration/README.md). No fresh
+EVM/model/upstream/user or performance run, deployment or submission is claimed.
+Current root staged review/mandatoryCI/raw review and independent human main
+approval remain separate. Goal active through the rechecked official deadline;
+Discord excluded.
+
+## October 4 — select exact terminal account inspection
+
+The default candidate selects CLI99e0's opt-in `position-inspect --format text`
+with existing SDKba4/Engine88c6/viewer422d/scenarios8785. The quick start now
+shows exact baseline/candidate/delta units directly; default JSON is unchanged.
+A new30-second offline CLI step saves complete stdout/stderr/status/source hashes
+before comparing the full committed expected text. Original nine reader bodies,
+required jobs, production/scripts, locks and frozen native inputs are unchanged.
+
+All ten full offline readers actually passed once. The original twelve complete
+outputs preserve every recorded fact after individually checking the new CLI pin
+and three exact main.py source bindings; new output13 equals the expected text.
+Initial wrong-cwd setup and overly strict old-source comparison failures remain
+retained. Final verification uses existing results, without reader reruns or broad
+field normalization. [Manifest/full outputs and scope](evidence/position-text-integration/README.md)
+separate this from fresh EVM/model/browser/timing evidence. CLI83unit/quality/
+installed-package/staged independent review and original-attempt6CI pass; current
+full raw review and combined-rootCI remain separate checkpoint records.
+
+No main integration, new live Pages/video or formal submission is claimed.
+Human independent approval remains required. Goal stays active to the official
+October13 15:59JST deadline; Discord and owner-deferred user evaluations excluded.
+
+
+## October 4 — gate unproven recorded comparisons in scripts
+
+CLI1ce7677 adds opt-in `--require-complete` to account/price verification.
+A valid but unproven record returns3 while retaining unchanged full JSON;
+success requires complete views and matching original baseline receipts.
+Default behavior, invalid1/argument2, negative/zero/no-debt success and offline
+Engine/network/export-ledger isolation are covered by9 new groups/full92 units.
+Fresh installed wheels preserve source/README/RECORD and old JSON/text goldens;
+local quality and all6 original CLI mandatory checks passed. Original argparse
+regression and two malformed synthetic fixture failures remain retained and
+scoped; SDK validation was preserved. Independent core review has no finding.
+
+The candidate selects this CLI, adds a contributor-facing script option and an
+eleventh offline CI reader. Its actual9 groups passed locally and complete raw
+stdout/stderr/status/pins/source hashes are saved before assertions. Previous ten
+reader bodies are byte-exact and their historical local results reused; current
+combinedCI is separate. Production/scripts, locks, other selected workers, frozen
+inputs and original media remain unchanged. [Composition evidence](evidence/require-complete-integration/README.md)
+records the exact source/step scope. No main merge, Pages, formal submission,
+new EVM/model/browser/timing or user evaluation is claimed; human independent
+approval remains required. Goal active to the rechecked October13 15:59JST
+competition deadline, with Discord excluded.
+
+
+## October 4 — keep contributor quality setup consistent with CI
+
+Select CLIa10c28d, whose development recipe now reads the quality SDK directly
+from its manifest instead of an obsolete literal pin. The exact fresh copied
+checkout recipe completed successfully, including local wheel installation,
+full quality checks and42 locked identities with0 reported advisories. Seven CLI
+and five SDK runtime module bytes match prior1ce wheels; original complete JSON
+goldens remain unchanged. The initial wrong-cwd attempt was interrupted130 and
+retained separately. All six original current CLI mandatory checks passed.
+
+The root pin/current guidance change preserves all eleven reader bodies,
+production/scripts/locks, other workers, frozen inputs and existing videos.
+Prior rootb605 five-check/full-reader CI remains historical; current required CI
+and independent review are separate. [Setup composition](evidence/setup-pin-integration/README.md)
+links the actual recipe evidence without rerunning unchanged local readers.
+Human main approval, latest Pages and submission remain pending. No fresh
+EVM/model/browser/performance/user execution is claimed; goal active, Discord excluded.
+
+
+## October 4 — select exact terminal price inspection
+
+The candidate selects CLI24bbb91's `observed-inspect --format text`. Exact USD
+prices/differences, four phases, finite unproven reasons and receipt status now
+appear in the quick start; default JSON and existing account text are unchanged.
+CLI8 new groups/full100/installed8, full10-source static checks and all6 original
+mandatory checks passed. Giant integers and unsupported currency/unit are covered;
+this is recorded/synthetic inspection, not fresh EVM or price/profit prediction.
+
+The new twelfth offline reader actually matches the whole Engine88c6 original32
+wrapper to the CLI fixture and the entire1382-byte text to its golden. Full raw
+stdout/stderr/status/pins/seven hashes are saved before assertions. Prior11 bodies
+are byte-exact; their prior5193 CI facts are reused, not locally rerun. The initial
+helper's ten-step expectation failed before execution and was corrected to eleven.
+[Composition evidence](evidence/observed-text-integration/README.md) separates the
+local new reader from current combinedCI and protected publication. Other sources,
+production/scripts/locks/frozen inputs and media remain unchanged; no fresh local
+EVM/model/browser/performance/user run claimed. Human main/Pages/submission pending;
+goal active through the official deadline, Discord excluded.
+
+## October 4 — demonstrate exact CLI inspection without replacing original media
+
+The additional2:36.80 edited demo now shows actual CLI24/SDKba4 price32/account13
+text and the same account's complete0/synthetic missing-view3 script exits.
+Four offline calls save all raw outputs before assertions;13 installed sources
+match immutable Git and both full text goldens match. Three picture intervals
+replace older visuals, preserving viewer8aa/CLI696 footage, its earlier EVM calls,
+all13 prior media files and15 narration cues. No fresh EVM/model/archive call,
+current viewer capture, paid generation or upload is claimed.
+
+The final3920-frame H2641600×90025fps MP4 fully decodes with0 errors. Every7331
+AAC packet's content/timestamps/metadata and whole VTT/SRT bytes match the source.
+All12 transition-boundary frames compare expected pictures and retained captions;
+actual Chromium checks three local GETs/full stdout/layout/0JSerrors. Account
+overflow, removed FFmpeg option and malformed extraction filter failures remain
+retained separately. [Media evidence](evidence/submission-cli-demo/README.md)
+records exact sources, cut ranges, outputs and limitations. Independent review,
+current mandatoryCI, protected main/Pages, human auditory review, supported-host
+delivery and formal submission remain separate. Goal active through the official
+October13 15:59JST deadline; Discord excluded.
+
+## October 4 — compose supplied Aave collateral and variable borrowing
+
+The candidate now selects Enginef53a66a, whose actual default-Docker Aave action
+experiment supplies10 WETH, compares the proposed9 WETH borrow at policy step3
+and then executes a supplied1 WETH borrow. Baseline mines a162805-gas revert;
+candidate holds without that transaction. Both finish with1 WETH and1 WETH
+variable debt. The smaller action is supplied, not policy-generated; artificial
+20 ETH/local impersonation, differing gas prices and archived-state scope remain
+explicit. First execution, actual recorded replay and final EngineCI action output
+match the complete59506-byte report. This is not signed-strategy replay or profit.
+
+All8 Engine checks succeeded:7 originalattempt1 plus isolatedattempt2. First
+isolated failure retained old account baseline index9 `not_mined`; causeunknown,
+new action step skipped. The unchanged diagnostic is non-authoritative; one
+failed-job retry passed the original gates without changing caps/source/checkers.
+[Action composition](evidence/aave-action-integration/README.md) links exact
+Engine evidence, currentCI and the one successful new offline reader. It checks
+the Engine semantic result and standalone CLI/SDK whole outputs, with network,
+Engine-import/API/export denial on CLI paths. Earlier installed13 module hashes
+match immutableGit; old workflow bodies, frozen inputs, quality variants and
+media are preserved. No fresh local EVM/model/browser/timing run is claimed.
+Current coordinator CI and independent review/publication are separate; protected
+main/Pages and submission remain pending. Goalactive, Discordexcluded.
+
+## October 4 — exact native and ERC-20 result text enters integration
+
+The candidate selects CLI169b759/PR10 with Enginef53/SDKba4. General
+`inspect --format text` shows exact native/token initial/final/change and
+candidate-minus-baseline, gas cost/usage and revert/reject counts. Missing records
+stay Unavailable; default JSON and earlier price/account commands are unchanged.
+Display controls reject contradictory pinned units, identities and raw arithmetic
+without partial output, preserve uint256/36-decimal amounts and escape metadata.
+They do not authenticate execution or infer valuation/profit.
+
+Current CLI has all6 mandatory checks successful on originalattempt1,107 tests
+per supported Python with0 skips,24 installed cases and14 matching runtime module
+identities. Complete raw independent review SHAf8431a22 and parent rehash pass;
+public actualtree5bf matches CI merge tree. The commit-addressed tree response
+is retained, with actual tree SHA/entire entry list checked separately. CLI quality
+reports0 findings/advisories across11 sources/42 locked Python dependencies;
+OS/Cargo/kernel audit scope remains separate frozen Engine evidence.
+
+[Text composition](evidence/aave-result-text-integration/README.md) executes the
+updated four-command offline reader against the exact original59506-byte Aave
+result. New3013-byte text matches the selected CLI golden; original3 whole
+outputs are unchanged. All19 source/sample hashes match immutable selectedGit.
+Only the bounded-default CLI checkout and this step change; all other workflow
+content, frozen pins/locks, old evidence and media remain unchanged. No new local
+EVM, model, browser or performance run. Current coordinator CI and independent
+review/publication are separate gates; protected-main/Pages and submission remain
+pending. Goalactive through officialOctober13 15:59JST; Discordexcluded.
+
+
+## October 4 — select exact Aave outcomes in the browser
+
+The candidate selects viewer37c43d0 with Enginef53/SDKba4/CLI169. The v0.1 source
+selector offers the original59506-byte action result; exact native/ERC-20
+initial/final/change/differences, identity/decimal bindings and arithmetic controls
+preserve digits and distinguish Unavailable from zero. The display and content
+seals establish selected internal consistency, not provider/execution authenticity
+or valuation/profit. Original report families, contracts and videos retain versions.
+
+All4 current viewer mandatory checks pass on originalattempt1:131 Node tests,
+12 Python site tests,47 Chromium groups/61 rawaxe zero violations/JSerrors,
+19JS/20typed/148 reviewed findings,109Node/42Python locked identities with zero
+reported advisories and17docs/103links/90unique with zero errors/timeouts/excludes.
+Independent original-CI proof SHA7fee1b9a and parent rehash bind all14 public blobs,
+actual merge/public tree, full original ZIP entries and source identities. Strict
+protected-human main approval and Pages remain separate; PR16 is open/unmerged.
+
+[Aave browser composition](evidence/aave-viewer-integration/README.md) adds one
+production Node view-model command to the existing four-command offline reader.
+The initial missing async await failed the required-field assertion; original
+outputs remain retained and the corrected actual step passes. Every earlier
+whole output is unchanged; all16 four-column rows/source/identities/recorded hold
+match the selected browser golden and all22 inputs match immutable selected Git.
+Other workflow bodies, frozen pins/locks/quality variants, old evidence and media
+are unchanged. No new local EVM/RPC/model/browser/performance execution is claimed.
+Current coordinator CI and independent stage review remain separate. Goalactive
+through officialOctober13 15:59JST, Discordexcluded; submission facts/audio/hosting
+and protected independent-human review remain pending.
+
+## October 4 — shareable bundled examples join the pinned integration
+
+The candidate selects viewer280958c with Enginef53/SDKba4/CLI169. An allowlisted
+URL opens the original Aave v0.1 example automatically; verified example links
+remove unrelated URL state and never serialize local imports. Loading, errors
+and stale responses cannot restore a link. The current component has all4 checks
+successful, with actual browser49/62 on attempt2 after an original native chooser
+timeout of unknown cause; independent complete223ZIP/source review and parent
+rehash pass. Original check/quality timestamps/results are retained in retry API
+metadata, not counted as new execution. Main/Pages remain independently protected.
+
+[Report-link composition](evidence/report-link-integration/README.md) updates the
+viewer pin and two current-golden references in the existing Aave reader. The
+new source against the old golden first fails the strict appSHA assertion; final
+current golden passes with every original five-command whole object unchanged,
+all16 exact four-column rows/source/identities/agent output and22 immutable input
+identities. Original golden/report/workflows/locks/media are retained. This is
+one successful local offline composition, not fresh EVM/RPC/model/browser/timing.
+Current coordinator CI and independent review/publication remain separate gates.
+Goalactive through officialOctober13 15:59JST; submission facts/audio/hosting and
+protected human-main review remain pending, Discordexcluded.
+
+
+## October 4 — bundled recordings offer pinned CLI inspection recipes
+
+The candidate selects viewer05a0059 with Enginef53/SDKba4/CLI169. All six verified
+bundled recordings offer exact Source JSON filenames and immutable public CLI/SDK
+setup and read-only inspection commands. Actual clean-clone setup and every
+inspection pass; metadata/imports cannot enter shell text. Scoped keyboard-scroll
+controls corrected12 actual mobile failures without changing browser assertions.
+Original recipe feature2f83987 passed local135 Node/12 site/49 browser groups/
+62 raw axe/security150; its Linux CI passed48/49 browser groups and timed out on
+one320px ArrowRight check, cause unknown. The selected05a diagnostics candidate
+passed fresh local49/62 browser checks and4 fault controls, with19JS/20typed and
+151 full findings (150 exact inherited reasons plus one diagnostic write).
+Independent staged review and current component CI/publication are recorded separately in the [CLI recipe composition](evidence/cli-recipe-integration/README.md).
+
+The actual existing five-command offline reader passes against current22 immutable
+inputs. All prior whole command objects, original59506-byte recording/3013-byte
+CLI text and16 exact four-column browser rows remain unchanged. Only viewerpins
+and two viewgolden references change executable composition; every otherworkflow
+byte, frozen input, component pin, lock and media remains. No new EVM/RPC/model,
+performance or historical-execution authenticity is claimed. Current combined CI
+and protected human-main approval/Pages remain separate. Submission facts/audio/
+hosting remain pending, goalactive through officialOctober13 15:59JST; Discordexcluded.
+
+## October 4 — copyable public CLI recipes join the selected candidate
+
+The candidate selects viewerad697dc with unchanged Enginef53/SDKba4/CLI169. Verified
+bundled examples provide native keyboard copy controls for fixed public recipes,
+manual fallback and serialized pending writes with stale feedback clearing. Six
+actual Clipboard write/readback cases and finite320px controls pass within current
+51 groups/64 raw axe/zero violations and JS errors. The original88 quality CI and
+local lint had a test-hook no-undef, overlooked by the initial review; corrective
+same-global reference leaves production/rules/types/locks unchanged and full19
+lint/20 typed/152 exact retained reasons pass. Original failures remain recorded.
+Component source/publication and fresh CI are separately bound in the [CLI copy composition](evidence/cli-copy-integration/README.md).
+
+The actual existing five-command reader passes with22 immutable inputs and every
+prior whole output unchanged. Original59506-byte Aave/3013-byte text and16 exact
+four-column rows remain. Only selected viewer and two currentgolden paths change
+workflow composition; all other jobs/inputs/locks/pins/media are preserved. No new
+chain/RPC/model/performance execution is claimed. Coordinator CI and protected
+independent human-main approval/live Pages remain separate; submission ownerfacts/
+audio/hosting pending, goalactive until officialOctober13 15:59JST, Discordexcluded.
+
+
+## October 4 — recorded Aave decision and pinned-copy review demo
+
+An [additional2:18.48 review cut](evidence/submission-aave-demo/README.md) shows
+viewerad697dc inspecting the original supplied-action Aave recording: baseline
+9WETH revert/candidate builtin hold, later supplied1WETH success, exact units,
+actual Source JSON download/native keyboard copy and CLI169/SDKba4 offline output.
+All3013CLI bytes equal the immutable golden; a focused origin check binds both
+aliases and9 loaded modules. Original16media files remain byte-identical.
+
+Producer134 and the initial recorder selector timeout are retained honestly.
+Completed23PCM payloads verify exactly; firstsix valid scenes are reused and only
+lastfive recaptured. Actual encoded marker frames bind cuts. H264/AAC full decode
+passes; draft captions retain14 normalized ASR matches/9differences and require
+human listening. No new EVM/RPC/model/paid calls or execution/provider authenticity
+is claimed. The inherited local-model comparison paragraph is not Aave model
+evidence. Supported hosting, independent-human main approval/Pages and submission
+facts remain pending; goalactive through officialOctober13 15:59JST, Discordexcluded.
+
+
+## October 4 — separate example evaluation joins the selected viewer
+
+The candidate selects viewer035f2eb with unchanged Enginef53/SDKba4/CLI169. The
+agent panel labels its native-transfer model comparison as a separate example,
+preventing a selected Aave/imported report from inheriting that evidence claim.
+Twelve site tests and six actual1440px/320px views pass with full paragraph
+visibility, zero scoped axe violations/JavaScript errors and three explicit
+contrast incompletes. Programmatic link focus is not native keyboard traversal.
+The corrected browser helper preserves CSP and records earlier injection/scroll
+failures. [Composition evidence](evidence/agent-scope-integration/README.md)
+separates current component CI and source/publication review from local tests.
+
+The existing five-command offline reader passes at the new pin: all previous
+whole output objects and22 immutable source byte hashes remain exact, including
+the original59506-byte Aave/3013-byte text and16 four-column rows. Only one
+manifest/workflow viewer pin changes; app/golden/locks/other pins/media stay.
+The Aave review video still captures ad697dc, not this wording correction.
+Current coordinator CI and protected human-main approval/Pages remain separate.
+No fresh EVM/RPC/model/performance execution is claimed. Submission profile,
+audio/caption and hosting gates remain pending; goalactive through official
+October13 15:59JST, Discordexcluded.
+
+
+## October 4 — copied setup stops on the first Git failure
+
+The candidate selects viewer3fd98b6 with unchanged Enginef53/SDKba4/CLI169.
+Copied setup joins four fixed Git commands with `&&`; clone/checkout failures
+stop the recipe instead of being masked by a later success. The application
+cache token is refreshed. Actual Git failure128 preserves the existing file
+and avoids the next clone; clean public clones reproduce all six exact CLI
+outputs. Local137 Node/12 site/20lint/21types/156security pass with152 original
+reasons plus four reviewed finite-test paths. Final51 browser groups/64 raw
+axe scans have zero violations/JS errors and63 explicit incomplete items.
+[Composition evidence](evidence/setup-chain-integration/README.md) separates
+original component CI, source/publication review and retained initial failures.
+
+The existing five-command offline reader passes with all whole outputs exact.
+All22 immutable source identities verify:20 bytes unchanged, currentapp and
+source-bound viewgolden deliberately changed. One manifest/workflow viewer pin
+changes; reversing it restores the whole prior de0c composition. Other pins,
+frozen jobs, locks and originalmedia remain. No new EVM/RPC/model/performance
+execution is claimed. The Aave review video still captures ad697dc. Coordinator
+CI, protected independent human-main approval/Pages and profile/audio/hosting
+requirements remain separate; goalactive through October13 15:59JST,
+Discordexcluded.
+
+
+## October 4 — inspect the recorded result without Docker
+
+The README starts with an isolated Git/Python walkthrough using CLI169/SDKba4
+and the original Aave report already included in CLI. It needs no package install,
+Engine checkout, separate report download, Docker, wallet or API key. The literal
+README block passes with real public clones and a new no-pip/no-distribution Python
+venv: original59506 report,129 verification/3013 inspection bytes and14 cloned
+runtime files match immutable sources and prior whole outputs. No fresh EVM/RPC/
+model execution, cross-platform run or speed guarantee is claimed.
+[Evidence](evidence/recorded-quick-start/README.md) separates the measured command
+from mandatory currentCI, independent review and protected human-main/Pages.
+Source pins, workflows, frozen inputs and media stay unchanged. Submission
+profile/audio/hosting requirements remain pending; goalactive through official
+October13 15:59JST, Discordexcluded.
+
+
+## October 4 — local imports expose a fixed CLI inspection recipe
+
+The candidate selects viewerdacd134 with unchanged Enginef53/SDKba4/CLI169.
+Validated local imports now expose pinned setup and fixed `./local-report.json`
+inspection. The UI asks for a local copy in an empty working directory and
+preserves the original. Imported filename/title/metadata never enter commands;
+local import remains browser-only with no public example link or upload.
+Clearing, async generation protection, serialized copy and manual fallback remain.
+[Composition evidence](evidence/local-cli-integration/README.md) separates actual
+138 Node/12 site/20lint/21types/159security,52 local browser groups/66 raw axe
+scans (65 incompletes), two actual copied CLI executions and final-runner Linux CI.
+The local browser used the runner before one assertion null fallback; initial
+closed-details assertions and type failure are retained. All156 inherited
+security reasons are unchanged; three finite browser paths are reviewed.
+
+The actual existing five-command reader retains every prior whole command
+object. All22 selected immutable inputs verify:20 hashes unchanged, current
+app.js and source-bound view golden changed. Reversing one selected viewer pin
+restores whole156 workflow/manifest. Other pins, frozen inputs, locks and media
+remain; no fresh EVM/RPC/model/performance execution is claimed. Demo captures
+ad697dc. Required coordinator CI, protected independent human-main approval,
+Pages and owner profile/audio/hosting remain separate; goalactive through
+October13 15:59JST, Discordexcluded.

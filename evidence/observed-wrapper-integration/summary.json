@@ -1,0 +1,48 @@
+{
+  "status": "prepared_proposed_composition; combined current-head CI pending",
+  "coordinator_base": "9b49fe2e53afb6a7bb35548034e222f0bdac624c",
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "engine_all8_current_checks_reviewed": true,
+  "engine_source_head": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+  "four_engine_selectors_changed_only": true,
+  "preparation_source_sha256": {
+    ".github/workflows/ci.yml": "152758bd8d82bc41aaa6220c47fd3d72c6a3b422d3acfabf0b39270d0978ba5e",
+    ".github/workflows/quality.yml": "2b11bd8294024cb55db9842a70f77ac9c49ad6968cc69790efa4a76c17d19b4a",
+    "bounded-worker-pins.json": "bb8973d91c506d1ac16baabd44c008fc9ff013443726d8eef1dbd5e31073dd73",
+    "quality-inputs.json": "951e6bc49e9b2bb1e1b3e6c76104d376432f21a7a86072315be42e8e610e9960"
+  },
+  "local_exact_workflow_reader_steps": 6,
+  "previous_five_complete_outputs_unchanged_except_engine_pin": true,
+  "tool_source_count": 21,
+  "type_diagnostics_retained": 3,
+  "supported_wrapper_original32_native_execution": "Prior engine single actual attempt127.599511s/original150s,32-of181/skip12,4readonlyconsumer phases; this composition performs no new chain/model/browser execution.",
+  "strict_wrapper_sha256": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+  "nested_trace_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+  "prior_verified_composition": "9b49fe2/bd all5 originalchecks/fullraw review; cleanfixture7.797681250999972s/agent8.182155030000047s with runningDocker/cgroupv2,potentiallywarmcaches, excludesinstallationVMstartup; historical measurement only",
+  "current_combined_CI": "pending after publication",
+  "main_approval": "independent human GitHub approval still required",
+  "current_candidate_Pages": "not verified deployed",
+  "formal_submission": "not claimed",
+  "original_raw_reviews": {
+    "independent-preparation-review.json": "69d05d348deac85e62acf7960055cfab63218c3620b06993f3c3ddc67deef742",
+    "engine-ci-root.json": "f61cc57e18fabd1012466999c58506dd9e2873b338e687250e0ad792ef92da0a",
+    "engine-ci-independent.json": "71c45f45f1e07808a1868b6a87ed5442838f6b8414588e622f7b300ae6371e8d"
+  },
+  "copy_counts": {
+    "files": 15,
+    "byte_identical": 15,
+    "workspace_prefix_only": 0
+  },
+  "limitations": [
+    "Offline engine wrapper\u2192normal export\u2192SDK/viewer parsing is separate from fresh runtime/browser checks.",
+    "Existing SDK/viewer do not validate/display the additional wrapper price views.",
+    "Read-only price dependence is not signed consumer strategy/profit/provider-auth/fullblock/root/opcode/defaultDocker32 proof.",
+    "172nonCargo components, exact linked binary subset and unexported database/tool binaries remain audit gaps."
+  ]
+}

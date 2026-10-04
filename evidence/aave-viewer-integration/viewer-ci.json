@@ -1,0 +1,47 @@
+{
+  "head": "37c43d0cf8be61dfd33253bc2d3401429ca9cd9b",
+  "tree": "a5ef442b254ed316c94058394c93aad93791c725",
+  "runs": {
+    "pages": {
+      "id": 37166112812,
+      "attempt": 1,
+      "conclusion": "success",
+      "url": "https://github.com/entrotter/entrotter.github.io/actions/runs/37166112812"
+    },
+    "docs": {
+      "id": 37166112816,
+      "attempt": 1,
+      "conclusion": "success",
+      "url": "https://github.com/entrotter/entrotter.github.io/actions/runs/37166112816"
+    }
+  },
+  "mandatory_checks": [
+    "accessibility",
+    "check",
+    "docs-links",
+    "quality"
+  ],
+  "facts": {
+    "published": 14,
+    "JS": 19,
+    "type_inputs": 20,
+    "source_config": 26,
+    "security_findings": 148,
+    "inherited_reasons": 137,
+    "removed_contexts": 2,
+    "new_contexts": 11,
+    "Node_tests": 131,
+    "Python_tests": 12,
+    "locked_Node": 109,
+    "locked_Python": 42,
+    "browser_checks": 47,
+    "raw_axe": 61,
+    "browser_sources": 22,
+    "docs": 17,
+    "links": 103,
+    "unique_links": 90
+  },
+  "independent_review_sha256": "7fee1b9aa72f988eadd2316ff6487ae4c65e2ac0e60a5273e2177d69fca39ac1",
+  "parent_rehash": "PASS;210 consulted inputs/60 current Git/17 immutable reuse/14 public blobs/116 whole ZIP entries",
+  "scope": "Fresh original Linux CI for this viewer component, both attempt1; PR open/unmerged, build/deploy skipped, protected human main approval and live Pages separate."
+}

@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "audio_packets": 7331,
+  "packet_data_hashes_pts_dts_duration_size_flags_equal": true,
+  "source_packets_sha256": "7d8f705c3dc613c04f6d015921efa93379c79da3779107845f118c521edce91c",
+  "target_packets_sha256": "7d8f705c3dc613c04f6d015921efa93379c79da3779107845f118c521edce91c",
+  "caption_files": {
+    "srt": {
+      "bytes": 2797,
+      "sha256": "d710f64c22401a82a86cb3cda819e7d974a1530c99e9343453be05de7cf646b7",
+      "unchanged": true
+    },
+    "vtt": {
+      "bytes": 2769,
+      "sha256": "55b3d93ab73d51e493bb0aec7d148a5ff9e6d2a3051226f63844a9bc880d7295",
+      "unchanged": true
+    }
+  }
+}

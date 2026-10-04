@@ -1,0 +1,115 @@
+{
+  "status": "pass",
+  "checked_frames": 12,
+  "rows": [
+    {
+      "frame": 1242,
+      "seconds": 49.68,
+      "active": null,
+      "SSIM": {
+        "picture": 0.999641,
+        "captions": 0.999903
+      }
+    },
+    {
+      "frame": 1243,
+      "seconds": 49.72,
+      "active": "price.png",
+      "SSIM": {
+        "picture": 0.996341,
+        "captions": 0.999535
+      }
+    },
+    {
+      "frame": 1471,
+      "seconds": 58.84,
+      "active": "price.png",
+      "SSIM": {
+        "picture": 0.996402,
+        "captions": 0.999594
+      }
+    },
+    {
+      "frame": 1472,
+      "seconds": 58.88,
+      "active": null,
+      "SSIM": {
+        "picture": 0.999515,
+        "captions": 0.99892
+      }
+    },
+    {
+      "frame": 2113,
+      "seconds": 84.52,
+      "active": null,
+      "SSIM": {
+        "picture": 0.999489,
+        "captions": 0.99965
+      }
+    },
+    {
+      "frame": 2114,
+      "seconds": 84.56,
+      "active": "account.png",
+      "SSIM": {
+        "picture": 0.995143,
+        "captions": 0.99928
+      }
+    },
+    {
+      "frame": 2372,
+      "seconds": 94.88,
+      "active": "account.png",
+      "SSIM": {
+        "picture": 0.99481,
+        "captions": 0.998438
+      }
+    },
+    {
+      "frame": 2373,
+      "seconds": 94.92,
+      "active": null,
+      "SSIM": {
+        "picture": 0.999331,
+        "captions": 0.998429
+      }
+    },
+    {
+      "frame": 3399,
+      "seconds": 135.96,
+      "active": null,
+      "SSIM": {
+        "picture": 0.999347,
+        "captions": 0.999648
+      }
+    },
+    {
+      "frame": 3400,
+      "seconds": 136.0,
+      "active": "gate.png",
+      "SSIM": {
+        "picture": 0.991229,
+        "captions": 0.999924
+      }
+    },
+    {
+      "frame": 3652,
+      "seconds": 146.08,
+      "active": "gate.png",
+      "SSIM": {
+        "picture": 0.989736,
+        "captions": 0.999085
+      }
+    },
+    {
+      "frame": 3653,
+      "seconds": 146.12,
+      "active": null,
+      "SSIM": {
+        "picture": 0.999652,
+        "captions": 0.999134
+      }
+    }
+  ],
+  "scope": "All four frames around each overlay boundary; top expected-source and caption-region fidelity. Lossy reencode, not byte/pixel equality or human auditory assurance."
+}

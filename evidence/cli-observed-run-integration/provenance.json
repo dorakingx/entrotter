@@ -1,0 +1,80 @@
+{
+  "base": "6c228f0794dbed37b035c41e1d7be2b794af1f5e",
+  "pins": {
+    "engine": "c2eb54dc97509e7318216c01f98adade1da5bc6e",
+    "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+    "cli": "d437ad14828cf63f19091656b68e4b9a2b842ad4",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "current_workflow_sha256": "53a1843aa4a2aaab7390eb9895d763fc30a3307c35a63e036e44607c0d0584d8",
+  "seven_full_outputs_reuse": {
+    "bounded-observed-transaction-replay.json": {
+      "new_full_output_sha256": "34dc0a59b6eed7b1d7b3cf5603307199d00dcb53dca6021742f43fee91005fa4",
+      "scope": "Auxiliary engine-export file byte-identical to previous private/public component output, independently bound by full readers; no duplicate report copy."
+    },
+    "observed-transaction-replay.json": {
+      "new_full_output_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+      "scope": "Auxiliary engine-export file byte-identical to previous private/public component output, independently bound by full readers; no duplicate report copy."
+    },
+    "trace-bounded-observed-reader.json": {
+      "prior_public_path": "evidence/bounded-observed-integration/trace-bounded-observed-reader.json",
+      "prior_public_sha256": "ca16be7c5a2b5d2c4163c61db5f7f796f6b6f790e61454e18a26ac7320c2b8f2",
+      "new_full_output_sha256": "ea318a49bfd6240feff9b8bfbe5bf7392c4e1a3aa535e1c16ca490d4c8b0e0eb",
+      "scope": "Full historical fact body reused without relabelling; exact current pins and sixth/seventh CLI module metadata recorded by local-execution.json."
+    },
+    "trace-comparison-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-comparison-reader.json",
+      "prior_public_sha256": "56b64864aa3d2c3ec8184d92c2c157af5ba46a8a815704df846718487d806646",
+      "new_full_output_sha256": "b75a4bbbfd172d0f16a6289d57e7c91b8818c135f8f2b1ce17da4c2ac7e9a095",
+      "scope": "Full historical fact body reused without relabelling; exact current pins and sixth/seventh CLI module metadata recorded by local-execution.json."
+    },
+    "trace-consumer-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-consumer-reader.json",
+      "prior_public_sha256": "35a3801be11b7880b87cf088d888ea7ebfbfa5295701017c8079636526993bdf",
+      "new_full_output_sha256": "5c1bc4fc177f5e00d876ab9b3c9dec235e03ea43be9369cc83d642666205d2da",
+      "scope": "Full historical fact body reused without relabelling; exact current pins and sixth/seventh CLI module metadata recorded by local-execution.json."
+    },
+    "trace-funding-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-funding-reader.json",
+      "prior_public_sha256": "77bd0749930ca712edfd34013dd948d886e9d2c76c2234b5918a669b306170ac",
+      "new_full_output_sha256": "75353376a601aa33df848399268de8bb73d29e6592cbe1169ee66fb52d0f5057",
+      "scope": "Full historical fact body reused without relabelling; exact current pins and sixth/seventh CLI module metadata recorded by local-execution.json."
+    },
+    "trace-observed-reader.json": {
+      "prior_public_path": "evidence/cli-observed-integration/trace-observed-reader.json",
+      "prior_public_sha256": "27218526aa4effd81afaee14b36faa7300af7c026fc07659bd6121a663847221",
+      "new_full_output_sha256": "d3a954bf9d730b1e1d2b97607366f2dcea23c8f8806f7be9f3b3d61c9ad212d4",
+      "scope": "Full historical fact body reused without relabelling; exact current pins and sixth/seventh CLI module metadata recorded by local-execution.json."
+    },
+    "trace-oracle-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-oracle-reader.json",
+      "prior_public_sha256": "d992b0142dc12c945ef82b3b8d10969acd8cd9848cc47581654805e9d8159104",
+      "new_full_output_sha256": "4816ad1fa73501bf3296191969392c64b907035311dfe7b7beb4f855e707f55b",
+      "scope": "Full historical fact body reused without relabelling; exact current pins and sixth/seventh CLI module metadata recorded by local-execution.json."
+    },
+    "trace-reader.json": {
+      "prior_public_path": "evidence/sdk-observed-integration/trace-reader.json",
+      "prior_public_sha256": "869c323315000678cecde4a7cd31b5c3001075ab81022e0234ff8dfcf34d25a6",
+      "new_full_output_sha256": "9fe1efa0d7b2fa202eedeeb2e9a246ca658905077997f810eea3436123177d40",
+      "scope": "Full historical fact body reused without relabelling; exact current pins and sixth/seventh CLI module metadata recorded by local-execution.json."
+    }
+  },
+  "copies": {
+    "local-execution.json": "5ffd96d47b3028a210111887407bc445c2ba94578ca99e5c384a590e112fb1cb",
+    "cli-ci-independent.json": "ad73c100fc3cb87f199a1321c224a1fb66f7650d9e6235ae976842db332e5ee3",
+    "local-types.json": "5ce478843c0964610e0b931279f6d2dcf2d176f3607ca41a5817005e6fd854bd",
+    "workflow-parse.json": "ab4ec43122ece3cc34ac90602f7ee9adb01f339476db521bc88e7c63c7eedef5"
+  },
+  "scope": "Exact current copy hashes; all seven complete fact bodies reused, not newchain/model/browser/replay execution.",
+  "local_docs": {
+    "files": 67,
+    "links": 477,
+    "successful": 477,
+    "errors": 0,
+    "timeouts": 0,
+    "excludes": 0,
+    "raw_sha256": "95d6d8e25dc1b0e64138777a8c000376afd1d77ae376c5fd0eb870903129b976",
+    "raw_source": ".quality/cli-observed-run-integration/docs-links-final.json"
+  }
+}

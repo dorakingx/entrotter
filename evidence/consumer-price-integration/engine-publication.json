@@ -1,0 +1,12 @@
+{
+  "status": "public63changed_git_blobs_and_PR_metadata_verified",
+  "head": "bd5527f71d3c561335e7786b6f4421572cd9aad6",
+  "published_files": 63,
+  "provenance_copies": 57,
+  "production_sources_unchanged": 25,
+  "review_output_byte_exact": true,
+  "main_merge": false,
+  "current_CI": "pending",
+  "GitHub_PR": "https://github.com/entrotter/engine/pull/34",
+  "scope": "Remote complete Git tree and currentPR exactreadback; no main/Pages claim. Independentreview original60inputs unmodified plus reviewoutput."
+}

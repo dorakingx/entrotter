@@ -1,0 +1,45 @@
+{
+  "result": "passed_independent_review_of_failed_execution",
+  "verifier_sha256": "4dd76274a2df497d3557782bd5ecf89aa0bb2aca0d5dcfcfb3abcb0e3b7d9440",
+  "readiness_sha256": "9379e3bf1100825321663fdbb46a84a55fcad54dfbd286bacb51913683c028ce",
+  "terminal_sha256": "df5e42bed4bf8beba59a402dde368e62ef7f7473612adf56cc07279219aab80d",
+  "raw_sha256": {
+    "baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "host-owned-cleanup.json": "9e3d4c49093baaba354f03cf4685a5003df9616e1483c48fd461179d7beef9f2",
+    "host-result.json": "ca8fde11f6168e464cd9fba61594df7daf36996b9da2c6f36c3cfadf95c7f74e",
+    "observations.json": "38ee45f2051debfb36fcd5fa13cc60ff3697aacd7456e25ae633b83d66d18e4d",
+    "owned-nodes.json": "63402430595536f7e65d012587ac2dd64e5b745ca3f14f93ea9787441348aba9",
+    "result.json": "54f60737b39a86cb42390d23562ef33ca54eea52e9469af24bf912c313cdbec0"
+  },
+  "frozen_bindings": 72,
+  "baseline_complete_projected_receipts_equal": 32,
+  "signed_binding": "exact independently decoded discovery003 bytes/signers/hashes/indices",
+  "identical_initial_owned_head_and_getter": true,
+  "baseline_after_answer": 256292441874,
+  "observed_failed_operation": {
+    "category": "rpc_error",
+    "code": "other_error",
+    "method": "evm_mine",
+    "rpc_diagnostics": {
+      "code": "timeout",
+      "method": "evm_mine"
+    },
+    "rpc_method_matches_observed": true,
+    "stage": "candidate_replay"
+  },
+  "guards_absent_and_ports_closed": 2,
+  "child_seconds": 152.058653,
+  "host_seconds": 152.161653,
+  "source_and_baseline_bytes_equal002": true,
+  "prior001_and002_retained_unchanged": true,
+  "liquidation_topic_indices": [],
+  "paired_replay_pass": false,
+  "limits": [
+    "No candidate branch result or final protocol; omission outcome remains unknown.",
+    "This attempt classified evm_mine transport timeout; underlying archive/miner/provider cause remains unknown. No retrospective classification of001/002.",
+    "No root/state/opcode/provider authenticity or actual dependent-consumer proof.",
+    "No liquidation topic match does not rule out other internal consumers.",
+    "Native diagnostics do not establish default Docker CPU/RSS/PID bounds."
+  ]
+}

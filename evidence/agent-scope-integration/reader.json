@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "prior_root": "ac07dbf3b37474eab5d0043dab59b73fae30774f",
+  "pins": {
+    "engine": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "035f2ebf0d36e0f9bbedca1e87598fc6c03eef22"
+  },
+  "execution": {
+    "returncode": 0,
+    "prior_root": "59131f47c31b054416d560deb47e9a0ec073ba4f",
+    "workflow_sha256": "1d88eb7f31f71996a2c8aaf6b96b37f67f6cd4f1d8fdb0484af6cef47f3870dc",
+    "helper_sha256": "537f07ab44e05890308156fc42235a090f859e0ca7051f3de6ab92f1209d43e3",
+    "stdout_sha256": "1097fe7caa223f4f039ce2a7c2c0c7a39f949341f51584ad76fcb7fc2c770e27",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "other_workflow_content_preserved": true,
+    "pins": {
+      "engine": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+      "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "cli": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+      "entrotter.github.io": "035f2ebf0d36e0f9bbedca1e87598fc6c03eef22"
+    },
+    "scope": "Actual existing Aave CI step, five offline commands against selected immutable checkouts; no fresh EVM/RPC/model/browser/performance run. Unchanged gates remain mandatory coordinator CI."
+  },
+  "prior_whole_outputs": "../cli-copy-integration/reader-results.json",
+  "prior_whole_outputs_sha256": "2478a9280556bb60290cf3b189a086e148d8cd9f491218fb86fe25911c94f830",
+  "whole_command_objects_unchanged": true,
+  "commands": [
+    {
+      "name": "check",
+      "returncode": 0,
+      "whole_object_sha256": "f3cb2b346b5cdc03f3b96685716636cb30c766294f3dbcead0b019a72edd2c4b",
+      "stdout_bytes": 617,
+      "stdout_sha256": "0aecb5a96e124c726ea8bf6aacc165ac6ccf7d1b000bdf1041e23196d771018d",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "verify",
+      "returncode": 0,
+      "whole_object_sha256": "2b9fff9847597c4ecb2a18add655d315e3db3cd8fe6d6d7bae44e48461f721e4",
+      "stdout_bytes": 129,
+      "stdout_sha256": "14799479a13047e12fd7daf65cd852bdc8ac80cdaf235ac188d629bd898b2366",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "inspect",
+      "returncode": 0,
+      "whole_object_sha256": "2a05132125d868293d0f77fecf22159c121d5258afacd94e5c4e2182f614814b",
+      "stdout_bytes": 2246,
+      "stdout_sha256": "9e45e81fd5d5a111cfeffe51ad95010cc442679e1bdfcec40fdff759b66b6d99",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "inspect-text",
+      "returncode": 0,
+      "whole_object_sha256": "b0446920e5bd288245711fb7c287828c056b90b340753ed20bcca9c750e2e301",
+      "stdout_bytes": 3013,
+      "stdout_sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "viewer",
+      "returncode": 0,
+      "whole_object_sha256": "1cddbec46ae384b4c06fba2d1ea73030e23b4bad57912419a24e53e9f273b68a",
+      "stdout_bytes": 1371,
+      "stdout_sha256": "7e5c17dae5eee2482d3b7969acea9d6c8fdcaad2987f6bdbfc7a39ac66ebe57a",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "immutable_inputs": {
+    "engine/evidence/aave-borrow-actions/report.json": {
+      "commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+      "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622"
+    },
+    "engine/scripts/aave_borrow.py": {
+      "commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+      "sha256": "8b3f46308f14d3803ca03c5c7d69a12311b9e01f1f16b72d96151b1046a8394e"
+    },
+    "engine/tests/data/aave-borrow-actions.json": {
+      "commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+      "sha256": "f39d9367f9731d90af66a84e4eaf4eac04e57bfbc834d30fbd27e28d6ff4079b"
+    },
+    "cli/tests/data/aave-borrow-result.json": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622"
+    },
+    "cli/tests/data/aave-borrow-result.txt": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3"
+    },
+    "entrotter.github.io/app.js": {
+      "commit": "035f2ebf0d36e0f9bbedca1e87598fc6c03eef22",
+      "sha256": "7c3b1992938e5c7d1a60635519412b1988b9f058d1e7275991501d82adeaefca"
+    },
+    "entrotter.github.io/reports/aave-borrow-actions.json": {
+      "commit": "035f2ebf0d36e0f9bbedca1e87598fc6c03eef22",
+      "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622"
+    },
+    "entrotter.github.io/evidence/cli-copy/view.json": {
+      "commit": "035f2ebf0d36e0f9bbedca1e87598fc6c03eef22",
+      "sha256": "cd71a6c6e3f1ad3a462c8296b8eaa96cde0f92c244ef5a194c7dbf35d7e0d2af"
+    },
+    "cli/src/entrotter_cli/__init__.py": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6"
+    },
+    "cli/src/entrotter_cli/__main__.py": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7"
+    },
+    "cli/src/entrotter_cli/export_budget.py": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f"
+    },
+    "cli/src/entrotter_cli/main.py": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc"
+    },
+    "cli/src/entrotter_cli/observed_run.py": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e"
+    },
+    "cli/src/entrotter_cli/observed_text.py": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d"
+    },
+    "cli/src/entrotter_cli/position_run.py": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed"
+    },
+    "cli/src/entrotter_cli/position_text.py": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f"
+    },
+    "cli/src/entrotter_cli/result_text.py": {
+      "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+      "sha256": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47"
+    },
+    "sdk-python/src/entrotter_sdk/__init__.py": {
+      "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "sha256": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568"
+    },
+    "sdk-python/src/entrotter_sdk/client.py": {
+      "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "sha256": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543"
+    },
+    "sdk-python/src/entrotter_sdk/observed.py": {
+      "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "sha256": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5"
+    },
+    "sdk-python/src/entrotter_sdk/position.py": {
+      "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "sha256": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+    },
+    "sdk-python/src/entrotter_sdk/trace.py": {
+      "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+      "sha256": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+    }
+  },
+  "whole_source_byte_hashes_unchanged": true,
+  "workflow_restored_to_prior_with_one_pin": true,
+  "scope": "Actual five offline inspection commands at selected immutable sources. No new EVM/RPC/model/browser/performance run. Current coordinator CI, human main approval and live Pages remain separate."
+}

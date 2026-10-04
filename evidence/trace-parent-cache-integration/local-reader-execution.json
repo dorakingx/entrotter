@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "selected_engine": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
+  "steps": [
+    {
+      "number": 1,
+      "original_script_sha256": "de86b469fabf892a9392a57c396991aec3f376817a0e8fea299d5a4015393e1a",
+      "script_sha256": "f3d9c997afb6394ed85b2bd0fb13d19947e26d2f163c0b1c90c1c15cd028c713",
+      "returncode": 0
+    },
+    {
+      "number": 2,
+      "original_script_sha256": "7b3278c30a98ce15c672c18a5101038d1c9a4f2f3ea2d9f112c929b8fb106482",
+      "script_sha256": "831d1ec4ecdd37ce9cf9130595cf70125e98d965d5da6844f44264c7867433be",
+      "returncode": 0
+    },
+    {
+      "number": 3,
+      "original_script_sha256": "2b46135cec965a30e19dab6d0841cb2942efc311fb33495c34734ead7e99b92d",
+      "script_sha256": "e410dbe2784c88c7f42231543f2a257553fa58fb4e8f629ba20dd2842299a634",
+      "returncode": 0
+    }
+  ],
+  "reader_results": "Complete prior results unchanged apart from the engine pin.",
+  "execution": "Offline SDK and Node codec assertions; no new chain/model call.",
+  "viewer": "Exact b7c20ce Git blobs copied to private read-only fixture, independent of active viewer edits.",
+  "setup_correction": "Initial interpreter/cwd setup failure executed no product code; corrected before tests.",
+  "verifier_sha256": "cddce9528d9b1ef3ece5920db0c285ece65161c137da02a2039f9dc2e848b4e0"
+}

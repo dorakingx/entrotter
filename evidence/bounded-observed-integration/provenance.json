@@ -1,0 +1,120 @@
+{
+  "copies": [
+    {
+      "source": "entrotter/.quality/bounded-observed-integration/local-readers.json",
+      "public": "local-execution.json",
+      "original_sha256": "1a24e46d6ad1e531d8afe1b33d466bdabff95c810477dc9a5c4a74e38a406b3b",
+      "public_sha256": "1a24e46d6ad1e531d8afe1b33d466bdabff95c810477dc9a5c4a74e38a406b3b",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/bounded-observed-integration/types.log",
+      "public": "local-types.json",
+      "original_sha256": "5a8cf9a1edd3f9d37152428cc9f85465df0731f138765950b6f96175c72eead1",
+      "public_sha256": "5a8cf9a1edd3f9d37152428cc9f85465df0731f138765950b6f96175c72eead1",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/bounded-observed-integration/workspace/entrotter/evidence/bounded-agent-integration/integration-ci/trace-bounded-observed-reader.json",
+      "public": "trace-bounded-observed-reader.json",
+      "original_sha256": "ca16be7c5a2b5d2c4163c61db5f7f796f6b6f790e61454e18a26ac7320c2b8f2",
+      "public_sha256": "ca16be7c5a2b5d2c4163c61db5f7f796f6b6f790e61454e18a26ac7320c2b8f2",
+      "normalization": "byte identical"
+    },
+    {
+      "source": ".worktrees/engine-consumer-observations/.quality/observed-worker-c2eb-ci/independent-ci-review.json",
+      "public": "engine-ci-independent.json",
+      "original_sha256": "4a9c77cb32540e0f68ae2e14072d49400535bd8e176d90aa388244844a75ffca",
+      "public_sha256": "4a9c77cb32540e0f68ae2e14072d49400535bd8e176d90aa388244844a75ffca",
+      "normalization": "byte identical"
+    },
+    {
+      "source": "entrotter/.quality/bounded-observed-integration/workflow-parse.json",
+      "public": "workflow-parse.json",
+      "original_sha256": "9e515e5ebb58912325223d38244c8bb804844c8d0b868abee8b8d8e3e5e54151",
+      "public_sha256": "9e515e5ebb58912325223d38244c8bb804844c8d0b868abee8b8d8e3e5e54151",
+      "normalization": "byte identical"
+    }
+  ],
+  "reused_first_six_full_reader_outputs": {
+    "trace-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-reader.json",
+      "prior_public_sha256": "869c323315000678cecde4a7cd31b5c3001075ab81022e0234ff8dfcf34d25a6",
+      "prior_public_pins": {
+        "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+        "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+        "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+        "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+        "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+      },
+      "current_local_sha256": "2282c5535303203a32caf5118d46ccfd54b812720f30a801fcdef5a850f607a6",
+      "change": "All complete result fields unchanged; explicitly newer pins.engine and, for SDK composition files, pins.cli. Historical public result not relabelled as new execution."
+    },
+    "trace-comparison-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-comparison-reader.json",
+      "prior_public_sha256": "56b64864aa3d2c3ec8184d92c2c157af5ba46a8a815704df846718487d806646",
+      "prior_public_pins": {
+        "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+        "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+        "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+        "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+        "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+      },
+      "current_local_sha256": "184aa0843458b7041c061d02d9b26e04e592decb23dcd571c04ae96b577032c0",
+      "change": "All complete result fields unchanged; explicitly newer pins.engine and, for SDK composition files, pins.cli. Historical public result not relabelled as new execution."
+    },
+    "trace-consumer-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-consumer-reader.json",
+      "prior_public_sha256": "35a3801be11b7880b87cf088d888ea7ebfbfa5295701017c8079636526993bdf",
+      "prior_public_pins": {
+        "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+        "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+        "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+        "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+        "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+      },
+      "current_local_sha256": "e29004a3b2b3402942e6dc4b5932bad08bab64bc7913da8991cff310d32c8587",
+      "change": "All complete result fields unchanged; explicitly newer pins.engine and, for SDK composition files, pins.cli. Historical public result not relabelled as new execution."
+    },
+    "trace-funding-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-funding-reader.json",
+      "prior_public_sha256": "77bd0749930ca712edfd34013dd948d886e9d2c76c2234b5918a669b306170ac",
+      "prior_public_pins": {
+        "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+        "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+        "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+        "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+        "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+      },
+      "current_local_sha256": "df00c2d8f98b4388e634d0927d5713e65056b8dc6427cefbc11f95dc40c05fcd",
+      "change": "All complete result fields unchanged; explicitly newer pins.engine and, for SDK composition files, pins.cli. Historical public result not relabelled as new execution."
+    },
+    "trace-oracle-reader.json": {
+      "prior_public_path": "../sdk-observed-integration/trace-oracle-reader.json",
+      "prior_public_sha256": "d992b0142dc12c945ef82b3b8d10969acd8cd9848cc47581654805e9d8159104",
+      "prior_public_pins": {
+        "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+        "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+        "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+        "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+        "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+      },
+      "current_local_sha256": "7a156523e8d968ae2ce1524637393c4937ffced15febaca4456c36bce45b37aa",
+      "change": "All complete result fields unchanged; explicitly newer pins.engine and, for SDK composition files, pins.cli. Historical public result not relabelled as new execution."
+    },
+    "trace-observed-reader.json": {
+      "prior_public_path": "../cli-observed-integration/trace-observed-reader.json",
+      "prior_public_sha256": "27218526aa4effd81afaee14b36faa7300af7c026fc07659bd6121a663847221",
+      "prior_public_pins": {
+        "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+        "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+        "cli": "1ee3d3aea29d1cb3c48c3658a49e5ca22df97e0e",
+        "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+        "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+      },
+      "current_local_sha256": "4d84b1fa704598f96f64ed036521c7e83fdafa344452d507e1ee254e36b07223",
+      "change": "All complete result fields unchanged; explicitly newer pins.engine and, for SDK composition files, pins.cli. Historical public result not relabelled as new execution."
+    }
+  },
+  "limits": "Original raw/full current outcomes retained privately and bound; public copies use only stated workspace prefix normalization."
+}

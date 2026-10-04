@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "workflow_sha256": "152758bd8d82bc41aaa6220c47fd3d72c6a3b422d3acfabf0b39270d0978ba5e",
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "steps": [
+    {
+      "name": "Verify offline reader and viewer retain the actual signed-prefix evidence",
+      "path": ".quality/observed-wrapper-integration/step-1.sh",
+      "workflow_script_sha256": "f2dc8d5edb44ea12d37cab8b8d3cbfcdaf374d2c2e32d33bb792ebb69a92636a",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the original 32-receipt case and display classification with SDK and viewer",
+      "path": ".quality/observed-wrapper-integration/step-2.sh",
+      "workflow_script_sha256": "09fed780bae31612d9e22e6ef4c89b84be6726c0cc1a23c877888a07c76d119c",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the historical Aave consumer price records with SDK and viewer",
+      "path": ".quality/observed-wrapper-integration/step-3.sh",
+      "workflow_script_sha256": "47cc1b92fef09890744a071f9f5fc6ad9fa32f6b223301eaf697943bed2adb2a",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the synthetic same-block funding report with SDK and viewer",
+      "path": ".quality/observed-wrapper-integration/step-4.sh",
+      "workflow_script_sha256": "adaf874f5dc073337e7577cac42a5af5c06f428334ac17d418b04b25db43eb49",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect oracle omission and unverified storage reports with SDK and viewer",
+      "path": ".quality/observed-wrapper-integration/step-5.sh",
+      "workflow_script_sha256": "345ed9ecf904b91505a6abcf061d9a9c75fd6a760de33eb821ae3d670e8e9b62",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the supported observation wrapper with engine, SDK and viewer",
+      "path": ".quality/observed-wrapper-integration/step-6.sh",
+      "workflow_script_sha256": "edc5595a5512b4aaf158098fa8e291af1333245f4868812245341a96ab870710",
+      "returncode": 0
+    }
+  ],
+  "old_five_complete_outcomes_unchanged_except_engine_pin": true,
+  "execution": "Six exact workflow run scripts, source-owned symlinks at registered clean pins; fresh isolated output directory. Offline recorded bytes only, no chain/model/browser calls.",
+  "output_sha256": {
+    "trace-observed-reader.json": "e2d97d170d5e42862390b8b64acc40abd42c092ef35caae7f1041e917a1998f6",
+    "trace-comparison-reader.json": "a71fca38d4163d74f8e42d7d8b59561c3de895c37629ff286c2a79e5530fd975",
+    "trace-consumer-reader.json": "287c01e1eaa110c5fec2fd34c0339b89d44c0bb83ac2f3da3b25ae96bdd351af",
+    "trace-reader.json": "f3bcbb911623cefb22e7438b156a7b6ef3e8fc92977dca815326fab6fd147a11",
+    "observed-transaction-replay.json": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+    "trace-funding-reader.json": "989d860b35716b5aadce528fc16c8b0090ac1ecd12ffe8e4bd1979a66aaafe7e",
+    "trace-oracle-reader.json": "f957e95cca7ae45b39cd1d9aef6f48c37995b2b52963b62c80340e7272b786ee"
+  }
+}

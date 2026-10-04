@@ -1,0 +1,152 @@
+{
+  "status": "recorded_new_review_cut",
+  "source": {
+    "coordination": "3b9d24e8b169c325fcb9c99929fb6559733847e3",
+    "engine": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "viewer": "8aa0e582dfa56ec795cf0adc83303ac1eb952528",
+    "sdk": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "696511c5cb46482c96cf6f609c83877fcf16e922"
+  },
+  "media": {
+    "submission/media/entrotter-demo-account.mp4": {
+      "sha256": "8bf4541c49aa7482bb495464c9dddd7fc689dad2b0ba1472f9c1dfd1fa7f0a07",
+      "bytes": 12361104
+    },
+    "submission/media/entrotter-demo-account.vtt": {
+      "sha256": "55b3d93ab73d51e493bb0aec7d148a5ff9e6d2a3051226f63844a9bc880d7295",
+      "bytes": 2769
+    },
+    "submission/media/entrotter-demo-account.srt": {
+      "sha256": "d710f64c22401a82a86cb3cda819e7d974a1530c99e9343453be05de7cf646b7",
+      "bytes": 2797
+    }
+  },
+  "duration_seconds": 156.8,
+  "continuous_capture_seconds": 156.8,
+  "narration_audio_offset_seconds": 0.12322358400004418,
+  "caption_count": 15,
+  "production_helper_sha256": {
+    "record.mjs": "74981a52e1e560fd7454b682c977256959a9034d848e787208cdd7b1343ca900",
+    "live_run.py": "7485a1843fc0266e34da3d11de4d1a4858e8aa034c3bfc94170fb855b64f847d",
+    "encode.py": "7d10891cff35a7fdae4922b5fec3d82addcec2de4fd5f5f94fa862294a2bf567",
+    "studio.html": "39e5f458a0b887bc57e0afd31e668fa17636fc2ef403656564ac4e736a1406ff",
+    "scenes.json": "d8cbaa3c1894ef10aa7804189e8b5d0b24da35a207c8b19191a049fac1d8c801",
+    "narrate.py": "dc92052d380df7041a9b23ef81b2eb0d5e32afa908bcde3579f3cbc60cba5f29",
+    "normalize_captions.py": "64ef9f41c1490a1bc799f3116efcd45a2bfeb567c5c40513c2b062ede11d1cf7",
+    "package.py": "2d20983abfd642bfa19e8aa600370874786834b8b1771518c919e43e1dd16f11"
+  },
+  "public_evidence_sha256": {
+    "actual-execution.log": "bfc760504312ef455115242cfcffdc535d6380aa36bbf5417b257c9b745b82a1",
+    "agent-replay.json": "6998b9d58b9286af42efc873a3c2d736016dd9ef1822a369c512d8688f37b1ea",
+    "caption-normalization.json": "653632f489fa2b745861b9fa0ecde5f408c4dc34d40dfaf0431310e47cbd1104",
+    "capture.json": "8660fc4a13200d8a3b29a2e96e19944813060b4b7604d95a1f0ed6cad4e119c5",
+    "cleanup.json": "7a4b22f32dab5f6d229941811f8b129260fbfe9ee3b5feae9bd397c75b12772d",
+    "encoding.json": "dd88ff37230f65d6826c58bae2de0b89982e27437528b6af2b6c1ce6feab1a2b",
+    "execution.json": "eb71ec1904ccc6ce51edf9ff54f8a38aaa3541113a3990d281f2482d2e6e8460",
+    "frame-account.png": "1a8ffaa834cef13a6178360e8f3416ff6ad48de3a0c23f597ab180848f3afb71",
+    "frame-agent.png": "fbda996f76d8edd1e21226c15c19a6f81beea2808b41b4c18bc2ebb527341f04",
+    "frame-end.png": "64b65d6fe52c3b29186aa5bdcd91002ebe62b278eb98bb5b2d4e5a3fa27c2c1d",
+    "frame-invalid.png": "e84db4b5a62892bbc7f4b5a55feaeed97574db02009d0a92b8622bb5b2268296",
+    "frame-receipts.png": "37b50c51124f0509657c3f6310f2d8a79745f731cc203fa1f9c87570ca7efcb3",
+    "negative-input-fix.json": "2d1ed1cfb7335154656256419d7ba89c8f0cfac758fa59f08a38f702de6e1366",
+    "original-media-sha256.json": "64f827c99ff2ef8db0940831be893cc3c1bb41910f65dd8b50dd28bcb99db34f",
+    "production-encode.py.gz": "ba4b4410953b10476f2d295b8127eeb9295789a6a1a992f809ef4ec21fc63070",
+    "production-live_run.py.gz": "5acb0a4ae1ba109a8a1bf22c9bd946bdad5ecdeaf98b5d59f910c9657754c317",
+    "production-narrate.py.gz": "0dd497e98a2680b6fe3a0bee4d8bbfc34c1f69f67f0263ada2c0ac5301e51476",
+    "production-normalize_captions.py.gz": "140576a442ff90551c92af940153c52dc5ca88878a634f5935249023b418da0f",
+    "production-package.py.gz": "b66e7e6dcc8304d01ea71149f8d2e8ddac65118858636d069afac16b6ad71a11",
+    "production-record.mjs.gz": "0de2ba89ca8e19f197cdb82b65187a9ce2e617a551d272a7d5e46643a74a57e5",
+    "production-scenes.json.gz": "43fc55c82b1c9a1acbf9b5fef639a014053522cc2b108e8255574bb3c5e3b194",
+    "production-studio.html.gz": "a2bbc63abd4f1928ff5a9dd28d46b6cc192da309497fd144e07a3845984c4ab6",
+    "timeline.json": "5dbf35a1febfbc92b0437ed80c3ccbedf97877b4ba18bf8e17aec8bc863898c3",
+    "worker-image.json": "2e365d12eda11ec24a96456c8abdaf6f2338f47c756ae9541b09ef9c9873f61b"
+  },
+  "local_raw_sha256": {
+    "entrotter/output/playwright/account-summary-demo/demo-capture.webm": "a2b2f813abba06d183d41013ffa4260e2dcbf88e1e8d6b0351c91eb2c749f727",
+    ".tools/entrotter-account-demo/audio/demo.wav": "67c6c51c4d6a105eacdb835bef554d47e548788925e4d176b189302504398b12",
+    "entrotter/.quality/account-summary-demo/encode-results.json": "efb6eb3c1e26b90ab8214e4c68eff1d42a530d81957735e0a99218e2ff401199",
+    "entrotter/.quality/account-summary-demo/decode.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "entrotter/.quality/account-summary-demo/audio-analysis.log": "92f7f83ce82575fb97c473e8c8a2662617bcc34ae61472f3a93f26c894bcede4",
+    "entrotter/.quality/account-summary-demo/record.log": "4bc4682f850cea87956f50923b2f79e5fd1ff4aaa665c0471b9dc7d214982059"
+  },
+  "voice": {
+    "status": "PASS",
+    "original_media_count": 10,
+    "voice_model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "voice_config_sha256": "7e1f4634af596d83cca997fb7a931ba80b70f8a316a2655ee69c55365e0ace14"
+  },
+  "root_current_ci_before_media_change_sha256": "a32868f44e72e3a3042bf21ea793eb0195e646c8db5927b5babf50c45ee94808",
+  "caption_derivation": {
+    "vtt": {
+      "before_sha256": "1a8172c7cdecc614629ecaeb2725215520023f57a387cb7f1d6215019bdaf5db",
+      "after_sha256": "55b3d93ab73d51e493bb0aec7d148a5ff9e6d2a3051226f63844a9bc880d7295",
+      "before_bytes": 2770,
+      "after_bytes": 2769,
+      "scope": "Only EOF surplus newline removal; no cue text, separator, order or timestamp changes."
+    },
+    "srt": {
+      "before_sha256": "0418596fa4f30eb027c6ae0a45d6adf63a1c323588e1ff5828ff64b124f77324",
+      "after_sha256": "d710f64c22401a82a86cb3cda819e7d974a1530c99e9343453be05de7cf646b7",
+      "before_bytes": 2798,
+      "after_bytes": 2797,
+      "scope": "Only EOF surplus newline removal; no cue text, separator, order or timestamp changes."
+    }
+  },
+  "negative_input": {
+    "only_changed_byte_range": [
+      20,
+      84
+    ],
+    "original_sha256": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "invalid_sha256": "98501c6d56b146f2f4d4d5a4dbbda8609cf0703c30f7e3cfe5ac5e46f35091fb",
+    "all_other_raw_bytes_exact": true,
+    "scope": "Lossless raw-text outer identifier substitution; no parsing/serialization of report numbers."
+  },
+  "execution": {
+    "complete_json_equality": true,
+    "artifact_id": "1d1de88d01cbe23c494f6a6f7ee7127d63629baac071def58c067506ddf5893b",
+    "risk_artifact_id": "bae842845d882b3007fbb497c4d6abbbc86bb935b7e0cb1d504cecf6dad57e52",
+    "agent_model_calls": 0,
+    "archive_requests": 0,
+    "elapsed_seconds": 3.4105243331287056,
+    "source": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "image_id": "sha256:dd32bd89f9e038e9b7770eb9cad927bc86649f1857062b493823bdbbed7bede1",
+    "report_sha256": "6998b9d58b9286af42efc873a3c2d736016dd9ef1822a369c512d8688f37b1ea",
+    "scope": "Two actual local bounded worker calls; historical account13 is a separate previously recorded file."
+  },
+  "verification": {
+    "complete_decode_exit": 0,
+    "decode_errors": 0,
+    "full_decode_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "all_original_media_unchanged": true,
+    "page_errors": 0,
+    "loopback_GET_requests": 18,
+    "all_requested_product_resources_status200": true,
+    "owned_worker_containers_remaining": 0
+  },
+  "attempts": {
+    "first": {
+      "scope": "Retained partial capture; missing actual explorer-open operation caused a hidden hash wait timeout. Two local calls passed but helper did not persist child stdout; that gap is not reconstructed."
+    },
+    "second": {
+      "scope": "Retained successful 156.88s cut, original exact helpers and independent negative review bfc12a21. Nested comparison asset returned404, lossily serialized invalid file also rounded two health-factor integers, account/receipt framing obscured relevant table. This cut is not selected."
+    },
+    "third": {
+      "scope": "Retained partial capture and exact helper; owned browser deliberately cancelled after precision finding. Recorder caught cancellation and persisted stdout/failure; not selected."
+    },
+    "final": {
+      "scope": "Complete continuous capture using lossless64-byte identifier-only negative input, exact nested asset allowlist, all200responses and readable account/receipt framing. No change to product or narration between last two attempts."
+    }
+  },
+  "limits": [
+    "Two fresh bounded local agent calls; account13 is previously recorded historical evidence inspected offline, not a new chain run.",
+    "Four attempts/extra local calls are authoring work, not controlled timing comparisons or model calls.",
+    "No sole-price causality, profit, trading/borrowing strategy, provider/proxy authenticity, full-block/state-root proof or market prediction.",
+    "Browser/server closed; only owned worker containers checked; existing local Docker VM and unrelated services remain running.",
+    "Current rebuilt local arm64 image has exact23 sources/pinnedbase; no fresh image advisory scan is implied by the recording.",
+    "The archive wrappers preserve one-off local harnesses; not installed production modules or a portable supported media generation command.",
+    "Public FFprobe filename normalized to repository-relative; original retained privately. Captions remove only one surplus EOF newline per file; original bytes and all unchanged cues retained.",
+    "Human auditory review pending; automated audio/decode and visual checks are separate.",
+    "Original owner-approved videos unchanged; new cut is additional material, no hosting/upload/submission or main/Pages deployment."
+  ]
+}

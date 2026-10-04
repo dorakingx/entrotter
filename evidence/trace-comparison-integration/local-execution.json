@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "pins": {
+    "engine": "198139ff0b3bf37781b4232b27d8eeb0a5da5365",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b1cfb001ad642d4b7423ea914045abb56166c903"
+  },
+  "steps": [
+    {
+      "name": "Verify offline reader and viewer retain the actual signed-prefix evidence",
+      "script_sha256": "fa523b0ca2625bd1b5ad6bab73bf699e049778310c1d491e73eb955a0bb2c87d",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the original 32-receipt case and display classification with SDK and viewer",
+      "script_sha256": "cfb577bf2400d6d77d61159e33a0c8a1f3f0369bf1bd96a91e2636d095778bc2",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the synthetic same-block funding report with SDK and viewer",
+      "script_sha256": "2cd2a98aa2dab686672db9c603004040690a851c6b607a45798fbf6c3ea88539",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect oracle omission and unverified storage reports with SDK and viewer",
+      "script_sha256": "22fed455e975aceb9c5440fb1691e66ac7d275853566ccc7a217b08412bacf52",
+      "returncode": 0
+    }
+  ],
+  "prior_three_readers": "Complete previous outcomes unchanged except selected viewer pin.",
+  "new_original32_reader": "Actual SDK and viewer classifier used; all receipts and32 complete classifications retained.",
+  "execution": "Offline frozen reports only; no new EVM/archive/model/browser call.",
+  "script_sha256": "0b51f730358d27b5eb9e4e7ea345bbe331c2b19a8b47a9e8a06c5e08ba38b5e3"
+}

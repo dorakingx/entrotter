@@ -1,0 +1,236 @@
+{
+  "error": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#product').contentFrame().locator('#cli-copy-feedback').filter({ hasText: 'Copied' }) to be visible\u001b[22m\n",
+  "events": [
+    {
+      "scene": "intro",
+      "started": 1.0000966249999996,
+      "ready": 1.009185167
+    },
+    {
+      "scene": "record",
+      "started": 11.152488917000001,
+      "ready": 12.210052042000001
+    },
+    {
+      "scene": "setup",
+      "started": 22.734984459,
+      "ready": 23.242957625
+    },
+    {
+      "scene": "decision",
+      "started": 35.424723917,
+      "ready": 36.057928542
+    },
+    {
+      "scene": "decision-detail",
+      "ready": 39.642389959
+    },
+    {
+      "scene": "final",
+      "started": 51.051402,
+      "ready": 51.50870625
+    },
+    {
+      "scene": "balances",
+      "started": 61.438206625,
+      "ready": 62.057271667
+    },
+    {
+      "scene": "balances-detail",
+      "ready": 67.52597529199998
+    },
+    {
+      "scene": "download",
+      "started": 74.52172825,
+      "ready": 75.65799804199999
+    }
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:59845/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/mascot.webp",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/style.css?v=eb30a5dd5297",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/app.js?v=7c3b1992938e",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/comparison.mjs?v=e0dac48fe543",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/trace-viewer.mjs?v=e87805dcef59",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/icon.png",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/mascot.webp",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/reports/liquidity-shock.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/report-validation.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/trace-report.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/trace-comparison.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/observed-trace.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/position-report.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/examples/action-comparison.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/reports/aave-borrow-actions.json",
+      "method": "GET"
+    }
+  ],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:59845/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/icon.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/mascot.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/style.css?v=eb30a5dd5297",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/icon.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/mascot.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/app.js?v=7c3b1992938e",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/comparison.mjs?v=e0dac48fe543",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/trace-viewer.mjs?v=e87805dcef59",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/reports/liquidity-shock.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/report-validation.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/trace-report.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/observed-trace.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/trace-comparison.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/position-report.mjs",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/assets/examples/action-comparison.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:59845/site/reports/aave-borrow-actions.json",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "observed": {
+    "balance_rows": [
+      "Native ETH · Initial20200",
+      "Native ETH · Final9.9888275591703197129.9912499816031695+0.002422422432849788",
+      "Native ETH · Change-10.011172440829680288-10.0087500183968305+0.002422422432849788",
+      "Gas cost (ETH)0.0111724408296802880.0087500183968305-0.002422422432849788",
+      "Gas used723131560326-162805",
+      "Reverted transactions10-1",
+      "Rejected transactions000",
+      "WETH · Initial000",
+      "WETH · Final110",
+      "WETH · Change+1+10",
+      "AWETH · Initial000",
+      "AWETH · Final10.00000009445455846210.0000000944545584620",
+      "AWETH · Change+10.000000094454558462+10.0000000944545584620",
+      "VWETH · Initial000",
+      "VWETH · Final110",
+      "VWETH · Change+1+10"
+    ],
+    "action_rows": [
+      "Baseline0success450389999026541994134046",
+      "Baseline1success460529998149476289352358",
+      "Baseline2success2023199994751245023605365",
+      "Baseline3reverted1628059992333837521840195",
+      "Baseline4success2669179988827559170319712",
+      "Candidate0success450389999026541994134046",
+      "Candidate1success460529998149476289352358",
+      "Candidate2success2023199994751245023605365",
+      "Candidate3noop09994751245023605365",
+      "Candidate4success2669179991249981603169500"
+    ],
+    "agent_row": "3\trejected\t500000 / 2000000\thold\tCurrent-state preflight or requested gas exceeds the policy\tnoop\t0",
+    "provenance": "Provider: builtin\nOriginal model/policy: preflight-risk-v1\nModel identity scope: Unavailable\nPrompt version: Unavailable\nGeneration: Deterministic\nSeed: Unavailable\nOriginal generation cost (USD): 0\nCost note: Unavailable",
+    "download": {
+      "filename": "aave-borrow-actions.json",
+      "bytes": 59506,
+      "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622"
+    }
+  }
+}

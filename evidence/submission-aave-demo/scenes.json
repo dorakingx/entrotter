@@ -1,0 +1,93 @@
+{
+  "demo": [
+    {
+      "id": "intro",
+      "label": "01 / A DECISION YOU CAN EXPLAIN",
+      "narration": [
+        "Before allowing an onchain agent to act, compare what its decision changes.",
+        "This is the actual Entrotter viewer, with synthetic narration."
+      ]
+    },
+    {
+      "id": "record",
+      "label": "02 / RECORDED AAVE ACTIONS",
+      "narration": [
+        "This saved recording tests supplied collateral and borrow actions on Ethereum.",
+        "Today we inspect that recording. We do not execute a new historical run."
+      ]
+    },
+    {
+      "id": "setup",
+      "label": "03 / IDENTICAL INITIAL CONDITIONS",
+      "narration": [
+        "Both isolated branches start with the same artificial twenty Ether and local account impersonation.",
+        "The supplied setup wraps, approves, and supplies ten wrapped Ether."
+      ]
+    },
+    {
+      "id": "decision",
+      "label": "04 / ONE PROPOSAL, TWO OUTCOMES",
+      "narration": [
+        "A nine wrapped Ether borrow reverts in the baseline.",
+        "The candidate uses a built in current state preflight policy and holds that proposal.",
+        "This case uses a deterministic policy, not a new language model call."
+      ]
+    },
+    {
+      "id": "final",
+      "label": "05 / THE SMALLER BORROW IS SUPPLIED",
+      "narration": [
+        "A later one wrapped Ether borrow succeeds in both branches.",
+        "That smaller action was supplied in advance. The policy did not generate it."
+      ]
+    },
+    {
+      "id": "balances",
+      "label": "06 / EXACT UNITS, NO PROFIT CLAIM",
+      "narration": [
+        "Compare every recorded native and token balance without losing decimal precision.",
+        "The held revert changes gas use, but gas prices also differ. These differences are not profit."
+      ]
+    },
+    {
+      "id": "download",
+      "label": "07 / THE SAME SOURCE JSON",
+      "narration": [
+        "Download the exact source recording, then open the pinned command recipe.",
+        "The setup selects immutable public command line and Python reader versions."
+      ]
+    },
+    {
+      "id": "copy",
+      "label": "08 / COPY THE SELECTED INSPECTION COMMAND",
+      "narration": [
+        "Use the keyboard to copy the inspection command for this sample.",
+        "Only the fixed public command is copied. Local report metadata never enters shell text."
+      ]
+    },
+    {
+      "id": "cli",
+      "label": "09 / ACTUAL OFFLINE CLI OUTPUT",
+      "narration": [
+        "Here is actual command output from the downloaded recording, using those pinned sources.",
+        "The command verifies the content hash and preserves the same exact units and recorded decision."
+      ]
+    },
+    {
+      "id": "limit",
+      "label": "10 / WHAT THE RECORDING DOES NOT PROVE",
+      "narration": [
+        "Integrity does not establish provider authenticity, a correct policy, or future market behavior.",
+        "This is supplied action execution on archived state, not replay of original signed transactions."
+      ]
+    },
+    {
+      "id": "end",
+      "label": "11 / REPRODUCE, INSPECT, REVIEW",
+      "narration": [
+        "Use Entrotter to keep the inputs, receipts, assumptions, and decisions together for review.",
+        "The current code is on development branches. Main integration, public deployment, and submission remain separate."
+      ]
+    }
+  ]
+}

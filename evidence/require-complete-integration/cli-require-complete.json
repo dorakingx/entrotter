@@ -1,0 +1,34 @@
+{
+  "pins": {
+    "engine": "88c6cd0d00f466ed7e870bd57c118aa50984f8b1",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "1ce7677d809847bc9f5917f2ca633878b1761c3c",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "422d98a7cf753bfc9be9b86553cd76f3a549f70c"
+  },
+  "command": [
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "cli/tests",
+    "-p",
+    "test_require_complete.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_all_existing_price_controls_change_only_exit_policy (test_require_complete.RequireCompleteTests.test_all_existing_price_controls_change_only_exit_policy) ... ok\ntest_baseline_receipts_gate_even_when_price_views_are_complete (test_require_complete.RequireCompleteTests.test_baseline_receipts_gate_even_when_price_views_are_complete) ... ok\ntest_complete_account_adverse_zero_and_no_debt_are_success (test_require_complete.RequireCompleteTests.test_complete_account_adverse_zero_and_no_debt_are_success) ... ok\ntest_complete_price_zero_and_negative_differences_are_success (test_require_complete.RequireCompleteTests.test_complete_price_zero_and_negative_differences_are_success) ... ok\ntest_inspection_and_execution_reject_the_option (test_require_complete.RequireCompleteTests.test_inspection_and_execution_reject_the_option) ... ok\ntest_invalid_or_resealed_contradictory_reports_never_print_json (test_require_complete.RequireCompleteTests.test_invalid_or_resealed_contradictory_reports_never_print_json) ... ok\ntest_missing_account_and_nested_price_are_unproven (test_require_complete.RequireCompleteTests.test_missing_account_and_nested_price_are_unproven) ... ok\ntest_original_default_bytes_and_success_exit_are_preserved (test_require_complete.RequireCompleteTests.test_original_default_bytes_and_success_exit_are_preserved) ... ok\ntest_verification_stays_offline_without_engine_or_export_ledger (test_require_complete.RequireCompleteTests.test_verification_stays_offline_without_engine_or_export_ledger) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 11.337s\n\nOK\n",
+  "source_sha256": {
+    "cli/src/entrotter_cli/main.py": "40adc67020f47b911fbad283dad794cc1ee1786c78f6329e51c977a89b1e8b6a",
+    "cli/tests/test_require_complete.py": "8c7f90c0c3b7160081498999c56c019876e5a88ee9cf58c46bb48d293db66e68",
+    "cli/tests/test_position_text.py": "5e7c0772835c122ab0ca6712c82ee160e27f6589ca79c878f2e993890f8afc38",
+    "sdk-python/src/entrotter_sdk/observed.py": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5",
+    "sdk-python/src/entrotter_sdk/position.py": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2",
+    "sdk-python/src/entrotter_sdk/trace.py": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2",
+    "cli/tests/data/aave-account-position13.json": "cd96e04c837fa1dcc6b6cf009d58adffe3ffdaebc9fbd5b3b900d71cd2912978",
+    "cli/tests/data/observed-price32.json": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+    "cli/tests/data/observed-controls.json": "b68865916ac365e2ca1093c16439b4baaa628e14b3b2e209f36596f2c09bba67"
+  },
+  "scope": "Offline CLI process exit contracts with selected SDK; synthetic controls are not fresh EVM evidence."
+}

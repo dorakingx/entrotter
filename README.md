@@ -22,6 +22,11 @@ All six repositories are public at the links below. The documentation site is
 live at https://entrotter.github.io/. Packages remain unpublished and the engine
 runs locally. See STATUS.md for current verification and open acceptance gates.
 
+The candidate CLI's [development setup](https://github.com/entrotter/cli/blob/169b759aff9280ce44fb0d15569c7ae0a4a40889/README.md)
+now selects the quality SDK directly from its manifest. The
+[setup composition evidence](evidence/setup-pin-integration/README.md) records the
+executed recipe and separates this documentation fix from runtime verification.
+
 ## Repositories
 
 | Repository | Owns | Does not own |
@@ -39,7 +44,39 @@ contribution boundary that justifies another repository.
 
 <a id="quick-start-without-dependencies-or-an-api-key"></a>
 
-## Quick start: reproduce the tested candidate locally
+## Quick start: inspect a recorded result
+
+To see what an Entrotter report contains, you need Git and Python 3.11+ on
+macOS or Linux. The CLI already includes the original Aave recording, so this
+path needs no Docker, package installation, wallet or API key. Setup downloads
+public source; verification and inspection afterward run locally.
+
+Paste the following block in a shell from a directory where
+`entrotter-inspection` does not exist. It creates an isolated folder and stops
+at the first failure; it does not change your existing Entrotter checkouts.
+
+```bash
+mkdir entrotter-inspection &&
+cd entrotter-inspection &&
+git clone https://github.com/entrotter/cli.git entrotter-cli &&
+git -C entrotter-cli checkout --detach 169b759aff9280ce44fb0d15569c7ae0a4a40889 &&
+git clone https://github.com/entrotter/sdk-python.git entrotter-sdk &&
+git -C entrotter-sdk checkout --detach ba4af512784119f23b6dea63fd24c7f5d1fdde44 &&
+PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli verify entrotter-cli/tests/data/aave-borrow-result.json &&
+PYTHONPATH=entrotter-cli/src:entrotter-sdk/src python3 -m entrotter_cli inspect entrotter-cli/tests/data/aave-borrow-result.json --format text
+```
+
+The text shows exact native/token balance changes, gas, failed transactions and
+assumptions. In this recording, the supplied baseline 9 WETH borrow reverts while
+the candidate preflight policy holds; the later supplied 1 WETH borrow succeeds
+in both branches. This reads an existing report. It does not run new chain
+transactions or prove model advantage, execution authenticity or financial return.
+Hash verification checks content integrity. The pinned sources are reviewed
+candidates awaiting independent human-main approval, not published packages.
+Read the [recording and limits](https://github.com/entrotter/engine/tree/f53a66a303e67ca4fbb4322a06b36b036f4db599/evidence/aave-borrow-actions)
+and [executed walkthrough evidence](evidence/recorded-quick-start/README.md).
+
+## Run a new simulation
 
 Follow the [pinned quick start](docs/QUICK_START.md) to fetch compatible public
 source revisions, build the Docker worker and produce a verified offline report.
@@ -58,7 +95,107 @@ accidentally resolving an unrelated package with the same name. Run it only afte
 the pinned checkout steps; it does not select candidate revisions, install Docker
 or build/configure the worker. Build-time package tooling may require network access.
 
+The proposed [signed-prefix reader integration](evidence/trace-reader-integration/README.md)
+adds typed offline SDK inspection and a separate local browser view of original
+transactions, receipt differences and nonce conflicts. Its exact component and
+combined CI evidence is distinct from the older deployed site. Follow the
+[optional replay instructions](docs/QUICK_START.md#optional-original-transaction-prefix-replay)
+for the recorded four-transaction case and archive requirements.
+
+The [same-block funding composition](evidence/trace-funding-integration/README.md)
+adds a trace-only admission fix and cross-repository inspection of the synthetic
+original-signature baseline and adverse funding omission. Historical and bounded
+execution, combined CI and protected publication remain distinct evidence gates.
+
+The proposed [bounded historical price composition](evidence/bounded-observed-integration/README.md)
+lets the fixed Aave/WETH observation command use the default Docker worker.
+[Replay and inspect the result](docs/QUICK_START.md#replay-historical-prices-through-the-bounded-worker)
+with the SDK, CLI or local viewer. The recorded32-input run verified every original
+baseline receipt and four complete price views; missing state and worker deadlines
+remain explicit. Read-only price dependence does not establish a signed consumer
+strategy or profit. Candidate integration and protected publication remain separate.
+
+The proposed [Aave account composition](evidence/account-impact-integration/README.md)
+adds exact collateral, debt, borrowing-capacity and health-factor inspection beside
+the recorded price and receipt evidence. Its [offline commands and replay guide](docs/QUICK_START.md#compare-historical-aave-account-impact)
+use the same bounded worker and disclose unproven views. This is read-only account
+state comparison; signed strategy execution and financial return remain unproven.
+The [account viewer composition](evidence/viewer-position-integration/README.md)
+adds exact SDK-to-browser inspection of the same sealed records, including explicit
+synthetic missing/large-integer/no-debt/boundary controls. The next
+[account summary composition](evidence/account-summary-integration/README.md)
+selects the independently verified mobile summary: exact borrowing-capacity and
+health-factor changes before the full table, with positive/negative/zero and
+unavailable/no-debt behavior. Original report facts and all nine reader bodies
+remain unchanged. The current viewer also identifies local v0.1 imports explicitly,
+clears previous results while loading, and lets the same example be selected after
+a rejected file. [Source-label verification](https://github.com/entrotter/entrotter.github.io/blob/422d98a7cf753bfc9be9b86553cd76f3a549f70c/evidence/report-source/README.md) preserves the actual regression and full browser evidence.
+
+The [Aave outcome composition](evidence/aave-viewer-integration/README.md) selects
+the exact browser balance table and original supply/borrow recording. Native and
+ERC-20 initial/final/change/differences retain all digits; missing observations
+stay Unavailable and units bind to scenario identities. One offline reader checks
+all sixteen browser rows beside the original Engine/SDK/CLI outputs. The current
+viewer component has passed its own mandatory CI; combined integration, protected
+human main approval and live Pages remain separate.
+
+The current candidate selects viewerdacd134 and retains the
+[CLI copy controls](evidence/cli-copy-integration/README.md). Verified bundled
+recordings provide fixed download filenames and
+pinned CLI/SDK setup with selected read-only inspection commands. All six recipes
+have actual clean-checkout results; commands never include local report metadata.
+Validated local imports also expose a fixed `./local-report.json` recipe. Save a
+local copy under that name in an empty working directory and keep the original
+unchanged. [Local import evidence](evidence/local-cli-integration/README.md) binds
+actual native clipboard reads and both executed inspection commands.
+Keyboard-activated copy controls use only fixed recipes; denied APIs
+provide manual copying and pending writes are serialized. Shared example links
+and exact outcomes remain intact. The existing five-command
+reader retains all original outputs and uses the current source-bound view golden.
+The [separate evaluation composition](evidence/agent-scope-integration/README.md)
+labels the native-transfer model comparison as evidence for that example only;
+it does not evaluate every Aave or imported recording shown in the panel.
+The [setup failure correction](evidence/setup-chain-integration/README.md) stops
+copyable setup commands at the first Git failure and refreshes the application
+cache token. Actual fresh public clones reproduce all six original CLI outputs.
+
+Terminal users can also inspect the same account record with
+`position-inspect --format text`: all six exact account fields and differences,
+health status, source IDs and unproven reasons appear without manual unit scaling.
+The default JSON remains unchanged; [CLI evidence](https://github.com/entrotter/cli/blob/169b759aff9280ce44fb0d15569c7ae0a4a40889/evidence/position-text/README.md)
+separates current offline controls and installed-package proof from the original
+historical execution. Protected integration and live publication remain separate.
+
+Price inspection also accepts `observed-inspect --format text`: exact USD
+baseline/candidate/difference, four recorded phases and unproven reasons can be
+read without converting raw integer units. [Price text composition](evidence/observed-text-integration/README.md)
+compares the entire output with the original32-record sample; default JSON is
+unchanged and a quoted phase value alone does not establish completeness.
+
+Scripts can use `position-verify --require-complete` or
+`observed-verify --require-complete` to require both complete recorded views and
+matching baseline receipts. An unproven comparison returns3 with the same JSON
+and reasons on stderr; ordinary verification retains its prior exit behavior.
+Negative differences and valid no-debt states can pass: completeness does not
+prove profit or authenticate a provider. [CLI exit-contract evidence](https://github.com/entrotter/cli/blob/169b759aff9280ce44fb0d15569c7ae0a4a40889/evidence/require-complete/README.md)
+records the offline and installed-package checks.
+
 ## Local API and SDK
+
+The candidate also compares [supplied Aave collateral and borrowing actions](docs/QUICK_START.md#compare-supplied-aave-borrowing-actions).
+Both branches wrap and supply 10 WETH; the baseline's proposed 9 WETH borrow
+reverts, while the built-in current-state risk policy holds that candidate step.
+Both then execute the supplied 1 WETH borrow. Exact token/debt units, receipts,
+gas and the recorded decision remain inspectable offline. This is local action
+execution against pinned archived state, with artificial funding and local
+impersonation. It does not establish an original signed strategy or profit.
+[Composition evidence](evidence/aave-action-integration/README.md) distinguishes
+the actual Engine runs from standalone CLI/SDK inspection and current integration.
+The candidate also supports `inspect --format text` for exact native/ERC-20
+initial/final/change and gas/revert differences. The
+[text composition](evidence/aave-result-text-integration/README.md) preserves
+all decimal units, distinguishes missing records from zero and retains unchanged
+default JSON; it does not infer valuation or authenticate execution.
 
 After completing the quick start, keep its environment variables in both terminals.
 For additional Linux API-process limits, use the optional
@@ -134,7 +271,7 @@ Do not stop after building a landing page. Do not mark blockers as completed.
 
 ## Actual archived-state evidence
 
-The [Uniswap scenario](https://github.com/entrotter/scenarios/blob/main/evm/ethereum-uniswap-slippage.json)
+The [Uniswap scenario](https://raw.githubusercontent.com/entrotter/scenarios/8785bb090c13390b783fe8c42f01b26f1d5e7c24/evm/ethereum-uniswap-slippage.json)
 compares a successful 1 WETH swap with a reverted minimum-output intervention on
 identical Ethereum block 19,000,000 state. Two runs yielded identical artifacts;
 see `evidence/historical-verification.json` for timings and resource scope.
@@ -152,6 +289,15 @@ a reconstructed alternative market, or an integrated-agent benchmark.
 
 ## Recorded model decisions
 
+The proposed [recorded-agent viewer](https://github.com/entrotter/entrotter.github.io/pull/14)
+lets contributors open the v0.1 report explorer and select **Local EVM · recorded
+model decisions**. It places preflight, gas budget, execute/hold and reasons beside
+candidate receipts while preserving original model/cost uncertainty. The current
+[pinned quick start](docs/QUICK_START.md) selects that tested candidate; independent
+approval and live publication remain pending. Original media and model evaluation
+inputs retain their separate versions.
+
+
 The experimental local controller now connects typed `execute`/`hold` model
 responses to real Anvil execution and replays a full recording without another
 model call. In the artificial transfer/revert example, the model and a simple
@@ -159,6 +305,11 @@ preflight rule made identical decisions; the rule was faster. See
 [agent evaluation](docs/AGENT_EVALUATION.md) for receipts, measured timings,
 metadata, exact replay commands and pending historical/holdout work. The engine
 and schema PRs require independent review before this becomes a main-branch release.
+
+The [pinned quick start](docs/QUICK_START.md#4-run-agent-decisions-and-replay-the-recorded-model)
+now includes proposed standalone CLI risk execution and complete recorded-model
+replay. These commands reuse original decisions and make no new model call;
+independent review and main integration remain pending.
 
 The [frozen historical comparison](docs/HISTORICAL_AGENT_EVALUATION.md) now includes
 three sourced cases and two previously unused implementation holdouts. All ten
@@ -214,6 +365,8 @@ The proposed [bounded agent integration](docs/BOUNDED_AGENT_REPLAY.md) reproduce
 all 19 existing EVM reports under the worker quotas, including 12 agent-recording
 replays without model calls. This is verified on an open branch; independent
 approval and dependency-pin integration remain pending.
+
+[Current account-impact demo](submission/media/entrotter-demo-account.mp4) shows exact account changes, receipt evidence and altered-file rejection in 2:36.80; its [source-bound recording evidence](evidence/submission-account-demo/README.md) distinguishes new local execution from recorded historical inspection. Original approved media remains unchanged.
 
 [Submission review package](submission/README.md) includes recorded pitch/demo
 videos, measured evidence, explicit AI/prior-work disclosure and unvalidated

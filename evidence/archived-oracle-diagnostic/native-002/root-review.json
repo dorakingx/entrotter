@@ -1,0 +1,36 @@
+{
+  "result": "passed_independent_review_of_failed_execution",
+  "verifier_sha256": "6bb694959b2b0ffbfa3a0e5937a8a4d179a8eb881f2b7251c44c4f3e1213f658",
+  "readiness_sha256": "d636e4311eabefe9509f1f096cea01898ddf995ca5cc0dfcff042992199e1d08",
+  "terminal_sha256": "4dc750d9c0d46bf4d30a41eb74b060eaeae845cc3cab6b121050b7efc900bee6",
+  "raw_sha256": {
+    "baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "host-owned-cleanup.json": "fb98c9c66a4a4decbd2f5b8d21703f3e9fde6f2b450c0a87c6c5aa828db844a1",
+    "host-result.json": "a33c47fef1e8d7f887947138b39266ebe96b7f5395e53c3231ce2f32a9e94cd1",
+    "observations.json": "38ee45f2051debfb36fcd5fa13cc60ff3697aacd7456e25ae633b83d66d18e4d",
+    "owned-nodes.json": "2fae5ef1267991da34aa617ec47cbdd16780d361bd759e2fa9c8a6a37d2058ae",
+    "result.json": "ed902f2792512fcb767b05674bcb2ae2ca83845e92687fc3cb81aaadff03a77f"
+  },
+  "frozen_bindings": 72,
+  "baseline_complete_projected_receipts_equal": 32,
+  "signed_binding": "exact independently decoded discovery003 bytes/signers/hashes/indices",
+  "identical_initial_owned_head_and_getter": true,
+  "baseline_after_answer": 256292441874,
+  "observed_failed_operation": {
+    "category": "rpc_error",
+    "code": "other_error",
+    "method": "evm_mine",
+    "stage": "candidate_replay"
+  },
+  "guards_absent_and_ports_closed": 2,
+  "liquidation_topic_indices": [],
+  "paired_replay_pass": false,
+  "limits": [
+    "No candidate branch result or final protocol; omission outcome remains unknown.",
+    "Finite operation is evm_mine, but original RPC transport discarded underlying cause.",
+    "No root/state/opcode/provider authenticity or actual dependent-consumer proof.",
+    "No liquidation topic match does not rule out other internal consumers.",
+    "Native diagnostics do not establish default Docker CPU/RSS/PID bounds."
+  ]
+}

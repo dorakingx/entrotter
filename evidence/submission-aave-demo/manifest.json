@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "status": "ADDITIONAL REVIEW CUT; human pronunciation/caption review and supported host pending",
+  "produced_at": "2026-10-04T05:46:19.952429+00:00",
+  "source_pins": {
+    "viewer": "ad697dc5c7c9506ed8ec54386da727b0ef2f0b81",
+    "cli": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sdk": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "recorded_engine": "f53a66a303e67ca4fbb4322a06b36b036f4db599"
+  },
+  "voice": {
+    "packages": {
+      "piper-tts": "1.8.0",
+      "onnxruntime": "1.30.0"
+    },
+    "files_sha256": {
+      "en_US-ljspeech-high.onnx": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+      "en_US-ljspeech-high.onnx.json": "7e1f4634af596d83cca997fb7a931ba80b70f8a316a2655ee69c55365e0ace14"
+    },
+    "scope": "Existing local public Piper synthetic voice reused; no paid synthesis or downloads by narration producer; stochastic inference is not claimed bit reproducible"
+  },
+  "output": {
+    "submission/media/entrotter-demo-aave-review.mp4": {
+      "bytes": 11002134,
+      "sha256": "7bccd03c3d2bd358ce537ee2895ce3abbc727aa83c43a65c8508c14136b8d28d"
+    },
+    "submission/media/entrotter-demo-aave-review.vtt": {
+      "bytes": 2711,
+      "sha256": "70075a7f804c20bdf0bfab77892814aaba6b951a7be26eafedf13e128d54d5c9"
+    },
+    "submission/media/entrotter-demo-aave-review.srt": {
+      "bytes": 2642,
+      "sha256": "1a49fa2716a7d25e9965affd58a7de05f18406e998ab5ca538718d97ad5d1bfc"
+    }
+  },
+  "raw_evidence": {
+    "scenes.json": {
+      "public_file": "scenes.json",
+      "original_sha256": "86888a88686fb4f36be23cfca35b5a911ae377521c059b280f95f592b43ebf9c",
+      "normalized_public_sha256": "86888a88686fb4f36be23cfca35b5a911ae377521c059b280f95f592b43ebf9c"
+    },
+    "audio/frame-timeline.json": {
+      "public_file": "audio-frame-timeline.json",
+      "original_sha256": "d12fbeeb7b16cc617c91335b6322e23dd0764397469abc34b1dd886b179864b9",
+      "normalized_public_sha256": "d12fbeeb7b16cc617c91335b6322e23dd0764397469abc34b1dd886b179864b9"
+    },
+    "audio-file-review.json": {
+      "public_file": "audio-file-review.json",
+      "original_sha256": "2f59627b3edcc3fc2afbceef013e91f73989150aac1c59743e9c05a3c1ae10f4",
+      "normalized_public_sha256": "2f59627b3edcc3fc2afbceef013e91f73989150aac1c59743e9c05a3c1ae10f4"
+    },
+    "asr.json": {
+      "public_file": "asr.json",
+      "original_sha256": "13d8c38be041e3dab0b52e2247243b84942d7641737098cffde996cddf488931",
+      "normalized_public_sha256": "13d8c38be041e3dab0b52e2247243b84942d7641737098cffde996cddf488931"
+    },
+    "caption-draft.json": {
+      "public_file": "caption-draft.json",
+      "original_sha256": "9a3a1324ca6caa9171fc90f19d096754a7672f7cb68056d846705e889afdca0b",
+      "normalized_public_sha256": "9a3a1324ca6caa9171fc90f19d096754a7672f7cb68056d846705e889afdca0b"
+    },
+    "capture/failure.json": {
+      "public_file": "capture-failure.json",
+      "original_sha256": "02b21e112ae1c28629322775895a8402b72c92ac7c65b841a17d00078d2c0351",
+      "normalized_public_sha256": "02b21e112ae1c28629322775895a8402b72c92ac7c65b841a17d00078d2c0351"
+    },
+    "capture-resumed/capture.json": {
+      "public_file": "capture-resumed-capture.json",
+      "original_sha256": "6b85c3fe8f642bf0b3b170d5331cb8541fdea8357b3ae4fc1470d466b904bcc5",
+      "normalized_public_sha256": "bba47f823d6341dc74a95d397d3ac092667fc98145e6b8445183b25246f84238"
+    },
+    "capture-resumed/cli-process.json": {
+      "public_file": "capture-resumed-cli-process.json",
+      "original_sha256": "97bbfadaa0dee739361fa290dc8a2334982ddf37edf89dd2825221376d0f29fe",
+      "normalized_public_sha256": "96aa6f012962781cedf13f2db93db1b2d7825ad29c25aefb1c6492bacf0da09b"
+    },
+    "cli-origin-review.json": {
+      "public_file": "cli-origin-review.json",
+      "original_sha256": "e766d436debc54de08ef568a781e651d9eec485e0f8027dbaf7d528cf7183ea4",
+      "normalized_public_sha256": "4ac3028967b0ff7149802d63a77361b4a5d36c32b7dcccc7646467db6a6e124d"
+    },
+    "render.json": {
+      "public_file": "render.json",
+      "original_sha256": "4fb1ffb6969d46c8ef1312a9f277fb27688e667d61fdca11b7c6be1c94ee6a5a",
+      "normalized_public_sha256": "0a89290f1d8250b6d79ca14551e43c12bf40643436a5648275f9669975a86a87"
+    },
+    "caption-render.json": {
+      "public_file": "caption-render.json",
+      "original_sha256": "de95af8667b8525cc666a843914b2e51a9f19feafbf6972990178c34b2747fe2",
+      "normalized_public_sha256": "de95af8667b8525cc666a843914b2e51a9f19feafbf6972990178c34b2747fe2"
+    },
+    "final-video-review.json": {
+      "public_file": "final-video-review.json",
+      "original_sha256": "94ce429f1bc125224ac850df05f6eb6b6a8a859c87530f9183946102d2e55c56",
+      "normalized_public_sha256": "fb3c65dd1a079dd126eeb7ed6ab749b8b0f289c0e1cec8bf1b484e4c7983f54f"
+    },
+    "independent-audio-preflight-review.json": {
+      "public_file": "independent-audio-preflight-review.json",
+      "original_sha256": "c1f9a3b265b3471acd6890fb8760f5aa6a50e07cab26cf8133cc2b11a310920a",
+      "normalized_public_sha256": "c1f9a3b265b3471acd6890fb8760f5aa6a50e07cab26cf8133cc2b11a310920a"
+    },
+    "initial-record.stderr": {
+      "public_file": "initial-record.stderr",
+      "original_sha256": "41fc14224d7c9d52d30465472d57ba89eac001da6a029b80e7f45a37ef13016c",
+      "normalized_public_sha256": "6e3a968cf9c1e614cf96bfd000bbf91c37a99cc781cb522753c22576efabf706"
+    },
+    "narration.stderr": {
+      "public_file": "narration.stderr",
+      "original_sha256": "8a60283ea6d022e33abf7f99278b10422c1d2d3ab7e27219552f562fd6f8a329",
+      "normalized_public_sha256": "8a60283ea6d022e33abf7f99278b10422c1d2d3ab7e27219552f562fd6f8a329"
+    },
+    "narration-path-failed.stderr": {
+      "public_file": "narration-path-failed.stderr",
+      "original_sha256": "c89ce4015f95a2a04738f862a87783d6fc854e8615ca591a88d6a55666cf852b",
+      "normalized_public_sha256": "9708e2ece6b1a2ec9dd31d4592aa7b99d1748bae8f5c446b3977484b0e554888"
+    },
+    "asr-decode-failed.stderr": {
+      "public_file": "asr-decode-failed.stderr",
+      "original_sha256": "7c0ca03c9a11c620ef52e94ac6daa659d7307344bbdad0986e09c7ca90672691",
+      "normalized_public_sha256": "1e50c016b71e3a0bddfd85448f727b71d2510f12341fcd7e0f635bec6f5d055b"
+    },
+    "offset-parse-failed.stderr": {
+      "public_file": "offset-parse-failed.stderr",
+      "original_sha256": "775d8a57616df8865bf493d52294531bcad464b8e90d14c455d46d9841da9192",
+      "normalized_public_sha256": "48120a5a7a0aee4a7119abc6535fcfe40e20176561d3a99313df5659ea69225f"
+    },
+    "narrate.py": {
+      "public_file": "production-narrate.py.gz",
+      "original_sha256": "f29b22021c77ba2e417cf42cd3877dbb9e1805824803ce811b46938162dc282c",
+      "compressed_sha256": "5063c8c6e7fdaf7856342508b5570db851f8219c238aba68c56ae380acd5b110",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "verify-audio.py": {
+      "public_file": "production-verify-audio.py.gz",
+      "original_sha256": "047b9a3e1522fb7b2d8493b8113d2ed32bfea19565767b52e88c159a1b860a8f",
+      "compressed_sha256": "8e9becffa3445c91f8985e0f7f4ea90f07582064956900254107999e58a08309",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "transcribe.py": {
+      "public_file": "production-transcribe.py.gz",
+      "original_sha256": "a4605afb543960003d14b6e21e267373635d96cb841054f029c1878b08104526",
+      "compressed_sha256": "b19933b361429e21bd3ebeae50c670cf30b98e95bdae1e180ee5afc35dedd41e",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "captions.py": {
+      "public_file": "production-captions.py.gz",
+      "original_sha256": "45950bd895024094f2a3c5c59ebbd9424eba29c8ff05d09d98558de0b2c564fe",
+      "compressed_sha256": "d5db14c748ea36f55a77008d3851eb768064c5eb42e99a4d1868a2f61b72d5ee",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "browser-common.mjs": {
+      "public_file": "production-browser-common.mjs.gz",
+      "original_sha256": "3142f607eb87c948e9bdc2bd28a0b75a200348dc214201ca0692e58516dddb0c",
+      "compressed_sha256": "7d64d08ef99409923033fd1d69c5b446d93ae07b5b7b6e2d60f8d6cd62552c43",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "studio.html": {
+      "public_file": "production-studio.html.gz",
+      "original_sha256": "0bfc38dac537312b2d971d8252729fb56d40cb828651041c81f90f947497c3a6",
+      "compressed_sha256": "dcf85e8ce25a6facd1dd3f5e5471f1180db590282421c908feb7dbb694902bfa",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "record.mjs": {
+      "public_file": "production-record.mjs.gz",
+      "original_sha256": "34c12cafcd99f9d08dc2b8516203d5addcfad46ca93ce78bd58a5b119faf2a4e",
+      "compressed_sha256": "8faf25a2b13d8b8af88cc4cf52ff1c65d8e29237f524834ff31f0ec41386151e",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "record-resumed-source.mjs": {
+      "public_file": "production-record-resumed-source.mjs.gz",
+      "original_sha256": "9485a68c282cbf82069f3587194f50d3d0d698ed08deedc8e864ceaf1641b2aa",
+      "compressed_sha256": "b197f2fc90313a305c8c24765cb50b9c961472af969aa90bc9e04357fc771114",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "inspect-offline.py": {
+      "public_file": "production-inspect-offline.py.gz",
+      "original_sha256": "bd37c0fad9fc4d1d643c0237d47e35527b626ff0b2b0d700a45b705cf935fc79",
+      "compressed_sha256": "919c681cac4077289afdaf3f2e0edf71e18cc1323e0969b24e50265d0ebfe213",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "inspect-resumed-source.py": {
+      "public_file": "production-inspect-resumed-source.py.gz",
+      "original_sha256": "8f7e26fb4c32e077b45d17a8753c82b438a89b047a9ec627af0e73c565cae62f",
+      "compressed_sha256": "564f6e5fc46a8567176b97d81b75c014a44de7ff3ba52b850e16f1bf64682705",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "review-cli-origin.py": {
+      "public_file": "production-review-cli-origin.py.gz",
+      "original_sha256": "febe9828d29b93aa31bc65598067dfe0a269731871657457fd6bd1b905a34458",
+      "compressed_sha256": "5ce44f51d65ab9e3bae3f326a92f0b7c0592632e73e3f2d3286fb6a1562feb7b",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "encode.py": {
+      "public_file": "production-encode.py.gz",
+      "original_sha256": "c31cae991e2abc1d2e2d73db2df244be1592dd9a2b6ecf6f9405536edb6eaf04",
+      "compressed_sha256": "b6972200c4dc93f6c406e98d3a83f2cc66c319705df719b960d2370e518e0ea4",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "render-captions.mjs": {
+      "public_file": "production-render-captions.mjs.gz",
+      "original_sha256": "22618497427b81364dbc50326d1d19a399d975045ab8f01e4ef19370e5640dcf",
+      "compressed_sha256": "fb8d70363da02d6bcdb84d373740a9418f09d70b307dd3745e345af229801ea1",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    },
+    "finish-video.py": {
+      "public_file": "production-finish-video.py.gz",
+      "original_sha256": "c78256f8d4892b935e9cd702d96121ff1a698fcc6e6c352c5373c1be82906341",
+      "compressed_sha256": "86c908bdef7a379561a3a518f17efabf0c1d7b5bcc05499e802224d39e5396e0",
+      "scope": "Current helper or explicitly named resumed prelaunch snapshot; initial first-attempt helper source hash was not exported before capture"
+    }
+  },
+  "clean_master": {
+    "path": "private projects/entrotter-aave-demo/deliverables/entrotter-aave-clean.mp4",
+    "sha256": "0bd2d5e5d7bcb1b05eca35ecf7aea10a2fa8ec92bc79b5b7480759da89584b5d"
+  },
+  "limits": [
+    "No human listening or complete word-level ASR approval. Captions clearly labelled DRAFT.",
+    "Original Piper process exited134 with recursive_mutex exception; completed23PCM payloads verified independently; cause unproven.",
+    "Initial capture selector timeout preserved. Valid firstsix scenes retained, corrected lastfive scenes captured once; original first-attempt helper hash not exported prelaunch.",
+    "Actual CLI output uses guarded fixed main argv and selected existing source aliases; copied clean-clone shell setup not rerun. Separate focused origin run verifies nine immutable modules and same whole output; capture origins were not initially exported.",
+    "Inherited generic viewer paragraph mentions local-model comparison; this Aave case itself only records builtin preflight. No Aave model comparison/advantage is established.",
+    "Archived-state supplied-action recording inspected offline; no new EVM/RPC/model/paid API/third-party browser request, provider authenticity, economic refusal cause or profit proof.",
+    "Original16media files retained byte-for-byte. Main/Pages/hosting/final submission remain separate; no new approval or submission is inferred."
+  ],
+  "independent_final_review": {
+    "public_file": "independent-final-review.json",
+    "original_sha256": "fc1e93d1a207d7ae41b5346fb3e0f7f34f18b2cbf75da6372d8dd0049e89487b",
+    "normalized_public_sha256": "fc1e93d1a207d7ae41b5346fb3e0f7f34f18b2cbf75da6372d8dd0049e89487b",
+    "scope": "Scoped media/source/capture review with no human listening or protected-main approval; public staged package reviewed separately"
+  },
+  "subtitle_file_normalization": "Published SRT/VTT trim terminal blank lines only; cue text/timestamps unchanged from private draft.",
+  "encoded_caption_review": {
+    "public_file": "encoded-caption-review.json",
+    "original_sha256": "d93cda6d13c0343802705e98bb113cbf827f1aa51cba26fa8c11a758b2a3bb18",
+    "normalized_public_sha256": "d93cda6d13c0343802705e98bb113cbf827f1aa51cba26fa8c11a758b2a3bb18",
+    "helper_sha256": "63bbd6b98b47c4d9139a818ebdabc783b7d9ba9c9645e3229df75eb116bf01ac",
+    "helper_compressed_sha256": "eb35338ecd845702c203b35ff6103137c0511a0bc5bc584a0638e331d03804b2",
+    "scope": "All23 actual encoded cue midpoints match rasterized draft cards; no listening approval. First local PIL import failed before producing checks; corrected decoder uses existing ffmpeg/numpy."
+  },
+  "public_path_normalization": {
+    "workspace": "<workspace>",
+    "erroneous_parent_voice_path": "<workspace-parent>",
+    "scope": "Original raw bytes/hashes retained privately; failed initial model path outside workspace is additionally redacted in its public stderr copy."
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "result": "pass",
+  "actionable_findings": [],
+  "source_sha256": {
+    "AGENTS.md": "4d64ecf25cc77ff46612e40e28b827a01a9fb32a8eed3281d81606200a997285",
+    "CODEX_GOAL.md": "c2a2de26c604c97737da6ab0ad28841946cf5152505636fe850b53b4c9c5da06",
+    "CODEX_START.txt": "3c77d8acde3e8a44af9f0dfac69cd6e7ba2f7820b8b8ea7ebd13b4b00ab2a456",
+    "STATUS.md": "f52befae43df5e2f10a31cbce11626d79914ae00e6eef9695bcf5cc00dc5477f",
+    "docs/COMPETITION.md": "062dcbe7950ffb1aeb855ad56271cf9cbf892c12a7ef700f1bdb788d576e9aff",
+    "release-gates.json": "8301d90c2bc0db25b69dbc8bd6399c14bc40e5183bf9b28560b5f0115c0dbb51",
+    "evidence/submission-preparation/oct02-rules-recheck.json": "755842d52fc6a3386ddc28e4c2c75238e0c074293bde2e832f0f8b81aa88e94b",
+    "evidence/archived-oracle-diagnostic/README.md": "964a63b6021e010fc93f34bee6eeaf0064e38b262c62a36becac6ed0131e5e0a",
+    "evidence/archived-oracle-diagnostic/native-001/host-owned-cleanup.json": "6e47c4266e0bc86ec722e58ebab5eb9f1581ab425efdc299b097d343d04e8e12",
+    "evidence/archived-oracle-diagnostic/native-001/host-result.json": "99be5b1f36cd1fb997a61d259f5c7d026ebd41fd17bc797a5185df20bb5307c9",
+    "evidence/archived-oracle-diagnostic/native-001/observations.json": "00b8896613232412d861d6a46cf1487bf2ffcbc4ab03dc8c5e94f3a8596fcdd4",
+    "evidence/archived-oracle-diagnostic/native-001/owned-nodes.json": "b9bd5a5aab1159c946025c460aebc8a8776ead5e2c65c63e0b1dec69312f1c4e",
+    "evidence/archived-oracle-diagnostic/native-001/result.json": "c41cc0938cb4a9e4610eb2f5ba8d53d4927b1c67dcd49c4af486d22b76d7bd2e",
+    "evidence/archived-oracle-diagnostic/native-001/root-review.json": "dfd0a46b152f0fed53c6e62f72ecf8993b2ded03583a7e0f980ea4b7d30a005d",
+    "evidence/archived-oracle-diagnostic/native-001/terminal-record.json": "ba9751892aaeaf4809d53a1488fda0681871def454b8fe7c1643d586d88bccc9",
+    "evidence/archived-oracle-diagnostic/native-002/baseline-branch.json": "52bfffe3b76958560f7d3cb1ab3b36343794d9b06176e57e82415f12606903cd",
+    "evidence/archived-oracle-diagnostic/native-002/captured-source.json": "1767e980c99ac5d2bd0451c4c061a5d99aa56451e1ed2de7569c9de5fa03d4a9",
+    "evidence/archived-oracle-diagnostic/native-002/host-owned-cleanup.json": "fb98c9c66a4a4decbd2f5b8d21703f3e9fde6f2b450c0a87c6c5aa828db844a1",
+    "evidence/archived-oracle-diagnostic/native-002/host-result.json": "a33c47fef1e8d7f887947138b39266ebe96b7f5395e53c3231ce2f32a9e94cd1",
+    "evidence/archived-oracle-diagnostic/native-002/observations.json": "38ee45f2051debfb36fcd5fa13cc60ff3697aacd7456e25ae633b83d66d18e4d",
+    "evidence/archived-oracle-diagnostic/native-002/owned-nodes.json": "2fae5ef1267991da34aa617ec47cbdd16780d361bd759e2fa9c8a6a37d2058ae",
+    "evidence/archived-oracle-diagnostic/native-002/result.json": "ed902f2792512fcb767b05674bcb2ae2ca83845e92687fc3cb81aaadff03a77f",
+    "evidence/archived-oracle-diagnostic/native-002/root-review.json": "c2647f57b39eb9f57b6cc6e46417295be9f3f328bc2f19f80c7a6609d9f5f76b",
+    "evidence/archived-oracle-diagnostic/native-002/terminal-record.json": "4dc750d9c0d46bf4d30a41eb74b060eaeae845cc3cab6b121050b7efc900bee6",
+    "evidence/archived-oracle-diagnostic/summary.json": "3db9f05847fd6dbcb805cdc371e40b8c48f3c4f434e0db6267037578642f0c99"
+  },
+  "scope": [
+    "Current six tracked document diffs, October2rules recheck and18file archived-oracle bundle; prior unchanged proofs reused.",
+    "All16 public raw/review files byte-identical to original private sources; full32 native002 baseline projected receipts equal captured originals.",
+    "No paired replay/candidate/profit/consumer/provider authenticity/fullblock/defaultDocker claim; original001 evidence loss and002 finite owned evm_mine failure accurately scoped.",
+    "Native001 observationsfile3success rows vsresult4inclskippedmarker retained rather than regenerated;002 final artifact/result4rowconsistency stated.",
+    "Localdeadline conversion/PR47->affc ancestry already independently checked; conditional submission continues to require facts/auth/terms/CI/independent approval/immutable version.",
+    "CODEX_START resumes current goal/repositories, excludesDiscord and duplicatebootstrap/goal.",
+    "Currentcomposition completion checkpoint distinct from candidate publication/protected approval; historical reviews/readiness scope explicit."
+  ],
+  "public_bundle_copy_checks": {
+    "copies": [
+      {
+        "file": "native-001/host-owned-cleanup.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-001/host-result.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-001/observations.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-001/owned-nodes.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-001/result.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-001/terminal-record.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-001/root-review.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-002/baseline-branch.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-002/captured-source.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-002/host-owned-cleanup.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-002/host-result.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-002/observations.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-002/owned-nodes.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-002/result.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-002/terminal-record.json",
+        "byte_identity_verified": true
+      },
+      {
+        "file": "native-002/root-review.json",
+        "byte_identity_verified": true
+      }
+    ],
+    "raw32receipt_match": true,
+    "no_liquidation_topic_does_not_disprove_other_internal_consumers": true,
+    "privacy_checks": "No personalhome paths, loopbackURL, Bearer orquerycredential patterns in18publicpackage files; not universal secret detector.",
+    "verifier_correction": "First source-copy comparison incorrectly chose native002 harness review instead of execution review. Corrected private path before16copies pass; no runtime/product finding."
+  },
+  "limits": [
+    "No new authenticated portal, web/GitHub status query, CI/test/browser/archive replay, approval orpublication for this document review. Currentaffc/protection/publication facts rely on root retained authoritative proof.",
+    "Actualroot active ownergoal object not accessible in subagent get_goal namespace; policy derives from parent-provided currentowner instructions, missingattachment not claimed read.",
+    "Pattern privacy scan is bounded and not proof of universal secret absence.",
+    "Initial copy verifier picked harnessreview instead ofexecutionreview path; corrected before all16byte identity checks, not a product/source issue."
+  ]
+}

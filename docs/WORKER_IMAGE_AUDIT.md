@@ -63,7 +63,7 @@ remaining submission gates stay open. The frozen agent/scenario checkouts remain
 unchanged. This is experimental local software, not a hosted multi-tenant service.
 
 Upstream references: [Chainguard signature verification](https://edu.chainguard.dev/chainguard/containers/security-and-compliance/verifying-chainguard-images-and-metadata-signatures-with-cosign/),
-[Trivy native Rust inventory coverage](https://github.com/aquasecurity/trivy/blob/v0.74.0/docs/guide/coverage/language/rust.md).
+[Trivy native Rust inventory coverage](https://raw.githubusercontent.com/aquasecurity/trivy/v0.74.0/docs/guide/coverage/language/rust.md).
 
 ## Verified checkpoint
 

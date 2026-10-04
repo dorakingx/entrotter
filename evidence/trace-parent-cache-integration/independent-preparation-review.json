@@ -1,0 +1,41 @@
+{
+  "status": "passed_independent_preparation_source_review",
+  "base": "ccc4780763b2c7c409486ea81e5fabf2e1065134",
+  "prepared_bindings_sha256": "6b743668da071907350b895396c87f95ad90be5983259fa5c7c2004df6b5ce34",
+  "selectors_sha256": {
+    ".github/workflows/ci.yml": "042f698f3732c6c18e71f6efc136428112bf186084644d7f8feea42e34a5af9d",
+    ".github/workflows/quality.yml": "9213034928af9b09ddf027dd6e1ac8261db0827df207251096b31bb144449122",
+    "bounded-worker-pins.json": "f79ba6b7453cfcc79a7d1b666b8dd24433b671db778bbb6eafc8d53d31ed8b32",
+    "quality-inputs.json": "5133b74932e7249253b3b232ca84faf65ae29341c448f0839713fcffafdba5fb"
+  },
+  "evidence_sha256": {
+    "evidence/trace-parent-cache-integration/README.md": "4428bccd3aaa864a98330f80fb5e04e6bc9ee7e349f56d7aedd325fa5704bb50",
+    "evidence/trace-parent-cache-integration/engine-CI.json": "bb91130c43e88a6aad15c58f8dc924be4f64569da78eb48b44fe41735130d514",
+    "evidence/trace-parent-cache-integration/engine-doc-bindings.json": "1bb09c7307b0f15613c08b20f1c54f485bc9d108f31505fa1152555259bf77fa",
+    "evidence/trace-parent-cache-integration/engine-docs-first.json": "83bfde33fa33d7b22b875dc8952d98640e32258955382f490b27a9da8212659b",
+    "evidence/trace-parent-cache-integration/engine-docs-second.json": "008fbbd27bba55c63ea53391ae8000f388e035039c542ad1ff2406c35edfe555",
+    "evidence/trace-parent-cache-integration/engine-docs.json": "fc0ddf5e5e17cc1f69fb49d8c44d8eabe241be9a2b9a02048daf12ee6786991c",
+    "evidence/trace-parent-cache-integration/engine-link-recovery.json": "4863266e3bb20252104039af4d9653e0fcc1403bb63b8ab6c0a1a1255e65f933",
+    "evidence/trace-parent-cache-integration/local-reader-execution.json": "34b6f2808509142e0c67e5723ccb256ff9898f56f2c4355217d6a9cf5eb0cd1d",
+    "evidence/trace-parent-cache-integration/local-types.json": "bb81ad6391465e0fd592621a55e1268925c82d72cc96e25db6496a04b1f56e4c",
+    "evidence/trace-parent-cache-integration/summary.json": "15f6eeb53ccdb0be2f4bde7d8c25829990ed6b704fe9d13bb06e24bc3916b711",
+    "evidence/trace-parent-cache-integration/trace-funding-reader.json": "b2866ef19f676f8ae074e995c7a3647dfae305c225d92f51bd5414b57cd45875",
+    "evidence/trace-parent-cache-integration/trace-oracle-reader.json": "8f414886d31a1a1157d11cfb39ad5687ff157b7068812341b2a9d9182cf2131d",
+    "evidence/trace-parent-cache-integration/trace-reader.json": "42a7a03868fb4dde6180580bc21ffa1b94da205000035cc78006d109493479df"
+  },
+  "checks": [
+    "17 bound file hashes match",
+    "Each selector equals base after exactly one 65c-to-198 replacement; other source/pins unchanged",
+    "11 summary public-copy hashes match",
+    "21 type source hashes current; type results retain explicit frozen diagnostics",
+    "All three reader outputs equal prior published outputs except engine pin",
+    "Generator hash matches readiness",
+    "Public personal absolute paths and loopback URLs absent; component/native/combined/human approval limits explicit"
+  ],
+  "actionable_findings": [],
+  "limits": [
+    "Read-only source/evidence review; no tests, CI, RPC or browser rerun",
+    "Reuses root exact-head component artifact verification; this review does not independently repeat all engine CI artifact inspection",
+    "Combined CI and protected-main human approval remain pending"
+  ]
+}

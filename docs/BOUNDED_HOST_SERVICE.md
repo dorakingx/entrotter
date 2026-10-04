@@ -34,7 +34,7 @@ mount after a workspace move. Preserve compatibility symlinks for other tools,
 but do not rely on them as Lima mount sources. Verify the actual mount and an
 EROFS write rejection before treating the configured read-only share as enforced.
 
-Colima's [versioned configuration implementation](https://github.com/abiosoft/colima/blob/v0.8.1/environment/vm/lima/yaml.go)
+Colima's [versioned configuration implementation](https://raw.githubusercontent.com/abiosoft/colima/v0.8.1/environment/vm/lima/yaml.go)
 is the source for the tested mapping; newer versions can have separate root/data
 disks. Inspect the generated Lima configuration, `lsblk -b`, `/proc/meminfo`,
 `/proc/swaps` and `findmnt` before relying on a capacity claim. Verify that guest

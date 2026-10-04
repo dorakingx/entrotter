@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "head": "035f2ebf0d36e0f9bbedca1e87598fc6c03eef22",
+  "tree": "c356e117994bdf5e0e609597db5d319e5ede6ab0",
+  "tested_merge": "8c74f65340cca2b18d6708d88d928de7ce96cdf5",
+  "runs": [
+    {
+      "id": 37182660728,
+      "url": "https://github.com/entrotter/entrotter.github.io/actions/runs/37182660728",
+      "attempt": 1
+    },
+    {
+      "id": 37182660732,
+      "url": "https://github.com/entrotter/entrotter.github.io/actions/runs/37182660732",
+      "attempt": 1
+    }
+  ],
+  "mandatory_checks": {
+    "quality": {
+      "id": 111378180232,
+      "conclusion": "success",
+      "started_at": "2026-10-04T06:23:25Z",
+      "completed_at": "2026-10-04T06:23:50Z"
+    },
+    "accessibility": {
+      "id": 111378180253,
+      "conclusion": "success",
+      "started_at": "2026-10-04T06:23:25Z",
+      "completed_at": "2026-10-04T06:25:55Z"
+    },
+    "check": {
+      "id": 111378180271,
+      "conclusion": "success",
+      "started_at": "2026-10-04T06:23:27Z",
+      "completed_at": "2026-10-04T06:23:40Z"
+    },
+    "docs-links": {
+      "id": 111378180093,
+      "conclusion": "success",
+      "started_at": "2026-10-04T06:23:25Z",
+      "completed_at": "2026-10-04T06:23:40Z"
+    }
+  },
+  "separate_skipped_jobs": [
+    "build",
+    "deploy"
+  ],
+  "counts": {
+    "required_success_jobs": 4,
+    "attempt": 1,
+    "published_reviewed_files": 8,
+    "log_zip_members": 48,
+    "artifact_zip_members": 120,
+    "Node_tests_per_check_or_quality": 136,
+    "Python_tests": 12,
+    "browser_groups": 51,
+    "raw_axe_scans": 64,
+    "raw_axe_incomplete_items": 63,
+    "JS_files": 19,
+    "typed_inputs": 20,
+    "retained_security_findings": 152,
+    "Node_audited_packages": 109,
+    "Python_locked_identities": 42,
+    "docs": 23,
+    "links": 131,
+    "unique_links": 113
+  },
+  "independent_CI_proof_sha256": "f52af8af4e0aa2b09f77248c96c978194aa9e9f7af1bc10b307373c88b88a292",
+  "independent_CI_helper_sha256": "9378f8524d517d949f472aef4a6f672946141f61726ca15e9c3f1611a27074fa",
+  "independent_eight_file_stage_proof_sha256": "e267d1fe95c052df3dc79370052f57c6ce797cb59dc9c1e09929c33e8ccab875",
+  "publication": {
+    "actual_commit_tree_matches_review": true,
+    "actual_changed_raw_blobs_verified": 8,
+    "head": "035f2ebf0d36e0f9bbedca1e87598fc6c03eef22",
+    "tree": "c356e117994bdf5e0e609597db5d319e5ede6ab0"
+  },
+  "limits": [
+    "Reviewer did not reexecute product/tests/scanners/browser/CI or re-audit historical evidence corpus.",
+    "Current required original four jobs are attempt1 success; build/deploy skipped on PR, not evidence of live Pages or main merge.",
+    "HTML wording/visible targeted six-view review reused by exact proof hash; current full Linux suite is separately verified from original raw source-bound output.",
+    "Raw axe incomplete/manual contrast checks remain; zero violations does not mean complete WCAG/human assistive-technology certification.",
+    "Current advisory reports show zero reported vulnerabilities, not vulnerability absence guarantee or repeated independent tool/database cryptography.",
+    "Published8 blobs bound by immutable local Git and exact staged IDs; API tested merge whole tree matches published reviewed tree.",
+    "Independent software review is not human GitHub approval, provider/archived execution authentication or new model/EVM demonstration."
+  ]
+}

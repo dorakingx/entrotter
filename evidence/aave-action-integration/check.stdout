@@ -1,0 +1,27 @@
+{
+  "artifact_id": "728cfe26dcd40ed9bc08d28c5d8c9a088a7a8b6ad22b83a07285af9084175b00",
+  "statuses": {
+    "baseline": [
+      "success",
+      "success",
+      "success",
+      "reverted",
+      "success"
+    ],
+    "candidate": [
+      "success",
+      "success",
+      "success",
+      "noop",
+      "success"
+    ]
+  },
+  "borrowed_weth_raw_each": "1000000000000000000",
+  "variable_debt_raw_each": "1000000000000000000",
+  "gas_used": {
+    "baseline": "723131",
+    "candidate": "560326"
+  },
+  "native_balance_difference_wei": "2422422432849788",
+  "valuation": "exact local units; not profit or a forecast"
+}

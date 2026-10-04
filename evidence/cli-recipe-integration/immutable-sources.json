@@ -1,0 +1,90 @@
+{
+  "engine/evidence/aave-borrow-actions/report.json": {
+    "commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+    "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622"
+  },
+  "engine/scripts/aave_borrow.py": {
+    "commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+    "sha256": "8b3f46308f14d3803ca03c5c7d69a12311b9e01f1f16b72d96151b1046a8394e"
+  },
+  "engine/tests/data/aave-borrow-actions.json": {
+    "commit": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+    "sha256": "f39d9367f9731d90af66a84e4eaf4eac04e57bfbc834d30fbd27e28d6ff4079b"
+  },
+  "cli/tests/data/aave-borrow-result.json": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622"
+  },
+  "cli/tests/data/aave-borrow-result.txt": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "bf64e3dc3e70ac82ec9ddbd555fc7c4aab470c046a0a945befc3d637b3c110c3"
+  },
+  "entrotter.github.io/app.js": {
+    "commit": "05a005977b3850607be047895807a811f63267c8",
+    "sha256": "028f90d30a2313f8bc46274539568a47ba77f2a74e5ab7dd96934501f92739e2"
+  },
+  "entrotter.github.io/reports/aave-borrow-actions.json": {
+    "commit": "05a005977b3850607be047895807a811f63267c8",
+    "sha256": "e2db6ee04f2642e7e75ac53e8ad6212cd68b2ae4aab0ca7a4e06063f5f435622"
+  },
+  "entrotter.github.io/evidence/cli-inspection/view.json": {
+    "commit": "05a005977b3850607be047895807a811f63267c8",
+    "sha256": "514f44598e0ad8af6ed2c6c41ac387276cd43e8dfcb39933603da1eccacaf734"
+  },
+  "cli/src/entrotter_cli/__init__.py": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "11f3961a518c3a40429472d8582270a306114419f588008729d8759d8da83db6"
+  },
+  "cli/src/entrotter_cli/__main__.py": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7"
+  },
+  "cli/src/entrotter_cli/export_budget.py": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "2bebd29413cb86bf25acdc108d87b3f13a3ecd6ed447cd04a86a4e6a9e28614f"
+  },
+  "cli/src/entrotter_cli/main.py": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "94cf5f3e64169e0e8c7272a175c8ae4de53c9c775612a020aa3958cc362319cc"
+  },
+  "cli/src/entrotter_cli/observed_run.py": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "35c34a523af62c4b0093501fb8298e40fc5a35fc7eb3b2f06d6197a588bdbc6e"
+  },
+  "cli/src/entrotter_cli/observed_text.py": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "a3e4e6db536319428c6f608a6c88dcdca9fc3d33e06758f1a37155f44631578d"
+  },
+  "cli/src/entrotter_cli/position_run.py": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "c0a6fccf18fe4478b62c010a535b64829fd21eb3791565973beab8b9231db0ed"
+  },
+  "cli/src/entrotter_cli/position_text.py": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "c47b792a7c124b9cca9cd38e1d5bb7b5d39b1a295b114605c041cfa115f9761f"
+  },
+  "cli/src/entrotter_cli/result_text.py": {
+    "commit": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "sha256": "525232d8fb4c911531d5c7aeb177f442d9c9f01dd054998e8448997db3e3ae47"
+  },
+  "sdk-python/src/entrotter_sdk/__init__.py": {
+    "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "sha256": "c8dd65a77e2bee5d701d5df3ba927c106c473645a812c95d905ea59ef515c568"
+  },
+  "sdk-python/src/entrotter_sdk/client.py": {
+    "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "sha256": "cd5371d84584cf35fc5a4782e7aa8057c517b6d5410f1424734f8821d66cf543"
+  },
+  "sdk-python/src/entrotter_sdk/observed.py": {
+    "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "sha256": "c2bd300449a850146c0fedec550393e0133bba03311e007106e268145fc9f2a5"
+  },
+  "sdk-python/src/entrotter_sdk/position.py": {
+    "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "sha256": "45586cd60694558ce45de767079245549e40690b9bb1363034d10302f4aa6df2"
+  },
+  "sdk-python/src/entrotter_sdk/trace.py": {
+    "commit": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "sha256": "407f7a5640385823631e1bcebe4be769efc2d5d893996614431148719abdd1d2"
+  }
+}

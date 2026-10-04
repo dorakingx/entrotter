@@ -1,0 +1,55 @@
+{
+  "status": "prepared; combined current-head CI pending",
+  "coordinator_base": "213b0bcb9472cbef0a6f7ea47ab0b4824d256128",
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "viewer_selectors_changed": 2,
+  "other_pins_and_frozen_jobs_unchanged": true,
+  "local_workflow_reader_steps": 6,
+  "first_five_scripts_and_outputs_unchanged_except_viewer_pin": true,
+  "sixth_direct_wrapper": "Actual viewer validates same sealed wrapper as engine, compares complete nested report, full four decoded price/address/unit/head/code records and classification; BigInts retain decimal precision.",
+  "wrapper_sha256": "7010848300c353310fb78dab7f377daea4226633e49af3c1a384bcb3a579ba9d",
+  "nested_trace_sha256": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+  "coordinator_types": {
+    "sources": 21,
+    "retained_frozen_diagnostics": 3
+  },
+  "viewer_original_CI": {
+    "runs": [
+      37047157220,
+      37047157381
+    ],
+    "required_checks": 4,
+    "independent_review_original_sha256": "20ad24e37a23f3740348ad6636977397576af7b5f5e4ba787f9d5712fa1366ca",
+    "Node_tests": 94,
+    "Python_tests": 11,
+    "browser_checks": 39,
+    "raw_axe_scans": 34,
+    "axe_violations": 0,
+    "security_findings_retained": 122,
+    "docs_links": 66
+  },
+  "prior_coordinator_213_CI": {
+    "required_checks": 5,
+    "runs": [
+      37043199268,
+      37043199336,
+      37043199602
+    ],
+    "independent_review_sha256": "5dc73f44033caa1e34eeda3961e2d956908fc7bc09c5c1b855f89093d26e602d",
+    "fixture_seconds": 7.635239860000013,
+    "recorded_agent_seconds": 7.390131998000015,
+    "scope": "Historical tested composition; configured running Docker/cgroup-v2, potentially warm caches; excludes install/VM startup."
+  },
+  "limitations": [
+    "Integration readers inspect recorded bytes; no fresh EVM/archive/model/browser execution.",
+    "Read-only price dependence is not signed strategy, profit, provider/deployed-code authenticity or full-block/root/opcode proof.",
+    "Candidate combined CI, independent human main approval and Pages deployment remain separate.",
+    "Formal submission and changed videos are not claimed."
+  ]
+}

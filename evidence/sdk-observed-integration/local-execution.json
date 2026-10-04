@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "pins": {
+    "engine": "40bea57e25ab94c0d0f6136b4c3a5af4a99e6a1d",
+    "sdk-python": "eb9921f30c1f0f3750140f66023e3b10d255cb20",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "a19d3b17fcf44e58a237b622de8cef89842eb6e7"
+  },
+  "steps": [
+    {
+      "name": "Verify offline reader and viewer retain the actual signed-prefix evidence",
+      "script": "step-1.sh",
+      "sha256": "f2dc8d5edb44ea12d37cab8b8d3cbfcdaf374d2c2e32d33bb792ebb69a92636a",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the original 32-receipt case and display classification with SDK and viewer",
+      "script": "step-2.sh",
+      "sha256": "09fed780bae31612d9e22e6ef4c89b84be6726c0cc1a23c877888a07c76d119c",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the historical Aave consumer price records with SDK and viewer",
+      "script": "step-3.sh",
+      "sha256": "47cc1b92fef09890744a071f9f5fc6ad9fa32f6b223301eaf697943bed2adb2a",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the synthetic same-block funding report with SDK and viewer",
+      "script": "step-4.sh",
+      "sha256": "adaf874f5dc073337e7577cac42a5af5c06f428334ac17d418b04b25db43eb49",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect oracle omission and unverified storage reports with SDK and viewer",
+      "script": "step-5.sh",
+      "sha256": "345ed9ecf904b91505a6abcf061d9a9c75fd6a760de33eb821ae3d670e8e9b62",
+      "returncode": 0
+    },
+    {
+      "name": "Inspect the supported observation wrapper with engine, SDK and viewer",
+      "script": "step-6.sh",
+      "sha256": "cb86cd7ad28b63ec452467bd43313ca0f756f745bc21a748de004ccb78975a84",
+      "returncode": 0
+    }
+  ],
+  "first_five_exact_scripts_and_complete_outputs_unchanged_except_sdk_pin": true,
+  "sixth_previous_fields_unchanged_except_pins_and_updated_limits": true,
+  "execution": "Offline recorded byte inspection in fresh isolated coordinator output; actual pinned engine/SDK/Node22 viewer codecs; no new chain/model/browser execution.",
+  "workflow_sha256": "45ed2072b265e95bafc796d4f24c3bb213d0babc6f6ff20a863d88987c93113a",
+  "output_sha256": {
+    "observed-transaction-replay.json": "245d52672445bf16e8f19f685790e99f34e1a625a2aa5b98e5c36e15cbdfb82f",
+    "trace-comparison-reader.json": "56b64864aa3d2c3ec8184d92c2c157af5ba46a8a815704df846718487d806646",
+    "trace-consumer-reader.json": "35a3801be11b7880b87cf088d888ea7ebfbfa5295701017c8079636526993bdf",
+    "trace-funding-reader.json": "77bd0749930ca712edfd34013dd948d886e9d2c76c2234b5918a669b306170ac",
+    "trace-observed-reader.json": "e978f572426a9ef047ffc8bb17f3cff3716294325c654b72371ab6726daf548b",
+    "trace-oracle-reader.json": "d992b0142dc12c945ef82b3b8d10969acd8cd9848cc47581654805e9d8159104",
+    "trace-reader.json": "869c323315000678cecde4a7cd31b5c3001075ab81022e0234ff8dfcf34d25a6"
+  },
+  "source_tracking": "All selected component tracked source/index clean; viewer output/ is untracked prior browser evidence, not an input."
+}

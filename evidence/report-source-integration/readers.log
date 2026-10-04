@@ -1,0 +1,10 @@
+PASS 1 Verify offline reader and viewer retain the actual signed-prefix evidence
+PASS 2 Inspect the original 32-receipt case and display classification with SDK and viewer
+PASS 3 Inspect the historical Aave consumer price records with SDK and viewer
+PASS 4 Inspect the synthetic same-block funding report with SDK and viewer
+PASS 5 Inspect oracle omission and unverified storage reports with SDK and viewer
+PASS 6 Inspect the supported observation wrapper with engine, SDK, CLI and viewer
+PASS 7 Inspect the actual bounded historical price wrapper across engine, SDK, CLI and viewer
+PASS 8 Inspect historical Aave account impact with engine, SDK and CLI
+PASS 9 Inspect the actual Aave account wrapper and synthetic controls with SDK and viewer
+PASS all9/all12complete facts except selected viewerpin

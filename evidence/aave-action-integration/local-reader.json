@@ -1,0 +1,17 @@
+{
+  "returncode": 0,
+  "new_step": "Inspect recorded Aave supply and borrow actions offline",
+  "existing_step_bodies_preserved": true,
+  "workflow_sha256": "c3b560fb8025c33ed703c8f95f7b411e8c11d223001ad57a9ea0f67e557e8cef",
+  "pins": {
+    "engine": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "24bbb916555ef18528300f995e127d50ff29167e",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "422d98a7cf753bfc9be9b86553cd76f3a549f70c"
+  },
+  "helper_sha256": "0b1a9a25bb438f8aeaf50bc78c71b09399d2f051380f88c110f75e61c28422a4",
+  "stdout_sha256": "f00a3581a825766720566702ecdf4cef0d2f4a7cb0b164cd3e11a512f9de2792",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "Only the new offline reader executed locally; all original workflow steps remain identical except the selected Engine checkout. No fresh EVM/model/browser/timing claim."
+}

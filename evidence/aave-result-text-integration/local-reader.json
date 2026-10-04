@@ -1,0 +1,18 @@
+{
+  "returncode": 0,
+  "step": "Inspect recorded Aave supply and borrow actions offline",
+  "prior_root": "452c0689e3c7fedcb24a35e409328cd525ba89ff",
+  "other_workflow_content_preserved": true,
+  "workflow_sha256": "9cd3894944b135dc2d972dc831d86a17b20d84c2bd460982a77ae85146695d1c",
+  "pins": {
+    "engine": "f53a66a303e67ca4fbb4322a06b36b036f4db599",
+    "sdk-python": "ba4af512784119f23b6dea63fd24c7f5d1fdde44",
+    "cli": "169b759aff9280ce44fb0d15569c7ae0a4a40889",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "422d98a7cf753bfc9be9b86553cd76f3a549f70c"
+  },
+  "helper_sha256": "e40a9d678895ca360f4491f5d3de9d75769261d9558294e421b37ec9cc8dbb78",
+  "stdout_sha256": "d134018d5e80d1cc1e50307aa14018fdbe11fb389b48e382e767062fa33b1592",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "One offline four-command composition with current selected CLI/SDK/Engine sources; no new EVM, RPC, model, browser or performance measurement."
+}

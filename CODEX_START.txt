@@ -1,1 +1,26 @@
-/goal Build Entrotter to a grand-prize-quality Colosseum submission by completing the acceptance gates in entrotter/CODEX_GOAL.md. Read AGENTS.md, entrotter/README.md, entrotter/STATUS.md and entrotter/evidence first. Verify the actual workspace, create the six public MIT repositories in the existing entrotter organization from entrotter/repositories.json, and deploy only the OSS documentation/report site to https://entrotter.github.io/ through GitHub Pages with no custom domain. The preparation environment did not publish repositories or start a Codex session. Execute entrotter/scripts/verify.py, fix the unverified Anvil integration, implement and validate one useful real historical-state DeFi scenario, causal agent actions, complete traces and honest benchmark evidence. Continue inspect/implement/test/review/fix/document/commit cycles instead of stopping after scaffolding or a synthetic demo. Work on independent tasks when credentials or human input block one gate. Record exact blockers and resume checkpoints in entrotter/STATUS.md. Never fabricate historical results, demand, deployments or a guaranteed prize; never use live keys, broadcast transactions, expose private repositories, purchase services or submit the entry without explicit approval. Do not declare the goal complete until the documented engineering gates have actual evidence and remaining human-dependent deliverables are honestly identified.
+Resume the existing active Entrotter goal; do not create a duplicate goal or session.
+Follow the October 2 owner policy in entrotter/CODEX_GOAL.md. Read applicable
+AGENTS.md and current STATUS.md, relevant diffs and unresolved evidence. Reuse the
+latest PR47/PR55 and component candidates, real EVM/agent records and videos;
+verify current remote heads. The six public MIT repositories and GitHub Pages
+already exist. Do not repeat initialization or rebuild from old main/the ZIP.
+
+Continue concrete developer-value improvements through implementation, real tests,
+independent review, fixes, protected integration, public verification and evidence.
+Keep the backend local and publish the OSS documentation/report viewer only to
+https://entrotter.github.io/ without a custom domain. Recheck the official deadline
+at execution time; currently October 13, 2026 at 15:59 JST. Passing CI, checklists,
+PRs, readiness or formal submission do not end the improvement goal before then.
+
+The owner has conditionally authorized formal submission of the existing entry
+once quality, required owner facts and materials are verified and the portal is
+open, without another blanket approval. Confirm server acceptance and exact code
+and video versions; do not alter an immutable submission. Authentication, terms,
+required CI and independent approval remain necessary. Never fabricate results,
+demand, private facts, deployments or a guaranteed prize; never expose secrets,
+broadcast upstream transactions, incur unapproved costs or bypass protections.
+
+Work on other actionable improvements when one gate is blocked. Preserve actual
+failed evidence, commands and resume checkpoints; do not replace failures with
+narrower passing claims. Follow explicit owner stop/pause instructions. Discord
+is excluded. The full objective remains active until its completion audit passes.

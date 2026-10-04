@@ -1,0 +1,44 @@
+{
+  "scope": "Single instrumented native attempt; no Docker CPU/RSS/PID or normal host-default proof.",
+  "actual_session": 29852,
+  "terminal_exec_exit": 0,
+  "replay_status": "failed",
+  "primary_category": "execution_error",
+  "cause": "Unknown: finite execution_error only; cannot reconstruct exact RPC/deadline/mining origin. No retry.",
+  "host_return_not_replay_success": true,
+  "host_seconds": 152.146621,
+  "replay_seconds": 152.055966,
+  "protocol_and_report_absent": true,
+  "observation_scope": [
+    "Both owned nodes parent latestRoundData oldphase6/10477 and proxy aggregatorE62.",
+    "Baseline owned after shows newphase6/10478, answer256292441874; no final baseline receipt report retained.",
+    "Candidate-after skipped upon primary failure; no omission outcome verified.",
+    "No actual dependent consumer/profit/oracle authenticity/provider state attestation."
+  ],
+  "cleanup_checks": [
+    {
+      "branch": "baseline",
+      "guardian_pid": 25903,
+      "guardian_pid_exists": false,
+      "port": 63382,
+      "port_closed_independent_final_check": true
+    },
+    {
+      "branch": "candidate",
+      "guardian_pid": 26213,
+      "guardian_pid_exists": false,
+      "port": 63528,
+      "port_closed_independent_final_check": true
+    }
+  ],
+  "remaining_anvil_processes": [],
+  "source_unchanged": true,
+  "readiness_sha256": "0b6cc3d610a9c8e7b9f7ec7c460638af1966e6eda1807165daaf1f6db1ef776a",
+  "run_sha256": {
+    "host-owned-cleanup.json": "6e47c4266e0bc86ec722e58ebab5eb9f1581ab425efdc299b097d343d04e8e12",
+    "host-result.json": "99be5b1f36cd1fb997a61d259f5c7d026ebd41fd17bc797a5185df20bb5307c9",
+    "observations.json": "00b8896613232412d861d6a46cf1487bf2ffcbc4ab03dc8c5e94f3a8596fcdd4",
+    "owned-nodes.json": "b9bd5a5aab1159c946025c460aebc8a8776ead5e2c65c63e0b1dec69312f1c4e",
+    "result.json": "c41cc0938cb4a9e4610eb2f5ba8d53d4927b1c67dcd49c4af486d22b76d7bd2e"
+  }
+}

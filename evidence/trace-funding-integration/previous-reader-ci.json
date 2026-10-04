@@ -1,0 +1,73 @@
+{
+  "head": "86a118716a39a0a4ace2d0e0a3ebff407f7cf9e9",
+  "execution_snapshot": "968b48886991223278ae0671848279b16e93e157",
+  "all_five_checks": "passed",
+  "production_source_count": 21,
+  "frozen_diagnostics": 3,
+  "retained_bandit_findings": 78,
+  "audited_Python_packages": 50,
+  "reported_advisories": 0,
+  "image_inputs_match": 19,
+  "dependency_pins": {
+    "engine": "8176597af994dddb7a3dc6721db623580ebc9601",
+    "sdk-python": "ee5523ded16488af32d1f64040f1996cd002f8f3",
+    "cli": "22b514cbba2ecd0c41ae99c330f8396c97acebf2",
+    "scenarios": "8785bb090c13390b783fe8c42f01b26f1d5e7c24",
+    "entrotter.github.io": "b7c20ce2c080427fe0742a1afcb5dbc49277de70"
+  },
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T16:58:38Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36895882546/job/110482639483",
+      "name": "quality",
+      "startedAt": "2026-10-01T16:58:04Z",
+      "status": "COMPLETED",
+      "workflowName": "Coordination quality and dependency audit"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T16:58:45Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36895882417/job/110482637155",
+      "name": "docs-links",
+      "startedAt": "2026-10-01T16:58:04Z",
+      "status": "COMPLETED",
+      "workflowName": "Documentation links"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T16:58:38Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36895882418/job/110482637804",
+      "name": "integration",
+      "startedAt": "2026-10-01T16:58:04Z",
+      "status": "COMPLETED",
+      "workflowName": "Workspace integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T16:58:21Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36895882418/job/110482638039",
+      "name": "host-bounds",
+      "startedAt": "2026-10-01T16:58:04Z",
+      "status": "COMPLETED",
+      "workflowName": "Workspace integration"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T16:58:54Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/entrotter/entrotter/actions/runs/36895882418/job/110482637436",
+      "name": "bounded-default",
+      "startedAt": "2026-10-01T16:58:04Z",
+      "status": "COMPLETED",
+      "workflowName": "Workspace integration"
+    }
+  ],
+  "document_hashes_match": 54,
+  "full_verification_sha256": "506ce6f3474c67bd62cb75fcf6ab80e767ed12658026ec7bd33b32a551e8d999",
+  "scope": "Historical exact86a composition proof; not new935 engine proof."
+}
