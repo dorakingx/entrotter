@@ -48,7 +48,7 @@ jobs:
         run: |
           .venv/bin/python -m pip_audit --strict --require-hashes --disable-pip -r requirements-quality.txt --progress-spinner off -f json -o .quality/dependencies.json
           .venv/bin/python -m pip_audit --strict --require-hashes --disable-pip -r requirements-dev.txt --progress-spinner off -f json -o .quality/contracts-dependencies.json
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
           name: scenario-quality-reports
