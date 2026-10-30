@@ -1,8 +1,5 @@
 # Entrotter
 
-[Selective X publishing](docs/social-publishing.md) uses an explicitly approved
-editorial queue, with at most ten posts per month and no automatic commit posts.
-
 **A time machine for onchain agents.**
 
 Rewind a state. Change a decision. Inspect the evidence.

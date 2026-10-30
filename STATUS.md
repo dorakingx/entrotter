@@ -80,7 +80,10 @@ mainnet transaction, customer outreach or competition submission was performed.
 The current per-EVM memory bound is not a complete process sandbox. Preserve these
 limits in the product and release-gates.json. Overall completion remains unproven.
 
-## Selective Typefully publishing — September 27, 2026
+## Historical: selective Typefully publishing — September 27, 2026
+
+Retired at the owner's request on October 30, 2026. The implementation and setup
+instructions below describe historical work, not an active feature or pending task.
 
 - A focused branch from remote main `5401d56` adds an explicit Issues editorial
   queue for @entrotterxyz, Typefully Public API v2 single-X scheduling, daily/manual
@@ -111,9 +114,26 @@ limits in the product and release-gates.json. Overall completion remains unprove
   absent from current main and live on earlier review branches; this scoped PR
   does not bypass or weaken their integration requirement.
 
-HUMAN_BLOCKED:
-- connect @entrotterxyz to Typefully
-- add TYPEFULLY_API_KEY
-- add TYPEFULLY_SOCIAL_SET_ID
-- configure the Typefully posting queue
-- approve the first social:candidate
+
+## October 30, 2026 — social publishing removed
+
+The owner requested removal of remaining automatic SNS posting. Removed the
+Typefully publisher, daily/manual publishing workflow, dedicated tests/workflow,
+candidate issue form, setup guide, README link and active release-gate entry from
+`feat/selective-social`. Historical evidence is retained without rewriting it.
+The inspected remote `main` and current monorepo candidate contained no publisher.
+
+GitHub PR #51, candidate #52 and journal #50 were closed without merging. Candidate
+#52 no longer has publishing approval. The two Typefully Actions secrets and
+`TYPEFULLY_QUEUE_READY` variable were deleted; the registered social test workflow
+was disabled. No social workflow was running at inspection. No Typefully API call
+or SNS publication was made. External Typefully account settings and any drafts
+created independently of this repository were not inspected.
+
+Verification: all six existing workspace tests passed on macOS with Python 3.13
+using the unchanged CI dependency revisions in an isolated temporary sibling
+workspace (`python3 -m unittest discover -s tests -p test_workspace.py -v`).
+This includes a real loopback SDK/API roundtrip, CLI/report validation and fixture
+contracts. `git diff --check` passed. Removed paths are absent, the release-gate
+JSON parses, and no active publisher/configuration references remain outside this
+historical status and the preserved evidence. No model or paid API was used.

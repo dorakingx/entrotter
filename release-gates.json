@@ -127,11 +127,5 @@
     "evidence/repository-security.json",
     "evidence/clean-historical-reproduction.json",
     "evidence/branch-protection.json"
-  ],
-  "social_publishing": {
-    "status": "implemented_mock_verified_owner_setup_pending",
-    "evidence": "evidence/social-publishing/verification.json",
-    "live_posts": 0,
-    "overall_project_gates_unchanged": true
-  }
+  ]
 }
